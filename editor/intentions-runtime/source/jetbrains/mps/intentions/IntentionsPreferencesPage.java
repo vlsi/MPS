@@ -24,10 +24,19 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.StringUtil;
 import org.jetbrains.annotations.Nls;
 
-import javax.swing.*;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.Icon;
+import javax.swing.JCheckBox;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.UIManager;
 import javax.swing.border.TitledBorder;
-import java.awt.*;
-import java.util.*;
+import java.awt.Component;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 public class IntentionsPreferencesPage implements Configurable {
@@ -61,20 +70,19 @@ public class IntentionsPreferencesPage implements Configurable {
     JPanel mainPanel = new JPanel();
     mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
     mainPanel.setBackground(UIManager.getLookAndFeel().getDefaults().getColor("TextArea.background"));
-    LinkedHashMap<Language, JPanel> languagesToPanels = new LinkedHashMap<Language, JPanel>();
+    LinkedHashMap<String, JPanel> languagesToPanels = new LinkedHashMap<String, JPanel>();
     for (IntentionEnabledCheckBox checkBox : myCheckBoxes) {
-      Language language = myIntentionsManager.getIntentionLanguage(checkBox.getIntention());
-      if (language != null) {
-        JPanel languagePanel = languagesToPanels.get(language);
+      String languageFqName = checkBox.getLanguageFqName();
+      if (languageFqName != null) {
+        JPanel languagePanel = languagesToPanels.get(languageFqName);
         if (languagePanel == null) {
           languagePanel = new JPanel();
           languagePanel.setLayout(new BoxLayout(languagePanel, BoxLayout.Y_AXIS));
           languagePanel.add(Box.createHorizontalGlue());
-          languagePanel.setBorder(new TitledBorder(language.getModuleFqName()));
+          languagePanel.setBorder(new TitledBorder(checkBox.getLanguageFqName()));
           languagePanel.setBackground(UIManager.getLookAndFeel().getDefaults().getColor("TextArea.background"));
           languagePanel.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-          languagesToPanels.put(language, languagePanel);
+          languagesToPanels.put(languageFqName, languagePanel);
           mainPanel.add(languagePanel);
         }
         languagePanel.add(checkBox.getCheckBox());
@@ -85,18 +93,18 @@ public class IntentionsPreferencesPage implements Configurable {
 
   private void initCheckBoxes() {
     myCheckBoxes = new ArrayList<IntentionEnabledCheckBox>();
-    List<Intention> allIntentions = new ArrayList<Intention>(myIntentionsManager.getAllIntentions());
-    Collections.sort(allIntentions, new Comparator<Intention>() {
-      @Override
-      public int compare(Intention o1, Intention o2) {
-        int result = StringUtil.compare(o1.getClass().getPackage().getName(), o2.getClass().getPackage().getName());
-        if (result != 0) return result;
-        return StringUtil.compare(o1.getClass().getSimpleName(), o2.getClass().getSimpleName());
-      }
-    });
-    for (Intention intention : allIntentions) {
+    for (Intention intention : myIntentionsManager.getAllIntentions()) {
       myCheckBoxes.add(new IntentionEnabledCheckBox(intention));
     }
+    for (IntentionFactory intentionFactory : myIntentionsManager.getAllIntentionFactories()) {
+      myCheckBoxes.add(new IntentionEnabledCheckBox(intentionFactory));
+    }
+    Collections.sort(myCheckBoxes, new Comparator<IntentionEnabledCheckBox>() {
+      @Override
+      public int compare(IntentionEnabledCheckBox o1, IntentionEnabledCheckBox o2) {
+        return StringUtil.compare(o1.getLanguageFqName(), o2.getLanguageFqName());
+      }
+    });
   }
 
   @Override
@@ -129,45 +137,42 @@ public class IntentionsPreferencesPage implements Configurable {
   }
 
   private class IntentionEnabledCheckBox {
-    private Intention myIntention;
     private JCheckBox myCheckBox;
+    private String myLanguageFqName;
+    private String myPersistentStateKey;
+
+    private IntentionEnabledCheckBox(final IntentionFactory intentionFactory) {
+      myCheckBox = new JCheckBox(intentionFactory.getPresentation());
+      myCheckBox.setBackground(UIManager.getLookAndFeel().getDefaults().getColor("TextArea.background"));
+      myLanguageFqName = intentionFactory.getLanguageFqName();
+      myPersistentStateKey = intentionFactory.getPersistentStateKey();
+    }
 
     private IntentionEnabledCheckBox(final Intention intention) {
-      myIntention = intention;
-      final String intentionClassName = myIntention.getClass().getName();
-      String intentionName = ModelAccess.instance().runReadAction(new Computable<String>() {
-        @Override
-        public String compute() {
-          final SNode intentionNode = myIntentionsManager.getNodeByIntention(intention);
-          if (intentionNode != null) {
-            return intentionNode.getName();
-          } else {
-            return intentionClassName;
-          }
-        }
-      });
-      myCheckBox = new JCheckBox(intentionName);
+      myCheckBox = new JCheckBox(intention.getPresentation());
       myCheckBox.setBackground(UIManager.getLookAndFeel().getDefaults().getColor("TextArea.background"));
+      myLanguageFqName = intention.getLanguageFqName();
+      myPersistentStateKey = intention.getPersistentStateKey();
     }
 
     private boolean isModified() {
-      return myIntentionsManager.intentionIsDisabled(myIntention) == myCheckBox.isSelected();
+      return myIntentionsManager.isIntentionDisabled(myPersistentStateKey) == myCheckBox.isSelected();
     }
 
     private JCheckBox getCheckBox() {
       return myCheckBox;
     }
 
-    public Intention getIntention() {
-      return myIntention;
+    private String getLanguageFqName() {
+      return myLanguageFqName;
     }
 
     private void apply() {
-      myIntentionsManager.setIntentionState(myIntention, !myCheckBox.isSelected());
+      myIntentionsManager.setIntentionState(myPersistentStateKey, !myCheckBox.isSelected());
     }
 
     private void reset() {
-      myCheckBox.setSelected(!myIntentionsManager.intentionIsDisabled(myIntention));
+      myCheckBox.setSelected(!myIntentionsManager.isIntentionDisabled(myPersistentStateKey));
     }
   }
 }

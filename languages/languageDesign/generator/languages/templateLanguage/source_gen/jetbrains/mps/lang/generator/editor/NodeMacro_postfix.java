@@ -77,7 +77,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_crgygw_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "bad role:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "bad role:");
     editorCell.setCellId("Constant_crgygw_a0a");
     editorCell.setDefaultText("");
     return editorCell;

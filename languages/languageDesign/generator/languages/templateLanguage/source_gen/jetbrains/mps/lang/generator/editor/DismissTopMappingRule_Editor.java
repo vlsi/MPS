@@ -30,7 +30,7 @@ public class DismissTopMappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5f3uie_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "DISMISS TOP RULE");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "DISMISS TOP RULE");
     editorCell.setCellId("Constant_5f3uie_a0");
     {
       Style style = editorCell.getStyle();

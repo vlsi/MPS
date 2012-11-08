@@ -32,7 +32,7 @@ public class RemovePart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_an4g7e_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "remove concept");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "remove concept");
     editorCell.setCellId("Constant_an4g7e_a0");
     {
       Style style = editorCell.getStyle();

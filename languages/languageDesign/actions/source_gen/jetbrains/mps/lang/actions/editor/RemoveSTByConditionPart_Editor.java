@@ -54,7 +54,7 @@ public class RemoveSTByConditionPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9b05zh_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "remove by condition");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "remove by condition");
     editorCell.setCellId("Constant_9b05zh_a0a");
     {
       Style style = editorCell.getStyle();
@@ -65,7 +65,7 @@ public class RemoveSTByConditionPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_9b05zh_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

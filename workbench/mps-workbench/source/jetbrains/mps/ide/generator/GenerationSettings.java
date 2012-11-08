@@ -319,170 +319,26 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
   }
 
   public static class MyState {
-    private boolean mySaveTransientModels;
-    private boolean myShowErrorsOnly;
+    public boolean mySaveTransientModels;
+    public boolean myShowErrorsOnly;
     // This is and outdated
     @Deprecated
-    private boolean myGenerateRequirements = true;
-    private GenerateRequirementsPolicy myGenerateRequirementsPolicy = GenerateRequirementsPolicy.ASK;
-    private boolean myCheckModelsBeforeGeneration = true;
-    private boolean myParallelGenerator = false;
-    private boolean myStrictMode = true;
-    private int myNumberOfParallelThreads = 2;
-    private int myPerformanceTracingLevel = GenerationOptions.TRACE_OFF;
-    private int myNumberOfModelsToKeep = -1;
-    private boolean myShowInfo = false;
-    private boolean myShowWarnings = true;
-    private boolean myKeepModelsWithWarnings = true;
-    private boolean myIncremental = true;
-    private boolean myIncrementalUseCache = false;
-    private boolean myFailOnMissingTextGen = false;
-    private boolean myGenerateDebugInfo = true;
-    private boolean myShowBadChildWarning = true;
-    private boolean myDebugIncrementalDependencies = false;
-
-    public int getNumberOfModelsToKeep() {
-      return myNumberOfModelsToKeep;
-    }
-
-    public void setNumberOfModelsToKeep(int numberOfModelsToKeep) {
-      myNumberOfModelsToKeep = numberOfModelsToKeep;
-    }
-
-    public boolean isShowInfo() {
-      return myShowInfo;
-    }
-
-    public void setShowInfo(boolean showInfo) {
-      myShowInfo = showInfo;
-    }
-
-    public boolean isShowWarnings() {
-      return myShowWarnings;
-    }
-
-    public void setShowWarnings(boolean showWarnings) {
-      myShowWarnings = showWarnings;
-    }
-
-    public boolean isKeepModelsWithWarnings() {
-      return myKeepModelsWithWarnings;
-    }
-
-    public void setKeepModelsWithWarnings(boolean keepModelsWithWarnings) {
-      myKeepModelsWithWarnings = keepModelsWithWarnings;
-    }
-
-    public boolean isSaveTransientModels() {
-      return mySaveTransientModels;
-    }
-
-    public void setSaveTransientModels(boolean saveTransientModels) {
-      mySaveTransientModels = saveTransientModels;
-    }
-
-    public boolean isShowErrorsOnly() {
-      return myShowErrorsOnly;
-    }
-
-    public void setShowErrorsOnly(boolean showErrorsOnly) {
-      myShowErrorsOnly = showErrorsOnly;
-    }
-
-    public GenerateRequirementsPolicy getGenerateRequirementsPolicy() {
-      return myGenerateRequirementsPolicy;
-    }
-
-    public void setGenerateRequirementsPolicy(GenerateRequirementsPolicy generateRequirementsPolicy) {
-      myGenerateRequirementsPolicy = generateRequirementsPolicy;
-    }
-
-    public boolean isCheckModelsBeforeGeneration() {
-      return myCheckModelsBeforeGeneration;
-    }
-
-    public void setCheckModelsBeforeGeneration(boolean checkModelsBeforeGeneration) {
-      myCheckModelsBeforeGeneration = checkModelsBeforeGeneration;
-    }
-
-    public boolean isParallelGenerator() {
-      return myParallelGenerator;
-    }
-
-    public void setParallelGenerator(boolean parallelGenerator) {
-      myParallelGenerator = parallelGenerator;
-    }
-
-    public boolean isStrictMode() {
-      return myStrictMode;
-    }
-
-    public void setStrictMode(boolean strictMode) {
-      myStrictMode = strictMode;
-    }
-
-    public int getNumberOfParallelThreads() {
-      return myNumberOfParallelThreads;
-    }
-
-    public void setNumberOfParallelThreads(int numberOfParallelThreads) {
-      myNumberOfParallelThreads = numberOfParallelThreads;
-    }
-
-    public int getPerformanceTracingLevel() {
-      return myPerformanceTracingLevel;
-    }
-
-    public void setPerformanceTracingLevel(int performanceTracingLevel) {
-      myPerformanceTracingLevel = performanceTracingLevel;
-    }
-
-    public boolean isIncremental() {
-      return myIncremental;
-    }
-
-    public void setIncremental(boolean incremental) {
-      myIncremental = incremental;
-    }
-
-    public boolean isIncrementalUseCache() {
-      return myIncrementalUseCache;
-    }
-
-    public void setIncrementalUseCache(boolean incrementalUseCache) {
-      myIncrementalUseCache = incrementalUseCache;
-    }
-
-    public boolean isDebugIncrementalDependencies() {
-      return myDebugIncrementalDependencies;
-    }
-
-    public void setDebugIncrementalDependencies(boolean debugIncrementalDependencies) {
-      myDebugIncrementalDependencies = debugIncrementalDependencies;
-    }
-
-    public boolean isFailOnMissingTextGen() {
-      return myFailOnMissingTextGen;
-    }
-
-    public void setFailOnMissingTextGen(boolean failOnMissingTextGen) {
-      myFailOnMissingTextGen = failOnMissingTextGen;
-    }
-
-    public boolean isGenerateDebugInfo() {
-      return myGenerateDebugInfo;
-    }
-
-    public void setGenerateDebugInfo(boolean generateDebugInfo) {
-      myGenerateDebugInfo = generateDebugInfo;
-    }
-
-    public boolean isShowBadChildWarning() {
-      return myShowBadChildWarning;
-    }
-
-    public void setShowBadChildWarning(boolean showBadChildWarning) {
-      myShowBadChildWarning = showBadChildWarning;
-    }
+    public boolean myGenerateRequirements = true;
+    public GenerateRequirementsPolicy myGenerateRequirementsPolicy = GenerateRequirementsPolicy.ASK;
+    public boolean myCheckModelsBeforeGeneration = true;
+    public boolean myParallelGenerator = false;
+    public boolean myStrictMode = true;
+    public int myNumberOfParallelThreads = 2;
+    public int myPerformanceTracingLevel = GenerationOptions.TRACE_OFF;
+    public int myNumberOfModelsToKeep = -1;
+    public boolean myShowInfo = false;
+    public boolean myShowWarnings = true;
+    public boolean myKeepModelsWithWarnings = true;
+    public boolean myIncremental = true;
+    public boolean myIncrementalUseCache = false;
+    public boolean myFailOnMissingTextGen = false;
+    public boolean myGenerateDebugInfo = true;
+    public boolean myShowBadChildWarning = true;
+    public boolean myDebugIncrementalDependencies = false;
   }
 }

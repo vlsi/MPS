@@ -15,14 +15,26 @@
  */
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-
-import java.util.List;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public interface Intention {
   String getConcept();
 
+  String getPresentation();
+
+  String getPersistentStateKey();
+
+  String getLanguageFqName();
+
+  IntentionType getType();
+
+  /**
+   * Was deprecated in MPS 3.0
+   * This method should be removed after MPS 3.0
+   */
+  @Deprecated
   boolean isParameterized();
 
   String getDescription(SNode node, EditorContext editorContext);
@@ -33,9 +45,20 @@ public interface Intention {
 
   void execute(SNode node, EditorContext editorContext);
 
-  IntentionType getType();
+  /**
+   * Was deprecated in MPS 3.0
+   * This method should be removed after MPS 3.0
+   */
+  @Deprecated
+  String getLocationString();
 
-  String getLocationString();  //todo what is this method for?
+  /**
+   * Was deprecated in MPS 3.0
+   * <code>getIntentionNodeReference()</code> should be used instead
+   * This method should be removed after MPS 3.0
+   */
+  @Deprecated
+  SNode getNodeByIntention();
 
-  SNode getNodeByIntention(); 
+  SNodeReference getIntentionNodeReference();
 }

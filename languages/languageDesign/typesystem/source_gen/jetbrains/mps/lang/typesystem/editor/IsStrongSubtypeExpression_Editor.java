@@ -36,7 +36,7 @@ public class IsStrongSubtypeExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_42v771_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "isStrongSubtype");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "isStrongSubtype");
     editorCell.setCellId("Constant_42v771_a0");
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IsStrongSubtypeExpression_Editor.ReplaceWith_IsSubtypeExpression_cellMenu_a0a0_0()}));
@@ -44,7 +44,7 @@ public class IsStrongSubtypeExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_42v771_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_42v771_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -52,7 +52,7 @@ public class IsStrongSubtypeExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_42v771_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":<<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":<<");
     editorCell.setCellId("Constant_42v771_d0");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -60,7 +60,7 @@ public class IsStrongSubtypeExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_42v771_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_42v771_f0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

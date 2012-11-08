@@ -3,12 +3,12 @@
   <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.findUsages.dataFlow.DFABuilders" />
   <root nodeId="1540083505037467679" modelId="r:390b21f6-c313-46da-a7d6-8dd5e6a64da3(jetbrains.mps.lang.findUsages.dataFlow)">
     <nodeInfo nodeId="2787088073488043533" fileName="ResultStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1540083505037467679" fileName="ResultStatement_DataFlow.java" startLine="11" startPosition="63" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ResultStatement_DataFlow#()V" />
-    <nodeInfo nodeId="1540083505037467679" fileName="ResultStatement_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <nodeInfo nodeId="1540083505037467679" fileName="ResultStatement_DataFlow.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ResultStatement_DataFlow#()V" />
+    <nodeInfo nodeId="1540083505037467679" fileName="ResultStatement_DataFlow.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
     <scopeInfo nodeId="1540083505037467679" fileName="ResultStatement_DataFlow.java" startLine="12" startPosition="37" endLine="12" endPosition="37" />
     <scopeInfo nodeId="1540083505037467681" fileName="ResultStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="106" />
-    <scopeInfo nodeId="1540083505037467679" fileName="ResultStatement_DataFlow.java" startLine="11" startPosition="63" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1540083505037467679" fileName="ResultStatement_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+    <scopeInfo nodeId="1540083505037467679" fileName="ResultStatement_DataFlow.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="1540083505037467679" fileName="ResultStatement_DataFlow.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1540083505037467679" varName="_context" />
       <varInfo nodeId="1540083505037467679" varName="operationContext" />
     </scopeInfo>
@@ -17,12 +17,12 @@
   <root nodeId="1540083505037525413" modelId="r:390b21f6-c313-46da-a7d6-8dd5e6a64da3(jetbrains.mps.lang.findUsages.dataFlow)">
     <nodeInfo nodeId="1540083505037525416" fileName="ExecuteFinderExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1540083505037526549" fileName="ExecuteFinderExpression_DataFlow.java" startLine="16" startPosition="106" endLine="17" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1540083505037525413" fileName="ExecuteFinderExpression_DataFlow.java" startLine="11" startPosition="71" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExecuteFinderExpression_DataFlow#()V" />
-    <nodeInfo nodeId="1540083505037525413" fileName="ExecuteFinderExpression_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <nodeInfo nodeId="1540083505037525413" fileName="ExecuteFinderExpression_DataFlow.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExecuteFinderExpression_DataFlow#()V" />
+    <nodeInfo nodeId="1540083505037525413" fileName="ExecuteFinderExpression_DataFlow.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
     <scopeInfo nodeId="1540083505037525413" fileName="ExecuteFinderExpression_DataFlow.java" startLine="12" startPosition="45" endLine="12" endPosition="45" />
-    <scopeInfo nodeId="1540083505037525413" fileName="ExecuteFinderExpression_DataFlow.java" startLine="11" startPosition="71" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="1540083505037525413" fileName="ExecuteFinderExpression_DataFlow.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
     <scopeInfo nodeId="1540083505037525415" fileName="ExecuteFinderExpression_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="107" />
-    <scopeInfo nodeId="1540083505037525413" fileName="ExecuteFinderExpression_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
+    <scopeInfo nodeId="1540083505037525413" fileName="ExecuteFinderExpression_DataFlow.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="1540083505037525413" varName="_context" />
       <varInfo nodeId="1540083505037525413" varName="operationContext" />
     </scopeInfo>
@@ -32,12 +32,12 @@
     <nodeInfo nodeId="6413574678187373045" fileName="ExecuteFindersGetSearchResults_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6413574678187373054" fileName="ExecuteFindersGetSearchResults_DataFlow.java" startLine="16" startPosition="105" endLine="17" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6413574678187373063" fileName="ExecuteFindersGetSearchResults_DataFlow.java" startLine="17" startPosition="106" endLine="18" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6413574678187369355" fileName="ExecuteFindersGetSearchResults_DataFlow.java" startLine="11" startPosition="78" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExecuteFindersGetSearchResults_DataFlow#()V" />
-    <nodeInfo nodeId="6413574678187369355" fileName="ExecuteFindersGetSearchResults_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <nodeInfo nodeId="6413574678187369355" fileName="ExecuteFindersGetSearchResults_DataFlow.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExecuteFindersGetSearchResults_DataFlow#()V" />
+    <nodeInfo nodeId="6413574678187369355" fileName="ExecuteFindersGetSearchResults_DataFlow.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
     <scopeInfo nodeId="6413574678187369355" fileName="ExecuteFindersGetSearchResults_DataFlow.java" startLine="12" startPosition="52" endLine="12" endPosition="52" />
-    <scopeInfo nodeId="6413574678187369355" fileName="ExecuteFindersGetSearchResults_DataFlow.java" startLine="11" startPosition="78" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="6413574678187369355" fileName="ExecuteFindersGetSearchResults_DataFlow.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
     <scopeInfo nodeId="6413574678187369357" fileName="ExecuteFindersGetSearchResults_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="102" />
-    <scopeInfo nodeId="6413574678187369355" fileName="ExecuteFindersGetSearchResults_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="6413574678187369355" fileName="ExecuteFindersGetSearchResults_DataFlow.java" startLine="15" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="6413574678187369355" varName="_context" />
       <varInfo nodeId="6413574678187369355" varName="operationContext" />
     </scopeInfo>
@@ -45,12 +45,12 @@
   </root>
   <root nodeId="6413574678187601670" modelId="r:390b21f6-c313-46da-a7d6-8dd5e6a64da3(jetbrains.mps.lang.findUsages.dataFlow)">
     <nodeInfo nodeId="6413574678187601673" fileName="NodeStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6413574678187601670" fileName="NodeStatement_DataFlow.java" startLine="11" startPosition="61" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeStatement_DataFlow#()V" />
-    <nodeInfo nodeId="6413574678187601670" fileName="NodeStatement_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <nodeInfo nodeId="6413574678187601670" fileName="NodeStatement_DataFlow.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeStatement_DataFlow#()V" />
+    <nodeInfo nodeId="6413574678187601670" fileName="NodeStatement_DataFlow.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
     <scopeInfo nodeId="6413574678187601670" fileName="NodeStatement_DataFlow.java" startLine="12" startPosition="35" endLine="12" endPosition="35" />
     <scopeInfo nodeId="6413574678187601672" fileName="NodeStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="106" />
-    <scopeInfo nodeId="6413574678187601670" fileName="NodeStatement_DataFlow.java" startLine="11" startPosition="61" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="6413574678187601670" fileName="NodeStatement_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+    <scopeInfo nodeId="6413574678187601670" fileName="NodeStatement_DataFlow.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="6413574678187601670" fileName="NodeStatement_DataFlow.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="6413574678187601670" varName="_context" />
       <varInfo nodeId="6413574678187601670" varName="operationContext" />
     </scopeInfo>

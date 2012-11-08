@@ -43,21 +43,21 @@ public class Rule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_z0m96w_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "data flow constructor");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "data flow constructor");
     editorCell.setCellId("Constant_z0m96w_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_z0m96w_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "for");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
     editorCell.setCellId("Constant_z0m96w_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_z0m96w_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "analyzer");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "analyzer");
     editorCell.setCellId("Constant_z0m96w_e0");
     {
       Style style = editorCell.getStyle();
@@ -68,7 +68,7 @@ public class Rule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_z0m96w_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_z0m96w_g0");
     {
       Style style = editorCell.getStyle();

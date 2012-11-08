@@ -66,24 +66,19 @@ public class ConceptMethodDeclaration_Behavior {
     return SPropertyOperations.getString(conceptDeclaration, "name");
   }
 
+  @Deprecated
   public static String call_getGeneratedName_1225196404000(SNode thisNode) {
-    SNode baseMethod = ConceptMethodDeclaration_Behavior.call_getOverridenMethod_1225196403956(thisNode);
-    if (baseMethod == null) {
-      return ConceptMethodDeclaration_Behavior.call_getCallerMethodName_1225196404032(thisNode);
-    }
-    return "virtual_" + SPropertyOperations.getString(baseMethod, "name") + "_" + baseMethod.getSNodeId().toString();
+    return BehaviorMethodNames.getDeclarationName(thisNode);
   }
 
+  @Deprecated
   public static String call_getCallerMethodName_1225196404032(SNode thisNode) {
-    return "call_" + SPropertyOperations.getString(thisNode, "name") + "_" + thisNode.getSNodeId().toString();
+    return BehaviorMethodNames.getCallerMethodName(thisNode);
   }
 
-  public static String call_getSuperCallerMethodName_1225196404049(SNode thisNode) {
-    return "callSuperNew_" + SPropertyOperations.getString(thisNode, "name") + "_" + thisNode.getSNodeId().toString();
-  }
-
-  public static String call_getOldSuperCallerMethodName_5914983970298756775(SNode thisNode) {
-    return "callSuper_" + SPropertyOperations.getString(thisNode, "name") + "_" + thisNode.getSNodeId().toString();
+  @Deprecated
+  public static String call_getSuperCallerMethodName_5914983970298756775(SNode thisNode) {
+    return BehaviorMethodNames.getSuperCallerMethodName(thisNode);
   }
 
   public static boolean virtual_isAbstract_1232982539764(SNode thisNode) {

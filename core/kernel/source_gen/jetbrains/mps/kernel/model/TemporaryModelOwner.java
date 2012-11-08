@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
 
 public class TemporaryModelOwner extends AbstractModule {
-  private MPSModuleOwner myOwner = new BaseMPSModuleOwner();
+  private MPSModuleOwner myOwner = new BaseMPSModuleOwner() {};
 
   public TemporaryModelOwner() {
     setModuleReference(new ModuleReference("TemporaryModelOwner #" + System.identityHashCode(this), ModuleId.regular()));

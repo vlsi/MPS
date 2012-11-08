@@ -5,11 +5,11 @@
     <nodeInfo nodeId="1180688328445" fileName="FileTreePath.java" startLine="17" startPosition="39" endLine="18" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1180688350262" fileName="FileTreePath.java" startLine="22" startPosition="42" endLine="23" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1180688357635" fileName="FileTreePath.java" startLine="28" startPosition="51" endLine="29" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="33" startPosition="68" endLine="34" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="instance" />
+    <nodeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="instance" />
     <nodeInfo nodeId="1180688370991" fileName="FileTreePath.java" startLine="39" startPosition="38" endLine="40" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="44" startPosition="29" endLine="45" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="46" startPosition="7" endLine="47" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="51" startPosition="69" endLine="52" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="instance" />
+    <nodeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="52" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="instance" />
     <nodeInfo nodeId="1180688385189" fileName="FileTreePath.java" startLine="57" startPosition="38" endLine="58" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="62" startPosition="29" endLine="63" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="64" startPosition="7" endLine="65" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -35,36 +35,36 @@
     <nodeInfo nodeId="1180688573083" fileName="FileTreePath.java" startLine="125" startPosition="51" endLine="126" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1180688531589" fileName="FileTreePath.java" startLine="127" startPosition="68" endLine="128" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1180688659269" fileName="FileTreePath.java" startLine="129" startPosition="9" endLine="130" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1180688328445" fileName="FileTreePath.java" startLine="9" startPosition="50" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FileTreePath#()V" />
-    <nodeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="35" startPosition="0" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DIR_NodeKindTrigger#()V" />
-    <nodeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="53" startPosition="0" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FILE_NodeKindTrigger#()V" />
+    <nodeInfo nodeId="1180688328445" fileName="FileTreePath.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FileTreePath#()V" />
+    <nodeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="36" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DIR_NodeKindTrigger#()V" />
+    <nodeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="54" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FILE_NodeKindTrigger#()V" />
+    <nodeInfo nodeId="1180688328445" fileName="FileTreePath.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parent#(Ljava/io/File;)Ljava/io/File;" />
+    <nodeInfo nodeId="1180688328445" fileName="FileTreePath.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="childrenArray#(Ljava/io/File;)[Ljava/io/File;" />
+    <nodeInfo nodeId="1180688328449" fileName="FileTreePath.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parent#(Ljava/io/File;)Ljava/io/File;" />
+    <nodeInfo nodeId="1180688328452" fileName="FileTreePath.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="childrenArray#(Ljava/io/File;)[Ljava/io/File;" />
+    <nodeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/io/File;)Z" />
     <nodeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="43" startPosition="47" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/io/File;)Z" />
     <nodeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="61" startPosition="47" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1180688395938" fileName="FileTreePath.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getValue#(Ljava/io/File;)Ljava/lang/String;" />
     <nodeInfo nodeId="1180688531587" fileName="FileTreePath.java" startLine="126" startPosition="24" endLine="129" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1180688328445" fileName="FileTreePath.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parent#(Ljava/io/File;)Ljava/io/File;" />
-    <nodeInfo nodeId="1180688328445" fileName="FileTreePath.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="childrenArray#(Ljava/io/File;)[Ljava/io/File;" />
-    <nodeInfo nodeId="1180688328449" fileName="FileTreePath.java" startLine="21" startPosition="31" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parent#(Ljava/io/File;)Ljava/io/File;" />
-    <nodeInfo nodeId="1180688328452" fileName="FileTreePath.java" startLine="27" startPosition="33" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="childrenArray#(Ljava/io/File;)[Ljava/io/File;" />
-    <nodeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/io/File;)Z" />
-    <nodeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/io/File;)Z" />
-    <nodeInfo nodeId="1180688395938" fileName="FileTreePath.java" startLine="92" startPosition="33" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getValue#(Ljava/io/File;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="73" startPosition="32" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="81" startPosition="32" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="103" startPosition="32" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="111" startPosition="32" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="42" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ypath/runtime/IFilter;" />
-    <nodeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="60" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ypath/runtime/IFilter;" />
+    <nodeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="74" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="82" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="104" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="112" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="43" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ypath/runtime/IFilter;" />
+    <nodeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="61" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ypath/runtime/IFilter;" />
     <nodeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="72" startPosition="31" endLine="79" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="80" startPosition="14" endLine="87" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="102" startPosition="31" endLine="109" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="110" startPosition="14" endLine="117" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="80" startPosition="12" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="110" startPosition="12" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1180688453546" fileName="FileTreePath.java" startLine="122" startPosition="33" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getValue#(Ljava/io/File;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1180688453546" fileName="FileTreePath.java" startLine="123" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getValue#(Ljava/io/File;)Ljava/lang/String;" />
     <nodeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="71" startPosition="21" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="101" startPosition="21" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="69" startPosition="50" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMatcher#(Ljava/lang/String;)Ljetbrains/mps/ypath/runtime/IFilter;" />
-    <nodeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="99" startPosition="47" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMatcher#(Ljava/lang/String;)Ljetbrains/mps/ypath/runtime/IFilter;" />
+    <nodeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="70" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMatcher#(Ljava/lang/String;)Ljetbrains/mps/ypath/runtime/IFilter;" />
+    <nodeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="100" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMatcher#(Ljava/lang/String;)Ljetbrains/mps/ypath/runtime/IFilter;" />
     <scopeInfo nodeId="1180688328445" fileName="FileTreePath.java" startLine="10" startPosition="25" endLine="10" endPosition="25" />
     <scopeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="36" startPosition="35" endLine="36" endPosition="35" />
     <scopeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="54" startPosition="36" endLine="54" endPosition="36" />
@@ -78,9 +78,27 @@
     <scopeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="62" startPosition="29" endLine="63" endPosition="59" />
     <scopeInfo nodeId="1180688395940" fileName="FileTreePath.java" startLine="93" startPosition="48" endLine="94" endPosition="30" />
     <scopeInfo nodeId="1180688531588" fileName="FileTreePath.java" startLine="127" startPosition="68" endLine="128" endPosition="47" />
-    <scopeInfo nodeId="1180688328445" fileName="FileTreePath.java" startLine="9" startPosition="50" endLine="11" endPosition="3" />
-    <scopeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="35" startPosition="0" endLine="37" endPosition="5" />
-    <scopeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="53" startPosition="0" endLine="55" endPosition="5" />
+    <scopeInfo nodeId="1180688328445" fileName="FileTreePath.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
+    <scopeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="36" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="54" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="1180688328445" fileName="FileTreePath.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="1180688328445" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180688328445" fileName="FileTreePath.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1180688328445" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180688328449" fileName="FileTreePath.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1180688328449" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180688328452" fileName="FileTreePath.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="1180688328452" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1180688366351" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="57" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="1180688380126" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="74" startPosition="43" endLine="77" endPosition="50">
       <varInfo nodeId="1180688395937" varName="actualValue" />
       <varInfo nodeId="1180688395937" varName="node" />
@@ -88,6 +106,9 @@
     <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="82" startPosition="43" endLine="85" endPosition="39">
       <varInfo nodeId="1180688395937" varName="actualValue" />
       <varInfo nodeId="1180688395937" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180688395938" fileName="FileTreePath.java" startLine="93" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="1180688395938" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="104" startPosition="43" endLine="107" endPosition="50">
       <varInfo nodeId="1180688453545" varName="actualValue" />
@@ -97,43 +118,22 @@
       <varInfo nodeId="1180688453545" varName="actualValue" />
       <varInfo nodeId="1180688453545" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1180688328445" fileName="FileTreePath.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="1180688328445" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1180688328445" fileName="FileTreePath.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="1180688328445" varName="n" />
-    </scopeInfo>
-    <scopeInfo nodeId="1180688328449" fileName="FileTreePath.java" startLine="21" startPosition="31" endLine="25" endPosition="0">
-      <varInfo nodeId="1180688328449" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1180688328452" fileName="FileTreePath.java" startLine="27" startPosition="33" endLine="31" endPosition="0">
-      <varInfo nodeId="1180688328452" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
-      <varInfo nodeId="1180688366351" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="43" startPosition="47" endLine="47" endPosition="22" />
-    <scopeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="1180688380126" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="61" startPosition="47" endLine="65" endPosition="22" />
-    <scopeInfo nodeId="1180688395938" fileName="FileTreePath.java" startLine="92" startPosition="33" endLine="96" endPosition="0">
-      <varInfo nodeId="1180688395938" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="73" startPosition="32" endLine="79" endPosition="0">
+    <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="74" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="1180688395937" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="81" startPosition="32" endLine="87" endPosition="0">
+    <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="82" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="1180688395937" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="103" startPosition="32" endLine="109" endPosition="0">
+    <scopeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="104" startPosition="0" endLine="109" endPosition="0">
       <varInfo nodeId="1180688453545" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="111" startPosition="32" endLine="117" endPosition="0">
+    <scopeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="112" startPosition="0" endLine="117" endPosition="0">
       <varInfo nodeId="1180688453545" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="42" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="60" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1180688366351" fileName="FileTreePath.java" startLine="43" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="1180688380126" fileName="FileTreePath.java" startLine="61" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="72" startPosition="31" endLine="79" endPosition="10" />
     <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="80" startPosition="14" endLine="87" endPosition="10" />
     <scopeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="102" startPosition="31" endLine="109" endPosition="10" />
@@ -143,7 +143,7 @@
       <varInfo nodeId="1180688501063" varName="indexOfLastDot" />
       <varInfo nodeId="1180688621968" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="1180688453546" fileName="FileTreePath.java" startLine="122" startPosition="33" endLine="132" endPosition="0">
+    <scopeInfo nodeId="1180688453546" fileName="FileTreePath.java" startLine="123" startPosition="0" endLine="132" endPosition="0">
       <varInfo nodeId="1180688453546" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="70" startPosition="69" endLine="89" endPosition="36">
@@ -152,10 +152,10 @@
     <scopeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="100" startPosition="69" endLine="119" endPosition="36">
       <varInfo nodeId="1180688453545" varName="filter" />
     </scopeInfo>
-    <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="69" startPosition="50" endLine="91" endPosition="0">
+    <scopeInfo nodeId="1180688395937" fileName="FileTreePath.java" startLine="70" startPosition="0" endLine="91" endPosition="0">
       <varInfo nodeId="1180688395937" varName="matchValue" />
     </scopeInfo>
-    <scopeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="99" startPosition="47" endLine="121" endPosition="0">
+    <scopeInfo nodeId="1180688453545" fileName="FileTreePath.java" startLine="100" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="1180688453545" varName="matchValue" />
     </scopeInfo>
     <unitInfo nodeId="1180688328449" fileName="FileTreePath.java" startLine="21" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ypath.treepaths.FileTreePath$Parent" />
@@ -178,37 +178,37 @@
     <nodeInfo nodeId="1180689261562" fileName="ClassPathItemTreePath.java" startLine="27" startPosition="62" endLine="28" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="1180689321547" fileName="ClassPathItemTreePath.java" startLine="34" startPosition="51" endLine="35" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1180689348970" fileName="ClassPathItemTreePath.java" startLine="36" startPosition="14" endLine="37" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="42" startPosition="84" endLine="43" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="instance" />
+    <nodeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="43" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="instance" />
     <nodeInfo nodeId="1180689388535" fileName="ClassPathItemTreePath.java" startLine="48" startPosition="48" endLine="49" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="53" startPosition="29" endLine="54" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="55" startPosition="7" endLine="56" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="60" startPosition="79" endLine="61" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="instance" />
+    <nodeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="61" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="instance" />
     <nodeInfo nodeId="1180689402488" fileName="ClassPathItemTreePath.java" startLine="66" startPosition="48" endLine="67" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="71" startPosition="29" endLine="72" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="73" startPosition="7" endLine="74" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="78" startPosition="78" endLine="79" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="instance" />
+    <nodeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="79" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="instance" />
     <nodeInfo nodeId="1180689411455" fileName="ClassPathItemTreePath.java" startLine="84" startPosition="48" endLine="85" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="89" startPosition="29" endLine="90" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="91" startPosition="7" endLine="92" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1180689174637" fileName="ClassPathItemTreePath.java" startLine="14" startPosition="69" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClassPathItemTreePath#()V" />
+    <nodeInfo nodeId="1180689174637" fileName="ClassPathItemTreePath.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClassPathItemTreePath#()V" />
     <nodeInfo nodeId="1180689347543" fileName="ClassPathItemTreePath.java" startLine="36" startPosition="12" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="44" startPosition="0" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="COMPOSITE_NodeKindTrigger#()V" />
-    <nodeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="62" startPosition="0" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FILE_NodeKindTrigger#()V" />
-    <nodeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="80" startPosition="0" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JAR_NodeKindTrigger#()V" />
+    <nodeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="45" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="COMPOSITE_NodeKindTrigger#()V" />
+    <nodeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="63" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FILE_NodeKindTrigger#()V" />
+    <nodeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="81" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JAR_NodeKindTrigger#()V" />
+    <nodeInfo nodeId="1180689174637" fileName="ClassPathItemTreePath.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parent#(Ljetbrains/mps/reloading/IClassPathItem;)Ljetbrains/mps/reloading/IClassPathItem;" />
+    <nodeInfo nodeId="1180689174637" fileName="ClassPathItemTreePath.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="children#(Ljetbrains/mps/reloading/IClassPathItem;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1180689174641" fileName="ClassPathItemTreePath.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parent#(Ljetbrains/mps/reloading/IClassPathItem;)Ljetbrains/mps/reloading/IClassPathItem;" />
+    <nodeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/reloading/IClassPathItem;)Z" />
     <nodeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="52" startPosition="57" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/reloading/IClassPathItem;)Z" />
     <nodeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="70" startPosition="57" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/reloading/IClassPathItem;)Z" />
     <nodeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="88" startPosition="57" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1180689174637" fileName="ClassPathItemTreePath.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parent#(Ljetbrains/mps/reloading/IClassPathItem;)Ljetbrains/mps/reloading/IClassPathItem;" />
-    <nodeInfo nodeId="1180689174637" fileName="ClassPathItemTreePath.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="children#(Ljetbrains/mps/reloading/IClassPathItem;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1180689174641" fileName="ClassPathItemTreePath.java" startLine="26" startPosition="31" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parent#(Ljetbrains/mps/reloading/IClassPathItem;)Ljetbrains/mps/reloading/IClassPathItem;" />
-    <nodeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/reloading/IClassPathItem;)Z" />
-    <nodeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/reloading/IClassPathItem;)Z" />
-    <nodeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/reloading/IClassPathItem;)Z" />
     <nodeInfo nodeId="1180689310302" fileName="ClassPathItemTreePath.java" startLine="33" startPosition="74" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="51" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ypath/runtime/IFilter;" />
-    <nodeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="69" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ypath/runtime/IFilter;" />
-    <nodeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="87" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ypath/runtime/IFilter;" />
-    <nodeInfo nodeId="1180689174644" fileName="ClassPathItemTreePath.java" startLine="32" startPosition="33" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="children#(Ljetbrains/mps/reloading/IClassPathItem;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="52" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ypath/runtime/IFilter;" />
+    <nodeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="70" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ypath/runtime/IFilter;" />
+    <nodeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="88" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ypath/runtime/IFilter;" />
+    <nodeInfo nodeId="1180689174644" fileName="ClassPathItemTreePath.java" startLine="33" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="children#(Ljetbrains/mps/reloading/IClassPathItem;)Ljava/lang/Iterable;" />
     <scopeInfo nodeId="1180689174637" fileName="ClassPathItemTreePath.java" startLine="15" startPosition="34" endLine="15" endPosition="34" />
     <scopeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="45" startPosition="41" endLine="45" endPosition="41" />
     <scopeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="63" startPosition="36" endLine="63" endPosition="36" />
@@ -224,36 +224,36 @@
     <scopeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="71" startPosition="29" endLine="72" endPosition="68" />
     <scopeInfo nodeId="1180689407662" fileName="ClassPathItemTreePath.java" startLine="84" startPosition="48" endLine="85" endPosition="50" />
     <scopeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="89" startPosition="29" endLine="90" endPosition="67" />
-    <scopeInfo nodeId="1180689174637" fileName="ClassPathItemTreePath.java" startLine="14" startPosition="69" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="44" startPosition="0" endLine="46" endPosition="5" />
-    <scopeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="62" startPosition="0" endLine="64" endPosition="5" />
-    <scopeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="80" startPosition="0" endLine="82" endPosition="5" />
-    <scopeInfo nodeId="1180689174637" fileName="ClassPathItemTreePath.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+    <scopeInfo nodeId="1180689174637" fileName="ClassPathItemTreePath.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="45" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="63" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="81" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="1180689174637" fileName="ClassPathItemTreePath.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="1180689174637" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1180689174637" fileName="ClassPathItemTreePath.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+    <scopeInfo nodeId="1180689174637" fileName="ClassPathItemTreePath.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="1180689174637" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1180689174641" fileName="ClassPathItemTreePath.java" startLine="26" startPosition="31" endLine="30" endPosition="0">
+    <scopeInfo nodeId="1180689174641" fileName="ClassPathItemTreePath.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="1180689174641" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+    <scopeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="48" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="1180689381286" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="52" startPosition="57" endLine="56" endPosition="22" />
-    <scopeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="66" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="1180689378234" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="70" startPosition="57" endLine="74" endPosition="22" />
-    <scopeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="84" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="1180689407660" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="52" startPosition="57" endLine="56" endPosition="22" />
+    <scopeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="70" startPosition="57" endLine="74" endPosition="22" />
     <scopeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="88" startPosition="57" endLine="92" endPosition="22" />
     <scopeInfo nodeId="1180689174646" fileName="ClassPathItemTreePath.java" startLine="33" startPosition="74" endLine="38" endPosition="7" />
-    <scopeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="51" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="69" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="87" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="1180689174644" fileName="ClassPathItemTreePath.java" startLine="32" startPosition="33" endLine="40" endPosition="0">
+    <scopeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="52" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1180689378234" fileName="ClassPathItemTreePath.java" startLine="70" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="1180689407660" fileName="ClassPathItemTreePath.java" startLine="88" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="1180689174644" fileName="ClassPathItemTreePath.java" startLine="33" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="1180689174644" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="1180689174641" fileName="ClassPathItemTreePath.java" startLine="26" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.ypath.treepaths.ClassPathItemTreePath$Parent" />

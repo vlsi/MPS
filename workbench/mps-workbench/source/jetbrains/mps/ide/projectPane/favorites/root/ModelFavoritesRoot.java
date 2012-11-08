@@ -17,7 +17,6 @@ package jetbrains.mps.ide.projectPane.favorites.root;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
@@ -31,14 +30,14 @@ class ModelFavoritesRoot extends FavoritesRoot<SModelReference> {
   }
 
   public MPSTreeNode getTreeNode(IOperationContext context) {
-    SModelDescriptor md = GlobalScope.getInstance().getModelDescriptor(getValue());
+    SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(getValue());
     if (md == null) return null;
     return new SModelTreeNode(md, null, new ModuleContext(md.getModule(), context.getProject()));
   }
 
   public List<SNode> getAvaliableNodes() {
     List<SNode> result = new ArrayList<SNode>();
-    final SModelDescriptor md = GlobalScope.getInstance().getModelDescriptor(getValue());
+    final SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(getValue());
     if (md == null) return result;
     SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
       public SModel compute() {

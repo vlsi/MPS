@@ -22,7 +22,6 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.LinkedHashSet;
 
 public class OverridingMethodsFinder {
@@ -133,12 +132,8 @@ public class OverridingMethodsFinder {
     }
   }
 
-  public static Iterable<SNode> getInstanceMethods(final SNode containingClassifier) {
-    Iterable<SNode> result = Sequence.fromClosure(new ISequenceClosure<SNode>() {
-      public Iterable<SNode> iterable() {
-        return SLinkOperations.getTargets(containingClassifier, "method", true);
-      }
-    });
+  public static Iterable<SNode> getInstanceMethods(SNode containingClassifier) {
+    Iterable<SNode> result = SLinkOperations.getTargets(containingClassifier, "method", true);
     if (SNodeOperations.isInstanceOf(containingClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
       for (SNode enumConstant : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(containingClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true))) {
         result = Sequence.fromIterable(result).concat(ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "method", true)));

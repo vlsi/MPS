@@ -57,6 +57,7 @@
       <modulePath path="${project}/core/kernel/traceinfo/solutions/traceMacro.sandbox/sandbox.msd" folder="traceInfo" />
       <modulePath path="${project}/core/make-runtime/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" folder="core.make" />
       <modulePath path="${project}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" folder="core.make" />
+      <modulePath path="${project}/core/persistence/persistence.msd" folder="core.kernel" />
       <modulePath path="${project}/core/refactoring-runtime/jetbrains.mps.refactoring.runtime.msd" folder="core" />
       <modulePath path="${project}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/jetbrains.mps.typesystemEngine.msd" folder="core" />
       <modulePath path="${project}/editor/actions-runtime/jetbrains.mps.actions.runtime.msd" folder="core.editor" />

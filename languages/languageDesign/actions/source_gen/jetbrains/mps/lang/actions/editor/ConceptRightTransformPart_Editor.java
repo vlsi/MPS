@@ -100,7 +100,7 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e4d6s0_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "target node");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "target node");
     editorCell.setCellId("Constant_e4d6s0_b1a");
     {
       Style style = editorCell.getStyle();
@@ -111,7 +111,7 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e4d6s0_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_e4d6s0_a2a");
     {
       Style style = editorCell.getStyle();
@@ -122,7 +122,7 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e4d6s0_b3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "handler");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "handler");
     editorCell.setCellId("Constant_e4d6s0_b3a");
     {
       Style style = editorCell.getStyle();
@@ -133,7 +133,7 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e4d6s0_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_e4d6s0_a4a");
     {
       Style style = editorCell.getStyle();
@@ -144,22 +144,22 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_e4d6s0_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_e4d6s0_b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_e4d6s0_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_e4d6s0_b4a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

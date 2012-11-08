@@ -8,6 +8,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -21,6 +23,9 @@ public class JoinType_supertypeOf_some_arg_InequationReplacementRule extends Abs
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
     for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(supertype, "argument", true))) {
       if (SNodeOperations.getConceptDeclaration(arg) == SNodeOperations.getConceptDeclaration(subtype)) {
+        if (SNodeOperations.getConceptDeclaration(subtype) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+          return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(SNodeOperations.cast(arg, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false)});
+        }
         return true;
       }
     }
@@ -30,6 +35,11 @@ public class JoinType_supertypeOf_some_arg_InequationReplacementRule extends Abs
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(supertype, "argument", true))) {
       if (SNodeOperations.getConceptDeclaration(arg) == SNodeOperations.getConceptDeclaration(subtype)) {
+        if (SNodeOperations.getConceptDeclaration(subtype) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+          if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(SNodeOperations.cast(arg, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false)}))) {
+            continue;
+          }
+        }
         {
           SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "8122224761040392880", 0, null);
@@ -45,6 +55,11 @@ public class JoinType_supertypeOf_some_arg_InequationReplacementRule extends Abs
     boolean result_14532009 = true;
     for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(supertype, "argument", true))) {
       if (SNodeOperations.getConceptDeclaration(arg) == SNodeOperations.getConceptDeclaration(subtype)) {
+        if (SNodeOperations.getConceptDeclaration(subtype) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+          if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(SNodeOperations.cast(arg, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false)}))) {
+            continue;
+          }
+        }
         result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) subtype, (SNode) arg, true);
         break;
       }

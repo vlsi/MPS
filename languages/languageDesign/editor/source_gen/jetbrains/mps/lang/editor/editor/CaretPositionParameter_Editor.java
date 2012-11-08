@@ -28,14 +28,14 @@ public class CaretPositionParameter_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7n8lz_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "caret position");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "caret position");
     editorCell.setCellId("Constant_7n8lz_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_7n8lz_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_7n8lz_b0");
     editorCell.setDefaultText("");
     return editorCell;

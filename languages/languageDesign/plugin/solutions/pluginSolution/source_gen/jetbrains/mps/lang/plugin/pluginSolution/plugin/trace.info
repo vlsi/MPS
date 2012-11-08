@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="5487985028841901743" modelId="r:e9b40035-0176-42c7-80b0-c481dc478a68(jetbrains.mps.lang.plugin.pluginSolution.plugin)">
-    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="23" startPosition="58" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="24" startPosition="40" endLine="25" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="27" startPosition="37" endLine="28" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="28" startPosition="43" endLine="29" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="29" startPosition="35" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -20,34 +20,35 @@
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="71" startPosition="5" endLine="72" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="73" startPosition="62" endLine="74" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="75" startPosition="5" endLine="76" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3708497006802272066" fileName="SortKeymapMembers_Action.java" startLine="83" startPosition="248" endLine="84" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841901752" fileName="SortKeymapMembers_Action.java" startLine="85" startPosition="11" endLine="86" endPosition="332" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1161420610164770151" fileName="SortKeymapMembers_Action.java" startLine="88" startPosition="9" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="91" startPosition="33" endLine="92" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7732671373443367254" fileName="SortKeymapMembers_Action.java" startLine="82" startPosition="27" endLine="83" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7732671373443367264" fileName="SortKeymapMembers_Action.java" startLine="84" startPosition="158" endLine="85" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841901752" fileName="SortKeymapMembers_Action.java" startLine="86" startPosition="11" endLine="87" endPosition="332" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1161420610164770151" fileName="SortKeymapMembers_Action.java" startLine="89" startPosition="9" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="92" startPosition="33" endLine="93" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="48" startPosition="27" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="48" startPosition="27" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="56" startPosition="95" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="62" startPosition="25" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="68" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="72" startPosition="94" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3708497006802271957" fileName="SortKeymapMembers_Action.java" startLine="82" startPosition="27" endLine="85" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="90" startPosition="27" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="90" startPosition="27" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="7732671373443367262" fileName="SortKeymapMembers_Action.java" startLine="83" startPosition="88" endLine="86" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="91" startPosition="27" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="91" startPosition="27" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="43" startPosition="9" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="71" startPosition="5" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="26" startPosition="0" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SortKeymapMembers_Action#()V" />
-    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
+    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SortKeymapMembers_Action#()V" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="61" startPosition="57" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1161420610164770326" fileName="SortKeymapMembers_Action.java" startLine="81" startPosition="58" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1161420610164770301" fileName="SortKeymapMembers_Action.java" startLine="80" startPosition="9" endLine="88" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1161420610164770326" fileName="SortKeymapMembers_Action.java" startLine="82" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="59" startPosition="5" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1161420610164770301" fileName="SortKeymapMembers_Action.java" startLine="80" startPosition="9" endLine="89" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="42" startPosition="89" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="59" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="41" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="79" startPosition="96" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="78" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="55" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="42" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="79" startPosition="96" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="79" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="56" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="34" startPosition="32" endLine="35" endPosition="16" />
     <scopeInfo nodeId="5487985028841901760" fileName="SortKeymapMembers_Action.java" startLine="38" startPosition="87" endLine="39" endPosition="207" />
     <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="49" startPosition="33" endLine="50" endPosition="92" />
@@ -55,116 +56,118 @@
     <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="63" startPosition="116" endLine="64" endPosition="22" />
     <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="69" startPosition="61" endLine="70" endPosition="19" />
     <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="73" startPosition="62" endLine="74" endPosition="19" />
-    <scopeInfo nodeId="3708497006802271958" fileName="SortKeymapMembers_Action.java" startLine="83" startPosition="248" endLine="84" endPosition="19" />
-    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="91" startPosition="33" endLine="92" endPosition="91" />
+    <scopeInfo nodeId="7732671373443367263" fileName="SortKeymapMembers_Action.java" startLine="84" startPosition="158" endLine="85" endPosition="19" />
+    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="92" startPosition="33" endLine="93" endPosition="91" />
     <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="44" startPosition="7" endLine="46" endPosition="63">
       <varInfo nodeId="5487985028841901743" varName="enabled" />
     </scopeInfo>
     <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="27" startPosition="37" endLine="30" endPosition="40" />
-    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="48" startPosition="27" endLine="51" endPosition="7" />
-    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="62" startPosition="25" endLine="65" endPosition="9" />
-    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="90" startPosition="0" endLine="93" endPosition="7">
-      <varInfo nodeId="5487985028841901743" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="90" startPosition="27" endLine="93" endPosition="7" />
-    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="5487985028841901743" varName="_params" />
       <varInfo nodeId="5487985028841901743" varName="event" />
     </scopeInfo>
+    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="48" startPosition="27" endLine="51" endPosition="7" />
+    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="62" startPosition="25" endLine="65" endPosition="9" />
+    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="91" startPosition="0" endLine="94" endPosition="7">
+      <varInfo nodeId="5487985028841901743" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="91" startPosition="27" endLine="94" endPosition="7" />
+    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="43" startPosition="9" endLine="47" endPosition="7" />
     <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="48" startPosition="0" endLine="52" endPosition="44">
       <varInfo nodeId="5487985028841901743" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="48" startPosition="27" endLine="52" endPosition="44" />
     <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="71" startPosition="5" endLine="75" endPosition="5" />
-    <scopeInfo nodeId="1161420610164770329" fileName="SortKeymapMembers_Action.java" startLine="82" startPosition="27" endLine="86" endPosition="332" />
-    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="26" startPosition="0" endLine="31" endPosition="3" />
-    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1161420610164770329" fileName="SortKeymapMembers_Action.java" startLine="82" startPosition="27" endLine="87" endPosition="332">
+      <varInfo nodeId="7732671373443367252" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="60" startPosition="5" endLine="67" endPosition="55">
       <varInfo nodeId="5487985028841901743" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1161420610164770326" fileName="SortKeymapMembers_Action.java" startLine="81" startPosition="58" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="80" startPosition="9" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="1161420610164770326" fileName="SortKeymapMembers_Action.java" startLine="82" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="80" startPosition="9" endLine="90" endPosition="0" />
     <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="42" startPosition="89" endLine="53" endPosition="5" />
     <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="59" startPosition="5" endLine="71" endPosition="5" />
-    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="41" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="42" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="5487985028841901743" varName="_params" />
       <varInfo nodeId="5487985028841901743" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="79" startPosition="96" endLine="94" endPosition="5" />
-    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="78" startPosition="0" endLine="96" endPosition="0">
+    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="79" startPosition="96" endLine="95" endPosition="5" />
+    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="79" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="5487985028841901743" varName="_params" />
       <varInfo nodeId="5487985028841901743" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="56" startPosition="95" endLine="76" endPosition="16" />
-    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="55" startPosition="0" endLine="78" endPosition="0">
+    <scopeInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="56" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="5487985028841901743" varName="_params" />
       <varInfo nodeId="5487985028841901743" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="1161420610164770324" fileName="SortKeymapMembers_Action.java" startLine="81" startPosition="46" endLine="88" endPosition="7" unitName="jetbrains.mps.lang.plugin.pluginSolution.plugin.SortKeymapMembers_Action$1" />
-    <unitInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="23" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.plugin.pluginSolution.plugin.SortKeymapMembers_Action" />
+    <unitInfo nodeId="1161420610164770324" fileName="SortKeymapMembers_Action.java" startLine="81" startPosition="46" endLine="89" endPosition="7" unitName="jetbrains.mps.lang.plugin.pluginSolution.plugin.SortKeymapMembers_Action$1" />
+    <unitInfo nodeId="5487985028841901743" fileName="SortKeymapMembers_Action.java" startLine="23" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.lang.plugin.pluginSolution.plugin.SortKeymapMembers_Action" />
   </root>
   <root nodeId="5487985028841901766" modelId="r:e9b40035-0176-42c7-80b0-c481dc478a68(jetbrains.mps.lang.plugin.pluginSolution.plugin)">
-    <nodeInfo nodeId="5487985028841901766" fileName="RefactoringAdditions_ActionGroup.java" startLine="8" startPosition="76" endLine="9" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="5487985028841901766" fileName="RefactoringAdditions_ActionGroup.java" startLine="9" startPosition="87" endLine="10" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
+    <nodeInfo nodeId="5487985028841901766" fileName="RefactoringAdditions_ActionGroup.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="5487985028841901766" fileName="RefactoringAdditions_ActionGroup.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
     <nodeInfo nodeId="5487985028841901766" fileName="RefactoringAdditions_ActionGroup.java" startLine="12" startPosition="45" endLine="13" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5487985028841901766" fileName="RefactoringAdditions_ActionGroup.java" startLine="13" startPosition="38" endLine="14" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841901766" fileName="RefactoringAdditions_ActionGroup.java" startLine="14" startPosition="30" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841901768" fileName="RefactoringAdditions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841901766" fileName="RefactoringAdditions_ActionGroup.java" startLine="18" startPosition="27" endLine="19" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841901766" fileName="RefactoringAdditions_ActionGroup.java" startLine="15" startPosition="25" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5487985028841901766" fileName="RefactoringAdditions_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefactoringAdditions_ActionGroup#()V" />
+    <nodeInfo nodeId="5487985028841901766" fileName="RefactoringAdditions_ActionGroup.java" startLine="12" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefactoringAdditions_ActionGroup#()V" />
     <scopeInfo nodeId="5487985028841901766" fileName="RefactoringAdditions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="130" />
     <scopeInfo nodeId="5487985028841901766" fileName="RefactoringAdditions_ActionGroup.java" startLine="18" startPosition="0" endLine="19" endPosition="39">
       <varInfo nodeId="5487985028841901766" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="5487985028841901766" fileName="RefactoringAdditions_ActionGroup.java" startLine="18" startPosition="27" endLine="19" endPosition="39" />
     <scopeInfo nodeId="5487985028841901766" fileName="RefactoringAdditions_ActionGroup.java" startLine="12" startPosition="45" endLine="20" endPosition="5" />
-    <scopeInfo nodeId="5487985028841901766" fileName="RefactoringAdditions_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" />
+    <scopeInfo nodeId="5487985028841901766" fileName="RefactoringAdditions_ActionGroup.java" startLine="12" startPosition="0" endLine="22" endPosition="0" />
     <unitInfo nodeId="5487985028841901766" fileName="RefactoringAdditions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.pluginSolution.plugin.RefactoringAdditions_ActionGroup" />
   </root>
   <root nodeId="7162597690967657585" modelId="r:e9b40035-0176-42c7-80b0-c481dc478a68(jetbrains.mps.lang.plugin.pluginSolution.plugin)">
-    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="8" startPosition="77" endLine="9" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
+    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="27" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="30" endLine="19" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="20" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="20" startPosition="46" endLine="21" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="21" startPosition="14" endLine="22" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="37" endLine="26" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginSolution_ApplicationPlugin#()V" />
-    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
-    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustRegularGroups#()V" />
-    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="17" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createGroups#()V" />
+    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginSolution_ApplicationPlugin#()V" />
+    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
+    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustRegularGroups#()V" />
+    <nodeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createGroups#()V" />
     <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="11" startPosition="45" endLine="11" endPosition="45" />
     <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="27" endLine="15" endPosition="16" />
     <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="37" endLine="26" endPosition="136" />
-    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="12" endPosition="3" />
-    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
+    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="30" endLine="22" endPosition="53" />
-    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="17" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="24" endPosition="0" />
     <unitInfo nodeId="7162597690967657585" fileName="PluginSolution_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.plugin.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
   </root>
   <root nodeId="8268629222289297283" modelId="r:e9b40035-0176-42c7-80b0-c481dc478a68(jetbrains.mps.lang.plugin.pluginSolution.plugin)">
-    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="8" startPosition="77" endLine="9" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
+    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="27" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="30" endLine="19" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="20" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="20" startPosition="46" endLine="21" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="21" startPosition="14" endLine="22" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="37" endLine="26" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginSolution_ApplicationPlugin#()V" />
-    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
-    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustRegularGroups#()V" />
-    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="17" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createGroups#()V" />
+    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginSolution_ApplicationPlugin#()V" />
+    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
+    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustRegularGroups#()V" />
+    <nodeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createGroups#()V" />
     <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="11" startPosition="45" endLine="11" endPosition="45" />
     <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="27" endLine="15" endPosition="16" />
     <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="37" endLine="26" endPosition="136" />
-    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="12" endPosition="3" />
-    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
+    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="30" endLine="22" endPosition="53" />
-    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="17" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="24" endPosition="0" />
     <unitInfo nodeId="8268629222289297283" fileName="PluginSolution_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.plugin.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
   </root>
 </debugInfo>

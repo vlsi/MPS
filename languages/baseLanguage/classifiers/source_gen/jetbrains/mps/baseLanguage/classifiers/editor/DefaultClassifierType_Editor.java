@@ -36,7 +36,7 @@ public class DefaultClassifierType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_35pyag_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "classifier");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "classifier");
     editorCell.setCellId("Constant_35pyag_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -48,7 +48,7 @@ public class DefaultClassifierType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_35pyag_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_35pyag_b0");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
@@ -61,7 +61,7 @@ public class DefaultClassifierType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_35pyag_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_35pyag_d0");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {

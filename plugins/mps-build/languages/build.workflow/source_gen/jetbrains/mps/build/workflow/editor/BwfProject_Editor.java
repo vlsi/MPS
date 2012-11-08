@@ -51,7 +51,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4tk4ky_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "build");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "build");
     editorCell.setCellId("Constant_4tk4ky_a0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -59,7 +59,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4tk4ky_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ".xml");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".xml");
     editorCell.setCellId("Constant_4tk4ky_c0");
     {
       Style style = editorCell.getStyle();
@@ -72,7 +72,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4tk4ky_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_4tk4ky_d0");
     {
       Style style = editorCell.getStyle();
@@ -83,7 +83,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4tk4ky_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "imports:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "imports:");
     editorCell.setCellId("Constant_4tk4ky_e0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -95,7 +95,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4tk4ky_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_4tk4ky_g0");
     {
       Style style = editorCell.getStyle();
@@ -106,7 +106,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4tk4ky_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "folders:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "folders:");
     editorCell.setCellId("Constant_4tk4ky_h0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -118,7 +118,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4tk4ky_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "base directory:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "base directory:");
     editorCell.setCellId("Constant_4tk4ky_i0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -130,7 +130,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4tk4ky_k0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "temporary directory:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "temporary directory:");
     editorCell.setCellId("Constant_4tk4ky_k0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -143,7 +143,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4tk4ky_m0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_4tk4ky_m0");
     {
       Style style = editorCell.getStyle();
@@ -154,7 +154,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4tk4ky_n0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "workflow:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "workflow:");
     editorCell.setCellId("Constant_4tk4ky_n0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {

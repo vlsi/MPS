@@ -256,6 +256,11 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     }
   }
 
+  @Override
+  public void selectWRTFocusPolicy(jetbrains.mps.openapi.editor.EditorCell editorCell) {
+    getNodeEditorComponent().changeSelectionWRTFocusPolicy((EditorCell) editorCell);
+  }
+
   public void openInspector() {
     SwingUtilities.invokeLater(new Runnable() {
       @Override

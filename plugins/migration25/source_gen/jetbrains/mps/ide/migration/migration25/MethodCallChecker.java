@@ -27,8 +27,8 @@ import jetbrains.mps.ide.java.platform.highlighters.MethodDeclarationsFixer;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 
@@ -78,12 +78,12 @@ public class MethodCallChecker extends SpecificChecker {
         if (uid == null) {
           continue;
         }
-        SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(uid);
-        if (scope.getModelDescriptor(uid) == null && descriptor != null) {
-          addIssue(results, node, "Target module " + descriptor.getModule() + " should be imported", ModelChecker.SEVERITY_ERROR, "target module not imported", new IModelCheckerFix() {
+        org.jetbrains.mps.openapi.model.SModel descriptor = SModelRepository.getInstance().getModelDescriptor(uid);
+        if (scope.resolve(uid) == null && descriptor != null) {
+          addIssue(results, node, "Target module " + descriptor.getModule().getModuleName() + " should be imported", ModelChecker.SEVERITY_ERROR, "target module not imported", new IModelCheckerFix() {
             public boolean doFix() {
-              if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
-                SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(uid);
+              if (scope.getModelDescriptor(uid) == null && SModelRepository.getInstance().getModelDescriptor(uid) != null) {
+                SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(uid);
                 check_lz161n_a1a0a5a0a7a1a6a0(check_lz161n_a0b0a0f0a0h0b0g0a(model.getModelDescriptor()), sm);
                 return true;
               }

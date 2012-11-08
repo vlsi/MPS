@@ -221,7 +221,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             myGenerationTracer.pushRule(rule.getRuleNode());
             try {
               boolean copyRootOnFailure = false;
-              if (inputNode.isRoot() && !rule.keepSourceRoot()) {
+              if (inputNode.getModel() != null && inputNode.getModel().isRoot(inputNode) && !rule.keepSourceRoot()) {
                 rootsToCopy.remove(inputNode);
                 copyRootOnFailure = true;
               }
@@ -284,7 +284,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     } catch (DismissTopMappingRuleException e) {
       // it's ok, just continue
-      if (copyRootOnFailure && inputNode.isRoot()) {
+      if (copyRootOnFailure && inputNode.getModel() != null && inputNode.getModel().isRoot(inputNode)) {
         copyRootNodeFromInput(inputNode, environment);
       }
     } catch (TemplateProcessingFailureException e) {
@@ -462,7 +462,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   Collection<SNode> copyNodeFromExternalNode(String mappingName, SNodePointer templateNode, String templateNodeId, SNode inputNode, ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
-    if (jetbrains.mps.util.SNodeOperations.isRegistered(inputNode)) {
+    if (inputNode.getModel() != null) {
       // TODO fail in strict mode
       inputNode = CopyUtil.copy(inputNode);
       // TODO inputNode.changeModel();
@@ -505,7 +505,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // no reduction found - do node copying
     myGenerationTracer.pushCopyOperation();
     SNode outputNode = new SNode(inputNode.getConcept().getId());
-    if (inputNode.getSNodeId() != null && jetbrains.mps.util.SNodeOperations.isRegistered(inputNode)) {
+    if (inputNode.getSNodeId() != null && inputNode.getModel() != null) {
       outputNode.setId(inputNode.getSNodeId());
     }
     blockReductionsForCopiedNode(inputNode, outputNode, reductionContext); // prevent infinite applying of the same reduction to the 'same' node.
@@ -526,7 +526,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     for (SReference inputReference : inputNode.getReferences()) {
-      if (jetbrains.mps.util.SNodeOperations.isRegistered(inputNode) && (inputReference instanceof DynamicReference || inputReference.isExternal())) {
+      if (inputNode.getModel() != null && (inputReference instanceof DynamicReference || inputReference.isExternal())) {
         // dynamic & external references don't need validation => replace input model with output
         SModelReference targetModelReference = inputReference.isExternal() ? inputReference.getTargetSModelReference() : myOutputModel.getSModelReference();
         if (inputReference instanceof StaticReference) {
@@ -566,7 +566,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           GeneratorUtil.describeIfExists(templateNode != null ? templateNode.getNode() : null, "template"));
         continue;
       }
-      if (jetbrains.mps.util.SNodeOperations.isRegistered(inputTargetNode) && inputTargetNode.getModel().equals(myInputModel) || myAdditionalInputNodes.containsKey(inputTargetNode)) {
+      if (inputTargetNode.getModel() != null && inputTargetNode.getModel().equals(myInputModel) || myAdditionalInputNodes.containsKey(inputTargetNode)) {
         ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
           inputReference.getRole(),
           outputNode,
@@ -577,7 +577,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           this
         );
         outputNode.setReference(reference.getRole(), reference);
-      } else if (jetbrains.mps.util.SNodeOperations.isRegistered(inputTargetNode)) {
+      } else if (inputTargetNode.getModel() != null) {
         outputNode.setReferenceTarget(inputReference.getRole(), inputTargetNode);
       } else {
         myLogger.error(templateNode != null ? templateNode.getNode() : inputNode, "broken reference '" + inputReference.getRole() + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode) + " (unregistered target node)",
@@ -709,13 +709,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   public SNode getOriginalRootByGenerated(SNode root) {
     SNode node = myNewToOldRoot.get(root);
-    if (node != null && !node.isRoot()) {
-      SNode noderoot = node.getContainingRoot();
-      if (noderoot != null) {
-        return noderoot;
-      }
-    }
-    return node;
+    if (node == null) return null;
+    if (node.getModel() == null) return null;
+    if (node.getModel().isRoot(node)) return node;
+    return node.getTopmostAncestor();
   }
 
   public boolean isIncremental() {

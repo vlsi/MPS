@@ -28,7 +28,7 @@ public class VariableInialized_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y3jdtg_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "init");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "init");
     editorCell.setCellId("Constant_y3jdtg_a0");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

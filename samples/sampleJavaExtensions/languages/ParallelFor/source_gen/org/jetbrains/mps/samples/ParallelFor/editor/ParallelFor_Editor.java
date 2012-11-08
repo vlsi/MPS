@@ -52,7 +52,7 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_p0t1np_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "parallel for");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parallel for");
     editorCell.setCellId("Constant_p0t1np_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -60,7 +60,7 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_p0t1np_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_p0t1np_b0");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -68,7 +68,7 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_p0t1np_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "in");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
     editorCell.setCellId("Constant_p0t1np_d0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -76,7 +76,7 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_p0t1np_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_p0t1np_f0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -84,7 +84,7 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_p0t1np_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_p0t1np_g0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -97,7 +97,7 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_p0t1np_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_p0t1np_i0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
@@ -109,7 +109,7 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_p0t1np_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Thread Pool");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Thread Pool");
     editorCell.setCellId("Constant_p0t1np_a0_0");
     RemoveThreadPoolReference.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -117,7 +117,7 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_p0t1np_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Nowait");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Nowait");
     editorCell.setCellId("Constant_p0t1np_c0");
     editorCell.setDefaultText("");
     return editorCell;

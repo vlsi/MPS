@@ -5,6 +5,7 @@ package jetbrains.mps.internalCollections.test.closures;
 
 public interface IFoo {
   public Iterable<? extends IBar> get();
+
   public static class Foo implements IFoo {
     public Foo() {
     }
@@ -13,5 +14,4 @@ public interface IFoo {
       return null;
     }
   }
-
 }

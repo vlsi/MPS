@@ -45,14 +45,14 @@
     <nodeInfo nodeId="6855443792548949956" fileName="DispatchGenUtil.java" startLine="96" startPosition="9" endLine="97" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3813896760028091992" fileName="DispatchGenUtil.java" startLine="101" startPosition="35" endLine="102" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6855443792548949974" fileName="DispatchGenUtil.java" startLine="104" startPosition="7" endLine="105" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3813896760028776287" fileName="DispatchGenUtil.java" startLine="22" startPosition="30" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DispatchGenUtil#()V" />
+    <nodeInfo nodeId="3813896760028776287" fileName="DispatchGenUtil.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DispatchGenUtil#()V" />
+    <nodeInfo nodeId="6855443792548949760" fileName="DispatchGenUtil.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="6855443792548949787" fileName="DispatchGenUtil.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="6855443792548949812" fileName="DispatchGenUtil.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="6855443792548949863" fileName="DispatchGenUtil.java" startLine="68" startPosition="42" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6855443792548949871" fileName="DispatchGenUtil.java" startLine="72" startPosition="49" endLine="75" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6855443792548949884" fileName="DispatchGenUtil.java" startLine="76" startPosition="78" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6855443792548949760" fileName="DispatchGenUtil.java" startLine="41" startPosition="72" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="6855443792548949787" fileName="DispatchGenUtil.java" startLine="49" startPosition="72" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="6855443792548949812" fileName="DispatchGenUtil.java" startLine="60" startPosition="119" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="3813896760028090886" fileName="DispatchGenUtil.java" startLine="100" startPosition="66" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3813896760028090886" fileName="DispatchGenUtil.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="6855443792548949758" fileName="DispatchGenUtil.java" startLine="40" startPosition="65" endLine="45" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6855443792548949784" fileName="DispatchGenUtil.java" startLine="48" startPosition="143" endLine="53" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6855443792548949805" fileName="DispatchGenUtil.java" startLine="59" startPosition="44" endLine="64" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -64,7 +64,7 @@
     <nodeInfo nodeId="6855443792548949844" fileName="DispatchGenUtil.java" startLine="65" startPosition="0" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6855443792548949745" fileName="DispatchGenUtil.java" startLine="36" startPosition="0" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6855443792548949799" fileName="DispatchGenUtil.java" startLine="57" startPosition="62" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6855443792548949702" fileName="DispatchGenUtil.java" startLine="25" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMatchingMethods#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6855443792548949702" fileName="DispatchGenUtil.java" startLine="26" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMatchingMethods#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
     <scopeInfo nodeId="3813896760028776290" fileName="DispatchGenUtil.java" startLine="23" startPosition="28" endLine="23" endPosition="28" />
     <scopeInfo nodeId="6855443792548949761" fileName="DispatchGenUtil.java" startLine="42" startPosition="46" endLine="43" endPosition="146" />
     <scopeInfo nodeId="6855443792548949788" fileName="DispatchGenUtil.java" startLine="50" startPosition="46" endLine="51" endPosition="140" />
@@ -73,18 +73,18 @@
     <scopeInfo nodeId="6855443792548949880" fileName="DispatchGenUtil.java" startLine="73" startPosition="108" endLine="74" endPosition="19" />
     <scopeInfo nodeId="6855443792548949891" fileName="DispatchGenUtil.java" startLine="77" startPosition="217" endLine="78" endPosition="19" />
     <scopeInfo nodeId="3813896760028090887" fileName="DispatchGenUtil.java" startLine="101" startPosition="35" endLine="102" endPosition="60" />
-    <scopeInfo nodeId="3813896760028776287" fileName="DispatchGenUtil.java" startLine="22" startPosition="30" endLine="24" endPosition="3" />
-    <scopeInfo nodeId="6855443792548949944" fileName="DispatchGenUtil.java" startLine="92" startPosition="74" endLine="95" endPosition="25" />
-    <scopeInfo nodeId="6855443792548949760" fileName="DispatchGenUtil.java" startLine="41" startPosition="72" endLine="45" endPosition="0">
+    <scopeInfo nodeId="3813896760028776287" fileName="DispatchGenUtil.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="6855443792548949760" fileName="DispatchGenUtil.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="6855443792548949760" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="6855443792548949787" fileName="DispatchGenUtil.java" startLine="49" startPosition="72" endLine="53" endPosition="0">
+    <scopeInfo nodeId="6855443792548949787" fileName="DispatchGenUtil.java" startLine="50" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="6855443792548949787" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="6855443792548949812" fileName="DispatchGenUtil.java" startLine="60" startPosition="119" endLine="64" endPosition="0">
+    <scopeInfo nodeId="6855443792548949812" fileName="DispatchGenUtil.java" startLine="61" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="6855443792548949812" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3813896760028090886" fileName="DispatchGenUtil.java" startLine="100" startPosition="66" endLine="104" endPosition="0">
+    <scopeInfo nodeId="6855443792548949944" fileName="DispatchGenUtil.java" startLine="92" startPosition="74" endLine="95" endPosition="25" />
+    <scopeInfo nodeId="3813896760028090886" fileName="DispatchGenUtil.java" startLine="101" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="3813896760028090886" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="6855443792548949776" fileName="DispatchGenUtil.java" startLine="47" startPosition="12" endLine="53" endPosition="8" />
@@ -119,7 +119,7 @@
       <varInfo nodeId="3813896760028126247" varName="parentClass" />
       <varInfo nodeId="6855443792548949905" varName="toRemove" />
     </scopeInfo>
-    <scopeInfo nodeId="6855443792548949702" fileName="DispatchGenUtil.java" startLine="25" startPosition="0" endLine="107" endPosition="0">
+    <scopeInfo nodeId="6855443792548949702" fileName="DispatchGenUtil.java" startLine="26" startPosition="0" endLine="107" endPosition="0">
       <varInfo nodeId="6855443792548949978" varName="dispatchMethod" />
     </scopeInfo>
     <unitInfo nodeId="6855443792548949760" fileName="DispatchGenUtil.java" startLine="41" startPosition="20" endLine="45" endPosition="7" unitName="jetbrains.mps.baseLanguage.methodDispatch.generator.util.DispatchGenUtil$1" />

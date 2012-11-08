@@ -8,5 +8,4 @@ public interface IBar {
     public Bar() {
     }
   }
-
 }

@@ -32,7 +32,7 @@ public class BitwiseNotExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9r01ax_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "~");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "~");
     editorCell.setCellId("Constant_9r01ax_a0");
     {
       Style style = editorCell.getStyle();
@@ -45,7 +45,7 @@ public class BitwiseNotExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9r01ax_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_9r01ax_b0");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -53,7 +53,7 @@ public class BitwiseNotExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9r01ax_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_9r01ax_d0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     {

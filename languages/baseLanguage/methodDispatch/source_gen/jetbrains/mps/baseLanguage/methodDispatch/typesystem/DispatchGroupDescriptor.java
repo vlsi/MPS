@@ -13,7 +13,6 @@ import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
-
 /**
  * This describes a group of related dispatch methods, i.e. which dispatch to each other
  */

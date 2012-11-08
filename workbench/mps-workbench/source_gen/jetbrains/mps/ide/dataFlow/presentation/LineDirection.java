@@ -7,12 +7,10 @@ import java.awt.Color;
 
 public enum LineDirection {
   HORIZONTAL() {
-
     public void paint(Graphics g, int first, int second, int level, Color backGround) {
       g.setColor(Color.BLACK);
       g.drawLine(first, level, second, level);
     }
-
     public void shiftLeft(Line line, int indent) {
       line.myFirst = line.myFirst + indent;
       line.mySecond = line.mySecond + indent;
@@ -20,7 +18,6 @@ public enum LineDirection {
 
   },
   VERTICAL() {
-
     public void paint(Graphics g, int first, int second, int level, Color backGround) {
       g.setColor(backGround);
       int height;
@@ -36,7 +33,6 @@ public enum LineDirection {
       g.setColor(Color.BLACK);
       g.drawLine(level, first, level, second);
     }
-
     public void shiftLeft(Line line, int indent) {
       line.myLevel = line.myLevel + indent;
     }

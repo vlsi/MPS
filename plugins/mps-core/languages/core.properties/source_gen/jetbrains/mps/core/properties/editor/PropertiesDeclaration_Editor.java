@@ -53,7 +53,7 @@ public class PropertiesDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cuzp02_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_cuzp02_b0");
     properiesSS_StyleSheet.getSeparator(editorCell).apply(editorCell);
     {
@@ -66,7 +66,7 @@ public class PropertiesDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cuzp02_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "key:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "key:");
     editorCell.setCellId("Constant_cuzp02_a0");
     {
       Style style = editorCell.getStyle();
@@ -78,7 +78,7 @@ public class PropertiesDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cuzp02_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "value:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "value:");
     editorCell.setCellId("Constant_cuzp02_c0");
     {
       Style style = editorCell.getStyle();

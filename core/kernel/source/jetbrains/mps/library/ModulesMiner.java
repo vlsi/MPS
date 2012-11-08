@@ -233,7 +233,7 @@ public class ModulesMiner {
     }
   }
 
-  private boolean isModuleFile(IFile file) {
+  boolean isModuleFile(IFile file) {
     return !file.isDirectory() && DescriptorIOFacade.getInstance().fromFileType(file) != null;
   }
 

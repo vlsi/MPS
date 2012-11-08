@@ -93,14 +93,14 @@ public class GeneratorParameterReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_p6qpij_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_p6qpij_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_p6qpij_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_p6qpij_a2a");
     {
       Style style = editorCell.getStyle();
@@ -111,14 +111,14 @@ public class GeneratorParameterReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_p6qpij_b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "optional");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "optional");
     editorCell.setCellId("Constant_p6qpij_b2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_p6qpij_c2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_p6qpij_c2a");
     {
       Style style = editorCell.getStyle();
@@ -129,7 +129,7 @@ public class GeneratorParameterReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_p6qpij_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "optional:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "optional:");
     editorCell.setCellId("Constant_p6qpij_a0a");
     editorCell.setDefaultText("");
     return editorCell;

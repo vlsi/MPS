@@ -26,7 +26,7 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactor
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.java.platform.refactorings.ExtractMethodDialog;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 
 public class ExtractMethod_Action extends BaseAction {
   private static final Icon ICON = null;

@@ -33,7 +33,7 @@ public class InternalClassExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3zwjq4_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ".");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_3zwjq4_b0");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -41,7 +41,7 @@ public class InternalClassExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3zwjq4_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "class");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "class");
     editorCell.setCellId("Constant_3zwjq4_c0");
     StyleSheet_StyleSheet.getInternalKeyword(editorCell).apply(editorCell);
     {

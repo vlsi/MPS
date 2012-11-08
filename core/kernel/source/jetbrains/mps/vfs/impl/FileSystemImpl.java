@@ -16,6 +16,7 @@
 package jetbrains.mps.vfs.impl;
 
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.FileSystemProvider;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.ex.IFileEx;
@@ -75,6 +76,16 @@ public class FileSystemImpl extends FileSystem {
 
   public void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles) {
     myFileSystemProvider.scheduleUpdateForWrittenFiles(writtenFiles);
+  }
+
+  @Override
+  public void addListener(FileSystemListener listener) {
+    myFileSystemProvider.addListener(listener);
+  }
+
+  @Override
+  public void removeListener(FileSystemListener listener) {
+    myFileSystemProvider.removeListener(listener);
   }
 
   @Override

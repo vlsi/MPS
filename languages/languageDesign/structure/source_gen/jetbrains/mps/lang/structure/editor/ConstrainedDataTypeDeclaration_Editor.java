@@ -55,7 +55,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_993c3a_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "constrained string datatype:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "constrained string datatype:");
     editorCell.setCellId("Constant_993c3a_a0a");
     {
       Style style = editorCell.getStyle();
@@ -67,7 +67,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_993c3a_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_993c3a_b0");
     {
       Style style = editorCell.getStyle();
@@ -78,7 +78,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_993c3a_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "    matching regexp:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    matching regexp:");
     editorCell.setCellId("Constant_993c3a_a2a");
     editorCell.setDefaultText("");
     return editorCell;

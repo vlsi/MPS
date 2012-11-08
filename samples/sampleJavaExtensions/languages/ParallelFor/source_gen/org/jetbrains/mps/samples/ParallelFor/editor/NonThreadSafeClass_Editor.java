@@ -26,7 +26,7 @@ public class NonThreadSafeClass_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_djoi4_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "@non thread safe");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@non thread safe");
     editorCell.setCellId("Constant_djoi4_a0");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

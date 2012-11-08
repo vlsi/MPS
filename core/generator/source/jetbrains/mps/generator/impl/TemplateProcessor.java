@@ -242,7 +242,7 @@ public class TemplateProcessor {
       SNodePointer templateNodeRef = templateNode == null ? null : new SNodePointer(templateNode);
       for (SNode newInputNode : newInputNodes) {
         Collection<SNode> _outputNodes =
-          newInputNode.getModel() == myGenerator.getInputModel() && jetbrains.mps.util.SNodeOperations.isRegistered(newInputNode)
+          newInputNode.getModel() == myGenerator.getInputModel() && newInputNode.getModel() != null
             ? myGenerator.copyNodeFromInputNode(mappingName, templateNodeRef, null, newInputNode, myReductionContext, new boolean[]{false})
             : myGenerator.copyNodeFromExternalNode(mappingName, templateNodeRef, null, newInputNode, myReductionContext);
         if (_outputNodes != null) {
@@ -279,7 +279,7 @@ public class TemplateProcessor {
           }
         }
 
-        if (jetbrains.mps.util.SNodeOperations.isRegistered(child)) {
+        if (child.getModel() != null) {
           // must be "in air"
           child = CopyUtil.copy(child);
         }

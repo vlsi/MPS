@@ -15,9 +15,9 @@
   <unitInfo fileName="DebuggerType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.DebuggerType_BehaviorDescriptor" />
   <unitInfo fileName="GetDebuggerSettings_Function_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.GetDebuggerSettings_Function_BehaviorDescriptor" />
   <root nodeId="2511103526757024634" modelId="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)">
-    <nodeInfo nodeId="2511103526757024634" fileName="DebuggerReference_Behavior.java" startLine="7" startPosition="41" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2511103526757024634" fileName="DebuggerReference_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="2511103526757024636" fileName="DebuggerReference_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="2511103526757024634" fileName="DebuggerReference_Behavior.java" startLine="7" startPosition="41" endLine="10" endPosition="0">
+    <scopeInfo nodeId="2511103526757024634" fileName="DebuggerReference_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="2511103526757024634" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="2511103526757024634" fileName="DebuggerReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.DebuggerReference_Behavior" />

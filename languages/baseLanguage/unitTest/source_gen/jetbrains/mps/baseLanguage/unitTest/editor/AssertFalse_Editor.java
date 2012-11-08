@@ -43,7 +43,7 @@ public class AssertFalse_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_uozwif_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "assert false");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "assert false");
     editorCell.setCellId("Constant_uozwif_a0");
     {
       Style style = editorCell.getStyle();
@@ -54,7 +54,7 @@ public class AssertFalse_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_uozwif_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_uozwif_d0");
     {
       Style style = editorCell.getStyle();

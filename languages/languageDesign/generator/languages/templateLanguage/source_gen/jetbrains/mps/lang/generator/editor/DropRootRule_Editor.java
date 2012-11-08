@@ -40,7 +40,7 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_fdnaen_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "condition");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "condition");
     editorCell.setCellId("Constant_fdnaen_b0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -48,7 +48,7 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_fdnaen_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_fdnaen_d0");
     {
       Style style = editorCell.getStyle();

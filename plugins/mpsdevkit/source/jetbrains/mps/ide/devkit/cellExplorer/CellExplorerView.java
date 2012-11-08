@@ -124,7 +124,7 @@ public class CellExplorerView extends BaseProjectTool {
     makeAvailable();
     openTool(true);
 
-    EditorComponent cellEditor = cell.getEditorContext().getNodeEditorComponent();
+    EditorComponent cellEditor = cell.getEditor();
     if (myCurrentEditor != cellEditor) {
       removeListeners();
       myCurrentEditor = cellEditor;

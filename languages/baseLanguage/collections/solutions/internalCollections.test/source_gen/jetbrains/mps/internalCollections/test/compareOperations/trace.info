@@ -25,11 +25,11 @@
     <nodeInfo nodeId="1241359235555" fileName="Union_Test.java" startLine="47" startPosition="9" endLine="48" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1241359235553" fileName="Union_Test.java" startLine="48" startPosition="16" endLine="49" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1241359235553" fileName="Union_Test.java" startLine="50" startPosition="40" endLine="51" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1205497886685" fileName="Union_Test.java" startLine="15" startPosition="43" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_unionMethod#()V" />
-    <nodeInfo nodeId="1205512662549" fileName="Union_Test.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_unionOperation#()V" />
+    <nodeInfo nodeId="1205497886685" fileName="Union_Test.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_unionMethod#()V" />
+    <nodeInfo nodeId="1205512662549" fileName="Union_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_unionOperation#()V" />
     <nodeInfo nodeId="1241359235553" fileName="Union_Test.java" startLine="46" startPosition="37" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2796241438627701536" fileName="Union_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_unionOpCovariant#()V" />
-    <nodeInfo nodeId="1241359235502" fileName="Union_Test.java" startLine="39" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nextWithoutHasNext#()V" />
+    <nodeInfo nodeId="2796241438627701536" fileName="Union_Test.java" startLine="28" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_unionOpCovariant#()V" />
+    <nodeInfo nodeId="1241359235502" fileName="Union_Test.java" startLine="40" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nextWithoutHasNext#()V" />
     <scopeInfo nodeId="1241359235553" fileName="Union_Test.java" startLine="50" startPosition="0" endLine="51" endPosition="28">
       <varInfo nodeId="1241359235553" varName="e" />
     </scopeInfo>
@@ -43,8 +43,8 @@
       <varInfo nodeId="1205512669745" varName="input" />
       <varInfo nodeId="1205512738195" varName="test" />
     </scopeInfo>
-    <scopeInfo nodeId="1205497886685" fileName="Union_Test.java" startLine="15" startPosition="43" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1205512662549" fileName="Union_Test.java" startLine="21" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1205497886685" fileName="Union_Test.java" startLine="16" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1205512662549" fileName="Union_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="2796241438627701539" fileName="Union_Test.java" startLine="28" startPosition="56" endLine="37" endPosition="85">
       <varInfo nodeId="2796241438627701581" varName="bar1" />
       <varInfo nodeId="2796241438627701586" varName="bar2" />
@@ -55,11 +55,11 @@
       <varInfo nodeId="2796241438627701616" varName="res" />
       <varInfo nodeId="2796241438627701605" varName="second" />
     </scopeInfo>
-    <scopeInfo nodeId="2796241438627701536" fileName="Union_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="2796241438627701536" fileName="Union_Test.java" startLine="28" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="1241359235504" fileName="Union_Test.java" startLine="40" startPosition="58" endLine="52" endPosition="5">
       <varInfo nodeId="1241359235506" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1241359235502" fileName="Union_Test.java" startLine="39" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1241359235502" fileName="Union_Test.java" startLine="40" startPosition="0" endLine="54" endPosition="0" />
     <unitInfo nodeId="1205497877107" fileName="Union_Test.java" startLine="15" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.internalCollections.test.compareOperations.Union_Test" />
   </root>
   <root nodeId="1205514854257" modelId="r:00000000-0000-4000-0000-011c895903ef(jetbrains.mps.internalCollections.test.compareOperations)">
@@ -87,11 +87,11 @@
     <nodeInfo nodeId="1241359271662" fileName="SubtractTest_Test.java" startLine="47" startPosition="9" endLine="48" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1241359271660" fileName="SubtractTest_Test.java" startLine="48" startPosition="16" endLine="49" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1241359271660" fileName="SubtractTest_Test.java" startLine="50" startPosition="40" endLine="51" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1205514867105" fileName="SubtractTest_Test.java" startLine="15" startPosition="50" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_subtractMethod#()V" />
-    <nodeInfo nodeId="1205515308375" fileName="SubtractTest_Test.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_subtractOperation#()V" />
+    <nodeInfo nodeId="1205514867105" fileName="SubtractTest_Test.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_subtractMethod#()V" />
+    <nodeInfo nodeId="1205515308375" fileName="SubtractTest_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_subtractOperation#()V" />
     <nodeInfo nodeId="1241359271660" fileName="SubtractTest_Test.java" startLine="46" startPosition="37" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2796241438627700375" fileName="SubtractTest_Test.java" startLine="27" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_subtractOpCovariant#()V" />
-    <nodeInfo nodeId="1241359271609" fileName="SubtractTest_Test.java" startLine="40" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nextWithoutHasNext#()V" />
+    <nodeInfo nodeId="2796241438627700375" fileName="SubtractTest_Test.java" startLine="28" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_subtractOpCovariant#()V" />
+    <nodeInfo nodeId="1241359271609" fileName="SubtractTest_Test.java" startLine="41" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nextWithoutHasNext#()V" />
     <scopeInfo nodeId="1241359271660" fileName="SubtractTest_Test.java" startLine="50" startPosition="0" endLine="51" endPosition="28">
       <varInfo nodeId="1241359271660" varName="e" />
     </scopeInfo>
@@ -105,8 +105,8 @@
       <varInfo nodeId="1205515314847" varName="input" />
       <varInfo nodeId="1205515334647" varName="test" />
     </scopeInfo>
-    <scopeInfo nodeId="1205514867105" fileName="SubtractTest_Test.java" startLine="15" startPosition="50" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1205515308375" fileName="SubtractTest_Test.java" startLine="21" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1205514867105" fileName="SubtractTest_Test.java" startLine="16" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1205515308375" fileName="SubtractTest_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="2796241438627700378" fileName="SubtractTest_Test.java" startLine="28" startPosition="59" endLine="38" endPosition="67">
       <varInfo nodeId="2796241438627700415" varName="bar1" />
       <varInfo nodeId="2796241438627700420" varName="bar2" />
@@ -121,8 +121,8 @@
     <scopeInfo nodeId="1241359271611" fileName="SubtractTest_Test.java" startLine="41" startPosition="58" endLine="52" endPosition="5">
       <varInfo nodeId="1241359271613" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2796241438627700375" fileName="SubtractTest_Test.java" startLine="27" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1241359271609" fileName="SubtractTest_Test.java" startLine="40" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="2796241438627700375" fileName="SubtractTest_Test.java" startLine="28" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1241359271609" fileName="SubtractTest_Test.java" startLine="41" startPosition="0" endLine="54" endPosition="0" />
     <unitInfo nodeId="1205514854257" fileName="SubtractTest_Test.java" startLine="15" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.internalCollections.test.compareOperations.SubtractTest_Test" />
   </root>
   <root nodeId="1205515610187" modelId="r:00000000-0000-4000-0000-011c895903ef(jetbrains.mps.internalCollections.test.compareOperations)">
@@ -148,11 +148,11 @@
     <nodeInfo nodeId="1241359316019" fileName="Intersect_Test.java" startLine="45" startPosition="9" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1241359316017" fileName="Intersect_Test.java" startLine="46" startPosition="16" endLine="47" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1241359316017" fileName="Intersect_Test.java" startLine="48" startPosition="40" endLine="49" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1205515625184" fileName="Intersect_Test.java" startLine="15" startPosition="47" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_intersectMethod#()V" />
-    <nodeInfo nodeId="1205515751004" fileName="Intersect_Test.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_intersectOperation#()V" />
+    <nodeInfo nodeId="1205515625184" fileName="Intersect_Test.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_intersectMethod#()V" />
+    <nodeInfo nodeId="1205515751004" fileName="Intersect_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_intersectOperation#()V" />
     <nodeInfo nodeId="1241359316017" fileName="Intersect_Test.java" startLine="44" startPosition="37" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2796241438627699823" fileName="Intersect_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_intersectOpCovariant#()V" />
-    <nodeInfo nodeId="1241359315966" fileName="Intersect_Test.java" startLine="39" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nextWithoutHasNext#()V" />
+    <nodeInfo nodeId="2796241438627699823" fileName="Intersect_Test.java" startLine="28" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_intersectOpCovariant#()V" />
+    <nodeInfo nodeId="1241359315966" fileName="Intersect_Test.java" startLine="40" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nextWithoutHasNext#()V" />
     <scopeInfo nodeId="1241359316017" fileName="Intersect_Test.java" startLine="48" startPosition="0" endLine="49" endPosition="28">
       <varInfo nodeId="1241359316017" varName="e" />
     </scopeInfo>
@@ -166,8 +166,8 @@
       <varInfo nodeId="1205515757405" varName="input" />
       <varInfo nodeId="1205515757416" varName="test" />
     </scopeInfo>
-    <scopeInfo nodeId="1205515625184" fileName="Intersect_Test.java" startLine="15" startPosition="47" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1205515751004" fileName="Intersect_Test.java" startLine="21" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1205515625184" fileName="Intersect_Test.java" startLine="16" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1205515751004" fileName="Intersect_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="2796241438627699826" fileName="Intersect_Test.java" startLine="28" startPosition="60" endLine="37" endPosition="67">
       <varInfo nodeId="2796241438627699873" varName="bar1" />
       <varInfo nodeId="2796241438627699924" varName="bar2" />
@@ -181,8 +181,8 @@
     <scopeInfo nodeId="1241359315968" fileName="Intersect_Test.java" startLine="40" startPosition="58" endLine="50" endPosition="5">
       <varInfo nodeId="1241359315970" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2796241438627699823" fileName="Intersect_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1241359315966" fileName="Intersect_Test.java" startLine="39" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="2796241438627699823" fileName="Intersect_Test.java" startLine="28" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1241359315966" fileName="Intersect_Test.java" startLine="40" startPosition="0" endLine="52" endPosition="0" />
     <unitInfo nodeId="1205515610187" fileName="Intersect_Test.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.internalCollections.test.compareOperations.Intersect_Test" />
   </root>
   <root nodeId="1205528089811" modelId="r:00000000-0000-4000-0000-011c895903ef(jetbrains.mps.internalCollections.test.compareOperations)">
@@ -214,12 +214,12 @@
     <nodeInfo nodeId="1241359347185" fileName="Disjunct_Test.java" startLine="54" startPosition="9" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1241359347183" fileName="Disjunct_Test.java" startLine="55" startPosition="16" endLine="56" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1241359347183" fileName="Disjunct_Test.java" startLine="57" startPosition="40" endLine="58" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1205528105673" fileName="Disjunct_Test.java" startLine="15" startPosition="46" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_disjunctionMethod#()V" />
-    <nodeInfo nodeId="1205598508954" fileName="Disjunct_Test.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_discjunctOperation#()V" />
+    <nodeInfo nodeId="1205528105673" fileName="Disjunct_Test.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_disjunctionMethod#()V" />
+    <nodeInfo nodeId="1205598508954" fileName="Disjunct_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_discjunctOperation#()V" />
+    <nodeInfo nodeId="1205756979836" fileName="Disjunct_Test.java" startLine="40" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_disjunctionEquivalence#()V" />
     <nodeInfo nodeId="1241359347183" fileName="Disjunct_Test.java" startLine="53" startPosition="37" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1205756979836" fileName="Disjunct_Test.java" startLine="39" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_disjunctionEquivalence#()V" />
-    <nodeInfo nodeId="2796241438627701980" fileName="Disjunct_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_disjunctOpCovariant#()V" />
-    <nodeInfo nodeId="1241359347132" fileName="Disjunct_Test.java" startLine="46" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nextWithoutHasNext#()V" />
+    <nodeInfo nodeId="2796241438627701980" fileName="Disjunct_Test.java" startLine="28" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_disjunctOpCovariant#()V" />
+    <nodeInfo nodeId="1241359347132" fileName="Disjunct_Test.java" startLine="47" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nextWithoutHasNext#()V" />
     <scopeInfo nodeId="1241359347183" fileName="Disjunct_Test.java" startLine="57" startPosition="0" endLine="58" endPosition="28">
       <varInfo nodeId="1241359347183" varName="e" />
     </scopeInfo>
@@ -237,9 +237,9 @@
       <varInfo nodeId="1205756990208" varName="a" />
       <varInfo nodeId="1205757045801" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="1205528105673" fileName="Disjunct_Test.java" startLine="15" startPosition="46" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1205598508954" fileName="Disjunct_Test.java" startLine="21" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1205756979836" fileName="Disjunct_Test.java" startLine="39" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="1205528105673" fileName="Disjunct_Test.java" startLine="16" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1205598508954" fileName="Disjunct_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1205756979836" fileName="Disjunct_Test.java" startLine="40" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="2796241438627701983" fileName="Disjunct_Test.java" startLine="28" startPosition="59" endLine="37" endPosition="79">
       <varInfo nodeId="2796241438627702051" varName="bar1" />
       <varInfo nodeId="2796241438627702056" varName="bar2" />
@@ -250,11 +250,11 @@
       <varInfo nodeId="2796241438627702086" varName="res" />
       <varInfo nodeId="2796241438627702075" varName="second" />
     </scopeInfo>
-    <scopeInfo nodeId="2796241438627701980" fileName="Disjunct_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="2796241438627701980" fileName="Disjunct_Test.java" startLine="28" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="1241359347134" fileName="Disjunct_Test.java" startLine="47" startPosition="58" endLine="59" endPosition="5">
       <varInfo nodeId="1241359347136" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1241359347132" fileName="Disjunct_Test.java" startLine="46" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1241359347132" fileName="Disjunct_Test.java" startLine="47" startPosition="0" endLine="61" endPosition="0" />
     <unitInfo nodeId="1205528089811" fileName="Disjunct_Test.java" startLine="15" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.internalCollections.test.compareOperations.Disjunct_Test" />
   </root>
   <root nodeId="1205574331460" modelId="r:00000000-0000-4000-0000-011c895903ef(jetbrains.mps.internalCollections.test.compareOperations)">
@@ -281,11 +281,11 @@
     <nodeInfo nodeId="1241359092606" fileName="Concat_Test.java" startLine="46" startPosition="9" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1241359081160" fileName="Concat_Test.java" startLine="47" startPosition="16" endLine="48" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1241359081160" fileName="Concat_Test.java" startLine="49" startPosition="40" endLine="50" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1205574337823" fileName="Concat_Test.java" startLine="15" startPosition="44" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_concatMethod#()V" />
-    <nodeInfo nodeId="1206730385103" fileName="Concat_Test.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_concatOperation#()V" />
+    <nodeInfo nodeId="1205574337823" fileName="Concat_Test.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_concatMethod#()V" />
+    <nodeInfo nodeId="1206730385103" fileName="Concat_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_concatOperation#()V" />
     <nodeInfo nodeId="1241359081160" fileName="Concat_Test.java" startLine="45" startPosition="37" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2796241438627699170" fileName="Concat_Test.java" startLine="27" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_concatOpCovariant#()V" />
-    <nodeInfo nodeId="1241358954601" fileName="Concat_Test.java" startLine="37" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nextWithoutHasNext#()V" />
+    <nodeInfo nodeId="2796241438627699170" fileName="Concat_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_concatOpCovariant#()V" />
+    <nodeInfo nodeId="1241358954601" fileName="Concat_Test.java" startLine="38" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nextWithoutHasNext#()V" />
     <scopeInfo nodeId="1241359081160" fileName="Concat_Test.java" startLine="49" startPosition="0" endLine="50" endPosition="28">
       <varInfo nodeId="1241359081160" varName="e" />
     </scopeInfo>
@@ -299,8 +299,8 @@
       <varInfo nodeId="1206730396346" varName="input" />
       <varInfo nodeId="1206730428796" varName="test" />
     </scopeInfo>
-    <scopeInfo nodeId="1205574337823" fileName="Concat_Test.java" startLine="15" startPosition="44" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1206730385103" fileName="Concat_Test.java" startLine="21" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1205574337823" fileName="Concat_Test.java" startLine="16" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1206730385103" fileName="Concat_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="2796241438627699173" fileName="Concat_Test.java" startLine="28" startPosition="57" endLine="35" endPosition="79">
       <varInfo nodeId="2796241438627699280" varName="bar1" />
       <varInfo nodeId="2796241438627699260" varName="foo1" />
@@ -309,23 +309,23 @@
       <varInfo nodeId="2796241438627699378" varName="res" />
       <varInfo nodeId="2796241438627699333" varName="tail" />
     </scopeInfo>
-    <scopeInfo nodeId="2796241438627699170" fileName="Concat_Test.java" startLine="27" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="2796241438627699170" fileName="Concat_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="1241358954603" fileName="Concat_Test.java" startLine="38" startPosition="58" endLine="51" endPosition="5">
       <varInfo nodeId="1241359038130" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1241358954601" fileName="Concat_Test.java" startLine="37" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="1241358954601" fileName="Concat_Test.java" startLine="38" startPosition="0" endLine="53" endPosition="0" />
     <unitInfo nodeId="1205574331460" fileName="Concat_Test.java" startLine="15" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.internalCollections.test.compareOperations.Concat_Test" />
   </root>
   <root nodeId="2796241438627699186" modelId="r:00000000-0000-4000-0000-011c895903ef(jetbrains.mps.internalCollections.test.compareOperations)">
-    <nodeInfo nodeId="2796241438627699188" fileName="Foo.java" startLine="6" startPosition="18" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Foo#()V" />
+    <nodeInfo nodeId="2796241438627699188" fileName="Foo.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Foo#()V" />
     <scopeInfo nodeId="2796241438627699191" fileName="Foo.java" startLine="7" startPosition="16" endLine="7" endPosition="16" />
-    <scopeInfo nodeId="2796241438627699188" fileName="Foo.java" startLine="6" startPosition="18" endLine="8" endPosition="3" />
+    <scopeInfo nodeId="2796241438627699188" fileName="Foo.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
     <unitInfo nodeId="2796241438627699186" fileName="Foo.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.internalCollections.test.compareOperations.Foo" />
   </root>
   <root nodeId="2796241438627699197" modelId="r:00000000-0000-4000-0000-011c895903ef(jetbrains.mps.internalCollections.test.compareOperations)">
-    <nodeInfo nodeId="2796241438627699199" fileName="Bar.java" startLine="6" startPosition="30" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Bar#()V" />
+    <nodeInfo nodeId="2796241438627699199" fileName="Bar.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Bar#()V" />
     <scopeInfo nodeId="2796241438627699202" fileName="Bar.java" startLine="7" startPosition="16" endLine="7" endPosition="16" />
-    <scopeInfo nodeId="2796241438627699199" fileName="Bar.java" startLine="6" startPosition="30" endLine="8" endPosition="3" />
+    <scopeInfo nodeId="2796241438627699199" fileName="Bar.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
     <unitInfo nodeId="2796241438627699197" fileName="Bar.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.internalCollections.test.compareOperations.Bar" />
   </root>
 </debugInfo>

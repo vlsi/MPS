@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 
@@ -23,7 +23,7 @@ public class Styles_StyleSheet {
           cell.getSNode()
         ), (cell == null ?
           null :
-          cell.getEditorContext()
+          cell.getContext()
         ));
       }
     });
@@ -34,7 +34,7 @@ public class Styles_StyleSheet {
           cell.getSNode()
         ), (cell == null ?
           null :
-          cell.getEditorContext()
+          cell.getContext()
         ));
       }
     });
@@ -45,7 +45,7 @@ public class Styles_StyleSheet {
           cell.getSNode()
         ), (cell == null ?
           null :
-          cell.getEditorContext()
+          cell.getContext()
         ));
       }
     });
@@ -121,7 +121,7 @@ public class Styles_StyleSheet {
           cell.getSNode()
         ), (cell == null ?
           null :
-          cell.getEditorContext()
+          cell.getContext()
         ));
       }
     });

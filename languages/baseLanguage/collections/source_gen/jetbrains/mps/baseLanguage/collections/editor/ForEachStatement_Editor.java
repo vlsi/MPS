@@ -86,7 +86,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kov3ab_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_kov3ab_b0a");
     {
       Style style = editorCell.getStyle();
@@ -98,7 +98,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kov3ab_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_kov3ab_b1a");
     {
       Style style = editorCell.getStyle();
@@ -110,7 +110,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kov3ab_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "foreach");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "foreach");
     editorCell.setCellId("Constant_kov3ab_c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -122,7 +122,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kov3ab_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "in");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
     editorCell.setCellId("Constant_kov3ab_e0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -130,7 +130,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kov3ab_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_kov3ab_g0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -142,7 +142,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kov3ab_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_kov3ab_i0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
@@ -154,7 +154,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kov3ab_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "label");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "label");
     editorCell.setCellId("Constant_kov3ab_a0");
     {
       Style style = editorCell.getStyle();
@@ -165,7 +165,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kov3ab_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_kov3ab_b0");
     {
       Style style = editorCell.getStyle();

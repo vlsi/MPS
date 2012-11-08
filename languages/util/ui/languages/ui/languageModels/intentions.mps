@@ -32,8 +32,8 @@
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="fb0y.8381258131358737398" resolveInfo="View" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1576918603588812821">
-      <property name="name" nameId="tpck.1169194664001" value="replace_UIObjectStatement_AppendUIObjectStatement" />
       <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="replace_UIObjectStatement_AppendUIObjectStatement" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="fb0y.8381258131358446225" resolveInfo="UIObjectStatement" />
     </node>
     <node type="tp3j.ParameterizedIntentionDeclaration" typeId="tp3j.1240395258925" id="8905126934806239993">
@@ -494,7 +494,7 @@
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8717063129899257794">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~IModule%daddDependency(jetbrains%dmps%dproject%dstructure%dmodules%dModuleReference,boolean)%cvoid" resolveInfo="addDependency" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~IModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cvoid" resolveInfo="addDependency" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8717063129899257798">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8717063129899257795">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8717063129899257759" resolveInfo="langToDep" />

@@ -87,14 +87,14 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ttjdsx_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "test");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "test");
     editorCell.setCellId("Constant_ttjdsx_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_ttjdsx_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_ttjdsx_a1a");
     {
       Style style = editorCell.getStyle();
@@ -105,7 +105,7 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ttjdsx_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "final state:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final state:");
     editorCell.setCellId("Constant_ttjdsx_a1b1a");
     editorCell.setDefaultText("");
     return editorCell;

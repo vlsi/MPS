@@ -24,12 +24,8 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ClassPathFactory;
-import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.runtime.ProtectionDomainUtil;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -38,8 +34,8 @@ import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
-import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -56,16 +52,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
   private ModelLoadingState myNamesLoadingState = ModelLoadingState.NOT_LOADED;
 
-  private final Object LOCK = new Object();
-  private Runnable myClasspathInvalidator = new Runnable() {
-    public void run() {
-      synchronized (LOCK) {
-        myLanguageRuntimeClasspathCache = null;
-      }
-    }
-  };
-  private CompositeClassPathItem myLanguageRuntimeClasspathCache;
-
   private CachesInvalidator myCachesInvalidator;
 
   //todo [MihMuh] this should be replaced in 3.0 (don't know exactly with what now)
@@ -73,7 +59,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   private final LanguageDependenciesManager myLanguageDependenciesManager = new LanguageDependenciesManager(this);
 
   protected Language(LanguageDescriptor descriptor, IFile file) {
-    myDescriptorFile = file;
+    super(file);
     myLanguageDescriptor = descriptor;
     setModuleReference(descriptor.getModuleReference());
   }
@@ -147,12 +133,13 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
       }
     }
 
-    if (!remove.isEmpty()){
+    if (!remove.isEmpty()) {
       myLanguageDescriptor.getExtendedLanguages().removeAll(remove);
       setChanged();
     }
   }
 
+  @Override
   public void onModuleLoad() {
     super.onModuleLoad();
 
@@ -189,7 +176,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   }
 
   public void setLanguageDescriptor(final LanguageDescriptor newDescriptor, boolean reloadClasses) {
-    super.setModuleDescriptor(newDescriptor,reloadClasses);
+    super.setModuleDescriptor(newDescriptor, reloadClasses);
 
     myLanguageDescriptor = newDescriptor;
 
@@ -218,7 +205,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   }
 
   public int getVersion() {
-    return getStructureModelDescriptor().getVersion();
+    return ((DefaultSModelDescriptor) getStructureModelDescriptor()).getVersion();
   }
 
   public Collection<Generator> getGenerators() {
@@ -308,7 +295,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return result;
   }
 
-  public DefaultSModelDescriptor getStructureModelDescriptor() {
+  public SModelDescriptor getStructureModelDescriptor() {
     return LanguageAspect.STRUCTURE.get(this);
   }
 
@@ -379,7 +366,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return result;
   }
 
-  public boolean isAccessoryModel(SModelReference modelReference) {
+  public boolean isAccessoryModel(org.jetbrains.mps.openapi.model.SModelReference modelReference) {
     for (SModelReference model : getModuleDescriptor().getAccessoryModels()) {
       if (EqualUtil.equals(model, modelReference)) return true;
     }
@@ -401,7 +388,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return getModuleDescriptor().getNamespace();
   }
 
-  public LanguageAspect getAspectForModel(@NotNull SModelDescriptor sm) {
+  public LanguageAspect getAspectForModel(@NotNull org.jetbrains.mps.openapi.model.SModel sm) {
     for (LanguageAspect la : LanguageAspect.values()) {
       if (la.get(this) == sm) {
         return la;
@@ -410,13 +397,13 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return null;
   }
 
-  public static Language getLanguageForLanguageAspect(SModelDescriptor modelDescriptor) {
+  public static Language getLanguageForLanguageAspect(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
     return getLanguageFor(modelDescriptor);
   }
 
-  public static LanguageAspect getModelAspect(SModelDescriptor sm) {
+  public static LanguageAspect getModelAspect(org.jetbrains.mps.openapi.model.SModel sm) {
     if (sm == null) return null;
-    IModule module = sm.getModule();
+    SModule module = sm.getModule();
     if (!(module instanceof Language)) return null;
 
     Language l = (Language) module;
@@ -425,25 +412,21 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return l.getAspectForModel(sm);
   }
 
-  public static boolean isLanguageOwnedAccessoryModel(SModelDescriptor sm) {
-    Set<ModelOwner> owners = SModelRepository.getInstance().getOwners(sm);
-    for (ModelOwner modelOwner : owners) {
-      if (modelOwner instanceof Language) {
-        Language l = (Language) modelOwner;
-        if (l.isAccessoryModel(sm.getSModelReference())) {
-          return true;
-        }
+  public static boolean isLanguageOwnedAccessoryModel(org.jetbrains.mps.openapi.model.SModel sm) {
+    SModule modelOwner = SModelRepository.getInstance().getOwner(sm);
+    if (modelOwner instanceof Language) {
+      Language l = (Language) modelOwner;
+      if (l.isAccessoryModel(sm.getModelReference())) {
+        return true;
       }
     }
     return false;
   }
 
-  public static Language getLanguageFor(SModelDescriptor sm) {
-    Set<ModelOwner> owners = SModelRepository.getInstance().getOwners(sm);
-    for (ModelOwner modelOwner : owners) {
-      if (modelOwner instanceof Language) {
-        return (Language) modelOwner;
-      }
+  public static Language getLanguageFor(org.jetbrains.mps.openapi.model.SModel sm) {
+    SModule owner = SModelRepository.getInstance().getOwner(sm);
+    if (owner instanceof Language) {
+      return (Language) owner;
     }
     return null;
   }
@@ -477,13 +460,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
       return Collections.singletonList(classesGen.getPath());
     }
     return Collections.emptyList();
-  }
-
-  protected void invalidateClassPath() {
-    super.invalidateClassPath();
-    synchronized (LOCK) {
-      myLanguageRuntimeClasspathCache = null;
-    }
   }
 
   @Override

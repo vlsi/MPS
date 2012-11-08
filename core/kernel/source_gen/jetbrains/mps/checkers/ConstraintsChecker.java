@@ -68,7 +68,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       }
     }
 
-    if (node.isRoot()) {
+    if (jetbrains.mps.util.SNodeOperations.isRoot(node)) {
       boolean canBeRoot = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
           return ModelConstraintsManager.canBeRoot(newDescriptor, operationContext, node.getConcept().getId(), SNodeOperations.getModel(node), checkingNodeContext);

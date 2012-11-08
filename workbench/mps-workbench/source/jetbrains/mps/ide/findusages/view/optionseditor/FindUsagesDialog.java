@@ -142,7 +142,7 @@ public class FindUsagesDialog extends BaseDialog {
           if (finderNode == null) return;
           FindUsagesDialog.this.onCancel();
           IOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
-          NavigationSupport.getInstance().openNode(context, finderNode, true, !(finderNode.isRoot()));
+          NavigationSupport.getInstance().openNode(context, finderNode, true, !(finderNode.getModel() != null && finderNode.getModel().isRoot(finderNode)));
         }
       });
     }

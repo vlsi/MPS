@@ -110,7 +110,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_c84kqv_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "-->");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-->");
     editorCell.setCellId("Constant_c84kqv_a1a");
     {
       Style style = editorCell.getStyle();
@@ -121,14 +121,14 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_c84kqv_b1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_c84kqv_b1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_c84kqv_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_c84kqv_c0");
     {
       Style style = editorCell.getStyle();
@@ -140,7 +140,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_c84kqv_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "reduction rule");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reduction rule");
     editorCell.setCellId("Constant_c84kqv_a0");
     {
       Style style = editorCell.getStyle();
@@ -153,7 +153,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_c84kqv_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_c84kqv_b0");
     {
       Style style = editorCell.getStyle();
@@ -164,7 +164,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_c84kqv_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapping label");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_c84kqv_a2a");
     editorCell.setDefaultText("");
     return editorCell;

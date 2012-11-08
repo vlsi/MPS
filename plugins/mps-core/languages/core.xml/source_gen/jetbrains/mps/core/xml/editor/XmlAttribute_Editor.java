@@ -81,7 +81,7 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1uorir_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_1uorir_b0a");
     {
       Style style = editorCell.getStyle();
@@ -93,7 +93,7 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1uorir_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "\"");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_1uorir_c0a");
     XmlSS_StyleSheet.getXmlAttributeValue(editorCell).apply(editorCell);
     {
@@ -106,7 +106,7 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1uorir_e0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "\"");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_1uorir_e0a");
     XmlSS_StyleSheet.getXmlAttributeValue(editorCell).apply(editorCell);
     {
@@ -119,7 +119,7 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1uorir_b0a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_1uorir_b0a_0");
     {
       Style style = editorCell.getStyle();
@@ -131,7 +131,7 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1uorir_c0a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "\"");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_1uorir_c0a_0");
     XmlSS_StyleSheet.getXmlAttributeValue(editorCell).apply(editorCell);
     {
@@ -144,7 +144,7 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1uorir_e0a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "\"");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_1uorir_e0a_0");
     XmlSS_StyleSheet.getXmlAttributeValue(editorCell).apply(editorCell);
     {
@@ -258,7 +258,7 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_1uorir_a3a0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_1uorir_a3a0");
       {
         Style style = editorCell.getStyle();
@@ -313,7 +313,7 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_1uorir_a0d0a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_1uorir_a0d0a");
       {
         Style style = editorCell.getStyle();

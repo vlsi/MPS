@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SNode;
 
-import javax.swing.KeyStroke;
 import java.awt.event.KeyEvent;
 import java.util.List;
 
@@ -35,11 +33,35 @@ public abstract class EditorCellKeyMapAction {
   private int myCaretPolicy;
   private boolean myShownInPopupMenu = false;
 
+  /**
+   * @deprecated starting from MPS 3.0 another method should be used:
+   * <code>canExecute(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   * This method should be removed after MPS 3.0
+   */
+  @Deprecated
   public boolean canExecute(KeyEvent keyEvent, EditorContext context) {
     return true;
   }
 
-  public abstract void execute(KeyEvent keyEvent, EditorContext context);
+  public boolean canExecute(KeyEvent keyEvent, jetbrains.mps.openapi.editor.EditorContext context) {
+    return canExecute(keyEvent, (EditorContext) context);
+  }
+
+  /**
+   * @deprecated starting from MPS 3.0 another method should be used:
+   * <code>execute(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   * This method should be removed after MPS 3.0
+   */
+  @Deprecated
+  public void execute(KeyEvent keyEvent, EditorContext context) {
+  }
+
+  /**
+   * This method should become abstract after MPS 3.0
+   */
+  public void execute(KeyEvent keyEvent, jetbrains.mps.openapi.editor.EditorContext context) {
+    execute(keyEvent, (EditorContext) context);
+  }
 
   public String getDescriptionText() {
     return null;
@@ -69,7 +91,17 @@ public abstract class EditorCellKeyMapAction {
     return "";
   }
 
+  /**
+   * @deprecated starting from MPS 3.0 another method should be used:
+   * <code>getSelectedNodes(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   * This method should be removed after MPS 3.0
+   */
+  @Deprecated
   protected List<SNode> getSelectedNodes(EditorContext context) {
-    return context.getNodeEditorComponent().getSelectedNodes();
+    return getSelectedNodes((jetbrains.mps.openapi.editor.EditorContext) context);
+  }
+  
+  protected List<SNode> getSelectedNodes(jetbrains.mps.openapi.editor.EditorContext context) {
+    return context.getEditorComponent().getSelectedNodes();
   }
 }

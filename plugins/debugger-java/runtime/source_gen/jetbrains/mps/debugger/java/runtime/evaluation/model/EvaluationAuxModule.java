@@ -17,12 +17,8 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.LanguageID;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModelDescriptor;
 
 public class EvaluationAuxModule extends AbstractModule {
   private Project myProject;
@@ -81,18 +77,11 @@ public class EvaluationAuxModule extends AbstractModule {
   }
 
   @Override
-  public Set<ModelRoot> doUpdateModelsSet() {
+  protected Iterable<ModelRoot> loadRoots() {
     Set<ModelRoot> result = new HashSet<ModelRoot>();
-    SModelRepository repo = SModelRepository.getInstance();
     for (String stub : SetSequence.fromSet(myStubPaths)) {
       SModelRoot smodelRoot = new SModelRoot(LanguageID.JAVA_MANAGER);
       smodelRoot.setPath(stub);
-      smodelRoot.setModule(this);
-      for (SModel descriptor : Sequence.fromIterable(smodelRoot.getModels())) {
-        if (repo.getModelDescriptor(descriptor.getModelReference()) == null) {
-          repo.registerModelDescriptor((SModelDescriptor) descriptor, this);
-        }
-      }
       result.add(smodelRoot);
     }
     return result;

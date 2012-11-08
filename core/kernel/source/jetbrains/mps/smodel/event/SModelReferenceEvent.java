@@ -33,7 +33,7 @@ public class SModelReferenceEvent extends SModelEvent {
   }
 
   public SNode getAffectedRoot() {
-    return myReference.getSourceNode().getContainingRoot();
+    return myReference.getSourceNode().getTopmostAncestor();
   }
 
   public SReference getReference() {

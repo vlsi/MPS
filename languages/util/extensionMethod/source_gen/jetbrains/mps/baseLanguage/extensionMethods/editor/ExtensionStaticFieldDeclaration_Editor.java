@@ -51,7 +51,7 @@ public class ExtensionStaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ipnr5b_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "const");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "const");
     editorCell.setCellId("Constant_ipnr5b_b0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -59,7 +59,7 @@ public class ExtensionStaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ipnr5b_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_ipnr5b_e0");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -67,7 +67,7 @@ public class ExtensionStaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ipnr5b_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_ipnr5b_g0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     {

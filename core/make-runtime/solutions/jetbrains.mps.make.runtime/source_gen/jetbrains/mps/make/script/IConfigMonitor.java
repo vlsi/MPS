@@ -5,6 +5,7 @@ package jetbrains.mps.make.script;
 
 public interface IConfigMonitor extends IJobMonitor {
   public <T extends IOption> T relayQuery(IQuery<T> query);
+
   public static class Stub extends IJobMonitor.Stub implements IConfigMonitor {
     public Stub() {
       super(new IProgress.Stub());
@@ -18,5 +19,4 @@ public interface IConfigMonitor extends IJobMonitor {
       return null;
     }
   }
-
 }

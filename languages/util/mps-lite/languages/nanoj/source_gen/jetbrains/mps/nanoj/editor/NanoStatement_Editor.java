@@ -14,7 +14,7 @@ public class NanoStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createError_5f70dk_a(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<abstract statement>");
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<abstract statement>");
     editorCell.setCellId("Error_5f70dk_a");
     return editorCell;
   }

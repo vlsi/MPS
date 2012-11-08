@@ -56,6 +56,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.ModelUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -359,7 +360,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   public void editNode(final SNode node, final IOperationContext context, final boolean focus) {
     ModelAccess.assertLegalWrite();
-    NavigationSupport.getInstance().openNode(context, node, focus, !node.isRoot());
+    NavigationSupport.getInstance().openNode(context, node, focus, !(node.getModel() != null && node.getModel().isRoot(node)));
   }
 
   public <T extends TreeNode> List<T> getSelectedTreeNodes(Class<T> nodeClass) {
@@ -384,13 +385,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     List<SModelDescriptor> descriptors = getSelectedModels();
     if (descriptors != null) {
       for (SModelDescriptor descriptor : descriptors) {
-        if (!(descriptor instanceof DefaultSModelDescriptor)) continue;
-        DefaultSModelDescriptor emd = (DefaultSModelDescriptor) descriptor;
-        IFile ifile = emd.getModelFile();
-        if (ifile == null) continue;
-        VirtualFile vfile = VirtualFileUtils.getVirtualFile(ifile);
-        if (vfile == null) continue;
-        selectedFilesList.add(vfile);
+        selectedFilesList.addAll(ModelUtil.getVFilesByModelDescriptor(descriptor));
       }
     }
 

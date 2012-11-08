@@ -81,7 +81,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ou8udj_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_ou8udj_b0a");
     {
       Style style = editorCell.getStyle();
@@ -93,7 +93,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ou8udj_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_ou8udj_b1a");
     {
       Style style = editorCell.getStyle();
@@ -105,7 +105,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ou8udj_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "while");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "while");
     editorCell.setCellId("Constant_ou8udj_c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -117,7 +117,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ou8udj_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_ou8udj_d0");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -125,7 +125,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ou8udj_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_ou8udj_f0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -133,7 +133,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ou8udj_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_ou8udj_g0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -145,7 +145,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ou8udj_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_ou8udj_i0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -153,7 +153,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ou8udj_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "label");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "label");
     editorCell.setCellId("Constant_ou8udj_a0");
     {
       Style style = editorCell.getStyle();
@@ -164,7 +164,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ou8udj_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_ou8udj_b0");
     {
       Style style = editorCell.getStyle();

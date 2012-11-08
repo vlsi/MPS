@@ -32,7 +32,7 @@ public class DefaultBaseLine_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4pywwz_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "default-baseline");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default-baseline");
     editorCell.setCellId("Constant_4pywwz_a0");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -41,7 +41,7 @@ public class DefaultBaseLine_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4pywwz_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_4pywwz_b0");
     editorCell.setDefaultText("");
     return editorCell;

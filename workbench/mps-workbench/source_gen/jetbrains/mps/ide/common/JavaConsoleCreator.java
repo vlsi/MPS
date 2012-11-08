@@ -11,7 +11,6 @@ import com.intellij.execution.filters.Filter;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.unscramble.AnalyzeStacktraceUtil;
 
-
 /**
  * Use ConsoleCreator from j.m.e.configurations to create console and JavaStackTraceFilter from j.m.execution.lib to highlight stacktraces.
  */

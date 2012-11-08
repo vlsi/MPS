@@ -30,7 +30,7 @@ public class NormalTypeClause_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_yb6oam_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "NORMAL TYPE CLAUSE");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "NORMAL TYPE CLAUSE");
     editorCell.setCellId("Constant_yb6oam_a");
     editorCell.setDefaultText("");
     return editorCell;

@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SReference;
 import java.util.LinkedList;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.util.Iterator;
@@ -145,6 +146,14 @@ public class SNodeOperations {
   }
 
   /**
+   * todo rewrite the code using this
+   */
+  public static boolean isRoot(SNode n) {
+    SModel model = ((jetbrains.mps.smodel.SNode) n).getModel();
+    return model != null && model.isRoot(((jetbrains.mps.smodel.SNode) n));
+  }
+
+  /**
    * todo rewrite the code via snode methods
    */
   public static void insertChild(SNode parent, String role, SNode child, SNode anchor, boolean before) {
@@ -156,30 +165,12 @@ public class SNodeOperations {
   }
 
   /**
-   * todo KILL IT! should be node.getModel!=null
-   * todo after killing it, correct migration script to return model!=null instead
-   */
-  @Deprecated
-  public static boolean isRegistered(SNode node) {
-    return ((jetbrains.mps.smodel.SNode) node).getModel() != null;
-  }
-
-  /**
    * todo KILL IT! should not be used since nodes are not passed between read actions
    * todo after killing it, correct migration script to return false instead
    */
   @Deprecated
   public static boolean isDisposed(SNode node) {
     return ((jetbrains.mps.smodel.SNode) node).isDisposed();
-  }
-
-  /**
-   * todo KILL IT! should be node.getTopMostAncestor
-   * todo after killing it, correct migration script getTopMostAncestor
-   */
-  @Deprecated
-  public static SNode getContainingRoot(SNode node) {
-    return ((jetbrains.mps.smodel.SNode) node).getContainingRoot();
   }
 
   /**

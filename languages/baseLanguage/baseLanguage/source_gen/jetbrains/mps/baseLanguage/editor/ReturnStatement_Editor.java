@@ -32,7 +32,7 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_evgwyu_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "return");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "return");
     editorCell.setCellId("Constant_evgwyu_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     ReturnStatement_Actions.setCellActions(editorCell, node, editorContext);
@@ -41,7 +41,7 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_evgwyu_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_evgwyu_c0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

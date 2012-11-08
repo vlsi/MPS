@@ -27,7 +27,7 @@ public class BuildVariableMacroInitWithDate_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_idjuyr_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "date");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "date");
     editorCell.setCellId("Constant_idjuyr_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

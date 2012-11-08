@@ -27,7 +27,7 @@ public class ChildConceptWeave_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pj940b_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "weave");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "weave");
     editorCell.setCellId("Constant_pj940b_a0");
     editorCell.setDefaultText("");
     return editorCell;

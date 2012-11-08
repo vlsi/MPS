@@ -77,7 +77,7 @@ public class BwfFileSet_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_wd783v_a0a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_wd783v_a0a");
       editorCell.setDefaultText("<no fileset>");
       return editorCell;

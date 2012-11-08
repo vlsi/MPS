@@ -18,7 +18,7 @@ public class Node_GetContainingRootOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_50x6v_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "containing root");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "containing root");
     editorCell.setCellId("Constant_50x6v_a");
     {
       Style style = editorCell.getStyle();

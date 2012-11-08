@@ -199,6 +199,12 @@ public class DiffTemporaryModule extends AbstractModule {
       }
     }
 
+    public void reloadFromDisk() {
+    }
+
+    public void updateDiskTimestamp() {
+    }
+
     public void rename(SModelFqName name, boolean b) {
       throw new UnsupportedOperationException();
     }

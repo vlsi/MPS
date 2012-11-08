@@ -57,14 +57,14 @@ public class PastePostProcessor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_gbheja_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "paste post processor");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "paste post processor");
     editorCell.setCellId("Constant_gbheja_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createIndentCell_gbheja_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

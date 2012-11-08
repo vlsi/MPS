@@ -21,7 +21,7 @@ public class LightWeightDecisionTable_Editor extends DefaultNodeEditor {
   private EditorCell createTable_qbxdb8_a(EditorContext editorContext, SNode node) {
     TableModelFactory creator = new TableModelFactory() {
       public TableModel createTableModel(final SNode node, final EditorContext editorContext) {
-        return new XYCTableModel(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.tableTests.structure.LightWeightDecisionTable", "column"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.tableTests.structure.LightWeightDecisionTable", "row"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.tableTests.structure.LightWeightDecisionTable", "body"), editorContext);
+        return new XYCTableModel(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.tableTests.structure.LightWeightDecisionTable", "column"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.tableTests.structure.LightWeightDecisionTable", "row"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.tableTests.structure.LightWeightDecisionTable", "body"), editorContext) {};
       }
     };
     EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.createTableModel(node, editorContext), "Table_qbxdb8_a");

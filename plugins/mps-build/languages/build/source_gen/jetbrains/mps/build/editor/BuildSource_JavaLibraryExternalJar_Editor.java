@@ -27,7 +27,7 @@ public class BuildSource_JavaLibraryExternalJar_Editor extends DefaultNodeEditor
   }
 
   private EditorCell createConstant_fpruxb_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "external jar");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "external jar");
     editorCell.setCellId("Constant_fpruxb_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

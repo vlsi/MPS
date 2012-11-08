@@ -28,7 +28,7 @@ public class ValidatingView_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_esy5mi_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "with guard");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with guard");
     editorCell.setCellId("Constant_esy5mi_b0");
     editorCell.setDefaultText("");
     return editorCell;

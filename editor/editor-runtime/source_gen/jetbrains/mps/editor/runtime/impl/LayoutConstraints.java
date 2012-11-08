@@ -4,8 +4,7 @@ package jetbrains.mps.editor.runtime.impl;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 
-public 
-/**
+public /**
  * TODO: Import layout logic into MPS
  */
 enum LayoutConstraints {

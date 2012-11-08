@@ -123,7 +123,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kwr3w_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "modify query");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "modify query");
     editorCell.setCellId("Constant_kwr3w_a0a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -131,7 +131,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kwr3w_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "with all");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with all");
     editorCell.setCellId("Constant_kwr3w_a1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -139,7 +139,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kwr3w_a0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "where");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "where");
     editorCell.setCellId("Constant_kwr3w_a0c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -147,7 +147,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kwr3w_a1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "do");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do");
     editorCell.setCellId("Constant_kwr3w_a1c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

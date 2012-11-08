@@ -14,14 +14,14 @@
   <unitInfo fileName="WhitespaceMigrationScriptPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.WhitespaceMigrationScriptPart_BehaviorDescriptor" />
   <root nodeId="5166971494091017143" modelId="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)">
     <nodeInfo nodeId="5166971494091017150" fileName="PullUpMethod_Behavior.java" startLine="12" startPosition="77" endLine="13" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5166971494091017143" fileName="PullUpMethod_Behavior.java" startLine="8" startPosition="36" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="5166971494091017143" fileName="PullUpMethod_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getMigration_5166971494091017146#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5166971494091017143" fileName="PullUpMethod_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5166971494091017143" fileName="PullUpMethod_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getMigration_5166971494091017146#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="5166971494091017145" fileName="PullUpMethod_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="5166971494091017149" fileName="PullUpMethod_Behavior.java" startLine="12" startPosition="77" endLine="13" endPosition="134" />
-    <scopeInfo nodeId="5166971494091017143" fileName="PullUpMethod_Behavior.java" startLine="8" startPosition="36" endLine="11" endPosition="0">
+    <scopeInfo nodeId="5166971494091017143" fileName="PullUpMethod_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="5166971494091017143" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5166971494091017143" fileName="PullUpMethod_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="5166971494091017143" fileName="PullUpMethod_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="5166971494091017143" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="5166971494091017143" fileName="PullUpMethod_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.PullUpMethod_Behavior" />

@@ -11,7 +11,7 @@
     <nodeInfo nodeId="1162935492983" fileName="Main_lists.java" startLine="20" startPosition="67" endLine="21" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1160611278758" fileName="Main_lists.java" startLine="16" startPosition="139" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1162935392615" fileName="Main_lists.java" startLine="19" startPosition="5" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="1160610606322" fileName="Main_lists.java" startLine="9" startPosition="30" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1160610606322" fileName="Main_lists.java" startLine="10" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
     <scopeInfo nodeId="1160611278761" fileName="Main_lists.java" startLine="17" startPosition="50" endLine="18" endPosition="28" />
     <scopeInfo nodeId="1162935392618" fileName="Main_lists.java" startLine="20" startPosition="67" endLine="21" endPosition="68" />
     <scopeInfo nodeId="1160611278758" fileName="Main_lists.java" startLine="16" startPosition="139" endLine="19" endPosition="5">
@@ -25,7 +25,7 @@
       <varInfo nodeId="1164884227614" varName="ll" />
       <varInfo nodeId="1164884256169" varName="lll" />
     </scopeInfo>
-    <scopeInfo nodeId="1160610606322" fileName="Main_lists.java" startLine="9" startPosition="30" endLine="24" endPosition="0">
+    <scopeInfo nodeId="1160610606322" fileName="Main_lists.java" startLine="10" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="1160610619154" varName="args" />
     </scopeInfo>
     <unitInfo nodeId="1160610587352" fileName="Main_lists.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.lists.Main_lists" />

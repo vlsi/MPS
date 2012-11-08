@@ -35,7 +35,7 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_be8v21_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "aggregation");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "aggregation");
     editorCell.setCellId("Constant_be8v21_a0");
     {
       Style style = editorCell.getStyle();
@@ -47,7 +47,7 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_be8v21_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "target concept:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "target concept:");
     editorCell.setCellId("Constant_be8v21_c0");
     {
       Style style = editorCell.getStyle();

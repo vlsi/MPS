@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1440921264474787839" modelId="r:511c0af5-be4d-432a-9b92-22734315f3a1(jetbrains.mps.textGenTest.test2.package2)">
-    <nodeInfo nodeId="1440921264474787841" fileName="Class3.java" startLine="6" startPosition="21" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Class3#()V" />
-    <nodeInfo nodeId="1440921264474787849" fileName="Class3.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="method#()V" />
+    <nodeInfo nodeId="1440921264474787841" fileName="Class3.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Class3#()V" />
+    <nodeInfo nodeId="1440921264474787849" fileName="Class3.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="method#()V" />
     <scopeInfo nodeId="1440921264474787844" fileName="Class3.java" startLine="7" startPosition="19" endLine="7" endPosition="19" />
     <scopeInfo nodeId="1440921264474787852" fileName="Class3.java" startLine="10" startPosition="31" endLine="10" endPosition="31" />
-    <scopeInfo nodeId="1440921264474787841" fileName="Class3.java" startLine="6" startPosition="21" endLine="8" endPosition="3" />
-    <scopeInfo nodeId="1440921264474787849" fileName="Class3.java" startLine="9" startPosition="0" endLine="12" endPosition="0" />
+    <scopeInfo nodeId="1440921264474787841" fileName="Class3.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
+    <scopeInfo nodeId="1440921264474787849" fileName="Class3.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
     <unitInfo nodeId="1440921264474787839" fileName="Class3.java" startLine="6" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.textGenTest.test2.package2.Class3" />
   </root>
 </debugInfo>

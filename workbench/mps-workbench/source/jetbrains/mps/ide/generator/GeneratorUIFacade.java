@@ -37,10 +37,9 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.ModelCommandExecutor.RunnableWithProgress;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
 import java.util.*;
 
 /**
@@ -73,10 +72,10 @@ public class GeneratorUIFacade {
    * @return false if canceled
    */
   public boolean generateModels(final IOperationContext operationContext,
-                                final List<SModelDescriptor> inputModels,
-                                final IGenerationHandler generationHandler,
-                                boolean rebuildAll,
-                                boolean skipRequirementsGeneration) {
+                  final List<SModelDescriptor> inputModels,
+                  final IGenerationHandler generationHandler,
+                  boolean rebuildAll,
+                  boolean skipRequirementsGeneration) {
     return generateModelsWithProgressWindow(operationContext, inputModels, generationHandler, rebuildAll, skipRequirementsGeneration);
   }
 
@@ -84,9 +83,9 @@ public class GeneratorUIFacade {
    * @return false if canceled
    */
   private boolean generateModelsWithProgressWindow(final IOperationContext invocationContext,
-                                                   final List<SModelDescriptor> inputModels,
-                                                   final IGenerationHandler generationHandler,
-                                                   final boolean rebuildAll, boolean skipRequirementsGeneration) {
+                           final List<SModelDescriptor> inputModels,
+                           final IGenerationHandler generationHandler,
+                           final boolean rebuildAll, boolean skipRequirementsGeneration) {
     if (inputModels.isEmpty()) return true;
 
     final Project project = invocationContext.getProject();
@@ -213,17 +212,14 @@ public class GeneratorUIFacade {
           @Override
           public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
             if (!sm.isGeneratable()) return null;
-            if (!(sm instanceof EditableSModelDescriptor)) {
-              String hash = sm.getModelHash();
-              return hash != null ? Collections.singletonMap(ModelDigestHelper.FILE, hash) : null;
+
+            Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm.getSource(), operationContext);
+            if (generationHashes != null) {
+              return generationHashes;
             }
-            EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
 
-            if (!(esm instanceof DefaultSModelDescriptor)) return null;
-            IFile modelFile = ((DefaultSModelDescriptor) esm).getModelFile();
-            if (modelFile == null) return null;
-
-            return ModelDigestHelper.getInstance().getGenerationHashes(modelFile, operationContext);
+            String hash = sm.getModelHash();
+            return hash != null ? Collections.singletonMap(ModelDigestHelper.FILE, hash) : null;
           }
 
           @Override

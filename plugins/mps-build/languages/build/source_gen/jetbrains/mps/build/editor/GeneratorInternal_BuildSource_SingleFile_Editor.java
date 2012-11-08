@@ -22,7 +22,7 @@ public class GeneratorInternal_BuildSource_SingleFile_Editor extends DefaultNode
   }
 
   private EditorCell createConstant_1p6igx_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "file");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "file");
     editorCell.setCellId("Constant_1p6igx_a0");
     editorCell.setDefaultText("");
     return editorCell;

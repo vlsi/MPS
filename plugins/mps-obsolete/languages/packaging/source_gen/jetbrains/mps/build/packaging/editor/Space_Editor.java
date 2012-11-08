@@ -17,7 +17,7 @@ public class Space_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_mfe9ab_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "\\s");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\\s");
     editorCell.setCellId("Constant_mfe9ab_a");
     {
       Style style = editorCell.getStyle();

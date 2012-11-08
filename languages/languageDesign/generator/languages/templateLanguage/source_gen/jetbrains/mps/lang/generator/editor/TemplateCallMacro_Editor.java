@@ -146,7 +146,7 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nnob7w_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "$CALL$");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$CALL$");
     editorCell.setCellId("Constant_nnob7w_a0");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     if (true) {
@@ -159,7 +159,7 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nnob7w_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "template-call-macro");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "template-call-macro");
     editorCell.setCellId("Constant_nnob7w_a0_0");
     {
       Style style = editorCell.getStyle();
@@ -172,7 +172,7 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nnob7w_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_nnob7w_b0");
     {
       Style style = editorCell.getStyle();
@@ -183,14 +183,14 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nnob7w_a0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "comment");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
     editorCell.setCellId("Constant_nnob7w_a0c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_nnob7w_b0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_nnob7w_b0c0");
     {
       Style style = editorCell.getStyle();
@@ -201,14 +201,14 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nnob7w_a1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapping label");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_nnob7w_a1c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_nnob7w_b1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_nnob7w_b1c0");
     {
       Style style = editorCell.getStyle();
@@ -219,7 +219,7 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nnob7w_a2c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapped node");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapped node");
     editorCell.setCellId("Constant_nnob7w_a2c0");
     {
       Style style = editorCell.getStyle();
@@ -230,7 +230,7 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nnob7w_b2c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_nnob7w_b2c0");
     {
       Style style = editorCell.getStyle();
@@ -241,7 +241,7 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nnob7w_d2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_nnob7w_d2a");
     {
       Style style = editorCell.getStyle();
@@ -252,7 +252,7 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nnob7w_a4c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "call template");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "call template");
     editorCell.setCellId("Constant_nnob7w_a4c0");
     {
       Style style = editorCell.getStyle();
@@ -263,7 +263,7 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nnob7w_b4c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_nnob7w_b4c0");
     {
       Style style = editorCell.getStyle();

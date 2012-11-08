@@ -74,7 +74,7 @@ public class Node_GetChildrenOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_q8cg0u_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "The 'children' operation");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "The 'children' operation");
     editorCell.setCellId("Constant_q8cg0u_a0a");
     {
       Style style = editorCell.getStyle();
@@ -86,14 +86,14 @@ public class Node_GetChildrenOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_q8cg0u_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_q8cg0u_b0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_q8cg0u_a2a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Returns children of this node optionally specified by");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Returns children of this node optionally specified by");
     editorCell.setCellId("Constant_q8cg0u_a2a0");
     {
       Style style = editorCell.getStyle();
@@ -104,14 +104,14 @@ public class Node_GetChildrenOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_q8cg0u_b2a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "linkQualifier");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "linkQualifier");
     editorCell.setCellId("Constant_q8cg0u_b2a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_q8cg0u_c2a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "parameter");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameter");
     editorCell.setCellId("Constant_q8cg0u_c2a0");
     {
       Style style = editorCell.getStyle();
@@ -122,14 +122,14 @@ public class Node_GetChildrenOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_q8cg0u_d0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_q8cg0u_d0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_q8cg0u_e0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Parameter:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Parameter:");
     editorCell.setCellId("Constant_q8cg0u_e0a");
     {
       Style style = editorCell.getStyle();
@@ -140,14 +140,14 @@ public class Node_GetChildrenOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_q8cg0u_a5a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "linkQualifier");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "linkQualifier");
     editorCell.setCellId("Constant_q8cg0u_a5a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_q8cg0u_b5a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "LinkDeclaration of corresponding child reference");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "LinkDeclaration of corresponding child reference");
     editorCell.setCellId("Constant_q8cg0u_b5a0");
     {
       Style style = editorCell.getStyle();

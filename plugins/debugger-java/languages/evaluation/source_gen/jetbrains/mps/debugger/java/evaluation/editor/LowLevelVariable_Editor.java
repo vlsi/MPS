@@ -53,7 +53,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_f5bzsg_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_f5bzsg_a2a");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -61,7 +61,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_f5bzsg_d2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_f5bzsg_d2a");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -69,7 +69,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_f5bzsg_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(out of scope)");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(out of scope)");
     editorCell.setCellId("Constant_f5bzsg_d0");
     {
       Style style = editorCell.getStyle();

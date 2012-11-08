@@ -104,12 +104,12 @@
     <nodeInfo nodeId="1197710647421" fileName="QueriesGenerated.java" startLine="307" startPosition="169" endLine="308" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197710602406" fileName="QueriesGenerated.java" startLine="308" startPosition="70" endLine="309" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197710530132" fileName="QueriesGenerated.java" startLine="312" startPosition="57" endLine="313" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225096926382" fileName="QueriesGenerated.java" startLine="291" startPosition="284" endLine="295" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1225096926382" fileName="QueriesGenerated.java" startLine="292" startPosition="0" endLine="295" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="1197710512781" fileName="QueriesGenerated.java" startLine="290" startPosition="151" endLine="295" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1175170178383" fileName="QueriesGenerated.java" startLine="96" startPosition="208" endLine="97" endPosition="145" />
     <scopeInfo nodeId="1225096926385" fileName="QueriesGenerated.java" startLine="292" startPosition="45" endLine="293" endPosition="108" />
     <scopeInfo nodeId="1197710530131" fileName="QueriesGenerated.java" startLine="312" startPosition="57" endLine="313" endPosition="71" />
-    <scopeInfo nodeId="1225096926382" fileName="QueriesGenerated.java" startLine="291" startPosition="284" endLine="295" endPosition="0">
+    <scopeInfo nodeId="1225096926382" fileName="QueriesGenerated.java" startLine="292" startPosition="0" endLine="295" endPosition="0">
       <varInfo nodeId="1225096926382" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="1197710485643" fileName="QueriesGenerated.java" startLine="289" startPosition="33" endLine="295" endPosition="30">
@@ -136,17 +136,17 @@
     <nodeInfo nodeId="1178974734718" fileName="TreePathAspectUtil.java" startLine="42" startPosition="5" endLine="43" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1179164669101" fileName="TreePathAspectUtil.java" startLine="26" startPosition="85" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1225096928291" fileName="TreePathAspectUtil.java" startLine="35" startPosition="33" endLine="38" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225096928277" fileName="TreePathAspectUtil.java" startLine="32" startPosition="123" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1225096928277" fileName="TreePathAspectUtil.java" startLine="33" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="1178975693306" fileName="TreePathAspectUtil.java" startLine="31" startPosition="170" endLine="41" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1178974614588" fileName="TreePathAspectUtil.java" startLine="24" startPosition="111" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1178974554507" fileName="TreePathAspectUtil.java" startLine="21" startPosition="33" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getTreePathAspects#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;)Ljava/util/List;" />
+    <nodeInfo nodeId="1178974554507" fileName="TreePathAspectUtil.java" startLine="22" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getTreePathAspects#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;)Ljava/util/List;" />
     <scopeInfo nodeId="1179164669102" fileName="TreePathAspectUtil.java" startLine="27" startPosition="132" endLine="28" endPosition="85" />
     <scopeInfo nodeId="1225096928292" fileName="TreePathAspectUtil.java" startLine="36" startPosition="31" endLine="37" endPosition="107" />
     <scopeInfo nodeId="1225096928280" fileName="TreePathAspectUtil.java" startLine="33" startPosition="41" endLine="39" endPosition="24">
       <varInfo nodeId="1225096928288" varName="result" />
       <varInfo nodeId="1225096928282" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="1225096928277" fileName="TreePathAspectUtil.java" startLine="32" startPosition="123" endLine="41" endPosition="0">
+    <scopeInfo nodeId="1225096928277" fileName="TreePathAspectUtil.java" startLine="33" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="1225096928277" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="1178974614590" fileName="TreePathAspectUtil.java" startLine="25" startPosition="34" endLine="41" endPosition="10">
@@ -158,7 +158,7 @@
       <varInfo nodeId="1178975568242" varName="expType" />
       <varInfo nodeId="1178974698709" varName="treePathAspects" />
     </scopeInfo>
-    <scopeInfo nodeId="1178974554507" fileName="TreePathAspectUtil.java" startLine="21" startPosition="33" endLine="45" endPosition="0">
+    <scopeInfo nodeId="1178974554507" fileName="TreePathAspectUtil.java" startLine="22" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="1178974581903" varName="expression" />
       <varInfo nodeId="1178974593898" varName="scope" />
     </scopeInfo>
@@ -243,13 +243,13 @@
     <nodeInfo nodeId="1199896301700" fileName="TraversalAxisUtil.java" startLine="112" startPosition="63" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
     <nodeInfo nodeId="1199801718469" fileName="TraversalAxisUtil.java" startLine="137" startPosition="61" endLine="159" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
     <nodeInfo nodeId="1199808477904" fileName="TraversalAxisUtil.java" startLine="162" startPosition="57" endLine="184" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="1179161831408" fileName="TraversalAxisUtil.java" startLine="11" startPosition="32" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getOperationSign#(Ljetbrains/mps/ypath/runtime/TraversalAxis;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7098165822328196765" fileName="TraversalAxisUtil.java" startLine="36" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isAbbreviated#(Ljetbrains/mps/ypath/runtime/TraversalAxis;)Z" />
-    <nodeInfo nodeId="1199384095556" fileName="TraversalAxisUtil.java" startLine="61" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isAcceptableFeatureForAxis#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/ypath/runtime/TraversalAxis;)Z" />
-    <nodeInfo nodeId="1199895409190" fileName="TraversalAxisUtil.java" startLine="86" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isUsingOpposite#(Ljetbrains/mps/ypath/runtime/TraversalAxis;)Z" />
-    <nodeInfo nodeId="1199896301696" fileName="TraversalAxisUtil.java" startLine="111" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getOpposite#(Ljetbrains/mps/ypath/runtime/TraversalAxis;)Ljetbrains/mps/ypath/runtime/TraversalAxis;" />
-    <nodeInfo nodeId="1199801597865" fileName="TraversalAxisUtil.java" startLine="136" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isIncludingSelf#(Ljetbrains/mps/ypath/runtime/TraversalAxis;)Z" />
-    <nodeInfo nodeId="1199808477900" fileName="TraversalAxisUtil.java" startLine="161" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isSelfFirst#(Ljetbrains/mps/ypath/runtime/TraversalAxis;)Z" />
+    <nodeInfo nodeId="1179161831408" fileName="TraversalAxisUtil.java" startLine="12" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getOperationSign#(Ljetbrains/mps/ypath/runtime/TraversalAxis;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7098165822328196765" fileName="TraversalAxisUtil.java" startLine="37" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isAbbreviated#(Ljetbrains/mps/ypath/runtime/TraversalAxis;)Z" />
+    <nodeInfo nodeId="1199384095556" fileName="TraversalAxisUtil.java" startLine="62" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isAcceptableFeatureForAxis#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/ypath/runtime/TraversalAxis;)Z" />
+    <nodeInfo nodeId="1199895409190" fileName="TraversalAxisUtil.java" startLine="87" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isUsingOpposite#(Ljetbrains/mps/ypath/runtime/TraversalAxis;)Z" />
+    <nodeInfo nodeId="1199896301696" fileName="TraversalAxisUtil.java" startLine="112" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getOpposite#(Ljetbrains/mps/ypath/runtime/TraversalAxis;)Ljetbrains/mps/ypath/runtime/TraversalAxis;" />
+    <nodeInfo nodeId="1199801597865" fileName="TraversalAxisUtil.java" startLine="137" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isIncludingSelf#(Ljetbrains/mps/ypath/runtime/TraversalAxis;)Z" />
+    <nodeInfo nodeId="1199808477900" fileName="TraversalAxisUtil.java" startLine="162" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isSelfFirst#(Ljetbrains/mps/ypath/runtime/TraversalAxis;)Z" />
     <scopeInfo nodeId="1199385395753" fileName="TraversalAxisUtil.java" startLine="14" startPosition="21" endLine="15" endPosition="31" />
     <scopeInfo nodeId="1199385403684" fileName="TraversalAxisUtil.java" startLine="16" startPosition="20" endLine="17" endPosition="20" />
     <scopeInfo nodeId="1199385414941" fileName="TraversalAxisUtil.java" startLine="18" startPosition="23" endLine="19" endPosition="33" />
@@ -327,26 +327,26 @@
     <scopeInfo nodeId="1199896301699" fileName="TraversalAxisUtil.java" startLine="112" startPosition="63" endLine="134" endPosition="5" />
     <scopeInfo nodeId="1199801597868" fileName="TraversalAxisUtil.java" startLine="137" startPosition="61" endLine="159" endPosition="5" />
     <scopeInfo nodeId="1199808477903" fileName="TraversalAxisUtil.java" startLine="162" startPosition="57" endLine="184" endPosition="5" />
-    <scopeInfo nodeId="1179161831408" fileName="TraversalAxisUtil.java" startLine="11" startPosition="32" endLine="36" endPosition="0">
+    <scopeInfo nodeId="1179161831408" fileName="TraversalAxisUtil.java" startLine="12" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="1179161879728" varName="axis" />
     </scopeInfo>
-    <scopeInfo nodeId="7098165822328196765" fileName="TraversalAxisUtil.java" startLine="36" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="7098165822328196765" fileName="TraversalAxisUtil.java" startLine="37" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="7098165822328196812" varName="axis" />
     </scopeInfo>
-    <scopeInfo nodeId="1199384095556" fileName="TraversalAxisUtil.java" startLine="61" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="1199384095556" fileName="TraversalAxisUtil.java" startLine="62" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="1199384118911" varName="axis" />
       <varInfo nodeId="1199384116484" varName="feature" />
     </scopeInfo>
-    <scopeInfo nodeId="1199895409190" fileName="TraversalAxisUtil.java" startLine="86" startPosition="0" endLine="111" endPosition="0">
+    <scopeInfo nodeId="1199895409190" fileName="TraversalAxisUtil.java" startLine="87" startPosition="0" endLine="111" endPosition="0">
       <varInfo nodeId="1199895409237" varName="axis" />
     </scopeInfo>
-    <scopeInfo nodeId="1199896301696" fileName="TraversalAxisUtil.java" startLine="111" startPosition="0" endLine="136" endPosition="0">
+    <scopeInfo nodeId="1199896301696" fileName="TraversalAxisUtil.java" startLine="112" startPosition="0" endLine="136" endPosition="0">
       <varInfo nodeId="1199896301744" varName="axis" />
     </scopeInfo>
-    <scopeInfo nodeId="1199801597865" fileName="TraversalAxisUtil.java" startLine="136" startPosition="0" endLine="161" endPosition="0">
+    <scopeInfo nodeId="1199801597865" fileName="TraversalAxisUtil.java" startLine="137" startPosition="0" endLine="161" endPosition="0">
       <varInfo nodeId="1199801731100" varName="axis" />
     </scopeInfo>
-    <scopeInfo nodeId="1199808477900" fileName="TraversalAxisUtil.java" startLine="161" startPosition="0" endLine="186" endPosition="0">
+    <scopeInfo nodeId="1199808477900" fileName="TraversalAxisUtil.java" startLine="162" startPosition="0" endLine="186" endPosition="0">
       <varInfo nodeId="1199808477947" varName="axis" />
     </scopeInfo>
     <unitInfo nodeId="1179161788761" fileName="TraversalAxisUtil.java" startLine="11" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.ypath.actions.TraversalAxisUtil" />
@@ -384,13 +384,16 @@
     <nodeInfo nodeId="1225096925935" fileName="QueriesGenerated.java" startLine="339" startPosition="45" endLine="343" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197904851746" fileName="QueriesGenerated.java" startLine="365" startPosition="45" endLine="369" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197904874005" fileName="QueriesGenerated.java" startLine="378" startPosition="45" endLine="382" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225096925931" fileName="QueriesGenerated.java" startLine="338" startPosition="233" endLine="345" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1225096925931" fileName="QueriesGenerated.java" startLine="339" startPosition="0" endLine="345" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="1197904829515" fileName="QueriesGenerated.java" startLine="337" startPosition="123" endLine="348" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="1197904829532" fileName="QueriesGenerated.java" startLine="345" startPosition="15" endLine="347" endPosition="95" />
     <scopeInfo nodeId="1225096925934" fileName="QueriesGenerated.java" startLine="339" startPosition="45" endLine="343" endPosition="17" />
     <scopeInfo nodeId="1197904818276" fileName="QueriesGenerated.java" startLine="356" startPosition="53" endLine="360" endPosition="44">
       <varInfo nodeId="1197904890302" varName="fe" />
       <varInfo nodeId="1197904890309" varName="mu" />
+    </scopeInfo>
+    <scopeInfo nodeId="1225096925931" fileName="QueriesGenerated.java" startLine="339" startPosition="0" endLine="345" endPosition="0">
+      <varInfo nodeId="1225096925931" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="1197904848977" fileName="QueriesGenerated.java" startLine="363" startPosition="57" endLine="369" endPosition="14">
       <varInfo nodeId="1197904851732" varName="fe" />
@@ -399,9 +402,6 @@
     <scopeInfo nodeId="1197904871528" fileName="QueriesGenerated.java" startLine="376" startPosition="60" endLine="382" endPosition="14">
       <varInfo nodeId="1197904873992" varName="fe" />
       <varInfo nodeId="1197904873999" varName="mu" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225096925931" fileName="QueriesGenerated.java" startLine="338" startPosition="233" endLine="345" endPosition="0">
-      <varInfo nodeId="1225096925931" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="1197904829515" fileName="QueriesGenerated.java" startLine="337" startPosition="123" endLine="348" endPosition="11">
       <varInfo nodeId="1197904829516" varName="fe" />
@@ -487,8 +487,8 @@
     <nodeInfo nodeId="1198056176820" fileName="QueriesGenerated.java" startLine="409" startPosition="104" endLine="412" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1198056283530" fileName="QueriesGenerated.java" startLine="436" startPosition="68" endLine="439" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" />
     <nodeInfo nodeId="1198056283541" fileName="QueriesGenerated.java" startLine="440" startPosition="20" endLine="443" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225096925112" fileName="QueriesGenerated.java" startLine="522" startPosition="284" endLine="526" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1225096926623" fileName="QueriesGenerated.java" startLine="560" startPosition="284" endLine="564" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1225096925112" fileName="QueriesGenerated.java" startLine="523" startPosition="0" endLine="526" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1225096926623" fileName="QueriesGenerated.java" startLine="561" startPosition="0" endLine="564" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="1198056220487" fileName="QueriesGenerated.java" startLine="458" startPosition="20" endLine="463" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1198056250013" fileName="QueriesGenerated.java" startLine="482" startPosition="20" endLine="487" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1198013650670" fileName="QueriesGenerated.java" startLine="521" startPosition="151" endLine="526" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -537,14 +537,14 @@
       <varInfo nodeId="1198056176821" varName="pw" />
     </scopeInfo>
     <scopeInfo nodeId="1198056283529" fileName="QueriesGenerated.java" startLine="436" startPosition="68" endLine="439" endPosition="18" />
-    <scopeInfo nodeId="1198013650627" fileName="QueriesGenerated.java" startLine="497" startPosition="51" endLine="501" endPosition="24">
-      <varInfo nodeId="1198013650629" varName="tpoExp" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225096925112" fileName="QueriesGenerated.java" startLine="522" startPosition="284" endLine="526" endPosition="0">
+    <scopeInfo nodeId="1225096925112" fileName="QueriesGenerated.java" startLine="523" startPosition="0" endLine="526" endPosition="0">
       <varInfo nodeId="1225096925112" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1225096926623" fileName="QueriesGenerated.java" startLine="560" startPosition="284" endLine="564" endPosition="0">
+    <scopeInfo nodeId="1225096926623" fileName="QueriesGenerated.java" startLine="561" startPosition="0" endLine="564" endPosition="0">
       <varInfo nodeId="1225096926623" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1198013650627" fileName="QueriesGenerated.java" startLine="497" startPosition="51" endLine="501" endPosition="24">
+      <varInfo nodeId="1198013650629" varName="tpoExp" />
     </scopeInfo>
     <scopeInfo nodeId="1198013650772" fileName="QueriesGenerated.java" startLine="571" startPosition="53" endLine="575" endPosition="26">
       <varInfo nodeId="1198013650787" varName="mdpo" />

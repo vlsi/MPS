@@ -36,7 +36,7 @@ public class BuildVariableMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cnoc6t_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "var");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "var");
     editorCell.setCellId("Constant_cnoc6t_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -49,7 +49,7 @@ public class BuildVariableMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cnoc6t_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_cnoc6t_c0");
     editorCell.setDefaultText("");
     return editorCell;

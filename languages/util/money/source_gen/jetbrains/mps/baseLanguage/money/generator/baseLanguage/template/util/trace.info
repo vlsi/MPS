@@ -37,11 +37,11 @@
     <nodeInfo nodeId="1197379725544" fileName="Util.java" startLine="95" startPosition="170" endLine="96" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197379725544" fileName="Util.java" startLine="96" startPosition="43" endLine="97" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197379725544" fileName="Util.java" startLine="98" startPosition="7" endLine="99" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7383406024685217858" fileName="Util.java" startLine="13" startPosition="19" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Util#()V" />
-    <nodeInfo nodeId="1197379725523" fileName="Util.java" startLine="35" startPosition="52" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_sd8x_a1a0a2a0#()V" />
-    <nodeInfo nodeId="1197379725540" fileName="Util.java" startLine="52" startPosition="54" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_sd8x_a1a0a2a0_0#()V" />
-    <nodeInfo nodeId="1197379725542" fileName="Util.java" startLine="69" startPosition="52" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_sd8x_a1a0a2a1#()V" />
-    <nodeInfo nodeId="1197379725544" fileName="Util.java" startLine="86" startPosition="54" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_sd8x_a1a0a2a1_0#()V" />
+    <nodeInfo nodeId="7383406024685217858" fileName="Util.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Util#()V" />
+    <nodeInfo nodeId="1197379725523" fileName="Util.java" startLine="36" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_sd8x_a1a0a2a0#()V" />
+    <nodeInfo nodeId="1197379725540" fileName="Util.java" startLine="53" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_sd8x_a1a0a2a0_0#()V" />
+    <nodeInfo nodeId="1197379725542" fileName="Util.java" startLine="70" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_sd8x_a1a0a2a1#()V" />
+    <nodeInfo nodeId="1197379725544" fileName="Util.java" startLine="87" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_sd8x_a1a0a2a1_0#()V" />
     <nodeInfo nodeId="1187347960654" fileName="Util.java" startLine="19" startPosition="111" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1187348834661" fileName="Util.java" startLine="28" startPosition="111" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1197379725523" fileName="Util.java" startLine="42" startPosition="32" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -52,12 +52,12 @@
     <nodeInfo nodeId="1197379725542" fileName="Util.java" startLine="76" startPosition="32" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1197379725544" fileName="Util.java" startLine="93" startPosition="32" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1197379725544" fileName="Util.java" startLine="93" startPosition="32" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1187345082782" fileName="Util.java" startLine="16" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isPlusMinusExpressionMoneyExpression#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1187348734513" fileName="Util.java" startLine="25" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isMulDivExpressionMoneyExpression#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1197379725523" fileName="Util.java" startLine="38" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1197379725540" fileName="Util.java" startLine="55" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1197379725542" fileName="Util.java" startLine="72" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1197379725544" fileName="Util.java" startLine="89" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1187345082782" fileName="Util.java" startLine="17" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isPlusMinusExpressionMoneyExpression#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1187348734513" fileName="Util.java" startLine="26" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isMulDivExpressionMoneyExpression#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1197379725523" fileName="Util.java" startLine="39" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1197379725540" fileName="Util.java" startLine="56" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1197379725542" fileName="Util.java" startLine="73" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1197379725544" fileName="Util.java" startLine="90" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="7383406024685217860" fileName="Util.java" startLine="14" startPosition="17" endLine="14" endPosition="17" />
     <scopeInfo nodeId="1197379725523" fileName="Util.java" startLine="36" startPosition="43" endLine="36" endPosition="43" />
     <scopeInfo nodeId="1197379725540" fileName="Util.java" startLine="53" startPosition="45" endLine="53" endPosition="45" />
@@ -65,11 +65,11 @@
     <scopeInfo nodeId="1197379725544" fileName="Util.java" startLine="87" startPosition="45" endLine="87" endPosition="45" />
     <scopeInfo nodeId="1187347960655" fileName="Util.java" startLine="20" startPosition="253" endLine="21" endPosition="18" />
     <scopeInfo nodeId="1187348834662" fileName="Util.java" startLine="29" startPosition="253" endLine="30" endPosition="18" />
-    <scopeInfo nodeId="7383406024685217858" fileName="Util.java" startLine="13" startPosition="19" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1197379725523" fileName="Util.java" startLine="35" startPosition="52" endLine="37" endPosition="5" />
-    <scopeInfo nodeId="1197379725540" fileName="Util.java" startLine="52" startPosition="54" endLine="54" endPosition="5" />
-    <scopeInfo nodeId="1197379725542" fileName="Util.java" startLine="69" startPosition="52" endLine="71" endPosition="5" />
-    <scopeInfo nodeId="1197379725544" fileName="Util.java" startLine="86" startPosition="54" endLine="88" endPosition="5" />
+    <scopeInfo nodeId="7383406024685217858" fileName="Util.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="1197379725523" fileName="Util.java" startLine="36" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1197379725540" fileName="Util.java" startLine="53" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="1197379725542" fileName="Util.java" startLine="70" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="1197379725544" fileName="Util.java" startLine="87" startPosition="0" endLine="89" endPosition="0" />
     <scopeInfo nodeId="1197379725523" fileName="Util.java" startLine="43" startPosition="7" endLine="46" endPosition="31">
       <varInfo nodeId="1197379725523" varName="quotedNode1_2" />
     </scopeInfo>
@@ -94,10 +94,10 @@
       <varInfo nodeId="1187352032278" varName="ltype" />
       <varInfo nodeId="1187352032270" varName="rtype" />
     </scopeInfo>
-    <scopeInfo nodeId="1187345082782" fileName="Util.java" startLine="16" startPosition="0" endLine="25" endPosition="0">
+    <scopeInfo nodeId="1187345082782" fileName="Util.java" startLine="17" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="1187345199673" varName="expr" />
     </scopeInfo>
-    <scopeInfo nodeId="1187348734513" fileName="Util.java" startLine="25" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="1187348734513" fileName="Util.java" startLine="26" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="1187348820111" varName="expr" />
     </scopeInfo>
     <scopeInfo nodeId="1197379725523" fileName="Util.java" startLine="39" startPosition="31" endLine="48" endPosition="20">
@@ -120,10 +120,10 @@
       <varInfo nodeId="1197379725544" varName="quotedNode_1" />
       <varInfo nodeId="1197379725544" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1197379725523" fileName="Util.java" startLine="38" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="1197379725540" fileName="Util.java" startLine="55" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="1197379725542" fileName="Util.java" startLine="72" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="1197379725544" fileName="Util.java" startLine="89" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="1197379725523" fileName="Util.java" startLine="39" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1197379725540" fileName="Util.java" startLine="56" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1197379725542" fileName="Util.java" startLine="73" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="1197379725544" fileName="Util.java" startLine="90" startPosition="0" endLine="101" endPosition="0" />
     <unitInfo nodeId="1197379725523" fileName="Util.java" startLine="35" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.generator.baseLanguage.template.util.Util$QuotationClass_sd8x_a1a0a2a0" />
     <unitInfo nodeId="1197379725540" fileName="Util.java" startLine="52" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.generator.baseLanguage.template.util.Util$QuotationClass_sd8x_a1a0a2a0_0" />
     <unitInfo nodeId="1197379725542" fileName="Util.java" startLine="69" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.generator.baseLanguage.template.util.Util$QuotationClass_sd8x_a1a0a2a1" />

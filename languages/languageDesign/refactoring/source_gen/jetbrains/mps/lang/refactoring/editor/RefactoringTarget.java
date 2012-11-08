@@ -56,7 +56,7 @@ public class RefactoringTarget extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_l747zs_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "allow multiple:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "allow multiple:");
     editorCell.setCellId("Constant_l747zs_a0a");
     editorCell.setDefaultText("");
     return editorCell;

@@ -36,7 +36,7 @@ public class BuildMps_ModuleDependencyOnModule_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_2jl94m_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(reexport)");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(reexport)");
     editorCell.setCellId("Constant_2jl94m_b0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     delete_moduleDepReexport.setCellActions(editorCell, node, editorContext);

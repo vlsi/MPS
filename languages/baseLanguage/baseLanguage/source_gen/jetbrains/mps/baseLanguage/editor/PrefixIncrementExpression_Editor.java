@@ -30,7 +30,7 @@ public class PrefixIncrementExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_d3u5ln_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "++");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "++");
     editorCell.setCellId("Constant_d3u5ln_a0");
     {
       Style style = editorCell.getStyle();

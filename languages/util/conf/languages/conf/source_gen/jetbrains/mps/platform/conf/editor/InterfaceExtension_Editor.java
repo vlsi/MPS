@@ -58,7 +58,7 @@ public class InterfaceExtension_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4lf1wj_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "implementation:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "implementation:");
     editorCell.setCellId("Constant_4lf1wj_a1a");
     editorCell.setDefaultText("");
     return editorCell;

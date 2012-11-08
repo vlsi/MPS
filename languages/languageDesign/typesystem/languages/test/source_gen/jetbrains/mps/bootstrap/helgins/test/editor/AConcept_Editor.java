@@ -27,7 +27,7 @@ public class AConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ngw44y_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "ACONCEPT");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ACONCEPT");
     editorCell.setCellId("Constant_ngw44y_a0");
     editorCell.setDefaultText("");
     return editorCell;

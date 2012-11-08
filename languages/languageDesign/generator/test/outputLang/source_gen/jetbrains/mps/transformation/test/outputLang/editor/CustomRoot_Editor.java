@@ -28,14 +28,14 @@ public class CustomRoot_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_olleho_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "My custom root");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "My custom root");
     editorCell.setCellId("Constant_olleho_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_olleho_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_olleho_b0");
     editorCell.setDefaultText("");
     return editorCell;

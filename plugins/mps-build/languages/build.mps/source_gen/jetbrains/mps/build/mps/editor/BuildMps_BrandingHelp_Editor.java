@@ -47,7 +47,7 @@ public class BuildMps_BrandingHelp_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_r7vwah_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "help");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "help");
     editorCell.setCellId("Constant_r7vwah_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -59,7 +59,7 @@ public class BuildMps_BrandingHelp_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_r7vwah_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "file");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "file");
     editorCell.setCellId("Constant_r7vwah_a1a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -67,7 +67,7 @@ public class BuildMps_BrandingHelp_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_r7vwah_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "root");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "root");
     editorCell.setCellId("Constant_r7vwah_c1a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -75,7 +75,7 @@ public class BuildMps_BrandingHelp_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_r7vwah_e1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "url");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "url");
     editorCell.setCellId("Constant_r7vwah_e1a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

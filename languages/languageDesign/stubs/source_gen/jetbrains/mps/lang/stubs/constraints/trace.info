@@ -17,27 +17,27 @@
     <nodeInfo nodeId="562112407431570000" fileName="LanguageRef_Constraints.java" startLine="48" startPosition="0" endLine="49" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="52" startPosition="7" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="562112407431866959" fileName="LanguageRef_Constraints.java" startLine="56" startPosition="68" endLine="57" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="17" startPosition="72" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LanguageRef_Constraints#()V" />
+    <nodeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LanguageRef_Constraints#()V" />
     <nodeInfo nodeId="562112407431845227" fileName="LanguageRef_Constraints.java" startLine="34" startPosition="9" endLine="37" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="562112407431866972" fileName="LanguageRef_Constraints.java" startLine="39" startPosition="101" endLine="42" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="562112407431867001" fileName="LanguageRef_Constraints.java" startLine="44" startPosition="85" endLine="47" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="562112407431866959" fileName="LanguageRef_Constraints.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_bmor1l_a0a0b0b0a1a0b0a#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="25" startPosition="100" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnGetter#()Z" />
+    <nodeInfo nodeId="562112407431866959" fileName="LanguageRef_Constraints.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_bmor1l_a0a0b0b0a1a0b0a#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnGetter#()Z" />
     <nodeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="33" startPosition="47" endLine="50" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="30" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="31" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;)Ljava/lang/Object;" />
     <nodeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="24" startPosition="74" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="21" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
+    <nodeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="22" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
     <scopeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="18" startPosition="36" endLine="19" endPosition="60" />
     <scopeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="27" startPosition="37" endLine="28" endPosition="20" />
     <scopeInfo nodeId="562112407431845228" fileName="LanguageRef_Constraints.java" startLine="35" startPosition="98" endLine="36" endPosition="24" />
     <scopeInfo nodeId="562112407431866973" fileName="LanguageRef_Constraints.java" startLine="40" startPosition="33" endLine="41" endPosition="24" />
     <scopeInfo nodeId="562112407431867002" fileName="LanguageRef_Constraints.java" startLine="45" startPosition="31" endLine="46" endPosition="39" />
     <scopeInfo nodeId="562112407431866959" fileName="LanguageRef_Constraints.java" startLine="56" startPosition="68" endLine="57" endPosition="44" />
-    <scopeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="17" startPosition="72" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="562112407431866959" fileName="LanguageRef_Constraints.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="562112407431866959" fileName="LanguageRef_Constraints.java" startLine="56" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="562112407431866959" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="25" startPosition="100" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="562112407431569999" fileName="LanguageRef_Constraints.java" startLine="34" startPosition="9" endLine="49" endPosition="42">
       <varInfo nodeId="562112407431866990" varName="module" />
       <varInfo nodeId="562112407431866964" varName="moduleId" />
@@ -45,14 +45,14 @@
     <scopeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="32" startPosition="56" endLine="50" endPosition="9">
       <varInfo nodeId="562112407431569978" varName="propertyName" />
     </scopeInfo>
-    <scopeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="30" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="31" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="562112407431569978" varName="node" />
       <varInfo nodeId="562112407431569978" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="23" startPosition="82" endLine="53" endPosition="22">
       <varInfo nodeId="562112407431569978" varName="properties" />
     </scopeInfo>
-    <scopeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="21" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="22" startPosition="0" endLine="55" endPosition="0" />
     <unitInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="25" startPosition="41" endLine="52" endPosition="5" unitName="jetbrains.mps.lang.stubs.constraints.LanguageRef_Constraints$1" />
     <unitInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="17" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.stubs.constraints.LanguageRef_Constraints" />
   </root>

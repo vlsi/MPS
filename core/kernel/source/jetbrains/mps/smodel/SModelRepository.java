@@ -19,17 +19,19 @@ import gnu.trove.THashMap;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.persistence.DataSourceBase;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
-import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -47,8 +49,8 @@ public class SModelRepository implements CoreComponent {
   private final Map<SModelFqName, SModelDescriptor> myFqNameToModelDescriptorMap = new ConcurrentHashMap<SModelFqName, SModelDescriptor>();
 
   private final Object myModelsLock = new Object();
-  private final Map<SModelDescriptor, List<ModelOwner>> myModelsWithOwners = new THashMap<SModelDescriptor, List<ModelOwner>>();
-  private final Map<ModelOwner, Set<SModelDescriptor>> myModelsByOwner = new THashMap<ModelOwner, Set<SModelDescriptor>>();
+  private final Map<SModelDescriptor, SModule> myModelOwner = new THashMap<SModelDescriptor, SModule>();
+  private final Map<SModule, Set<SModelDescriptor>> myModelsByOwner = new THashMap<SModule, Set<SModelDescriptor>>();
 
   private final Object myListenersLock = new Object();
   private final List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
@@ -74,33 +76,30 @@ public class SModelRepository implements CoreComponent {
 
   //--------------------register/unregister----------------------
 
-  public void registerModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
+  public void registerModelDescriptor(SModelDescriptor modelDescriptor, SModule container) {
     synchronized (myModelsLock) {
-      List<ModelOwner> owners = myModelsWithOwners.get(modelDescriptor);
-      if (owners != null && owners.contains(owner)) return;
+      SModule prevModule = myModelOwner.get(modelDescriptor);
+      if (prevModule != null) {
+        if (prevModule != container) {
+          LOG.error("Model \"" + modelDescriptor.getModelName() + "\" is already registered by another module: existing=" + prevModule + ", new=" + container);
+        }
+        return;
+      }
 
       SModelReference modelReference = modelDescriptor.getSModelReference();
       SModelDescriptor registeredModel = getModelDescriptor(modelReference);
 
       LOG.assertLog(registeredModel == null || registeredModel == modelDescriptor,
-        "Another model \"" + modelReference + "\" is already registered for " + owner);
+        "Another model \"" + modelReference + "\" is already registered");
 
-      LOG.assertLog(owners == null || !owners.contains(owner),
-        "Another model \"" + modelReference + "\" is already registered for " + owner);
-
-      if (owners == null) {
-        owners = new ArrayList<ModelOwner>(1);
-        myModelsWithOwners.put(modelDescriptor, owners);
-      }
-
-      Set<SModelDescriptor> ownerModels = myModelsByOwner.get(owner);
+      Set<SModelDescriptor> ownerModels = myModelsByOwner.get(container);
       if (ownerModels == null) {
         ownerModels = new HashSet<SModelDescriptor>();
-        myModelsByOwner.put(owner, ownerModels);
+        myModelsByOwner.put(container, ownerModels);
       }
 
       ownerModels.add(modelDescriptor);
-      owners.add(owner);
+      myModelOwner.put(modelDescriptor, container);
 
       if (modelReference.getModelId() != null) {
         myIdToModelDescriptorMap.put(modelReference.getModelId(), modelDescriptor);
@@ -111,35 +110,30 @@ public class SModelRepository implements CoreComponent {
       if (modelReference.getSModelFqName() != null) {
         myFqNameToModelDescriptorMap.put(modelReference.getSModelFqName(), modelDescriptor);
       }
+      if (modelDescriptor instanceof BaseSModelDescriptor) {
+        ((BaseSModelDescriptor) modelDescriptor).attach();
+      }
       modelDescriptor.addModelListener(myModelsListener);
     }
     fireModelAdded(modelDescriptor);
   }
 
-  public void unRegisterModelDescriptor(SModelDescriptor md, ModelOwner owner) {
+  public void unRegisterModelDescriptor(SModelDescriptor md, SModule forModule) {
     synchronized (myModelsLock) {
-      List<ModelOwner> owners = myModelsWithOwners.get(md);
-      if (!owners.remove(owner)) throw new IllegalStateException();
-      Set<SModelDescriptor> ownerModels = myModelsByOwner.get(owner);
-      if (!ownerModels.remove(md)) throw new IllegalStateException();
-
-      if (owners.isEmpty()) {
-        removeModelDescriptor(md);
-      }
+      SModule owner = myModelOwner.get(md);
+      if (owner != forModule) throw new IllegalStateException();
+      removeModelDescriptor(md);
     }
   }
 
   public void removeModelDescriptor(SModelDescriptor md) {
     synchronized (myModelsLock) {
       fireBeforeModelRemoved(md);
-      List<ModelOwner> owners = myModelsWithOwners.get(md);
-      if (owners != null) {
-        for (ModelOwner owner : owners) {
-          Set<SModelDescriptor> ownerModels = myModelsByOwner.get(owner);
-          if (!ownerModels.remove(md)) throw new IllegalStateException();
-        }
-      }
-      myModelsWithOwners.remove(md);
+      SModule owner = myModelOwner.remove(md);
+      if (owner == null) throw new IllegalStateException();
+      Set<SModelDescriptor> ownerModels = myModelsByOwner.get(owner);
+      if (!ownerModels.remove(md)) throw new IllegalStateException();
+
       if (md.getSModelReference().getModelId() != null) {
         myIdToModelDescriptorMap.remove(md.getSModelReference().getModelId());
         if (md instanceof BaseSModelDescriptor) {
@@ -153,9 +147,9 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
-  public void unRegisterModelDescriptors(ModelOwner owner) {
-    for (SModelDescriptor sm : getModelDescriptors(owner)) {
-      unRegisterModelDescriptor(sm, owner);
+  public void unRegisterModelDescriptors(SModule module) {
+    for (SModelDescriptor sm : getModelDescriptors(module)) {
+      unRegisterModelDescriptor(sm, module);
     }
   }
 
@@ -165,16 +159,12 @@ public class SModelRepository implements CoreComponent {
     fireModelWillBeDeletedEvent(d);
     removeModelDescriptor(d);
 
-    if (d instanceof BaseSModelDescriptorWithSource) {
-      ModelDataSource source = ((BaseSModelDescriptorWithSource) d).getSource();
-      if (source instanceof FileBasedModelDataSource) {
-        for (String file: ((FileBasedModelDataSource) source).getFilesToListen()){
-          IFile modelFile = FileSystem.getInstance().getFileByPath(file);
+    DataSource source = d.getSource();
+    if (source instanceof FileDataSource) {
+      IFile modelFile = ((FileDataSource) source).getFile();
 
-          if (modelFile != null && modelFile.exists()) {
-            modelFile.delete();
-          }
-        }
+      if (modelFile != null && modelFile.exists()) {
+        modelFile.delete();
       }
     }
     SModelRepository.getInstance().fireModelDeletedEvent(d);
@@ -185,7 +175,7 @@ public class SModelRepository implements CoreComponent {
 
   public List<SModelDescriptor> getModelDescriptors() {
     synchronized (myModelsLock) {
-      return new ArrayList<SModelDescriptor>(myModelsWithOwners.keySet());
+      return new ArrayList<SModelDescriptor>(myModelOwner.keySet());
     }
   }
 
@@ -213,20 +203,17 @@ public class SModelRepository implements CoreComponent {
     return myIdToModelDescriptorMap.get(id);
   }
 
-  public List<SModelDescriptor> getModelDescriptors(ModelOwner modelOwner) {
+  public List<SModelDescriptor> getModelDescriptors(SModule module) {
     synchronized (myModelsLock) {
-      Set<SModelDescriptor> result = myModelsByOwner.get(modelOwner);
+      Set<SModelDescriptor> result = myModelsByOwner.get(module);
       if (result == null || result.size() == 0) return Collections.emptyList();
       return new ArrayList<SModelDescriptor>(result);
     }
   }
 
-  public Set<ModelOwner> getOwners(SModelDescriptor modelDescriptor) {
+  public SModule getOwner(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
     synchronized (myModelsLock) {
-      List<ModelOwner> modelOwners = myModelsWithOwners.get(modelDescriptor);
-      if (modelOwners == null || modelOwners.size() == 0) return Collections.emptySet();
-      if (modelOwners.size() == 1) return Collections.singleton(modelOwners.get(0));
-      return new HashSet<ModelOwner>(modelOwners);
+      return myModelOwner.get((SModelDescriptor) modelDescriptor);
     }
   }
 
@@ -235,7 +222,7 @@ public class SModelRepository implements CoreComponent {
 
   private List<EditableSModelDescriptor> getModelsToSave() {
     List<EditableSModelDescriptor> modelsToSave = new ArrayList<EditableSModelDescriptor>();
-    for (SModelDescriptor md : myModelsWithOwners.keySet()) {
+    for (SModelDescriptor md : myModelOwner.keySet()) {
       if (!(md instanceof EditableSModelDescriptor)) continue;
 
       EditableSModelDescriptor emd = ((EditableSModelDescriptor) md);
@@ -255,17 +242,10 @@ public class SModelRepository implements CoreComponent {
       modelsToRefresh = getModelsToSave();
     }
 
-    FileSystem fs = FileSystem.getInstance();
     for (EditableSModelDescriptor emd : modelsToRefresh) {
-      if (!(emd instanceof BaseSModelDescriptorWithSource)) return;
-
-      ModelDataSource source = ((BaseSModelDescriptorWithSource) emd).getSource();
-      if (!(source instanceof FileBasedModelDataSource)) continue;
-
-      Collection<String> files = ((FileBasedModelDataSource) source).getFilesToListen();
-      for (String file : files) {
-        fs.refresh(fs.getFileByPath(file));
-      }
+      DataSource source = emd.getSource();
+      if (!(source instanceof DataSourceBase)) continue;
+      ((DataSourceBase) source).refresh();
     }
 
     synchronized (myModelsLock) {

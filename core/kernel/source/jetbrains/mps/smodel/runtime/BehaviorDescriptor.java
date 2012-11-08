@@ -17,16 +17,20 @@ package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public interface BehaviorDescriptor {
-  public static final String VIRTUAL_METHOD_PREFIX = "virtual_";
-  public static final String NON_VIRTUAL_METHOD_PREFIX = "call_";
+  // remove prefixes to some other place? or rename?
+  public static final String VIRTUAL_METHOD_PREFIX = "virtual";
+  public static final String NON_VIRTUAL_METHOD_PREFIX = "call";
 
   String getConceptFqName();
 
   public void initNode(SNode node);
 
   public Object invoke(@NotNull SNode node, String methodName, Object[] parameters);
+
+  Object invokeStatic(@NotNull SConcept concept, String methodName, Object[] parameters);
 
   @Deprecated
   public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters);

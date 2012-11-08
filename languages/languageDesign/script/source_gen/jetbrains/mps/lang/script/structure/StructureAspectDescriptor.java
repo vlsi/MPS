@@ -18,7 +18,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.CommentMigrationScriptPart", "jetbrains.mps.lang.script.structure.MigrationScriptPart", false, new String[]{"jetbrains.mps.lang.script.structure.MigrationScriptPart"}, new String[]{"text"}, new String[]{});
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.ExtractInterfaceMigration", "jetbrains.mps.lang.script.structure.MigrationScriptPart", false, new String[]{"jetbrains.mps.lang.script.structure.MigrationScriptPart"}, new String[]{}, new String[]{"oldClassifier", "newClassifier"});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.ExtractInterfaceMigration", "jetbrains.mps.lang.script.structure.MigrationScriptPart", false, new String[]{"jetbrains.mps.lang.script.structure.MigrationScriptPart"}, new String[]{"updateClassifierTypes"}, new String[]{"oldClassifier", "newClassifier"});
       case 2:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.FactoryMigrationScriptPart", "jetbrains.mps.lang.script.structure.MigrationScriptPart", false, new String[]{"jetbrains.mps.lang.script.structure.MigrationScriptPart"}, new String[]{}, new String[]{});
       case 3:

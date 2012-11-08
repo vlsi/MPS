@@ -15,10 +15,14 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.IntelligentInputUtil;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
@@ -44,7 +48,7 @@ public class EditorCell_Property extends EditorCell_Label {
         listener.clearCleanlyReadAccessProperties();
       }
     }
-    EditorCell_Property result = new EditorCell_Property((EditorContext) editorContext, modelAccessor, node);
+    EditorCell_Property result = new EditorCell_Property(editorContext, modelAccessor, node);
     if (listener != null) {
       addPropertyDependenciesToEditor(listener, result);
     }
@@ -100,7 +104,7 @@ public class EditorCell_Property extends EditorCell_Label {
       if (myModelAccessor instanceof TransactionalModelAccessor) {
         ((TransactionalModelAccessor) myModelAccessor).commit();
         synchronizeViewWithModel();
-        getEditorContext().getNodeEditorComponent().relayout();
+        getEditor().relayout();
       }
     } finally {
       myCommitInProgress = false;

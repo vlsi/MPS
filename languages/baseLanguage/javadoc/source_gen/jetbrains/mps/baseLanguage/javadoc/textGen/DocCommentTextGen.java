@@ -16,7 +16,6 @@ public abstract class DocCommentTextGen {
   }
 
   public static void docCommentStart(SNode node, final SNodeTextGen textGen) {
-    textGen.appendNewLine();
     textGen.indentBuffer();
     textGen.append("/**");
 
@@ -59,5 +58,6 @@ public abstract class DocCommentTextGen {
     textGen.appendNewLine();
     textGen.indentBuffer();
     textGen.append(" */");
+    textGen.appendNewLine();
   }
 }

@@ -25,7 +25,7 @@ public class PlainText extends ModelRootManagerBase {
   @Override
   public Collection<SModelDescriptor> load(@NotNull SModelRoot modelRoot) {
     List<SModelDescriptor> res = ListSequence.fromList(new ArrayList<SModelDescriptor>());
-    ListSequence.fromList(res).addElement(new TextModelDescriptor(modelRoot.getModule(), new TextModelDataSource(PlainText.this.getRootDir(modelRoot), modelRoot.getModule().getModuleReference())));
+    ListSequence.fromList(res).addElement(new TextModelDescriptor(modelRoot.getModule(), new TextModelDataSource(PlainText.this.getRootDir(modelRoot), modelRoot)));
     return res;
   }
 
@@ -42,7 +42,7 @@ public class PlainText extends ModelRootManagerBase {
   @Override
   public SModelDescriptor createModel(@NotNull SModelRoot modelRoot, @NotNull SModelFqName fqName) {
     IFile dir = PlainText.this.getRootDir(modelRoot);
-    return new TextModelDescriptor(modelRoot.getModule(), new TextModelDataSource(dir, modelRoot.getModule().getModuleReference()));
+    return new TextModelDescriptor(modelRoot.getModule(), new TextModelDataSource(dir, modelRoot));
   }
 
   private IFile getRootDir(SModelRoot root) {

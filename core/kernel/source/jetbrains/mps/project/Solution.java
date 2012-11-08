@@ -21,8 +21,10 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
-import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.modules.*;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.smodel.LanguageID;
@@ -68,7 +70,7 @@ public class Solution extends ClassLoadingModule {
 
   /* TODO make package local, move to appropriate package */
   public Solution(SolutionDescriptor descriptor, IFile file) {
-    myDescriptorFile = file;
+    super(file);
     mySolutionDescriptor = descriptor;
     setModuleReference(descriptor.getModuleReference());
   }
@@ -82,7 +84,7 @@ public class Solution extends ClassLoadingModule {
   }
 
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
-    super.setModuleDescriptor(newDescriptor,reloadClasses);
+    super.setModuleDescriptor(newDescriptor, reloadClasses);
 
     mySolutionDescriptor = newDescriptor;
 

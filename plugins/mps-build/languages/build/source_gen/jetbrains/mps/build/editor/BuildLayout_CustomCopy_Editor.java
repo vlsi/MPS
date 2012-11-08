@@ -38,7 +38,7 @@ public class BuildLayout_CustomCopy_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6lrdv3_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "copy");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "copy");
     editorCell.setCellId("Constant_6lrdv3_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     delete_CustomCopy.setCellActions(editorCell, node, editorContext);
@@ -120,7 +120,7 @@ public class BuildLayout_CustomCopy_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_6lrdv3_a2a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_6lrdv3_a2a");
       {
         Style style = editorCell.getStyle();

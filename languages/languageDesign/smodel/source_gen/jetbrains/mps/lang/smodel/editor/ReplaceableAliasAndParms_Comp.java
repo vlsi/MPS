@@ -77,7 +77,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_n84rmm_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_n84rmm_a1a");
     Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
     {
@@ -93,7 +93,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_n84rmm_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_n84rmm_c1a");
     Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
     {
@@ -191,7 +191,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -199,7 +199,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     }
 
     private EditorCell createConstant_n84rmm_a1b0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "no params");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no params");
       editorCell.setCellId("Constant_n84rmm_a1b0");
       {
         Style style = editorCell.getStyle();

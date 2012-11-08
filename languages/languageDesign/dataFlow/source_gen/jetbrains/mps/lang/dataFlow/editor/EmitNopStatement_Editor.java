@@ -34,7 +34,7 @@ public class EmitNopStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_s9jju4_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "insert");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "insert");
     editorCell.setCellId("Constant_s9jju4_a0");
     DataFlow_StyleSheet.getInsertPosition(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -42,7 +42,7 @@ public class EmitNopStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_s9jju4_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "nop");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "nop");
     editorCell.setCellId("Constant_s9jju4_b0");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

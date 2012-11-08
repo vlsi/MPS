@@ -5,6 +5,7 @@ package jetbrains.mps.lang.generator.intentions;
 import jetbrains.mps.intentions.BaseIntentionsDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
@@ -14,15 +15,8 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public void init() {
     add(new AddContext_Intention(), "3462145372628250475");
     add(new AddNodeMacro_Intention(), "1207152859258");
-    add(new AddNodeMacroParam_copySrcMacro_Intention(), "1240595838065");
-    add(new AddNodeMacroParam_copySrclMacro_Intention(), "1240595864245");
-    add(new AddNodeMacroParam_ifMacro_Intention(), "1240572960649");
-    add(new AddNodeMacroParam_loopMacro_Intention(), "1240595919493");
-    add(new AddNodeMacroParam_switch_Intention(), "3644457381597319727");
     add(new AddPropertyMacro_Intention(), "1207154194671");
-    add(new AddPropertyMacroParam_property_Intention(), "1240595522621");
     add(new AddReferenceMacro_Intention(), "1207154220489");
-    add(new AddReferenceMacroParam_link_Intention(), "1240573470307");
     add(new ConvertClassConceptToExtract_Intention(), "34229510189607557");
     add(new ConvertInlineTemplateToTemplateFragment_Intention(), "1203775431223");
     add(new ConvertLoopWithCopySrc_Intention(), "7834938100936599479");
@@ -40,6 +34,13 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     add(new NewTemplateInSwitchDefault_Intention(), "1216323872536");
     add(new NewTemplateInWeaveEach_Intention(), "1216319039419");
     add(new NewTemplateInWeavingRule_Intention(), "8699312839322230162");
-    add(new ReplaceWithConcreteSubconcept_Intention(), "1210374656847760938");
+    IntentionsManager.getInstance().registerIntentionFactory(new AddNodeMacroParam_copySrcMacro_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddNodeMacroParam_copySrclMacro_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddNodeMacroParam_ifMacro_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddNodeMacroParam_loopMacro_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddNodeMacroParam_switch_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddPropertyMacroParam_property_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddReferenceMacroParam_link_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new ReplaceWithConcreteSubconcept_Intention());
   }
 }

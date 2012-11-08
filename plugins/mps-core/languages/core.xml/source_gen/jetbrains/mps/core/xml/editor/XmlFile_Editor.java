@@ -33,7 +33,7 @@ public class XmlFile_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_zencf0_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "xml");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "xml");
     editorCell.setCellId("Constant_zencf0_a0");
     {
       Style style = editorCell.getStyle();
@@ -44,7 +44,7 @@ public class XmlFile_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_zencf0_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_zencf0_c0");
     {
       Style style = editorCell.getStyle();

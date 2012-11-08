@@ -15,16 +15,12 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
-import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -48,36 +44,30 @@ public class ModelDigestHelper {
     myProviders.add(provider);
   }
 
-  public Map<String, String> getGenerationHashes(@NotNull IFile modelFile, IOperationContext operationContext) {
+  public Map<String, String> getGenerationHashes(@NotNull DataSource source, IOperationContext operationContext) {
     for (DigestProvider p : myProviders) {
-      Map<String, String> result = p.getGenerationHashes(operationContext, modelFile);
+      Map<String, String> result = p.getGenerationHashes(operationContext, source);
       if (result != null) return result;
     }
 
-    return ModelDigestUtil.getDigestMap(modelFile);
+    if (source instanceof RegularModelDataSource) {
+      return ModelDigestUtil.getDigestMap(((RegularModelDataSource) source).getFile());
+    }
+
+    return null;
   }
 
   public String getModelHashFast(@NotNull SModelDescriptor descriptor, IOperationContext operationContext) {
-    if (!(descriptor instanceof BaseSModelDescriptorWithSource)) return descriptor.getModelHash();
-
-    ModelDataSource source = ((BaseSModelDescriptorWithSource) descriptor).getSource();
-    if (!(source instanceof FileBasedModelDataSource)) return descriptor.getModelHash();
-
-    Collection<String> files = ((FileBasedModelDataSource) source).getFilesToListen();
-    if (files.size() != 1) return descriptor.getModelHash();
-    IFile modelFile = FileSystem.getInstance().getFileByPath(files.iterator().next());
-    if (modelFile == null) return descriptor.getModelHash();
-
+    DataSource source = descriptor.getSource();
     for (DigestProvider p : myProviders) {
-      Map<String, String> result = p.getGenerationHashes(operationContext, modelFile);
+      Map<String, String> result = p.getGenerationHashes(operationContext, source);
       if (result != null) return result.get(FILE);
     }
-
     return descriptor.getModelHash();
   }
 
 
   public interface DigestProvider {
-    Map<String, String> getGenerationHashes(IOperationContext operationContext, @NotNull IFile f);
+    Map<String, String> getGenerationHashes(IOperationContext operationContext, @NotNull DataSource f);
   }
 }

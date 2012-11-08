@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.methodDispatch.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="2403002034744707266" modelId="r:3d7b3732-9bef-45a8-98fa-22d696f27853(jetbrains.mps.baseLanguage.methodDispatch.constraints)">
-    <nodeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="13" startPosition="77" endLine="14" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
+    <nodeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="16" startPosition="41" endLine="17" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="21" startPosition="43" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="26" startPosition="200" endLine="27" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -12,18 +12,18 @@
     <nodeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="32" startPosition="0" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2323553266854773026" fileName="DispatchModifier_Constraints.java" startLine="36" startPosition="148" endLine="37" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2403002034744707506" fileName="DispatchModifier_Constraints.java" startLine="37" startPosition="39" endLine="38" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DispatchModifier_Constraints#()V" />
+    <nodeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DispatchModifier_Constraints#()V" />
     <nodeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="28" startPosition="0" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
-    <nodeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="35" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-    <nodeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="24" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+    <nodeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
+    <nodeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+    <nodeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="25" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
     <scopeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="16" startPosition="41" endLine="17" endPosition="82" />
     <scopeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="21" startPosition="43" endLine="22" endPosition="16" />
     <scopeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="29" startPosition="51" endLine="30" endPosition="67" />
     <scopeInfo nodeId="2403002034744707319" fileName="DispatchModifier_Constraints.java" startLine="36" startPosition="148" endLine="38" endPosition="110" />
-    <scopeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
-    <scopeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="35" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="2403002034744707266" varName="childConcept" />
       <varInfo nodeId="2403002034744707266" varName="link" />
       <varInfo nodeId="2403002034744707266" varName="node" />
@@ -33,7 +33,7 @@
     <scopeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="26" startPosition="200" endLine="33" endPosition="18">
       <varInfo nodeId="2403002034744707266" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="24" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="2403002034744707266" fileName="DispatchModifier_Constraints.java" startLine="25" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="2403002034744707266" varName="checkingNodeContext" />
       <varInfo nodeId="2403002034744707266" varName="childConcept" />
       <varInfo nodeId="2403002034744707266" varName="link" />

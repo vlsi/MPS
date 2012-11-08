@@ -9,13 +9,13 @@
     <nodeInfo nodeId="1203415512996" fileName="FourHex_PropertySupport.java" startLine="14" startPosition="5" endLine="15" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1203415512996" fileName="FourHex_PropertySupport.java" startLine="12" startPosition="10" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1203415512996" fileName="FourHex_PropertySupport.java" startLine="9" startPosition="28" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1203415512996" fileName="FourHex_PropertySupport.java" startLine="7" startPosition="62" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1203415512996" fileName="FourHex_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
     <scopeInfo nodeId="1203415512996" fileName="FourHex_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" />
     <scopeInfo nodeId="1203415512996" fileName="FourHex_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" />
     <scopeInfo nodeId="1203415512996" fileName="FourHex_PropertySupport.java" startLine="8" startPosition="44" endLine="15" endPosition="77">
       <varInfo nodeId="1203415512996" varName="testValue" />
     </scopeInfo>
-    <scopeInfo nodeId="1203415512996" fileName="FourHex_PropertySupport.java" startLine="7" startPosition="62" endLine="17" endPosition="0">
+    <scopeInfo nodeId="1203415512996" fileName="FourHex_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="1203415512996" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="1203415512996" fileName="FourHex_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.FourHex_PropertySupport" />
@@ -27,13 +27,13 @@
     <nodeInfo nodeId="7473568212391781030" fileName="_StringRegexp_PropertySupport.java" startLine="14" startPosition="5" endLine="15" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7473568212391781030" fileName="_StringRegexp_PropertySupport.java" startLine="12" startPosition="10" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7473568212391781030" fileName="_StringRegexp_PropertySupport.java" startLine="9" startPosition="28" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7473568212391781030" fileName="_StringRegexp_PropertySupport.java" startLine="7" startPosition="68" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="7473568212391781030" fileName="_StringRegexp_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
     <scopeInfo nodeId="7473568212391781030" fileName="_StringRegexp_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" />
     <scopeInfo nodeId="7473568212391781030" fileName="_StringRegexp_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" />
     <scopeInfo nodeId="7473568212391781030" fileName="_StringRegexp_PropertySupport.java" startLine="8" startPosition="44" endLine="15" endPosition="48">
       <varInfo nodeId="7473568212391781030" varName="testValue" />
     </scopeInfo>
-    <scopeInfo nodeId="7473568212391781030" fileName="_StringRegexp_PropertySupport.java" startLine="7" startPosition="68" endLine="17" endPosition="0">
+    <scopeInfo nodeId="7473568212391781030" fileName="_StringRegexp_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="7473568212391781030" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="7473568212391781030" fileName="_StringRegexp_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure._StringRegexp_PropertySupport" />

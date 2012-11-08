@@ -7,21 +7,21 @@
     <nodeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4997106363361386792" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4997106363361416683" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="32" startPosition="78" endLine="33" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="13" startPosition="84" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InsertPrevSiblingOperation_Focus_Test#()V" />
-    <nodeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="24" startPosition="59" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="16" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_InsertPrevSiblingOperation_Focus#()V" />
-    <nodeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="27" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <nodeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InsertPrevSiblingOperation_Focus_Test#()V" />
+    <nodeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_InsertPrevSiblingOperation_Focus#()V" />
+    <nodeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
     <scopeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="14" startPosition="50" endLine="14" endPosition="50" />
     <scopeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="13" startPosition="84" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="18" startPosition="72" endLine="20" endPosition="119" />
-    <scopeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="24" startPosition="59" endLine="26" endPosition="5" />
+    <scopeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="60">
       <varInfo nodeId="1835794636205154554" varName="editor" />
       <varInfo nodeId="1835794636205154554" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="16" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="27" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
     <unitInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.smodel.test.InsertPrevSiblingOperation_Focus_Test$TestBody" />
     <unitInfo nodeId="1835794636205154554" fileName="InsertPrevSiblingOperation_Focus_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.smodel.test.InsertPrevSiblingOperation_Focus_Test" />
   </root>

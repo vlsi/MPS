@@ -9,6 +9,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 
 public interface IJob {
   public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa, @NotNull ProgressMonitor monitor);
+
   public static class Stub implements IJob {
     public Stub() {
     }
@@ -23,5 +24,4 @@ public interface IJob {
       return execute(input, mon, pa);
     }
   }
-
 }

@@ -96,28 +96,28 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_th2ud5_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "script");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "script");
     editorCell.setCellId("Constant_th2ud5_b0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_th2ud5_a3a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "to");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "to");
     editorCell.setCellId("Constant_th2ud5_a3a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_th2ud5_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "title:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "title:");
     editorCell.setCellId("Constant_th2ud5_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_th2ud5_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_th2ud5_c0");
     {
       Style style = editorCell.getStyle();
@@ -128,7 +128,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_th2ud5_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "updaters:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "updaters:");
     editorCell.setCellId("Constant_th2ud5_d0");
     {
       Style style = editorCell.getStyle();
@@ -147,7 +147,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_th2ud5_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

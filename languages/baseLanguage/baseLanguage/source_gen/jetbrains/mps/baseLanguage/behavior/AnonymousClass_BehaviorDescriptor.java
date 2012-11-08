@@ -22,7 +22,7 @@ public class AnonymousClass_BehaviorDescriptor extends ClassConcept_BehaviorDesc
     return TypeDerivable_Behavior.virtual_deriveType_4555537781928374706(thisNode, expression, link);
   }
 
-  public List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
+  public Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     return AnonymousClass_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
   }
 

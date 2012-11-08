@@ -3,8 +3,8 @@
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.ypath.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Ypath_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ypath.structure.Ypath_Language" />
   <root nodeId="1168457888645" modelId="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)">
-    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="19" startPosition="0" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="20" startPosition="24" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
+    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="23" startPosition="44" endLine="24" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="24" startPosition="23" endLine="25" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="28" startPosition="27" endLine="29" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -33,6 +33,10 @@
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="83" startPosition="76" endLine="84" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="86" startPosition="81" endLine="87" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="88" startPosition="5" endLine="89" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/ypath/structure/TraversalAxis;" />
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="58" startPosition="56" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="61" startPosition="5" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="64" startPosition="5" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -43,13 +47,9 @@
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="79" startPosition="5" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="82" startPosition="5" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="85" startPosition="5" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="22" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TraversalAxis#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/ypath/structure/TraversalAxis;" />
-    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="39" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
-    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="57" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/ypath/structure/TraversalAxis;" />
+    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TraversalAxis#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="40" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
+    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="58" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/ypath/structure/TraversalAxis;" />
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -70,9 +70,9 @@
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="39" startPosition="61" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="14" startPosition="103" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="28" startPosition="103" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="9" startPosition="68" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
     <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="28" startPosition="27" endLine="29" endPosition="23" />
     <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="32" startPosition="36" endLine="33" endPosition="24" />
     <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="36" startPosition="28" endLine="37" endPosition="24" />
@@ -88,20 +88,20 @@
     <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="83" startPosition="76" endLine="84" endPosition="46" />
     <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="86" startPosition="81" endLine="87" endPosition="51" />
     <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="23" startPosition="44" endLine="25" endPosition="25" />
-    <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="22" startPosition="0" endLine="26" endPosition="3">
+    <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="54" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="1168457888645" varName="name" />
       <varInfo nodeId="1168457888645" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="40" startPosition="52" endLine="51" endPosition="16">
       <varInfo nodeId="1168457888645" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="39" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="40" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="58" startPosition="56" endLine="89" endPosition="38" />
-    <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="57" startPosition="0" endLine="91" endPosition="0">
+    <scopeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="58" startPosition="0" endLine="91" endPosition="0">
       <varInfo nodeId="1168457888645" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" />
@@ -118,7 +118,7 @@
     <scopeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="38" startPosition="49" endLine="43" endPosition="14">
       <varInfo nodeId="1168457888645" varName="constant" />
     </scopeInfo>
-    <scopeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="1168457888645" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="10" startPosition="44" endLine="21" endPosition="17">
@@ -127,18 +127,18 @@
     <scopeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="24" startPosition="47" endLine="35" endPosition="16">
       <varInfo nodeId="1168457888645" varName="constants" />
     </scopeInfo>
-    <scopeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="9" startPosition="68" endLine="23" endPosition="0">
+    <scopeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="1168457888645" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1168457888645" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="9" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.ypath.structure.TraversalAxis" />
     <unitInfo nodeId="1168457888645" fileName="TraversalAxis_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ypath.structure.TraversalAxis_PropertySupport" />
   </root>
   <root nodeId="1196419521949" modelId="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)">
-    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="20" startPosition="0" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="21" startPosition="24" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
+    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
     <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="24" startPosition="47" endLine="25" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="25" startPosition="23" endLine="26" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="29" startPosition="27" endLine="30" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -169,6 +169,10 @@
     <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="88" startPosition="74" endLine="89" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="91" startPosition="73" endLine="92" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="93" startPosition="5" endLine="94" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/ypath/structure/FragmentTypeEnum;" />
     <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="60" startPosition="59" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="63" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="66" startPosition="5" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -180,13 +184,9 @@
     <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="84" startPosition="5" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="87" startPosition="5" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="90" startPosition="5" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="23" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FragmentTypeEnum#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/ypath/structure/FragmentTypeEnum;" />
-    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="40" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
-    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="59" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/ypath/structure/FragmentTypeEnum;" />
+    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FragmentTypeEnum#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="41" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
+    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="60" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/ypath/structure/FragmentTypeEnum;" />
     <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -207,9 +207,9 @@
     <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="39" startPosition="67" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="14" startPosition="109" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="28" startPosition="109" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="9" startPosition="71" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
     <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="29" startPosition="27" endLine="30" endPosition="23" />
     <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="33" startPosition="36" endLine="34" endPosition="24" />
     <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="37" startPosition="28" endLine="38" endPosition="24" />
@@ -226,20 +226,20 @@
     <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="88" startPosition="74" endLine="89" endPosition="44" />
     <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="91" startPosition="73" endLine="92" endPosition="43" />
     <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="24" startPosition="47" endLine="26" endPosition="25" />
-    <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="23" startPosition="0" endLine="27" endPosition="3">
+    <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="56" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="1196419521949" varName="name" />
       <varInfo nodeId="1196419521949" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="41" startPosition="55" endLine="53" endPosition="16">
       <varInfo nodeId="1196419521949" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="40" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="41" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="60" startPosition="59" endLine="94" endPosition="41" />
-    <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="59" startPosition="0" endLine="96" endPosition="0">
+    <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="60" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="1196419521949" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" />
@@ -256,7 +256,7 @@
     <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="38" startPosition="49" endLine="43" endPosition="14">
       <varInfo nodeId="1196419521949" varName="constant" />
     </scopeInfo>
-    <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="1196419521949" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="10" startPosition="44" endLine="21" endPosition="17">
@@ -265,10 +265,10 @@
     <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="24" startPosition="47" endLine="35" endPosition="16">
       <varInfo nodeId="1196419521949" varName="constants" />
     </scopeInfo>
-    <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="9" startPosition="71" endLine="23" endPosition="0">
+    <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="1196419521949" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="1196419521949" fileName="FragmentTypeEnum_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1196419521949" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="1196419521949" fileName="FragmentTypeEnum.java" startLine="9" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ypath.structure.FragmentTypeEnum" />

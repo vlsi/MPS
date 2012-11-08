@@ -39,7 +39,7 @@ public class Reference_GetTargetOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5uwcto_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Get reference 'target' operation");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Get reference 'target' operation");
     editorCell.setCellId("Constant_5uwcto_a0");
     {
       Style style = editorCell.getStyle();
@@ -52,7 +52,7 @@ public class Reference_GetTargetOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5uwcto_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5uwcto_b0");
     {
       Style style = editorCell.getStyle();
@@ -63,7 +63,7 @@ public class Reference_GetTargetOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5uwcto_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Returns target node linked by this reference");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Returns target node linked by this reference");
     editorCell.setCellId("Constant_5uwcto_c0");
     {
       Style style = editorCell.getStyle();

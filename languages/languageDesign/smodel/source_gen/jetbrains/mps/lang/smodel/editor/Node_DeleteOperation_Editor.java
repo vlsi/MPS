@@ -18,7 +18,7 @@ public class Node_DeleteOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6be9za_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "delete");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "delete");
     editorCell.setCellId("Constant_6be9za_a");
     {
       Style style = editorCell.getStyle();

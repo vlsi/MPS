@@ -8,7 +8,7 @@
     <nodeInfo nodeId="1154026588181" fileName="Main_javaIterable_as_sequence.java" startLine="17" startPosition="55" endLine="18" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1153936530265" fileName="Main_javaIterable_as_sequence.java" startLine="11" startPosition="63" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="1154026567207" fileName="Main_javaIterable_as_sequence.java" startLine="16" startPosition="46" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1153934557090" fileName="Main_javaIterable_as_sequence.java" startLine="9" startPosition="49" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1153934557090" fileName="Main_javaIterable_as_sequence.java" startLine="10" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
     <scopeInfo nodeId="1153936530268" fileName="Main_javaIterable_as_sequence.java" startLine="12" startPosition="33" endLine="13" endPosition="44" />
     <scopeInfo nodeId="1154026567210" fileName="Main_javaIterable_as_sequence.java" startLine="17" startPosition="55" endLine="18" endPosition="28" />
     <scopeInfo nodeId="1153936530265" fileName="Main_javaIterable_as_sequence.java" startLine="11" startPosition="63" endLine="14" endPosition="5">
@@ -21,7 +21,7 @@
       <varInfo nodeId="1153934720447" varName="javaIterable" />
       <varInfo nodeId="1154026534653" varName="sequence" />
     </scopeInfo>
-    <scopeInfo nodeId="1153934557090" fileName="Main_javaIterable_as_sequence.java" startLine="9" startPosition="49" endLine="21" endPosition="0">
+    <scopeInfo nodeId="1153934557090" fileName="Main_javaIterable_as_sequence.java" startLine="10" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="1153934557175" varName="args" />
     </scopeInfo>
     <unitInfo nodeId="1153934557089" fileName="Main_javaIterable_as_sequence.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_javaIterable_as_sequence" />
@@ -38,7 +38,7 @@
     <nodeInfo nodeId="1153938616909" fileName="Main_javaList_as_sequence.java" startLine="12" startPosition="55" endLine="15" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="1154026701002" fileName="Main_javaList_as_sequence.java" startLine="17" startPosition="42" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1154026745894" fileName="Main_javaList_as_sequence.java" startLine="22" startPosition="34" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1153938616900" fileName="Main_javaList_as_sequence.java" startLine="10" startPosition="45" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1153938616900" fileName="Main_javaList_as_sequence.java" startLine="11" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
     <scopeInfo nodeId="1153938616913" fileName="Main_javaList_as_sequence.java" startLine="13" startPosition="33" endLine="14" endPosition="22" />
     <scopeInfo nodeId="1154026701005" fileName="Main_javaList_as_sequence.java" startLine="18" startPosition="55" endLine="19" endPosition="28" />
     <scopeInfo nodeId="1154026745897" fileName="Main_javaList_as_sequence.java" startLine="23" startPosition="51" endLine="24" endPosition="28" />
@@ -56,7 +56,7 @@
       <varInfo nodeId="1154026740139" varName="list" />
       <varInfo nodeId="1154026691215" varName="sequence" />
     </scopeInfo>
-    <scopeInfo nodeId="1153938616900" fileName="Main_javaList_as_sequence.java" startLine="10" startPosition="45" endLine="27" endPosition="0">
+    <scopeInfo nodeId="1153938616900" fileName="Main_javaList_as_sequence.java" startLine="11" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="1153938616964" varName="args" />
     </scopeInfo>
     <unitInfo nodeId="1153938616899" fileName="Main_javaList_as_sequence.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_javaList_as_sequence" />
@@ -64,8 +64,8 @@
   <root nodeId="1153939305375" modelId="r:00000000-0000-4000-0000-011c895903b6(jetbrains.mps.baseLanguage.collections.samples.java_collections)">
     <nodeInfo nodeId="1224754223402" fileName="Main_sequence_as_javaList.java" startLine="46" startPosition="27" endLine="46" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224754223404" fileName="Main_sequence_as_javaList.java" startLine="49" startPosition="27" endLine="49" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="17" startPosition="52" endLine="18" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
-    <nodeInfo nodeId="1224754223407" fileName="Main_sequence_as_javaList.java" startLine="18" startPosition="37" endLine="19" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_2_i" />
+    <nodeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
+    <nodeInfo nodeId="1224754223407" fileName="Main_sequence_as_javaList.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_2_i" />
     <nodeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="26" startPosition="28" endLine="27" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="27" startPosition="54" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1224754223403" fileName="Main_sequence_as_javaList.java" startLine="29" startPosition="27" endLine="30" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -93,13 +93,13 @@
     <nodeInfo nodeId="1224754223403" fileName="Main_sequence_as_javaList.java" startLine="31" startPosition="27" endLine="35" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="23" startPosition="20" endLine="54" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
     <nodeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="21" startPosition="46" endLine="55" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="20" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
+    <nodeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="21" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
     <nodeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="16" startPosition="47" endLine="58" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="15" startPosition="40" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="16" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
     <nodeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="14" startPosition="43" endLine="60" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="13" startPosition="87" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="14" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1153939438520" fileName="Main_sequence_as_javaList.java" startLine="12" startPosition="47" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1153939332251" fileName="Main_sequence_as_javaList.java" startLine="11" startPosition="45" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1153939332251" fileName="Main_sequence_as_javaList.java" startLine="12" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
     <scopeInfo nodeId="1224754223402" fileName="Main_sequence_as_javaList.java" startLine="46" startPosition="27" endLine="46" endPosition="27" />
     <scopeInfo nodeId="1224754223404" fileName="Main_sequence_as_javaList.java" startLine="49" startPosition="27" endLine="49" endPosition="27" />
     <scopeInfo nodeId="1224754223403" fileName="Main_sequence_as_javaList.java" startLine="29" startPosition="27" endLine="30" endPosition="36" />
@@ -117,17 +117,17 @@
     <scopeInfo nodeId="1224754223403" fileName="Main_sequence_as_javaList.java" startLine="31" startPosition="27" endLine="37" endPosition="28" />
     <scopeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="23" startPosition="20" endLine="54" endPosition="19" />
     <scopeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="21" startPosition="46" endLine="56" endPosition="29" />
-    <scopeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="20" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="21" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="16" startPosition="47" endLine="58" endPosition="14" />
-    <scopeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="15" startPosition="40" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="16" startPosition="0" endLine="60" endPosition="0" />
     <scopeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="14" startPosition="43" endLine="60" endPosition="10" />
-    <scopeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="13" startPosition="87" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="14" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="1153939332253" fileName="Main_sequence_as_javaList.java" startLine="12" startPosition="47" endLine="68" endPosition="5">
       <varInfo nodeId="1153939850177" varName="javaList" />
       <varInfo nodeId="1153940280463" varName="list" />
       <varInfo nodeId="1153939438521" varName="sequence" />
     </scopeInfo>
-    <scopeInfo nodeId="1153939332251" fileName="Main_sequence_as_javaList.java" startLine="11" startPosition="45" endLine="70" endPosition="0">
+    <scopeInfo nodeId="1153939332251" fileName="Main_sequence_as_javaList.java" startLine="12" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="1153939342427" varName="args" />
     </scopeInfo>
     <unitInfo nodeId="1224754223401" fileName="Main_sequence_as_javaList.java" startLine="17" startPosition="23" endLine="58" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_sequence_as_javaList$3" />

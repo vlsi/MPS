@@ -16,7 +16,7 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import com.intellij.ide.BrowserUtil;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
 import jetbrains.mps.smodel.SNode;

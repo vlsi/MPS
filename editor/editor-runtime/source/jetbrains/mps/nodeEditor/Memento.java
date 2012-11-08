@@ -15,15 +15,25 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.nodeEditor.cells.CellInfo;
+import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.selection.SelectionInfo;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.EqualUtil;
 import org.jdom.Element;
 
 import java.awt.Point;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Stack;
 
 class Memento {
   private static final Comparator<EditorCell> FOLDED_CELLS_COMPARATOR = new Comparator<EditorCell>() {
@@ -51,8 +61,8 @@ class Memento {
 
   private Memento() {}
 
-  Memento(EditorContext context, boolean full) {
-    EditorComponent nodeEditor = context.getNodeEditorComponent();
+  Memento(jetbrains.mps.openapi.editor.EditorContext context, boolean full) {
+    EditorComponent nodeEditor = (EditorComponent) context.getEditorComponent();
     SNode editedNode = nodeEditor.getEditedNode();
     if (editedNode == null || (!jetbrains.mps.util.SNodeOperations.isDisposed(editedNode) && editedNode.getModel() != null && !editedNode.getModel().isDisposed())) {
       mySelectionStack = nodeEditor.getSelectionManager().getSelectionInfoStack();

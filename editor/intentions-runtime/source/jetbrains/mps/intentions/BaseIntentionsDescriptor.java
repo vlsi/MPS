@@ -36,4 +36,9 @@ public abstract class BaseIntentionsDescriptor {
     SNodePointer np = nodeId == null ? null : new SNodePointer(myModelRef, SNodeId.fromString(nodeId));
     IntentionsManager.getInstance().addIntention(intention, myModuleRef, np);
   }
+
+  // TODO: remove and used direct call to IntentionsManager from generated code
+  protected void registerIntentionFactory(IntentionFactory intentionFactory) {
+    IntentionsManager.getInstance().registerIntentionFactory(intentionFactory);
+  }
 }

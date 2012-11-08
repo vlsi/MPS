@@ -29,7 +29,7 @@ public class GeneratorInternal_BuildSource_JavaLibrary_Editor extends DefaultNod
   }
 
   private EditorCell createConstant_b31w58_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "java library");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "java library");
     editorCell.setCellId("Constant_b31w58_a0");
     editorCell.setDefaultText("");
     return editorCell;

@@ -88,7 +88,7 @@ public class BuildString_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_4qas4m_a0a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_4qas4m_a0a");
       editorCell.setDefaultText("<empty>");
       return editorCell;

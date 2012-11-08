@@ -45,30 +45,28 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
-          public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+          public EditorCell createEditorCell(EditorContext editorContext) {
             RefNodeListHandler handler = new RefNodeListHandler(node, "element", editorContext) {
-              public SNode createNodeToInsert(jetbrains.mps.nodeEditor.EditorContext p0) {
+              public SNode createNodeToInsert(EditorContext p0) {
                 return SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null);
               }
 
-              public EditorCell createNodeCell(jetbrains.mps.nodeEditor.EditorContext editorContext, SNode elementNode) {
+              public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
                 EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
                 this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
                 return elementCell;
               }
 
-              public EditorCell createEmptyCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+              public EditorCell createEmptyCell(EditorContext editorContext) {
                 EditorCell emptyCell = super.createEmptyCell(editorContext);
                 this.installElementCellActions(this.getOwner(), null, emptyCell, editorContext);
                 return emptyCell;
               }
 
-              public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+              public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
                 if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
                   elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
-                  SNode substituteInfoNode = listOwner;
                   if (elementNode != null) {
-                    substituteInfoNode = elementNode;
                     elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
                     elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, SPropertyOperations.getString(SLinkOperations.getTarget(node, "customConstructor", false), "separator")));
                   }
@@ -78,7 +76,7 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
                 }
               }
 
-              public EditorCell createSeparatorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+              public EditorCell createSeparatorCell(EditorContext editorContext) {
                 EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), SPropertyOperations.getString(SLinkOperations.getTarget(node, "customConstructor", false), "separator"));
                 editorCell.setSelectable(false);
                 editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");

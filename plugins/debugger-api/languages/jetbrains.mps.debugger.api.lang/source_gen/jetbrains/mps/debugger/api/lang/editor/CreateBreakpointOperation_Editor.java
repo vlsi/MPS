@@ -53,7 +53,7 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vi48ux_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "create");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "create");
     editorCell.setCellId("Constant_vi48ux_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -61,7 +61,7 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vi48ux_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_vi48ux_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -69,7 +69,7 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vi48ux_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_vi48ux_d0");
     {
       Style style = editorCell.getStyle();
@@ -80,7 +80,7 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vi48ux_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_vi48ux_f0");
     {
       Style style = editorCell.getStyle();
@@ -91,7 +91,7 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vi48ux_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_vi48ux_h0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

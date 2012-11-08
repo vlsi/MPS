@@ -22,12 +22,12 @@ public class Descendant extends TestClass {
   public int hello(Number x, String zzz) {
     if (x instanceof Integer) {
       return hello((Integer) x, zzz);
-    } else if (x instanceof Long) {
-      return hello((Long) x, zzz);
     } else if (x instanceof Float) {
       return hello((Float) x, zzz);
     } else if (x instanceof Double) {
       return hello((Double) x, zzz);
+    } else if (x instanceof Long) {
+      return hello((Long) x, zzz);
     } else {
       return 5;
     }

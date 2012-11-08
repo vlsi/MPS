@@ -48,7 +48,7 @@ public class BuildMps_BrandingUpdateSite_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1r2vma_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "check url");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check url");
     editorCell.setCellId("Constant_1r2vma_a1a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -56,7 +56,7 @@ public class BuildMps_BrandingUpdateSite_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1r2vma_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "update url");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "update url");
     editorCell.setCellId("Constant_1r2vma_c1a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -64,7 +64,7 @@ public class BuildMps_BrandingUpdateSite_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1r2vma_e1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "channel");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "channel");
     editorCell.setCellId("Constant_1r2vma_e1a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

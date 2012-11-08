@@ -36,17 +36,12 @@ import java.util.List;
 
 public class DevKit extends AbstractModule {
   private DevkitDescriptor myDescriptor;
-  private IFile myDescriptorFile;
 
   /* TODO make package local, move to appropriate package */
   public DevKit(DevkitDescriptor descriptor, IFile file) {
-    myDescriptorFile = file;
+    super(file);
     myDescriptor = descriptor;
     setModuleReference(descriptor.getModuleReference());
-  }
-
-  public IFile getDescriptorFile() {
-    return myDescriptorFile;
   }
 
   public DevkitDescriptor getModuleDescriptor() {

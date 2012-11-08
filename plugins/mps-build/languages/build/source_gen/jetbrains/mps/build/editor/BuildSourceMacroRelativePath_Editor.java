@@ -55,7 +55,7 @@ public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3is4rg_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "$");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$");
     editorCell.setCellId("Constant_3is4rg_a0");
     buildStyles_StyleSheet.getMacro(editorCell).apply(editorCell);
     {
@@ -68,7 +68,7 @@ public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3is4rg_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "/");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_3is4rg_a2a");
     {
       Style style = editorCell.getStyle();

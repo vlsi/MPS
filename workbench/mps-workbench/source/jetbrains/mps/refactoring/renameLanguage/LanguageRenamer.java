@@ -18,7 +18,6 @@ package jetbrains.mps.refactoring.renameLanguage;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
-import jetbrains.mps.ide.platform.refactoring.RefactoringFacade;
 import jetbrains.mps.project.ReferenceUpdater;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -68,7 +67,7 @@ public class LanguageRenamer {
 
       if (sm.getSModelReference().getSModelFqName().toString().startsWith(oldFqName + ".")) {
         String suffix = sm.getSModelReference().getSModelFqName().toString().substring(oldFqName.length());
-        myContext.changeModelName(((DefaultSModelDescriptor) sm), myNewName + suffix);
+        myContext.changeModelName(((EditableSModelDescriptor) sm), myNewName + suffix);
       }
     }
 
@@ -89,9 +88,11 @@ public class LanguageRenamer {
 
       for (SModelDescriptor sm : g.getOwnModelDescriptors()) {
         if (!SModelStereotype.isUserModel(sm)) continue;
+        if (!(sm instanceof EditableSModelDescriptor)) continue;
+
         if (sm.getSModelReference().getSModelFqName().toString().startsWith(oldFqName + ".")) {
           String suffix = sm.getSModelReference().getSModelFqName().toString().substring(oldFqName.length());
-          myContext.changeModelName(((DefaultSModelDescriptor) sm), newPrefix + suffix);
+          myContext.changeModelName(((EditableSModelDescriptor) sm), newPrefix + suffix);
         }
       }
     }

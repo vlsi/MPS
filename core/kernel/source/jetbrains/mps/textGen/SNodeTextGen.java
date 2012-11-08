@@ -21,7 +21,6 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public abstract class SNodeTextGen {
   private TextGenBuffer myBuffer;
-  private IOperationContext myContext;
   private SNode mySNode;
 
   public void setBuffer(TextGenBuffer buffer) {
@@ -33,11 +32,8 @@ public abstract class SNodeTextGen {
   }
 
   public IOperationContext getContext() {
-    return myContext;
-  }
-
-  public void setContext(IOperationContext context) {
-    myContext = context;
+    // todo: write something else!
+    return null;
   }
 
   public SNode getSNode() {

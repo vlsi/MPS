@@ -128,10 +128,8 @@
     <classNode dependClassName="jetbrains.mps.generator.ModelDigestHelper" />
     <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependencies" />
     <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache" />
-    <classNode dependClassName="jetbrains.mps.smodel.DefaultSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode extendsClassName="jetbrains.mps.generator.IncrementalGenerationStrategy" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.plugin.Make_Facet" file="Make_Facet.java">

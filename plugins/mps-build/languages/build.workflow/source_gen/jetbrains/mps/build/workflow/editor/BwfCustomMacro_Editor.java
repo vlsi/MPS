@@ -33,7 +33,7 @@ public class BwfCustomMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3al981_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "custom macro");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "custom macro");
     editorCell.setCellId("Constant_3al981_a0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {

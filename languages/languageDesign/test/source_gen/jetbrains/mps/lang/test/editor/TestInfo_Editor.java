@@ -33,21 +33,21 @@ public class TestInfo_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_v9r28m_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Project path:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Project path:");
     editorCell.setCellId("Constant_v9r28m_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_v9r28m_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "UI test:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "UI test:");
     editorCell.setCellId("Constant_v9r28m_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_v9r28m_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "ReOpen project:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ReOpen project:");
     editorCell.setCellId("Constant_v9r28m_e0");
     editorCell.setDefaultText("");
     return editorCell;

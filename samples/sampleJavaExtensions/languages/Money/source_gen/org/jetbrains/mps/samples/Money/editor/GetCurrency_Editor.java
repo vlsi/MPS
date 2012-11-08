@@ -14,7 +14,7 @@ public class GetCurrency_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6zlpyq_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "currency");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "currency");
     editorCell.setCellId("Constant_6zlpyq_a");
     editorCell.setDefaultText("");
     return editorCell;

@@ -88,7 +88,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_mr1gse_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "@interface");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@interface");
     editorCell.setCellId("Constant_mr1gse_c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -100,7 +100,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_mr1gse_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_mr1gse_a4a");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -112,7 +112,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_mr1gse_c4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_mr1gse_c4a");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -120,7 +120,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_mr1gse_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "annotations:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "annotations:");
     editorCell.setCellId("Constant_mr1gse_a0");
     {
       Style style = editorCell.getStyle();
@@ -222,7 +222,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_mr1gse_a1e0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_mr1gse_a1e0");
       {
         Style style = editorCell.getStyle();

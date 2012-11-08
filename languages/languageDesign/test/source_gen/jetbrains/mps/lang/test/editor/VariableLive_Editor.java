@@ -28,7 +28,7 @@ public class VariableLive_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nbf2a_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "live");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "live");
     editorCell.setCellId("Constant_nbf2a_a0");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

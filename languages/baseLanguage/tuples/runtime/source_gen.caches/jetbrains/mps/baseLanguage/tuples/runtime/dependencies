@@ -41,16 +41,6 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._9" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" file="Tuples.java">
-    <classNode dependClassName="Tuples._0" />
-    <classNode dependClassName="Tuples._1" />
-    <classNode dependClassName="Tuples._2" />
-    <classNode dependClassName="Tuples._3" />
-    <classNode dependClassName="Tuples._4" />
-    <classNode dependClassName="Tuples._5" />
-    <classNode dependClassName="Tuples._6" />
-    <classNode dependClassName="Tuples._7" />
-    <classNode dependClassName="Tuples._8" />
-    <classNode dependClassName="Tuples._9" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._0" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />

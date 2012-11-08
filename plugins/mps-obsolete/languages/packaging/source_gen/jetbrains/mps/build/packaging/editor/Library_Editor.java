@@ -71,7 +71,7 @@ public class Library_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_x0ve1k_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
@@ -152,7 +152,7 @@ public class Library_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_x0ve1k_a1b0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "module");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "module");
       editorCell.setCellId("Constant_x0ve1k_a1b0");
       PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
       editorCell.setDefaultText("");

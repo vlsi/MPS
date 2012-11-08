@@ -83,7 +83,7 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ql48ef_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_ql48ef_a0");
     {
       Style style = editorCell.getStyle();
@@ -94,7 +94,7 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ql48ef_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "cell");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "cell");
     editorCell.setCellId("Constant_ql48ef_b0");
     transformationTest_StyleSheet.getEditorOperation(editorCell).apply(editorCell);
     Annotation_Actions.setCellActions(editorCell, node, editorContext);
@@ -103,7 +103,7 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ql48ef_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_ql48ef_d0");
     {
       Style style = editorCell.getStyle();
@@ -114,42 +114,42 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ql48ef_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "is in inspector");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is in inspector");
     editorCell.setCellId("Constant_ql48ef_a0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_ql48ef_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "cell id:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "cell id:");
     editorCell.setCellId("Constant_ql48ef_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_ql48ef_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "position:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "position:");
     editorCell.setCellId("Constant_ql48ef_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_ql48ef_a5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "last");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "last");
     editorCell.setCellId("Constant_ql48ef_a5a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_ql48ef_a6a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "selection start:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "selection start:");
     editorCell.setCellId("Constant_ql48ef_a6a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_ql48ef_c6a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "selection end:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "selection end:");
     editorCell.setCellId("Constant_ql48ef_c6a");
     editorCell.setDefaultText("");
     return editorCell;

@@ -32,7 +32,7 @@ public class InheritedNodeScopeFactory_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cp9vsd_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "search for");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "search for");
     editorCell.setCellId("Constant_cp9vsd_a0");
     {
       Style style = editorCell.getStyle();

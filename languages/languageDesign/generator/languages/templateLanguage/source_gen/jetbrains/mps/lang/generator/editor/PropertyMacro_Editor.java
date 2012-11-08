@@ -76,7 +76,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y5igai_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "property macro");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "property macro");
     editorCell.setCellId("Constant_y5igai_a0");
     {
       Style style = editorCell.getStyle();
@@ -89,7 +89,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y5igai_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_y5igai_b0");
     {
       Style style = editorCell.getStyle();
@@ -100,14 +100,14 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y5igai_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "comment");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
     editorCell.setCellId("Constant_y5igai_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_y5igai_b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_y5igai_b2a");
     {
       Style style = editorCell.getStyle();
@@ -118,7 +118,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y5igai_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "value :");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "value :");
     editorCell.setCellId("Constant_y5igai_a3a");
     {
       Style style = editorCell.getStyle();
@@ -129,7 +129,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y5igai_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "$");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$");
     editorCell.setCellId("Constant_y5igai_a0_0");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     {

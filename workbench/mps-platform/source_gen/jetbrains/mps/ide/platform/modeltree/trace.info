@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="4288082098349207686" modelId="r:e180cc3d-e9f2-4c0c-91b4-6730d80d9b23(jetbrains.mps.ide.platform.modeltree)">
-    <nodeInfo nodeId="4288082098349207687" fileName="ModelTreeBuilder.java" startLine="21" startPosition="73" endLine="22" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
+    <nodeInfo nodeId="4288082098349207687" fileName="ModelTreeBuilder.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
     <nodeInfo nodeId="4288082098349207909" fileName="ModelTreeBuilder.java" startLine="24" startPosition="39" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4288082098349207913" fileName="ModelTreeBuilder.java" startLine="25" startPosition="18" endLine="26" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4288082098349207927" fileName="ModelTreeBuilder.java" startLine="29" startPosition="54" endLine="30" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4288082098349207937" fileName="ModelTreeBuilder.java" startLine="31" startPosition="44" endLine="32" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4288082098349207946" fileName="ModelTreeBuilder.java" startLine="33" startPosition="45" endLine="34" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4288082098349207949" fileName="ModelTreeBuilder.java" startLine="34" startPosition="35" endLine="35" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4288082098349207968" fileName="ModelTreeBuilder.java" startLine="43" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initTreeNode#(Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;)V" />
     <nodeInfo nodeId="4288082098349207980" fileName="ModelTreeBuilder.java" startLine="45" startPosition="74" endLine="46" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4288082098349207696" fileName="ModelTreeBuilder.java" startLine="49" startPosition="81" endLine="50" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4288082098349207702" fileName="ModelTreeBuilder.java" startLine="50" startPosition="70" endLine="51" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -28,29 +29,31 @@
     <nodeInfo nodeId="4288082098349207870" fileName="ModelTreeBuilder.java" startLine="94" startPosition="47" endLine="95" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4288082098349207879" fileName="ModelTreeBuilder.java" startLine="96" startPosition="51" endLine="97" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4288082098349207898" fileName="ModelTreeBuilder.java" startLine="100" startPosition="5" endLine="101" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4288082098349207968" fileName="ModelTreeBuilder.java" startLine="42" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initTreeNode#(Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;)V" />
-    <nodeInfo nodeId="4288082098349207962" fileName="ModelTreeBuilder.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="treeCollapsed#(Ljavax/swing/event/TreeExpansionEvent;)V" />
+    <nodeInfo nodeId="4288082098349207962" fileName="ModelTreeBuilder.java" startLine="40" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="treeCollapsed#(Ljavax/swing/event/TreeExpansionEvent;)V" />
+    <nodeInfo nodeId="4288082098349207974" fileName="ModelTreeBuilder.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notifyNodeStructureChanged#(Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;)V" />
     <nodeInfo nodeId="4288082098349207708" fileName="ModelTreeBuilder.java" startLine="51" startPosition="49" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4288082098349207742" fileName="ModelTreeBuilder.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createSNodeTreeNode#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;" />
+    <nodeInfo nodeId="4288082098349207760" fileName="ModelTreeBuilder.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createFolderTreeNode#(Ljava/lang/String;)Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;" />
+    <nodeInfo nodeId="4288082098349207782" fileName="ModelTreeBuilder.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="4288082098349207877" fileName="ModelTreeBuilder.java" startLine="95" startPosition="61" endLine="98" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4288082098349207905" fileName="ModelTreeBuilder.java" startLine="23" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelTreeBuilder#(Ljavax/swing/JTree;)V" />
+    <nodeInfo nodeId="4288082098349207905" fileName="ModelTreeBuilder.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelTreeBuilder#(Ljavax/swing/JTree;)V" />
     <nodeInfo nodeId="4288082098349207944" fileName="ModelTreeBuilder.java" startLine="32" startPosition="62" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4288082098349207974" fileName="ModelTreeBuilder.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notifyNodeStructureChanged#(Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;)V" />
-    <nodeInfo nodeId="4288082098349207742" fileName="ModelTreeBuilder.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createSNodeTreeNode#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;" />
-    <nodeInfo nodeId="4288082098349207760" fileName="ModelTreeBuilder.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createFolderTreeNode#(Ljava/lang/String;)Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;" />
-    <nodeInfo nodeId="4288082098349207782" fileName="ModelTreeBuilder.java" startLine="69" startPosition="77" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="4288082098349207823" fileName="ModelTreeBuilder.java" startLine="80" startPosition="81" endLine="84" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4288082098349207778" fileName="ModelTreeBuilder.java" startLine="68" startPosition="71" endLine="73" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4288082098349207868" fileName="ModelTreeBuilder.java" startLine="93" startPosition="48" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4288082098349207935" fileName="ModelTreeBuilder.java" startLine="30" startPosition="61" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4288082098349207772" fileName="ModelTreeBuilder.java" startLine="67" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="sortChildNodes#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="4288082098349207772" fileName="ModelTreeBuilder.java" startLine="68" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="sortChildNodes#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="4288082098349207815" fileName="ModelTreeBuilder.java" startLine="78" startPosition="66" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4288082098349207860" fileName="ModelTreeBuilder.java" startLine="91" startPosition="99" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="4288082098349207921" fileName="ModelTreeBuilder.java" startLine="29" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="treeExpanded#(Ljavax/swing/event/TreeExpansionEvent;)V" />
+    <nodeInfo nodeId="4288082098349207690" fileName="ModelTreeBuilder.java" startLine="49" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createSModelTreeNode#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;" />
     <nodeInfo nodeId="4288082098349207813" fileName="ModelTreeBuilder.java" startLine="77" startPosition="50" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4288082098349207921" fileName="ModelTreeBuilder.java" startLine="28" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="treeExpanded#(Ljavax/swing/event/TreeExpansionEvent;)V" />
-    <nodeInfo nodeId="4288082098349207690" fileName="ModelTreeBuilder.java" startLine="48" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createSModelTreeNode#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;" />
-    <nodeInfo nodeId="4288082098349207856" fileName="ModelTreeBuilder.java" startLine="90" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findChildNodeByText#(Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;Ljava/lang/String;)Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;" />
-    <nodeInfo nodeId="4288082098349207799" fileName="ModelTreeBuilder.java" startLine="75" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="insertChildSNodeTreeNode#(Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4288082098349207856" fileName="ModelTreeBuilder.java" startLine="91" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findChildNodeByText#(Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;Ljava/lang/String;)Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;" />
+    <nodeInfo nodeId="4288082098349207799" fileName="ModelTreeBuilder.java" startLine="76" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="insertChildSNodeTreeNode#(Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;Ljava/lang/String;)V" />
     <scopeInfo nodeId="4288082098349207967" fileName="ModelTreeBuilder.java" startLine="40" startPosition="55" endLine="40" endPosition="55" />
+    <scopeInfo nodeId="4288082098349207968" fileName="ModelTreeBuilder.java" startLine="43" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="4288082098349207969" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4288082098349207979" fileName="ModelTreeBuilder.java" startLine="45" startPosition="74" endLine="46" endPosition="79" />
     <scopeInfo nodeId="4288082098349207709" fileName="ModelTreeBuilder.java" startLine="52" startPosition="55" endLine="53" endPosition="53" />
     <scopeInfo nodeId="4288082098349207747" fileName="ModelTreeBuilder.java" startLine="60" startPosition="63" endLine="61" endPosition="107" />
@@ -59,27 +62,24 @@
     <scopeInfo nodeId="4288082098349207878" fileName="ModelTreeBuilder.java" startLine="96" startPosition="51" endLine="97" endPosition="26" />
     <scopeInfo nodeId="4288082098349207908" fileName="ModelTreeBuilder.java" startLine="24" startPosition="39" endLine="26" endPosition="42" />
     <scopeInfo nodeId="4288082098349207945" fileName="ModelTreeBuilder.java" startLine="33" startPosition="45" endLine="35" endPosition="42" />
-    <scopeInfo nodeId="4288082098349207968" fileName="ModelTreeBuilder.java" startLine="42" startPosition="0" endLine="44" endPosition="0">
-      <varInfo nodeId="4288082098349207969" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4288082098349207824" fileName="ModelTreeBuilder.java" startLine="81" startPosition="38" endLine="83" endPosition="46" />
-    <scopeInfo nodeId="4288082098349207962" fileName="ModelTreeBuilder.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="4288082098349207962" fileName="ModelTreeBuilder.java" startLine="40" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="4288082098349207965" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="4288082098349207905" fileName="ModelTreeBuilder.java" startLine="23" startPosition="0" endLine="27" endPosition="3">
-      <varInfo nodeId="4288082098349207918" varName="tree" />
-    </scopeInfo>
-    <scopeInfo nodeId="4288082098349207974" fileName="ModelTreeBuilder.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="4288082098349207824" fileName="ModelTreeBuilder.java" startLine="81" startPosition="38" endLine="83" endPosition="46" />
+    <scopeInfo nodeId="4288082098349207974" fileName="ModelTreeBuilder.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="4288082098349207975" varName="modelTreeNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4288082098349207742" fileName="ModelTreeBuilder.java" startLine="59" startPosition="0" endLine="63" endPosition="0">
+    <scopeInfo nodeId="4288082098349207742" fileName="ModelTreeBuilder.java" startLine="60" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="4288082098349207743" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4288082098349207760" fileName="ModelTreeBuilder.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="4288082098349207760" fileName="ModelTreeBuilder.java" startLine="64" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="4288082098349207761" varName="folderName" />
     </scopeInfo>
-    <scopeInfo nodeId="4288082098349207782" fileName="ModelTreeBuilder.java" startLine="69" startPosition="77" endLine="73" endPosition="0">
+    <scopeInfo nodeId="4288082098349207782" fileName="ModelTreeBuilder.java" startLine="70" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="4288082098349207782" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4288082098349207905" fileName="ModelTreeBuilder.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="4288082098349207918" varName="tree" />
     </scopeInfo>
     <scopeInfo nodeId="4288082098349207869" fileName="ModelTreeBuilder.java" startLine="94" startPosition="47" endLine="98" endPosition="9">
       <varInfo nodeId="4288082098349207871" varName="treeNode" />
@@ -90,6 +90,9 @@
     <scopeInfo nodeId="4288082098349207777" fileName="ModelTreeBuilder.java" startLine="68" startPosition="71" endLine="73" endPosition="13" />
     <scopeInfo nodeId="4288082098349207816" fileName="ModelTreeBuilder.java" startLine="79" startPosition="54" endLine="85" endPosition="41">
       <varInfo nodeId="4288082098349207818" varName="packageTreeNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4288082098349207772" fileName="ModelTreeBuilder.java" startLine="68" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="4288082098349207773" varName="nodes" />
     </scopeInfo>
     <scopeInfo nodeId="4288082098349207861" fileName="ModelTreeBuilder.java" startLine="92" startPosition="89" endLine="99" endPosition="7">
       <varInfo nodeId="4288082098349207863" varName="nextChild" />
@@ -102,9 +105,6 @@
       <varInfo nodeId="4288082098349207726" varName="node" />
       <varInfo nodeId="4288082098349207697" varName="sModelReference" />
     </scopeInfo>
-    <scopeInfo nodeId="4288082098349207772" fileName="ModelTreeBuilder.java" startLine="67" startPosition="0" endLine="75" endPosition="0">
-      <varInfo nodeId="4288082098349207773" varName="nodes" />
-    </scopeInfo>
     <scopeInfo nodeId="4288082098349207814" fileName="ModelTreeBuilder.java" startLine="78" startPosition="66" endLine="86" endPosition="7" />
     <scopeInfo nodeId="4288082098349207815" fileName="ModelTreeBuilder.java" startLine="78" startPosition="66" endLine="86" endPosition="7">
       <varInfo nodeId="4288082098349207842" varName="sub" />
@@ -112,21 +112,21 @@
     <scopeInfo nodeId="4288082098349207860" fileName="ModelTreeBuilder.java" startLine="91" startPosition="99" endLine="100" endPosition="5">
       <varInfo nodeId="4288082098349207890" varName="children" />
     </scopeInfo>
-    <scopeInfo nodeId="4288082098349207859" fileName="ModelTreeBuilder.java" startLine="91" startPosition="99" endLine="101" endPosition="16" />
-    <scopeInfo nodeId="4288082098349207921" fileName="ModelTreeBuilder.java" startLine="28" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="4288082098349207921" fileName="ModelTreeBuilder.java" startLine="29" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="4288082098349207924" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="4288082098349207690" fileName="ModelTreeBuilder.java" startLine="48" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="4288082098349207690" fileName="ModelTreeBuilder.java" startLine="49" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="4288082098349207691" varName="descriptor" />
     </scopeInfo>
+    <scopeInfo nodeId="4288082098349207859" fileName="ModelTreeBuilder.java" startLine="91" startPosition="99" endLine="101" endPosition="16" />
     <scopeInfo nodeId="4288082098349207808" fileName="ModelTreeBuilder.java" startLine="76" startPosition="129" endLine="88" endPosition="38">
       <varInfo nodeId="4288082098349207810" varName="parentTreeNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4288082098349207856" fileName="ModelTreeBuilder.java" startLine="90" startPosition="0" endLine="103" endPosition="0">
+    <scopeInfo nodeId="4288082098349207856" fileName="ModelTreeBuilder.java" startLine="91" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="4288082098349207902" varName="childName" />
       <varInfo nodeId="4288082098349207900" varName="parentTreeNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4288082098349207799" fileName="ModelTreeBuilder.java" startLine="75" startPosition="0" endLine="90" endPosition="0">
+    <scopeInfo nodeId="4288082098349207799" fileName="ModelTreeBuilder.java" startLine="76" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="4288082098349207800" varName="sModelTreeNode" />
       <varInfo nodeId="4288082098349207802" varName="sNodeTreeNode" />
       <varInfo nodeId="4288082098349207804" varName="virtualPackage" />
@@ -138,16 +138,16 @@
     <nodeInfo nodeId="4288082098349208021" fileName="ModelTreeCellRenderer.java" startLine="15" startPosition="36" endLine="16" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4288082098349208027" fileName="ModelTreeCellRenderer.java" startLine="16" startPosition="53" endLine="17" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4288082098349208032" fileName="ModelTreeCellRenderer.java" startLine="17" startPosition="33" endLine="18" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4288082098349207992" fileName="ModelTreeCellRenderer.java" startLine="10" startPosition="96" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelTreeCellRenderer#()V" />
+    <nodeInfo nodeId="4288082098349207992" fileName="ModelTreeCellRenderer.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelTreeCellRenderer#()V" />
     <nodeInfo nodeId="4288082098349208016" fileName="ModelTreeCellRenderer.java" startLine="14" startPosition="140" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4288082098349207998" fileName="ModelTreeCellRenderer.java" startLine="13" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="customizeCellRenderer#(Ljavax/swing/JTree;Ljava/lang/Object;ZZZIZ)V" />
+    <nodeInfo nodeId="4288082098349207998" fileName="ModelTreeCellRenderer.java" startLine="14" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="customizeCellRenderer#(Ljavax/swing/JTree;Ljava/lang/Object;ZZZIZ)V" />
     <scopeInfo nodeId="4288082098349207995" fileName="ModelTreeCellRenderer.java" startLine="11" startPosition="34" endLine="11" endPosition="34" />
-    <scopeInfo nodeId="4288082098349207992" fileName="ModelTreeCellRenderer.java" startLine="10" startPosition="96" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="4288082098349207992" fileName="ModelTreeCellRenderer.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
     <scopeInfo nodeId="4288082098349208020" fileName="ModelTreeCellRenderer.java" startLine="15" startPosition="36" endLine="18" endPosition="42">
       <varInfo nodeId="4288082098349208022" varName="treeNode" />
     </scopeInfo>
     <scopeInfo nodeId="4288082098349208015" fileName="ModelTreeCellRenderer.java" startLine="14" startPosition="140" endLine="19" endPosition="5" />
-    <scopeInfo nodeId="4288082098349207998" fileName="ModelTreeCellRenderer.java" startLine="13" startPosition="0" endLine="21" endPosition="0">
+    <scopeInfo nodeId="4288082098349207998" fileName="ModelTreeCellRenderer.java" startLine="14" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="4288082098349208007" varName="expanded" />
       <varInfo nodeId="4288082098349208013" varName="hasFocus" />
       <varInfo nodeId="4288082098349208009" varName="leaf" />
@@ -159,11 +159,11 @@
     <unitInfo nodeId="4288082098349207990" fileName="ModelTreeCellRenderer.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.platform.modeltree.ModelTreeCellRenderer" />
   </root>
   <root nodeId="4288082098349208038" modelId="r:e180cc3d-e9f2-4c0c-91b4-6730d80d9b23(jetbrains.mps.ide.platform.modeltree)">
-    <nodeInfo nodeId="4288082098349208039" fileName="ModelTreeNode.java" startLine="8" startPosition="59" endLine="9" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCollapsedIcon" />
-    <nodeInfo nodeId="4288082098349208042" fileName="ModelTreeNode.java" startLine="9" startPosition="31" endLine="10" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myExpandedIcon" />
-    <nodeInfo nodeId="4288082098349208045" fileName="ModelTreeNode.java" startLine="10" startPosition="30" endLine="11" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myText" />
-    <nodeInfo nodeId="4288082098349208052" fileName="ModelTreeNode.java" startLine="11" startPosition="24" endLine="12" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLeaf" />
-    <nodeInfo nodeId="4288082098349208059" fileName="ModelTreeNode.java" startLine="12" startPosition="25" endLine="13" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInitialized" />
+    <nodeInfo nodeId="4288082098349208039" fileName="ModelTreeNode.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCollapsedIcon" />
+    <nodeInfo nodeId="4288082098349208042" fileName="ModelTreeNode.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myExpandedIcon" />
+    <nodeInfo nodeId="4288082098349208045" fileName="ModelTreeNode.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myText" />
+    <nodeInfo nodeId="4288082098349208052" fileName="ModelTreeNode.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLeaf" />
+    <nodeInfo nodeId="4288082098349208059" fileName="ModelTreeNode.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInitialized" />
     <nodeInfo nodeId="4288082098349208071" fileName="ModelTreeNode.java" startLine="15" startPosition="38" endLine="16" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
     <nodeInfo nodeId="4288082098349208081" fileName="ModelTreeNode.java" startLine="19" startPosition="68" endLine="20" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
     <nodeInfo nodeId="4288082098349208085" fileName="ModelTreeNode.java" startLine="20" startPosition="29" endLine="21" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -181,20 +181,20 @@
     <nodeInfo nodeId="4288082098349208052" fileName="ModelTreeNode.java" startLine="64" startPosition="38" endLine="65" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4288082098349208059" fileName="ModelTreeNode.java" startLine="68" startPosition="35" endLine="69" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4288082098349208059" fileName="ModelTreeNode.java" startLine="72" startPosition="45" endLine="73" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4288082098349208067" fileName="ModelTreeNode.java" startLine="14" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelTreeNode#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4288082098349208067" fileName="ModelTreeNode.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelTreeNode#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="4288082098349208128" fileName="ModelTreeNode.java" startLine="33" startPosition="27" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4288082098349208077" fileName="ModelTreeNode.java" startLine="18" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelTreeNode#(Ljava/lang/String;Ljavax/swing/Icon;Ljavax/swing/Icon;)V" />
+    <nodeInfo nodeId="4288082098349208045" fileName="ModelTreeNode.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4288082098349208045" fileName="ModelTreeNode.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setText#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4288082098349208052" fileName="ModelTreeNode.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLeaf#()Z" />
+    <nodeInfo nodeId="4288082098349208052" fileName="ModelTreeNode.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setLeaf#(Z)V" />
+    <nodeInfo nodeId="4288082098349208059" fileName="ModelTreeNode.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInitialized#()Z" />
+    <nodeInfo nodeId="4288082098349208059" fileName="ModelTreeNode.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setInitialized#(Z)V" />
+    <nodeInfo nodeId="4288082098349208077" fileName="ModelTreeNode.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelTreeNode#(Ljava/lang/String;Ljavax/swing/Icon;Ljavax/swing/Icon;)V" />
+    <nodeInfo nodeId="4288082098349208141" fileName="ModelTreeNode.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
     <nodeInfo nodeId="4288082098349208154" fileName="ModelTreeNode.java" startLine="45" startPosition="41" endLine="49" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4288082098349208045" fileName="ModelTreeNode.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4288082098349208045" fileName="ModelTreeNode.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setText#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4288082098349208052" fileName="ModelTreeNode.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLeaf#()Z" />
-    <nodeInfo nodeId="4288082098349208052" fileName="ModelTreeNode.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setLeaf#(Z)V" />
-    <nodeInfo nodeId="4288082098349208059" fileName="ModelTreeNode.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInitialized#()Z" />
-    <nodeInfo nodeId="4288082098349208059" fileName="ModelTreeNode.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setInitialized#(Z)V" />
-    <nodeInfo nodeId="4288082098349208141" fileName="ModelTreeNode.java" startLine="39" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4288082098349208095" fileName="ModelTreeNode.java" startLine="23" startPosition="0" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelTreeNode#(Ljava/lang/String;Ljavax/swing/Icon;Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="4288082098349208148" fileName="ModelTreeNode.java" startLine="44" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#(Z)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="4288082098349208124" fileName="ModelTreeNode.java" startLine="31" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isLeaf#()Z" />
+    <nodeInfo nodeId="4288082098349208148" fileName="ModelTreeNode.java" startLine="45" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#(Z)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="4288082098349208095" fileName="ModelTreeNode.java" startLine="24" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelTreeNode#(Ljava/lang/String;Ljavax/swing/Icon;Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="4288082098349208124" fileName="ModelTreeNode.java" startLine="32" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isLeaf#()Z" />
     <scopeInfo nodeId="4288082098349208070" fileName="ModelTreeNode.java" startLine="15" startPosition="38" endLine="16" endPosition="29" />
     <scopeInfo nodeId="4288082098349208129" fileName="ModelTreeNode.java" startLine="34" startPosition="62" endLine="35" endPosition="19" />
     <scopeInfo nodeId="4288082098349208144" fileName="ModelTreeNode.java" startLine="41" startPosition="28" endLine="42" endPosition="40" />
@@ -205,39 +205,39 @@
     <scopeInfo nodeId="4288082098349208059" fileName="ModelTreeNode.java" startLine="68" startPosition="35" endLine="69" endPosition="30" />
     <scopeInfo nodeId="4288082098349208059" fileName="ModelTreeNode.java" startLine="72" startPosition="45" endLine="73" endPosition="31" />
     <scopeInfo nodeId="4288082098349208080" fileName="ModelTreeNode.java" startLine="19" startPosition="68" endLine="21" endPosition="34" />
-    <scopeInfo nodeId="4288082098349208067" fileName="ModelTreeNode.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+    <scopeInfo nodeId="4288082098349208067" fileName="ModelTreeNode.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="4288082098349208075" varName="label" />
     </scopeInfo>
-    <scopeInfo nodeId="4288082098349208077" fileName="ModelTreeNode.java" startLine="18" startPosition="0" endLine="22" endPosition="3">
+    <scopeInfo nodeId="4288082098349208045" fileName="ModelTreeNode.java" startLine="52" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="4288082098349208045" fileName="ModelTreeNode.java" startLine="56" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="4288082098349208045" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="4288082098349208052" fileName="ModelTreeNode.java" startLine="60" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="4288082098349208052" fileName="ModelTreeNode.java" startLine="64" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="4288082098349208052" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="4288082098349208059" fileName="ModelTreeNode.java" startLine="68" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="4288082098349208059" fileName="ModelTreeNode.java" startLine="72" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="4288082098349208059" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="4288082098349208077" fileName="ModelTreeNode.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="4288082098349208093" varName="expandedIcon" />
       <varInfo nodeId="4288082098349208091" varName="icon" />
       <varInfo nodeId="4288082098349208089" varName="label" />
     </scopeInfo>
     <scopeInfo nodeId="4288082098349208127" fileName="ModelTreeNode.java" startLine="33" startPosition="27" endLine="37" endPosition="26" />
+    <scopeInfo nodeId="4288082098349208141" fileName="ModelTreeNode.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="4288082098349208153" fileName="ModelTreeNode.java" startLine="45" startPosition="41" endLine="49" endPosition="6" />
-    <scopeInfo nodeId="4288082098349208045" fileName="ModelTreeNode.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="4288082098349208045" fileName="ModelTreeNode.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
-      <varInfo nodeId="4288082098349208045" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4288082098349208052" fileName="ModelTreeNode.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="4288082098349208052" fileName="ModelTreeNode.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
-      <varInfo nodeId="4288082098349208052" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4288082098349208059" fileName="ModelTreeNode.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="4288082098349208059" fileName="ModelTreeNode.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
-      <varInfo nodeId="4288082098349208059" varName="value" />
-    </scopeInfo>
     <scopeInfo nodeId="4288082098349208098" fileName="ModelTreeNode.java" startLine="24" startPosition="62" endLine="29" endPosition="44" />
-    <scopeInfo nodeId="4288082098349208141" fileName="ModelTreeNode.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="4288082098349208095" fileName="ModelTreeNode.java" startLine="23" startPosition="0" endLine="30" endPosition="3">
+    <scopeInfo nodeId="4288082098349208148" fileName="ModelTreeNode.java" startLine="45" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="4288082098349208149" varName="expanded" />
+    </scopeInfo>
+    <scopeInfo nodeId="4288082098349208095" fileName="ModelTreeNode.java" startLine="24" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="4288082098349208121" varName="data" />
       <varInfo nodeId="4288082098349208119" varName="icon" />
       <varInfo nodeId="4288082098349208117" varName="label" />
     </scopeInfo>
-    <scopeInfo nodeId="4288082098349208148" fileName="ModelTreeNode.java" startLine="44" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="4288082098349208149" varName="expanded" />
-    </scopeInfo>
-    <scopeInfo nodeId="4288082098349208124" fileName="ModelTreeNode.java" startLine="31" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="4288082098349208124" fileName="ModelTreeNode.java" startLine="32" startPosition="0" endLine="39" endPosition="0" />
     <unitInfo nodeId="4288082098349208038" fileName="ModelTreeNode.java" startLine="8" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.platform.modeltree.ModelTreeNode" />
   </root>
 </debugInfo>

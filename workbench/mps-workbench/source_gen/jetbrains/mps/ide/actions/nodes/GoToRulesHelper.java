@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.Language;
 import java.util.Collections;
 import jetbrains.mps.smodel.SModel;
@@ -15,14 +16,13 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import javax.swing.JPopupMenu;
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -43,7 +43,7 @@ public class GoToRulesHelper {
     if (rules.size() == 1) {
       SNode nodeToSelect = rules.get(0);
       if ((nodeToSelect != null)) {
-        NavigationSupport.getInstance().openNode(context, nodeToSelect, true, !(nodeToSelect.isRoot()));
+        NavigationSupport.getInstance().openNode(context, nodeToSelect, true, !(SNodeOperations.isRoot(nodeToSelect)));
       }
       return;
     }
@@ -76,11 +76,11 @@ public class GoToRulesHelper {
 
     List<SNode> overriding = ListSequence.fromList(rules).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.typesystem.structure.InferenceRule");
+        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.typesystem.structure.InferenceRule");
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.lang.typesystem.structure.InferenceRule");
+        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(it, "jetbrains.mps.lang.typesystem.structure.InferenceRule");
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -123,17 +123,17 @@ public class GoToRulesHelper {
   }
 
   private static SNode getApplicableConcept(SNode applicableNode) {
-    if (SNodeOperations.isInstanceOf(applicableNode, "jetbrains.mps.lang.typesystem.structure.ConceptReference")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(applicableNode, "jetbrains.mps.lang.typesystem.structure.ConceptReference"), "concept", false);
+    if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(applicableNode, "jetbrains.mps.lang.typesystem.structure.ConceptReference")) {
+      return SLinkOperations.getTarget(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(applicableNode, "jetbrains.mps.lang.typesystem.structure.ConceptReference"), "concept", false);
     } else
-    if (SNodeOperations.isInstanceOf(applicableNode, "jetbrains.mps.lang.typesystem.structure.PatternCondition")) {
-      return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(applicableNode, "jetbrains.mps.lang.typesystem.structure.PatternCondition"), "pattern", true), "patternNode", true));
+    if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(applicableNode, "jetbrains.mps.lang.typesystem.structure.PatternCondition")) {
+      return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(applicableNode, "jetbrains.mps.lang.typesystem.structure.PatternCondition"), "pattern", true), "patternNode", true));
     } else {
       return null;
     }
   }
 
-  private static SModel check_l17hf5_a0c0b(DefaultSModelDescriptor checkedDotOperand) {
+  private static SModel check_l17hf5_a0c0b(EditableSModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModel();
     }
@@ -167,11 +167,11 @@ public class GoToRulesHelper {
           public void actionPerformed(ActionEvent e) {
             ModelAccess.instance().runWriteInEDT(new Runnable() {
               public void run() {
-                if (jetbrains.mps.util.SNodeOperations.isDisposed(node) || !(jetbrains.mps.util.SNodeOperations.isRegistered(node)) || node.getModel().getModelDescriptor() != null) {
+                if (SNodeOperations.isDisposed(node) || node.getModel() == null || node.getModel().getModelDescriptor() == null) {
                   return;
                 }
                 // TODO: use node pointers here 
-                NavigationSupport.getInstance().openNode(operationContext, node, true, !(node.isRoot()));
+                NavigationSupport.getInstance().openNode(operationContext, node, true, !(SNodeOperations.isRoot(node)));
               }
             });
           }

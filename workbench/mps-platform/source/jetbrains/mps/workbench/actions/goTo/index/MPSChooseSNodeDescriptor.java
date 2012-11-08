@@ -29,7 +29,6 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -131,7 +130,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
       public void navigate(boolean requestFocus) {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           public void run() {
-            SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(object.getModelReference());
+            SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(object.getModelReference());
             if (descriptor == null) {
               LOG.error("Can't find model descriptor for: " + object.getModelReference());
               return;
@@ -145,7 +144,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
             }
 
             ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
-            NavigationSupport.getInstance().openNode(context, node, true, !(node.isRoot()));
+            NavigationSupport.getInstance().openNode(context, node, true, !(node.getModel() != null && node.getModel().isRoot(node)));
           }
         });
       }
@@ -173,7 +172,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
     return true;
   }
 
-  private static class FilterStubsScope implements IScope {
+  private static class FilterStubsScope extends BaseScope {
     private final IScope inner;
 
     public FilterStubsScope(IScope inner) {
@@ -234,16 +233,6 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
     @Override
     public Iterable<IModule> getVisibleModules() {
       return inner.getVisibleModules();
-    }
-
-    @Override
-    public SModelDescriptor getModelDescriptor(SModelFqName fqName) {
-      return inner.getModelDescriptor(fqName);
-    }
-
-    @Override
-    public Language getLanguage(String fqName) {
-      return inner.getLanguage(fqName);
     }
   }
 }

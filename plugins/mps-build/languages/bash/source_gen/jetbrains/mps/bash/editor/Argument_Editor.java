@@ -48,7 +48,7 @@ public class Argument_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jagqzb_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "argument");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "argument");
     editorCell.setCellId("Constant_jagqzb_a0");
     {
       Style style = editorCell.getStyle();

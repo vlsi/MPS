@@ -26,7 +26,9 @@ public class BaseIntentionDeclaration_Behavior {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "forConcept", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
+  @Deprecated
   public static boolean virtual_isParameterized_6263518417926802310(SNode thisNode) {
+    // Was deprecated in MPS 3.0 should be removed after MPS 3.0 
     return false;
   }
 

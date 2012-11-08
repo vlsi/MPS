@@ -15,15 +15,15 @@
     <nodeInfo nodeId="1197150020790" fileName="MrsH_StateMachineFactory.java" startLine="25" startPosition="94" endLine="26" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197150020790" fileName="MrsH_StateMachineFactory.java" startLine="26" startPosition="40" endLine="27" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197150020790" fileName="MrsH_StateMachineFactory.java" startLine="27" startPosition="61" endLine="28" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197150020790" fileName="MrsH_StateMachineFactory.java" startLine="10" startPosition="67" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MrsH_StateMachineFactory#()V" />
-    <nodeInfo nodeId="1197150020790" fileName="MrsH_StateMachineFactory.java" startLine="13" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStateMachine#()Ljetbrains/mps/samples/secretCompartmentLanguage/runtime/StateMachine;" />
+    <nodeInfo nodeId="1197150020790" fileName="MrsH_StateMachineFactory.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MrsH_StateMachineFactory#()V" />
+    <nodeInfo nodeId="1197150020790" fileName="MrsH_StateMachineFactory.java" startLine="14" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStateMachine#()Ljetbrains/mps/samples/secretCompartmentLanguage/runtime/StateMachine;" />
     <scopeInfo nodeId="1197150020790" fileName="MrsH_StateMachineFactory.java" startLine="11" startPosition="37" endLine="11" endPosition="37" />
-    <scopeInfo nodeId="1197150020790" fileName="MrsH_StateMachineFactory.java" startLine="10" startPosition="67" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="1197150020790" fileName="MrsH_StateMachineFactory.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
     <scopeInfo nodeId="1197150020790" fileName="MrsH_StateMachineFactory.java" startLine="14" startPosition="41" endLine="28" endPosition="24">
       <varInfo nodeId="1197150020790" varName="startState" />
       <varInfo nodeId="1197150020790" varName="stateMachine" />
     </scopeInfo>
-    <scopeInfo nodeId="1197150020790" fileName="MrsH_StateMachineFactory.java" startLine="13" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1197150020790" fileName="MrsH_StateMachineFactory.java" startLine="14" startPosition="0" endLine="30" endPosition="0" />
     <unitInfo nodeId="1197150020790" fileName="MrsH_StateMachineFactory.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.sandbox.MrsH_StateMachineFactory" />
   </root>
   <root nodeId="1197247437082" modelId="r:00000000-0000-4000-0000-011c89590431(jetbrains.mps.samples.secretCompartmentLanguage.sandbox)">
@@ -33,11 +33,11 @@
     <nodeInfo nodeId="1197255894825" fileName="MrsH_StateMachine_Test.java" startLine="13" startPosition="35" endLine="14" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197255910138" fileName="MrsH_StateMachine_Test.java" startLine="14" startPosition="35" endLine="15" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197253131013" fileName="MrsH_StateMachine_Test.java" startLine="15" startPosition="35" endLine="16" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197253131013" fileName="MrsH_StateMachine_Test.java" startLine="9" startPosition="62" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_A#()V" />
+    <nodeInfo nodeId="1197253131013" fileName="MrsH_StateMachine_Test.java" startLine="10" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_A#()V" />
     <scopeInfo nodeId="1197253131013" fileName="MrsH_StateMachine_Test.java" startLine="10" startPosition="41" endLine="16" endPosition="86">
       <varInfo nodeId="1197253131013" varName="stateMachineFactory" />
     </scopeInfo>
-    <scopeInfo nodeId="1197253131013" fileName="MrsH_StateMachine_Test.java" startLine="9" startPosition="62" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1197253131013" fileName="MrsH_StateMachine_Test.java" startLine="10" startPosition="0" endLine="18" endPosition="0" />
     <unitInfo nodeId="1197247437082" fileName="MrsH_StateMachine_Test.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.sandbox.MrsH_StateMachine_Test" />
   </root>
 </debugInfo>

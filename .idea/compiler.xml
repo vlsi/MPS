@@ -92,6 +92,7 @@
       <directory url="file://$PROJECT_DIR$/languages/util/math/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/money/runtimeSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/money/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/baseLanguage/methodDispatch/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/mps-lite/languages/mpslite/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/mps-lite/languages/nanoj/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/mps-lite/source" includeSubdirectories="true" />

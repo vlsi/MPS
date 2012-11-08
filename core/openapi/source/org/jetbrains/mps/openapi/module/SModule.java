@@ -36,6 +36,8 @@ public interface SModule {
 
   SRepository getRepository();
 
+  SModuleScope getModuleScope();
+
   Iterable<SDependency> getDeclaredDependencies();
 
   Iterable<SLanguage> getUsedLanguages();

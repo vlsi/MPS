@@ -37,14 +37,14 @@ public class _NotInRules_Component extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_rcqmfi_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "do not use in rules");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do not use in rules");
     editorCell.setCellId("Constant_rcqmfi_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_rcqmfi_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "use in queries only");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use in queries only");
     editorCell.setCellId("Constant_rcqmfi_b0");
     editorCell.setDefaultText("");
     return editorCell;

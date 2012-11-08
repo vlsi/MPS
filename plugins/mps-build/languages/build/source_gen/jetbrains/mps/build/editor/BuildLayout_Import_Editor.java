@@ -36,7 +36,7 @@ public class BuildLayout_Import_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4dmy40_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "import");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "import");
     editorCell.setCellId("Constant_4dmy40_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {

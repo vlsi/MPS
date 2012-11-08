@@ -35,7 +35,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ghsvq8_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "/*");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/*");
     editorCell.setCellId("Constant_ghsvq8_a0");
     {
       Style style = editorCell.getStyle();
@@ -48,7 +48,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ghsvq8_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "*/");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "*/");
     editorCell.setCellId("Constant_ghsvq8_c0");
     {
       Style style = editorCell.getStyle();

@@ -31,7 +31,7 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_r9gaet_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "check");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check");
     editorCell.setCellId("Constant_r9gaet_a0");
     transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -39,7 +39,7 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_r9gaet_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "dataflow");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dataflow");
     editorCell.setCellId("Constant_r9gaet_c0");
     transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -47,7 +47,7 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_r9gaet_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_r9gaet_d0");
     {
       Style style = editorCell.getStyle();

@@ -43,14 +43,14 @@ public class SimpleVmOptions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6n3yp7_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "#");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#");
     editorCell.setCellId("Constant_6n3yp7_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_6n3yp7_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "commented");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "commented");
     editorCell.setCellId("Constant_6n3yp7_a0_0");
     editorCell.setDefaultText("");
     return editorCell;

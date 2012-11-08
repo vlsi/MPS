@@ -53,7 +53,7 @@ public class CustomContainerCreator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_j9f7go_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "container declaration:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "container declaration:");
     editorCell.setCellId("Constant_j9f7go_a0a");
     editorCell.setDefaultText("");
     return editorCell;

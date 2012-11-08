@@ -10,33 +10,33 @@
     <nodeInfo nodeId="2819311507031226118" fileName="TestUtil.java" startLine="34" startPosition="24" endLine="35" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2819311507031226092" fileName="TestUtil.java" startLine="38" startPosition="43" endLine="39" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2819311507031226103" fileName="TestUtil.java" startLine="39" startPosition="302" endLine="40" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2819311507031225992" fileName="TestUtil.java" startLine="17" startPosition="23" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestUtil#()V" />
+    <nodeInfo nodeId="2819311507031225992" fileName="TestUtil.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestUtil#()V" />
+    <nodeInfo nodeId="2819311507031226018" fileName="TestUtil.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="2819311507031226128" fileName="TestUtil.java" startLine="37" startPosition="35" endLine="41" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="2819311507031226018" fileName="TestUtil.java" startLine="24" startPosition="65" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="2819311507031226012" fileName="TestUtil.java" startLine="23" startPosition="24" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2819311507031226090" fileName="TestUtil.java" startLine="36" startPosition="65" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2819311507031226090" fileName="TestUtil.java" startLine="37" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="2819311507031226087" fileName="TestUtil.java" startLine="35" startPosition="26" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2819311507031226000" fileName="TestUtil.java" startLine="20" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="testWeave#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;I)V" />
-    <nodeInfo nodeId="2819311507031226075" fileName="TestUtil.java" startLine="31" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="testWeaveMany#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;I)V" />
+    <nodeInfo nodeId="2819311507031226000" fileName="TestUtil.java" startLine="21" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="testWeave#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;I)V" />
+    <nodeInfo nodeId="2819311507031226075" fileName="TestUtil.java" startLine="32" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="testWeaveMany#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;I)V" />
     <scopeInfo nodeId="2819311507031225995" fileName="TestUtil.java" startLine="18" startPosition="21" endLine="18" endPosition="21" />
-    <scopeInfo nodeId="2819311507031225992" fileName="TestUtil.java" startLine="17" startPosition="23" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="2819311507031225992" fileName="TestUtil.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="2819311507031226019" fileName="TestUtil.java" startLine="25" startPosition="35" endLine="27" endPosition="28" />
     <scopeInfo nodeId="2819311507031226129" fileName="TestUtil.java" startLine="38" startPosition="43" endLine="40" endPosition="30" />
+    <scopeInfo nodeId="2819311507031226018" fileName="TestUtil.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="2819311507031226018" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="2819311507031226091" fileName="TestUtil.java" startLine="37" startPosition="35" endLine="41" endPosition="9" />
     <scopeInfo nodeId="2819311507031226128" fileName="TestUtil.java" startLine="37" startPosition="35" endLine="41" endPosition="9">
       <varInfo nodeId="2819311507031226131" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="2819311507031226018" fileName="TestUtil.java" startLine="24" startPosition="65" endLine="29" endPosition="0">
-      <varInfo nodeId="2819311507031226018" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="2819311507031226090" fileName="TestUtil.java" startLine="36" startPosition="65" endLine="43" endPosition="0">
+    <scopeInfo nodeId="2819311507031226090" fileName="TestUtil.java" startLine="37" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="2819311507031226090" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="2819311507031226003" fileName="TestUtil.java" startLine="21" startPosition="84" endLine="29" endPosition="7">
       <varInfo nodeId="2819311507031226009" varName="delta" />
       <varInfo nodeId="2819311507031226005" varName="line" />
     </scopeInfo>
-    <scopeInfo nodeId="2819311507031226000" fileName="TestUtil.java" startLine="20" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="2819311507031226000" fileName="TestUtil.java" startLine="21" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="2819311507031226037" varName="nodes" />
       <varInfo nodeId="2819311507031226047" varName="root" />
       <varInfo nodeId="2819311507031226040" varName="startLine" />
@@ -46,7 +46,7 @@
       <varInfo nodeId="2819311507031226119" varName="howMany" />
       <varInfo nodeId="2819311507031226080" varName="line" />
     </scopeInfo>
-    <scopeInfo nodeId="2819311507031226075" fileName="TestUtil.java" startLine="31" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="2819311507031226075" fileName="TestUtil.java" startLine="32" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="2819311507031226112" varName="nodes" />
       <varInfo nodeId="2819311507031226110" varName="root" />
       <varInfo nodeId="2819311507031226114" varName="startLine" />
@@ -80,22 +80,22 @@
     <nodeInfo nodeId="2819311507031226193" fileName="TestWeaving_Test.java" startLine="84" startPosition="62" endLine="85" endPosition="340" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2819311507031226183" fileName="TestWeaving_Test.java" startLine="88" startPosition="62" endLine="89" endPosition="344" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2819311507031226173" fileName="TestWeaving_Test.java" startLine="92" startPosition="66" endLine="93" endPosition="348" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008539169" fileName="TestWeaving_Test.java" startLine="63" startPosition="53" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weave#()V" />
-    <nodeInfo nodeId="6186432342008544908" fileName="TestWeaving_Test.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveEach#()V" />
-    <nodeInfo nodeId="6186432342008544948" fileName="TestWeaving_Test.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveMany#()V" />
-    <nodeInfo nodeId="6186432342008544988" fileName="TestWeaving_Test.java" startLine="75" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveEachMany#()V" />
-    <nodeInfo nodeId="2819311507031226200" fileName="TestWeaving_Test.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveInterpreted#()V" />
-    <nodeInfo nodeId="2819311507031226190" fileName="TestWeaving_Test.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveEachInterpreted#()V" />
-    <nodeInfo nodeId="2819311507031226180" fileName="TestWeaving_Test.java" startLine="87" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveManyInterpreted#()V" />
-    <nodeInfo nodeId="2819311507031226170" fileName="TestWeaving_Test.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveEachManyInterpreted#()V" />
-    <nodeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="13" startPosition="63" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weave#()V" />
-    <nodeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="19" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveEach#()V" />
-    <nodeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="25" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveMany#()V" />
-    <nodeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveEachMany#()V" />
-    <nodeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="37" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveInterpreted#()V" />
-    <nodeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="43" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveEachInterpreted#()V" />
-    <nodeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="49" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveManyInterpreted#()V" />
-    <nodeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="55" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveEachManyInterpreted#()V" />
+    <nodeInfo nodeId="6186432342008539169" fileName="TestWeaving_Test.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weave#()V" />
+    <nodeInfo nodeId="6186432342008544908" fileName="TestWeaving_Test.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveEach#()V" />
+    <nodeInfo nodeId="6186432342008544948" fileName="TestWeaving_Test.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveMany#()V" />
+    <nodeInfo nodeId="6186432342008544988" fileName="TestWeaving_Test.java" startLine="76" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveEachMany#()V" />
+    <nodeInfo nodeId="2819311507031226200" fileName="TestWeaving_Test.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveInterpreted#()V" />
+    <nodeInfo nodeId="2819311507031226190" fileName="TestWeaving_Test.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveEachInterpreted#()V" />
+    <nodeInfo nodeId="2819311507031226180" fileName="TestWeaving_Test.java" startLine="88" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveManyInterpreted#()V" />
+    <nodeInfo nodeId="2819311507031226170" fileName="TestWeaving_Test.java" startLine="92" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveEachManyInterpreted#()V" />
+    <nodeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="14" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weave#()V" />
+    <nodeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveEach#()V" />
+    <nodeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveMany#()V" />
+    <nodeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveEachMany#()V" />
+    <nodeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="38" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveInterpreted#()V" />
+    <nodeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="44" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveEachInterpreted#()V" />
+    <nodeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="50" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveManyInterpreted#()V" />
+    <nodeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="56" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_weaveEachManyInterpreted#()V" />
     <scopeInfo nodeId="6186432342008539169" fileName="TestWeaving_Test.java" startLine="64" startPosition="47" endLine="65" endPosition="336" />
     <scopeInfo nodeId="6186432342008544908" fileName="TestWeaving_Test.java" startLine="68" startPosition="51" endLine="69" endPosition="340" />
     <scopeInfo nodeId="6186432342008544948" fileName="TestWeaving_Test.java" startLine="72" startPosition="51" endLine="73" endPosition="344" />
@@ -112,22 +112,22 @@
     <scopeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="45" startPosition="60" endLine="47" endPosition="122" />
     <scopeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="51" startPosition="60" endLine="53" endPosition="122" />
     <scopeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="57" startPosition="64" endLine="59" endPosition="126" />
-    <scopeInfo nodeId="6186432342008539169" fileName="TestWeaving_Test.java" startLine="63" startPosition="53" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="6186432342008544908" fileName="TestWeaving_Test.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="6186432342008544948" fileName="TestWeaving_Test.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="6186432342008544988" fileName="TestWeaving_Test.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="2819311507031226200" fileName="TestWeaving_Test.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="2819311507031226190" fileName="TestWeaving_Test.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="2819311507031226180" fileName="TestWeaving_Test.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="2819311507031226170" fileName="TestWeaving_Test.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="13" startPosition="63" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="19" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="25" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="31" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="37" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="43" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="49" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="55" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="6186432342008539169" fileName="TestWeaving_Test.java" startLine="64" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="6186432342008544908" fileName="TestWeaving_Test.java" startLine="68" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="6186432342008544948" fileName="TestWeaving_Test.java" startLine="72" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="6186432342008544988" fileName="TestWeaving_Test.java" startLine="76" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="2819311507031226200" fileName="TestWeaving_Test.java" startLine="80" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="2819311507031226190" fileName="TestWeaving_Test.java" startLine="84" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="2819311507031226180" fileName="TestWeaving_Test.java" startLine="88" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="2819311507031226170" fileName="TestWeaving_Test.java" startLine="92" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="26" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="44" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="50" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="56" startPosition="0" endLine="61" endPosition="0" />
     <unitInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="62" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test$TestBody" />
     <unitInfo nodeId="6186432342008539165" fileName="TestWeaving_Test.java" startLine="12" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test" />
   </root>

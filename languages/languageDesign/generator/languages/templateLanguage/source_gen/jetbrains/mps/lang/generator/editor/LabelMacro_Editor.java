@@ -102,7 +102,7 @@ public class LabelMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_x0em22_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "$LABEL$");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$LABEL$");
     editorCell.setCellId("Constant_x0em22_a0");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     if (true) {
@@ -115,7 +115,7 @@ public class LabelMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_x0em22_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "label node macro");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "label node macro");
     editorCell.setCellId("Constant_x0em22_a0_0");
     {
       Style style = editorCell.getStyle();
@@ -128,7 +128,7 @@ public class LabelMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_x0em22_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_x0em22_b0");
     {
       Style style = editorCell.getStyle();
@@ -139,14 +139,14 @@ public class LabelMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_x0em22_a0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "comment");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
     editorCell.setCellId("Constant_x0em22_a0c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_x0em22_b0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_x0em22_b0c0");
     {
       Style style = editorCell.getStyle();
@@ -157,14 +157,14 @@ public class LabelMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_x0em22_a1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapping label");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_x0em22_a1c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_x0em22_b1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_x0em22_b1c0");
     {
       Style style = editorCell.getStyle();

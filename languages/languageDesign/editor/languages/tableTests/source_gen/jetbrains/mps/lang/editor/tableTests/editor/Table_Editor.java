@@ -39,7 +39,7 @@ public class Table_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3p37vj_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Table");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Table");
     editorCell.setCellId("Constant_3p37vj_a0");
     {
       Style style = editorCell.getStyle();

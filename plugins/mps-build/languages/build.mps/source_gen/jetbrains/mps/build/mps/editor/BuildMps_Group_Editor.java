@@ -58,7 +58,7 @@ public class BuildMps_Group_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pilq2t_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mps group");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mps group");
     editorCell.setCellId("Constant_pilq2t_a0");
     buildStyles_StyleSheet.getProjectPartKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -66,7 +66,7 @@ public class BuildMps_Group_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pilq2t_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_pilq2t_d0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -150,7 +150,7 @@ public class BuildMps_Group_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_pilq2t_a0c0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_pilq2t_a0c0");
       {
         Style style = editorCell.getStyle();

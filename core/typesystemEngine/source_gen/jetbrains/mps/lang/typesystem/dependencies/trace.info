@@ -224,11 +224,11 @@
     <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="430" startPosition="7" endLine="431" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="431" startPosition="75" endLine="432" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="432" startPosition="76" endLine="433" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1194870678778" fileName="DependenciesCollector.java" startLine="21" startPosition="36" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DependenciesCollector#()V" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="137" startPosition="72" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_bcwvc2_a1a1a0a0a0a0c0a2a1a1a2a5a0#()V" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="212" startPosition="75" endLine="214" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_bcwvc2_a1a1a0a0a0a0c0a2a0c0b0b0c0f0a#()V" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="287" startPosition="82" endLine="289" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_bcwvc2_a1a1a0a0a0a0a0c0b0a2a0c0a2a1a1a2a5a0#()V" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="362" startPosition="87" endLine="364" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_bcwvc2_a1a1a0a0e0a0b0a0c0a2a1a0c0a2a0c0b0b0c0f0a#()V" />
+    <nodeInfo nodeId="1194870678778" fileName="DependenciesCollector.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DependenciesCollector#()V" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="138" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_bcwvc2_a1a1a0a0a0a0c0a2a1a1a2a5a0#()V" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="213" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_bcwvc2_a1a1a0a0a0a0c0a2a0c0b0b0c0f0a#()V" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="288" startPosition="0" endLine="290" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_bcwvc2_a1a1a0a0a0a0a0c0b0a2a0c0a2a1a1a2a5a0#()V" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="363" startPosition="0" endLine="365" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_bcwvc2_a1a1a0a0e0a0b0a0c0a2a1a0c0a2a0c0b0b0c0f0a#()V" />
     <nodeInfo nodeId="1194537417411" fileName="DependenciesCollector.java" startLine="27" startPosition="179" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1194608818461" fileName="DependenciesCollector.java" startLine="33" startPosition="57" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="47" startPosition="58" endLine="50" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -244,8 +244,8 @@
     <nodeInfo nodeId="1194966986144" fileName="DependenciesCollector.java" startLine="91" startPosition="182" endLine="94" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="99" startPosition="67" endLine="102" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1194968562732" fileName="DependenciesCollector.java" startLine="110" startPosition="156" endLine="113" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="1194969756459" fileName="DependenciesCollector.java" startLine="115" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="1194968619105" fileName="DependenciesCollector.java" startLine="118" startPosition="33" endLine="121" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1194969756459" fileName="DependenciesCollector.java" startLine="114" startPosition="178" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="1194536084807" fileName="DependenciesCollector.java" startLine="26" startPosition="65" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="90" startPosition="51" endLine="95" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1194966986142" fileName="DependenciesCollector.java" startLine="90" startPosition="51" endLine="95" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -346,17 +346,17 @@
     <nodeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="75" startPosition="17" endLine="128" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="68" startPosition="20" endLine="129" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="63" startPosition="15" endLine="129" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="140" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="215" startPosition="0" endLine="285" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="290" startPosition="0" endLine="360" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="365" startPosition="0" endLine="435" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="141" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="216" startPosition="0" endLine="285" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="291" startPosition="0" endLine="360" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="366" startPosition="0" endLine="435" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="56" startPosition="18" endLine="130" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="51" startPosition="13" endLine="130" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="43" startPosition="52" endLine="131" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1194538774943" fileName="DependenciesCollector.java" startLine="41" startPosition="55" endLine="132" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1194538082892" fileName="DependenciesCollector.java" startLine="39" startPosition="55" endLine="133" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1194537984796" fileName="DependenciesCollector.java" startLine="36" startPosition="5" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1194535086641" fileName="DependenciesCollector.java" startLine="24" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectDependencies#(Ljetbrains/mps/smodel/SNode;Ljava/util/Map;Ljava/util/Set;)V" />
+    <nodeInfo nodeId="1194535086641" fileName="DependenciesCollector.java" startLine="25" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectDependencies#(Ljetbrains/mps/smodel/SNode;Ljava/util/Map;Ljava/util/Set;)V" />
     <scopeInfo nodeId="1194870678781" fileName="DependenciesCollector.java" startLine="22" startPosition="34" endLine="22" endPosition="34" />
     <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="138" startPosition="63" endLine="138" endPosition="63" />
     <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="213" startPosition="66" endLine="213" endPosition="66" />
@@ -376,11 +376,11 @@
     <scopeInfo nodeId="1194968562734" fileName="DependenciesCollector.java" startLine="111" startPosition="125" endLine="112" endPosition="157" />
     <scopeInfo nodeId="1194969756464" fileName="DependenciesCollector.java" startLine="115" startPosition="63" endLine="116" endPosition="134" />
     <scopeInfo nodeId="1194968619106" fileName="DependenciesCollector.java" startLine="119" startPosition="142" endLine="120" endPosition="217" />
-    <scopeInfo nodeId="1194870678778" fileName="DependenciesCollector.java" startLine="21" startPosition="36" endLine="23" endPosition="3" />
-    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="137" startPosition="72" endLine="139" endPosition="5" />
-    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="212" startPosition="75" endLine="214" endPosition="5" />
-    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="287" startPosition="82" endLine="289" endPosition="5" />
-    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="362" startPosition="87" endLine="364" endPosition="5" />
+    <scopeInfo nodeId="1194870678778" fileName="DependenciesCollector.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="138" startPosition="0" endLine="140" endPosition="0" />
+    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="213" startPosition="0" endLine="215" endPosition="0" />
+    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="288" startPosition="0" endLine="290" endPosition="0" />
+    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="363" startPosition="0" endLine="365" endPosition="0" />
     <scopeInfo nodeId="1194536084811" fileName="DependenciesCollector.java" startLine="27" startPosition="179" endLine="30" endPosition="7" />
     <scopeInfo nodeId="1194608818461" fileName="DependenciesCollector.java" startLine="33" startPosition="57" endLine="36" endPosition="5">
       <varInfo nodeId="1194608818465" varName="root" />
@@ -392,6 +392,9 @@
     <scopeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="76" startPosition="46" endLine="79" endPosition="19" />
     <scopeInfo nodeId="1194964521499" fileName="DependenciesCollector.java" startLine="76" startPosition="46" endLine="79" endPosition="19" />
     <scopeInfo nodeId="1194966986143" fileName="DependenciesCollector.java" startLine="91" startPosition="182" endLine="94" endPosition="25" />
+    <scopeInfo nodeId="1194969756459" fileName="DependenciesCollector.java" startLine="115" startPosition="0" endLine="118" endPosition="0">
+      <varInfo nodeId="1194969756462" varName="p0" />
+    </scopeInfo>
     <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="158" startPosition="9" endLine="161" endPosition="62">
       <varInfo nodeId="1238589082283" varName="quotedNode1_12" />
     </scopeInfo>
@@ -466,9 +469,6 @@
     </scopeInfo>
     <scopeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="98" startPosition="23" endLine="102" endPosition="25">
       <varInfo nodeId="1194967010187" varName="matchingNode_bcwvc2_b0b0c0f0a" />
-    </scopeInfo>
-    <scopeInfo nodeId="1194969756459" fileName="DependenciesCollector.java" startLine="114" startPosition="178" endLine="118" endPosition="0">
-      <varInfo nodeId="1194969756462" varName="p0" />
     </scopeInfo>
     <scopeInfo nodeId="1194536084807" fileName="DependenciesCollector.java" startLine="26" startPosition="65" endLine="31" endPosition="5">
       <varInfo nodeId="1194536084809" varName="applicableNodeReference" />
@@ -659,10 +659,10 @@
       <varInfo nodeId="1238589082239" varName="quotedNode_9" />
       <varInfo nodeId="1238589082239" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="140" startPosition="0" endLine="210" endPosition="0" />
-    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="215" startPosition="0" endLine="285" endPosition="0" />
-    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="290" startPosition="0" endLine="360" endPosition="0" />
-    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="365" startPosition="0" endLine="435" endPosition="0" />
+    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="141" startPosition="0" endLine="210" endPosition="0" />
+    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="216" startPosition="0" endLine="285" endPosition="0" />
+    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="291" startPosition="0" endLine="360" endPosition="0" />
+    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="366" startPosition="0" endLine="435" endPosition="0" />
     <scopeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="56" startPosition="20" endLine="129" endPosition="15">
       <varInfo nodeId="1194538897614" varName="matches_bcwvc2_b1a2a5a0" />
     </scopeInfo>
@@ -684,7 +684,7 @@
       <varInfo nodeId="1194538029692" varName="prevSize" />
       <varInfo nodeId="1194537616585" varName="roots" />
     </scopeInfo>
-    <scopeInfo nodeId="1194535086641" fileName="DependenciesCollector.java" startLine="24" startPosition="0" endLine="136" endPosition="0">
+    <scopeInfo nodeId="1194535086641" fileName="DependenciesCollector.java" startLine="25" startPosition="0" endLine="136" endPosition="0">
       <varInfo nodeId="1194612304660" varName="dependencies" />
       <varInfo nodeId="1194535127693" varName="inferenceRule" />
       <varInfo nodeId="1194612324558" varName="leaves" />

@@ -31,7 +31,7 @@ import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -152,7 +152,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
 
   public Set<EditorMessage> createMessages(SNode node, List<SModelEvent> list, boolean wasCheckedOnce, EditorContext editorContext) {
     myMessagesChanged = false;
-    EditorComponent editorComponent = editorContext.getNodeEditorComponent();
+    EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
     SNode sNode = editorComponent.getEditedNode();
     SNodePointer sNodePointer = editorComponent.getEditedNodePointer();
 

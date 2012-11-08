@@ -9,6 +9,7 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" />
   <import index="9a8" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="srng" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="tpcw" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" implicit="yes" />
@@ -26,20 +27,20 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
     </node>
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1161807239261">
-      <property name="name" nameId="tpck.1169194664001" value="Options_DefaultCustom" />
       <property name="memberIdentifierPolicy" nameId="tpce.1197591154882" value="custom" />
+      <property name="name" nameId="tpck.1169194664001" value="Options_DefaultCustom" />
       <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
       <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1161807239262" resolveInfo="default_" />
     </node>
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1165007009656">
-      <property name="name" nameId="tpck.1169194664001" value="NodePresentationOptions" />
       <property name="memberIdentifierPolicy" nameId="tpce.1197591154882" value="custom" />
+      <property name="name" nameId="tpck.1169194664001" value="NodePresentationOptions" />
       <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
       <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1165007009657" resolveInfo="default_" />
     </node>
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1177964585679">
-      <property name="name" nameId="tpck.1169194664001" value="Options_DefaultTrue" />
       <property name="memberIdentifierPolicy" nameId="tpce.1197591154882" value="custom" />
+      <property name="name" nameId="tpck.1169194664001" value="Options_DefaultTrue" />
       <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
       <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1177964585680" resolveInfo="default_" />
     </node>
@@ -109,47 +110,47 @@
   </root>
   <root id="1161807239261">
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1161807239262">
-      <property name="externalValue" nameId="tpce.1083923523172" value="default_" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="default_" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="default_" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1161807432013">
-      <property name="externalValue" nameId="tpce.1083923523172" value="custom_" />
       <property name="internalValue" nameId="tpce.1083923523171" value="custom" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="custom_" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="custom_" />
     </node>
   </root>
   <root id="1165007009656">
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1165007009657">
-      <property name="externalValue" nameId="tpce.1083923523172" value="default" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="default_" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="default" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1165007068491">
-      <property name="externalValue" nameId="tpce.1083923523172" value="referent" />
       <property name="internalValue" nameId="tpce.1083923523171" value="default_referent" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="referent_" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="referent" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1165007009658">
-      <property name="externalValue" nameId="tpce.1083923523172" value="custom" />
       <property name="internalValue" nameId="tpce.1083923523171" value="custom" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="custom_" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="custom" />
     </node>
   </root>
   <root id="1177964585679">
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1177964585680">
-      <property name="externalValue" nameId="tpce.1083923523172" value="default" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="default_" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="default" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1177964653995">
-      <property name="externalValue" nameId="tpce.1083923523172" value="true" />
       <property name="internalValue" nameId="tpce.1083923523171" value="true" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="true_" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="true" />
     </node>
   </root>
   <root id="1194033889146">
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1194033889147">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545963098" resolveInfo="conceptFunctionParameterType" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1194033923853">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9a8.~EditorContext" resolveInfo="EditorContext" />
+      <node role="target" roleId="tpce.1105736901241" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5718428430100574473">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="srng.~EditorContext" resolveInfo="EditorContext" />
       </node>
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1194033889149">

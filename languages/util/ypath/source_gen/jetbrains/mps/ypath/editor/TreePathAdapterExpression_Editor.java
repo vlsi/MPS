@@ -49,7 +49,7 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7bcc0k_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "!");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "!");
     editorCell.setCellId("Constant_7bcc0k_a0");
     {
       Style style = editorCell.getStyle();
@@ -61,7 +61,7 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7bcc0k_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "treepath aspect:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "treepath aspect:");
     editorCell.setCellId("Constant_7bcc0k_a0_0");
     editorCell.setDefaultText("");
     return editorCell;
