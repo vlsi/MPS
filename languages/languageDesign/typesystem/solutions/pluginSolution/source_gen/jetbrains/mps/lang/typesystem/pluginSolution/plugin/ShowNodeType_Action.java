@@ -23,8 +23,6 @@ import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog;
 import jetbrains.mps.smodel.IOperationContext;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
 
 public class ShowNodeType_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("types.png");

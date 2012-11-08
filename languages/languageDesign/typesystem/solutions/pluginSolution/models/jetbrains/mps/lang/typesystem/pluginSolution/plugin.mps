@@ -33,24 +33,25 @@
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="35" implicit="yes" />
   <import index="1oap" modelUID="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" version="0" implicit="yes" />
   <import index="qff7" modelUID="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" version="0" implicit="yes" />
+  <import index="tgbt" modelUID="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" version="1" implicit="yes" />
   <roots>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="5487985028841908585">
+      <property name="mnemonic" nameId="tp4k.1205160812895" value="T" />
       <property name="name" nameId="tpck.1169194664001" value="TypesystemActions" />
       <property name="caption" nameId="tp4k.1204991940915" value="Type System" />
-      <property name="mnemonic" nameId="tp4k.1205160812895" value="T" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5487985028841908720">
-      <property name="name" nameId="tpck.1169194664001" value="ShowNodeType" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Show Type" />
       <property name="description" nameId="tp4k.1213273179528" value="Show node's HELGINS type" />
+      <property name="name" nameId="tpck.1169194664001" value="ShowNodeType" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Show Type" />
     </node>
     <node type="tp4k.KeymapChangesDeclaration" typeId="tp4k.1562714432501166197" id="5487985028841909059">
       <property name="keymap" nameId="tp4k.1562714432501166281" value="$default" />
       <property name="name" nameId="tpck.1169194664001" value="Default" />
     </node>
-    <node type=".jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor" id="7162597690967702203" />
+    <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690967702203" />
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1381359735925524321">
       <property name="name" nameId="tpck.1169194664001" value="AuxilaryRuntimeModel" />
       <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
@@ -262,7 +263,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5487985028841908800">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6277318027977522449">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6277318027977528924">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7kbf.~MyBaseNodeDialog%dshowDialog()%cvoid" resolveInfo="showDialog" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7kbf.~BaseNodeDialog%dshow()%cvoid" resolveInfo="show" />
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5487985028841908789">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5487985028841908790">
@@ -393,8 +394,8 @@
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1381359735925524331" />
       </node>
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1381359735925524332">
-        <property name="name" nameId="tpck.1169194664001" value="createModel" />
         <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
+        <property name="name" nameId="tpck.1169194664001" value="createModel" />
         <property name="isFinal" nameId="tpee.1181808852946" value="false" />
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1381359735925633656">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModel" resolveInfo="SModel" />
@@ -414,8 +415,8 @@
                   </node>
                   <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1381359735925524338" />
                   <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1381359735925524339">
-                    <property name="name" nameId="tpck.1169194664001" value="performUndoableAction" />
                     <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
+                    <property name="name" nameId="tpck.1169194664001" value="performUndoableAction" />
                     <property name="isFinal" nameId="tpee.1181808852946" value="false" />
                     <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1381359735925524340">
                       <property name="name" nameId="tpck.1169194664001" value="action" />
@@ -428,8 +429,8 @@
                     <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1381359735925524359" />
                   </node>
                   <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1381359735925524360">
-                    <property name="name" nameId="tpck.1169194664001" value="canFireEvent" />
                     <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
+                    <property name="name" nameId="tpck.1169194664001" value="canFireEvent" />
                     <property name="isFinal" nameId="tpee.1181808852946" value="false" />
                     <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1381359735925524361">
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1381359735925524362">

@@ -44,6 +44,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
@@ -536,7 +537,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
     }
 
     private JComponent getLibrariesTable() {
-      myLibraryTableModel = new LibraryTableModel(myConfigurableItem);
+      myLibraryTableModel = new LibraryTableModel();
       final JBTable librariesTable = new JBTable(myLibraryTableModel);
       librariesTable.setTableHeader(null);
 
@@ -544,7 +545,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
       decorator.setAddAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
-          List<ModelRoot> modelRoots = new ArrayList<ModelRoot>(myConfigurableItem.getModuleDescriptor().getModelRoots());
+          List<ModelRootDescriptor> modelRoots = new ArrayList<ModelRootDescriptor>(myModuleDescriptor.getModelRootDescriptors());
           StubRootChooser stubRootChooser = new StubRootChooser(new IBindedDialog() {
             @Override
             public JComponent getMainComponent() {
@@ -711,16 +712,16 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
 
     private class LibraryTableModel extends AbstractTableModel implements ItemRemovable {
 
-      List<ModelRoot> myStubModelEntries = new ArrayList<ModelRoot>();
+      List<String> myStubModelEntries = new ArrayList<String>();
 
-      public LibraryTableModel(IModule module) {
+      public LibraryTableModel() {
         super();
-        for(ModelRoot modelRoot : module.getModuleDescriptor().getStubModelEntries())
-          myStubModelEntries.add(modelRoot);
+        for(String javaStubPath : myModuleDescriptor.getAdditionalJavaStubPaths())
+          myStubModelEntries.add(javaStubPath);
       }
 
-      public void addAll(Collection<ModelRoot> modelRoots) {
-        if(myStubModelEntries.addAll(modelRoots))
+      public void addAll(Collection<String> javaStubPaths) {
+        if(myStubModelEntries.addAll(javaStubPaths))
           fireTableDataChanged();
       }
 
@@ -731,12 +732,12 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
 
       @Override
       public Object getValueAt(int rowIndex, int columnIndex) {
-        return columnIndex == 0 ? myStubModelEntries.get(rowIndex).getPath() : NameUtil.shortNameFromLongName(myStubModelEntries.get(rowIndex).getManager().getClassName());
+        return myStubModelEntries.get(rowIndex);
       }
 
       @Override
       public int getColumnCount() {
-        return 2;
+        return 1;
       }
 
       @Override
@@ -749,24 +750,14 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
         myStubModelEntries.remove(idx);
       }
 
-      @Override
-      public boolean equals(Object obj) {
-        if(!(obj instanceof LibraryTableModel)) return false;
-
-        Set<ModelRoot> set = new HashSet<ModelRoot>();
-        set.addAll(myStubModelEntries);
-        Set<ModelRoot> set1 = new HashSet<ModelRoot>();
-        set1.addAll(myConfigurableItem.getModuleDescriptor().getStubModelEntries());
-        return set.equals(set1);
-      }
 
       public boolean isModified() {
-        return !(myModuleDescriptor.getStubModelEntries().containsAll(myStubModelEntries) && myStubModelEntries.containsAll(myModuleDescriptor.getStubModelEntries()));
+        return !(myModuleDescriptor.getAdditionalJavaStubPaths().containsAll(myStubModelEntries) && myStubModelEntries.containsAll(myModuleDescriptor.getAdditionalJavaStubPaths()));
       }
 
       public void apply() {
-        myModuleDescriptor.getStubModelEntries().clear();
-        myModuleDescriptor.getStubModelEntries().addAll(myStubModelEntries);
+        myModuleDescriptor.getAdditionalJavaStubPaths().clear();
+        myModuleDescriptor.getAdditionalJavaStubPaths().addAll(myStubModelEntries);
       }
     }
   }

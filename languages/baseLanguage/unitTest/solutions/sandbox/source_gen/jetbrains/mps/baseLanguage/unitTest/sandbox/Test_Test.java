@@ -21,10 +21,6 @@ public class Test_Test extends TestCase {
     Assert.assertTrue(true);
   }
 
-  public void test1() {
-    int i = 0;
-  }
-
   public void setUp() {
     System.err.println("setup test!!");
   }

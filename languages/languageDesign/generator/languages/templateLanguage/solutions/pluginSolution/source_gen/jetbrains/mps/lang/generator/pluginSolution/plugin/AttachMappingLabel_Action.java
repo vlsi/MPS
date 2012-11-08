@@ -21,7 +21,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.IModule;
@@ -35,7 +34,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.SwingUtilities;
-import com.intellij.openapi.project.Project;
 
 public class AttachMappingLabel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -118,17 +116,13 @@ public class AttachMappingLabel_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
-    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final SNode node = ((SNode) MapSequence.fromMap(_params).get("nodeSelected"));
-      final IOperationContext operationContext = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext();
+      IOperationContext operationContext = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext();
       IModule module = operationContext.getModule();
       List<SNode> mappings;
       if (module instanceof Generator) {
@@ -186,7 +180,7 @@ __switch__:
       }).toListSequence();
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          AttachMappingLabelDialog dialog = new AttachMappingLabelDialog(((Project) MapSequence.fromMap(_params).get("project")), node, existingLabels, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+          AttachMappingLabelDialog dialog = new AttachMappingLabelDialog(node, existingLabels, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
           dialog.show();
         }
       });

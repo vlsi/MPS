@@ -14,7 +14,6 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.bookmark.BookmarkManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.bookmark.BookmarksDialog;
-import com.intellij.openapi.application.ApplicationManager;
 
 public class ShowBookmarksDialog_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -56,12 +55,8 @@ public class ShowBookmarksDialog_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       BookmarkManager bookmarkManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(BookmarkManager.class);
-      final BookmarksDialog dialog = new BookmarksDialog(((Project) MapSequence.fromMap(_params).get("project")), bookmarkManager);
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        public void run() {
-          dialog.show();
-        }
-      });
+      BookmarksDialog dialog = new BookmarksDialog(((Project) MapSequence.fromMap(_params).get("project")), bookmarkManager);
+      dialog.show();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowBookmarksDialog", t);

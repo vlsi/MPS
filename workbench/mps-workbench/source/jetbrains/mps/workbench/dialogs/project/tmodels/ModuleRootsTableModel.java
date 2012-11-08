@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.dialogs.project.tmodels;
 import jetbrains.mps.ide.properties.ModuleProperties;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 
 import javax.swing.table.AbstractTableModel;
@@ -25,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ModuleRootsTableModel extends AbstractTableModel {
-  private List<ModelRoot> myTableItems = new ArrayList<ModelRoot>();
+  private List<ModelRootDescriptor> myTableItems = new ArrayList<ModelRootDescriptor>();
 
   public static final int PATH_COLUMN = 0;
   public static final int MANAGER_COLUMN = 1;
@@ -34,7 +35,7 @@ public class ModuleRootsTableModel extends AbstractTableModel {
     ModuleProperties moduleProperties = new ModuleProperties();
     moduleProperties.loadFrom(module.getModuleDescriptor());
 
-    for (ModelRoot modelRoot : moduleProperties.getModelRoots()) {
+    for (ModelRootDescriptor modelRoot : moduleProperties.getModelRoots()) {
       myTableItems.add(modelRoot);
     }
 
@@ -52,12 +53,12 @@ public class ModuleRootsTableModel extends AbstractTableModel {
 
   @Override
   public Object getValueAt(int rowIndex, int columnIndex) {
-    ModelRoot item = myTableItems.get(rowIndex);
+    ModelRootDescriptor item = myTableItems.get(rowIndex);
 
     if(columnIndex == PATH_COLUMN)
-      return item.getPath();
+      return item.getRoot().getPath();
     if(columnIndex == MANAGER_COLUMN)
-      return item.getManager();
+      return item.getRoot().getManager();
 
     return null;
   }

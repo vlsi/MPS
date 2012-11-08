@@ -85,7 +85,7 @@ public class RenameModel_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new RenameModelDialog(((Project) MapSequence.fromMap(_params).get("project")), ((DefaultSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model")))).show();
+      new RenameModelDialog(((Project) MapSequence.fromMap(_params).get("project")), (EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).show();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RenameModel", t);
