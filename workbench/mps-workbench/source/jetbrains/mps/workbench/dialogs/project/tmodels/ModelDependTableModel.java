@@ -17,7 +17,6 @@ package jetbrains.mps.workbench.dialogs.project.tmodels;
 
 import jetbrains.mps.ide.properties.ModelProperties;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 
 import java.util.ArrayList;

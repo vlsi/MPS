@@ -25,7 +25,13 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.PopupStep;
 import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
 import com.intellij.openapi.util.Disposer;
-import com.intellij.ui.*;
+import com.intellij.ui.AnActionButton;
+import com.intellij.ui.AnActionButtonRunnable;
+import com.intellij.ui.EnumComboBoxModel;
+import com.intellij.ui.IdeBorderFactory;
+import com.intellij.ui.TabbedPaneWrapper;
+import com.intellij.ui.TableUtil;
+import com.intellij.ui.ToolbarDecorator;
 import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.table.JBTable;
 import com.intellij.uiDesigner.core.GridConstraints;
@@ -34,13 +40,20 @@ import com.intellij.uiDesigner.core.Spacer;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.*;
+
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.DevKitChooser;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.LanguageChooser;
-import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModelChooser;
-import jetbrains.mps.workbench.dialogs.project.tmodels.*;
+import jetbrains.mps.workbench.dialogs.project.tmodels.DependTableModel;
+import jetbrains.mps.workbench.dialogs.project.tmodels.DependenciesTableItem;
+import jetbrains.mps.workbench.dialogs.project.tmodels.DependenciesTableItemRole;
+import jetbrains.mps.workbench.dialogs.project.tmodels.MPSPropertiesAnActionButton;
+import jetbrains.mps.workbench.dialogs.project.tmodels.UsedLangTableItem;
+import jetbrains.mps.workbench.dialogs.project.tmodels.UsedLangsTableModel;
 import org.jdesktop.beansbinding.AutoBinding;
 import org.jetbrains.annotations.NotNull;
 
@@ -57,7 +70,8 @@ import java.awt.Dimension;
 import java.awt.FontMetrics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public abstract class MPSPropertiesConfigurable<T> implements Configurable, Disposable {
@@ -211,7 +225,7 @@ public abstract class MPSPropertiesConfigurable<T> implements Configurable, Disp
     protected JTextField myTextFieldName;
 
     public CommonTab() {
-      super("Common", IdeIcons.ADD_MODEL_ROOT_ICON, "Common properties");
+      super(PropertiesBundle.message("mps.properties.configurable.common.commontab.title"), IdeIcons.ADD_MODEL_ROOT_ICON, PropertiesBundle.message("mps.properties.configurable.common.commontab.tip"));
       initUI();
     }
 
@@ -223,14 +237,14 @@ public abstract class MPSPropertiesConfigurable<T> implements Configurable, Disp
       JPanel sourcesTab = new JPanel();
       sourcesTab.setLayout(new GridLayoutManager(3, 2, new Insets(5, 5, 5, 5), -1, -1));
 
-      JBLabel label = new JBLabel("Name:");
+      JBLabel label = new JBLabel(PropertiesBundle.message("mps.properties.configurable.common.commontab.namelabel"));
       sourcesTab.add(label, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
       myTextFieldName = new JTextField();
       myTextFieldName.setText(getConfigItemName());
       sourcesTab.add(myTextFieldName, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
 
-      label = new JBLabel("File path:");
+      label = new JBLabel(PropertiesBundle.message("mps.properties.configurable.common.commontab.filepathlabel"));
       sourcesTab.add(label, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
       JTextField textField = new JTextField();
@@ -253,7 +267,7 @@ public abstract class MPSPropertiesConfigurable<T> implements Configurable, Disp
     protected DependTableModel myDependTableModel;
 
     public DependenciesTab() {
-      super("Dependencies", IdeIcons.DEPENDENCIES_ICON, "Dependencies");
+      super(PropertiesBundle.message("mps.properties.configurable.common.dependenciestab.title"), IdeIcons.DEPENDENCIES_ICON, PropertiesBundle.message("mps.properties.configurable.common.dependenciestab.tip"));
       initUI();
     }
 
@@ -366,7 +380,7 @@ public abstract class MPSPropertiesConfigurable<T> implements Configurable, Disp
     protected UsedLangsTableModel myUsedLangsTableModel;
 
     public UsedLanguagesTab() {
-      super("Used Languages", IdeIcons.PROJECT_LANGUAGE_ICON, "List of used languages");
+      super(PropertiesBundle.message("mps.properties.configurable.common.usedlanguagestab.title"), IdeIcons.PROJECT_LANGUAGE_ICON, PropertiesBundle.message("mps.properties.configurable.common.usedlanguagestab.tip"));
       initUI();
     }
 

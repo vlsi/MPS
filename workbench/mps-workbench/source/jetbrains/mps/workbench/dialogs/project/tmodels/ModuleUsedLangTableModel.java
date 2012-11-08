@@ -15,14 +15,8 @@
  */
 package jetbrains.mps.workbench.dialogs.project.tmodels;
 
-import jetbrains.mps.ide.properties.ModuleProperties;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.Language;
-
-import java.util.HashSet;
-import java.util.Set;
 
 public class ModuleUsedLangTableModel extends UsedLangsTableModel<ModuleDescriptor> {
   public ModuleUsedLangTableModel(ModuleDescriptor value) {

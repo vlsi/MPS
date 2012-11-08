@@ -18,7 +18,7 @@ package jetbrains.mps.workbench.dialogs.project.tmodels;
 import com.intellij.util.ui.ItemRemovable;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.workbench.dialogs.project.PropertiesBundle;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
@@ -31,6 +31,7 @@ public class ModuleRootsTableModel extends AbstractTableModel implements ItemRem
   private ModuleDescriptor myModuleDescriptor;
 
   public static final int PATH_COLUMN = 0;
+  public static final String PATH_COLUMN_NAME = PropertiesBundle.message("mps.properties.configurable.tablemodel.modelroots.column.item");
 
   public ModuleRootsTableModel(ModuleDescriptor moduleDescriptor){
     myModuleDescriptor = moduleDescriptor;
@@ -66,7 +67,7 @@ public class ModuleRootsTableModel extends AbstractTableModel implements ItemRem
   @Override
   public String getColumnName(int column) {
     if(column == PATH_COLUMN)
-      return "model root path";
+      return PATH_COLUMN_NAME;
     return super.getColumnName(column);
   }
 
