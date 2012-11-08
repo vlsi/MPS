@@ -13,7 +13,7 @@
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="editor-api" exported="" />
     <orderEntry type="module" module-name="actions-runtime" />
-    <orderEntry type="module" module-name="typesystemEngine" />
+    <orderEntry type="module" module-name="typesystemEngine" exported="" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="findUsages-runtime" />
