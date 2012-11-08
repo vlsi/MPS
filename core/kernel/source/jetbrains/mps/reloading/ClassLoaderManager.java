@@ -21,6 +21,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ClassLoadingModule;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -30,6 +31,7 @@ import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -116,7 +118,18 @@ public class ClassLoaderManager implements CoreComponent {
       public void run() {
         for (SModule m : MPSModuleRepository.getInstance().getAllModules()) {
           if (!(m instanceof AbstractModule)) continue;
-          if (myLoadedModules.contains(m.getModuleReference())) continue;
+          if (myLoadedModules.contains(m.getModuleReference())) {
+            boolean hasInvalidRoots = false;
+            for (ModelRoot modelRoot : m.getModelRoots()) {
+              if (modelRoot instanceof SModelRoot && ((SModelRoot) modelRoot).isInvalid()) {
+                hasInvalidRoots = true;
+                break;
+              }
+            }
+            if (!hasInvalidRoots) {
+              continue;
+            }
+          }
           myLoadedModules.add(m.getModuleReference());
           ((AbstractModule) m).updateModelsSet();
         }

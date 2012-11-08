@@ -420,7 +420,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
         DataSource source = d.getSource();
         if (!(source instanceof FileSystemBasedDataSource)) return false;
 
-        IFile modelFile = ((FileSystemBasedDataSource) d).getAffectedFiles().iterator().next();
+        IFile modelFile = ((FileSystemBasedDataSource) source).getAffectedFiles().iterator().next();
         VirtualFile realFile = null;
         if (modelFile != null) {
           realFile = VirtualFileUtils.getVirtualFile(modelFile);

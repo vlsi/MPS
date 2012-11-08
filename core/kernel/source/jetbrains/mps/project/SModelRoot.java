@@ -221,4 +221,9 @@ public class SModelRoot extends ModelRootBase implements FileSystemListener {
   public void update(ProgressMonitor monitor, FileSystemEvent event) {
     update();
   }
+
+  @Deprecated
+  public boolean isInvalid() {
+    return myManager instanceof IModelRootManager;
+  }
 }
