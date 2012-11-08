@@ -31,10 +31,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
     return this.createCollection_mr1gse_a(editorContext, node);
   }
 
-  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_mr1gse_a_0(editorContext, node);
-  }
-
   private EditorCell createCollection_mr1gse_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mr1gse_a");
@@ -58,14 +54,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_mr1gse_a4a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_mr1gse_b4a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_mr1gse_c4a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_mr1gse_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_mr1gse_a_0");
-    editorCell.addEditorCell(this.createConstant_mr1gse_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_mr1gse_b0(editorContext, node));
     return editorCell;
   }
 
@@ -119,17 +107,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_mr1gse_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "annotations:");
-    editorCell.setCellId("Constant_mr1gse_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createRefNodeList_mr1gse_b4a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new Annotation_Editor.annotationMethodListHandler_mr1gse_b4a(node, "annotationMethod", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -139,18 +116,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
       style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
-    }
-    editorCell.setRole(handler.getElementRole());
-    return editorCell;
-  }
-
-  private EditorCell createRefNodeList_mr1gse_b0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Annotation_Editor.annotationListHandler_mr1gse_b0(node, "annotation", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_annotation");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -230,42 +195,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
       }
       editorCell.setDefaultText("<<methods>>");
       return editorCell;
-    }
-  }
-
-  private static class annotationListHandler_mr1gse_b0 extends RefNodeListHandler {
-    public annotationListHandler_mr1gse_b0(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
-    }
-
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      SNode listOwner = super.getOwner();
-      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
-    }
-
-    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
-      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
-      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
-      return elementCell;
-    }
-
-    public EditorCell createEmptyCell(EditorContext editorContext) {
-      EditorCell emptyCell = null;
-      emptyCell = super.createEmptyCell(editorContext);
-      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
-      return emptyCell;
-    }
-
-    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
-      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
-        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
-        if (elementNode != null) {
-          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
-        }
-        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
-          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
-        }
-      }
     }
   }
 }
