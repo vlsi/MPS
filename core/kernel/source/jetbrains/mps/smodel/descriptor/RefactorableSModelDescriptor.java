@@ -18,7 +18,7 @@ package jetbrains.mps.smodel.descriptor;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import org.jetbrains.annotations.NotNull;
 
-public interface Refactorable {
+public interface RefactorableSModelDescriptor extends EditableSModelDescriptor {
   @NotNull
   StructureModificationLog getStructureModificationLog();
 

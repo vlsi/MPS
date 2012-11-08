@@ -75,6 +75,11 @@ public class ProjectModels {
     }
 
     @Override
+    public boolean needsReloading() {
+      return false;
+    }
+
+    @Override
     public void reloadFromDisk() {
     }
 

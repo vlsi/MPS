@@ -21,8 +21,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
@@ -128,8 +128,8 @@ public class SModel {
   //---------incremental load--------
 
   protected void enforceFullLoad() {
-    if (!(myModelDescriptor instanceof DefaultSModelDescriptor)) return;
-    ((DefaultSModelDescriptor) myModelDescriptor).getUpdateableModel().getModel(ModelLoadingState.FULLY_LOADED);
+    if (myModelDescriptor == null) return;
+    myModelDescriptor.forceLoad();
   }
 
   //---------roots manipulation--------
@@ -573,8 +573,8 @@ public class SModel {
     if (importElement == null) {
       SModelDescriptor modelDescriptor = MPSCore.getInstance().isMergeDriverMode() ? null : SModelRepository.getInstance().getModelDescriptor(modelReference);
       int usedVersion = -1;
-      if (modelDescriptor instanceof DefaultSModelDescriptor) {
-        usedVersion = ((DefaultSModelDescriptor) modelDescriptor).getVersion();
+      if (modelDescriptor instanceof RefactorableSModelDescriptor) {
+        usedVersion = ((RefactorableSModelDescriptor) modelDescriptor).getVersion();
       }
       importElement = new ImportElement(modelReference, ++myMaxImportIndex, firstVersion ? -1 : usedVersion);
     }
@@ -676,7 +676,7 @@ public class SModel {
         version = RoleIdsComponent.getModelVersion(ref);
       } else {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(ref);
-        version = modelDescriptor instanceof DefaultSModelDescriptor ? ((DefaultSModelDescriptor) modelDescriptor).getVersion() : -1;
+        version = modelDescriptor instanceof RefactorableSModelDescriptor ? ((RefactorableSModelDescriptor) modelDescriptor).getVersion() : -1;
       }
       implicitImports.add(new ImportElement(ref, -1, version));  // for compatibility index will be assigned on save
     }

@@ -6,9 +6,6 @@ import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -17,9 +14,12 @@ import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.IOException;
 import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.InputStream;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.ThreadUtils;
 
 public class TextModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor {
   private SModel myModel = null;
@@ -31,25 +31,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
   }
 
   protected void reloadFromDiskSafe() {
-    final SModel old = myModel;
-    check_bp2jat_a1a0(old);
-
-    myModel = null;
-    isChanged = false;
-    updateDiskTimestamp();
-
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
-      public void run() {
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          public void run() {
-            fireModelReplaced();
-            fireModelStateChanged(ModelLoadingState.FULLY_LOADED, ModelLoadingState.NOT_LOADED);
-
-            check_bp2jat_a3a0a0a0h0a(old);
-          }
-        });
-      }
-    });
+    reloadFromDisk();
   }
 
   public boolean isChanged() {
@@ -127,16 +109,38 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
   }
 
   public void reloadFromDisk() {
+    ModelAccess.assertLegalWrite();
+
+    final SModel old = myModel;
+    check_bp2jat_a3a01(old);
+
+    myModel = null;
+    isChanged = false;
+    updateDiskTimestamp();
+
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          public void run() {
+            fireModelReplaced();
+            fireModelStateChanged(ModelLoadingState.FULLY_LOADED, ModelLoadingState.NOT_LOADED);
+
+            check_bp2jat_a3a0a0a0j0k(old);
+          }
+        });
+      }
+    });
+
   }
 
-  private static void check_bp2jat_a1a0(SModel checkedDotOperand) {
+  private static void check_bp2jat_a3a01(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.setModelDescriptor(null);
     }
 
   }
 
-  private static void check_bp2jat_a3a0a0a0h0a(SModel checkedDotOperand) {
+  private static void check_bp2jat_a3a0a0a0j0k(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.dispose();
     }

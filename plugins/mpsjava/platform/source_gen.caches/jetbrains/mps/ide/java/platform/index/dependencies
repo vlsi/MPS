@@ -15,6 +15,7 @@
     <classNode dependClassName="java.util.Queue" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ClassifierSuccessors" />
+    <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
     <classNode dependClassName="jetbrains.mps.ide.MPSCoreComponents" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.index.GlobalSNodeId" />
@@ -29,14 +30,15 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.smodel.DefaultSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
     <classNode extendsClassName="com.intellij.psi.search.GlobalSearchScope" />
     <classNode extendsClassName="com.intellij.util.indexing.ValueProcessor" />

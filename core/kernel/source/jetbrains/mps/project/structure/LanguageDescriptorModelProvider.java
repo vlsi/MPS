@@ -20,6 +20,7 @@ import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 
 import java.util.*;
@@ -173,7 +174,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     return "component: Language Descriptor Models Provider";
   }
 
-  public class LanguageModelDescriptor extends BaseSpecialModelDescriptor {
+  public class LanguageModelDescriptor extends BaseSpecialModelDescriptor implements GeneratableSModelDescriptor {
     private final Language myModule;
     private String myHash;
 
@@ -198,6 +199,12 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
       return !myModule.isPackaged();
     }
 
+    @Override
+    public boolean isGenerateIntoModelFolder() {
+      return false;
+    }
+
+    @Override
     public String getModelHash() {
       String hash = myHash;
       if (hash == null) {
@@ -206,6 +213,16 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
         myHash = hash;
       }
       return hash;
+    }
+
+    @Override
+    public void setDoNotGenerate(boolean value) {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public boolean isDoNotGenerate() {
+      return false;
     }
 
     public void invalidate() {
