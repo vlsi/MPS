@@ -6,6 +6,7 @@ import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.IModule;
 import javax.swing.JPanel;
+import java.awt.BorderLayout;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -24,11 +25,14 @@ import java.awt.event.ItemEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import jetbrains.mps.smodel.SModelStereotype;
-import java.awt.BorderLayout;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.ide.properties.StandardDialogs;
+import jetbrains.mps.workbench.dialogs.project.MPSPropertiesConfigurable;
+import jetbrains.mps.workbench.dialogs.project.ModelPropertiesConfigurable;
+import com.intellij.openapi.options.ex.SingleConfigurableEditor;
+import jetbrains.mps.ide.project.ProjectHelper;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -39,7 +43,7 @@ import javax.swing.JComponent;
 public class NewModelDialog extends DialogWrapper {
   private IOperationContext myContext;
   private IModule myModule;
-  private JPanel myContentPane;
+  private JPanel myContentPane = new JPanel(new BorderLayout());
   private JTextField myModelName = new JTextField();
   private JComboBox myModelStereotype = new JComboBox();
   private JComboBox myModelRoots = new JComboBox();
@@ -146,7 +150,15 @@ public class NewModelDialog extends DialogWrapper {
     }, myContext.getProject());
 
     assert myResult != null;
-    StandardDialogs.createModelPropertiesDialog(myResult, myContext).show();
+
+    MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(myResult, myContext);
+    final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(myContext.getProject()), configurable, "#MPSPropertiesConfigurable");
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        configurableEditor.show();
+      }
+    });
+
 
     super.doOKAction();
   }
@@ -201,7 +213,7 @@ public class NewModelDialog extends DialogWrapper {
       return false;
     }
 
-    setErrorText("");
+    setErrorText(null);
     return true;
   }
 
