@@ -6,6 +6,7 @@ import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.Set;
 import javax.swing.Icon;
 import java.util.List;
@@ -18,6 +19,10 @@ public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_B
 
   public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return HasAnnotation_Behavior.virtual_canBeAnnotated_1233076312117(thisNode);
+  }
+
+  public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
+    return ClassifierMember_Behavior.virtual_canBeInterfaceMember_2949815620938109095(thisConcept);
   }
 
   public boolean virtual_checkLoops_3980490811621705344(SNode thisNode) {

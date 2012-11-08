@@ -16,6 +16,7 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ClassifierMember_Behavior {
@@ -88,6 +89,10 @@ public class ClassifierMember_Behavior {
 
   public static boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
     return ClassifierMember_Behavior.call_isStatic_8986964027630462944(thisNode);
+  }
+
+  public static boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
+    return false;
   }
 
   @Deprecated
