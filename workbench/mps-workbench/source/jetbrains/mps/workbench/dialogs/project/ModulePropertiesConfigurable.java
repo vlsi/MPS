@@ -126,6 +126,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
   public class ModuleCommonTab extends CommonTab {
 
     private ModuleDependenciesTab myModuleDependenciesTab;
+    private ModuleRootsTableModel myRootsTableModel;
 
     @Override
     protected String getConfigItemName() {
@@ -159,57 +160,44 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
       tableRoots.setShowHorizontalLines(false);
       tableRoots.setShowVerticalLines(false);
 
-      ModuleRootsTableModel rootsTableModel = new ModuleRootsTableModel(myConfigurableItem);
-      tableRoots.setModel(rootsTableModel);
-
-      tableRoots.setDefaultRenderer(ModelRootManager.class, new ComboBoxTableRenderer<ModelRootManager>(new ModelRootManager[]{new ModelRootManager(), new ModelRootManager("f3061a53-9226-4cc5-a443-f952ceaf5816", "jetbrains.mps.baseLanguage.stubs.JavaStubs")}) {
-        @Override
-        protected String getTextFor(@NotNull ModelRootManager value) {
-          return value.getClassName();
-        }
-      });
-
-      tableRoots.getTableHeader().getColumnModel().getColumn(ModuleRootsTableModel.MANAGER_COLUMN).setWidth(300);
-      tableRoots.getTableHeader().getColumnModel().getColumn(ModuleRootsTableModel.MANAGER_COLUMN).setPreferredWidth(300);
-      tableRoots.getTableHeader().getColumnModel().getColumn(ModuleRootsTableModel.MANAGER_COLUMN).setMaxWidth(300);
-      tableRoots.getTableHeader().getColumnModel().getColumn(ModuleRootsTableModel.MANAGER_COLUMN).setMinWidth(100);
+      myRootsTableModel = new ModuleRootsTableModel(myModuleDescriptor);
+      tableRoots.setModel(myRootsTableModel);
 
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(tableRoots);
       decorator.setAddAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
-          System.out.println("Add");
+          ModelRootChooser modelRootChooser = new ModelRootChooser(new IBindedDialog() {
+            @Override
+            public JComponent getMainComponent() {
+              return getTabComponent();
+            }
+
+            @Override
+            public IOperationContext getOperationContext() {
+              return null;
+            }
+
+            @Override
+            public IScope getModuleScope() {
+              return null;
+            }
+
+            @Override
+            public IScope getProjectScope() {
+              return null;
+            }
+
+            @Override
+            public void addBinding(AutoBinding binding) {
+            }
+          }, myConfigurableItem.getBundleHome());
+          myRootsTableModel.add(modelRootChooser.compute());
         }
       }).setRemoveAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
-          System.out.println("Edit");
-        }
-      }).setUpAction(new AnActionButtonRunnable() {
-        @Override
-        public void run(AnActionButton anActionButton) {
-          if(tableRoots.isEditing())
-            tableRoots.getCellEditor().stopCellEditing();
-
-          final int min = tableRoots.getSelectionModel().getMinSelectionIndex();
-          final int max = tableRoots.getSelectionModel().getMaxSelectionIndex();
-          tableRoots.getSelectionModel().setSelectionInterval(
-            (min - 1 < 0 ? 0 : min - 1),
-            (max - 1 < 0 ? 0 : max - 1)
-          );
-        }
-      }).setDownAction(new AnActionButtonRunnable() {
-        @Override
-        public void run(AnActionButton anActionButton) {
-          if(tableRoots.isEditing())
-            tableRoots.getCellEditor().stopCellEditing();
-
-          final int min = tableRoots.getSelectionModel().getMinSelectionIndex();
-          final int max = tableRoots.getSelectionModel().getMaxSelectionIndex();
-          tableRoots.getSelectionModel().setSelectionInterval(
-            (min + 1 >= tableRoots.getRowCount() ? 0 : min + 1),
-            (max + 1 >= tableRoots.getRowCount() ? 0 : max + 1)
-          );
+          TableUtil.removeSelectedItems(tableRoots);
         }
       });
 
@@ -222,7 +210,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
 
     @Override
     public boolean isModified() {
-      return super.isModified() || (myConfigurableItem instanceof DevKit ? myModuleDependenciesTab.isModified() : false);
+      return super.isModified() || (myConfigurableItem instanceof DevKit ? myModuleDependenciesTab.isModified() : myRootsTableModel.isModified());
     }
 
     @Override
@@ -232,6 +220,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
       }
       if(myConfigurableItem instanceof DevKit)
         myModuleDependenciesTab.apply();
+      else
+        myRootsTableModel.apply();
     }
   }
 
@@ -503,32 +493,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
           TableUtil.removeSelectedItems(sourcePathTable);
           myPathsTableModel.fireTableDataChanged();
         }
-      }).setUpAction(new AnActionButtonRunnable() {
-        @Override
-        public void run(AnActionButton anActionButton) {
-          if(sourcePathTable.isEditing())
-            sourcePathTable.getCellEditor().stopCellEditing();
-
-          final int min = sourcePathTable.getSelectionModel().getMinSelectionIndex();
-          final int max = sourcePathTable.getSelectionModel().getMaxSelectionIndex();
-          sourcePathTable.getSelectionModel().setSelectionInterval(
-            (min - 1 < 0 ? 0 : min - 1),
-            (max - 1 < 0 ? 0 : max - 1)
-          );
-        }
-      }).setDownAction(new AnActionButtonRunnable() {
-        @Override
-        public void run(AnActionButton anActionButton) {
-          if(sourcePathTable.isEditing())
-            sourcePathTable.getCellEditor().stopCellEditing();
-
-          final int min = sourcePathTable.getSelectionModel().getMinSelectionIndex();
-          final int max = sourcePathTable.getSelectionModel().getMaxSelectionIndex();
-          sourcePathTable.getSelectionModel().setSelectionInterval(
-            (min + 1 >= sourcePathTable.getRowCount() ? 0 : min + 1),
-            (max + 1 >= sourcePathTable.getRowCount() ? 0 : max + 1)
-          );
-        }
       });
 
       JPanel table = decorator.createPanel();
@@ -579,32 +543,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
         public void run(AnActionButton anActionButton) {
           TableUtil.removeSelectedItems(librariesTable);
           myLibraryTableModel.fireTableDataChanged();
-        }
-      }).setUpAction(new AnActionButtonRunnable() {
-        @Override
-        public void run(AnActionButton anActionButton) {
-          if(librariesTable.isEditing())
-            librariesTable.getCellEditor().stopCellEditing();
-
-          final int min = librariesTable.getSelectionModel().getMinSelectionIndex();
-          final int max = librariesTable.getSelectionModel().getMaxSelectionIndex();
-          librariesTable.getSelectionModel().setSelectionInterval(
-            (min - 1 < 0 ? 0 : min - 1),
-            (max - 1 < 0 ? 0 : max - 1)
-          );
-        }
-      }).setDownAction(new AnActionButtonRunnable() {
-        @Override
-        public void run(AnActionButton anActionButton) {
-          if(librariesTable.isEditing())
-            librariesTable.getCellEditor().stopCellEditing();
-
-          final int min = librariesTable.getSelectionModel().getMinSelectionIndex();
-          final int max = librariesTable.getSelectionModel().getMaxSelectionIndex();
-          librariesTable.getSelectionModel().setSelectionInterval(
-            (min + 1 >= librariesTable.getRowCount() ? 0 : min + 1),
-            (max + 1 >= librariesTable.getRowCount() ? 0 : max + 1)
-          );
         }
       });
 
@@ -768,7 +706,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
     private JBCheckBox myCheckBox;
 
     public GeneratorAdvancesTab() {
-      super("Advanced", IdeIcons.DEFAULT_ICON, "List of generator priorities & 'Generate Templates' flag");
+      super("Generators priorities", IdeIcons.DEFAULT_ICON, "List of generator priorities & 'Generate Templates' flag");
       initUI();
     }
 
@@ -814,32 +752,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
         public void run(AnActionButton anActionButton) {
           TableUtil.removeSelectedItems(table);
           myPrioritiesTableModel.fireTableDataChanged();
-        }
-      }).setUpAction(new AnActionButtonRunnable() {
-        @Override
-        public void run(AnActionButton anActionButton) {
-          if(table.isEditing())
-            table.getCellEditor().stopCellEditing();
-
-          final int min = table.getSelectionModel().getMinSelectionIndex();
-          final int max = table.getSelectionModel().getMaxSelectionIndex();
-          table.getSelectionModel().setSelectionInterval(
-            (min - 1 < 0 ? 0 : min - 1),
-            (max - 1 < 0 ? 0 : max - 1)
-          );
-        }
-      }).setDownAction(new AnActionButtonRunnable() {
-        @Override
-        public void run(AnActionButton anActionButton) {
-          if(table.isEditing())
-            table.getCellEditor().stopCellEditing();
-
-          final int min = table.getSelectionModel().getMinSelectionIndex();
-          final int max = table.getSelectionModel().getMaxSelectionIndex();
-          table.getSelectionModel().setSelectionInterval(
-            (min + 1 >= table.getRowCount() ? 0 : min + 1),
-            (max + 1 >= table.getRowCount() ? 0 : max + 1)
-          );
         }
       });
 

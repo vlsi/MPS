@@ -79,23 +79,25 @@ public class ModuleProperties_Action extends BaseAction {
       });
 
 
-      final Wrappers._T<BasePropertiesDialog> dialog = new Wrappers._T<BasePropertiesDialog>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language) {
-            dialog.value = StandardDialogs.createLanguagePropertiesDialog((Language) ((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-          } else if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Solution) {
-            dialog.value = StandardDialogs.createSolutionPropertiesDialog((Solution) ((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-          } else if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof DevKit) {
-            dialog.value = StandardDialogs.createDevKitPropertiesDialog((DevKit) ((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-          } else if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Generator) {
-            dialog.value = StandardDialogs.createGeneratorPropertiesDialog(((Generator) ((IModule) MapSequence.fromMap(_params).get("module"))), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-          } else {
-            throw new IllegalArgumentException("Unknown module type: " + ((IModule) MapSequence.fromMap(_params).get("module")).getClass().getName());
+      /*
+        final Wrappers._T<BasePropertiesDialog> dialog = new Wrappers._T<BasePropertiesDialog>();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language) {
+              dialog.value = StandardDialogs.createLanguagePropertiesDialog((Language) ((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+            } else if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Solution) {
+              dialog.value = StandardDialogs.createSolutionPropertiesDialog((Solution) ((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+            } else if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof DevKit) {
+              dialog.value = StandardDialogs.createDevKitPropertiesDialog((DevKit) ((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+            } else if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Generator) {
+              dialog.value = StandardDialogs.createGeneratorPropertiesDialog(((Generator) ((IModule) MapSequence.fromMap(_params).get("module"))), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+            } else {
+              throw new IllegalArgumentException("Unknown module type: " + ((IModule) MapSequence.fromMap(_params).get("module")).getClass().getName());
+            }
           }
-        }
-      });
-      dialog.value.show();
+        });
+        dialog.value.show();
+      */
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ModuleProperties", t);

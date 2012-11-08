@@ -15,27 +15,27 @@
  */
 package jetbrains.mps.workbench.dialogs.project.tmodels;
 
-import jetbrains.mps.ide.properties.ModuleProperties;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import com.intellij.util.ui.ItemRemovable;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.project.structure.model.ModelRootManager;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ModuleRootsTableModel extends AbstractTableModel {
+public class ModuleRootsTableModel extends AbstractTableModel implements ItemRemovable {
   private List<ModelRootDescriptor> myTableItems = new ArrayList<ModelRootDescriptor>();
+  private ModuleDescriptor myModuleDescriptor;
 
   public static final int PATH_COLUMN = 0;
-  public static final int MANAGER_COLUMN = 1;
 
-  public ModuleRootsTableModel(IModule module){
-    ModuleProperties moduleProperties = new ModuleProperties();
-    moduleProperties.loadFrom(module.getModuleDescriptor());
+  public ModuleRootsTableModel(ModuleDescriptor moduleDescriptor){
+    myModuleDescriptor = moduleDescriptor;
 
-    for (ModelRootDescriptor modelRoot : moduleProperties.getModelRoots()) {
+    for (ModelRootDescriptor modelRoot : moduleDescriptor.getModelRootDescriptors()) {
       myTableItems.add(modelRoot);
     }
 
@@ -48,17 +48,17 @@ public class ModuleRootsTableModel extends AbstractTableModel {
 
   @Override
   public int getColumnCount() {
-    return 2;
+    return 1;
   }
 
   @Override
   public Object getValueAt(int rowIndex, int columnIndex) {
     ModelRootDescriptor item = myTableItems.get(rowIndex);
 
+    ModelRoot root = PersistenceFacade.getInstance().getModelRootFactory(item.getType()).create();
+    root.load(item.getMemento());
     if(columnIndex == PATH_COLUMN)
-      return item.getRoot().getPath();
-    if(columnIndex == MANAGER_COLUMN)
-      return item.getRoot().getManager();
+      return root.getPresentation();
 
     return null;
   }
@@ -67,8 +67,6 @@ public class ModuleRootsTableModel extends AbstractTableModel {
   public String getColumnName(int column) {
     if(column == PATH_COLUMN)
       return "model root path";
-    if(column == MANAGER_COLUMN)
-      return "type";
     return super.getColumnName(column);
   }
 
@@ -76,13 +74,31 @@ public class ModuleRootsTableModel extends AbstractTableModel {
   public Class<?> getColumnClass(int columnIndex) {
     if(columnIndex == PATH_COLUMN)
       return String.class;
-    if(columnIndex == MANAGER_COLUMN)
-      return ModelRootManager.class;
     return super.getColumnClass(columnIndex);
   }
 
+  public void add(ModelRootDescriptor modelRootDescriptor) {
+    if(modelRootDescriptor == null)
+      return;
+    myTableItems.add(modelRootDescriptor);
+    fireTableDataChanged();
+  }
+
   @Override
-  public boolean isCellEditable(int rowIndex, int columnIndex) {
-    return true;
+  public void removeRow(int idx) {
+    myTableItems.remove(idx);
+    fireTableDataChanged();
+  }
+
+  public boolean isModified() {
+    return !(
+      myModuleDescriptor.getModelRootDescriptors().containsAll(myTableItems)
+        && myTableItems.containsAll(myModuleDescriptor.getModelRootDescriptors())
+    );
+  }
+
+  public void apply() {
+    myModuleDescriptor.getModelRootDescriptors().clear();
+    myModuleDescriptor.getModelRootDescriptors().addAll(myTableItems);
   }
 }

@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.ide.properties.StandardDialogs;
 
 public class ModelProperties_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("modelProperties.png");
@@ -88,7 +87,7 @@ public class ModelProperties_Action extends BaseAction {
       });
 
 
-      StandardDialogs.createModelPropertiesDialog(((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("context"))).show();
+      // <node> 
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ModelProperties", t);

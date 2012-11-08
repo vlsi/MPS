@@ -339,32 +339,6 @@ public abstract class MPSPropertiesConfigurable<T> implements Configurable, Disp
           TableUtil.removeSelectedItems(tableDepend);
           myDependTableModel.fireTableDataChanged();
         }
-      }).setUpAction(new AnActionButtonRunnable() {
-        @Override
-        public void run(AnActionButton anActionButton) {
-          if(tableDepend.isEditing())
-            tableDepend.getCellEditor().stopCellEditing();
-
-          final int min = tableDepend.getSelectionModel().getMinSelectionIndex();
-          final int max = tableDepend.getSelectionModel().getMaxSelectionIndex();
-          tableDepend.getSelectionModel().setSelectionInterval(
-            (min - 1 < 0 ? 0 : min - 1),
-            (max - 1 < 0 ? 0 : max - 1)
-          );
-        }
-      }).setDownAction(new AnActionButtonRunnable() {
-        @Override
-        public void run(AnActionButton anActionButton) {
-          if(tableDepend.isEditing())
-            tableDepend.getCellEditor().stopCellEditing();
-
-          final int min = tableDepend.getSelectionModel().getMinSelectionIndex();
-          final int max = tableDepend.getSelectionModel().getMaxSelectionIndex();
-          tableDepend.getSelectionModel().setSelectionInterval(
-            (min + 1 >= tableDepend.getRowCount() ? 0 : min + 1),
-            (max + 1 >= tableDepend.getRowCount() ? 0 : max + 1)
-          );
-        }
       });
 
       JPanel table = decorator.createPanel();
@@ -473,32 +447,6 @@ public abstract class MPSPropertiesConfigurable<T> implements Configurable, Disp
         public void run(AnActionButton anActionButton) {
           TableUtil.removeSelectedItems(usedLangsTable);
           myUsedLangsTableModel.fireTableDataChanged();
-        }
-      }).setUpAction(new AnActionButtonRunnable() {
-        @Override
-        public void run(AnActionButton anActionButton) {
-          if(usedLangsTable.isEditing())
-            usedLangsTable.getCellEditor().stopCellEditing();
-
-          final int min = usedLangsTable.getSelectionModel().getMinSelectionIndex();
-          final int max = usedLangsTable.getSelectionModel().getMaxSelectionIndex();
-          usedLangsTable.getSelectionModel().setSelectionInterval(
-            (min - 1 < 0 ? 0 : min - 1),
-            (max - 1 < 0 ? 0 : max - 1)
-          );
-        }
-      }).setDownAction(new AnActionButtonRunnable() {
-        @Override
-        public void run(AnActionButton anActionButton) {
-          if(usedLangsTable.isEditing())
-            usedLangsTable.getCellEditor().stopCellEditing();
-
-          final int min = usedLangsTable.getSelectionModel().getMinSelectionIndex();
-          final int max = usedLangsTable.getSelectionModel().getMaxSelectionIndex();
-          usedLangsTable.getSelectionModel().setSelectionInterval(
-            (min + 1 >= usedLangsTable.getRowCount() ? 0 : min + 1),
-            (max + 1 >= usedLangsTable.getRowCount() ? 0 : max + 1)
-          );
         }
       });
 
