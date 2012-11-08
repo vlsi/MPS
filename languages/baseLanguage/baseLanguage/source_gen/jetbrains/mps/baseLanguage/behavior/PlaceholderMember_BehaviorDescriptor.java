@@ -12,7 +12,7 @@ public class PlaceholderMember_BehaviorDescriptor extends BaseConcept_BehaviorDe
   }
 
   public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
-    return ClassifierMember_Behavior.virtual_canBeInterfaceMember_2949815620938109095(thisConcept);
+    return PlaceholderMember_Behavior.virtual_canBeInterfaceMember_2949815620938109095(thisConcept);
   }
 
   public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {

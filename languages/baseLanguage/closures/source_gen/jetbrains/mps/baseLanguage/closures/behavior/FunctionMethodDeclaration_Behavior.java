@@ -8,6 +8,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -25,6 +26,10 @@ public class FunctionMethodDeclaration_Behavior {
       }
     }).toListSequence();
     return new FunctionMethodDeclaration_Behavior.QuotationClass_c7xn2w_a0b0b().createNode(params, SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "returnType", true)));
+  }
+
+  public static boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
+    return false;
   }
 
   public static class QuotationClass_c7xn2w_a0b0b {

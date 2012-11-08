@@ -22,7 +22,7 @@ public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_B
   }
 
   public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
-    return ClassifierMember_Behavior.virtual_canBeInterfaceMember_2949815620938109095(thisConcept);
+    return Classifier_Behavior.virtual_canBeInterfaceMember_2949815620938109095(thisConcept);
   }
 
   public boolean virtual_checkLoops_3980490811621705344(SNode thisNode) {

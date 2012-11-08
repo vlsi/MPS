@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.baseLanguage.util.CodeStyleSettings;
 import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
@@ -52,6 +53,10 @@ public class StaticFieldDeclaration_Behavior {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
 
+  public static boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
+    return true;
+  }
+
   public static String virtual_getSuffix_3012473318495499856(SNode thisNode, Project project) {
     CodeStyleSettings settings = CodeStyleSettingsRegistry.getSettings(project);
     if (settings == null) {
@@ -88,7 +93,7 @@ public class StaticFieldDeclaration_Behavior {
   }
 
   public static SNode virtual_getQualifiedReference_4598334504606213641(SNode thisNode) {
-    return new StaticFieldDeclaration_Behavior.QuotationClass_ge0l0h_a0a0k().createNode(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.Classifier"), thisNode);
+    return new StaticFieldDeclaration_Behavior.QuotationClass_ge0l0h_a0a0l().createNode(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.Classifier"), thisNode);
   }
 
   @Deprecated
@@ -161,8 +166,8 @@ public class StaticFieldDeclaration_Behavior {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getTraceableProperty_5067982036267369901", new Class[]{SNode.class}, new Object[]{});
   }
 
-  public static class QuotationClass_ge0l0h_a0a0k {
-    public QuotationClass_ge0l0h_a0a0k() {
+  public static class QuotationClass_ge0l0h_a0a0l {
+    public QuotationClass_ge0l0h_a0a0l() {
     }
 
     public SNode createNode(Object parameter_3, Object parameter_4) {

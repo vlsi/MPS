@@ -17,7 +17,7 @@ public class StaticFieldDeclaration_BehaviorDescriptor extends VariableDeclarati
   }
 
   public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
-    return ClassifierMember_Behavior.virtual_canBeInterfaceMember_2949815620938109095(thisConcept);
+    return StaticFieldDeclaration_Behavior.virtual_canBeInterfaceMember_2949815620938109095(thisConcept);
   }
 
   public Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
