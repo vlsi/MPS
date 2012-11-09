@@ -16,32 +16,51 @@
     <unitInfo nodeId="3097384118511823189" fileName="Test.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLnaguage.extensionMethods.sandbox.Test" />
   </root>
   <root nodeId="6791353716095480383" modelId="r:983279f4-89a9-45ad-aeeb-5621fd5cbb63(jetbrains.mps.baseLnaguage.extensionMethods.sandbox)">
-    <nodeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="6" startPosition="37" endLine="7" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="str" />
-    <nodeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="7" startPosition="42" endLine="8" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="a" />
-    <nodeInfo nodeId="7685333756920163917" fileName="StringExtensionMethods.java" startLine="13" startPosition="48" endLine="14" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7685333756920172843" fileName="StringExtensionMethods.java" startLine="14" startPosition="20" endLine="15" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7685333756920232198" fileName="StringExtensionMethods.java" startLine="15" startPosition="20" endLine="16" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7685333756920232202" fileName="StringExtensionMethods.java" startLine="16" startPosition="20" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7685333756920232211" fileName="StringExtensionMethods.java" startLine="17" startPosition="23" endLine="18" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7685333756920232217" fileName="StringExtensionMethods.java" startLine="18" startPosition="23" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7517860079983474761" fileName="StringExtensionMethods.java" startLine="19" startPosition="25" endLine="20" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="688031995686448475" fileName="StringExtensionMethods.java" startLine="20" startPosition="20" endLine="21" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6791353716095480405" fileName="StringExtensionMethods.java" startLine="21" startPosition="20" endLine="22" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7685333756920172853" fileName="StringExtensionMethods.java" startLine="25" startPosition="53" endLine="26" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="9" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StringExtensionMethods#()V" />
-    <nodeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="foo2#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="12" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="foo#(Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="10" startPosition="35" endLine="10" endPosition="35" />
-    <scopeInfo nodeId="7685333756920172851" fileName="StringExtensionMethods.java" startLine="25" startPosition="53" endLine="26" endPosition="45" />
-    <scopeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="9" startPosition="0" endLine="11" endPosition="3" />
-    <scopeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+    <nodeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="7" startPosition="37" endLine="8" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="str" />
+    <nodeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="8" startPosition="42" endLine="9" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="a" />
+    <nodeInfo nodeId="7685333756920163917" fileName="StringExtensionMethods.java" startLine="14" startPosition="48" endLine="15" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7685333756920172843" fileName="StringExtensionMethods.java" startLine="15" startPosition="20" endLine="16" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7685333756920232198" fileName="StringExtensionMethods.java" startLine="16" startPosition="20" endLine="17" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7685333756920232202" fileName="StringExtensionMethods.java" startLine="17" startPosition="20" endLine="18" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7685333756920232211" fileName="StringExtensionMethods.java" startLine="18" startPosition="23" endLine="19" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7685333756920232217" fileName="StringExtensionMethods.java" startLine="19" startPosition="23" endLine="20" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7517860079983474761" fileName="StringExtensionMethods.java" startLine="20" startPosition="25" endLine="21" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="688031995686448475" fileName="StringExtensionMethods.java" startLine="21" startPosition="20" endLine="22" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6791353716095480405" fileName="StringExtensionMethods.java" startLine="22" startPosition="20" endLine="23" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7685333756920172853" fileName="StringExtensionMethods.java" startLine="26" startPosition="53" endLine="27" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4525411394273860990" fileName="StringExtensionMethods.java" startLine="30" startPosition="94" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4525411394273861047" fileName="StringExtensionMethods.java" startLine="34" startPosition="51" endLine="35" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4525411394273861105" fileName="StringExtensionMethods.java" startLine="35" startPosition="60" endLine="36" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4525411394273871078" fileName="StringExtensionMethods.java" startLine="36" startPosition="29" endLine="37" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="10" startPosition="0" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StringExtensionMethods#()V" />
+    <nodeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="foo2#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="safeCast#(Ljava/lang/String;Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="testFoo3#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="13" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="foo#(Ljava/lang/String;)Ljava/lang/String;" />
+    <scopeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="11" startPosition="35" endLine="11" endPosition="35" />
+    <scopeInfo nodeId="7685333756920172851" fileName="StringExtensionMethods.java" startLine="26" startPosition="53" endLine="27" endPosition="45" />
+    <scopeInfo nodeId="4525411394273860982" fileName="StringExtensionMethods.java" startLine="30" startPosition="94" endLine="31" endPosition="16" />
+    <scopeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="10" startPosition="0" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="4525411394273860995" fileName="StringExtensionMethods.java" startLine="34" startPosition="51" endLine="37" endPosition="71">
+      <varInfo nodeId="4525411394273861106" varName="list" />
+      <varInfo nodeId="4525411394273871079" varName="my" />
+      <varInfo nodeId="4525411394273861048" varName="s" />
+    </scopeInfo>
+    <scopeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="6791353716095480383" varName="_this" />
     </scopeInfo>
-    <scopeInfo nodeId="6791353716095480392" fileName="StringExtensionMethods.java" startLine="13" startPosition="48" endLine="22" endPosition="23" />
-    <scopeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="12" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="6791353716095480383" varName="_this" />
+      <varInfo nodeId="4525411394273860986" varName="iterable" />
+    </scopeInfo>
+    <scopeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="33" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="6791353716095480383" varName="_this" />
     </scopeInfo>
-    <unitInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="6" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLnaguage.extensionMethods.sandbox.StringExtensionMethods" />
+    <scopeInfo nodeId="6791353716095480392" fileName="StringExtensionMethods.java" startLine="14" startPosition="48" endLine="23" endPosition="23" />
+    <scopeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="13" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="6791353716095480383" varName="_this" />
+    </scopeInfo>
+    <unitInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="7" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLnaguage.extensionMethods.sandbox.StringExtensionMethods" />
   </root>
   <root nodeId="6791353716095480385" modelId="r:983279f4-89a9-45ad-aeeb-5621fd5cbb63(jetbrains.mps.baseLnaguage.extensionMethods.sandbox)">
     <nodeInfo nodeId="6791353716095480385" fileName="Abc.java" startLine="7" startPosition="18" endLine="8" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="b" />
