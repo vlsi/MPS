@@ -76,12 +76,16 @@ public class IDEAProjectPeer implements ProjectComponent, IAuxProjectPeer {
       }
     }
 
-    public MPSCompilationResult compileModule(IModule module) {
+    public MPSCompilationResult compileModules(IModule[] modules) {
       if (!(isIDEAPresent())) {
         return null;
       }
+      String[] modulePaths = new String[modules.length];
+      for (int i = 0; i < modules.length; i++) {
+        modulePaths[i] = modules[i].getGeneratorOutputPath();
+      }
       try {
-        CompilationResult cr = myIdeaProjectHandler.buildModule(module.getGeneratorOutputPath());
+        CompilationResult cr = myIdeaProjectHandler.buildModules(modulePaths);
         if (cr != null) {
           return new MPSCompilationResult(cr.getErrors(), cr.getWarnings(), cr.isAborted(), cr.isCompiledAnything());
         }

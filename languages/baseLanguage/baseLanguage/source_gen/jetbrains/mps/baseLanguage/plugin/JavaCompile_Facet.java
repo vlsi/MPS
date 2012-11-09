@@ -316,7 +316,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
                   refreshed = true;
                 }
 
-                MPSCompilationResult cr = peer.getJavaCompiler().compileModule(tres.module());
+                MPSCompilationResult cr = peer.getJavaCompiler().compileModules(new IModule[]{tres.module()});
                 if (cr != null) {
                   for (IMessage msg : cr.getMessages()) {
                     monitor.reportFeedback(new IFeedback.MESSAGE(msg));

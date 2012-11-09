@@ -39,8 +39,8 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="facets" />
     </node>
     <node type="vvvw.FacetDeclaration" typeId="vvvw.6418371274763029523" id="6648795410103987945">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="facets" />
       <property name="name" nameId="tpck.1169194664001" value="ReloadClasses" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="facets" />
     </node>
     <node type="1oap.IconResourceBundle" typeId="1oap.8974276187400029885" id="2990235398088186554">
       <property name="name" nameId="tpck.1169194664001" value="Behavior" />
@@ -54,8 +54,8 @@
       <link role="facet" roleId="vvvw.6447445394688422643" targetNodeId="uskx.6648795410103988025" resolveInfo="Binaries" />
     </node>
     <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="6648795410103967074">
-      <property name="name" nameId="tpck.1169194664001" value="compile" />
       <property name="weight" nameId="vvvw.184542595914096177" value="300" />
+      <property name="name" nameId="tpck.1169194664001" value="compile" />
       <node role="dependency" roleId="vvvw.6418371274763146553" type="vvvw.TargetDependency" typeId="vvvw.6418371274763029600" id="6648795410103967075">
         <property name="qualifier" nameId="vvvw.8351679702044326377" value="AFTER" />
         <link role="dependsOn" roleId="vvvw.6418371274763029603" targetNodeId="tpcq.6648795410103966566" resolveInfo="textGen" />
@@ -493,8 +493,8 @@
       </node>
     </node>
     <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="6648795410103967258">
-      <property name="name" nameId="tpck.1169194664001" value="auxCompile" />
       <property name="weight" nameId="vvvw.184542595914096177" value="100" />
+      <property name="name" nameId="tpck.1169194664001" value="auxCompile" />
       <node role="dependency" roleId="vvvw.6418371274763146553" type="vvvw.TargetDependency" typeId="vvvw.6418371274763029600" id="6648795410103967259">
         <property name="qualifier" nameId="vvvw.8351679702044326377" value="AFTER" />
         <link role="dependsOn" roleId="vvvw.6418371274763029603" targetNodeId="tpcq.6648795410103966566" resolveInfo="textGen" />
@@ -858,13 +858,20 @@
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6648795410103967406">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="iqmz.2974008768272253425" resolveInfo="compileModule" />
-                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6648795410103967407">
-                          <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6648795410103967408">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6648795410103967347" resolveInfo="tres" />
-                          </node>
-                          <node role="operation" roleId="tpee.1197027833540" type="cx9y.NamedTupleComponentAccessOperation" typeId="cx9y.1239576519914" id="6648795410103967409">
-                            <link role="component" roleId="cx9y.1239576542472" targetNodeId="fn29.2257725414731981664" resolveInfo="module" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="iqmz.4652478519508015231" resolveInfo="compileModules" />
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4652478519508271260">
+                          <node role="creator" roleId="tpee.1145553007750" type="tpee.ArrayCreatorWithInitializer" typeId="tpee.1154542696413" id="4652478519508275202">
+                            <node role="initValue" roleId="tpee.1154542803372" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4652478519508279658">
+                              <node role="operation" roleId="tpee.1197027833540" type="cx9y.NamedTupleComponentAccessOperation" typeId="cx9y.1239576519914" id="4652478519508283297">
+                                <link role="component" roleId="cx9y.1239576542472" targetNodeId="fn29.2257725414731981664" resolveInfo="module" />
+                              </node>
+                              <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4652478519508275681">
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6648795410103967347" resolveInfo="tres" />
+                              </node>
+                            </node>
+                            <node role="componentType" roleId="tpee.1154542793668" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4652478519508273437">
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vsqj.~IModule" resolveInfo="IModule" />
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -1038,8 +1045,8 @@
       </node>
     </node>
     <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="6648795410103967476">
-      <property name="name" nameId="tpck.1169194664001" value="compileToMemory" />
       <property name="weight" nameId="vvvw.184542595914096177" value="200" />
+      <property name="name" nameId="tpck.1169194664001" value="compileToMemory" />
       <node role="dependency" roleId="vvvw.6418371274763146553" type="vvvw.TargetDependency" typeId="vvvw.6418371274763029600" id="6648795410103967477">
         <property name="qualifier" nameId="vvvw.8351679702044326377" value="AFTER" />
         <link role="dependsOn" roleId="vvvw.6418371274763029603" targetNodeId="tpcq.6648795410103966906" resolveInfo="textGenToMemory" />
@@ -1505,9 +1512,9 @@
   </root>
   <root id="6648795410103987945">
     <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="6648795410103987946">
+      <property name="weight" nameId="vvvw.184542595914096177" value="300" />
       <property name="name" nameId="tpck.1169194664001" value="reloadClasses" />
       <property name="resourcesPolicy" nameId="vvvw.1675547159918562088" value="TRANSFORM" />
-      <property name="weight" nameId="vvvw.184542595914096177" value="300" />
       <node role="job" roleId="vvvw.2360002718792633290" type="q9ra.JobDeclaration" typeId="q9ra.505095865854384109" id="6648795410103987947">
         <node role="job" roleId="q9ra.505095865854384110" type="q9ra.JobDefinition" typeId="q9ra.2360002718792625579" id="6648795410103987948">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6648795410103987949">

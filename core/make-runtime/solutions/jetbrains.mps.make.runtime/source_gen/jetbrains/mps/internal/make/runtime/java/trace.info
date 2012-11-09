@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2974008768272250195" modelId="r:6bc4612e-813e-4efa-8244-77b9a4da8b36(jetbrains.mps.internal.make.runtime.java)">
-    <nodeInfo nodeId="2974008768272253425" fileName="IJavaCompiler.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compileModule#(Ljetbrains/mps/project/IModule;)Ljetbrains/mps/make/MPSCompilationResult;" />
+    <nodeInfo nodeId="4652478519508015231" fileName="IJavaCompiler.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compileModules#([Ljetbrains/mps/project/IModule;)Ljetbrains/mps/make/MPSCompilationResult;" />
     <nodeInfo nodeId="2427888168044467804" fileName="IJavaCompiler.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refreshFiles#()V" />
-    <scopeInfo nodeId="2974008768272253425" fileName="IJavaCompiler.java" startLine="9" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="2974008768272253430" varName="module" />
+    <scopeInfo nodeId="4652478519508015231" fileName="IJavaCompiler.java" startLine="9" startPosition="0" endLine="10" endPosition="0">
+      <varInfo nodeId="4652478519508016215" varName="modules" />
     </scopeInfo>
     <scopeInfo nodeId="2427888168044467804" fileName="IJavaCompiler.java" startLine="10" startPosition="0" endLine="11" endPosition="0" />
     <unitInfo nodeId="2974008768272250195" fileName="IJavaCompiler.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.IJavaCompiler" />
