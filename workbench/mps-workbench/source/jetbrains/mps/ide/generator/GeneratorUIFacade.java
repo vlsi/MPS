@@ -213,7 +213,7 @@ public class GeneratorUIFacade {
           public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
             if (!sm.isGeneratable()) return null;
 
-            Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm.getSource(), operationContext);
+            Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext);
             if (generationHashes != null) {
               return generationHashes;
             }
