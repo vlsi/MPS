@@ -5,24 +5,25 @@ package jetbrains.mps.baseLanguage.javadoc.intentions;
 import jetbrains.mps.intentions.BaseIntentionsDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
-    super(new ModuleReference("jetbrains.mps.baseLanguage.javadoc", "f2801650-65d5-424e-bb1b-463a8781b786"), SModelReference.fromString("r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)"));
+    super(new ModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)"), SModelReference.fromString("r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)"));
   }
 
   public void init() {
-    add(new AddAuthorBlockDocTag_Intention(), "8465538089690783660");
-    add(new AddClassifierDocComment_Intention(), "2068944020170372970");
-    add(new AddFieldDocComment_Intention(), "6832197706140958200");
-    add(new AddMethodDocComment_Intention(), "3196018662491292781");
-    add(new AddParameterBlockDocTag_Intention(), "5858074156537083239");
-    add(new AddReturnBlockTag_Intention(), "6832197706140861451");
-    add(new AddSeeBlockTag_Intention(), "2217234381367409810");
-    add(new AddSinceBlockDocTag_Intention(), "8465538089690815842");
-    add(new AddStaticFieldDocComment_Intention(), "4021391592916341753");
-    add(new AddThrowBlockDocTag_Intention(), "6612597108006318457");
-    add(new AddVersionBlockTagDoc_Intention(), "8465538089690851630");
-    add(new FoldHTMLElement_Intention(), "6612597108004799966");
+    IntentionsManager.getInstance().registerIntentionFactory(new AddAuthorBlockDocTag_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddClassifierDocComment_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddFieldDocComment_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddMethodDocComment_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddParameterBlockDocTag_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddReturnBlockTag_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddSeeBlockTag_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddSinceBlockDocTag_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddStaticFieldDocComment_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddThrowBlockDocTag_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddVersionBlockTagDoc_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new FoldHTMLElement_Intention());
   }
 }

@@ -5,14 +5,15 @@ package jetbrains.mps.ui.modeling.intentions;
 import jetbrains.mps.intentions.BaseIntentionsDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
-    super(new ModuleReference("jetbrains.mps.ui.modeling", "8a448bd0-1380-4c01-9820-0f051d33888c"), SModelReference.fromString("r:bac8ec1e-8e5a-402a-a005-91bd829c7598(jetbrains.mps.ui.modeling.intentions)"));
+    super(new ModuleReference("8a448bd0-1380-4c01-9820-0f051d33888c(jetbrains.mps.ui.modeling)"), SModelReference.fromString("r:bac8ec1e-8e5a-402a-a005-91bd829c7598(jetbrains.mps.ui.modeling.intentions)"));
   }
 
   public void init() {
-    add(new ChildAspectDefinition_makeOptional_Intention(), "6030013275786405059");
-    add(new LinkDeclaration_addOverrideAnnotation_Intention(), "6247544121092588774");
+    IntentionsManager.getInstance().registerIntentionFactory(new ChildAspectDefinition_makeOptional_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new LinkDeclaration_addOverrideAnnotation_Intention());
   }
 }

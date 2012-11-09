@@ -17,7 +17,6 @@ package jetbrains.mps.intentions;
 
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
 
@@ -25,18 +24,6 @@ import java.util.Collection;
  * User: shatalin
  * Date: 10/31/12
  */
-public interface IntentionFactory {
-  String getConcept();
-
-  String getPresentation();
-
-  String getPersistentStateKey();
-
-  String getLanguageFqName();
-
-  IntentionType getType();
-
-  SNodeReference getIntentionNodeReference();
-
-  Collection<Intention> instances(SNode node, EditorContext editorContext);
+public interface IntentionFactory extends IntentionDescriptor {
+  Collection<IntentionExecutable> instances(SNode node, EditorContext editorContext);
 }

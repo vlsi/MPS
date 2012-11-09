@@ -5,14 +5,15 @@ package jetbrains.mps.baseLanguage.contracts.intentions;
 import jetbrains.mps.intentions.BaseIntentionsDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
-    super(new ModuleReference("jetbrains.mps.baseLanguage.contracts", "c1b26490-e316-44a3-bb8e-c9120732af93"), SModelReference.fromString("r:3070cbe8-0c27-49bc-b3e1-822ee20455cd(jetbrains.mps.baseLanguage.contracts.intentions)"));
+    super(new ModuleReference("c1b26490-e316-44a3-bb8e-c9120732af93(jetbrains.mps.baseLanguage.contracts)"), SModelReference.fromString("r:3070cbe8-0c27-49bc-b3e1-822ee20455cd(jetbrains.mps.baseLanguage.contracts.intentions)"));
   }
 
   public void init() {
-    add(new AddConditions_Intention(), "6302815655306137102");
-    add(new RemoveConditions_Intention(), "6302815655306137097");
+    IntentionsManager.getInstance().registerIntentionFactory(new AddConditions_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new RemoveConditions_Intention());
   }
 }

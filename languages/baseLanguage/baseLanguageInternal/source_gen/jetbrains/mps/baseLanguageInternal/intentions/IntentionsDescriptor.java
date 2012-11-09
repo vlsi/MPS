@@ -5,15 +5,16 @@ package jetbrains.mps.baseLanguageInternal.intentions;
 import jetbrains.mps.intentions.BaseIntentionsDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
-    super(new ModuleReference("jetbrains.mps.baseLanguageInternal", "df345b11-b8c7-4213-ac66-48d2a9b75d88"), SModelReference.fromString("r:f0d79467-678d-44a3-9372-d1b2fb477d99(jetbrains.mps.baseLanguageInternal.intentions)"));
+    super(new ModuleReference("df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)"), SModelReference.fromString("r:f0d79467-678d-44a3-9372-d1b2fb477d99(jetbrains.mps.baseLanguageInternal.intentions)"));
   }
 
   public void init() {
-    add(new ReplaceWithConstantValue_Intention(), "5332097447638335764");
-    add(new ReplaceWithFieldReference_Intention(), "5332097447638335653");
-    add(new add_parameter_to_InternalClassifierType_Intention(), "1229871155083");
+    IntentionsManager.getInstance().registerIntentionFactory(new ReplaceWithConstantValue_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new ReplaceWithFieldReference_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new add_parameter_to_InternalClassifierType_Intention());
   }
 }

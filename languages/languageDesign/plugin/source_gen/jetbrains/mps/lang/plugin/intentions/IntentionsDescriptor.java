@@ -5,13 +5,14 @@ package jetbrains.mps.lang.plugin.intentions;
 import jetbrains.mps.intentions.BaseIntentionsDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
-    super(new ModuleReference("jetbrains.mps.lang.plugin", "28f9e497-3b42-4291-aeba-0a1039153ab1"), SModelReference.fromString("r:00000000-0000-4000-0000-011c89590365(jetbrains.mps.lang.plugin.intentions)"));
+    super(new ModuleReference("28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)"), SModelReference.fromString("r:00000000-0000-4000-0000-011c89590365(jetbrains.mps.lang.plugin.intentions)"));
   }
 
   public void init() {
-    add(new ExtractGroup_Intention(), "1204990433124");
+    IntentionsManager.getInstance().registerIntentionFactory(new ExtractGroup_Intention());
   }
 }

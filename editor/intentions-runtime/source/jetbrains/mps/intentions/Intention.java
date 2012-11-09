@@ -15,35 +15,20 @@
  */
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
-public interface Intention {
-  String getConcept();
-
-  String getPresentation();
-
-  String getPersistentStateKey();
-
-  String getLanguageFqName();
-
-  IntentionType getType();
-
+/**
+ * This interface was replaced with IntentionFactory in MPS 3.0
+ * Should be removed after MPS 3.0
+ */
+@Deprecated
+public interface Intention extends IntentionExecutable, IntentionDescriptor {
   /**
    * Was deprecated in MPS 3.0
    * This method should be removed after MPS 3.0
    */
   @Deprecated
   boolean isParameterized();
-
-  String getDescription(SNode node, EditorContext editorContext);
-
-  boolean isApplicable(SNode node, EditorContext editorContext);
-
-  boolean isAvailableInChildNodes();
-
-  void execute(SNode node, EditorContext editorContext);
 
   /**
    * Was deprecated in MPS 3.0
@@ -59,6 +44,4 @@ public interface Intention {
    */
   @Deprecated
   SNode getNodeByIntention();
-
-  SNodeReference getIntentionNodeReference();
 }

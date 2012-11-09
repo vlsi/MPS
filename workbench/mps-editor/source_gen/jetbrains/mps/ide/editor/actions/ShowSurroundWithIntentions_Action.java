@@ -28,7 +28,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.intentions.Intention;
+import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.smodel.SNode;
 import java.util.Comparator;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -135,14 +135,14 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
   private ActionGroup getActionGroup(final Map<String, Object> _params) {
     DefaultActionGroup actionGroup = new DefaultActionGroup();
 
-    Iterable<Pair<Intention, SNode>> availableIntentions = Sequence.fromIterable(ShowSurroundWithIntentions_Action.this.getAvailableIntentions(_params)).sort(new Comparator<Pair<Intention, SNode>>() {
-      public int compare(Pair<Intention, SNode> a, Pair<Intention, SNode> b) {
+    Iterable<Pair<IntentionExecutable, SNode>> availableIntentions = Sequence.fromIterable(ShowSurroundWithIntentions_Action.this.getAvailableIntentions(_params)).sort(new Comparator<Pair<IntentionExecutable, SNode>>() {
+      public int compare(Pair<IntentionExecutable, SNode> a, Pair<IntentionExecutable, SNode> b) {
         return ShowSurroundWithIntentions_Action.this.getDescriptior(a, _params).compareTo(ShowSurroundWithIntentions_Action.this.getDescriptior(b, _params));
       }
     }, true);
 
-    for (Pair<Intention, SNode> pair : Sequence.fromIterable(availableIntentions)) {
-      final Pair<Intention, SNode> finalPair = pair;
+    for (Pair<IntentionExecutable, SNode> pair : Sequence.fromIterable(availableIntentions)) {
+      final Pair<IntentionExecutable, SNode> finalPair = pair;
       actionGroup.add(new AnAction(ShowSurroundWithIntentions_Action.this.getDescriptior(pair, _params)) {
         public void actionPerformed(AnActionEvent event) {
           ModelAccess.instance().runCommandInEDT(new Runnable() {
@@ -157,14 +157,14 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
     return actionGroup;
   }
 
-  private Iterable<Pair<Intention, SNode>> getAvailableIntentions(final Map<String, Object> _params) {
+  private Iterable<Pair<IntentionExecutable, SNode>> getAvailableIntentions(final Map<String, Object> _params) {
     IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
     query.setIntentionClass(SurroundWithIntention.class);
     query.setCurrentNodeOnly(true);
     return IntentionsManager.getInstance().getAvailableIntentions(query, ((SNode) MapSequence.fromMap(_params).get("node")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
   }
 
-  private String getDescriptior(Pair<Intention, SNode> pair, final Map<String, Object> _params) {
+  private String getDescriptior(Pair<IntentionExecutable, SNode> pair, final Map<String, Object> _params) {
     return pair.o1.getDescription(pair.o2, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
   }
 }
