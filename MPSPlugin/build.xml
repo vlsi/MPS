@@ -12,7 +12,7 @@
 
     <target name="compile">
         <mkdir dir="build/classes"/>
-        <javac destdir="build/classes" source="1.5" target="1.5">
+        <javac destdir="build/classes" source="1.6" target="1.6">
             <src path="source"/>
             <src path="source-api"/>
             <classpath>
