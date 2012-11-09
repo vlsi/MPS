@@ -58,4 +58,21 @@ public class Dependency {
 
     return result;
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    Dependency that = (Dependency) o;
+
+    return myReexport == that.myReexport && myModuleRef.equals(that.myModuleRef);
+  }
+
+  @Override
+  public int hashCode() {
+    int result = myModuleRef.hashCode();
+    result = 31 * result + (myReexport ? 1 : 0);
+    return result;
+  }
 }
