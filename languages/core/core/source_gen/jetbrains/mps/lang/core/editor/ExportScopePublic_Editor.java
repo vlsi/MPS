@@ -10,10 +10,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ExportScopePublic_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -33,17 +31,7 @@ public class ExportScopePublic_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(editorContext);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator<Boolean>() {
-        public Boolean calculate(EditorCell cell) {
-          return ExportScopePublic_Editor._StyleParameter_QueryFunction_pjxymp_a0a0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     return editorCell;
   }
@@ -53,9 +41,5 @@ public class ExportScopePublic_Editor extends DefaultNodeEditor {
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedNodeCell();
     return editorCell;
-  }
-
-  private static boolean _StyleParameter_QueryFunction_pjxymp_a0a0(SNode node, EditorContext editorContext) {
-    return (SNodeOperations.getParent(node) != null) && jetbrains.mps.util.SNodeOperations.isRoot(SNodeOperations.getParent(node));
   }
 }

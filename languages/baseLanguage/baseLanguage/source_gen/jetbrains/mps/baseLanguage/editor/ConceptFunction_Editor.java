@@ -34,11 +34,11 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
-          public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
-            EditorCell_Collection collection = EditorCell_Collection.createVertical(editorContext, node);
-            collection.addEditorCell(new EditorCell_Constant(editorContext, node, "Concept function help:"));
+          public EditorCell createEditorCell(EditorContext context) {
+            EditorCell_Collection collection = EditorCell_Collection.createVertical(context, node);
+            collection.addEditorCell(new EditorCell_Constant(context, node, "Concept function help:"));
             if (SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription") != null) {
-              collection.addEditorCell(new EditorCell_Constant(editorContext, node, SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription")));
+              collection.addEditorCell(new EditorCell_Constant(context, node, SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription")));
             }
             collection.addEditorCell(new EditorCell_Constant(context, node, ""));
             collection.addEditorCell(new EditorCell_Constant(context, node, "Parameter help:"));

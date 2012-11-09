@@ -62,7 +62,7 @@ public class AliasComponent extends AbstractCellProvider {
   }
 
   private EditorCell createError_ezwpxy_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<choose operaion>");
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose operaion>");
     editorCell.setCellId("Error_ezwpxy_a0");
     return editorCell;
   }

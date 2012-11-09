@@ -17,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -121,7 +121,7 @@ public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory
         return false;
       }
       SNode selectedNodeConcept = SNodeOperations.getConceptDeclaration(node);
-      return SConceptPropertyOperations.getBoolean(selectedNodeConcept, "abstract");
+      return SPropertyOperations.getBoolean(selectedNodeConcept, "abstract");
     }
 
     public boolean isAvailableInChildNodes() {
