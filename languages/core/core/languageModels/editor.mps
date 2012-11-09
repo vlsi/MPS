@@ -223,6 +223,9 @@
           </node>
         </node>
       </node>
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="5694771681056371077">
+        <property name="style" nameId="tpc2.1186403771423" value="BOLD" />
+      </node>
     </node>
   </root>
   <root id="6639471181490591356">

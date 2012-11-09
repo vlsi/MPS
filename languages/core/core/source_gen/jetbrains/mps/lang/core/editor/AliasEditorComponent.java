@@ -13,6 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class AliasEditorComponent extends AbstractCellProvider {
   public AliasEditorComponent(SNode node) {
@@ -48,6 +51,10 @@ public class AliasEditorComponent extends AbstractCellProvider {
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     editorCell.setCellId("ReadOnlyModelAccessor_c5ei8w_a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    }
     return editorCell;
   }
 }
