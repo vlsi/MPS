@@ -96,6 +96,5 @@ public class RMIHandler {
       checkAccess();
       return ourProjectCreator;
     }
-
   }
 }

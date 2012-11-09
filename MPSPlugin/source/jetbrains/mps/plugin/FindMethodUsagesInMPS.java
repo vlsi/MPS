@@ -24,7 +24,6 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiMethod;
 
 public class FindMethodUsagesInMPS extends AnAction {
-
   public void update(AnActionEvent anActionEvent) {
     super.update(anActionEvent);
     PsiElement element = PluginUtil.getCurrentElement(anActionEvent);
@@ -47,5 +46,4 @@ public class FindMethodUsagesInMPS extends AnAction {
     ProjectHandler projectHandler = project.getComponent(ProjectHandler.class);
     projectHandler.showMethodUsages(cls.getQualifiedName(), method.getName(), method.getParameterList().getParameters().length);
   }
-
 }
