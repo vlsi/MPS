@@ -137,7 +137,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
       }
     });
     try {
-      latch.wait();
+      latch.await();
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
