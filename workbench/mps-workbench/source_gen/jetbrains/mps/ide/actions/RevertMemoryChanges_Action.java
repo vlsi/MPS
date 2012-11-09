@@ -10,9 +10,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import org.jetbrains.annotations.NotNull;
 
 public class RevertMemoryChanges_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -30,7 +29,7 @@ public class RevertMemoryChanges_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((SModelDescriptor) MapSequence.fromMap(_params).get("model")) instanceof DefaultSModelDescriptor;
+    return ((SModelDescriptor) MapSequence.fromMap(_params).get("model")) instanceof EditableSModelDescriptor;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -63,7 +62,7 @@ public class RevertMemoryChanges_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((DefaultSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).reloadFromDisk();
+      ((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).reloadFromDisk();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RevertMemoryChanges", t);

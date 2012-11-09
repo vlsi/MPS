@@ -28,6 +28,7 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -140,8 +141,8 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
 
   private boolean isDoNotGenerate(SModelTreeNode node) {
     SModelDescriptor md = node.getSModelDescriptor();
-    if (!(md instanceof DefaultSModelDescriptor)) return false;
-    return ((DefaultSModelDescriptor) md).isDoNotGenerate();
+    if (!(md instanceof GeneratableSModelDescriptor)) return false;
+    return ((GeneratableSModelDescriptor) md).isDoNotGenerate();
   }
 
   public static enum GenerationStatus {

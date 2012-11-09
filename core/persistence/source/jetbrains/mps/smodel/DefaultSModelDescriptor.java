@@ -15,11 +15,18 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.findUsages.fastfind.FastFindSupport;
+import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
+import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
+import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.persistence.DefaultModelPersistence;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.descriptor.Refactorable;
-import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
+import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
@@ -30,6 +37,7 @@ import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -37,8 +45,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Collections;
 import java.util.Map;
 
-public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor, Refactorable {
+public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor, GeneratableSModelDescriptor, RefactorableSModelDescriptor, FastFindSupportProvider {
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
+  public static String FAST_FIND_ID = "regular";
 
   private final UpdateableModel myModel = new UpdateableModel(this) {
     @Override
@@ -71,7 +80,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   private boolean myChanged = false;
 
-  public DefaultSModelDescriptor(RegularModelDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
+  public DefaultSModelDescriptor(FileDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
     super(modelReference, source);
     myHeader = d.getHeader();
     myMetadata = d.getMetadata();
@@ -98,6 +107,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
       }
       return res;
     }
+  }
+
+  @Override
+  public void forceLoad() {
+    getUpdateableModel().getModel(ModelLoadingState.FULLY_LOADED);
   }
 
   @Override
@@ -169,8 +183,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   @Override
   @NotNull
-  public RegularModelDataSource getSource() {
-    return ((RegularModelDataSource) super.getSource());
+  public FileDataSource getSource() {
+    return (FileDataSource) super.getSource();
   }
 
   @Override
@@ -178,7 +192,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   public StructureModificationLog getStructureModificationLog() {
     synchronized (myRefactoringHistoryLock) {
       if (myStructureModificationLog == null) {
-        myStructureModificationLog = getSource().loadModelRefactorings(this);
+        myStructureModificationLog = RefactoringsPersistence.load(getSource().getFile());
       }
       if (myStructureModificationLog == null) {
         myStructureModificationLog = new StructureModificationLog();
@@ -190,7 +204,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   @Override
   public void saveStructureModificationLog(@NotNull StructureModificationLog log) {
     myStructureModificationLog = log;
-    getSource().saveModelRefactorings(this, log);
+    RefactoringsPersistence.save(getSource().getFile(), log);
   }
 
   @Override
@@ -235,6 +249,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     return !isDoNotGenerate() && !isReadOnly() && SModelStereotype.isUserModel(this);
   }
 
+  @Override
+  public boolean isGenerateIntoModelFolder() {
+    return Boolean.parseBoolean(getSModelHeader().getOptionalProperty("useModelFolderForGeneration"));
+  }
+
   public void replaceModel(final SModel newModel, final ModelLoadingState state) {
     ModelAccess.assertLegalWrite();
 
@@ -251,7 +270,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   @Override
   public String getModelHash() {
-    return getSource().getModelHash();
+    IFile file = getSource().getFile();
+    if (file == null) return null;
+    return ModelDigestUtil.hash(file);
   }
 
   @Override
@@ -402,9 +423,28 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
     SModelReference newModelReference = new SModelReference(newModelFqName, myModelReference.getSModelId());
     model.changeModelReference(newModelReference);
-    getSource().rename(this, newModelFqName, changeFile);
+
+    if (!changeFile) {
+      save();
+    } else {
+      IFile oldFile = getSource().getFile();
+      SModelRoot root = ModelRootUtil.getSModelRoot(this);
+      IFile newFile = DefaultModelPersistence.createFileForModelUID(root, newModelFqName, DefaultModelPersistence.isLanguageAspect(root, getModule(), newModelFqName));
+      newFile.getParent().mkdirs();
+      newFile.createNewFile();
+      changeModelFile(newFile);
+      save();
+      oldFile.delete();
+    }
+
     myModelReference = newModelReference;
 
     fireModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
+  }
+
+  @Nullable
+  @Override
+  public FastFindSupport getFastFindSupport() {
+    return FastFindSupportRegistry.getInstance().getFastFindSupport(DefaultSModelDescriptor.FAST_FIND_ID);
   }
 }

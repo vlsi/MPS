@@ -44,7 +44,6 @@
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassLoader" />
-    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -66,7 +65,6 @@
     <classNode dependClassName="jetbrains.mps.compiler.CompilationResultAdapter" />
     <classNode dependClassName="jetbrains.mps.compiler.IClassesData" />
     <classNode dependClassName="jetbrains.mps.compiler.JavaCompiler" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />

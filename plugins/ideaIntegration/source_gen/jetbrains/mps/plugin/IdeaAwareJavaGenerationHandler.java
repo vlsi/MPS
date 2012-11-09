@@ -94,8 +94,7 @@ public class IdeaAwareJavaGenerationHandler extends JavaGenerationHandler {
           monitor.advance(1);
           monitor.step("compiling..");
           info(info);
-          compilationResult = projectHandler.buildModule(module.getGeneratorOutputPath());
-
+          compilationResult = projectHandler.buildModules(new String[]{module.getGeneratorOutputPath()});
         } finally {
           monitor.done();
         }

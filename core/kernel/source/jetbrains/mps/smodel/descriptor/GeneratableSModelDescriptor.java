@@ -15,14 +15,20 @@
  */
 package jetbrains.mps.smodel.descriptor;
 
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 /**
- * evgeny, 11/6/12
+ * evgeny, 11/8/12
  */
-public interface SModelEx extends SModel {
+public interface GeneratableSModelDescriptor extends SModelDescriptor {
 
   boolean isGeneratable();
 
+  boolean isGenerateIntoModelFolder();
+
   String getModelHash();
+
+  void setDoNotGenerate(boolean value);
+
+  boolean isDoNotGenerate();
 }

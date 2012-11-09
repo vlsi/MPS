@@ -33,5 +33,7 @@ public interface EditableSModelDescriptor extends SModelDescriptor {
 
   void updateDiskTimestamp();
 
+  boolean needsReloading();
+
   void reloadFromDisk();
 }

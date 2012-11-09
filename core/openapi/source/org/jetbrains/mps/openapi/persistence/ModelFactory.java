@@ -19,7 +19,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 
 public interface ModelFactory {
 
-  boolean canCreate(DataSource dataSource);
+  boolean canCreate(StreamDataSource dataSource);
 
-  SModel create(DataSource dataSource);
+  SModel create(StreamDataSource dataSource);
 }

@@ -2149,86 +2149,86 @@
     <unitInfo nodeId="1216120033386" fileName="ShowConceptInHierarchy_Action.java" startLine="23" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action" />
   </root>
   <root nodeId="1216120752903" modelId="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)">
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="21" startPosition="39" endLine="22" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="22" startPosition="45" endLine="23" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="23" startPosition="35" endLine="24" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="28" startPosition="32" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7793469387662800201" fileName="RevertMemoryChanges_Action.java" startLine="32" startPosition="87" endLine="33" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="38" startPosition="7" endLine="39" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="39" startPosition="60" endLine="40" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="43" startPosition="33" endLine="44" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="45" startPosition="7" endLine="46" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="51" startPosition="53" endLine="52" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="53" startPosition="5" endLine="54" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="55" startPosition="60" endLine="56" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="58" startPosition="178" endLine="59" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="60" startPosition="5" endLine="61" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216120783441" fileName="RevertMemoryChanges_Action.java" startLine="65" startPosition="9" endLine="66" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="68" startPosition="33" endLine="69" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="42" startPosition="27" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="42" startPosition="27" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="50" startPosition="95" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="54" startPosition="86" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="57" startPosition="5" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="67" startPosition="27" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="67" startPosition="27" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="37" startPosition="9" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RevertMemoryChanges_Action#()V" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="53" startPosition="5" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="64" startPosition="96" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="64" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="36" startPosition="89" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="36" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="50" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="28" startPosition="32" endLine="29" endPosition="16" />
-    <scopeInfo nodeId="257555896712961360" fileName="RevertMemoryChanges_Action.java" startLine="32" startPosition="87" endLine="33" endPosition="109" />
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="43" startPosition="33" endLine="44" endPosition="94" />
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="51" startPosition="53" endLine="52" endPosition="19" />
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="55" startPosition="60" endLine="56" endPosition="19" />
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="58" startPosition="178" endLine="59" endPosition="19" />
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="65" startPosition="9" endLine="66" endPosition="114" />
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="68" startPosition="33" endLine="69" endPosition="93" />
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="38" startPosition="7" endLine="40" endPosition="63">
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="20" startPosition="39" endLine="21" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="21" startPosition="45" endLine="22" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="22" startPosition="35" endLine="23" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="27" startPosition="32" endLine="28" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7793469387662800201" fileName="RevertMemoryChanges_Action.java" startLine="31" startPosition="87" endLine="32" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="37" startPosition="7" endLine="38" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="38" startPosition="60" endLine="39" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="42" startPosition="33" endLine="43" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="44" startPosition="7" endLine="45" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="50" startPosition="53" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="52" startPosition="5" endLine="53" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="54" startPosition="60" endLine="55" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="57" startPosition="178" endLine="58" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="59" startPosition="5" endLine="60" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1216120783441" fileName="RevertMemoryChanges_Action.java" startLine="64" startPosition="9" endLine="65" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="67" startPosition="33" endLine="68" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="41" startPosition="27" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="41" startPosition="27" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="49" startPosition="95" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="53" startPosition="86" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="56" startPosition="5" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="66" startPosition="27" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="66" startPosition="27" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="36" startPosition="9" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RevertMemoryChanges_Action#()V" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="52" startPosition="5" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="63" startPosition="96" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="63" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="35" startPosition="89" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="35" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="49" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="27" startPosition="32" endLine="28" endPosition="16" />
+    <scopeInfo nodeId="257555896712961360" fileName="RevertMemoryChanges_Action.java" startLine="31" startPosition="87" endLine="32" endPosition="110" />
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="42" startPosition="33" endLine="43" endPosition="94" />
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="50" startPosition="53" endLine="51" endPosition="19" />
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="54" startPosition="60" endLine="55" endPosition="19" />
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="57" startPosition="178" endLine="58" endPosition="19" />
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="64" startPosition="9" endLine="65" endPosition="115" />
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="67" startPosition="33" endLine="68" endPosition="93" />
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="37" startPosition="7" endLine="39" endPosition="63">
       <varInfo nodeId="1216120752903" varName="enabled" />
     </scopeInfo>
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="21" startPosition="39" endLine="24" endPosition="41" />
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="20" startPosition="39" endLine="23" endPosition="41" />
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="1216120752903" varName="_params" />
       <varInfo nodeId="1216120752903" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="42" startPosition="27" endLine="45" endPosition="7" />
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="67" startPosition="0" endLine="70" endPosition="7">
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="41" startPosition="27" endLine="44" endPosition="7" />
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="66" startPosition="0" endLine="69" endPosition="7">
       <varInfo nodeId="1216120752903" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="67" startPosition="27" endLine="70" endPosition="7" />
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="37" startPosition="9" endLine="41" endPosition="7" />
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="42" startPosition="0" endLine="46" endPosition="44">
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="66" startPosition="27" endLine="69" endPosition="7" />
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="36" startPosition="9" endLine="40" endPosition="7" />
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="41" startPosition="0" endLine="45" endPosition="44">
       <varInfo nodeId="1216120752903" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="42" startPosition="27" endLine="46" endPosition="44" />
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="53" startPosition="5" endLine="60" endPosition="5" />
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="64" startPosition="96" endLine="71" endPosition="5" />
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="64" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="41" startPosition="27" endLine="45" endPosition="44" />
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="52" startPosition="5" endLine="59" endPosition="5" />
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="63" startPosition="96" endLine="70" endPosition="5" />
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="63" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="1216120752903" varName="_params" />
       <varInfo nodeId="1216120752903" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="36" startPosition="89" endLine="47" endPosition="5" />
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="50" startPosition="95" endLine="61" endPosition="16" />
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="36" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="35" startPosition="89" endLine="46" endPosition="5" />
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="49" startPosition="95" endLine="60" endPosition="16" />
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="35" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="1216120752903" varName="_params" />
       <varInfo nodeId="1216120752903" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="50" startPosition="0" endLine="63" endPosition="0">
+    <scopeInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="49" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="1216120752903" varName="_params" />
       <varInfo nodeId="1216120752903" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.RevertMemoryChanges_Action" />
+    <unitInfo nodeId="1216120752903" fileName="RevertMemoryChanges_Action.java" startLine="16" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ide.actions.RevertMemoryChanges_Action" />
   </root>
   <root nodeId="1216124527478" modelId="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)">
     <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

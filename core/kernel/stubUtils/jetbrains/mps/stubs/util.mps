@@ -3794,8 +3794,8 @@
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="omdc.~StubModelDataSource" resolveInfo="StubModelDataSource" />
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="4895370762350786853">
-      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="hasModel" />
+      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="4895370762350786854">
         <property name="name" nameId="tpck.1169194664001" value="md" />
@@ -4273,7 +4273,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3886341793880680899">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3886341793880691320">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3886341793880693381">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d2v5.~ModelRootBase%dsetModule(org%djetbrains%dmps%dopenapi%dmodule%dSModule)%cvoid" resolveInfo="setModule" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ep0o.~ModelRootBase%dsetModule(org%djetbrains%dmps%dopenapi%dmodule%dSModule)%cvoid" resolveInfo="setModule" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3886341793880696939">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3031904122192783263" resolveInfo="module" />
                   </node>
@@ -4284,7 +4284,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3886341793880659205" resolveInfo="created" />
                     </node>
                     <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3886341793880685913">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="d2v5.~ModelRootBase" resolveInfo="ModelRootBase" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ep0o.~ModelRootBase" resolveInfo="ModelRootBase" />
                     </node>
                   </node>
                 </node>

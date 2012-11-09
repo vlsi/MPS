@@ -14,8 +14,9 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
@@ -60,22 +61,22 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       for (SModel model : Sequence.fromIterable(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProjectModels())) {
-        if (!(model instanceof DefaultSModelDescriptor)) {
+        if (!(model instanceof RefactorableSModelDescriptor)) {
           continue;
         }
         if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model))) {
           continue;
         }
-        UpdateRefactoringVersions_Action.this.updateModelVersion((DefaultSModelDescriptor) model, _params);
+        UpdateRefactoringVersions_Action.this.updateModelVersion((RefactorableSModelDescriptor) model, _params);
       }
       for (SModel model : Sequence.fromIterable(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProjectModels())) {
-        if (!(model instanceof DefaultSModelDescriptor)) {
+        if (!(model instanceof EditableSModelDescriptor)) {
           continue;
         }
         if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model))) {
           continue;
         }
-        UpdateRefactoringVersions_Action.this.updateImportVersions((DefaultSModelDescriptor) model, _params);
+        UpdateRefactoringVersions_Action.this.updateImportVersions((EditableSModelDescriptor) model, _params);
       }
       SModelRepository.getInstance().saveAll();
     } catch (Throwable t) {
@@ -85,7 +86,7 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
     }
   }
 
-  /*package*/ void updateModelVersion(DefaultSModelDescriptor model, final Map<String, Object> _params) {
+  /*package*/ void updateModelVersion(RefactorableSModelDescriptor model, final Map<String, Object> _params) {
     int modelVersion = model.getVersion();
     int historyVersion = model.getStructureModificationLog().getLatestVersion(model.getSModelReference());
     if (modelVersion < historyVersion) {
@@ -101,10 +102,10 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
     }
   }
 
-  /*package*/ void updateImportVersions(DefaultSModelDescriptor model, final Map<String, Object> _params) {
+  /*package*/ void updateImportVersions(EditableSModelDescriptor model, final Map<String, Object> _params) {
     jetbrains.mps.smodel.SModel m = model.getSModel();
     for (jetbrains.mps.smodel.SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(model.getSModel()))) {
-      DefaultSModelDescriptor usedModel = as_hexye9_a0a0a1a5(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), DefaultSModelDescriptor.class);
+      RefactorableSModelDescriptor usedModel = as_hexye9_a0a0a1a5(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), RefactorableSModelDescriptor.class);
       if (usedModel == null) {
         continue;
       }

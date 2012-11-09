@@ -23,6 +23,7 @@ import jetbrains.mps.ide.findusages.MPSFindUsages;
 import jetbrains.mps.ide.smodel.WorkbenchModelAccess;
 import jetbrains.mps.ide.undo.WorkbenchUndoHandler;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
+import jetbrains.mps.persistence.MPSPersistence;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.MPSTypesystem;
@@ -55,6 +56,7 @@ public class MPSCoreComponents implements ApplicationComponent {
 
     // setup MPS.Core
     MPSCore.getInstance().init();
+    MPSPersistence.getInstance().init();
     MPSTypesystem.getInstance().init();
     MPSGenerator.getInstance().init();
     MPSFindUsages.getInstance().init();
@@ -72,6 +74,7 @@ public class MPSCoreComponents implements ApplicationComponent {
     MPSFindUsages.getInstance().dispose();
     MPSGenerator.getInstance().dispose();
     MPSTypesystem.getInstance().dispose();
+    MPSPersistence.getInstance().dispose();
     MPSCore.getInstance().dispose();
 
     // cleanup

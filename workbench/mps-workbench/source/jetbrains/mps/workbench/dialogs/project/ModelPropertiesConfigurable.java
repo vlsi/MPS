@@ -15,31 +15,26 @@
  */
 package jetbrains.mps.workbench.dialogs.project;
 
-import com.intellij.ide.highlighter.HtmlHighlighterFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.editor.colors.EditorColorsScheme;
-import com.intellij.openapi.editor.colors.impl.EditorColorsSchemeImpl;
 import com.intellij.ui.components.JBLabel;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.properties.ModelProperties;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.*;
-import jetbrains.mps.workbench.dialogs.project.components.parts.creators.DevKitChooser;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.LanguageChooser;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModelChooser;
 import jetbrains.mps.workbench.dialogs.project.tmodels.*;
 import org.jdesktop.beansbinding.AutoBinding;
 import org.jetbrains.annotations.Nls;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
-import javax.swing.JComponent;
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
-import java.awt.Insets;
+import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -83,8 +78,12 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable<SMode
 
     @Override
     protected String getConfigItemPath() {
-      if(myConfigurableItem instanceof DefaultSModelDescriptor)
-        return ((DefaultSModelDescriptor)myConfigurableItem).getModelFile().getPath();
+      if (myConfigurableItem instanceof EditableSModelDescriptor) {
+        DataSource source = ((EditableSModelDescriptor) myConfigurableItem).getSource();
+        if (source instanceof FileDataSource) {
+          return ((FileDataSource) source).getFile().getPath();
+        }
+      }
       return "";
     }
 
@@ -128,37 +127,63 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable<SMode
           List<ModuleReference> list =
             (new LanguageChooser(new IBindedDialog() {
               @Override
-              public JComponent getMainComponent() {return getTabComponent();}
+              public JComponent getMainComponent() {
+                return getTabComponent();
+              }
+
               @Override
-              public IOperationContext getOperationContext() {return null;}
+              public IOperationContext getOperationContext() {
+                return null;
+              }
+
               @Override
-              public IScope getModuleScope() {return null;}
+              public IScope getModuleScope() {
+                return null;
+              }
+
               @Override
-              public IScope getProjectScope() {return null;}
+              public IScope getProjectScope() {
+                return null;
+              }
+
               @Override
-              public void addBinding(AutoBinding binding) {}
+              public void addBinding(AutoBinding binding) {
+              }
             })).compute();
-          for(ModuleReference reference : list)
+          for (ModuleReference reference : list)
             myDependTableModel.addItem(new ModuleDepTableItem(reference, DependenciesTableItemRole.ENGAGE_ON_GEN));
         }
       });
-      list.add(new MPSPropertiesAnActionButton(SModel.class, IdeIcons.MODEL_ICON){
+      list.add(new MPSPropertiesAnActionButton(SModel.class, IdeIcons.MODEL_ICON) {
         @Override
         public void actionPerformed(AnActionEvent e) {
           List<jetbrains.mps.smodel.SModelReference> list =
             (new ModelChooser(new IBindedDialog() {
               @Override
-              public JComponent getMainComponent() {return getTabComponent();}
+              public JComponent getMainComponent() {
+                return getTabComponent();
+              }
+
               @Override
-              public IOperationContext getOperationContext() {return null;}
+              public IOperationContext getOperationContext() {
+                return null;
+              }
+
               @Override
-              public IScope getModuleScope() {return null;}
+              public IScope getModuleScope() {
+                return null;
+              }
+
               @Override
-              public IScope getProjectScope() {return null;}
+              public IScope getProjectScope() {
+                return null;
+              }
+
               @Override
-              public void addBinding(AutoBinding binding) {}
+              public void addBinding(AutoBinding binding) {
+              }
             })).compute();
-          for(jetbrains.mps.smodel.SModelReference reference : list)
+          for (jetbrains.mps.smodel.SModelReference reference : list)
             myDependTableModel.addItem(new ModelDepTableItem(reference, DependenciesTableItemRole.IMPORT));
         }
       });

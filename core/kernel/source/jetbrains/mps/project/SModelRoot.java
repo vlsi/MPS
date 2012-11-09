@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.persistence.ModelRootBase;
+import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.persistence.PathAwareJDOMMemento;
-import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.model.ModelRootManager;
@@ -27,9 +26,6 @@ import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.InvalidModelRootManager;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.FileSystemListener;
-import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -41,7 +37,7 @@ import org.jetbrains.mps.openapi.persistence.Memento;
 import java.util.Collection;
 import java.util.Collections;
 
-public class SModelRoot extends ModelRootBase implements FileSystemListener {
+public class SModelRoot extends FolderModelRootBase {
   @NotNull
   private ModelRoot myModelRoot;
   private IModelRootManager myManager;
@@ -70,10 +66,12 @@ public class SModelRoot extends ModelRootBase implements FileSystemListener {
     return myManager;
   }
 
+  @Override
   public String getPath() {
     return myModelRoot.getPath();
   }
 
+  @Override
   public void setPath(String newPath) {
     checkNotRegistered();
     myModelRoot.setPath(newPath);
@@ -163,6 +161,24 @@ public class SModelRoot extends ModelRootBase implements FileSystemListener {
   }
 
   @Override
+  public void update() {
+    assert isRegistered();
+    if (myManager instanceof InvalidModelRootManager) {
+      // try to recreate
+      IModelRootManager n = createManager();
+      if (!(n instanceof InvalidModelRootManager)) {
+        myManager = n;
+      }
+    }
+    super.update();
+  }
+
+  @Deprecated
+  public boolean isInvalid() {
+    return myManager instanceof IModelRootManager;
+  }
+
+  @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
@@ -177,53 +193,5 @@ public class SModelRoot extends ModelRootBase implements FileSystemListener {
   @Override
   public int hashCode() {
     return myModelRoot.hashCode();
-  }
-
-  @Override
-  public void attach() {
-    super.attach();
-    FileSystem.getInstance().addListener(this);
-  }
-
-  @Override
-  public void dispose() {
-    FileSystem.getInstance().removeListener(this);
-    super.dispose();
-  }
-
-  @Override
-  public IFile getFileToListen() {
-    return FileSystem.getInstance().getFileByPath(getPath());
-  }
-
-  @Override
-  public Iterable<FileSystemListener> getListenerDependencies() {
-    if (getModule() instanceof FileSystemListener) {
-      return Collections.singleton((FileSystemListener) getModule());
-    }
-    return null;
-  }
-
-  @Override
-  public void update() {
-    assert isRegistered();
-    if (myManager instanceof InvalidModelRootManager) {
-      // try to recreate
-      IModelRootManager n = createManager();
-      if (!(n instanceof InvalidModelRootManager)) {
-        myManager = n;
-      }
-    }
-    super.update();
-  }
-
-  @Override
-  public void update(ProgressMonitor monitor, FileSystemEvent event) {
-    update();
-  }
-
-  @Deprecated
-  public boolean isInvalid() {
-    return myManager instanceof IModelRootManager;
   }
 }
