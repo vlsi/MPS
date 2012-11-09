@@ -244,6 +244,8 @@ __switch__:
 
   private void executeTargets(final IScriptController ctl, final Iterable<ITarget> toExecute, final Iterable<? extends IResource> scriptInput, final Script.ParametersPool pool, final CompositeResult results, final ProgressMonitor monitor) {
     final Map<ITarget.Name, Long> timeStatistic = MapSequence.fromMap(new HashMap<ITarget.Name, Long>());
+    // add time statistic result first - in composite result output() is the last one 
+    results.addResult(TIME_STATISTIC_RESULT_NAME, new IResult.SUCCESS(Sequence.<IResource>singleton(new TimeStatisticResource(timeStatistic))));
 
     ctl.runJobWithMonitor(new _FunctionTypes._void_P1_E0<IJobMonitor>() {
       public void invoke(final IJobMonitor monit) {
@@ -293,7 +295,6 @@ with_targets:
                     LOG.debug("No input. Stopping");
                     monit.reportFeedback(new IFeedback.ERROR("Error executing target " + trg.getName() + " : no input. Stopping"));
                     results.addResult(trg.getName(), new IResult.FAILURE(null));
-                    results.addResult(TIME_STATISTIC_RESULT_NAME, new IResult.SUCCESS(Sequence.<IResource>singleton(new TimeStatisticResource(timeStatistic))));
                     return;
                   }
                 }
@@ -343,13 +344,11 @@ with_targets:
               LOG.debug("Timeout executing target " + trg.getName(), to);
               monit.reportFeedback(new IFeedback.ERROR("Target execution aborted " + trg.getName(), to));
               results.addResult(trg.getName(), new IResult.FAILURE(null));
-              results.addResult(TIME_STATISTIC_RESULT_NAME, new IResult.SUCCESS(Sequence.<IResource>singleton(new TimeStatisticResource(timeStatistic))));
               return;
             } catch (RuntimeException rex) {
               LOG.debug("Exception executing target " + trg.getName(), rex);
               monit.reportFeedback(new IFeedback.ERROR("Exception executing target " + trg.getName(), rex));
               results.addResult(trg.getName(), new IResult.FAILURE(null));
-              results.addResult(TIME_STATISTIC_RESULT_NAME, new IResult.SUCCESS(Sequence.<IResource>singleton(new TimeStatisticResource(timeStatistic))));
               return;
             }
           }
@@ -358,7 +357,6 @@ with_targets:
         }
       }
     });
-    results.addResult(TIME_STATISTIC_RESULT_NAME, new IResult.SUCCESS(Sequence.<IResource>singleton(new TimeStatisticResource(timeStatistic))));
   }
 
   private void configureTargets(IScriptController ctl, final Iterable<ITarget> toExecute, final Script.ParametersPool pool, final CompositeResult results) {
