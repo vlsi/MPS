@@ -48,6 +48,7 @@ public class typeof_ExtensionMethodCall_InferenceRule extends AbstractInferenceR
     //  no more when_concrete 
     Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, extensionMethodCall, SLinkOperations.getTarget(SLinkOperations.getTarget(extensionMethodCall, "baseMethodDeclaration", false), "returnType", true), mmap);
+    RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithMethodTypeVariables(typeCheckingContext, extensionMethodCall, mmap);
     RulesFunctions_Extension.inference_equateApplicableType(typeCheckingContext, typeCheckingContext.getRepresentative(instanceType_typevar_5744862332973319659), SLinkOperations.getTarget(extensionMethodCall, "baseMethodDeclaration", false), mmap);
     RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
   }

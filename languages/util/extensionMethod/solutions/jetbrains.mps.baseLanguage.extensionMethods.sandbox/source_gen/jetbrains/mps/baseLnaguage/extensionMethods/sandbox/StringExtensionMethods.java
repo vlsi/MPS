@@ -32,8 +32,8 @@ public class StringExtensionMethods {
   }
 
   public static void testFoo3(final String _this) {
-    String s = StringExtensionMethods.safeCast(_this, null);
     List<String> list = null;
-    Iterable<Object> my = StringExtensionMethods.safeCast(_this, list);
+    Iterable<Object> my = StringExtensionMethods.<Object>safeCast(_this, list);
+    my.hashCode();
   }
 }
