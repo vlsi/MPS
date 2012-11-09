@@ -143,7 +143,7 @@ public class BaseEditorTestBody extends BaseTestBody {
             query.setCurrentNodeOnly(true);
             Collection<Pair<IntentionExecutable, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, editor.getEditorContext());
             for (Pair<IntentionExecutable, SNode> intention : intentions) {
-              if (intention.o1.getClass().getCanonicalName().equals(name)) {
+              if (intention.o1.getDescriptor().getPersistentStateKey().equals(name)) {
                 intention.o1.execute(intention.o2, editor.getEditorContext());
               }
             }
