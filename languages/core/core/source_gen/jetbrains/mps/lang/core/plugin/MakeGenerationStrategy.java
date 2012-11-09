@@ -41,7 +41,7 @@ public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
       return null;
     }
 
-    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm.getSource(), context);
+    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, context);
     if (generationHashes != null) {
       return generationHashes;
     }

@@ -26,7 +26,6 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import jetbrains.mps.util.containers.MultiMap;
@@ -40,11 +39,11 @@ import java.util.Set;
 
 public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindSupport {
   public void initComponent() {
-    FastFindSupportRegistry.getInstance().addFastFindSupport(RegularModelDataSource.FAST_FIND_ID, this);
+    FastFindSupportRegistry.getInstance().addFastFindSupport(DefaultSModelDescriptor.FAST_FIND_ID, this);
   }
 
   public void disposeComponent() {
-    FastFindSupportRegistry.getInstance().removeFastFindSupport(RegularModelDataSource.FAST_FIND_ID);
+    FastFindSupportRegistry.getInstance().removeFastFindSupport(DefaultSModelDescriptor.FAST_FIND_ID);
   }
 
   @NotNull

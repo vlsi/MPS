@@ -43,7 +43,6 @@
   <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
   <import index="v54s" modelUID="r:2a0fe383-d602-4f5b-813c-e41afdbbb97e(jetbrains.mps.lang.extension.structure)" version="-1" implicit="yes" />
   <import index="qff7" modelUID="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" version="0" implicit="yes" />
-  <import index="ec5l" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="vvvw.FacetDeclaration" typeId="vvvw.6418371274763029523" id="6648795410103966565">
       <property name="name" nameId="tpck.1169194664001" value="TextGen" />
@@ -4637,14 +4636,9 @@
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5px.~ModelDigestHelper%dgetInstance()%cjetbrains%dmps%dgenerator%dModelDigestHelper" resolveInfo="getInstance" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5481755926445118548">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5px.~ModelDigestHelper%dgetGenerationHashes(org%djetbrains%dmps%dopenapi%dpersistence%dDataSource,jetbrains%dmps%dsmodel%dIOperationContext)%cjava%dutil%dMap" resolveInfo="getGenerationHashes" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5481755926445147224">
-                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5481755926445148313">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetSource()%corg%djetbrains%dmps%dopenapi%dpersistence%dDataSource" resolveInfo="getSource" />
-                  </node>
-                  <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5481755926445146284">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5521353027965879718" resolveInfo="sm" />
-                  </node>
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5px.~ModelDigestHelper%dgetGenerationHashes(jetbrains%dmps%dsmodel%dSModelDescriptor,jetbrains%dmps%dsmodel%dIOperationContext)%cjava%dutil%dMap" resolveInfo="getGenerationHashes" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5481755926445146284">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5521353027965879718" resolveInfo="sm" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5481755926445118550">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5521353027965879720" resolveInfo="context" />

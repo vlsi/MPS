@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.persistence.ModelRootBase;
+import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Collections;
 

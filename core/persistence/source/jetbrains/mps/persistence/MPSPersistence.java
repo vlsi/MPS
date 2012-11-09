@@ -13,13 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.persistence;
+package jetbrains.mps.persistence;
 
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.components.ComponentPlugin;
 
-public interface ModelFactory {
+/**
+ * evgeny, 11/9/12
+ */
+public class MPSPersistence extends ComponentPlugin {
 
-  boolean canCreate(StreamDataSource dataSource);
+  private static MPSPersistence ourInstance = new MPSPersistence();
 
-  SModel create(StreamDataSource dataSource);
+  public static MPSPersistence getInstance() {
+    return ourInstance;
+  }
+
+  private MPSPersistence() {
+  }
+
+  @Override
+  public void init() {
+    super.init();
+    init(new DefaultModelPersistence());
+  }
 }

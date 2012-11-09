@@ -52,6 +52,7 @@ public class ModelDigestUtil {
 
   public static Map<String, String> getDigestMap(byte[] modelBytes) {
     try {
+      // TODO plugable hashes...
       return ModelPersistence.calculateHashes(modelBytes);
     } catch (ModelReadException e) {
       return null;

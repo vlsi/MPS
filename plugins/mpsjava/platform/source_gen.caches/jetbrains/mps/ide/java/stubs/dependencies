@@ -37,7 +37,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.Memento" />
-    <classNode extendsClassName="jetbrains.mps.persistence.ModelRootBase" />
+    <classNode extendsClassName="jetbrains.mps.extapi.persistence.ModelRootBase" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.stubs.JavaClassStubsModelRootSettingsEditor" file="JavaClassStubsModelRootSettingsEditor.java">
     <classNode dependClassName="java.awt.event.ActionEvent" />

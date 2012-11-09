@@ -20,8 +20,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Iterator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ExtensionMethodCall_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -59,6 +59,30 @@ public class typeof_ExtensionMethodCall_InferenceRule extends AbstractInferenceR
     }
 
     final Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
+    if (ListSequence.fromList(SLinkOperations.getTargets(emcall, "typeArgument", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(emdecl, "typeVariableDeclaration", true)).isNotEmpty()) {
+      for (SNode tvd : ListSequence.fromList(SLinkOperations.getTargets(emdecl, "typeVariableDeclaration", true))) {
+        if (!(MapSequence.fromMap(subs).containsKey(tvd))) {
+          final SNode T_typevar_7499685733215754047 = typeCheckingContext.createNewRuntimeTypesVariable();
+          MapSequence.fromMap(subs).put(tvd, typeCheckingContext.getRepresentative(T_typevar_7499685733215754047));
+        }
+      }
+    } else {
+      {
+        Iterator<SNode> tvd_it = ListSequence.fromList(SLinkOperations.getTargets(emdecl, "typeVariableDeclaration", true)).iterator();
+        Iterator<SNode> targ_it = ListSequence.fromList(SLinkOperations.getTargets(emcall, "typeArgument", true)).iterator();
+        SNode tvd_var;
+        SNode targ_var;
+        while (tvd_it.hasNext() && targ_it.hasNext()) {
+          tvd_var = tvd_it.next();
+          targ_var = targ_it.next();
+          MapSequence.fromMap(subs).put(tvd_var, targ_var);
+          if (SNodeOperations.isInstanceOf(targ_var, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+            BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(targ_var, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
+          }
+        }
+      }
+    }
+
     if (SNodeOperations.isInstanceOf(thisType, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
       BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(thisType, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
     }
