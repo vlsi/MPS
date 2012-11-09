@@ -18,7 +18,8 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.descriptor.Refactorable;
+import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
@@ -37,7 +38,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Collections;
 import java.util.Map;
 
-public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor, Refactorable {
+public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor, GeneratableSModelDescriptor, RefactorableSModelDescriptor {
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
 
   private final UpdateableModel myModel = new UpdateableModel(this) {
@@ -98,6 +99,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
       }
       return res;
     }
+  }
+
+  @Override
+  public void forceLoad() {
+    getUpdateableModel().getModel(ModelLoadingState.FULLY_LOADED);
   }
 
   @Override
@@ -233,6 +239,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   @Override
   public boolean isGeneratable() {
     return !isDoNotGenerate() && !isReadOnly() && SModelStereotype.isUserModel(this);
+  }
+
+  @Override
+  public boolean isGenerateIntoModelFolder() {
+    return Boolean.parseBoolean(getSModelHeader().getOptionalProperty("useModelFolderForGeneration"));
   }
 
   public void replaceModel(final SModel newModel, final ModelLoadingState state) {

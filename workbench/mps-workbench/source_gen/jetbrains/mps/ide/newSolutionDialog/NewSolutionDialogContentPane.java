@@ -180,7 +180,7 @@ public class NewSolutionDialogContentPane extends JPanel {
   /*package*/ void onOk() {
     String message = NewModuleUtil.check(MPSExtentions.DOT_SOLUTION, myThis.getSolutionName(), myThis.getSolutionPath());
     if (message != null) {
-      myThis.getDialog().setErrorText(message);
+      myThis.getDialog().setError(message);
       return;
     }
 

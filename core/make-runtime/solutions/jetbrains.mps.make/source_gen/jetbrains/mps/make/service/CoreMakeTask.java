@@ -10,6 +10,10 @@ import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.messages.IMessageHandler;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
+import java.util.Map;
+import jetbrains.mps.make.facet.ITarget;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Iterator;
 import jetbrains.mps.messages.Message;
@@ -18,6 +22,15 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.make.runtime.script.CompositeResult;
+import jetbrains.mps.internal.make.runtime.script.Script;
+import jetbrains.mps.internal.make.runtime.script.TimeStatisticResource;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -54,6 +67,8 @@ public class CoreMakeTask {
   }
 
   protected void doRun(ProgressMonitor monitor) {
+    final Map<ITarget.Name, Long> timeStatistic = MapSequence.fromMap(new HashMap<ITarget.Name, Long>());
+
     aboutToStart();
     final int clsize = Sequence.fromIterable(this.myClInput).count();
     if (clsize == 0) {
@@ -93,12 +108,49 @@ public class CoreMakeTask {
           }
         }), ","));
         this.myResult = scr.execute(this.myController, cl, monitor.subTask(1));
+        if (this.myResult instanceof CompositeResult) {
+          IResource timeStatResource = Sequence.fromIterable(((CompositeResult) this.myResult).getResult(Script.TIME_STATISTIC_RESULT_NAME).output()).first();
+          Map<ITarget.Name, Long> currentStatistic = ((TimeStatisticResource) timeStatResource).getStatistic();
+          for (ITarget.Name targetName : SetSequence.fromSet(MapSequence.fromMap(currentStatistic).keySet())) {
+            MapSequence.fromMap(timeStatistic).put(targetName, ((MapSequence.fromMap(timeStatistic).containsKey(targetName) ?
+              MapSequence.fromMap(timeStatistic).get(targetName) :
+              0
+            )) + MapSequence.fromMap(currentStatistic).get(targetName));
+          }
+        }
         if (!(this.myResult.isSucessful()) || monitor.isCanceled()) {
           break;
         }
         idx++;
       }
     } finally {
+      long overallTime = Sequence.fromIterable(MapSequence.fromMap(timeStatistic).values()).foldLeft(0L, new ILeftCombinator<Long, Long>() {
+        public Long combine(Long s, Long it) {
+          return s + it;
+        }
+      });
+      List<ITarget.Name> otherTargets = ListSequence.fromList(new ArrayList<ITarget.Name>());
+
+      long currentTime = 0;
+      for (IMapping<ITarget.Name, Long> stat : MapSequence.fromMap(timeStatistic).sort(new ISelector<IMapping<ITarget.Name, Long>, Long>() {
+        public Long select(IMapping<ITarget.Name, Long> it) {
+          return it.value();
+        }
+      }, false)) {
+        if (currentTime < overallTime * 0.95) {
+          LOG.info("\"" + stat.key().name() + "\" target execution time: " + stat.value() + " ms");
+          currentTime += stat.value();
+        } else {
+          ListSequence.fromList(otherTargets).addElement(stat.key());
+        }
+      }
+
+      LOG.info("Other targets execution time: " + (overallTime - currentTime) + " ms; " + IterableUtils.join(ListSequence.fromList(otherTargets).select(new ISelector<ITarget.Name, String>() {
+        public String select(ITarget.Name it) {
+          return it.name() + ": " + MapSequence.fromMap(timeStatistic).get(it) + " ms";
+        }
+      }), ", "));
+
       monitor.done();
     }
   }

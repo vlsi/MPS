@@ -322,9 +322,9 @@
     <nodeInfo nodeId="6930463558351181384" fileName="NewModelFromSource_Action.java" startLine="121" startPosition="7" endLine="122" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6930463558351181387" fileName="NewModelFromSource_Action.java" startLine="122" startPosition="83" endLine="123" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6930463558351181411" fileName="NewModelFromSource_Action.java" startLine="129" startPosition="27" endLine="130" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6930463558351181417" fileName="NewModelFromSource_Action.java" startLine="130" startPosition="84" endLine="131" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6930463558351181431" fileName="NewModelFromSource_Action.java" startLine="133" startPosition="9" endLine="134" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6930463558351181435" fileName="NewModelFromSource_Action.java" startLine="134" startPosition="32" endLine="135" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6930463558351181417" fileName="NewModelFromSource_Action.java" startLine="130" startPosition="84" endLine="131" endPosition="244" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6930463558351181431" fileName="NewModelFromSource_Action.java" startLine="133" startPosition="9" endLine="134" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6930463558351181435" fileName="NewModelFromSource_Action.java" startLine="134" startPosition="26" endLine="135" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6930463558351181443" fileName="NewModelFromSource_Action.java" startLine="136" startPosition="27" endLine="137" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6930463558351181448" fileName="NewModelFromSource_Action.java" startLine="137" startPosition="64" endLine="138" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6930463558351181453" fileName="NewModelFromSource_Action.java" startLine="138" startPosition="61" endLine="139" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -438,7 +438,7 @@
       <varInfo nodeId="6930463558351181264" varName="enabled" />
     </scopeInfo>
     <scopeInfo nodeId="6930463558351181365" fileName="NewModelFromSource_Action.java" startLine="118" startPosition="96" endLine="120" endPosition="15" />
-    <scopeInfo nodeId="6930463558351181410" fileName="NewModelFromSource_Action.java" startLine="129" startPosition="27" endLine="131" endPosition="187">
+    <scopeInfo nodeId="6930463558351181410" fileName="NewModelFromSource_Action.java" startLine="129" startPosition="27" endLine="131" endPosition="244">
       <varInfo nodeId="6930463558351181412" varName="stereotype" />
     </scopeInfo>
     <scopeInfo nodeId="6930463558351181264" fileName="NewModelFromSource_Action.java" startLine="43" startPosition="38" endLine="46" endPosition="40" />

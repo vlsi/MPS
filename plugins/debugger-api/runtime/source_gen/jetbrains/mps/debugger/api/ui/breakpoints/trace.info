@@ -372,7 +372,7 @@
     <nodeInfo nodeId="4474271214083124032" fileName="BreakpointsUiComponent.java" startLine="89" startPosition="104" endLine="90" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6030523036739578271" fileName="BreakpointsUiComponent.java" startLine="90" startPosition="65" endLine="91" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083124044" fileName="BreakpointsUiComponent.java" startLine="94" startPosition="78" endLine="95" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083124053" fileName="BreakpointsUiComponent.java" startLine="95" startPosition="159" endLine="96" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083124053" fileName="BreakpointsUiComponent.java" startLine="95" startPosition="159" endLine="96" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083125091" fileName="BreakpointsUiComponent.java" startLine="99" startPosition="25" endLine="100" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083124075" fileName="BreakpointsUiComponent.java" startLine="106" startPosition="113" endLine="107" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4474271214083124086" fileName="BreakpointsUiComponent.java" startLine="108" startPosition="29" endLine="109" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -486,7 +486,7 @@
     <nodeInfo nodeId="4474271214083124582" fileName="BreakpointsUiComponent.java" startLine="194" startPosition="12" endLine="199" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4474271214083124634" fileName="BreakpointsUiComponent.java" startLine="207" startPosition="10" endLine="212" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2927956374319299039" fileName="BreakpointsUiComponent.java" startLine="74" startPosition="17" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083124057" fileName="BreakpointsUiComponent.java" startLine="96" startPosition="42" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083124057" fileName="BreakpointsUiComponent.java" startLine="96" startPosition="36" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083125117" fileName="BreakpointsUiComponent.java" startLine="141" startPosition="25" endLine="147" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4474271214083124542" fileName="BreakpointsUiComponent.java" startLine="180" startPosition="35" endLine="186" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4474271214083124942" fileName="BreakpointsUiComponent.java" startLine="273" startPosition="57" endLine="279" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1402,470 +1402,471 @@
     <unitInfo nodeId="4474271214083119913" fileName="BreakpointPainter.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointPainter" />
   </root>
   <root nodeId="4474271214083122178" modelId="r:e8d15a56-f89d-47fc-ac9f-8a35d3539ac3(jetbrains.mps.debugger.api.ui.breakpoints)">
-    <nodeInfo nodeId="4474271214083122182" fileName="BreakpointsBrowserDialog.java" startLine="55" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COMMAND_SHOW_NODE" />
-    <nodeInfo nodeId="4474271214083122186" fileName="BreakpointsBrowserDialog.java" startLine="57" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMainPanel" />
-    <nodeInfo nodeId="4474271214083122189" fileName="BreakpointsBrowserDialog.java" startLine="58" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPropertiesEditorPanel" />
-    <nodeInfo nodeId="4474271214083122192" fileName="BreakpointsBrowserDialog.java" startLine="59" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
-    <nodeInfo nodeId="4474271214083122195" fileName="BreakpointsBrowserDialog.java" startLine="60" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpointsManager" />
-    <nodeInfo nodeId="4474271214083122198" fileName="BreakpointsBrowserDialog.java" startLine="61" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProvidersManager" />
-    <nodeInfo nodeId="4474271214083122201" fileName="BreakpointsBrowserDialog.java" startLine="62" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpointsUi" />
-    <nodeInfo nodeId="4474271214083122213" fileName="BreakpointsBrowserDialog.java" startLine="63" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpointsScrollPane" />
-    <nodeInfo nodeId="4474271214083122216" fileName="BreakpointsBrowserDialog.java" startLine="64" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myViews" />
-    <nodeInfo nodeId="4474271214083122220" fileName="BreakpointsBrowserDialog.java" startLine="65" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentViewIndex" />
-    <nodeInfo nodeId="4474271214083122223" fileName="BreakpointsBrowserDialog.java" startLine="66" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myKindToUi" />
-    <nodeInfo nodeId="4474271214083123106" fileName="BreakpointsBrowserDialog.java" startLine="69" startPosition="38" endLine="70" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083123114" fileName="BreakpointsBrowserDialog.java" startLine="70" startPosition="75" endLine="71" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122247" fileName="BreakpointsBrowserDialog.java" startLine="75" startPosition="62" endLine="76" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4474271214083122253" fileName="BreakpointsBrowserDialog.java" startLine="76" startPosition="74" endLine="77" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122256" fileName="BreakpointsBrowserDialog.java" startLine="77" startPosition="20" endLine="78" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122260" fileName="BreakpointsBrowserDialog.java" startLine="78" startPosition="24" endLine="79" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122268" fileName="BreakpointsBrowserDialog.java" startLine="79" startPosition="119" endLine="80" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122276" fileName="BreakpointsBrowserDialog.java" startLine="80" startPosition="110" endLine="81" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122283" fileName="BreakpointsBrowserDialog.java" startLine="81" startPosition="66" endLine="82" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122292" fileName="BreakpointsBrowserDialog.java" startLine="82" startPosition="108" endLine="83" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122306" fileName="BreakpointsBrowserDialog.java" startLine="83" startPosition="145" endLine="84" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122313" fileName="BreakpointsBrowserDialog.java" startLine="84" startPosition="49" endLine="85" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122322" fileName="BreakpointsBrowserDialog.java" startLine="85" startPosition="113" endLine="86" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122330" fileName="BreakpointsBrowserDialog.java" startLine="86" startPosition="96" endLine="87" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122336" fileName="BreakpointsBrowserDialog.java" startLine="87" startPosition="66" endLine="88" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083122345" fileName="BreakpointsBrowserDialog.java" startLine="88" startPosition="127" endLine="89" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083127090" fileName="BreakpointsBrowserDialog.java" startLine="89" startPosition="70" endLine="90" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4474271214083122353" fileName="BreakpointsBrowserDialog.java" startLine="90" startPosition="53" endLine="91" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123119" fileName="BreakpointsBrowserDialog.java" startLine="94" startPosition="47" endLine="95" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123123" fileName="BreakpointsBrowserDialog.java" startLine="100" startPosition="52" endLine="101" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122375" fileName="BreakpointsBrowserDialog.java" startLine="103" startPosition="7" endLine="104" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122388" fileName="BreakpointsBrowserDialog.java" startLine="108" startPosition="46" endLine="109" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083122394" fileName="BreakpointsBrowserDialog.java" startLine="111" startPosition="42" endLine="112" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122409" fileName="BreakpointsBrowserDialog.java" startLine="117" startPosition="67" endLine="118" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083122421" fileName="BreakpointsBrowserDialog.java" startLine="119" startPosition="29" endLine="120" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4474271214083122422" fileName="BreakpointsBrowserDialog.java" startLine="121" startPosition="7" endLine="122" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083122434" fileName="BreakpointsBrowserDialog.java" startLine="123" startPosition="27" endLine="124" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4474271214083122435" fileName="BreakpointsBrowserDialog.java" startLine="125" startPosition="7" endLine="126" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123127" fileName="BreakpointsBrowserDialog.java" startLine="131" startPosition="74" endLine="132" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122458" fileName="BreakpointsBrowserDialog.java" startLine="135" startPosition="5" endLine="136" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122463" fileName="BreakpointsBrowserDialog.java" startLine="136" startPosition="72" endLine="137" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083122476" fileName="BreakpointsBrowserDialog.java" startLine="138" startPosition="37" endLine="139" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122486" fileName="BreakpointsBrowserDialog.java" startLine="143" startPosition="66" endLine="144" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122504" fileName="BreakpointsBrowserDialog.java" startLine="148" startPosition="42" endLine="149" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122514" fileName="BreakpointsBrowserDialog.java" startLine="151" startPosition="29" endLine="152" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083122523" fileName="BreakpointsBrowserDialog.java" startLine="152" startPosition="72" endLine="153" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122528" fileName="BreakpointsBrowserDialog.java" startLine="153" startPosition="35" endLine="154" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122534" fileName="BreakpointsBrowserDialog.java" startLine="154" startPosition="54" endLine="155" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122540" fileName="BreakpointsBrowserDialog.java" startLine="156" startPosition="5" endLine="157" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083127092" fileName="BreakpointsBrowserDialog.java" startLine="160" startPosition="39" endLine="161" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4474271214083122548" fileName="BreakpointsBrowserDialog.java" startLine="161" startPosition="23" endLine="162" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083122572" fileName="BreakpointsBrowserDialog.java" startLine="162" startPosition="56" endLine="163" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6515087165749935467" fileName="BreakpointsBrowserDialog.java" startLine="163" startPosition="143" endLine="164" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122663" fileName="BreakpointsBrowserDialog.java" startLine="164" startPosition="143" endLine="165" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122687" fileName="BreakpointsBrowserDialog.java" startLine="165" startPosition="38" endLine="166" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122692" fileName="BreakpointsBrowserDialog.java" startLine="166" startPosition="139" endLine="167" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123258" fileName="BreakpointsBrowserDialog.java" startLine="170" startPosition="50" endLine="171" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083123262" fileName="BreakpointsBrowserDialog.java" startLine="175" startPosition="63" endLine="176" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123264" fileName="BreakpointsBrowserDialog.java" startLine="176" startPosition="21" endLine="177" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123279" fileName="BreakpointsBrowserDialog.java" startLine="182" startPosition="43" endLine="183" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123282" fileName="BreakpointsBrowserDialog.java" startLine="183" startPosition="24" endLine="184" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123295" fileName="BreakpointsBrowserDialog.java" startLine="189" startPosition="30" endLine="190" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083123297" fileName="BreakpointsBrowserDialog.java" startLine="191" startPosition="9" endLine="192" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083123305" fileName="BreakpointsBrowserDialog.java" startLine="192" startPosition="77" endLine="193" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083123311" fileName="BreakpointsBrowserDialog.java" startLine="197" startPosition="63" endLine="198" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083123319" fileName="BreakpointsBrowserDialog.java" startLine="198" startPosition="77" endLine="199" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123324" fileName="BreakpointsBrowserDialog.java" startLine="199" startPosition="38" endLine="200" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123330" fileName="BreakpointsBrowserDialog.java" startLine="205" startPosition="43" endLine="206" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123333" fileName="BreakpointsBrowserDialog.java" startLine="206" startPosition="24" endLine="207" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123346" fileName="BreakpointsBrowserDialog.java" startLine="212" startPosition="30" endLine="213" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083123348" fileName="BreakpointsBrowserDialog.java" startLine="214" startPosition="9" endLine="215" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083123356" fileName="BreakpointsBrowserDialog.java" startLine="215" startPosition="77" endLine="216" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083123362" fileName="BreakpointsBrowserDialog.java" startLine="220" startPosition="63" endLine="221" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083123370" fileName="BreakpointsBrowserDialog.java" startLine="221" startPosition="77" endLine="222" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123375" fileName="BreakpointsBrowserDialog.java" startLine="222" startPosition="37" endLine="223" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123381" fileName="BreakpointsBrowserDialog.java" startLine="228" startPosition="43" endLine="229" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123384" fileName="BreakpointsBrowserDialog.java" startLine="229" startPosition="24" endLine="230" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123397" fileName="BreakpointsBrowserDialog.java" startLine="235" startPosition="30" endLine="236" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083123399" fileName="BreakpointsBrowserDialog.java" startLine="237" startPosition="9" endLine="238" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083123407" fileName="BreakpointsBrowserDialog.java" startLine="238" startPosition="77" endLine="239" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083123413" fileName="BreakpointsBrowserDialog.java" startLine="243" startPosition="63" endLine="244" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083123421" fileName="BreakpointsBrowserDialog.java" startLine="244" startPosition="77" endLine="245" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123426" fileName="BreakpointsBrowserDialog.java" startLine="245" startPosition="36" endLine="246" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083127096" fileName="BreakpointsBrowserDialog.java" startLine="251" startPosition="43" endLine="252" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4474271214083123432" fileName="BreakpointsBrowserDialog.java" startLine="252" startPosition="79" endLine="253" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123445" fileName="BreakpointsBrowserDialog.java" startLine="258" startPosition="30" endLine="259" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083123446" fileName="BreakpointsBrowserDialog.java" startLine="260" startPosition="9" endLine="261" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083123454" fileName="BreakpointsBrowserDialog.java" startLine="261" startPosition="77" endLine="262" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123460" fileName="BreakpointsBrowserDialog.java" startLine="267" startPosition="43" endLine="268" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123473" fileName="BreakpointsBrowserDialog.java" startLine="273" startPosition="30" endLine="274" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083123474" fileName="BreakpointsBrowserDialog.java" startLine="275" startPosition="9" endLine="276" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083123482" fileName="BreakpointsBrowserDialog.java" startLine="276" startPosition="77" endLine="277" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122841" fileName="BreakpointsBrowserDialog.java" startLine="279" startPosition="7" endLine="280" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="418270182880377872" fileName="BreakpointsBrowserDialog.java" startLine="286" startPosition="43" endLine="287" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="418270182880377875" fileName="BreakpointsBrowserDialog.java" startLine="287" startPosition="24" endLine="288" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="418270182880377891" fileName="BreakpointsBrowserDialog.java" startLine="291" startPosition="73" endLine="292" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="418270182880377907" fileName="BreakpointsBrowserDialog.java" startLine="293" startPosition="63" endLine="294" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="418270182880377920" fileName="BreakpointsBrowserDialog.java" startLine="297" startPosition="56" endLine="298" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="418270182880377935" fileName="BreakpointsBrowserDialog.java" startLine="300" startPosition="10" endLine="301" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="418270182880377940" fileName="BreakpointsBrowserDialog.java" startLine="303" startPosition="5" endLine="304" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083122849" fileName="BreakpointsBrowserDialog.java" startLine="307" startPosition="54" endLine="308" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083122860" fileName="BreakpointsBrowserDialog.java" startLine="311" startPosition="32" endLine="312" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083122870" fileName="BreakpointsBrowserDialog.java" startLine="315" startPosition="29" endLine="316" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122876" fileName="BreakpointsBrowserDialog.java" startLine="316" startPosition="48" endLine="317" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122884" fileName="BreakpointsBrowserDialog.java" startLine="317" startPosition="105" endLine="318" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="418270182880378283" fileName="BreakpointsBrowserDialog.java" startLine="324" startPosition="50" endLine="325" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083127098" fileName="BreakpointsBrowserDialog.java" startLine="331" startPosition="44" endLine="332" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4474271214083122902" fileName="BreakpointsBrowserDialog.java" startLine="332" startPosition="24" endLine="333" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122914" fileName="BreakpointsBrowserDialog.java" startLine="333" startPosition="115" endLine="334" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083127100" fileName="BreakpointsBrowserDialog.java" startLine="334" startPosition="214" endLine="335" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4474271214083122931" fileName="BreakpointsBrowserDialog.java" startLine="335" startPosition="21" endLine="336" endPosition="276" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083127102" fileName="BreakpointsBrowserDialog.java" startLine="336" startPosition="276" endLine="337" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4474271214083122948" fileName="BreakpointsBrowserDialog.java" startLine="337" startPosition="24" endLine="338" endPosition="276" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083127104" fileName="BreakpointsBrowserDialog.java" startLine="338" startPosition="276" endLine="339" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4474271214083123519" fileName="BreakpointsBrowserDialog.java" startLine="343" startPosition="39" endLine="344" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083123533" fileName="BreakpointsBrowserDialog.java" startLine="345" startPosition="37" endLine="346" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083123534" fileName="BreakpointsBrowserDialog.java" startLine="347" startPosition="13" endLine="348" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123536" fileName="BreakpointsBrowserDialog.java" startLine="348" startPosition="22" endLine="349" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122985" fileName="BreakpointsBrowserDialog.java" startLine="356" startPosition="54" endLine="357" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083123009" fileName="BreakpointsBrowserDialog.java" startLine="360" startPosition="98" endLine="361" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083123022" fileName="BreakpointsBrowserDialog.java" startLine="362" startPosition="57" endLine="363" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2208727413134774488" fileName="BreakpointsBrowserDialog.java" startLine="366" startPosition="25" endLine="367" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2208727413134774531" fileName="BreakpointsBrowserDialog.java" startLine="368" startPosition="27" endLine="369" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1071422968910399174" fileName="BreakpointsBrowserDialog.java" startLine="370" startPosition="9" endLine="371" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123038" fileName="BreakpointsBrowserDialog.java" startLine="377" startPosition="43" endLine="378" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083123045" fileName="BreakpointsBrowserDialog.java" startLine="382" startPosition="82" endLine="383" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083123057" fileName="BreakpointsBrowserDialog.java" startLine="387" startPosition="29" endLine="388" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6515087165749935462" fileName="BreakpointsBrowserDialog.java" startLine="394" startPosition="68" endLine="395" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083123075" fileName="BreakpointsBrowserDialog.java" startLine="396" startPosition="5" endLine="397" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083123093" fileName="BreakpointsBrowserDialog.java" startLine="402" startPosition="42" endLine="403" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123097" fileName="BreakpointsBrowserDialog.java" startLine="404" startPosition="5" endLine="405" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083123102" fileName="BreakpointsBrowserDialog.java" startLine="405" startPosition="75" endLine="406" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122381" fileName="BreakpointsBrowserDialog.java" startLine="107" startPosition="28" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083122389" fileName="BreakpointsBrowserDialog.java" startLine="110" startPosition="5" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4474271214083122416" fileName="BreakpointsBrowserDialog.java" startLine="118" startPosition="75" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083122429" fileName="BreakpointsBrowserDialog.java" startLine="122" startPosition="77" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083122471" fileName="BreakpointsBrowserDialog.java" startLine="137" startPosition="89" endLine="140" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083122479" fileName="BreakpointsBrowserDialog.java" startLine="143" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="selectBreakpoint#(Ljetbrains/mps/debug/api/breakpoints/IBreakpoint;)V" />
-    <nodeInfo nodeId="4474271214083122499" fileName="BreakpointsBrowserDialog.java" startLine="147" startPosition="59" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083123291" fileName="BreakpointsBrowserDialog.java" startLine="188" startPosition="50" endLine="191" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083123342" fileName="BreakpointsBrowserDialog.java" startLine="211" startPosition="50" endLine="214" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083123393" fileName="BreakpointsBrowserDialog.java" startLine="234" startPosition="50" endLine="237" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083123441" fileName="BreakpointsBrowserDialog.java" startLine="257" startPosition="52" endLine="260" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083123469" fileName="BreakpointsBrowserDialog.java" startLine="272" startPosition="52" endLine="275" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083122843" fileName="BreakpointsBrowserDialog.java" startLine="307" startPosition="0" endLine="310" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBreakpoint#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Ljetbrains/mps/debug/api/breakpoints/IBreakpoint;" />
-    <nodeInfo nodeId="4474271214083122856" fileName="BreakpointsBrowserDialog.java" startLine="311" startPosition="0" endLine="314" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isTreeView#()Z" />
-    <nodeInfo nodeId="4474271214083123528" fileName="BreakpointsBrowserDialog.java" startLine="344" startPosition="105" endLine="347" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083122979" fileName="BreakpointsBrowserDialog.java" startLine="356" startPosition="0" endLine="359" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEvent#(Lcom/intellij/openapi/actionSystem/AnAction;)Lcom/intellij/openapi/actionSystem/AnActionEvent;" />
-    <nodeInfo nodeId="4474271214083123015" fileName="BreakpointsBrowserDialog.java" startLine="361" startPosition="51" endLine="364" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2208727413134774502" fileName="BreakpointsBrowserDialog.java" startLine="367" startPosition="81" endLine="370" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6515087165749935428" fileName="BreakpointsBrowserDialog.java" startLine="393" startPosition="48" endLine="396" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083123088" fileName="BreakpointsBrowserDialog.java" startLine="401" startPosition="25" endLine="404" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4474271214083122360" fileName="BreakpointsBrowserDialog.java" startLine="93" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="windowClosed#(Ljava/awt/event/WindowEvent;)V" />
-    <nodeInfo nodeId="4474271214083122370" fileName="BreakpointsBrowserDialog.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="focusLost#(Ljava/awt/event/FocusEvent;)V" />
-    <nodeInfo nodeId="4474271214083122453" fileName="BreakpointsBrowserDialog.java" startLine="130" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="breakpointSelected#(Ljetbrains/mps/debug/api/breakpoints/IBreakpoint;)V" />
-    <nodeInfo nodeId="4474271214083122705" fileName="BreakpointsBrowserDialog.java" startLine="169" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
-    <nodeInfo nodeId="4474271214083122828" fileName="BreakpointsBrowserDialog.java" startLine="266" startPosition="0" endLine="270" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-    <nodeInfo nodeId="418270182880377914" fileName="BreakpointsBrowserDialog.java" startLine="296" startPosition="0" endLine="300" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-    <nodeInfo nodeId="418270182880378273" fileName="BreakpointsBrowserDialog.java" startLine="323" startPosition="0" endLine="327" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="4474271214083123034" fileName="BreakpointsBrowserDialog.java" startLine="376" startPosition="0" endLine="380" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="4474271214083123041" fileName="BreakpointsBrowserDialog.java" startLine="381" startPosition="0" endLine="385" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultDimensionSettings#()Ljetbrains/mps/ide/dialogs/DialogDimensionsSettings/DialogDimensions;" />
-    <nodeInfo nodeId="4474271214083123053" fileName="BreakpointsBrowserDialog.java" startLine="386" startPosition="0" endLine="390" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonClose#()V" />
-    <nodeInfo nodeId="4474271214083122238" fileName="BreakpointsBrowserDialog.java" startLine="68" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="breakpointsChanged#()V" />
-    <nodeInfo nodeId="4474271214083122710" fileName="BreakpointsBrowserDialog.java" startLine="174" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
-    <nodeInfo nodeId="4474271214083122727" fileName="BreakpointsBrowserDialog.java" startLine="181" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-    <nodeInfo nodeId="4474271214083122754" fileName="BreakpointsBrowserDialog.java" startLine="204" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-    <nodeInfo nodeId="4474271214083122781" fileName="BreakpointsBrowserDialog.java" startLine="227" startPosition="0" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-    <nodeInfo nodeId="4474271214083122808" fileName="BreakpointsBrowserDialog.java" startLine="250" startPosition="0" endLine="255" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-    <nodeInfo nodeId="418270182880377867" fileName="BreakpointsBrowserDialog.java" startLine="285" startPosition="0" endLine="290" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-    <nodeInfo nodeId="4474271214083122866" fileName="BreakpointsBrowserDialog.java" startLine="315" startPosition="0" endLine="320" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="switchView#()V" />
-    <nodeInfo nodeId="4474271214083122355" fileName="BreakpointsBrowserDialog.java" startLine="91" startPosition="29" endLine="97" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122365" fileName="BreakpointsBrowserDialog.java" startLine="97" startPosition="7" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122446" fileName="BreakpointsBrowserDialog.java" startLine="128" startPosition="42" endLine="134" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122509" fileName="BreakpointsBrowserDialog.java" startLine="150" startPosition="5" endLine="156" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083122737" fileName="BreakpointsBrowserDialog.java" startLine="196" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
-    <nodeInfo nodeId="4474271214083122764" fileName="BreakpointsBrowserDialog.java" startLine="219" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
-    <nodeInfo nodeId="4474271214083122791" fileName="BreakpointsBrowserDialog.java" startLine="242" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
-    <nodeInfo nodeId="418270182880377909" fileName="BreakpointsBrowserDialog.java" startLine="294" startPosition="47" endLine="300" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="418270182880378269" fileName="BreakpointsBrowserDialog.java" startLine="321" startPosition="65" endLine="327" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083122232" fileName="BreakpointsBrowserDialog.java" startLine="67" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpointManagerListener" />
-    <nodeInfo nodeId="418270182880377862" fileName="BreakpointsBrowserDialog.java" startLine="283" startPosition="53" endLine="290" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083123030" fileName="BreakpointsBrowserDialog.java" startLine="366" startPosition="0" endLine="373" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4474271214083122377" fileName="BreakpointsBrowserDialog.java" startLine="107" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveState#()V" />
-    <nodeInfo nodeId="4474271214083122441" fileName="BreakpointsBrowserDialog.java" startLine="127" startPosition="5" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4474271214083122732" fileName="BreakpointsBrowserDialog.java" startLine="187" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
-    <nodeInfo nodeId="4474271214083122759" fileName="BreakpointsBrowserDialog.java" startLine="210" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
-    <nodeInfo nodeId="4474271214083122786" fileName="BreakpointsBrowserDialog.java" startLine="233" startPosition="0" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
-    <nodeInfo nodeId="4474271214083122813" fileName="BreakpointsBrowserDialog.java" startLine="256" startPosition="0" endLine="264" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-    <nodeInfo nodeId="4474271214083122833" fileName="BreakpointsBrowserDialog.java" startLine="271" startPosition="0" endLine="279" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-    <nodeInfo nodeId="418270182880378155" fileName="BreakpointsBrowserDialog.java" startLine="321" startPosition="0" endLine="329" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createWrapper#(Lcom/intellij/openapi/actionSystem/AnAction;)Ljavax/swing/AbstractAction;" />
-    <nodeInfo nodeId="4474271214083123512" fileName="BreakpointsBrowserDialog.java" startLine="342" startPosition="48" endLine="350" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083123068" fileName="BreakpointsBrowserDialog.java" startLine="391" startPosition="0" endLine="399" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getData#(Ljava/lang/String;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="4474271214083123084" fileName="BreakpointsBrowserDialog.java" startLine="400" startPosition="0" endLine="408" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="4474271214083123023" fileName="BreakpointsBrowserDialog.java" startLine="364" startPosition="5" endLine="373" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="418270182880377897" fileName="BreakpointsBrowserDialog.java" startLine="292" startPosition="75" endLine="302" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083122402" fileName="BreakpointsBrowserDialog.java" startLine="116" startPosition="35" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4474271214083122974" fileName="BreakpointsBrowserDialog.java" startLine="341" startPosition="0" endLine="352" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mouseClicked#(Ljava/awt/event/MouseEvent;)V" />
-    <nodeInfo nodeId="4474271214083122493" fileName="BreakpointsBrowserDialog.java" startLine="147" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="breakpointSelected#(Ljetbrains/mps/debug/api/breakpoints/IBreakpoint;)V" />
-    <nodeInfo nodeId="4474271214083122698" fileName="BreakpointsBrowserDialog.java" startLine="167" startPosition="31" endLine="179" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="418270182880377885" fileName="BreakpointsBrowserDialog.java" startLine="290" startPosition="6" endLine="303" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4474271214083122965" fileName="BreakpointsBrowserDialog.java" startLine="339" startPosition="31" endLine="352" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122821" fileName="BreakpointsBrowserDialog.java" startLine="264" startPosition="7" endLine="279" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122999" fileName="BreakpointsBrowserDialog.java" startLine="360" startPosition="0" endLine="375" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="openNode#(Ljetbrains/mps/debug/api/breakpoints/IBreakpoint;ZZ)V" />
-    <nodeInfo nodeId="4474271214083122801" fileName="BreakpointsBrowserDialog.java" startLine="248" startPosition="7" endLine="264" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122720" fileName="BreakpointsBrowserDialog.java" startLine="179" startPosition="7" endLine="202" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122747" fileName="BreakpointsBrowserDialog.java" startLine="202" startPosition="7" endLine="225" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122774" fileName="BreakpointsBrowserDialog.java" startLine="225" startPosition="7" endLine="248" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="418270182880377858" fileName="BreakpointsBrowserDialog.java" startLine="283" startPosition="0" endLine="306" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAddActionGroup#()Lcom/intellij/openapi/actionSystem/DefaultActionGroup;" />
-    <nodeInfo nodeId="4474271214083122897" fileName="BreakpointsBrowserDialog.java" startLine="330" startPosition="41" endLine="353" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4474271214083122893" fileName="BreakpointsBrowserDialog.java" startLine="330" startPosition="0" endLine="355" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerActionsOnViews#()V" />
-    <nodeInfo nodeId="4474271214083122398" fileName="BreakpointsBrowserDialog.java" startLine="116" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initPropertiesUi#()V" />
-    <nodeInfo nodeId="4474271214083122241" fileName="BreakpointsBrowserDialog.java" startLine="75" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BreakpointsBrowserDialog#(Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <nodeInfo nodeId="4474271214083122544" fileName="BreakpointsBrowserDialog.java" startLine="160" startPosition="0" endLine="282" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#()Lcom/intellij/openapi/actionSystem/ActionGroup;" />
-    <scopeInfo nodeId="4474271214083123118" fileName="BreakpointsBrowserDialog.java" startLine="94" startPosition="47" endLine="95" endPosition="20" />
-    <scopeInfo nodeId="4474271214083123122" fileName="BreakpointsBrowserDialog.java" startLine="100" startPosition="52" endLine="101" endPosition="20" />
-    <scopeInfo nodeId="4474271214083122387" fileName="BreakpointsBrowserDialog.java" startLine="108" startPosition="46" endLine="109" endPosition="13" />
-    <scopeInfo nodeId="4474271214083122393" fileName="BreakpointsBrowserDialog.java" startLine="111" startPosition="42" endLine="112" endPosition="23" />
-    <scopeInfo nodeId="4474271214083122420" fileName="BreakpointsBrowserDialog.java" startLine="119" startPosition="29" endLine="120" endPosition="17" />
-    <scopeInfo nodeId="4474271214083122433" fileName="BreakpointsBrowserDialog.java" startLine="123" startPosition="27" endLine="124" endPosition="17" />
-    <scopeInfo nodeId="4474271214083123126" fileName="BreakpointsBrowserDialog.java" startLine="131" startPosition="74" endLine="132" endPosition="71" />
-    <scopeInfo nodeId="4474271214083122475" fileName="BreakpointsBrowserDialog.java" startLine="138" startPosition="37" endLine="139" endPosition="45" />
-    <scopeInfo nodeId="4474271214083122485" fileName="BreakpointsBrowserDialog.java" startLine="143" startPosition="66" endLine="144" endPosition="61" />
-    <scopeInfo nodeId="4474271214083122503" fileName="BreakpointsBrowserDialog.java" startLine="148" startPosition="42" endLine="149" endPosition="50" />
-    <scopeInfo nodeId="4474271214083123257" fileName="BreakpointsBrowserDialog.java" startLine="170" startPosition="50" endLine="171" endPosition="28" />
-    <scopeInfo nodeId="4474271214083123294" fileName="BreakpointsBrowserDialog.java" startLine="189" startPosition="30" endLine="190" endPosition="23" />
-    <scopeInfo nodeId="4474271214083123345" fileName="BreakpointsBrowserDialog.java" startLine="212" startPosition="30" endLine="213" endPosition="23" />
-    <scopeInfo nodeId="4474271214083123396" fileName="BreakpointsBrowserDialog.java" startLine="235" startPosition="30" endLine="236" endPosition="23" />
-    <scopeInfo nodeId="4474271214083123444" fileName="BreakpointsBrowserDialog.java" startLine="258" startPosition="30" endLine="259" endPosition="17" />
-    <scopeInfo nodeId="4474271214083123459" fileName="BreakpointsBrowserDialog.java" startLine="267" startPosition="43" endLine="268" endPosition="53" />
-    <scopeInfo nodeId="4474271214083123472" fileName="BreakpointsBrowserDialog.java" startLine="273" startPosition="30" endLine="274" endPosition="17" />
-    <scopeInfo nodeId="418270182880377919" fileName="BreakpointsBrowserDialog.java" startLine="297" startPosition="56" endLine="298" endPosition="47" />
-    <scopeInfo nodeId="4474271214083122848" fileName="BreakpointsBrowserDialog.java" startLine="307" startPosition="54" endLine="308" endPosition="70" />
-    <scopeInfo nodeId="4474271214083122859" fileName="BreakpointsBrowserDialog.java" startLine="311" startPosition="32" endLine="312" endPosition="66" />
-    <scopeInfo nodeId="418270182880378278" fileName="BreakpointsBrowserDialog.java" startLine="324" startPosition="50" endLine="325" endPosition="52" />
-    <scopeInfo nodeId="4474271214083123532" fileName="BreakpointsBrowserDialog.java" startLine="345" startPosition="37" endLine="346" endPosition="21" />
-    <scopeInfo nodeId="4474271214083122984" fileName="BreakpointsBrowserDialog.java" startLine="356" startPosition="54" endLine="357" endPosition="171" />
-    <scopeInfo nodeId="4474271214083123021" fileName="BreakpointsBrowserDialog.java" startLine="362" startPosition="57" endLine="363" endPosition="13" />
-    <scopeInfo nodeId="2208727413134774503" fileName="BreakpointsBrowserDialog.java" startLine="368" startPosition="27" endLine="369" endPosition="17" />
-    <scopeInfo nodeId="4474271214083123037" fileName="BreakpointsBrowserDialog.java" startLine="377" startPosition="43" endLine="378" endPosition="23" />
-    <scopeInfo nodeId="4474271214083123044" fileName="BreakpointsBrowserDialog.java" startLine="382" startPosition="82" endLine="383" endPosition="77" />
-    <scopeInfo nodeId="4474271214083123056" fileName="BreakpointsBrowserDialog.java" startLine="387" startPosition="29" endLine="388" endPosition="14" />
-    <scopeInfo nodeId="6515087165749935429" fileName="BreakpointsBrowserDialog.java" startLine="394" startPosition="68" endLine="395" endPosition="18" />
-    <scopeInfo nodeId="4474271214083123092" fileName="BreakpointsBrowserDialog.java" startLine="402" startPosition="42" endLine="403" endPosition="21" />
-    <scopeInfo nodeId="4474271214083123105" fileName="BreakpointsBrowserDialog.java" startLine="69" startPosition="38" endLine="71" endPosition="29">
+    <nodeInfo nodeId="4474271214083122182" fileName="BreakpointsBrowserDialog.java" startLine="54" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COMMAND_SHOW_NODE" />
+    <nodeInfo nodeId="4474271214083122186" fileName="BreakpointsBrowserDialog.java" startLine="56" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMainPanel" />
+    <nodeInfo nodeId="4474271214083122189" fileName="BreakpointsBrowserDialog.java" startLine="57" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPropertiesEditorPanel" />
+    <nodeInfo nodeId="4474271214083122192" fileName="BreakpointsBrowserDialog.java" startLine="58" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
+    <nodeInfo nodeId="4474271214083122195" fileName="BreakpointsBrowserDialog.java" startLine="59" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpointsManager" />
+    <nodeInfo nodeId="4474271214083122198" fileName="BreakpointsBrowserDialog.java" startLine="60" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProvidersManager" />
+    <nodeInfo nodeId="4474271214083122201" fileName="BreakpointsBrowserDialog.java" startLine="61" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpointsUi" />
+    <nodeInfo nodeId="4474271214083122213" fileName="BreakpointsBrowserDialog.java" startLine="62" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpointsScrollPane" />
+    <nodeInfo nodeId="4474271214083122216" fileName="BreakpointsBrowserDialog.java" startLine="63" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myViews" />
+    <nodeInfo nodeId="4474271214083122220" fileName="BreakpointsBrowserDialog.java" startLine="64" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentViewIndex" />
+    <nodeInfo nodeId="4474271214083122223" fileName="BreakpointsBrowserDialog.java" startLine="65" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myKindToUi" />
+    <nodeInfo nodeId="4474271214083123106" fileName="BreakpointsBrowserDialog.java" startLine="68" startPosition="38" endLine="69" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083123114" fileName="BreakpointsBrowserDialog.java" startLine="69" startPosition="75" endLine="70" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8552644901220531092" fileName="BreakpointsBrowserDialog.java" startLine="74" startPosition="62" endLine="75" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5827441295399212231" fileName="BreakpointsBrowserDialog.java" startLine="75" startPosition="61" endLine="76" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122253" fileName="BreakpointsBrowserDialog.java" startLine="76" startPosition="28" endLine="77" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5185119859851481482" fileName="BreakpointsBrowserDialog.java" startLine="77" startPosition="20" endLine="78" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5185119859851481453" fileName="BreakpointsBrowserDialog.java" startLine="78" startPosition="34" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4474271214083122256" fileName="BreakpointsBrowserDialog.java" startLine="79" startPosition="0" endLine="80" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122260" fileName="BreakpointsBrowserDialog.java" startLine="80" startPosition="24" endLine="81" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122268" fileName="BreakpointsBrowserDialog.java" startLine="81" startPosition="119" endLine="82" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122276" fileName="BreakpointsBrowserDialog.java" startLine="82" startPosition="110" endLine="83" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122283" fileName="BreakpointsBrowserDialog.java" startLine="83" startPosition="66" endLine="84" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122292" fileName="BreakpointsBrowserDialog.java" startLine="84" startPosition="108" endLine="85" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122306" fileName="BreakpointsBrowserDialog.java" startLine="85" startPosition="145" endLine="86" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122313" fileName="BreakpointsBrowserDialog.java" startLine="86" startPosition="49" endLine="87" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122322" fileName="BreakpointsBrowserDialog.java" startLine="87" startPosition="113" endLine="88" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122330" fileName="BreakpointsBrowserDialog.java" startLine="88" startPosition="96" endLine="89" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122336" fileName="BreakpointsBrowserDialog.java" startLine="89" startPosition="66" endLine="90" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083122345" fileName="BreakpointsBrowserDialog.java" startLine="90" startPosition="131" endLine="91" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8552644901220533832" fileName="BreakpointsBrowserDialog.java" startLine="91" startPosition="70" endLine="92" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083127090" fileName="BreakpointsBrowserDialog.java" startLine="92" startPosition="56" endLine="93" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4474271214083122353" fileName="BreakpointsBrowserDialog.java" startLine="93" startPosition="53" endLine="94" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5827441295399212153" fileName="BreakpointsBrowserDialog.java" startLine="94" startPosition="29" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4474271214083122375" fileName="BreakpointsBrowserDialog.java" startLine="95" startPosition="0" endLine="96" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5827441295399162965" fileName="BreakpointsBrowserDialog.java" startLine="96" startPosition="23" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5827441295399162969" fileName="BreakpointsBrowserDialog.java" startLine="97" startPosition="0" endLine="98" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122388" fileName="BreakpointsBrowserDialog.java" startLine="102" startPosition="46" endLine="103" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083122394" fileName="BreakpointsBrowserDialog.java" startLine="105" startPosition="42" endLine="106" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122409" fileName="BreakpointsBrowserDialog.java" startLine="111" startPosition="67" endLine="112" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083122421" fileName="BreakpointsBrowserDialog.java" startLine="113" startPosition="29" endLine="114" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4474271214083122422" fileName="BreakpointsBrowserDialog.java" startLine="115" startPosition="7" endLine="116" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083122434" fileName="BreakpointsBrowserDialog.java" startLine="117" startPosition="27" endLine="118" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4474271214083122435" fileName="BreakpointsBrowserDialog.java" startLine="119" startPosition="7" endLine="120" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083123127" fileName="BreakpointsBrowserDialog.java" startLine="125" startPosition="74" endLine="126" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122458" fileName="BreakpointsBrowserDialog.java" startLine="129" startPosition="5" endLine="130" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122463" fileName="BreakpointsBrowserDialog.java" startLine="130" startPosition="72" endLine="131" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083122476" fileName="BreakpointsBrowserDialog.java" startLine="132" startPosition="37" endLine="133" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122486" fileName="BreakpointsBrowserDialog.java" startLine="137" startPosition="66" endLine="138" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122504" fileName="BreakpointsBrowserDialog.java" startLine="142" startPosition="42" endLine="143" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122514" fileName="BreakpointsBrowserDialog.java" startLine="145" startPosition="29" endLine="146" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083122523" fileName="BreakpointsBrowserDialog.java" startLine="146" startPosition="72" endLine="147" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122528" fileName="BreakpointsBrowserDialog.java" startLine="147" startPosition="35" endLine="148" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122534" fileName="BreakpointsBrowserDialog.java" startLine="148" startPosition="54" endLine="149" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122540" fileName="BreakpointsBrowserDialog.java" startLine="150" startPosition="5" endLine="151" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083127092" fileName="BreakpointsBrowserDialog.java" startLine="154" startPosition="43" endLine="155" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4474271214083122548" fileName="BreakpointsBrowserDialog.java" startLine="155" startPosition="23" endLine="156" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083122572" fileName="BreakpointsBrowserDialog.java" startLine="156" startPosition="56" endLine="157" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6515087165749935467" fileName="BreakpointsBrowserDialog.java" startLine="157" startPosition="143" endLine="158" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122663" fileName="BreakpointsBrowserDialog.java" startLine="158" startPosition="143" endLine="159" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122687" fileName="BreakpointsBrowserDialog.java" startLine="159" startPosition="38" endLine="160" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122692" fileName="BreakpointsBrowserDialog.java" startLine="160" startPosition="139" endLine="161" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083123258" fileName="BreakpointsBrowserDialog.java" startLine="164" startPosition="50" endLine="165" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083123262" fileName="BreakpointsBrowserDialog.java" startLine="169" startPosition="63" endLine="170" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083123264" fileName="BreakpointsBrowserDialog.java" startLine="170" startPosition="21" endLine="171" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083123279" fileName="BreakpointsBrowserDialog.java" startLine="176" startPosition="43" endLine="177" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083123282" fileName="BreakpointsBrowserDialog.java" startLine="177" startPosition="24" endLine="178" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083123295" fileName="BreakpointsBrowserDialog.java" startLine="183" startPosition="30" endLine="184" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083123297" fileName="BreakpointsBrowserDialog.java" startLine="185" startPosition="9" endLine="186" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083123305" fileName="BreakpointsBrowserDialog.java" startLine="186" startPosition="77" endLine="187" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083123311" fileName="BreakpointsBrowserDialog.java" startLine="191" startPosition="63" endLine="192" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083123319" fileName="BreakpointsBrowserDialog.java" startLine="192" startPosition="77" endLine="193" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083123324" fileName="BreakpointsBrowserDialog.java" startLine="193" startPosition="38" endLine="194" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083123330" fileName="BreakpointsBrowserDialog.java" startLine="199" startPosition="43" endLine="200" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083123333" fileName="BreakpointsBrowserDialog.java" startLine="200" startPosition="24" endLine="201" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083123346" fileName="BreakpointsBrowserDialog.java" startLine="206" startPosition="30" endLine="207" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083123348" fileName="BreakpointsBrowserDialog.java" startLine="208" startPosition="9" endLine="209" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083123356" fileName="BreakpointsBrowserDialog.java" startLine="209" startPosition="77" endLine="210" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083123362" fileName="BreakpointsBrowserDialog.java" startLine="214" startPosition="63" endLine="215" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083123370" fileName="BreakpointsBrowserDialog.java" startLine="215" startPosition="77" endLine="216" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083123375" fileName="BreakpointsBrowserDialog.java" startLine="216" startPosition="37" endLine="217" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083123381" fileName="BreakpointsBrowserDialog.java" startLine="222" startPosition="43" endLine="223" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083123384" fileName="BreakpointsBrowserDialog.java" startLine="223" startPosition="24" endLine="224" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083123397" fileName="BreakpointsBrowserDialog.java" startLine="229" startPosition="30" endLine="230" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083123399" fileName="BreakpointsBrowserDialog.java" startLine="231" startPosition="9" endLine="232" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083123407" fileName="BreakpointsBrowserDialog.java" startLine="232" startPosition="77" endLine="233" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083123413" fileName="BreakpointsBrowserDialog.java" startLine="237" startPosition="63" endLine="238" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083123421" fileName="BreakpointsBrowserDialog.java" startLine="238" startPosition="77" endLine="239" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083123426" fileName="BreakpointsBrowserDialog.java" startLine="239" startPosition="36" endLine="240" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083127096" fileName="BreakpointsBrowserDialog.java" startLine="245" startPosition="43" endLine="246" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4474271214083123432" fileName="BreakpointsBrowserDialog.java" startLine="246" startPosition="79" endLine="247" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083123445" fileName="BreakpointsBrowserDialog.java" startLine="252" startPosition="30" endLine="253" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083123446" fileName="BreakpointsBrowserDialog.java" startLine="254" startPosition="9" endLine="255" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083123454" fileName="BreakpointsBrowserDialog.java" startLine="255" startPosition="77" endLine="256" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083123460" fileName="BreakpointsBrowserDialog.java" startLine="261" startPosition="43" endLine="262" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083123473" fileName="BreakpointsBrowserDialog.java" startLine="267" startPosition="30" endLine="268" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083123474" fileName="BreakpointsBrowserDialog.java" startLine="269" startPosition="9" endLine="270" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083123482" fileName="BreakpointsBrowserDialog.java" startLine="270" startPosition="77" endLine="271" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122841" fileName="BreakpointsBrowserDialog.java" startLine="273" startPosition="7" endLine="274" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="418270182880377872" fileName="BreakpointsBrowserDialog.java" startLine="280" startPosition="43" endLine="281" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="418270182880377875" fileName="BreakpointsBrowserDialog.java" startLine="281" startPosition="24" endLine="282" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="418270182880377891" fileName="BreakpointsBrowserDialog.java" startLine="285" startPosition="73" endLine="286" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="418270182880377907" fileName="BreakpointsBrowserDialog.java" startLine="287" startPosition="63" endLine="288" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="418270182880377920" fileName="BreakpointsBrowserDialog.java" startLine="291" startPosition="56" endLine="292" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="418270182880377935" fileName="BreakpointsBrowserDialog.java" startLine="294" startPosition="10" endLine="295" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="418270182880377940" fileName="BreakpointsBrowserDialog.java" startLine="297" startPosition="5" endLine="298" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083122849" fileName="BreakpointsBrowserDialog.java" startLine="301" startPosition="54" endLine="302" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083122860" fileName="BreakpointsBrowserDialog.java" startLine="305" startPosition="32" endLine="306" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083122870" fileName="BreakpointsBrowserDialog.java" startLine="309" startPosition="29" endLine="310" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122876" fileName="BreakpointsBrowserDialog.java" startLine="310" startPosition="48" endLine="311" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122884" fileName="BreakpointsBrowserDialog.java" startLine="311" startPosition="105" endLine="312" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="418270182880378283" fileName="BreakpointsBrowserDialog.java" startLine="318" startPosition="50" endLine="319" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083127098" fileName="BreakpointsBrowserDialog.java" startLine="325" startPosition="44" endLine="326" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4474271214083122902" fileName="BreakpointsBrowserDialog.java" startLine="326" startPosition="24" endLine="327" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122914" fileName="BreakpointsBrowserDialog.java" startLine="327" startPosition="115" endLine="328" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083127100" fileName="BreakpointsBrowserDialog.java" startLine="328" startPosition="214" endLine="329" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4474271214083122931" fileName="BreakpointsBrowserDialog.java" startLine="329" startPosition="21" endLine="330" endPosition="276" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083127102" fileName="BreakpointsBrowserDialog.java" startLine="330" startPosition="276" endLine="331" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4474271214083122948" fileName="BreakpointsBrowserDialog.java" startLine="331" startPosition="24" endLine="332" endPosition="276" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083127104" fileName="BreakpointsBrowserDialog.java" startLine="332" startPosition="276" endLine="333" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4474271214083123519" fileName="BreakpointsBrowserDialog.java" startLine="337" startPosition="39" endLine="338" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083123533" fileName="BreakpointsBrowserDialog.java" startLine="339" startPosition="37" endLine="340" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083123534" fileName="BreakpointsBrowserDialog.java" startLine="341" startPosition="13" endLine="342" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083123536" fileName="BreakpointsBrowserDialog.java" startLine="342" startPosition="22" endLine="343" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122985" fileName="BreakpointsBrowserDialog.java" startLine="350" startPosition="54" endLine="351" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083123009" fileName="BreakpointsBrowserDialog.java" startLine="354" startPosition="98" endLine="355" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083123022" fileName="BreakpointsBrowserDialog.java" startLine="356" startPosition="57" endLine="357" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2208727413134774488" fileName="BreakpointsBrowserDialog.java" startLine="360" startPosition="25" endLine="361" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2208727413134774531" fileName="BreakpointsBrowserDialog.java" startLine="362" startPosition="27" endLine="363" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1071422968910399174" fileName="BreakpointsBrowserDialog.java" startLine="364" startPosition="9" endLine="365" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3591638047281768800" fileName="BreakpointsBrowserDialog.java" startLine="371" startPosition="44" endLine="372" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3591638047281848380" fileName="BreakpointsBrowserDialog.java" startLine="375" startPosition="47" endLine="376" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3591638047281768801" fileName="BreakpointsBrowserDialog.java" startLine="378" startPosition="7" endLine="379" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5827441295399150380" fileName="BreakpointsBrowserDialog.java" startLine="379" startPosition="0" endLine="380" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8552644901220533790" fileName="BreakpointsBrowserDialog.java" startLine="386" startPosition="45" endLine="387" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5827441295399212389" fileName="BreakpointsBrowserDialog.java" startLine="391" startPosition="38" endLine="392" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6515087165749935462" fileName="BreakpointsBrowserDialog.java" startLine="398" startPosition="68" endLine="399" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083123075" fileName="BreakpointsBrowserDialog.java" startLine="400" startPosition="5" endLine="401" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083123093" fileName="BreakpointsBrowserDialog.java" startLine="406" startPosition="42" endLine="407" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083123097" fileName="BreakpointsBrowserDialog.java" startLine="408" startPosition="5" endLine="409" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083123102" fileName="BreakpointsBrowserDialog.java" startLine="409" startPosition="75" endLine="410" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122381" fileName="BreakpointsBrowserDialog.java" startLine="101" startPosition="28" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214083122389" fileName="BreakpointsBrowserDialog.java" startLine="104" startPosition="5" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4474271214083122416" fileName="BreakpointsBrowserDialog.java" startLine="112" startPosition="75" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214083122429" fileName="BreakpointsBrowserDialog.java" startLine="116" startPosition="77" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214083122471" fileName="BreakpointsBrowserDialog.java" startLine="131" startPosition="89" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214083122479" fileName="BreakpointsBrowserDialog.java" startLine="137" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="selectBreakpoint#(Ljetbrains/mps/debug/api/breakpoints/IBreakpoint;)V" />
+    <nodeInfo nodeId="4474271214083122499" fileName="BreakpointsBrowserDialog.java" startLine="141" startPosition="59" endLine="144" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214083123291" fileName="BreakpointsBrowserDialog.java" startLine="182" startPosition="50" endLine="185" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214083123342" fileName="BreakpointsBrowserDialog.java" startLine="205" startPosition="50" endLine="208" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214083123393" fileName="BreakpointsBrowserDialog.java" startLine="228" startPosition="50" endLine="231" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214083123441" fileName="BreakpointsBrowserDialog.java" startLine="251" startPosition="52" endLine="254" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214083123469" fileName="BreakpointsBrowserDialog.java" startLine="266" startPosition="52" endLine="269" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214083122843" fileName="BreakpointsBrowserDialog.java" startLine="301" startPosition="0" endLine="304" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBreakpoint#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Ljetbrains/mps/debug/api/breakpoints/IBreakpoint;" />
+    <nodeInfo nodeId="4474271214083122856" fileName="BreakpointsBrowserDialog.java" startLine="305" startPosition="0" endLine="308" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isTreeView#()Z" />
+    <nodeInfo nodeId="4474271214083123528" fileName="BreakpointsBrowserDialog.java" startLine="338" startPosition="105" endLine="341" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214083122979" fileName="BreakpointsBrowserDialog.java" startLine="350" startPosition="0" endLine="353" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEvent#(Lcom/intellij/openapi/actionSystem/AnAction;)Lcom/intellij/openapi/actionSystem/AnActionEvent;" />
+    <nodeInfo nodeId="4474271214083123015" fileName="BreakpointsBrowserDialog.java" startLine="355" startPosition="51" endLine="358" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2208727413134774502" fileName="BreakpointsBrowserDialog.java" startLine="361" startPosition="81" endLine="364" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6515087165749935428" fileName="BreakpointsBrowserDialog.java" startLine="397" startPosition="48" endLine="400" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214083123088" fileName="BreakpointsBrowserDialog.java" startLine="405" startPosition="25" endLine="408" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4474271214083122453" fileName="BreakpointsBrowserDialog.java" startLine="124" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="breakpointSelected#(Ljetbrains/mps/debug/api/breakpoints/IBreakpoint;)V" />
+    <nodeInfo nodeId="4474271214083122705" fileName="BreakpointsBrowserDialog.java" startLine="163" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
+    <nodeInfo nodeId="4474271214083122828" fileName="BreakpointsBrowserDialog.java" startLine="260" startPosition="0" endLine="264" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+    <nodeInfo nodeId="418270182880377914" fileName="BreakpointsBrowserDialog.java" startLine="290" startPosition="0" endLine="294" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+    <nodeInfo nodeId="418270182880378273" fileName="BreakpointsBrowserDialog.java" startLine="317" startPosition="0" endLine="321" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="3591638047281848374" fileName="BreakpointsBrowserDialog.java" startLine="374" startPosition="0" endLine="378" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="windowClosed#(Ljava/awt/event/WindowEvent;)V" />
+    <nodeInfo nodeId="5827441295399212357" fileName="BreakpointsBrowserDialog.java" startLine="390" startPosition="0" endLine="394" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#()[Ljavax/swing/Action;" />
+    <nodeInfo nodeId="4474271214083122238" fileName="BreakpointsBrowserDialog.java" startLine="67" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="breakpointsChanged#()V" />
+    <nodeInfo nodeId="4474271214083122710" fileName="BreakpointsBrowserDialog.java" startLine="168" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
+    <nodeInfo nodeId="4474271214083122727" fileName="BreakpointsBrowserDialog.java" startLine="175" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+    <nodeInfo nodeId="4474271214083122754" fileName="BreakpointsBrowserDialog.java" startLine="198" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+    <nodeInfo nodeId="4474271214083122781" fileName="BreakpointsBrowserDialog.java" startLine="221" startPosition="0" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+    <nodeInfo nodeId="4474271214083122808" fileName="BreakpointsBrowserDialog.java" startLine="244" startPosition="0" endLine="249" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+    <nodeInfo nodeId="418270182880377867" fileName="BreakpointsBrowserDialog.java" startLine="279" startPosition="0" endLine="284" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+    <nodeInfo nodeId="4474271214083122866" fileName="BreakpointsBrowserDialog.java" startLine="309" startPosition="0" endLine="314" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="switchView#()V" />
+    <nodeInfo nodeId="4474271214083122446" fileName="BreakpointsBrowserDialog.java" startLine="122" startPosition="42" endLine="128" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122509" fileName="BreakpointsBrowserDialog.java" startLine="144" startPosition="5" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214083122737" fileName="BreakpointsBrowserDialog.java" startLine="190" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
+    <nodeInfo nodeId="4474271214083122764" fileName="BreakpointsBrowserDialog.java" startLine="213" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
+    <nodeInfo nodeId="4474271214083122791" fileName="BreakpointsBrowserDialog.java" startLine="236" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
+    <nodeInfo nodeId="418270182880377909" fileName="BreakpointsBrowserDialog.java" startLine="288" startPosition="47" endLine="294" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="418270182880378269" fileName="BreakpointsBrowserDialog.java" startLine="315" startPosition="65" endLine="321" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3591638047281768840" fileName="BreakpointsBrowserDialog.java" startLine="372" startPosition="0" endLine="378" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8552644901220533459" fileName="BreakpointsBrowserDialog.java" startLine="383" startPosition="0" endLine="389" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDimensionServiceKey#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4474271214083122232" fileName="BreakpointsBrowserDialog.java" startLine="66" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpointManagerListener" />
+    <nodeInfo nodeId="418270182880377862" fileName="BreakpointsBrowserDialog.java" startLine="277" startPosition="53" endLine="284" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083123030" fileName="BreakpointsBrowserDialog.java" startLine="360" startPosition="0" endLine="367" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4474271214083122377" fileName="BreakpointsBrowserDialog.java" startLine="101" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveState#()V" />
+    <nodeInfo nodeId="4474271214083122441" fileName="BreakpointsBrowserDialog.java" startLine="121" startPosition="5" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4474271214083122732" fileName="BreakpointsBrowserDialog.java" startLine="181" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
+    <nodeInfo nodeId="4474271214083122759" fileName="BreakpointsBrowserDialog.java" startLine="204" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
+    <nodeInfo nodeId="4474271214083122786" fileName="BreakpointsBrowserDialog.java" startLine="227" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
+    <nodeInfo nodeId="4474271214083122813" fileName="BreakpointsBrowserDialog.java" startLine="250" startPosition="0" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+    <nodeInfo nodeId="4474271214083122833" fileName="BreakpointsBrowserDialog.java" startLine="265" startPosition="0" endLine="273" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+    <nodeInfo nodeId="418270182880378155" fileName="BreakpointsBrowserDialog.java" startLine="315" startPosition="0" endLine="323" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createWrapper#(Lcom/intellij/openapi/actionSystem/AnAction;)Ljavax/swing/AbstractAction;" />
+    <nodeInfo nodeId="4474271214083123512" fileName="BreakpointsBrowserDialog.java" startLine="336" startPosition="48" endLine="344" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214083123068" fileName="BreakpointsBrowserDialog.java" startLine="395" startPosition="0" endLine="403" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getData#(Ljava/lang/String;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="4474271214083123084" fileName="BreakpointsBrowserDialog.java" startLine="404" startPosition="0" endLine="412" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="4474271214083123023" fileName="BreakpointsBrowserDialog.java" startLine="358" startPosition="5" endLine="367" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="418270182880377897" fileName="BreakpointsBrowserDialog.java" startLine="286" startPosition="75" endLine="296" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214083122402" fileName="BreakpointsBrowserDialog.java" startLine="110" startPosition="35" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4474271214083122974" fileName="BreakpointsBrowserDialog.java" startLine="335" startPosition="0" endLine="346" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mouseClicked#(Ljava/awt/event/MouseEvent;)V" />
+    <nodeInfo nodeId="4474271214083122493" fileName="BreakpointsBrowserDialog.java" startLine="141" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="breakpointSelected#(Ljetbrains/mps/debug/api/breakpoints/IBreakpoint;)V" />
+    <nodeInfo nodeId="4474271214083122698" fileName="BreakpointsBrowserDialog.java" startLine="161" startPosition="31" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5827441295399150335" fileName="BreakpointsBrowserDialog.java" startLine="370" startPosition="0" endLine="382" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="418270182880377885" fileName="BreakpointsBrowserDialog.java" startLine="284" startPosition="6" endLine="297" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4474271214083122965" fileName="BreakpointsBrowserDialog.java" startLine="333" startPosition="31" endLine="346" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122821" fileName="BreakpointsBrowserDialog.java" startLine="258" startPosition="7" endLine="273" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122999" fileName="BreakpointsBrowserDialog.java" startLine="354" startPosition="0" endLine="369" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="openNode#(Ljetbrains/mps/debug/api/breakpoints/IBreakpoint;ZZ)V" />
+    <nodeInfo nodeId="4474271214083122801" fileName="BreakpointsBrowserDialog.java" startLine="242" startPosition="7" endLine="258" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122720" fileName="BreakpointsBrowserDialog.java" startLine="173" startPosition="7" endLine="196" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122747" fileName="BreakpointsBrowserDialog.java" startLine="196" startPosition="7" endLine="219" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122774" fileName="BreakpointsBrowserDialog.java" startLine="219" startPosition="7" endLine="242" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="418270182880377858" fileName="BreakpointsBrowserDialog.java" startLine="277" startPosition="0" endLine="300" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAddActionGroup#()Lcom/intellij/openapi/actionSystem/DefaultActionGroup;" />
+    <nodeInfo nodeId="4474271214083122897" fileName="BreakpointsBrowserDialog.java" startLine="324" startPosition="41" endLine="347" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4474271214083122893" fileName="BreakpointsBrowserDialog.java" startLine="324" startPosition="0" endLine="349" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerActionsOnViews#()V" />
+    <nodeInfo nodeId="4474271214083122241" fileName="BreakpointsBrowserDialog.java" startLine="74" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BreakpointsBrowserDialog#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <nodeInfo nodeId="4474271214083122398" fileName="BreakpointsBrowserDialog.java" startLine="110" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initPropertiesUi#()V" />
+    <nodeInfo nodeId="4474271214083122544" fileName="BreakpointsBrowserDialog.java" startLine="154" startPosition="0" endLine="276" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActionGroup#()Lcom/intellij/openapi/actionSystem/ActionGroup;" />
+    <scopeInfo nodeId="4474271214083122387" fileName="BreakpointsBrowserDialog.java" startLine="102" startPosition="46" endLine="103" endPosition="13" />
+    <scopeInfo nodeId="4474271214083122393" fileName="BreakpointsBrowserDialog.java" startLine="105" startPosition="42" endLine="106" endPosition="23" />
+    <scopeInfo nodeId="4474271214083122420" fileName="BreakpointsBrowserDialog.java" startLine="113" startPosition="29" endLine="114" endPosition="17" />
+    <scopeInfo nodeId="4474271214083122433" fileName="BreakpointsBrowserDialog.java" startLine="117" startPosition="27" endLine="118" endPosition="17" />
+    <scopeInfo nodeId="4474271214083123126" fileName="BreakpointsBrowserDialog.java" startLine="125" startPosition="74" endLine="126" endPosition="71" />
+    <scopeInfo nodeId="4474271214083122475" fileName="BreakpointsBrowserDialog.java" startLine="132" startPosition="37" endLine="133" endPosition="45" />
+    <scopeInfo nodeId="4474271214083122485" fileName="BreakpointsBrowserDialog.java" startLine="137" startPosition="66" endLine="138" endPosition="61" />
+    <scopeInfo nodeId="4474271214083122503" fileName="BreakpointsBrowserDialog.java" startLine="142" startPosition="42" endLine="143" endPosition="50" />
+    <scopeInfo nodeId="4474271214083123257" fileName="BreakpointsBrowserDialog.java" startLine="164" startPosition="50" endLine="165" endPosition="28" />
+    <scopeInfo nodeId="4474271214083123294" fileName="BreakpointsBrowserDialog.java" startLine="183" startPosition="30" endLine="184" endPosition="23" />
+    <scopeInfo nodeId="4474271214083123345" fileName="BreakpointsBrowserDialog.java" startLine="206" startPosition="30" endLine="207" endPosition="23" />
+    <scopeInfo nodeId="4474271214083123396" fileName="BreakpointsBrowserDialog.java" startLine="229" startPosition="30" endLine="230" endPosition="23" />
+    <scopeInfo nodeId="4474271214083123444" fileName="BreakpointsBrowserDialog.java" startLine="252" startPosition="30" endLine="253" endPosition="17" />
+    <scopeInfo nodeId="4474271214083123459" fileName="BreakpointsBrowserDialog.java" startLine="261" startPosition="43" endLine="262" endPosition="53" />
+    <scopeInfo nodeId="4474271214083123472" fileName="BreakpointsBrowserDialog.java" startLine="267" startPosition="30" endLine="268" endPosition="17" />
+    <scopeInfo nodeId="418270182880377919" fileName="BreakpointsBrowserDialog.java" startLine="291" startPosition="56" endLine="292" endPosition="47" />
+    <scopeInfo nodeId="4474271214083122848" fileName="BreakpointsBrowserDialog.java" startLine="301" startPosition="54" endLine="302" endPosition="70" />
+    <scopeInfo nodeId="4474271214083122859" fileName="BreakpointsBrowserDialog.java" startLine="305" startPosition="32" endLine="306" endPosition="66" />
+    <scopeInfo nodeId="418270182880378278" fileName="BreakpointsBrowserDialog.java" startLine="318" startPosition="50" endLine="319" endPosition="52" />
+    <scopeInfo nodeId="4474271214083123532" fileName="BreakpointsBrowserDialog.java" startLine="339" startPosition="37" endLine="340" endPosition="21" />
+    <scopeInfo nodeId="4474271214083122984" fileName="BreakpointsBrowserDialog.java" startLine="350" startPosition="54" endLine="351" endPosition="188" />
+    <scopeInfo nodeId="4474271214083123021" fileName="BreakpointsBrowserDialog.java" startLine="356" startPosition="57" endLine="357" endPosition="13" />
+    <scopeInfo nodeId="2208727413134774503" fileName="BreakpointsBrowserDialog.java" startLine="362" startPosition="27" endLine="363" endPosition="17" />
+    <scopeInfo nodeId="3591638047281848379" fileName="BreakpointsBrowserDialog.java" startLine="375" startPosition="47" endLine="376" endPosition="20" />
+    <scopeInfo nodeId="8552644901220533464" fileName="BreakpointsBrowserDialog.java" startLine="386" startPosition="45" endLine="387" endPosition="52" />
+    <scopeInfo nodeId="5827441295399212361" fileName="BreakpointsBrowserDialog.java" startLine="391" startPosition="38" endLine="392" endPosition="39" />
+    <scopeInfo nodeId="6515087165749935429" fileName="BreakpointsBrowserDialog.java" startLine="398" startPosition="68" endLine="399" endPosition="18" />
+    <scopeInfo nodeId="4474271214083123092" fileName="BreakpointsBrowserDialog.java" startLine="406" startPosition="42" endLine="407" endPosition="21" />
+    <scopeInfo nodeId="4474271214083123105" fileName="BreakpointsBrowserDialog.java" startLine="68" startPosition="38" endLine="70" endPosition="29">
       <varInfo nodeId="4474271214083123107" varName="bp" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083123261" fileName="BreakpointsBrowserDialog.java" startLine="175" startPosition="63" endLine="177" endPosition="80" />
-    <scopeInfo nodeId="4474271214083123278" fileName="BreakpointsBrowserDialog.java" startLine="182" startPosition="43" endLine="184" endPosition="53" />
-    <scopeInfo nodeId="4474271214083123329" fileName="BreakpointsBrowserDialog.java" startLine="205" startPosition="43" endLine="207" endPosition="53" />
-    <scopeInfo nodeId="4474271214083123380" fileName="BreakpointsBrowserDialog.java" startLine="228" startPosition="43" endLine="230" endPosition="53" />
-    <scopeInfo nodeId="4474271214083123431" fileName="BreakpointsBrowserDialog.java" startLine="251" startPosition="43" endLine="253" endPosition="53" />
-    <scopeInfo nodeId="418270182880377871" fileName="BreakpointsBrowserDialog.java" startLine="286" startPosition="43" endLine="288" endPosition="118" />
-    <scopeInfo nodeId="4474271214083122389" fileName="BreakpointsBrowserDialog.java" startLine="110" startPosition="5" endLine="113" endPosition="5">
+    <scopeInfo nodeId="4474271214083123261" fileName="BreakpointsBrowserDialog.java" startLine="169" startPosition="63" endLine="171" endPosition="80" />
+    <scopeInfo nodeId="4474271214083123278" fileName="BreakpointsBrowserDialog.java" startLine="176" startPosition="43" endLine="178" endPosition="53" />
+    <scopeInfo nodeId="4474271214083123329" fileName="BreakpointsBrowserDialog.java" startLine="199" startPosition="43" endLine="201" endPosition="53" />
+    <scopeInfo nodeId="4474271214083123380" fileName="BreakpointsBrowserDialog.java" startLine="222" startPosition="43" endLine="224" endPosition="53" />
+    <scopeInfo nodeId="4474271214083123431" fileName="BreakpointsBrowserDialog.java" startLine="245" startPosition="43" endLine="247" endPosition="53" />
+    <scopeInfo nodeId="418270182880377871" fileName="BreakpointsBrowserDialog.java" startLine="280" startPosition="43" endLine="282" endPosition="118" />
+    <scopeInfo nodeId="4474271214083122389" fileName="BreakpointsBrowserDialog.java" startLine="104" startPosition="5" endLine="107" endPosition="5">
       <varInfo nodeId="4474271214083122391" varName="view" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122479" fileName="BreakpointsBrowserDialog.java" startLine="143" startPosition="0" endLine="146" endPosition="0">
+    <scopeInfo nodeId="4474271214083122479" fileName="BreakpointsBrowserDialog.java" startLine="137" startPosition="0" endLine="140" endPosition="0">
       <varInfo nodeId="4474271214083122482" varName="breakpoint" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083123310" fileName="BreakpointsBrowserDialog.java" startLine="197" startPosition="63" endLine="200" endPosition="22">
+    <scopeInfo nodeId="4474271214083123310" fileName="BreakpointsBrowserDialog.java" startLine="191" startPosition="63" endLine="194" endPosition="22">
       <varInfo nodeId="4474271214083123312" varName="tree" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083123361" fileName="BreakpointsBrowserDialog.java" startLine="220" startPosition="63" endLine="223" endPosition="22">
+    <scopeInfo nodeId="4474271214083123361" fileName="BreakpointsBrowserDialog.java" startLine="214" startPosition="63" endLine="217" endPosition="22">
       <varInfo nodeId="4474271214083123363" varName="tree" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083123412" fileName="BreakpointsBrowserDialog.java" startLine="243" startPosition="63" endLine="246" endPosition="22">
+    <scopeInfo nodeId="4474271214083123412" fileName="BreakpointsBrowserDialog.java" startLine="237" startPosition="63" endLine="240" endPosition="22">
       <varInfo nodeId="4474271214083123414" varName="tree" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122843" fileName="BreakpointsBrowserDialog.java" startLine="307" startPosition="0" endLine="310" endPosition="0">
+    <scopeInfo nodeId="4474271214083122843" fileName="BreakpointsBrowserDialog.java" startLine="301" startPosition="0" endLine="304" endPosition="0">
       <varInfo nodeId="4474271214083122846" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122856" fileName="BreakpointsBrowserDialog.java" startLine="311" startPosition="0" endLine="314" endPosition="0" />
-    <scopeInfo nodeId="4474271214083122869" fileName="BreakpointsBrowserDialog.java" startLine="315" startPosition="29" endLine="318" endPosition="92" />
-    <scopeInfo nodeId="4474271214083122979" fileName="BreakpointsBrowserDialog.java" startLine="356" startPosition="0" endLine="359" endPosition="0">
+    <scopeInfo nodeId="4474271214083122856" fileName="BreakpointsBrowserDialog.java" startLine="305" startPosition="0" endLine="308" endPosition="0" />
+    <scopeInfo nodeId="4474271214083122869" fileName="BreakpointsBrowserDialog.java" startLine="309" startPosition="29" endLine="312" endPosition="92" />
+    <scopeInfo nodeId="4474271214083122979" fileName="BreakpointsBrowserDialog.java" startLine="350" startPosition="0" endLine="353" endPosition="0">
       <varInfo nodeId="4474271214083122982" varName="action" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083123088" fileName="BreakpointsBrowserDialog.java" startLine="401" startPosition="25" endLine="404" endPosition="5">
+    <scopeInfo nodeId="4474271214083123088" fileName="BreakpointsBrowserDialog.java" startLine="405" startPosition="25" endLine="408" endPosition="5">
       <varInfo nodeId="4474271214083123090" varName="view" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122360" fileName="BreakpointsBrowserDialog.java" startLine="93" startPosition="0" endLine="97" endPosition="0">
-      <varInfo nodeId="4474271214083122363" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083122370" fileName="BreakpointsBrowserDialog.java" startLine="99" startPosition="0" endLine="103" endPosition="0">
-      <varInfo nodeId="4474271214083122373" varName="focusEvent" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083122453" fileName="BreakpointsBrowserDialog.java" startLine="130" startPosition="0" endLine="134" endPosition="0">
+    <scopeInfo nodeId="4474271214083122453" fileName="BreakpointsBrowserDialog.java" startLine="124" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="4474271214083122456" varName="breakpoint" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122513" fileName="BreakpointsBrowserDialog.java" startLine="151" startPosition="29" endLine="155" endPosition="67">
+    <scopeInfo nodeId="4474271214083122513" fileName="BreakpointsBrowserDialog.java" startLine="145" startPosition="29" endLine="149" endPosition="67">
       <varInfo nodeId="4474271214083122515" varName="ui" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122705" fileName="BreakpointsBrowserDialog.java" startLine="169" startPosition="0" endLine="173" endPosition="0">
+    <scopeInfo nodeId="4474271214083122705" fileName="BreakpointsBrowserDialog.java" startLine="163" startPosition="0" endLine="167" endPosition="0">
       <varInfo nodeId="4474271214083122708" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122828" fileName="BreakpointsBrowserDialog.java" startLine="266" startPosition="0" endLine="270" endPosition="0">
+    <scopeInfo nodeId="4474271214083122828" fileName="BreakpointsBrowserDialog.java" startLine="260" startPosition="0" endLine="264" endPosition="0">
       <varInfo nodeId="4474271214083122831" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="418270182880377914" fileName="BreakpointsBrowserDialog.java" startLine="296" startPosition="0" endLine="300" endPosition="0">
+    <scopeInfo nodeId="418270182880377914" fileName="BreakpointsBrowserDialog.java" startLine="290" startPosition="0" endLine="294" endPosition="0">
       <varInfo nodeId="418270182880377917" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="418270182880378273" fileName="BreakpointsBrowserDialog.java" startLine="323" startPosition="0" endLine="327" endPosition="0">
+    <scopeInfo nodeId="418270182880378273" fileName="BreakpointsBrowserDialog.java" startLine="317" startPosition="0" endLine="321" endPosition="0">
       <varInfo nodeId="418270182880378276" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083123034" fileName="BreakpointsBrowserDialog.java" startLine="376" startPosition="0" endLine="380" endPosition="0" />
-    <scopeInfo nodeId="4474271214083123041" fileName="BreakpointsBrowserDialog.java" startLine="381" startPosition="0" endLine="385" endPosition="0" />
-    <scopeInfo nodeId="4474271214083123053" fileName="BreakpointsBrowserDialog.java" startLine="386" startPosition="0" endLine="390" endPosition="0" />
-    <scopeInfo nodeId="4474271214083123074" fileName="BreakpointsBrowserDialog.java" startLine="393" startPosition="48" endLine="397" endPosition="55" />
-    <scopeInfo nodeId="4474271214083122238" fileName="BreakpointsBrowserDialog.java" startLine="68" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="4474271214083122710" fileName="BreakpointsBrowserDialog.java" startLine="174" startPosition="0" endLine="179" endPosition="0">
+    <scopeInfo nodeId="3591638047281848374" fileName="BreakpointsBrowserDialog.java" startLine="374" startPosition="0" endLine="378" endPosition="0">
+      <varInfo nodeId="3591638047281848377" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="5827441295399212357" fileName="BreakpointsBrowserDialog.java" startLine="390" startPosition="0" endLine="394" endPosition="0" />
+    <scopeInfo nodeId="4474271214083123074" fileName="BreakpointsBrowserDialog.java" startLine="397" startPosition="48" endLine="401" endPosition="55" />
+    <scopeInfo nodeId="4474271214083122238" fileName="BreakpointsBrowserDialog.java" startLine="67" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="4474271214083122710" fileName="BreakpointsBrowserDialog.java" startLine="168" startPosition="0" endLine="173" endPosition="0">
       <varInfo nodeId="4474271214083122713" varName="e" />
       <varInfo nodeId="4474271214083122715" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122727" fileName="BreakpointsBrowserDialog.java" startLine="181" startPosition="0" endLine="186" endPosition="0">
+    <scopeInfo nodeId="4474271214083122727" fileName="BreakpointsBrowserDialog.java" startLine="175" startPosition="0" endLine="180" endPosition="0">
       <varInfo nodeId="4474271214083122730" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083123290" fileName="BreakpointsBrowserDialog.java" startLine="188" startPosition="50" endLine="193" endPosition="43">
+    <scopeInfo nodeId="4474271214083123290" fileName="BreakpointsBrowserDialog.java" startLine="182" startPosition="50" endLine="187" endPosition="43">
       <varInfo nodeId="4474271214083123298" varName="tree" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122754" fileName="BreakpointsBrowserDialog.java" startLine="204" startPosition="0" endLine="209" endPosition="0">
+    <scopeInfo nodeId="4474271214083122754" fileName="BreakpointsBrowserDialog.java" startLine="198" startPosition="0" endLine="203" endPosition="0">
       <varInfo nodeId="4474271214083122757" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083123341" fileName="BreakpointsBrowserDialog.java" startLine="211" startPosition="50" endLine="216" endPosition="42">
+    <scopeInfo nodeId="4474271214083123341" fileName="BreakpointsBrowserDialog.java" startLine="205" startPosition="50" endLine="210" endPosition="42">
       <varInfo nodeId="4474271214083123349" varName="tree" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122781" fileName="BreakpointsBrowserDialog.java" startLine="227" startPosition="0" endLine="232" endPosition="0">
+    <scopeInfo nodeId="4474271214083122781" fileName="BreakpointsBrowserDialog.java" startLine="221" startPosition="0" endLine="226" endPosition="0">
       <varInfo nodeId="4474271214083122784" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083123392" fileName="BreakpointsBrowserDialog.java" startLine="234" startPosition="50" endLine="239" endPosition="41">
+    <scopeInfo nodeId="4474271214083123392" fileName="BreakpointsBrowserDialog.java" startLine="228" startPosition="50" endLine="233" endPosition="41">
       <varInfo nodeId="4474271214083123400" varName="tree" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122808" fileName="BreakpointsBrowserDialog.java" startLine="250" startPosition="0" endLine="255" endPosition="0">
+    <scopeInfo nodeId="4474271214083122808" fileName="BreakpointsBrowserDialog.java" startLine="244" startPosition="0" endLine="249" endPosition="0">
       <varInfo nodeId="4474271214083122811" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083123440" fileName="BreakpointsBrowserDialog.java" startLine="257" startPosition="52" endLine="262" endPosition="25">
+    <scopeInfo nodeId="4474271214083123440" fileName="BreakpointsBrowserDialog.java" startLine="251" startPosition="52" endLine="256" endPosition="25">
       <varInfo nodeId="4474271214083123447" varName="tree" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083123468" fileName="BreakpointsBrowserDialog.java" startLine="272" startPosition="52" endLine="277" endPosition="27">
+    <scopeInfo nodeId="4474271214083123468" fileName="BreakpointsBrowserDialog.java" startLine="266" startPosition="52" endLine="271" endPosition="27">
       <varInfo nodeId="4474271214083123475" varName="tree" />
     </scopeInfo>
-    <scopeInfo nodeId="418270182880377867" fileName="BreakpointsBrowserDialog.java" startLine="285" startPosition="0" endLine="290" endPosition="0">
+    <scopeInfo nodeId="418270182880377867" fileName="BreakpointsBrowserDialog.java" startLine="279" startPosition="0" endLine="284" endPosition="0">
       <varInfo nodeId="418270182880377853" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122866" fileName="BreakpointsBrowserDialog.java" startLine="315" startPosition="0" endLine="320" endPosition="0" />
-    <scopeInfo nodeId="4474271214083123542" fileName="BreakpointsBrowserDialog.java" startLine="366" startPosition="25" endLine="371" endPosition="81">
+    <scopeInfo nodeId="4474271214083122866" fileName="BreakpointsBrowserDialog.java" startLine="309" startPosition="0" endLine="314" endPosition="0" />
+    <scopeInfo nodeId="4474271214083123542" fileName="BreakpointsBrowserDialog.java" startLine="360" startPosition="25" endLine="365" endPosition="81">
       <varInfo nodeId="2208727413134774489" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083123087" fileName="BreakpointsBrowserDialog.java" startLine="401" startPosition="25" endLine="406" endPosition="20" />
-    <scopeInfo nodeId="4474271214083122380" fileName="BreakpointsBrowserDialog.java" startLine="107" startPosition="28" endLine="113" endPosition="5" />
-    <scopeInfo nodeId="4474271214083122445" fileName="BreakpointsBrowserDialog.java" startLine="128" startPosition="42" endLine="134" endPosition="9" />
-    <scopeInfo nodeId="4474271214083122737" fileName="BreakpointsBrowserDialog.java" startLine="196" startPosition="0" endLine="202" endPosition="0">
+    <scopeInfo nodeId="4474271214083123087" fileName="BreakpointsBrowserDialog.java" startLine="405" startPosition="25" endLine="410" endPosition="20" />
+    <scopeInfo nodeId="4474271214083122380" fileName="BreakpointsBrowserDialog.java" startLine="101" startPosition="28" endLine="107" endPosition="5" />
+    <scopeInfo nodeId="4474271214083122445" fileName="BreakpointsBrowserDialog.java" startLine="122" startPosition="42" endLine="128" endPosition="9" />
+    <scopeInfo nodeId="4474271214083122737" fileName="BreakpointsBrowserDialog.java" startLine="190" startPosition="0" endLine="196" endPosition="0">
       <varInfo nodeId="4474271214083122740" varName="e" />
       <varInfo nodeId="4474271214083122742" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122764" fileName="BreakpointsBrowserDialog.java" startLine="219" startPosition="0" endLine="225" endPosition="0">
+    <scopeInfo nodeId="4474271214083122764" fileName="BreakpointsBrowserDialog.java" startLine="213" startPosition="0" endLine="219" endPosition="0">
       <varInfo nodeId="4474271214083122767" varName="e" />
       <varInfo nodeId="4474271214083122769" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122791" fileName="BreakpointsBrowserDialog.java" startLine="242" startPosition="0" endLine="248" endPosition="0">
+    <scopeInfo nodeId="4474271214083122791" fileName="BreakpointsBrowserDialog.java" startLine="236" startPosition="0" endLine="242" endPosition="0">
       <varInfo nodeId="4474271214083122794" varName="e" />
       <varInfo nodeId="4474271214083122796" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="418270182880378158" fileName="BreakpointsBrowserDialog.java" startLine="321" startPosition="65" endLine="327" endPosition="6" />
-    <scopeInfo nodeId="4474271214083123518" fileName="BreakpointsBrowserDialog.java" startLine="343" startPosition="39" endLine="349" endPosition="45">
+    <scopeInfo nodeId="418270182880378158" fileName="BreakpointsBrowserDialog.java" startLine="315" startPosition="65" endLine="321" endPosition="6" />
+    <scopeInfo nodeId="4474271214083123518" fileName="BreakpointsBrowserDialog.java" startLine="337" startPosition="39" endLine="343" endPosition="45">
       <varInfo nodeId="4474271214083123520" varName="breakpoint" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083123030" fileName="BreakpointsBrowserDialog.java" startLine="366" startPosition="0" endLine="373" endPosition="0" />
-    <scopeInfo nodeId="4474271214083122377" fileName="BreakpointsBrowserDialog.java" startLine="107" startPosition="0" endLine="115" endPosition="0" />
-    <scopeInfo nodeId="4474271214083122441" fileName="BreakpointsBrowserDialog.java" startLine="127" startPosition="5" endLine="135" endPosition="5">
+    <scopeInfo nodeId="8552644901220533459" fileName="BreakpointsBrowserDialog.java" startLine="383" startPosition="0" endLine="389" endPosition="0" />
+    <scopeInfo nodeId="4474271214083123030" fileName="BreakpointsBrowserDialog.java" startLine="360" startPosition="0" endLine="367" endPosition="0" />
+    <scopeInfo nodeId="4474271214083122377" fileName="BreakpointsBrowserDialog.java" startLine="101" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="4474271214083122441" fileName="BreakpointsBrowserDialog.java" startLine="121" startPosition="5" endLine="129" endPosition="5">
       <varInfo nodeId="4474271214083122443" varName="view" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122732" fileName="BreakpointsBrowserDialog.java" startLine="187" startPosition="0" endLine="195" endPosition="0">
+    <scopeInfo nodeId="4474271214083122732" fileName="BreakpointsBrowserDialog.java" startLine="181" startPosition="0" endLine="189" endPosition="0">
       <varInfo nodeId="4474271214083122735" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122759" fileName="BreakpointsBrowserDialog.java" startLine="210" startPosition="0" endLine="218" endPosition="0">
+    <scopeInfo nodeId="4474271214083122759" fileName="BreakpointsBrowserDialog.java" startLine="204" startPosition="0" endLine="212" endPosition="0">
       <varInfo nodeId="4474271214083122762" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122786" fileName="BreakpointsBrowserDialog.java" startLine="233" startPosition="0" endLine="241" endPosition="0">
+    <scopeInfo nodeId="4474271214083122786" fileName="BreakpointsBrowserDialog.java" startLine="227" startPosition="0" endLine="235" endPosition="0">
       <varInfo nodeId="4474271214083122789" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122813" fileName="BreakpointsBrowserDialog.java" startLine="256" startPosition="0" endLine="264" endPosition="0">
+    <scopeInfo nodeId="4474271214083122813" fileName="BreakpointsBrowserDialog.java" startLine="250" startPosition="0" endLine="258" endPosition="0">
       <varInfo nodeId="4474271214083122816" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122833" fileName="BreakpointsBrowserDialog.java" startLine="271" startPosition="0" endLine="279" endPosition="0">
+    <scopeInfo nodeId="4474271214083122833" fileName="BreakpointsBrowserDialog.java" startLine="265" startPosition="0" endLine="273" endPosition="0">
       <varInfo nodeId="4474271214083122836" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="418270182880377906" fileName="BreakpointsBrowserDialog.java" startLine="293" startPosition="63" endLine="301" endPosition="49">
+    <scopeInfo nodeId="418270182880377906" fileName="BreakpointsBrowserDialog.java" startLine="287" startPosition="63" endLine="295" endPosition="49">
       <varInfo nodeId="418270182880377857" varName="addBreakpoointAction" />
     </scopeInfo>
-    <scopeInfo nodeId="418270182880378155" fileName="BreakpointsBrowserDialog.java" startLine="321" startPosition="0" endLine="329" endPosition="0">
+    <scopeInfo nodeId="418270182880378155" fileName="BreakpointsBrowserDialog.java" startLine="315" startPosition="0" endLine="323" endPosition="0">
       <varInfo nodeId="418270182880378205" varName="action" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083123511" fileName="BreakpointsBrowserDialog.java" startLine="342" startPosition="48" endLine="350" endPosition="11" />
-    <scopeInfo nodeId="4474271214083123068" fileName="BreakpointsBrowserDialog.java" startLine="391" startPosition="0" endLine="399" endPosition="0">
+    <scopeInfo nodeId="4474271214083123511" fileName="BreakpointsBrowserDialog.java" startLine="336" startPosition="48" endLine="344" endPosition="11" />
+    <scopeInfo nodeId="4474271214083123068" fileName="BreakpointsBrowserDialog.java" startLine="395" startPosition="0" endLine="403" endPosition="0">
       <varInfo nodeId="4474271214083123071" varName="dataId" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083123084" fileName="BreakpointsBrowserDialog.java" startLine="400" startPosition="0" endLine="408" endPosition="0" />
-    <scopeInfo nodeId="4474271214083122408" fileName="BreakpointsBrowserDialog.java" startLine="117" startPosition="67" endLine="126" endPosition="35">
+    <scopeInfo nodeId="4474271214083123084" fileName="BreakpointsBrowserDialog.java" startLine="404" startPosition="0" endLine="412" endPosition="0" />
+    <scopeInfo nodeId="4474271214083122408" fileName="BreakpointsBrowserDialog.java" startLine="111" startPosition="67" endLine="120" endPosition="35">
       <varInfo nodeId="4474271214083122423" varName="editor" />
       <varInfo nodeId="4474271214083122410" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122498" fileName="BreakpointsBrowserDialog.java" startLine="147" startPosition="59" endLine="157" endPosition="27" />
-    <scopeInfo nodeId="4474271214083122402" fileName="BreakpointsBrowserDialog.java" startLine="116" startPosition="35" endLine="127" endPosition="5">
+    <scopeInfo nodeId="5827441295399150339" fileName="BreakpointsBrowserDialog.java" startLine="371" startPosition="44" endLine="380" endPosition="23" />
+    <scopeInfo nodeId="4474271214083122498" fileName="BreakpointsBrowserDialog.java" startLine="141" startPosition="59" endLine="151" endPosition="27" />
+    <scopeInfo nodeId="4474271214083122402" fileName="BreakpointsBrowserDialog.java" startLine="110" startPosition="35" endLine="121" endPosition="5">
       <varInfo nodeId="4474271214083122406" varName="kind" />
     </scopeInfo>
-    <scopeInfo nodeId="418270182880377890" fileName="BreakpointsBrowserDialog.java" startLine="291" startPosition="73" endLine="302" endPosition="7">
+    <scopeInfo nodeId="418270182880377890" fileName="BreakpointsBrowserDialog.java" startLine="285" startPosition="73" endLine="296" endPosition="7">
       <varInfo nodeId="418270182880377855" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122974" fileName="BreakpointsBrowserDialog.java" startLine="341" startPosition="0" endLine="352" endPosition="0">
+    <scopeInfo nodeId="4474271214083122974" fileName="BreakpointsBrowserDialog.java" startLine="335" startPosition="0" endLine="346" endPosition="0">
       <varInfo nodeId="4474271214083122977" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122493" fileName="BreakpointsBrowserDialog.java" startLine="147" startPosition="0" endLine="159" endPosition="0">
+    <scopeInfo nodeId="4474271214083122493" fileName="BreakpointsBrowserDialog.java" startLine="141" startPosition="0" endLine="153" endPosition="0">
       <varInfo nodeId="4474271214083122496" varName="breakpoint" />
     </scopeInfo>
-    <scopeInfo nodeId="418270182880377885" fileName="BreakpointsBrowserDialog.java" startLine="290" startPosition="6" endLine="303" endPosition="5">
+    <scopeInfo nodeId="5827441295399150335" fileName="BreakpointsBrowserDialog.java" startLine="370" startPosition="0" endLine="382" endPosition="0" />
+    <scopeInfo nodeId="418270182880377885" fileName="BreakpointsBrowserDialog.java" startLine="284" startPosition="6" endLine="297" endPosition="5">
       <varInfo nodeId="418270182880377854" varName="kind" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083123008" fileName="BreakpointsBrowserDialog.java" startLine="360" startPosition="98" endLine="373" endPosition="16">
+    <scopeInfo nodeId="4474271214083123008" fileName="BreakpointsBrowserDialog.java" startLine="354" startPosition="98" endLine="367" endPosition="16">
       <varInfo nodeId="4474271214083123010" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122999" fileName="BreakpointsBrowserDialog.java" startLine="360" startPosition="0" endLine="375" endPosition="0">
+    <scopeInfo nodeId="4474271214083122999" fileName="BreakpointsBrowserDialog.java" startLine="354" startPosition="0" endLine="369" endPosition="0">
       <varInfo nodeId="4474271214083123002" varName="breakpoint" />
       <varInfo nodeId="4474271214083123004" varName="focus" />
       <varInfo nodeId="4474271214083123006" varName="select" />
     </scopeInfo>
-    <scopeInfo nodeId="418270182880377861" fileName="BreakpointsBrowserDialog.java" startLine="283" startPosition="53" endLine="304" endPosition="26">
+    <scopeInfo nodeId="418270182880377861" fileName="BreakpointsBrowserDialog.java" startLine="277" startPosition="53" endLine="298" endPosition="26">
       <varInfo nodeId="418270182880377856" varName="addActionGroup" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122901" fileName="BreakpointsBrowserDialog.java" startLine="331" startPosition="44" endLine="352" endPosition="9" />
-    <scopeInfo nodeId="418270182880377858" fileName="BreakpointsBrowserDialog.java" startLine="283" startPosition="0" endLine="306" endPosition="0" />
-    <scopeInfo nodeId="4474271214083122896" fileName="BreakpointsBrowserDialog.java" startLine="330" startPosition="41" endLine="353" endPosition="5" />
-    <scopeInfo nodeId="4474271214083122897" fileName="BreakpointsBrowserDialog.java" startLine="330" startPosition="41" endLine="353" endPosition="5">
+    <scopeInfo nodeId="4474271214083122901" fileName="BreakpointsBrowserDialog.java" startLine="325" startPosition="44" endLine="346" endPosition="9" />
+    <scopeInfo nodeId="418270182880377858" fileName="BreakpointsBrowserDialog.java" startLine="277" startPosition="0" endLine="300" endPosition="0" />
+    <scopeInfo nodeId="4474271214083122896" fileName="BreakpointsBrowserDialog.java" startLine="324" startPosition="41" endLine="347" endPosition="5" />
+    <scopeInfo nodeId="4474271214083122897" fileName="BreakpointsBrowserDialog.java" startLine="324" startPosition="41" endLine="347" endPosition="5">
       <varInfo nodeId="4474271214083122899" varName="myView" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122401" fileName="BreakpointsBrowserDialog.java" startLine="116" startPosition="35" endLine="140" endPosition="5">
-      <varInfo nodeId="4474271214083122464" varName="selectedBreakpoint" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083122893" fileName="BreakpointsBrowserDialog.java" startLine="330" startPosition="0" endLine="355" endPosition="0" />
-    <scopeInfo nodeId="4474271214083122398" fileName="BreakpointsBrowserDialog.java" startLine="116" startPosition="0" endLine="142" endPosition="0" />
-    <scopeInfo nodeId="4474271214083122246" fileName="BreakpointsBrowserDialog.java" startLine="75" startPosition="62" endLine="104" endPosition="23">
+    <scopeInfo nodeId="4474271214083122246" fileName="BreakpointsBrowserDialog.java" startLine="74" startPosition="62" endLine="98" endPosition="11">
       <varInfo nodeId="4474271214083122337" varName="actionToolbar" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122241" fileName="BreakpointsBrowserDialog.java" startLine="75" startPosition="0" endLine="106" endPosition="0">
+    <scopeInfo nodeId="4474271214083122401" fileName="BreakpointsBrowserDialog.java" startLine="110" startPosition="35" endLine="134" endPosition="5">
+      <varInfo nodeId="4474271214083122464" varName="selectedBreakpoint" />
+    </scopeInfo>
+    <scopeInfo nodeId="4474271214083122893" fileName="BreakpointsBrowserDialog.java" startLine="324" startPosition="0" endLine="349" endPosition="0" />
+    <scopeInfo nodeId="4474271214083122241" fileName="BreakpointsBrowserDialog.java" startLine="74" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="4474271214083122244" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122547" fileName="BreakpointsBrowserDialog.java" startLine="160" startPosition="39" endLine="280" endPosition="17">
+    <scopeInfo nodeId="4474271214083122398" fileName="BreakpointsBrowserDialog.java" startLine="110" startPosition="0" endLine="136" endPosition="0" />
+    <scopeInfo nodeId="4474271214083122547" fileName="BreakpointsBrowserDialog.java" startLine="154" startPosition="43" endLine="274" endPosition="17">
       <varInfo nodeId="4474271214083122549" varName="group" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083122544" fileName="BreakpointsBrowserDialog.java" startLine="160" startPosition="0" endLine="282" endPosition="0" />
-    <unitInfo nodeId="4474271214083122359" fileName="BreakpointsBrowserDialog.java" startLine="92" startPosition="26" endLine="97" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$2" />
-    <unitInfo nodeId="4474271214083122369" fileName="BreakpointsBrowserDialog.java" startLine="98" startPosition="25" endLine="103" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$3" />
-    <unitInfo nodeId="4474271214083122452" fileName="BreakpointsBrowserDialog.java" startLine="129" startPosition="46" endLine="134" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$4" />
-    <unitInfo nodeId="418270182880377913" fileName="BreakpointsBrowserDialog.java" startLine="295" startPosition="44" endLine="300" endPosition="9" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$12" />
-    <unitInfo nodeId="418270182880378272" fileName="BreakpointsBrowserDialog.java" startLine="322" startPosition="15" endLine="327" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$13" />
-    <unitInfo nodeId="4474271214083122237" fileName="BreakpointsBrowserDialog.java" startLine="67" startPosition="103" endLine="73" endPosition="3" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$1" />
-    <unitInfo nodeId="418270182880377866" fileName="BreakpointsBrowserDialog.java" startLine="284" startPosition="44" endLine="290" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$11" />
-    <unitInfo nodeId="4474271214083123029" fileName="BreakpointsBrowserDialog.java" startLine="365" startPosition="46" endLine="373" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$15" />
-    <unitInfo nodeId="4474271214083122704" fileName="BreakpointsBrowserDialog.java" startLine="168" startPosition="18" endLine="179" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$5" />
-    <unitInfo nodeId="4474271214083122973" fileName="BreakpointsBrowserDialog.java" startLine="340" startPosition="53" endLine="352" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$14" />
-    <unitInfo nodeId="4474271214083122827" fileName="BreakpointsBrowserDialog.java" startLine="265" startPosition="18" endLine="279" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$10" />
-    <unitInfo nodeId="4474271214083122807" fileName="BreakpointsBrowserDialog.java" startLine="249" startPosition="18" endLine="264" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$9" />
-    <unitInfo nodeId="4474271214083122726" fileName="BreakpointsBrowserDialog.java" startLine="180" startPosition="18" endLine="202" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$6" />
-    <unitInfo nodeId="4474271214083122753" fileName="BreakpointsBrowserDialog.java" startLine="203" startPosition="18" endLine="225" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$7" />
-    <unitInfo nodeId="4474271214083122780" fileName="BreakpointsBrowserDialog.java" startLine="226" startPosition="18" endLine="248" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$8" />
-    <unitInfo nodeId="4474271214083122178" fileName="BreakpointsBrowserDialog.java" startLine="54" startPosition="0" endLine="409" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog" />
+    <scopeInfo nodeId="4474271214083122544" fileName="BreakpointsBrowserDialog.java" startLine="154" startPosition="0" endLine="276" endPosition="0" />
+    <unitInfo nodeId="4474271214083122452" fileName="BreakpointsBrowserDialog.java" startLine="123" startPosition="46" endLine="128" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$2" />
+    <unitInfo nodeId="418270182880377913" fileName="BreakpointsBrowserDialog.java" startLine="289" startPosition="44" endLine="294" endPosition="9" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$10" />
+    <unitInfo nodeId="418270182880378272" fileName="BreakpointsBrowserDialog.java" startLine="316" startPosition="15" endLine="321" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$11" />
+    <unitInfo nodeId="3591638047281848373" fileName="BreakpointsBrowserDialog.java" startLine="373" startPosition="43" endLine="378" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$14" />
+    <unitInfo nodeId="4474271214083122237" fileName="BreakpointsBrowserDialog.java" startLine="66" startPosition="103" endLine="72" endPosition="3" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$1" />
+    <unitInfo nodeId="418270182880377866" fileName="BreakpointsBrowserDialog.java" startLine="278" startPosition="44" endLine="284" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$9" />
+    <unitInfo nodeId="4474271214083123029" fileName="BreakpointsBrowserDialog.java" startLine="359" startPosition="46" endLine="367" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$13" />
+    <unitInfo nodeId="4474271214083122704" fileName="BreakpointsBrowserDialog.java" startLine="162" startPosition="18" endLine="173" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$3" />
+    <unitInfo nodeId="4474271214083122973" fileName="BreakpointsBrowserDialog.java" startLine="334" startPosition="53" endLine="346" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$12" />
+    <unitInfo nodeId="4474271214083122827" fileName="BreakpointsBrowserDialog.java" startLine="259" startPosition="18" endLine="273" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$8" />
+    <unitInfo nodeId="4474271214083122807" fileName="BreakpointsBrowserDialog.java" startLine="243" startPosition="18" endLine="258" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$7" />
+    <unitInfo nodeId="4474271214083122726" fileName="BreakpointsBrowserDialog.java" startLine="174" startPosition="18" endLine="196" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$4" />
+    <unitInfo nodeId="4474271214083122753" fileName="BreakpointsBrowserDialog.java" startLine="197" startPosition="18" endLine="219" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$5" />
+    <unitInfo nodeId="4474271214083122780" fileName="BreakpointsBrowserDialog.java" startLine="220" startPosition="18" endLine="242" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog$6" />
+    <unitInfo nodeId="4474271214083122178" fileName="BreakpointsBrowserDialog.java" startLine="53" startPosition="0" endLine="413" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog" />
   </root>
   <root nodeId="4474271214083123569" modelId="r:e8d15a56-f89d-47fc-ac9f-8a35d3539ac3(jetbrains.mps.debugger.api.ui.breakpoints)">
     <nodeInfo nodeId="4474271214083123571" fileName="JPanelWithCheckbox.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCheckBox" />

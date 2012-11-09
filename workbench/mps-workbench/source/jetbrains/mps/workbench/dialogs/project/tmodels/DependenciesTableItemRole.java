@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2012 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,18 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.descriptor;
+package jetbrains.mps.workbench.dialogs.project.tmodels;
 
-import jetbrains.mps.refactoring.StructureModificationLog;
-import org.jetbrains.annotations.NotNull;
 
-public interface Refactorable {
-  @NotNull
-  StructureModificationLog getStructureModificationLog();
+public enum DependenciesTableItemRole {
+  DEPEND("depend on"),
+  EXTEND("extend"),
+  EXPORT("export"),
+  ACCESSORY("as accessory model"),
+  RUNTIME("as runtime solution"),
+  ENGAGE_ON_GEN("engage on generation"),
+  IMPORT("imported");
 
-  void saveStructureModificationLog(@NotNull StructureModificationLog log);
+  private final String myText;
+  DependenciesTableItemRole(String text) {
+    myText = text;
+  }
 
-  int getVersion();
-
-  void setVersion(int newVersion);
+  @Override
+  public String toString() {
+    return myText;
+  }
 }

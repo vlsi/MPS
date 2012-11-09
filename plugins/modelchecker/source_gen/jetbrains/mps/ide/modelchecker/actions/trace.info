@@ -448,60 +448,47 @@
     <unitInfo nodeId="1453248744423273146" fileName="BrokenReferencesFinder.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.BrokenReferencesFinder" />
   </root>
   <root nodeId="1453248744423273165" modelId="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)">
-    <nodeInfo nodeId="1453248744423273166" fileName="CheckBeforeGenerationDialog.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDialogMessage" />
-    <nodeInfo nodeId="1453248744423273271" fileName="CheckBeforeGenerationDialog.java" startLine="22" startPosition="81" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1453248744423273274" fileName="CheckBeforeGenerationDialog.java" startLine="23" startPosition="25" endLine="24" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423273283" fileName="CheckBeforeGenerationDialog.java" startLine="24" startPosition="163" endLine="25" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423273286" fileName="CheckBeforeGenerationDialog.java" startLine="25" startPosition="40" endLine="26" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423273289" fileName="CheckBeforeGenerationDialog.java" startLine="26" startPosition="47" endLine="27" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423273174" fileName="CheckBeforeGenerationDialog.java" startLine="31" startPosition="44" endLine="32" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1453248744423273181" fileName="CheckBeforeGenerationDialog.java" startLine="32" startPosition="50" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1453248744423273182" fileName="CheckBeforeGenerationDialog.java" startLine="33" startPosition="0" endLine="34" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1453248744423273202" fileName="CheckBeforeGenerationDialog.java" startLine="36" startPosition="50" endLine="37" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1453248744423273210" fileName="CheckBeforeGenerationDialog.java" startLine="37" startPosition="69" endLine="38" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423273216" fileName="CheckBeforeGenerationDialog.java" startLine="40" startPosition="7" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1453248744423273217" fileName="CheckBeforeGenerationDialog.java" startLine="41" startPosition="0" endLine="42" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423273225" fileName="CheckBeforeGenerationDialog.java" startLine="42" startPosition="64" endLine="43" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423273231" fileName="CheckBeforeGenerationDialog.java" startLine="43" startPosition="44" endLine="44" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1453248744423273237" fileName="CheckBeforeGenerationDialog.java" startLine="48" startPosition="38" endLine="49" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1453248744423273241" fileName="CheckBeforeGenerationDialog.java" startLine="49" startPosition="50" endLine="50" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423273247" fileName="CheckBeforeGenerationDialog.java" startLine="50" startPosition="56" endLine="51" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1453248744423273254" fileName="CheckBeforeGenerationDialog.java" startLine="55" startPosition="34" endLine="56" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1453248744423273258" fileName="CheckBeforeGenerationDialog.java" startLine="56" startPosition="42" endLine="57" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423273264" fileName="CheckBeforeGenerationDialog.java" startLine="57" startPosition="52" endLine="58" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1453248744423273196" fileName="CheckBeforeGenerationDialog.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="itemStateChanged#(Ljava/awt/event/ItemEvent;)V" />
-    <nodeInfo nodeId="1453248744423273188" fileName="CheckBeforeGenerationDialog.java" startLine="34" startPosition="79" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423273233" fileName="CheckBeforeGenerationDialog.java" startLine="47" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCancelAction#()Ljavax/swing/Action;" />
-    <nodeInfo nodeId="1453248744423273250" fileName="CheckBeforeGenerationDialog.java" startLine="54" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOKAction#()Ljavax/swing/Action;" />
-    <nodeInfo nodeId="1453248744423273267" fileName="CheckBeforeGenerationDialog.java" startLine="22" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckBeforeGenerationDialog#(Lcom/intellij/openapi/project/Project;II)V" />
-    <nodeInfo nodeId="1453248744423273169" fileName="CheckBeforeGenerationDialog.java" startLine="30" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
-    <scopeInfo nodeId="1453248744423273201" fileName="CheckBeforeGenerationDialog.java" startLine="36" startPosition="50" endLine="38" endPosition="85">
+    <nodeInfo nodeId="1453248744423273166" fileName="CheckBeforeGenerationDialog.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDialogMessage" />
+    <nodeInfo nodeId="1453248744423273271" fileName="CheckBeforeGenerationDialog.java" startLine="21" startPosition="81" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1453248744423273274" fileName="CheckBeforeGenerationDialog.java" startLine="22" startPosition="25" endLine="23" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423273283" fileName="CheckBeforeGenerationDialog.java" startLine="23" startPosition="163" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247039228432239168" fileName="CheckBeforeGenerationDialog.java" startLine="24" startPosition="40" endLine="25" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247039228432239178" fileName="CheckBeforeGenerationDialog.java" startLine="25" startPosition="37" endLine="26" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423273286" fileName="CheckBeforeGenerationDialog.java" startLine="26" startPosition="41" endLine="27" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247039228432238028" fileName="CheckBeforeGenerationDialog.java" startLine="27" startPosition="47" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1453248744423273289" fileName="CheckBeforeGenerationDialog.java" startLine="28" startPosition="0" endLine="29" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423273174" fileName="CheckBeforeGenerationDialog.java" startLine="33" startPosition="44" endLine="34" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1453248744423273181" fileName="CheckBeforeGenerationDialog.java" startLine="34" startPosition="50" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1453248744423273182" fileName="CheckBeforeGenerationDialog.java" startLine="35" startPosition="0" endLine="36" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1453248744423273202" fileName="CheckBeforeGenerationDialog.java" startLine="38" startPosition="50" endLine="39" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1453248744423273210" fileName="CheckBeforeGenerationDialog.java" startLine="39" startPosition="69" endLine="40" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423273216" fileName="CheckBeforeGenerationDialog.java" startLine="42" startPosition="7" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1453248744423273217" fileName="CheckBeforeGenerationDialog.java" startLine="43" startPosition="0" endLine="44" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423273225" fileName="CheckBeforeGenerationDialog.java" startLine="44" startPosition="64" endLine="45" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423273231" fileName="CheckBeforeGenerationDialog.java" startLine="45" startPosition="44" endLine="46" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1453248744423273196" fileName="CheckBeforeGenerationDialog.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="itemStateChanged#(Ljava/awt/event/ItemEvent;)V" />
+    <nodeInfo nodeId="1453248744423273188" fileName="CheckBeforeGenerationDialog.java" startLine="36" startPosition="79" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423273267" fileName="CheckBeforeGenerationDialog.java" startLine="21" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckBeforeGenerationDialog#(Lcom/intellij/openapi/project/Project;II)V" />
+    <nodeInfo nodeId="1453248744423273169" fileName="CheckBeforeGenerationDialog.java" startLine="32" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <scopeInfo nodeId="1453248744423273201" fileName="CheckBeforeGenerationDialog.java" startLine="38" startPosition="50" endLine="40" endPosition="85">
       <varInfo nodeId="1453248744423273203" varName="selected" />
     </scopeInfo>
-    <scopeInfo nodeId="1453248744423273236" fileName="CheckBeforeGenerationDialog.java" startLine="48" startPosition="38" endLine="51" endPosition="24">
-      <varInfo nodeId="1453248744423273238" varName="cancelAction" />
-    </scopeInfo>
-    <scopeInfo nodeId="1453248744423273253" fileName="CheckBeforeGenerationDialog.java" startLine="55" startPosition="34" endLine="58" endPosition="20">
-      <varInfo nodeId="1453248744423273255" varName="okAction" />
-    </scopeInfo>
-    <scopeInfo nodeId="1453248744423273196" fileName="CheckBeforeGenerationDialog.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="1453248744423273196" fileName="CheckBeforeGenerationDialog.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="1453248744423273199" varName="ev" />
     </scopeInfo>
-    <scopeInfo nodeId="1453248744423273270" fileName="CheckBeforeGenerationDialog.java" startLine="22" startPosition="81" endLine="27" endPosition="11" />
-    <scopeInfo nodeId="1453248744423273233" fileName="CheckBeforeGenerationDialog.java" startLine="47" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="1453248744423273250" fileName="CheckBeforeGenerationDialog.java" startLine="54" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="1453248744423273267" fileName="CheckBeforeGenerationDialog.java" startLine="22" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="1453248744423273270" fileName="CheckBeforeGenerationDialog.java" startLine="21" startPosition="81" endLine="29" endPosition="11" />
+    <scopeInfo nodeId="1453248744423273267" fileName="CheckBeforeGenerationDialog.java" startLine="21" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="1453248744423273293" varName="errors" />
       <varInfo nodeId="1453248744423273291" varName="project" />
       <varInfo nodeId="1453248744423273295" varName="warnings" />
     </scopeInfo>
-    <scopeInfo nodeId="1453248744423273173" fileName="CheckBeforeGenerationDialog.java" startLine="31" startPosition="44" endLine="44" endPosition="17">
+    <scopeInfo nodeId="1453248744423273173" fileName="CheckBeforeGenerationDialog.java" startLine="33" startPosition="44" endLine="46" endPosition="17">
       <varInfo nodeId="1453248744423273183" varName="checkBox" />
       <varInfo nodeId="1453248744423273175" varName="panel" />
     </scopeInfo>
-    <scopeInfo nodeId="1453248744423273169" fileName="CheckBeforeGenerationDialog.java" startLine="30" startPosition="0" endLine="46" endPosition="0" />
-    <unitInfo nodeId="1453248744423273194" fileName="CheckBeforeGenerationDialog.java" startLine="35" startPosition="33" endLine="40" endPosition="5" unitName="jetbrains.mps.ide.modelchecker.actions.CheckBeforeGenerationDialog$1" />
-    <unitInfo nodeId="1453248744423273165" fileName="CheckBeforeGenerationDialog.java" startLine="19" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.CheckBeforeGenerationDialog" />
+    <scopeInfo nodeId="1453248744423273169" fileName="CheckBeforeGenerationDialog.java" startLine="32" startPosition="0" endLine="48" endPosition="0" />
+    <unitInfo nodeId="1453248744423273194" fileName="CheckBeforeGenerationDialog.java" startLine="37" startPosition="33" endLine="42" endPosition="5" unitName="jetbrains.mps.ide.modelchecker.actions.CheckBeforeGenerationDialog$1" />
+    <unitInfo nodeId="1453248744423273165" fileName="CheckBeforeGenerationDialog.java" startLine="18" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.CheckBeforeGenerationDialog" />
   </root>
   <root nodeId="1453248744423273298" modelId="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)">
     <nodeInfo nodeId="1453248744423273299" fileName="IModelCheckerFix.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFix#()Z" />

@@ -76,6 +76,10 @@ public class StringChooserDialog extends RefactoringDialog {
     return myResultString;
   }
 
+  protected String getCurrentValue() {
+    return this.myTextField.getText();
+  }
+
   protected void doRefactoringAction() {
     myResultString = this.myTextField.getText();
     super.doRefactoringAction();

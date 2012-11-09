@@ -36,6 +36,7 @@ import com.intellij.openapi.vfs.VirtualFileEvent;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.psi.*;
 import com.intellij.util.messages.MessageBusConnection;
+import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.java.util.SolutionIds;
 import jetbrains.mps.idea.core.facet.MPSFacet;
@@ -46,7 +47,6 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.util.Computable;
@@ -189,7 +189,7 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
             updatePsiListener();
             BaseStubModelDescriptor model = files2Models.get(vfile.getParent());
             if (model!=null) { // just in case, although files2Models shouldn't contain value null
-              ((StubModelDataSource)model.getSource()).addPath(vfile.toString());
+              ((FolderSetDataSource)model.getSource()).addPath(vfile.toString(), null);
               files2Models.put(vfile, model);
             }
           }
@@ -274,8 +274,8 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
       for (SModelDescriptor desc: SModelRepository.getInstance().getModelDescriptors(solution)) {
         if (desc instanceof BaseStubModelDescriptor) {
           BaseStubModelDescriptor modelDesc = (BaseStubModelDescriptor)desc;
-          FileBasedModelDataSource modelDataSource = (FileBasedModelDataSource) modelDesc.getSource();
-          Collection<String> files = modelDataSource.getFilesToListen();
+          FolderSetDataSource modelDataSource = (FolderSetDataSource) modelDesc.getSource();
+          Collection<String> files = modelDataSource.getPaths();
 
           System.out.println("Model: " + desc.getLongName());
           for (String f: files) {

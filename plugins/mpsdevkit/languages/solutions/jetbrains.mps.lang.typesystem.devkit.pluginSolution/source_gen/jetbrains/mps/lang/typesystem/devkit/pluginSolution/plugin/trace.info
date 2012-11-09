@@ -118,7 +118,7 @@
     <nodeInfo nodeId="5181507218630412253" fileName="ShowInferredNodeType_Action.java" startLine="77" startPosition="102" endLine="78" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5181507218630412257" fileName="ShowInferredNodeType_Action.java" startLine="79" startPosition="7" endLine="80" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5181507218630412260" fileName="ShowInferredNodeType_Action.java" startLine="80" startPosition="30" endLine="81" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5181507218630412273" fileName="ShowInferredNodeType_Action.java" startLine="81" startPosition="173" endLine="82" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5181507218630412273" fileName="ShowInferredNodeType_Action.java" startLine="81" startPosition="173" endLine="82" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5181507218630412221" fileName="ShowInferredNodeType_Action.java" startLine="84" startPosition="33" endLine="85" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5181507218630412221" fileName="ShowInferredNodeType_Action.java" startLine="41" startPosition="27" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5181507218630412221" fileName="ShowInferredNodeType_Action.java" startLine="41" startPosition="27" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -172,7 +172,7 @@
       <varInfo nodeId="5181507218630412221" varName="_params" />
       <varInfo nodeId="5181507218630412221" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="5181507218630412221" fileName="ShowInferredNodeType_Action.java" startLine="69" startPosition="9" endLine="82" endPosition="26">
+    <scopeInfo nodeId="5181507218630412221" fileName="ShowInferredNodeType_Action.java" startLine="69" startPosition="9" endLine="82" endPosition="20">
       <varInfo nodeId="5181507218630412258" varName="dialog" />
       <varInfo nodeId="5181507218630412231" varName="type" />
     </scopeInfo>
@@ -214,7 +214,7 @@
     <nodeInfo nodeId="5181507218630412312" fileName="ShowExpectedType_Action.java" startLine="77" startPosition="111" endLine="78" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5181507218630412316" fileName="ShowExpectedType_Action.java" startLine="79" startPosition="7" endLine="80" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5181507218630412319" fileName="ShowExpectedType_Action.java" startLine="80" startPosition="30" endLine="81" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5181507218630412332" fileName="ShowExpectedType_Action.java" startLine="81" startPosition="173" endLine="82" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5181507218630412332" fileName="ShowExpectedType_Action.java" startLine="81" startPosition="173" endLine="82" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5181507218630412277" fileName="ShowExpectedType_Action.java" startLine="84" startPosition="33" endLine="85" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5181507218630412277" fileName="ShowExpectedType_Action.java" startLine="41" startPosition="27" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5181507218630412277" fileName="ShowExpectedType_Action.java" startLine="41" startPosition="27" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -268,7 +268,7 @@
       <varInfo nodeId="5181507218630412277" varName="_params" />
       <varInfo nodeId="5181507218630412277" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="5181507218630412277" fileName="ShowExpectedType_Action.java" startLine="69" startPosition="9" endLine="82" endPosition="26">
+    <scopeInfo nodeId="5181507218630412277" fileName="ShowExpectedType_Action.java" startLine="69" startPosition="9" endLine="82" endPosition="20">
       <varInfo nodeId="5181507218630412317" varName="dialog" />
       <varInfo nodeId="5181507218630412287" varName="type" />
     </scopeInfo>

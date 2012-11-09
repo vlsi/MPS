@@ -93,7 +93,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
 
   public void editBreakpointProperties(final ILocationBreakpoint breakpoint) {
     final BreakpointsBrowserDialog breakpointsBrowserDialog = new BreakpointsBrowserDialog(new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)));
-    breakpointsBrowserDialog.showDialog();
+    breakpointsBrowserDialog.show();
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       @Override
       public void run() {

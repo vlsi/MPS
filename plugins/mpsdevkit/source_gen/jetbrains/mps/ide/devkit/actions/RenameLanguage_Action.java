@@ -15,7 +15,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.refactoring.RenameLanguageDialog;
-import java.awt.Frame;
 import com.intellij.openapi.project.Project;
 
 public class RenameLanguage_Action extends BaseAction {
@@ -72,7 +71,7 @@ public class RenameLanguage_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new RenameLanguageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), ((Project) MapSequence.fromMap(_params).get("project")), ((Language) ((IModule) MapSequence.fromMap(_params).get("module")))).showDialog();
+      new RenameLanguageDialog(((Project) MapSequence.fromMap(_params).get("project")), ((Language) ((IModule) MapSequence.fromMap(_params).get("module")))).show();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RenameLanguage", t);

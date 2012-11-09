@@ -73,7 +73,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   @Override
   public void addRootNode(@NotNull SNode node) {
     // TODO remove cast
-    getSModel().addRoot((jetbrains.mps.smodel.SNode)node);
+    getSModel().addRoot((jetbrains.mps.smodel.SNode) node);
   }
 
   @Override
@@ -273,6 +273,11 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   @Override
   public boolean isTransient() {
     return false;
+  }
+
+  @Override
+  public void forceLoad() {
+    getSModel();
   }
 
   @Override

@@ -13,16 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.descriptor;
+package jetbrains.mps.workbench.dialogs.project.tmodels;
 
-import org.jetbrains.mps.openapi.model.SModel;
+import javax.swing.Icon;
 
-/**
- * evgeny, 11/6/12
- */
-public interface SModelEx extends SModel {
+public abstract class ConnectionsTableItem<T> {
+  protected T myItem;
 
-  boolean isGeneratable();
+  public ConnectionsTableItem(T value) {
+    myItem = value;
+  }
 
-  String getModelHash();
+  public T getItem() {
+    return myItem;
+  }
+
+  public abstract Icon getIcon();
+
+  public abstract String getPresentation();
+
+  public abstract boolean isValid();
 }

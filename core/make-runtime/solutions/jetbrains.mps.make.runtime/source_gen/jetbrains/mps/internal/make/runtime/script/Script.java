@@ -20,6 +20,9 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.make.facet.ITargetEx2;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
@@ -31,9 +34,6 @@ import jetbrains.mps.smodel.TimeOutRuntimeException;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.make.script.IPropertiesPool;
-import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
 import java.util.Set;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -47,6 +47,7 @@ import jetbrains.mps.make.resources.IResourceWithProperties;
 
 public class Script implements IScript {
   private static Logger LOG = Logger.getLogger(Script.class);
+  public static final ITarget.Name TIME_STATISTIC_RESULT_NAME = new ITarget.Name("TIME_STATISTIC");
 
   private ITarget.Name startingTarget;
   private ITarget.Name finalTarget;
@@ -242,6 +243,8 @@ __switch__:
   }
 
   private void executeTargets(final IScriptController ctl, final Iterable<ITarget> toExecute, final Iterable<? extends IResource> scriptInput, final Script.ParametersPool pool, final CompositeResult results, final ProgressMonitor monitor) {
+    final Map<ITarget.Name, Long> timeStatistic = MapSequence.fromMap(new HashMap<ITarget.Name, Long>());
+
     ctl.runJobWithMonitor(new _FunctionTypes._void_P1_E0<IJobMonitor>() {
       public void invoke(final IJobMonitor monit) {
         monitor.start("", Sequence.fromIterable(toExecute).foldLeft(0, new ILeftCombinator<ITarget, Integer>() {
@@ -290,6 +293,7 @@ with_targets:
                     LOG.debug("No input. Stopping");
                     monit.reportFeedback(new IFeedback.ERROR("Error executing target " + trg.getName() + " : no input. Stopping"));
                     results.addResult(trg.getName(), new IResult.FAILURE(null));
+                    results.addResult(TIME_STATISTIC_RESULT_NAME, new IResult.SUCCESS(Sequence.<IResource>singleton(new TimeStatisticResource(timeStatistic))));
                     return;
                   }
                 }
@@ -298,11 +302,20 @@ with_targets:
               ProgressMonitor subMonitor = monitor.subTask(workEstimate(trg));
               ctl.useMonitor(subMonitor);
               IJob job = trg.createJob();
-              IResult jr = job.execute(Sequence.fromIterable(input).where(new IWhereFilter<IResource>() {
-                public boolean accept(IResource it) {
-                  return !(monit.stopRequested());
-                }
-              }), monit, new Script.PropertiesAccessor(pool), subMonitor);
+              long startTime = System.currentTimeMillis();
+              IResult jr;
+              try {
+                jr = job.execute(Sequence.fromIterable(input).where(new IWhereFilter<IResource>() {
+                  public boolean accept(IResource it) {
+                    return !(monit.stopRequested());
+                  }
+                }), monit, new Script.PropertiesAccessor(pool), subMonitor);
+              } finally {
+                MapSequence.fromMap(timeStatistic).put(trg.getName(), ((MapSequence.fromMap(timeStatistic).containsKey(trg.getName()) ?
+                  MapSequence.fromMap(timeStatistic).get(trg.getName()) :
+                  0
+                )) + (System.currentTimeMillis() - startTime));
+              }
               if (!(trg.producesOutput())) {
                 // ignore the output 
                 jr = new Script.SubsOutputResult(jr, (trg.requiresInput() ?
@@ -330,11 +343,13 @@ with_targets:
               LOG.debug("Timeout executing target " + trg.getName(), to);
               monit.reportFeedback(new IFeedback.ERROR("Target execution aborted " + trg.getName(), to));
               results.addResult(trg.getName(), new IResult.FAILURE(null));
+              results.addResult(TIME_STATISTIC_RESULT_NAME, new IResult.SUCCESS(Sequence.<IResource>singleton(new TimeStatisticResource(timeStatistic))));
               return;
             } catch (RuntimeException rex) {
               LOG.debug("Exception executing target " + trg.getName(), rex);
               monit.reportFeedback(new IFeedback.ERROR("Exception executing target " + trg.getName(), rex));
               results.addResult(trg.getName(), new IResult.FAILURE(null));
+              results.addResult(TIME_STATISTIC_RESULT_NAME, new IResult.SUCCESS(Sequence.<IResource>singleton(new TimeStatisticResource(timeStatistic))));
               return;
             }
           }
@@ -343,6 +358,7 @@ with_targets:
         }
       }
     });
+    results.addResult(TIME_STATISTIC_RESULT_NAME, new IResult.SUCCESS(Sequence.<IResource>singleton(new TimeStatisticResource(timeStatistic))));
   }
 
   private void configureTargets(IScriptController ctl, final Iterable<ITarget> toExecute, final Script.ParametersPool pool, final CompositeResult results) {

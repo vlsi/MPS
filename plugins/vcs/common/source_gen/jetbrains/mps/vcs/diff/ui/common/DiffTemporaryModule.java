@@ -226,6 +226,10 @@ public class DiffTemporaryModule extends AbstractModule {
     protected SModel createModel() {
       throw new UnsupportedOperationException();
     }
+
+    public boolean needsReloading() {
+      return false;
+    }
   }
 
   private class DiffModuleContext extends ModuleContext {

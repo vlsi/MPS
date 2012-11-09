@@ -79,7 +79,7 @@ public class ShowExpectedType_Action extends BaseAction {
       }
       MyBaseNodeDialog dialog;
       dialog = new MyBaseNodeDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, null);
-      dialog.showDialog();
+      dialog.show();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowExpectedType", t);

@@ -18,6 +18,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -83,8 +84,8 @@ public class NewAccessoryModel_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Language language = ((Language) ((IModule) MapSequence.fromMap(_params).get("module")));
-      NewModelDialog d = new NewModelDialog(((IModule) MapSequence.fromMap(_params).get("module")), language.getModuleFqName() + ".", ((IOperationContext) MapSequence.fromMap(_params).get("context")), SModelStereotype.NONE, true);
-      d.showDialog();
+      NewModelDialog d = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), language.getModuleFqName() + ".", ((IOperationContext) MapSequence.fromMap(_params).get("context")), SModelStereotype.NONE, true);
+      d.show();
       final SModelDescriptor result = d.getResult();
 
       if (result == null) {

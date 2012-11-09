@@ -35,7 +35,7 @@ public class DependencyChooser implements Computable<List<Dependency>> {
         });
       }
     });
-    List<ModuleReference> moduleRefs = CommonChoosers.showDialogModuleCollectionChooser(myOwner.getMainComponent(), "module", Sequence.fromIterable(allModuleRefs.value).toListSequence(), null);
+    List<ModuleReference> moduleRefs = CommonChoosers.showDialogModuleCollectionChooser(null, myOwner.getMainComponent(), "module", Sequence.fromIterable(allModuleRefs.value).toListSequence(), null);
     if (moduleRefs == null) {
       return null;
     }

@@ -56,9 +56,9 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
     });
     // show dialog 
     final Wrappers._T<FindUsagesOptions> options = new Wrappers._T<FindUsagesOptions>(getOptionsComponent().getDefaultOptions().getDefaultSearchOptions(concept.value));
-    FindUsagesDialog dialog = new FindUsagesDialog(options.value, operationNode.value, myProject, frame);
+    FindUsagesDialog dialog = new FindUsagesDialog(options.value, operationNode.value, myProject);
     if (myWithDialog) {
-      dialog.showDialog();
+      dialog.show();
       if (dialog.isCancelled()) {
         return;
       }

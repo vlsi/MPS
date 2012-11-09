@@ -29,35 +29,29 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class CommonChoosers {
-  private static List<SModelReference> showDialogModelChooser_internal(final Component parent, final List<SModelReference> models,
-                                     @Nullable List<SModelReference> nonProjectModels,
-                                     boolean multiSelection) {
-    Window window = parent instanceof Window ? (Window) parent : SwingUtilities.getWindowAncestor(parent);
-    ModelChooserDialog dialog;
-    if (window instanceof Frame) {
-      dialog = new ModelChooserDialog((Frame) window, models, nonProjectModels, multiSelection);
-    } else {
-      dialog = new ModelChooserDialog((Dialog) window, models, nonProjectModels, multiSelection);
-    }
-    dialog.showDialog();
+  private static List<SModelReference> showDialogModelChooser_internal(Project project, final Component parent, final List<SModelReference> models,
+                                                                       @Nullable List<SModelReference> nonProjectModels,
+                                                                       boolean multiSelection) {
+    ModelChooserDialog dialog = new ModelChooserDialog(project, models, nonProjectModels, multiSelection);
+    dialog.show();
     return dialog.getResult();
   }
 
-  private static List<ModuleReference> showDialogModuleChooser_internal(final Component parent, String entityString, final List<? extends SModuleReference> modules,
-                                      @Nullable List<? extends SModuleReference> nonProjectModules,
-                                      boolean multiSelection) {
-    Window window = parent instanceof Window ? (Window) parent : SwingUtilities.getWindowAncestor(parent);
-    ModuleChooserDialog dialog;
-    if (window instanceof Frame) {
-      dialog = new ModuleChooserDialog((Frame) window, modules, nonProjectModules, entityString, multiSelection);
-    } else {
-      dialog = new ModuleChooserDialog((Dialog) window, modules, nonProjectModules, entityString, multiSelection);
+  private static List<ModuleReference> showDialogModuleChooser_internal(Project project, final Component parent, String entityString, final Collection<? extends SModuleReference> modules,
+                                                                        @Nullable Collection<? extends SModuleReference> nonProjectModules,
+                                                                        boolean multiSelection) {
+    ModuleChooserDialog dialog = new ModuleChooserDialog(project, modules, nonProjectModules, entityString, multiSelection);
+    dialog.show();
+    List<ModuleReference> result = new ArrayList<ModuleReference>();
+    for (SModuleReference reference : dialog.getResult()) {
+      result.add((ModuleReference)reference);
     }
-    dialog.showDialog();
-    return dialog.getResult();
+    return result;
   }
 
   @Deprecated
@@ -76,24 +70,24 @@ public class CommonChoosers {
     return dialog.getResultNode();
   }
 
-  public static List<SModelReference> showDialogModelCollectionChooser(Component parent, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels) {
-    return showDialogModelChooser_internal(parent, models, nonProjectModels, true);
+  public static List<SModelReference> showDialogModelCollectionChooser(Project project, Component parent, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels) {
+    return showDialogModelChooser_internal(project, parent, models, nonProjectModels, true);
   }
 
-  public static SModelReference showDialogModelChooser(Component parent, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels) {
-    List<SModelReference> result = showDialogModelChooser_internal(parent, models, nonProjectModels, false);
+  public static SModelReference showDialogModelChooser(Project project, Component parent, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels) {
+    List<SModelReference> result = showDialogModelChooser_internal(project, parent, models, nonProjectModels, false);
     if (result == null || result.isEmpty()) return null;
     return result.get(0);
   }
 
-  public static ModuleReference showDialogModuleChooser(Component parent, String entityString, List<? extends SModuleReference> modules, @Nullable List<? extends SModuleReference> nonProjectModules) {
-    List<ModuleReference> result = showDialogModuleChooser_internal(parent, entityString, modules, nonProjectModules, false);
+  public static ModuleReference showDialogModuleChooser(Project project, Component parent, String entityString, List<? extends SModuleReference> modules, @Nullable List<? extends SModuleReference> nonProjectModules) {
+    List<ModuleReference> result = showDialogModuleChooser_internal(project, parent, entityString, modules, nonProjectModules, false);
     if (result == null || result.isEmpty()) return null;
     return result.get(0);
   }
 
-  public static List<ModuleReference> showDialogModuleCollectionChooser(Component parent, String entityString, List<ModuleReference> modules, @Nullable List<ModuleReference> nonProjectModules) {
-    return showDialogModuleChooser_internal(parent, entityString, modules, nonProjectModules, true);
+  public static List<ModuleReference> showDialogModuleCollectionChooser(Project project, Component parent, String entityString, List<ModuleReference> modules, @Nullable List<ModuleReference> nonProjectModules) {
+    return showDialogModuleChooser_internal(project, parent, entityString, modules, nonProjectModules, true);
   }
 
   public static String showDialogStringChooser(final Component parent, String entityString, final List<String> values) {

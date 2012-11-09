@@ -28,6 +28,7 @@ import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.runtime.ProtectionDomainUtil;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
@@ -205,7 +206,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   }
 
   public int getVersion() {
-    return ((DefaultSModelDescriptor) getStructureModelDescriptor()).getVersion();
+    return ((RefactorableSModelDescriptor) getStructureModelDescriptor()).getVersion();
   }
 
   public Collection<Generator> getGenerators() {

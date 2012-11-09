@@ -34,7 +34,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.ide.project.ProjectHelper;
 
 public class AttachMappingLabel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -123,7 +122,7 @@ public class AttachMappingLabel_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final SNode node = ((SNode) MapSequence.fromMap(_params).get("nodeSelected"));
-      final IOperationContext operationContext = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext();
+      IOperationContext operationContext = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext();
       IModule module = operationContext.getModule();
       List<SNode> mappings;
       if (module instanceof Generator) {
@@ -181,8 +180,8 @@ __switch__:
       }).toListSequence();
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          AttachMappingLabelDialog dialog = new AttachMappingLabelDialog(node, existingLabels, ProjectHelper.toMainFrame(operationContext.getProject()), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
-          dialog.showDialog();
+          AttachMappingLabelDialog dialog = new AttachMappingLabelDialog(node, existingLabels, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+          dialog.show();
         }
       });
     } catch (Throwable t) {
