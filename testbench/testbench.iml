@@ -64,6 +64,7 @@
     <orderEntry type="module" module-name="resources_en" />
     <orderEntry type="module" module-name="mpsjava-platform" scope="RUNTIME" />
     <orderEntry type="module" module-name="mpsjava-workbench" scope="RUNTIME" />
+    <orderEntry type="module" module-name="persistence" scope="TEST" />
   </component>
 </module>
 
