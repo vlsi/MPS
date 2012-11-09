@@ -32,7 +32,7 @@ public class IntervalType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_o8o2di_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "interval");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "interval");
     editorCell.setCellId("Constant_o8o2di_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -40,7 +40,7 @@ public class IntervalType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_o8o2di_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_o8o2di_b0");
     {
       Style style = editorCell.getStyle();
@@ -52,7 +52,7 @@ public class IntervalType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_o8o2di_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_o8o2di_d0");
     {
       Style style = editorCell.getStyle();

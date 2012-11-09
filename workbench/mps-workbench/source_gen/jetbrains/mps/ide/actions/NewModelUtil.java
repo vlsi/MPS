@@ -32,6 +32,6 @@ public class NewModelUtil {
     } else {
       return;
     }
-    dialog.value.showDialog();
+    dialog.value.show();
   }
 }

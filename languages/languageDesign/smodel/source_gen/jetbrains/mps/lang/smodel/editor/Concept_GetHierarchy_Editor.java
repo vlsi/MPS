@@ -16,7 +16,7 @@ public class Concept_GetHierarchy_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qkpwwr_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "hierarchy");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "hierarchy");
     editorCell.setCellId("Constant_qkpwwr_a");
     {
       Style style = editorCell.getStyle();

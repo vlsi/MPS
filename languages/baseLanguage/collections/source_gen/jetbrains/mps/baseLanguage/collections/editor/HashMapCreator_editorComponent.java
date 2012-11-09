@@ -95,7 +95,7 @@ public class HashMapCreator_editorComponent extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_s4nv53_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_s4nv53_a1a");
     Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -103,7 +103,7 @@ public class HashMapCreator_editorComponent extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_s4nv53_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_s4nv53_c1a");
     {
       Style style = editorCell.getStyle();
@@ -114,7 +114,7 @@ public class HashMapCreator_editorComponent extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_s4nv53_e1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_s4nv53_e1a");
     Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     {
@@ -127,7 +127,7 @@ public class HashMapCreator_editorComponent extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_s4nv53_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_s4nv53_a3a");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -135,7 +135,7 @@ public class HashMapCreator_editorComponent extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_s4nv53_c3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_s4nv53_c3a");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

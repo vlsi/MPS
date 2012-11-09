@@ -8,16 +8,16 @@
   <root nodeId="2511103526757024637" modelId="r:d56331d6-5f8f-417d-8ab3-d7bc220d7936(jetbrains.mps.debugger.java.privateMembers.behavior)">
     <nodeInfo nodeId="7488520339326236144" fileName="PrivateFieldReferenceOperation_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7488520339326236175" fileName="PrivateFieldReferenceOperation_Behavior.java" startLine="17" startPosition="5" endLine="18" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2511103526757024637" fileName="PrivateFieldReferenceOperation_Behavior.java" startLine="10" startPosition="54" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2511103526757024637" fileName="PrivateFieldReferenceOperation_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="7488520339326236113" fileName="PrivateFieldReferenceOperation_Behavior.java" startLine="14" startPosition="78" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2511103526757024637" fileName="PrivateFieldReferenceOperation_Behavior.java" startLine="13" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2511103526757024637" fileName="PrivateFieldReferenceOperation_Behavior.java" startLine="14" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="2511103526757024639" fileName="PrivateFieldReferenceOperation_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="7488520339326236115" fileName="PrivateFieldReferenceOperation_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="189" />
-    <scopeInfo nodeId="2511103526757024637" fileName="PrivateFieldReferenceOperation_Behavior.java" startLine="10" startPosition="54" endLine="13" endPosition="0">
+    <scopeInfo nodeId="2511103526757024637" fileName="PrivateFieldReferenceOperation_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="2511103526757024637" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="7488520339326236078" fileName="PrivateFieldReferenceOperation_Behavior.java" startLine="14" startPosition="78" endLine="18" endPosition="113" />
-    <scopeInfo nodeId="2511103526757024637" fileName="PrivateFieldReferenceOperation_Behavior.java" startLine="13" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="2511103526757024637" fileName="PrivateFieldReferenceOperation_Behavior.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="2511103526757024637" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="2511103526757024637" fileName="PrivateFieldReferenceOperation_Behavior.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateFieldReferenceOperation_Behavior" />
@@ -27,20 +27,20 @@
     <nodeInfo nodeId="7488520339326239498" fileName="PrivateStaticFieldReference_Behavior.java" startLine="17" startPosition="5" endLine="18" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7488520339326239531" fileName="PrivateStaticFieldReference_Behavior.java" startLine="19" startPosition="77" endLine="20" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7488520339326239070" fileName="PrivateStaticFieldReference_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7488520339326239023" fileName="PrivateStaticFieldReference_Behavior.java" startLine="10" startPosition="51" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7488520339326239023" fileName="PrivateStaticFieldReference_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="7488520339326239059" fileName="PrivateStaticFieldReference_Behavior.java" startLine="14" startPosition="78" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7488520339326239535" fileName="PrivateStaticFieldReference_Behavior.java" startLine="18" startPosition="39" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7488520339326239023" fileName="PrivateStaticFieldReference_Behavior.java" startLine="13" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7488520339326239023" fileName="PrivateStaticFieldReference_Behavior.java" startLine="14" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="7488520339326239025" fileName="PrivateStaticFieldReference_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="7488520339326239060" fileName="PrivateStaticFieldReference_Behavior.java" startLine="15" startPosition="86" endLine="16" endPosition="186" />
     <scopeInfo nodeId="7488520339326239536" fileName="PrivateStaticFieldReference_Behavior.java" startLine="19" startPosition="77" endLine="20" endPosition="199" />
-    <scopeInfo nodeId="7488520339326239023" fileName="PrivateStaticFieldReference_Behavior.java" startLine="10" startPosition="51" endLine="13" endPosition="0">
+    <scopeInfo nodeId="7488520339326239023" fileName="PrivateStaticFieldReference_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="7488520339326239023" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="7488520339326239041" fileName="PrivateStaticFieldReference_Behavior.java" startLine="14" startPosition="78" endLine="22" endPosition="141">
       <varInfo nodeId="7488520339326239499" varName="classifierPresentation" />
     </scopeInfo>
-    <scopeInfo nodeId="7488520339326239023" fileName="PrivateStaticFieldReference_Behavior.java" startLine="13" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="7488520339326239023" fileName="PrivateStaticFieldReference_Behavior.java" startLine="14" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="7488520339326239023" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="7488520339326239023" fileName="PrivateStaticFieldReference_Behavior.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateStaticFieldReference_Behavior" />

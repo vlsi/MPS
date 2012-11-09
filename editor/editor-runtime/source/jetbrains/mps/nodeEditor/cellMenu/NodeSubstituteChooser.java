@@ -271,7 +271,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private void sortSmartActions(List<INodeSubstituteAction> matchingActions) {
-    Collections.sort(matchingActions, new NodeSubstituteActionsComparator(myContextCell.getSNode().getContainingRoot()));
+    Collections.sort(matchingActions, new NodeSubstituteActionsComparator(myContextCell.getSNode().getTopmostAncestor()));
   }
 
   private int getDescriptionLength(INodeSubstituteAction action, String pattern) {

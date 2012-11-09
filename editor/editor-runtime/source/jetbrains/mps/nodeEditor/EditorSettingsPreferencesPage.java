@@ -449,7 +449,7 @@ class EditorSettingsPreferencesPage {
   }
 
   private class EditorCell_Demo extends EditorCell_Constant {
-    public EditorCell_Demo(EditorContext editorContext, String text) {
+    public EditorCell_Demo(jetbrains.mps.openapi.editor.EditorContext editorContext, String text) {
       super(editorContext, null, text);
       this.setCaretPosition(3);
     }

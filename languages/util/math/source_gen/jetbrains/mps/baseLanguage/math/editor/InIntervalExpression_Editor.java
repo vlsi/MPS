@@ -34,7 +34,7 @@ public class InIntervalExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_34pshx_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "in");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
     editorCell.setCellId("Constant_34pshx_b0");
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new InIntervalExpression_Editor.ReplaceWith_BinaryOperation_cellMenu_a0b0()}));

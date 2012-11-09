@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="3990508698139426770" modelId="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)">
-    <nodeInfo nodeId="3990508698139426773" fileName="StreamAnswer.java" startLine="6" startPosition="45" endLine="7" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="3990508698139426773" fileName="StreamAnswer.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
     <nodeInfo nodeId="3990508698139426784" fileName="StreamAnswer.java" startLine="9" startPosition="49" endLine="10" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3990508698139426786" fileName="StreamAnswer.java" startLine="10" startPosition="17" endLine="11" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139426794" fileName="StreamAnswer.java" startLine="14" startPosition="28" endLine="15" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3990508698139426776" fileName="StreamAnswer.java" startLine="8" startPosition="0" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StreamAnswer#(CLjava/lang/String;)V" />
-    <nodeInfo nodeId="3990508698139426790" fileName="StreamAnswer.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3990508698139426790" fileName="StreamAnswer.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3990508698139426776" fileName="StreamAnswer.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StreamAnswer#(CLjava/lang/String;)V" />
     <scopeInfo nodeId="3990508698139426793" fileName="StreamAnswer.java" startLine="14" startPosition="28" endLine="15" endPosition="19" />
     <scopeInfo nodeId="3990508698139426783" fileName="StreamAnswer.java" startLine="9" startPosition="49" endLine="11" endPosition="20" />
-    <scopeInfo nodeId="3990508698139426776" fileName="StreamAnswer.java" startLine="8" startPosition="0" endLine="12" endPosition="3">
+    <scopeInfo nodeId="3990508698139426790" fileName="StreamAnswer.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="3990508698139426776" fileName="StreamAnswer.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="3990508698139426779" varName="token" />
       <varInfo nodeId="3990508698139426781" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139426790" fileName="StreamAnswer.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
     <unitInfo nodeId="3990508698139426770" fileName="StreamAnswer.java" startLine="6" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.nanoc.debug.answer.StreamAnswer" />
   </root>
   <root nodeId="3990508698139427086" modelId="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)">
-    <nodeInfo nodeId="3990508698139427089" fileName="RecordValue.java" startLine="8" startPosition="43" endLine="9" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMap" />
+    <nodeInfo nodeId="3990508698139427089" fileName="RecordValue.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMap" />
     <nodeInfo nodeId="3990508698139427109" fileName="RecordValue.java" startLine="14" startPosition="64" endLine="15" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139427121" fileName="RecordValue.java" startLine="18" startPosition="57" endLine="19" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3990508698139427132" fileName="RecordValue.java" startLine="22" startPosition="53" endLine="23" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -28,14 +28,14 @@
     <nodeInfo nodeId="3990508698139427182" fileName="RecordValue.java" startLine="34" startPosition="55" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3990508698139427172" fileName="RecordValue.java" startLine="36" startPosition="42" endLine="37" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3990508698139427184" fileName="RecordValue.java" startLine="39" startPosition="5" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3990508698139427097" fileName="RecordValue.java" startLine="10" startPosition="0" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RecordValue#()V" />
+    <nodeInfo nodeId="3990508698139427097" fileName="RecordValue.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RecordValue#()V" />
+    <nodeInfo nodeId="3990508698139427101" fileName="RecordValue.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="putProperty#(Ljava/lang/String;Ljetbrains/mps/nanoc/debug/answer/GDBValue;)V" />
+    <nodeInfo nodeId="3990508698139427115" fileName="RecordValue.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPropertyValue#(Ljava/lang/String;)Ljetbrains/mps/nanoc/debug/answer/GDBValue;" />
     <nodeInfo nodeId="3990508698139427139" fileName="RecordValue.java" startLine="23" startPosition="45" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3990508698139427101" fileName="RecordValue.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="putProperty#(Ljava/lang/String;Ljetbrains/mps/nanoc/debug/answer/GDBValue;)V" />
-    <nodeInfo nodeId="3990508698139427115" fileName="RecordValue.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPropertyValue#(Ljava/lang/String;)Ljetbrains/mps/nanoc/debug/answer/GDBValue;" />
     <nodeInfo nodeId="3990508698139427169" fileName="RecordValue.java" startLine="32" startPosition="30" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3990508698139427126" fileName="RecordValue.java" startLine="21" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStringValue#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3990508698139427126" fileName="RecordValue.java" startLine="22" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStringValue#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="3990508698139427164" fileName="RecordValue.java" startLine="31" startPosition="54" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3990508698139427153" fileName="RecordValue.java" startLine="29" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntegerValue#(Ljava/lang/String;)Ljava/lang/Integer;" />
+    <nodeInfo nodeId="3990508698139427153" fileName="RecordValue.java" startLine="30" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntegerValue#(Ljava/lang/String;)Ljava/lang/Integer;" />
     <scopeInfo nodeId="3990508698139427100" fileName="RecordValue.java" startLine="11" startPosition="24" endLine="11" endPosition="24" />
     <scopeInfo nodeId="3990508698139427108" fileName="RecordValue.java" startLine="14" startPosition="64" endLine="15" endPosition="35" />
     <scopeInfo nodeId="3990508698139427120" fileName="RecordValue.java" startLine="18" startPosition="57" endLine="19" endPosition="35" />
@@ -44,57 +44,57 @@
       <varInfo nodeId="3990508698139427174" varName="ex" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139427171" fileName="RecordValue.java" startLine="36" startPosition="42" endLine="37" endPosition="20" />
-    <scopeInfo nodeId="3990508698139427097" fileName="RecordValue.java" startLine="10" startPosition="0" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="3990508698139427097" fileName="RecordValue.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
     <scopeInfo nodeId="3990508698139427176" fileName="RecordValue.java" startLine="33" startPosition="11" endLine="35" endPosition="22">
       <varInfo nodeId="3990508698139427178" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139427101" fileName="RecordValue.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+    <scopeInfo nodeId="3990508698139427101" fileName="RecordValue.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="3990508698139427104" varName="propertyName" />
       <varInfo nodeId="3990508698139427106" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139427115" fileName="RecordValue.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+    <scopeInfo nodeId="3990508698139427115" fileName="RecordValue.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="3990508698139427118" varName="propertyName" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139427131" fileName="RecordValue.java" startLine="22" startPosition="53" endLine="27" endPosition="16">
       <varInfo nodeId="3990508698139427133" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139427168" fileName="RecordValue.java" startLine="32" startPosition="30" endLine="38" endPosition="7" />
-    <scopeInfo nodeId="3990508698139427126" fileName="RecordValue.java" startLine="21" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="3990508698139427126" fileName="RecordValue.java" startLine="22" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="3990508698139427129" varName="propertyName" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139427158" fileName="RecordValue.java" startLine="30" startPosition="55" endLine="40" endPosition="16">
       <varInfo nodeId="3990508698139427160" varName="stringValue" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139427153" fileName="RecordValue.java" startLine="29" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="3990508698139427153" fileName="RecordValue.java" startLine="30" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="3990508698139427156" varName="propertyName" />
     </scopeInfo>
     <unitInfo nodeId="3990508698139427086" fileName="RecordValue.java" startLine="8" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.nanoc.debug.answer.RecordValue" />
   </root>
   <root nodeId="3990508698139427186" modelId="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)">
-    <nodeInfo nodeId="3990508698139427188" fileName="GDBValue.java" startLine="6" startPosition="32" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GDBValue#()V" />
+    <nodeInfo nodeId="3990508698139427188" fileName="GDBValue.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GDBValue#()V" />
     <scopeInfo nodeId="3990508698139427191" fileName="GDBValue.java" startLine="7" startPosition="21" endLine="7" endPosition="21" />
-    <scopeInfo nodeId="3990508698139427188" fileName="GDBValue.java" startLine="6" startPosition="32" endLine="8" endPosition="3" />
+    <scopeInfo nodeId="3990508698139427188" fileName="GDBValue.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
     <unitInfo nodeId="3990508698139427186" fileName="GDBValue.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.nanoc.debug.answer.GDBValue" />
   </root>
   <root nodeId="3990508698139427452" modelId="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)">
-    <nodeInfo nodeId="3990508698139427454" fileName="GDBAnswer.java" startLine="6" startPosition="33" endLine="7" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTokenChar" />
+    <nodeInfo nodeId="3990508698139427454" fileName="GDBAnswer.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTokenChar" />
     <nodeInfo nodeId="3990508698139427463" fileName="GDBAnswer.java" startLine="9" startPosition="36" endLine="10" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139427471" fileName="GDBAnswer.java" startLine="13" startPosition="30" endLine="14" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3990508698139427457" fileName="GDBAnswer.java" startLine="8" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GDBAnswer#(C)V" />
-    <nodeInfo nodeId="3990508698139427467" fileName="GDBAnswer.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTokenChar#()C" />
+    <nodeInfo nodeId="3990508698139427457" fileName="GDBAnswer.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GDBAnswer#(C)V" />
+    <nodeInfo nodeId="3990508698139427467" fileName="GDBAnswer.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTokenChar#()C" />
     <scopeInfo nodeId="3990508698139427462" fileName="GDBAnswer.java" startLine="9" startPosition="36" endLine="10" endPosition="28" />
     <scopeInfo nodeId="3990508698139427470" fileName="GDBAnswer.java" startLine="13" startPosition="30" endLine="14" endPosition="23" />
-    <scopeInfo nodeId="3990508698139427457" fileName="GDBAnswer.java" startLine="8" startPosition="0" endLine="11" endPosition="3">
+    <scopeInfo nodeId="3990508698139427457" fileName="GDBAnswer.java" startLine="9" startPosition="0" endLine="12" endPosition="0">
       <varInfo nodeId="3990508698139427460" varName="tokenChar" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139427467" fileName="GDBAnswer.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="3990508698139427467" fileName="GDBAnswer.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
     <unitInfo nodeId="3990508698139427452" fileName="GDBAnswer.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.nanoc.debug.answer.GDBAnswer" />
   </root>
   <root nodeId="3990508698139427548" modelId="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)">
     <nodeInfo nodeId="3990508698139427561" fileName="ResultAnswer.java" startLine="7" startPosition="80" endLine="8" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3990508698139427551" fileName="ResultAnswer.java" startLine="6" startPosition="52" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ResultAnswer#(CLjava/lang/String;Ljetbrains/mps/nanoc/debug/answer/RecordValue;)V" />
+    <nodeInfo nodeId="3990508698139427551" fileName="ResultAnswer.java" startLine="7" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ResultAnswer#(CLjava/lang/String;Ljetbrains/mps/nanoc/debug/answer/RecordValue;)V" />
     <scopeInfo nodeId="3990508698139427560" fileName="ResultAnswer.java" startLine="7" startPosition="80" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="3990508698139427551" fileName="ResultAnswer.java" startLine="6" startPosition="52" endLine="9" endPosition="3">
+    <scopeInfo nodeId="3990508698139427551" fileName="ResultAnswer.java" startLine="7" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="3990508698139427556" varName="answerClass" />
       <varInfo nodeId="3990508698139427558" varName="results" />
       <varInfo nodeId="3990508698139427554" varName="tokenChar" />
@@ -102,11 +102,11 @@
     <unitInfo nodeId="3990508698139427548" fileName="ResultAnswer.java" startLine="6" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.nanoc.debug.answer.ResultAnswer" />
   </root>
   <root nodeId="3990508698139427565" modelId="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)">
-    <nodeInfo nodeId="3990508698139427567" fileName="GDBAnswerProducer.java" startLine="7" startPosition="32" endLine="8" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SAMPLE_STRING" />
-    <nodeInfo nodeId="3990508698139427571" fileName="GDBAnswerProducer.java" startLine="9" startPosition="0" endLine="10" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInput" />
-    <nodeInfo nodeId="3990508698139427574" fileName="GDBAnswerProducer.java" startLine="10" startPosition="25" endLine="11" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGDBAnswer" />
-    <nodeInfo nodeId="3990508698139427577" fileName="GDBAnswerProducer.java" startLine="11" startPosition="32" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHasError" />
-    <nodeInfo nodeId="3990508698139427581" fileName="GDBAnswerProducer.java" startLine="12" startPosition="37" endLine="13" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOffset" />
+    <nodeInfo nodeId="3990508698139427567" fileName="GDBAnswerProducer.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SAMPLE_STRING" />
+    <nodeInfo nodeId="3990508698139427571" fileName="GDBAnswerProducer.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInput" />
+    <nodeInfo nodeId="3990508698139427574" fileName="GDBAnswerProducer.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGDBAnswer" />
+    <nodeInfo nodeId="3990508698139427577" fileName="GDBAnswerProducer.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHasError" />
+    <nodeInfo nodeId="3990508698139427581" fileName="GDBAnswerProducer.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOffset" />
     <nodeInfo nodeId="3990508698139427591" fileName="GDBAnswerProducer.java" startLine="15" startPosition="42" endLine="16" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139427609" fileName="GDBAnswerProducer.java" startLine="17" startPosition="9" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139427598" fileName="GDBAnswerProducer.java" startLine="19" startPosition="27" endLine="20" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -241,15 +241,17 @@
     <nodeInfo nodeId="3990508698139427912" fileName="GDBAnswerProducer.java" startLine="114" startPosition="40" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3990508698139427965" fileName="GDBAnswerProducer.java" startLine="127" startPosition="12" endLine="130" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3990508698139428020" fileName="GDBAnswerProducer.java" startLine="150" startPosition="33" endLine="153" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3990508698139428029" fileName="GDBAnswerProducer.java" startLine="157" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentChar#()C" />
+    <nodeInfo nodeId="3990508698139428038" fileName="GDBAnswerProducer.java" startLine="161" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="error#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="3990508698139428214" fileName="GDBAnswerProducer.java" startLine="204" startPosition="14" endLine="207" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3990508698139428156" fileName="GDBAnswerProducer.java" startLine="222" startPosition="14" endLine="225" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3990508698139428304" fileName="GDBAnswerProducer.java" startLine="252" startPosition="12" endLine="255" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3990508698139428381" fileName="GDBAnswerProducer.java" startLine="270" startPosition="0" endLine="273" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGDBAnswer#()Ljetbrains/mps/nanoc/debug/answer/GDBAnswer;" />
+    <nodeInfo nodeId="3990508698139428387" fileName="GDBAnswerProducer.java" startLine="274" startPosition="0" endLine="277" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasError#()Z" />
     <nodeInfo nodeId="3990508698139427650" fileName="GDBAnswerProducer.java" startLine="29" startPosition="41" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3990508698139427711" fileName="GDBAnswerProducer.java" startLine="58" startPosition="43" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="3990508698139427740" fileName="GDBAnswerProducer.java" startLine="68" startPosition="22" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3990508698139427876" fileName="GDBAnswerProducer.java" startLine="103" startPosition="29" endLine="107" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3990508698139428029" fileName="GDBAnswerProducer.java" startLine="156" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentChar#()C" />
-    <nodeInfo nodeId="3990508698139428038" fileName="GDBAnswerProducer.java" startLine="160" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="error#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="3990508698139428052" fileName="GDBAnswerProducer.java" startLine="165" startPosition="36" endLine="169" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3990508698139428070" fileName="GDBAnswerProducer.java" startLine="171" startPosition="43" endLine="175" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="3990508698139428096" fileName="GDBAnswerProducer.java" startLine="180" startPosition="31" endLine="184" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -257,48 +259,46 @@
     <nodeInfo nodeId="3990508698139428259" fileName="GDBAnswerProducer.java" startLine="231" startPosition="36" endLine="235" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3990508698139428277" fileName="GDBAnswerProducer.java" startLine="237" startPosition="48" endLine="241" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3990508698139428352" fileName="GDBAnswerProducer.java" startLine="260" startPosition="46" endLine="264" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="3990508698139428381" fileName="GDBAnswerProducer.java" startLine="269" startPosition="0" endLine="273" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGDBAnswer#()Ljetbrains/mps/nanoc/debug/answer/GDBAnswer;" />
-    <nodeInfo nodeId="3990508698139428387" fileName="GDBAnswerProducer.java" startLine="273" startPosition="0" endLine="277" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasError#()Z" />
+    <nodeInfo nodeId="3990508698139428393" fileName="GDBAnswerProducer.java" startLine="278" startPosition="0" endLine="282" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
     <nodeInfo nodeId="3990508698139427669" fileName="GDBAnswerProducer.java" startLine="39" startPosition="25" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3990508698139427995" fileName="GDBAnswerProducer.java" startLine="141" startPosition="10" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3990508698139428393" fileName="GDBAnswerProducer.java" startLine="277" startPosition="0" endLine="282" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
     <nodeInfo nodeId="3990508698139427595" fileName="GDBAnswerProducer.java" startLine="16" startPosition="20" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="3990508698139427961" fileName="GDBAnswerProducer.java" startLine="124" startPosition="12" endLine="130" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3990508698139427665" fileName="GDBAnswerProducer.java" startLine="39" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readEOL#()V" />
     <nodeInfo nodeId="3990508698139427686" fileName="GDBAnswerProducer.java" startLine="47" startPosition="27" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3990508698139427665" fileName="GDBAnswerProducer.java" startLine="38" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readEOL#()V" />
+    <nodeInfo nodeId="3990508698139428012" fileName="GDBAnswerProducer.java" startLine="149" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueOrResult#()Ljava/lang/Object;" />
+    <nodeInfo nodeId="3990508698139427702" fileName="GDBAnswerProducer.java" startLine="57" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readToken#()Ljava/lang/Long;" />
     <nodeInfo nodeId="3990508698139427991" fileName="GDBAnswerProducer.java" startLine="138" startPosition="10" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3990508698139428012" fileName="GDBAnswerProducer.java" startLine="148" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueOrResult#()Ljava/lang/Object;" />
     <nodeInfo nodeId="3990508698139428210" fileName="GDBAnswerProducer.java" startLine="199" startPosition="14" endLine="207" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3990508698139428152" fileName="GDBAnswerProducer.java" startLine="217" startPosition="14" endLine="225" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3990508698139428300" fileName="GDBAnswerProducer.java" startLine="247" startPosition="12" endLine="255" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3990508698139427585" fileName="GDBAnswerProducer.java" startLine="14" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GDBAnswerProducer#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="3990508698139427702" fileName="GDBAnswerProducer.java" startLine="56" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readToken#()Ljava/lang/Long;" />
+    <nodeInfo nodeId="3990508698139427585" fileName="GDBAnswerProducer.java" startLine="15" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GDBAnswerProducer#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3990508698139427682" fileName="GDBAnswerProducer.java" startLine="47" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="read#()Ljetbrains/mps/nanoc/debug/answer/GDBAnswer;" />
     <nodeInfo nodeId="3990508698139427865" fileName="GDBAnswerProducer.java" startLine="101" startPosition="43" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="3990508698139427947" fileName="GDBAnswerProducer.java" startLine="121" startPosition="48" endLine="130" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3990508698139427623" fileName="GDBAnswerProducer.java" startLine="26" startPosition="14" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="3990508698139427682" fileName="GDBAnswerProducer.java" startLine="46" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="read#()Ljetbrains/mps/nanoc/debug/answer/GDBAnswer;" />
+    <nodeInfo nodeId="3990508698139428341" fileName="GDBAnswerProducer.java" startLine="259" startPosition="0" endLine="269" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readResult#()Ljetbrains/mps/util/Pair;" />
     <nodeInfo nodeId="3990508698139427779" fileName="GDBAnswerProducer.java" startLine="86" startPosition="10" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3990508698139427987" fileName="GDBAnswerProducer.java" startLine="135" startPosition="27" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3990508698139428341" fileName="GDBAnswerProducer.java" startLine="258" startPosition="0" endLine="269" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readResult#()Ljetbrains/mps/util/Pair;" />
     <nodeInfo nodeId="3990508698139428206" fileName="GDBAnswerProducer.java" startLine="195" startPosition="20" endLine="207" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3990508698139428148" fileName="GDBAnswerProducer.java" startLine="213" startPosition="20" endLine="225" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3990508698139428296" fileName="GDBAnswerProducer.java" startLine="243" startPosition="51" endLine="255" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3990508698139427613" fileName="GDBAnswerProducer.java" startLine="25" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3990508698139427856" fileName="GDBAnswerProducer.java" startLine="100" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readClass#()Ljava/lang/String;" />
     <nodeInfo nodeId="3990508698139427928" fileName="GDBAnswerProducer.java" startLine="118" startPosition="48" endLine="131" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="3990508698139427613" fileName="GDBAnswerProducer.java" startLine="24" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="3990508698139427856" fileName="GDBAnswerProducer.java" startLine="99" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readClass#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3990508698139427979" fileName="GDBAnswerProducer.java" startLine="133" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readValue#()Ljetbrains/mps/nanoc/debug/answer/GDBValue;" />
-    <nodeInfo nodeId="3990508698139428048" fileName="GDBAnswerProducer.java" startLine="164" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readString#()Ljetbrains/mps/nanoc/debug/answer/StringValue;" />
+    <nodeInfo nodeId="3990508698139427979" fileName="GDBAnswerProducer.java" startLine="134" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readValue#()Ljetbrains/mps/nanoc/debug/answer/GDBValue;" />
+    <nodeInfo nodeId="3990508698139428048" fileName="GDBAnswerProducer.java" startLine="165" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readString#()Ljetbrains/mps/nanoc/debug/answer/StringValue;" />
     <nodeInfo nodeId="3990508698139428203" fileName="GDBAnswerProducer.java" startLine="194" startPosition="69" endLine="209" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="3990508698139428145" fileName="GDBAnswerProducer.java" startLine="212" startPosition="40" endLine="227" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="3990508698139428287" fileName="GDBAnswerProducer.java" startLine="241" startPosition="5" endLine="256" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="3990508698139427767" fileName="GDBAnswerProducer.java" startLine="81" startPosition="10" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3990508698139428132" fileName="GDBAnswerProducer.java" startLine="210" startPosition="10" endLine="228" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3990508698139427908" fileName="GDBAnswerProducer.java" startLine="113" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readResultList#()Ljetbrains/mps/nanoc/debug/answer/RecordValue;" />
+    <nodeInfo nodeId="3990508698139427908" fileName="GDBAnswerProducer.java" startLine="114" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readResultList#()Ljetbrains/mps/nanoc/debug/answer/RecordValue;" />
     <nodeInfo nodeId="3990508698139427755" fileName="GDBAnswerProducer.java" startLine="73" startPosition="15" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3990508698139428255" fileName="GDBAnswerProducer.java" startLine="230" startPosition="0" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readRecord#()Ljetbrains/mps/nanoc/debug/answer/RecordValue;" />
-    <nodeInfo nodeId="3990508698139427728" fileName="GDBAnswerProducer.java" startLine="65" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readAnswer#()Ljetbrains/mps/nanoc/debug/answer/GDBAnswer;" />
+    <nodeInfo nodeId="3990508698139428255" fileName="GDBAnswerProducer.java" startLine="231" startPosition="0" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readRecord#()Ljetbrains/mps/nanoc/debug/answer/RecordValue;" />
+    <nodeInfo nodeId="3990508698139427728" fileName="GDBAnswerProducer.java" startLine="66" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readAnswer#()Ljetbrains/mps/nanoc/debug/answer/GDBAnswer;" />
     <nodeInfo nodeId="3990508698139428130" fileName="GDBAnswerProducer.java" startLine="191" startPosition="42" endLine="228" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3990508698139428092" fileName="GDBAnswerProducer.java" startLine="179" startPosition="0" endLine="230" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readList#()Ljetbrains/mps/nanoc/debug/answer/GDBValue;" />
+    <nodeInfo nodeId="3990508698139428092" fileName="GDBAnswerProducer.java" startLine="180" startPosition="0" endLine="230" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readList#()Ljetbrains/mps/nanoc/debug/answer/GDBValue;" />
     <scopeInfo nodeId="3990508698139427608" fileName="GDBAnswerProducer.java" startLine="17" startPosition="9" endLine="18" endPosition="27" />
     <scopeInfo nodeId="3990508698139427678" fileName="GDBAnswerProducer.java" startLine="40" startPosition="32" endLine="41" endPosition="21" />
     <scopeInfo nodeId="3990508698139427674" fileName="GDBAnswerProducer.java" startLine="42" startPosition="12" endLine="43" endPosition="19" />
@@ -345,21 +345,21 @@
     <scopeInfo nodeId="3990508698139427816" fileName="GDBAnswerProducer.java" startLine="82" startPosition="43" endLine="85" endPosition="52">
       <varInfo nodeId="3990508698139427818" varName="value" />
     </scopeInfo>
+    <scopeInfo nodeId="3990508698139428029" fileName="GDBAnswerProducer.java" startLine="157" startPosition="0" endLine="160" endPosition="0" />
+    <scopeInfo nodeId="3990508698139428038" fileName="GDBAnswerProducer.java" startLine="161" startPosition="0" endLine="164" endPosition="0">
+      <varInfo nodeId="3990508698139428041" varName="message" />
+    </scopeInfo>
     <scopeInfo nodeId="3990508698139428221" fileName="GDBAnswerProducer.java" startLine="200" startPosition="35" endLine="203" endPosition="30" />
     <scopeInfo nodeId="3990508698139428163" fileName="GDBAnswerProducer.java" startLine="218" startPosition="35" endLine="221" endPosition="27" />
     <scopeInfo nodeId="3990508698139428311" fileName="GDBAnswerProducer.java" startLine="248" startPosition="33" endLine="251" endPosition="27" />
-    <scopeInfo nodeId="3990508698139428029" fileName="GDBAnswerProducer.java" startLine="156" startPosition="0" endLine="160" endPosition="0" />
-    <scopeInfo nodeId="3990508698139428038" fileName="GDBAnswerProducer.java" startLine="160" startPosition="0" endLine="164" endPosition="0">
-      <varInfo nodeId="3990508698139428041" varName="message" />
+    <scopeInfo nodeId="3990508698139428381" fileName="GDBAnswerProducer.java" startLine="270" startPosition="0" endLine="273" endPosition="0" />
+    <scopeInfo nodeId="3990508698139428387" fileName="GDBAnswerProducer.java" startLine="274" startPosition="0" endLine="277" endPosition="0" />
+    <scopeInfo nodeId="3990508698139428393" fileName="GDBAnswerProducer.java" startLine="278" startPosition="0" endLine="282" endPosition="0">
+      <varInfo nodeId="3990508698139428396" varName="args" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139428381" fileName="GDBAnswerProducer.java" startLine="269" startPosition="0" endLine="273" endPosition="0" />
-    <scopeInfo nodeId="3990508698139428387" fileName="GDBAnswerProducer.java" startLine="273" startPosition="0" endLine="277" endPosition="0" />
     <scopeInfo nodeId="3990508698139427668" fileName="GDBAnswerProducer.java" startLine="39" startPosition="25" endLine="44" endPosition="5" />
     <scopeInfo nodeId="3990508698139428015" fileName="GDBAnswerProducer.java" startLine="149" startPosition="37" endLine="154" endPosition="17">
       <varInfo nodeId="3990508698139428017" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="3990508698139428393" fileName="GDBAnswerProducer.java" startLine="277" startPosition="0" endLine="282" endPosition="0">
-      <varInfo nodeId="3990508698139428396" varName="args" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139427705" fileName="GDBAnswerProducer.java" startLine="57" startPosition="28" endLine="63" endPosition="41">
       <varInfo nodeId="3990508698139427707" varName="sb" />
@@ -375,25 +375,26 @@
       <varInfo nodeId="3990508698139427796" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139427590" fileName="GDBAnswerProducer.java" startLine="15" startPosition="42" endLine="22" endPosition="5" />
+    <scopeInfo nodeId="3990508698139427665" fileName="GDBAnswerProducer.java" startLine="39" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="3990508698139427685" fileName="GDBAnswerProducer.java" startLine="47" startPosition="27" endLine="54" endPosition="5" />
     <scopeInfo nodeId="3990508698139427871" fileName="GDBAnswerProducer.java" startLine="102" startPosition="41" endLine="109" endPosition="17">
       <varInfo nodeId="3990508698139427873" varName="c" />
     </scopeInfo>
+    <scopeInfo nodeId="3990508698139428012" fileName="GDBAnswerProducer.java" startLine="149" startPosition="0" endLine="156" endPosition="0" />
     <scopeInfo nodeId="3990508698139427635" fileName="GDBAnswerProducer.java" startLine="27" startPosition="65" endLine="35" endPosition="17">
       <varInfo nodeId="3990508698139427637" varName="c1" />
       <varInfo nodeId="3990508698139427644" varName="c2" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139427665" fileName="GDBAnswerProducer.java" startLine="38" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="3990508698139428012" fileName="GDBAnswerProducer.java" startLine="148" startPosition="0" endLine="156" endPosition="0" />
+    <scopeInfo nodeId="3990508698139427702" fileName="GDBAnswerProducer.java" startLine="57" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="3990508698139428346" fileName="GDBAnswerProducer.java" startLine="259" startPosition="47" endLine="267" endPosition="63">
       <varInfo nodeId="3990508698139428369" varName="value" />
       <varInfo nodeId="3990508698139428348" varName="varSb" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139427585" fileName="GDBAnswerProducer.java" startLine="14" startPosition="0" endLine="23" endPosition="3">
+    <scopeInfo nodeId="3990508698139427585" fileName="GDBAnswerProducer.java" startLine="15" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="3990508698139427588" varName="input" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139427702" fileName="GDBAnswerProducer.java" startLine="56" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="3990508698139427682" fileName="GDBAnswerProducer.java" startLine="46" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="3990508698139427682" fileName="GDBAnswerProducer.java" startLine="47" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="3990508698139428341" fileName="GDBAnswerProducer.java" startLine="259" startPosition="0" endLine="269" endPosition="0" />
     <scopeInfo nodeId="3990508698139427618" fileName="GDBAnswerProducer.java" startLine="25" startPosition="39" endLine="36" endPosition="5">
       <varInfo nodeId="3990508698139427620" varName="i" />
     </scopeInfo>
@@ -403,24 +404,23 @@
     <scopeInfo nodeId="3990508698139427930" fileName="GDBAnswerProducer.java" startLine="119" startPosition="18" endLine="130" endPosition="7">
       <varInfo nodeId="3990508698139427932" varName="pair" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139428341" fileName="GDBAnswerProducer.java" startLine="258" startPosition="0" endLine="269" endPosition="0" />
     <scopeInfo nodeId="3990508698139427982" fileName="GDBAnswerProducer.java" startLine="134" startPosition="32" endLine="146" endPosition="5">
       <varInfo nodeId="3990508698139427984" varName="c" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139428051" fileName="GDBAnswerProducer.java" startLine="165" startPosition="36" endLine="177" endPosition="42">
       <varInfo nodeId="3990508698139428066" varName="sb" />
     </scopeInfo>
+    <scopeInfo nodeId="3990508698139427613" fileName="GDBAnswerProducer.java" startLine="25" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="3990508698139427616" varName="pattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139427856" fileName="GDBAnswerProducer.java" startLine="100" startPosition="0" endLine="113" endPosition="0" />
     <scopeInfo nodeId="3990508698139428205" fileName="GDBAnswerProducer.java" startLine="195" startPosition="20" endLine="208" endPosition="30" />
     <scopeInfo nodeId="3990508698139428147" fileName="GDBAnswerProducer.java" startLine="213" startPosition="20" endLine="226" endPosition="28" />
     <scopeInfo nodeId="3990508698139428289" fileName="GDBAnswerProducer.java" startLine="242" startPosition="18" endLine="255" endPosition="7">
       <varInfo nodeId="3990508698139428291" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139427613" fileName="GDBAnswerProducer.java" startLine="24" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="3990508698139427616" varName="pattern" />
-    </scopeInfo>
-    <scopeInfo nodeId="3990508698139427856" fileName="GDBAnswerProducer.java" startLine="99" startPosition="0" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="3990508698139427979" fileName="GDBAnswerProducer.java" startLine="133" startPosition="0" endLine="148" endPosition="0" />
-    <scopeInfo nodeId="3990508698139428048" fileName="GDBAnswerProducer.java" startLine="164" startPosition="0" endLine="179" endPosition="0" />
+    <scopeInfo nodeId="3990508698139427979" fileName="GDBAnswerProducer.java" startLine="134" startPosition="0" endLine="148" endPosition="0" />
+    <scopeInfo nodeId="3990508698139428048" fileName="GDBAnswerProducer.java" startLine="165" startPosition="0" endLine="179" endPosition="0" />
     <scopeInfo nodeId="3990508698139427911" fileName="GDBAnswerProducer.java" startLine="114" startPosition="40" endLine="131" endPosition="5">
       <varInfo nodeId="3990508698139427924" varName="recordValue" />
     </scopeInfo>
@@ -432,27 +432,27 @@
       <varInfo nodeId="3990508698139428135" varName="listValue" />
       <varInfo nodeId="3990508698139428140" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139427908" fileName="GDBAnswerProducer.java" startLine="113" startPosition="0" endLine="133" endPosition="0" />
+    <scopeInfo nodeId="3990508698139427908" fileName="GDBAnswerProducer.java" startLine="114" startPosition="0" endLine="133" endPosition="0" />
     <scopeInfo nodeId="3990508698139428258" fileName="GDBAnswerProducer.java" startLine="231" startPosition="36" endLine="256" endPosition="5">
       <varInfo nodeId="3990508698139428273" varName="recordValue" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139428255" fileName="GDBAnswerProducer.java" startLine="230" startPosition="0" endLine="258" endPosition="0" />
+    <scopeInfo nodeId="3990508698139428255" fileName="GDBAnswerProducer.java" startLine="231" startPosition="0" endLine="258" endPosition="0" />
     <scopeInfo nodeId="3990508698139427731" fileName="GDBAnswerProducer.java" startLine="66" startPosition="34" endLine="97" endPosition="5">
       <varInfo nodeId="3990508698139427733" varName="c" />
       <varInfo nodeId="3990508698139427737" varName="token" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139427728" fileName="GDBAnswerProducer.java" startLine="65" startPosition="0" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="3990508698139427728" fileName="GDBAnswerProducer.java" startLine="66" startPosition="0" endLine="99" endPosition="0" />
     <scopeInfo nodeId="3990508698139428095" fileName="GDBAnswerProducer.java" startLine="180" startPosition="31" endLine="228" endPosition="5">
       <varInfo nodeId="3990508698139428121" varName="first" />
       <varInfo nodeId="3990508698139428125" varName="isMap" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139428092" fileName="GDBAnswerProducer.java" startLine="179" startPosition="0" endLine="230" endPosition="0" />
+    <scopeInfo nodeId="3990508698139428092" fileName="GDBAnswerProducer.java" startLine="180" startPosition="0" endLine="230" endPosition="0" />
     <unitInfo nodeId="3990508698139427565" fileName="GDBAnswerProducer.java" startLine="7" startPosition="0" endLine="283" endPosition="0" unitName="jetbrains.mps.nanoc.debug.answer.GDBAnswerProducer" />
   </root>
   <root nodeId="3990508698139428838" modelId="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)">
-    <nodeInfo nodeId="3990508698139428841" fileName="StructuralAnswer.java" startLine="6" startPosition="58" endLine="7" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAnswerClass" />
-    <nodeInfo nodeId="3990508698139428844" fileName="StructuralAnswer.java" startLine="7" startPosition="33" endLine="8" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResults" />
-    <nodeInfo nodeId="3990508698139428847" fileName="StructuralAnswer.java" startLine="8" startPosition="34" endLine="9" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDigitalToken" />
+    <nodeInfo nodeId="3990508698139428841" fileName="StructuralAnswer.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAnswerClass" />
+    <nodeInfo nodeId="3990508698139428844" fileName="StructuralAnswer.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResults" />
+    <nodeInfo nodeId="3990508698139428847" fileName="StructuralAnswer.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDigitalToken" />
     <nodeInfo nodeId="3990508698139428860" fileName="StructuralAnswer.java" startLine="11" startPosition="84" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3990508698139428862" fileName="StructuralAnswer.java" startLine="12" startPosition="21" endLine="13" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139428866" fileName="StructuralAnswer.java" startLine="13" startPosition="32" endLine="14" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -460,23 +460,23 @@
     <nodeInfo nodeId="3990508698139428880" fileName="StructuralAnswer.java" startLine="21" startPosition="35" endLine="22" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3990508698139428886" fileName="StructuralAnswer.java" startLine="25" startPosition="33" endLine="26" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3990508698139428894" fileName="StructuralAnswer.java" startLine="29" startPosition="50" endLine="30" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139428870" fileName="StructuralAnswer.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAnswerClass#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3990508698139428876" fileName="StructuralAnswer.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResults#()Ljetbrains/mps/nanoc/debug/answer/RecordValue;" />
-    <nodeInfo nodeId="3990508698139428882" fileName="StructuralAnswer.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDigitalToken#()Ljava/lang/Long;" />
-    <nodeInfo nodeId="3990508698139428888" fileName="StructuralAnswer.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setDigitalToken#(Ljava/lang/Long;)V" />
-    <nodeInfo nodeId="3990508698139428850" fileName="StructuralAnswer.java" startLine="10" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StructuralAnswer#(CLjava/lang/String;Ljetbrains/mps/nanoc/debug/answer/RecordValue;)V" />
+    <nodeInfo nodeId="3990508698139428870" fileName="StructuralAnswer.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAnswerClass#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3990508698139428876" fileName="StructuralAnswer.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResults#()Ljetbrains/mps/nanoc/debug/answer/RecordValue;" />
+    <nodeInfo nodeId="3990508698139428882" fileName="StructuralAnswer.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDigitalToken#()Ljava/lang/Long;" />
+    <nodeInfo nodeId="3990508698139428888" fileName="StructuralAnswer.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setDigitalToken#(Ljava/lang/Long;)V" />
+    <nodeInfo nodeId="3990508698139428850" fileName="StructuralAnswer.java" startLine="11" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StructuralAnswer#(CLjava/lang/String;Ljetbrains/mps/nanoc/debug/answer/RecordValue;)V" />
     <scopeInfo nodeId="3990508698139428873" fileName="StructuralAnswer.java" startLine="17" startPosition="34" endLine="18" endPosition="25" />
     <scopeInfo nodeId="3990508698139428879" fileName="StructuralAnswer.java" startLine="21" startPosition="35" endLine="22" endPosition="21" />
     <scopeInfo nodeId="3990508698139428885" fileName="StructuralAnswer.java" startLine="25" startPosition="33" endLine="26" endPosition="26" />
     <scopeInfo nodeId="3990508698139428893" fileName="StructuralAnswer.java" startLine="29" startPosition="50" endLine="30" endPosition="34" />
     <scopeInfo nodeId="3990508698139428859" fileName="StructuralAnswer.java" startLine="11" startPosition="84" endLine="14" endPosition="24" />
-    <scopeInfo nodeId="3990508698139428870" fileName="StructuralAnswer.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="3990508698139428876" fileName="StructuralAnswer.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="3990508698139428882" fileName="StructuralAnswer.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="3990508698139428888" fileName="StructuralAnswer.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="3990508698139428870" fileName="StructuralAnswer.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="3990508698139428876" fileName="StructuralAnswer.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="3990508698139428882" fileName="StructuralAnswer.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="3990508698139428888" fileName="StructuralAnswer.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="3990508698139428891" varName="digitalToken" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139428850" fileName="StructuralAnswer.java" startLine="10" startPosition="0" endLine="15" endPosition="3">
+    <scopeInfo nodeId="3990508698139428850" fileName="StructuralAnswer.java" startLine="11" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="3990508698139428855" varName="answerClass" />
       <varInfo nodeId="3990508698139428857" varName="results" />
       <varInfo nodeId="3990508698139428853" varName="tokenChar" />
@@ -484,92 +484,92 @@
     <unitInfo nodeId="3990508698139428838" fileName="StructuralAnswer.java" startLine="6" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.nanoc.debug.answer.StructuralAnswer" />
   </root>
   <root nodeId="3990508698139428898" modelId="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)">
-    <nodeInfo nodeId="3990508698139428901" fileName="AsyncAnswer.java" startLine="6" startPosition="51" endLine="7" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TOKEN_EXEC" />
-    <nodeInfo nodeId="3990508698139428905" fileName="AsyncAnswer.java" startLine="7" startPosition="44" endLine="8" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TOKEN_NOTIFY" />
-    <nodeInfo nodeId="3990508698139428909" fileName="AsyncAnswer.java" startLine="8" startPosition="46" endLine="9" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TOKEN_STATUS" />
-    <nodeInfo nodeId="3990508698139428913" fileName="AsyncAnswer.java" startLine="9" startPosition="46" endLine="10" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CLS_STOPPED" />
+    <nodeInfo nodeId="3990508698139428901" fileName="AsyncAnswer.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TOKEN_EXEC" />
+    <nodeInfo nodeId="3990508698139428905" fileName="AsyncAnswer.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TOKEN_NOTIFY" />
+    <nodeInfo nodeId="3990508698139428909" fileName="AsyncAnswer.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TOKEN_STATUS" />
+    <nodeInfo nodeId="3990508698139428913" fileName="AsyncAnswer.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CLS_STOPPED" />
     <nodeInfo nodeId="3990508698139428927" fileName="AsyncAnswer.java" startLine="12" startPosition="82" endLine="13" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3990508698139428935" fileName="AsyncAnswer.java" startLine="16" startPosition="27" endLine="17" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3990508698139428943" fileName="AsyncAnswer.java" startLine="20" startPosition="29" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3990508698139428951" fileName="AsyncAnswer.java" startLine="24" startPosition="29" endLine="25" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3990508698139428959" fileName="AsyncAnswer.java" startLine="28" startPosition="30" endLine="29" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3990508698139428917" fileName="AsyncAnswer.java" startLine="11" startPosition="0" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AsyncAnswer#(CLjava/lang/String;Ljetbrains/mps/nanoc/debug/answer/RecordValue;)V" />
-    <nodeInfo nodeId="3990508698139428931" fileName="AsyncAnswer.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isExec#()Z" />
-    <nodeInfo nodeId="3990508698139428939" fileName="AsyncAnswer.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isNotify#()Z" />
-    <nodeInfo nodeId="3990508698139428947" fileName="AsyncAnswer.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStatus#()Z" />
-    <nodeInfo nodeId="3990508698139428955" fileName="AsyncAnswer.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStopped#()Z" />
+    <nodeInfo nodeId="3990508698139428917" fileName="AsyncAnswer.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AsyncAnswer#(CLjava/lang/String;Ljetbrains/mps/nanoc/debug/answer/RecordValue;)V" />
+    <nodeInfo nodeId="3990508698139428931" fileName="AsyncAnswer.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isExec#()Z" />
+    <nodeInfo nodeId="3990508698139428939" fileName="AsyncAnswer.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isNotify#()Z" />
+    <nodeInfo nodeId="3990508698139428947" fileName="AsyncAnswer.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStatus#()Z" />
+    <nodeInfo nodeId="3990508698139428955" fileName="AsyncAnswer.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStopped#()Z" />
     <scopeInfo nodeId="3990508698139428926" fileName="AsyncAnswer.java" startLine="12" startPosition="82" endLine="13" endPosition="46" />
     <scopeInfo nodeId="3990508698139428934" fileName="AsyncAnswer.java" startLine="16" startPosition="27" endLine="17" endPosition="37" />
     <scopeInfo nodeId="3990508698139428942" fileName="AsyncAnswer.java" startLine="20" startPosition="29" endLine="21" endPosition="39" />
     <scopeInfo nodeId="3990508698139428950" fileName="AsyncAnswer.java" startLine="24" startPosition="29" endLine="25" endPosition="39" />
     <scopeInfo nodeId="3990508698139428958" fileName="AsyncAnswer.java" startLine="28" startPosition="30" endLine="29" endPosition="45" />
-    <scopeInfo nodeId="3990508698139428917" fileName="AsyncAnswer.java" startLine="11" startPosition="0" endLine="14" endPosition="3">
+    <scopeInfo nodeId="3990508698139428917" fileName="AsyncAnswer.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="3990508698139428922" varName="asyncClass" />
       <varInfo nodeId="3990508698139428924" varName="recordValue" />
       <varInfo nodeId="3990508698139428920" varName="tokenChar" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139428931" fileName="AsyncAnswer.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="3990508698139428939" fileName="AsyncAnswer.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="3990508698139428947" fileName="AsyncAnswer.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="3990508698139428955" fileName="AsyncAnswer.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="3990508698139428931" fileName="AsyncAnswer.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="3990508698139428939" fileName="AsyncAnswer.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="3990508698139428947" fileName="AsyncAnswer.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="3990508698139428955" fileName="AsyncAnswer.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
     <unitInfo nodeId="3990508698139428898" fileName="AsyncAnswer.java" startLine="6" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.nanoc.debug.answer.AsyncAnswer" />
   </root>
   <root nodeId="3990508698139429835" modelId="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)">
-    <nodeInfo nodeId="3990508698139429838" fileName="ListValue.java" startLine="8" startPosition="41" endLine="9" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValues" />
+    <nodeInfo nodeId="3990508698139429838" fileName="ListValue.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValues" />
     <nodeInfo nodeId="3990508698139429855" fileName="ListValue.java" startLine="14" startPosition="35" endLine="15" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139429865" fileName="ListValue.java" startLine="18" startPosition="37" endLine="19" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3990508698139429845" fileName="ListValue.java" startLine="10" startPosition="0" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ListValue#()V" />
-    <nodeInfo nodeId="3990508698139429849" fileName="ListValue.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="add#(Ljetbrains/mps/nanoc/debug/answer/GDBValue;)V" />
-    <nodeInfo nodeId="3990508698139429860" fileName="ListValue.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValues#()Ljava/util/List;" />
+    <nodeInfo nodeId="3990508698139429845" fileName="ListValue.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ListValue#()V" />
+    <nodeInfo nodeId="3990508698139429849" fileName="ListValue.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="add#(Ljetbrains/mps/nanoc/debug/answer/GDBValue;)V" />
+    <nodeInfo nodeId="3990508698139429860" fileName="ListValue.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValues#()Ljava/util/List;" />
     <scopeInfo nodeId="3990508698139429848" fileName="ListValue.java" startLine="11" startPosition="22" endLine="11" endPosition="22" />
     <scopeInfo nodeId="3990508698139429854" fileName="ListValue.java" startLine="14" startPosition="35" endLine="15" endPosition="24" />
     <scopeInfo nodeId="3990508698139429864" fileName="ListValue.java" startLine="18" startPosition="37" endLine="19" endPosition="45" />
-    <scopeInfo nodeId="3990508698139429845" fileName="ListValue.java" startLine="10" startPosition="0" endLine="12" endPosition="3" />
-    <scopeInfo nodeId="3990508698139429849" fileName="ListValue.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+    <scopeInfo nodeId="3990508698139429845" fileName="ListValue.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
+    <scopeInfo nodeId="3990508698139429849" fileName="ListValue.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="3990508698139429852" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139429860" fileName="ListValue.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="3990508698139429860" fileName="ListValue.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
     <unitInfo nodeId="3990508698139429835" fileName="ListValue.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.nanoc.debug.answer.ListValue" />
   </root>
   <root nodeId="3990508698139430286" modelId="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)">
-    <nodeInfo nodeId="3990508698139430289" fileName="ListMapValue.java" startLine="9" startPosition="44" endLine="10" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myList" />
+    <nodeInfo nodeId="3990508698139430289" fileName="ListMapValue.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myList" />
     <nodeInfo nodeId="3990508698139430312" fileName="ListMapValue.java" startLine="15" startPosition="55" endLine="16" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139430327" fileName="ListMapValue.java" startLine="19" startPosition="37" endLine="20" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3990508698139430341" fileName="ListMapValue.java" startLine="21" startPosition="49" endLine="22" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139430348" fileName="ListMapValue.java" startLine="23" startPosition="5" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3990508698139430300" fileName="ListMapValue.java" startLine="11" startPosition="0" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ListMapValue#()V" />
+    <nodeInfo nodeId="3990508698139430300" fileName="ListMapValue.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ListMapValue#()V" />
+    <nodeInfo nodeId="3990508698139430304" fileName="ListMapValue.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addProperty#(Ljava/lang/String;Ljetbrains/mps/nanoc/debug/answer/GDBValue;)V" />
     <nodeInfo nodeId="3990508698139430334" fileName="ListMapValue.java" startLine="20" startPosition="54" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3990508698139430304" fileName="ListMapValue.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addProperty#(Ljava/lang/String;Ljetbrains/mps/nanoc/debug/answer/GDBValue;)V" />
-    <nodeInfo nodeId="3990508698139430322" fileName="ListMapValue.java" startLine="18" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValues#()Ljava/util/List;" />
+    <nodeInfo nodeId="3990508698139430322" fileName="ListMapValue.java" startLine="19" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValues#()Ljava/util/List;" />
     <scopeInfo nodeId="3990508698139430303" fileName="ListMapValue.java" startLine="12" startPosition="25" endLine="12" endPosition="25" />
     <scopeInfo nodeId="3990508698139430311" fileName="ListMapValue.java" startLine="15" startPosition="55" endLine="16" endPosition="55" />
     <scopeInfo nodeId="3990508698139430340" fileName="ListMapValue.java" startLine="21" startPosition="49" endLine="22" endPosition="27" />
-    <scopeInfo nodeId="3990508698139430300" fileName="ListMapValue.java" startLine="11" startPosition="0" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="3990508698139430334" fileName="ListMapValue.java" startLine="20" startPosition="54" endLine="23" endPosition="5">
-      <varInfo nodeId="3990508698139430336" varName="entry" />
-    </scopeInfo>
-    <scopeInfo nodeId="3990508698139430304" fileName="ListMapValue.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+    <scopeInfo nodeId="3990508698139430300" fileName="ListMapValue.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="3990508698139430304" fileName="ListMapValue.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="3990508698139430307" varName="key" />
       <varInfo nodeId="3990508698139430309" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139430334" fileName="ListMapValue.java" startLine="20" startPosition="54" endLine="23" endPosition="5">
+      <varInfo nodeId="3990508698139430336" varName="entry" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139430326" fileName="ListMapValue.java" startLine="19" startPosition="37" endLine="24" endPosition="18">
       <varInfo nodeId="3990508698139430328" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139430322" fileName="ListMapValue.java" startLine="18" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="3990508698139430322" fileName="ListMapValue.java" startLine="19" startPosition="0" endLine="26" endPosition="0" />
     <unitInfo nodeId="3990508698139430286" fileName="ListMapValue.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.nanoc.debug.answer.ListMapValue" />
   </root>
   <root nodeId="3990508698139430361" modelId="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)">
-    <nodeInfo nodeId="3990508698139430364" fileName="StringValue.java" startLine="6" startPosition="43" endLine="7" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="3990508698139430364" fileName="StringValue.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
     <nodeInfo nodeId="3990508698139430373" fileName="StringValue.java" startLine="9" startPosition="34" endLine="10" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139430381" fileName="StringValue.java" startLine="13" startPosition="29" endLine="14" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3990508698139430367" fileName="StringValue.java" startLine="8" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StringValue#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="3990508698139430377" fileName="StringValue.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3990508698139430367" fileName="StringValue.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StringValue#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3990508698139430377" fileName="StringValue.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getString#()Ljava/lang/String;" />
     <scopeInfo nodeId="3990508698139430372" fileName="StringValue.java" startLine="9" startPosition="34" endLine="10" endPosition="18" />
     <scopeInfo nodeId="3990508698139430380" fileName="StringValue.java" startLine="13" startPosition="29" endLine="14" endPosition="19" />
-    <scopeInfo nodeId="3990508698139430367" fileName="StringValue.java" startLine="8" startPosition="0" endLine="11" endPosition="3">
+    <scopeInfo nodeId="3990508698139430367" fileName="StringValue.java" startLine="9" startPosition="0" endLine="12" endPosition="0">
       <varInfo nodeId="3990508698139430370" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139430377" fileName="StringValue.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="3990508698139430377" fileName="StringValue.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
     <unitInfo nodeId="3990508698139430361" fileName="StringValue.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.nanoc.debug.answer.StringValue" />
   </root>
 </debugInfo>

@@ -40,7 +40,7 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ow7a4w_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<node");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<node");
     editorCell.setCellId("Constant_ow7a4w_a0");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     Annotation_Actions.setCellActions(editorCell, node, editorContext);
@@ -49,7 +49,7 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ow7a4w_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_ow7a4w_d0");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     {
@@ -118,7 +118,7 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -126,7 +126,7 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_ow7a4w_a2a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "...");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "...");
       editorCell.setCellId("Constant_ow7a4w_a2a");
       BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
       editorCell.setDefaultText("");

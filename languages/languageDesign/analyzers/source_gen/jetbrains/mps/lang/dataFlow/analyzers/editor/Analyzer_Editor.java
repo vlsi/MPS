@@ -59,28 +59,28 @@ public class Analyzer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_590xoz_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "analyzer");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "analyzer");
     editorCell.setCellId("Constant_590xoz_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_590xoz_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "analysis direction:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "analysis direction:");
     editorCell.setCellId("Constant_590xoz_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_590xoz_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "lattice element type:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "lattice element type:");
     editorCell.setCellId("Constant_590xoz_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_590xoz_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_590xoz_g0");
     {
       Style style = editorCell.getStyle();
@@ -92,7 +92,7 @@ public class Analyzer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_590xoz_j0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_590xoz_j0");
     {
       Style style = editorCell.getStyle();
@@ -104,7 +104,7 @@ public class Analyzer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_590xoz_m0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_590xoz_m0");
     {
       Style style = editorCell.getStyle();
@@ -116,7 +116,7 @@ public class Analyzer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_590xoz_p0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_590xoz_p0");
     {
       Style style = editorCell.getStyle();
@@ -127,7 +127,7 @@ public class Analyzer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_590xoz_q0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "instructions:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "instructions:");
     editorCell.setCellId("Constant_590xoz_q0");
     {
       Style style = editorCell.getStyle();
@@ -138,7 +138,7 @@ public class Analyzer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_590xoz_s0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_590xoz_s0");
     {
       Style style = editorCell.getStyle();

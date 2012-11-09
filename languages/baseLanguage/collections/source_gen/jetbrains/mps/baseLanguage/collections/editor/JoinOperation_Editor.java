@@ -78,7 +78,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9t56qv_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_9t56qv_a1a");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -86,7 +86,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9t56qv_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_9t56qv_c1a");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -94,7 +94,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9t56qv_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "delimeter:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "delimeter:");
     editorCell.setCellId("Constant_9t56qv_a0");
     editorCell.setDefaultText("");
     return editorCell;

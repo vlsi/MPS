@@ -27,7 +27,7 @@ public class BarConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4gywwb_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "BAR");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "BAR");
     editorCell.setCellId("Constant_4gywwb_a0");
     editorCell.setDefaultText("");
     return editorCell;

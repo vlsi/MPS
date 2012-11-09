@@ -60,6 +60,13 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
     }
 
     final Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
+    for (SNode tvd : ListSequence.fromList(SLinkOperations.getTargets(cdecl, "typeVariableDeclaration", true))) {
+      if (!(MapSequence.fromMap(subs).containsKey(tvd))) {
+        final SNode T_typevar_4690171080787098805 = typeCheckingContext.createNewRuntimeTypesVariable();
+        MapSequence.fromMap(subs).put(tvd, typeCheckingContext.getRepresentative(T_typevar_4690171080787098805));
+      }
+    }
+
     // TODO: this is to avoid collecting generics from explicitly substituted types 
     List<SNode> typeParam = ListSequence.fromList(SLinkOperations.getTargets(creator, "typeParameter", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode tp) {
@@ -73,7 +80,7 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
         return tmp;
       }
     }).toListSequence();
-    SNode newType = new typeof_ClassCreator_InferenceRule.QuotationClass_4w0o2k_a0a21a0().createNode(classifier, typeParam, typeCheckingContext);
+    SNode newType = new typeof_ClassCreator_InferenceRule.QuotationClass_4w0o2k_a0a41a0().createNode(classifier, typeParam, typeCheckingContext);
     BehaviorReflection.invokeVirtual(Void.class, newType, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
 
     List<SNode> argl = SLinkOperations.getTargets(creator, "actualArgument", true);
@@ -162,8 +169,8 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
     }
   }
 
-  public static class QuotationClass_4w0o2k_a0a21a0 {
-    public QuotationClass_4w0o2k_a0a21a0() {
+  public static class QuotationClass_4w0o2k_a0a41a0 {
+    public QuotationClass_4w0o2k_a0a41a0() {
     }
 
     public SNode createNode(Object parameter_4, Object parameter_5, final TypeCheckingContext typeCheckingContext) {

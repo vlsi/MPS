@@ -9,11 +9,13 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.properties.StandardComponents;
 import jetbrains.mps.workbench.dialogs.project.BaseBindedDialog;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.awt.Dimension;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
-import jetbrains.mps.ide.dialogs.BaseDialog;
+import javax.swing.Action;
+import com.intellij.openapi.ui.DialogWrapper;
+import java.awt.event.ActionEvent;
 
 public final class ProjectPropertiesDialog extends BaseStretchingBindedDialog {
   private Project myProject;
@@ -21,10 +23,7 @@ public final class ProjectPropertiesDialog extends BaseStretchingBindedDialog {
   private ProjectPrefsExtraPanel[] myExtraPanels;
 
   public ProjectPropertiesDialog(final Project project) {
-    super(project.getName() + " Properties", new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
-    myProject = project;
-    collectProjectProperties();
-    initUI();
+    this(project, null, null);
   }
 
   public ProjectPropertiesDialog(final Project project, ProjectProperties properties, ProjectPrefsExtraPanel[] extraPanels) {
@@ -32,6 +31,9 @@ public final class ProjectPropertiesDialog extends BaseStretchingBindedDialog {
     myProject = project;
     myProperties = properties;
     myExtraPanels = extraPanels;
+    if (myProperties == null && myExtraPanels == null) {
+      collectProjectProperties();
+    }
     initUI();
   }
 
@@ -41,6 +43,7 @@ public final class ProjectPropertiesDialog extends BaseStretchingBindedDialog {
     for (ProjectPrefsExtraPanel extraPanel : Sequence.fromIterable(Sequence.fromArray(myExtraPanels))) {
       addComponent(extraPanel.getComponent(), BaseBindedDialog.ConstraintsType.LIST);
     }
+    getWindow().setMinimumSize(new Dimension(500, 700));
   }
 
   private void collectProjectProperties() {
@@ -62,33 +65,12 @@ public final class ProjectPropertiesDialog extends BaseStretchingBindedDialog {
     return true;
   }
 
-  public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensionsSettings.DialogDimensions(200, 200, 500, 700);
-  }
-
-  public void bindData() {
-    super.bind();
-  }
-
-  public void unbindData() {
-    super.unbind();
-  }
-
-  @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
-  public void buttonOK() {
-    if (!(saveChanges())) {
-      return;
-    }
-    dispose();
-  }
-
-  @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')
-  public void buttonCancel() {
-    dispose();
-  }
-
-  @BaseDialog.Button(position = 2, name = "Apply", mnemonic = 'A')
-  public void buttonApply() {
-    saveChanges();
+  @Override
+  protected Action[] createActions() {
+    return new Action[]{getOKAction(), getCancelAction(), new DialogWrapper.DialogWrapperAction("Apply") {
+      protected void doAction(ActionEvent p0) {
+        saveChanges();
+      }
+    }};
   }
 }

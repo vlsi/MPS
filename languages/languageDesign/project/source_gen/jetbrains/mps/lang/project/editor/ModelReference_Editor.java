@@ -84,7 +84,7 @@ public class ModelReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_i85no5_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "@");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
     editorCell.setCellId("Constant_i85no5_a1a");
     {
       Style style = editorCell.getStyle();
@@ -96,14 +96,14 @@ public class ModelReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_i85no5_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Model reference:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Model reference:");
     editorCell.setCellId("Constant_i85no5_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_i85no5_a1a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "uuid");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uuid");
     editorCell.setCellId("Constant_i85no5_a1a_0");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -111,7 +111,7 @@ public class ModelReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_i85no5_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_i85no5_b1a");
     {
       Style style = editorCell.getStyle();
@@ -122,7 +122,7 @@ public class ModelReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_i85no5_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "stereotype");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "stereotype");
     editorCell.setCellId("Constant_i85no5_a2a");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -130,7 +130,7 @@ public class ModelReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_i85no5_b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_i85no5_b2a");
     editorCell.setDefaultText("");
     return editorCell;

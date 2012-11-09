@@ -57,7 +57,7 @@ public class TypesystemIntention_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_il97sk_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_il97sk_b0a");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -65,7 +65,7 @@ public class TypesystemIntention_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_il97sk_d0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_il97sk_d0a");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -73,7 +73,7 @@ public class TypesystemIntention_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_il97sk_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "apply immediately:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "apply immediately:");
     editorCell.setCellId("Constant_il97sk_b0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -194,7 +194,7 @@ public class TypesystemIntention_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);

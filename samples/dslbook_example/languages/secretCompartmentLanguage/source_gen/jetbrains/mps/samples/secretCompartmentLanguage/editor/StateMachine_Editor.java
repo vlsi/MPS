@@ -81,28 +81,28 @@ public class StateMachine_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qpt50r_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "State Machine");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "State Machine");
     editorCell.setCellId("Constant_qpt50r_b0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_qpt50r_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_qpt50r_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_qpt50r_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Events");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Events");
     editorCell.setCellId("Constant_qpt50r_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_qpt50r_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_qpt50r_a3a");
     {
       Style style = editorCell.getStyle();
@@ -113,21 +113,21 @@ public class StateMachine_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qpt50r_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_qpt50r_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_qpt50r_a5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Start state:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Start state:");
     editorCell.setCellId("Constant_qpt50r_a5a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_qpt50r_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_qpt50r_g0");
     editorCell.setDefaultText("");
     return editorCell;

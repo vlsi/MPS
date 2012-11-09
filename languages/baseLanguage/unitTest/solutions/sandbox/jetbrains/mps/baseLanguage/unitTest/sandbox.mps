@@ -98,9 +98,7 @@
             </node>
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertFalse" typeId="tpe3.1171983834376" id="3669442855016276722">
-            <node role="condition" roleId="tpe3.1171983854940" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3669442855016276724">
-              <property name="value" nameId="tpee.1068580123138" value="false" />
-            </node>
+            <node role="condition" roleId="tpe3.1171983854940" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3669442855016276724" />
           </node>
         </node>
       </node>

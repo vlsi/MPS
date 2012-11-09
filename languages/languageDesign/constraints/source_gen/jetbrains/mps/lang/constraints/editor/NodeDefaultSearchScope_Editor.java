@@ -38,7 +38,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3o8vz3_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "scope");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "scope");
     editorCell.setCellId("Constant_3o8vz3_a0");
     {
       Style style = editorCell.getStyle();
@@ -50,7 +50,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3o8vz3_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_3o8vz3_b0");
     {
       Style style = editorCell.getStyle();
@@ -63,7 +63,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3o8vz3_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "validator");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "validator");
     editorCell.setCellId("Constant_3o8vz3_d0");
     {
       Style style = editorCell.getStyle();
@@ -75,7 +75,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3o8vz3_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_3o8vz3_e0");
     {
       Style style = editorCell.getStyle();
@@ -88,7 +88,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3o8vz3_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "presentation");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "presentation");
     editorCell.setCellId("Constant_3o8vz3_g0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -96,7 +96,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3o8vz3_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_3o8vz3_h0");
     {
       Style style = editorCell.getStyle();

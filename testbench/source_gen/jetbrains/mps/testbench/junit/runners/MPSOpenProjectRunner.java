@@ -108,12 +108,12 @@ public class MPSOpenProjectRunner extends Runner {
 
   @Retention(RetentionPolicy.RUNTIME)
   @Target(value = {ElementType.TYPE})
-public static   @interface MPSProject {
-    /**
+public static   @interface MPSProject {    /**
      * 
      * 
      * @return path to MPS project
      */
+
     String value();
 }
 }

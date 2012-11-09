@@ -56,7 +56,7 @@ public class BuildSource_JavaLibrary_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kr3uwk_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "java library");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "java library");
     editorCell.setCellId("Constant_kr3uwk_a0");
     buildStyles_StyleSheet.getProjectPartKeyword(editorCell).apply(editorCell);
     {
@@ -69,7 +69,7 @@ public class BuildSource_JavaLibrary_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kr3uwk_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_kr3uwk_d0");
     editorCell.setDefaultText("");
     return editorCell;

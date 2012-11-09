@@ -40,7 +40,7 @@ public class TextCommentPart_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -57,7 +57,7 @@ public class TextCommentPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_z1r74j_a1a(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_z1r74j_a1a(SNode node, EditorContext editorContext) {
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isToDo_7236590470026152831", new Object[]{})) {
       return Color.BLUE;
     } else {

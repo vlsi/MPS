@@ -128,7 +128,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_b42orx_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "compact");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "compact");
     editorCell.setCellId("Constant_b42orx_a0");
     delete_CompactKW.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -136,28 +136,28 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_b42orx_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "rule");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rule");
     editorCell.setCellId("Constant_b42orx_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_b42orx_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "for tag");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for tag");
     editorCell.setCellId("Constant_b42orx_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_b42orx_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "->");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_b42orx_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_b42orx_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_b42orx_h0");
     {
       Style style = editorCell.getStyle();
@@ -168,7 +168,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_b42orx_j0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_b42orx_j0");
     {
       Style style = editorCell.getStyle();
@@ -180,7 +180,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_b42orx_l0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_b42orx_l0");
     {
       Style style = editorCell.getStyle();
@@ -192,7 +192,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_b42orx_n0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_b42orx_n0");
     {
       Style style = editorCell.getStyle();
@@ -204,7 +204,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_b42orx_p0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_b42orx_p0");
     {
       Style style = editorCell.getStyle();
@@ -216,21 +216,21 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_b42orx_r0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_b42orx_r0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_b42orx_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "tag:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "tag:");
     editorCell.setCellId("Constant_b42orx_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_b42orx_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "compact form:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "compact form:");
     editorCell.setCellId("Constant_b42orx_a1a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -507,7 +507,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), " ");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), " ");
       editorCell.setSelectable(false);
       {
         Style style = editorCell.getStyle();
@@ -519,7 +519,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_b42orx_a01a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<no attributes>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no attributes>");
       editorCell.setCellId("Constant_b42orx_a01a");
       {
         Style style = editorCell.getStyle();
@@ -572,7 +572,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), " ");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), " ");
       editorCell.setSelectable(false);
       {
         Style style = editorCell.getStyle();
@@ -584,7 +584,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_b42orx_a21a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<no children>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no children>");
       editorCell.setCellId("Constant_b42orx_a21a");
       {
         Style style = editorCell.getStyle();

@@ -70,6 +70,19 @@ public class ProjectModels {
       return false;
     }
 
+    @Override
+    public void updateDiskTimestamp() {
+    }
+
+    @Override
+    public boolean needsReloading() {
+      return false;
+    }
+
+    @Override
+    public void reloadFromDisk() {
+    }
+
     public IFile getModelFile() {
       return null;
     }

@@ -33,21 +33,21 @@ public class PluginDependency_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_at6inr_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "depends on");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "depends on");
     editorCell.setCellId("Constant_at6inr_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_at6inr_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "optional=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "optional=");
     editorCell.setCellId("Constant_at6inr_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_at6inr_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "config=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "config=");
     editorCell.setCellId("Constant_at6inr_e0");
     editorCell.setDefaultText("");
     return editorCell;

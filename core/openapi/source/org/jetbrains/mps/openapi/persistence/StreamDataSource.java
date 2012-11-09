@@ -26,6 +26,4 @@ public interface StreamDataSource extends DataSource {
   InputStream openInputStream() throws IOException;
 
   OutputStream openOutputStream() throws IOException;
-
-  void delete() throws IOException;
 }

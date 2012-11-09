@@ -43,7 +43,7 @@ public class ExtensionPointType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_i3f4o0_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_i3f4o0_b0");
     BaseLanguageStyle_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     {
@@ -55,7 +55,7 @@ public class ExtensionPointType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_i3f4o0_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_i3f4o0_d0");
     BaseLanguageStyle_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     {

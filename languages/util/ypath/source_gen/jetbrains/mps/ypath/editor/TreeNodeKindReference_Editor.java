@@ -47,7 +47,7 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_g2eo62_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_g2eo62_b0");
     {
       Style style = editorCell.getStyle();
@@ -58,7 +58,7 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_g2eo62_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ".");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_g2eo62_d0");
     {
       Style style = editorCell.getStyle();
@@ -69,7 +69,7 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_g2eo62_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_g2eo62_f0");
     editorCell.setDefaultText("");
     return editorCell;

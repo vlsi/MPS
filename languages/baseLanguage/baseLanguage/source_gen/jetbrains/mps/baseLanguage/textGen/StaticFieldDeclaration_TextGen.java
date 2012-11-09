@@ -25,7 +25,6 @@ public class StaticFieldDeclaration_TextGen extends SNodeTextGen {
     if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"))) != null)) {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"))), this.getSNode());
     }
-    this.appendNewLine();
     BaseLanguageTextGen.annotations(node, this);
     BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
     this.append("static ");
@@ -40,6 +39,7 @@ public class StaticFieldDeclaration_TextGen extends SNodeTextGen {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "initializer", true), this.getSNode());
     }
     this.append(";");
+    this.appendNewLine();
     if (getBuffer().hasPositionsSupport()) {
       {
         String traceableProperty = "";

@@ -17,7 +17,7 @@ public class StubStatementList_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_guw1pi_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "/*compiled code*/");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/*compiled code*/");
     editorCell.setCellId("Constant_guw1pi_a");
     {
       Style style = editorCell.getStyle();

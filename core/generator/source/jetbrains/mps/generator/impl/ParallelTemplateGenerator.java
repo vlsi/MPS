@@ -108,7 +108,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   @Override
   protected QueryExecutionContext getDefaultExecutionContext(SNode inputNode) {
     if (ROOT_PER_THREAD) {
-      if (inputNode == null || !jetbrains.mps.util.SNodeOperations.isRegistered(inputNode)) {
+      if (inputNode == null || !(inputNode.getModel() != null)) {
         return super.getDefaultExecutionContext(null);
       }
       inputNode = inputNode.getTopmostAncestor();

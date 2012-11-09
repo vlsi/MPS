@@ -43,14 +43,14 @@ public class SomeConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1ociws_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "is valid");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is valid");
     editorCell.setCellId("Constant_1ociws_b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createIndentCell_1ociws_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

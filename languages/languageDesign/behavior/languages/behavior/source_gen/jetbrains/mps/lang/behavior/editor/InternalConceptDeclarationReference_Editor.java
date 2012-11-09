@@ -29,7 +29,7 @@ public class InternalConceptDeclarationReference_Editor extends DefaultNodeEdito
   }
 
   private EditorCell createConstant_wcbhig_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Concept");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Concept");
     editorCell.setCellId("Constant_wcbhig_a0");
     editorCell.setDefaultText("");
     return editorCell;

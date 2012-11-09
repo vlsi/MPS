@@ -28,6 +28,7 @@ public class ModelCacheReloader implements ApplicationComponent {
   private List<BaseModelCache> myCaches = ListSequence.fromList(new ArrayList<BaseModelCache>());
 
   public ModelCacheReloader(VirtualFileManager virtualFileManager, MPSCoreComponents coreComponents) {
+    // TODO rewrite using FileSystem.getInstance().addListener(..) 
     myVirtualFileManager = virtualFileManager;
     ListSequence.fromList(myCaches).addElement(TraceInfoCache.getInstance());
     ListSequence.fromList(myCaches).addElement(BLDependenciesCache.getInstance());

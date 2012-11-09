@@ -54,7 +54,7 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_42nz3b_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_42nz3b_a0");
     {
       Style style = editorCell.getStyle();
@@ -66,7 +66,7 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_42nz3b_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "operator");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "operator");
     editorCell.setCellId("Constant_42nz3b_b0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -74,7 +74,7 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_42nz3b_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_42nz3b_d0");
     BaseLanguageStyle_StyleSheet.getParenthesis(editorCell).apply(editorCell);
     {
@@ -86,7 +86,7 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_42nz3b_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_42nz3b_f0");
     {
       Style style = editorCell.getStyle();
@@ -97,7 +97,7 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_42nz3b_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_42nz3b_h0");
     BaseLanguageStyle_StyleSheet.getParenthesis(editorCell).apply(editorCell);
     {
@@ -109,14 +109,14 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_42nz3b_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "->");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_42nz3b_i0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_42nz3b_k0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "commutative:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "commutative:");
     editorCell.setCellId("Constant_42nz3b_k0");
     editorCell.setDefaultText("");
     return editorCell;

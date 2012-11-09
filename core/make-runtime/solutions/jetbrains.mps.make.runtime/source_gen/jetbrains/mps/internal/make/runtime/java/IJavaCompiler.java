@@ -6,6 +6,6 @@ import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.project.IModule;
 
 public interface IJavaCompiler {
-  public MPSCompilationResult compileModule(IModule module);
+  public MPSCompilationResult compileModules(IModule[] modules);
   public void refreshFiles();
 }

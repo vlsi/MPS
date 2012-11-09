@@ -16,7 +16,7 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
@@ -25,7 +25,7 @@ import jetbrains.mps.util.EqualUtil;
 
 public class EditorCell_RefPresentation {
 
-  public static EditorCell_Property create(jetbrains.mps.openapi.editor.EditorContext context, SNode node) {
+  public static EditorCell_Property create(EditorContext context, SNode node) {
     MyAccessor accessor = new MyAccessor();
     EditorCell_Property result = new EditorCell_Property((EditorContext) context, accessor, node) {
       @Override
@@ -43,8 +43,8 @@ public class EditorCell_RefPresentation {
     return result;
   }
 
-  public static EditorCell_Property create(jetbrains.mps.openapi.editor.EditorContext context, SNode node, SNode refNode, SNode linkDeclaration) {
-    MyAccessor accessor = new MyAccessor((EditorContext) context, node, refNode, linkDeclaration);
+  public static EditorCell_Property create(EditorContext context, SNode node, SNode refNode, SNode linkDeclaration) {
+    MyAccessor accessor = new MyAccessor(node, refNode, linkDeclaration);
     EditorCell_Property result = EditorCell_Property.create(context, accessor, node);
     return result;
   }
@@ -54,13 +54,11 @@ public class EditorCell_RefPresentation {
     private SNode myNode;
     private SNode myRefNode;
     private SNode myLinkDeclaration;
-    private EditorContext myContext;
 
     public MyAccessor() {
     }
 
-    public MyAccessor(EditorContext context, SNode node, SNode refNode, SNode linkDeclaration) {
-      myContext = context;
+    public MyAccessor(SNode node, SNode refNode, SNode linkDeclaration) {
       myNode = node;
       myRefNode = refNode;
       myLinkDeclaration = linkDeclaration;

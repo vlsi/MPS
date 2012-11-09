@@ -14,7 +14,7 @@ public class NanoExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createError_90hbgw_a(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<abstract expression>");
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<abstract expression>");
     editorCell.setCellId("Error_90hbgw_a");
     return editorCell;
   }

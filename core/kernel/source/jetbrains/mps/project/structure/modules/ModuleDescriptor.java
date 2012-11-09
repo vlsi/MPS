@@ -98,7 +98,6 @@ public class ModuleDescriptor {
     throw new UnsupportedOperationException();
   }
 
-
   public Collection<ModelRootDescriptor> getModelRootDescriptors() {
     return myModelRoots;
   }

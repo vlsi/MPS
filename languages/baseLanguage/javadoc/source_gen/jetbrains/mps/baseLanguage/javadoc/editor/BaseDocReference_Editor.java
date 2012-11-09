@@ -14,7 +14,7 @@ public class BaseDocReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createError_k7fcgk_a(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<no target>");
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<no target>");
     editorCell.setCellId("Error_k7fcgk_a");
     return editorCell;
   }

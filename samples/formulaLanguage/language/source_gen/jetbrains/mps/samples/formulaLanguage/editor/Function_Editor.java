@@ -14,7 +14,7 @@ public class Function_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createError_y1p9lm_a(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "?function?");
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "?function?");
     editorCell.setCellId("Error_y1p9lm_a");
     return editorCell;
   }

@@ -49,7 +49,7 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1dey68_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_1dey68_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     CompactInvokeFunctionExpression_DELETE.setCellActions(editorCell, node, editorContext);
@@ -58,7 +58,7 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1dey68_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_1dey68_d0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     if (renderingCondition_1dey68_a3a(node, editorContext, editorContext.getScope())) {
@@ -147,7 +147,7 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -155,7 +155,7 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_1dey68_a2a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_1dey68_a2a");
       {
         Style style = editorCell.getStyle();

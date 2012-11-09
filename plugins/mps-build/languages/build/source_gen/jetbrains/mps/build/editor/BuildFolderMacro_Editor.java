@@ -36,7 +36,7 @@ public class BuildFolderMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_io6s4u_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "folder");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "folder");
     editorCell.setCellId("Constant_io6s4u_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -49,7 +49,7 @@ public class BuildFolderMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_io6s4u_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_io6s4u_c0");
     editorCell.setDefaultText("");
     return editorCell;

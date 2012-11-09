@@ -61,7 +61,7 @@ public class AppendUIObjectStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_mtcoyd_c0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "with");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");
     editorCell.setCellId("Constant_mtcoyd_c0a0");
     editorCell.setDefaultText("");
     return editorCell;

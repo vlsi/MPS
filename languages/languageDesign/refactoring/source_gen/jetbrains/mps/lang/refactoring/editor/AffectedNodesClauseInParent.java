@@ -64,7 +64,7 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_33nozx_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "refactor immediately on no usages:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "refactor immediately on no usages:");
     editorCell.setCellId("Constant_33nozx_a0a");
     {
       Style style = editorCell.getStyle();

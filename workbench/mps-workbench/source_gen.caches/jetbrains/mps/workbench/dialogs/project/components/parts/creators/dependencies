@@ -80,11 +80,24 @@
     <classNode extendsClassName="jetbrains.mps.util.Computable" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModelRootChooser" file="ModelRootChooser.java">
+    <classNode dependClassName="com.intellij.openapi.ui.Messages" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
+    <classNode dependClassName="jetbrains.mps.ide.persistence.ModelRootSettingsEditor" />
+    <classNode dependClassName="jetbrains.mps.ide.persistence.PersistenceComponent" />
     <classNode dependClassName="jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.persistence.PathAwareJDOMMemento" />
+    <classNode dependClassName="jetbrains.mps.persistence.PersistenceRegistry" />
     <classNode dependClassName="jetbrains.mps.project.SModelRoot" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootDescriptor" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.IBindedDialog" />
+    <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.util.Computable" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModulePathChooser" file="ModulePathChooser.java">

@@ -20,14 +20,8 @@ import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
-import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
-import jetbrains.mps.smodel.runtime.EditorAspectDescriptor;
-import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
-import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
-import jetbrains.mps.smodel.runtime.interpreted.EditorAspectDescriptorInterpreted;
-import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
+import jetbrains.mps.smodel.runtime.*;
+import jetbrains.mps.smodel.runtime.interpreted.*;
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ExtensionDescriptor;
 import jetbrains.mps.smodel.structure.FacetDescriptor;
@@ -48,6 +42,7 @@ public abstract class LanguageRuntime {
   private ConstraintsAspectDescriptor constraintsDescriptor;
   private ExtensionDescriptor myExtensionDescriptor;
   protected EditorAspectDescriptor myEditorDescriptor;
+  protected TextGenAspectDescriptor myTextGenDescriptor;
 
   public abstract String getNamespace();
 
@@ -123,6 +118,13 @@ public abstract class LanguageRuntime {
     }
 
     return constraintsDescriptor;
+  }
+
+  public TextGenAspectDescriptor getTextGenAspectDescriptor() {
+    if (myTextGenDescriptor == null) {
+      myTextGenDescriptor = TextGenAspectInterpreted.getInstance();
+    }
+    return myTextGenDescriptor;
   }
 
   public final EditorAspectDescriptor getEditorAspectDescriptor() {

@@ -70,7 +70,7 @@ public class ConceptTreeNode extends MPSTreeNodeEx {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
         SNode concept = getSNode();
-        if (concept == null || jetbrains.mps.util.SNodeOperations.isDisposed(concept) || !(jetbrains.mps.util.SNodeOperations.isRegistered(concept)) || concept.getModel().getModelDescriptor() != null) {
+        if (concept == null || jetbrains.mps.util.SNodeOperations.isDisposed(concept) || concept.getModel() == null || concept.getModel().getModelDescriptor() == null) {
           return;
         }
         // TODO: use node pointers here

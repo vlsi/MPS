@@ -72,7 +72,7 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9nqz5z_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_9nqz5z_c0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -84,7 +84,7 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9nqz5z_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "compression");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "compression");
     editorCell.setCellId("Constant_9nqz5z_d0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -92,7 +92,7 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9nqz5z_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_9nqz5z_f0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -105,7 +105,7 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9nqz5z_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "name");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name");
     editorCell.setCellId("Constant_9nqz5z_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

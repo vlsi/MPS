@@ -45,7 +45,7 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_al4u6z_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "covering");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "covering");
     editorCell.setCellId("Constant_al4u6z_c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -53,7 +53,7 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_al4u6z_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "units of total work left,");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "units of total work left,");
     editorCell.setCellId("Constant_al4u6z_e0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -61,7 +61,7 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_al4u6z_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "expecting");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "expecting");
     editorCell.setCellId("Constant_al4u6z_f0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -69,7 +69,7 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_al4u6z_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "units");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "units");
     editorCell.setCellId("Constant_al4u6z_h0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -77,7 +77,7 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_al4u6z_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_al4u6z_i0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

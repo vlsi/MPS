@@ -280,7 +280,7 @@ public class KeyMapUtil {
   public static boolean canExecuteKeyMapAction(final EditorCellKeyMapAction action, final KeyEvent keyEvent, EditorCell contextCell, final EditorContext editorContext) {
     return editorContext.runWithContextCell(contextCell, new Computable<Boolean>() {
       public Boolean compute() {
-        return action.canExecute(keyEvent, editorContext);
+        return action.canExecute(keyEvent, (jetbrains.mps.openapi.editor.EditorContext) editorContext);
       }
     });
   }
@@ -290,7 +290,7 @@ public class KeyMapUtil {
       public void run() {
         editorContext.executeCommand(new Runnable() {
           public void run() {
-            action.execute(keyEvent, editorContext);
+            action.execute(keyEvent, (jetbrains.mps.openapi.editor.EditorContext) editorContext);
           }
         });
       }

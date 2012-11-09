@@ -100,7 +100,7 @@ public class HierarchyTreeNode extends MPSTreeNode {
     }
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
-        if (jetbrains.mps.util.SNodeOperations.isDisposed(myNode) || !(jetbrains.mps.util.SNodeOperations.isRegistered(myNode)) || myNode.getModel().getModelDescriptor() == null) {
+        if (jetbrains.mps.util.SNodeOperations.isDisposed(myNode) || !(myNode.getModel() != null) || myNode.getModel().getModelDescriptor() == null) {
           return;
         }
         AbstractHierarchyView hierarchyView = myHierarchyTree.getHierarchyView();

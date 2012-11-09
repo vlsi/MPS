@@ -96,7 +96,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_3210848622155981279(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "staticInitializer", true);
+    return SLinkOperations.getTarget(_context.getNode(), "classInitializer", true);
   }
 
   public static SNode sourceNodeQuery_3210848622155981288(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

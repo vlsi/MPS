@@ -14,7 +14,7 @@ public class EmitRetStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kzxe6t_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "ret");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ret");
     editorCell.setCellId("Constant_kzxe6t_a");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

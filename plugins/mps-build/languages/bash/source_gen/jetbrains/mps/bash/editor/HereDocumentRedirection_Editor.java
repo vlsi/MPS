@@ -49,21 +49,21 @@ public class HereDocumentRedirection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_l3f4id_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<<");
     editorCell.setCellId("Constant_l3f4id_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_l3f4id_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "-");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-");
     editorCell.setCellId("Constant_l3f4id_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_l3f4id_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "strip tabs:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "strip tabs:");
     editorCell.setCellId("Constant_l3f4id_a0_0");
     editorCell.setDefaultText("");
     return editorCell;

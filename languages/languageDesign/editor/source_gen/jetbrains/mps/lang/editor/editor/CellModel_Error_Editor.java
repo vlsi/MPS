@@ -101,7 +101,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xkqo7y_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_xkqo7y_b0");
     {
       Style style = editorCell.getStyle();
@@ -112,7 +112,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xkqo7y_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Error cell:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Error cell:");
     editorCell.setCellId("Constant_xkqo7y_c0");
     Styles_StyleSheet.getHeader(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -120,7 +120,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xkqo7y_a0d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "text");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text");
     editorCell.setCellId("Constant_xkqo7y_a0d0");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -144,7 +144,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -186,7 +186,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_xkqo7y_a1b0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_xkqo7y_a1b0(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 }

@@ -15,9 +15,13 @@
  */
 package jetbrains.mps.ide.bookmark;
 
-import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.ide.bookmark.BookmarkManager.BookmarkListener;
+import jetbrains.mps.nodeEditor.DefaultEditorMessage;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Pair;

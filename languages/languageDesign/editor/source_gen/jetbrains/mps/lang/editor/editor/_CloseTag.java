@@ -61,7 +61,7 @@ public class _CloseTag extends AbstractCellProvider {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -70,7 +70,7 @@ public class _CloseTag extends AbstractCellProvider {
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_abi8e8_a0a(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_abi8e8_a0a(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 }

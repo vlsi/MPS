@@ -61,7 +61,7 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_416fys_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "extract");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extract");
     editorCell.setCellId("Constant_416fys_a0");
     StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -69,7 +69,7 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_416fys_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_416fys_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -77,7 +77,7 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_416fys_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "=>");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=>");
     editorCell.setCellId("Constant_416fys_d0");
     StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
     {
@@ -89,7 +89,7 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_416fys_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_416fys_f0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

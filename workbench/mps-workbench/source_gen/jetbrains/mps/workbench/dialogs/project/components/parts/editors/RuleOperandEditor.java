@@ -54,7 +54,7 @@ public class RuleOperandEditor extends AbstractTableCellEditor {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         EditOperandDialog dialog = new EditOperandDialog(myGenerator, myDepGens, myOperand, myLeft);
-        dialog.showDialog();
+        dialog.show();
         if (dialog.getResult() != null) {
           myOperand = dialog.getResult();
           table.editingStopped(new ChangeEvent(this));

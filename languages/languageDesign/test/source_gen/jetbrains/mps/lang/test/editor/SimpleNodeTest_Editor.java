@@ -70,7 +70,7 @@ public class SimpleNodeTest_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7u86xv_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "test");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "test");
     editorCell.setCellId("Constant_7u86xv_a2a");
     editorCell.setDefaultText("");
     return editorCell;

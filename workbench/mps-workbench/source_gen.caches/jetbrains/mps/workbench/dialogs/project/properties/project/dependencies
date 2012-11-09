@@ -36,9 +36,12 @@
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog" file="ProjectPropertiesDialog.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.ui.DialogWrapper" />
+    <classNode dependClassName="java.awt.Dimension" />
+    <classNode dependClassName="java.awt.event.ActionEvent" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
-    <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
+    <classNode dependClassName="javax.swing.Action" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.properties.StandardComponents" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -79,6 +82,7 @@
     <classNode dependClassName="java.awt.CardLayout" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Component" />
+    <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.GridBagConstraints" />
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.awt.HeadlessException" />
@@ -109,7 +113,6 @@
     <classNode dependClassName="javax.swing.border.Border" />
     <classNode dependClassName="javax.swing.border.CompoundBorder" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -143,8 +146,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
+    <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
     <classNode extendsClassName="javax.swing.JPanel" />
-    <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
     <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.properties.project.BasePanel" />
   </dependency>
 </dependenciesRoot>

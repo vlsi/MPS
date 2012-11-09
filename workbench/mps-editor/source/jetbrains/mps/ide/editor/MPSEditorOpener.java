@@ -78,7 +78,7 @@ public class MPSEditorOpener {
         if (module == null) return;
 
         ModuleContext context = new ModuleContext(module, ProjectHelper.toMPSProject(myProject));
-        openNode(node, context, true, !node.isRoot());
+        openNode(node, context, true, !(node.getModel() != null && node.getModel().isRoot(node)));
       }
     });
   }
@@ -88,7 +88,7 @@ public class MPSEditorOpener {
    */
   @Deprecated
   public Editor editNode(@NotNull final SNode node, final IOperationContext context) {
-    return openNode(node, context, true, !node.isRoot());
+    return openNode(node, context, true, !(node.getModel() != null && node.getModel().isRoot(node)));
   }
 
   /*
@@ -105,16 +105,15 @@ public class MPSEditorOpener {
   }
 
   private Editor doOpenNode(final SNode node, IOperationContext context, final boolean focus, boolean select) {
-    assert jetbrains.mps.util.SNodeOperations.isRegistered(node) : "You can't edit unregistered node";
+    assert node.getModel() != null : "You can't edit unregistered node";
 
     if (node.getModel().getModelDescriptor() == null) {
       return null;
     }
 
     //open editor
-    SNode containingRoot = node.getContainingRoot();
     // [++] for http://youtrack.jetbrains.net/issue/MPS-7663
-    if (containingRoot == null) {
+    if (node.getModel() == null) {
       SNode current = node;
       while (current.getParent() != null) {
         current = current.getParent();
@@ -126,7 +125,7 @@ public class MPSEditorOpener {
         (node.getModel() != null ? ", modelDisposed: " + node.getModel().isDisposed() : "");
     }
     // [--] for http://youtrack.jetbrains.net/issue/MPS-7663
-    final Editor nodeEditor = openEditor(containingRoot, context, false);
+    final Editor nodeEditor = openEditor(node.getTopmostAncestor(), context, false);
 
     //restore inspector state for opened editor (if exists)
     if (!restorePrevSelectionInInspector(nodeEditor, nodeEditor.getOperationContext(), getInspector())) {
@@ -163,11 +162,11 @@ public class MPSEditorOpener {
     }
 
     // [++] assertions for http://youtrack.jetbrains.net/issue/MPS-7792
-    assert jetbrains.mps.util.SNodeOperations.isRegistered(baseNode) : "BaseNode is not registered";
+    assert baseNode.getModel() != null : "BaseNode is not registered";
     SNodePointer sNodePointer = new SNodePointer(baseNode);
     SNode node = sNodePointer.getNode();
     assert node != null : "Unable to get Node by SNodePointer: " + sNodePointer + " (baseNode = " + baseNode + ", root = " + root + ")";
-    assert jetbrains.mps.util.SNodeOperations.isRegistered(node) : "Returned node is not registered (" + node + "|" + baseNode + ")";
+    assert node.getModel() != null : "Returned node is not registered (" + node + "|" + baseNode + ")";
     // [--] assertions for http://youtrack.jetbrains.net/issue/MPS-7792
     MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
     // [++] assertion for http://youtrack.jetbrains.net/issue/MPS-9753

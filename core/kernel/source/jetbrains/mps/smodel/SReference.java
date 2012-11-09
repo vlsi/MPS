@@ -97,7 +97,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   public abstract boolean isExternal();
 
   public static SReference create(String role, SNode sourceNode, SNode targetNode) {
-    if (jetbrains.mps.util.SNodeOperations.isRegistered(sourceNode) && jetbrains.mps.util.SNodeOperations.isRegistered(targetNode)) {
+    if (sourceNode.getModel() != null && targetNode.getModel() != null) {
       // 'mature' reference
       return new StaticReference(role, sourceNode, targetNode.getModel().getSModelReference(), targetNode.getSNodeId(), targetNode.getName());
     }
@@ -140,7 +140,8 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     if (ourLoggingOff) return;
     //skip errors in java stubs because they can have reference to classes that doesn't present
     //in class path
-    if (SModelStereotype.isStubModelStereotype(getSourceNode().getModel().getStereotype())) return;
+    SModel model = getSourceNode().getModel();
+    if (model != null && SModelStereotype.isStubModelStereotype(model.getStereotype())) return;
 
     synchronized (ourErrorReportedRefs) {
       if (ourErrorReportedRefs.contains(this)) return;
@@ -163,6 +164,9 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     }
 
     SModel model = node.getModel();
+    if (model == null){
+      return null;
+    }
     if (!model.isTransient()) {
       return new SNodePointer(node);
     }

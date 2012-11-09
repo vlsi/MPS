@@ -16,6 +16,9 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public abstract class BaseScope implements IScope {
   public SModelDescriptor getModelDescriptor(SModelFqName fqName) {
@@ -28,5 +31,26 @@ public abstract class BaseScope implements IScope {
 
   public Iterable<SModelDescriptor> getOwnModelDescriptors() {
     return getModelDescriptors();
+  }
+
+  @Override
+  public Iterable<SModule> getModules() {
+    return (Iterable) getVisibleModules();
+  }
+
+  @Override
+  public Iterable<SModel> getModels() {
+    return (Iterable) getModelDescriptors();
+  }
+
+  @Override
+  public SModel resolve(org.jetbrains.mps.openapi.model.SModelReference reference) {
+    return getModelDescriptor((SModelReference) reference);  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+  @Override
+  public SModule resolve(SModuleReference reference) {
+    // TODO (implement)
+    return null;
   }
 }

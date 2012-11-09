@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
@@ -32,14 +31,15 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
 
   protected BaseSModelDescriptorWithSource(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     super(modelReference, source);
+  }
+
+  @Override
+  public void attach() {
     getSource().addListener(mySourceListener);
+    super.attach();
   }
 
-  @NotNull
-  public ModelDataSource getSource() {
-    return (ModelDataSource) super.getSource();
-  }
-
+  @Override
   public void dispose() {
     getSource().removeListener(mySourceListener);
     super.dispose();

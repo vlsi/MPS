@@ -1281,7 +1281,7 @@ __switch__:
                 SNode creator = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", null);
                 SLinkOperations.setTarget(creator, "cls", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClass", null), true);
                 SLinkOperations.setTarget(SLinkOperations.getTarget(creator, "cls", true), "classifier", (item), false);
-                List<SNode> methodsToImplement = SLinkOperations.getTargets((item), "method", true);
+                List<SNode> methodsToImplement = ListSequence.fromList(SLinkOperations.getTargets((item), "method", true)).toListSequence();
                 if (SNodeOperations.isInstanceOf((item), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
                   methodsToImplement = ListSequence.fromList(methodsToImplement).where(new IWhereFilter<SNode>() {
                     public boolean accept(SNode it) {

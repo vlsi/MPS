@@ -27,6 +27,7 @@
     <orderEntry type="module" module-name="refactoring-runtime" />
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="module" module-name="persistence" />
   </component>
 </module>
 

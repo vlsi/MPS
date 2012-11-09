@@ -30,7 +30,7 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_h2teu2_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "->");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_h2teu2_a0");
     Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     {

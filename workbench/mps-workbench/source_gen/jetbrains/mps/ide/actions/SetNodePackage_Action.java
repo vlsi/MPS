@@ -16,10 +16,11 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.awt.Frame;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
 import jetbrains.mps.smodel.SModel;
@@ -71,10 +72,6 @@ public class SetNodePackage_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("scope", event.getData(MPSCommonDataKeys.SCOPE));
     if (MapSequence.fromMap(_params).get("scope") == null) {
       return false;
@@ -99,6 +96,10 @@ public class SetNodePackage_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("nodes") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
     return true;
   }
 
@@ -112,9 +113,9 @@ public class SetNodePackage_Action extends BaseAction {
           oldPackage.value = SPropertyOperations.getString(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first(), "virtualPackage");
         }
       });
-      final SetNodePackageDialog dialog = new SetNodePackageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Set Virtual Package", packages.value);
+      final SetNodePackageDialog dialog = new SetNodePackageDialog(((Project) MapSequence.fromMap(_params).get("project")), "Set Virtual Package", packages.value);
       dialog.setPackage(oldPackage.value);
-      dialog.showDialog();
+      dialog.show();
       if (dialog.isCancelled()) {
         return;
       }

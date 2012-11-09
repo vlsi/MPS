@@ -38,7 +38,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pl7j0v_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "[");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_pl7j0v_a0");
     {
       Style style = editorCell.getStyle();
@@ -49,7 +49,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pl7j0v_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ".");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_pl7j0v_c0");
     {
       Style style = editorCell.getStyle();
@@ -60,7 +60,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pl7j0v_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_pl7j0v_e0");
     {
       Style style = editorCell.getStyle();
@@ -71,7 +71,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pl7j0v_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "]");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_pl7j0v_g0");
     {
       Style style = editorCell.getStyle();

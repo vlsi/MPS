@@ -14,12 +14,11 @@ import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import java.awt.Frame;
 import jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import com.intellij.openapi.project.Project;
 
 public class NewGenerator_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -58,10 +57,6 @@ public class NewGenerator_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
     if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
@@ -75,14 +70,13 @@ public class NewGenerator_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Frame localFrame = ((Frame) MapSequence.fromMap(_params).get("frame"));
       final NewGeneratorDialog[] dialog = new NewGeneratorDialog[1];
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          dialog[0] = new NewGeneratorDialog(localFrame, ((Language) ((IModule) MapSequence.fromMap(_params).get("module"))));
+          dialog[0] = new NewGeneratorDialog(((Project) MapSequence.fromMap(_params).get("project")), ((Language) ((IModule) MapSequence.fromMap(_params).get("module"))));
         }
       });
-      dialog[0].showDialog();
+      dialog[0].show();
       Generator result = dialog[0].getResult();
       if (result != null) {
         ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).selectModule(result, false);

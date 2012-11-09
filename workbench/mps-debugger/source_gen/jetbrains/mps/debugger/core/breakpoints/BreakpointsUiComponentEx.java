@@ -25,7 +25,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.awt.event.MouseEvent;
 import jetbrains.mps.smodel.ModelAccess;
 
-
 /**
  * 
  * 

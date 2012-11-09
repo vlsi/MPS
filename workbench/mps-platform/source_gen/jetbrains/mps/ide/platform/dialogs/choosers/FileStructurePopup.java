@@ -111,7 +111,6 @@ import java.lang.reflect.Field;
 import javax.swing.JTree;
 import java.util.Hashtable;
 
-
 /**
  * todo: this was copied from Idea. Should be changed when there's no PSI in their code  (MPS-12045)
  * * @author Konstantin Bulenkov

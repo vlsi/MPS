@@ -131,7 +131,7 @@ public class PatternReduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_o2w2pr_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "pattern reduction rule");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "pattern reduction rule");
     editorCell.setCellId("Constant_o2w2pr_a0");
     {
       Style style = editorCell.getStyle();
@@ -144,7 +144,7 @@ public class PatternReduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_o2w2pr_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_o2w2pr_b0");
     {
       Style style = editorCell.getStyle();
@@ -155,14 +155,14 @@ public class PatternReduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_o2w2pr_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapping label");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_o2w2pr_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_o2w2pr_a0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "pattern");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "pattern");
     editorCell.setCellId("Constant_o2w2pr_a0a0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
@@ -174,7 +174,7 @@ public class PatternReduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_o2w2pr_a1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "condition");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "condition");
     editorCell.setCellId("Constant_o2w2pr_a1a0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
@@ -186,7 +186,7 @@ public class PatternReduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_o2w2pr_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "-->");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-->");
     editorCell.setCellId("Constant_o2w2pr_a1a");
     {
       Style style = editorCell.getStyle();
@@ -197,14 +197,14 @@ public class PatternReduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_o2w2pr_b1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_o2w2pr_b1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_o2w2pr_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_o2w2pr_c0");
     {
       Style style = editorCell.getStyle();

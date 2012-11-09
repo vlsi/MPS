@@ -7,14 +7,10 @@ import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.ypath.design.IFeatureDesign;
 import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.ModelOwner;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.reloading.ReloadAdapter;
 
 public class DesignPartLoader {
@@ -29,9 +25,9 @@ public class DesignPartLoader {
   }
 
   public IFeatureDesign getFeatureDesign(String fqClassName, SModel smodel) {
-    IModule module = getModuleFor(smodel);
+    SModule module = getModuleFor(smodel);
     if (module != null) {
-      return getFeatureDesign(fqClassName, module);
+      return getFeatureDesign(fqClassName, (IModule) module);
     }
     return null;
   }
@@ -69,22 +65,12 @@ public class DesignPartLoader {
     }
   }
 
-  private IModule getModuleFor(SModel smodel) {
+  private SModule getModuleFor(SModel smodel) {
     SModelDescriptor smd = smodel.getModelDescriptor();
-    IModule module = smd.getModule();
-    if (module != null) {
-      return module;
-    }
-    for (ModelOwner owner : SModelRepository.getInstance().getOwners(smd)) {
-      if (owner instanceof Solution || owner instanceof Language) {
-        module = (IModule) owner;
-        break;
-      } else
-      if (module == null && owner instanceof TransientModelsModule) {
-        module = (IModule) owner;
-      }
-    }
-    return module;
+    return (smd != null ?
+      smd.getModule() :
+      null
+    );
   }
 
   private void clearCache() {

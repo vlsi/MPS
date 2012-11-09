@@ -18,7 +18,11 @@ package jetbrains.mps.ide.editor.icons;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.fileEditor.ex.FileEditorManagerEx;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -58,11 +62,11 @@ public class NodeIconUpdater extends AbstractProjectComponent {
   private class MyModelListener extends SModelAdapter {
     @Override
     public void eventFired(SModelEvent event) {
-      SNode affectedRoot = event.getAffectedRoot();
-      if (affectedRoot != null) {
-        synchronized (myUpdatedRoots) {
-          myUpdatedRoots.add(new SNodePointer(event.getModel().getSModelReference(), affectedRoot.getSNodeId()));
-        }
+      SNode root = event.getAffectedRoot();
+      if (root == null) return;
+      if (root.getModel() == null) return;
+      synchronized (myUpdatedRoots) {
+        myUpdatedRoots.add(new SNodePointer(event.getModel().getSModelReference(), root.getSNodeId()));
       }
     }
   }

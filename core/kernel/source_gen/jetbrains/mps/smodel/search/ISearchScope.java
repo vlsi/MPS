@@ -13,8 +13,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 @Deprecated
-public 
-/**
+public /**
  * @Deprecated
  */
 interface ISearchScope {
@@ -24,6 +23,7 @@ interface ISearchScope {
   @NotNull
   public List<SNode> getNodes();
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept);
+
   public static class Adapter extends Scope {
     protected final ISearchScope searchScope;
 
@@ -95,5 +95,4 @@ interface ISearchScope {
       return infoResolver.resolve(refText, reference.getTargetSModelReference());
     }
   }
-
 }

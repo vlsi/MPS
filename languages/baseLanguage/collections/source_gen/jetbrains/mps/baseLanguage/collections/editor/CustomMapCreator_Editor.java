@@ -53,7 +53,7 @@ public class CustomMapCreator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jxu7lh_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "container declaration:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "container declaration:");
     editorCell.setCellId("Constant_jxu7lh_a0a");
     editorCell.setDefaultText("");
     return editorCell;

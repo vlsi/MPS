@@ -16,7 +16,10 @@
 package jetbrains.mps.testbench;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -58,11 +61,6 @@ public class ModelsExtractor {
 
   private boolean includeModel(SModelDescriptor modelDescriptor) {
     return SModelStereotype.isUserModel(modelDescriptor) &&
-      (myIncludeDoNotGenerate || !(isDoNotGenerate(modelDescriptor)));
-  }
-
-  public static boolean isDoNotGenerate(SModelDescriptor sm) {
-    if (!(sm instanceof DefaultSModelDescriptor)) return false;
-    return ((DefaultSModelDescriptor) sm).isDoNotGenerate();
+      (myIncludeDoNotGenerate || modelDescriptor.isGeneratable());
   }
 }

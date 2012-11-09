@@ -29,7 +29,7 @@ public class ParameterBlockDocTag_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_hezczn_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "@param");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@param");
     editorCell.setCellId("Constant_hezczn_a0");
     DocumentationCommentStyleSheet_StyleSheet.getCommentTag(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

@@ -51,7 +51,7 @@ public class IfInstanceOfStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ret20j_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_ret20j_b0");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -59,7 +59,7 @@ public class IfInstanceOfStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ret20j_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "is");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is");
     editorCell.setCellId("Constant_ret20j_d0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -67,7 +67,7 @@ public class IfInstanceOfStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ret20j_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_ret20j_g0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -75,7 +75,7 @@ public class IfInstanceOfStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ret20j_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_ret20j_h0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -87,7 +87,7 @@ public class IfInstanceOfStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ret20j_j0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_ret20j_j0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

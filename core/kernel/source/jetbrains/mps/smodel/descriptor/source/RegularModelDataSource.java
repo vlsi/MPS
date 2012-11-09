@@ -15,128 +15,38 @@
  */
 package jetbrains.mps.smodel.descriptor.source;
 
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.loading.ModelLoadResult;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
-import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
-import java.util.Collection;
-import java.util.Collections;
 
-public class RegularModelDataSource extends FileBasedModelDataSource implements FastFindSupportProvider {
+public class RegularModelDataSource extends FileDataSource implements FastFindSupportProvider {
   public static String FAST_FIND_ID = "regular";
 
   private static Logger LOG = Logger.getLogger(RegularModelDataSource.class);
 
-  private IFile myFile;
-
-  public RegularModelDataSource(SModuleReference origin, @NotNull IFile file) {
-    super(origin);
-    myFile = file;
-  }
-
-  public IFile getFile() {
-    return myFile;
-  }
-
-  public String toString() {
-    return myFile.toString();
-  }
-
-  public Collection<String> getFilesToListen() {
-    return Collections.singleton(myFile.getPath());
-  }
-
-  public boolean isReadOnly() {
-    return FileSystem.getInstance().isPackaged(myFile);
+  public RegularModelDataSource(@NotNull IFile file, ModelRoot root) {
+    super(file, root);
   }
 
   public String getModelHash() {
-    if (myFile == null) return null;
-    return ModelDigestUtil.hash(myFile);
-  }
-
-  public long getTimestamp() {
-    if (myFile == null || !myFile.exists()) return -1;
-    return myFile.lastModified();
-  }
-
-  public DescriptorLoadResult loadDescriptor(IModule module, SModelFqName modelName) throws ModelReadException {
-    return ModelPersistence.loadDescriptor(myFile);
-  }
-
-  @Override
-  public ModelLoadResult loadSModel(IModule module, SModelDescriptor sm, ModelLoadingState state) {
-    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
-    SModelReference dsmRef = dsm.getSModelReference();
-
-    if (!dsm.getModelFile().isReadOnly() && !dsm.getModelFile().exists()) {
-      SModel model = new SModel(dsmRef, new RegularNodeIdMap());
-      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
-    }
-
-    ModelLoadResult result;
-    try {
-      result = ModelPersistence.readModel(dsm.getDescriptorSModelHeader(), dsm.getModelFile(), state);
-    } catch (ModelReadException e) {
-      SuspiciousModelHandler.getHandler().handleSuspiciousModel(dsm, false);
-      SModel newModel = new StubModel(dsm.getSModelReference(), e);
-      return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
-    }
-
-    SModel model = result.getModel();
-    if (result.getState() == ModelLoadingState.FULLY_LOADED) {
-      boolean needToSave = model.updateSModelReferences() || model.updateModuleReferences();
-
-      if (needToSave && !dsm.getModelFile().isReadOnly()) {
-        SModelRepository.getInstance().markChanged(model);
-      }
-    }
-
-    LOG.assertLog(model.getSModelReference().equals(dsmRef),
-      "\nError loading model from file: \"" + dsm.getModelFile() + "\"\n" +
-        "expected model UID     : \"" + dsmRef + "\"\n" +
-        "but was UID            : \"" + model.getSModelReference() + "\"\n" +
-        "the model will not be available.\n" +
-        "Make sure that all project's roots and/or the model namespace is correct");
-    return result;
-  }
-
-  public boolean saveModel(SModelDescriptor descriptor) {
-    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) descriptor;
-    SModel smodel = dsm.getSModel();
-    if (smodel instanceof StubModel) {
-      // we do not save stub model to do not overwrite the real model
-      return false;
-    }
-    IFile modelFile = dsm.getModelFile();
-    assert modelFile != null;
-    return ModelPersistence.saveModel(smodel, modelFile) != null;
-  }
-
-  public boolean hasModel(SModelDescriptor md) {
-    return myFile != null && myFile.exists();
+    if (getFile() == null) return null;
+    return ModelDigestUtil.hash(getFile());
   }
 
   public void saveModelRefactorings(@NotNull SModelDescriptor sm, @NotNull StructureModificationLog log) {
@@ -147,11 +57,6 @@ public class RegularModelDataSource extends FileBasedModelDataSource implements 
   public StructureModificationLog loadModelRefactorings(@NotNull SModelDescriptor sm) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
     return RefactoringsPersistence.load(dsm.getModelFile());
-  }
-
-  public void setFile(IFile file) {
-    myFile = file;
-    sourceFilesChanged();
   }
 
   public void rename(SModelDescriptor sm, SModelFqName modelFqName, boolean changeFile) {
@@ -186,7 +91,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource implements 
 
   public static RegularModelDataSource createSourceForModelUID(SModelRoot root, SModelFqName fqName, SModule module) {
     IFile file = createFileForModelUID(root, fqName, isLanguageAspect(root, module, fqName));
-    return new RegularModelDataSource(module.getModuleReference(), file);
+    return new RegularModelDataSource(file, root);
   }
 
   public static boolean isLanguageAspect(SModelRoot root, SModule module, SModelFqName modelFqName) {
@@ -212,6 +117,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource implements 
     return true;
   }
 
+  @Override
   public FastFindSupport getFastFindSupport() {
     return FastFindSupportRegistry.getInstance().getFastFindSupport(FAST_FIND_ID);
   }

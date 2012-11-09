@@ -55,14 +55,14 @@ public class Component_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3k4y3b_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "interface");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "interface");
     editorCell.setCellId("Constant_3k4y3b_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_3k4y3b_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "implementation");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "implementation");
     editorCell.setCellId("Constant_3k4y3b_d0");
     editorCell.setDefaultText("");
     return editorCell;

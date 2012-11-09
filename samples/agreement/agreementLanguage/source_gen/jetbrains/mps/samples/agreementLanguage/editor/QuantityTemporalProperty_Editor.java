@@ -30,7 +30,7 @@ public class QuantityTemporalProperty_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pitxl1_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ": ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ": ");
     editorCell.setCellId("Constant_pitxl1_b0");
     {
       Style style = editorCell.getStyle();

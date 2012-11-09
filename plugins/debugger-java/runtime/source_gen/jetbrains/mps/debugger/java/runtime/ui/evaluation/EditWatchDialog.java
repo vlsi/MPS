@@ -8,7 +8,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
 import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel;
-import jetbrains.mps.ide.dialogs.BaseDialog;
+import javax.swing.Action;
+import org.jetbrains.annotations.NonNls;
 
 public class EditWatchDialog extends AbstractEvaluationDialog {
   @Nullable
@@ -23,11 +24,23 @@ public class EditWatchDialog extends AbstractEvaluationDialog {
     myOkAction = okAction;
   }
 
-  @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
-  public void buttonOk() {
+  @Override
+  protected void doOKAction() {
     if (myOkAction != null) {
       myOkAction.invoke();
     }
-    dispose();
+    super.doOKAction();
+  }
+
+  @Override
+  protected Action[] createActions() {
+    return new Action[]{getOKAction()};
+  }
+
+  @Nullable
+  @NonNls
+  @Override
+  protected String getDimensionServiceKey() {
+    return EditWatchDialog.class.getName();
   }
 }

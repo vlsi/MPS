@@ -14,7 +14,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.reloading.ClassPathFactory;
 import java.io.IOException;
-import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
@@ -32,7 +32,7 @@ public class JavaStubs extends ModelRootManagerBase {
   public Collection<SModelDescriptor> load(@NotNull SModelRoot modelRoot) {
     List<SModelDescriptor> result = ListSequence.fromList(new ArrayList<SModelDescriptor>());
     IClassPathItem cp = JavaStubs.this.create(modelRoot.getPath());
-    JavaStubs.this.getModelDescriptors(result, modelRoot.getPath(), cp, "", LanguageID.JAVA, modelRoot.getModule());
+    JavaStubs.this.getModelDescriptors(result, modelRoot.getPath(), cp, "", LanguageID.JAVA, modelRoot);
     return result;
   }
 
@@ -46,10 +46,10 @@ public class JavaStubs extends ModelRootManagerBase {
     return null;
   }
 
-  /*package*/ void getModelDescriptors(List<SModelDescriptor> result, String startPath, IClassPathItem cp, String prefix, String languageId, SModule module) {
+  /*package*/ void getModelDescriptors(List<SModelDescriptor> result, String startPath, IClassPathItem cp, String prefix, String languageId, ModelRoot modelRoot) {
     for (String subpackage : cp.getSubpackages(prefix)) {
       if (cp.getRootClasses(subpackage).iterator().hasNext()) {
-        SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage, languageId, module.getModuleReference());
+        SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage, languageId, modelRoot.getModule().getModuleReference());
         BaseStubModelDescriptor smd;
         if (SModelRepository.getInstance().getModelDescriptor(modelReference) != null) {
           SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
@@ -57,12 +57,12 @@ public class JavaStubs extends ModelRootManagerBase {
           smd = (BaseStubModelDescriptor) descriptor;
           ListSequence.fromList(result).addElement(descriptor);
         } else {
-          smd = new JavaStubModelDescriptor(modelReference, new JavaStubModelDataSource(module.getModuleReference(), false), module);
+          smd = new JavaStubModelDescriptor(modelReference, new JavaStubModelDataSource(false), modelRoot.getModule());
           ListSequence.fromList(result).addElement(smd);
         }
-        ((JavaStubModelDataSource) smd.getSource()).addPath(JavaStubs.this.child(startPath, subpackage));
+        ((JavaStubModelDataSource) smd.getSource()).addPath(JavaStubs.this.child(startPath, subpackage), modelRoot);
       }
-      JavaStubs.this.getModelDescriptors(result, startPath, cp, subpackage, languageId, module);
+      JavaStubs.this.getModelDescriptors(result, startPath, cp, subpackage, languageId, modelRoot);
     }
   }
 

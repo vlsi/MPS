@@ -44,14 +44,14 @@ public class RefTestMethod_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_aelxmr_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "method");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "method");
     editorCell.setCellId("Constant_aelxmr_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_aelxmr_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_aelxmr_c0");
     {
       Style style = editorCell.getStyle();
@@ -63,7 +63,7 @@ public class RefTestMethod_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_aelxmr_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_aelxmr_e0");
     {
       Style style = editorCell.getStyle();
@@ -74,7 +74,7 @@ public class RefTestMethod_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_aelxmr_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_aelxmr_f0");
     {
       Style style = editorCell.getStyle();
@@ -86,7 +86,7 @@ public class RefTestMethod_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_aelxmr_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_aelxmr_h0");
     {
       Style style = editorCell.getStyle();
@@ -174,7 +174,7 @@ public class RefTestMethod_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);

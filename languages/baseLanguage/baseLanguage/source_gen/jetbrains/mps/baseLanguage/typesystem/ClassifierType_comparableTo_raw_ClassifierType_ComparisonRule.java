@@ -20,11 +20,11 @@ public class ClassifierType_comparableTo_raw_ClassifierType_ComparisonRule exten
   public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
     if ((ListSequence.fromList(SLinkOperations.getTargets(node1, "parameter", true)).isNotEmpty() ^ ListSequence.fromList(SLinkOperations.getTargets(node2, "parameter", true)).isNotEmpty()) || ListSequence.fromList(SLinkOperations.getTargets(node1, "parameter", true)).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.WildCardType");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
       }
     }) || ListSequence.fromList(SLinkOperations.getTargets(node2, "parameter", true)).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.WildCardType");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
       }
     })) {
       // formatting 

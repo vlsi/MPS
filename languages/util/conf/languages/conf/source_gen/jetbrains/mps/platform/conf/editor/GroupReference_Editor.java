@@ -90,14 +90,14 @@ public class GroupReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_b7gqtc_a0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "at");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "at");
     editorCell.setCellId("Constant_b7gqtc_a0c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_b7gqtc_c0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "position");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "position");
     editorCell.setCellId("Constant_b7gqtc_c0c0");
     editorCell.setDefaultText("");
     return editorCell;

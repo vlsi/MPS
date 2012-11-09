@@ -34,7 +34,6 @@ import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import jetbrains.mps.ide.ThreadUtils;
 
-
 /**
  * * @author Evgeny Gerashchenko
  * * @since 3/23/11

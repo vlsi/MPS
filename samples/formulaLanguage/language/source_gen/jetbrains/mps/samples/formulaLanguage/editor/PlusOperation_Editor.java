@@ -34,7 +34,7 @@ public class PlusOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_306krj_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "+");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "+");
     editorCell.setCellId("Constant_306krj_b0");
     {
       Style style = editorCell.getStyle();

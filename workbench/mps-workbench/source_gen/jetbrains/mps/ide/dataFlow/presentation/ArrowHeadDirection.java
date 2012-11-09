@@ -7,13 +7,11 @@ import java.awt.Color;
 
 public enum ArrowHeadDirection {
   NONE() {
-
     public void paint(Graphics g, int x, int y) {
     }
 
   },
   UP() {
-
     public void paint(Graphics g, int x, int y) {
       g.setColor(Color.BLACK);
       g.drawLine(x - HALFWIDTH, y + LENGTH, x, y);
@@ -22,7 +20,6 @@ public enum ArrowHeadDirection {
 
   },
   DOWN() {
-
     public void paint(Graphics g, int x, int y) {
       g.setColor(Color.BLACK);
       g.drawLine(x - HALFWIDTH, y - LENGTH, x, y);
@@ -31,7 +28,6 @@ public enum ArrowHeadDirection {
 
   },
   LEFT() {
-
     public void paint(Graphics g, int x, int y) {
       g.setColor(Color.BLACK);
       g.drawLine(x + LENGTH, y + HALFWIDTH, x, y);
@@ -40,7 +36,6 @@ public enum ArrowHeadDirection {
 
   },
   RIGHT() {
-
     public void paint(Graphics g, int x, int y) {
       g.setColor(Color.BLACK);
       g.drawLine(x - LENGTH, y + HALFWIDTH, x, y);

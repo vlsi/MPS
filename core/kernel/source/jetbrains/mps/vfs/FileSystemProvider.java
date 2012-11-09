@@ -25,4 +25,7 @@ public interface FileSystemProvider {
   boolean isFileIgnored(String name);
   void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles);
   boolean runWriteTransaction(Runnable r);
+
+  void addListener(FileSystemListener listener);
+  void removeListener(FileSystemListener listener);
 }

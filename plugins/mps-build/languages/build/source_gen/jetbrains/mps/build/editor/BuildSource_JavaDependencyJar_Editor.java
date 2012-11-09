@@ -44,7 +44,7 @@ public class BuildSource_JavaDependencyJar_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tvqbfe_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(reexport)");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(reexport)");
     editorCell.setCellId("Constant_tvqbfe_b0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     delete_reexport_inJavaDependencyJar.setCellActions(editorCell, node, editorContext);
@@ -53,7 +53,7 @@ public class BuildSource_JavaDependencyJar_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tvqbfe_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "reexport:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reexport:");
     editorCell.setCellId("Constant_tvqbfe_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

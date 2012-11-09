@@ -33,7 +33,7 @@ public class TestCaseRef_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_aryab1_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "ITestCase");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ITestCase");
     editorCell.setCellId("Constant_aryab1_a0");
     {
       Style style = editorCell.getStyle();
@@ -44,7 +44,7 @@ public class TestCaseRef_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -71,7 +71,7 @@ public class TestCaseRef_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean _StyleParameter_QueryFunction_aryab1_a0a0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_aryab1_a0a0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "muted");
   }
 

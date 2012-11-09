@@ -66,14 +66,14 @@ public class Service_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_m4h17_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "serviceInterface:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "serviceInterface:");
     editorCell.setCellId("Constant_m4h17_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_m4h17_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "serviceImplementation:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "serviceImplementation:");
     editorCell.setCellId("Constant_m4h17_c1a");
     editorCell.setDefaultText("");
     return editorCell;

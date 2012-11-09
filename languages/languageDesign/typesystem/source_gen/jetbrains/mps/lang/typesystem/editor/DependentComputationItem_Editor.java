@@ -46,14 +46,14 @@ public class DependentComputationItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_i53w7s_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "dependent computation");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependent computation");
     editorCell.setCellId("Constant_i53w7s_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_i53w7s_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "applicable for concept:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "applicable for concept:");
     editorCell.setCellId("Constant_i53w7s_c0");
     {
       Style style = editorCell.getStyle();
@@ -64,7 +64,7 @@ public class DependentComputationItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_i53w7s_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_i53w7s_e0");
     {
       Style style = editorCell.getStyle();
@@ -76,7 +76,7 @@ public class DependentComputationItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_i53w7s_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "is applicable:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is applicable:");
     editorCell.setCellId("Constant_i53w7s_f0");
     {
       Style style = editorCell.getStyle();
@@ -87,7 +87,7 @@ public class DependentComputationItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_i53w7s_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_i53w7s_h0");
     {
       Style style = editorCell.getStyle();
@@ -98,7 +98,7 @@ public class DependentComputationItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_i53w7s_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "blocking node's concept:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "blocking node's concept:");
     editorCell.setCellId("Constant_i53w7s_i0");
     {
       Style style = editorCell.getStyle();
@@ -109,7 +109,7 @@ public class DependentComputationItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_i53w7s_k0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_i53w7s_k0");
     {
       Style style = editorCell.getStyle();
@@ -120,7 +120,7 @@ public class DependentComputationItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_i53w7s_l0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "is blocking:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is blocking:");
     editorCell.setCellId("Constant_i53w7s_l0");
     {
       Style style = editorCell.getStyle();
@@ -131,7 +131,7 @@ public class DependentComputationItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_i53w7s_n0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_i53w7s_n0");
     {
       Style style = editorCell.getStyle();
@@ -142,7 +142,7 @@ public class DependentComputationItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_i53w7s_o0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "find blocking node:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "find blocking node:");
     editorCell.setCellId("Constant_i53w7s_o0");
     {
       Style style = editorCell.getStyle();

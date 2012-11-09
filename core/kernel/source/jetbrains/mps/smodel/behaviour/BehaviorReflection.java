@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.behaviour;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -64,6 +65,14 @@ public class BehaviorReflection {
     return ConceptRegistry.getInstance().getBehaviorDescriptor(conceptFqName).invoke(node, methodName, parameters);
   }
 
+  public static Object invokeVirtualStatic(@NotNull SConcept concept, String methodName, Object[] parameters) {
+    return ConceptRegistry.getInstance().getBehaviorDescriptor(concept.getId()).invokeStatic(concept, methodName, parameters);
+  }
+
+  public static Object invokeNonVirtualStatic(@NotNull SConcept concept, String methodName, Object[] parameters) {
+    return ConceptRegistry.getInstance().getBehaviorDescriptor(concept.getId()).invokeStatic(concept, methodName, parameters);
+  }
+
   public static Object invokeSuper(@NotNull SNode node, String targetSuperFqName, String methodName, Object[] parameters) {
     return ConceptRegistry.getInstance().getBehaviorDescriptor(targetSuperFqName).invoke(node, methodName, parameters);
   }
@@ -75,6 +84,15 @@ public class BehaviorReflection {
 
   public static <T> T invokeNonVirtual(Class<T> returnType, SNode node, String conceptFqName, String methodName, Object[] parameters) {
     return node == null ? defaultValue(returnType) : (T) invokeNonVirtual(node, conceptFqName, methodName, parameters);
+  }
+
+  // this methods for <T> generic parameter and null safety
+  public static <T> T invokeVirtualStatic(Class<T> returnType, SConcept concept, String methodName, Object[] parameters) {
+    return concept == null ? defaultValue(returnType) : (T) invokeVirtualStatic(concept, methodName, parameters);
+  }
+
+  public static <T> T invokeNonVirtualStatic(Class<T> returnType, SConcept concept, String methodName, Object[] parameters) {
+    return (T) invokeNonVirtualStatic(concept, methodName, parameters);
   }
 
   public static <T> T invokeSuper(Class<T> returnType, SNode node, String targetSuperFqName, String methodName, Object[] parameters) {

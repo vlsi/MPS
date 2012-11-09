@@ -161,14 +161,14 @@ public abstract class AbstractCellListHandler {
 
     // if the list compartment is selectable - create wrapping cell collection around it so
     // that actions intended to work for the list element do not work for the list owner.
-    EditorCell_Collection wrapperCell = EditorCell_Collection.create((jetbrains.mps.nodeEditor.EditorContext) editorContext, myOwnerNode, new CellLayout_Horizontal(), null);
+    EditorCell_Collection wrapperCell = EditorCell_Collection.create(editorContext, myOwnerNode, new CellLayout_Horizontal(), null);
     wrapperCell.setSelectable(true);
     wrapperCell.addEditorCell(cellsCollection);
     return wrapperCell;
   }
 
   public EditorCell_Collection createCells(EditorContext editorContext, CellLayout cellLayout) {
-    myListEditorCell_Collection = EditorCell_Collection.create((jetbrains.mps.nodeEditor.EditorContext) editorContext, myOwnerNode, cellLayout, this);
+    myListEditorCell_Collection = EditorCell_Collection.create(editorContext, myOwnerNode, cellLayout, this);
     myListEditorCell_Collection.setSelectable(false);
 
     Iterator<SNode> listNodes = getNodesForList().iterator();

@@ -52,7 +52,7 @@ public class LinkedHashMapCreator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_g44azu_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "iteration order:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "iteration order:");
     editorCell.setCellId("Constant_g44azu_a0a");
     editorCell.setDefaultText("");
     return editorCell;

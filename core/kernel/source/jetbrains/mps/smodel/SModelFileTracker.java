@@ -16,13 +16,13 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
-import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
-import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -32,7 +32,7 @@ public class SModelFileTracker implements CoreComponent {
 
   private SModelRepository myRepo;
   private GlobalSModelEventsManager myGem;
-  private final Map<String, BaseSModelDescriptorWithSource> myPathsToModelDescriptorMap = new ConcurrentHashMap<String, BaseSModelDescriptorWithSource>();
+  private final Map<String, SModel> myPathsToModelDescriptorMap = new ConcurrentHashMap<String, SModel>();
   private final SModelRepositoryAdapter myRepoListener = new MySModelRepositoryAdapter();
   private final SModelFileTracker.ModelChangeListener myModelChangeListener = new ModelChangeListener();
 
@@ -64,33 +64,23 @@ public class SModelFileTracker implements CoreComponent {
   }
 
   public BaseSModelDescriptorWithSource findModel(IFile modelFile) {
-    return myPathsToModelDescriptorMap.get(modelFile.getPath());
+    return (BaseSModelDescriptorWithSource) myPathsToModelDescriptorMap.get(modelFile.getPath());
   }
 
-  private void addModelToFileCache(SModelDescriptor md) {
-    if (!(md instanceof BaseSModelDescriptorWithSource)) return;
+  private void addModelToFileCache(SModel md) {
+    DataSource source = md.getSource();
+    if (!(source instanceof FileDataSource)) return;
 
-    BaseSModelDescriptorWithSource bmd = (BaseSModelDescriptorWithSource) md;
-    ModelDataSource source = bmd.getSource();
-    if (!(source instanceof FileBasedModelDataSource)) return;
-
-    Collection<String> files = ((FileBasedModelDataSource) source).getFilesToListen();
-    if (files.size() != 1) return;
-
-    myPathsToModelDescriptorMap.put(files.iterator().next(), bmd);
+    IFile file = ((FileDataSource) source).getFile();
+    myPathsToModelDescriptorMap.put(file.getPath(), md);
   }
 
-  private void removeModelFromFileCache(SModelDescriptor md) {
-    if (!(md instanceof BaseSModelDescriptorWithSource)) return;
+  private void removeModelFromFileCache(SModel md) {
+    DataSource source = md.getSource();
+    if (!(source instanceof FileDataSource)) return;
 
-    BaseSModelDescriptorWithSource bmd = (BaseSModelDescriptorWithSource) md;
-    ModelDataSource source = bmd.getSource();
-    if (!(source instanceof FileBasedModelDataSource)) return;
-
-    Collection<String> files = ((FileBasedModelDataSource) source).getFilesToListen();
-    if (files.size() != 1) return;
-
-    myPathsToModelDescriptorMap.remove(files.iterator().next());
+    IFile file = ((FileDataSource) source).getFile();
+    myPathsToModelDescriptorMap.remove(file.getPath());
   }
 
   private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {

@@ -59,7 +59,7 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_fao2ea_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_fao2ea_a0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -71,7 +71,7 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -81,7 +81,7 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_fao2ea_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_fao2ea_c0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
@@ -107,7 +107,7 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -124,11 +124,11 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
     return editorCell;
   }
 
-  private static boolean _StyleParameter_QueryFunction_fao2ea_a0a0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_fao2ea_a0a0(SNode node, EditorContext editorContext) {
     return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
   }
 
-  private static boolean _StyleParameter_QueryFunction_fao2ea_a0b0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_fao2ea_a0b0(SNode node, EditorContext editorContext) {
     return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
   }
 }

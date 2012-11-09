@@ -72,7 +72,7 @@ public class NewSolution_Action extends BaseAction {
     try {
       NewSolutionDialog dialog = new NewSolutionDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
       dialog.setProject(((MPSProject) MapSequence.fromMap(_params).get("project")));
-      dialog.showDialog();
+      dialog.show();
       final Solution s = dialog.getResult();
       if (s == null) {
         return;

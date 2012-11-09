@@ -48,11 +48,8 @@ public class InternalAnonymousClass_TextGen extends SNodeTextGen {
       this.append(" {}");
       return;
     }
-    this.append(" {");
-    this.increaseDepth();
-    BaseClassConceptTextGen.body(node, this);
-    this.decreaseDepth();
-    this.appendWithIndent("}");
+    this.append(" ");
+    BaseClassConceptTextGen.membersWithBrackets(node, false, this);
     if (getBuffer().hasPositionsSupport()) {
       {
         String unitName = null;

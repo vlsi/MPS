@@ -45,7 +45,7 @@ public class BuildLayout_CopyRegexMapper_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_do9qzk_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "\"");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_do9qzk_b0");
     {
       Style style = editorCell.getStyle();
@@ -57,7 +57,7 @@ public class BuildLayout_CopyRegexMapper_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_do9qzk_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "\"");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_do9qzk_d0");
     {
       Style style = editorCell.getStyle();
@@ -69,7 +69,7 @@ public class BuildLayout_CopyRegexMapper_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_do9qzk_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "->");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_do9qzk_e0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -77,7 +77,7 @@ public class BuildLayout_CopyRegexMapper_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_do9qzk_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "\"");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_do9qzk_f0");
     {
       Style style = editorCell.getStyle();
@@ -89,7 +89,7 @@ public class BuildLayout_CopyRegexMapper_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_do9qzk_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "\"");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_do9qzk_h0");
     {
       Style style = editorCell.getStyle();

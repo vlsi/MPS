@@ -139,14 +139,14 @@ public class Group_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_o84zp2_b1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "class:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "class:");
     editorCell.setCellId("Constant_o84zp2_b1a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_o84zp2_b2a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "contents:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "contents:");
     editorCell.setCellId("Constant_o84zp2_b2a0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -173,17 +173,17 @@ public class Group_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_o84zp2_a1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_o84zp2_a2a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_o84zp2_a3a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
@@ -278,7 +278,7 @@ public class Group_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_o84zp2_a0c2a0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_o84zp2_a0c2a0");
       editorCell.setDefaultText("<no contents>");
       return editorCell;
@@ -325,7 +325,7 @@ public class Group_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_o84zp2_a1d0a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_o84zp2_a1d0a");
       editorCell.setDefaultText("<no groups>");
       return editorCell;

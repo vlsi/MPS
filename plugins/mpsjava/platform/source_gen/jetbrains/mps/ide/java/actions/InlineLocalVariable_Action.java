@@ -27,7 +27,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableReferenceRefactoring;
 import com.intellij.openapi.ui.Messages;
 import java.awt.Frame;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 
 public class InlineLocalVariable_Action extends BaseAction {
   private static final Icon ICON = null;

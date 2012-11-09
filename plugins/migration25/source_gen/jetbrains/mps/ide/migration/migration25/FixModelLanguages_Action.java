@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -68,10 +68,10 @@ public class FixModelLanguages_Action extends BaseAction {
           continue;
         }
         for (SModel md : Sequence.fromIterable(module.getModels())) {
-          if (!(md instanceof DefaultSModelDescriptor)) {
+          if (!(md instanceof EditableSModelDescriptor)) {
             continue;
           }
-          if (((DefaultSModelDescriptor) md).isReadOnly()) {
+          if (((EditableSModelDescriptor) md).isReadOnly()) {
             continue;
           }
 

@@ -39,14 +39,14 @@ public class ConcreteChildPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_39prjl_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "[");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_39prjl_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_39prjl_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "]");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_39prjl_d0");
     editorCell.addKeyMap(new ChildPart_Actions());
     editorCell.setDefaultText("");
@@ -54,7 +54,7 @@ public class ConcreteChildPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_39prjl_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "*");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "*");
     editorCell.setCellId("Constant_39prjl_e0");
     editorCell.addKeyMap(new ChildPart_Actions());
     editorCell.setDefaultText("");
@@ -62,7 +62,7 @@ public class ConcreteChildPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_39prjl_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "V");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "V");
     editorCell.setCellId("Constant_39prjl_f0");
     editorCell.setDefaultText("");
     return editorCell;

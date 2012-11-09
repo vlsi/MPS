@@ -53,14 +53,14 @@ public class ConceptContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_d6y0ft_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "concepts");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concepts");
     editorCell.setCellId("Constant_d6y0ft_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_d6y0ft_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_d6y0ft_c0a");
     {
       Style style = editorCell.getStyle();
@@ -71,7 +71,7 @@ public class ConceptContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_d6y0ft_e0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_d6y0ft_e0a");
     {
       Style style = editorCell.getStyle();

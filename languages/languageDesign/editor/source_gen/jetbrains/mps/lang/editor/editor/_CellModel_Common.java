@@ -50,7 +50,7 @@ public class _CellModel_Common extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_1stfn5_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_1stfn5_b0");
     editorCell.setDefaultText("");
     return editorCell;

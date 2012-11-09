@@ -43,7 +43,7 @@ public class BuildSource_JavaContentRoot_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_p3v1g4_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "content root:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "content root:");
     editorCell.setCellId("Constant_p3v1g4_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -52,7 +52,7 @@ public class BuildSource_JavaContentRoot_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_p3v1g4_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_p3v1g4_d0");
     editorCell.setDefaultText("");
     return editorCell;

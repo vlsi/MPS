@@ -49,7 +49,7 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jiideg_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "$COPY_SRC$");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$COPY_SRC$");
     editorCell.setCellId("Constant_jiideg_a0");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     {

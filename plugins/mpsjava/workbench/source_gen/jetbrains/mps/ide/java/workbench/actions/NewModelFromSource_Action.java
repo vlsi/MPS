@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.smodel.SModel;
@@ -32,7 +33,6 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.java.newparser.DirParser;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import com.intellij.openapi.project.Project;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.ide.StereotypeProvider;
 
@@ -128,10 +128,10 @@ public class NewModelFromSource_Action extends BaseAction {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           String stereotype = NewModelFromSource_Action.this.getStereotype(_params);
-          dialog.value = new NewModelDialog(localModule, NewModelFromSource_Action.this.getNamespace(_params), localContext, stereotype, NewModelFromSource_Action.this.isStrict(_params));
+          dialog.value = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("project")), localModule, NewModelFromSource_Action.this.getNamespace(_params), localContext, stereotype, NewModelFromSource_Action.this.isStrict(_params));
         }
       });
-      dialog.value.showDialog();
+      dialog.value.show();
       SModelDescriptor result = dialog.value.getResult();
       if (result != null) {
         TreeFileChooser treeFileChooser = new TreeFileChooser();

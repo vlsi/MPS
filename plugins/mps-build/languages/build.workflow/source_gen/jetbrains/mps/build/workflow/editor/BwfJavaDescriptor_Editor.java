@@ -25,7 +25,7 @@ public class BwfJavaDescriptor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qa8ftx_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "java project");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "java project");
     editorCell.setCellId("Constant_qa8ftx_a0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -37,7 +37,7 @@ public class BwfJavaDescriptor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qa8ftx_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_qa8ftx_b0");
     editorCell.setDefaultText("");
     return editorCell;

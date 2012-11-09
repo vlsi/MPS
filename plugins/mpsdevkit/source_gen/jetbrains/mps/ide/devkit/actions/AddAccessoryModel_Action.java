@@ -21,14 +21,14 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
+import com.intellij.openapi.project.Project;
 import java.awt.Frame;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.IScope;
 import javax.swing.JOptionPane;
-import jetbrains.mps.smodel.SModelRepository;
 
 public class AddAccessoryModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -85,7 +85,7 @@ public class AddAccessoryModel_Action extends BaseAction {
       final List<SModelReference> models = ListSequence.fromList(new ArrayList<SModelReference>());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          List<SModelDescriptor> descriptors = GlobalScope.getInstance().getModelDescriptors();
+          List<SModelDescriptor> descriptors = SModelRepository.getInstance().getModelDescriptors();
           ListSequence.fromList(models).addSequence(ListSequence.fromList(descriptors).select(new ISelector<SModelDescriptor, SModelReference>() {
             public SModelReference select(SModelDescriptor it) {
               return it.getSModelReference();
@@ -93,7 +93,7 @@ public class AddAccessoryModel_Action extends BaseAction {
           }));
         }
       });
-      final SModelReference result = CommonChoosers.showDialogModelChooser(((Frame) MapSequence.fromMap(_params).get("frame")), models, null);
+      final SModelReference result = CommonChoosers.showDialogModelChooser(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")), models, null);
       if (result == null) {
         return;
       }

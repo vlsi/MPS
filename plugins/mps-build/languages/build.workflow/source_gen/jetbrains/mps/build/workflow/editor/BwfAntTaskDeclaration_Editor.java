@@ -33,7 +33,7 @@ public class BwfAntTaskDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_fxg4hy_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "ant taskdef");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ant taskdef");
     editorCell.setCellId("Constant_fxg4hy_a0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -41,7 +41,7 @@ public class BwfAntTaskDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_fxg4hy_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "class");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "class");
     editorCell.setCellId("Constant_fxg4hy_c0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -49,7 +49,7 @@ public class BwfAntTaskDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_fxg4hy_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "from");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
     editorCell.setCellId("Constant_fxg4hy_e0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

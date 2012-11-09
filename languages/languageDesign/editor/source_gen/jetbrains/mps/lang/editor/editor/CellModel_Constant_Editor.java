@@ -118,7 +118,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8hdu2g_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8hdu2g_b0");
     {
       Style style = editorCell.getStyle();
@@ -129,7 +129,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8hdu2g_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Constant cell:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Constant cell:");
     editorCell.setCellId("Constant_8hdu2g_c0");
     Styles_StyleSheet.getHeader(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -137,7 +137,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8hdu2g_a0d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "text");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text");
     editorCell.setCellId("Constant_8hdu2g_a0d0");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -145,7 +145,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8hdu2g_a1d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "text*");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text*");
     editorCell.setCellId("Constant_8hdu2g_a1d0");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -170,7 +170,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -181,7 +181,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -192,7 +192,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -203,7 +203,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -214,7 +214,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -225,7 +225,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -236,7 +236,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -311,31 +311,31 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     return EditorCellModel_Behavior.call_getClosingTag_1220340488560(node).length() > 0;
   }
 
-  private static int _StyleParameter_QueryFunction_8hdu2g_a4b0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static int _StyleParameter_QueryFunction_8hdu2g_a4b0(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getFontSize_1221216397365(node);
   }
 
-  private static int _StyleParameter_QueryFunction_8hdu2g_a3b0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static int _StyleParameter_QueryFunction_8hdu2g_a3b0(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
   }
 
-  private static boolean _StyleParameter_QueryFunction_8hdu2g_a6b0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_8hdu2g_a6b0(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_isStrikeOut_1223390694337(node);
   }
 
-  private static boolean _StyleParameter_QueryFunction_8hdu2g_a5b0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_8hdu2g_a5b0(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_8hdu2g_a0b0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_8hdu2g_a0b0(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_8hdu2g_a1b0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_8hdu2g_a1b0(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getBackgroundColor_1220969182195(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_8hdu2g_a2b0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_8hdu2g_a2b0(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
   }
 }

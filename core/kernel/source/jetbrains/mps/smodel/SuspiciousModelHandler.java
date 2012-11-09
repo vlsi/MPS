@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.model.SModel;
 
 /**
  * @author Evgeny Gerashchenko
@@ -23,12 +24,12 @@ import jetbrains.mps.project.AbstractModule;
  */
 public abstract class SuspiciousModelHandler {
   // TODO replace with extension point & interface
-  public abstract void handleSuspiciousModel(DefaultSModelDescriptor modelDescriptor, boolean isInConflict);
+  public abstract void handleSuspiciousModel(SModel modelDescriptor, boolean isInConflict);
   public abstract void handleSuspiciousModule(AbstractModule abstractModule, boolean isInConflict);
 
   private static SuspiciousModelHandler ourHandler = new SuspiciousModelHandler() {
     @Override
-    public void handleSuspiciousModel(DefaultSModelDescriptor modelDescriptor, boolean isInConflict) {
+    public void handleSuspiciousModel(SModel modelDescriptor, boolean isInConflict) {
     }
 
     @Override

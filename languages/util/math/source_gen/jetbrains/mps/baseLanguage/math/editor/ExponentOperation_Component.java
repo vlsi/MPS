@@ -101,7 +101,7 @@ public class ExponentOperation_Component extends AbstractCellProvider {
   }
 
   private EditorCell createEmpty_spngij_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Empty editorCell = new EditorCell_Empty((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
     editorCell.setCellId("Empty_spngij_c0");
     {
       Style style = editorCell.getStyle();

@@ -71,7 +71,7 @@ public class Expand_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Expand_Action.this.getAction(_params).execute((EditorContext) ((jetbrains.mps.nodeEditor.EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+      Expand_Action.this.getAction(_params).execute((EditorContext) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "Expand", t);

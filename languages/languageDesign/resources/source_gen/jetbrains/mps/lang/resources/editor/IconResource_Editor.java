@@ -79,7 +79,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_79r3b6_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<no icon>");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no icon>");
     editorCell.setCellId("Constant_79r3b6_a0a");
     {
       Style style = editorCell.getStyle();
@@ -90,7 +90,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_79r3b6_a0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<invalid path>");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<invalid path>");
     editorCell.setCellId("Constant_79r3b6_a0a0");
     {
       Style style = editorCell.getStyle();
@@ -134,7 +134,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -162,7 +162,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
     return EditorUtil.createSelectIconButton(node, "path", editorContext);
   }
 
-  private static Color _StyleParameter_QueryFunction_79r3b6_a0a(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_79r3b6_a0a(SNode node, EditorContext editorContext) {
     return (IconResource_Behavior.call_isValid_8974276187400030063(node) ?
       Color.BLACK :
       Color.RED

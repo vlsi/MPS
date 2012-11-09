@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="7489932710218379845" modelId="r:3d6eb713-f66e-4101-9aa3-d4d364fcec63(jetbrains.mps.testModels.staticConst2)">
-    <nodeInfo nodeId="7489932710218379851" fileName="TestUtil.java" startLine="6" startPosition="23" endLine="7" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="test" />
+    <nodeInfo nodeId="7489932710218379851" fileName="TestUtil.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="test" />
     <unitInfo nodeId="7489932710218379845" fileName="TestUtil.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.testModels.staticConst2.TestUtil" />
   </root>
 </debugInfo>

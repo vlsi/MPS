@@ -15,11 +15,15 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 
@@ -61,14 +65,14 @@ public class EditorCell_Image extends EditorCell_Basic {
     getStyle().set(StyleAttributes.PUNCTUATION_RIGHT, true);
   }
 
-  public static EditorCell_Image createImageCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node, String imageFileName) {
-    EditorCell_Image result = new EditorCell_Image((EditorContext) editorContext, node);
+  public static EditorCell_Image createImageCell(EditorContext editorContext, SNode node, String imageFileName) {
+    EditorCell_Image result = new EditorCell_Image(editorContext, node);
     result.setImageFileName(expandIconPath(imageFileName, node));
     return result;
   }
 
-  public static EditorCell_Image createImageCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node, Image image) {
-    EditorCell_Image result = new EditorCell_Image((EditorContext) editorContext, node);
+  public static EditorCell_Image createImageCell(EditorContext editorContext, SNode node, Image image) {
+    EditorCell_Image result = new EditorCell_Image(editorContext, node);
     result.setImage(image);
     return result;
   }

@@ -6,30 +6,18 @@ import javax.swing.DefaultListCellRenderer;
 import java.awt.Component;
 import javax.swing.JList;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.model.ModelRootManager;
-import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class ModelRootRenderer extends DefaultListCellRenderer {
   public ModelRootRenderer() {
   }
 
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
-    ModelRootDescriptor modelRoot = (ModelRootDescriptor) value;
-    ModelRoot root = modelRoot.getRoot();
-    ModelRootManager manager = (root != null ?
-      root.getManager() :
-      null
-    );
-    String representation = (root != null ?
-      root.getPath() + " (" + ((manager == null ?
-        "Default" :
-        NameUtil.shortNameFromLongName(manager.getClassName())
-      )) + ")" :
-      "<" + modelRoot.getType() + ">"
-    );
-
-    Component result = super.getListCellRendererComponent(list, representation, index, isSelected, cellHasFocus);
+    ModelRootDescriptor rootDescriptor = (ModelRootDescriptor) value;
+    ModelRoot root = PersistenceFacade.getInstance().getModelRootFactory(rootDescriptor.getType()).create();
+    root.load(rootDescriptor.getMemento());
+    Component result = super.getListCellRendererComponent(list, root.getPresentation(), index, isSelected, cellHasFocus);
     return result;
   }
 }

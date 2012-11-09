@@ -71,7 +71,7 @@ public class SequenceType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_z5ycp4_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_z5ycp4_a1a");
     Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     {
@@ -83,7 +83,7 @@ public class SequenceType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_z5ycp4_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_z5ycp4_c1a");
     Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     {

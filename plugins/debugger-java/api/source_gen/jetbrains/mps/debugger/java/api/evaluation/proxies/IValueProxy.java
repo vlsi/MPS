@@ -5,8 +5,7 @@ package jetbrains.mps.debugger.java.api.evaluation.proxies;
 import org.jetbrains.annotations.Nullable;
 import com.sun.jdi.Value;
 
-public 
-/**
+public /**
  * This solution was introduced as the easiest of the two adequate solutions of MPS-9041
  */
 interface IValueProxy {

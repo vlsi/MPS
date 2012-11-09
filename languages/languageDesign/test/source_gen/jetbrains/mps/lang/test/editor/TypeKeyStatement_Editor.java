@@ -41,7 +41,7 @@ public class TypeKeyStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ye1swh_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "\"");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_ye1swh_b0");
     BaseLanguageStyle_StyleSheet.getStringLiteral(editorCell).apply(editorCell);
     {
@@ -53,7 +53,7 @@ public class TypeKeyStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ye1swh_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "\"");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_ye1swh_d0");
     BaseLanguageStyle_StyleSheet.getStringLiteral(editorCell).apply(editorCell);
     {

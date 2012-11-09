@@ -101,7 +101,7 @@ public final class TextGenBuffer {
 
   private Message prepare(MessageKind kind, String text, @Nullable SNode node) {
     Message message = new Message(kind, text);
-    if (node != null && jetbrains.mps.util.SNodeOperations.isRegistered(node) && node.getModel() != null && !node.getModel().isTransient()) {
+    if (node != null && node.getModel() != null && node.getModel() != null && !node.getModel().isTransient()) {
       message.setHintObject(new SNodePointer(node));
     }
     return message;

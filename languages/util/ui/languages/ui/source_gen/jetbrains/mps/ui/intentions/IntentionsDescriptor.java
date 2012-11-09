@@ -5,6 +5,7 @@ package jetbrains.mps.ui.intentions;
 import jetbrains.mps.intentions.BaseIntentionsDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
@@ -12,8 +13,8 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   }
 
   public void init() {
-    add(new Classifier_add_GenerateVariant_Intention(), "8905126934806239993");
     add(new View_wrap_with_ValidatingView_Intention(), "8381258131358771407");
     add(new replace_UIObjectStatement_AppendUIObjectStatement_Intention(), "1576918603588812821");
+    IntentionsManager.getInstance().registerIntentionFactory(new Classifier_add_GenerateVariant_Intention());
   }
 }

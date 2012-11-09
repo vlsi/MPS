@@ -89,21 +89,21 @@ public class MathContextEditorPart extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_qri1nn_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "predefined precision setting:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "predefined precision setting:");
     editorCell.setCellId("Constant_qri1nn_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_qri1nn_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "rounding mode:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rounding mode:");
     editorCell.setCellId("Constant_qri1nn_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_qri1nn_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "precision:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "precision:");
     editorCell.setCellId("Constant_qri1nn_a2a");
     editorCell.setDefaultText("");
     return editorCell;

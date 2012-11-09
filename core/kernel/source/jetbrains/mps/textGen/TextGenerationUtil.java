@@ -15,36 +15,20 @@
  */
 package jetbrains.mps.textGen;
 
-import jetbrains.mps.messages.IMessage;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 
-import java.util.Collections;
-
+// use TextGen instead
+@Deprecated
 public class TextGenerationUtil {
-
-  public static final String NO_TEXTGEN = "\33\33NO TEXTGEN\33\33";
+  public static final String NO_TEXTGEN = TextGen.NO_TEXTGEN;
 
   public static TextGenerationResult generateText(IOperationContext context, SNode node) {
-    return TextGenerationUtil.generateText(context, node, false, false, null);
+    return TextGen.generateText(node);
   }
 
   public static TextGenerationResult generateText(IOperationContext context, SNode node, boolean failIfNoTextgen, boolean withDebugInfo, StringBuilder[] buffers) {
-    if (TextGenManager.instance().canGenerateTextFor(node)) {
-      return TextGenManager.instance().generateText(context, node, withDebugInfo, buffers);
-    } else if (failIfNoTextgen) {
-      String error = "Can't generate text from " + node;
-      Message m = new Message(MessageKind.ERROR, error);
-      if (node != null && jetbrains.mps.util.SNodeOperations.isRegistered(node) && node.getModel() != null && !node.getModel().isTransient()) {
-        m.setHintObject(new SNodePointer(node));
-      }
-      return new TextGenerationResult(NO_TEXTGEN, true, Collections.<IMessage>singleton(m), null, null, null, null);
-    } else {
-      return new TextGenerationResult(NO_TEXTGEN, false, null, null, null, null, null);
-    }
+    return TextGen.generateText(node, failIfNoTextgen, withDebugInfo, buffers);
   }
 }
                                                             

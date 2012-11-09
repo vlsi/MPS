@@ -33,6 +33,6 @@ public class SolutionChooser implements Computable<List<ModuleReference>> {
         }).toListSequence();
       }
     });
-    return CommonChoosers.showDialogModuleCollectionChooser(myOwner.getMainComponent(), "solution", solRefs.value, null);
+    return CommonChoosers.showDialogModuleCollectionChooser(null, myOwner.getMainComponent(), "solution", solRefs.value, null);
   }
 }

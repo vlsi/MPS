@@ -23,7 +23,7 @@ import com.intellij.util.xmlb.annotations.Attribute;
 /**
  * evgeny, 10/24/12
  */
-public class ModelRootSettingsEP extends AbstractExtensionPointBean implements KeyedLazyInstance<ModelRootSettingsProvider> {
+public class ModelRootSettingsEP extends AbstractExtensionPointBean implements KeyedLazyInstance<ModelRootSettingsEditorProvider> {
   @Attribute("rootType")
   public String rootType;
   @Attribute("className")
@@ -35,13 +35,13 @@ public class ModelRootSettingsEP extends AbstractExtensionPointBean implements K
     return rootType;
   }
 
-  private final LazyInstance<ModelRootSettingsProvider> myProvider = new LazyInstance<ModelRootSettingsProvider>() {
-    protected Class<ModelRootSettingsProvider> getInstanceClass() throws ClassNotFoundException {
+  private final LazyInstance<ModelRootSettingsEditorProvider> myProvider = new LazyInstance<ModelRootSettingsEditorProvider>() {
+    protected Class<ModelRootSettingsEditorProvider> getInstanceClass() throws ClassNotFoundException {
       return findClass(className);
     }
   };
 
-  public ModelRootSettingsProvider getInstance() {
+  public ModelRootSettingsEditorProvider getInstance() {
     return myProvider.getValue();
   }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1077540970775387654" modelId="r:d357a980-6a2b-481f-acb3-29792a9d3728(jetbrains.mps.make.dependencies)">
-    <nodeInfo nodeId="5541828167401385635" fileName="ModulesClusterizer.java" startLine="32" startPosition="33" endLine="33" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="5541828167401385635" fileName="ModulesClusterizer.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1077540970775395300" fileName="ModulesClusterizer.java" startLine="40" startPosition="42" endLine="41" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1077540970775395207" fileName="ModulesClusterizer.java" startLine="45" startPosition="42" endLine="46" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1077540970775403251" fileName="ModulesClusterizer.java" startLine="48" startPosition="7" endLine="49" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -31,18 +31,18 @@
     <nodeInfo nodeId="5541828167401370186" fileName="ModulesClusterizer.java" startLine="126" startPosition="62" endLine="127" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5006694999088887612" fileName="ModulesClusterizer.java" startLine="127" startPosition="115" endLine="128" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5541828167401370209" fileName="ModulesClusterizer.java" startLine="134" startPosition="5" endLine="135" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1077540970775387656" fileName="ModulesClusterizer.java" startLine="34" startPosition="0" endLine="36" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModulesClusterizer#()V" />
+    <nodeInfo nodeId="1077540970775387656" fileName="ModulesClusterizer.java" startLine="35" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModulesClusterizer#()V" />
+    <nodeInfo nodeId="1077540970775395298" fileName="ModulesClusterizer.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/make/resources/IResource;)Z" />
+    <nodeInfo nodeId="1077540970775395205" fileName="ModulesClusterizer.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/make/resources/IResource;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="6815280125878415644" fileName="ModulesClusterizer.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/make/resources/IResource;)Z" />
+    <nodeInfo nodeId="5541828167401360160" fileName="ModulesClusterizer.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/make/resources/IResource;)Z" />
+    <nodeInfo nodeId="5541828167401360176" fileName="ModulesClusterizer.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/make/resources/IResource;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="6987891284706393035" fileName="ModulesClusterizer.java" startLine="88" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6987891284706393046" fileName="ModulesClusterizer.java" startLine="92" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="3712686628935232879" fileName="ModulesClusterizer.java" startLine="97" startPosition="75" endLine="100" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5541828167401370139" fileName="ModulesClusterizer.java" startLine="102" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/Language;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6987891284706391844" fileName="ModulesClusterizer.java" startLine="106" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="7952422520065086502" fileName="ModulesClusterizer.java" startLine="122" startPosition="44" endLine="125" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1077540970775395298" fileName="ModulesClusterizer.java" startLine="39" startPosition="101" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/make/resources/IResource;)Z" />
-    <nodeInfo nodeId="1077540970775395205" fileName="ModulesClusterizer.java" startLine="44" startPosition="101" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/make/resources/IResource;)Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="6815280125878415644" fileName="ModulesClusterizer.java" startLine="54" startPosition="98" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/make/resources/IResource;)Z" />
-    <nodeInfo nodeId="5541828167401360160" fileName="ModulesClusterizer.java" startLine="67" startPosition="99" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/make/resources/IResource;)Z" />
-    <nodeInfo nodeId="5541828167401360176" fileName="ModulesClusterizer.java" startLine="72" startPosition="101" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/make/resources/IResource;)Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="6987891284706393035" fileName="ModulesClusterizer.java" startLine="87" startPosition="138" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6987891284706393046" fileName="ModulesClusterizer.java" startLine="91" startPosition="45" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="5541828167401370139" fileName="ModulesClusterizer.java" startLine="101" startPosition="118" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/Language;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6987891284706391844" fileName="ModulesClusterizer.java" startLine="105" startPosition="45" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="5541828167401370164" fileName="ModulesClusterizer.java" startLine="113" startPosition="76" endLine="117" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5006694999088887595" fileName="ModulesClusterizer.java" startLine="125" startPosition="15" endLine="129" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1077540970775395291" fileName="ModulesClusterizer.java" startLine="38" startPosition="86" endLine="43" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -50,20 +50,20 @@
     <nodeInfo nodeId="198406549333194314" fileName="ModulesClusterizer.java" startLine="53" startPosition="65" endLine="58" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5541828167401360152" fileName="ModulesClusterizer.java" startLine="66" startPosition="78" endLine="71" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5541828167401360169" fileName="ModulesClusterizer.java" startLine="71" startPosition="24" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="198406549333194312" fileName="ModulesClusterizer.java" startLine="52" startPosition="112" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Iterable;)Ljava/util/List;" />
+    <nodeInfo nodeId="198406549333194312" fileName="ModulesClusterizer.java" startLine="53" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Iterable;)Ljava/util/List;" />
     <nodeInfo nodeId="6987891284706393023" fileName="ModulesClusterizer.java" startLine="86" startPosition="76" endLine="95" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5541828167401370132" fileName="ModulesClusterizer.java" startLine="100" startPosition="9" endLine="109" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5541828167401370184" fileName="ModulesClusterizer.java" startLine="121" startPosition="29" endLine="130" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3861256696861030151" fileName="ModulesClusterizer.java" startLine="120" startPosition="63" endLine="131" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="198406549333194305" fileName="ModulesClusterizer.java" startLine="51" startPosition="31" endLine="63" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5541828167401360121" fileName="ModulesClusterizer.java" startLine="65" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="allUsedLangNamespaces#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="5541828167401360121" fileName="ModulesClusterizer.java" startLine="66" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="allUsedLangNamespaces#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="6987891284706391828" fileName="ModulesClusterizer.java" startLine="96" startPosition="12" endLine="110" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5541828167401370177" fileName="ModulesClusterizer.java" startLine="117" startPosition="9" endLine="132" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5541828167401370149" fileName="ModulesClusterizer.java" startLine="110" startPosition="7" endLine="133" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="6987891284706391815" fileName="ModulesClusterizer.java" startLine="84" startPosition="33" endLine="110" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1077540970775387661" fileName="ModulesClusterizer.java" startLine="37" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clusterize#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1077540970775387661" fileName="ModulesClusterizer.java" startLine="38" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clusterize#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="5541828167401370121" fileName="ModulesClusterizer.java" startLine="83" startPosition="74" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5541828167401370102" fileName="ModulesClusterizer.java" startLine="79" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="allNamespaces#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="5541828167401370102" fileName="ModulesClusterizer.java" startLine="80" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="allNamespaces#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
     <scopeInfo nodeId="1077540970775387659" fileName="ModulesClusterizer.java" startLine="35" startPosition="31" endLine="35" endPosition="31" />
     <scopeInfo nodeId="1077540970775395299" fileName="ModulesClusterizer.java" startLine="40" startPosition="42" endLine="41" endPosition="39" />
     <scopeInfo nodeId="1077540970775395206" fileName="ModulesClusterizer.java" startLine="45" startPosition="42" endLine="46" endPosition="41" />
@@ -76,44 +76,44 @@
     <scopeInfo nodeId="5541828167401370140" fileName="ModulesClusterizer.java" startLine="102" startPosition="47" endLine="103" endPosition="61" />
     <scopeInfo nodeId="6987891284706391845" fileName="ModulesClusterizer.java" startLine="106" startPosition="44" endLine="107" endPosition="67" />
     <scopeInfo nodeId="7952422520065086503" fileName="ModulesClusterizer.java" startLine="123" startPosition="31" endLine="124" endPosition="25" />
-    <scopeInfo nodeId="1077540970775387656" fileName="ModulesClusterizer.java" startLine="34" startPosition="0" endLine="36" endPosition="3" />
+    <scopeInfo nodeId="1077540970775387656" fileName="ModulesClusterizer.java" startLine="35" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="5541828167401370165" fileName="ModulesClusterizer.java" startLine="114" startPosition="25" endLine="116" endPosition="19" />
     <scopeInfo nodeId="5006694999088887596" fileName="ModulesClusterizer.java" startLine="126" startPosition="62" endLine="128" endPosition="57" />
+    <scopeInfo nodeId="1077540970775395298" fileName="ModulesClusterizer.java" startLine="40" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1077540970775395298" varName="r" />
+    </scopeInfo>
+    <scopeInfo nodeId="1077540970775395205" fileName="ModulesClusterizer.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="1077540970775395205" varName="r" />
+    </scopeInfo>
+    <scopeInfo nodeId="6815280125878415644" fileName="ModulesClusterizer.java" startLine="55" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="6815280125878415644" varName="r" />
+    </scopeInfo>
+    <scopeInfo nodeId="5541828167401360160" fileName="ModulesClusterizer.java" startLine="68" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="5541828167401360160" varName="r" />
+    </scopeInfo>
+    <scopeInfo nodeId="5541828167401360176" fileName="ModulesClusterizer.java" startLine="73" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="5541828167401360176" varName="r" />
+    </scopeInfo>
+    <scopeInfo nodeId="6987891284706393035" fileName="ModulesClusterizer.java" startLine="88" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="6987891284706393035" varName="smd" />
+    </scopeInfo>
+    <scopeInfo nodeId="6987891284706393046" fileName="ModulesClusterizer.java" startLine="92" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="6987891284706393046" varName="ns" />
+    </scopeInfo>
     <scopeInfo nodeId="3712686628935232879" fileName="ModulesClusterizer.java" startLine="97" startPosition="75" endLine="100" endPosition="9">
       <varInfo nodeId="3712686628935232880" varName="l" />
     </scopeInfo>
-    <scopeInfo nodeId="1077540970775395298" fileName="ModulesClusterizer.java" startLine="39" startPosition="101" endLine="43" endPosition="0">
-      <varInfo nodeId="1077540970775395298" varName="r" />
-    </scopeInfo>
-    <scopeInfo nodeId="1077540970775395205" fileName="ModulesClusterizer.java" startLine="44" startPosition="101" endLine="48" endPosition="0">
-      <varInfo nodeId="1077540970775395205" varName="r" />
-    </scopeInfo>
-    <scopeInfo nodeId="6815280125878415644" fileName="ModulesClusterizer.java" startLine="54" startPosition="98" endLine="58" endPosition="0">
-      <varInfo nodeId="6815280125878415644" varName="r" />
-    </scopeInfo>
-    <scopeInfo nodeId="5541828167401360160" fileName="ModulesClusterizer.java" startLine="67" startPosition="99" endLine="71" endPosition="0">
-      <varInfo nodeId="5541828167401360160" varName="r" />
-    </scopeInfo>
-    <scopeInfo nodeId="5541828167401360176" fileName="ModulesClusterizer.java" startLine="72" startPosition="101" endLine="76" endPosition="0">
-      <varInfo nodeId="5541828167401360176" varName="r" />
-    </scopeInfo>
-    <scopeInfo nodeId="6987891284706393035" fileName="ModulesClusterizer.java" startLine="87" startPosition="138" endLine="91" endPosition="0">
-      <varInfo nodeId="6987891284706393035" varName="smd" />
-    </scopeInfo>
-    <scopeInfo nodeId="6987891284706393046" fileName="ModulesClusterizer.java" startLine="91" startPosition="45" endLine="95" endPosition="0">
-      <varInfo nodeId="6987891284706393046" varName="ns" />
-    </scopeInfo>
-    <scopeInfo nodeId="5541828167401370139" fileName="ModulesClusterizer.java" startLine="101" startPosition="118" endLine="105" endPosition="0">
+    <scopeInfo nodeId="5541828167401370139" fileName="ModulesClusterizer.java" startLine="102" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="5541828167401370139" varName="lang" />
     </scopeInfo>
-    <scopeInfo nodeId="6987891284706391844" fileName="ModulesClusterizer.java" startLine="105" startPosition="45" endLine="109" endPosition="0">
+    <scopeInfo nodeId="6987891284706391844" fileName="ModulesClusterizer.java" startLine="106" startPosition="0" endLine="109" endPosition="0">
       <varInfo nodeId="6987891284706391844" varName="ns" />
     </scopeInfo>
     <scopeInfo nodeId="198406549333194313" fileName="ModulesClusterizer.java" startLine="53" startPosition="65" endLine="58" endPosition="28" />
-    <scopeInfo nodeId="5541828167401370185" fileName="ModulesClusterizer.java" startLine="122" startPosition="44" endLine="129" endPosition="15" />
-    <scopeInfo nodeId="198406549333194312" fileName="ModulesClusterizer.java" startLine="52" startPosition="112" endLine="60" endPosition="0">
+    <scopeInfo nodeId="198406549333194312" fileName="ModulesClusterizer.java" startLine="53" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="198406549333194312" varName="cl" />
     </scopeInfo>
+    <scopeInfo nodeId="5541828167401370185" fileName="ModulesClusterizer.java" startLine="122" startPosition="44" endLine="129" endPosition="15" />
     <scopeInfo nodeId="3861256696861030152" fileName="ModulesClusterizer.java" startLine="121" startPosition="29" endLine="130" endPosition="13" />
     <scopeInfo nodeId="5541828167401370184" fileName="ModulesClusterizer.java" startLine="121" startPosition="29" endLine="130" endPosition="13">
       <varInfo nodeId="5541828167401370193" varName="tm" />
@@ -125,14 +125,14 @@
       <varInfo nodeId="5541828167401360170" varName="mods" />
       <varInfo nodeId="5541828167401360153" varName="mres" />
     </scopeInfo>
+    <scopeInfo nodeId="5541828167401360121" fileName="ModulesClusterizer.java" startLine="66" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="5541828167401360128" varName="cluster" />
+    </scopeInfo>
     <scopeInfo nodeId="6987891284706391829" fileName="ModulesClusterizer.java" startLine="96" startPosition="14" endLine="109" endPosition="12">
       <varInfo nodeId="5541828167401370124" varName="langs" />
     </scopeInfo>
     <scopeInfo nodeId="5541828167401370178" fileName="ModulesClusterizer.java" startLine="118" startPosition="62" endLine="131" endPosition="11">
       <varInfo nodeId="3861256696861030166" varName="gens" />
-    </scopeInfo>
-    <scopeInfo nodeId="5541828167401360121" fileName="ModulesClusterizer.java" startLine="65" startPosition="0" endLine="79" endPosition="0">
-      <varInfo nodeId="5541828167401360128" varName="cluster" />
     </scopeInfo>
     <scopeInfo nodeId="5541828167401370150" fileName="ModulesClusterizer.java" startLine="111" startPosition="57" endLine="132" endPosition="9">
       <varInfo nodeId="5541828167401370158" varName="lr" />
@@ -144,7 +144,7 @@
       <varInfo nodeId="1077540970775395292" varName="mres" />
       <varInfo nodeId="1077540970775403252" varName="rest" />
     </scopeInfo>
-    <scopeInfo nodeId="1077540970775387661" fileName="ModulesClusterizer.java" startLine="37" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="1077540970775387661" fileName="ModulesClusterizer.java" startLine="38" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="1077540970775387666" varName="res" />
     </scopeInfo>
     <scopeInfo nodeId="5541828167401370122" fileName="ModulesClusterizer.java" startLine="84" startPosition="33" endLine="133" endPosition="7" />
@@ -156,7 +156,7 @@
       <varInfo nodeId="5541828167401370115" varName="nsq" />
       <varInfo nodeId="5006694999088887586" varName="seen" />
     </scopeInfo>
-    <scopeInfo nodeId="5541828167401370102" fileName="ModulesClusterizer.java" startLine="79" startPosition="0" endLine="137" endPosition="0">
+    <scopeInfo nodeId="5541828167401370102" fileName="ModulesClusterizer.java" startLine="80" startPosition="0" endLine="137" endPosition="0">
       <varInfo nodeId="5541828167401370216" varName="modules" />
     </scopeInfo>
     <unitInfo nodeId="1077540970775395298" fileName="ModulesClusterizer.java" startLine="39" startPosition="74" endLine="43" endPosition="5" unitName="jetbrains.mps.make.dependencies.ModulesClusterizer$1" />
@@ -176,8 +176,8 @@
     <nodeInfo nodeId="7959437477381204312" fileName="ModulesCluster.java" startLine="146" startPosition="27" endLine="146" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7959437477381204330" fileName="ModulesCluster.java" startLine="157" startPosition="27" endLine="157" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7959437477381204371" fileName="ModulesCluster.java" startLine="164" startPosition="28" endLine="164" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7902446790715915584" fileName="ModulesCluster.java" startLine="32" startPosition="29" endLine="33" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="modulesView" />
-    <nodeInfo nodeId="7902446790715915149" fileName="ModulesCluster.java" startLine="33" startPosition="115" endLine="34" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="allDeps" />
+    <nodeInfo nodeId="7902446790715915584" fileName="ModulesCluster.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="modulesView" />
+    <nodeInfo nodeId="7902446790715915149" fileName="ModulesCluster.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="allDeps" />
     <nodeInfo nodeId="1077540970775393604" fileName="ModulesCluster.java" startLine="36" startPosition="49" endLine="37" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7902446790715915689" fileName="ModulesCluster.java" startLine="40" startPosition="32" endLine="41" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7902446790715915705" fileName="ModulesCluster.java" startLine="45" startPosition="30" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -195,7 +195,7 @@
     <nodeInfo nodeId="6632091773530719719" fileName="ModulesCluster.java" startLine="80" startPosition="87" endLine="81" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6329960826076769422" fileName="ModulesCluster.java" startLine="85" startPosition="53" endLine="86" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7959437477381204291" fileName="ModulesCluster.java" startLine="93" startPosition="90" endLine="94" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="99" startPosition="70" endLine="100" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
+    <nodeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="100" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
     <nodeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="107" startPosition="28" endLine="108" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="108" startPosition="54" endLine="109" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7959437477381204311" fileName="ModulesCluster.java" startLine="111" startPosition="42" endLine="112" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -261,34 +261,35 @@
     <nodeInfo nodeId="7902446790715915059" fileName="ModulesCluster.java" startLine="230" startPosition="35" endLine="231" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7902446790715915032" fileName="ModulesCluster.java" startLine="234" startPosition="10" endLine="235" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7902446790715915090" fileName="ModulesCluster.java" startLine="235" startPosition="5" endLine="236" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7902446790715915117" fileName="ModulesCluster.java" startLine="239" startPosition="34" endLine="240" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="dependent" />
-    <nodeInfo nodeId="7902446790715915129" fileName="ModulesCluster.java" startLine="240" startPosition="103" endLine="241" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="required" />
+    <nodeInfo nodeId="7902446790715915117" fileName="ModulesCluster.java" startLine="240" startPosition="0" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="dependent" />
+    <nodeInfo nodeId="7902446790715915129" fileName="ModulesCluster.java" startLine="241" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="required" />
     <nodeInfo nodeId="6354106720379814584" fileName="ModulesCluster.java" startLine="243" startPosition="44" endLine="244" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6354106720379814594" fileName="ModulesCluster.java" startLine="244" startPosition="55" endLine="245" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7902446790715915240" fileName="ModulesCluster.java" startLine="255" startPosition="52" endLine="256" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7902446790715915219" fileName="ModulesCluster.java" startLine="263" startPosition="52" endLine="264" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7902446790715915189" fileName="ModulesCluster.java" startLine="269" startPosition="49" endLine="270" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7902446790715915143" fileName="ModulesCluster.java" startLine="249" startPosition="68" endLine="251" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModulesGraph#()V" />
-    <nodeInfo nodeId="7902446790715915657" fileName="ModulesCluster.java" startLine="35" startPosition="0" endLine="38" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModulesCluster#(Ljava/lang/Iterable;)V" />
+    <nodeInfo nodeId="3429507295688670720" fileName="ModulesCluster.java" startLine="72" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectAllRequired#()V" />
+    <nodeInfo nodeId="7902446790715915143" fileName="ModulesCluster.java" startLine="250" startPosition="0" endLine="252" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModulesGraph#()V" />
+    <nodeInfo nodeId="7902446790715915657" fileName="ModulesCluster.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModulesCluster#(Ljava/lang/Iterable;)V" />
+    <nodeInfo nodeId="5888262800849895743" fileName="ModulesCluster.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="add#(Ljetbrains/mps/project/IModule;)V" />
     <nodeInfo nodeId="7902446790715915700" fileName="ModulesCluster.java" startLine="44" startPosition="46" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3429507295688670720" fileName="ModulesCluster.java" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectAllRequired#()V" />
+    <nodeInfo nodeId="7902446790715915749" fileName="ModulesCluster.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/make/dependencies/ModulesCluster/ModuleDeps;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3429507295688670724" fileName="ModulesCluster.java" startLine="75" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasCycles#()Z" />
+    <nodeInfo nodeId="6329960826076769420" fileName="ModulesCluster.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/project/structure/modules/ModuleReference;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="7959437477381204337" fileName="ModulesCluster.java" startLine="122" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/project/structure/modules/ModuleReference;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7959437477381204350" fileName="ModulesCluster.java" startLine="126" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/project/structure/modules/ModuleReference;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3429507295688670740" fileName="ModulesCluster.java" startLine="184" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDirty#(Ljetbrains/mps/project/IModule;)Z" />
     <nodeInfo nodeId="7902446790715915424" fileName="ModulesCluster.java" startLine="204" startPosition="47" endLine="207" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7902446790715915463" fileName="ModulesCluster.java" startLine="209" startPosition="111" endLine="212" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5888262800849895743" fileName="ModulesCluster.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="add#(Ljetbrains/mps/project/IModule;)V" />
-    <nodeInfo nodeId="7902446790715915749" fileName="ModulesCluster.java" startLine="51" startPosition="236" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/make/dependencies/ModulesCluster/ModuleDeps;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="3429507295688670724" fileName="ModulesCluster.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasCycles#()Z" />
-    <nodeInfo nodeId="6329960826076769420" fileName="ModulesCluster.java" startLine="84" startPosition="94" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/project/structure/modules/ModuleReference;)Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="7959437477381204337" fileName="ModulesCluster.java" startLine="121" startPosition="119" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/project/structure/modules/ModuleReference;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="7959437477381204350" fileName="ModulesCluster.java" startLine="125" startPosition="133" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/project/structure/modules/ModuleReference;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="3429507295688670740" fileName="ModulesCluster.java" startLine="183" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDirty#(Ljetbrains/mps/project/IModule;)Z" />
+    <nodeInfo nodeId="2976001787990663190" fileName="ModulesCluster.java" startLine="219" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/Language;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7902446790715915288" fileName="ModulesCluster.java" startLine="226" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/project/IModule;)Ljetbrains/mps/project/structure/modules/ModuleReference;" />
+    <nodeInfo nodeId="7902446790715915238" fileName="ModulesCluster.java" startLine="255" startPosition="0" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/structure/modules/ModuleReference;)Z" />
+    <nodeInfo nodeId="7902446790715915214" fileName="ModulesCluster.java" startLine="263" startPosition="0" endLine="266" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/structure/modules/ModuleReference;)Z" />
+    <nodeInfo nodeId="7902446790715915180" fileName="ModulesCluster.java" startLine="269" startPosition="0" endLine="272" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="vertices#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="7902446790715915673" fileName="ModulesCluster.java" startLine="189" startPosition="50" endLine="193" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7902446790715915359" fileName="ModulesCluster.java" startLine="198" startPosition="74" endLine="202" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2976001787990663190" fileName="ModulesCluster.java" startLine="218" startPosition="204" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/Language;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="7902446790715915288" fileName="ModulesCluster.java" startLine="225" startPosition="116" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/project/IModule;)Ljetbrains/mps/project/structure/modules/ModuleReference;" />
-    <nodeInfo nodeId="7902446790715915112" fileName="ModulesCluster.java" startLine="242" startPosition="0" endLine="246" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleDeps#(Ljetbrains/mps/project/structure/modules/ModuleReference;)V" />
-    <nodeInfo nodeId="7902446790715915238" fileName="ModulesCluster.java" startLine="254" startPosition="125" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/structure/modules/ModuleReference;)Z" />
-    <nodeInfo nodeId="7902446790715915214" fileName="ModulesCluster.java" startLine="262" startPosition="124" endLine="266" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/structure/modules/ModuleReference;)Z" />
-    <nodeInfo nodeId="7902446790715915180" fileName="ModulesCluster.java" startLine="268" startPosition="0" endLine="272" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="vertices#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7902446790715915112" fileName="ModulesCluster.java" startLine="243" startPosition="0" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleDeps#(Ljetbrains/mps/project/structure/modules/ModuleReference;)V" />
+    <nodeInfo nodeId="3429507295688670711" fileName="ModulesCluster.java" startLine="44" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addAll#(Ljava/lang/Iterable;)V" />
     <nodeInfo nodeId="7902446790715915708" fileName="ModulesCluster.java" startLine="50" startPosition="55" endLine="55" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7902446790715915840" fileName="ModulesCluster.java" startLine="62" startPosition="54" endLine="67" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6329960826076769416" fileName="ModulesCluster.java" startLine="83" startPosition="77" endLine="88" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -298,30 +299,29 @@
     <nodeInfo nodeId="7902446790715915047" fileName="ModulesCluster.java" startLine="224" startPosition="148" endLine="229" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7902446790715915230" fileName="ModulesCluster.java" startLine="253" startPosition="70" endLine="258" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7902446790715915197" fileName="ModulesCluster.java" startLine="261" startPosition="71" endLine="266" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3429507295688670711" fileName="ModulesCluster.java" startLine="43" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addAll#(Ljava/lang/Iterable;)V" />
     <nodeInfo nodeId="7902446790715897794" fileName="ModulesCluster.java" startLine="229" startPosition="7" endLine="235" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6329960826076776719" fileName="ModulesCluster.java" startLine="83" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Iterable;)Ljetbrains/mps/internal/collections/runtime/IListSequence;" />
     <nodeInfo nodeId="7959437477381204311" fileName="ModulesCluster.java" startLine="110" startPosition="27" endLine="117" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6329960826076776719" fileName="ModulesCluster.java" startLine="82" startPosition="119" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Iterable;)Ljetbrains/mps/internal/collections/runtime/IListSequence;" />
-    <nodeInfo nodeId="7902446790715915663" fileName="ModulesCluster.java" startLine="187" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="primAdd#(Ljetbrains/mps/project/IModule;)V" />
-    <nodeInfo nodeId="7902446790715915173" fileName="ModulesCluster.java" startLine="252" startPosition="0" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="forwardEdges#(Ljetbrains/mps/project/structure/modules/ModuleReference;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="7902446790715915166" fileName="ModulesCluster.java" startLine="260" startPosition="0" endLine="268" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="backwardEdges#(Ljetbrains/mps/project/structure/modules/ModuleReference;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7902446790715915663" fileName="ModulesCluster.java" startLine="188" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="primAdd#(Ljetbrains/mps/project/IModule;)V" />
+    <nodeInfo nodeId="7902446790715915173" fileName="ModulesCluster.java" startLine="253" startPosition="0" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="forwardEdges#(Ljetbrains/mps/project/structure/modules/ModuleReference;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7902446790715915166" fileName="ModulesCluster.java" startLine="261" startPosition="0" endLine="268" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="backwardEdges#(Ljetbrains/mps/project/structure/modules/ModuleReference;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="7902446790715915806" fileName="ModulesCluster.java" startLine="59" startPosition="52" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="6329960826076769377" fileName="ModulesCluster.java" startLine="81" startPosition="122" endLine="90" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7902446790715915780" fileName="ModulesCluster.java" startLine="57" startPosition="15" endLine="69" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
     <nodeInfo nodeId="7959437477381204331" fileName="ModulesCluster.java" startLine="120" startPosition="27" endLine="132" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3429507295688670731" fileName="ModulesCluster.java" startLine="78" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildOrder#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="7902446790715915319" fileName="ModulesCluster.java" startLine="195" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateDeps#(Ljetbrains/mps/project/IModule;)V" />
-    <nodeInfo nodeId="3429507295688660819" fileName="ModulesCluster.java" startLine="49" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectRequired#(Ljava/lang/Iterable;)V" />
-    <nodeInfo nodeId="7902446790715897784" fileName="ModulesCluster.java" startLine="215" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="required#(Ljetbrains/mps/project/IModule;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3429507295688670731" fileName="ModulesCluster.java" startLine="79" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildOrder#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7902446790715915319" fileName="ModulesCluster.java" startLine="196" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateDeps#(Ljetbrains/mps/project/IModule;)V" />
+    <nodeInfo nodeId="3429507295688660819" fileName="ModulesCluster.java" startLine="50" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectRequired#(Ljava/lang/Iterable;)V" />
+    <nodeInfo nodeId="7902446790715897784" fileName="ModulesCluster.java" startLine="216" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="required#(Ljetbrains/mps/project/IModule;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="104" startPosition="20" endLine="173" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
     <nodeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="102" startPosition="46" endLine="174" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="101" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
+    <nodeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="102" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
     <nodeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="98" startPosition="65" endLine="177" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="97" startPosition="58" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="98" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
     <nodeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="96" startPosition="95" endLine="179" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="95" startPosition="199" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljava/util/List;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="96" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljava/util/List;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="7959437477381204379" fileName="ModulesCluster.java" startLine="94" startPosition="105" endLine="181" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7959437477381204282" fileName="ModulesCluster.java" startLine="92" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compact#(Ljava/util/List;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7959437477381204282" fileName="ModulesCluster.java" startLine="93" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compact#(Ljava/util/List;)Ljava/lang/Iterable;" />
     <scopeInfo nodeId="3429507295688670723" fileName="ModulesCluster.java" startLine="72" startPosition="36" endLine="72" endPosition="36" />
     <scopeInfo nodeId="7959437477381204310" fileName="ModulesCluster.java" startLine="143" startPosition="27" endLine="143" endPosition="27" />
     <scopeInfo nodeId="7959437477381204312" fileName="ModulesCluster.java" startLine="146" startPosition="27" endLine="146" endPosition="27" />
@@ -353,6 +353,7 @@
     <scopeInfo nodeId="7902446790715915239" fileName="ModulesCluster.java" startLine="255" startPosition="52" endLine="256" endPosition="63" />
     <scopeInfo nodeId="7902446790715915215" fileName="ModulesCluster.java" startLine="263" startPosition="52" endLine="264" endPosition="63" />
     <scopeInfo nodeId="7902446790715915184" fileName="ModulesCluster.java" startLine="269" startPosition="49" endLine="270" endPosition="51" />
+    <scopeInfo nodeId="3429507295688670720" fileName="ModulesCluster.java" startLine="72" startPosition="0" endLine="74" endPosition="0" />
     <scopeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="107" startPosition="28" endLine="109" endPosition="35" />
     <scopeInfo nodeId="7959437477381204311" fileName="ModulesCluster.java" startLine="111" startPosition="42" endLine="113" endPosition="30" />
     <scopeInfo nodeId="7959437477381204311" fileName="ModulesCluster.java" startLine="114" startPosition="54" endLine="116" endPosition="30" />
@@ -364,59 +365,61 @@
     <scopeInfo nodeId="7902446790715915679" fileName="ModulesCluster.java" startLine="190" startPosition="62" endLine="192" endPosition="22" />
     <scopeInfo nodeId="7902446790715915360" fileName="ModulesCluster.java" startLine="199" startPosition="23" endLine="201" endPosition="49" />
     <scopeInfo nodeId="7902446790715915115" fileName="ModulesCluster.java" startLine="243" startPosition="44" endLine="245" endPosition="54" />
-    <scopeInfo nodeId="7902446790715915143" fileName="ModulesCluster.java" startLine="249" startPosition="68" endLine="251" endPosition="5" />
-    <scopeInfo nodeId="7902446790715915657" fileName="ModulesCluster.java" startLine="35" startPosition="0" endLine="38" endPosition="3">
+    <scopeInfo nodeId="7902446790715915143" fileName="ModulesCluster.java" startLine="250" startPosition="0" endLine="252" endPosition="0" />
+    <scopeInfo nodeId="7902446790715915657" fileName="ModulesCluster.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="1077540970775393600" varName="mods" />
+    </scopeInfo>
+    <scopeInfo nodeId="5888262800849895743" fileName="ModulesCluster.java" startLine="40" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="5888262800849895747" varName="mod" />
     </scopeInfo>
     <scopeInfo nodeId="3429507295688670714" fileName="ModulesCluster.java" startLine="44" startPosition="46" endLine="47" endPosition="5" />
     <scopeInfo nodeId="7902446790715915700" fileName="ModulesCluster.java" startLine="44" startPosition="46" endLine="47" endPosition="5">
       <varInfo nodeId="7902446790715915702" varName="mod" />
     </scopeInfo>
+    <scopeInfo nodeId="7902446790715915749" fileName="ModulesCluster.java" startLine="52" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="7902446790715915749" varName="dep" />
+    </scopeInfo>
     <scopeInfo nodeId="7902446790715915841" fileName="ModulesCluster.java" startLine="63" startPosition="60" endLine="66" endPosition="22" />
-    <scopeInfo nodeId="3429507295688670720" fileName="ModulesCluster.java" startLine="71" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="3429507295688670724" fileName="ModulesCluster.java" startLine="75" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="6329960826076769420" fileName="ModulesCluster.java" startLine="85" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="6329960826076769420" varName="mr" />
+    </scopeInfo>
+    <scopeInfo nodeId="7959437477381204337" fileName="ModulesCluster.java" startLine="122" startPosition="0" endLine="125" endPosition="0">
+      <varInfo nodeId="7959437477381204337" varName="mr" />
+    </scopeInfo>
+    <scopeInfo nodeId="7959437477381204350" fileName="ModulesCluster.java" startLine="126" startPosition="0" endLine="129" endPosition="0">
+      <varInfo nodeId="7959437477381204350" varName="mr" />
+    </scopeInfo>
     <scopeInfo nodeId="7959437477381204313" fileName="ModulesCluster.java" startLine="135" startPosition="27" endLine="138" endPosition="34" />
     <scopeInfo nodeId="7959437477381204372" fileName="ModulesCluster.java" startLine="139" startPosition="28" endLine="142" endPosition="34" />
     <scopeInfo nodeId="7959437477381204312" fileName="ModulesCluster.java" startLine="149" startPosition="27" endLine="152" endPosition="28" />
     <scopeInfo nodeId="7959437477381204322" fileName="ModulesCluster.java" startLine="153" startPosition="27" endLine="156" endPosition="28" />
     <scopeInfo nodeId="7959437477381204360" fileName="ModulesCluster.java" startLine="160" startPosition="28" endLine="163" endPosition="28" />
     <scopeInfo nodeId="7959437477381204371" fileName="ModulesCluster.java" startLine="167" startPosition="28" endLine="170" endPosition="28" />
-    <scopeInfo nodeId="7902446790715915418" fileName="ModulesCluster.java" startLine="204" startPosition="47" endLine="207" endPosition="7" />
-    <scopeInfo nodeId="7902446790715915457" fileName="ModulesCluster.java" startLine="209" startPosition="111" endLine="212" endPosition="7" />
-    <scopeInfo nodeId="5888262800849895743" fileName="ModulesCluster.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="5888262800849895747" varName="mod" />
-    </scopeInfo>
-    <scopeInfo nodeId="7902446790715915749" fileName="ModulesCluster.java" startLine="51" startPosition="236" endLine="55" endPosition="0">
-      <varInfo nodeId="7902446790715915749" varName="dep" />
-    </scopeInfo>
-    <scopeInfo nodeId="3429507295688670724" fileName="ModulesCluster.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="6329960826076769420" fileName="ModulesCluster.java" startLine="84" startPosition="94" endLine="88" endPosition="0">
-      <varInfo nodeId="6329960826076769420" varName="mr" />
-    </scopeInfo>
-    <scopeInfo nodeId="7959437477381204337" fileName="ModulesCluster.java" startLine="121" startPosition="119" endLine="125" endPosition="0">
-      <varInfo nodeId="7959437477381204337" varName="mr" />
-    </scopeInfo>
-    <scopeInfo nodeId="7959437477381204350" fileName="ModulesCluster.java" startLine="125" startPosition="133" endLine="129" endPosition="0">
-      <varInfo nodeId="7959437477381204350" varName="mr" />
-    </scopeInfo>
-    <scopeInfo nodeId="3429507295688670740" fileName="ModulesCluster.java" startLine="183" startPosition="0" endLine="187" endPosition="0">
+    <scopeInfo nodeId="3429507295688670740" fileName="ModulesCluster.java" startLine="184" startPosition="0" endLine="187" endPosition="0">
       <varInfo nodeId="3429507295688670746" varName="mod" />
     </scopeInfo>
-    <scopeInfo nodeId="2976001787990663190" fileName="ModulesCluster.java" startLine="218" startPosition="204" endLine="222" endPosition="0">
+    <scopeInfo nodeId="7902446790715915418" fileName="ModulesCluster.java" startLine="204" startPosition="47" endLine="207" endPosition="7" />
+    <scopeInfo nodeId="7902446790715915457" fileName="ModulesCluster.java" startLine="209" startPosition="111" endLine="212" endPosition="7" />
+    <scopeInfo nodeId="2976001787990663190" fileName="ModulesCluster.java" startLine="219" startPosition="0" endLine="222" endPosition="0">
       <varInfo nodeId="2976001787990663190" varName="lang" />
     </scopeInfo>
-    <scopeInfo nodeId="7902446790715915288" fileName="ModulesCluster.java" startLine="225" startPosition="116" endLine="229" endPosition="0">
+    <scopeInfo nodeId="7902446790715915288" fileName="ModulesCluster.java" startLine="226" startPosition="0" endLine="229" endPosition="0">
       <varInfo nodeId="7902446790715915288" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="7902446790715915112" fileName="ModulesCluster.java" startLine="242" startPosition="0" endLine="246" endPosition="5">
-      <varInfo nodeId="6354106720379814581" varName="mod" />
-    </scopeInfo>
-    <scopeInfo nodeId="7902446790715915238" fileName="ModulesCluster.java" startLine="254" startPosition="125" endLine="258" endPosition="0">
+    <scopeInfo nodeId="7902446790715915238" fileName="ModulesCluster.java" startLine="255" startPosition="0" endLine="258" endPosition="0">
       <varInfo nodeId="7902446790715915238" varName="mod" />
     </scopeInfo>
-    <scopeInfo nodeId="7902446790715915214" fileName="ModulesCluster.java" startLine="262" startPosition="124" endLine="266" endPosition="0">
+    <scopeInfo nodeId="7902446790715915214" fileName="ModulesCluster.java" startLine="263" startPosition="0" endLine="266" endPosition="0">
       <varInfo nodeId="7902446790715915214" varName="mod" />
     </scopeInfo>
-    <scopeInfo nodeId="7902446790715915180" fileName="ModulesCluster.java" startLine="268" startPosition="0" endLine="272" endPosition="0" />
+    <scopeInfo nodeId="7902446790715915180" fileName="ModulesCluster.java" startLine="269" startPosition="0" endLine="272" endPosition="0" />
+    <scopeInfo nodeId="7902446790715915112" fileName="ModulesCluster.java" startLine="243" startPosition="0" endLine="247" endPosition="0">
+      <varInfo nodeId="6354106720379814581" varName="mod" />
+    </scopeInfo>
+    <scopeInfo nodeId="3429507295688670711" fileName="ModulesCluster.java" startLine="44" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="3429507295688670715" varName="mods" />
+    </scopeInfo>
     <scopeInfo nodeId="6329960826076776720" fileName="ModulesCluster.java" startLine="83" startPosition="77" endLine="88" endPosition="28" />
     <scopeInfo nodeId="7902446790715915667" fileName="ModulesCluster.java" startLine="188" startPosition="37" endLine="193" endPosition="5">
       <varInfo nodeId="7902446790715915661" varName="mr" />
@@ -429,23 +432,20 @@
     </scopeInfo>
     <scopeInfo nodeId="7902446790715915179" fileName="ModulesCluster.java" startLine="253" startPosition="70" endLine="258" endPosition="9" />
     <scopeInfo nodeId="7902446790715915172" fileName="ModulesCluster.java" startLine="261" startPosition="71" endLine="266" endPosition="9" />
-    <scopeInfo nodeId="3429507295688670711" fileName="ModulesCluster.java" startLine="43" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="3429507295688670715" varName="mods" />
-    </scopeInfo>
     <scopeInfo nodeId="7902446790715915807" fileName="ModulesCluster.java" startLine="60" startPosition="95" endLine="67" endPosition="9">
       <varInfo nodeId="7902446790715915834" varName="mod" />
       <varInfo nodeId="7902446790715915858" varName="mr" />
     </scopeInfo>
-    <scopeInfo nodeId="6329960826076776719" fileName="ModulesCluster.java" startLine="82" startPosition="119" endLine="90" endPosition="0">
+    <scopeInfo nodeId="6329960826076776719" fileName="ModulesCluster.java" startLine="83" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="6329960826076776719" varName="cycle" />
     </scopeInfo>
-    <scopeInfo nodeId="7902446790715915663" fileName="ModulesCluster.java" startLine="187" startPosition="0" endLine="195" endPosition="0">
+    <scopeInfo nodeId="7902446790715915663" fileName="ModulesCluster.java" startLine="188" startPosition="0" endLine="195" endPosition="0">
       <varInfo nodeId="7902446790715915662" varName="mod" />
     </scopeInfo>
-    <scopeInfo nodeId="7902446790715915173" fileName="ModulesCluster.java" startLine="252" startPosition="0" endLine="260" endPosition="0">
+    <scopeInfo nodeId="7902446790715915173" fileName="ModulesCluster.java" startLine="253" startPosition="0" endLine="260" endPosition="0">
       <varInfo nodeId="7902446790715915177" varName="v" />
     </scopeInfo>
-    <scopeInfo nodeId="7902446790715915166" fileName="ModulesCluster.java" startLine="260" startPosition="0" endLine="268" endPosition="0">
+    <scopeInfo nodeId="7902446790715915166" fileName="ModulesCluster.java" startLine="261" startPosition="0" endLine="268" endPosition="0">
       <varInfo nodeId="7902446790715915170" varName="v" />
     </scopeInfo>
     <scopeInfo nodeId="7902446790715915806" fileName="ModulesCluster.java" startLine="59" startPosition="52" endLine="68" endPosition="7">
@@ -457,7 +457,7 @@
       <varInfo nodeId="6632091773530719720" varName="compacted" />
       <varInfo nodeId="7959437477381204267" varName="order" />
     </scopeInfo>
-    <scopeInfo nodeId="3429507295688670731" fileName="ModulesCluster.java" startLine="78" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="3429507295688670731" fileName="ModulesCluster.java" startLine="79" startPosition="0" endLine="92" endPosition="0" />
     <scopeInfo nodeId="7959437477381204331" fileName="ModulesCluster.java" startLine="120" startPosition="27" endLine="134" endPosition="28" />
     <scopeInfo nodeId="7902446790715915322" fileName="ModulesCluster.java" startLine="196" startPosition="39" endLine="213" endPosition="5">
       <varInfo nodeId="7902446790715915348" varName="deps" />
@@ -468,7 +468,7 @@
       <varInfo nodeId="7902446790715915777" varName="atSize" />
       <varInfo nodeId="7902446790715915769" varName="available" />
     </scopeInfo>
-    <scopeInfo nodeId="7902446790715915319" fileName="ModulesCluster.java" startLine="195" startPosition="0" endLine="215" endPosition="0">
+    <scopeInfo nodeId="7902446790715915319" fileName="ModulesCluster.java" startLine="196" startPosition="0" endLine="215" endPosition="0">
       <varInfo nodeId="7902446790715915323" varName="mod" />
     </scopeInfo>
     <scopeInfo nodeId="7902446790715897787" fileName="ModulesCluster.java" startLine="216" startPosition="59" endLine="236" endPosition="67">
@@ -476,25 +476,25 @@
       <varInfo nodeId="1210882578169309101" varName="reqmods" />
       <varInfo nodeId="7902446790715915048" varName="reqs" />
     </scopeInfo>
-    <scopeInfo nodeId="3429507295688660819" fileName="ModulesCluster.java" startLine="49" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="3429507295688660819" fileName="ModulesCluster.java" startLine="50" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="3429507295688670707" varName="pool" />
     </scopeInfo>
-    <scopeInfo nodeId="7902446790715897784" fileName="ModulesCluster.java" startLine="215" startPosition="0" endLine="238" endPosition="0">
+    <scopeInfo nodeId="7902446790715897784" fileName="ModulesCluster.java" startLine="216" startPosition="0" endLine="238" endPosition="0">
       <varInfo nodeId="7902446790715897792" varName="mod" />
     </scopeInfo>
     <scopeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="104" startPosition="20" endLine="173" endPosition="19" />
     <scopeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="102" startPosition="46" endLine="175" endPosition="29" />
-    <scopeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="101" startPosition="0" endLine="177" endPosition="0" />
+    <scopeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="102" startPosition="0" endLine="177" endPosition="0" />
     <scopeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="98" startPosition="65" endLine="177" endPosition="14" />
-    <scopeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="97" startPosition="58" endLine="179" endPosition="0" />
+    <scopeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="98" startPosition="0" endLine="179" endPosition="0" />
     <scopeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="96" startPosition="95" endLine="179" endPosition="10" />
-    <scopeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="95" startPosition="199" endLine="181" endPosition="0">
+    <scopeInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="96" startPosition="0" endLine="181" endPosition="0">
       <varInfo nodeId="7959437477381204309" varName="cycle" />
     </scopeInfo>
     <scopeInfo nodeId="7959437477381204290" fileName="ModulesCluster.java" startLine="93" startPosition="90" endLine="181" endPosition="7">
       <varInfo nodeId="7959437477381204276" varName="prev" />
     </scopeInfo>
-    <scopeInfo nodeId="7959437477381204282" fileName="ModulesCluster.java" startLine="92" startPosition="0" endLine="183" endPosition="0">
+    <scopeInfo nodeId="7959437477381204282" fileName="ModulesCluster.java" startLine="93" startPosition="0" endLine="183" endPosition="0">
       <varInfo nodeId="7959437477381204281" varName="order" />
     </scopeInfo>
     <unitInfo nodeId="7902446790715915749" fileName="ModulesCluster.java" startLine="51" startPosition="176" endLine="55" endPosition="5" unitName="jetbrains.mps.make.dependencies.ModulesCluster$1" />

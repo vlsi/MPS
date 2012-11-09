@@ -15,7 +15,7 @@ public class DisposeDialogExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nus1qu_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "disposeDialog");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "disposeDialog");
     editorCell.setCellId("Constant_nus1qu_a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

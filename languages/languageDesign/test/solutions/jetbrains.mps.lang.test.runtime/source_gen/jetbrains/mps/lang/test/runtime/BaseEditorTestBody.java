@@ -18,7 +18,6 @@ import java.util.HashMap;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import java.util.ArrayList;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.intentions.IntentionsManager;
 import java.util.Collection;
 import jetbrains.mps.util.Pair;
@@ -139,14 +138,13 @@ public class BaseEditorTestBody extends BaseTestBody {
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            ((EditorContext) editor.getEditorContext()).select(node);
+            editor.getEditorContext().select(node);
             IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
-            query.setInstantiate(true);
             query.setCurrentNodeOnly(true);
-            Collection<Pair<Intention, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, (EditorContext) editor.getEditorContext());
+            Collection<Pair<Intention, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, editor.getEditorContext());
             for (Pair<Intention, SNode> intention : intentions) {
               if (intention.o1.getClass().getCanonicalName().equals(name)) {
-                intention.o1.execute(intention.o2, (EditorContext) editor.getEditorContext());
+                intention.o1.execute(intention.o2, editor.getEditorContext());
               }
             }
           }
@@ -157,7 +155,7 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   public static Editor openEditor(Project project, SModelDescriptor model, SNode node) {
     IOperationContext context = new ModuleContext(model.getModule(), project);
-    return NavigationSupport.getInstance().openNode(context, node, true, !(node.isRoot()));
+    return NavigationSupport.getInstance().openNode(context, node, true, !(jetbrains.mps.util.SNodeOperations.isRoot(node)));
   }
 
   public static void closeEditor(Project project, SNode node) {

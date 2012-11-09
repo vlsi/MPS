@@ -54,7 +54,7 @@ public class MPSProjectPaths_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ProjectPropertiesDialog dialog = new ProjectPropertiesDialog(((Project) MapSequence.fromMap(_params).get("project")));
-      dialog.showDialog();
+      dialog.show();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MPSProjectPaths", t);

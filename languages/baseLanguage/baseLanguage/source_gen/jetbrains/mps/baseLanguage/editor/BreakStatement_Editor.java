@@ -71,7 +71,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xk0l2m_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "break");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "break");
     editorCell.setCellId("Constant_xk0l2m_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -83,7 +83,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xk0l2m_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_xk0l2m_d0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

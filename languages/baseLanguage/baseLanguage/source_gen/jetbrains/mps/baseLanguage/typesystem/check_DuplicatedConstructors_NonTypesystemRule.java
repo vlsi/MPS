@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_DuplicatedConstructors_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -17,7 +17,7 @@ public class check_DuplicatedConstructors_NonTypesystemRule extends AbstractNonT
   }
 
   public void applyRule(final SNode classConcept, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> constructors = SLinkOperations.getTargets(classConcept, "constructor", true);
+    List<SNode> constructors = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "constructor", true)).toListSequence();
     if (ListSequence.fromList(constructors).count() > 1) {
       for (SNode constructor : constructors) {
         RulesFunctions_BaseLanguage.checkDuplicates(typeCheckingContext, constructor, classConcept, constructors);

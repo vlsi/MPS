@@ -22,7 +22,7 @@ public class BuildJavaPlugin_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_gciqt0_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "java");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "java");
     editorCell.setCellId("Constant_gciqt0_a0");
     buildStyles_StyleSheet.getPlugin(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

@@ -31,12 +31,17 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
 
   ModelLoadingState getLoadingState();
 
+  @Override
   IModule getModule();
 
   //------
 
+  void forceLoad();
+
+  // TODO remove
   boolean isGeneratable();
 
+  // TODO remove
   String getModelHash();
 
   //------

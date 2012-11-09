@@ -399,7 +399,7 @@ public class ChangesTracking {
 
     private void processProperty(SModelPropertyEvent event) {
       final SNode node = event.getNode();
-      if (node.isDeleted()) {
+      if (node.getModel() == null) {
         return;
       }
       final SNodeId nodeId = node.getSNodeId();
@@ -423,7 +423,7 @@ public class ChangesTracking {
     private void processReference(SModelReferenceEvent event) {
       SReference ref = event.getReference();
       final SNode sourceNode = ref.getSourceNode();
-      if (sourceNode.isDeleted()) {
+      if (sourceNode.getModel() == null) {
         return;
       }
       final SNodeId nodeId = sourceNode.getSNodeId();
@@ -497,8 +497,8 @@ public class ChangesTracking {
       SNode root = event.getRoot();
       final boolean added = event.isAdded();
       if ((added ?
-        root.isDeleted() :
-        !(root.isDeleted())
+        root.getModel() == null :
+        root.getModel() != null
       )) {
         return;
       }

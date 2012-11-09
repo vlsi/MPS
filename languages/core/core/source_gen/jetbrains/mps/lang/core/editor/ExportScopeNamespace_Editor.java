@@ -33,7 +33,7 @@ public class ExportScopeNamespace_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_p7dwc8_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "@export(namespace =");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@export(namespace =");
     editorCell.setCellId("Constant_p7dwc8_a0");
     DeleteExportScope.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -41,7 +41,7 @@ public class ExportScopeNamespace_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_p7dwc8_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_p7dwc8_c0");
     {
       Style style = editorCell.getStyle();
@@ -53,7 +53,7 @@ public class ExportScopeNamespace_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -87,7 +87,7 @@ public class ExportScopeNamespace_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean _StyleParameter_QueryFunction_p7dwc8_a1c0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
-    return (SNodeOperations.getParent(node) != null) && SNodeOperations.getParent(node).isRoot();
+  private static boolean _StyleParameter_QueryFunction_p7dwc8_a1c0(SNode node, EditorContext editorContext) {
+    return (SNodeOperations.getParent(node) != null) && jetbrains.mps.util.SNodeOperations.isRoot(SNodeOperations.getParent(node));
   }
 }

@@ -56,7 +56,7 @@ public class ShowBookmarksDialog_Action extends BaseAction {
     try {
       BookmarkManager bookmarkManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(BookmarkManager.class);
       BookmarksDialog dialog = new BookmarksDialog(((Project) MapSequence.fromMap(_params).get("project")), bookmarkManager);
-      dialog.showDialog();
+      dialog.show();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowBookmarksDialog", t);

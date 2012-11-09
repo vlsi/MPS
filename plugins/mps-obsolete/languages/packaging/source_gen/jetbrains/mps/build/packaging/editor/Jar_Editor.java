@@ -110,7 +110,7 @@ public class Jar_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_5vbi94_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

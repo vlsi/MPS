@@ -49,7 +49,7 @@ public class MapType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y21z1n_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_y21z1n_b0");
     Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -57,7 +57,7 @@ public class MapType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y21z1n_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_y21z1n_d0");
     {
       Style style = editorCell.getStyle();
@@ -68,7 +68,7 @@ public class MapType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y21z1n_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_y21z1n_f0");
     Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

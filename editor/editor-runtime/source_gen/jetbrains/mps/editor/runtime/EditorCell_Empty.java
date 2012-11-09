@@ -4,7 +4,7 @@ package jetbrains.mps.editor.runtime;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.TextLine;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
@@ -66,7 +66,7 @@ public class EditorCell_Empty extends EditorCell_Basic {
 
   @Override
   protected boolean doProcessKeyTyped(KeyEvent p0, boolean p1) {
-    final EditorContext editorContext = this.getEditorContext();
+    final EditorContext editorContext = this.getContext();
     CellSide side = null;
     if (!(UIUtil.isReallyTypedEvent(p0))) {
       return false;
@@ -111,7 +111,7 @@ public class EditorCell_Empty extends EditorCell_Basic {
     return !(this.getStyle().get(StyleAttributes.PUNCTUATION_RIGHT));
   }
 
-  private boolean applyLeftTransform(jetbrains.mps.openapi.editor.EditorContext editorContext, EditorCell cellForNewNode, String text) {
+  private boolean applyLeftTransform(EditorContext editorContext, EditorCell cellForNewNode, String text) {
     EditorCellAction ltAction = cellForNewNode.getApplicableCellAction(CellActionType.LEFT_TRANSFORM);
     ltAction.execute(editorContext);
     cellForNewNode.getSTHintCell().changeText(text);
@@ -119,7 +119,7 @@ public class EditorCell_Empty extends EditorCell_Basic {
     return true;
   }
 
-  private boolean applyRightTransform(jetbrains.mps.openapi.editor.EditorContext editorContext, EditorCell cellForNewNode, String text) {
+  private boolean applyRightTransform(EditorContext editorContext, EditorCell cellForNewNode, String text) {
     EditorCellAction ltAction = cellForNewNode.getApplicableCellAction(CellActionType.RIGHT_TRANSFORM);
     ltAction.execute(editorContext);
     cellForNewNode.getSTHintCell().changeText(text);

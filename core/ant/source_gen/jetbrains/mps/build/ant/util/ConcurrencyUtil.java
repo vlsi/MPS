@@ -19,7 +19,6 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
-
 /**
  * * @author cdr
  */

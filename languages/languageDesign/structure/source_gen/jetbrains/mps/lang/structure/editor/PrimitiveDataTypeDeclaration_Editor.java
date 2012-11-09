@@ -41,7 +41,7 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ft4eji_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "primitive datatype:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "primitive datatype:");
     editorCell.setCellId("Constant_ft4eji_a0a");
     {
       Style style = editorCell.getStyle();

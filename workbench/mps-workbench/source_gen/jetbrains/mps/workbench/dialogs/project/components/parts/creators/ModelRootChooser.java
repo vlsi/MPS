@@ -6,8 +6,19 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.persistence.PersistenceRegistry;
+import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.ide.persistence.ModelRootSettingsEditor;
+import jetbrains.mps.ide.persistence.PersistenceComponent;
+import jetbrains.mps.ide.dialogs.BaseDialog;
+import javax.swing.JComponent;
+import jetbrains.mps.persistence.PathAwareJDOMMemento;
+import org.jdom.Element;
 
 public class ModelRootChooser implements Computable<ModelRootDescriptor> {
   private final IBindedDialog myOwner;
@@ -19,15 +30,41 @@ public class ModelRootChooser implements Computable<ModelRootDescriptor> {
   }
 
   public ModelRootDescriptor compute() {
-    TreeFileChooser chooser = new TreeFileChooser();
-    chooser.setInitialFile(myBundleHome);
-    chooser.setMode(TreeFileChooser.MODE_FILES_AND_DIRECTORIES);
-    IFile dir = chooser.showDialog(myOwner.getMainComponent());
-    if (dir == null) {
+    PersistenceFacade pReg = PersistenceRegistry.getInstance();
+    Iterable<String> ti = pReg.getTypeIds();
+    int index = Messages.showChooseDialog("select", "type", Sequence.fromIterable(ti).toGenericArray(String.class), Sequence.fromIterable(ti).first(), null);
+    if (index == -1) {
       return null;
     }
-    SModelRoot result = new SModelRoot(null);
-    result.setPath(dir.getPath());
-    return result.toDescriptor();
+
+    String selectedType = Sequence.fromIterable(ti).take(index + 1).last();
+    ModelRoot mr = pReg.getModelRootFactory(selectedType).create();
+
+    if (selectedType.equals("default")) {
+      TreeFileChooser chooser = new TreeFileChooser();
+      chooser.setInitialFile(myBundleHome);
+      chooser.setMode(TreeFileChooser.MODE_FILES_AND_DIRECTORIES);
+      IFile dir = chooser.showDialog(myOwner.getMainComponent());
+      if (dir == null) {
+        return null;
+      }
+
+      SModelRoot result = new SModelRoot(null);
+      result.setPath(dir.getPath());
+      return result.toDescriptor();
+    }
+
+    final ModelRootSettingsEditor editor = PersistenceComponent.getModelRootSettingsEditor(mr.getType());
+    editor.reset(null, mr);
+    new BaseDialog(null) {
+      protected JComponent getMainComponent() {
+        return editor.getComponent();
+      }
+    }.showDialog();
+    editor.apply(mr);
+
+    PathAwareJDOMMemento memento = new PathAwareJDOMMemento(new Element("modelRoot"), null);
+    mr.save(memento);
+    return new ModelRootDescriptor(mr.getType(), memento);
   }
 }

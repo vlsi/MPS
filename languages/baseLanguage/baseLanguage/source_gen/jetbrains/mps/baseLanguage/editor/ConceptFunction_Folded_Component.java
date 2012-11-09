@@ -28,7 +28,7 @@ public class ConceptFunction_Folded_Component extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_hl0bni_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{...}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{...}");
     editorCell.setCellId("Constant_hl0bni_a");
     BaseLanguageStyle_StyleSheet.getFoldedCell(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

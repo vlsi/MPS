@@ -100,7 +100,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     }
   }
 
-  public CompilationResult buildModule(final String path) {
+  public CompilationResult buildModules(final String[] paths) {
     final Object lock = new Object() {
     };
     final CompilationResult[] result = new CompilationResult[1];
@@ -109,8 +109,15 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
         public void run() {
           ApplicationManager.getApplication().runWriteAction(new Runnable() {
             public void run() {
-              Module module = findModule(path);
-              if (module == null) {
+              List<Module> modules = new ArrayList<Module>();
+              for (String path : paths) {
+                Module module = findModule(path);
+                if (module != null) {
+                  modules.add(module);
+                }
+              }
+
+              if (modules.isEmpty()) {
                 synchronized (lock) {
                   lock.notifyAll();
                 }
@@ -118,7 +125,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
               }
 
               CompilerManager compilerManager = CompilerManager.getInstance(myProject);
-              compilerManager.make(module, new CompileStatusNotification() {
+              compilerManager.make(myProject, modules.toArray(new Module[modules.size()]), new CompileStatusNotification() {
                 public void finished(boolean aborted, int errors, int warnings, CompileContext compileContext) {
                   compilationFinished(aborted, errors, warnings);
                 }

@@ -35,7 +35,7 @@ public class DialogDimensions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_daw9nf_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "left:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "left:");
     editorCell.setCellId("Constant_daw9nf_a0");
     {
       Style style = editorCell.getStyle();
@@ -46,7 +46,7 @@ public class DialogDimensions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_daw9nf_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "top:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "top:");
     editorCell.setCellId("Constant_daw9nf_c0");
     {
       Style style = editorCell.getStyle();
@@ -57,7 +57,7 @@ public class DialogDimensions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_daw9nf_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "width:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "width:");
     editorCell.setCellId("Constant_daw9nf_e0");
     {
       Style style = editorCell.getStyle();
@@ -68,7 +68,7 @@ public class DialogDimensions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_daw9nf_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "height:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "height:");
     editorCell.setCellId("Constant_daw9nf_g0");
     {
       Style style = editorCell.getStyle();

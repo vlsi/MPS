@@ -84,7 +84,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7t32xl_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "condition");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "condition");
     editorCell.setCellId("Constant_7t32xl_a0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
@@ -96,7 +96,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7t32xl_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "-->");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-->");
     editorCell.setCellId("Constant_7t32xl_c0");
     {
       Style style = editorCell.getStyle();
@@ -107,14 +107,14 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7t32xl_b3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_7t32xl_b3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_7t32xl_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_7t32xl_f0");
     {
       Style style = editorCell.getStyle();
@@ -125,7 +125,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7t32xl_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "conditional root rule");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "conditional root rule");
     editorCell.setCellId("Constant_7t32xl_a0_0");
     {
       Style style = editorCell.getStyle();
@@ -138,7 +138,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7t32xl_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_7t32xl_b0");
     {
       Style style = editorCell.getStyle();
@@ -149,7 +149,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7t32xl_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapping label");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_7t32xl_a2a");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -157,7 +157,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7t32xl_b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_7t32xl_b2a");
     {
       Style style = editorCell.getStyle();

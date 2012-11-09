@@ -82,14 +82,14 @@ public class SmartEditorActions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_703hqq_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "smart editor actions");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "smart editor actions");
     editorCell.setCellId("Constant_703hqq_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_703hqq_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_703hqq_b0");
     {
       Style style = editorCell.getStyle();
@@ -100,14 +100,14 @@ public class SmartEditorActions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_703hqq_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "generate code actions:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generate code actions:");
     editorCell.setCellId("Constant_703hqq_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_703hqq_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_703hqq_e0");
     {
       Style style = editorCell.getStyle();
@@ -118,7 +118,7 @@ public class SmartEditorActions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_703hqq_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "surround with actions:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "surround with actions:");
     editorCell.setCellId("Constant_703hqq_f0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -141,12 +141,12 @@ public class SmartEditorActions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_703hqq_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_703hqq_a6a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

@@ -60,7 +60,7 @@ public class BaseConcept_Behavior {
   }
 
   public static int virtual_getMetaLevel_3981318653438234726(SNode thisNode) {
-    if (thisNode.isRoot()) {
+    if (jetbrains.mps.util.SNodeOperations.isRoot(thisNode)) {
       return 0;
     }
     int metalevel = 0;

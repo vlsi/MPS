@@ -35,7 +35,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4kcpi0_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "replaceAll");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replaceAll");
     editorCell.setCellId("Constant_4kcpi0_a0");
     {
       Style style = editorCell.getStyle();
@@ -46,7 +46,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4kcpi0_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "in");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
     editorCell.setCellId("Constant_4kcpi0_c0");
     {
       Style style = editorCell.getStyle();
@@ -57,7 +57,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4kcpi0_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_4kcpi0_e0");
     {
       Style style = editorCell.getStyle();
@@ -68,7 +68,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4kcpi0_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "with");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");
     editorCell.setCellId("Constant_4kcpi0_f0");
     {
       Style style = editorCell.getStyle();

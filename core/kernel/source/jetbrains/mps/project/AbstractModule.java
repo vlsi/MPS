@@ -19,6 +19,7 @@ import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.ModelRootBase;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
 import jetbrains.mps.project.listener.ModelCreationListener;
@@ -28,6 +29,7 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -35,13 +37,13 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.*;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SDependency;
-import org.jetbrains.mps.openapi.module.SModuleId;
-import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.*;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -50,12 +52,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
-public abstract class AbstractModule implements IModule {
+public abstract class AbstractModule implements IModule, FileSystemListener {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
   public static final String MODULE_DIR = "module";
 
-  protected IFile myDescriptorFile;
+  protected final IFile myDescriptorFile;
   private ModuleReference myModuleReference;
   private Set<ModelRoot> mySModelRoots = new LinkedHashSet<ModelRoot>();
   private ModuleScope myScope = createScope();
@@ -73,6 +75,15 @@ public abstract class AbstractModule implements IModule {
 
   //----model creation
 
+  protected AbstractModule() {
+    this(null);
+  }
+
+
+  protected AbstractModule(@Nullable IFile myDescriptorFile) {
+    this.myDescriptorFile = myDescriptorFile;
+  }
+
   private static Set<ModelCreationListener> ourModelCreationListeners = new HashSet<ModelCreationListener>();
 
   public static void registerModelCreationListener(ModelCreationListener listener) {
@@ -83,11 +94,13 @@ public abstract class AbstractModule implements IModule {
     ourModelCreationListeners.remove(creationListener);
   }
 
+  @Override
   @Deprecated
   public final EditableSModelDescriptor createModel(SModelFqName name, SModelRoot root, ModelAdjuster adj) {
     return createModel(name.toString(), root, adj);
   }
 
+  @Override
   public final EditableSModelDescriptor createModel(String name, ModelRoot root, ModelAdjuster adj) {
     if (!root.canCreateModel(name)) {
       LOG.error("Can't create a model " + name + " under model root " + root.getPresentation());
@@ -131,6 +144,11 @@ public abstract class AbstractModule implements IModule {
   public SRepository getRepository() {
     // TODO API (implement)
     return null;
+  }
+
+  @Override
+  public SModuleScope getModuleScope() {
+    return getScope();
   }
 
   @Override
@@ -203,7 +221,7 @@ public abstract class AbstractModule implements IModule {
   //----adding different deps
 
   @Override
-  public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
+  public void addDependency(@NotNull SModuleReference moduleRef, boolean reexport) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
     for (Dependency dep : descriptor.getDependencies()) {
@@ -219,7 +237,7 @@ public abstract class AbstractModule implements IModule {
     }
 
     Dependency dep = new Dependency();
-    dep.setModuleRef(moduleRef);
+    dep.setModuleRef((ModuleReference) moduleRef);
     dep.setReexport(reexport);
     descriptor.getDependencies().add(dep);
 
@@ -468,6 +486,7 @@ public abstract class AbstractModule implements IModule {
     invalidateClassPath();
   }
 
+  @Override
   public void onModuleLoad() {
     updateSModelReferences();
     updateModuleReferences();
@@ -490,10 +509,6 @@ public abstract class AbstractModule implements IModule {
   @Override
   public Collection<SModel> getModels() {
     return new ArrayList<SModel>(SModelRepository.getInstance().getModelDescriptors(this));
-  }
-
-  public List<SModelDescriptor> getHiddenModelDescriptors() {
-    return Collections.emptyList();
   }
 
   public IFile getClassesGen() {
@@ -521,7 +536,54 @@ public abstract class AbstractModule implements IModule {
     return myScope;
   }
 
+
+  @Override
+  public void attach() {
+    if (myDescriptorFile != null) {
+      FileSystem.getInstance().addListener(this);
+    }
+  }
+
+  @Override
+  public IFile getFileToListen() {
+    return myDescriptorFile;
+  }
+
+  @Override
+  public Iterable<FileSystemListener> getListenerDependencies() {
+    List<FileSystemListener> listeners = new ArrayList<FileSystemListener>();
+    for (MPSModuleOwner owner : MPSModuleRepository.getInstance().getOwners(this)) {
+      if (owner instanceof FileSystemListener) {
+        listeners.add((FileSystemListener) owner);
+      }
+    }
+    return listeners.isEmpty() ? null : listeners;
+  }
+
+  @Override
+  public void update(ProgressMonitor monitor, FileSystemEvent event) {
+    for (IFile file : event.getRemoved()) {
+      if (file.equals(myDescriptorFile)) {
+        ModuleRepositoryFacade.getInstance().removeModuleForced(this);
+        ClassLoaderManager.getInstance().requestReload();
+        return;
+      }
+    }
+    for (IFile file : event.getChanged()) {
+      if (file.equals(myDescriptorFile)) {
+        reloadFromDisk(false);
+        ClassLoaderManager.getInstance().requestReload();
+        return;
+      }
+    }
+  }
+
+  @Override
   public void dispose() {
+    FileSystem.getInstance().removeListener(this);
+    for (ModelRoot m : mySModelRoots) {
+      ((ModelRootBase) m).dispose();
+    }
     mySModelRoots.clear();
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
   }
@@ -544,48 +606,64 @@ public abstract class AbstractModule implements IModule {
   }
 
   public void updateModelsSet() {
-    mySModelRoots = doUpdateModelsSet();
+    doUpdateModelsSet();
     fireModuleInitialized();
   }
 
-  protected Set<ModelRoot> doUpdateModelsSet() {
-    List<org.jetbrains.mps.openapi.model.SModelReference> allLoadedModels = new ArrayList<org.jetbrains.mps.openapi.model.SModelReference>();
+  protected Iterable<ModelRoot> loadRoots() {
     ModuleDescriptor descriptor = getModuleDescriptor();
-    Set<ModelRoot> result = new HashSet<ModelRoot>();
-    if (descriptor != null) {
-      SModelRepository smRepo = SModelRepository.getInstance();
-      Collection<ModelRootDescriptor> roots = descriptor.getModelRootDescriptors();
-      for (ModelRootDescriptor modelRoot : roots) {
-        try {
-          ModelRootFactory modelRootFactory = PersistenceFacade.getInstance().getModelRootFactory(modelRoot.getType());
-          if (modelRootFactory == null) {
-            LOG.error("Unknown model root type: `" + modelRoot.getType() + "'. Requested by: " + this);
-            continue;
-          }
+    if (descriptor == null) {
+      return Collections.emptyList();
+    }
 
-          ModelRoot root = modelRootFactory.create();
-          root.load(modelRoot.getMemento());
-          ((ModelRootBase) root).setModule(this);
-          result.add(root);
-
-          for (SModel model : root.getModels()) {
-            allLoadedModels.add(model.getModelReference());
-            if (smRepo.getModelDescriptor(model.getModelReference()) == null) {
-              smRepo.registerModelDescriptor((SModelDescriptor) model, this);
-            }
-          }
-        } catch (Exception e) {
-          LOG.error("Error loading models from root with type: `" + modelRoot.getType() + "'. Requested by: " + this, e);
+    List<ModelRoot> result = new ArrayList<ModelRoot>();
+    for (ModelRootDescriptor modelRoot : descriptor.getModelRootDescriptors()) {
+      try {
+        ModelRootFactory modelRootFactory = PersistenceFacade.getInstance().getModelRootFactory(modelRoot.getType());
+        if (modelRootFactory == null) {
+          LOG.error("Unknown model root type: `" + modelRoot.getType() + "'. Requested by: " + this);
+          continue;
         }
-      }
 
-      for (SModelDescriptor md : smRepo.getModelDescriptors(this)) {
-        if (allLoadedModels.contains(md.getSModelReference())) continue;
-        if (!(md instanceof BaseSModelDescriptorWithSource)) continue;
-        smRepo.unRegisterModelDescriptor(md, this);
+        ModelRoot root = modelRootFactory.create();
+        root.load(modelRoot.getMemento());
+        result.add(root);
+      } catch (Exception e) {
+        LOG.error("Error loading models from root with type: `" + modelRoot.getType() + "'. Requested by: " + this, e);
       }
     }
     return result;
+  }
+
+  private void doUpdateModelsSet() {
+    ModelAccess.assertLegalWrite();
+
+    Set<ModelRoot> toRemove = new HashSet<ModelRoot>(mySModelRoots);
+    Set<ModelRoot> toUpdate = new HashSet<ModelRoot>(mySModelRoots);
+
+    for (ModelRoot root : loadRoots()) {
+      try {
+        if (mySModelRoots.contains(root)) {
+          toRemove.remove(root);
+        } else {
+          ModelRootBase rootBase = (ModelRootBase) root;
+          rootBase.setModule(this);
+          mySModelRoots.add(root);
+          rootBase.attach();
+        }
+      } catch (Exception e) {
+        LOG.error("Error loading models from root `" + root.getPresentation() + "'. Requested by: " + this, e);
+      }
+    }
+    toUpdate.removeAll(toRemove);
+
+    for (ModelRoot modelRoot : toRemove) {
+      ((ModelRootBase) modelRoot).dispose();
+    }
+    mySModelRoots.removeAll(toRemove);
+    for (ModelRoot modelRoot : toUpdate) {
+      ((ModelRootBase) modelRoot).update();
+    }
   }
 
   protected void fireModuleInitialized() {

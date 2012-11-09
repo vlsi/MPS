@@ -13,10 +13,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -56,12 +55,12 @@ public abstract class StubModelDescriptors {
         if (descById != null) {
           assert descById.getModule() == module;
           SetSequence.fromSet(result).addElement(((BaseStubModelDescriptor) descById));
-          ModelDataSource dataSource = ((BaseStubModelDescriptor) descById).getSource();
+          DataSource dataSource = ((BaseStubModelDescriptor) descById).getSource();
           if (dataSource instanceof MultiRootModelDataSource) {
             ((MultiRootModelDataSource) dataSource).addRoot(path);
           }
         } else {
-          BaseStubModelDescriptor desc = new BaseStubModelDescriptor(smref, createStubsSource(module.getModuleReference(), path), module);
+          BaseStubModelDescriptor desc = new BaseStubModelDescriptor(smref, createStubsSource(path), module);
           SModelRepository.getInstance().registerModelDescriptor(desc, (IModule) module);
           SetSequence.fromSet(result).addElement(desc);
         }
@@ -70,7 +69,7 @@ public abstract class StubModelDescriptors {
     }
   }
 
-  public abstract StubModelDataSource createStubsSource(SModuleReference origin, String path);
+  public abstract StubModelDataSource createStubsSource(String path);
 
   public SModelReference smodelRefWithId(String pkg) {
     SModelFqName fqname = new SModelFqName(module.getModuleName(), pkg, stubStereotype);

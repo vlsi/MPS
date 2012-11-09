@@ -9,6 +9,7 @@ public interface IMakeNotificationListener {
   public void scriptFinished(MakeNotification notification);
   public void sessionOpened(MakeNotification notification);
   public void sessionClosed(MakeNotification notification);
+
   public static class Stub implements IMakeNotificationListener {
     public Stub() {
     }
@@ -43,5 +44,4 @@ public interface IMakeNotificationListener {
     public void sessionClosed(MakeNotification notification) {
     }
   }
-
 }

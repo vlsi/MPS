@@ -15,14 +15,14 @@
     <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="31" startPosition="52" endLine="32" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="32" startPosition="46" endLine="33" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="33" startPosition="49" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="10" startPosition="22" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Config1#()V" />
-    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="13" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="Configure#(Ljetbrains/mps/samples/readerConfigLanguage/reader/Reader;)V" />
-    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="18" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ConfigureServiceCall#()Ljetbrains/mps/samples/readerConfigLanguage/reader/ReaderStrategy;" />
-    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="27" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ConfigureUsage#()Ljetbrains/mps/samples/readerConfigLanguage/reader/ReaderStrategy;" />
+    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Config1#()V" />
+    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="Configure#(Ljetbrains/mps/samples/readerConfigLanguage/reader/Reader;)V" />
+    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="19" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ConfigureServiceCall#()Ljetbrains/mps/samples/readerConfigLanguage/reader/ReaderStrategy;" />
+    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ConfigureUsage#()Ljetbrains/mps/samples/readerConfigLanguage/reader/ReaderStrategy;" />
     <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="11" startPosition="20" endLine="11" endPosition="20" />
-    <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="10" startPosition="22" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
     <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="14" startPosition="40" endLine="16" endPosition="46" />
-    <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="13" startPosition="0" endLine="18" endPosition="0">
+    <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1127341420738" varName="target" />
     </scopeInfo>
     <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="19" startPosition="48" endLine="25" endPosition="18">
@@ -31,8 +31,8 @@
     <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="28" startPosition="42" endLine="34" endPosition="18">
       <varInfo nodeId="1127341420738" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="18" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="27" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="19" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="28" startPosition="0" endLine="36" endPosition="0" />
     <unitInfo nodeId="1127341420738" fileName="Config1.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.readerConfigs.Config1" />
     <unitInfo nodeId="1127341420738" fileName="Config1.xml" startLine="1" startPosition="0" endLine="14" endPosition="22" unitName="jetbrains.mps.samples.readerConfigLanguage.readerConfigs.Config1" />
   </root>

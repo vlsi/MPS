@@ -10,10 +10,10 @@ import java.util.List;
 import java.util.Collections;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.util.SNodeOperations;
 
 public class ModelPlusImportedScope extends Scope {
   private final SModel myModel;
@@ -45,7 +45,7 @@ public class ModelPlusImportedScope extends Scope {
 
   @Override
   public boolean contains(SNode node) {
-    return node.isInstanceOfConcept(myTargetConcept) && (!(myRootsOnly) || node.isRoot()) && getModels().contains(node.getModel().getModelDescriptor());
+    return node.isInstanceOfConcept(myTargetConcept) && (!(myRootsOnly) || SNodeOperations.isRoot(node)) && getModels().contains(node.getModel().getModelDescriptor());
   }
 
   public SNode resolve(SNode contextNode, String refText) {

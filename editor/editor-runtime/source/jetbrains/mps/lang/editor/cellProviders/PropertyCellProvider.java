@@ -56,8 +56,8 @@ public class PropertyCellProvider extends CellProviderWithRole {
   }
 
   public EditorCell createEditorCell(EditorContext context) {
-    PropertyAccessor propertyAccessor = new PropertyAccessor(getSNode(), myPropertyName, myReadOnly, myAllowsEmptyTarget, (jetbrains.mps.nodeEditor.EditorContext) context);
-    EditorCell_Property editorCell = EditorCell_Property.create((jetbrains.mps.nodeEditor.EditorContext) context, propertyAccessor, getSNode());
+    PropertyAccessor propertyAccessor = new PropertyAccessor(getSNode(), myPropertyName, myReadOnly, myAllowsEmptyTarget, context);
+    EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, getSNode());
     editorCell.setDefaultText(myNoTargetText);
     if (!myReadOnly) {
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeletePropertyOrNode(getSNode(), myPropertyName));

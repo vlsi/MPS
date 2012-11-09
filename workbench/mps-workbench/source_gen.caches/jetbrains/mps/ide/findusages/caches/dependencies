@@ -51,6 +51,7 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.extapi.persistence.FileSystemBasedDataSource" />
     <classNode dependClassName="jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.ConcreteFilesGlobalSearchScope" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
@@ -62,7 +63,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.smodel.descriptor.source.ModelDataSource" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.source.StubModelDataSource" />
     <classNode dependClassName="jetbrains.mps.stubs.BaseStubModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.stubs.util.JavaStubModelDataSource" />
@@ -71,6 +71,7 @@
     <classNode dependClassName="jetbrains.mps.util.containers.ManyToManyMap" />
     <classNode dependClassName="jetbrains.mps.util.containers.MultiMap" />
     <classNode dependClassName="jetbrains.mps.util.containers.SetBasedMultiMap" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

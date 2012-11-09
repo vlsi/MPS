@@ -7,8 +7,9 @@ import org.apache.commons.logging.LogFactory;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.progress.SubProgressKind;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 
@@ -17,15 +18,14 @@ public class ReloadSession {
 
   private final Set<FSChangesWatcher.IReloadListener> myReloadListeners;
   private boolean myReloaded = false;
-  private ModelFileProcessor myModelProcessor = new ModelFileProcessor();
-  private ModuleFileProcessor myModuleProcessor = new ModuleFileProcessor();
+  private FileProcessor myFileProcessor = new FileProcessor();
 
   public ReloadSession(Set<FSChangesWatcher.IReloadListener> reloadListeners) {
     myReloadListeners = SetSequence.fromSetWithValues(new HashSet<FSChangesWatcher.IReloadListener>(), reloadListeners);
   }
 
   public EventProcessor[] getProcessors() {
-    return new EventProcessor[]{myModuleProcessor, myModelProcessor};
+    return new EventProcessor[]{myFileProcessor};
   }
 
   public boolean isEmpty() {
@@ -37,21 +37,19 @@ public class ReloadSession {
     return true;
   }
 
-  public void doReload(final ProgressIndicator indicator) {
+  public void doReload(final ProgressMonitor monitor) {
     assert !(myReloaded) : "Contract: do not call doReload twice on one reload session";
     myReloaded = true;
 
+    monitor.start("Reloading ...", 2);
     fireReloadStarted();
     try {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          myModuleProcessor.update(indicator);
+          myFileProcessor.update(monitor.subTask(1, SubProgressKind.REPLACING));
 
-          myModelProcessor.validateModules(myModuleProcessor.getProcessedModules());
-          myModelProcessor.update(indicator);
-
-          if (myModuleProcessor.needsReload()) {
-            indicator.setText("Reloading classes... Please wait.");
+          if (ClassLoaderManager.getInstance().isReloadRequested()) {
+            monitor.subTask(1, SubProgressKind.REPLACING).start("Reloading classes... Please wait.", 1);
             ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
           }
         }
@@ -60,6 +58,7 @@ public class ReloadSession {
       if (log.isInfoEnabled()) {
         log.info("Reload finished.");
       }
+      monitor.done();
       fireReloadFinished();
     }
   }

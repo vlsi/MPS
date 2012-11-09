@@ -117,7 +117,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_l06mua_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "loop-macro");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "loop-macro");
     editorCell.setCellId("Constant_l06mua_a0");
     {
       Style style = editorCell.getStyle();
@@ -130,7 +130,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_l06mua_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_l06mua_b0");
     {
       Style style = editorCell.getStyle();
@@ -141,14 +141,14 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_l06mua_a0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "comment");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
     editorCell.setCellId("Constant_l06mua_a0c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_l06mua_b0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_l06mua_b0c0");
     {
       Style style = editorCell.getStyle();
@@ -159,14 +159,14 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_l06mua_a1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapping label");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_l06mua_a1c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_l06mua_b1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_l06mua_b1c0");
     {
       Style style = editorCell.getStyle();
@@ -177,7 +177,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_l06mua_a2c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapped nodes");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapped nodes");
     editorCell.setCellId("Constant_l06mua_a2c0");
     {
       Style style = editorCell.getStyle();
@@ -188,7 +188,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_l06mua_b2c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_l06mua_b2c0");
     {
       Style style = editorCell.getStyle();
@@ -199,7 +199,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_l06mua_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "$LOOP$");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$LOOP$");
     editorCell.setCellId("Constant_l06mua_a0_0");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     {

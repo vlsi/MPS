@@ -88,7 +88,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   public InequalitySystem getInequalitiesSystem(EditorCell contextCell) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
-    SNode nodeCopyRoot = CopyUtil.copy(Arrays.asList(myParentNode.getContainingRoot()), mapping).get(0);
+    CopyUtil.copy(Arrays.asList(myParentNode.getTopmostAncestor()), mapping).get(0);
 
     boolean holeIsAType = SModelUtil.isAssignableConcept(NameUtil.nodeFQName(SModelUtil.getLinkDeclarationTarget(myLinkDeclaration)), "jetbrains.mps.lang.core.structure.IType");
     SNode hole = null;

@@ -97,21 +97,21 @@ public class AbstractEquationInspector extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_gj4y2c_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "node to check =");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node to check =");
     editorCell.setCellId("Constant_gj4y2c_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_gj4y2c_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "error string =");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "error string =");
     editorCell.setCellId("Constant_gj4y2c_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_gj4y2c_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_gj4y2c_c0");
     {
       Style style = editorCell.getStyle();
@@ -122,14 +122,14 @@ public class AbstractEquationInspector extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_gj4y2c_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "check only");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check only");
     editorCell.setCellId("Constant_gj4y2c_a3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_gj4y2c_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_gj4y2c_e0");
     {
       Style style = editorCell.getStyle();
@@ -140,7 +140,7 @@ public class AbstractEquationInspector extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_gj4y2c_a5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "intention to fix error");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "intention to fix error");
     editorCell.setCellId("Constant_gj4y2c_a5a");
     editorCell.setDefaultText("");
     return editorCell;

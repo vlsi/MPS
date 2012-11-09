@@ -37,7 +37,7 @@ public class RemoveAllSetElementsOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ert4q8_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "removeAll");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "removeAll");
     editorCell.setCellId("Constant_ert4q8_a0");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     {
@@ -50,7 +50,7 @@ public class RemoveAllSetElementsOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ert4q8_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_ert4q8_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     {
@@ -62,7 +62,7 @@ public class RemoveAllSetElementsOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ert4q8_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_ert4q8_d0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

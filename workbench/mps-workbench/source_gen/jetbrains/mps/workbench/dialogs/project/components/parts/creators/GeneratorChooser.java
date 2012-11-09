@@ -33,6 +33,6 @@ public class GeneratorChooser implements Computable<List<ModuleReference>> {
         }).toListSequence();
       }
     });
-    return CommonChoosers.showDialogModuleCollectionChooser(myOwner.getMainComponent(), "generator", genRefs.value, null);
+    return CommonChoosers.showDialogModuleCollectionChooser(null, myOwner.getMainComponent(), "generator", genRefs.value, null);
   }
 }

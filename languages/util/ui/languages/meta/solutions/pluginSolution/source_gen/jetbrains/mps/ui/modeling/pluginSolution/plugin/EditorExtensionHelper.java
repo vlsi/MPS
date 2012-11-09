@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -27,7 +27,7 @@ public class EditorExtensionHelper {
   }
 
   public void init() {
-    SModelDescriptor wdesc = GlobalScope.getInstance().getModelDescriptor(SModelFqName.fromString(this.getWidgetTemplatesModel(this.templatesBase)));
+    SModelDescriptor wdesc = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(this.getWidgetTemplatesModel(this.templatesBase)));
     final SModel widgetsModel = (wdesc != null ?
       wdesc.getSModel() :
       null
@@ -55,7 +55,7 @@ public class EditorExtensionHelper {
         return EditorExtensionHelper.this.templatesBase;
       }
     };
-    SModelDescriptor edesc = GlobalScope.getInstance().getModelDescriptor(SModelFqName.fromString(this.getEventHandlerTemplatesModel(this.templatesBase)));
+    SModelDescriptor edesc = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(this.getEventHandlerTemplatesModel(this.templatesBase)));
     final SModel eventsModel = (edesc != null ?
       edesc.getSModel() :
       null

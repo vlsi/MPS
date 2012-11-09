@@ -5,14 +5,14 @@
     <nodeInfo nodeId="4346819404427345637" fileName="GitUtils.java" startLine="16" startPosition="82" endLine="17" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3907542737155185413" fileName="GitUtils.java" startLine="17" startPosition="40" endLine="18" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4346819404427345664" fileName="GitUtils.java" startLine="18" startPosition="21" endLine="19" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4346819404427339853" fileName="GitUtils.java" startLine="11" startPosition="23" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GitUtils#()V" />
-    <nodeInfo nodeId="4346819404427342446" fileName="GitUtils.java" startLine="14" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="uncommmit#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vfs/VirtualFile;)V" />
+    <nodeInfo nodeId="4346819404427339853" fileName="GitUtils.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GitUtils#()V" />
+    <nodeInfo nodeId="4346819404427342446" fileName="GitUtils.java" startLine="15" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="uncommmit#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vfs/VirtualFile;)V" />
     <scopeInfo nodeId="4346819404427339856" fileName="GitUtils.java" startLine="12" startPosition="22" endLine="12" endPosition="22" />
-    <scopeInfo nodeId="4346819404427339853" fileName="GitUtils.java" startLine="11" startPosition="23" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="4346819404427339853" fileName="GitUtils.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
     <scopeInfo nodeId="4346819404427342449" fileName="GitUtils.java" startLine="15" startPosition="90" endLine="19" endPosition="12">
       <varInfo nodeId="4346819404427345647" varName="h" />
     </scopeInfo>
-    <scopeInfo nodeId="4346819404427342446" fileName="GitUtils.java" startLine="14" startPosition="0" endLine="21" endPosition="0">
+    <scopeInfo nodeId="4346819404427342446" fileName="GitUtils.java" startLine="15" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="4346819404427342450" varName="gitRoot" />
       <varInfo nodeId="4346819404427342453" varName="project" />
     </scopeInfo>
@@ -64,15 +64,15 @@
     <nodeInfo nodeId="4346819404427368514" fileName="MPSSourceRevision.java" startLine="44" startPosition="7" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4346819404427368310" fileName="MPSSourceRevision.java" startLine="84" startPosition="69" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4346819404427368468" fileName="MPSSourceRevision.java" startLine="91" startPosition="75" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4346819404427368421" fileName="MPSSourceRevision.java" startLine="19" startPosition="55" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSSourceRevision#()V" />
+    <nodeInfo nodeId="4346819404427368421" fileName="MPSSourceRevision.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSSourceRevision#()V" />
     <nodeInfo nodeId="4346819404427368358" fileName="MPSSourceRevision.java" startLine="67" startPosition="29" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4346819404427368310" fileName="MPSSourceRevision.java" startLine="83" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_9qzcwz_a4a0#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4346819404427368468" fileName="MPSSourceRevision.java" startLine="90" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_9qzcwz_a0a0e0a#(Lgit4idea/GitBranch;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4346819404427368281" fileName="MPSSourceRevision.java" startLine="53" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getCurrentRevision#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vfs/VirtualFile;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4346819404427368376" fileName="MPSSourceRevision.java" startLine="74" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDistance#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vfs/VirtualFile;)I" />
-    <nodeInfo nodeId="4346819404427368320" fileName="MPSSourceRevision.java" startLine="61" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMergeBase#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vfs/VirtualFile;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4346819404427368310" fileName="MPSSourceRevision.java" startLine="84" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_9qzcwz_a4a0#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4346819404427368468" fileName="MPSSourceRevision.java" startLine="91" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_9qzcwz_a0a0e0a#(Lgit4idea/GitBranch;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4346819404427368281" fileName="MPSSourceRevision.java" startLine="54" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getCurrentRevision#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vfs/VirtualFile;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4346819404427368376" fileName="MPSSourceRevision.java" startLine="75" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDistance#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vfs/VirtualFile;)I" />
+    <nodeInfo nodeId="4346819404427368320" fileName="MPSSourceRevision.java" startLine="62" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMergeBase#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vfs/VirtualFile;)Ljava/lang/String;" />
     <nodeInfo nodeId="4346819404427368463" fileName="MPSSourceRevision.java" startLine="34" startPosition="72" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4346819404427368430" fileName="MPSSourceRevision.java" startLine="24" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4346819404427368430" fileName="MPSSourceRevision.java" startLine="25" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljava/lang/String;" />
     <scopeInfo nodeId="4346819404427368528" fileName="MPSSourceRevision.java" startLine="49" startPosition="0" endLine="49" endPosition="30">
       <varInfo nodeId="4346819404427368529" varName="e" />
     </scopeInfo>
@@ -86,7 +86,7 @@
     <scopeInfo nodeId="4346819404427368310" fileName="MPSSourceRevision.java" startLine="85" startPosition="36" endLine="86" endPosition="38" />
     <scopeInfo nodeId="4346819404427368468" fileName="MPSSourceRevision.java" startLine="92" startPosition="36" endLine="93" endPosition="41" />
     <scopeInfo nodeId="4346819404427368424" fileName="MPSSourceRevision.java" startLine="20" startPosition="30" endLine="22" endPosition="96" />
-    <scopeInfo nodeId="4346819404427368421" fileName="MPSSourceRevision.java" startLine="19" startPosition="55" endLine="23" endPosition="3" />
+    <scopeInfo nodeId="4346819404427368421" fileName="MPSSourceRevision.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="4346819404427368310" fileName="MPSSourceRevision.java" startLine="84" startPosition="69" endLine="88" endPosition="16" />
     <scopeInfo nodeId="4346819404427368468" fileName="MPSSourceRevision.java" startLine="91" startPosition="75" endLine="95" endPosition="16" />
     <scopeInfo nodeId="4346819404427368284" fileName="MPSSourceRevision.java" startLine="54" startPosition="99" endLine="59" endPosition="38">
@@ -96,23 +96,27 @@
       <varInfo nodeId="4346819404427368409" varName="count" />
       <varInfo nodeId="4346819404427368385" varName="h" />
     </scopeInfo>
-    <scopeInfo nodeId="4346819404427368310" fileName="MPSSourceRevision.java" startLine="83" startPosition="0" endLine="90" endPosition="0">
+    <scopeInfo nodeId="4346819404427368310" fileName="MPSSourceRevision.java" startLine="84" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="4346819404427368310" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="4346819404427368468" fileName="MPSSourceRevision.java" startLine="90" startPosition="0" endLine="97" endPosition="0">
+    <scopeInfo nodeId="4346819404427368468" fileName="MPSSourceRevision.java" startLine="91" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="4346819404427368468" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="4346819404427368281" fileName="MPSSourceRevision.java" startLine="53" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="4346819404427368281" fileName="MPSSourceRevision.java" startLine="54" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="4346819404427368315" varName="project" />
       <varInfo nodeId="4346819404427368317" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="4346819404427368376" fileName="MPSSourceRevision.java" startLine="74" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="4346819404427368376" fileName="MPSSourceRevision.java" startLine="75" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="4346819404427368377" varName="project" />
       <varInfo nodeId="4346819404427368379" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="4346819404427368327" fileName="MPSSourceRevision.java" startLine="62" startPosition="92" endLine="72" endPosition="5">
       <varInfo nodeId="4346819404427368329" varName="h" />
       <varInfo nodeId="4346819404427368353" varName="longRev" />
+    </scopeInfo>
+    <scopeInfo nodeId="4346819404427368320" fileName="MPSSourceRevision.java" startLine="62" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="4346819404427368321" varName="project" />
+      <varInfo nodeId="4346819404427368323" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="4346819404427368464" fileName="MPSSourceRevision.java" startLine="35" startPosition="9" endLine="48" endPosition="29">
       <varInfo nodeId="4346819404427368466" varName="currentBranchName" />
@@ -121,15 +125,11 @@
       <varInfo nodeId="4346819404427368493" varName="headDescription" />
       <varInfo nodeId="4346819404427368480" varName="mergeBase" />
     </scopeInfo>
-    <scopeInfo nodeId="4346819404427368320" fileName="MPSSourceRevision.java" startLine="61" startPosition="0" endLine="74" endPosition="0">
-      <varInfo nodeId="4346819404427368321" varName="project" />
-      <varInfo nodeId="4346819404427368323" varName="root" />
-    </scopeInfo>
     <scopeInfo nodeId="4346819404427368434" fileName="MPSSourceRevision.java" startLine="26" startPosition="23" endLine="51" endPosition="16">
       <varInfo nodeId="4346819404427368442" varName="mpsHome" />
       <varInfo nodeId="4346819404427368456" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4346819404427368430" fileName="MPSSourceRevision.java" startLine="24" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="4346819404427368430" fileName="MPSSourceRevision.java" startLine="25" startPosition="0" endLine="53" endPosition="0" />
     <unitInfo nodeId="4346819404427368280" fileName="MPSSourceRevision.java" startLine="19" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.vcs.concrete.MPSSourceRevision" />
   </root>
 </debugInfo>

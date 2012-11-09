@@ -15,81 +15,16 @@
  */
 package jetbrains.mps.smodel.descriptor.source;
 
-import gnu.trove.THashSet;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelId;
-import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Set;
+public interface StubModelDataSource extends DataSource {
 
-public abstract class StubModelDataSource extends FileBasedModelDataSource {
-  private final Set<String> myStubPaths = new THashSet<String>();
+  ModelLoadResult loadSModel(IModule contextModule, SModelDescriptor descriptor, ModelLoadingState targetState);
 
-  public StubModelDataSource(SModuleReference origin) {
-    super(origin);
-  }
-
-  public String toString() {
-    return "stub model data source"; //todo include filenames
-  }
-
-  public Collection<String> getFilesToListen() {
-    return getStubPaths();
-  }
-
-  public long getTimestamp() {
-    long max = -1;
-    for (String path : myStubPaths) {
-      long ts = getTimestampRecursive(FileSystem.getInstance().getFileByPath(path));
-      max = Math.max(max, ts);
-    }
-    return max;
-  }
-
-  public DescriptorLoadResult loadDescriptor(IModule module, SModelFqName modelName) {
-    DescriptorLoadResult result = new DescriptorLoadResult();
-
-    SModelId modelId = SModelId.foreign(modelName.getStereotype(), module.getModuleReference().getModuleId().toString(), modelName.getLongName());
-    result.setUID(modelId.toString());
-
-    return result;
-  }
-
-  public final boolean saveModel(SModelDescriptor descriptor) {
-    throw new UnsupportedOperationException();
-  }
-
-  private static long getTimestampRecursive(IFile path) {
-    long max = path.lastModified();
-    if (path.isDirectory()) {
-      for (IFile child : path.getChildren()) {
-        long timestamp = getTimestampRecursive(child);
-        if (timestamp > max) {
-          max = timestamp;
-        }
-      }
-    }
-    return max;
-  }
-
-  public void addPath(String path) {
-    myStubPaths.add(path);
-    sourceFilesChanged();
-  }
-
-  protected Set<String> getStubPaths() {
-    return Collections.unmodifiableSet(myStubPaths);
-  }
-
-  //todo more precise
-  public boolean hasModel(SModelDescriptor md) {
-    return !myStubPaths.isEmpty();
-  }
+  // todo move to loadSModel - return null in case no model is there
+  boolean hasModel(SModelDescriptor d);
 }

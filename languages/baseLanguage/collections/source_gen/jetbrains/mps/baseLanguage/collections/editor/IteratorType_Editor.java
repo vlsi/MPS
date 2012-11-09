@@ -48,7 +48,7 @@ public class IteratorType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_i4eule_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_i4eule_b0");
     Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     {
@@ -60,7 +60,7 @@ public class IteratorType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_i4eule_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_i4eule_d0");
     Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     {

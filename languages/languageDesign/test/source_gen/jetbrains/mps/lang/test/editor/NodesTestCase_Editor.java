@@ -114,14 +114,14 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_58c6e4_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Test case");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Test case");
     editorCell.setCellId("Constant_58c6e4_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_58c6e4_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "nodes");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "nodes");
     editorCell.setCellId("Constant_58c6e4_b0");
     {
       Style style = editorCell.getStyle();
@@ -132,7 +132,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_58c6e4_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "test methods");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "test methods");
     editorCell.setCellId("Constant_58c6e4_e0");
     {
       Style style = editorCell.getStyle();
@@ -143,7 +143,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_58c6e4_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "utility methods");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "utility methods");
     editorCell.setCellId("Constant_58c6e4_h0");
     {
       Style style = editorCell.getStyle();
@@ -178,27 +178,27 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_58c6e4_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_58c6e4_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_58c6e4_a5a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_58c6e4_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_58c6e4_a8a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
@@ -330,7 +330,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), " ");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), " ");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);

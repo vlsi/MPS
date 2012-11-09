@@ -139,7 +139,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ka3b3c_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "check");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check");
     editorCell.setCellId("Constant_ka3b3c_a0a");
     {
       Style style = editorCell.getStyle();
@@ -150,7 +150,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -161,7 +161,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ka3b3c_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_ka3b3c_b0a");
     BaseLanguageStyle_StyleSheet.getParenthesis(editorCell).apply(editorCell);
     {
@@ -173,7 +173,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -184,7 +184,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ka3b3c_f0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_ka3b3c_f0a");
     BaseLanguageStyle_StyleSheet.getParenthesis(editorCell).apply(editorCell);
     {
@@ -196,7 +196,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -207,7 +207,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ka3b3c_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "infer");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "infer");
     editorCell.setCellId("Constant_ka3b3c_a1a");
     {
       Style style = editorCell.getStyle();
@@ -218,7 +218,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -228,7 +228,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ka3b3c_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_ka3b3c_c0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -236,21 +236,21 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ka3b3c_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "label:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "label:");
     editorCell.setCellId("Constant_ka3b3c_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_ka3b3c_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "strong:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "strong:");
     editorCell.setCellId("Constant_ka3b3c_a3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_ka3b3c_c3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "orientation:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "orientation:");
     editorCell.setCellId("Constant_ka3b3c_c3a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -420,19 +420,19 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     return SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", false, false) != null;
   }
 
-  private static Color _StyleParameter_QueryFunction_ka3b3c_a0a0a(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_ka3b3c_a0a0a(SNode node, EditorContext editorContext) {
     return MPSColors.DARK_BLUE;
   }
 
-  private static Color _StyleParameter_QueryFunction_ka3b3c_a0b0a(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_ka3b3c_a0b0a(SNode node, EditorContext editorContext) {
     return MPSColors.DARK_BLUE;
   }
 
-  private static Color _StyleParameter_QueryFunction_ka3b3c_a0f0a(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_ka3b3c_a0f0a(SNode node, EditorContext editorContext) {
     return MPSColors.DARK_BLUE;
   }
 
-  private static Color _StyleParameter_QueryFunction_ka3b3c_a0a1a(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_ka3b3c_a0a1a(SNode node, EditorContext editorContext) {
     return MPSColors.DARK_BLUE;
   }
 

@@ -147,7 +147,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_5822086619725756204(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "staticInitializer", true);
+    return SLinkOperations.getTarget(_context.getNode(), "classInitializer", true);
   }
 
   public static SNode sourceNodeQuery_5822086619725756291(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -167,7 +167,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_7805405506192339204(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "staticInitializer", true);
+    return SLinkOperations.getTarget(_context.getNode(), "classInitializer", true);
   }
 
   public static SNode sourceNodeQuery_7805405506192339213(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

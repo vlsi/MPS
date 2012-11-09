@@ -9,6 +9,7 @@ public interface IFeedback {
   public String getMessage();
   public Object getSource();
   public Throwable getException();
+
   public static   enum Severity {
     ERROR("error"),
     WARNING("warning"),
@@ -149,5 +150,4 @@ public interface IFeedback {
       return IFeedback.Severity.INFO;
     }
   }
-
 }

@@ -32,7 +32,7 @@ public class BuildLayout_CopyFilterFixCRLF_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vd01i9_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "fix eol:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "fix eol:");
     editorCell.setCellId("Constant_vd01i9_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -40,7 +40,7 @@ public class BuildLayout_CopyFilterFixCRLF_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vd01i9_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_vd01i9_c0");
     {
       Style style = editorCell.getStyle();
@@ -51,7 +51,7 @@ public class BuildLayout_CopyFilterFixCRLF_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vd01i9_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "remove eof (Ctrl-Z):");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "remove eof (Ctrl-Z):");
     editorCell.setCellId("Constant_vd01i9_d0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

@@ -38,7 +38,7 @@ public class Type_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createError_a1nfgp_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<type>");
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<type>");
     editorCell.setCellId("Error_a1nfgp_a0");
     return editorCell;
   }

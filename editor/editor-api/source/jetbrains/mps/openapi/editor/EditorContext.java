@@ -17,8 +17,11 @@ package jetbrains.mps.openapi.editor;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
+
+import java.util.List;
 
 /**
  * evgeny, 11/17/11
@@ -26,6 +29,8 @@ import jetbrains.mps.util.Computable;
 public interface EditorContext {
 
   SNode getSelectedNode();
+
+  List<SNode> getSelectedNodes();
 
   /**
    * same as selectWRTFocusPolicy(node, true);
@@ -42,7 +47,11 @@ public interface EditorContext {
    */
   void selectWRTFocusPolicy(SNode node, boolean force);
 
+  void selectWRTFocusPolicy(EditorCell editorCell);
+
   void select(SNode node);
+
+  void selectRange(SNode first, SNode last);
 
   void select(SNode node, String cellId);
 
@@ -58,7 +67,13 @@ public interface EditorContext {
 
   EditorInspector getInspector();
 
+  boolean isInspector();
+
+  void openInspector();
+
   EditorComponent getEditorComponent();
+
+  IOperationContext getOperationContext();
 
   void executeCommand(Runnable r);
 
@@ -70,13 +85,19 @@ public interface EditorContext {
 
   IScope getScope();
 
+  SModel getModel();
+
+  boolean isEditable();
+
+  Object createMemento(boolean full);
+
+  Object createMemento();
+
+  boolean setMemento(Object o);
+
   EditorCell createNodeCell(SNode node);
 
   EditorCell createReferentCell(SNode sourceNode, SNode targetNode, String role);
 
   EditorCell createRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, SNode roleAttribute);
-
-  IOperationContext getOperationContext();
-
-  boolean isInspector();
 }

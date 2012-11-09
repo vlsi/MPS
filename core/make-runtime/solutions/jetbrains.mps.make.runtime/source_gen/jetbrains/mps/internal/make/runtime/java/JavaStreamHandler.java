@@ -12,7 +12,9 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import org.jdom.Element;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 
 public class JavaStreamHandler implements StreamHandler {
   private final SModelDescriptor myModelDescriptor;
@@ -87,10 +89,11 @@ public class JavaStreamHandler implements StreamHandler {
   }
 
   private IFile getOverriddenOutputDir(SModelDescriptor md) {
-    if (md instanceof DefaultSModelDescriptor) {
-      boolean useModelFolder = Boolean.parseBoolean(((DefaultSModelDescriptor) md).getSModelHeader().getOptionalProperty("useModelFolderForGeneration"));
-      if (useModelFolder) {
-        IFile file = ((DefaultSModelDescriptor) md).getSource().getFile();
+    if (md instanceof GeneratableSModelDescriptor) {
+      boolean useModelFolder = ((GeneratableSModelDescriptor) md).isGenerateIntoModelFolder();
+      DataSource source = md.getSource();
+      if (useModelFolder && source instanceof FileDataSource) {
+        IFile file = ((FileDataSource) source).getFile();
         return file.getParent();
       }
     }

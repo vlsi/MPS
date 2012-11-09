@@ -17,7 +17,7 @@ public class ToolInstanceExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ar658z_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "instance");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "instance");
     editorCell.setCellId("Constant_ar658z_a");
     {
       Style style = editorCell.getStyle();

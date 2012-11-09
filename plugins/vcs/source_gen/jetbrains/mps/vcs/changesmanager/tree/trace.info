@@ -9,19 +9,19 @@
     <nodeInfo nodeId="285677603355202476" fileName="UsagesTreeFeatureExtractor.java" startLine="38" startPosition="5" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="285677603355202465" fileName="UsagesTreeFeatureExtractor.java" startLine="43" startPosition="36" endLine="44" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="285677603355202465" fileName="UsagesTreeFeatureExtractor.java" startLine="45" startPosition="5" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="285677603355151501" fileName="UsagesTreeFeatureExtractor.java" startLine="19" startPosition="77" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UsagesTreeFeatureExtractor#()V" />
+    <nodeInfo nodeId="285677603355151501" fileName="UsagesTreeFeatureExtractor.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UsagesTreeFeatureExtractor#()V" />
     <nodeInfo nodeId="285677603355205555" fileName="UsagesTreeFeatureExtractor.java" startLine="28" startPosition="76" endLine="31" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="285677603355205617" fileName="UsagesTreeFeatureExtractor.java" startLine="33" startPosition="69" endLine="36" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="285677603355202465" fileName="UsagesTreeFeatureExtractor.java" startLine="42" startPosition="80" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="285677603355202465" fileName="UsagesTreeFeatureExtractor.java" startLine="41" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_f7pfq7_a0a0a0a#(Ljetbrains/mps/ide/findusages/view/treeholder/tree/DataNode;)Ljetbrains/mps/ide/findusages/view/treeholder/tree/nodedatatypes/BaseNodeData;" />
+    <nodeInfo nodeId="285677603355202465" fileName="UsagesTreeFeatureExtractor.java" startLine="42" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_f7pfq7_a0a0a0a#(Ljetbrains/mps/ide/findusages/view/treeholder/tree/DataNode;)Ljetbrains/mps/ide/findusages/view/treeholder/tree/nodedatatypes/BaseNodeData;" />
     <nodeInfo nodeId="285677603355202482" fileName="UsagesTreeFeatureExtractor.java" startLine="26" startPosition="107" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="285677603355153483" fileName="UsagesTreeFeatureExtractor.java" startLine="24" startPosition="60" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="285677603355153473" fileName="UsagesTreeFeatureExtractor.java" startLine="22" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFeature#(Ljetbrains/mps/ide/ui/MPSTreeNode;)Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
+    <nodeInfo nodeId="285677603355153473" fileName="UsagesTreeFeatureExtractor.java" startLine="23" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFeature#(Ljetbrains/mps/ide/ui/MPSTreeNode;)Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
     <scopeInfo nodeId="285677603355151504" fileName="UsagesTreeFeatureExtractor.java" startLine="20" startPosition="39" endLine="20" endPosition="39" />
     <scopeInfo nodeId="285677603355205556" fileName="UsagesTreeFeatureExtractor.java" startLine="29" startPosition="25" endLine="30" endPosition="38" />
     <scopeInfo nodeId="285677603355205618" fileName="UsagesTreeFeatureExtractor.java" startLine="34" startPosition="85" endLine="35" endPosition="37" />
     <scopeInfo nodeId="285677603355202465" fileName="UsagesTreeFeatureExtractor.java" startLine="43" startPosition="36" endLine="44" endPosition="41" />
-    <scopeInfo nodeId="285677603355151501" fileName="UsagesTreeFeatureExtractor.java" startLine="19" startPosition="77" endLine="21" endPosition="3" />
+    <scopeInfo nodeId="285677603355151501" fileName="UsagesTreeFeatureExtractor.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="285677603355202483" fileName="UsagesTreeFeatureExtractor.java" startLine="27" startPosition="46" endLine="31" endPosition="9">
       <varInfo nodeId="285677603355205545" varName="mr" />
     </scopeInfo>
@@ -29,220 +29,220 @@
       <varInfo nodeId="285677603355205607" varName="np" />
     </scopeInfo>
     <scopeInfo nodeId="285677603355202465" fileName="UsagesTreeFeatureExtractor.java" startLine="42" startPosition="80" endLine="46" endPosition="16" />
-    <scopeInfo nodeId="285677603355202465" fileName="UsagesTreeFeatureExtractor.java" startLine="41" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="285677603355202465" fileName="UsagesTreeFeatureExtractor.java" startLine="42" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="285677603355202465" varName="checkedDotOperand" />
     </scopeInfo>
     <scopeInfo nodeId="285677603355153485" fileName="UsagesTreeFeatureExtractor.java" startLine="25" startPosition="56" endLine="37" endPosition="7">
       <varInfo nodeId="285677603355202463" varName="nodeData" />
     </scopeInfo>
     <scopeInfo nodeId="285677603355153480" fileName="UsagesTreeFeatureExtractor.java" startLine="24" startPosition="60" endLine="39" endPosition="16" />
-    <scopeInfo nodeId="285677603355153473" fileName="UsagesTreeFeatureExtractor.java" startLine="22" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="285677603355153473" fileName="UsagesTreeFeatureExtractor.java" startLine="23" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="285677603355153474" varName="treeNode" />
     </scopeInfo>
     <unitInfo nodeId="285677603355151499" fileName="UsagesTreeFeatureExtractor.java" startLine="19" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.UsagesTreeFeatureExtractor" />
   </root>
   <root nodeId="3751911615136891847" modelId="r:0fdcfe58-6a3e-4b7d-bea2-685e5d104fd0(jetbrains.mps.vcs.changesmanager.tree)">
-    <nodeInfo nodeId="3477558405266237767" fileName="FeatureForestMap.java" startLine="29" startPosition="34" endLine="30" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourLoggingEnabled" />
-    <nodeInfo nodeId="3751911615136891847" fileName="FeatureForestMap.java" startLine="30" startPosition="103" endLine="31" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
-    <nodeInfo nodeId="3751911615136891854" fileName="FeatureForestMap.java" startLine="32" startPosition="0" endLine="33" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFeatureToValue" />
-    <nodeInfo nodeId="3751911615136891867" fileName="FeatureForestMap.java" startLine="33" startPosition="92" endLine="34" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFeatureToAncestors" />
-    <nodeInfo nodeId="3751911615136891883" fileName="FeatureForestMap.java" startLine="34" startPosition="112" endLine="35" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFeaturesIsAncestorCounterMap" />
-    <nodeInfo nodeId="9200516641176950910" fileName="FeatureForestMap.java" startLine="35" startPosition="131" endLine="36" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListeners" />
-    <nodeInfo nodeId="3751911615136891940" fileName="FeatureForestMap.java" startLine="41" startPosition="63" endLine="42" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3477558405266249861" fileName="FeatureForestMap.java" startLine="43" startPosition="69" endLine="44" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3751911615136891968" fileName="FeatureForestMap.java" startLine="45" startPosition="5" endLine="46" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3477558405266249892" fileName="FeatureForestMap.java" startLine="48" startPosition="40" endLine="49" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3477558405266249866" fileName="FeatureForestMap.java" startLine="52" startPosition="27" endLine="53" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3751911615136892043" fileName="FeatureForestMap.java" startLine="54" startPosition="5" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3751911615136891950" fileName="FeatureForestMap.java" startLine="55" startPosition="0" endLine="56" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3751911615136891977" fileName="FeatureForestMap.java" startLine="56" startPosition="62" endLine="57" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3751911615136891993" fileName="FeatureForestMap.java" startLine="59" startPosition="36" endLine="60" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9200516641176985462" fileName="FeatureForestMap.java" startLine="62" startPosition="7" endLine="63" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3477558405266249914" fileName="FeatureForestMap.java" startLine="67" startPosition="72" endLine="68" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3751911615136892084" fileName="FeatureForestMap.java" startLine="69" startPosition="5" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3751911615136892093" fileName="FeatureForestMap.java" startLine="70" startPosition="0" endLine="71" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3751911615136892101" fileName="FeatureForestMap.java" startLine="71" startPosition="81" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3751911615136892103" fileName="FeatureForestMap.java" startLine="72" startPosition="0" endLine="73" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3751911615136892113" fileName="FeatureForestMap.java" startLine="73" startPosition="61" endLine="74" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3751911615136892136" fileName="FeatureForestMap.java" startLine="76" startPosition="36" endLine="77" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9200516641176985773" fileName="FeatureForestMap.java" startLine="79" startPosition="7" endLine="80" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3751911615136892153" fileName="FeatureForestMap.java" startLine="84" startPosition="42" endLine="85" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3751911615136892301" fileName="FeatureForestMap.java" startLine="88" startPosition="69" endLine="89" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3751911615136892334" fileName="FeatureForestMap.java" startLine="93" startPosition="61" endLine="94" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4653713283496888359" fileName="FeatureForestMap.java" startLine="96" startPosition="40" endLine="97" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4653713283496888398" fileName="FeatureForestMap.java" startLine="103" startPosition="60" endLine="104" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8579517044346265756" fileName="FeatureForestMap.java" startLine="108" startPosition="32" endLine="109" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8579517044346265772" fileName="FeatureForestMap.java" startLine="114" startPosition="32" endLine="115" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8579517044346265788" fileName="FeatureForestMap.java" startLine="121" startPosition="32" endLine="122" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8579517044346265807" fileName="FeatureForestMap.java" startLine="128" startPosition="11" endLine="129" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5364815602089878036" fileName="FeatureForestMap.java" startLine="131" startPosition="111" endLine="132" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8579517044346265815" fileName="FeatureForestMap.java" startLine="134" startPosition="37" endLine="135" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3477558405266249834" fileName="FeatureForestMap.java" startLine="142" startPosition="64" endLine="143" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3477558405266249856" fileName="FeatureForestMap.java" startLine="148" startPosition="33" endLine="149" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5364815602089878028" fileName="FeatureForestMap.java" startLine="155" startPosition="36" endLine="156" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5364815602089878028" fileName="FeatureForestMap.java" startLine="157" startPosition="5" endLine="158" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4653713283496953820" fileName="FeatureForestMap.java" startLine="165" startPosition="55" endLine="166" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4653713283496953816" fileName="FeatureForestMap.java" startLine="169" startPosition="58" endLine="170" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3751911615136891849" fileName="FeatureForestMap.java" startLine="37" startPosition="0" endLine="39" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FeatureForestMap#()V" />
-    <nodeInfo nodeId="9200516641176985789" fileName="FeatureForestMap.java" startLine="161" startPosition="86" endLine="163" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyCounterMapHandler#()V" />
-    <nodeInfo nodeId="3751911615136891911" fileName="FeatureForestMap.java" startLine="42" startPosition="34" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3751911615136892002" fileName="FeatureForestMap.java" startLine="51" startPosition="7" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3751911615136892069" fileName="FeatureForestMap.java" startLine="66" startPosition="51" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8579517044346265754" fileName="FeatureForestMap.java" startLine="107" startPosition="71" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="8579517044346265769" fileName="FeatureForestMap.java" startLine="113" startPosition="74" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="8579517044346265785" fileName="FeatureForestMap.java" startLine="120" startPosition="58" endLine="123" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="8579517044346265815" fileName="FeatureForestMap.java" startLine="133" startPosition="16" endLine="136" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8579517044346265815" fileName="FeatureForestMap.java" startLine="133" startPosition="16" endLine="136" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3477558405266249856" fileName="FeatureForestMap.java" startLine="147" startPosition="28" endLine="150" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3477558405266249856" fileName="FeatureForestMap.java" startLine="147" startPosition="28" endLine="150" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5364815602089878028" fileName="FeatureForestMap.java" startLine="154" startPosition="82" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3477558405266249890" fileName="FeatureForestMap.java" startLine="47" startPosition="115" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)Z" />
-    <nodeInfo nodeId="3751911615136892057" fileName="FeatureForestMap.java" startLine="58" startPosition="91" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
-    <nodeInfo nodeId="3751911615136892132" fileName="FeatureForestMap.java" startLine="75" startPosition="91" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
-    <nodeInfo nodeId="3751911615136892290" fileName="FeatureForestMap.java" startLine="87" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAncestorOfAddedFeature#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)Z" />
-    <nodeInfo nodeId="4653713283496888357" fileName="FeatureForestMap.java" startLine="95" startPosition="116" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)Z" />
-    <nodeInfo nodeId="5364815602089878038" fileName="FeatureForestMap.java" startLine="133" startPosition="14" endLine="137" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3477558405266237771" fileName="FeatureForestMap.java" startLine="141" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setLoggingEnabled#(Z)V" />
-    <nodeInfo nodeId="9200516641176998960" fileName="FeatureForestMap.java" startLine="164" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="counterZero#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
-    <nodeInfo nodeId="9200516641176998953" fileName="FeatureForestMap.java" startLine="168" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="counterNonZero#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
-    <nodeInfo nodeId="3477558405266249882" fileName="FeatureForestMap.java" startLine="46" startPosition="49" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3751911615136892045" fileName="FeatureForestMap.java" startLine="57" startPosition="70" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3751911615136892120" fileName="FeatureForestMap.java" startLine="74" startPosition="65" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3751911615136892144" fileName="FeatureForestMap.java" startLine="82" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)null" />
-    <nodeInfo nodeId="3751911615136892391" fileName="FeatureForestMap.java" startLine="94" startPosition="34" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4653713283496888366" fileName="FeatureForestMap.java" startLine="101" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAddedAncestorValue#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)null" />
-    <nodeInfo nodeId="3477558405266249847" fileName="FeatureForestMap.java" startLine="146" startPosition="39" endLine="151" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8579517044346265750" fileName="FeatureForestMap.java" startLine="106" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addListener#(Ljetbrains/mps/vcs/changesmanager/tree/FeatureForestMapListener;)V" />
-    <nodeInfo nodeId="8579517044346265765" fileName="FeatureForestMap.java" startLine="112" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeListener#(Ljetbrains/mps/vcs/changesmanager/tree/FeatureForestMapListener;)V" />
-    <nodeInfo nodeId="8579517044346265780" fileName="FeatureForestMap.java" startLine="118" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="copyListeners#()Ljava/util/List;" />
-    <nodeInfo nodeId="5364815602089878011" fileName="FeatureForestMap.java" startLine="130" startPosition="29" endLine="137" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5364815602089878028" fileName="FeatureForestMap.java" startLine="153" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_tcy57o_a0a0a0a0a0j#(Ljava/lang/Throwable;)Ljava/lang/Throwable;" />
-    <nodeInfo nodeId="3477558405266249840" fileName="FeatureForestMap.java" startLine="145" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="log#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="3751911615136892318" fileName="FeatureForestMap.java" startLine="91" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAddedAncestor#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
-    <nodeInfo nodeId="8579517044346265805" fileName="FeatureForestMap.java" startLine="127" startPosition="86" endLine="138" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8579517044346265802" fileName="FeatureForestMap.java" startLine="126" startPosition="66" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8579517044346265794" fileName="FeatureForestMap.java" startLine="125" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireFeatureStateChanged#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
-    <nodeInfo nodeId="3751911615136892062" fileName="FeatureForestMap.java" startLine="65" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeKey#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
-    <nodeInfo nodeId="3751911615136891897" fileName="FeatureForestMap.java" startLine="40" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="put#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;null)V" />
-    <scopeInfo nodeId="3751911615136891852" fileName="FeatureForestMap.java" startLine="38" startPosition="29" endLine="38" endPosition="29" />
-    <scopeInfo nodeId="9200516641176985792" fileName="FeatureForestMap.java" startLine="162" startPosition="34" endLine="162" endPosition="34" />
-    <scopeInfo nodeId="3751911615136891912" fileName="FeatureForestMap.java" startLine="43" startPosition="69" endLine="44" endPosition="62" />
-    <scopeInfo nodeId="3477558405266249891" fileName="FeatureForestMap.java" startLine="48" startPosition="40" endLine="49" endPosition="68" />
-    <scopeInfo nodeId="3751911615136892003" fileName="FeatureForestMap.java" startLine="52" startPosition="27" endLine="53" endPosition="114" />
-    <scopeInfo nodeId="3751911615136892058" fileName="FeatureForestMap.java" startLine="59" startPosition="36" endLine="60" endPosition="52" />
-    <scopeInfo nodeId="3751911615136892070" fileName="FeatureForestMap.java" startLine="67" startPosition="72" endLine="68" endPosition="69" />
-    <scopeInfo nodeId="3751911615136892133" fileName="FeatureForestMap.java" startLine="76" startPosition="36" endLine="77" endPosition="52" />
-    <scopeInfo nodeId="3751911615136892147" fileName="FeatureForestMap.java" startLine="84" startPosition="42" endLine="85" endPosition="62" />
-    <scopeInfo nodeId="3751911615136892293" fileName="FeatureForestMap.java" startLine="88" startPosition="69" endLine="89" endPosition="61" />
-    <scopeInfo nodeId="4653713283496888358" fileName="FeatureForestMap.java" startLine="96" startPosition="40" endLine="97" endPosition="68" />
-    <scopeInfo nodeId="4653713283496888371" fileName="FeatureForestMap.java" startLine="103" startPosition="60" endLine="104" endPosition="80" />
-    <scopeInfo nodeId="8579517044346265755" fileName="FeatureForestMap.java" startLine="108" startPosition="32" endLine="109" endPosition="62" />
-    <scopeInfo nodeId="8579517044346265771" fileName="FeatureForestMap.java" startLine="114" startPosition="32" endLine="115" endPosition="65" />
-    <scopeInfo nodeId="8579517044346265787" fileName="FeatureForestMap.java" startLine="121" startPosition="32" endLine="122" endPosition="101" />
-    <scopeInfo nodeId="8579517044346265806" fileName="FeatureForestMap.java" startLine="128" startPosition="11" endLine="129" endPosition="46" />
-    <scopeInfo nodeId="5364815602089878012" fileName="FeatureForestMap.java" startLine="131" startPosition="111" endLine="132" endPosition="20" />
-    <scopeInfo nodeId="8579517044346265815" fileName="FeatureForestMap.java" startLine="134" startPosition="37" endLine="135" endPosition="74" />
-    <scopeInfo nodeId="3477558405266237774" fileName="FeatureForestMap.java" startLine="142" startPosition="64" endLine="143" endPosition="39" />
-    <scopeInfo nodeId="3477558405266249856" fileName="FeatureForestMap.java" startLine="148" startPosition="33" endLine="149" endPosition="23" />
-    <scopeInfo nodeId="5364815602089878028" fileName="FeatureForestMap.java" startLine="155" startPosition="36" endLine="156" endPosition="42" />
-    <scopeInfo nodeId="9200516641176998966" fileName="FeatureForestMap.java" startLine="165" startPosition="55" endLine="166" endPosition="39" />
-    <scopeInfo nodeId="9200516641176998959" fileName="FeatureForestMap.java" startLine="169" startPosition="58" endLine="170" endPosition="39" />
-    <scopeInfo nodeId="3751911615136891849" fileName="FeatureForestMap.java" startLine="37" startPosition="0" endLine="39" endPosition="3" />
-    <scopeInfo nodeId="9200516641176985789" fileName="FeatureForestMap.java" startLine="161" startPosition="86" endLine="163" endPosition="5" />
-    <scopeInfo nodeId="8579517044346265753" fileName="FeatureForestMap.java" startLine="107" startPosition="71" endLine="110" endPosition="5" />
-    <scopeInfo nodeId="8579517044346265768" fileName="FeatureForestMap.java" startLine="113" startPosition="74" endLine="116" endPosition="5" />
-    <scopeInfo nodeId="8579517044346265784" fileName="FeatureForestMap.java" startLine="120" startPosition="58" endLine="123" endPosition="5" />
-    <scopeInfo nodeId="5364815602089878039" fileName="FeatureForestMap.java" startLine="133" startPosition="16" endLine="136" endPosition="11" />
-    <scopeInfo nodeId="8579517044346265815" fileName="FeatureForestMap.java" startLine="133" startPosition="16" endLine="136" endPosition="11" />
-    <scopeInfo nodeId="3477558405266249849" fileName="FeatureForestMap.java" startLine="147" startPosition="28" endLine="150" endPosition="7" />
-    <scopeInfo nodeId="3477558405266249856" fileName="FeatureForestMap.java" startLine="147" startPosition="28" endLine="150" endPosition="7" />
-    <scopeInfo nodeId="3477558405266249890" fileName="FeatureForestMap.java" startLine="47" startPosition="115" endLine="51" endPosition="0">
+    <nodeInfo nodeId="3477558405266237767" fileName="FeatureForestMap.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourLoggingEnabled" />
+    <nodeInfo nodeId="3751911615136891847" fileName="FeatureForestMap.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="3751911615136891854" fileName="FeatureForestMap.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFeatureToValue" />
+    <nodeInfo nodeId="3751911615136891867" fileName="FeatureForestMap.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFeatureToAncestors" />
+    <nodeInfo nodeId="3751911615136891883" fileName="FeatureForestMap.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFeaturesIsAncestorCounterMap" />
+    <nodeInfo nodeId="9200516641176950910" fileName="FeatureForestMap.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListeners" />
+    <nodeInfo nodeId="3751911615136891940" fileName="FeatureForestMap.java" startLine="40" startPosition="63" endLine="41" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3477558405266249861" fileName="FeatureForestMap.java" startLine="42" startPosition="69" endLine="43" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3751911615136891968" fileName="FeatureForestMap.java" startLine="44" startPosition="5" endLine="45" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3477558405266249892" fileName="FeatureForestMap.java" startLine="47" startPosition="40" endLine="48" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3477558405266249866" fileName="FeatureForestMap.java" startLine="51" startPosition="27" endLine="52" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3751911615136892043" fileName="FeatureForestMap.java" startLine="53" startPosition="5" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3751911615136891950" fileName="FeatureForestMap.java" startLine="54" startPosition="0" endLine="55" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3751911615136891977" fileName="FeatureForestMap.java" startLine="55" startPosition="62" endLine="56" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3751911615136891993" fileName="FeatureForestMap.java" startLine="58" startPosition="36" endLine="59" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9200516641176985462" fileName="FeatureForestMap.java" startLine="61" startPosition="7" endLine="62" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3477558405266249914" fileName="FeatureForestMap.java" startLine="66" startPosition="72" endLine="67" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3751911615136892084" fileName="FeatureForestMap.java" startLine="68" startPosition="5" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3751911615136892093" fileName="FeatureForestMap.java" startLine="69" startPosition="0" endLine="70" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3751911615136892101" fileName="FeatureForestMap.java" startLine="70" startPosition="81" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3751911615136892103" fileName="FeatureForestMap.java" startLine="71" startPosition="0" endLine="72" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3751911615136892113" fileName="FeatureForestMap.java" startLine="72" startPosition="61" endLine="73" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3751911615136892136" fileName="FeatureForestMap.java" startLine="75" startPosition="36" endLine="76" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9200516641176985773" fileName="FeatureForestMap.java" startLine="78" startPosition="7" endLine="79" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3751911615136892153" fileName="FeatureForestMap.java" startLine="83" startPosition="42" endLine="84" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3751911615136892301" fileName="FeatureForestMap.java" startLine="87" startPosition="69" endLine="88" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3751911615136892334" fileName="FeatureForestMap.java" startLine="92" startPosition="61" endLine="93" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4653713283496888359" fileName="FeatureForestMap.java" startLine="95" startPosition="40" endLine="96" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4653713283496888398" fileName="FeatureForestMap.java" startLine="102" startPosition="60" endLine="103" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8579517044346265756" fileName="FeatureForestMap.java" startLine="107" startPosition="32" endLine="108" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8579517044346265772" fileName="FeatureForestMap.java" startLine="113" startPosition="32" endLine="114" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8579517044346265788" fileName="FeatureForestMap.java" startLine="120" startPosition="32" endLine="121" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8579517044346265807" fileName="FeatureForestMap.java" startLine="127" startPosition="11" endLine="128" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5364815602089878036" fileName="FeatureForestMap.java" startLine="130" startPosition="111" endLine="131" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8579517044346265815" fileName="FeatureForestMap.java" startLine="133" startPosition="37" endLine="134" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3477558405266249834" fileName="FeatureForestMap.java" startLine="141" startPosition="64" endLine="142" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3477558405266249856" fileName="FeatureForestMap.java" startLine="147" startPosition="33" endLine="148" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5364815602089878028" fileName="FeatureForestMap.java" startLine="154" startPosition="36" endLine="155" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5364815602089878028" fileName="FeatureForestMap.java" startLine="156" startPosition="5" endLine="157" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4653713283496953820" fileName="FeatureForestMap.java" startLine="164" startPosition="55" endLine="165" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4653713283496953816" fileName="FeatureForestMap.java" startLine="168" startPosition="58" endLine="169" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3751911615136891849" fileName="FeatureForestMap.java" startLine="37" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FeatureForestMap#()V" />
+    <nodeInfo nodeId="9200516641176985789" fileName="FeatureForestMap.java" startLine="161" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyCounterMapHandler#()V" />
+    <nodeInfo nodeId="3751911615136891911" fileName="FeatureForestMap.java" startLine="41" startPosition="34" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3477558405266249890" fileName="FeatureForestMap.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)Z" />
+    <nodeInfo nodeId="3751911615136892002" fileName="FeatureForestMap.java" startLine="50" startPosition="7" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3751911615136892057" fileName="FeatureForestMap.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
+    <nodeInfo nodeId="3751911615136892069" fileName="FeatureForestMap.java" startLine="65" startPosition="51" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3751911615136892132" fileName="FeatureForestMap.java" startLine="75" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
+    <nodeInfo nodeId="3751911615136892290" fileName="FeatureForestMap.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAncestorOfAddedFeature#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)Z" />
+    <nodeInfo nodeId="4653713283496888357" fileName="FeatureForestMap.java" startLine="95" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)Z" />
+    <nodeInfo nodeId="8579517044346265754" fileName="FeatureForestMap.java" startLine="106" startPosition="71" endLine="109" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="8579517044346265769" fileName="FeatureForestMap.java" startLine="112" startPosition="74" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="8579517044346265785" fileName="FeatureForestMap.java" startLine="119" startPosition="58" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="8579517044346265815" fileName="FeatureForestMap.java" startLine="132" startPosition="16" endLine="135" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8579517044346265815" fileName="FeatureForestMap.java" startLine="132" startPosition="16" endLine="135" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3477558405266237771" fileName="FeatureForestMap.java" startLine="141" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setLoggingEnabled#(Z)V" />
+    <nodeInfo nodeId="3477558405266249856" fileName="FeatureForestMap.java" startLine="146" startPosition="28" endLine="149" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3477558405266249856" fileName="FeatureForestMap.java" startLine="146" startPosition="28" endLine="149" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5364815602089878028" fileName="FeatureForestMap.java" startLine="153" startPosition="82" endLine="156" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9200516641176998960" fileName="FeatureForestMap.java" startLine="164" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="counterZero#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
+    <nodeInfo nodeId="9200516641176998953" fileName="FeatureForestMap.java" startLine="168" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="counterNonZero#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
+    <nodeInfo nodeId="3751911615136892144" fileName="FeatureForestMap.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)null" />
+    <nodeInfo nodeId="4653713283496888366" fileName="FeatureForestMap.java" startLine="101" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAddedAncestorValue#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)null" />
+    <nodeInfo nodeId="5364815602089878038" fileName="FeatureForestMap.java" startLine="132" startPosition="14" endLine="136" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3477558405266249882" fileName="FeatureForestMap.java" startLine="45" startPosition="49" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3751911615136892045" fileName="FeatureForestMap.java" startLine="56" startPosition="70" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3751911615136892120" fileName="FeatureForestMap.java" startLine="73" startPosition="65" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3751911615136892391" fileName="FeatureForestMap.java" startLine="93" startPosition="34" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8579517044346265750" fileName="FeatureForestMap.java" startLine="106" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addListener#(Ljetbrains/mps/vcs/changesmanager/tree/FeatureForestMapListener;)V" />
+    <nodeInfo nodeId="8579517044346265765" fileName="FeatureForestMap.java" startLine="112" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeListener#(Ljetbrains/mps/vcs/changesmanager/tree/FeatureForestMapListener;)V" />
+    <nodeInfo nodeId="3477558405266249847" fileName="FeatureForestMap.java" startLine="145" startPosition="39" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8579517044346265780" fileName="FeatureForestMap.java" startLine="118" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="copyListeners#()Ljava/util/List;" />
+    <nodeInfo nodeId="5364815602089878028" fileName="FeatureForestMap.java" startLine="153" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_tcy57o_a0a0a0a0a0j#(Ljava/lang/Throwable;)Ljava/lang/Throwable;" />
+    <nodeInfo nodeId="5364815602089878011" fileName="FeatureForestMap.java" startLine="129" startPosition="29" endLine="136" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3477558405266249840" fileName="FeatureForestMap.java" startLine="145" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="log#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3751911615136892318" fileName="FeatureForestMap.java" startLine="91" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAddedAncestor#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
+    <nodeInfo nodeId="8579517044346265805" fileName="FeatureForestMap.java" startLine="126" startPosition="86" endLine="137" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8579517044346265802" fileName="FeatureForestMap.java" startLine="125" startPosition="66" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8579517044346265794" fileName="FeatureForestMap.java" startLine="125" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireFeatureStateChanged#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
+    <nodeInfo nodeId="3751911615136892062" fileName="FeatureForestMap.java" startLine="65" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeKey#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
+    <nodeInfo nodeId="3751911615136891897" fileName="FeatureForestMap.java" startLine="40" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="put#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;null)V" />
+    <scopeInfo nodeId="3751911615136891852" fileName="FeatureForestMap.java" startLine="37" startPosition="29" endLine="37" endPosition="29" />
+    <scopeInfo nodeId="9200516641176985792" fileName="FeatureForestMap.java" startLine="161" startPosition="34" endLine="161" endPosition="34" />
+    <scopeInfo nodeId="3751911615136891912" fileName="FeatureForestMap.java" startLine="42" startPosition="69" endLine="43" endPosition="62" />
+    <scopeInfo nodeId="3477558405266249891" fileName="FeatureForestMap.java" startLine="47" startPosition="40" endLine="48" endPosition="68" />
+    <scopeInfo nodeId="3751911615136892003" fileName="FeatureForestMap.java" startLine="51" startPosition="27" endLine="52" endPosition="114" />
+    <scopeInfo nodeId="3751911615136892058" fileName="FeatureForestMap.java" startLine="58" startPosition="36" endLine="59" endPosition="52" />
+    <scopeInfo nodeId="3751911615136892070" fileName="FeatureForestMap.java" startLine="66" startPosition="72" endLine="67" endPosition="69" />
+    <scopeInfo nodeId="3751911615136892133" fileName="FeatureForestMap.java" startLine="75" startPosition="36" endLine="76" endPosition="52" />
+    <scopeInfo nodeId="3751911615136892147" fileName="FeatureForestMap.java" startLine="83" startPosition="42" endLine="84" endPosition="62" />
+    <scopeInfo nodeId="3751911615136892293" fileName="FeatureForestMap.java" startLine="87" startPosition="69" endLine="88" endPosition="61" />
+    <scopeInfo nodeId="4653713283496888358" fileName="FeatureForestMap.java" startLine="95" startPosition="40" endLine="96" endPosition="68" />
+    <scopeInfo nodeId="4653713283496888371" fileName="FeatureForestMap.java" startLine="102" startPosition="60" endLine="103" endPosition="80" />
+    <scopeInfo nodeId="8579517044346265755" fileName="FeatureForestMap.java" startLine="107" startPosition="32" endLine="108" endPosition="62" />
+    <scopeInfo nodeId="8579517044346265771" fileName="FeatureForestMap.java" startLine="113" startPosition="32" endLine="114" endPosition="65" />
+    <scopeInfo nodeId="8579517044346265787" fileName="FeatureForestMap.java" startLine="120" startPosition="32" endLine="121" endPosition="101" />
+    <scopeInfo nodeId="8579517044346265806" fileName="FeatureForestMap.java" startLine="127" startPosition="11" endLine="128" endPosition="46" />
+    <scopeInfo nodeId="5364815602089878012" fileName="FeatureForestMap.java" startLine="130" startPosition="111" endLine="131" endPosition="20" />
+    <scopeInfo nodeId="8579517044346265815" fileName="FeatureForestMap.java" startLine="133" startPosition="37" endLine="134" endPosition="74" />
+    <scopeInfo nodeId="3477558405266237774" fileName="FeatureForestMap.java" startLine="141" startPosition="64" endLine="142" endPosition="39" />
+    <scopeInfo nodeId="3477558405266249856" fileName="FeatureForestMap.java" startLine="147" startPosition="33" endLine="148" endPosition="23" />
+    <scopeInfo nodeId="5364815602089878028" fileName="FeatureForestMap.java" startLine="154" startPosition="36" endLine="155" endPosition="42" />
+    <scopeInfo nodeId="9200516641176998966" fileName="FeatureForestMap.java" startLine="164" startPosition="55" endLine="165" endPosition="39" />
+    <scopeInfo nodeId="9200516641176998959" fileName="FeatureForestMap.java" startLine="168" startPosition="58" endLine="169" endPosition="39" />
+    <scopeInfo nodeId="3751911615136891849" fileName="FeatureForestMap.java" startLine="37" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="9200516641176985789" fileName="FeatureForestMap.java" startLine="161" startPosition="0" endLine="163" endPosition="0" />
+    <scopeInfo nodeId="3477558405266249890" fileName="FeatureForestMap.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="3477558405266249890" varName="a" />
     </scopeInfo>
-    <scopeInfo nodeId="3751911615136892057" fileName="FeatureForestMap.java" startLine="58" startPosition="91" endLine="62" endPosition="0">
+    <scopeInfo nodeId="3751911615136892057" fileName="FeatureForestMap.java" startLine="58" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="3751911615136892057" varName="a" />
     </scopeInfo>
-    <scopeInfo nodeId="3751911615136892132" fileName="FeatureForestMap.java" startLine="75" startPosition="91" endLine="79" endPosition="0">
+    <scopeInfo nodeId="3751911615136892132" fileName="FeatureForestMap.java" startLine="75" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="3751911615136892132" varName="a" />
     </scopeInfo>
-    <scopeInfo nodeId="3751911615136892290" fileName="FeatureForestMap.java" startLine="87" startPosition="0" endLine="91" endPosition="0">
+    <scopeInfo nodeId="3751911615136892290" fileName="FeatureForestMap.java" startLine="87" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="3751911615136892297" varName="feature" />
     </scopeInfo>
-    <scopeInfo nodeId="4653713283496888357" fileName="FeatureForestMap.java" startLine="95" startPosition="116" endLine="99" endPosition="0">
+    <scopeInfo nodeId="4653713283496888357" fileName="FeatureForestMap.java" startLine="95" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="4653713283496888357" varName="a" />
     </scopeInfo>
-    <scopeInfo nodeId="3477558405266237771" fileName="FeatureForestMap.java" startLine="141" startPosition="0" endLine="145" endPosition="0">
+    <scopeInfo nodeId="8579517044346265753" fileName="FeatureForestMap.java" startLine="106" startPosition="71" endLine="109" endPosition="5" />
+    <scopeInfo nodeId="8579517044346265768" fileName="FeatureForestMap.java" startLine="112" startPosition="74" endLine="115" endPosition="5" />
+    <scopeInfo nodeId="8579517044346265784" fileName="FeatureForestMap.java" startLine="119" startPosition="58" endLine="122" endPosition="5" />
+    <scopeInfo nodeId="5364815602089878039" fileName="FeatureForestMap.java" startLine="132" startPosition="16" endLine="135" endPosition="11" />
+    <scopeInfo nodeId="8579517044346265815" fileName="FeatureForestMap.java" startLine="132" startPosition="16" endLine="135" endPosition="11" />
+    <scopeInfo nodeId="3477558405266237771" fileName="FeatureForestMap.java" startLine="141" startPosition="0" endLine="144" endPosition="0">
       <varInfo nodeId="3477558405266249832" varName="loggingEnabled" />
     </scopeInfo>
-    <scopeInfo nodeId="5364815602089878028" fileName="FeatureForestMap.java" startLine="154" startPosition="82" endLine="158" endPosition="16" />
-    <scopeInfo nodeId="9200516641176998960" fileName="FeatureForestMap.java" startLine="164" startPosition="0" endLine="168" endPosition="0">
+    <scopeInfo nodeId="3477558405266249849" fileName="FeatureForestMap.java" startLine="146" startPosition="28" endLine="149" endPosition="7" />
+    <scopeInfo nodeId="3477558405266249856" fileName="FeatureForestMap.java" startLine="146" startPosition="28" endLine="149" endPosition="7" />
+    <scopeInfo nodeId="9200516641176998960" fileName="FeatureForestMap.java" startLine="164" startPosition="0" endLine="167" endPosition="0">
       <varInfo nodeId="9200516641176998963" varName="feature" />
     </scopeInfo>
-    <scopeInfo nodeId="9200516641176998953" fileName="FeatureForestMap.java" startLine="168" startPosition="0" endLine="172" endPosition="0">
+    <scopeInfo nodeId="9200516641176998953" fileName="FeatureForestMap.java" startLine="168" startPosition="0" endLine="171" endPosition="0">
       <varInfo nodeId="9200516641176998956" varName="feature" />
     </scopeInfo>
-    <scopeInfo nodeId="3751911615136892144" fileName="FeatureForestMap.java" startLine="82" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="3751911615136892144" fileName="FeatureForestMap.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="3751911615136892148" varName="feature" />
     </scopeInfo>
-    <scopeInfo nodeId="4653713283496888366" fileName="FeatureForestMap.java" startLine="101" startPosition="0" endLine="106" endPosition="0">
+    <scopeInfo nodeId="4653713283496888366" fileName="FeatureForestMap.java" startLine="101" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="4653713283496888367" varName="feature" />
     </scopeInfo>
-    <scopeInfo nodeId="3477558405266249843" fileName="FeatureForestMap.java" startLine="146" startPosition="39" endLine="151" endPosition="5" />
-    <scopeInfo nodeId="3751911615136892321" fileName="FeatureForestMap.java" startLine="93" startPosition="61" endLine="99" endPosition="7" />
-    <scopeInfo nodeId="8579517044346265750" fileName="FeatureForestMap.java" startLine="106" startPosition="0" endLine="112" endPosition="0">
+    <scopeInfo nodeId="5364815602089878028" fileName="FeatureForestMap.java" startLine="153" startPosition="82" endLine="157" endPosition="16" />
+    <scopeInfo nodeId="8579517044346265750" fileName="FeatureForestMap.java" startLine="106" startPosition="0" endLine="111" endPosition="0">
       <varInfo nodeId="8579517044346265762" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="8579517044346265765" fileName="FeatureForestMap.java" startLine="112" startPosition="0" endLine="118" endPosition="0">
+    <scopeInfo nodeId="8579517044346265765" fileName="FeatureForestMap.java" startLine="112" startPosition="0" endLine="117" endPosition="0">
       <varInfo nodeId="8579517044346265777" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="8579517044346265780" fileName="FeatureForestMap.java" startLine="118" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="8579517044346265811" fileName="FeatureForestMap.java" startLine="130" startPosition="0" endLine="137" endPosition="9">
-      <varInfo nodeId="8579517044346265812" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="8579517044346265814" fileName="FeatureForestMap.java" startLine="130" startPosition="29" endLine="137" endPosition="9" />
-    <scopeInfo nodeId="5364815602089878028" fileName="FeatureForestMap.java" startLine="153" startPosition="0" endLine="160" endPosition="0">
+    <scopeInfo nodeId="3477558405266249843" fileName="FeatureForestMap.java" startLine="145" startPosition="39" endLine="150" endPosition="5" />
+    <scopeInfo nodeId="3751911615136892321" fileName="FeatureForestMap.java" startLine="92" startPosition="61" endLine="98" endPosition="7" />
+    <scopeInfo nodeId="8579517044346265780" fileName="FeatureForestMap.java" startLine="118" startPosition="0" endLine="124" endPosition="0" />
+    <scopeInfo nodeId="5364815602089878028" fileName="FeatureForestMap.java" startLine="153" startPosition="0" endLine="159" endPosition="0">
       <varInfo nodeId="5364815602089878028" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="3477558405266249840" fileName="FeatureForestMap.java" startLine="145" startPosition="0" endLine="153" endPosition="0">
+    <scopeInfo nodeId="8579517044346265811" fileName="FeatureForestMap.java" startLine="129" startPosition="0" endLine="136" endPosition="9">
+      <varInfo nodeId="8579517044346265812" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="8579517044346265814" fileName="FeatureForestMap.java" startLine="129" startPosition="29" endLine="136" endPosition="9" />
+    <scopeInfo nodeId="3477558405266249840" fileName="FeatureForestMap.java" startLine="145" startPosition="0" endLine="152" endPosition="0">
       <varInfo nodeId="3477558405266249845" varName="msg" />
     </scopeInfo>
-    <scopeInfo nodeId="3751911615136892318" fileName="FeatureForestMap.java" startLine="91" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="3751911615136892318" fileName="FeatureForestMap.java" startLine="91" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="3751911615136892323" varName="feature" />
     </scopeInfo>
-    <scopeInfo nodeId="8579517044346265804" fileName="FeatureForestMap.java" startLine="127" startPosition="86" endLine="138" endPosition="7" />
-    <scopeInfo nodeId="8579517044346265797" fileName="FeatureForestMap.java" startLine="126" startPosition="66" endLine="139" endPosition="5" />
-    <scopeInfo nodeId="8579517044346265802" fileName="FeatureForestMap.java" startLine="126" startPosition="66" endLine="139" endPosition="5">
+    <scopeInfo nodeId="8579517044346265804" fileName="FeatureForestMap.java" startLine="126" startPosition="86" endLine="137" endPosition="7" />
+    <scopeInfo nodeId="8579517044346265797" fileName="FeatureForestMap.java" startLine="125" startPosition="66" endLine="138" endPosition="5" />
+    <scopeInfo nodeId="8579517044346265802" fileName="FeatureForestMap.java" startLine="125" startPosition="66" endLine="138" endPosition="5">
       <varInfo nodeId="8579517044346265803" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="3751911615136892065" fileName="FeatureForestMap.java" startLine="66" startPosition="51" endLine="80" endPosition="37">
+    <scopeInfo nodeId="3751911615136892065" fileName="FeatureForestMap.java" startLine="65" startPosition="51" endLine="79" endPosition="37">
       <varInfo nodeId="3751911615136892094" varName="ancestors" />
     </scopeInfo>
-    <scopeInfo nodeId="8579517044346265794" fileName="FeatureForestMap.java" startLine="125" startPosition="0" endLine="141" endPosition="0">
+    <scopeInfo nodeId="8579517044346265794" fileName="FeatureForestMap.java" startLine="125" startPosition="0" endLine="140" endPosition="0">
       <varInfo nodeId="4653713283496953811" varName="feature" />
     </scopeInfo>
-    <scopeInfo nodeId="3751911615136892062" fileName="FeatureForestMap.java" startLine="65" startPosition="0" endLine="82" endPosition="0">
+    <scopeInfo nodeId="3751911615136892062" fileName="FeatureForestMap.java" startLine="65" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="3751911615136892066" varName="feature" />
     </scopeInfo>
-    <scopeInfo nodeId="3751911615136891900" fileName="FeatureForestMap.java" startLine="41" startPosition="63" endLine="63" endPosition="37">
+    <scopeInfo nodeId="3751911615136891900" fileName="FeatureForestMap.java" startLine="40" startPosition="63" endLine="62" endPosition="37">
       <varInfo nodeId="3477558405266249883" varName="ancestor" />
       <varInfo nodeId="3751911615136891969" varName="ancestors" />
     </scopeInfo>
-    <scopeInfo nodeId="3751911615136891897" fileName="FeatureForestMap.java" startLine="40" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="3751911615136891897" fileName="FeatureForestMap.java" startLine="40" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="3751911615136891901" varName="feature" />
       <varInfo nodeId="3751911615136891904" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="3477558405266249890" fileName="FeatureForestMap.java" startLine="47" startPosition="90" endLine="51" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap$1" />
-    <unitInfo nodeId="3751911615136892057" fileName="FeatureForestMap.java" startLine="58" startPosition="70" endLine="62" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap$2" />
-    <unitInfo nodeId="3751911615136892132" fileName="FeatureForestMap.java" startLine="75" startPosition="70" endLine="79" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap$3" />
-    <unitInfo nodeId="4653713283496888357" fileName="FeatureForestMap.java" startLine="95" startPosition="91" endLine="99" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap$4" />
-    <unitInfo nodeId="9200516641176985787" fileName="FeatureForestMap.java" startLine="161" startPosition="0" endLine="173" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap$MyCounterMapHandler" />
-    <unitInfo nodeId="3751911615136891847" fileName="FeatureForestMap.java" startLine="22" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap" />
+    <unitInfo nodeId="3477558405266249890" fileName="FeatureForestMap.java" startLine="46" startPosition="90" endLine="50" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap$1" />
+    <unitInfo nodeId="3751911615136892057" fileName="FeatureForestMap.java" startLine="57" startPosition="70" endLine="61" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap$2" />
+    <unitInfo nodeId="3751911615136892132" fileName="FeatureForestMap.java" startLine="74" startPosition="70" endLine="78" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap$3" />
+    <unitInfo nodeId="4653713283496888357" fileName="FeatureForestMap.java" startLine="94" startPosition="91" endLine="98" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap$4" />
+    <unitInfo nodeId="9200516641176985787" fileName="FeatureForestMap.java" startLine="160" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap$MyCounterMapHandler" />
+    <unitInfo nodeId="3751911615136891847" fileName="FeatureForestMap.java" startLine="22" startPosition="0" endLine="173" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap" />
   </root>
   <root nodeId="3751911615136892572" modelId="r:0fdcfe58-6a3e-4b7d-bea2-685e5d104fd0(jetbrains.mps.vcs.changesmanager.tree)">
-    <nodeInfo nodeId="3751911615136910577" fileName="FeatureForestMapSupport.java" startLine="34" startPosition="71" endLine="35" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMap" />
-    <nodeInfo nodeId="2717926124490468063" fileName="FeatureForestMapSupport.java" startLine="35" startPosition="84" endLine="36" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeToFeaturesMap" />
-    <nodeInfo nodeId="5060092229902857489" fileName="FeatureForestMapSupport.java" startLine="36" startPosition="121" endLine="37" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentDifferenceRegistry" />
-    <nodeInfo nodeId="5060092229902867752" fileName="FeatureForestMapSupport.java" startLine="37" startPosition="64" endLine="38" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListener" />
+    <nodeInfo nodeId="3751911615136910577" fileName="FeatureForestMapSupport.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMap" />
+    <nodeInfo nodeId="2717926124490468063" fileName="FeatureForestMapSupport.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeToFeaturesMap" />
+    <nodeInfo nodeId="5060092229902857489" fileName="FeatureForestMapSupport.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentDifferenceRegistry" />
+    <nodeInfo nodeId="5060092229902867752" fileName="FeatureForestMapSupport.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListener" />
     <nodeInfo nodeId="5060092229902868003" fileName="FeatureForestMapSupport.java" startLine="40" startPosition="104" endLine="41" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5060092229902857494" fileName="FeatureForestMapSupport.java" startLine="41" startPosition="19" endLine="42" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5060092229902867366" fileName="FeatureForestMapSupport.java" startLine="46" startPosition="31" endLine="47" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -271,24 +271,24 @@
     <nodeInfo nodeId="2717926124490468142" fileName="FeatureForestMapSupport.java" startLine="103" startPosition="84" endLine="104" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2717926124490468171" fileName="FeatureForestMapSupport.java" startLine="113" startPosition="38" endLine="114" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2717926124490472629" fileName="FeatureForestMapSupport.java" startLine="116" startPosition="9" endLine="117" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5060092229902857478" fileName="FeatureForestMapSupport.java" startLine="93" startPosition="61" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyListener#()V" />
+    <nodeInfo nodeId="5060092229902857478" fileName="FeatureForestMapSupport.java" startLine="94" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyListener#()V" />
     <nodeInfo nodeId="7204111691395757643" fileName="FeatureForestMapSupport.java" startLine="83" startPosition="43" endLine="86" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2717926124490468127" fileName="FeatureForestMapSupport.java" startLine="102" startPosition="75" endLine="105" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3751911615136892574" fileName="FeatureForestMapSupport.java" startLine="39" startPosition="0" endLine="43" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FeatureForestMapSupport#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/vcs/changesmanager/CurrentDifferenceRegistry;)V" />
-    <nodeInfo nodeId="2717926124490472944" fileName="FeatureForestMapSupport.java" startLine="112" startPosition="138" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
-    <nodeInfo nodeId="5060092229902868010" fileName="FeatureForestMapSupport.java" startLine="44" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="5060092229902868006" fileName="FeatureForestMapSupport.java" startLine="49" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="5060092229902867765" fileName="FeatureForestMapSupport.java" startLine="54" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMap#()Ljetbrains/mps/vcs/changesmanager/tree/FeatureForestMap;" />
+    <nodeInfo nodeId="2717926124490472944" fileName="FeatureForestMapSupport.java" startLine="113" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
+    <nodeInfo nodeId="3751911615136892574" fileName="FeatureForestMapSupport.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FeatureForestMapSupport#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/vcs/changesmanager/CurrentDifferenceRegistry;)V" />
+    <nodeInfo nodeId="5060092229902868010" fileName="FeatureForestMapSupport.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="5060092229902868006" fileName="FeatureForestMapSupport.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="5060092229902867765" fileName="FeatureForestMapSupport.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMap#()Ljetbrains/mps/vcs/changesmanager/tree/FeatureForestMap;" />
     <nodeInfo nodeId="3751911615136919745" fileName="FeatureForestMapSupport.java" startLine="82" startPosition="113" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="2717926124490472930" fileName="FeatureForestMapSupport.java" startLine="111" startPosition="60" endLine="116" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3751911615136919730" fileName="FeatureForestMapSupport.java" startLine="81" startPosition="12" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2717926124490472622" fileName="FeatureForestMapSupport.java" startLine="99" startPosition="59" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2717926124490472622" fileName="FeatureForestMapSupport.java" startLine="100" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="2717926124490472621" fileName="FeatureForestMapSupport.java" startLine="98" startPosition="64" endLine="107" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3751911615136910587" fileName="FeatureForestMapSupport.java" startLine="110" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeRemoved#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
     <nodeInfo nodeId="3751911615136919709" fileName="FeatureForestMapSupport.java" startLine="78" startPosition="34" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3751911615136910587" fileName="FeatureForestMapSupport.java" startLine="109" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeRemoved#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
-    <nodeInfo nodeId="3751911615136910594" fileName="FeatureForestMapSupport.java" startLine="96" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeAdded#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
+    <nodeInfo nodeId="3751911615136910594" fileName="FeatureForestMapSupport.java" startLine="97" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeAdded#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
     <nodeInfo nodeId="3751911615136910627" fileName="FeatureForestMapSupport.java" startLine="63" startPosition="94" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3751911615136910609" fileName="FeatureForestMapSupport.java" startLine="59" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFeaturesForChange#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)[Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
+    <nodeInfo nodeId="3751911615136910609" fileName="FeatureForestMapSupport.java" startLine="60" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFeaturesForChange#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)[Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
     <scopeInfo nodeId="5060092229902857481" fileName="FeatureForestMapSupport.java" startLine="94" startPosition="25" endLine="94" endPosition="25" />
     <scopeInfo nodeId="5060092229902868013" fileName="FeatureForestMapSupport.java" startLine="46" startPosition="31" endLine="47" endPosition="72" />
     <scopeInfo nodeId="5060092229902868009" fileName="FeatureForestMapSupport.java" startLine="51" startPosition="34" endLine="52" endPosition="75" />
@@ -307,21 +307,21 @@
     <scopeInfo nodeId="3751911615136912185" fileName="FeatureForestMapSupport.java" startLine="70" startPosition="54" endLine="72" endPosition="143">
       <varInfo nodeId="3751911615136912214" varName="src" />
     </scopeInfo>
-    <scopeInfo nodeId="5060092229902857478" fileName="FeatureForestMapSupport.java" startLine="93" startPosition="61" endLine="95" endPosition="5" />
+    <scopeInfo nodeId="5060092229902857478" fileName="FeatureForestMapSupport.java" startLine="94" startPosition="0" endLine="96" endPosition="0" />
     <scopeInfo nodeId="3751911615136919747" fileName="FeatureForestMapSupport.java" startLine="83" startPosition="43" endLine="86" endPosition="11" />
     <scopeInfo nodeId="2717926124490468127" fileName="FeatureForestMapSupport.java" startLine="102" startPosition="75" endLine="105" endPosition="11">
       <varInfo nodeId="2717926124490468128" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="3751911615136892574" fileName="FeatureForestMapSupport.java" startLine="39" startPosition="0" endLine="43" endPosition="3">
+    <scopeInfo nodeId="2717926124490472944" fileName="FeatureForestMapSupport.java" startLine="113" startPosition="0" endLine="116" endPosition="0">
+      <varInfo nodeId="2717926124490472944" varName="f" />
+    </scopeInfo>
+    <scopeInfo nodeId="3751911615136892574" fileName="FeatureForestMapSupport.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="3751911615136892578" varName="currentDifferenceRegistry" />
       <varInfo nodeId="5060092229902867999" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="2717926124490472944" fileName="FeatureForestMapSupport.java" startLine="112" startPosition="138" endLine="116" endPosition="0">
-      <varInfo nodeId="2717926124490472944" varName="f" />
-    </scopeInfo>
-    <scopeInfo nodeId="5060092229902868010" fileName="FeatureForestMapSupport.java" startLine="44" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="5060092229902868006" fileName="FeatureForestMapSupport.java" startLine="49" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="5060092229902867765" fileName="FeatureForestMapSupport.java" startLine="54" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="5060092229902868010" fileName="FeatureForestMapSupport.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="5060092229902868006" fileName="FeatureForestMapSupport.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="5060092229902867765" fileName="FeatureForestMapSupport.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="3751911615136919745" fileName="FeatureForestMapSupport.java" startLine="82" startPosition="113" endLine="87" endPosition="9">
       <varInfo nodeId="3751911615136919746" varName="i" />
     </scopeInfo>
@@ -332,12 +332,12 @@
       <varInfo nodeId="410698761440029792" varName="changeChildren" />
     </scopeInfo>
     <scopeInfo nodeId="3751911615136910593" fileName="FeatureForestMapSupport.java" startLine="111" startPosition="60" endLine="117" endPosition="67" />
-    <scopeInfo nodeId="2717926124490472622" fileName="FeatureForestMapSupport.java" startLine="99" startPosition="59" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="2717926124490472622" fileName="FeatureForestMapSupport.java" startLine="100" startPosition="0" endLine="107" endPosition="0" />
     <scopeInfo nodeId="3751911615136910600" fileName="FeatureForestMapSupport.java" startLine="98" startPosition="64" endLine="107" endPosition="9" />
-    <scopeInfo nodeId="3751911615136910587" fileName="FeatureForestMapSupport.java" startLine="109" startPosition="0" endLine="119" endPosition="0">
+    <scopeInfo nodeId="3751911615136910587" fileName="FeatureForestMapSupport.java" startLine="110" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="3751911615136910590" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="3751911615136910594" fileName="FeatureForestMapSupport.java" startLine="96" startPosition="0" endLine="109" endPosition="0">
+    <scopeInfo nodeId="3751911615136910594" fileName="FeatureForestMapSupport.java" startLine="97" startPosition="0" endLine="109" endPosition="0">
       <varInfo nodeId="3751911615136910597" varName="change" />
     </scopeInfo>
     <scopeInfo nodeId="3751911615136912239" fileName="FeatureForestMapSupport.java" startLine="73" startPosition="51" endLine="88" endPosition="7">
@@ -351,7 +351,7 @@
       <varInfo nodeId="3751911615136912122" varName="modelReference" />
       <varInfo nodeId="3751911615136910641" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3751911615136910609" fileName="FeatureForestMapSupport.java" startLine="59" startPosition="0" endLine="92" endPosition="0">
+    <scopeInfo nodeId="3751911615136910609" fileName="FeatureForestMapSupport.java" startLine="60" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="3751911615136910623" varName="change" />
     </scopeInfo>
     <unitInfo nodeId="2717926124490472944" fileName="FeatureForestMapSupport.java" startLine="112" startPosition="117" endLine="116" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapSupport$2" />
@@ -376,12 +376,12 @@
     <nodeInfo nodeId="4394654201966537206" fileName="ProjectTreeFeatureExtractor.java" startLine="59" startPosition="48" endLine="60" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3201398707754971929" fileName="ProjectTreeFeatureExtractor.java" startLine="61" startPosition="52" endLine="62" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4106919528499210870" fileName="ProjectTreeFeatureExtractor.java" startLine="63" startPosition="5" endLine="64" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4106919528499190856" fileName="ProjectTreeFeatureExtractor.java" startLine="28" startPosition="78" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectTreeFeatureExtractor#()V" />
+    <nodeInfo nodeId="4106919528499190856" fileName="ProjectTreeFeatureExtractor.java" startLine="29" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectTreeFeatureExtractor#()V" />
     <nodeInfo nodeId="2105471615617474019" fileName="ProjectTreeFeatureExtractor.java" startLine="41" startPosition="23" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4106919528499211026" fileName="ProjectTreeFeatureExtractor.java" startLine="34" startPosition="22" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2105471615617473991" fileName="ProjectTreeFeatureExtractor.java" startLine="40" startPosition="36" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4106919528499201709" fileName="ProjectTreeFeatureExtractor.java" startLine="46" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4106919528499201699" fileName="ProjectTreeFeatureExtractor.java" startLine="31" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFeature#(Ljetbrains/mps/ide/ui/MPSTreeNode;)Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
+    <nodeInfo nodeId="4106919528499201699" fileName="ProjectTreeFeatureExtractor.java" startLine="32" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFeature#(Ljetbrains/mps/ide/ui/MPSTreeNode;)Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
     <scopeInfo nodeId="4106919528499190859" fileName="ProjectTreeFeatureExtractor.java" startLine="29" startPosition="40" endLine="29" endPosition="40" />
     <scopeInfo nodeId="4106919528499211027" fileName="ProjectTreeFeatureExtractor.java" startLine="35" startPosition="44" endLine="36" endPosition="51" />
     <scopeInfo nodeId="4106919528499211085" fileName="ProjectTreeFeatureExtractor.java" startLine="37" startPosition="63" endLine="38" endPosition="63" />
@@ -391,7 +391,7 @@
     <scopeInfo nodeId="4106919528499211019" fileName="ProjectTreeFeatureExtractor.java" startLine="54" startPosition="56" endLine="55" endPosition="48" />
     <scopeInfo nodeId="4106919528499211156" fileName="ProjectTreeFeatureExtractor.java" startLine="56" startPosition="56" endLine="57" endPosition="48" />
     <scopeInfo nodeId="3201398707754971923" fileName="ProjectTreeFeatureExtractor.java" startLine="61" startPosition="52" endLine="62" endPosition="102" />
-    <scopeInfo nodeId="4106919528499190856" fileName="ProjectTreeFeatureExtractor.java" startLine="28" startPosition="78" endLine="30" endPosition="3" />
+    <scopeInfo nodeId="4106919528499190856" fileName="ProjectTreeFeatureExtractor.java" startLine="29" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="4106919528499210942" fileName="ProjectTreeFeatureExtractor.java" startLine="51" startPosition="55" endLine="53" endPosition="87">
       <varInfo nodeId="4106919528499210988" varName="ref" />
     </scopeInfo>
@@ -403,15 +403,15 @@
       <varInfo nodeId="4106919528499211062" varName="node" />
       <varInfo nodeId="4106919528499211128" varName="nodePointer" />
     </scopeInfo>
-    <scopeInfo nodeId="4106919528499201699" fileName="ProjectTreeFeatureExtractor.java" startLine="31" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="4106919528499201699" fileName="ProjectTreeFeatureExtractor.java" startLine="32" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="4106919528499201700" varName="treeNode" />
     </scopeInfo>
     <unitInfo nodeId="4106919528499190854" fileName="ProjectTreeFeatureExtractor.java" startLine="28" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.ProjectTreeFeatureExtractor" />
   </root>
   <root nodeId="4106919528499268085" modelId="r:0fdcfe58-6a3e-4b7d-bea2-685e5d104fd0(jetbrains.mps.vcs.changesmanager.tree)">
-    <nodeInfo nodeId="4106919528499284100" fileName="TreeHighlighterFactory.java" startLine="17" startPosition="70" endLine="18" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRegistry" />
-    <nodeInfo nodeId="4106919528499289309" fileName="TreeHighlighterFactory.java" startLine="18" startPosition="47" endLine="19" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFeatureForestMapSupport" />
-    <nodeInfo nodeId="391123256063746394" fileName="TreeHighlighterFactory.java" startLine="19" startPosition="60" endLine="20" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTreeToHighlighter" />
+    <nodeInfo nodeId="4106919528499284100" fileName="TreeHighlighterFactory.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRegistry" />
+    <nodeInfo nodeId="4106919528499289309" fileName="TreeHighlighterFactory.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFeatureForestMapSupport" />
+    <nodeInfo nodeId="391123256063746394" fileName="TreeHighlighterFactory.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTreeToHighlighter" />
     <nodeInfo nodeId="4106919528499277957" fileName="TreeHighlighterFactory.java" startLine="22" startPosition="162" endLine="23" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4106919528499284866" fileName="TreeHighlighterFactory.java" startLine="23" startPosition="19" endLine="24" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4106919528499289414" fileName="TreeHighlighterFactory.java" startLine="24" startPosition="26" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -425,14 +425,14 @@
     <nodeInfo nodeId="391123256063776921" fileName="TreeHighlighterFactory.java" startLine="48" startPosition="69" endLine="49" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="391123256063815903" fileName="TreeHighlighterFactory.java" startLine="54" startPosition="69" endLine="55" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="391123256063776846" fileName="TreeHighlighterFactory.java" startLine="38" startPosition="25" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="391123256063806042" fileName="TreeHighlighterFactory.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/vcs/changesmanager/tree/TreeHighlighterFactory;" />
     <nodeInfo nodeId="391123256063776934" fileName="TreeHighlighterFactory.java" startLine="46" startPosition="40" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="391123256063806042" fileName="TreeHighlighterFactory.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/vcs/changesmanager/tree/TreeHighlighterFactory;" />
-    <nodeInfo nodeId="4106919528499268087" fileName="TreeHighlighterFactory.java" startLine="21" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TreeHighlighterFactory#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/vcs/changesmanager/CurrentDifferenceRegistry;Ljetbrains/mps/vcs/changesmanager/tree/FeatureForestMapSupport;)V" />
+    <nodeInfo nodeId="4106919528499268087" fileName="TreeHighlighterFactory.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TreeHighlighterFactory#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/vcs/changesmanager/CurrentDifferenceRegistry;Ljetbrains/mps/vcs/changesmanager/tree/FeatureForestMapSupport;)V" />
     <nodeInfo nodeId="391123256063776859" fileName="TreeHighlighterFactory.java" startLine="36" startPosition="5" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="391123256063776896" fileName="TreeHighlighterFactory.java" startLine="45" startPosition="45" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="391123256063762064" fileName="TreeHighlighterFactory.java" startLine="29" startPosition="39" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="391123256063776884" fileName="TreeHighlighterFactory.java" startLine="44" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unhighlightTree#(Ljetbrains/mps/ide/ui/MPSTree;)V" />
-    <nodeInfo nodeId="391123256063746407" fileName="TreeHighlighterFactory.java" startLine="27" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="highlightTreeIfNeeded#(Ljetbrains/mps/ide/ui/MPSTree;)V" />
+    <nodeInfo nodeId="391123256063776884" fileName="TreeHighlighterFactory.java" startLine="45" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unhighlightTree#(Ljetbrains/mps/ide/ui/MPSTree;)V" />
+    <nodeInfo nodeId="391123256063746407" fileName="TreeHighlighterFactory.java" startLine="28" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="highlightTreeIfNeeded#(Ljetbrains/mps/ide/ui/MPSTree;)V" />
     <scopeInfo nodeId="391123256063762066" fileName="TreeHighlighterFactory.java" startLine="30" startPosition="38" endLine="31" endPosition="126" />
     <scopeInfo nodeId="285677603355153489" fileName="TreeHighlighterFactory.java" startLine="32" startPosition="44" endLine="33" endPosition="126" />
     <scopeInfo nodeId="6426754448685223791" fileName="TreeHighlighterFactory.java" startLine="34" startPosition="55" endLine="35" endPosition="125" />
@@ -440,47 +440,47 @@
     <scopeInfo nodeId="391123256063806045" fileName="TreeHighlighterFactory.java" startLine="54" startPosition="69" endLine="55" endPosition="62" />
     <scopeInfo nodeId="391123256063776935" fileName="TreeHighlighterFactory.java" startLine="47" startPosition="71" endLine="49" endPosition="65" />
     <scopeInfo nodeId="4106919528499268090" fileName="TreeHighlighterFactory.java" startLine="22" startPosition="162" endLine="25" endPosition="56" />
-    <scopeInfo nodeId="391123256063776860" fileName="TreeHighlighterFactory.java" startLine="37" startPosition="30" endLine="41" endPosition="7" />
-    <scopeInfo nodeId="391123256063776898" fileName="TreeHighlighterFactory.java" startLine="46" startPosition="40" endLine="50" endPosition="7" />
-    <scopeInfo nodeId="391123256063806042" fileName="TreeHighlighterFactory.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="391123256063806042" fileName="TreeHighlighterFactory.java" startLine="54" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="391123256063815901" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4106919528499268087" fileName="TreeHighlighterFactory.java" startLine="21" startPosition="0" endLine="26" endPosition="3">
+    <scopeInfo nodeId="391123256063776860" fileName="TreeHighlighterFactory.java" startLine="37" startPosition="30" endLine="41" endPosition="7" />
+    <scopeInfo nodeId="391123256063776898" fileName="TreeHighlighterFactory.java" startLine="46" startPosition="40" endLine="50" endPosition="7" />
+    <scopeInfo nodeId="4106919528499268087" fileName="TreeHighlighterFactory.java" startLine="22" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="4106919528499289305" varName="featureForestMapSupport" />
       <varInfo nodeId="4106919528499268092" varName="project" />
       <varInfo nodeId="4106919528499268094" varName="registry" />
     </scopeInfo>
     <scopeInfo nodeId="391123256063776887" fileName="TreeHighlighterFactory.java" startLine="45" startPosition="45" endLine="51" endPosition="5" />
-    <scopeInfo nodeId="391123256063776884" fileName="TreeHighlighterFactory.java" startLine="44" startPosition="0" endLine="53" endPosition="0">
+    <scopeInfo nodeId="391123256063776884" fileName="TreeHighlighterFactory.java" startLine="45" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="391123256063776888" varName="tree" />
     </scopeInfo>
     <scopeInfo nodeId="391123256063746410" fileName="TreeHighlighterFactory.java" startLine="28" startPosition="51" endLine="42" endPosition="5">
       <varInfo nodeId="391123256063776834" varName="highlighter" />
     </scopeInfo>
-    <scopeInfo nodeId="391123256063746407" fileName="TreeHighlighterFactory.java" startLine="27" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="391123256063746407" fileName="TreeHighlighterFactory.java" startLine="28" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="391123256063762062" varName="tree" />
     </scopeInfo>
     <unitInfo nodeId="4106919528499268085" fileName="TreeHighlighterFactory.java" startLine="17" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighterFactory" />
   </root>
   <root nodeId="4225526609875760407" modelId="r:0fdcfe58-6a3e-4b7d-bea2-685e5d104fd0(jetbrains.mps.vcs.changesmanager.tree)">
-    <nodeInfo nodeId="4225526609875774710" fileName="ChangesTreeCreationHandler.java" startLine="8" startPosition="74" endLine="9" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTreesHighlighter" />
+    <nodeInfo nodeId="4225526609875774710" fileName="ChangesTreeCreationHandler.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTreesHighlighter" />
     <nodeInfo nodeId="391123256063776964" fileName="ChangesTreeCreationHandler.java" startLine="11" startPosition="78" endLine="12" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="391123256063776971" fileName="ChangesTreeCreationHandler.java" startLine="15" startPosition="39" endLine="16" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="391123256063776957" fileName="ChangesTreeCreationHandler.java" startLine="10" startPosition="0" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangesTreeCreationHandler#(Ljetbrains/mps/vcs/changesmanager/tree/TreeHighlighterFactory;)V" />
-    <nodeInfo nodeId="3499818918522499385" fileName="ChangesTreeCreationHandler.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attach#(Ljetbrains/mps/ide/ui/MPSTree;)V" />
+    <nodeInfo nodeId="391123256063776957" fileName="ChangesTreeCreationHandler.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangesTreeCreationHandler#(Ljetbrains/mps/vcs/changesmanager/tree/TreeHighlighterFactory;)V" />
+    <nodeInfo nodeId="3499818918522499385" fileName="ChangesTreeCreationHandler.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attach#(Ljetbrains/mps/ide/ui/MPSTree;)V" />
     <scopeInfo nodeId="391123256063776961" fileName="ChangesTreeCreationHandler.java" startLine="11" startPosition="78" endLine="12" endPosition="42" />
     <scopeInfo nodeId="3499818918522499391" fileName="ChangesTreeCreationHandler.java" startLine="15" startPosition="39" endLine="16" endPosition="51" />
-    <scopeInfo nodeId="391123256063776957" fileName="ChangesTreeCreationHandler.java" startLine="10" startPosition="0" endLine="13" endPosition="3">
+    <scopeInfo nodeId="391123256063776957" fileName="ChangesTreeCreationHandler.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="391123256063776962" varName="treesHighlighter" />
     </scopeInfo>
-    <scopeInfo nodeId="3499818918522499385" fileName="ChangesTreeCreationHandler.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+    <scopeInfo nodeId="3499818918522499385" fileName="ChangesTreeCreationHandler.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="3499818918522499389" varName="tree" />
     </scopeInfo>
     <unitInfo nodeId="4225526609875760407" fileName="ChangesTreeCreationHandler.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.ChangesTreeCreationHandler" />
   </root>
   <root nodeId="5668645347099288944" modelId="r:0fdcfe58-6a3e-4b7d-bea2-685e5d104fd0(jetbrains.mps.vcs.changesmanager.tree)">
-    <nodeInfo nodeId="5668645347099288946" fileName="FeatureForestMapListener.java" startLine="8" startPosition="68" endLine="9" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="featureStateChanged#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
-    <scopeInfo nodeId="5668645347099288946" fileName="FeatureForestMapListener.java" startLine="8" startPosition="68" endLine="9" endPosition="51">
+    <nodeInfo nodeId="5668645347099288946" fileName="FeatureForestMapListener.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="featureStateChanged#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
+    <scopeInfo nodeId="5668645347099288946" fileName="FeatureForestMapListener.java" startLine="9" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="5668645347099288950" varName="feature" />
     </scopeInfo>
     <unitInfo nodeId="5668645347099288944" fileName="FeatureForestMapListener.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapListener" />
@@ -489,43 +489,43 @@
     <nodeInfo nodeId="6426754448685222897" fileName="HierarchyFeatureExtractor.java" startLine="20" startPosition="48" endLine="21" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6426754448685223780" fileName="HierarchyFeatureExtractor.java" startLine="22" startPosition="25" endLine="23" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6426754448685220052" fileName="HierarchyFeatureExtractor.java" startLine="25" startPosition="5" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6426754448685220029" fileName="HierarchyFeatureExtractor.java" startLine="14" startPosition="76" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HierarchyFeatureExtractor#()V" />
+    <nodeInfo nodeId="6426754448685220029" fileName="HierarchyFeatureExtractor.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HierarchyFeatureExtractor#()V" />
     <nodeInfo nodeId="6426754448685222908" fileName="HierarchyFeatureExtractor.java" startLine="21" startPosition="60" endLine="24" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6426754448685220044" fileName="HierarchyFeatureExtractor.java" startLine="19" startPosition="60" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6426754448685220034" fileName="HierarchyFeatureExtractor.java" startLine="17" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFeature#(Ljetbrains/mps/ide/ui/MPSTreeNode;)Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
+    <nodeInfo nodeId="6426754448685220034" fileName="HierarchyFeatureExtractor.java" startLine="18" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFeature#(Ljetbrains/mps/ide/ui/MPSTreeNode;)Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
     <scopeInfo nodeId="6426754448685220032" fileName="HierarchyFeatureExtractor.java" startLine="15" startPosition="38" endLine="15" endPosition="38" />
     <scopeInfo nodeId="6426754448685222909" fileName="HierarchyFeatureExtractor.java" startLine="22" startPosition="25" endLine="23" endPosition="55" />
-    <scopeInfo nodeId="6426754448685220029" fileName="HierarchyFeatureExtractor.java" startLine="14" startPosition="76" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="6426754448685220029" fileName="HierarchyFeatureExtractor.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
     <scopeInfo nodeId="6426754448685220046" fileName="HierarchyFeatureExtractor.java" startLine="20" startPosition="48" endLine="24" endPosition="7">
       <varInfo nodeId="6426754448685222898" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6426754448685220041" fileName="HierarchyFeatureExtractor.java" startLine="19" startPosition="60" endLine="26" endPosition="16" />
-    <scopeInfo nodeId="6426754448685220034" fileName="HierarchyFeatureExtractor.java" startLine="17" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="6426754448685220034" fileName="HierarchyFeatureExtractor.java" startLine="18" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="6426754448685220035" varName="treeNode" />
     </scopeInfo>
     <unitInfo nodeId="6426754448685220027" fileName="HierarchyFeatureExtractor.java" startLine="14" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.HierarchyFeatureExtractor" />
   </root>
   <root nodeId="6940763585259488666" modelId="r:0fdcfe58-6a3e-4b7d-bea2-685e5d104fd0(jetbrains.mps.vcs.changesmanager.tree)">
-    <nodeInfo nodeId="5060092229902815332" fileName="TreeNodeFeatureExtractor.java" startLine="10" startPosition="43" endLine="12" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFeature#(Ljetbrains/mps/ide/ui/MPSTreeNode;)Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
-    <scopeInfo nodeId="5060092229902815332" fileName="TreeNodeFeatureExtractor.java" startLine="10" startPosition="43" endLine="12" endPosition="59">
+    <nodeInfo nodeId="5060092229902815332" fileName="TreeNodeFeatureExtractor.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFeature#(Ljetbrains/mps/ide/ui/MPSTreeNode;)Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
+    <scopeInfo nodeId="5060092229902815332" fileName="TreeNodeFeatureExtractor.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="5060092229902815336" varName="treeNode" />
     </scopeInfo>
     <unitInfo nodeId="6940763585259488666" fileName="TreeNodeFeatureExtractor.java" startLine="10" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeNodeFeatureExtractor" />
   </root>
   <root nodeId="9200516641177001205" modelId="r:0fdcfe58-6a3e-4b7d-bea2-685e5d104fd0(jetbrains.mps.vcs.changesmanager.tree)">
-    <nodeInfo nodeId="9200516641177001205" fileName="TreeHighlighter.java" startLine="52" startPosition="58" endLine="53" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
-    <nodeInfo nodeId="4653713283496888201" fileName="TreeHighlighter.java" startLine="54" startPosition="0" endLine="55" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTreeMessages" />
-    <nodeInfo nodeId="4653713283496952731" fileName="TreeHighlighter.java" startLine="55" startPosition="116" endLine="56" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRegistry" />
-    <nodeInfo nodeId="4653713283496948082" fileName="TreeHighlighter.java" startLine="56" startPosition="47" endLine="57" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommandQueue" />
-    <nodeInfo nodeId="9200516641177060998" fileName="TreeHighlighter.java" startLine="57" startPosition="44" endLine="58" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMap" />
-    <nodeInfo nodeId="9200516641177001211" fileName="TreeHighlighter.java" startLine="58" startPosition="46" endLine="59" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
-    <nodeInfo nodeId="9200516641177001215" fileName="TreeHighlighter.java" startLine="59" startPosition="25" endLine="60" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFeatureExtractor" />
-    <nodeInfo nodeId="9200516641177032538" fileName="TreeHighlighter.java" startLine="60" startPosition="54" endLine="61" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInitialized" />
-    <nodeInfo nodeId="9200516641177032542" fileName="TreeHighlighter.java" startLine="61" startPosition="32" endLine="62" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTreeNodeListener" />
-    <nodeInfo nodeId="9200516641177032666" fileName="TreeHighlighter.java" startLine="62" startPosition="107" endLine="63" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFeatureListener" />
-    <nodeInfo nodeId="583280731372885603" fileName="TreeHighlighter.java" startLine="63" startPosition="122" endLine="64" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileStatusListener" />
-    <nodeInfo nodeId="2105471615617493117" fileName="TreeHighlighter.java" startLine="64" startPosition="113" endLine="65" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGlobalModelListener" />
-    <nodeInfo nodeId="9112654717583022139" fileName="TreeHighlighter.java" startLine="65" startPosition="64" endLine="66" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFeaturesHolder" />
+    <nodeInfo nodeId="9200516641177001205" fileName="TreeHighlighter.java" startLine="53" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="4653713283496888201" fileName="TreeHighlighter.java" startLine="55" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTreeMessages" />
+    <nodeInfo nodeId="4653713283496952731" fileName="TreeHighlighter.java" startLine="56" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRegistry" />
+    <nodeInfo nodeId="4653713283496948082" fileName="TreeHighlighter.java" startLine="57" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommandQueue" />
+    <nodeInfo nodeId="9200516641177060998" fileName="TreeHighlighter.java" startLine="58" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMap" />
+    <nodeInfo nodeId="9200516641177001211" fileName="TreeHighlighter.java" startLine="59" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
+    <nodeInfo nodeId="9200516641177001215" fileName="TreeHighlighter.java" startLine="60" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFeatureExtractor" />
+    <nodeInfo nodeId="9200516641177032538" fileName="TreeHighlighter.java" startLine="61" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInitialized" />
+    <nodeInfo nodeId="9200516641177032542" fileName="TreeHighlighter.java" startLine="62" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTreeNodeListener" />
+    <nodeInfo nodeId="9200516641177032666" fileName="TreeHighlighter.java" startLine="63" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFeatureListener" />
+    <nodeInfo nodeId="583280731372885603" fileName="TreeHighlighter.java" startLine="64" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileStatusListener" />
+    <nodeInfo nodeId="2105471615617493117" fileName="TreeHighlighter.java" startLine="65" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGlobalModelListener" />
+    <nodeInfo nodeId="9112654717583022139" fileName="TreeHighlighter.java" startLine="66" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFeaturesHolder" />
     <nodeInfo nodeId="4653713283496952736" fileName="TreeHighlighter.java" startLine="68" startPosition="240" endLine="69" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4653713283496948091" fileName="TreeHighlighter.java" startLine="69" startPosition="26" endLine="70" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9200516641177061003" fileName="TreeHighlighter.java" startLine="70" startPosition="48" endLine="71" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -603,8 +603,8 @@
     <nodeInfo nodeId="2105471615617493075" fileName="TreeHighlighter.java" startLine="331" startPosition="45" endLine="332" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2105471615617493090" fileName="TreeHighlighter.java" startLine="332" startPosition="139" endLine="333" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2105471615617493111" fileName="TreeHighlighter.java" startLine="338" startPosition="43" endLine="339" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9200516641177061037" fileName="TreeHighlighter.java" startLine="345" startPosition="32" endLine="346" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFeatureToNodes" />
-    <nodeInfo nodeId="7530558370901259647" fileName="TreeHighlighter.java" startLine="346" startPosition="105" endLine="347" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelRefToFeatures" />
+    <nodeInfo nodeId="9200516641177061037" fileName="TreeHighlighter.java" startLine="346" startPosition="0" endLine="347" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFeatureToNodes" />
+    <nodeInfo nodeId="7530558370901259647" fileName="TreeHighlighter.java" startLine="347" startPosition="0" endLine="348" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelRefToFeatures" />
     <nodeInfo nodeId="9112654717583022612" fileName="TreeHighlighter.java" startLine="352" startPosition="71" endLine="353" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7530558370901274652" fileName="TreeHighlighter.java" startLine="353" startPosition="47" endLine="354" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9112654717583069248" fileName="TreeHighlighter.java" startLine="357" startPosition="74" endLine="358" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -619,14 +619,16 @@
     <nodeInfo nodeId="9112654717583085588" fileName="TreeHighlighter.java" startLine="382" startPosition="40" endLine="383" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9112654717583085621" fileName="TreeHighlighter.java" startLine="385" startPosition="7" endLine="386" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3201398707754975489" fileName="TreeHighlighter.java" startLine="253" startPosition="10" endLine="255" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9200516641177032550" fileName="TreeHighlighter.java" startLine="267" startPosition="67" endLine="269" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTreeNodeListener#()V" />
-    <nodeInfo nodeId="9200516641177032596" fileName="TreeHighlighter.java" startLine="287" startPosition="80" endLine="289" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyFeatureForestMapListener#()V" />
-    <nodeInfo nodeId="17187394613279097" fileName="TreeHighlighter.java" startLine="296" startPosition="68" endLine="298" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyFileStatusListener#()V" />
-    <nodeInfo nodeId="2105471615617473964" fileName="TreeHighlighter.java" startLine="321" startPosition="55" endLine="323" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyModelListener#()V" />
-    <nodeInfo nodeId="9112654717583022096" fileName="TreeHighlighter.java" startLine="348" startPosition="0" endLine="350" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FeaturesHolder#()V" />
+    <nodeInfo nodeId="9200516641177032550" fileName="TreeHighlighter.java" startLine="268" startPosition="0" endLine="270" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTreeNodeListener#()V" />
+    <nodeInfo nodeId="9200516641177032557" fileName="TreeHighlighter.java" startLine="279" startPosition="0" endLine="281" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="treeNodeUpdated#(Ljetbrains/mps/ide/ui/MPSTreeNode;Ljetbrains/mps/ide/ui/MPSTree;)V" />
+    <nodeInfo nodeId="9200516641177032596" fileName="TreeHighlighter.java" startLine="288" startPosition="0" endLine="290" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyFeatureForestMapListener#()V" />
+    <nodeInfo nodeId="17187394613279097" fileName="TreeHighlighter.java" startLine="297" startPosition="0" endLine="299" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyFileStatusListener#()V" />
+    <nodeInfo nodeId="2105471615617473964" fileName="TreeHighlighter.java" startLine="322" startPosition="0" endLine="324" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyModelListener#()V" />
+    <nodeInfo nodeId="9112654717583022096" fileName="TreeHighlighter.java" startLine="349" startPosition="0" endLine="351" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FeaturesHolder#()V" />
     <nodeInfo nodeId="2105471615617503006" fileName="TreeHighlighter.java" startLine="73" startPosition="42" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9200516641177032637" fileName="TreeHighlighter.java" startLine="79" startPosition="35" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2105471615617493129" fileName="TreeHighlighter.java" startLine="87" startPosition="103" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4653713283496907218" fileName="TreeHighlighter.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="9200516641177032644" fileName="TreeHighlighter.java" startLine="99" startPosition="38" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2105471615617503019" fileName="TreeHighlighter.java" startLine="104" startPosition="0" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4653713283496907186" fileName="TreeHighlighter.java" startLine="114" startPosition="23" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -634,77 +636,75 @@
     <nodeInfo nodeId="5008832173035887178" fileName="TreeHighlighter.java" startLine="131" startPosition="65" endLine="134" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9170101780449102275" fileName="TreeHighlighter.java" startLine="149" startPosition="16" endLine="152" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="9170101780449102275" fileName="TreeHighlighter.java" startLine="149" startPosition="16" endLine="152" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4653713283496925979" fileName="TreeHighlighter.java" startLine="159" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unhighlightNode#(Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
     <nodeInfo nodeId="4653713283496948123" fileName="TreeHighlighter.java" startLine="171" startPosition="46" endLine="174" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6005884031659336324" fileName="TreeHighlighter.java" startLine="180" startPosition="65" endLine="183" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4653713283496948026" fileName="TreeHighlighter.java" startLine="188" startPosition="61" endLine="191" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8308671070660563040" fileName="TreeHighlighter.java" startLine="202" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)Z" />
     <nodeInfo nodeId="4653713283496888239" fileName="TreeHighlighter.java" startLine="215" startPosition="66" endLine="218" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9200516641177032557" fileName="TreeHighlighter.java" startLine="278" startPosition="0" endLine="281" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="treeNodeUpdated#(Ljetbrains/mps/ide/ui/MPSTreeNode;Ljetbrains/mps/ide/ui/MPSTree;)V" />
+    <nodeInfo nodeId="9200516641177032573" fileName="TreeHighlighter.java" startLine="271" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="treeNodeAdded#(Ljetbrains/mps/ide/ui/MPSTreeNode;Ljetbrains/mps/ide/ui/MPSTree;)V" />
+    <nodeInfo nodeId="9200516641177032565" fileName="TreeHighlighter.java" startLine="275" startPosition="0" endLine="278" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="treeNodeRemoved#(Ljetbrains/mps/ide/ui/MPSTreeNode;Ljetbrains/mps/ide/ui/MPSTree;)V" />
+    <nodeInfo nodeId="7014360199878017513" fileName="TreeHighlighter.java" startLine="282" startPosition="0" endLine="285" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeTreeDisposed#(Ljetbrains/mps/ide/ui/MPSTree;)V" />
+    <nodeInfo nodeId="4653713283496953827" fileName="TreeHighlighter.java" startLine="291" startPosition="0" endLine="294" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="featureStateChanged#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
     <nodeInfo nodeId="9181287675440482543" fileName="TreeHighlighter.java" startLine="302" startPosition="78" endLine="305" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="17187394613279820" fileName="TreeHighlighter.java" startLine="311" startPosition="43" endLine="314" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2105471615617493107" fileName="TreeHighlighter.java" startLine="338" startPosition="0" endLine="341" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
     <nodeInfo nodeId="7530558370901274762" fileName="TreeHighlighter.java" startLine="358" startPosition="50" endLine="361" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9112654717583022646" fileName="TreeHighlighter.java" startLine="369" startPosition="0" endLine="372" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodesByFeature#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)Ljava/util/Collection;" />
     <nodeInfo nodeId="9112654717583085560" fileName="TreeHighlighter.java" startLine="381" startPosition="72" endLine="384" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4653713283496907218" fileName="TreeHighlighter.java" startLine="92" startPosition="56" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="9170101780449102282" fileName="TreeHighlighter.java" startLine="149" startPosition="14" endLine="153" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4653713283496925979" fileName="TreeHighlighter.java" startLine="158" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unhighlightNode#(Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
-    <nodeInfo nodeId="8308671070660563040" fileName="TreeHighlighter.java" startLine="201" startPosition="122" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)Z" />
     <nodeInfo nodeId="3201398707754975500" fileName="TreeHighlighter.java" startLine="248" startPosition="100" endLine="252" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7484618899643756422" fileName="TreeHighlighter.java" startLine="260" startPosition="72" endLine="264" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9200516641177032573" fileName="TreeHighlighter.java" startLine="270" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="treeNodeAdded#(Ljetbrains/mps/ide/ui/MPSTreeNode;Ljetbrains/mps/ide/ui/MPSTree;)V" />
-    <nodeInfo nodeId="9200516641177032565" fileName="TreeHighlighter.java" startLine="274" startPosition="0" endLine="278" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="treeNodeRemoved#(Ljetbrains/mps/ide/ui/MPSTreeNode;Ljetbrains/mps/ide/ui/MPSTree;)V" />
-    <nodeInfo nodeId="7014360199878017513" fileName="TreeHighlighter.java" startLine="281" startPosition="0" endLine="285" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeTreeDisposed#(Ljetbrains/mps/ide/ui/MPSTree;)V" />
-    <nodeInfo nodeId="4653713283496953827" fileName="TreeHighlighter.java" startLine="290" startPosition="0" endLine="294" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="featureStateChanged#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
     <nodeInfo nodeId="2105471615617474066" fileName="TreeHighlighter.java" startLine="330" startPosition="105" endLine="334" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2105471615617493107" fileName="TreeHighlighter.java" startLine="337" startPosition="85" endLine="341" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
-    <nodeInfo nodeId="9112654717583022646" fileName="TreeHighlighter.java" startLine="368" startPosition="0" endLine="372" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodesByFeature#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="9112654717583022161" fileName="TreeHighlighter.java" startLine="352" startPosition="0" endLine="356" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="putNodeWithFeature#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
+    <nodeInfo nodeId="9112654717583082374" fileName="TreeHighlighter.java" startLine="364" startPosition="0" endLine="368" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeFeature#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
     <nodeInfo nodeId="4653713283496907210" fileName="TreeHighlighter.java" startLine="91" startPosition="0" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4653713283496948011" fileName="TreeHighlighter.java" startLine="188" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rehighlightFeature#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
     <nodeInfo nodeId="1162831315436727889" fileName="TreeHighlighter.java" startLine="228" startPosition="80" endLine="233" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="17187394613279831" fileName="TreeHighlighter.java" startLine="310" startPosition="27" endLine="315" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="2105471615617493100" fileName="TreeHighlighter.java" startLine="336" startPosition="7" endLine="341" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9112654717583022161" fileName="TreeHighlighter.java" startLine="351" startPosition="0" endLine="356" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="putNodeWithFeature#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
-    <nodeInfo nodeId="9112654717583082374" fileName="TreeHighlighter.java" startLine="363" startPosition="0" endLine="368" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeFeature#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
+    <nodeInfo nodeId="9112654717583085364" fileName="TreeHighlighter.java" startLine="373" startPosition="0" endLine="378" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFeaturesByModelReference#(Ljetbrains/mps/smodel/SModelReference;)Ljava/util/List;" />
     <nodeInfo nodeId="9112654717583085554" fileName="TreeHighlighter.java" startLine="380" startPosition="79" endLine="385" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4653713283496907175" fileName="TreeHighlighter.java" startLine="113" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerNodeRecursively#(Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
     <nodeInfo nodeId="5008832173035887173" fileName="TreeHighlighter.java" startLine="129" startPosition="31" endLine="135" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="4653713283496948011" fileName="TreeHighlighter.java" startLine="187" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rehighlightFeature#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
     <nodeInfo nodeId="2105471615617474060" fileName="TreeHighlighter.java" startLine="329" startPosition="39" endLine="335" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="9112654717583085364" fileName="TreeHighlighter.java" startLine="372" startPosition="0" endLine="378" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFeaturesByModelReference#(Ljetbrains/mps/smodel/SModelReference;)Ljava/util/List;" />
-    <nodeInfo nodeId="4653713283496907175" fileName="TreeHighlighter.java" startLine="112" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerNodeRecursively#(Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
+    <nodeInfo nodeId="9112654717583069223" fileName="TreeHighlighter.java" startLine="357" startPosition="0" endLine="363" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeNodeWithFeature#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
     <nodeInfo nodeId="9170101780449102244" fileName="TreeHighlighter.java" startLine="146" startPosition="39" endLine="153" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8308671070660563006" fileName="TreeHighlighter.java" startLine="200" startPosition="120" endLine="207" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9112654717583069223" fileName="TreeHighlighter.java" startLine="356" startPosition="0" endLine="363" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeNodeWithFeature#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
-    <nodeInfo nodeId="4653713283496888231" fileName="TreeHighlighter.java" startLine="213" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessage#(Lcom/intellij/openapi/vcs/FileStatus;)Ljetbrains/mps/ide/ui/treeMessages/TreeMessage;" />
-    <nodeInfo nodeId="17187394613279103" fileName="TreeHighlighter.java" startLine="299" startPosition="0" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileStatusChanged#(Lcom/intellij/openapi/vfs/VirtualFile;)V" />
-    <nodeInfo nodeId="756246431460598813" fileName="TreeHighlighter.java" startLine="309" startPosition="59" endLine="317" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4653713283496888231" fileName="TreeHighlighter.java" startLine="214" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessage#(Lcom/intellij/openapi/vcs/FileStatus;)Ljetbrains/mps/ide/ui/treeMessages/TreeMessage;" />
+    <nodeInfo nodeId="17187394613279103" fileName="TreeHighlighter.java" startLine="300" startPosition="0" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileStatusChanged#(Lcom/intellij/openapi/vfs/VirtualFile;)V" />
+    <nodeInfo nodeId="756246431460598813" fileName="TreeHighlighter.java" startLine="310" startPosition="0" endLine="317" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4653713283496948159" fileName="TreeHighlighter.java" startLine="129" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="3201398707754975430" fileName="TreeHighlighter.java" startLine="258" startPosition="0" endLine="266" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModelFileStatus#(Ljetbrains/mps/smodel/DefaultSModelDescriptor;Lcom/intellij/openapi/project/Project;)Lcom/intellij/openapi/vcs/FileStatus;" />
     <nodeInfo nodeId="2105471615617474057" fileName="TreeHighlighter.java" startLine="328" startPosition="96" endLine="336" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="4653713283496948159" fileName="TreeHighlighter.java" startLine="128" startPosition="63" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="5008832173035887169" fileName="TreeHighlighter.java" startLine="145" startPosition="26" endLine="154" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="9112654717583085506" fileName="TreeHighlighter.java" startLine="199" startPosition="65" endLine="208" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1162831315436744258" fileName="TreeHighlighter.java" startLine="225" startPosition="15" endLine="234" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3201398707754975399" fileName="TreeHighlighter.java" startLine="246" startPosition="110" endLine="255" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3201398707754975430" fileName="TreeHighlighter.java" startLine="257" startPosition="0" endLine="266" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModelFileStatus#(Ljetbrains/mps/smodel/DefaultSModelDescriptor;Lcom/intellij/openapi/project/Project;)Lcom/intellij/openapi/vcs/FileStatus;" />
     <nodeInfo nodeId="756246431460598812" fileName="TreeHighlighter.java" startLine="308" startPosition="39" endLine="317" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9200516641177001222" fileName="TreeHighlighter.java" startLine="67" startPosition="0" endLine="77" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TreeHighlighter#(Ljetbrains/mps/vcs/changesmanager/CurrentDifferenceRegistry;Ljetbrains/mps/vcs/changesmanager/tree/FeatureForestMapSupport;Ljetbrains/mps/ide/ui/MPSTree;Ljetbrains/mps/vcs/changesmanager/tree/TreeNodeFeatureExtractor;Z)V" />
+    <nodeInfo nodeId="9112654717583085539" fileName="TreeHighlighter.java" startLine="379" startPosition="0" endLine="388" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAllModelFeatures#()Ljava/util/List;" />
+    <nodeInfo nodeId="9200516641177001222" fileName="TreeHighlighter.java" startLine="68" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TreeHighlighter#(Ljetbrains/mps/vcs/changesmanager/CurrentDifferenceRegistry;Ljetbrains/mps/vcs/changesmanager/tree/FeatureForestMapSupport;Ljetbrains/mps/ide/ui/MPSTree;Ljetbrains/mps/vcs/changesmanager/tree/TreeNodeFeatureExtractor;Z)V" />
     <nodeInfo nodeId="4653713283496948158" fileName="TreeHighlighter.java" startLine="127" startPosition="27" endLine="137" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4653713283496948135" fileName="TreeHighlighter.java" startLine="174" startPosition="7" endLine="184" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9112654717583085539" fileName="TreeHighlighter.java" startLine="378" startPosition="0" endLine="388" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAllModelFeatures#()Ljava/util/List;" />
+    <nodeInfo nodeId="17187394613279110" fileName="TreeHighlighter.java" startLine="308" startPosition="0" endLine="319" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileStatusesChanged#()V" />
+    <nodeInfo nodeId="4653713283496948114" fileName="TreeHighlighter.java" startLine="127" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4653713283496925960" fileName="TreeHighlighter.java" startLine="144" startPosition="58" endLine="156" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="17187394613279110" fileName="TreeHighlighter.java" startLine="307" startPosition="0" endLine="319" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileStatusesChanged#()V" />
-    <nodeInfo nodeId="4653713283496948114" fileName="TreeHighlighter.java" startLine="126" startPosition="45" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="9200516641177032534" fileName="TreeHighlighter.java" startLine="99" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
     <nodeInfo nodeId="8308671070660562609" fileName="TreeHighlighter.java" startLine="196" startPosition="25" endLine="209" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="9200516641177032534" fileName="TreeHighlighter.java" startLine="98" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="3201398707754975305" fileName="TreeHighlighter.java" startLine="244" startPosition="0" endLine="257" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessage#(Ljetbrains/mps/vcs/changesmanager/tree/features/ModelFeature;)Ljetbrains/mps/ide/ui/treeMessages/TreeMessage;" />
     <nodeInfo nodeId="4653713283496948107" fileName="TreeHighlighter.java" startLine="125" startPosition="7" endLine="139" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3201398707754975305" fileName="TreeHighlighter.java" startLine="243" startPosition="0" endLine="257" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessage#(Ljetbrains/mps/vcs/changesmanager/tree/features/ModelFeature;)Ljetbrains/mps/ide/ui/treeMessages/TreeMessage;" />
-    <nodeInfo nodeId="4653713283496925947" fileName="TreeHighlighter.java" startLine="142" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unregisterNode#(Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
-    <nodeInfo nodeId="8308671070660562607" fileName="TreeHighlighter.java" startLine="195" startPosition="57" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4653713283496925947" fileName="TreeHighlighter.java" startLine="143" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unregisterNode#(Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
+    <nodeInfo nodeId="8308671070660562607" fileName="TreeHighlighter.java" startLine="196" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="8308671070660562606" fileName="TreeHighlighter.java" startLine="194" startPosition="81" endLine="211" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4653713283496900694" fileName="TreeHighlighter.java" startLine="223" startPosition="118" endLine="241" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="2105471615617473970" fileName="TreeHighlighter.java" startLine="325" startPosition="0" endLine="343" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeModelDisposed#(Ljetbrains/mps/smodel/SModel;)V" />
+    <nodeInfo nodeId="9200516641177032530" fileName="TreeHighlighter.java" startLine="79" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
     <nodeInfo nodeId="4653713283496882525" fileName="TreeHighlighter.java" startLine="121" startPosition="64" endLine="140" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4653713283496952799" fileName="TreeHighlighter.java" startLine="166" startPosition="108" endLine="185" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2105471615617473970" fileName="TreeHighlighter.java" startLine="324" startPosition="0" endLine="343" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeModelDisposed#(Ljetbrains/mps/smodel/SModel;)V" />
-    <nodeInfo nodeId="9200516641177032530" fileName="TreeHighlighter.java" startLine="78" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
-    <nodeInfo nodeId="8308671070660562599" fileName="TreeHighlighter.java" startLine="193" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rehighlightFeatureAndDescendants#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
-    <nodeInfo nodeId="4653713283496900660" fileName="TreeHighlighter.java" startLine="221" startPosition="0" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessage#(Ljetbrains/mps/vcs/diff/changes/ModelChange;Ljetbrains/mps/smodel/DefaultSModelDescriptor;)Ljetbrains/mps/ide/ui/treeMessages/TreeMessage;" />
-    <nodeInfo nodeId="4653713283496878870" fileName="TreeHighlighter.java" startLine="119" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerNode#(Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
-    <nodeInfo nodeId="4653713283496925998" fileName="TreeHighlighter.java" startLine="162" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rehighlightNode#(Ljetbrains/mps/ide/ui/MPSTreeNode;Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
+    <nodeInfo nodeId="8308671070660562599" fileName="TreeHighlighter.java" startLine="194" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rehighlightFeatureAndDescendants#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
+    <nodeInfo nodeId="4653713283496900660" fileName="TreeHighlighter.java" startLine="222" startPosition="0" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessage#(Ljetbrains/mps/vcs/diff/changes/ModelChange;Ljetbrains/mps/smodel/DefaultSModelDescriptor;)Ljetbrains/mps/ide/ui/treeMessages/TreeMessage;" />
+    <nodeInfo nodeId="4653713283496878870" fileName="TreeHighlighter.java" startLine="120" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerNode#(Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
+    <nodeInfo nodeId="4653713283496925998" fileName="TreeHighlighter.java" startLine="163" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rehighlightNode#(Ljetbrains/mps/ide/ui/MPSTreeNode;Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
     <scopeInfo nodeId="9200516641177032553" fileName="TreeHighlighter.java" startLine="268" startPosition="33" endLine="268" endPosition="33" />
     <scopeInfo nodeId="9200516641177032564" fileName="TreeHighlighter.java" startLine="279" startPosition="65" endLine="279" endPosition="65" />
     <scopeInfo nodeId="9200516641177032599" fileName="TreeHighlighter.java" startLine="288" startPosition="41" endLine="288" endPosition="41" />
@@ -746,69 +746,79 @@
     <scopeInfo nodeId="9112654717583022649" fileName="TreeHighlighter.java" startLine="369" startPosition="71" endLine="370" endPosition="43" />
     <scopeInfo nodeId="9112654717583085564" fileName="TreeHighlighter.java" startLine="382" startPosition="40" endLine="383" endPosition="56" />
     <scopeInfo nodeId="4653713283496900696" fileName="TreeHighlighter.java" startLine="238" startPosition="14" endLine="240" endPosition="60" />
-    <scopeInfo nodeId="9200516641177032550" fileName="TreeHighlighter.java" startLine="267" startPosition="67" endLine="269" endPosition="5" />
-    <scopeInfo nodeId="9200516641177032596" fileName="TreeHighlighter.java" startLine="287" startPosition="80" endLine="289" endPosition="5" />
-    <scopeInfo nodeId="17187394613279097" fileName="TreeHighlighter.java" startLine="296" startPosition="68" endLine="298" endPosition="5" />
-    <scopeInfo nodeId="2105471615617473964" fileName="TreeHighlighter.java" startLine="321" startPosition="55" endLine="323" endPosition="5" />
+    <scopeInfo nodeId="9200516641177032550" fileName="TreeHighlighter.java" startLine="268" startPosition="0" endLine="270" endPosition="0" />
+    <scopeInfo nodeId="9200516641177032557" fileName="TreeHighlighter.java" startLine="279" startPosition="0" endLine="281" endPosition="0">
+      <varInfo nodeId="9200516641177032560" varName="node" />
+      <varInfo nodeId="9200516641177032562" varName="tree" />
+    </scopeInfo>
+    <scopeInfo nodeId="9200516641177032596" fileName="TreeHighlighter.java" startLine="288" startPosition="0" endLine="290" endPosition="0" />
+    <scopeInfo nodeId="17187394613279097" fileName="TreeHighlighter.java" startLine="297" startPosition="0" endLine="299" endPosition="0" />
+    <scopeInfo nodeId="2105471615617473964" fileName="TreeHighlighter.java" startLine="322" startPosition="0" endLine="324" endPosition="0" />
     <scopeInfo nodeId="2105471615617474070" fileName="TreeHighlighter.java" startLine="331" startPosition="45" endLine="333" endPosition="46" />
-    <scopeInfo nodeId="9112654717583022096" fileName="TreeHighlighter.java" startLine="348" startPosition="0" endLine="350" endPosition="5" />
+    <scopeInfo nodeId="9112654717583022096" fileName="TreeHighlighter.java" startLine="349" startPosition="0" endLine="351" endPosition="0" />
     <scopeInfo nodeId="9112654717583022164" fileName="TreeHighlighter.java" startLine="352" startPosition="71" endLine="354" endPosition="74" />
     <scopeInfo nodeId="9112654717583082377" fileName="TreeHighlighter.java" startLine="364" startPosition="48" endLine="366" endPosition="77" />
+    <scopeInfo nodeId="4653713283496907218" fileName="TreeHighlighter.java" startLine="93" startPosition="0" endLine="96" endPosition="0" />
     <scopeInfo nodeId="4653713283496907186" fileName="TreeHighlighter.java" startLine="114" startPosition="23" endLine="117" endPosition="5">
       <varInfo nodeId="4653713283496907187" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="9170101780449102245" fileName="TreeHighlighter.java" startLine="149" startPosition="16" endLine="152" endPosition="11" />
     <scopeInfo nodeId="9170101780449102275" fileName="TreeHighlighter.java" startLine="149" startPosition="16" endLine="152" endPosition="11" />
+    <scopeInfo nodeId="4653713283496925979" fileName="TreeHighlighter.java" startLine="159" startPosition="0" endLine="162" endPosition="0">
+      <varInfo nodeId="4653713283496925985" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4653713283496948018" fileName="TreeHighlighter.java" startLine="188" startPosition="61" endLine="191" endPosition="5" />
     <scopeInfo nodeId="4653713283496948026" fileName="TreeHighlighter.java" startLine="188" startPosition="61" endLine="191" endPosition="5">
       <varInfo nodeId="4653713283496948027" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="9200516641177032557" fileName="TreeHighlighter.java" startLine="278" startPosition="0" endLine="281" endPosition="0">
-      <varInfo nodeId="9200516641177032560" varName="node" />
-      <varInfo nodeId="9200516641177032562" varName="tree" />
+    <scopeInfo nodeId="8308671070660563040" fileName="TreeHighlighter.java" startLine="202" startPosition="0" endLine="205" endPosition="0">
+      <varInfo nodeId="8308671070660563040" varName="a" />
+    </scopeInfo>
+    <scopeInfo nodeId="9200516641177032573" fileName="TreeHighlighter.java" startLine="271" startPosition="0" endLine="274" endPosition="0">
+      <varInfo nodeId="9200516641177032576" varName="node" />
+      <varInfo nodeId="9200516641177032578" varName="tree" />
+    </scopeInfo>
+    <scopeInfo nodeId="9200516641177032565" fileName="TreeHighlighter.java" startLine="275" startPosition="0" endLine="278" endPosition="0">
+      <varInfo nodeId="9200516641177032568" varName="node" />
+      <varInfo nodeId="9200516641177032570" varName="tree" />
+    </scopeInfo>
+    <scopeInfo nodeId="7014360199878017513" fileName="TreeHighlighter.java" startLine="282" startPosition="0" endLine="285" endPosition="0">
+      <varInfo nodeId="7014360199878017518" varName="tree" />
+    </scopeInfo>
+    <scopeInfo nodeId="4653713283496953827" fileName="TreeHighlighter.java" startLine="291" startPosition="0" endLine="294" endPosition="0">
+      <varInfo nodeId="4653713283496953828" varName="feature" />
     </scopeInfo>
     <scopeInfo nodeId="17187394613279820" fileName="TreeHighlighter.java" startLine="311" startPosition="43" endLine="314" endPosition="13">
       <varInfo nodeId="17187394613279821" varName="f" />
     </scopeInfo>
     <scopeInfo nodeId="17187394613279833" fileName="TreeHighlighter.java" startLine="311" startPosition="43" endLine="314" endPosition="13" />
+    <scopeInfo nodeId="2105471615617493107" fileName="TreeHighlighter.java" startLine="338" startPosition="0" endLine="341" endPosition="0">
+      <varInfo nodeId="2105471615617493107" varName="tn" />
+    </scopeInfo>
+    <scopeInfo nodeId="9112654717583022646" fileName="TreeHighlighter.java" startLine="369" startPosition="0" endLine="372" endPosition="0">
+      <varInfo nodeId="9112654717583022650" varName="feature" />
+    </scopeInfo>
     <scopeInfo nodeId="9112654717583085367" fileName="TreeHighlighter.java" startLine="373" startPosition="80" endLine="376" endPosition="22">
       <varInfo nodeId="9112654717583085417" varName="features" />
     </scopeInfo>
     <scopeInfo nodeId="9112654717583085559" fileName="TreeHighlighter.java" startLine="381" startPosition="72" endLine="384" endPosition="9" />
-    <scopeInfo nodeId="4653713283496907218" fileName="TreeHighlighter.java" startLine="92" startPosition="56" endLine="96" endPosition="0" />
     <scopeInfo nodeId="4653713283496907178" fileName="TreeHighlighter.java" startLine="113" startPosition="67" endLine="117" endPosition="5" />
     <scopeInfo nodeId="5008832173035887175" fileName="TreeHighlighter.java" startLine="130" startPosition="47" endLine="134" endPosition="17" />
-    <scopeInfo nodeId="4653713283496925979" fileName="TreeHighlighter.java" startLine="158" startPosition="0" endLine="162" endPosition="0">
-      <varInfo nodeId="4653713283496925985" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="3201398707754975282" fileName="TreeHighlighter.java" startLine="179" startPosition="51" endLine="183" endPosition="9">
       <varInfo nodeId="6005884031659331465" varName="message" />
     </scopeInfo>
-    <scopeInfo nodeId="8308671070660563040" fileName="TreeHighlighter.java" startLine="201" startPosition="122" endLine="205" endPosition="0">
-      <varInfo nodeId="8308671070660563040" varName="a" />
-    </scopeInfo>
     <scopeInfo nodeId="4653713283496888234" fileName="TreeHighlighter.java" startLine="215" startPosition="66" endLine="219" endPosition="63" />
-    <scopeInfo nodeId="9200516641177032573" fileName="TreeHighlighter.java" startLine="270" startPosition="0" endLine="274" endPosition="0">
-      <varInfo nodeId="9200516641177032576" varName="node" />
-      <varInfo nodeId="9200516641177032578" varName="tree" />
-    </scopeInfo>
-    <scopeInfo nodeId="9200516641177032565" fileName="TreeHighlighter.java" startLine="274" startPosition="0" endLine="278" endPosition="0">
-      <varInfo nodeId="9200516641177032568" varName="node" />
-      <varInfo nodeId="9200516641177032570" varName="tree" />
-    </scopeInfo>
-    <scopeInfo nodeId="7014360199878017513" fileName="TreeHighlighter.java" startLine="281" startPosition="0" endLine="285" endPosition="0">
-      <varInfo nodeId="7014360199878017518" varName="tree" />
-    </scopeInfo>
-    <scopeInfo nodeId="4653713283496953827" fileName="TreeHighlighter.java" startLine="290" startPosition="0" endLine="294" endPosition="0">
-      <varInfo nodeId="4653713283496953828" varName="feature" />
-    </scopeInfo>
     <scopeInfo nodeId="2105471615617474065" fileName="TreeHighlighter.java" startLine="330" startPosition="105" endLine="334" endPosition="11" />
-    <scopeInfo nodeId="2105471615617493107" fileName="TreeHighlighter.java" startLine="337" startPosition="85" endLine="341" endPosition="0">
-      <varInfo nodeId="2105471615617493107" varName="tn" />
+    <scopeInfo nodeId="9112654717583022161" fileName="TreeHighlighter.java" startLine="352" startPosition="0" endLine="356" endPosition="0">
+      <varInfo nodeId="9112654717583022165" varName="feature" />
+      <varInfo nodeId="9112654717583022175" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="9112654717583069226" fileName="TreeHighlighter.java" startLine="357" startPosition="74" endLine="361" endPosition="7" />
-    <scopeInfo nodeId="9112654717583022646" fileName="TreeHighlighter.java" startLine="368" startPosition="0" endLine="372" endPosition="0">
-      <varInfo nodeId="9112654717583022650" varName="feature" />
+    <scopeInfo nodeId="9112654717583082374" fileName="TreeHighlighter.java" startLine="364" startPosition="0" endLine="368" endPosition="0">
+      <varInfo nodeId="9112654717583082378" varName="feature" />
+    </scopeInfo>
+    <scopeInfo nodeId="4653713283496948011" fileName="TreeHighlighter.java" startLine="188" startPosition="0" endLine="193" endPosition="0">
+      <varInfo nodeId="4653713283496948014" varName="feature" />
     </scopeInfo>
     <scopeInfo nodeId="3201398707754975400" fileName="TreeHighlighter.java" startLine="247" startPosition="48" endLine="252" endPosition="8">
       <varInfo nodeId="3089989024970165051" varName="status" />
@@ -821,61 +831,52 @@
       <varInfo nodeId="17187394613279770" varName="ifile" />
     </scopeInfo>
     <scopeInfo nodeId="756246431460598814" fileName="TreeHighlighter.java" startLine="310" startPosition="27" endLine="315" endPosition="11" />
-    <scopeInfo nodeId="9112654717583022161" fileName="TreeHighlighter.java" startLine="351" startPosition="0" endLine="356" endPosition="0">
-      <varInfo nodeId="9112654717583022165" varName="feature" />
-      <varInfo nodeId="9112654717583022175" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="9112654717583082374" fileName="TreeHighlighter.java" startLine="363" startPosition="0" endLine="368" endPosition="0">
-      <varInfo nodeId="9112654717583082378" varName="feature" />
+    <scopeInfo nodeId="9112654717583085364" fileName="TreeHighlighter.java" startLine="373" startPosition="0" endLine="378" endPosition="0">
+      <varInfo nodeId="9112654717583085406" varName="modelRef" />
     </scopeInfo>
     <scopeInfo nodeId="9112654717583085554" fileName="TreeHighlighter.java" startLine="380" startPosition="79" endLine="385" endPosition="7">
       <varInfo nodeId="9112654717583085555" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="4653713283496948160" fileName="TreeHighlighter.java" startLine="129" startPosition="31" endLine="135" endPosition="15" />
-    <scopeInfo nodeId="4653713283496948011" fileName="TreeHighlighter.java" startLine="187" startPosition="0" endLine="193" endPosition="0">
-      <varInfo nodeId="4653713283496948014" varName="feature" />
+    <scopeInfo nodeId="4653713283496907175" fileName="TreeHighlighter.java" startLine="113" startPosition="0" endLine="119" endPosition="0">
+      <varInfo nodeId="4653713283496907180" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="4653713283496948160" fileName="TreeHighlighter.java" startLine="129" startPosition="31" endLine="135" endPosition="15" />
     <scopeInfo nodeId="2105471615617474059" fileName="TreeHighlighter.java" startLine="329" startPosition="39" endLine="335" endPosition="9" />
     <scopeInfo nodeId="2105471615617474060" fileName="TreeHighlighter.java" startLine="329" startPosition="39" endLine="335" endPosition="9">
       <varInfo nodeId="2105471615617474061" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="9112654717583085364" fileName="TreeHighlighter.java" startLine="372" startPosition="0" endLine="378" endPosition="0">
-      <varInfo nodeId="9112654717583085406" varName="modelRef" />
-    </scopeInfo>
-    <scopeInfo nodeId="4653713283496907175" fileName="TreeHighlighter.java" startLine="112" startPosition="0" endLine="119" endPosition="0">
-      <varInfo nodeId="4653713283496907180" varName="node" />
+    <scopeInfo nodeId="9112654717583069223" fileName="TreeHighlighter.java" startLine="357" startPosition="0" endLine="363" endPosition="0">
+      <varInfo nodeId="9112654717583069227" varName="feature" />
+      <varInfo nodeId="9112654717583069237" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5008832173035887171" fileName="TreeHighlighter.java" startLine="146" startPosition="39" endLine="153" endPosition="9" />
     <scopeInfo nodeId="9112654717583085509" fileName="TreeHighlighter.java" startLine="200" startPosition="120" endLine="207" endPosition="13" />
+    <scopeInfo nodeId="4653713283496888231" fileName="TreeHighlighter.java" startLine="214" startPosition="0" endLine="221" endPosition="0">
+      <varInfo nodeId="4653713283496888237" varName="fileStatus" />
+    </scopeInfo>
     <scopeInfo nodeId="1162831315436744260" fileName="TreeHighlighter.java" startLine="226" startPosition="51" endLine="233" endPosition="11">
       <varInfo nodeId="1162831315436727904" varName="modelStatus" />
       <varInfo nodeId="4036854704706502311" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="9112654717583069223" fileName="TreeHighlighter.java" startLine="356" startPosition="0" endLine="363" endPosition="0">
-      <varInfo nodeId="9112654717583069227" varName="feature" />
-      <varInfo nodeId="9112654717583069237" varName="node" />
+    <scopeInfo nodeId="17187394613279103" fileName="TreeHighlighter.java" startLine="300" startPosition="0" endLine="307" endPosition="0">
+      <varInfo nodeId="17187394613279106" varName="file" />
     </scopeInfo>
+    <scopeInfo nodeId="756246431460598813" fileName="TreeHighlighter.java" startLine="310" startPosition="0" endLine="317" endPosition="0" />
     <scopeInfo nodeId="9112654717583085542" fileName="TreeHighlighter.java" startLine="379" startPosition="48" endLine="386" endPosition="22">
       <varInfo nodeId="9112654717583085581" varName="features" />
     </scopeInfo>
     <scopeInfo nodeId="9200516641177001226" fileName="TreeHighlighter.java" startLine="68" startPosition="240" endLine="76" endPosition="5" />
-    <scopeInfo nodeId="4653713283496888231" fileName="TreeHighlighter.java" startLine="213" startPosition="0" endLine="221" endPosition="0">
-      <varInfo nodeId="4653713283496888237" varName="fileStatus" />
-    </scopeInfo>
-    <scopeInfo nodeId="17187394613279103" fileName="TreeHighlighter.java" startLine="299" startPosition="0" endLine="307" endPosition="0">
-      <varInfo nodeId="17187394613279106" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="756246431460598813" fileName="TreeHighlighter.java" startLine="309" startPosition="59" endLine="317" endPosition="0" />
-    <scopeInfo nodeId="4653713283496948159" fileName="TreeHighlighter.java" startLine="128" startPosition="63" endLine="137" endPosition="0" />
-    <scopeInfo nodeId="9112654717583085506" fileName="TreeHighlighter.java" startLine="199" startPosition="65" endLine="208" endPosition="11">
-      <varInfo nodeId="9112654717583085507" varName="anotherFeature" />
-    </scopeInfo>
-    <scopeInfo nodeId="3201398707754975430" fileName="TreeHighlighter.java" startLine="257" startPosition="0" endLine="266" endPosition="0">
+    <scopeInfo nodeId="4653713283496948159" fileName="TreeHighlighter.java" startLine="129" startPosition="0" endLine="137" endPosition="0" />
+    <scopeInfo nodeId="3201398707754975430" fileName="TreeHighlighter.java" startLine="258" startPosition="0" endLine="266" endPosition="0">
       <varInfo nodeId="3201398707754975437" varName="ed" />
       <varInfo nodeId="3201398707754975513" varName="project" />
     </scopeInfo>
+    <scopeInfo nodeId="9112654717583085506" fileName="TreeHighlighter.java" startLine="199" startPosition="65" endLine="208" endPosition="11">
+      <varInfo nodeId="9112654717583085507" varName="anotherFeature" />
+    </scopeInfo>
     <scopeInfo nodeId="17187394613279113" fileName="TreeHighlighter.java" startLine="308" startPosition="39" endLine="317" endPosition="9" />
-    <scopeInfo nodeId="9200516641177001222" fileName="TreeHighlighter.java" startLine="67" startPosition="0" endLine="77" endPosition="3">
+    <scopeInfo nodeId="9112654717583085539" fileName="TreeHighlighter.java" startLine="379" startPosition="0" endLine="388" endPosition="0" />
+    <scopeInfo nodeId="9200516641177001222" fileName="TreeHighlighter.java" startLine="68" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="9200516641177001227" varName="featureExtractor" />
       <varInfo nodeId="9200516641177060994" varName="featureForestMapSupport" />
       <varInfo nodeId="4653713283496948086" varName="registry" />
@@ -888,29 +889,28 @@
     <scopeInfo nodeId="3201398707754975308" fileName="TreeHighlighter.java" startLine="245" startPosition="70" endLine="255" endPosition="5">
       <varInfo nodeId="3201398707754975389" varName="md" />
     </scopeInfo>
-    <scopeInfo nodeId="9112654717583085539" fileName="TreeHighlighter.java" startLine="378" startPosition="0" endLine="388" endPosition="0" />
     <scopeInfo nodeId="9200516641177032537" fileName="TreeHighlighter.java" startLine="99" startPosition="38" endLine="110" endPosition="44" />
     <scopeInfo nodeId="8308671070660562611" fileName="TreeHighlighter.java" startLine="197" startPosition="41" endLine="208" endPosition="11">
       <varInfo nodeId="8308671070660562987" varName="modelRef" />
     </scopeInfo>
-    <scopeInfo nodeId="17187394613279110" fileName="TreeHighlighter.java" startLine="307" startPosition="0" endLine="319" endPosition="0" />
-    <scopeInfo nodeId="4653713283496948114" fileName="TreeHighlighter.java" startLine="126" startPosition="45" endLine="139" endPosition="0" />
+    <scopeInfo nodeId="17187394613279110" fileName="TreeHighlighter.java" startLine="308" startPosition="0" endLine="319" endPosition="0" />
+    <scopeInfo nodeId="4653713283496948114" fileName="TreeHighlighter.java" startLine="127" startPosition="0" endLine="139" endPosition="0" />
+    <scopeInfo nodeId="9200516641177032534" fileName="TreeHighlighter.java" startLine="99" startPosition="0" endLine="112" endPosition="0" />
     <scopeInfo nodeId="4653713283496925952" fileName="TreeHighlighter.java" startLine="143" startPosition="58" endLine="156" endPosition="5">
       <varInfo nodeId="4653713283496925954" varName="feature" />
     </scopeInfo>
     <scopeInfo nodeId="8308671070660562608" fileName="TreeHighlighter.java" startLine="196" startPosition="25" endLine="209" endPosition="9" />
-    <scopeInfo nodeId="9200516641177032534" fileName="TreeHighlighter.java" startLine="98" startPosition="0" endLine="112" endPosition="0" />
-    <scopeInfo nodeId="3201398707754975305" fileName="TreeHighlighter.java" startLine="243" startPosition="0" endLine="257" endPosition="0">
+    <scopeInfo nodeId="3201398707754975305" fileName="TreeHighlighter.java" startLine="244" startPosition="0" endLine="257" endPosition="0">
       <varInfo nodeId="3201398707754975365" varName="modelFeature" />
     </scopeInfo>
+    <scopeInfo nodeId="4653713283496925947" fileName="TreeHighlighter.java" startLine="143" startPosition="0" endLine="158" endPosition="0">
+      <varInfo nodeId="4653713283496925948" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8308671070660562607" fileName="TreeHighlighter.java" startLine="196" startPosition="0" endLine="211" endPosition="0" />
     <scopeInfo nodeId="2105471615617473975" fileName="TreeHighlighter.java" startLine="326" startPosition="51" endLine="341" endPosition="9">
       <varInfo nodeId="2105471615617474050" varName="modelRef" />
       <varInfo nodeId="2105471615617474115" varName="obsoleteTreeNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="4653713283496925947" fileName="TreeHighlighter.java" startLine="142" startPosition="0" endLine="158" endPosition="0">
-      <varInfo nodeId="4653713283496925948" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="8308671070660562607" fileName="TreeHighlighter.java" startLine="195" startPosition="57" endLine="211" endPosition="0" />
     <scopeInfo nodeId="9200516641177032533" fileName="TreeHighlighter.java" startLine="79" startPosition="35" endLine="96" endPosition="7" />
     <scopeInfo nodeId="4653713283496882526" fileName="TreeHighlighter.java" startLine="122" startPosition="26" endLine="139" endPosition="9" />
     <scopeInfo nodeId="4653713283496952800" fileName="TreeHighlighter.java" startLine="167" startPosition="51" endLine="184" endPosition="7">
@@ -919,27 +919,27 @@
     </scopeInfo>
     <scopeInfo nodeId="8308671070660562605" fileName="TreeHighlighter.java" startLine="194" startPosition="81" endLine="211" endPosition="7" />
     <scopeInfo nodeId="4653713283496900663" fileName="TreeHighlighter.java" startLine="223" startPosition="118" endLine="241" endPosition="5" />
-    <scopeInfo nodeId="2105471615617473970" fileName="TreeHighlighter.java" startLine="324" startPosition="0" endLine="343" endPosition="0">
+    <scopeInfo nodeId="2105471615617473970" fileName="TreeHighlighter.java" startLine="325" startPosition="0" endLine="343" endPosition="0">
       <varInfo nodeId="2105471615617473973" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="9200516641177032530" fileName="TreeHighlighter.java" startLine="78" startPosition="0" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="9200516641177032530" fileName="TreeHighlighter.java" startLine="79" startPosition="0" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="8308671070660562599" fileName="TreeHighlighter.java" startLine="194" startPosition="0" endLine="213" endPosition="0">
+      <varInfo nodeId="8308671070660562600" varName="feature" />
+    </scopeInfo>
     <scopeInfo nodeId="4653713283496878873" fileName="TreeHighlighter.java" startLine="120" startPosition="62" endLine="140" endPosition="5">
       <varInfo nodeId="4653713283496882517" varName="feature" />
     </scopeInfo>
-    <scopeInfo nodeId="8308671070660562599" fileName="TreeHighlighter.java" startLine="193" startPosition="0" endLine="213" endPosition="0">
-      <varInfo nodeId="8308671070660562600" varName="feature" />
+    <scopeInfo nodeId="4653713283496900660" fileName="TreeHighlighter.java" startLine="222" startPosition="0" endLine="243" endPosition="0">
+      <varInfo nodeId="4653713283496900687" varName="modelChange" />
+      <varInfo nodeId="1162831315436744254" varName="modelDescriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="4653713283496878870" fileName="TreeHighlighter.java" startLine="120" startPosition="0" endLine="142" endPosition="0">
+      <varInfo nodeId="4653713283496878875" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4653713283496926001" fileName="TreeHighlighter.java" startLine="163" startPosition="85" endLine="185" endPosition="5">
       <varInfo nodeId="4653713283496952787" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="4653713283496900660" fileName="TreeHighlighter.java" startLine="221" startPosition="0" endLine="243" endPosition="0">
-      <varInfo nodeId="4653713283496900687" varName="modelChange" />
-      <varInfo nodeId="1162831315436744254" varName="modelDescriptor" />
-    </scopeInfo>
-    <scopeInfo nodeId="4653713283496878870" fileName="TreeHighlighter.java" startLine="119" startPosition="0" endLine="142" endPosition="0">
-      <varInfo nodeId="4653713283496878875" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4653713283496925998" fileName="TreeHighlighter.java" startLine="162" startPosition="0" endLine="187" endPosition="0">
+    <scopeInfo nodeId="4653713283496925998" fileName="TreeHighlighter.java" startLine="163" startPosition="0" endLine="187" endPosition="0">
       <varInfo nodeId="4653713283496926005" varName="feature" />
       <varInfo nodeId="4653713283496926003" varName="node" />
     </scopeInfo>

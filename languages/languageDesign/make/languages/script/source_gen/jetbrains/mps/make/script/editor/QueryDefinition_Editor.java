@@ -68,21 +68,21 @@ public class QueryDefinition_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_egantk_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "with title");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with title");
     editorCell.setCellId("Constant_egantk_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_egantk_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "display");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "display");
     editorCell.setCellId("Constant_egantk_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_egantk_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "expect");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "expect");
     editorCell.setCellId("Constant_egantk_a3a");
     editorCell.setDefaultText("");
     return editorCell;

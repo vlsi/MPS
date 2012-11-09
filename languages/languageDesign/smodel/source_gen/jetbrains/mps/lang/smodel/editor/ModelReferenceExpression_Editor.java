@@ -92,7 +92,7 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_uy53zt_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "/");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_uy53zt_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -100,7 +100,7 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_uy53zt_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "/");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_uy53zt_d0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -108,7 +108,7 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_uy53zt_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "long name");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "long name");
     editorCell.setCellId("Constant_uy53zt_a0a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -116,7 +116,7 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_uy53zt_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "stereotype");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "stereotype");
     editorCell.setCellId("Constant_uy53zt_a1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

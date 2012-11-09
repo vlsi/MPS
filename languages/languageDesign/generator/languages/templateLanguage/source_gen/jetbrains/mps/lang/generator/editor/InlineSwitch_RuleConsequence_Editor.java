@@ -56,7 +56,7 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_yn898b_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "default:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default:");
     editorCell.setCellId("Constant_yn898b_b0");
     {
       Style style = editorCell.getStyle();
@@ -67,7 +67,7 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_yn898b_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_yn898b_a2a");
     {
       Style style = editorCell.getStyle();

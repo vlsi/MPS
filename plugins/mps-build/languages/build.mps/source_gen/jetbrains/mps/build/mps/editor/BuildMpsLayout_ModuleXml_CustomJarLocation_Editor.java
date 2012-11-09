@@ -29,7 +29,7 @@ public class BuildMpsLayout_ModuleXml_CustomJarLocation_Editor extends DefaultNo
   }
 
   private EditorCell createConstant_r8678q_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "->");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_r8678q_b0");
     editorCell.setDefaultText("");
     return editorCell;

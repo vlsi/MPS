@@ -192,7 +192,7 @@ public class common_UIObjectStatement extends AbstractCellProvider {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -200,7 +200,7 @@ public class common_UIObjectStatement extends AbstractCellProvider {
     }
 
     private EditorCell createConstant_cz3bck_a0a0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_cz3bck_a0a0");
       editorCell.setDefaultText("<no aspect>");
       return editorCell;
@@ -249,7 +249,7 @@ public class common_UIObjectStatement extends AbstractCellProvider {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -257,7 +257,7 @@ public class common_UIObjectStatement extends AbstractCellProvider {
     }
 
     private EditorCell createConstant_cz3bck_a0b0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_cz3bck_a0b0");
       {
         Style style = editorCell.getStyle();
@@ -308,7 +308,7 @@ public class common_UIObjectStatement extends AbstractCellProvider {
     }
 
     private EditorCell createConstant_cz3bck_a0c0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_cz3bck_a0c0");
       {
         Style style = editorCell.getStyle();
@@ -359,7 +359,7 @@ public class common_UIObjectStatement extends AbstractCellProvider {
     }
 
     private EditorCell createConstant_cz3bck_a0d0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_cz3bck_a0d0");
       editorCell.setDefaultText("<no compartments>");
       return editorCell;

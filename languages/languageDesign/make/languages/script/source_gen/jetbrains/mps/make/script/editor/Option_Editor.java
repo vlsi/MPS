@@ -38,7 +38,7 @@ public class Option_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nr3cqj_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "default");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default");
     editorCell.setCellId("Constant_nr3cqj_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.addKeyMap(new Option_unmakeDefault());
@@ -47,7 +47,7 @@ public class Option_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nr3cqj_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "display as");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "display as");
     editorCell.setCellId("Constant_nr3cqj_c0");
     editorCell.setDefaultText("");
     return editorCell;

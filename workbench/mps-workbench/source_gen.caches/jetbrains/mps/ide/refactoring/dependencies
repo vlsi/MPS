@@ -130,13 +130,12 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.refactoring.RenameLanguageDialog" file="RenameLanguageDialog.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.awt.GridBagConstraints" />
-    <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.awt.HeadlessException" />
     <classNode dependClassName="java.awt.Insets" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -145,11 +144,7 @@
     <classNode dependClassName="javax.lang.model.SourceVersion" />
     <classNode dependClassName="javax.swing.JCheckBox" />
     <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="javax.swing.JLabel" />
-    <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="javax.swing.JTextField" />
     <classNode dependClassName="jetbrains.mps.generator.GenParameters" />
-    <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.make.IMakeService" />
@@ -167,7 +162,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
+    <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RenameDialog" />
   </dependency>
   <dependency className="jetbrains.mps.ide.refactoring.RenameModelDialog" file="RenameModelDialog.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
@@ -175,9 +170,7 @@
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.awt.GridBagConstraints" />
-    <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.awt.HeadlessException" />
     <classNode dependClassName="java.awt.Insets" />
     <classNode dependClassName="java.lang.Override" />
@@ -185,37 +178,28 @@
     <classNode dependClassName="javax.lang.model.SourceVersion" />
     <classNode dependClassName="javax.swing.JCheckBox" />
     <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.JTextField" />
-    <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
     <classNode dependClassName="jetbrains.mps.refactoring.renameModel.ModelRenamer" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.workbench.actions.model.DeleteModelHelper" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
+    <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RenameDialog" />
   </dependency>
   <dependency className="jetbrains.mps.ide.refactoring.RenameSolutionDialog" file="RenameSolutionDialog.java">
-    <classNode dependClassName="java.awt.Frame" />
-    <classNode dependClassName="java.awt.GridBagConstraints" />
-    <classNode dependClassName="java.awt.GridBagLayout" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.HeadlessException" />
-    <classNode dependClassName="java.awt.Insets" />
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="javax.swing.JLabel" />
-    <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="javax.swing.JTextField" />
-    <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
     <classNode dependClassName="jetbrains.mps.refactoring.renameSolution.SolutionRenamer" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
-    <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
+    <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RenameDialog" />
   </dependency>
   <dependency className="jetbrains.mps.ide.refactoring.SModelReferenceDialog" file="SModelReferenceDialog.java">
     <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent" />

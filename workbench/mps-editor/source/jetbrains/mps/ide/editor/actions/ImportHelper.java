@@ -207,7 +207,7 @@ public class ImportHelper {
         return new RootNodeElement(object) {
           public void navigate(boolean requestFocus) {
             ModelAccess.assertLegalRead();
-            SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(object.getModelReference());
+            SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(object.getModelReference());
             LOG.assertLog(descriptor != null, "Caches seems to be corrupted or the model was removed: model " + object.getModelReference().getLongName() + " does not exist. Please check model existence manually and specify it in bug report");
             SModel modelToImport = descriptor.getSModel();
             SNodeId id = object.getId();

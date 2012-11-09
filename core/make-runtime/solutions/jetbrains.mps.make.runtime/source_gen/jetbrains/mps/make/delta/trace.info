@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1268765481875672245" modelId="r:0bcaf439-5bc6-429b-a457-4e0d9746449f(jetbrains.mps.make.delta)">
-    <nodeInfo nodeId="1268765481875672250" fileName="IDelta.java" startLine="6" startPosition="25" endLine="7" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="merge#(Ljetbrains/mps/make/delta/IDelta;)Ljetbrains/mps/make/delta/IDelta;" />
-    <nodeInfo nodeId="5675045708290417855" fileName="IDelta.java" startLine="7" startPosition="38" endLine="8" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contains#(Ljetbrains/mps/make/delta/IDelta;)Z" />
-    <nodeInfo nodeId="1268765481875672256" fileName="IDelta.java" startLine="8" startPosition="40" endLine="9" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reconcile#()Z" />
-    <nodeInfo nodeId="7471912399447707905" fileName="IDelta.java" startLine="9" startPosition="29" endLine="10" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acceptVisitor#(Ljetbrains/mps/make/delta/IDeltaVisitor;)Z" />
-    <scopeInfo nodeId="1268765481875672250" fileName="IDelta.java" startLine="6" startPosition="25" endLine="7" endPosition="38">
+    <nodeInfo nodeId="1268765481875672250" fileName="IDelta.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="merge#(Ljetbrains/mps/make/delta/IDelta;)Ljetbrains/mps/make/delta/IDelta;" />
+    <nodeInfo nodeId="5675045708290417855" fileName="IDelta.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contains#(Ljetbrains/mps/make/delta/IDelta;)Z" />
+    <nodeInfo nodeId="1268765481875672256" fileName="IDelta.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reconcile#()Z" />
+    <nodeInfo nodeId="7471912399447707905" fileName="IDelta.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acceptVisitor#(Ljetbrains/mps/make/delta/IDeltaVisitor;)Z" />
+    <scopeInfo nodeId="1268765481875672250" fileName="IDelta.java" startLine="7" startPosition="0" endLine="8" endPosition="0">
       <varInfo nodeId="1268765481875672254" varName="toMerge" />
     </scopeInfo>
-    <scopeInfo nodeId="5675045708290417855" fileName="IDelta.java" startLine="7" startPosition="38" endLine="8" endPosition="40">
+    <scopeInfo nodeId="5675045708290417855" fileName="IDelta.java" startLine="8" startPosition="0" endLine="9" endPosition="0">
       <varInfo nodeId="5675045708290417860" varName="other" />
     </scopeInfo>
-    <scopeInfo nodeId="1268765481875672256" fileName="IDelta.java" startLine="8" startPosition="40" endLine="9" endPosition="29" />
-    <scopeInfo nodeId="7471912399447707905" fileName="IDelta.java" startLine="9" startPosition="29" endLine="10" endPosition="54">
+    <scopeInfo nodeId="1268765481875672256" fileName="IDelta.java" startLine="9" startPosition="0" endLine="10" endPosition="0" />
+    <scopeInfo nodeId="7471912399447707905" fileName="IDelta.java" startLine="10" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="7471912399447707910" varName="visitor" />
     </scopeInfo>
     <unitInfo nodeId="1268765481875672245" fileName="IDelta.java" startLine="6" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.make.delta.IDelta" />

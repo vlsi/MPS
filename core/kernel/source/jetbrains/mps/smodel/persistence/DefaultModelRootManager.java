@@ -20,7 +20,6 @@ import jetbrains.mps.library.ModelsMiner.ModelHandle;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.vfs.FileSystem;
@@ -46,7 +45,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     for (ModelHandle handle : models) {
-      SModelDescriptor modelDescriptor = getInstance(root.getModule(), new RegularModelDataSource(root.getModule().getModuleReference(), handle.getFile()), handle.getReference(), handle.getLoadResult());
+      SModelDescriptor modelDescriptor = getInstance(root.getModule(), new RegularModelDataSource(handle.getFile(), root), handle.getReference(), handle.getLoadResult());
       LOG.debug("Read model descriptor " + modelDescriptor.getSModelReference() + "\n" + "Model root is " + root.getPath());
       result.add(modelDescriptor);
     }
@@ -62,9 +61,9 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
   @Override
   public SModelDescriptor createModel(@NotNull SModelRoot root, @NotNull SModelFqName fqName) {
-    ModelDataSource modelSource = RegularModelDataSource.createSourceForModelUID(root, fqName, root.getModule());
+    RegularModelDataSource modelSource = RegularModelDataSource.createSourceForModelUID(root, fqName, root.getModule());
     SModelReference ref = new SModelReference(fqName, SModelId.generate());
-    return new DefaultSModelDescriptor(root.getModule(), modelSource, ref, new DescriptorLoadResult());
+    return new DefaultSModelDescriptor(modelSource, ref, new DescriptorLoadResult());
   }
 
   private static SModelDescriptor getInstance(SModule module, RegularModelDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
@@ -72,7 +71,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
     SModelRepository modelRepository = SModelRepository.getInstance();
     SModelDescriptor modelDescriptor = modelRepository.getModelDescriptor(modelReference);
-    if (modelDescriptor == null) return new DefaultSModelDescriptor(module, source, modelReference, d);
+    if (modelDescriptor == null) return new DefaultSModelDescriptor(source, modelReference, d);
 
     //todo rewrite
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) modelDescriptor;

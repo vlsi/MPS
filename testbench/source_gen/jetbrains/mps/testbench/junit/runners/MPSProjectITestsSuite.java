@@ -134,34 +134,34 @@ public class MPSProjectITestsSuite extends Suite {
 
   @Retention(RetentionPolicy.RUNTIME)
   @Target(value = {ElementType.TYPE})
-public static   @interface ModuleUUID {
-    /**
+public static   @interface ModuleUUID {    /**
      * 
      * 
      * @return path to MPS project
      */
+
     String value();
 }
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(value = {ElementType.TYPE})
-public static @interface ModelLongName {
-  /**
+public static @interface ModelLongName {  /**
    * 
    * 
    * @return path to MPS project
    */
+
   String value();
 }
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(value = {ElementType.TYPE})
-public static @interface TestClass {
-/**
+public static @interface TestClass {/**
  * 
  * 
  * @return path to MPS project
  */
+
 String value();
 }
 }

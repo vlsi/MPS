@@ -841,7 +841,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     setOperationContext(operationContext);
     editNode(node);
-    setReadOnly(node == null || node.isDeleted() || node.getModel().isNotEditable());
+    setReadOnly(node == null || node.getModel() == null || node.getModel().isNotEditable());
   }
 
   protected void editNode(final SNode node) {
@@ -1052,7 +1052,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     popupMenu.show(EditorComponent.this, x, y);
   }
 
-  public void executeIntention(final Intention intention, final SNode node, final EditorContext context) {
+  public void executeIntention(final Intention intention, final SNode node, final jetbrains.mps.openapi.editor.EditorContext context) {
     context.executeCommand(new Runnable() {
       public void run() {
         try {
@@ -1069,11 +1069,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode node = getSelectedNode();
-        EditorContext editorContext = getEditorContext();
+        jetbrains.mps.openapi.editor.EditorContext editorContext = getEditorContext();
         if (node != null && editorContext != null) {
           QueryDescriptor query = new QueryDescriptor();
           query.setIntentionClass(BaseIntention.class);
-          query.setInstantiate(true);
           result.addAll(IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext));
         }
       }
@@ -1089,7 +1088,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     final EditorContext editorContext = createEditorContextForActions();
     for (final EditorCellKeyMapAction action : KeyMapUtil.getRegisteredActions(cell, editorContext)) {
       try {
-        if (!(action.isShownInPopupMenu() && action.canExecute(null, editorContext))) continue;
+        if (!(action.isShownInPopupMenu() && action.canExecute(null, (jetbrains.mps.openapi.editor.EditorContext) editorContext))) continue;
         BaseAction mpsAction = new MyBaseAction(action, editorContext);
         mpsAction.addPlace(ActionPlace.EDITOR);
         result.add(mpsAction);
@@ -1210,22 +1209,23 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void assertModelNotDisposed() {
-    assert myModelDisposedStackTrace == null : getModelDisposedMessage();
-    assert myNode == null || !jetbrains.mps.util.SNodeOperations.isDisposed(myNode) : getNodeDisposedMessage();
+    boolean old = ModelAccess.instance().setReadEnabledFlag(true);
+    try {
+      assert myModelDisposedStackTrace == null : getModelDisposedMessage();
+      if (myNode == null) return;
+      SModel model = myNode.getModel();
+      if (model == null) return;
+      assert !model.isDisposed() : getNodeDisposedMessage(model);
+    } finally {
+      ModelAccess.instance().setReadEnabledFlag(old);
+    }
   }
 
-  private String getNodeDisposedMessage() {
+  private String getNodeDisposedMessage(SModel model) {
     StringBuilder sb = new StringBuilder("editor (" + this + ") is invalid");
     if (myNode != null) {
       sb.append(", myNode is disposed");
-      StackTraceElement[] result;
-      SModel model = myNode.getModelInternal();
-      if (model != null) {
-        result = model.getDisposedStacktrace();
-      } else {
-        result = null;
-      }
-      StackTraceElement[] modelDisposedTrace = result;
+      StackTraceElement[] modelDisposedTrace = model.getDisposedStacktrace();
       if (modelDisposedTrace != null) {
         for (StackTraceElement element : modelDisposedTrace) {
           sb.append("\nat ");
@@ -1339,7 +1339,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     // Sometimes EditorComponent doesn't react on ModelReplaced notifications.
     // Adding this assertion to ensure the reason is not in incorrectly removed listener (dependencies collection logic)
-    if (myNode != null && !myNode.isDeleted() && myNode.getModel() != null) {
+    if (myNode != null && myNode.getModel() != null) {
       SModel model = myNode.getModel();
       SModelDescriptor modelDescriptor = model.getModelDescriptor();
       if (modelDescriptor != null && modelDescriptor.isRegistered() && !model.isUpdateMode()) {
@@ -2788,7 +2788,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     if (lastRemove != null) {
-      if (lastRemove instanceof SModelChildEvent && (lastSelectedNode == null || lastSelectedNode.isDeleted())) {
+      if (lastRemove instanceof SModelChildEvent && (lastSelectedNode == null || lastSelectedNode.getModel() == null)) {
         SModelChildEvent ce = (SModelChildEvent) lastRemove;
         int childIndex = ce.getChildIndex();
         String role = ce.getChildRole();
@@ -3013,7 +3013,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
       try {
-        myAction.execute(null, myEditorContext);
+        myAction.execute(null, (jetbrains.mps.openapi.editor.EditorContext) myEditorContext);
       } catch (Throwable t) {
         LOG.error(t);
       }

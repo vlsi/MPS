@@ -44,7 +44,7 @@ public class BuildLayout_CopyGlobMapper_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_wl5djv_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "\"");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_wl5djv_b0");
     {
       Style style = editorCell.getStyle();
@@ -56,7 +56,7 @@ public class BuildLayout_CopyGlobMapper_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_wl5djv_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "\"");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_wl5djv_d0");
     {
       Style style = editorCell.getStyle();
@@ -68,7 +68,7 @@ public class BuildLayout_CopyGlobMapper_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_wl5djv_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "->");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_wl5djv_e0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

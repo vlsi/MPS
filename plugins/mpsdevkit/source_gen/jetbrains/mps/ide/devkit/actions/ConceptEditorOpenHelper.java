@@ -79,7 +79,7 @@ public class ConceptEditorOpenHelper {
 
   private static SNode findBaseNodeMultiTab(SNode node) {
     SNode baseNode = null;
-    if (node.isRoot() && SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.BaseConcept")) {
+    if (jetbrains.mps.util.SNodeOperations.isRoot(node) && SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.BaseConcept")) {
       SNode bc = SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept");
       SNode annotation = AttributeOperations.getAttribute(bc, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")));
       if ((annotation != null) && (SLinkOperations.getTarget(annotation, "applicableConcept", false) != null)) {

@@ -49,7 +49,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_m61dlm_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "else if");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "else if");
     editorCell.setCellId("Constant_m61dlm_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -62,7 +62,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_m61dlm_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_m61dlm_b0");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -70,7 +70,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_m61dlm_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_m61dlm_d0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -78,7 +78,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_m61dlm_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_m61dlm_e0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -90,7 +90,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_m61dlm_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_m61dlm_g0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {

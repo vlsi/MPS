@@ -4,7 +4,6 @@ package jetbrains.mps.ide.vcs;
 
 import org.jetbrains.annotations.Nullable;
 
-
 /**
  * 
  * 

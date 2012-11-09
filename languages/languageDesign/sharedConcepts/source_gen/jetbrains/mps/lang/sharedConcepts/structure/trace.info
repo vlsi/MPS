@@ -3,8 +3,8 @@
   <unitInfo fileName="SharedConcepts_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.SharedConcepts_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.StructureAspectDescriptor" />
   <root nodeId="1161807239261" modelId="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)">
-    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="12" startPosition="0" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="13" startPosition="24" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
+    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
     <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="16" startPosition="52" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="17" startPosition="23" endLine="18" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="21" startPosition="27" endLine="22" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -19,16 +19,16 @@
     <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="48" startPosition="74" endLine="49" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="51" startPosition="73" endLine="52" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="53" startPosition="5" endLine="54" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/lang/sharedConcepts/structure/Options_DefaultCustom;" />
     <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="44" startPosition="64" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="47" startPosition="5" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="50" startPosition="5" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="15" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Options_DefaultCustom#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/lang/sharedConcepts/structure/Options_DefaultCustom;" />
-    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="32" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
-    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="43" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/sharedConcepts/structure/Options_DefaultCustom;" />
+    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Options_DefaultCustom#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
+    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="44" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/sharedConcepts/structure/Options_DefaultCustom;" />
     <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -49,9 +49,9 @@
     <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="39" startPosition="77" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="14" startPosition="119" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="28" startPosition="119" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="9" startPosition="76" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
     <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="21" startPosition="27" endLine="22" endPosition="23" />
     <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="25" startPosition="36" endLine="26" endPosition="24" />
     <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="29" startPosition="28" endLine="30" endPosition="24" />
@@ -60,20 +60,20 @@
     <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="48" startPosition="74" endLine="49" endPosition="44" />
     <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="51" startPosition="73" endLine="52" endPosition="43" />
     <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="16" startPosition="52" endLine="18" endPosition="25" />
-    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="15" startPosition="0" endLine="19" endPosition="3">
+    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1161807239261" varName="name" />
       <varInfo nodeId="1161807239261" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="33" startPosition="60" endLine="37" endPosition="16">
       <varInfo nodeId="1161807239261" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="32" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="33" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="44" startPosition="64" endLine="54" endPosition="46" />
-    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="43" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="44" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="1161807239261" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" />
@@ -90,7 +90,7 @@
     <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="38" startPosition="49" endLine="43" endPosition="14">
       <varInfo nodeId="1161807239261" varName="constant" />
     </scopeInfo>
-    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="1161807239261" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="10" startPosition="44" endLine="21" endPosition="17">
@@ -99,18 +99,18 @@
     <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="24" startPosition="47" endLine="35" endPosition="16">
       <varInfo nodeId="1161807239261" varName="constants" />
     </scopeInfo>
-    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="9" startPosition="76" endLine="23" endPosition="0">
+    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="1161807239261" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1161807239261" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultCustom" />
     <unitInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultCustom_PropertySupport" />
   </root>
   <root nodeId="1165007009656" modelId="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)">
-    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="13" startPosition="0" endLine="14" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="14" startPosition="24" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
+    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
     <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="17" startPosition="54" endLine="18" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="18" startPosition="23" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="22" startPosition="27" endLine="23" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -127,17 +127,17 @@
     <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="53" startPosition="77" endLine="54" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="56" startPosition="75" endLine="57" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="58" startPosition="5" endLine="59" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/lang/sharedConcepts/structure/NodePresentationOptions;" />
     <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="46" startPosition="66" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="49" startPosition="5" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="52" startPosition="5" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="55" startPosition="5" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="16" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodePresentationOptions#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/lang/sharedConcepts/structure/NodePresentationOptions;" />
-    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="33" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
-    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="45" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/sharedConcepts/structure/NodePresentationOptions;" />
+    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodePresentationOptions#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="34" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
+    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="46" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/sharedConcepts/structure/NodePresentationOptions;" />
     <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -158,9 +158,9 @@
     <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="39" startPosition="81" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="14" startPosition="123" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="28" startPosition="123" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="9" startPosition="78" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
     <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="22" startPosition="27" endLine="23" endPosition="23" />
     <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="26" startPosition="36" endLine="27" endPosition="24" />
     <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="30" startPosition="28" endLine="31" endPosition="24" />
@@ -170,20 +170,20 @@
     <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="53" startPosition="77" endLine="54" endPosition="47" />
     <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="56" startPosition="75" endLine="57" endPosition="45" />
     <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="17" startPosition="54" endLine="19" endPosition="25" />
-    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="16" startPosition="0" endLine="20" endPosition="3">
+    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="1165007009656" varName="name" />
       <varInfo nodeId="1165007009656" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="34" startPosition="62" endLine="39" endPosition="16">
       <varInfo nodeId="1165007009656" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="33" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="34" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="46" startPosition="66" endLine="59" endPosition="48" />
-    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="45" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="46" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1165007009656" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" />
@@ -200,7 +200,7 @@
     <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="38" startPosition="49" endLine="43" endPosition="14">
       <varInfo nodeId="1165007009656" varName="constant" />
     </scopeInfo>
-    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="1165007009656" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="10" startPosition="44" endLine="21" endPosition="17">
@@ -209,18 +209,18 @@
     <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="24" startPosition="47" endLine="35" endPosition="16">
       <varInfo nodeId="1165007009656" varName="constants" />
     </scopeInfo>
-    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="9" startPosition="78" endLine="23" endPosition="0">
+    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="1165007009656" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1165007009656" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.NodePresentationOptions" />
     <unitInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.NodePresentationOptions_PropertySupport" />
   </root>
   <root nodeId="1177964585679" modelId="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)">
-    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="12" startPosition="0" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="13" startPosition="24" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
+    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
     <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="16" startPosition="50" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="17" startPosition="23" endLine="18" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="21" startPosition="27" endLine="22" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -235,16 +235,16 @@
     <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="48" startPosition="72" endLine="49" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="51" startPosition="69" endLine="52" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="53" startPosition="5" endLine="54" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/lang/sharedConcepts/structure/Options_DefaultTrue;" />
     <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="44" startPosition="62" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="47" startPosition="5" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="50" startPosition="5" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="15" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Options_DefaultTrue#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/lang/sharedConcepts/structure/Options_DefaultTrue;" />
-    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="32" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
-    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="43" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/sharedConcepts/structure/Options_DefaultTrue;" />
+    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Options_DefaultTrue#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
+    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="44" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/sharedConcepts/structure/Options_DefaultTrue;" />
     <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -265,9 +265,9 @@
     <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="39" startPosition="73" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="14" startPosition="115" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="28" startPosition="115" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="9" startPosition="74" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
     <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="21" startPosition="27" endLine="22" endPosition="23" />
     <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="25" startPosition="36" endLine="26" endPosition="24" />
     <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="29" startPosition="28" endLine="30" endPosition="24" />
@@ -276,20 +276,20 @@
     <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="48" startPosition="72" endLine="49" endPosition="42" />
     <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="51" startPosition="69" endLine="52" endPosition="39" />
     <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="16" startPosition="50" endLine="18" endPosition="25" />
-    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="15" startPosition="0" endLine="19" endPosition="3">
+    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1177964585679" varName="name" />
       <varInfo nodeId="1177964585679" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="33" startPosition="58" endLine="37" endPosition="16">
       <varInfo nodeId="1177964585679" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="32" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="33" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="44" startPosition="62" endLine="54" endPosition="44" />
-    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="43" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="44" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="1177964585679" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" />
@@ -306,7 +306,7 @@
     <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="38" startPosition="49" endLine="43" endPosition="14">
       <varInfo nodeId="1177964585679" varName="constant" />
     </scopeInfo>
-    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="1177964585679" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="10" startPosition="44" endLine="21" endPosition="17">
@@ -315,10 +315,10 @@
     <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="24" startPosition="47" endLine="35" endPosition="16">
       <varInfo nodeId="1177964585679" varName="constants" />
     </scopeInfo>
-    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="9" startPosition="74" endLine="23" endPosition="0">
+    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="1177964585679" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1177964585679" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue" />

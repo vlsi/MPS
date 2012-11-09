@@ -73,7 +73,7 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_wfu8o0_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "$list{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$list{");
     editorCell.setCellId("Constant_wfu8o0_a0");
     TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
     {
@@ -86,7 +86,7 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_wfu8o0_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "with");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");
     editorCell.setCellId("Constant_wfu8o0_a2a");
     TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
     {
@@ -98,7 +98,7 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_wfu8o0_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_wfu8o0_d0");
     TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
     {
@@ -111,14 +111,14 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_wfu8o0_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "separator");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "separator");
     editorCell.setCellId("Constant_wfu8o0_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_wfu8o0_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_wfu8o0_b0a");
     editorCell.setDefaultText("");
     return editorCell;

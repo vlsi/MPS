@@ -2,11 +2,17 @@
 <dependencies version="2" modelHash="-3hy8xbe6sxoee2wdlsg77prx51kv3sq">
   <dep model="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.user(jetbrains.mps.gwt.client/com.google.gwt.user@gwt_stub)" />
   <dep model="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.user.theme.standard(jetbrains.mps.gwt.client/com.google.gwt.user.theme.standard@gwt_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.apple.java(JDK/com.apple.java@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.oracle.net(JDK/com.oracle.net@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.oracle.nio(JDK/com.oracle.nio@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.accessibility.internal.resources(JDK/com.sun.accessibility.internal.resources@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.activation.registries(JDK/com.sun.activation.registries@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.awt(JDK/com.sun.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.beans(JDK/com.sun.beans@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.codemodel.internal(JDK/com.sun.codemodel.internal@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.codemodel.internal.fmt(JDK/com.sun.codemodel.internal.fmt@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.codemodel.internal.util(JDK/com.sun.codemodel.internal.util@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.codemodel.internal.writer(JDK/com.sun.codemodel.internal.writer@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.corba.se.impl.activation(JDK/com.sun.corba.se.impl.activation@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.corba.se.impl.copyobject(JDK/com.sun.corba.se.impl.copyobject@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.corba.se.impl.corba(JDK/com.sun.corba.se.impl.corba@java_stub)" />
@@ -87,6 +93,9 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.imageio.stream(JDK/com.sun.imageio.stream@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.istack.internal(JDK/com.sun.istack.internal@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.istack.internal.localization(JDK/com.sun.istack.internal.localization@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.istack.internal.tools(JDK/com.sun.istack.internal.tools@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.istack.internal.ws(JDK/com.sun.istack.internal.ws@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jarsigner(JDK/com.sun.jarsigner@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.browser.dom(JDK/com.sun.java.browser.dom@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.browser.net(JDK/com.sun.java.browser.net@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.swing(JDK/com.sun.java.swing@java_stub)" />
@@ -99,6 +108,12 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.swing.plaf.windows.resources(JDK/com.sun.java.swing.plaf.windows.resources@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.util.jar.pack(JDK/com.sun.java.util.jar.pack@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java_cup.internal.runtime(JDK/com.sun.java_cup.internal.runtime@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.javadoc(JDK/com.sun.javadoc@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi.connect(JDK/com.sun.jdi.connect@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi.connect.spi(JDK/com.sun.jdi.connect.spi@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi.event(JDK/com.sun.jdi.event@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi.request(JDK/com.sun.jdi.request@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jmx.defaults(JDK/com.sun.jmx.defaults@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jmx.interceptor(JDK/com.sun.jmx.interceptor@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jmx.mbeanserver(JDK/com.sun.jmx.mbeanserver@java_stub)" />
@@ -137,6 +152,10 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.management(JDK/com.sun.management@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.management.jmx(JDK/com.sun.management.jmx@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.media.sound(JDK/com.sun.media.sound@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.mirror.apt(JDK/com.sun.mirror.apt@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.mirror.declaration(JDK/com.sun.mirror.declaration@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.mirror.type(JDK/com.sun.mirror.type@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.mirror.util(JDK/com.sun.mirror.util@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.naming.internal(JDK/com.sun.naming.internal@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.net.httpserver(JDK/com.sun.net.httpserver@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.net.httpserver.spi(JDK/com.sun.net.httpserver.spi@java_stub)" />
@@ -154,6 +173,7 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xalan.internal.lib(JDK/com.sun.org.apache.xalan.internal.lib@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xalan.internal.res(JDK/com.sun.org.apache.xalan.internal.res@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xalan.internal.templates(JDK/com.sun.org.apache.xalan.internal.templates@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xalan.internal.utils(JDK/com.sun.org.apache.xalan.internal.utils@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xalan.internal.xslt(JDK/com.sun.org.apache.xalan.internal.xslt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xalan.internal.xsltc(JDK/com.sun.org.apache.xalan.internal.xsltc@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xalan.internal.xsltc.cmdline(JDK/com.sun.org.apache.xalan.internal.xsltc.cmdline@java_stub)" />
@@ -190,6 +210,7 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xerces.internal.jaxp.validation(JDK/com.sun.org.apache.xerces.internal.jaxp.validation@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xerces.internal.parsers(JDK/com.sun.org.apache.xerces.internal.parsers@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xerces.internal.util(JDK/com.sun.org.apache.xerces.internal.util@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xerces.internal.utils(JDK/com.sun.org.apache.xerces.internal.utils@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xerces.internal.xinclude(JDK/com.sun.org.apache.xerces.internal.xinclude@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xerces.internal.xni(JDK/com.sun.org.apache.xerces.internal.xni@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xerces.internal.xni.grammars(JDK/com.sun.org.apache.xerces.internal.xni.grammars@java_stub)" />
@@ -266,9 +287,134 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.security.sasl.gsskerb(JDK/com.sun.security.sasl.gsskerb@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.security.sasl.util(JDK/com.sun.security.sasl.util@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.servicetag(JDK/com.sun.servicetag@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.source.tree(JDK/com.sun.source.tree@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.source.util(JDK/com.sun.source.util@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.swing.internal.plaf.basic.resources(JDK/com.sun.swing.internal.plaf.basic.resources@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.swing.internal.plaf.metal.resources(JDK/com.sun.swing.internal.plaf.metal.resources@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.swing.internal.plaf.synth.resources(JDK/com.sun.swing.internal.plaf.synth.resources@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.apt(JDK/com.sun.tools.apt@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.apt.comp(JDK/com.sun.tools.apt.comp@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.apt.main(JDK/com.sun.tools.apt.main@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.apt.mirror(JDK/com.sun.tools.apt.mirror@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.apt.mirror.apt(JDK/com.sun.tools.apt.mirror.apt@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.apt.mirror.declaration(JDK/com.sun.tools.apt.mirror.declaration@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.apt.mirror.type(JDK/com.sun.tools.apt.mirror.type@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.apt.mirror.util(JDK/com.sun.tools.apt.mirror.util@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.apt.resources(JDK/com.sun.tools.apt.resources@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.apt.util(JDK/com.sun.tools.apt.util@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.attach(JDK/com.sun.tools.attach@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.attach.spi(JDK/com.sun.tools.attach.spi@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.corba.se.idl(JDK/com.sun.tools.corba.se.idl@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.corba.se.idl.constExpr(JDK/com.sun.tools.corba.se.idl.constExpr@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.corba.se.idl.som.cff(JDK/com.sun.tools.corba.se.idl.som.cff@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.corba.se.idl.som.idlemit(JDK/com.sun.tools.corba.se.idl.som.idlemit@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.corba.se.idl.toJavaPortable(JDK/com.sun.tools.corba.se.idl.toJavaPortable@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.doclets(JDK/com.sun.tools.doclets@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.doclets.formats.html(JDK/com.sun.tools.doclets.formats.html@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.doclets.formats.html.markup(JDK/com.sun.tools.doclets.formats.html.markup@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.doclets.formats.html.resources(JDK/com.sun.tools.doclets.formats.html.resources@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.doclets.internal.toolkit(JDK/com.sun.tools.doclets.internal.toolkit@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.doclets.internal.toolkit.builders(JDK/com.sun.tools.doclets.internal.toolkit.builders@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.doclets.internal.toolkit.resources(JDK/com.sun.tools.doclets.internal.toolkit.resources@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.doclets.internal.toolkit.taglets(JDK/com.sun.tools.doclets.internal.toolkit.taglets@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.doclets.internal.toolkit.util(JDK/com.sun.tools.doclets.internal.toolkit.util@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.doclets.internal.toolkit.util.links(JDK/com.sun.tools.doclets.internal.toolkit.util.links@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.doclets.standard(JDK/com.sun.tools.doclets.standard@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.example.debug.bdi(JDK/com.sun.tools.example.debug.bdi@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.example.debug.event(JDK/com.sun.tools.example.debug.event@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.example.debug.expr(JDK/com.sun.tools.example.debug.expr@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.example.debug.gui(JDK/com.sun.tools.example.debug.gui@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.example.debug.tty(JDK/com.sun.tools.example.debug.tty@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.extcheck(JDK/com.sun.tools.extcheck@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.hat(JDK/com.sun.tools.hat@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.hat.internal.model(JDK/com.sun.tools.hat.internal.model@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.hat.internal.oql(JDK/com.sun.tools.hat.internal.oql@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.hat.internal.parser(JDK/com.sun.tools.hat.internal.parser@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.hat.internal.server(JDK/com.sun.tools.hat.internal.server@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.hat.internal.util(JDK/com.sun.tools.hat.internal.util@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.jxc(JDK/com.sun.tools.internal.jxc@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.jxc.apt(JDK/com.sun.tools.internal.jxc.apt@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.jxc.gen.config(JDK/com.sun.tools.internal.jxc.gen.config@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.jxc.model.nav(JDK/com.sun.tools.internal.jxc.model.nav@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws(JDK/com.sun.tools.internal.ws@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.api(JDK/com.sun.tools.internal.ws.api@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.api.wsdl(JDK/com.sun.tools.internal.ws.api.wsdl@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.processor(JDK/com.sun.tools.internal.ws.processor@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.processor.generator(JDK/com.sun.tools.internal.ws.processor.generator@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.processor.model(JDK/com.sun.tools.internal.ws.processor.model@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.processor.model.exporter(JDK/com.sun.tools.internal.ws.processor.model.exporter@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.processor.model.java(JDK/com.sun.tools.internal.ws.processor.model.java@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.processor.model.jaxb(JDK/com.sun.tools.internal.ws.processor.model.jaxb@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.processor.modeler(JDK/com.sun.tools.internal.ws.processor.modeler@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.processor.modeler.annotation(JDK/com.sun.tools.internal.ws.processor.modeler.annotation@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.processor.modeler.wsdl(JDK/com.sun.tools.internal.ws.processor.modeler.wsdl@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.processor.util(JDK/com.sun.tools.internal.ws.processor.util@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.resources(JDK/com.sun.tools.internal.ws.resources@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.spi(JDK/com.sun.tools.internal.ws.spi@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.util(JDK/com.sun.tools.internal.ws.util@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.util.xml(JDK/com.sun.tools.internal.ws.util.xml@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.wscompile(JDK/com.sun.tools.internal.ws.wscompile@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.wsdl.document(JDK/com.sun.tools.internal.ws.wsdl.document@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.wsdl.document.http(JDK/com.sun.tools.internal.ws.wsdl.document.http@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.wsdl.document.jaxws(JDK/com.sun.tools.internal.ws.wsdl.document.jaxws@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.wsdl.document.mime(JDK/com.sun.tools.internal.ws.wsdl.document.mime@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.wsdl.document.schema(JDK/com.sun.tools.internal.ws.wsdl.document.schema@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.wsdl.document.soap(JDK/com.sun.tools.internal.ws.wsdl.document.soap@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.wsdl.framework(JDK/com.sun.tools.internal.ws.wsdl.framework@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.wsdl.parser(JDK/com.sun.tools.internal.ws.wsdl.parser@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc(JDK/com.sun.tools.internal.xjc@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.addon.at_generated(JDK/com.sun.tools.internal.xjc.addon.at_generated@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.addon.code_injector(JDK/com.sun.tools.internal.xjc.addon.code_injector@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.addon.episode(JDK/com.sun.tools.internal.xjc.addon.episode@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.addon.locator(JDK/com.sun.tools.internal.xjc.addon.locator@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.addon.sync(JDK/com.sun.tools.internal.xjc.addon.sync@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.api(JDK/com.sun.tools.internal.xjc.api@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.api.impl.j2s(JDK/com.sun.tools.internal.xjc.api.impl.j2s@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.api.impl.s2j(JDK/com.sun.tools.internal.xjc.api.impl.s2j@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.api.util(JDK/com.sun.tools.internal.xjc.api.util@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.generator.annotation.ri(JDK/com.sun.tools.internal.xjc.generator.annotation.ri@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.generator.annotation.spec(JDK/com.sun.tools.internal.xjc.generator.annotation.spec@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.generator.bean(JDK/com.sun.tools.internal.xjc.generator.bean@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.generator.bean.field(JDK/com.sun.tools.internal.xjc.generator.bean.field@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.generator.util(JDK/com.sun.tools.internal.xjc.generator.util@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.model(JDK/com.sun.tools.internal.xjc.model@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.model.nav(JDK/com.sun.tools.internal.xjc.model.nav@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.outline(JDK/com.sun.tools.internal.xjc.outline@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.reader(JDK/com.sun.tools.internal.xjc.reader@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.reader.dtd(JDK/com.sun.tools.internal.xjc.reader.dtd@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.reader.dtd.bindinfo(JDK/com.sun.tools.internal.xjc.reader.dtd.bindinfo@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.reader.gbind(JDK/com.sun.tools.internal.xjc.reader.gbind@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.reader.internalizer(JDK/com.sun.tools.internal.xjc.reader.internalizer@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.reader.relaxng(JDK/com.sun.tools.internal.xjc.reader.relaxng@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.reader.xmlschema(JDK/com.sun.tools.internal.xjc.reader.xmlschema@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.reader.xmlschema.bindinfo(JDK/com.sun.tools.internal.xjc.reader.xmlschema.bindinfo@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.reader.xmlschema.ct(JDK/com.sun.tools.internal.xjc.reader.xmlschema.ct@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.reader.xmlschema.parser(JDK/com.sun.tools.internal.xjc.reader.xmlschema.parser@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.runtime(JDK/com.sun.tools.internal.xjc.runtime@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.util(JDK/com.sun.tools.internal.xjc.util@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.writer(JDK/com.sun.tools.internal.xjc.writer@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac(JDK/com.sun.tools.javac@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.api(JDK/com.sun.tools.javac.api@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.code(JDK/com.sun.tools.javac.code@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.comp(JDK/com.sun.tools.javac.comp@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.jvm(JDK/com.sun.tools.javac.jvm@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.main(JDK/com.sun.tools.javac.main@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.model(JDK/com.sun.tools.javac.model@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.parser(JDK/com.sun.tools.javac.parser@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.processing(JDK/com.sun.tools.javac.processing@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.resources(JDK/com.sun.tools.javac.resources@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.sym(JDK/com.sun.tools.javac.sym@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.tree(JDK/com.sun.tools.javac.tree@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.util(JDK/com.sun.tools.javac.util@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.zip(JDK/com.sun.tools.javac.zip@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javadoc(JDK/com.sun.tools.javadoc@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javadoc.resources(JDK/com.sun.tools.javadoc.resources@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javah(JDK/com.sun.tools.javah@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javah.oldjavah(JDK/com.sun.tools.javah.oldjavah@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.jdi(JDK/com.sun.tools.jdi@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.jdi.resources(JDK/com.sun.tools.jdi.resources@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.jdwpgen(JDK/com.sun.tools.jdwpgen@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.script.shell(JDK/com.sun.tools.script.shell@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.bind(JDK/com.sun.xml.internal.bind@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.bind.annotation(JDK/com.sun.xml.internal.bind.annotation@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.bind.api(JDK/com.sun.xml.internal.bind.api@java_stub)" />
@@ -293,6 +439,7 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.bind.v2.schemagen.episode(JDK/com.sun.xml.internal.bind.v2.schemagen.episode@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.bind.v2.schemagen.xmlschema(JDK/com.sun.xml.internal.bind.v2.schemagen.xmlschema@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.bind.v2.util(JDK/com.sun.xml.internal.bind.v2.util@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.dtdparser(JDK/com.sun.xml.internal.dtdparser@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.fastinfoset(JDK/com.sun.xml.internal.fastinfoset@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.fastinfoset.algorithm(JDK/com.sun.xml.internal.fastinfoset.algorithm@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.fastinfoset.alphabet(JDK/com.sun.xml.internal.fastinfoset.alphabet@java_stub)" />
@@ -325,6 +472,22 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.org.jvnet.fastinfoset.stax(JDK/com.sun.xml.internal.org.jvnet.fastinfoset.stax@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.org.jvnet.mimepull(JDK/com.sun.xml.internal.org.jvnet.mimepull@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.org.jvnet.staxex(JDK/com.sun.xml.internal.org.jvnet.staxex@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.ast.builder(JDK/com.sun.xml.internal.rngom.ast.builder@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.ast.om(JDK/com.sun.xml.internal.rngom.ast.om@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.ast.util(JDK/com.sun.xml.internal.rngom.ast.util@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.binary(JDK/com.sun.xml.internal.rngom.binary@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.binary.visitor(JDK/com.sun.xml.internal.rngom.binary.visitor@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.digested(JDK/com.sun.xml.internal.rngom.digested@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.dt(JDK/com.sun.xml.internal.rngom.dt@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.dt.builtin(JDK/com.sun.xml.internal.rngom.dt.builtin@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.nc(JDK/com.sun.xml.internal.rngom.nc@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.parse(JDK/com.sun.xml.internal.rngom.parse@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.parse.compact(JDK/com.sun.xml.internal.rngom.parse.compact@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.parse.host(JDK/com.sun.xml.internal.rngom.parse.host@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.parse.xml(JDK/com.sun.xml.internal.rngom.parse.xml@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.util(JDK/com.sun.xml.internal.rngom.util@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.xml.sax(JDK/com.sun.xml.internal.rngom.xml.sax@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.xml.util(JDK/com.sun.xml.internal.rngom.xml.util@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.stream(JDK/com.sun.xml.internal.stream@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.stream.buffer(JDK/com.sun.xml.internal.stream.buffer@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.stream.buffer.sax(JDK/com.sun.xml.internal.stream.buffer.sax@java_stub)" />
@@ -402,6 +565,15 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.ws.wsdl.writer.document.soap(JDK/com.sun.xml.internal.ws.wsdl.writer.document.soap@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.ws.wsdl.writer.document.soap12(JDK/com.sun.xml.internal.ws.wsdl.writer.document.soap12@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.ws.wsdl.writer.document.xsd(JDK/com.sun.xml.internal.ws.wsdl.writer.document.xsd@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.xsom(JDK/com.sun.xml.internal.xsom@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.xsom.impl(JDK/com.sun.xml.internal.xsom.impl@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.xsom.impl.parser(JDK/com.sun.xml.internal.xsom.impl.parser@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.xsom.impl.parser.state(JDK/com.sun.xml.internal.xsom.impl.parser.state@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.xsom.impl.scd(JDK/com.sun.xml.internal.xsom.impl.scd@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.xsom.impl.util(JDK/com.sun.xml.internal.xsom.impl.util@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.xsom.parser(JDK/com.sun.xml.internal.xsom.parser@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.xsom.util(JDK/com.sun.xml.internal.xsom.util@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.xsom.visitor(JDK/com.sun.xml.internal.xsom.visitor@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.applet(JDK/java.applet@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.color(JDK/java.awt.color@java_stub)" />
@@ -604,6 +776,8 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.omg.SendingContext(JDK/org.omg.SendingContext@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.omg.stub.java.rmi(JDK/org.omg.stub.java.rmi@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.omg.stub.javax.management.remote.rmi(JDK/org.omg.stub.javax.management.remote.rmi@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.relaxng.datatype(JDK/org.relaxng.datatype@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.relaxng.datatype.helpers(JDK/org.relaxng.datatype.helpers@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.w3c.dom(JDK/org.w3c.dom@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.w3c.dom.bootstrap(JDK/org.w3c.dom.bootstrap@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.w3c.dom.css(JDK/org.w3c.dom.css@java_stub)" />
@@ -622,7 +796,6 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.applet.resources(JDK/sun.applet.resources@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.audio(JDK/sun.audio@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt(JDK/sun.awt@java_stub)" />
-  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.X11(JDK/sun.awt.X11@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.color(JDK/sun.awt.color@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.datatransfer(JDK/sun.awt.datatransfer@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.dnd(JDK/sun.awt.dnd@java_stub)" />
@@ -631,7 +804,6 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.im(JDK/sun.awt.im@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.image(JDK/sun.awt.image@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.image.codec(JDK/sun.awt.image.codec@java_stub)" />
-  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.motif(JDK/sun.awt.motif@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.resources(JDK/sun.awt.resources@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.shell(JDK/sun.awt.shell@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.util(JDK/sun.awt.util@java_stub)" />
@@ -649,10 +821,16 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d.opengl(JDK/sun.java2d.opengl@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d.pipe(JDK/sun.java2d.pipe@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d.pipe.hw(JDK/sun.java2d.pipe.hw@java_stub)" />
-  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d.x11(JDK/sun.java2d.x11@java_stub)" />
-  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jdbc.odbc(JDK/sun.jdbc.odbc@java_stub)" />
-  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jdbc.odbc.ee(JDK/sun.jdbc.odbc.ee@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jkernel(JDK/sun.jkernel@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jvmstat.monitor(JDK/sun.jvmstat.monitor@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jvmstat.monitor.event(JDK/sun.jvmstat.monitor.event@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jvmstat.monitor.remote(JDK/sun.jvmstat.monitor.remote@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jvmstat.perfdata.monitor(JDK/sun.jvmstat.perfdata.monitor@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jvmstat.perfdata.monitor.protocol.file(JDK/sun.jvmstat.perfdata.monitor.protocol.file@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jvmstat.perfdata.monitor.protocol.local(JDK/sun.jvmstat.perfdata.monitor.protocol.local@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jvmstat.perfdata.monitor.protocol.rmi(JDK/sun.jvmstat.perfdata.monitor.protocol.rmi@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jvmstat.perfdata.monitor.v1_0(JDK/sun.jvmstat.perfdata.monitor.v1_0@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jvmstat.perfdata.monitor.v2_0(JDK/sun.jvmstat.perfdata.monitor.v2_0@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.management(JDK/sun.management@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.management.counter(JDK/sun.management.counter@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.management.counter.perf(JDK/sun.management.counter.perf@java_stub)" />
@@ -713,6 +891,10 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.reflect.misc(JDK/sun.reflect.misc@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.rmi.log(JDK/sun.rmi.log@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.rmi.registry(JDK/sun.rmi.registry@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.rmi.rmic(JDK/sun.rmi.rmic@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.rmi.rmic.iiop(JDK/sun.rmi.rmic.iiop@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.rmi.rmic.newrmic(JDK/sun.rmi.rmic.newrmic@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.rmi.rmic.newrmic.jrmp(JDK/sun.rmi.rmic.newrmic.jrmp@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.rmi.runtime(JDK/sun.rmi.runtime@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.rmi.server(JDK/sun.rmi.server@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.rmi.transport(JDK/sun.rmi.transport@java_stub)" />
@@ -758,9 +940,26 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.text(JDK/sun.text@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.text.normalizer(JDK/sun.text.normalizer@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.text.resources(JDK/sun.text.resources@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.asm(JDK/sun.tools.asm@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.attach(JDK/sun.tools.attach@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.hprof(JDK/sun.tools.hprof@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.jar(JDK/sun.tools.jar@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.jar.resources(JDK/sun.tools.jar.resources@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.java(JDK/sun.tools.java@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.javac(JDK/sun.tools.javac@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.javap(JDK/sun.tools.javap@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.javap.oldjavap(JDK/sun.tools.javap.oldjavap@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.jinfo(JDK/sun.tools.jinfo@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.jmap(JDK/sun.tools.jmap@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.jps(JDK/sun.tools.jps@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.jstack(JDK/sun.tools.jstack@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.jstat(JDK/sun.tools.jstat@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.jstatd(JDK/sun.tools.jstatd@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.native2ascii(JDK/sun.tools.native2ascii@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.native2ascii.resources(JDK/sun.tools.native2ascii.resources@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.serialver(JDK/sun.tools.serialver@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.tree(JDK/sun.tools.tree@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.util(JDK/sun.tools.util@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.util(JDK/sun.util@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.util.calendar(JDK/sun.util.calendar@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.util.logging.resources(JDK/sun.util.logging.resources@java_stub)" />
@@ -775,20 +974,18 @@
   <dep model="f:java_stub#69934240-945d-492b-83e7-39bda70200e7#org.eclipse.swt.widgets(jetbrains.mps.ui.swt.runtime/org.eclipse.swt.widgets@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator(MPS.Core/jetbrains.mps.generator@java_stub)" />
   <dep model="f:java_stub#acc947bf-6778-444a-9dc7-4cc72d4eb3d0#org.jdesktop.swingx(jetbrains.mps.ui.swing.runtime/org.jdesktop.swingx@java_stub)" />
-  <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.core.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.core.client@java_stub)" />
   <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.dom.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.dom.client@java_stub)" />
   <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.event.dom.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.event.dom.client@java_stub)" />
   <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.event.logical.shared(jetbrains.mps.ui.gwt.runtime/com.google.gwt.event.logical.shared@java_stub)" />
   <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.event.shared(jetbrains.mps.ui.gwt.runtime/com.google.gwt.event.shared@java_stub)" />
-  <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.i18n.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.i18n.client@java_stub)" />
   <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client@java_stub)" />
   <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client.ui(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client.ui@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" hash="cxs30hywoxhaecg9wtrurzo74jw35te" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="21snxjnsdyx017gstofkv07qfwhy8bp" />
-  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="-crtg4vs6yxraskvde9q8ts2cdallgek" />
+  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="a1t48y5wxif0oizh315dy2n3pez6515" />
   <dep model="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" hash="59n2gedme5x59v3mb58pov4k35k6zjr" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2zzibu7tqv74frgzpnz5uza1ucknhwm" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2eqrjs8emy551teprj5no9utk82ifsq" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-cjp3x7kpslsgnhml4bi405qvj66t1vk" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dweusve4s1cnqvm1h7144swvj24rs4o" />
@@ -796,7 +993,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="bpm5l8tzdjl5ob7wfspdm9ighcx2egt" />
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="4yv3i228jsj4eigv2gbdxz34tjdaulm" />
   <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="-9sj32mv0hwby4m1dw4kwbtoapvsjysk" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-6md5g2h2acbyqtqsfqzg1ljuryigg5c" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-ajx3tbmj913lpllsy57180fd07jxqa3" />
   <dep model="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" hash="abstjwzsff5xdtew6irj8qr36p79xyd" />
   <dep model="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" hash="etiwap825aq5emlq6tt82yi5a7cobpk" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="2477vbyvtzsh7vo3tr3tayoxjyljmo5" />
@@ -815,13 +1012,12 @@
   <dep model="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" hash="-bjm41joiinsaf4eq4vwvx8oxwy3uze2" />
   <dep model="r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)" hash="-93x58l6yxe8ffxoe1ce6y6aezr19bqr" />
   <dep model="r:39023b18-af4f-44db-bcb1-c118a59086cd(jetbrains.mps.ui.generator.template.meta@generator)" hash="-4e4dv6xz04iuvsdfhgw8e84rxasa8he" />
-  <dep model="r:448d8730-24ed-4789-a1c7-efd9de20f14b(jetbrains.mps.ui.internal.structure)" hash="aqgerkn9hk53019t9lznfgbccu43835" />
   <dep model="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)" hash="-1u2bq8uvpsv9d10mcyyhyl5go09nn56" />
   <dep model="r:4bcef4e7-5bde-4076-8e02-73a0681ac6a3(jetbrains.mps.ui.structure)" hash="-8syy44b3wbbpkf24lbc99xsmiziwpzh" />
   <dep model="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" hash="-cqyqskrem7nlgpo1xelcebhd8lj9wq1" />
   <dep model="r:517e9ae1-a31e-409f-939e-e3818e8527df(jetbrains.mps.ui.gwt.structure)" hash="-2d2ap659jik25ccy9jwfpoaope76nl7" />
   <dep model="r:51efe78a-da84-4c87-b8b1-cd2e544fddd2(jetbrains.mps.ui.modeling.ann)" hash="-bif5boeesspp43qhjz7aimtnsc545hi" />
-  <dep model="r:66bbcfbe-bddf-4df7-8bd5-fa076512c024(jetbrains.mps.ui.generator.template.variants@generator)" hash="-b7lmv01t39t8rbzasrj8sh9nioryk45" />
+  <dep model="r:66bbcfbe-bddf-4df7-8bd5-fa076512c024(jetbrains.mps.ui.generator.template.variants@generator)" hash="-ara98zc0lg7riuy7td7ocist285mb66" />
   <dep model="r:6878192c-cfd9-411c-9af0-6054cf03c27f(jetbrains.mps.ui.gwt.generator.template.main@generator)" hash="36bnmrdg9oxy7isiajvb5trx6y5ayg0" />
   <dep model="r:6e5f3f83-4279-433d-9603-0c8b89b682e3(jetbrains.mps.ui.gwt.events)" />
   <dep model="r:73e6a865-ca49-4dc1-9fd2-b963d45d4e87(jetbrains.mps.ui.swt.generator.template.main@generator)" hash="67gl4xtzz6zvbl83ppezqogissfhm8l" />
@@ -829,7 +1025,6 @@
   <dep model="r:840b989b-d75d-4268-abaa-4676d1720c58(jetbrains.mps.ui.events)" />
   <dep model="r:86ee6b4b-6b14-4232-a964-c35c292583ac(jetbrains.mps.ui.gwt.generator.template.helper)" hash="3ylm0yzjp8eo96is00ow213cmrrjjr3" />
   <dep model="r:8999af71-8d74-463c-91cf-52b8c2875292(jetbrains.mps.ui.swt.structure)" hash="-cz5d6o5gg869c0gtmoiv2n518b5f6s4" />
-  <dep model="r:940623f0-75cf-4f64-98fc-aef3fadfaedd(jetbrains.mps.gwt.client.structure)" hash="-4a7o0b26g21gix95hm0g9kug9sozt6z" />
   <dep model="r:9e833b11-a3b9-451a-a8dc-35cf0834f311(jetbrains.mps.ui.swt.runtime.layout)" hash="-8nkr6ggg2b16dw2frqttf31p9t8m4c6" />
   <dep model="r:a145b87e-922a-44dc-a6ab-743b516afc3a(jetbrains.mps.ui.swing.behavior)" hash="41rginxyo1fz17bcvit6vr45ht74rel" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-3223m9cg8337am9br9ikluvywbkblf4" />
@@ -863,8 +1058,11 @@
     <dep root="7046856741208199003" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.accessibility(JDK/javax.accessibility@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.table(JDK/javax.swing.table@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.text(JDK/javax.swing.text@java_stub)" />
@@ -880,6 +1078,7 @@
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.dom.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.dom.client@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.event.logical.shared(jetbrains.mps.ui.gwt.runtime/com.google.gwt.event.logical.shared@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.event.shared(jetbrains.mps.ui.gwt.runtime/com.google.gwt.event.shared@java_stub)" />
+    <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client.ui(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client.ui@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -947,11 +1146,17 @@
   <source id="7046856741208290890" name="UIDemo" hash="e2vkkkzkm4rfa75k48meil0x98po2br">
     <dep model="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.user(jetbrains.mps.gwt.client/com.google.gwt.user@gwt_stub)" />
     <dep model="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.user.theme.standard(jetbrains.mps.gwt.client/com.google.gwt.user.theme.standard@gwt_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.apple.java(JDK/com.apple.java@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.oracle.net(JDK/com.oracle.net@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.oracle.nio(JDK/com.oracle.nio@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.accessibility.internal.resources(JDK/com.sun.accessibility.internal.resources@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.activation.registries(JDK/com.sun.activation.registries@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.awt(JDK/com.sun.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.beans(JDK/com.sun.beans@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.codemodel.internal(JDK/com.sun.codemodel.internal@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.codemodel.internal.fmt(JDK/com.sun.codemodel.internal.fmt@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.codemodel.internal.util(JDK/com.sun.codemodel.internal.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.codemodel.internal.writer(JDK/com.sun.codemodel.internal.writer@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.corba.se.impl.activation(JDK/com.sun.corba.se.impl.activation@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.corba.se.impl.copyobject(JDK/com.sun.corba.se.impl.copyobject@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.corba.se.impl.corba(JDK/com.sun.corba.se.impl.corba@java_stub)" />
@@ -1032,6 +1237,9 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.imageio.stream(JDK/com.sun.imageio.stream@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.istack.internal(JDK/com.sun.istack.internal@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.istack.internal.localization(JDK/com.sun.istack.internal.localization@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.istack.internal.tools(JDK/com.sun.istack.internal.tools@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.istack.internal.ws(JDK/com.sun.istack.internal.ws@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jarsigner(JDK/com.sun.jarsigner@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.browser.dom(JDK/com.sun.java.browser.dom@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.browser.net(JDK/com.sun.java.browser.net@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.swing(JDK/com.sun.java.swing@java_stub)" />
@@ -1044,6 +1252,12 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.swing.plaf.windows.resources(JDK/com.sun.java.swing.plaf.windows.resources@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.util.jar.pack(JDK/com.sun.java.util.jar.pack@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java_cup.internal.runtime(JDK/com.sun.java_cup.internal.runtime@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.javadoc(JDK/com.sun.javadoc@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi.connect(JDK/com.sun.jdi.connect@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi.connect.spi(JDK/com.sun.jdi.connect.spi@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi.event(JDK/com.sun.jdi.event@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi.request(JDK/com.sun.jdi.request@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jmx.defaults(JDK/com.sun.jmx.defaults@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jmx.interceptor(JDK/com.sun.jmx.interceptor@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jmx.mbeanserver(JDK/com.sun.jmx.mbeanserver@java_stub)" />
@@ -1082,6 +1296,10 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.management(JDK/com.sun.management@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.management.jmx(JDK/com.sun.management.jmx@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.media.sound(JDK/com.sun.media.sound@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.mirror.apt(JDK/com.sun.mirror.apt@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.mirror.declaration(JDK/com.sun.mirror.declaration@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.mirror.type(JDK/com.sun.mirror.type@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.mirror.util(JDK/com.sun.mirror.util@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.naming.internal(JDK/com.sun.naming.internal@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.net.httpserver(JDK/com.sun.net.httpserver@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.net.httpserver.spi(JDK/com.sun.net.httpserver.spi@java_stub)" />
@@ -1099,6 +1317,7 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xalan.internal.lib(JDK/com.sun.org.apache.xalan.internal.lib@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xalan.internal.res(JDK/com.sun.org.apache.xalan.internal.res@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xalan.internal.templates(JDK/com.sun.org.apache.xalan.internal.templates@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xalan.internal.utils(JDK/com.sun.org.apache.xalan.internal.utils@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xalan.internal.xslt(JDK/com.sun.org.apache.xalan.internal.xslt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xalan.internal.xsltc(JDK/com.sun.org.apache.xalan.internal.xsltc@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xalan.internal.xsltc.cmdline(JDK/com.sun.org.apache.xalan.internal.xsltc.cmdline@java_stub)" />
@@ -1135,6 +1354,7 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xerces.internal.jaxp.validation(JDK/com.sun.org.apache.xerces.internal.jaxp.validation@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xerces.internal.parsers(JDK/com.sun.org.apache.xerces.internal.parsers@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xerces.internal.util(JDK/com.sun.org.apache.xerces.internal.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xerces.internal.utils(JDK/com.sun.org.apache.xerces.internal.utils@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xerces.internal.xinclude(JDK/com.sun.org.apache.xerces.internal.xinclude@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xerces.internal.xni(JDK/com.sun.org.apache.xerces.internal.xni@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.org.apache.xerces.internal.xni.grammars(JDK/com.sun.org.apache.xerces.internal.xni.grammars@java_stub)" />
@@ -1211,9 +1431,134 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.security.sasl.gsskerb(JDK/com.sun.security.sasl.gsskerb@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.security.sasl.util(JDK/com.sun.security.sasl.util@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.servicetag(JDK/com.sun.servicetag@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.source.tree(JDK/com.sun.source.tree@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.source.util(JDK/com.sun.source.util@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.swing.internal.plaf.basic.resources(JDK/com.sun.swing.internal.plaf.basic.resources@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.swing.internal.plaf.metal.resources(JDK/com.sun.swing.internal.plaf.metal.resources@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.swing.internal.plaf.synth.resources(JDK/com.sun.swing.internal.plaf.synth.resources@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.apt(JDK/com.sun.tools.apt@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.apt.comp(JDK/com.sun.tools.apt.comp@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.apt.main(JDK/com.sun.tools.apt.main@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.apt.mirror(JDK/com.sun.tools.apt.mirror@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.apt.mirror.apt(JDK/com.sun.tools.apt.mirror.apt@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.apt.mirror.declaration(JDK/com.sun.tools.apt.mirror.declaration@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.apt.mirror.type(JDK/com.sun.tools.apt.mirror.type@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.apt.mirror.util(JDK/com.sun.tools.apt.mirror.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.apt.resources(JDK/com.sun.tools.apt.resources@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.apt.util(JDK/com.sun.tools.apt.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.attach(JDK/com.sun.tools.attach@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.attach.spi(JDK/com.sun.tools.attach.spi@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.corba.se.idl(JDK/com.sun.tools.corba.se.idl@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.corba.se.idl.constExpr(JDK/com.sun.tools.corba.se.idl.constExpr@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.corba.se.idl.som.cff(JDK/com.sun.tools.corba.se.idl.som.cff@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.corba.se.idl.som.idlemit(JDK/com.sun.tools.corba.se.idl.som.idlemit@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.corba.se.idl.toJavaPortable(JDK/com.sun.tools.corba.se.idl.toJavaPortable@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.doclets(JDK/com.sun.tools.doclets@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.doclets.formats.html(JDK/com.sun.tools.doclets.formats.html@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.doclets.formats.html.markup(JDK/com.sun.tools.doclets.formats.html.markup@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.doclets.formats.html.resources(JDK/com.sun.tools.doclets.formats.html.resources@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.doclets.internal.toolkit(JDK/com.sun.tools.doclets.internal.toolkit@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.doclets.internal.toolkit.builders(JDK/com.sun.tools.doclets.internal.toolkit.builders@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.doclets.internal.toolkit.resources(JDK/com.sun.tools.doclets.internal.toolkit.resources@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.doclets.internal.toolkit.taglets(JDK/com.sun.tools.doclets.internal.toolkit.taglets@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.doclets.internal.toolkit.util(JDK/com.sun.tools.doclets.internal.toolkit.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.doclets.internal.toolkit.util.links(JDK/com.sun.tools.doclets.internal.toolkit.util.links@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.doclets.standard(JDK/com.sun.tools.doclets.standard@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.example.debug.bdi(JDK/com.sun.tools.example.debug.bdi@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.example.debug.event(JDK/com.sun.tools.example.debug.event@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.example.debug.expr(JDK/com.sun.tools.example.debug.expr@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.example.debug.gui(JDK/com.sun.tools.example.debug.gui@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.example.debug.tty(JDK/com.sun.tools.example.debug.tty@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.extcheck(JDK/com.sun.tools.extcheck@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.hat(JDK/com.sun.tools.hat@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.hat.internal.model(JDK/com.sun.tools.hat.internal.model@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.hat.internal.oql(JDK/com.sun.tools.hat.internal.oql@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.hat.internal.parser(JDK/com.sun.tools.hat.internal.parser@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.hat.internal.server(JDK/com.sun.tools.hat.internal.server@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.hat.internal.util(JDK/com.sun.tools.hat.internal.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.jxc(JDK/com.sun.tools.internal.jxc@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.jxc.apt(JDK/com.sun.tools.internal.jxc.apt@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.jxc.gen.config(JDK/com.sun.tools.internal.jxc.gen.config@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.jxc.model.nav(JDK/com.sun.tools.internal.jxc.model.nav@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws(JDK/com.sun.tools.internal.ws@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.api(JDK/com.sun.tools.internal.ws.api@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.api.wsdl(JDK/com.sun.tools.internal.ws.api.wsdl@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.processor(JDK/com.sun.tools.internal.ws.processor@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.processor.generator(JDK/com.sun.tools.internal.ws.processor.generator@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.processor.model(JDK/com.sun.tools.internal.ws.processor.model@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.processor.model.exporter(JDK/com.sun.tools.internal.ws.processor.model.exporter@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.processor.model.java(JDK/com.sun.tools.internal.ws.processor.model.java@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.processor.model.jaxb(JDK/com.sun.tools.internal.ws.processor.model.jaxb@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.processor.modeler(JDK/com.sun.tools.internal.ws.processor.modeler@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.processor.modeler.annotation(JDK/com.sun.tools.internal.ws.processor.modeler.annotation@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.processor.modeler.wsdl(JDK/com.sun.tools.internal.ws.processor.modeler.wsdl@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.processor.util(JDK/com.sun.tools.internal.ws.processor.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.resources(JDK/com.sun.tools.internal.ws.resources@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.spi(JDK/com.sun.tools.internal.ws.spi@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.util(JDK/com.sun.tools.internal.ws.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.util.xml(JDK/com.sun.tools.internal.ws.util.xml@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.wscompile(JDK/com.sun.tools.internal.ws.wscompile@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.wsdl.document(JDK/com.sun.tools.internal.ws.wsdl.document@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.wsdl.document.http(JDK/com.sun.tools.internal.ws.wsdl.document.http@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.wsdl.document.jaxws(JDK/com.sun.tools.internal.ws.wsdl.document.jaxws@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.wsdl.document.mime(JDK/com.sun.tools.internal.ws.wsdl.document.mime@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.wsdl.document.schema(JDK/com.sun.tools.internal.ws.wsdl.document.schema@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.wsdl.document.soap(JDK/com.sun.tools.internal.ws.wsdl.document.soap@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.wsdl.framework(JDK/com.sun.tools.internal.ws.wsdl.framework@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.ws.wsdl.parser(JDK/com.sun.tools.internal.ws.wsdl.parser@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc(JDK/com.sun.tools.internal.xjc@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.addon.at_generated(JDK/com.sun.tools.internal.xjc.addon.at_generated@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.addon.code_injector(JDK/com.sun.tools.internal.xjc.addon.code_injector@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.addon.episode(JDK/com.sun.tools.internal.xjc.addon.episode@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.addon.locator(JDK/com.sun.tools.internal.xjc.addon.locator@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.addon.sync(JDK/com.sun.tools.internal.xjc.addon.sync@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.api(JDK/com.sun.tools.internal.xjc.api@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.api.impl.j2s(JDK/com.sun.tools.internal.xjc.api.impl.j2s@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.api.impl.s2j(JDK/com.sun.tools.internal.xjc.api.impl.s2j@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.api.util(JDK/com.sun.tools.internal.xjc.api.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.generator.annotation.ri(JDK/com.sun.tools.internal.xjc.generator.annotation.ri@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.generator.annotation.spec(JDK/com.sun.tools.internal.xjc.generator.annotation.spec@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.generator.bean(JDK/com.sun.tools.internal.xjc.generator.bean@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.generator.bean.field(JDK/com.sun.tools.internal.xjc.generator.bean.field@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.generator.util(JDK/com.sun.tools.internal.xjc.generator.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.model(JDK/com.sun.tools.internal.xjc.model@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.model.nav(JDK/com.sun.tools.internal.xjc.model.nav@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.outline(JDK/com.sun.tools.internal.xjc.outline@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.reader(JDK/com.sun.tools.internal.xjc.reader@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.reader.dtd(JDK/com.sun.tools.internal.xjc.reader.dtd@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.reader.dtd.bindinfo(JDK/com.sun.tools.internal.xjc.reader.dtd.bindinfo@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.reader.gbind(JDK/com.sun.tools.internal.xjc.reader.gbind@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.reader.internalizer(JDK/com.sun.tools.internal.xjc.reader.internalizer@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.reader.relaxng(JDK/com.sun.tools.internal.xjc.reader.relaxng@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.reader.xmlschema(JDK/com.sun.tools.internal.xjc.reader.xmlschema@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.reader.xmlschema.bindinfo(JDK/com.sun.tools.internal.xjc.reader.xmlschema.bindinfo@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.reader.xmlschema.ct(JDK/com.sun.tools.internal.xjc.reader.xmlschema.ct@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.reader.xmlschema.parser(JDK/com.sun.tools.internal.xjc.reader.xmlschema.parser@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.runtime(JDK/com.sun.tools.internal.xjc.runtime@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.util(JDK/com.sun.tools.internal.xjc.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.internal.xjc.writer(JDK/com.sun.tools.internal.xjc.writer@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac(JDK/com.sun.tools.javac@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.api(JDK/com.sun.tools.javac.api@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.code(JDK/com.sun.tools.javac.code@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.comp(JDK/com.sun.tools.javac.comp@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.jvm(JDK/com.sun.tools.javac.jvm@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.main(JDK/com.sun.tools.javac.main@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.model(JDK/com.sun.tools.javac.model@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.parser(JDK/com.sun.tools.javac.parser@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.processing(JDK/com.sun.tools.javac.processing@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.resources(JDK/com.sun.tools.javac.resources@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.sym(JDK/com.sun.tools.javac.sym@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.tree(JDK/com.sun.tools.javac.tree@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.util(JDK/com.sun.tools.javac.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javac.zip(JDK/com.sun.tools.javac.zip@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javadoc(JDK/com.sun.tools.javadoc@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javadoc.resources(JDK/com.sun.tools.javadoc.resources@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javah(JDK/com.sun.tools.javah@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.javah.oldjavah(JDK/com.sun.tools.javah.oldjavah@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.jdi(JDK/com.sun.tools.jdi@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.jdi.resources(JDK/com.sun.tools.jdi.resources@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.jdwpgen(JDK/com.sun.tools.jdwpgen@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.tools.script.shell(JDK/com.sun.tools.script.shell@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.bind(JDK/com.sun.xml.internal.bind@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.bind.annotation(JDK/com.sun.xml.internal.bind.annotation@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.bind.api(JDK/com.sun.xml.internal.bind.api@java_stub)" />
@@ -1238,6 +1583,7 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.bind.v2.schemagen.episode(JDK/com.sun.xml.internal.bind.v2.schemagen.episode@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.bind.v2.schemagen.xmlschema(JDK/com.sun.xml.internal.bind.v2.schemagen.xmlschema@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.bind.v2.util(JDK/com.sun.xml.internal.bind.v2.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.dtdparser(JDK/com.sun.xml.internal.dtdparser@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.fastinfoset(JDK/com.sun.xml.internal.fastinfoset@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.fastinfoset.algorithm(JDK/com.sun.xml.internal.fastinfoset.algorithm@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.fastinfoset.alphabet(JDK/com.sun.xml.internal.fastinfoset.alphabet@java_stub)" />
@@ -1270,6 +1616,22 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.org.jvnet.fastinfoset.stax(JDK/com.sun.xml.internal.org.jvnet.fastinfoset.stax@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.org.jvnet.mimepull(JDK/com.sun.xml.internal.org.jvnet.mimepull@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.org.jvnet.staxex(JDK/com.sun.xml.internal.org.jvnet.staxex@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.ast.builder(JDK/com.sun.xml.internal.rngom.ast.builder@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.ast.om(JDK/com.sun.xml.internal.rngom.ast.om@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.ast.util(JDK/com.sun.xml.internal.rngom.ast.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.binary(JDK/com.sun.xml.internal.rngom.binary@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.binary.visitor(JDK/com.sun.xml.internal.rngom.binary.visitor@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.digested(JDK/com.sun.xml.internal.rngom.digested@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.dt(JDK/com.sun.xml.internal.rngom.dt@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.dt.builtin(JDK/com.sun.xml.internal.rngom.dt.builtin@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.nc(JDK/com.sun.xml.internal.rngom.nc@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.parse(JDK/com.sun.xml.internal.rngom.parse@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.parse.compact(JDK/com.sun.xml.internal.rngom.parse.compact@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.parse.host(JDK/com.sun.xml.internal.rngom.parse.host@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.parse.xml(JDK/com.sun.xml.internal.rngom.parse.xml@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.util(JDK/com.sun.xml.internal.rngom.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.xml.sax(JDK/com.sun.xml.internal.rngom.xml.sax@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.rngom.xml.util(JDK/com.sun.xml.internal.rngom.xml.util@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.stream(JDK/com.sun.xml.internal.stream@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.stream.buffer(JDK/com.sun.xml.internal.stream.buffer@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.stream.buffer.sax(JDK/com.sun.xml.internal.stream.buffer.sax@java_stub)" />
@@ -1347,6 +1709,15 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.ws.wsdl.writer.document.soap(JDK/com.sun.xml.internal.ws.wsdl.writer.document.soap@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.ws.wsdl.writer.document.soap12(JDK/com.sun.xml.internal.ws.wsdl.writer.document.soap12@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.ws.wsdl.writer.document.xsd(JDK/com.sun.xml.internal.ws.wsdl.writer.document.xsd@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.xsom(JDK/com.sun.xml.internal.xsom@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.xsom.impl(JDK/com.sun.xml.internal.xsom.impl@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.xsom.impl.parser(JDK/com.sun.xml.internal.xsom.impl.parser@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.xsom.impl.parser.state(JDK/com.sun.xml.internal.xsom.impl.parser.state@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.xsom.impl.scd(JDK/com.sun.xml.internal.xsom.impl.scd@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.xsom.impl.util(JDK/com.sun.xml.internal.xsom.impl.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.xsom.parser(JDK/com.sun.xml.internal.xsom.parser@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.xsom.util(JDK/com.sun.xml.internal.xsom.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.xml.internal.xsom.visitor(JDK/com.sun.xml.internal.xsom.visitor@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.applet(JDK/java.applet@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.color(JDK/java.awt.color@java_stub)" />
@@ -1549,6 +1920,8 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.omg.SendingContext(JDK/org.omg.SendingContext@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.omg.stub.java.rmi(JDK/org.omg.stub.java.rmi@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.omg.stub.javax.management.remote.rmi(JDK/org.omg.stub.javax.management.remote.rmi@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.relaxng.datatype(JDK/org.relaxng.datatype@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.relaxng.datatype.helpers(JDK/org.relaxng.datatype.helpers@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.w3c.dom(JDK/org.w3c.dom@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.w3c.dom.bootstrap(JDK/org.w3c.dom.bootstrap@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.w3c.dom.css(JDK/org.w3c.dom.css@java_stub)" />
@@ -1567,7 +1940,6 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.applet.resources(JDK/sun.applet.resources@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.audio(JDK/sun.audio@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt(JDK/sun.awt@java_stub)" />
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.X11(JDK/sun.awt.X11@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.color(JDK/sun.awt.color@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.datatransfer(JDK/sun.awt.datatransfer@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.dnd(JDK/sun.awt.dnd@java_stub)" />
@@ -1576,7 +1948,6 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.im(JDK/sun.awt.im@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.image(JDK/sun.awt.image@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.image.codec(JDK/sun.awt.image.codec@java_stub)" />
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.motif(JDK/sun.awt.motif@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.resources(JDK/sun.awt.resources@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.shell(JDK/sun.awt.shell@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.util(JDK/sun.awt.util@java_stub)" />
@@ -1594,10 +1965,16 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d.opengl(JDK/sun.java2d.opengl@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d.pipe(JDK/sun.java2d.pipe@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d.pipe.hw(JDK/sun.java2d.pipe.hw@java_stub)" />
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d.x11(JDK/sun.java2d.x11@java_stub)" />
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jdbc.odbc(JDK/sun.jdbc.odbc@java_stub)" />
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jdbc.odbc.ee(JDK/sun.jdbc.odbc.ee@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jkernel(JDK/sun.jkernel@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jvmstat.monitor(JDK/sun.jvmstat.monitor@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jvmstat.monitor.event(JDK/sun.jvmstat.monitor.event@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jvmstat.monitor.remote(JDK/sun.jvmstat.monitor.remote@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jvmstat.perfdata.monitor(JDK/sun.jvmstat.perfdata.monitor@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jvmstat.perfdata.monitor.protocol.file(JDK/sun.jvmstat.perfdata.monitor.protocol.file@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jvmstat.perfdata.monitor.protocol.local(JDK/sun.jvmstat.perfdata.monitor.protocol.local@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jvmstat.perfdata.monitor.protocol.rmi(JDK/sun.jvmstat.perfdata.monitor.protocol.rmi@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jvmstat.perfdata.monitor.v1_0(JDK/sun.jvmstat.perfdata.monitor.v1_0@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jvmstat.perfdata.monitor.v2_0(JDK/sun.jvmstat.perfdata.monitor.v2_0@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.management(JDK/sun.management@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.management.counter(JDK/sun.management.counter@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.management.counter.perf(JDK/sun.management.counter.perf@java_stub)" />
@@ -1658,6 +2035,10 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.reflect.misc(JDK/sun.reflect.misc@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.rmi.log(JDK/sun.rmi.log@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.rmi.registry(JDK/sun.rmi.registry@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.rmi.rmic(JDK/sun.rmi.rmic@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.rmi.rmic.iiop(JDK/sun.rmi.rmic.iiop@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.rmi.rmic.newrmic(JDK/sun.rmi.rmic.newrmic@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.rmi.rmic.newrmic.jrmp(JDK/sun.rmi.rmic.newrmic.jrmp@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.rmi.runtime(JDK/sun.rmi.runtime@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.rmi.server(JDK/sun.rmi.server@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.rmi.transport(JDK/sun.rmi.transport@java_stub)" />
@@ -1703,9 +2084,26 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.text(JDK/sun.text@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.text.normalizer(JDK/sun.text.normalizer@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.text.resources(JDK/sun.text.resources@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.asm(JDK/sun.tools.asm@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.attach(JDK/sun.tools.attach@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.hprof(JDK/sun.tools.hprof@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.jar(JDK/sun.tools.jar@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.jar.resources(JDK/sun.tools.jar.resources@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.java(JDK/sun.tools.java@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.javac(JDK/sun.tools.javac@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.javap(JDK/sun.tools.javap@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.javap.oldjavap(JDK/sun.tools.javap.oldjavap@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.jinfo(JDK/sun.tools.jinfo@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.jmap(JDK/sun.tools.jmap@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.jps(JDK/sun.tools.jps@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.jstack(JDK/sun.tools.jstack@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.jstat(JDK/sun.tools.jstat@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.jstatd(JDK/sun.tools.jstatd@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.native2ascii(JDK/sun.tools.native2ascii@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.native2ascii.resources(JDK/sun.tools.native2ascii.resources@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.serialver(JDK/sun.tools.serialver@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.tree(JDK/sun.tools.tree@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.tools.util(JDK/sun.tools.util@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.util(JDK/sun.util@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.util.calendar(JDK/sun.util.calendar@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.util.logging.resources(JDK/sun.util.logging.resources@java_stub)" />
@@ -1719,7 +2117,6 @@
     <dep model="r:00000000-0000-4000-0000-011c89590592(jetbrains.mps.xmlInternal.generator.baseLanguage.template.main@generator)" />
     <dep model="r:10f25532-8045-4769-a24c-e48e027baa9d(jetbrains.mps.ui.sandbox.gwt)" />
     <dep model="r:1662aa20-edf5-46c3-8002-c6d4c875fd31(jetbrains.mps.gwt.client.generator.template.main@generator)" />
-    <dep model="r:940623f0-75cf-4f64-98fc-aef3fadfaedd(jetbrains.mps.gwt.client.structure)" />
     <file name="UIDemo.gwt.xml" />
   </source>
   <source id="7001216437968616991" name="PanelsDemo" hash="2u2m73vdxwg4sjoko9tyn02d83u8h24" dependsOnCreated="true">
@@ -1746,7 +2143,6 @@
     <dep model="f:java_stub#69934240-945d-492b-83e7-39bda70200e7#org.eclipse.swt.widgets(jetbrains.mps.ui.swt.runtime/org.eclipse.swt.widgets@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator(MPS.Core/jetbrains.mps.generator@java_stub)" />
     <dep model="f:java_stub#acc947bf-6778-444a-9dc7-4cc72d4eb3d0#org.jdesktop.swingx(jetbrains.mps.ui.swing.runtime/org.jdesktop.swingx@java_stub)" />
-    <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.core.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.core.client@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.dom.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.dom.client@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.event.dom.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.event.dom.client@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.event.logical.shared(jetbrains.mps.ui.gwt.runtime/com.google.gwt.event.logical.shared@java_stub)" />
@@ -1822,6 +2218,7 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.accessibility(JDK/javax.accessibility@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.event(JDK/javax.swing.event@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.table(JDK/javax.swing.table@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.text(JDK/javax.swing.text@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.tree(JDK/javax.swing.tree@java_stub)" />
@@ -1832,12 +2229,9 @@
     <dep model="f:java_stub#69934240-945d-492b-83e7-39bda70200e7#org.eclipse.swt.widgets(jetbrains.mps.ui.swt.runtime/org.eclipse.swt.widgets@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator(MPS.Core/jetbrains.mps.generator@java_stub)" />
     <dep model="f:java_stub#acc947bf-6778-444a-9dc7-4cc72d4eb3d0#org.jdesktop.swingx(jetbrains.mps.ui.swing.runtime/org.jdesktop.swingx@java_stub)" />
-    <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.core.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.core.client@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.dom.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.dom.client@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.event.dom.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.event.dom.client@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.event.logical.shared(jetbrains.mps.ui.gwt.runtime/com.google.gwt.event.logical.shared@java_stub)" />
-    <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.event.shared(jetbrains.mps.ui.gwt.runtime/com.google.gwt.event.shared@java_stub)" />
-    <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client.ui(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client.ui@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1846,7 +2240,6 @@
     <dep model="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -1902,9 +2295,11 @@
     <dep root="7046856741208199003" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.accessibility(JDK/javax.accessibility@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.table(JDK/javax.swing.table@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.text(JDK/javax.swing.text@java_stub)" />
@@ -1917,12 +2312,10 @@
     <dep model="f:java_stub#69934240-945d-492b-83e7-39bda70200e7#org.eclipse.swt.widgets(jetbrains.mps.ui.swt.runtime/org.eclipse.swt.widgets@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator(MPS.Core/jetbrains.mps.generator@java_stub)" />
     <dep model="f:java_stub#acc947bf-6778-444a-9dc7-4cc72d4eb3d0#org.jdesktop.swingx(jetbrains.mps.ui.swing.runtime/org.jdesktop.swingx@java_stub)" />
-    <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.core.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.core.client@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.dom.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.dom.client@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.event.dom.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.event.dom.client@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.event.logical.shared(jetbrains.mps.ui.gwt.runtime/com.google.gwt.event.logical.shared@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.event.shared(jetbrains.mps.ui.gwt.runtime/com.google.gwt.event.shared@java_stub)" />
-    <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.i18n.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.i18n.client@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client.ui(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client.ui@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" />
@@ -1952,7 +2345,6 @@
     <dep model="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" />
     <dep model="r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)" />
     <dep model="r:39023b18-af4f-44db-bcb1-c118a59086cd(jetbrains.mps.ui.generator.template.meta@generator)" />
-    <dep model="r:448d8730-24ed-4789-a1c7-efd9de20f14b(jetbrains.mps.ui.internal.structure)" />
     <dep model="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)" />
     <dep model="r:4bcef4e7-5bde-4076-8e02-73a0681ac6a3(jetbrains.mps.ui.structure)" />
     <dep model="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" />

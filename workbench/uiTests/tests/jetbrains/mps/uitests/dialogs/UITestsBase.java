@@ -19,6 +19,7 @@ import com.intellij.ide.GeneralSettings;
 import com.intellij.openapi.application.ex.ApplicationEx;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.MPSMainImpl;
 import jetbrains.mps.TestMain;
@@ -180,5 +181,9 @@ public abstract class UITestsBase extends JFCTestCase {
     List nextBtn = btnFinder.findAll((Container) dialog);
     assertFalse("\"" + caption + "\" not found", nextBtn.isEmpty());
     getHelper().enterClickAndLeave(new MouseEventData(UITestsBase.this, (Component) nextBtn.get(0)));
+  }
+
+  protected final void pressButton(DialogWrapper dialog, String caption) {
+    pressButton(dialog.getContentPane(), caption);
   }
 }

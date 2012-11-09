@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 
 /**
@@ -23,11 +24,11 @@ import jetbrains.mps.vfs.IFile;
  */
 public abstract class DiskMemoryConflictResolver {
   // TODO replace with extension point & interface
-  public abstract void resolveDiskMemoryConflict(IFile modelFile, SModel model, DefaultSModelDescriptor modelDescriptor);
+  public abstract void resolveDiskMemoryConflict(IFile modelFile, SModel model, EditableSModelDescriptor modelDescriptor);
 
   private static DiskMemoryConflictResolver ourResolver = new DiskMemoryConflictResolver() {
     @Override
-    public void resolveDiskMemoryConflict(IFile modelFile, SModel model, DefaultSModelDescriptor modelDescriptor) {
+    public void resolveDiskMemoryConflict(IFile modelFile, SModel model, EditableSModelDescriptor modelDescriptor) {
     }
   };
 

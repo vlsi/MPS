@@ -16,20 +16,20 @@
     <nodeInfo nodeId="3855395826139545576" fileName="TestModel.java" startLine="28" startPosition="14" endLine="29" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4888428037514503335" fileName="TestModel.java" startLine="33" startPosition="36" endLine="34" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4888428037514503335" fileName="TestModel.java" startLine="35" startPosition="5" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3855395826139545518" fileName="TestModel.java" startLine="9" startPosition="24" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModel#()V" />
+    <nodeInfo nodeId="3855395826139545518" fileName="TestModel.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModel#()V" />
     <nodeInfo nodeId="4888428037514503335" fileName="TestModel.java" startLine="32" startPosition="69" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4888428037514503301" fileName="TestModel.java" startLine="12" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test#()V" />
-    <nodeInfo nodeId="4888428037514503335" fileName="TestModel.java" startLine="31" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_6o96ff_a1a0#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3855395826139545526" fileName="TestModel.java" startLine="18" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4888428037514503301" fileName="TestModel.java" startLine="13" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test#()V" />
+    <nodeInfo nodeId="4888428037514503335" fileName="TestModel.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_6o96ff_a1a0#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3855395826139545526" fileName="TestModel.java" startLine="19" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
     <scopeInfo nodeId="3855395826139545521" fileName="TestModel.java" startLine="10" startPosition="22" endLine="10" endPosition="22" />
     <scopeInfo nodeId="4888428037514503335" fileName="TestModel.java" startLine="33" startPosition="36" endLine="34" endPosition="43" />
-    <scopeInfo nodeId="3855395826139545518" fileName="TestModel.java" startLine="9" startPosition="24" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="3855395826139545518" fileName="TestModel.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
     <scopeInfo nodeId="4888428037514503304" fileName="TestModel.java" startLine="13" startPosition="22" endLine="16" endPosition="20">
       <varInfo nodeId="4888428037514503306" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="4888428037514503335" fileName="TestModel.java" startLine="32" startPosition="69" endLine="36" endPosition="16" />
-    <scopeInfo nodeId="4888428037514503301" fileName="TestModel.java" startLine="12" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="4888428037514503335" fileName="TestModel.java" startLine="31" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="4888428037514503301" fileName="TestModel.java" startLine="13" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="4888428037514503335" fileName="TestModel.java" startLine="32" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="4888428037514503335" varName="checkedDotOperand" />
     </scopeInfo>
     <scopeInfo nodeId="3855395826139545529" fileName="TestModel.java" startLine="19" startPosition="42" endLine="29" endPosition="14">
@@ -38,7 +38,7 @@
       <varInfo nodeId="3855395826139545553" varName="c" />
       <varInfo nodeId="3855395826139545559" varName="d" />
     </scopeInfo>
-    <scopeInfo nodeId="3855395826139545526" fileName="TestModel.java" startLine="18" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="3855395826139545526" fileName="TestModel.java" startLine="19" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="3855395826139545580" varName="args" />
     </scopeInfo>
     <unitInfo nodeId="3855395826139545516" fileName="TestModel.java" startLine="9" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test2.TestModel" />

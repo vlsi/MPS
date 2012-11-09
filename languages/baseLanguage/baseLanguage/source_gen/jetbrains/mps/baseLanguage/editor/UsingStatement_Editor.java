@@ -44,7 +44,7 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pkcf3k_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "using");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "using");
     editorCell.setCellId("Constant_pkcf3k_a0");
     {
       Style style = editorCell.getStyle();
@@ -55,7 +55,7 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pkcf3k_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_pkcf3k_b0");
     {
       Style style = editorCell.getStyle();
@@ -66,7 +66,7 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pkcf3k_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_pkcf3k_d0");
     {
       Style style = editorCell.getStyle();
@@ -77,7 +77,7 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pkcf3k_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_pkcf3k_e0");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     {
@@ -89,7 +89,7 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pkcf3k_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_pkcf3k_g0");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -168,7 +168,7 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -176,7 +176,7 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_pkcf3k_a2a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<no resources>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no resources>");
       editorCell.setCellId("Constant_pkcf3k_a2a");
       editorCell.setDefaultText("");
       return editorCell;

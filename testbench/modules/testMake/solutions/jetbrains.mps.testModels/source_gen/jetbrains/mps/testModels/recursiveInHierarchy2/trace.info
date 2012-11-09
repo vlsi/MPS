@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="3043583937669651988" modelId="r:efeaae46-06f7-44f8-b5cd-cacdae3a27e2(jetbrains.mps.testModels.recursiveInHierarchy2)">
-    <nodeInfo nodeId="3043583937669651990" fileName="MyClass2.java" startLine="6" startPosition="55" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyClass2#()V" />
+    <nodeInfo nodeId="3043583937669651990" fileName="MyClass2.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyClass2#()V" />
     <scopeInfo nodeId="3043583937669651993" fileName="MyClass2.java" startLine="7" startPosition="21" endLine="7" endPosition="21" />
-    <scopeInfo nodeId="3043583937669651990" fileName="MyClass2.java" startLine="6" startPosition="55" endLine="8" endPosition="3" />
+    <scopeInfo nodeId="3043583937669651990" fileName="MyClass2.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
     <unitInfo nodeId="3043583937669651988" fileName="MyClass2.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.testModels.recursiveInHierarchy2.MyClass2" />
   </root>
   <root nodeId="3043583937669651994" modelId="r:efeaae46-06f7-44f8-b5cd-cacdae3a27e2(jetbrains.mps.testModels.recursiveInHierarchy2)">

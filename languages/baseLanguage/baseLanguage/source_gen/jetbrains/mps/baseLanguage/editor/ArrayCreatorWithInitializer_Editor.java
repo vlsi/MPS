@@ -42,7 +42,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ym22pt_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "[]");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[]");
     editorCell.setCellId("Constant_ym22pt_b0");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
@@ -54,7 +54,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ym22pt_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_ym22pt_c0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -67,7 +67,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ym22pt_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_ym22pt_e0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
@@ -152,7 +152,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -160,7 +160,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_ym22pt_a3a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_ym22pt_a3a");
       {
         Style style = editorCell.getStyle();

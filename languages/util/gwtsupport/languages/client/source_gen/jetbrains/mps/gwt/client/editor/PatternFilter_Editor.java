@@ -93,7 +93,7 @@ public class PatternFilter_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qer7ma_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "model");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "model");
     editorCell.setCellId("Constant_qer7ma_c0a");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
     {
@@ -106,14 +106,14 @@ public class PatternFilter_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qer7ma_e0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_qer7ma_e0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_qer7ma_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_qer7ma_a2a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -136,7 +136,7 @@ public class PatternFilter_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_qer7ma_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
@@ -205,7 +205,7 @@ public class PatternFilter_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_qer7ma_a3a0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
       editorCell.setCellId("Constant_qer7ma_a3a0");
       {
         Style style = editorCell.getStyle();
@@ -256,7 +256,7 @@ public class PatternFilter_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_qer7ma_a1b0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
       editorCell.setCellId("Constant_qer7ma_a1b0");
       {
         Style style = editorCell.getStyle();

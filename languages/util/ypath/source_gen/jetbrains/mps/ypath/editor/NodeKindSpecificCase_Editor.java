@@ -66,7 +66,7 @@ public class NodeKindSpecificCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qnryu2_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "case");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "case");
     editorCell.setCellId("Constant_qnryu2_a0a");
     {
       Style style = editorCell.getStyle();
@@ -77,7 +77,7 @@ public class NodeKindSpecificCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qnryu2_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_qnryu2_c0a");
     {
       Style style = editorCell.getStyle();
@@ -89,7 +89,7 @@ public class NodeKindSpecificCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qnryu2_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_qnryu2_a1a");
     {
       Style style = editorCell.getStyle();
@@ -100,7 +100,7 @@ public class NodeKindSpecificCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qnryu2_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "break");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "break");
     editorCell.setCellId("Constant_qnryu2_a1b1a");
     {
       Style style = editorCell.getStyle();
@@ -111,7 +111,7 @@ public class NodeKindSpecificCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qnryu2_b1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_qnryu2_b1b1a");
     {
       Style style = editorCell.getStyle();

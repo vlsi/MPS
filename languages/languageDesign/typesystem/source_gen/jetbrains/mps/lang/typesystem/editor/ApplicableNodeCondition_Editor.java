@@ -14,7 +14,7 @@ public class ApplicableNodeCondition_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createError_p1ik0p_a(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<condition>");
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<condition>");
     editorCell.setCellId("Error_p1ik0p_a");
     return editorCell;
   }

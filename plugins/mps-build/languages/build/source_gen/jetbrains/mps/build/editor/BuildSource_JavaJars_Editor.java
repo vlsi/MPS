@@ -27,7 +27,7 @@ public class BuildSource_JavaJars_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xqvwu_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "jars");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "jars");
     editorCell.setCellId("Constant_xqvwu_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

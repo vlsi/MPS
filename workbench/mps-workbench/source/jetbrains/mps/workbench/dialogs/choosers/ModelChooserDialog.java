@@ -15,62 +15,38 @@
  */
 package jetbrains.mps.workbench.dialogs.choosers;
 
-import com.intellij.ide.DataManager;
-import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
 import com.intellij.navigation.NavigationItem;
-import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.dialogs.BaseDialog;
-import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.actions.goTo.matcher.ChooseByNamePanel;
-import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
+import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.JComponent;
-import java.awt.Dialog;
-import java.awt.Frame;
 import java.awt.HeadlessException;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
-class ModelChooserDialog extends BaseDialog {
-  private List<SModelReference> myModels = new ArrayList<SModelReference>();
-  private List<SModelReference> myNonProjectModels = new ArrayList<SModelReference>();
-  private ChooseByNamePanel myChooser;
-  private boolean myIsCancelled = true;
-  private boolean myOkDone = false;
-  private boolean myIsMultipleSelection = false;
+class ModelChooserDialog extends BaseReferenceChooserDialog<SModelReference> {
 
-  ModelChooserDialog(Frame owner, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels, boolean multiSelection) throws HeadlessException {
-    super(owner, "Choose Model");
-    myIsMultipleSelection = multiSelection;
-    doInit(models, nonProjectModels);
+  ModelChooserDialog(Project project, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels, boolean multiSelection) throws HeadlessException {
+    super(project, models, nonProjectModels, "model", multiSelection);
   }
 
-  ModelChooserDialog(Dialog owner, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels, boolean multiSelection) throws HeadlessException {
-    super(owner, "Choose Model");
-    myIsMultipleSelection = multiSelection;
-    doInit(models, nonProjectModels);
+  @Override
+  protected boolean checkType(Object item) {
+    return (item instanceof BaseModelItem);
   }
 
-  private void doInit(final List<SModelReference> options, @Nullable List<SModelReference> nonProjectModels) {
-    setModal(true);
-    myModels.addAll(options);
-    if (nonProjectModels != null) {
-      myNonProjectModels.addAll(nonProjectModels);
-    }
+  @Override
+  protected SModelReference convert(Object item) {
+    BaseModelItem modelItem = (BaseModelItem) item;
+    return modelItem.getModelReference();
+  }
 
-    DataContext dataContext = DataManager.getInstance().getDataContext();
-    final Project project = MPSDataKeys.PROJECT.getData(dataContext);
-
-    BaseModelModel goToModelModel = new BaseModelModel(project) {
+  @Override
+  protected BaseMPSChooseModel<SModelReference> getMPSChooseModel(Project project, String entityString) {
+    return new BaseModelModel(project) {
       public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
         return new BaseModelItem(modelReference) {
           public void navigate(boolean requestFocus) {
@@ -79,13 +55,13 @@ class ModelChooserDialog extends BaseDialog {
       }
 
       @Override
-        public SModelReference[] find(boolean checkboxState) {
-          if (checkboxState) {
-            return myNonProjectModels.toArray(new SModelReference[myNonProjectModels.size()]);
-          } else {
-            return myModels.toArray(new SModelReference[myModels.size()]);
-          }
+      public SModelReference[] find(boolean checkboxState) {
+        if (checkboxState) {
+          return myNonProjectReferences.toArray(new SModelReference[myNonProjectReferences.size()]);
+        } else {
+          return myReferences.toArray(new SModelReference[myReferences.size()]);
         }
+      }
 
       public SModelReference[] find(IScope scope) {
         throw new UnsupportedOperationException("must not be used");
@@ -96,52 +72,5 @@ class ModelChooserDialog extends BaseDialog {
         return false;
       }
     };
-
-    myChooser = MpsPopupFactory.createPanelForPackage(goToModelModel, !myNonProjectModels.isEmpty());
-    myChooser.invoke(new Callback() {
-      public void elementChosen(Object element) {
-        if (!myOkDone) {
-          myOkDone = true;
-          onOk();
-        }
-      }
-    }, ModalityState.current(), myIsMultipleSelection);
   }
-
-  public boolean stretchMainComponent() {
-    return true;
-  }
-
-  public DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensions(100, 100, 500, 600);
-  }
-
-  protected JComponent getMainComponent() {
-    return myChooser.getPanel();
-  }
-
-  public List<SModelReference> getResult() {
-    List<SModelReference> result = new ArrayList<SModelReference>();
-    if (myIsCancelled) return result;
-    List<Object> choosen = Collections.unmodifiableList(myChooser.getChosenElements());
-    for (Object item : choosen) {
-      if (item instanceof BaseModelItem) {
-        BaseModelItem modelItem = (BaseModelItem) item;
-        result.add(modelItem.getModelReference());
-      }
-    }
-    return result;
-  }
-
-  @Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
-  public void onOk() {
-    dispose();
-    myIsCancelled = false;
-  }
-
-  @Button(position = 1, name = "Cancel", mnemonic = 'C', defaultButton = false)
-  public void onCancel() {
-    dispose();
-  }
-
 }

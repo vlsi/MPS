@@ -51,7 +51,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_54f2vs_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_54f2vs_a0");
     {
       Style style = editorCell.getStyle();
@@ -63,7 +63,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_54f2vs_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "[//");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[//");
     editorCell.setCellId("Constant_54f2vs_b0");
     {
       Style style = editorCell.getStyle();
@@ -76,7 +76,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_54f2vs_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "attributed link");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "attributed link");
     editorCell.setCellId("Constant_54f2vs_c0");
     Styles_StyleSheet.getAttributedCellLabel(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -84,7 +84,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_54f2vs_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "//]");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "//]");
     editorCell.setCellId("Constant_54f2vs_d0");
     {
       Style style = editorCell.getStyle();

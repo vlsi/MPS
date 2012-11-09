@@ -41,7 +41,8 @@ public abstract class BaseTabbedBindedDialog extends BaseBindedDialog {
     myTabOrder = new ArrayList<String>();
   }
 
-  public JComponent getMainComponent() {
+  @Override
+  protected JComponent createCenterPanel() {
     if (myTabbedPane == null) {
       myTabbedPane = new JTabbedPane();
       for (String tabName : myTabOrder) {

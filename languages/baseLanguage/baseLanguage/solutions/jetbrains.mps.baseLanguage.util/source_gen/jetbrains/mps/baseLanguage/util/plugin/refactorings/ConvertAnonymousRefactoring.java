@@ -48,7 +48,7 @@ public class ConvertAnonymousRefactoring {
     collectInformation();
     SNode creator = SNodeOperations.as(SNodeOperations.getParent(myClassToRefactor), "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
     if ((creator != null)) {
-      SNodeOperations.replaceWithAnother(creator, makeInnerConstructorInvocation(ListSequence.fromList(SLinkOperations.getTargets(makeInnerClass(), "constructor", true)).getElement(0)));
+      SNodeOperations.replaceWithAnother(creator, makeInnerConstructorInvocation(ListSequence.fromList(SLinkOperations.getTargets(makeInnerClass(), "constructor", true)).first()));
     }
   }
 
@@ -131,7 +131,7 @@ public class ConvertAnonymousRefactoring {
       SLinkOperations.setNewChild(ctor, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
       SLinkOperations.setNewChild(ctor, "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
     }
-    SNode innerConstructor = ListSequence.fromList(SLinkOperations.getTargets(innerClass, "constructor", true)).getElement(0);
+    SNode innerConstructor = ListSequence.fromList(SLinkOperations.getTargets(innerClass, "constructor", true)).first();
     this.addParametersToConstructor(innerConstructor);
     this.makeConstructorBody(innerConstructor);
   }

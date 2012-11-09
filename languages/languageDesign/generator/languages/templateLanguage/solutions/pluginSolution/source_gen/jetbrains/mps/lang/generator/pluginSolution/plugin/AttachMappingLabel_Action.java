@@ -22,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.IModule;
 import java.util.List;
 import jetbrains.mps.smodel.Generator;
@@ -180,8 +180,8 @@ __switch__:
       }).toListSequence();
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          AttachMappingLabelDialog dialog = new AttachMappingLabelDialog(node, existingLabels, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getMainFrame(), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
-          dialog.showDialog();
+          AttachMappingLabelDialog dialog = new AttachMappingLabelDialog(node, existingLabels, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+          dialog.show();
         }
       });
     } catch (Throwable t) {

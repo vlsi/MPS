@@ -16,7 +16,7 @@ public class ToListOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_fiobsf_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "toList");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "toList");
     editorCell.setCellId("Constant_fiobsf_a");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     {

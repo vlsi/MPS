@@ -9,6 +9,7 @@ import jetbrains.mps.lang.script.util.ScriptNameUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -52,16 +53,110 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), "showAsIntention");
   }
 
+  public static Object propertyMacro_GetPropertyValue_5718428430099023737(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getSModelReference().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_392628194913860560(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getModelDescriptor().getModule().getModuleReference().toString();
+  }
+
   public static Object propertyMacro_GetPropertyValue_7098974335153471015(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String oldClassifierFQName = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "oldClassifier", false), "virtual_getFqName_1213877404258", new Object[]{});
     String newClassifierFQName = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "newClassifier", false), "virtual_getFqName_1213877404258", new Object[]{});
     return "Replacing " + oldClassifierFQName + " classifier type instances with " + newClassifierFQName;
   }
 
+  public static Object propertyMacro_GetPropertyValue_8323716030939138902(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "oldClassifier", false), "virtual_getFqName_1213877404258", new Object[]{});
+  }
+
+  public static Object propertyMacro_GetPropertyValue_8323716030939140003(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "newClassifier", false), "virtual_getFqName_1213877404258", new Object[]{});
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5718428430099018454(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getSModelReference().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_392628194913886717(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getModelDescriptor().getModule().getModuleReference().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_8323716030938841829(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String oldClassifierFQName = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "oldClassifier", false), "virtual_getFqName_1213877404258", new Object[]{});
+    String newClassifierFQName = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "newClassifier", false), "virtual_getFqName_1213877404258", new Object[]{});
+    return "Replacing ClassCreators using " + oldClassifierFQName + " as a parameter with " + newClassifierFQName;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_8323716030939009628(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "oldClassifier", false), "virtual_getFqName_1213877404258", new Object[]{});
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5264392666049942988(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "oldClassifier", false), "virtual_getFqName_1213877404258", new Object[]{});
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5264392666049942998(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "newClassifier", false), "virtual_getFqName_1213877404258", new Object[]{});
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5264392666049943045(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getSModelReference().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5264392666049943069(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getModelDescriptor().getModule().getModuleReference().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5264392666049900041(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String oldClassifierFQName = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "oldClassifier", false), "virtual_getFqName_1213877404258", new Object[]{});
+    String newClassifierFQName = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "newClassifier", false), "virtual_getFqName_1213877404258", new Object[]{});
+    return "Replacing InstanceMethodCallOperations using " + oldClassifierFQName + " as a parameter with " + newClassifierFQName;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5264392666049936196(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "oldClassifier", false), "virtual_getFqName_1213877404258", new Object[]{});
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5718428430099013698(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getSModelReference().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_392628194913897820(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getModelDescriptor().getModule().getModuleReference().toString();
+  }
+
   public static Object propertyMacro_GetPropertyValue_8170811674345426784(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String oldClassifierFQName = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "oldClassifier", false), "virtual_getFqName_1213877404258", new Object[]{});
     String newClassifierFQName = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "newClassifier", false), "virtual_getFqName_1213877404258", new Object[]{});
     return "Pull up methods from " + oldClassifierFQName + " to " + newClassifierFQName;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5718428430098980103(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getSModelReference().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5718428430099001489(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getSModelReference().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5718428430098993525(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false)).getModelDescriptor().getModule().getModuleReference().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5718428430098288749(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String oldClassifierFQName = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "oldClassifier", false), "virtual_getFqName_1213877404258", new Object[]{});
+    String newClassifierFQName = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "newClassifier", false), "virtual_getFqName_1213877404258", new Object[]{});
+    return "Pull up and remove methods from " + oldClassifierFQName + " to " + newClassifierFQName;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5718428430098778814(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "oldClassifier", false)).getSModelReference().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5718428430098844386(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "newMethodDeclaration", false).getSNodeId().toString();
   }
 
   public static Object referenceMacro_GetReferent_7098974335153471205(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -79,7 +174,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_8170811674345426900(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(PullUpMethod_Behavior.call_getMigration_5166971494091017146(_context.getNode()), "newClassifier", false), "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a0l(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "oldMethodDeclaration", false), "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "oldMethodDeclaration", false), "parameter", true)).count();
+        return eq_x583g4_a0a0a0a0a0a0a0hb(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "oldMethodDeclaration", false), "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "oldMethodDeclaration", false), "parameter", true)).count();
       }
     }).first();
   }
@@ -100,12 +195,44 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "affectedInstancePredicate", true) != null);
   }
 
+  public static boolean ifMacro_Condition_7867202088808298768(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "updateClassifierTypes");
+  }
+
+  public static boolean ifMacro_Condition_7045307290273425410(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "updateClassifierTypes");
+  }
+
+  public static boolean ifMacro_Condition_5264392666049909430(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "updateClassifierTypes");
+  }
+
   public static boolean ifMacro_Condition_8170811674345426888(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "newMethodDeclaration", false) != null;
   }
 
   public static boolean ifMacro_Condition_8170811674345426946(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "newMethodDeclaration", false) == null;
+  }
+
+  public static boolean ifMacro_Condition_5718428430098178723(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "updateClassifierTypes");
+  }
+
+  public static boolean ifMacro_Condition_5538015646833879771(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(SPropertyOperations.getBoolean(_context.getNode(), "updateClassifierTypes"));
+  }
+
+  public static boolean ifMacro_Condition_5538015646833889611(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(SPropertyOperations.getBoolean(_context.getNode(), "updateClassifierTypes"));
+  }
+
+  public static boolean ifMacro_Condition_5718428430098202800(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "pullUpMethods", true)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SLinkOperations.getTarget(it, "oldMethodDeclaration", false) == null;
+      }
+    }) != null;
   }
 
   public static SNode sourceNodeQuery_2598676492883202973(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -128,15 +255,23 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "part", true);
   }
 
-  public static Iterable sourceNodesQuery_8170811674345426956(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_5718428430098141043(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "pullUpMethods", true);
   }
 
-  public static Iterable sourceNodesQuery_8170811674345426863(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_5718428430098112496(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "pullUpMethods", true);
   }
 
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0l(Object a, Object b) {
+  public static Iterable sourceNodesQuery_5718428430098854731(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "pullUpMethods", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SLinkOperations.getTarget(it, "oldMethodDeclaration", false) == null;
+      }
+    });
+  }
+
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0hb(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

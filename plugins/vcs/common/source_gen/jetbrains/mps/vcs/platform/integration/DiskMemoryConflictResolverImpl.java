@@ -7,7 +7,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import jetbrains.mps.util.Computable;
@@ -32,7 +32,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
   public DiskMemoryConflictResolverImpl() {
   }
 
-  public void resolveDiskMemoryConflict(final IFile file, final SModel model, final DefaultSModelDescriptor modelDescriptor) {
+  public void resolveDiskMemoryConflict(final IFile file, final SModel model, final EditableSModelDescriptor modelDescriptor) {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         boolean needSave = FSChangesWatcher.instance().executeUnderBlockedReload(new Computable<Boolean>() {

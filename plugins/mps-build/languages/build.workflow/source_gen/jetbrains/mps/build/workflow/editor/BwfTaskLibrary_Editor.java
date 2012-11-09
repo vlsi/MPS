@@ -43,7 +43,7 @@ public class BwfTaskLibrary_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qi7xwz_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "build library");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "build library");
     editorCell.setCellId("Constant_qi7xwz_a0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -51,7 +51,7 @@ public class BwfTaskLibrary_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qi7xwz_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_qi7xwz_c0");
     {
       Style style = editorCell.getStyle();
@@ -62,7 +62,7 @@ public class BwfTaskLibrary_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qi7xwz_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "imports:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "imports:");
     editorCell.setCellId("Constant_qi7xwz_d0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -74,7 +74,7 @@ public class BwfTaskLibrary_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qi7xwz_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_qi7xwz_f0");
     {
       Style style = editorCell.getStyle();
@@ -85,7 +85,7 @@ public class BwfTaskLibrary_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qi7xwz_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "tasks:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "tasks:");
     editorCell.setCellId("Constant_qi7xwz_g0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {

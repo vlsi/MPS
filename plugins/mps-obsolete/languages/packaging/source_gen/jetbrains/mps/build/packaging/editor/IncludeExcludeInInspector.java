@@ -57,7 +57,7 @@ public class IncludeExcludeInInspector extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_1f9za8_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "excludes");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "excludes");
     editorCell.setCellId("Constant_1f9za8_a0a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -65,7 +65,7 @@ public class IncludeExcludeInInspector extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_1f9za8_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "includes");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "includes");
     editorCell.setCellId("Constant_1f9za8_a1a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
