@@ -124,11 +124,25 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     checkLoaded();
     Computable<Set<Pair<IntentionExecutable, SNode>>> computable = new Computable<Set<Pair<IntentionExecutable, SNode>>>() {
       public Set<Pair<IntentionExecutable, SNode>> compute() {
-        Filter filter = new Filter(query.myIntentionClass, query.myEnabledOnly ? getDisabledIntentions() : null);
+        // Hiding intentions with same IntentionDescriptor
+        // important then currently selected element and it's parent has same intention
+        final Set<IntentionDescriptor> processedIntentionDescriptors = new HashSet<IntentionDescriptor>();
+        Filter filter = new Filter(query.myIntentionClass, query.myEnabledOnly ? getDisabledIntentions() : null) {
+          @Override
+          boolean accept(Intention intention) {
+            return super.accept(intention) && !processedIntentionDescriptors.contains(intention.getDescriptor());
+          }
+
+          @Override
+          boolean accept(IntentionFactory intentionFactory) {
+            return super.accept(intentionFactory) && !processedIntentionDescriptors.contains(intentionFactory);
+          }
+        };
         Set<Pair<IntentionExecutable, SNode>> result = new HashSet<Pair<IntentionExecutable, SNode>>();
 
         for (IntentionExecutable intentionExecutable : getAvailableIntentionsForExactNode(node, context, false, filter)) {
           result.add(new Pair<IntentionExecutable, SNode>(intentionExecutable, node));
+          processedIntentionDescriptors.add(intentionExecutable.getDescriptor());
         }
 
         if (!query.isCurrentNodeOnly()) {
@@ -136,6 +150,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
           while (parent != null) {
             for (IntentionExecutable intentionExecutable : getAvailableIntentionsForExactNode(parent, context, true, filter)) {
               result.add(new Pair<IntentionExecutable, SNode>(intentionExecutable, parent));
+              processedIntentionDescriptors.add(intentionExecutable.getDescriptor());
             }
             parent = parent.getParent();
           }
