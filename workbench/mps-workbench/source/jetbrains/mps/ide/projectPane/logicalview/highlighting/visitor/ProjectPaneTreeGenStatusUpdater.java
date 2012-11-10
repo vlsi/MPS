@@ -24,6 +24,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.GenStatusNodeUpdate;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
@@ -47,6 +48,8 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
 
   protected void visitModelNode(final SModelTreeNode modelNode) {
     if (!ProjectPane.isShowGenStatus()) return;
+    if (IMakeService.INSTANCE.isSessionActive()) return;
+
     Application application = ApplicationManager.getApplication();
     if (application.isDisposed() || application.isDisposeInProgress()) return;
 
