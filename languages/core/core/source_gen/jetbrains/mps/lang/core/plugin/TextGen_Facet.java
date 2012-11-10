@@ -38,6 +38,7 @@ import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.generator.TransientModelsModule;
@@ -197,6 +198,13 @@ public class TextGen_Facet extends IFacet.Stub {
                 }
               }
 
+              int handlersSize = Sequence.fromIterable(MapSequence.fromMap(streamHandlers).values()).foldLeft(0, new ILeftCombinator<JavaStreamHandler, Integer>() {
+                public Integer combine(Integer s, JavaStreamHandler it) {
+                  return s + it.calcApproximateSize_internal();
+                }
+              });
+              LOG.info("approximate handlers size: " + handlersSize / 1000 / 1000 + " mb");
+
               // flush stream handlers 
               final Wrappers._long flushTime = new Wrappers._long();
               if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
@@ -247,7 +255,7 @@ public class TextGen_Facet extends IFacet.Stub {
               monitor.currentProgress().finishWork("Writing");
 
               long overallTime = System.currentTimeMillis() - textGenStartTime;
-              if (false) {
+              if (true) {
                 LOG.info("text gen prepare time: " + prepareTime);
                 LOG.info("text gen generate time: " + textGenTime.value);
                 LOG.info("text gen flush time: " + flushTime.value);

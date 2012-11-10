@@ -206,6 +206,7 @@
   <dependency className="jetbrains.mps.lang.core.plugin.TextGen_Facet" file="TextGen_Facet.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -227,6 +228,7 @@
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.TextGenerator" />
     <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache" />
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoCache" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
