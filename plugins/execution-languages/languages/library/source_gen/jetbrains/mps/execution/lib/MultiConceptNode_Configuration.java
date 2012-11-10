@@ -4,8 +4,7 @@ package jetbrains.mps.execution.lib;
 
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -27,7 +26,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 
 public class MultiConceptNode_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
-  protected static Log log = LogFactory.getLog(MultiConceptNode_Configuration.class);
+  private static Logger LOG = Logger.getLogger(MultiConceptNode_Configuration.class);
 
   @NotNull
   private MultiConceptNode_Configuration.MyState myState = new MultiConceptNode_Configuration.MyState();
@@ -144,9 +143,7 @@ public class MultiConceptNode_Configuration implements IPersistentConfiguration,
       clone.myState = (MultiConceptNode_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      if (log.isErrorEnabled()) {
-        log.error("", ex);
-      }
+      LOG.error("", ex);
     }
     return clone;
   }
