@@ -28,9 +28,9 @@ import java.util.Map;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.internal.make.runtime.java.JavaStreamHandler;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.GenerationFacade;
-import jetbrains.mps.internal.make.runtime.java.JavaStreamHandler;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerator;
 import jetbrains.mps.make.java.BLDependenciesCache;
@@ -139,9 +139,15 @@ public class TextGen_Facet extends IFacet.Stub {
                 }
               });
 
-              // 1) prepare retainedFilesDelta and retainedCachedDelta 
+              // configure 
+              boolean _generateDebugInfo = pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).generateDebugInfo() == null || pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).generateDebugInfo();
+              boolean _failIfNoTextgen = pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).failIfNoTextgen() != null && pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).failIfNoTextgen();
+
+              // prepare retainedFilesDelta, retainedCachedDelta and streamHandlers 
               Map<IResource, Iterable<IDelta>> retainedFilesDelta = MapSequence.fromMap(new HashMap<IResource, Iterable<IDelta>>());
               Map<IResource, Iterable<IDelta>> retainedCachesDelta = MapSequence.fromMap(new HashMap<IResource, Iterable<IDelta>>());
+              Map<IResource, JavaStreamHandler> streamHandlers = MapSequence.fromMap(new HashMap<IResource, JavaStreamHandler>());
+
               for (GResource resource : Sequence.fromIterable(resources.value)) {
                 MapSequence.fromMap(retainedFilesDelta).put(resource, RetainedUtil.retainedFilesDelta(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
                   public boolean accept(SModelDescriptor smd) {
@@ -153,29 +159,26 @@ public class TextGen_Facet extends IFacet.Stub {
                     return GenerationFacade.canGenerate(smd);
                   }
                 }), resource.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile()));
+
+                String output = resource.module().getOutputFor(resource.model());
+                MapSequence.fromMap(streamHandlers).put(resource, new JavaStreamHandler(resource.model(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile().invoke(output), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile().invoke(FileGenerationUtil.getCachesPath(output))));
               }
 
               long prepareTime = System.currentTimeMillis() - currentTime;
 
-              // 2) prepare stream handlers 
-              // later 
-
+              // textgen 
               monitor.currentProgress().beginWork("Writing", Sequence.fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
               for (final GResource gres : Sequence.fromIterable(resources.value)) {
                 monitor.currentProgress().advanceWork("Writing", 100, gres.status().getInputModel().getSModelReference().getSModelFqName().getLongName());
-                String output = gres.module().getOutputFor(gres.model());
-
-
-                final JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gres.model(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile().invoke(output), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile().invoke(FileGenerationUtil.getCachesPath(output)));
+                final JavaStreamHandler javaStreamHandler = MapSequence.fromMap(streamHandlers).get(gres);
 
                 final Wrappers._boolean ok = new Wrappers._boolean();
-                boolean generateDI = pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).generateDebugInfo() == null || pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).generateDebugInfo();
-                final TextGenerator textgen = new TextGenerator(javaStreamHandler, BLDependenciesCache.getInstance().getGenerator(), (generateDI ?
+                final TextGenerator textgen = new TextGenerator(javaStreamHandler, BLDependenciesCache.getInstance().getGenerator(), (_generateDebugInfo ?
                   TraceInfoCache.getInstance().getGenerator() :
                   null
                 ), GenerationDependenciesCache.getInstance().getGenerator());
-                textgen.setFailIfNoTextgen(pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).failIfNoTextgen() != null && pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).failIfNoTextgen());
-                textgen.setGenerateDebugInfo(generateDI);
+                textgen.setFailIfNoTextgen(_failIfNoTextgen);
+                textgen.setGenerateDebugInfo(_generateDebugInfo);
 
                 currentTime = System.currentTimeMillis();
                 try {
