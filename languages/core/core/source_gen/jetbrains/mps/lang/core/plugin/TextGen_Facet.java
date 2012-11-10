@@ -205,6 +205,17 @@ public class TextGen_Facet extends IFacet.Stub {
               });
               LOG.info("approximate handlers size: " + handlersSize / 1000 / 1000 + " mb");
 
+              int rootsCount = Sequence.fromIterable(resources.value).select(new ISelector<GResource, SModelDescriptor>() {
+                public SModelDescriptor select(GResource it) {
+                  return it.model();
+                }
+              }).foldLeft(0, new ILeftCombinator<SModelDescriptor, Integer>() {
+                public Integer combine(Integer s, SModelDescriptor it) {
+                  return s + it.getSModel().rootsCount();
+                }
+              });
+              LOG.info("roots count: " + rootsCount);
+
               // flush stream handlers 
               final Wrappers._long flushTime = new Wrappers._long();
               if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
