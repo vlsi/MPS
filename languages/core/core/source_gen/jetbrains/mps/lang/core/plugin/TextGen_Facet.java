@@ -219,7 +219,7 @@ public class TextGen_Facet extends IFacet.Stub {
               monitor.currentProgress().finishWork("Writing");
 
               long overallTime = System.currentTimeMillis() - startTime;
-              if (true) {
+              if (false) {
                 LOG.info("text gen overall time: " + overallTime);
                 LOG.info("text gen prepare time: " + prepareTime);
                 LOG.info("text gen generate time: " + textGenTime.value);
