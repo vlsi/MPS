@@ -107,10 +107,6 @@ public class TextGen_Facet extends IFacet.Stub {
               long startTime = System.currentTimeMillis();
               final Wrappers._long textGenTime = new Wrappers._long(0);
               long textGenTimePlusReadActionTime = 0;
-              final Wrappers._long cleanUpTime = new Wrappers._long(0);
-              long cleanUpTimePlusWriteTransactionTime = 0;
-              final Wrappers._long flushTime = new Wrappers._long(0);
-              long flushTimePlusWriteTransactionTime = 0;
 
               long currentTime = System.currentTimeMillis();
               final Wrappers._T<Iterable<GResource>> resources = new Wrappers._T<Iterable<GResource>>(Sequence.fromIterable(input).select(new ISelector<IResource, GResource>() {
@@ -207,17 +203,15 @@ public class TextGen_Facet extends IFacet.Stub {
               currentTime = System.currentTimeMillis();
               if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
                 public void run() {
-                  long innerTime = System.currentTimeMillis();
                   for (JavaStreamHandler javaStreamHandler : Sequence.fromIterable(MapSequence.fromMap(streamHandlers).values())) {
                     javaStreamHandler.flush();
                   }
-                  flushTime.value += System.currentTimeMillis() - innerTime;
                 }
               }))) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to save files")));
                 return new IResult.FAILURE(_output_21gswx_a0a);
               }
-              flushTimePlusWriteTransactionTime = System.currentTimeMillis() - currentTime;
+              long flushTime = System.currentTimeMillis() - currentTime;
 
               // output result 
               for (GResource resource : Sequence.fromIterable(resources.value)) {
@@ -232,7 +226,6 @@ public class TextGen_Facet extends IFacet.Stub {
                 public void run() {
                   ModelAccess.instance().requireWrite(new Runnable() {
                     public void run() {
-                      long innerTime = System.currentTimeMillis();
                       if (!(Boolean.TRUE.equals(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).saveTransient()))) {
                         for (GResource resource : Sequence.fromIterable(resources.value)) {
                           SModelDescriptor outputMD = resource.status().getOutputModelDescriptor();
@@ -242,7 +235,6 @@ public class TextGen_Facet extends IFacet.Stub {
                         }
                       }
                       CleanupManager.getInstance().cleanup();
-                      cleanUpTime.value += System.currentTimeMillis() - innerTime;
                     }
                   });
                 }
@@ -250,7 +242,7 @@ public class TextGen_Facet extends IFacet.Stub {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to remove transient models")));
                 return new IResult.FAILURE(_output_21gswx_a0a);
               }
-              cleanUpTimePlusWriteTransactionTime += System.currentTimeMillis() - currentTime;
+              long cleanUpTime = System.currentTimeMillis() - currentTime;
 
               monitor.currentProgress().finishWork("Writing");
 
@@ -260,10 +252,8 @@ public class TextGen_Facet extends IFacet.Stub {
                 LOG.info("text gen prepare time: " + prepareTime);
                 LOG.info("text gen generate time: " + textGenTime.value);
                 LOG.info("text gen generate time plus read action: " + textGenTimePlusReadActionTime);
-                LOG.info("text gen clean up time: " + cleanUpTime.value);
-                LOG.info("text gen clean up time plus write transaction: " + cleanUpTimePlusWriteTransactionTime);
-                LOG.info("text gen flush time: " + flushTime.value);
-                LOG.info("text gen flush time plus write transaction: " + flushTimePlusWriteTransactionTime);
+                LOG.info("text gen clean up time: " + cleanUpTime);
+                LOG.info("text gen flush time: " + flushTime);
               }
             default:
               return new IResult.SUCCESS(_output_21gswx_a0a);
