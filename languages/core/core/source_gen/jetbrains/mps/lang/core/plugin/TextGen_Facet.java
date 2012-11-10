@@ -146,7 +146,7 @@ public class TextGen_Facet extends IFacet.Stub {
               // prepare retainedFilesDelta, retainedCachedDelta and streamHandlers 
               Map<IResource, Iterable<IDelta>> retainedFilesDelta = MapSequence.fromMap(new HashMap<IResource, Iterable<IDelta>>());
               Map<IResource, Iterable<IDelta>> retainedCachesDelta = MapSequence.fromMap(new HashMap<IResource, Iterable<IDelta>>());
-              Map<IResource, JavaStreamHandler> streamHandlers = MapSequence.fromMap(new HashMap<IResource, JavaStreamHandler>());
+              final Map<IResource, JavaStreamHandler> streamHandlers = MapSequence.fromMap(new HashMap<IResource, JavaStreamHandler>());
 
               for (GResource resource : Sequence.fromIterable(resources.value)) {
                 MapSequence.fromMap(retainedFilesDelta).put(resource, RetainedUtil.retainedFilesDelta(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
@@ -170,7 +170,7 @@ public class TextGen_Facet extends IFacet.Stub {
               monitor.currentProgress().beginWork("Writing", Sequence.fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
               for (final GResource gres : Sequence.fromIterable(resources.value)) {
                 monitor.currentProgress().advanceWork("Writing", 100, gres.status().getInputModel().getSModelReference().getSModelFqName().getLongName());
-                final JavaStreamHandler javaStreamHandler = MapSequence.fromMap(streamHandlers).get(gres);
+                JavaStreamHandler javaStreamHandler = MapSequence.fromMap(streamHandlers).get(gres);
 
                 final Wrappers._boolean ok = new Wrappers._boolean();
                 final TextGenerator textgen = new TextGenerator(javaStreamHandler, BLDependenciesCache.getInstance().getGenerator(), (_generateDebugInfo ?
@@ -201,25 +201,32 @@ public class TextGen_Facet extends IFacet.Stub {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text")));
                   return new IResult.FAILURE(_output_21gswx_a0a);
                 }
+              }
 
-                currentTime = System.currentTimeMillis();
-                if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
-                  public void run() {
-                    long innerTime = System.currentTimeMillis();
+              // flush stream handlers 
+              currentTime = System.currentTimeMillis();
+              if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
+                public void run() {
+                  long innerTime = System.currentTimeMillis();
+                  for (JavaStreamHandler javaStreamHandler : Sequence.fromIterable(MapSequence.fromMap(streamHandlers).values())) {
                     javaStreamHandler.flush();
-                    flushTime.value += System.currentTimeMillis() - innerTime;
                   }
-                }))) {
-                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to save files")));
-                  return new IResult.FAILURE(_output_21gswx_a0a);
+                  flushTime.value += System.currentTimeMillis() - innerTime;
                 }
-                flushTimePlusWriteTransactionTime += System.currentTimeMillis() - currentTime;
+              }))) {
+                monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to save files")));
+                return new IResult.FAILURE(_output_21gswx_a0a);
+              }
+              flushTimePlusWriteTransactionTime = System.currentTimeMillis() - currentTime;
 
-                Iterable<IDelta> delta = Sequence.fromIterable(javaStreamHandler.delta()).concat(Sequence.fromIterable(MapSequence.fromMap(retainedFilesDelta).get(gres))).concat(Sequence.fromIterable(MapSequence.fromMap(retainedCachesDelta).get(gres)));
-                IResource result = new TResource(gres.module(), delta, gres.model());
+              // output result 
+              for (GResource resource : Sequence.fromIterable(resources.value)) {
+                Iterable<IDelta> delta = Sequence.fromIterable(MapSequence.fromMap(streamHandlers).get(resource).delta()).concat(Sequence.fromIterable(MapSequence.fromMap(retainedFilesDelta).get(resource))).concat(Sequence.fromIterable(MapSequence.fromMap(retainedCachesDelta).get(resource)));
+                IResource result = new TResource(resource.module(), delta, resource.model());
                 _output_21gswx_a0a = Sequence.fromIterable(_output_21gswx_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(result)));
               }
 
+              // clean up 
               currentTime = System.currentTimeMillis();
               if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
                 public void run() {
