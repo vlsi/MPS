@@ -21,9 +21,13 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.resources.GResource;
-import jetbrains.mps.make.script.IFeedback;
-import jetbrains.mps.make.delta.IDelta;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.make.script.IFeedback;
+import java.util.Map;
+import jetbrains.mps.make.delta.IDelta;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.internal.make.runtime.java.JavaStreamHandler;
@@ -41,9 +45,6 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TextGenerationResult;
@@ -104,7 +105,6 @@ public class TextGen_Facet extends IFacet.Stub {
           switch (0) {
             case 0:
               long startTime = System.currentTimeMillis();
-              long prepareTime = 0;
               final Wrappers._long textGenTime = new Wrappers._long(0);
               long textGenTimePlusReadActionTime = 0;
               final Wrappers._long cleanUpTime = new Wrappers._long(0);
@@ -112,31 +112,59 @@ public class TextGen_Facet extends IFacet.Stub {
               final Wrappers._long flushTime = new Wrappers._long(0);
               long flushTimePlusWriteTransactionTime = 0;
 
-              monitor.currentProgress().beginWork("Writing", Sequence.fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
-              for (IResource resource : Sequence.fromIterable(input)) {
-                final GResource gres = (GResource) resource;
-                monitor.currentProgress().advanceWork("Writing", 100, gres.status().getInputModel().getSModelReference().getSModelFqName().getLongName());
-                if (!(gres.status().isOk())) {
-                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Generation was not OK")));
-                  return new IResult.FAILURE(_output_21gswx_a0a);
+              long currentTime = System.currentTimeMillis();
+              final Wrappers._T<Iterable<GResource>> resources = new Wrappers._T<Iterable<GResource>>(Sequence.fromIterable(input).select(new ISelector<IResource, GResource>() {
+                public GResource select(IResource it) {
+                  return (GResource) (IResource) it;
                 }
-                String output = gres.module().getOutputFor(gres.model());
-                if (output == null) {
-                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + gres.model().getLongName())));
-                  continue;
-                }
+              }));
 
-                long currentTime = System.currentTimeMillis();
-                Iterable<IDelta> retainedFilesDelta = RetainedUtil.retainedFilesDelta(Sequence.fromIterable(gres.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
+              if (Sequence.fromIterable(resources.value).any(new IWhereFilter<GResource>() {
+                public boolean accept(GResource it) {
+                  return !(it.status().isOk());
+                }
+              })) {
+                monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Generation was not OK")));
+                return new IResult.FAILURE(_output_21gswx_a0a);
+              }
+
+              for (GResource resource : Sequence.fromIterable(resources.value)) {
+                if (resource.module().getOutputFor(resource.model()) == null) {
+                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + resource.model().getLongName())));
+                }
+              }
+              resources.value = Sequence.fromIterable(resources.value).where(new IWhereFilter<GResource>() {
+                public boolean accept(GResource it) {
+                  return it.module().getOutputFor(it.model()) != null;
+                }
+              });
+
+              // 1) prepare retainedFilesDelta and retainedCachedDelta 
+              Map<IResource, Iterable<IDelta>> retainedFilesDelta = MapSequence.fromMap(new HashMap<IResource, Iterable<IDelta>>());
+              Map<IResource, Iterable<IDelta>> retainedCachesDelta = MapSequence.fromMap(new HashMap<IResource, Iterable<IDelta>>());
+              for (GResource resource : Sequence.fromIterable(resources.value)) {
+                MapSequence.fromMap(retainedFilesDelta).put(resource, RetainedUtil.retainedFilesDelta(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
                   public boolean accept(SModelDescriptor smd) {
                     return GenerationFacade.canGenerate(smd);
                   }
-                }), gres.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile());
-                Iterable<IDelta> retainedCachesDelta = RetainedUtil.retainedCachesDelta(Sequence.fromIterable(gres.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
+                }), resource.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile()));
+                MapSequence.fromMap(retainedCachesDelta).put(resource, RetainedUtil.retainedCachesDelta(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
                   public boolean accept(SModelDescriptor smd) {
                     return GenerationFacade.canGenerate(smd);
                   }
-                }), gres.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile());
+                }), resource.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile()));
+              }
+
+              long prepareTime = System.currentTimeMillis() - currentTime;
+
+              // 2) prepare stream handlers 
+              // later 
+
+              monitor.currentProgress().beginWork("Writing", Sequence.fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
+              for (final GResource gres : Sequence.fromIterable(resources.value)) {
+                monitor.currentProgress().advanceWork("Writing", 100, gres.status().getInputModel().getSModelReference().getSModelFqName().getLongName());
+                String output = gres.module().getOutputFor(gres.model());
+
 
                 final JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gres.model(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile().invoke(output), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile().invoke(FileGenerationUtil.getCachesPath(output)));
 
@@ -149,9 +177,7 @@ public class TextGen_Facet extends IFacet.Stub {
                 textgen.setFailIfNoTextgen(pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).failIfNoTextgen() != null && pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).failIfNoTextgen());
                 textgen.setGenerateDebugInfo(generateDI);
 
-                prepareTime += System.currentTimeMillis() - currentTime;
                 currentTime = System.currentTimeMillis();
-
                 try {
                   ModelAccess.instance().runReadAction(new Runnable() {
                     public void run() {
@@ -163,7 +189,6 @@ public class TextGen_Facet extends IFacet.Stub {
                 } finally {
                   javaStreamHandler.dispose();
                 }
-
                 textGenTimePlusReadActionTime += System.currentTimeMillis() - currentTime;
 
                 if (!(ok.value)) {
@@ -187,19 +212,20 @@ public class TextGen_Facet extends IFacet.Stub {
                 }
                 flushTimePlusWriteTransactionTime += System.currentTimeMillis() - currentTime;
 
-                _output_21gswx_a0a = Sequence.fromIterable(_output_21gswx_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TResource(gres.module(), Sequence.fromIterable(javaStreamHandler.delta()).concat(Sequence.fromIterable(retainedFilesDelta)).concat(Sequence.fromIterable(retainedCachesDelta)), gres.model()))));
+                Iterable<IDelta> delta = Sequence.fromIterable(javaStreamHandler.delta()).concat(Sequence.fromIterable(MapSequence.fromMap(retainedFilesDelta).get(gres))).concat(Sequence.fromIterable(MapSequence.fromMap(retainedCachesDelta).get(gres)));
+                IResource result = new TResource(gres.module(), delta, gres.model());
+                _output_21gswx_a0a = Sequence.fromIterable(_output_21gswx_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(result)));
               }
 
-              long currentTime = System.currentTimeMillis();
+              currentTime = System.currentTimeMillis();
               if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
                 public void run() {
                   ModelAccess.instance().requireWrite(new Runnable() {
                     public void run() {
                       long innerTime = System.currentTimeMillis();
                       if (!(Boolean.TRUE.equals(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).saveTransient()))) {
-                        for (IResource resource : Sequence.fromIterable(input)) {
-                          GResource gres = (GResource) resource;
-                          SModelDescriptor outputMD = gres.status().getOutputModelDescriptor();
+                        for (GResource resource : Sequence.fromIterable(resources.value)) {
+                          SModelDescriptor outputMD = resource.status().getOutputModelDescriptor();
                           if (outputMD instanceof TransientModelsModule.TransientSModelDescriptor) {
                             ((TransientModelsModule) outputMD.getModule()).removeModel(outputMD);
                           }
@@ -219,7 +245,7 @@ public class TextGen_Facet extends IFacet.Stub {
               monitor.currentProgress().finishWork("Writing");
 
               long overallTime = System.currentTimeMillis() - startTime;
-              if (false) {
+              if (true) {
                 LOG.info("text gen overall time: " + overallTime);
                 LOG.info("text gen prepare time: " + prepareTime);
                 LOG.info("text gen generate time: " + textGenTime.value);
