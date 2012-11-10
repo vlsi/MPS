@@ -4,8 +4,7 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
@@ -26,7 +25,7 @@ import java.util.Arrays;
 
 public class ConvertAnonymousClass_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ConvertAnonymousClass_Action.class);
+  private static Logger LOG = Logger.getLogger(ConvertAnonymousClass_Action.class);
 
   public ConvertAnonymousClass_Action() {
     super("Convert Anonymous Class", "", ICON);
@@ -50,9 +49,7 @@ public class ConvertAnonymousClass_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ConvertAnonymousClass", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ConvertAnonymousClass", t);
       this.disable(event.getPresentation());
     }
   }
@@ -103,9 +100,7 @@ public class ConvertAnonymousClass_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ConvertAnonymousClass", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ConvertAnonymousClass", t);
     }
   }
 }

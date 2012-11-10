@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -17,7 +16,7 @@ import jetbrains.mps.smodel.IOperationContext;
 
 public class SafeDelete_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(SafeDelete_Action.class);
+  private static Logger LOG = Logger.getLogger(SafeDelete_Action.class);
 
   public SafeDelete_Action() {
     super("Safe Delete", "", ICON);
@@ -34,9 +33,7 @@ public class SafeDelete_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "SafeDelete", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "SafeDelete", t);
       this.disable(event.getPresentation());
     }
   }
@@ -65,9 +62,7 @@ public class SafeDelete_Action extends BaseAction {
     try {
       new DeleteNodesHelper(ListSequence.fromListAndArray(new ArrayList<SNode>(), ((SNode) MapSequence.fromMap(_params).get("node"))), ((IOperationContext) MapSequence.fromMap(_params).get("context"))).deleteNodes(true, true, false);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "SafeDelete", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "SafeDelete", t);
     }
   }
 }

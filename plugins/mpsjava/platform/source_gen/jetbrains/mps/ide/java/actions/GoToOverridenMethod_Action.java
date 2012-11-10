@@ -4,8 +4,7 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
@@ -43,7 +42,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class GoToOverridenMethod_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(GoToOverridenMethod_Action.class);
+  private static Logger LOG = Logger.getLogger(GoToOverridenMethod_Action.class);
 
   public GoToOverridenMethod_Action() {
     super("Go to Overriden Method", "", ICON);
@@ -67,9 +66,7 @@ public class GoToOverridenMethod_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GoToOverridenMethod", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "GoToOverridenMethod", t);
       this.disable(event.getPresentation());
     }
   }
@@ -131,9 +128,7 @@ public class GoToOverridenMethod_Action extends BaseAction {
         }
       }).toListSequence(), relPoint, ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))), methodName[0]);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GoToOverridenMethod", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "GoToOverridenMethod", t);
     }
   }
 

@@ -4,8 +4,7 @@ package jetbrains.mps.quickQueryLanguage.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -18,7 +17,7 @@ import jetbrains.mps.project.IModule;
 
 public class FindInstancesByCondition_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(FindInstancesByCondition_Action.class);
+  private static Logger LOG = Logger.getLogger(FindInstancesByCondition_Action.class);
 
   public FindInstancesByCondition_Action() {
     super("Find Instances by Condition", "", ICON);
@@ -35,9 +34,7 @@ public class FindInstancesByCondition_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "FindInstancesByCondition", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "FindInstancesByCondition", t);
       this.disable(event.getPresentation());
     }
   }
@@ -77,9 +74,7 @@ public class FindInstancesByCondition_Action extends BaseAction {
       }
       testDialog.showDialog();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "FindInstancesByCondition", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "FindInstancesByCondition", t);
     }
   }
 }

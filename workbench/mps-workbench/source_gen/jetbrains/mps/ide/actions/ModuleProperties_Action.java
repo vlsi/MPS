@@ -5,8 +5,7 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -29,7 +28,7 @@ import jetbrains.mps.smodel.Generator;
 
 public class ModuleProperties_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("solutionProperties.png");
-  protected static Log log = LogFactory.getLog(ModuleProperties_Action.class);
+  private static Logger LOG = Logger.getLogger(ModuleProperties_Action.class);
 
   public ModuleProperties_Action() {
     super("Module Properties", "", ICON);
@@ -46,9 +45,7 @@ public class ModuleProperties_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ModuleProperties", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ModuleProperties", t);
       this.disable(event.getPresentation());
     }
   }
@@ -99,9 +96,7 @@ public class ModuleProperties_Action extends BaseAction {
         dialog.value.show();
       */
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ModuleProperties", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ModuleProperties", t);
     }
   }
 }

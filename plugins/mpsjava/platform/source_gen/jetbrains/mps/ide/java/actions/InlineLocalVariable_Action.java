@@ -4,8 +4,7 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -31,7 +30,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 
 public class InlineLocalVariable_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(InlineLocalVariable_Action.class);
+  private static Logger LOG = Logger.getLogger(InlineLocalVariable_Action.class);
 
   public InlineLocalVariable_Action() {
     super("Inline Local Variable", "", ICON);
@@ -56,9 +55,7 @@ public class InlineLocalVariable_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "InlineLocalVariable", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "InlineLocalVariable", t);
       this.disable(event.getPresentation());
     }
   }
@@ -147,9 +144,7 @@ public class InlineLocalVariable_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "InlineLocalVariable", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "InlineLocalVariable", t);
     }
   }
 }

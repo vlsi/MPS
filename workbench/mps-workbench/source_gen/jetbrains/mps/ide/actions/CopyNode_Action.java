@@ -5,8 +5,7 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
@@ -20,7 +19,7 @@ import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 
 public class CopyNode_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("menu-copy.png");
-  protected static Log log = LogFactory.getLog(CopyNode_Action.class);
+  private static Logger LOG = Logger.getLogger(CopyNode_Action.class);
 
   public CopyNode_Action() {
     super("Copy", "", ICON);
@@ -50,9 +49,7 @@ public class CopyNode_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "CopyNode", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "CopyNode", t);
       this.disable(event.getPresentation());
     }
   }
@@ -82,9 +79,7 @@ public class CopyNode_Action extends BaseAction {
     try {
       CopyPasteUtil.copyNodesToClipboard(((List<SNode>) MapSequence.fromMap(_params).get("nodes")));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "CopyNode", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "CopyNode", t);
     }
   }
 }

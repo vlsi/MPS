@@ -4,8 +4,7 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -15,7 +14,7 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 
 public class InsertBefore_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(InsertBefore_Action.class);
+  private static Logger LOG = Logger.getLogger(InsertBefore_Action.class);
 
   public InsertBefore_Action() {
     super("Insert New Element before Current", "", ICON);
@@ -39,9 +38,7 @@ public class InsertBefore_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "InsertBefore", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "InsertBefore", t);
       this.disable(event.getPresentation());
     }
   }
@@ -65,9 +62,7 @@ public class InsertBefore_Action extends BaseAction {
     try {
       EditorActionUtils.callInsertBeforeAction(EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "InsertBefore", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "InsertBefore", t);
     }
   }
 }

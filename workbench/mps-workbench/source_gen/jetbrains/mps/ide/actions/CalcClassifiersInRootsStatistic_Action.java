@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -32,7 +31,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(CalcClassifiersInRootsStatistic_Action.class);
+  private static Logger LOG = Logger.getLogger(CalcClassifiersInRootsStatistic_Action.class);
 
   public CalcClassifiersInRootsStatistic_Action() {
     super("Calc classifiers in roots statistic", "", ICON);
@@ -49,9 +48,7 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "CalcClassifiersInRootsStatistic", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "CalcClassifiersInRootsStatistic", t);
       this.disable(event.getPresentation());
     }
   }
@@ -134,9 +131,7 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
 
       System.out.println("Members average time: " + membersOverallTime.value * 0.001 / rootsCount.value);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "CalcClassifiersInRootsStatistic", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "CalcClassifiersInRootsStatistic", t);
     }
   }
 

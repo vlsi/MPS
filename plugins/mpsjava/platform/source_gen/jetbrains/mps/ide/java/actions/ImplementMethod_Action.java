@@ -4,8 +4,7 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
@@ -23,7 +22,7 @@ import jetbrains.mps.smodel.IOperationContext;
 
 public class ImplementMethod_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ImplementMethod_Action.class);
+  private static Logger LOG = Logger.getLogger(ImplementMethod_Action.class);
 
   public ImplementMethod_Action() {
     super("Implement Method...", "", ICON);
@@ -49,9 +48,7 @@ public class ImplementMethod_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ImplementMethod", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ImplementMethod", t);
       this.disable(event.getPresentation());
     }
   }
@@ -85,9 +82,7 @@ public class ImplementMethod_Action extends BaseAction {
       final Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
       new OverrideImplementMethodAction(project, ((SNode) MapSequence.fromMap(_params).get("selectedNode")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), false).run();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ImplementMethod", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ImplementMethod", t);
     }
   }
 }

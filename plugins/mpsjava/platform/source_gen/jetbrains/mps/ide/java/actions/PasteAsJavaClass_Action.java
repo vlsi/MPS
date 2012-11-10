@@ -4,8 +4,7 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SModel;
@@ -23,7 +22,7 @@ import jetbrains.mps.project.MPSProject;
 
 public class PasteAsJavaClass_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(PasteAsJavaClass_Action.class);
+  private static Logger LOG = Logger.getLogger(PasteAsJavaClass_Action.class);
 
   public PasteAsJavaClass_Action() {
     super("Paste as Java Class", "", ICON);
@@ -48,9 +47,7 @@ public class PasteAsJavaClass_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "PasteAsJavaClass", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "PasteAsJavaClass", t);
       this.disable(event.getPresentation());
     }
   }
@@ -81,9 +78,7 @@ public class PasteAsJavaClass_Action extends BaseAction {
     try {
       new JavaPaster().pasteJavaAsClass(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel(), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "PasteAsJavaClass", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "PasteAsJavaClass", t);
     }
   }
 }

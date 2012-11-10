@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -16,7 +15,7 @@ import jetbrains.mps.ide.bookmark.BookmarkManager;
 
 public class RemoveAllBookmarks_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(RemoveAllBookmarks_Action.class);
+  private static Logger LOG = Logger.getLogger(RemoveAllBookmarks_Action.class);
 
   public RemoveAllBookmarks_Action() {
     super("Remove All Bookmarks", "", ICON);
@@ -33,9 +32,7 @@ public class RemoveAllBookmarks_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RemoveAllBookmarks", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "RemoveAllBookmarks", t);
       this.disable(event.getPresentation());
     }
   }
@@ -55,9 +52,7 @@ public class RemoveAllBookmarks_Action extends BaseAction {
     try {
       ((Project) MapSequence.fromMap(_params).get("project")).getComponent(BookmarkManager.class).clearBookmarks();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RemoveAllBookmarks", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "RemoveAllBookmarks", t);
     }
   }
 }

@@ -5,8 +5,7 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -18,7 +17,7 @@ import jetbrains.mps.smodel.SNode;
 
 public class ShowInLogicalView_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("logical_view.png");
-  protected static Log log = LogFactory.getLog(ShowInLogicalView_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowInLogicalView_Action.class);
 
   public ShowInLogicalView_Action() {
     super("Show Node in Logical View", "", ICON);
@@ -35,9 +34,7 @@ public class ShowInLogicalView_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowInLogicalView", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowInLogicalView", t);
       this.disable(event.getPresentation());
     }
   }
@@ -66,9 +63,7 @@ public class ShowInLogicalView_Action extends BaseAction {
       ProjectPane pane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
       pane.selectNode(((SNode) MapSequence.fromMap(_params).get("node")), true);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowInLogicalView", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowInLogicalView", t);
     }
   }
 }

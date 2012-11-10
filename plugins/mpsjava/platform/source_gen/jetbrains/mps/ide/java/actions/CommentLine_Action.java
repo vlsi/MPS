@@ -4,8 +4,7 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -20,7 +19,7 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 
 public class CommentLine_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(CommentLine_Action.class);
+  private static Logger LOG = Logger.getLogger(CommentLine_Action.class);
 
   public CommentLine_Action() {
     super("Comment Line", "", ICON);
@@ -55,9 +54,7 @@ public class CommentLine_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "CommentLine", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "CommentLine", t);
       this.disable(event.getPresentation());
     }
   }
@@ -99,9 +96,7 @@ public class CommentLine_Action extends BaseAction {
         SLinkOperations.setTarget(commentPart, "commentedStatement", statement, true);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "CommentLine", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "CommentLine", t);
     }
   }
 

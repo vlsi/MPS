@@ -4,8 +4,7 @@ package jetbrains.mps.build.generictasks.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -18,7 +17,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 
 public class ImportAntStuff_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ImportAntStuff_Action.class);
+  private static Logger LOG = Logger.getLogger(ImportAntStuff_Action.class);
 
   public ImportAntStuff_Action() {
     super("Import Ant Stuff", "", ICON);
@@ -42,9 +41,7 @@ public class ImportAntStuff_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ImportAntStuff", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ImportAntStuff", t);
       this.disable(event.getPresentation());
     }
   }
@@ -65,13 +62,9 @@ public class ImportAntStuff_Action extends BaseAction {
       Language language = ((Language) ((IModule) MapSequence.fromMap(_params).get("module")));
       ImportAntStuff_Action.this.importTasks(language, ImportAntStuffUtil.getGenerated(language), Generator.Modes.CORE, _params);
       ImportAntStuff_Action.this.importTasks(language, ImportAntStuffUtil.getOptional(language), Generator.Modes.JUNIT, _params);
-      if (log.isInfoEnabled()) {
-        log.info("Import completed.");
-      }
+      LOG.info("Import completed.");
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ImportAntStuff", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ImportAntStuff", t);
     }
   }
 

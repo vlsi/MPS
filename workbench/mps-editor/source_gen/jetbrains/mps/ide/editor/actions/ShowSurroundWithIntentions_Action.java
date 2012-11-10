@@ -4,8 +4,7 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -38,7 +37,7 @@ import jetbrains.mps.intentions.SurroundWithIntention;
 
 public class ShowSurroundWithIntentions_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ShowSurroundWithIntentions_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowSurroundWithIntentions_Action.class);
 
   public ShowSurroundWithIntentions_Action() {
     super("Surround with...", "", ICON);
@@ -65,9 +64,7 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowSurroundWithIntentions", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowSurroundWithIntentions", t);
       this.disable(event.getPresentation());
     }
   }
@@ -114,9 +111,7 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
       RelativePoint relativePoint = new RelativePoint((EditorComponent) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent(), new Point(x, y));
       popup.value.show(relativePoint);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowSurroundWithIntentions", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowSurroundWithIntentions", t);
     }
   }
 

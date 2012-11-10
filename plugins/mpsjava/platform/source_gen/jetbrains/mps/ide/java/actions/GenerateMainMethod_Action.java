@@ -4,8 +4,7 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
@@ -26,7 +25,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GenerateMainMethod_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(GenerateMainMethod_Action.class);
+  private static Logger LOG = Logger.getLogger(GenerateMainMethod_Action.class);
 
   public GenerateMainMethod_Action() {
     super("main(Strins[] args)", "", ICON);
@@ -55,9 +54,7 @@ public class GenerateMainMethod_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GenerateMainMethod", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "GenerateMainMethod", t);
       this.disable(event.getPresentation());
     }
   }
@@ -84,9 +81,7 @@ public class GenerateMainMethod_Action extends BaseAction {
       ListSequence.fromList(SLinkOperations.getTargets(classConcept, "staticMethod", true)).addElement(methodNode);
       ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(SLinkOperations.getTarget(methodNode, "body", true));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GenerateMainMethod", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "GenerateMainMethod", t);
     }
   }
 

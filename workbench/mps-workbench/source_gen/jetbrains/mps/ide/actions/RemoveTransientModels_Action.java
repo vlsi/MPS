@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -17,7 +16,7 @@ import jetbrains.mps.ide.generator.TransientModelsComponent;
 
 public class RemoveTransientModels_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(RemoveTransientModels_Action.class);
+  private static Logger LOG = Logger.getLogger(RemoveTransientModels_Action.class);
 
   public RemoveTransientModels_Action() {
     super("Remove Transient Models", "", ICON);
@@ -34,9 +33,7 @@ public class RemoveTransientModels_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RemoveTransientModels", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "RemoveTransientModels", t);
       this.disable(event.getPresentation());
     }
   }
@@ -59,9 +56,7 @@ public class RemoveTransientModels_Action extends BaseAction {
       component.removeAllTransient();
       System.gc();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RemoveTransientModels", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "RemoveTransientModels", t);
     }
   }
 }

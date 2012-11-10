@@ -4,8 +4,7 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
@@ -32,7 +31,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class GenerateSetters_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(GenerateSetters_Action.class);
+  private static Logger LOG = Logger.getLogger(GenerateSetters_Action.class);
 
   public GenerateSetters_Action() {
     super("Setter", "", ICON);
@@ -57,9 +56,7 @@ public class GenerateSetters_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GenerateSetters", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "GenerateSetters", t);
       this.disable(event.getPresentation());
     }
   }
@@ -117,9 +114,7 @@ public class GenerateSetters_Action extends BaseAction {
       }
 
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GenerateSetters", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "GenerateSetters", t);
     }
   }
 
