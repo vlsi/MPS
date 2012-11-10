@@ -33,11 +33,11 @@ import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.resources.TResource;
+import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -166,30 +166,6 @@ public class TextGen_Facet extends IFacet.Stub {
 
                 textGenTimePlusReadActionTime += System.currentTimeMillis() - currentTime;
 
-                currentTime = System.currentTimeMillis();
-                final SModelDescriptor outputMD = gres.status().getOutputModelDescriptor();
-                if (outputMD instanceof TransientModelsModule.TransientSModelDescriptor) {
-                  if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
-                    public void run() {
-                      ModelAccess.instance().requireWrite(new Runnable() {
-                        public void run() {
-                          long innerTime = System.currentTimeMillis();
-                          if (!(Boolean.TRUE.equals(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).saveTransient()))) {
-                            TransientModelsModule.TransientSModelDescriptor tmd = (TransientModelsModule.TransientSModelDescriptor) outputMD;
-                            ((TransientModelsModule) tmd.getModule()).removeModel(tmd);
-                          }
-                          CleanupManager.getInstance().cleanup();
-                          cleanUpTime.value += System.currentTimeMillis() - innerTime;
-                        }
-                      });
-                    }
-                  }))) {
-                    monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to remove transient models")));
-                    return new IResult.FAILURE(_output_21gswx_a0a);
-                  }
-                }
-                cleanUpTimePlusWriteTransactionTime += System.currentTimeMillis() - currentTime;
-
                 if (!(ok.value)) {
                   for (IMessage err : textgen.errors()) {
                     monitor.reportFeedback(new IFeedback.MESSAGE(err));
@@ -213,6 +189,33 @@ public class TextGen_Facet extends IFacet.Stub {
 
                 _output_21gswx_a0a = Sequence.fromIterable(_output_21gswx_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TResource(gres.module(), Sequence.fromIterable(javaStreamHandler.delta()).concat(Sequence.fromIterable(retainedFilesDelta)).concat(Sequence.fromIterable(retainedCachesDelta)), gres.model()))));
               }
+
+              long currentTime = System.currentTimeMillis();
+              if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
+                public void run() {
+                  ModelAccess.instance().requireWrite(new Runnable() {
+                    public void run() {
+                      long innerTime = System.currentTimeMillis();
+                      if (!(Boolean.TRUE.equals(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).saveTransient()))) {
+                        for (IResource resource : Sequence.fromIterable(input)) {
+                          GResource gres = (GResource) resource;
+                          SModelDescriptor outputMD = gres.status().getOutputModelDescriptor();
+                          if (outputMD instanceof TransientModelsModule.TransientSModelDescriptor) {
+                            ((TransientModelsModule) outputMD.getModule()).removeModel(outputMD);
+                          }
+                        }
+                      }
+                      CleanupManager.getInstance().cleanup();
+                      cleanUpTime.value += System.currentTimeMillis() - innerTime;
+                    }
+                  });
+                }
+              }))) {
+                monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to remove transient models")));
+                return new IResult.FAILURE(_output_21gswx_a0a);
+              }
+              cleanUpTimePlusWriteTransactionTime += System.currentTimeMillis() - currentTime;
+
               monitor.currentProgress().finishWork("Writing");
 
               long overallTime = System.currentTimeMillis() - startTime;
