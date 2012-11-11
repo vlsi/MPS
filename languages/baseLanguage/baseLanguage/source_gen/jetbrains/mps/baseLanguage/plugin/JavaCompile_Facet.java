@@ -311,12 +311,9 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 return new IResult.FAILURE(_output_wf1ya0_a0b);
               }
 
-              monitor.currentProgress().beginWork("Compiling in IntelliJ IDEA", 2, monitor.currentProgress().workLeft());
+              monitor.currentProgress().beginWork("Compiling in IntelliJ IDEA", 1, monitor.currentProgress().workLeft());
 
-              monitor.currentProgress().advanceWork("Compiling in IntelliJ IDEA", 1, "Refresh files");
-              peer.getJavaCompiler().refreshFiles();
-
-              monitor.currentProgress().advanceWork("Compiling in IntelliJ IDEA", 1, "Compile");
+              monitor.currentProgress().advanceWork("Compiling in IntelliJ IDEA", 1);
               MPSCompilationResult cr = peer.getJavaCompiler().compileModules(Sequence.fromIterable(toCompile).select(new ISelector<TResource, IModule>() {
                 public IModule select(TResource it) {
                   return it.module();
