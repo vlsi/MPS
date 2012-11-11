@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -21,7 +20,7 @@ import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 
 public class AddToFavorites_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(AddToFavorites_Action.class);
+  private static Logger LOG = Logger.getLogger(AddToFavorites_Action.class);
 
   private String name;
 
@@ -41,9 +40,7 @@ public class AddToFavorites_Action extends BaseAction {
     try {
       event.getPresentation().setText(AddToFavorites_Action.this.name);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "AddToFavorites", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "AddToFavorites", t);
       this.disable(event.getPresentation());
     }
   }
@@ -76,9 +73,7 @@ public class AddToFavorites_Action extends BaseAction {
       }
       favoritesManager.addRoots(AddToFavorites_Action.this.name, toMove);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "AddToFavorites", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "AddToFavorites", t);
     }
   }
 

@@ -4,8 +4,7 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.ide.editor.util.GoToHelper;
@@ -22,7 +21,7 @@ import com.intellij.openapi.project.Project;
 
 public class GoToOverridingMethod_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(GoToOverridingMethod_Action.class);
+  private static Logger LOG = Logger.getLogger(GoToOverridingMethod_Action.class);
 
   public GoToOverridingMethod_Action() {
     super("Go to Overriding Methods", "", ICON);
@@ -46,9 +45,7 @@ public class GoToOverridingMethod_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GoToOverridingMethod", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "GoToOverridingMethod", t);
       this.disable(event.getPresentation());
     }
   }
@@ -85,9 +82,7 @@ public class GoToOverridingMethod_Action extends BaseAction {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
       GoToHelper.executeFinders(((SNode) MapSequence.fromMap(_params).get("methodNode")), ((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), ((Project) MapSequence.fromMap(_params).get("project")), GoToOverridingMethod_Action.this.getFinderName(_params));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GoToOverridingMethod", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "GoToOverridingMethod", t);
     }
   }
 

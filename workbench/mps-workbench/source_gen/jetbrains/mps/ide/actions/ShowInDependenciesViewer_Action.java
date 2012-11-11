@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import javax.swing.tree.TreeNode;
@@ -21,7 +20,7 @@ import jetbrains.mps.project.MPSProject;
 
 public class ShowInDependenciesViewer_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ShowInDependenciesViewer_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowInDependenciesViewer_Action.class);
 
   public ShowInDependenciesViewer_Action() {
     super("Show Usages", "show usages in dependencies viewer", ICON);
@@ -45,9 +44,7 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowInDependenciesViewer", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowInDependenciesViewer", t);
       this.disable(event.getPresentation());
     }
   }
@@ -77,9 +74,7 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
       IModule to = check_hezs1a_a0b0a(as_nkoo1o_a0a0b0a0e(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class));
       DependenciesUtil.analyzeDependencies(from, to, ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), true);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowInDependenciesViewer", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowInDependenciesViewer", t);
     }
   }
 

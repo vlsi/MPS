@@ -22,8 +22,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.IPersistentConfiguration" />
@@ -75,6 +74,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.ModuleId" />
@@ -95,8 +95,6 @@
     <classNode dependClassName="jetbrains.mps.traceInfo.DebugInfo" />
     <classNode dependClassName="jetbrains.mps.traceInfo.TraceablePositionInfo" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
 </dependenciesRoot>

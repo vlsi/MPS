@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -26,7 +25,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class HighlightInstances_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(HighlightInstances_Action.class);
+  private static Logger LOG = Logger.getLogger(HighlightInstances_Action.class);
 
   public HighlightInstances_Action() {
     super("Highlight Instances", "", ICON);
@@ -43,9 +42,7 @@ public class HighlightInstances_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "HighlightInstances", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "HighlightInstances", t);
       this.disable(event.getPresentation());
     }
   }
@@ -91,9 +88,7 @@ public class HighlightInstances_Action extends BaseAction {
       }
       highlightManager.repaintAndRebuildEditorMessages();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "HighlightInstances", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "HighlightInstances", t);
     }
   }
 }

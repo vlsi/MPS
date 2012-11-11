@@ -4,8 +4,7 @@ package jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -23,7 +22,7 @@ import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class ShowRulesWhichAffectNodeType_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ShowRulesWhichAffectNodeType_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowRulesWhichAffectNodeType_Action.class);
 
   public ShowRulesWhichAffectNodeType_Action() {
     super("Show Rules Which Affect Node's Type", "", ICON);
@@ -40,9 +39,7 @@ public class ShowRulesWhichAffectNodeType_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowRulesWhichAffectNodeType", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowRulesWhichAffectNodeType", t);
       this.disable(event.getPresentation());
     }
   }
@@ -79,9 +76,7 @@ public class ShowRulesWhichAffectNodeType_Action extends BaseAction {
       });
       ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getComponent(UsagesViewTool.class).findUsages(provider.value, query.value, false, true, false, "no rules found");
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowRulesWhichAffectNodeType", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowRulesWhichAffectNodeType", t);
     }
   }
 }

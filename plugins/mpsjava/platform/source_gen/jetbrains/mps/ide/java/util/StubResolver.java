@@ -4,8 +4,7 @@ package jetbrains.mps.ide.java.util;
 
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModel;
@@ -44,7 +43,7 @@ import jetbrains.mps.internal.collections.runtime.IListSequence;
 
 public class StubResolver {
   private static final String JAVA_STUB = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
-  protected static Log log = LogFactory.getLog(StubResolver.class);
+  private static Logger LOG = Logger.getLogger(StubResolver.class);
 
   private Set<SModelReference> myUsedModels;
 
@@ -110,9 +109,7 @@ public class StubResolver {
     int cnt = StubResolver.resolveReferences(toResolve, models, context);
 
     new OptimizeImportsHelper(context).optimizeModelImports(model.getModelDescriptor());
-    if (log.isInfoEnabled()) {
-      log.info(cnt + " stub references were re-resolved in model " + SModelOperations.getModelName(model) + ". (" + ListSequence.fromList(toResolve).count() + ")");
-    }
+    LOG.info(cnt + " stub references were re-resolved in model " + SModelOperations.getModelName(model) + ". (" + ListSequence.fromList(toResolve).count() + ")");
   }
 
   public void resolveInModels(List<SModelDescriptor> models, IOperationContext context) {
@@ -160,9 +157,7 @@ public class StubResolver {
           }
         });
         if (ListSequence.fromList(resolved).count() > 1) {
-          if (log.isErrorEnabled()) {
-            log.error("more than 1 possible resolution for " + SLinkOperations.getResolveInfo(ref) + " in model " + modelRef.getLongName());
-          }
+          LOG.error("more than 1 possible resolution for " + SLinkOperations.getResolveInfo(ref) + " in model " + modelRef.getLongName());
         }
         if (ListSequence.fromList(resolved).count() > 0) {
           node.setReferenceTarget(SLinkOperations.getRole(ref), ListSequence.fromList(resolved).first());

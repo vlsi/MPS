@@ -5,8 +5,7 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -34,7 +33,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 
 public class PasteNode_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("menu-paste.png");
-  protected static Log log = LogFactory.getLog(PasteNode_Action.class);
+  private static Logger LOG = Logger.getLogger(PasteNode_Action.class);
 
   public PasteNode_Action() {
     super("Paste", "", ICON);
@@ -60,9 +59,7 @@ public class PasteNode_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "PasteNode", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "PasteNode", t);
       this.disable(event.getPresentation());
     }
   }
@@ -141,9 +138,7 @@ public class PasteNode_Action extends BaseAction {
         }
       }, ((MPSProject) MapSequence.fromMap(_params).get("project")));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "PasteNode", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "PasteNode", t);
     }
   }
 

@@ -4,8 +4,7 @@ package jetbrains.mps.lang.quotation.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -20,7 +19,7 @@ import java.awt.Component;
 
 public class ShowMetaLevel_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ShowMetaLevel_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowMetaLevel_Action.class);
 
   public ShowMetaLevel_Action() {
     super("Show Quotation Metalevel", "", ICON);
@@ -37,9 +36,7 @@ public class ShowMetaLevel_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowMetaLevel", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowMetaLevel", t);
       this.disable(event.getPresentation());
     }
   }
@@ -72,9 +69,7 @@ public class ShowMetaLevel_Action extends BaseAction {
       int metaLevel = BehaviorReflection.invokeVirtual(Integer.TYPE, ((SNode) MapSequence.fromMap(_params).get("currentNode")), "virtual_getMetaLevel_3981318653438234726", new Object[]{});
       JOptionPane.showMessageDialog(((Component) MapSequence.fromMap(_params).get("component")), metaLevel);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowMetaLevel", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowMetaLevel", t);
     }
   }
 }

@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -25,7 +24,7 @@ import jetbrains.mps.workbench.actions.module.DeleteModuleHelper;
 
 public class DeleteModules_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(DeleteModules_Action.class);
+  private static Logger LOG = Logger.getLogger(DeleteModules_Action.class);
 
   public DeleteModules_Action() {
     super("Delete Module...", "", ICON);
@@ -60,9 +59,7 @@ public class DeleteModules_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "DeleteModules", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "DeleteModules", t);
       this.disable(event.getPresentation());
     }
   }
@@ -103,9 +100,7 @@ public class DeleteModules_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "DeleteModules", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "DeleteModules", t);
     }
   }
 }

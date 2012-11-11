@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
@@ -21,7 +20,7 @@ import com.intellij.openapi.project.Project;
 
 public class DeleteNode_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(DeleteNode_Action.class);
+  private static Logger LOG = Logger.getLogger(DeleteNode_Action.class);
 
   public DeleteNode_Action() {
     super("Delete", "", ICON);
@@ -45,9 +44,7 @@ public class DeleteNode_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "DeleteNode", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "DeleteNode", t);
       this.disable(event.getPresentation());
     }
   }
@@ -93,9 +90,7 @@ public class DeleteNode_Action extends BaseAction {
       }
       helper.deleteNodes(safeOption.selected, aspectsOption.selected, true);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "DeleteNode", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "DeleteNode", t);
     }
   }
 }

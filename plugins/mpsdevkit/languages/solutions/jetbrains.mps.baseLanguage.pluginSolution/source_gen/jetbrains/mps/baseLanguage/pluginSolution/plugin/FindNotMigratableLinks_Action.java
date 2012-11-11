@@ -4,8 +4,7 @@ package jetbrains.mps.baseLanguage.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -29,7 +28,7 @@ import com.intellij.openapi.project.Project;
 
 public class FindNotMigratableLinks_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(FindNotMigratableLinks_Action.class);
+  private static Logger LOG = Logger.getLogger(FindNotMigratableLinks_Action.class);
 
   public FindNotMigratableLinks_Action() {
     super("Find potentially not migratable classifier links (.field, .method etc) usages", "", ICON);
@@ -46,9 +45,7 @@ public class FindNotMigratableLinks_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "FindNotMigratableLinks", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "FindNotMigratableLinks", t);
       this.disable(event.getPresentation());
     }
   }
@@ -83,9 +80,7 @@ public class FindNotMigratableLinks_Action extends BaseAction {
 
       InternalActionsUtils.showUsagesViewForNodes(((Project) MapSequence.fromMap(_params).get("project")), usages);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "FindNotMigratableLinks", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "FindNotMigratableLinks", t);
     }
   }
 }

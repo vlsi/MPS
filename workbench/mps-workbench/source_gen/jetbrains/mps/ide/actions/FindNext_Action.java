@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -15,7 +14,7 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 
 public class FindNext_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(FindNext_Action.class);
+  private static Logger LOG = Logger.getLogger(FindNext_Action.class);
 
   public FindNext_Action() {
     super("Find Next", "Repeat the last Find operation", ICON);
@@ -40,9 +39,7 @@ public class FindNext_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "FindNext", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "FindNext", t);
       this.disable(event.getPresentation());
     }
   }
@@ -62,9 +59,7 @@ public class FindNext_Action extends BaseAction {
     try {
       ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSearchPanel().goToNext();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "FindNext", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "FindNext", t);
     }
   }
 }

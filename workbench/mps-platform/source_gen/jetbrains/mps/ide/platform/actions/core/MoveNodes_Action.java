@@ -4,8 +4,7 @@ package jetbrains.mps.ide.platform.actions.core;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
@@ -29,7 +28,7 @@ import java.util.Arrays;
 
 public class MoveNodes_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(MoveNodes_Action.class);
+  private static Logger LOG = Logger.getLogger(MoveNodes_Action.class);
 
   public MoveNodes_Action() {
     super("Move Nodes", "", ICON);
@@ -53,9 +52,7 @@ public class MoveNodes_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "MoveNodes", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "MoveNodes", t);
       this.disable(event.getPresentation());
     }
   }
@@ -122,9 +119,7 @@ public class MoveNodes_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "MoveNodes", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "MoveNodes", t);
     }
   }
 }

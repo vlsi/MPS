@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -33,7 +32,7 @@ import java.util.Collections;
 
 public class SetNodePackage_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(SetNodePackage_Action.class);
+  private static Logger LOG = Logger.getLogger(SetNodePackage_Action.class);
 
   public SetNodePackage_Action() {
     super("Set Virtual Package...", "", ICON);
@@ -61,9 +60,7 @@ public class SetNodePackage_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "SetNodePackage", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "SetNodePackage", t);
       this.disable(event.getPresentation());
     }
   }
@@ -132,9 +129,7 @@ public class SetNodePackage_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "SetNodePackage", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "SetNodePackage", t);
     }
   }
 

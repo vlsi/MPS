@@ -14,6 +14,7 @@ import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
 import jetbrains.mps.vcs.changesmanager.SimpleCommandQueue;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.ide.ui.MPSTree;
+import com.intellij.util.ui.update.MergingUpdateQueue;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
@@ -29,6 +30,8 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import com.intellij.util.ui.update.Update;
+import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.changesmanager.BaseVersionUtil;
@@ -64,6 +67,8 @@ public class TreeHighlighter implements TreeMessageOwner {
   private TreeHighlighter.MyFileStatusListener myFileStatusListener = new TreeHighlighter.MyFileStatusListener();
   private TreeHighlighter.MyModelListener myGlobalModelListener;
   private final TreeHighlighter.FeaturesHolder myFeaturesHolder = new TreeHighlighter.FeaturesHolder();
+  private MergingUpdateQueue myQueue = new MergingUpdateQueue("MPS Changes Manager RehighlightAll Watcher Queue", 500, true, null);
+  private final Object myUpdateId = new Object();
 
   public TreeHighlighter(@NotNull CurrentDifferenceRegistry registry, @NotNull FeatureForestMapSupport featureForestMapSupport, @NotNull MPSTree tree, @NotNull TreeNodeFeatureExtractor featureExtractor, boolean removeNodesOnModelDisposal) {
     myRegistry = registry;
@@ -211,6 +216,37 @@ public class TreeHighlighter implements TreeMessageOwner {
     });
   }
 
+  private void rehighlightAllFeaturesLater() {
+    myQueue.queue(new Update(myUpdateId) {
+      public void run() {
+        if (IMakeService.INSTANCE.isSessionActive()) {
+          new Thread(new Runnable() {
+            public void run() {
+              // for safety in another thread, should be started with delay as MergingUpdatingQueue has delay 
+              rehighlightAllFeaturesLater();
+            }
+          }).start();
+          return;
+        }
+
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            rehighlightAllFeaturesNow();
+          }
+        });
+      }
+    });
+  }
+
+  public void rehighlightAllFeaturesNow() {
+    ModelAccess.assertLegalRead();
+    synchronized (myFeaturesHolder) {
+      for (Feature f : ListSequence.fromList(myFeaturesHolder.getAllModelFeatures())) {
+        rehighlightFeatureAndDescendants(f);
+      }
+    }
+  }
+
   @NotNull
   private TreeMessage getMessage(@NotNull FileStatus fileStatus) {
     if (!(MapSequence.fromMap(myTreeMessages).containsKey(fileStatus))) {
@@ -306,15 +342,7 @@ public class TreeHighlighter implements TreeMessageOwner {
     }
 
     public void fileStatusesChanged() {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          synchronized (myFeaturesHolder) {
-            for (Feature f : ListSequence.fromList(myFeaturesHolder.getAllModelFeatures())) {
-              rehighlightFeatureAndDescendants(f);
-            }
-          }
-        }
-      });
+      rehighlightAllFeaturesLater();
     }
   }
 

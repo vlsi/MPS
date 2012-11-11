@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import javax.swing.tree.TreeNode;
@@ -17,7 +16,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 
 public class DeleteReferenceAction_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(DeleteReferenceAction_Action.class);
+  private static Logger LOG = Logger.getLogger(DeleteReferenceAction_Action.class);
 
   public DeleteReferenceAction_Action() {
     super("Delete", "", ICON);
@@ -45,9 +44,7 @@ public class DeleteReferenceAction_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "DeleteReferenceAction", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "DeleteReferenceAction", t);
       this.disable(event.getPresentation());
     }
   }
@@ -70,9 +67,7 @@ public class DeleteReferenceAction_Action extends BaseAction {
       ReferenceTreeNode refNode = (ReferenceTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
       refsNode.getSNode().removeReference(refNode.getRef());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "DeleteReferenceAction", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "DeleteReferenceAction", t);
     }
   }
 }

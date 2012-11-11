@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -16,7 +15,7 @@ import jetbrains.mps.project.IModule;
 
 public class AnalyzeClasspath_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(AnalyzeClasspath_Action.class);
+  private static Logger LOG = Logger.getLogger(AnalyzeClasspath_Action.class);
 
   public AnalyzeClasspath_Action() {
     super("Analyze Classpath", "", ICON);
@@ -33,9 +32,7 @@ public class AnalyzeClasspath_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "AnalyzeClasspath", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "AnalyzeClasspath", t);
       this.disable(event.getPresentation());
     }
   }
@@ -61,9 +58,7 @@ public class AnalyzeClasspath_Action extends BaseAction {
       tool.openToolLater(true);
       tool.analyzeModule(((IModule) MapSequence.fromMap(_params).get("module")));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "AnalyzeClasspath", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "AnalyzeClasspath", t);
     }
   }
 }

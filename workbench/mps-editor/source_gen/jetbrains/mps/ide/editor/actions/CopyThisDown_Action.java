@@ -4,8 +4,7 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -23,7 +22,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class CopyThisDown_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(CopyThisDown_Action.class);
+  private static Logger LOG = Logger.getLogger(CopyThisDown_Action.class);
 
   public CopyThisDown_Action() {
     super("Duplicate Node", "", ICON);
@@ -47,9 +46,7 @@ public class CopyThisDown_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "CopyThisDown", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "CopyThisDown", t);
       this.disable(event.getPresentation());
     }
   }
@@ -115,9 +112,7 @@ public class CopyThisDown_Action extends BaseAction {
         ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext().selectRange(firstNode, lastNode);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "CopyThisDown", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "CopyThisDown", t);
     }
   }
 }

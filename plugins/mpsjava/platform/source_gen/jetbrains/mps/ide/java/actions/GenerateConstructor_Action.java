@@ -4,8 +4,7 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
@@ -32,7 +31,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class GenerateConstructor_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(GenerateConstructor_Action.class);
+  private static Logger LOG = Logger.getLogger(GenerateConstructor_Action.class);
 
   public GenerateConstructor_Action() {
     super("Constructor", "", ICON);
@@ -56,9 +55,7 @@ public class GenerateConstructor_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GenerateConstructor", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "GenerateConstructor", t);
       this.disable(event.getPresentation());
     }
   }
@@ -170,9 +167,7 @@ public class GenerateConstructor_Action extends BaseAction {
         ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(constructorDeclaration);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GenerateConstructor", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "GenerateConstructor", t);
     }
   }
 

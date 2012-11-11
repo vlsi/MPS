@@ -4,8 +4,7 @@ package jetbrains.mps.nanoc.pluginSolution.plugin;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsBeforeTaskProvider;
 import com.intellij.openapi.util.Key;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.process.ProcessHandler;
@@ -19,7 +18,7 @@ import com.intellij.execution.ExecutionException;
 
 public class CompileWithGcc_BeforeTask extends BaseMpsBeforeTaskProvider<CompileWithGcc_BeforeTask.CompileWithGcc_BeforeTask_RunTask> {
   private static final Key<CompileWithGcc_BeforeTask.CompileWithGcc_BeforeTask_RunTask> KEY = Key.create("jetbrains.mps.nanoc.pluginSolution.plugin.CompileWithGcc_BeforeTask");
-  protected static Log log = LogFactory.getLog(CompileWithGcc_BeforeTask.class);
+  private static Logger LOG = Logger.getLogger(CompileWithGcc_BeforeTask.class);
 
   public CompileWithGcc_BeforeTask() {
     super("Compile with gcc");
@@ -50,13 +49,9 @@ public class CompileWithGcc_BeforeTask extends BaseMpsBeforeTaskProvider<Compile
           @Override
           public void onTextAvailable(ProcessEvent event, Key key) {
             if (ProcessOutputTypes.STDERR.equals(key)) {
-              if (log.isErrorEnabled()) {
-                log.error(event.getText());
-              }
+              LOG.error(event.getText());
             } else {
-              if (log.isInfoEnabled()) {
-                log.info(event.getText());
-              }
+              LOG.info(event.getText());
             }
           }
         });
@@ -66,9 +61,7 @@ public class CompileWithGcc_BeforeTask extends BaseMpsBeforeTaskProvider<Compile
         }
         return new File(Gcc_Command.getExecutableFile(myFile).getAbsolutePath()).exists();
       } catch (ExecutionException e) {
-        if (log.isErrorEnabled()) {
-          log.error("", e);
-        }
+        LOG.error("", e);
         return false;
       }
     }

@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import javax.swing.tree.TreeNode;
@@ -25,7 +24,7 @@ import com.intellij.openapi.project.Project;
 
 public class RenameNamespace_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(RenameNamespace_Action.class);
+  private static Logger LOG = Logger.getLogger(RenameNamespace_Action.class);
 
   public RenameNamespace_Action() {
     super("Rename", "", ICON);
@@ -49,9 +48,7 @@ public class RenameNamespace_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RenameNamespace", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "RenameNamespace", t);
       this.disable(event.getPresentation());
     }
   }
@@ -94,9 +91,7 @@ public class RenameNamespace_Action extends BaseAction {
       }
       RenameNamespace_Action.this.getProjectPane(_params).rebuild();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RenameNamespace", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "RenameNamespace", t);
     }
   }
 

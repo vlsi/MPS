@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -17,7 +16,7 @@ import jetbrains.mps.smodel.SNode;
 
 public class ShowNodeInInspector_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ShowNodeInInspector_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowNodeInInspector_Action.class);
 
   public ShowNodeInInspector_Action() {
     super("Inspect Node", "", ICON);
@@ -41,9 +40,7 @@ public class ShowNodeInInspector_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowNodeInInspector", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowNodeInInspector", t);
       this.disable(event.getPresentation());
     }
   }
@@ -68,9 +65,7 @@ public class ShowNodeInInspector_Action extends BaseAction {
       InspectorEditorComponent inspector = (InspectorEditorComponent) ((EditorComponent) MapSequence.fromMap(_params).get("editor"));
       inspector.inspectNode(((SNode) MapSequence.fromMap(_params).get("node")), inspector.getOperationContext());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowNodeInInspector", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowNodeInInspector", t);
     }
   }
 }

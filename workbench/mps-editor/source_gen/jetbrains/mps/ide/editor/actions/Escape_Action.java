@@ -4,8 +4,7 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -16,7 +15,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 
 public class Escape_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(Escape_Action.class);
+  private static Logger LOG = Logger.getLogger(Escape_Action.class);
 
   public Escape_Action() {
     super("Escape", "", ICON);
@@ -44,9 +43,7 @@ public class Escape_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "Escape", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "Escape", t);
       this.disable(event.getPresentation());
     }
   }
@@ -77,9 +74,7 @@ public class Escape_Action extends BaseAction {
 
       ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().setSelection(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getDeepestSelection());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "Escape", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "Escape", t);
     }
   }
 }

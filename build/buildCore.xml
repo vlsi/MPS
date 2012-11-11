@@ -1762,7 +1762,9 @@
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.logging.runtime.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.baseLanguage.logging.runtime.jar/META-INF/module.xml">
       <module namespace="jetbrains.mps.baseLanguage.logging.runtime" type="solution" uuid="a3e4657f-a76c-45bb-bbda-c764596ecc65">
-        <dependencies />
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+        </dependencies>
         <library jar="/lib/commons-logging-1.1.1.jar" />
         <sources jar="jetbrains.mps.baseLanguage.logging.runtime-src.jar" descriptor="runtime.msd" />
       </module>
