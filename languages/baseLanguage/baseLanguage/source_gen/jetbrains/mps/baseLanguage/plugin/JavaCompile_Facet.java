@@ -34,7 +34,7 @@ import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.internal.make.runtime.java.IAuxProjectPeer;
+import jetbrains.mps.internal.make.runtime.java.IdeaJavaCompiler;
 import jetbrains.mps.lang.core.plugin.Generate_Facet.Target_checkParameters.Variables;
 import jetbrains.mps.smodel.resources.IFResource;
 import jetbrains.mps.compiler.JavaCompiler;
@@ -305,8 +305,8 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 return new IResult.FAILURE(_output_wf1ya0_a0b);
               }
 
-              IAuxProjectPeer peer = pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Variables.class).project().getComponent(IAuxProjectPeer.class);
-              if (peer == null || !(peer.isValid())) {
+              IdeaJavaCompiler compiler = pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Variables.class).project().getComponent(IdeaJavaCompiler.class);
+              if (compiler == null || !(compiler.isValid())) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("IntelliJ IDEA is required for compilation")));
                 return new IResult.FAILURE(_output_wf1ya0_a0b);
               }
@@ -314,7 +314,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
               monitor.currentProgress().beginWork("Compiling in IntelliJ IDEA", 1, monitor.currentProgress().workLeft());
 
               monitor.currentProgress().advanceWork("Compiling in IntelliJ IDEA", 1);
-              MPSCompilationResult cr = peer.getJavaCompiler().compileModules(Sequence.fromIterable(toCompile).select(new ISelector<TResource, IModule>() {
+              MPSCompilationResult cr = compiler.compileModules(Sequence.fromIterable(toCompile).select(new ISelector<TResource, IModule>() {
                 public IModule select(TResource it) {
                   return it.module();
                 }
