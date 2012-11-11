@@ -52,11 +52,11 @@ public class LoggingGenerationUtil {
 
   public static String generateUniqueFieldName(SNode contextNode, final String baseName) {
     for (SNode logStatement : ListSequence.fromList(SNodeOperations.getDescendants(contextNode, "jetbrains.mps.baseLanguage.logging.structure.LogStatement", false, new String[]{}))) {
-      Scope scope = ScopeUtils.parentScope(logStatement, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IVariableDeclaration"));
+      Scope scope = ScopeUtils.parentScope(logStatement, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
 
       if (Sequence.fromIterable(scope.getAvailableElements(baseName)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) || baseName.equals(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration"), "name"));
+          return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) || baseName.equals(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "name"));
         }
       }).isNotEmpty()) {
         return baseName + "_" + Integer.toString(Math.abs(BehaviorReflection.invokeVirtual(String.class, contextNode, "virtual_getFqName_1213877404258", new Object[]{}).hashCode()));

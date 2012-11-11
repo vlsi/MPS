@@ -245,7 +245,7 @@
                     <link role="variable" roleId="tp2q.1153944258490" targetNodeId="6675136286173592153" resolveInfo="logStatement" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="4075687536653264600">
-                    <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.5432666129547687712" resolveInfo="IVariableDeclaration" />
+                    <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
                   </node>
                 </node>
               </node>
@@ -316,7 +316,7 @@
                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2698960852100988783">
                                   <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="2698960852100988805">
-                                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.5432666129547687712" resolveInfo="IVariableDeclaration" />
+                                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
                                     <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2698960852100988766">
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2698960852100988711" resolveInfo="it" />
                                     </node>
@@ -333,8 +333,8 @@
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2698960852100988711" resolveInfo="it" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="2698960852100988745">
-                                  <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="2698960852100988746">
-                                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpee.5432666129547687712" resolveInfo="IVariableDeclaration" />
+                                  <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="8131748187918313408">
+                                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
                                   </node>
                                 </node>
                               </node>
