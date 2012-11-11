@@ -80,16 +80,20 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   public void disposeComponent() {
   }
 
+  private void refreshFSInternal() {
+    VirtualFile[] contentRoots = ProjectRootManager.getInstance(myProject).getContentRoots();
+    for (VirtualFile contentRoot : contentRoots) {
+      contentRoot.refresh(false, true);
+    }
+  }
+
   public void refreshFS() {
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
           ApplicationManager.getApplication().runWriteAction(new Runnable() {
             public void run() {
-              VirtualFile[] contentRoots = ProjectRootManager.getInstance(myProject).getContentRoots();
-              for (VirtualFile contentRoot : contentRoots) {
-                contentRoot.refresh(false, true);
-              }
+              refreshFSInternal();
             }
           });
         }
@@ -108,6 +112,8 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
       public void run() {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
           public void run() {
+            refreshFSInternal();
+
             List<Module> modules = new ArrayList<Module>();
             for (String path : paths) {
               Module module = findModule(path);

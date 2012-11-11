@@ -26,10 +26,7 @@
     <classNode dependClassName="org.jdom.Element" />
     <classNode extendsClassName="jetbrains.mps.internal.make.runtime.java.FileContent" />
   </dependency>
-  <dependency className="jetbrains.mps.internal.make.runtime.java.IAuxProjectPeer" file="IAuxProjectPeer.java">
-    <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.IJavaCompiler" />
-  </dependency>
-  <dependency className="jetbrains.mps.internal.make.runtime.java.IJavaCompiler" file="IJavaCompiler.java">
+  <dependency className="jetbrains.mps.internal.make.runtime.java.IdeaJavaCompiler" file="IdeaJavaCompiler.java">
     <classNode dependClassName="jetbrains.mps.make.MPSCompilationResult" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
   </dependency>

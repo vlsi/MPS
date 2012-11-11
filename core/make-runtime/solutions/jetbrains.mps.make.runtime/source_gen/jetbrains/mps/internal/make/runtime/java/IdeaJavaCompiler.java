@@ -5,7 +5,7 @@ package jetbrains.mps.internal.make.runtime.java;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.project.IModule;
 
-public interface IJavaCompiler {
+public interface IdeaJavaCompiler {
+  public boolean isValid();
   public MPSCompilationResult compileModules(IModule[] modules);
-  public void refreshFiles();
 }

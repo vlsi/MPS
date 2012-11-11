@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2974008768272250195" modelId="r:6bc4612e-813e-4efa-8244-77b9a4da8b36(jetbrains.mps.internal.make.runtime.java)">
-    <nodeInfo nodeId="4652478519508015231" fileName="IJavaCompiler.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compileModules#([Ljetbrains/mps/project/IModule;)Ljetbrains/mps/make/MPSCompilationResult;" />
-    <nodeInfo nodeId="2427888168044467804" fileName="IJavaCompiler.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refreshFiles#()V" />
-    <scopeInfo nodeId="4652478519508015231" fileName="IJavaCompiler.java" startLine="9" startPosition="0" endLine="10" endPosition="0">
+  <root nodeId="2974008768272253139" modelId="r:6bc4612e-813e-4efa-8244-77b9a4da8b36(jetbrains.mps.internal.make.runtime.java)">
+    <nodeInfo nodeId="4454107004198491243" fileName="IdeaJavaCompiler.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#()Z" />
+    <nodeInfo nodeId="4652478519508015231" fileName="IdeaJavaCompiler.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compileModules#([Ljetbrains/mps/project/IModule;)Ljetbrains/mps/make/MPSCompilationResult;" />
+    <scopeInfo nodeId="4454107004198491243" fileName="IdeaJavaCompiler.java" startLine="9" startPosition="0" endLine="10" endPosition="0" />
+    <scopeInfo nodeId="4652478519508015231" fileName="IdeaJavaCompiler.java" startLine="10" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="4652478519508016215" varName="modules" />
     </scopeInfo>
-    <scopeInfo nodeId="2427888168044467804" fileName="IJavaCompiler.java" startLine="10" startPosition="0" endLine="11" endPosition="0" />
-    <unitInfo nodeId="2974008768272250195" fileName="IJavaCompiler.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.IJavaCompiler" />
-  </root>
-  <root nodeId="2974008768272253139" modelId="r:6bc4612e-813e-4efa-8244-77b9a4da8b36(jetbrains.mps.internal.make.runtime.java)">
-    <nodeInfo nodeId="4454107004198491243" fileName="IAuxProjectPeer.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#()Z" />
-    <nodeInfo nodeId="7017136043751668687" fileName="IAuxProjectPeer.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getJavaCompiler#()Ljetbrains/mps/internal/make/runtime/java/IJavaCompiler;" />
-    <scopeInfo nodeId="4454107004198491243" fileName="IAuxProjectPeer.java" startLine="7" startPosition="0" endLine="8" endPosition="0" />
-    <scopeInfo nodeId="7017136043751668687" fileName="IAuxProjectPeer.java" startLine="8" startPosition="0" endLine="9" endPosition="0" />
-    <unitInfo nodeId="2974008768272253139" fileName="IAuxProjectPeer.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.IAuxProjectPeer" />
+    <unitInfo nodeId="2974008768272253139" fileName="IdeaJavaCompiler.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.IdeaJavaCompiler" />
   </root>
   <root nodeId="4328738523548225887" modelId="r:6bc4612e-813e-4efa-8244-77b9a4da8b36(jetbrains.mps.internal.make.runtime.java)">
     <nodeInfo nodeId="4328738523548225948" fileName="FileProcessor.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
