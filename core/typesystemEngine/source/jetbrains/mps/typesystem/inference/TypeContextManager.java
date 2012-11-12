@@ -19,7 +19,6 @@ import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.lang.typesystem.runtime.performance.TypeCheckingContext_Tracer;
-import jetbrains.mps.newTypesystem.DelegateTypecheckingContext;
 import jetbrains.mps.newTypesystem.InferenceTypecheckingContext;
 import jetbrains.mps.newTypesystem.SingleTypecheckingContext;
 import jetbrains.mps.newTypesystem.TracingTypecheckingContext;
@@ -168,7 +167,7 @@ public class TypeContextManager implements CoreComponent {
     if (myTypeChecker.isGenerationMode()) {
       return new SingleTypecheckingContext(node, myTypeChecker);
     } else {
-      return new DelegateTypecheckingContext(node, myTypeChecker);
+      return new TypeCheckingContextNew(node, myTypeChecker);
     }
   }
 

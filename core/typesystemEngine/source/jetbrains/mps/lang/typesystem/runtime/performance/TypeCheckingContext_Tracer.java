@@ -16,15 +16,14 @@
 package jetbrains.mps.lang.typesystem.runtime.performance;
 
 import jetbrains.mps.newTypesystem.BaseTypecheckingContext;
-import jetbrains.mps.newTypesystem.DelegateTypecheckingContext;
-import jetbrains.mps.newTypesystem.NodeTypesComponent;
+import jetbrains.mps.newTypesystem.SingleNodeTypesComponent;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Computable;
 
-public class TypeCheckingContext_Tracer extends DelegateTypecheckingContext {
+public class TypeCheckingContext_Tracer extends TypeCheckingContextNew {
 
   public TypeCheckingContext_Tracer(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);

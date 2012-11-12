@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
 /**
@@ -25,11 +26,10 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
  * Time: 4:17 PM
  * To change this template use File | Settings | File Templates.
  */
-public class TracingTypecheckingContext extends DelegateTypecheckingContext{
+public class TracingTypecheckingContext extends TypeCheckingContextNew{
 
   public TracingTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
   }
-
 
 }

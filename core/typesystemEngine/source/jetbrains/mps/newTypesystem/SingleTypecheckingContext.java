@@ -32,10 +32,15 @@ import jetbrains.mps.util.Pair;
  * Time: 3:35 PM
  * To change this template use File | Settings | File Templates.
  */
-public class SingleTypecheckingContext extends DelegateTypecheckingContext {
+public class SingleTypecheckingContext extends TypeCheckingContextNew {
 
   public SingleTypecheckingContext (SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
+  }
+
+  @Override
+  protected SingleNodeTypesComponent createNodeTypesComponent() {
+    return new SingleNodeTypesComponent(this, getState());
   }
 
   @Override
@@ -44,7 +49,7 @@ public class SingleTypecheckingContext extends DelegateTypecheckingContext {
   }
 
   @Override
-  protected void processDependency(SNode node, String ruleModel, String ruleId, boolean addDependency, NodeTypesComponent currentTypesComponent) {
+  protected void processDependency(SNode node, String ruleModel, String ruleId, boolean addDependency) {
     // do nothing
   }
 

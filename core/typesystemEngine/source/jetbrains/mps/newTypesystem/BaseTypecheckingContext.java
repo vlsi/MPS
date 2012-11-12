@@ -32,8 +32,19 @@ public abstract class BaseTypecheckingContext extends TypeCheckingContext {
 
   protected final Object TYPECHECKING_LOCK = new Object();
 
-  private NodeTypesComponent myNodeTypesComponent;
+  protected SNode myRootNode;
+
+  protected TypeChecker myTypeChecker;
+
+  private SingleNodeTypesComponent myNodeTypesComponent;
   private State myState;
+
+  public BaseTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
+    myRootNode = rootNode;
+    myTypeChecker = typeChecker;
+    setState(new State(this));
+    setNodeTypesComponent(createNodeTypesComponent());
+  }
 
   @Override
   public SNode getTypeOf(SNode node, TypeChecker typeChecker) {
@@ -43,31 +54,7 @@ public abstract class BaseTypecheckingContext extends TypeCheckingContext {
     }
   }
 
-  @Override
-  public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
-    EquationInfo info = new EquationInfo(node, "typeOf", ruleModel, ruleId);
-    if (node == null) return null;
-    NodeTypesComponent currentTypesComponent = getNodeTypesComponent();   //first, in current component
-    if (currentTypesComponent != null) {
-      //--- for incremental algorithm:
-      currentTypesComponent.addNodeToFrontier(node);
-      processDependency(node, ruleModel, ruleId, addDependency, currentTypesComponent);
-    }
-    return getState().typeOf(node, info);
-  }
-
-  protected void processDependency(SNode node, String ruleModel, String ruleId, boolean addDependency, NodeTypesComponent currentTypesComponent) {
-    currentTypesComponent.typeOfNodeCalled(node);
-    if (addDependency) {
-      currentTypesComponent.addDependencyOnCurrent(node);
-    }
-    if (ruleModel != null && ruleId != null) {
-      currentTypesComponent.markNodeAsAffectedByRule(node, ruleModel, ruleId);
-      //todo wrap into "if (addDependency) {}" when sure that typeof works fine
-    }
-  }
-
-  public NodeTypesComponent getNodeTypesComponent() {
+  public SingleNodeTypesComponent getNodeTypesComponent() {
     return myNodeTypesComponent;
   }
 
@@ -76,7 +63,7 @@ public abstract class BaseTypecheckingContext extends TypeCheckingContext {
     return myState;
   }
 
-  protected final void setNodeTypesComponent(NodeTypesComponent nodeTypesComponent) {
+  protected final void setNodeTypesComponent(SingleNodeTypesComponent nodeTypesComponent) {
     assert myNodeTypesComponent == null;
     assert nodeTypesComponent != null;
     myNodeTypesComponent = nodeTypesComponent;
@@ -86,5 +73,9 @@ public abstract class BaseTypecheckingContext extends TypeCheckingContext {
     assert myState == null;
     assert state != null;
     myState = state;
+  }
+
+  protected SingleNodeTypesComponent createNodeTypesComponent() {
+    return new NodeTypesComponent(this, getState());
   }
 }
