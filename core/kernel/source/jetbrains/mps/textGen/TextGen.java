@@ -69,7 +69,7 @@ public class TextGen {
       }
       return new TextGenerationResult(node, NO_TEXTGEN, true, Collections.<IMessage>singleton(m), null, null, null, null);
     } else {
-      return new TextGenerationResult(node, NO_TEXTGEN, false, null, null, null, null, null);
+      return new TextGenerationResult(node, NO_TEXTGEN, false, Collections.<IMessage>emptyList(), null, null, null, null);
     }
   }
 

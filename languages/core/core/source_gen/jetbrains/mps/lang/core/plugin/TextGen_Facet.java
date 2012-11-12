@@ -19,11 +19,15 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.script.IFeedback;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.util.concurrent.atomic.AtomicLong;
+import jetbrains.mps.generator.textGen.TextGeneratorEngine;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
 import java.util.Map;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -32,23 +36,23 @@ import jetbrains.mps.internal.make.runtime.java.JavaStreamHandler;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.generator.generationTypes.TextGenerator;
+import jetbrains.mps.messages.IMessage;
+import java.util.Collections;
+import jetbrains.mps.textGen.TextGenerationResult;
+import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.generator.textGen.TextGenerator;
+import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.textGen.TextGenerationUtil;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.smodel.resources.FResource;
@@ -107,13 +111,13 @@ public class TextGen_Facet extends IFacet.Stub {
             case 0:
               long textGenStartTime = System.currentTimeMillis();
 
-              final Wrappers._T<Iterable<GResource>> resources = new Wrappers._T<Iterable<GResource>>(Sequence.fromIterable(input).select(new ISelector<IResource, GResource>() {
+              Iterable<GResource> resources = Sequence.fromIterable(input).select(new ISelector<IResource, GResource>() {
                 public GResource select(IResource it) {
                   return (GResource) (IResource) it;
                 }
-              }));
+              });
 
-              if (Sequence.fromIterable(resources.value).any(new IWhereFilter<GResource>() {
+              if (Sequence.fromIterable(resources).any(new IWhereFilter<GResource>() {
                 public boolean accept(GResource it) {
                   return !(it.status().isOk());
                 }
@@ -122,156 +126,229 @@ public class TextGen_Facet extends IFacet.Stub {
                 return new IResult.FAILURE(_output_21gswx_a0a);
               }
 
-              for (GResource resource : Sequence.fromIterable(resources.value)) {
+              for (GResource resource : Sequence.fromIterable(resources)) {
                 if (resource.module().getOutputFor(resource.model()) == null) {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + resource.model().getLongName())));
                 }
               }
-              resources.value = Sequence.fromIterable(resources.value).where(new IWhereFilter<GResource>() {
+              resources = Sequence.fromIterable(resources).where(new IWhereFilter<GResource>() {
                 public boolean accept(GResource it) {
                   return it.module().getOutputFor(it.model()) != null;
                 }
               });
 
               // configure 
-              boolean _generateDebugInfo = pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).generateDebugInfo() == null || pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).generateDebugInfo();
-              boolean _failIfNoTextgen = pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).failIfNoTextgen() != null && pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).failIfNoTextgen();
+              final boolean _generateDebugInfo = pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).generateDebugInfo() == null || pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).generateDebugInfo();
+              final boolean _failIfNoTextgen = pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).failIfNoTextgen() != null && pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).failIfNoTextgen();
 
-              // prepare retainedFilesDelta, retainedCachedDelta and streamHandlers 
-              long prepareStartTime = System.currentTimeMillis();
+              long prepareTime = 0;
+              final Wrappers._long generateTime = new Wrappers._long(0);
+              final Wrappers._long flushTime = new Wrappers._long(0);
+              final Wrappers._long cleanUpTime = new Wrappers._long(0);
+              AtomicLong transactionOverheadTime = new AtomicLong(0);
 
-              Map<IResource, Iterable<IDelta>> retainedFilesDelta = MapSequence.fromMap(new HashMap<IResource, Iterable<IDelta>>());
-              Map<IResource, Iterable<IDelta>> retainedCachesDelta = MapSequence.fromMap(new HashMap<IResource, Iterable<IDelta>>());
-              final Map<IResource, JavaStreamHandler> streamHandlers = MapSequence.fromMap(new HashMap<IResource, JavaStreamHandler>());
+              int MAX_ROOTS_COUNT = 1000;
+              final List<GResource> currentInput = ListSequence.fromList(new ArrayList<GResource>());
+              int currentRootsCount = 0;
 
-              for (GResource resource : Sequence.fromIterable(resources.value)) {
-                MapSequence.fromMap(retainedFilesDelta).put(resource, RetainedUtil.retainedFilesDelta(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
-                  public boolean accept(SModelDescriptor smd) {
-                    return GenerationFacade.canGenerate(smd);
-                  }
-                }), resource.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile()));
-                MapSequence.fromMap(retainedCachesDelta).put(resource, RetainedUtil.retainedCachesDelta(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
-                  public boolean accept(SModelDescriptor smd) {
-                    return GenerationFacade.canGenerate(smd);
-                  }
-                }), resource.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile()));
-
-                String output = resource.module().getOutputFor(resource.model());
-                MapSequence.fromMap(streamHandlers).put(resource, new JavaStreamHandler(resource.model(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile().invoke(output), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile().invoke(FileGenerationUtil.getCachesPath(output))));
-              }
-
-              long prepareTime = System.currentTimeMillis() - prepareStartTime;
-
-              // textgen 
-              final Wrappers._long textGenTime = new Wrappers._long(0);
               monitor.currentProgress().beginWork("Writing", Sequence.fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
-              for (final GResource gres : Sequence.fromIterable(resources.value)) {
-                monitor.currentProgress().advanceWork("Writing", 100, gres.status().getInputModel().getSModelReference().getSModelFqName().getLongName());
-                JavaStreamHandler javaStreamHandler = MapSequence.fromMap(streamHandlers).get(gres);
 
-                final Wrappers._boolean ok = new Wrappers._boolean();
-                final TextGenerator textgen = new TextGenerator(javaStreamHandler, BLDependenciesCache.getInstance().getGenerator(), (_generateDebugInfo ?
-                  TraceInfoCache.getInstance().getGenerator() :
-                  null
-                ), GenerationDependenciesCache.getInstance().getGenerator());
-                textgen.setFailIfNoTextgen(_failIfNoTextgen);
-                textgen.setGenerateDebugInfo(_generateDebugInfo);
+              final TextGeneratorEngine engine = new TextGeneratorEngine(_generateDebugInfo, _failIfNoTextgen);
+              try {
+                IResource lastResource = Sequence.fromIterable(resources).last();
+                for (final GResource currentResource : Sequence.fromIterable(resources)) {
+                  final Wrappers._int rootsCount = new Wrappers._int(0);
+                  final Wrappers._boolean ignoreResource = new Wrappers._boolean(false);
 
-                try {
-                  ModelAccess.instance().runReadAction(new Runnable() {
+                  // this action is time consuming! 
+                  prepareTime += TextGenUtil.withTimeTracking(new Runnable() {
                     public void run() {
-                      long innerTime = System.currentTimeMillis();
-                      ok.value = textgen.handleOutput(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), gres.status());
-                      textGenTime.value += System.currentTimeMillis() - innerTime;
-                    }
-                  });
-                } finally {
-                  javaStreamHandler.dispose();
-                }
-
-                if (!(ok.value)) {
-                  for (IMessage err : textgen.errors()) {
-                    monitor.reportFeedback(new IFeedback.MESSAGE(err));
-                  }
-                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text")));
-                  return new IResult.FAILURE(_output_21gswx_a0a);
-                }
-              }
-
-              int handlersSize = Sequence.fromIterable(MapSequence.fromMap(streamHandlers).values()).foldLeft(0, new ILeftCombinator<JavaStreamHandler, Integer>() {
-                public Integer combine(Integer s, JavaStreamHandler it) {
-                  return s + it.calcApproximateSize_internal();
-                }
-              });
-              LOG.info("approximate handlers size: " + handlersSize / 1000 / 1000 + " mb");
-
-              int rootsCount = Sequence.fromIterable(resources.value).select(new ISelector<GResource, SModelDescriptor>() {
-                public SModelDescriptor select(GResource it) {
-                  return it.model();
-                }
-              }).foldLeft(0, new ILeftCombinator<SModelDescriptor, Integer>() {
-                public Integer combine(Integer s, SModelDescriptor it) {
-                  return s + it.getSModel().rootsCount();
-                }
-              });
-              LOG.info("roots count: " + rootsCount);
-
-              // flush stream handlers 
-              final Wrappers._long flushTime = new Wrappers._long();
-              if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
-                public void run() {
-                  long startTime = System.currentTimeMillis();
-                  for (JavaStreamHandler javaStreamHandler : Sequence.fromIterable(MapSequence.fromMap(streamHandlers).values())) {
-                    javaStreamHandler.flush();
-                  }
-                  flushTime.value = System.currentTimeMillis() - startTime;
-                }
-              }))) {
-                monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to save files")));
-                return new IResult.FAILURE(_output_21gswx_a0a);
-              }
-
-              // output result 
-              for (GResource resource : Sequence.fromIterable(resources.value)) {
-                Iterable<IDelta> delta = Sequence.fromIterable(MapSequence.fromMap(streamHandlers).get(resource).delta()).concat(Sequence.fromIterable(MapSequence.fromMap(retainedFilesDelta).get(resource))).concat(Sequence.fromIterable(MapSequence.fromMap(retainedCachesDelta).get(resource)));
-                IResource result = new TResource(resource.module(), delta, resource.model());
-                _output_21gswx_a0a = Sequence.fromIterable(_output_21gswx_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(result)));
-              }
-
-              // clean up 
-              final Wrappers._long cleanUpTime = new Wrappers._long();
-              if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
-                public void run() {
-                  ModelAccess.instance().requireWrite(new Runnable() {
-                    public void run() {
-                      long startTime = System.currentTimeMillis();
-                      if (!(Boolean.TRUE.equals(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).saveTransient()))) {
-                        for (GResource resource : Sequence.fromIterable(resources.value)) {
-                          SModelDescriptor outputMD = resource.status().getOutputModelDescriptor();
-                          if (outputMD instanceof TransientModelsModule.TransientSModelDescriptor) {
-                            ((TransientModelsModule) outputMD.getModule()).removeModel(outputMD);
+                      ModelAccess.instance().runReadAction(new Runnable() {
+                        public void run() {
+                          SModel outputModel = currentResource.status().getOutputModel();
+                          if (outputModel == null) {
+                            ignoreResource.value = true;
+                          } else {
+                            rootsCount.value = outputModel.rootsCount();
                           }
                         }
-                      }
-                      CleanupManager.getInstance().cleanup();
-                      cleanUpTime.value = System.currentTimeMillis() - startTime;
+                      });
                     }
                   });
+
+                  if (ignoreResource.value) {
+                    continue;
+                  }
+                  currentRootsCount += rootsCount.value;
+                  ListSequence.fromList(currentInput).addElement(currentResource);
+                  if (currentRootsCount < MAX_ROOTS_COUNT && currentResource != lastResource) {
+                    continue;
+                  }
+                  if (ListSequence.fromList(currentInput).isEmpty()) {
+                    continue;
+                  }
+
+                  // prepare retainedFilesDelta, retainedCachedDelta and streamHandlers 
+                  final Map<IResource, Iterable<IDelta>> retainedFilesDelta = MapSequence.fromMap(new HashMap<IResource, Iterable<IDelta>>());
+                  final Map<IResource, Iterable<IDelta>> retainedCachesDelta = MapSequence.fromMap(new HashMap<IResource, Iterable<IDelta>>());
+                  final Map<IResource, JavaStreamHandler> streamHandlers = MapSequence.fromMap(new HashMap<IResource, JavaStreamHandler>());
+
+                  prepareTime += TextGenUtil.withTimeTracking(new Runnable() {
+                    public void run() {
+                      for (GResource resource : ListSequence.fromList(currentInput)) {
+                        MapSequence.fromMap(retainedFilesDelta).put(resource, RetainedUtil.retainedFilesDelta(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
+                          public boolean accept(SModelDescriptor smd) {
+                            return GenerationFacade.canGenerate(smd);
+                          }
+                        }), resource.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile()));
+                        MapSequence.fromMap(retainedCachesDelta).put(resource, RetainedUtil.retainedCachesDelta(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
+                          public boolean accept(SModelDescriptor smd) {
+                            return GenerationFacade.canGenerate(smd);
+                          }
+                        }), resource.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile()));
+
+                        String output = resource.module().getOutputFor(resource.model());
+                        MapSequence.fromMap(streamHandlers).put(resource, new JavaStreamHandler(resource.model(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile().invoke(output), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile().invoke(FileGenerationUtil.getCachesPath(output))));
+                      }
+                    }
+                  });
+
+                  // textgen 
+                  String nameOfStep = ListSequence.fromList(currentInput).first().status().getInputModel().getSModelReference().getSModelFqName().getLongName();
+                  monitor.currentProgress().advanceWork("Writing", ListSequence.fromList(currentInput).count() * 100, nameOfStep);
+
+                  final List<IMessage> errors = ListSequence.fromList((ListSequence.fromList(new ArrayList<IMessage>()))).asSynchronized();
+
+                  ModelAccess.instance().runReadAction(new Runnable() {
+                    public void run() {
+                      generateTime.value += TextGenUtil.withTimeTracking(new Runnable() {
+                        public void run() {
+                          // out map and hashmap doesn't have asSynchronized method 
+                          final Map<SModel, GResource> modelToInput = Collections.synchronizedMap(new HashMap<SModel, GResource>());
+                          for (GResource resource : ListSequence.fromList(currentInput)) {
+                            modelToInput.put(resource.status().getOutputModel(), resource);
+                          }
+
+                          engine.generateModels(modelToInput.keySet(), new TextGeneratorEngine.GenerateCallback() {
+                            public void modelGenerated(SModel model, List<TextGenerationResult> results) {
+                              GResource generatedResource = modelToInput.get(model);
+                              try {
+                                CacheGenerator[] cacheGenerators = new CacheGenerator[]{BLDependenciesCache.getInstance().getGenerator(), (_generateDebugInfo ?
+                                  TraceInfoCache.getInstance().getGenerator() :
+                                  null
+                                ), GenerationDependenciesCache.getInstance().getGenerator()};
+
+                                ListSequence.fromList(errors).addSequence(ListSequence.fromList(TextGenerator.handleTextGenResults(generatedResource.status(), results, _generateDebugInfo, MapSequence.fromMap(streamHandlers).get(generatedResource), cacheGenerators)));
+                              } finally {
+                                MapSequence.fromMap(streamHandlers).get(generatedResource).dispose();
+                              }
+                            }
+                          });
+                        }
+                      });
+                    }
+                  });
+
+                  if (ListSequence.fromList(errors).isNotEmpty()) {
+                    {
+                      Iterator<IMessage> error_it = ListSequence.fromList(errors).iterator();
+                      IMessage error_var;
+                      while (error_it.hasNext()) {
+                        error_var = error_it.next();
+                        monitor.reportFeedback(new IFeedback.MESSAGE(error_var));
+                      }
+                    }
+                    return new IResult.FAILURE(_output_21gswx_a0a);
+                  }
+
+                  if (false) {
+                    int handlersSize = Sequence.fromIterable(MapSequence.fromMap(streamHandlers).values()).foldLeft(0, new ILeftCombinator<JavaStreamHandler, Integer>() {
+                      public Integer combine(Integer s, JavaStreamHandler it) {
+                        return s + it.calcApproximateSize_internal();
+                      }
+                    });
+                    LOG.info("approximate handlers size: " + handlersSize / 1000 / 1000 + " mb");
+
+                    int overallRootsCount = ListSequence.fromList(currentInput).select(new ISelector<GResource, SModelDescriptor>() {
+                      public SModelDescriptor select(GResource it) {
+                        return it.model();
+                      }
+                    }).foldLeft(0, new ILeftCombinator<SModelDescriptor, Integer>() {
+                      public Integer combine(Integer s, SModelDescriptor it) {
+                        return s + it.getSModel().rootsCount();
+                      }
+                    });
+                    LOG.info("roots count: " + overallRootsCount);
+                    LOG.info("models count: " + ListSequence.fromList(currentInput).count());
+                  }
+
+                  // flush stream handlers 
+                  if (!(TextGenUtil.runWriteTransaction(new Runnable() {
+                    public void run() {
+                      flushTime.value += TextGenUtil.withTimeTracking(new Runnable() {
+                        public void run() {
+                          for (JavaStreamHandler javaStreamHandler : Sequence.fromIterable(MapSequence.fromMap(streamHandlers).values())) {
+                            javaStreamHandler.flush();
+                          }
+                        }
+                      });
+                    }
+                  }, transactionOverheadTime))) {
+                    monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to save files")));
+                    return new IResult.FAILURE(_output_21gswx_a0a);
+                  }
+
+                  // output result 
+                  for (GResource resource : ListSequence.fromList(currentInput)) {
+                    Iterable<IDelta> delta = Sequence.fromIterable(MapSequence.fromMap(streamHandlers).get(resource).delta()).concat(Sequence.fromIterable(MapSequence.fromMap(retainedFilesDelta).get(resource))).concat(Sequence.fromIterable(MapSequence.fromMap(retainedCachesDelta).get(resource)));
+                    IResource result = new TResource(resource.module(), delta, resource.model());
+                    _output_21gswx_a0a = Sequence.fromIterable(_output_21gswx_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(result)));
+                  }
+
+                  // clean up 
+                  if (!(TextGenUtil.runWriteTransaction(new Runnable() {
+                    public void run() {
+                      ModelAccess.instance().requireWrite(new Runnable() {
+                        public void run() {
+                          cleanUpTime.value += TextGenUtil.withTimeTracking(new Runnable() {
+                            public void run() {
+                              if (!(Boolean.TRUE.equals(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).saveTransient()))) {
+                                for (GResource resource : ListSequence.fromList(currentInput)) {
+                                  SModelDescriptor outputMD = resource.status().getOutputModelDescriptor();
+                                  if (outputMD instanceof TransientModelsModule.TransientSModelDescriptor) {
+                                    ((TransientModelsModule) outputMD.getModule()).removeModel(outputMD);
+                                  }
+                                }
+                              }
+                              CleanupManager.getInstance().cleanup();
+                            }
+                          });
+                        }
+                      });
+                    }
+                  }, transactionOverheadTime))) {
+                    monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to remove transient models")));
+                    return new IResult.FAILURE(_output_21gswx_a0a);
+                  }
+
+                  currentRootsCount = 0;
+                  ListSequence.fromList(currentInput).clear();
                 }
-              }))) {
-                monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to remove transient models")));
-                return new IResult.FAILURE(_output_21gswx_a0a);
-              }
-
-              monitor.currentProgress().finishWork("Writing");
-
-              long overallTime = System.currentTimeMillis() - textGenStartTime;
-              if (true) {
-                LOG.info("text gen prepare time: " + prepareTime);
-                LOG.info("text gen generate time: " + textGenTime.value);
-                LOG.info("text gen flush time: " + flushTime.value);
-                LOG.info("text gen clean up time: " + cleanUpTime.value);
-                LOG.info("text gen overhead time: " + (overallTime - prepareTime - textGenTime.value - cleanUpTime.value - flushTime.value));
+              } catch (Exception e) {
+                LOG.error("Exception while textGen", e);
+                throw new RuntimeException(e);
+              } finally {
+                engine.shutdown();
+                monitor.currentProgress().finishWork("Writing");
+                long overallTime = System.currentTimeMillis() - textGenStartTime;
+                if (true) {
+                  LOG.info("text gen prepare time: " + prepareTime);
+                  LOG.info("text gen generate time: " + generateTime.value);
+                  LOG.info("text gen flush time: " + flushTime.value);
+                  LOG.info("text gen clean up time: " + cleanUpTime.value);
+                  LOG.info("text gen write transaction overhead time: " + transactionOverheadTime);
+                  LOG.info("text gen overhead time: " + (overallTime - prepareTime - generateTime.value - cleanUpTime.value - flushTime.value));
+                }
               }
             default:
               return new IResult.SUCCESS(_output_21gswx_a0a);

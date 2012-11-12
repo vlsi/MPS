@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
@@ -43,7 +44,7 @@ public class TextGenerationResult {
   public TextGenerationResult(SNode root,
                               Object contents,
                               boolean containErrors,
-                              Collection<IMessage> problems,
+                              @NotNull Collection<IMessage> problems,
                               @Nullable Map<SNode, TraceablePositionInfo> positions,
                               @Nullable Map<SNode, ScopePositionInfo> scopePositions,
                               @Nullable Map<SNode, UnitPositionInfo> unitPositions,
