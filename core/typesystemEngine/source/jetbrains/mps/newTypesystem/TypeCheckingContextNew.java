@@ -29,14 +29,9 @@ import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.blocks.MultipleWhenConcreteBlock;
 import jetbrains.mps.newTypesystem.state.blocks.WhenConcreteBlock;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.typesystem.inference.SubtypingManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
@@ -46,25 +41,20 @@ import java.util.*;
 public class TypeCheckingContextNew extends BaseTypecheckingContext {
   private static Logger LOG = Logger.getLogger(TypeCheckingContextNew.class);
 
-  private State myState;
-
   private SNode myRootNode;
 
   private TypeChecker myTypeChecker;
 
-  protected NodeTypesComponent myNodeTypesComponent;
-
   private boolean myIsNonTypesystemComputation = false;
   private boolean myIsTraceMode = false;
-  private boolean myIsInferenceMode = false;
+//  private boolean myIsInferenceMode = false;
 
   private Map<Object, Integer> myRequesting = new HashMap<Object, Integer>();
   private Integer myOldHash = 0;
 
-  public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
-    myState = new State(this);
+  protected TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
+    setState(new State(this));
     myRootNode = rootNode;
-    myNodeTypesComponent = new NodeTypesComponent(myRootNode, typeChecker, this);
     myTypeChecker = typeChecker;
   }
 
@@ -83,18 +73,14 @@ public class TypeCheckingContextNew extends BaseTypecheckingContext {
     myIsTraceMode = false;
   }
 
-  public boolean isInTraceMode() {
-    return myIsTraceMode;
-  }
-
   @Override
   public void checkRoot(final boolean refreshTypes) {
     synchronized (TYPECHECKING_LOCK) {
       LanguageScopeExecutor.execWithModelScope(myRootNode.getModel(), new Computable<Object>() {
         @Override
         public Object compute() {
-          myNodeTypesComponent.computeTypes(refreshTypes);
-          myNodeTypesComponent.setCheckedTypesystem();
+          getNodeTypesComponent().computeTypes(refreshTypes);
+          getNodeTypesComponent().setCheckedTypesystem();
           return null;
         }
       });
@@ -103,44 +89,44 @@ public class TypeCheckingContextNew extends BaseTypecheckingContext {
 
   @Override
   public void createEquation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider) {
-    myState.addEquation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider));
+    getState().addEquation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider));
   }
 
   @Override
   public void createLessThanInequation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
-    myState.addInequality(node1, node2, true, checkOnly, equationInfo, true);
+    getState().addInequality(node1, node2, true, checkOnly, equationInfo, true);
   }
 
   @Override
   public void createLessThanInequationStrong(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
-    myState.addInequality(node1, node2, false, checkOnly, equationInfo, true);
+    getState().addInequality(node1, node2, false, checkOnly, equationInfo, true);
   }
 
   @Override
   public void createGreaterThanInequation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
-    myState.addInequality(node2, node1, true, checkOnly, equationInfo, false);
+    getState().addInequality(node2, node1, true, checkOnly, equationInfo, false);
   }
 
   @Override
   public void createGreaterThanInequationStrong(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
-    myState.addInequality(node2, node1, false, checkOnly, equationInfo, false);
+    getState().addInequality(node2, node1, false, checkOnly, equationInfo, false);
   }
 
   @Override
   public void createEquation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
-    myState.addEquation(node1, node2, equationInfo, checkOnly);
+    getState().addEquation(node1, node2, equationInfo, checkOnly);
   }
 
   @Override
   public void createLessThanInequationStrong(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, boolean checkOnly,
                                              int inequationPriority, QuickFixProvider intentionProvider) {
-    myState.addInequality(node1, node2, false, checkOnly, new EquationInfo(nodeToCheck, errorString, ruleModel,
+    getState().addInequality(node1, node2, false, checkOnly, new EquationInfo(nodeToCheck, errorString, ruleModel,
       ruleId, inequationPriority, intentionProvider), true);
   }
 
   @Override
   public void createGreaterThanInequation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, boolean checkOnly, int inequationPriority, QuickFixProvider intentionProvider) {
-    myState.addInequality(node2, node1, false, checkOnly, new EquationInfo(nodeToCheck, errorString, ruleModel,
+    getState().addInequality(node2, node1, false, checkOnly, new EquationInfo(nodeToCheck, errorString, ruleModel,
       ruleId, inequationPriority, intentionProvider), false);
   }
 
@@ -151,12 +137,12 @@ public class TypeCheckingContextNew extends BaseTypecheckingContext {
 
   @Override
   public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
-    return myNodeTypesComponent.getNodesWithErrors();
+    return super.getNodeTypesComponent().getNodesWithErrors();
   }
 
   @Override
   public SNode getRepresentative(SNode node) {
-    return myState.getRepresentative(node);
+    return getState().getRepresentative(node);
   }
 
   @Override
@@ -167,32 +153,28 @@ public class TypeCheckingContextNew extends BaseTypecheckingContext {
   @Override
   public SNode getTypeDontCheck(SNode node) {
     synchronized (TYPECHECKING_LOCK) {
-      return myState.getNodeMaps().getType(node);
+      return getState().getNodeMaps().getType(node);
     }
   }
 
   @Override
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId) {
-    myState.addBlock(new WhenConcreteBlock(myState, r, nodeModel, nodeId, argument, false, false));
+    getState().addBlock(new WhenConcreteBlock(getState(), r, nodeModel, nodeId, argument, false, false));
   }
 
   @Override
   public void printToTrace(String message) {
-    myState.executeOperation(new TraceMessageOperation(message));
+    getState().executeOperation(new TraceMessageOperation(message));
   }
 
   @Override
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId, boolean isShallow, boolean skipError) {
-    myState.addBlock(new WhenConcreteBlock(myState, r, nodeModel, nodeId, argument, isShallow, skipError));
+    getState().addBlock(new WhenConcreteBlock(getState(), r, nodeModel, nodeId, argument, isShallow, skipError));
   }
 
   @Override
   public void whenConcrete(List<SNode> argument, Runnable r, String nodeModel, String nodeId, boolean isShallow, boolean skipError) {
-    myState.addBlock(new MultipleWhenConcreteBlock(myState, r, nodeModel, nodeId, argument, isShallow, skipError));
-  }
-
-  public State getState() {
-    return myState;
+    getState().addBlock(new MultipleWhenConcreteBlock(getState(), r, nodeModel, nodeId, argument, isShallow, skipError));
   }
 
   public TypeChecker getTypeChecker() {
@@ -204,74 +186,65 @@ public class TypeCheckingContextNew extends BaseTypecheckingContext {
   }
 
   public AbstractOperation getOperation() {
-    return myState.getOperation();
+    return getState().getOperation();
   }
 
   @Override
   public SNode createNewRuntimeTypesVariable() {
-    return myState.createNewRuntimeTypesVariable();
+    return getState().createNewRuntimeTypesVariable();
   }
 
   public SNode computeTypeInferenceMode(SNode node) {
     synchronized (TYPECHECKING_LOCK) {
-      myIsInferenceMode = true;
+//      myIsInferenceMode = true;
       try {
-        return myNodeTypesComponent.computeTypesForNodeInferenceMode(node);
+        return super.getNodeTypesComponent().computeTypesForNodeInferenceMode(node);
       } finally {
-        myIsInferenceMode = false;
+//        myIsInferenceMode = false;
       }
     }
   }
 
   @Override
   public void clear() {
-    myNodeTypesComponent.clear();
-  }
-
-  public boolean isInferenceMode() {
-    return myIsInferenceMode;
-  }
-
-  @Override
-  public NodeTypesComponent getNodeTypesComponent() {
-    return myNodeTypesComponent;
+    super.getNodeTypesComponent().clear();
   }
 
   @Override
   public SNode getOverloadedOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-    SNode left = myState.expand(leftOperandType);
-    SNode right = myState.expand(rightOperandType);
+    SNode left = getState().expand(leftOperandType);
+    SNode right = getState().expand(rightOperandType);
     return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
   }
 
   @Override
   public void createComparableEquation(SNode node1, SNode node2, EquationInfo equationInfo) {
-    myState.addComparable(node1, node2, true, false, equationInfo);
+    getState().addComparable(node1, node2, true, false, equationInfo);
   }
 
   @Override
   public void createComparableEquation(SNode node1, SNode node2, boolean inference, EquationInfo equationInfo) {
-    myState.addComparable(node1, node2, true, inference, equationInfo);
+    getState().addComparable(node1, node2, true, inference, equationInfo);
   }
 
   @Override
   public void createComparableEquationStrong(SNode node1, SNode node2, EquationInfo equationInfo) {
-    myState.addComparable(node1, node2, false, false, equationInfo);
+    getState().addComparable(node1, node2, false, false, equationInfo);
   }
 
   @Override
   public void createLessThanInequality(SNode node1, SNode node2, boolean checkOnly, boolean isWeak, boolean lessThen, EquationInfo equationInfo) {
-    myState.addInequality(node1, node2, isWeak, checkOnly, equationInfo, lessThen);
+    getState().addInequality(node1, node2, isWeak, checkOnly, equationInfo, lessThen);
   }
 
   @Override
   public void createGreaterThanInequality(SNode node1, SNode node2, boolean checkOnly, boolean isWeak, boolean lessThen, EquationInfo equationInfo) {
-    myState.addInequality(node2, node1, isWeak, checkOnly, equationInfo, lessThen);
+    getState().addInequality(node2, node1, isWeak, checkOnly, equationInfo, lessThen);
   }
 
   @Override
   public NodeTypesComponent getBaseNodeTypesComponent() {
-    return myNodeTypesComponent;
+    return super.getNodeTypesComponent();
   }
 
   @Override
@@ -300,17 +273,17 @@ public class TypeCheckingContextNew extends BaseTypecheckingContext {
   @Override
   public void dispose() {
     myRootNode = null;
-    myNodeTypesComponent.dispose();
+    super.getNodeTypesComponent().dispose();
     myRequesting.clear();
-    myState.clear(true);
+    getState().clear(true);
   }
 
   public boolean isCheckedRoot(boolean considerNonTypesystemRules) {
-    return myNodeTypesComponent.isChecked(considerNonTypesystemRules);
+    return super.getNodeTypesComponent().isChecked(considerNonTypesystemRules);
   }
 
   public boolean messagesChanged(Object requesting) {
-    int hash = myNodeTypesComponent.getNodesWithErrors().hashCode();
+    int hash = super.getNodeTypesComponent().getNodesWithErrors().hashCode();
     if (hash != myOldHash) {
       myRequesting.clear();
       myOldHash = hash;
@@ -332,7 +305,7 @@ public class TypeCheckingContextNew extends BaseTypecheckingContext {
 
   @Override
   public boolean isIncrementalMode() {
-    return myTypeChecker.isGlobalIncrementalMode() && myState.getInequalitySystem() == null;
+    return !myTypeChecker.isGenerationMode() && getState().getInequalitySystem() == null;
   }
 
   @Override
@@ -389,7 +362,7 @@ public class TypeCheckingContextNew extends BaseTypecheckingContext {
   @Override
   public void reportMessage(SNode nodeWithError, IErrorReporter errorReporter) {
     if (nodeWithError == null) {
-      myState.executeOperation(new TraceWarningOperation("Error was not added: " + errorReporter.reportError()));
+      getState().executeOperation(new TraceWarningOperation("Error was not added: " + errorReporter.reportError()));
       return;//todo
     }
     getNodeTypesComponent().reportTypeError(nodeWithError, errorReporter);
@@ -437,7 +410,7 @@ public class TypeCheckingContextNew extends BaseTypecheckingContext {
 
   @Override
   public SNode getExpandedNode(SNode node) {
-    return myState.expand(node);
+    return getState().expand(node);
   }
 
   @Override
@@ -449,7 +422,7 @@ public class TypeCheckingContextNew extends BaseTypecheckingContext {
       myIsTraceMode = false;
 
       // TODO [ts] move dispose -> trace tree
-      myNodeTypesComponent.dispose();
+      super.getNodeTypesComponent().dispose();
     }
   }
 
@@ -459,7 +432,7 @@ public class TypeCheckingContextNew extends BaseTypecheckingContext {
       if (!isCheckedRoot(useNonTypesystemRules)) {
         checkRoot();
         if (useNonTypesystemRules) {
-          myNodeTypesComponent.applyNonTypesystemRulesToRoot(null);
+          super.getNodeTypesComponent().applyNonTypesystemRulesToRoot(null, this);
         }
       }
       return true;
@@ -471,9 +444,9 @@ public class TypeCheckingContextNew extends BaseTypecheckingContext {
     synchronized (TYPECHECKING_LOCK) {
       checkRoot(refreshTypes);
       //non-typesystem checks
-      getBaseNodeTypesComponent().applyNonTypesystemRulesToRoot(null);
+      getBaseNodeTypesComponent().applyNonTypesystemRulesToRoot(null, this);
 
-      return new THashSet<Pair<SNode, List<IErrorReporter>>>(myNodeTypesComponent.getNodesWithErrors());
+      return new THashSet<Pair<SNode, List<IErrorReporter>>>(super.getNodeTypesComponent().getNodesWithErrors());
     }
   }
 

@@ -1,0 +1,83 @@
+/*
+ * Copyright 2003-2012 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package jetbrains.mps.newTypesystem;
+
+import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: fyodor
+ * Date: 11/12/12
+ * Time: 10:07 AM
+ * To change this template use File | Settings | File Templates.
+ */
+/*package*/ class SingleTypeSystemComponent extends TypeSystemComponent {
+
+  public SingleTypeSystemComponent (TypeChecker typeChecker, State state, NodeTypesComponent component) {
+    super (typeChecker, state, component);
+  }
+
+  @Override
+  public void addDependencyForCurrent(SNode node, SNode nonTSCurrent) {
+    assert false;
+  }
+
+  //"type affected" means that *type* of this node depends on current
+  // used to decide whether call "type will be recalculated" if current invalidated
+  @Override
+  public void addDependencyOnCurrent(SNode node, boolean typeAffected) {
+    assert false;
+  }
+
+  //returns true if something was invalidated
+  @Override
+  protected boolean doInvalidate() {
+    assert false;
+    return false;
+  }
+
+  @Override
+  protected void invalidateNodeTypeSystem(SNode node, boolean typeWillBeRecalculated) {
+    assert false;
+  }
+
+  @Override
+  public void markNodeAsAffectedByRule(SNode node, String ruleModel, String ruleId) {
+    assert false;
+  }
+
+  @Override
+  protected void performActionsAfterChecking() {
+    assert false;
+  }
+
+  @Override
+  protected SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
+    return computeTypesForNode_special_(initialNode, givenAdditionalNodes);
+  }
+
+  @Override
+  protected void setTargetNode(SNode initialNode) {
+    myState.setTargetNode(initialNode);
+  }
+}

@@ -19,7 +19,10 @@ import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.lang.typesystem.runtime.performance.TypeCheckingContext_Tracer;
+import jetbrains.mps.newTypesystem.DelegateTypecheckingContext;
+import jetbrains.mps.newTypesystem.InferenceTypecheckingContext;
 import jetbrains.mps.newTypesystem.SingleTypecheckingContext;
+import jetbrains.mps.newTypesystem.TracingTypecheckingContext;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -162,21 +165,21 @@ public class TypeContextManager implements CoreComponent {
 
   public TypeCheckingContext createTypeCheckingContext(SNode node) {
     ModelAccess.assertLegalRead();
-    TypeCheckingContextNew context = new TypeCheckingContextNew(node, myTypeChecker);
     if (myTypeChecker.isGenerationMode()) {
-      return new SingleTypecheckingContext(context);
+      return new SingleTypecheckingContext(node, myTypeChecker);
+    } else {
+      return new DelegateTypecheckingContext(node, myTypeChecker);
     }
-    return context;
   }
 
-  public TypeCheckingContext createTypeCheckingContextSingle(SNode node) {
+  public TypeCheckingContext createInferenceTypeCheckingContext(SNode node) {
     ModelAccess.assertLegalRead();
-    return new SingleTypecheckingContext(new TypeCheckingContextNew(node, myTypeChecker));
+    return new InferenceTypecheckingContext(node, myTypeChecker);
   }
 
-  private TypeCheckingContext createTracingTypeCheckingContext(SNode node) {
+  public TypeCheckingContext createTracingTypeCheckingContext(SNode node) {
     ModelAccess.assertLegalRead();
-    return new TypeCheckingContext_Tracer(new TypeCheckingContextNew(node, myTypeChecker));
+    return new TracingTypecheckingContext(node, myTypeChecker);
   }
 
   public TypeCheckingContext getOrCreateContext(SNode node, ITypeContextOwner owner, boolean createIfAbsent) {
@@ -265,7 +268,7 @@ public class TypeContextManager implements CoreComponent {
 
   private TypeCheckingContext createTypeCheckingContextForResolve(SNode node) {
     SNode root = node.getTopmostAncestor();
-    return new SingleTypecheckingContext(new TypeCheckingContextNew(root, myTypeChecker));
+    return new SingleTypecheckingContext(root, myTypeChecker);
   }
 
   private Set<SNode> getMyResolveNodes() {
@@ -298,7 +301,9 @@ public class TypeContextManager implements CoreComponent {
     }
     try {
       if (myTypeChecker.isGenerationMode()) {
-        TypeCheckingContext context = myTypeChecker.hasPerformanceTracer() ? createTracingTypeCheckingContext(node) : createTypeCheckingContext(node);
+        TypeCheckingContext context = myTypeChecker.hasPerformanceTracer() ?
+          new TypeCheckingContext_Tracer(node, myTypeChecker) :
+          new SingleTypecheckingContext(node, myTypeChecker);
         if (context == null) return null;
         try {
           return context.getTypeOf_generationMode(node);

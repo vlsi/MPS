@@ -25,6 +25,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.newTypesystem.TracingTypecheckingContext;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.VariableIdentifier;
@@ -41,6 +42,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import jetbrains.mps.util.Pair;
 
@@ -50,7 +52,7 @@ import java.util.Map.Entry;
 public class State {
   private static final Logger LOG = Logger.getLogger(State.class);
 
-  private final TypeCheckingContextNew myTypeCheckingContext;
+  private final TypeCheckingContext myTypeCheckingContext;
 
   private final Equations myEquations;
   private final Inequalities myInequalities;
@@ -75,7 +77,7 @@ public class State {
   @StateObject
   private final Set<Block> myBlocks = new THashSet<Block>();
 
-  public State(TypeCheckingContextNew tcc) {
+  public State(TypeCheckingContext tcc) {
     myTypeCheckingContext = tcc;
     myEquations = new Equations(this);
     myInequalities = new Inequalities(this);
@@ -290,7 +292,7 @@ public class State {
     return myInequalities;
   }
 
-  public TypeCheckingContextNew getTypeCheckingContext() {
+  public TypeCheckingContext getTypeCheckingContext() {
     return myTypeCheckingContext;
   }
 
@@ -311,7 +313,7 @@ public class State {
     if (operation == null || myTargetTypeCalculated) {
       return;
     }
-    if (myTypeCheckingContext.isInTraceMode() || operation.hasEffect()) {
+    if (myTypeCheckingContext instanceof TracingTypecheckingContext|| operation.hasEffect()) {
       if (!myOperationStack.empty()) {
         myOperationStack.peek().addConsequence(operation);
       }
@@ -378,7 +380,7 @@ public class State {
 
 
   public void clearStateObjects() {
-    if (!myTypeCheckingContext.isInTraceMode() && myInequalitySystem == null) {
+    if (!(myTypeCheckingContext instanceof TracingTypecheckingContext) && myInequalitySystem == null) {
       for (Entry<ConditionKind, ManyToManyMap<SNode, Block>> map : myBlocksAndInputs.entrySet()) {
         map.getValue().clear();
       }

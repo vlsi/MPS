@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem;
 
 import gnu.trove.THashSet;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.AbstractNodesReadListener;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.LanguageHierarchyCache.CacheChangeListener;
@@ -27,7 +28,7 @@ import jetbrains.mps.util.annotation.UseCarefully;
 
 import java.util.Set;
 
-public abstract class CheckingComponent {
+/*package*/ abstract class CheckingComponent {
   protected boolean myInvalidationWasPerformed = false;
   protected boolean myCacheWasRebuilt = false;
   protected TypeChecker myTypeChecker;
@@ -36,6 +37,11 @@ public abstract class CheckingComponent {
   protected MyLanguageCacheListener myLanguageCacheListener = new MyLanguageCacheListener();
 
   protected Set<SNode> myCurrentNodesToInvalidate = new THashSet<SNode>();
+
+  protected CheckingComponent (TypeChecker typeChecker, NodeTypesComponent component) {
+    myTypeChecker = typeChecker;
+    myNodeTypesComponent = component;
+  }
 
   @UseCarefully
   public void setChecked() {
@@ -61,9 +67,7 @@ public abstract class CheckingComponent {
     setInvalidationWasPerformed(false);
   }
 
-  protected boolean isIncrementalMode() {
-    return myNodeTypesComponent.getTypeCheckingContext().isIncrementalMode();
-  }
+  protected abstract boolean isIncrementalMode();
 
   public void dispose() {
     LanguageHierarchyCache.getInstance().removeCacheChangeListener(myLanguageCacheListener);

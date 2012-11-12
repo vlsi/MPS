@@ -15,38 +15,21 @@
  */
 package jetbrains.mps.newTypesystem;
 
-import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.errors.messageTargets.MessageTarget;
-import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.Pair;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 11/7/12
- * Time: 12:47 PM
+ * Time: 4:17 PM
  * To change this template use File | Settings | File Templates.
  */
-public class DelegateTypecheckingContext extends TypeCheckingContextNew {
+public class TracingTypecheckingContext extends DelegateTypecheckingContext{
 
-  public DelegateTypecheckingContext (SNode rootNode, TypeChecker typeChecker) {
+  public TracingTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
-    setNodeTypesComponent(createNodeTypesComponent());
-    setState(new State(this));
   }
 
-  protected NodeTypesComponent createNodeTypesComponent() {
-    return new NodeTypesComponent(this);
-  }
+
 }

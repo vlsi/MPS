@@ -20,6 +20,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
+import jetbrains.mps.newTypesystem.InferenceTypecheckingContext;
 import jetbrains.mps.newTypesystem.RuntimeSupportNew;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.rules.LanguageScope;
@@ -274,8 +275,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
 
   public SNode getInferredTypeOf(final SNode node) {
     if (node == null) return null;
-    TypeCheckingContext typeCheckingContext =
-      TypeContextManager.getInstance().createTypeCheckingContextSingle(node);
+    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createInferenceTypeCheckingContext(node);
     SNode type = typeCheckingContext.computeTypeInferenceMode(node);
     typeCheckingContext.dispose();
     return type;

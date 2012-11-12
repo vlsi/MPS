@@ -75,7 +75,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
           try {
             myMessagesChanged = true;
             context.setIsNonTypesystemComputation();
-            typesComponent.applyNonTypesystemRulesToRoot(editorContext.getOperationContext());
+            typesComponent.applyNonTypesystemRulesToRoot(editorContext.getOperationContext(), context);
             typesComponent.setCheckedNonTypesystem();
           } catch (Throwable t) {
             LOG.error(t);

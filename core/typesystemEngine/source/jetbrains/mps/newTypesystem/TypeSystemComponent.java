@@ -33,12 +33,10 @@ import java.util.*;
 /*
  *   Non-reenterable.
  */
-class TypeSystemComponent extends CheckingComponent {
-  private static final Logger LOG = Logger.getLogger(TypeSystemComponent.class);
+/*package*/ class TypeSystemComponent extends CheckingComponent {
+  protected static final Logger LOG = Logger.getLogger(TypeSystemComponent.class);
 
   private boolean myInvalidationResult = false;
-
-  private State myState;
 
   private Map<SNode, Set<SNode>> myNodesToDependentNodes_A;
   private Map<SNode, Set<SNode>> myNodesToDependentNodes_B;
@@ -46,28 +44,27 @@ class TypeSystemComponent extends CheckingComponent {
   private Set<SNode> myNodes = new THashSet<SNode>();
 
   private Map<SNode, Set<Pair<String, String>>> myNodesToRules;
-  private Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
+  protected Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
   private Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
   private Set<SNode> myNodesDependentOnCaches;
   private Queue<SNode> myQueue = new LinkedList<SNode>();
   private SNode myCurrentCheckedNode;
   private boolean myCurrentTypeAffected = false;
 
+  protected State myState;
+
   public TypeSystemComponent(TypeChecker typeChecker, State state, NodeTypesComponent component) {
+    super(typeChecker, component);
     myState = state;
-    myTypeChecker = typeChecker;
-    myNodeTypesComponent = component;
-    if (!myNodeTypesComponent.getTypeCheckingContext().isSingleTypeComputation()) {
-      myNodesToRules = new THashMap<SNode, Set<Pair<String, String>>>();
-      myNodesDependentOnCaches = new THashSet<SNode>();
-      myNodesToDependentNodes_A = new THashMap<SNode, Set<SNode>>();
-      myNodesToDependentNodes_B = new THashMap<SNode, Set<SNode>>();
-    }
+    myNodesToRules = new THashMap<SNode, Set<Pair<String, String>>>();
+    myNodesDependentOnCaches = new THashSet<SNode>();
+    myNodesToDependentNodes_A = new THashMap<SNode, Set<SNode>>();
+    myNodesToDependentNodes_B = new THashMap<SNode, Set<SNode>>();
   }
 
   //returns true if something was invalidated
+  @Override
   protected boolean doInvalidate() {
-    assert !myNodeTypesComponent.getTypeCheckingContext().isSingleTypeComputation(); //incremental
     if (myInvalidationWasPerformed) {
       return myInvalidationResult;
     }
@@ -127,9 +124,8 @@ class TypeSystemComponent extends CheckingComponent {
     return result;
   }
 
-  private void invalidateNodeTypeSystem(SNode node, boolean typeWillBeRecalculated) {
-    assert !myNodeTypesComponent.getTypeCheckingContext().isSingleTypeComputation(); //incremental
 
+  protected void invalidateNodeTypeSystem(SNode node, boolean typeWillBeRecalculated) {
     myPartlyCheckedNodes.remove(node);
     myFullyCheckedNodes.remove(node);
     myState.clearNode(node);
@@ -171,8 +167,6 @@ class TypeSystemComponent extends CheckingComponent {
   //"type affected" means that *type* of this node depends on current
   // used to decide whether call "type will be recalculated" if current invalidated
   public void addDependencyOnCurrent(SNode node, boolean typeAffected) {
-    assert !myNodeTypesComponent.getTypeCheckingContext().isSingleTypeComputation(); //incremental
-
     Set<SNode> hashSet = new THashSet<SNode>(1);
     hashSet.add(myCurrentCheckedNode);
 
@@ -185,8 +179,6 @@ class TypeSystemComponent extends CheckingComponent {
   }
 
   public void addDependencyForCurrent(SNode node, SNode nonTSCurrent) {
-    assert !myNodeTypesComponent.getTypeCheckingContext().isSingleTypeComputation(); //incremental
-
     Set<SNode> hashSet = new THashSet<SNode>(1);
     hashSet.add(node);
     if (myCurrentCheckedNode == null) {
@@ -199,7 +191,7 @@ class TypeSystemComponent extends CheckingComponent {
     addDependentNodesTypeSystem(myCurrentCheckedNode, hashSet, true);
   }
 
-  private void computeTypesSpecial(SNode nodeToCheck, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
+  protected void computeTypesSpecial(SNode nodeToCheck, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
     computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, initialNode);
     if (typeCalculated(initialNode) != null) return;
     solveInequalitiesAndExpandTypes(finalExpansion);
@@ -209,9 +201,7 @@ class TypeSystemComponent extends CheckingComponent {
     try {
       if (refreshTypes) {
         clear();
-        if (myState.getTypeCheckingContext().isSingleTypeComputation()) {
-          myState.setTargetNode(initialNode);
-        }
+        setTargetNode(initialNode);
       } else {
         myState.clearStateObjects();
         doInvalidate();
@@ -221,13 +211,15 @@ class TypeSystemComponent extends CheckingComponent {
       computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, initialNode);
       if (typeCalculated(initialNode) != null) return;
       solveInequalitiesAndExpandTypes(finalExpansion);
-      if  (!myNodeTypesComponent.getTypeCheckingContext().isSingleTypeComputation()){
-        performActionsAfterChecking();
-      }
+      performActionsAfterChecking();
       myState.performActionsAfterChecking();
     } finally {
       myInvalidationWasPerformed = false;
     }
+  }
+
+  protected void setTargetNode(SNode initialNode) {
+    // do nothing
   }
 
   public void clearCaches() {
@@ -242,8 +234,12 @@ class TypeSystemComponent extends CheckingComponent {
   }
 
   protected SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
-    assert myNodeTypesComponent.getTypeCheckingContext().isSingleTypeComputation() || myState.getInequalitySystem() !=null;
+    assert myState.getInequalitySystem() !=null;
 
+    return computeTypesForNode_special_(initialNode, givenAdditionalNodes);
+  }
+
+  protected final SNode computeTypesForNode_special_(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
     assert myFullyCheckedNodes.isEmpty();
     SNode type = null;
     SNode prevNode = null;
@@ -287,12 +283,14 @@ class TypeSystemComponent extends CheckingComponent {
     return null;
   }
 
-  public SNode getRawTypeFromContext(SNode node) {
-    return myNodeTypesComponent.getTypeCheckingContext().getTypeDontCheck(node);
+  private SNode getRawTypeFromContext(SNode node) {
+    return myState.getTypeCheckingContext().getTypeDontCheck(node);
+//    synchronized (TYPECHECKING_LOCK) {
+//      return myState.getNodeMaps().getType(node);
+//    }
   }
 
   public void markNodeAsAffectedByRule(SNode node, String ruleModel, String ruleId) {
-    assert !myNodeTypesComponent.getTypeCheckingContext().isSingleTypeComputation();
     Set<Pair<String, String>> rulesWhichAffectNodesType = myNodesToRules.get(node);
     if (rulesWhichAffectNodesType == null) {
       rulesWhichAffectNodesType = new THashSet<Pair<String, String>>(1);
@@ -365,7 +363,7 @@ class TypeSystemComponent extends CheckingComponent {
     }
   }
 
-  private SNode typeCalculated(SNode initialNode) {
+  protected SNode typeCalculated(SNode initialNode) {
     if (myState.getInequalitySystem() != null) {
       SNode expectedType = myState.getInequalitySystem().getExpectedType();
       if (expectedType != null && !TypesUtil.hasVariablesInside(expectedType) && !HUtil.isRuntimeHoleType(expectedType)) {
@@ -411,8 +409,7 @@ class TypeSystemComponent extends CheckingComponent {
     computeTypes(myNodeTypesComponent.getNode(), refreshTypes, true, Collections.<SNode>emptyList(), true, null);
   }
 
-  private void performActionsAfterChecking() {
-    assert !myNodeTypesComponent.getTypeCheckingContext().isSingleTypeComputation();
+  protected void performActionsAfterChecking() {
     myNodeTypesComponent.getModelListenerManager().updateGCedNodes();
     TypeChecker.getInstance().addTypeRecalculatedListener(myNodeTypesComponent.getTypeRecalculatedListener());//method checks if already exists
     LanguageHierarchyCache.getInstance().addCacheChangeListener(myLanguageCacheListener);
@@ -442,5 +439,9 @@ class TypeSystemComponent extends CheckingComponent {
 
   private void addCacheDependentNodesTypesystem(SNode node) {
     myNodesDependentOnCaches.add(node);
+  }
+
+  protected boolean isIncrementalMode() {
+    return myState.getTypeCheckingContext().isIncrementalMode();
   }
 }

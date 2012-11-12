@@ -21,6 +21,7 @@ import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.typesystemEngine.util.CoerceUtil;
@@ -53,7 +54,7 @@ public class CoercionManager {
       }
       return null;
     }
-    final TypeCheckingContextNew typeCheckingContext = state == null ? null : state.getTypeCheckingContext();
+    final TypeCheckingContext typeCheckingContext = state == null ? null : state.getTypeCheckingContext();
     if ("jetbrains.mps.lang.typesystem.structure.JoinType".equals(subtype.getConcept().getId())) {
       List<SNode> children = subtype.getChildren("argument");
 

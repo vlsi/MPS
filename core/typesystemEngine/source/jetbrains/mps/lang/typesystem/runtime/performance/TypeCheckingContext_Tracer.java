@@ -26,8 +26,8 @@ import jetbrains.mps.util.Computable;
 
 public class TypeCheckingContext_Tracer extends DelegateTypecheckingContext {
 
-  public TypeCheckingContext_Tracer(TypeCheckingContext context) {
-    super(context);
+  public TypeCheckingContext_Tracer(SNode rootNode, TypeChecker typeChecker) {
+    super(rootNode, typeChecker);
   }
 
   @Override

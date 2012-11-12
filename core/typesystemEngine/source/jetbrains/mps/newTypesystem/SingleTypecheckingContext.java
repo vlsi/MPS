@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem;
 
+import com.sun.corba.se.impl.encoding.CodeSetConversion.BTCConverter;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
 import jetbrains.mps.smodel.SNode;
@@ -33,8 +34,8 @@ import jetbrains.mps.util.Pair;
  */
 public class SingleTypecheckingContext extends DelegateTypecheckingContext {
 
-  public SingleTypecheckingContext (TypeCheckingContext context) {
-    super(context);
+  public SingleTypecheckingContext (SNode rootNode, TypeChecker typeChecker) {
+    super(rootNode, typeChecker);
   }
 
   @Override
@@ -73,7 +74,7 @@ public class SingleTypecheckingContext extends DelegateTypecheckingContext {
     SNode result = LanguageScopeExecutor.execWithModelScope(node.getModel(), new Computable<SNode>() {
       @Override
       public SNode compute() {
-        return myDelegate.getBaseNodeTypesComponent().computeTypesForNodeDuringGeneration(node);
+        return getBaseNodeTypesComponent().computeTypesForNodeDuringGeneration(node);
       }
     });
     TypeSystemReporter.getInstance().reportTypeOf(node, (System.nanoTime() - start));
@@ -86,7 +87,7 @@ public class SingleTypecheckingContext extends DelegateTypecheckingContext {
     if (pair.o2) {
       return pair.o1;
     }
-    SNode resultType = myDelegate.getBaseNodeTypesComponent().computeTypesForNodeDuringResolving(node);
+    SNode resultType = getBaseNodeTypesComponent().computeTypesForNodeDuringResolving(node);
     typeChecker.putTypeComputedForCompletion(node, resultType);
     return resultType;
   }

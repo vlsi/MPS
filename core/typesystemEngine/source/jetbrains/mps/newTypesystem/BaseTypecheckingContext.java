@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem;
 
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -30,6 +31,9 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 public abstract class BaseTypecheckingContext extends TypeCheckingContext {
 
   protected final Object TYPECHECKING_LOCK = new Object();
+
+  private NodeTypesComponent myNodeTypesComponent;
+  private State myState;
 
   @Override
   public SNode getTypeOf(SNode node, TypeChecker typeChecker) {
@@ -61,5 +65,23 @@ public abstract class BaseTypecheckingContext extends TypeCheckingContext {
       currentTypesComponent.markNodeAsAffectedByRule(node, ruleModel, ruleId);
       //todo wrap into "if (addDependency) {}" when sure that typeof works fine
     }
+  }
+
+  public NodeTypesComponent getNodeTypesComponent() {
+    return myNodeTypesComponent;
+  }
+
+  public State getState() {
+    return myState;
+  }
+
+  protected final void setNodeTypesComponent(NodeTypesComponent nodeTypesComponent) {
+    assert myNodeTypesComponent == null;
+    myNodeTypesComponent = nodeTypesComponent;
+  }
+
+  protected final void setState(State state) {
+    assert myState == null;
+    myState = state;
   }
 }

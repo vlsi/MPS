@@ -63,8 +63,7 @@ class NonTypeSystemComponent extends CheckingComponent {
   private SNode myCurrentCheckedNode;
 
   public NonTypeSystemComponent(TypeChecker typeChecker, NodeTypesComponent nodeTypesComponent) {
-    myTypeChecker = typeChecker;
-    myNodeTypesComponent = nodeTypesComponent;
+    super(typeChecker, nodeTypesComponent);
   }
 
   public void clear() {
@@ -269,7 +268,7 @@ class NonTypeSystemComponent extends CheckingComponent {
     addDependentNodes(sNode, rule, nodesToDependOn, false);
   }
 
-  public void applyNonTypeSystemRulesToRoot(IOperationContext context) {
+  public void applyNonTypeSystemRulesToRoot(IOperationContext context, TypeCheckingContext typeCheckingContext) {
     SNode root = myNodeTypesComponent.getNode();
     if (root == null) return;
     doInvalidate();
@@ -279,7 +278,7 @@ class NonTypeSystemComponent extends CheckingComponent {
       frontier.add(root);
       while (!(frontier.isEmpty())) {
         SNode sNode = frontier.remove();
-        applyNonTypesystemRulesToNode(sNode);
+        applyNonTypesystemRulesToNode(sNode, typeCheckingContext);
         frontier.addAll(sNode.getChildren());
       }
       //all error reporters must be simple reporters, no error expansion needed
@@ -289,11 +288,7 @@ class NonTypeSystemComponent extends CheckingComponent {
     }
   }
 
-  private TypeCheckingContext getTypeCheckingContext() {
-    return myNodeTypesComponent.getTypeCheckingContext();
-  }
-
-  private void applyNonTypesystemRulesToNode(SNode node) {
+  private void applyNonTypesystemRulesToNode(SNode node, TypeCheckingContext typeCheckingContext) {
     SNode oldCheckedNode = myCurrentCheckedNode;
     myCurrentCheckedNode = node;
     List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> nonTypesystemRules = myTypeChecker.getRulesManager().getNonTypesystemRules(node);
@@ -314,7 +309,7 @@ class NonTypeSystemComponent extends CheckingComponent {
         myRuleAndNodeBeingChecked = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
       }
       try {
-        myNodeTypesComponent.applyRuleToNode(node, rule.o1, rule.o2);
+        myNodeTypesComponent.applyRuleToNode(node, rule.o1, rule.o2, typeCheckingContext);
       } finally {
         myRuleAndNodeBeingChecked = null;
         if (incrementalMode) {
@@ -343,6 +338,10 @@ class NonTypeSystemComponent extends CheckingComponent {
       myCheckedNodes.add(nodeAndRule);
     }
     myCurrentCheckedNode = oldCheckedNode;
+  }
+
+  protected boolean isIncrementalMode() {
+    return false; // can never be
   }
 
   private static class MyTypesReadListener implements TypesReadListener {

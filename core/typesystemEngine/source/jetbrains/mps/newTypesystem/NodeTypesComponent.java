@@ -54,24 +54,25 @@ public class NodeTypesComponent {
   private static final Logger LOG = Logger.getLogger(NodeTypesComponent.class);
 
   private boolean myIsNonTypeSystemCheckingInProgress = false;
+
   private TypeCheckingContext myTypeCheckingContext;
 
-  public NodeTypesComponent(SNode rootNode, TypeChecker typeChecker, TypeCheckingContextNew typeCheckingContext) {
-    myRootNode = rootNode;
+  public NodeTypesComponent(TypeCheckingContext typeCheckingContext) {
+    myRootNode = typeCheckingContext.getNode();
     myTypeCheckingContext = typeCheckingContext;
-    myTypeSystemComponent = new TypeSystemComponent(typeChecker, typeCheckingContext.getState(), this);
+
     if (!myTypeCheckingContext.isSingleTypeComputation()) {
-      myNonTypeSystemComponent = new NonTypeSystemComponent(typeChecker, this);
+      myTypeSystemComponent = new TypeSystemComponent(TypeChecker.getInstance(), typeCheckingContext.getState(), this);
+      myNonTypeSystemComponent = new NonTypeSystemComponent(TypeChecker.getInstance(), this);
       myModelListener = new MyModelListener();
       myModelListenerManager = new MyModelListenerManager(myModelListener);
       myModelListenerManager.track(myRootNode);
       myTypeRecalculatedListener = new MyTypeRecalculatedListener();
       myEvents = new ArrayList<SModelEvent>();
     }
-  }
-
-  public TypeCheckingContext getTypeCheckingContext() {
-    return myTypeCheckingContext;
+    else {
+      myTypeSystemComponent = new SingleTypeSystemComponent(TypeChecker.getInstance(), typeCheckingContext.getState(), this);
+    }
   }
 
   public void clear() {
@@ -144,9 +145,9 @@ public class NodeTypesComponent {
     myIsNonTypeSystemCheckingInProgress = inProgress;
   }
 
-  public void applyRuleToNode(SNode node, ICheckingRule_Runtime rule, IsApplicableStatus status) {
+  public void applyRuleToNode(SNode node, ICheckingRule_Runtime rule, IsApplicableStatus status, TypeCheckingContext typeCheckingContext) {
     try {
-      rule.applyRule(node, getTypeCheckingContext(), status);
+      rule.applyRule(node, typeCheckingContext, status);
     } catch (Throwable t) {
       LOG.error("an error occurred while applying rule to node " + node, t, node);
     }
@@ -213,8 +214,8 @@ public class NodeTypesComponent {
     myTypeSystemComponent.addDependencyOnCurrent(node);
   }
 
-  public void applyNonTypesystemRulesToRoot(IOperationContext context) {
-    myNonTypeSystemComponent.applyNonTypeSystemRulesToRoot(context);
+  public void applyNonTypesystemRulesToRoot(IOperationContext context, TypeCheckingContext typeCheckingContext) {
+    myNonTypeSystemComponent.applyNonTypeSystemRulesToRoot(context, typeCheckingContext);
   }
 
   public void addNodeToFrontier(SNode node) {
