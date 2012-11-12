@@ -438,7 +438,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
         if (child != null) {
-          result.addChild(child.getRole(), child);
+          result.addChild(child.getRoleInParent(), child);
         }
         return;
       }
@@ -533,7 +533,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
-        result.addChild(child.getRole(), child);
+        result.addChild(child.getRoleInParent(), child);
         return;
       }
       super.handleChild(resultObject, tagName, value);

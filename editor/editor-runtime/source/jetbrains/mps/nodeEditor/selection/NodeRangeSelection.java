@@ -68,7 +68,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     if (myParentNode != myFirstNode.getParent() || myParentNode != myLastNode.getParent()) {
       throw new SelectionRestoreException();
     }
-    if (!myRole.equals(myFirstNode.getRole()) || !myRole.equals(myLastNode.getRole())) {
+    if (!myRole.equals(myFirstNode.getRoleInParent()) || !myRole.equals(myLastNode.getRoleInParent())) {
       throw new SelectionRestoreException();
     }
     initSelectedCells();
@@ -79,11 +79,11 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     myFirstNode = firstNode;
     myLastNode = lastNode;
     myParentNode = myFirstNode.getParent();
-    myRole = myFirstNode.getRole();
+    myRole = myFirstNode.getRoleInParent();
 
     assert myParentNode != null;
     assert myParentNode == myLastNode.getParent();
-    assert myRole != null && myRole.equals(myLastNode.getRole()) : "First node role: " + myRole + ", last node role: " + myLastNode.getRole();
+    assert myRole != null && myRole.equals(myLastNode.getRoleInParent()) : "First node role: " + myRole + ", last node role: " + myLastNode.getRoleInParent();
     initSelectedCells();
   }
 
