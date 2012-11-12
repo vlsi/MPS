@@ -44,6 +44,10 @@ public abstract class DependTableModel<T> extends AbstractTableModel implements 
     fireTableDataChanged();
   }
 
+  public T getItem() {
+    return myItem;
+  }
+
   @Override
   public void removeRow(int idx) {
     myTableItems.remove(idx);

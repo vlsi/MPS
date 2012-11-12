@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.dialogs.project.tmodels;
 
 import jetbrains.mps.ide.properties.ModelProperties;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelReference;
 
 import java.util.ArrayList;
@@ -30,8 +31,9 @@ public class ModelDependTableModel extends DependTableModel<ModelProperties> {
 
   @Override
   protected void init() {
+    IScope scope = myItem.getModelDescriptor().getModule().getScope();
     for(SModelReference reference : myItem.getImportedModels()) {
-      myTableItems.add(new ModelDepTableItem(reference, DependenciesTableItemRole.IMPORT));
+      myTableItems.add(new ModelDepTableItem(reference, DependenciesTableItemRole.IMPORT, scope));
     }
 
     for(ModuleReference moduleReference : myItem.getLanguagesEngagedOnGeneration()) {

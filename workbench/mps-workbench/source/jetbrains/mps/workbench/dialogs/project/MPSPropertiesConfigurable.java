@@ -37,6 +37,7 @@ import com.intellij.ui.table.JBTable;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
+import com.intellij.util.ui.JBInsets;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Project;
@@ -62,10 +63,11 @@ import javax.swing.JPanel;
 import javax.swing.Icon;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.table.TableColumn;
 import javax.swing.DefaultCellEditor;
 import javax.swing.ListSelectionModel;
-import java.awt.Insets;
 import java.awt.Dimension;
 import java.awt.FontMetrics;
 import java.awt.event.MouseAdapter;
@@ -108,6 +110,7 @@ public abstract class MPSPropertiesConfigurable<T> implements Configurable, Disp
       addTab(tab);
     return myTabbedPaneWrapper.getComponent();
   }
+
 
   @Override
   public void apply() throws ConfigurationException {
@@ -235,7 +238,7 @@ public abstract class MPSPropertiesConfigurable<T> implements Configurable, Disp
     @Override
     protected void initUI() {
       JPanel sourcesTab = new JPanel();
-      sourcesTab.setLayout(new GridLayoutManager(3, 2, new Insets(5, 5, 5, 5), -1, -1));
+      sourcesTab.setLayout(new GridLayoutManager(3, 2, INSETS, -1, -1));
 
       JBLabel label = new JBLabel(PropertiesBundle.message("mps.properties.configurable.common.commontab.namelabel"));
       sourcesTab.add(label, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -276,7 +279,7 @@ public abstract class MPSPropertiesConfigurable<T> implements Configurable, Disp
     @Override
     protected void initUI() {
       JPanel dependenciesTab = new JPanel();
-      dependenciesTab.setLayout(new GridLayoutManager(1, 1, new Insets(5, 5, 5, 5), -1, -1));
+      dependenciesTab.setLayout(new GridLayoutManager(1, 1, INSETS, -1, -1));
 
       final JBTable tableDepend = new JBTable();
       tableDepend.setShowHorizontalLines(false);
@@ -389,7 +392,7 @@ public abstract class MPSPropertiesConfigurable<T> implements Configurable, Disp
     @Override
     protected void initUI() {
       JPanel usedLangsTab = new JPanel();
-      usedLangsTab.setLayout(new GridLayoutManager(1, 1, new Insets(5, 5, 5, 5), -1, -1));
+      usedLangsTab.setLayout(new GridLayoutManager(1, 1, INSETS, -1, -1));
 
       final JBTable usedLangsTable = new JBTable();
       usedLangsTable.setShowHorizontalLines(false);
@@ -526,4 +529,6 @@ public abstract class MPSPropertiesConfigurable<T> implements Configurable, Disp
       return list;
     }
   }
+
+  public static final JBInsets INSETS = new JBInsets(10,10,10,10);
 }

@@ -94,7 +94,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableColumn;
-import java.awt.Insets;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -223,9 +222,10 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
           TableUtil.removeSelectedItems(tableRoots);
         }
       });
+      decorator.setToolbarBorder(IdeBorderFactory.createBorder());
 
       JPanel table = decorator.createPanel();
-      table.setBorder(IdeBorderFactory.createTitledBorder(PropertiesBundle.message("mps.properties.configurable.module.commontab.modelrootsborder"), true));
+      table.setBorder(IdeBorderFactory.createTitledBorder(PropertiesBundle.message("mps.properties.configurable.module.commontab.modelrootsborder"), false));
       component.add(table, new GridConstraints(2, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
       setTabComponent(component);
@@ -459,7 +459,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
     @Override
     protected void initUI() {
       JPanel advancedTab = new JPanel();
-      advancedTab.setLayout(new GridLayoutManager((myConfigurableItem instanceof Solution ? 5 : 3), 2, new Insets(5, 5, 5, 5), -1, -1));
+      advancedTab.setLayout(new GridLayoutManager((myConfigurableItem instanceof Solution ? 5 : 3), 2, INSETS, -1, -1));
+
 
       JBLabel label = new JBLabel(PropertiesBundle.message("mps.properties.configurable.module.javatab.genoutlabel"));
       advancedTab.add(label, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -517,9 +518,10 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
           myPathsTableModel.fireTableDataChanged();
         }
       });
+      decorator.setToolbarBorder(IdeBorderFactory.createBorder());
 
       JPanel table = decorator.createPanel();
-      table.setBorder(IdeBorderFactory.createTitledBorder(PropertiesBundle.message("mps.properties.configurable.module.javatab.sourcepathborder"), true));
+      table.setBorder(IdeBorderFactory.createTitledBorder(PropertiesBundle.message("mps.properties.configurable.module.javatab.sourcepathborder"), false));
       return table;
     }
 
@@ -568,9 +570,10 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
           myLibraryTableModel.fireTableDataChanged();
         }
       });
+      decorator.setToolbarBorder(IdeBorderFactory.createBorder());
 
       JPanel table = decorator.createPanel();
-      table.setBorder(IdeBorderFactory.createTitledBorder(PropertiesBundle.message("mps.properties.configurable.module.javatab.librariesborder"), true));
+      table.setBorder(IdeBorderFactory.createTitledBorder(PropertiesBundle.message("mps.properties.configurable.module.javatab.librariesborder"), false));
       return table;
     }
 
@@ -744,7 +747,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
       List<ModuleReference> list = new ArrayList<ModuleReference>(((GeneratorDescriptor)myConfigurableItem.getModuleDescriptor()).getDepGenerators());
 
       JPanel panel = new JPanel();
-      panel.setLayout(new GridLayoutManager(2, 1, new Insets(5, 5, 5, 5), -1, -1));
+      panel.setLayout(new GridLayoutManager(2, 1, INSETS, -1, -1));
 
       final JBTable table = new JBTable();
       myPrioritiesTableModel = new GenPrioritiesTableModel();
@@ -777,6 +780,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
           myPrioritiesTableModel.fireTableDataChanged();
         }
       });
+      decorator.setToolbarBorder(IdeBorderFactory.createBorder());
 
       panel.add(decorator.createPanel(), new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 

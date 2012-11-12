@@ -48,7 +48,6 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
-import java.awt.Insets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -108,7 +107,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable<SMode
       myModelDependenciesTab = new ModelDependenciesTab();
 
       JComponent component = getTabComponent();
-      component.add(myModelDependenciesTab.getTabComponent(), new GridConstraints(2, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+      //HACK: get component by idx to avoid insets intend.
+      component.add(myModelDependenciesTab.getTabComponent().getComponent(0), new GridConstraints(2, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
       setTabComponent(component);
     }
@@ -126,6 +126,11 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable<SMode
   }
 
   private class ModelDependenciesTab extends DependenciesTab {
+    @Override
+    protected void initUI() {
+      super.initUI();
+
+    }
 
     @Override
     protected DependTableModel getDependTableModel() {
@@ -227,7 +232,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable<SMode
     @Override
     protected void initUI() {
       final JPanel panel = new JPanel();
-      panel.setLayout(new GridLayoutManager(2, 1, new Insets(5, 5, 5, 5), -1, -1));
+      panel.setLayout(new GridLayoutManager(2, 1, INSETS, -1, -1));
 
       final JBLabel label = new JBLabel();
       label.setText(getInfoText());

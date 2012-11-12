@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.dialogs.project.tmodels;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelRepository;
@@ -27,6 +28,12 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import javax.swing.Icon;
 
 public class ModelDepTableItem extends DependenciesTableItem<SModelReference> {
+  private IScope myScope;
+
+  public ModelDepTableItem(SModelReference value, DependenciesTableItemRole role, IScope scope) {
+    super(value, role);
+    myScope = scope;
+  }
 
   public ModelDepTableItem(SModelReference value, DependenciesTableItemRole role) {
     super(value, role);
@@ -39,9 +46,9 @@ public class ModelDepTableItem extends DependenciesTableItem<SModelReference> {
 
   @Override
   public boolean isValid() {
-    IModule module = SModelRepository.getInstance().getModelDescriptor(myItem).getModule();
-    ModelValidator validator = new ModelValidator(module.getScope());
-
+    if(myScope == null)
+      return true;
+    ModelValidator validator = new ModelValidator(myScope);
     return !(validator.isBrokenValue(myItem));
   }
 
