@@ -461,39 +461,34 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   protected void checkGenerationCanceledFast() throws GenerationCanceledException {
   }
 
-  Collection<SNode> copySrcExternal(String mappingName, SNodePointer templateNode, String templateNodeId, SNode inputNode, ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
-    if (inputNode.getModel() != null) {
-      // TODO fail in strict mode
-      inputNode = CopyUtil.copy(inputNode);
-      // TODO inputNode.changeModel();
-    }
+  Collection<SNode> copySrc(String mappingName, SNodePointer templateNode, String templateNodeId, SNode inputNode, ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
+    if (inputNode.getModel() != getInputModel() || inputNode.getModel() == null) {
 
-    synchronized (myAdditionalInputNodes) {
-      if (!myAdditionalInputNodes.containsKey(inputNode)) {
-        myAdditionalInputNodes.put(inputNode, Boolean.TRUE);
-        for (SNode n : inputNode.getDescendants()) {
-          myAdditionalInputNodes.put(n, Boolean.TRUE);
+      // adapt external node
+      if (inputNode.getModel() != null) {
+        // TODO fail in strict mode
+        inputNode = CopyUtil.copy(inputNode);
+        // TODO inputNode.changeModel();
+      }
+
+      synchronized (myAdditionalInputNodes) {
+        if (!myAdditionalInputNodes.containsKey(inputNode)) {
+          myAdditionalInputNodes.put(inputNode, Boolean.TRUE);
+          for (SNode n : inputNode.getDescendants()) {
+            myAdditionalInputNodes.put(n, Boolean.TRUE);
+          }
         }
       }
     }
 
-    // replace all references to input model => output model
-    //invalidateReferencesInCopiedNode(inputNode);
-    //return Collections.singletonList(inputNode);
-
-    return copySrc(mappingName, templateNode, templateNodeId, inputNode, reductionContext, new boolean[]{false});
-  }
-
-  Collection<SNode> copySrc(String mappingName, SNodePointer templateNode, String templateNodeId, SNode inputNode, ReductionContext reductionContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
     myGenerationTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputNode));
     try {
       Collection<SNode> outputNodes = tryToReduce(new DefaultTemplateContext(inputNode), null, mappingName, reductionContext);
       if (outputNodes != null) {
-        changed[0] = true;
         return outputNodes;
       }
 
-      SNode copiedNode = copyInputNode(inputNode, reductionContext, changed);
+      SNode copiedNode = copyInputNode(inputNode, reductionContext, new boolean[]{false});
       if (templateNodeId != null) {
         myMappings.addOutputNodeByInputAndTemplateNode(inputNode, templateNodeId, copiedNode);
       } else if (templateNode != null) {

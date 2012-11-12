@@ -24,9 +24,6 @@ import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -80,10 +77,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   public Collection<SNode> copyNodes(Iterable<SNode> inputNodes, SNodePointer templateNode, String templateId, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException {
     Collection<SNode> outputNodes = null;
     for (SNode newInputNode : inputNodes) {
-      Collection<SNode> _outputNodes =
-        newInputNode.getModel() == generator.getInputModel() && newInputNode.getModel() != null
-          ? generator.copySrc(mappingName, templateNode, templateId, newInputNode, reductionContext, new boolean[]{false})
-          : generator.copySrcExternal(mappingName, templateNode, templateId, newInputNode, reductionContext);
+      Collection<SNode> _outputNodes = generator.copySrc(mappingName, templateNode, templateId, newInputNode, reductionContext);
       if (_outputNodes != null) {
         // check node languages : prevent 'input node' query from returning node, which language was not counted when
         // planning the generation steps.
@@ -139,7 +133,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   }
 
   private void validateReferences(SNode node, final SNode inputNode) {
-    for (SReference ref: node.getReferences()){
+    for (SReference ref : node.getReferences()) {
       // reference to input model - illegal
       if (generator.getInputModel().getSModelReference().equals(ref.getTargetSModelReference())) {
         // replace

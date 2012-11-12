@@ -75,7 +75,7 @@ public class TemplateProcessor {
       }
 
       try {
-        List<SNode> outputNodes = applyTemplate(mappingName, templateNode, context.subContext(mappingName), 0);
+        List<SNode> outputNodes = applyTemplate(mappingName, templateNode, context.subContext(mappingName), null);
         if (outputNodes == null) {
           throw new TemplateProcessingFailureException();
         }
@@ -101,27 +101,42 @@ public class TemplateProcessor {
     }
   }
 
+  private SNode nextMacro(SNode templateNode, SNode prevMacro) {
+    if (prevMacro == null) {
+      for (SNode attrNode : templateNode.getChildren(GeneratorUtilEx.link_BaseConcept_attrs)) {
+        if (attrNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_NodeMacro))) {
+          return attrNode;
+        }
+      }
+    } else {
+      SNode attrNode = prevMacro;
+      assert prevMacro.getParent() == templateNode;
+      while ((attrNode = attrNode.getNextSibling()) != null) {
+        if (attrNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_NodeMacro))) {
+          return attrNode;
+        }
+      }
+    }
+    return null;
+  }
+
   @Nullable
   private List<SNode> applyTemplate(String mappingName,
                     SNode templateNode,
                     @NotNull TemplateContext context,
-                    int nodeMacrosToSkip)
+                    SNode prevMacro)
     throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
 
     assert mappingName == null || mappingName.equals(context.getInputName());
 
-    int macroCount = 0;
     // templateNode has unprocessed node-macros?
-    for (SNode templateChildNode : templateNode.getChildren()) {
-      if (!(templateChildNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_NodeMacro))))
-        continue;
-      macroCount++;
-      if (macroCount <= nodeMacrosToSkip) continue;
-      myTracer.pushMacro(new SNodePointer(templateChildNode));
+    SNode nextMacro = nextMacro(templateNode, prevMacro);
+    if (nextMacro != null) {
+      myTracer.pushMacro(new SNodePointer(nextMacro));
       try {
-        return applyMacro(templateChildNode, templateNode, context, nodeMacrosToSkip, mappingName);
+        return applyMacro(nextMacro, templateNode, context, mappingName);
       } finally {
-        myTracer.closeMacro(new SNodePointer(templateChildNode));
+        myTracer.closeMacro(new SNodePointer(nextMacro));
       }
     }
 
@@ -188,7 +203,7 @@ public class TemplateProcessor {
     // process children
     try {
       for (SNode templateChildNode : templateChildNodes) {
-        List<SNode> outputChildNodes = applyTemplate(null, templateChildNode, context, 0);
+        List<SNode> outputChildNodes = applyTemplate(null, templateChildNode, context, null);
         if (outputChildNodes != null) {
           String role = templateChildNode.getRoleInParent();
           for (SNode outputChildNode : outputChildNodes) {
@@ -212,10 +227,10 @@ public class TemplateProcessor {
   }
 
   @Nullable
-  private List<SNode> applyMacro(SNode macro, SNode templateNode, @NotNull TemplateContext templateContext, int nodeMacrosToSkip, String outerMappingName) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
+  private List<SNode> applyMacro(SNode macro, SNode templateNode, @NotNull TemplateContext templateContext, String outerMappingName) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
     String macroConceptFQName = macro.getConcept().getId();
     List<SNode> outputNodes = new ArrayList<SNode>();
-    String mappingName = GeneratorUtilEx.getMappingName(macro, outerMappingName);
+    String mappingName = GeneratorUtilEx.getMappingName_NodeMacro(macro, outerMappingName);
 
     if (macroConceptFQName.equals(RuleUtil.concept_LoopMacro)) {
       // $LOOP$
@@ -226,7 +241,7 @@ public class TemplateProcessor {
           myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(newInputNode));
         }
         try {
-          List<SNode> _outputNodes = applyTemplate(mappingName, templateNode, templateContext.subContext(mappingName, newInputNode), nodeMacrosToSkip + 1);
+          List<SNode> _outputNodes = applyTemplate(mappingName, templateNode, templateContext.subContext(mappingName, newInputNode), macro);
           if (_outputNodes != null) outputNodes.addAll(_outputNodes);
         } finally {
           if (inputChanged) {
@@ -241,10 +256,7 @@ public class TemplateProcessor {
       List<SNode> newInputNodes = getNewInputNodes(macro, templateContext);
       SNodePointer templateNodeRef = templateNode == null ? null : new SNodePointer(templateNode);
       for (SNode newInputNode : newInputNodes) {
-        Collection<SNode> _outputNodes =
-          newInputNode.getModel() == myGenerator.getInputModel() && newInputNode.getModel() != null
-            ? myGenerator.copySrc(mappingName, templateNodeRef, null, newInputNode, myReductionContext, new boolean[]{false})
-            : myGenerator.copySrcExternal(mappingName, templateNodeRef, null, newInputNode, myReductionContext);
+        Collection<SNode> _outputNodes = myGenerator.copySrc(mappingName, templateNodeRef, null, newInputNode, myReductionContext);
         if (_outputNodes != null) {
           // check node languages : prevent 'input node' query from returning node, which language was not counted when
           // planning the generation steps.
@@ -294,7 +306,7 @@ public class TemplateProcessor {
 
     } else if (macroConceptFQName.equals(RuleUtil.concept_WeaveMacro)) {
       // $WEAVE$
-      List<SNode> _outputNodes = applyTemplate(mappingName, templateNode, templateContext.subContext(mappingName), nodeMacrosToSkip + 1);
+      List<SNode> _outputNodes = applyTemplate(mappingName, templateNode, templateContext.subContext(mappingName), macro);
       if (_outputNodes != null && _outputNodes.size() > 0) {
 
         if (_outputNodes.size() == 1) {
@@ -330,7 +342,7 @@ public class TemplateProcessor {
 
     } else if (macroConceptFQName.equals(RuleUtil.concept_LabelMacro)) {
       // $LABEL$
-      List<SNode> _outputNodes = applyTemplate(mappingName, templateNode, templateContext.subContext(mappingName), nodeMacrosToSkip + 1);
+      List<SNode> _outputNodes = applyTemplate(mappingName, templateNode, templateContext.subContext(mappingName), macro);
       if (_outputNodes != null) outputNodes.addAll(_outputNodes);
       return outputNodes;
 
@@ -340,7 +352,7 @@ public class TemplateProcessor {
       Object varValue = myReductionContext.getQueryExecutor().evaluateVariableQuery(templateContext.getInput(), RuleUtil.getVarMacro_Query(macro), templateContext);
       TemplateContext newContext = templateContext.subContext(Collections.singletonMap(varName, varValue));
 
-      List<SNode> _outputNodes = applyTemplate(mappingName, templateNode, newContext.subContext(mappingName), nodeMacrosToSkip + 1);
+      List<SNode> _outputNodes = applyTemplate(mappingName, templateNode, newContext.subContext(mappingName), macro);
       if (_outputNodes != null) outputNodes.addAll(_outputNodes);
       return outputNodes;
 
@@ -348,7 +360,7 @@ public class TemplateProcessor {
       // $IF$
       List<SNode> _outputNodes = null;
       if (myReductionContext.getQueryExecutor().checkConditionForIfMacro(templateContext.getInput(), macro, templateContext)) {
-        _outputNodes = applyTemplate(mappingName, templateNode, templateContext.subContext(mappingName), nodeMacrosToSkip + 1);
+        _outputNodes = applyTemplate(mappingName, templateNode, templateContext.subContext(mappingName), macro);
       } else {
         // alternative consequence
         SNode altConsequence = RuleUtil.getIfMacro_AlternativeConsequence(macro);
@@ -396,7 +408,7 @@ public class TemplateProcessor {
             myGenerator.getDelayedChanges().addExecuteMapSrcNodeMacroChange(
               macro, childToReplaceLater, newcontext, myReductionContext);
           } else {
-            List<SNode> _outputNodes = applyTemplate(mappingName, templateNode, newcontext, nodeMacrosToSkip + 1);
+            List<SNode> _outputNodes = applyTemplate(mappingName, templateNode, newcontext, macro);
             if (_outputNodes != null) {
               outputNodes.addAll(_outputNodes);
               // do post-processing here (it's not really a post-processing because model is not completed yet - output nodes are not added to parent node).
@@ -458,7 +470,7 @@ public class TemplateProcessor {
 
           // no switch-case found for the inputNode - continue with templateNode under the $switch$
           if (collection == null) {
-            collection = applyTemplate(mappingName, templateNode, templateContext.subContext(mappingName, newInputNode), nodeMacrosToSkip + 1);
+            collection = applyTemplate(mappingName, templateNode, templateContext.subContext(mappingName, newInputNode), macro);
           }
         }
 
@@ -582,7 +594,7 @@ public class TemplateProcessor {
       // $TRACE$
       SNode inputNode = getNewInputNode(macro, templateContext);
 
-      List<SNode> _outputNodes = applyTemplate(mappingName, templateNode, templateContext.subContext(mappingName), nodeMacrosToSkip + 1);
+      List<SNode> _outputNodes = applyTemplate(mappingName, templateNode, templateContext.subContext(mappingName), macro);
       if (_outputNodes != null) {
         outputNodes.addAll(_outputNodes);
         for (SNode outputNode : _outputNodes) {
@@ -600,7 +612,7 @@ public class TemplateProcessor {
           myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(newInputNode));
         }
         try {
-          List<SNode> _outputNodes = applyTemplate(mappingName, templateNode, templateContext.subContext(mappingName, newInputNode), nodeMacrosToSkip + 1);
+          List<SNode> _outputNodes = applyTemplate(mappingName, templateNode, templateContext.subContext(mappingName, newInputNode), macro);
           if (_outputNodes != null) outputNodes.addAll(_outputNodes);
         } finally {
           if (inputChanged) {
@@ -650,7 +662,7 @@ public class TemplateProcessor {
     DismissTopMappingRuleException,
     GenerationFailureException, GenerationCanceledException {
     TemplateProcessor templateProcessor = new TemplateProcessor(myGenerator, myReductionContext);
-    return templateProcessor.applyTemplate(mappingName, templateNode, context, 0);
+    return templateProcessor.applyTemplate(mappingName, templateNode, context, null);
   }
 
   private void weaveMacro(SNode template, SNode outputContextNode, @NotNull TemplateContext context, SNode macro)
