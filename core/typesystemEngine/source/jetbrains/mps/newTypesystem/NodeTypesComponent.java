@@ -37,8 +37,7 @@ import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 import java.util.*;
 
-public class NodeTypesComponent {
-  private SNode myRootNode;
+public class NodeTypesComponent extends SingleNodeTypesComponent {
 
   private List<SModelEvent> myEvents;
 
@@ -48,38 +47,39 @@ public class NodeTypesComponent {
   private MyModelListenerManager myModelListenerManager;
 
   private NonTypeSystemComponent myNonTypeSystemComponent;
-  private TypeSystemComponent myTypeSystemComponent;
+
   private boolean myIsSpecial = false;
 
   private static final Logger LOG = Logger.getLogger(NodeTypesComponent.class);
 
   private boolean myIsNonTypeSystemCheckingInProgress = false;
 
-  private TypeCheckingContext myTypeCheckingContext;
 
   public NodeTypesComponent(TypeCheckingContext typeCheckingContext, State state) {
-    myRootNode = typeCheckingContext.getNode();
-    myTypeCheckingContext = typeCheckingContext;
+    super(typeCheckingContext, state);
+    myNonTypeSystemComponent = new NonTypeSystemComponent(TypeChecker.getInstance(), this);
+    myModelListener = new MyModelListener();
+    myModelListenerManager = new MyModelListenerManager(myModelListener);
+    myModelListenerManager.track(myRootNode);
+    myTypeRecalculatedListener = new MyTypeRecalculatedListener();
+    myEvents = new ArrayList<SModelEvent>();
+  }
 
-    if (!myTypeCheckingContext.isSingleTypeComputation()) {
-      myTypeSystemComponent = new TypeSystemComponent(TypeChecker.getInstance(), state, this);
-      myNonTypeSystemComponent = new NonTypeSystemComponent(TypeChecker.getInstance(), this);
-      myModelListener = new MyModelListener();
-      myModelListenerManager = new MyModelListenerManager(myModelListener);
-      myModelListenerManager.track(myRootNode);
-      myTypeRecalculatedListener = new MyTypeRecalculatedListener();
-      myEvents = new ArrayList<SModelEvent>();
-    }
-    else {
-      myTypeSystemComponent = new SingleTypeSystemComponent(TypeChecker.getInstance(), state, this);
-    }
+  @Override
+  protected TypeSystemComponent createTypeSystemComponent(State state) {
+    return new TypeSystemComponent(TypeChecker.getInstance(), state, this);
+  }
+
+  @Override
+  protected TypeSystemComponent getTypeSystemComponent() {
+    return (TypeSystemComponent) super.getTypeSystemComponent();
   }
 
   public void clear() {
 
     clearNodesTypes();
     myNonTypeSystemComponent.clear();
-    myTypeSystemComponent.clear();
+    getTypeSystemComponent().clear();
   }
 
   public SNode getNode() {
@@ -95,7 +95,7 @@ public class NodeTypesComponent {
   }
 
   private void clearNodesTypes() {
-    myTypeSystemComponent.clearNodeTypes();
+    getTypeSystemComponent().clearNodeTypes();
     myNonTypeSystemComponent.clearNodeTypes();
   }
 
@@ -105,7 +105,7 @@ public class NodeTypesComponent {
     if (myIsNonTypeSystemCheckingInProgress) {
       myNonTypeSystemComponent.putError(node, reporter);
     } else {
-      myTypeSystemComponent.addError(node, reporter);
+      getTypeSystemComponent().addError(node, reporter);
     }
   }
 
@@ -136,7 +136,7 @@ public class NodeTypesComponent {
 
   private SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
     myIsSpecial = true;
-    SNode result = myTypeSystemComponent.computeTypesForNode_special(initialNode, givenAdditionalNodes);
+    SNode result = getTypeSystemComponent().computeTypesForNode_special(initialNode, givenAdditionalNodes);
     myIsSpecial = false;
     return result;
   }
@@ -163,7 +163,7 @@ public class NodeTypesComponent {
         myNonTypeSystemComponent.dispose();
       }
     }
-    myTypeSystemComponent.dispose();
+    getTypeSystemComponent().dispose();
   }
 
   public Map<SNode, SNode> getMainContext() {
@@ -187,7 +187,7 @@ public class NodeTypesComponent {
   }
 
   public void computeTypes(boolean refreshTypes) {
-    myTypeSystemComponent.computeTypes(refreshTypes);
+    getTypeSystemComponent().computeTypes(refreshTypes);
   }
 
   public void setCheckedNonTypesystem() {
@@ -195,11 +195,11 @@ public class NodeTypesComponent {
   }
 
   public void typeOfNodeCalled(SNode node) {
-    myTypeSystemComponent.typeOfNodeCalled(node);
+    getTypeSystemComponent().typeOfNodeCalled(node);
   }
 
   public void addDependencyOnCurrent(SNode node, boolean typeAffected) {
-    myTypeSystemComponent.addDependencyOnCurrent(node, typeAffected);
+    getTypeSystemComponent().addDependencyOnCurrent(node, typeAffected);
   }
 
   public void addDependencyForCurrent(SNode node) {
@@ -207,11 +207,11 @@ public class NodeTypesComponent {
     if (myIsNonTypeSystemCheckingInProgress) {
       current = myNonTypeSystemComponent.getCurrentCheckedNode();
     }
-    myTypeSystemComponent.addDependencyForCurrent(node, current);
+    getTypeSystemComponent().addDependencyForCurrent(node, current);
   }
 
   public void addDependencyOnCurrent(SNode node) {
-    myTypeSystemComponent.addDependencyOnCurrent(node);
+    getTypeSystemComponent().addDependencyOnCurrent(node);
   }
 
   public void applyNonTypesystemRulesToRoot(IOperationContext context, TypeCheckingContext typeCheckingContext) {
@@ -219,16 +219,16 @@ public class NodeTypesComponent {
   }
 
   public void addNodeToFrontier(SNode node) {
-    myTypeSystemComponent.addNodeToFrontier(node);
+    getTypeSystemComponent().addNodeToFrontier(node);
   }
 
   public SNode getType(SNode node) {
-    return myTypeSystemComponent.getType(node);
+    return getTypeSystemComponent().getType(node);
   }
 
   @NotNull
   public List<IErrorReporter> getErrors(SNode node) {
-    Map<SNode, List<IErrorReporter>> nodesToErrorsMap = myTypeSystemComponent.getNodesToErrorsMap();
+    Map<SNode, List<IErrorReporter>> nodesToErrorsMap = getTypeSystemComponent().getNodesToErrorsMap();
     Map<SNode, List<IErrorReporter>> nodesToErrorsMapNT = myNonTypeSystemComponent.getNodesToErrorsMap();
 
     List<IErrorReporter> result = new ArrayList<IErrorReporter>(4);
@@ -253,7 +253,7 @@ public class NodeTypesComponent {
 
   //--------------------------------------------------
   public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
-    Map<SNode, List<IErrorReporter>> nodesToErrorsMap = myTypeSystemComponent.getNodesToErrorsMap();
+    Map<SNode, List<IErrorReporter>> nodesToErrorsMap = getTypeSystemComponent().getNodesToErrorsMap();
     Map<SNode, List<IErrorReporter>> nodesToErrorsMapNT = myNonTypeSystemComponent.getNodesToErrorsMap();
     Set<Pair<SNode, List<IErrorReporter>>> result = new THashSet<Pair<SNode, List<IErrorReporter>>>(1);
     Set<SNode> keySet = new THashSet<SNode>(nodesToErrorsMap.keySet());
@@ -276,11 +276,11 @@ public class NodeTypesComponent {
 
 
   public void markNodeAsAffectedByRule(SNode node, String ruleModel, String ruleId) {
-    myTypeSystemComponent.markNodeAsAffectedByRule(node, ruleModel, ruleId);
+    getTypeSystemComponent().markNodeAsAffectedByRule(node, ruleModel, ruleId);
   }
 
   public Set<Pair<String, String>> getRulesWhichAffectNodeType(SNode node) {
-    return myTypeSystemComponent.getRulesWhichAffectNodeType(node);
+    return getTypeSystemComponent().getRulesWhichAffectNodeType(node);
   }
 
   public boolean isCheckedNonTypesystem() {
@@ -288,12 +288,12 @@ public class NodeTypesComponent {
   }
 
   public void setCheckedTypesystem() {
-    myTypeSystemComponent.setChecked();
+    getTypeSystemComponent().setChecked();
   }
 
   public boolean isChecked(boolean considerNonTypeSystemRules) {
     processPendingEvents();
-    boolean typesChecked = myTypeSystemComponent.isChecked();
+    boolean typesChecked = getTypeSystemComponent().isChecked();
     if (considerNonTypeSystemRules) {
       return typesChecked && myNonTypeSystemComponent.isChecked();
     } else {
@@ -324,8 +324,8 @@ public class NodeTypesComponent {
 
   private class MySModelEventVisitorAdapter extends SModelEventVisitorAdapter {
     public void visitChildEvent(SModelChildEvent event) {
-      markDependentNodesForInvalidation(event.getChild(), myTypeSystemComponent);
-      markDependentNodesForInvalidation(event.getParent(), myTypeSystemComponent);
+      markDependentNodesForInvalidation(event.getChild(), getTypeSystemComponent());
+      markDependentNodesForInvalidation(event.getParent(), getTypeSystemComponent());
 
       markDependentNodesForInvalidation(event.getChild(), myNonTypeSystemComponent);
       markDependentNodesForInvalidation(event.getParent(), myNonTypeSystemComponent);
@@ -338,7 +338,7 @@ public class NodeTypesComponent {
         if (event.isRemoved()) {
           //invalidate nodes which are removed
           markDependentNodesForInvalidation(descendant, myNonTypeSystemComponent);
-          markDependentNodesForInvalidation(descendant, myTypeSystemComponent);
+          markDependentNodesForInvalidation(descendant, getTypeSystemComponent());
         }
       }
       for (SReference reference : references) {
@@ -350,7 +350,7 @@ public class NodeTypesComponent {
     }
 
     public void visitReferenceEvent(SModelReferenceEvent event) {
-      markDependentNodesForInvalidation(event.getReference().getSourceNode(), myTypeSystemComponent);
+      markDependentNodesForInvalidation(event.getReference().getSourceNode(), getTypeSystemComponent());
       markDependentNodesForInvalidation(event.getReference().getSourceNode(), myNonTypeSystemComponent);
       if (!event.isAdded()) return;
       markDependentNodesForInvalidation(event.getReference().getTargetNodeSilently(), myNonTypeSystemComponent);
@@ -366,7 +366,7 @@ public class NodeTypesComponent {
 
     private void markDependentOnPropertyNodesForInvalidation(SNode eventNode, String propertyName) {
       myNonTypeSystemComponent.addPropertyToInvalidate(eventNode, propertyName);
-      myTypeSystemComponent.addNodeToInvalidate(eventNode);
+      getTypeSystemComponent().addNodeToInvalidate(eventNode);
     }
   }
 

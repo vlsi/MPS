@@ -32,13 +32,13 @@ import java.util.Set;
   protected boolean myInvalidationWasPerformed = false;
   protected boolean myCacheWasRebuilt = false;
   protected TypeChecker myTypeChecker;
-  protected NodeTypesComponent myNodeTypesComponent;
+  private SingleNodeTypesComponent myNodeTypesComponent;
   protected boolean myIsChecked = false;
   protected MyLanguageCacheListener myLanguageCacheListener = new MyLanguageCacheListener();
 
   protected Set<SNode> myCurrentNodesToInvalidate = new THashSet<SNode>();
 
-  protected CheckingComponent (TypeChecker typeChecker, NodeTypesComponent component) {
+  protected CheckingComponent (TypeChecker typeChecker, SingleNodeTypesComponent component) {
     myTypeChecker = typeChecker;
     myNodeTypesComponent = component;
   }
@@ -71,6 +71,10 @@ import java.util.Set;
 
   public void dispose() {
     LanguageHierarchyCache.getInstance().removeCacheChangeListener(myLanguageCacheListener);
+  }
+
+  protected SingleNodeTypesComponent getNodeTypesComponent() {
+    return myNodeTypesComponent;
   }
 
   /*

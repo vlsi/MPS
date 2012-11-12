@@ -31,53 +31,58 @@ import java.util.Collections;
  * Time: 10:07 AM
  * To change this template use File | Settings | File Templates.
  */
-/*package*/ class SingleTypeSystemComponent extends TypeSystemComponent {
+/*package*/ class SingleTypeSystemComponent extends CheckingComponent {
 
-  public SingleTypeSystemComponent (TypeChecker typeChecker, State state, NodeTypesComponent component) {
-    super (typeChecker, state, component);
+  protected final State myState;
+
+  public SingleTypeSystemComponent (TypeChecker typeChecker, State state, SingleNodeTypesComponent component) {
+    super (typeChecker, component);
+    myState = state;
   }
 
   @Override
-  public void addDependencyForCurrent(SNode node, SNode nonTSCurrent) {
+  protected boolean isIncrementalMode() {
+    return false;
+  }
+
+  /*package*/ void addDependencyForCurrent(SNode node, SNode nonTSCurrent) {
     assert false;
   }
 
   //"type affected" means that *type* of this node depends on current
   // used to decide whether call "type will be recalculated" if current invalidated
-  @Override
-  public void addDependencyOnCurrent(SNode node, boolean typeAffected) {
+  /*package*/ void addDependencyOnCurrent(SNode node, boolean typeAffected) {
     assert false;
   }
 
   //returns true if something was invalidated
-  @Override
   protected boolean doInvalidate() {
     assert false;
     return false;
   }
 
-  @Override
   protected void invalidateNodeTypeSystem(SNode node, boolean typeWillBeRecalculated) {
     assert false;
   }
 
-  @Override
-  public void markNodeAsAffectedByRule(SNode node, String ruleModel, String ruleId) {
+  /*package*/ void markNodeAsAffectedByRule(SNode node, String ruleModel, String ruleId) {
     assert false;
   }
 
-  @Override
   protected void performActionsAfterChecking() {
     assert false;
   }
 
-  @Override
   protected SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
     return computeTypesForNode_special_(initialNode, givenAdditionalNodes);
   }
 
-  @Override
   protected void setTargetNode(SNode initialNode) {
     myState.setTargetNode(initialNode);
+  }
+
+  protected SNode computeTypesForNode_special_(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
+    assert false;
+    return null;
   }
 }

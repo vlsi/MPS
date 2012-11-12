@@ -33,7 +33,7 @@ import java.util.*;
 /*
  *   Non-reenterable.
  */
-/*package*/ class TypeSystemComponent extends CheckingComponent {
+/*package*/ class TypeSystemComponent extends SingleTypeSystemComponent {
   protected static final Logger LOG = Logger.getLogger(TypeSystemComponent.class);
 
   private boolean myInvalidationResult = false;
@@ -51,11 +51,10 @@ import java.util.*;
   private SNode myCurrentCheckedNode;
   private boolean myCurrentTypeAffected = false;
 
-  protected State myState;
 
   public TypeSystemComponent(TypeChecker typeChecker, State state, NodeTypesComponent component) {
-    super(typeChecker, component);
-    myState = state;
+    super(typeChecker, state, component);
+
     myNodesToRules = new THashMap<SNode, Set<Pair<String, String>>>();
     myNodesDependentOnCaches = new THashSet<SNode>();
     myNodesToDependentNodes_A = new THashMap<SNode, Set<SNode>>();
@@ -125,6 +124,7 @@ import java.util.*;
   }
 
 
+  @Override
   protected void invalidateNodeTypeSystem(SNode node, boolean typeWillBeRecalculated) {
     myPartlyCheckedNodes.remove(node);
     myFullyCheckedNodes.remove(node);
@@ -166,6 +166,7 @@ import java.util.*;
 
   //"type affected" means that *type* of this node depends on current
   // used to decide whether call "type will be recalculated" if current invalidated
+  @Override
   public void addDependencyOnCurrent(SNode node, boolean typeAffected) {
     Set<SNode> hashSet = new THashSet<SNode>(1);
     hashSet.add(myCurrentCheckedNode);
@@ -178,6 +179,7 @@ import java.util.*;
     addDependentNodesTypeSystem(node, hashSet, typeAffected);
   }
 
+  @Override
   public void addDependencyForCurrent(SNode node, SNode nonTSCurrent) {
     Set<SNode> hashSet = new THashSet<SNode>(1);
     hashSet.add(node);
@@ -218,6 +220,7 @@ import java.util.*;
     }
   }
 
+  @Override
   protected void setTargetNode(SNode initialNode) {
     // do nothing
   }
@@ -233,12 +236,13 @@ import java.util.*;
     myPartlyCheckedNodes.clear();
   }
 
+  @Override
   protected SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
     assert myState.getInequalitySystem() !=null;
-
     return computeTypesForNode_special_(initialNode, givenAdditionalNodes);
   }
 
+  @Override
   protected final SNode computeTypesForNode_special_(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
     assert myFullyCheckedNodes.isEmpty();
     SNode type = null;
@@ -290,6 +294,7 @@ import java.util.*;
 //    }
   }
 
+  @Override
   public void markNodeAsAffectedByRule(SNode node, String ruleModel, String ruleId) {
     Set<Pair<String, String>> rulesWhichAffectNodesType = myNodesToRules.get(node);
     if (rulesWhichAffectNodesType == null) {
@@ -378,6 +383,11 @@ import java.util.*;
     return null;
   }
 
+  @Override
+  protected NodeTypesComponent getNodeTypesComponent() {
+    return (NodeTypesComponent) super.getNodeTypesComponent();
+  }
+
   //"type affected" means that *type* of this node depends on this set
   // used to decide whether call "type will be recalculated" if node from set invalidated
   private void addDependentNodesTypeSystem(@NotNull SNode sNode, Set<SNode> nodesToDependOn, boolean typesAffected) {
@@ -389,7 +399,7 @@ import java.util.*;
       if (dependentNodes == null) {
         dependentNodes = new THashSet<SNode>(1);
         dependencies.put(nodeToDependOn, dependentNodes);
-        myNodeTypesComponent.track(nodeToDependOn);
+        getNodeTypesComponent().track(nodeToDependOn);
       }
       dependentNodes.add(sNode);
     }
@@ -406,12 +416,13 @@ import java.util.*;
   }
 
   public void computeTypes(boolean refreshTypes) {
-    computeTypes(myNodeTypesComponent.getNode(), refreshTypes, true, Collections.<SNode>emptyList(), true, null);
+    computeTypes(getNodeTypesComponent().getNode(), refreshTypes, true, Collections.<SNode>emptyList(), true, null);
   }
 
+  @Override
   protected void performActionsAfterChecking() {
-    myNodeTypesComponent.getModelListenerManager().updateGCedNodes();
-    TypeChecker.getInstance().addTypeRecalculatedListener(myNodeTypesComponent.getTypeRecalculatedListener());//method checks if already exists
+    getNodeTypesComponent().getModelListenerManager().updateGCedNodes();
+    TypeChecker.getInstance().addTypeRecalculatedListener(getNodeTypesComponent().getTypeRecalculatedListener());//method checks if already exists
     LanguageHierarchyCache.getInstance().addCacheChangeListener(myLanguageCacheListener);
   }
 

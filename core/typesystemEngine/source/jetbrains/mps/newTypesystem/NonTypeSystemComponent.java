@@ -91,6 +91,11 @@ class NonTypeSystemComponent extends CheckingComponent {
     return Collections.unmodifiableMap(myNodesToErrorsMap);
   }
 
+  @Override
+  protected NodeTypesComponent getNodeTypesComponent() {
+    return (NodeTypesComponent) super.getNodeTypesComponent();
+  }
+
   private void doInvalidate(Map<NonTypesystemRule_Runtime, Set<SNode>> nodesAndRules, Set<Pair<SNode, NonTypesystemRule_Runtime>> invalidatedNodesAndRules) {
     if (nodesAndRules != null) {
       for (NonTypesystemRule_Runtime ruleOfNode : nodesAndRules.keySet()) {
@@ -269,10 +274,10 @@ class NonTypeSystemComponent extends CheckingComponent {
   }
 
   public void applyNonTypeSystemRulesToRoot(IOperationContext context, TypeCheckingContext typeCheckingContext) {
-    SNode root = myNodeTypesComponent.getNode();
+    SNode root = getNodeTypesComponent().getNode();
     if (root == null) return;
     doInvalidate();
-    myNodeTypesComponent.setNonTypeSystemCheckingInProgress(true);
+    getNodeTypesComponent().setNonTypeSystemCheckingInProgress(true);
     try {
       Queue<SNode> frontier = new LinkedList<SNode>();
       frontier.add(root);
@@ -283,7 +288,7 @@ class NonTypeSystemComponent extends CheckingComponent {
       }
       //all error reporters must be simple reporters, no error expansion needed
     } finally {
-      myNodeTypesComponent.setNonTypeSystemCheckingInProgress(false);
+      getNodeTypesComponent().setNonTypeSystemCheckingInProgress(false);
       myInvalidationWasPerformed = false;
     }
   }
@@ -309,7 +314,7 @@ class NonTypeSystemComponent extends CheckingComponent {
         myRuleAndNodeBeingChecked = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
       }
       try {
-        myNodeTypesComponent.applyRuleToNode(node, rule.o1, rule.o2, typeCheckingContext);
+        getNodeTypesComponent().applyRuleToNode(node, rule.o1, rule.o2, typeCheckingContext);
       } finally {
         myRuleAndNodeBeingChecked = null;
         if (incrementalMode) {
