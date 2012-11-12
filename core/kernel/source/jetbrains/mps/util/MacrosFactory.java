@@ -17,6 +17,8 @@ package jetbrains.mps.util;
 
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.samples.SamplesManager;
@@ -52,6 +54,19 @@ public class MacrosFactory {
 
   public static MacroHelper getGlobal() {
     return new MacroHelperImpl(null, new HomeMacros());
+  }
+
+  /**
+   * @deprecated use forModuleFile
+   */
+  @Deprecated
+  public static Macros moduleDescriptor(IModule module) {
+    IFile descriptorFile = ((AbstractModule) module).getDescriptorFile();
+    MacroHelper macroHelper = forModuleFile(descriptorFile);
+    if (macroHelper instanceof MacroHelperImpl) {
+      return ((MacroHelperImpl) macroHelper).macros;
+    }
+    return new HomeMacros();
   }
 
   private static class ModuleMacros extends HomeMacros {
