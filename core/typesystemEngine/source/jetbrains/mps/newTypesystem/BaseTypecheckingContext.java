@@ -72,16 +72,19 @@ public abstract class BaseTypecheckingContext extends TypeCheckingContext {
   }
 
   public State getState() {
+    assert myState != null;
     return myState;
   }
 
   protected final void setNodeTypesComponent(NodeTypesComponent nodeTypesComponent) {
     assert myNodeTypesComponent == null;
+    assert nodeTypesComponent != null;
     myNodeTypesComponent = nodeTypesComponent;
   }
 
   protected final void setState(State state) {
     assert myState == null;
+    assert state != null;
     myState = state;
   }
 }

@@ -57,12 +57,12 @@ public class NodeTypesComponent {
 
   private TypeCheckingContext myTypeCheckingContext;
 
-  public NodeTypesComponent(TypeCheckingContext typeCheckingContext) {
+  public NodeTypesComponent(TypeCheckingContext typeCheckingContext, State state) {
     myRootNode = typeCheckingContext.getNode();
     myTypeCheckingContext = typeCheckingContext;
 
     if (!myTypeCheckingContext.isSingleTypeComputation()) {
-      myTypeSystemComponent = new TypeSystemComponent(TypeChecker.getInstance(), typeCheckingContext.getState(), this);
+      myTypeSystemComponent = new TypeSystemComponent(TypeChecker.getInstance(), state, this);
       myNonTypeSystemComponent = new NonTypeSystemComponent(TypeChecker.getInstance(), this);
       myModelListener = new MyModelListener();
       myModelListenerManager = new MyModelListenerManager(myModelListener);
@@ -71,7 +71,7 @@ public class NodeTypesComponent {
       myEvents = new ArrayList<SModelEvent>();
     }
     else {
-      myTypeSystemComponent = new SingleTypeSystemComponent(TypeChecker.getInstance(), typeCheckingContext.getState(), this);
+      myTypeSystemComponent = new SingleTypeSystemComponent(TypeChecker.getInstance(), state, this);
     }
   }
 

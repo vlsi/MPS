@@ -42,11 +42,11 @@ public class DelegateTypecheckingContext extends TypeCheckingContextNew {
 
   public DelegateTypecheckingContext (SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
-    setNodeTypesComponent(createNodeTypesComponent());
     setState(new State(this));
+    setNodeTypesComponent(createNodeTypesComponent());
   }
 
   protected NodeTypesComponent createNodeTypesComponent() {
-    return new NodeTypesComponent(this);
+    return new NodeTypesComponent(this, getState());
   }
 }

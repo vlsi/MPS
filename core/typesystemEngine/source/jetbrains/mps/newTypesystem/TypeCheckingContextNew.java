@@ -53,7 +53,6 @@ public class TypeCheckingContextNew extends BaseTypecheckingContext {
   private Integer myOldHash = 0;
 
   protected TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
-    setState(new State(this));
     myRootNode = rootNode;
     myTypeChecker = typeChecker;
   }
