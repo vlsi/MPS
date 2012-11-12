@@ -156,7 +156,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
   }
 
   private void weaveTemplateDeclaration(SNode template,
-                                        SNode outputContextNode, @NotNull TemplateContext context, @NotNull TemplateExecutionEnvironment environment)
+                      SNode outputContextNode, @NotNull TemplateContext context, @NotNull TemplateExecutionEnvironment environment)
     throws GenerationFailureException, GenerationCanceledException {
 
     environment.getTracer().pushInputNode(GenerationTracerUtil.getSNodePointer(context.getInput()));
@@ -198,7 +198,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
       }
       if (contextParentNode != null) {
         try {
-          List<SNode> outputNodesToWeave = templateProcessor.processTemplateNode(
+          List<SNode> outputNodesToWeave = templateProcessor.apply(
             GeneratorUtilEx.getMappingName(templateFragment, ruleMappingName),
             templateFragmentNode, context);
           String childRole = templateFragmentNode.getRole_();
