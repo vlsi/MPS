@@ -38,6 +38,7 @@ import jetbrains.mps.traceInfo.DebugInfoBuilder;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class TextGenerator {
@@ -51,60 +52,35 @@ public class TextGenerator {
       throw new IllegalArgumentException();
     }
 
-    List<IMessage> errors = new ArrayList<IMessage>();
-
+    // check results
     for (TextGenerationResult result : results) {
-      fillGenerationStatus(sourceStatus, result, generateDebugInfo, errors);
+      if (result.hasErrors() && result.problems().isEmpty()) {
+        // looks like it possible when user uses just report error without message (?)
+        throw new IllegalStateException();
+      }
     }
 
-    generateFiles(sourceStatus, results, generateDebugInfo, errors, streamHandler);
+    // accumulate errors
+    List<IMessage> errors = new ArrayList<IMessage>();
+    for (TextGenerationResult result : results) {
+      errors.addAll(result.problems());
+    }
+
+    // write results
+    GenerationDependencies dependencies = sourceStatus.getDependencies();
+    List<GenerationRootDependencies> unchangedDependencies = (dependencies != null) ? dependencies.getUnchangedDependencies() : Collections.<GenerationRootDependencies>emptyList();
+
+    fillBLDependencies(sourceStatus, results, unchangedDependencies, streamHandler);
+    if (generateDebugInfo) {
+      fillDebugInfo(sourceStatus, results, unchangedDependencies);
+    }
+    saveGeneratedFiles(results, errors, streamHandler);
     generateCaches(sourceStatus, streamHandler, cacheGenerators);
 
     return errors;
   }
 
-  private static void fillGenerationStatus(GenerationStatus sourceStatus,
-                                           TextGenerationResult result,
-                                           boolean generateDebugInfo,
-                                           List<IMessage> errors) {
-    if (result.hasErrors() && result.problems().isEmpty()) {
-      // looks like it possible when user uses just report error without message (?)
-      throw new IllegalStateException();
-    }
-
-    errors.addAll(result.problems());
-
-    Object contents = result.getResult();
-    if (TextGen.NO_TEXTGEN != contents) {
-      String fileName = getFileName(result.getRoot());
-
-      if (generateDebugInfo) {
-        DebugInfoBuilder debugInfoBuilder = new DebugInfoBuilder();
-        sourceStatus.setDebugInfo(debugInfoBuilder.getDebugInfo());
-        debugInfoBuilder.fillDebugInfo(fileName, result.getPositions(), result.getScopePositions(), result.getUnitPositions(), sourceStatus.getOriginalInputModel());
-      }
-
-      ModelDependencies dependRoot = new ModelDependencies();
-      sourceStatus.setBLDependencies(dependRoot);
-      fillDependencies(dependRoot, result.getRoot(), fileName, result);
-    } else {
-      // ignore this node
-    }
-  }
-
-  private static void fillDependencies(ModelDependencies root, SNode outputNode, String fileName, TextGenerationResult result) {
-    if (result.hasDependencies()) {
-      root.addDependencies(new RootDependencies(NameUtil.nodeFQName(outputNode), fileName, result.getDependencies(TextGen.DEPENDENCY),
-        result.getDependencies(TextGen.EXTENDS)));
-    }
-  }
-
-  private static String getFileName(SNode outputRootNode) {
-    String extension = TextGen.getExtension(outputRootNode);
-    return (extension == null) ? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
-  }
-
-  private static void generateFiles(GenerationStatus status, List<TextGenerationResult> results, boolean generateDebugInfo, List<IMessage> errors, StreamHandler streamHandler) {
+  private static void saveGeneratedFiles(List<TextGenerationResult> results, List<IMessage> errors, StreamHandler streamHandler) {
     for (TextGenerationResult result : results) {
       SNode outputRootNode = result.getRoot();
 
@@ -122,56 +98,75 @@ public class TextGenerator {
         streamHandler.saveStream(name, (byte[]) contents, false);
       }
     }
+  }
 
+  private static void fillDebugInfo(GenerationStatus sourceStatus, List<TextGenerationResult> results, List<GenerationRootDependencies> unchangedDependencies) {
+    // fill debug info from text generation results
+    DebugInfoBuilder debugInfoBuilder = new DebugInfoBuilder();
+    for (TextGenerationResult result : results) {
+      if (TextGen.NO_TEXTGEN != result.getResult()) {
+        debugInfoBuilder.fillDebugInfo(getFileName(result.getRoot()), result.getPositions(), result.getScopePositions(), result.getUnitPositions(), sourceStatus.getOriginalInputModel());
+      }
+    }
+    DebugInfo generatedDebugInfo = debugInfoBuilder.getDebugInfo();
+
+    // complete debug info with info for roots that did not changed and therefore were not generated
+    // we get debug info for them from cache
+    DebugInfo cachedDebugInfo = TraceInfoCache.getInstance().getLastGeneratedDebugInfo(sourceStatus.getOriginalInputModel());
+    if (cachedDebugInfo != null) {
+      List<SNodePointer> unchangedRoots = new ArrayList<SNodePointer>();
+      String inputModelUid = sourceStatus.getOriginalInputModel().getSModelReference().toString();
+
+      for (GenerationRootDependencies dependency : unchangedDependencies) {
+        String rootId = dependency.getRootId();
+        if (rootId == null) continue;
+        unchangedRoots.add(new SNodePointer(inputModelUid, rootId));
+      }
+
+      DebugInfoBuilder.completeDebugInfoFromCache(cachedDebugInfo, generatedDebugInfo, unchangedRoots);
+    }
+
+    sourceStatus.setDebugInfo(generatedDebugInfo);
+  }
+
+  private static void fillBLDependencies(GenerationStatus sourceStatus, List<TextGenerationResult> results, List<GenerationRootDependencies> unchangedDependencies, StreamHandler streamHandler) {
+    ModelDependencies modelDependencies = new ModelDependencies();
+    for (TextGenerationResult result : results) {
+      if (TextGen.NO_TEXTGEN != result.getResult()) {
+        if (result.hasDependencies()) {
+          modelDependencies.addDependencies(new RootDependencies(NameUtil.nodeFQName(result.getRoot()), getFileName(result.getRoot()), result.getDependencies(TextGen.DEPENDENCY),
+            result.getDependencies(TextGen.EXTENDS)));
+        }
+      }
+    }
+    sourceStatus.setBLDependencies(modelDependencies);
+
+    // update modelDependencies and generationDependencies
     ModelDependencies modelDep = null;
 
-    GenerationDependencies dependencies = status.getDependencies();
-    if (dependencies != null) {
-      // process unchanged files
-      List<GenerationRootDependencies> unchangedDependencies = dependencies.getUnchangedDependencies();
-      SModelDescriptor originalInputModel = status.getOriginalInputModel();
-      for (GenerationRootDependencies rdep : unchangedDependencies) {
-        for (String filename : rdep.getFiles()) {
-          if (streamHandler.touch(filename, false)) {
-            // re-register baselanguage dependencies
-            if (modelDep == null) {
-              modelDep = BLDependenciesCache.getInstance().get(originalInputModel);
-            }
-            if (modelDep != null) {
-              RootDependencies root = modelDep.getDependency(filename);
-              if (root != null) {
-                status.getBLDependencies().replaceRoot(root);
-              }
+    // process unchanged files
+    SModelDescriptor originalInputModel = sourceStatus.getOriginalInputModel();
+    for (GenerationRootDependencies rdep : unchangedDependencies) {
+      for (String filename : rdep.getFiles()) {
+        if (streamHandler.touch(filename, false)) {
+          // re-register baseLanguage dependencies
+          if (modelDep == null) {
+            modelDep = BLDependenciesCache.getInstance().get(originalInputModel);
+          }
+          if (modelDep != null) {
+            RootDependencies root = modelDep.getDependency(filename);
+            if (root != null) {
+              sourceStatus.getBLDependencies().replaceRoot(root);
             }
           }
         }
       }
-
-      if (unchangedDependencies.isEmpty() || !generateDebugInfo) {
-        return;
-      }
-      DebugInfo generatedDebugInfo = status.getDebugInfo();
-      if (generatedDebugInfo == null) {
-        generatedDebugInfo = new DebugInfoBuilder().getDebugInfo();
-        status.setDebugInfo(generatedDebugInfo);
-      }
-      // complete debug info with info for roots that did not changed and therefore were not generated
-      // we get debug info for them from cache
-      DebugInfo cachedDebugInfo = TraceInfoCache.getInstance().getLastGeneratedDebugInfo(status.getOriginalInputModel());
-      if (cachedDebugInfo != null) {
-
-        List<SNodePointer> unchangedRoots = new ArrayList<SNodePointer>();
-        String inputModelUid = status.getOriginalInputModel().getSModelReference().toString();
-
-        for (GenerationRootDependencies dependency : dependencies.getUnchangedDependencies()) {
-          String rootId = dependency.getRootId();
-          if (rootId == null) continue;
-          unchangedRoots.add(new SNodePointer(inputModelUid, rootId));
-        }
-
-        DebugInfoBuilder.completeDebugInfoFromCache(cachedDebugInfo, generatedDebugInfo, unchangedRoots);
-      }
     }
+  }
+
+  private static String getFileName(SNode outputRootNode) {
+    String extension = TextGen.getExtension(outputRootNode);
+    return (extension == null) ? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
   }
 
   private static void generateCaches(GenerationStatus status, StreamHandler streamHandler, CacheGenerator[] cacheGenerators) {
