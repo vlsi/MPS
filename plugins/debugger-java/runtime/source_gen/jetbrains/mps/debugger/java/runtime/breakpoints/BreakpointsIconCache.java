@@ -123,17 +123,18 @@ public class BreakpointsIconCache implements ProjectComponent {
   public void updateIcons(@Nullable final DebugSession session) {
     final _FunctionTypes._void_P0_E0 update = new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        synchronized (myCache) {
-          MapSequence.fromMap(myCache).clear();
-          for (IBreakpoint breakpoint : SetSequence.fromSet(myBreakpointManager.getAllIBreakpoints())) {
-            if (breakpoint instanceof JavaBreakpoint) {
-              JavaBreakpoint javaBreakpoint = (JavaBreakpoint) breakpoint;
-              Icon icon = getIconInternal(javaBreakpoint, session);
-              MapSequence.fromMap(myCache).put(javaBreakpoint, icon);
-            }
+        Map<IBreakpoint, Icon> icons = MapSequence.fromMap(new HashMap<IBreakpoint, Icon>());
+        for (IBreakpoint breakpoint : SetSequence.fromSet(myBreakpointManager.getAllIBreakpoints())) {
+          if (breakpoint instanceof JavaBreakpoint) {
+            JavaBreakpoint javaBreakpoint = (JavaBreakpoint) breakpoint;
+            Icon icon = getIconInternal(javaBreakpoint, session);
+            MapSequence.fromMap(icons).put(javaBreakpoint, icon);
           }
         }
-
+        synchronized (myCache) {
+          MapSequence.fromMap(myCache).clear();
+          MapSequence.fromMap(myCache).putAll(icons);
+        }
         myBreakpointsUiComponent.repaintBreakpoints();
       }
     };
