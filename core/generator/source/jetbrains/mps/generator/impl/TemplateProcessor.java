@@ -34,6 +34,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 import java.util.ArrayList;
@@ -205,15 +206,19 @@ public class TemplateProcessor {
       for (SNode templateChildNode : templateChildNodes) {
         List<SNode> outputChildNodes = applyTemplate(null, templateChildNode, context, null);
         if (outputChildNodes != null) {
+          SConcept originalConcept = templateChildNode.getConcept();
           String role = templateChildNode.getRoleInParent();
           for (SNode outputChildNode : outputChildNodes) {
-            // check child
-            RoleValidationStatus status = myGenerator.validateChild(outputNode, role, outputChildNode);
-            if (status != null) {
-              status.reportProblem(false, "",
-                GeneratorUtil.describe(context.getInput(), "input"),
-                GeneratorUtil.describe(templateNode, "parent in template"),
-                GeneratorUtil.describe(templateChildNode, "child in template"));
+            // returned node is subconcept of template node => fine
+            if (!(outputChildNode.getConcept().isSubConceptOf(originalConcept))) {
+              // check child
+              RoleValidationStatus status = myGenerator.validateChild(outputNode, role, outputChildNode);
+              if (status != null) {
+                status.reportProblem(false, "",
+                  GeneratorUtil.describe(context.getInput(), "input"),
+                  GeneratorUtil.describe(templateNode, "parent in template"),
+                  GeneratorUtil.describe(templateChildNode, "child in template"));
+              }
             }
             outputNode.addChild(role, outputChildNode);
           }
