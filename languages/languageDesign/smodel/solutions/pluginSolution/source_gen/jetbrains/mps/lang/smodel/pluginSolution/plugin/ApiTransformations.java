@@ -103,7 +103,7 @@ public class ApiTransformations {
 
     // ----------------- 
 
-    String cat8 = "getRole_()->getRole()";
+    String cat8 = "getRole_()->getRoleInParent()";
     SNode md8 = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new ApiTransformations.QuotationClass_f4dkew_a0a0a0bc0a().createNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
     _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> transVerifier8 = new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
       public Boolean invoke(SNode n) {
