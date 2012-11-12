@@ -28,7 +28,6 @@ import jetbrains.mps.make.java.RootDependencies;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -39,77 +38,58 @@ import jetbrains.mps.traceInfo.DebugInfoBuilder;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 public class TextGenerator {
   private static final Logger LOG = Logger.getLogger(TextGenerator.class);
 
-  public static List<IMessage> handleOutput(GenerationStatus status, boolean generateDebugInfo, boolean failIfNoTextgen, StreamHandler streamHandler, CacheGenerator[] cacheGenerators) {
-    if (!status.isOk()) {
-      throw new IllegalStateException();
+  public static List<IMessage> handleTextGenResults(GenerationStatus sourceStatus, List<TextGenerationResult> results,
+                                                    boolean generateDebugInfo,
+                                                    StreamHandler streamHandler,
+                                                    CacheGenerator[] cacheGenerators) {
+    if (sourceStatus.getOutputModel() == null || !sourceStatus.isOk()) {
+      throw new IllegalArgumentException();
     }
 
     List<IMessage> errors = new ArrayList<IMessage>();
 
-    Map<SNode, Object> outputNodeContents = new LinkedHashMap<SNode, Object>();
-    if (!generateText(status, outputNodeContents, generateDebugInfo, failIfNoTextgen, errors)) return errors;
+    for (TextGenerationResult result : results) {
+      fillGenerationStatus(sourceStatus, result, generateDebugInfo, errors);
+    }
 
-    generateFiles(status, outputNodeContents, generateDebugInfo, errors, streamHandler);
-    generateCaches(status, streamHandler, cacheGenerators);
+    generateFiles(sourceStatus, results, generateDebugInfo, errors, streamHandler);
+    generateCaches(sourceStatus, streamHandler, cacheGenerators);
 
     return errors;
   }
 
-  private static boolean generateText(GenerationStatus status, Map<SNode, Object> outputNodeContents, boolean generateDebugInfo, boolean failIfNoTextgen, List<IMessage> errors) {
-    boolean hasErrors = false;
-    ModelDependencies dependRoot = new ModelDependencies();
-    status.setBLDependencies(dependRoot);
-
-    SModel outputModel = status.getOutputModel();
-    if (outputModel == null) return !hasErrors;
-
-    DebugInfoBuilder debugInfoBuilder = null;
-    if (generateDebugInfo) {
-      debugInfoBuilder = new DebugInfoBuilder();
-      status.setDebugInfo(debugInfoBuilder.getDebugInfo());
+  private static void fillGenerationStatus(GenerationStatus sourceStatus,
+                                           TextGenerationResult result,
+                                           boolean generateDebugInfo,
+                                           List<IMessage> errors) {
+    if (result.hasErrors() && result.problems().isEmpty()) {
+      // looks like it possible when user uses just report error without message (?)
+      throw new IllegalStateException();
     }
 
-    StringBuilder[] buffers = new StringBuilder[]{new StringBuilder(8192), new StringBuilder(32768)};
+    errors.addAll(result.problems());
 
-    for (SNode outputNode : outputModel.roots()) {
-      buffers[0].setLength(0);
-      buffers[1].setLength(0);
-      if (buffers[0].capacity() > 100000) {
-        buffers[0] = new StringBuilder(8192);
+    Object contents = result.getResult();
+    if (TextGen.NO_TEXTGEN != contents) {
+      String fileName = getFileName(result.getRoot());
+
+      if (generateDebugInfo) {
+        DebugInfoBuilder debugInfoBuilder = new DebugInfoBuilder();
+        sourceStatus.setDebugInfo(debugInfoBuilder.getDebugInfo());
+        debugInfoBuilder.fillDebugInfo(fileName, result.getPositions(), result.getScopePositions(), result.getUnitPositions(), sourceStatus.getOriginalInputModel());
       }
-      if (buffers[1].capacity() > 200000) {
-        buffers[1] = new StringBuilder(32768);
-      }
-      TextGenerationResult result = TextGen.generateText(outputNode, failIfNoTextgen, generateDebugInfo, buffers);
-      if (hasErrors && result.problems().isEmpty()) {
-        // looks like it possible when user uses just report error without message (?)
-        throw new IllegalStateException();
-      }
-      hasErrors |= result.hasErrors();
-      if (result.hasErrors()) {
-        errors.addAll(result.problems());
-      } else {
-        Object contents = result.getResult();
-        if (TextGen.NO_TEXTGEN != contents) {
-          String fileName = getFileName(outputNode);
-          if (debugInfoBuilder != null) {
-            debugInfoBuilder.fillDebugInfo(fileName, result.getPositions(), result.getScopePositions(), result.getUnitPositions(), status.getOriginalInputModel());
-          }
-          fillDependencies(dependRoot, outputNode, fileName, result);
-          outputNodeContents.put(outputNode, contents);
-        } else {
-          // ignore this node
-        }
-      }
+
+      ModelDependencies dependRoot = new ModelDependencies();
+      sourceStatus.setBLDependencies(dependRoot);
+      fillDependencies(dependRoot, result.getRoot(), fileName, result);
+    } else {
+      // ignore this node
     }
-    return !hasErrors;
   }
 
   private static void fillDependencies(ModelDependencies root, SNode outputNode, String fileName, TextGenerationResult result) {
@@ -124,8 +104,10 @@ public class TextGenerator {
     return (extension == null) ? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
   }
 
-  private static void generateFiles(GenerationStatus status, Map<SNode, Object> outputNodeContents, boolean generateDebugInfo, List<IMessage> errors, StreamHandler streamHandler) {
-    for (SNode outputRootNode : outputNodeContents.keySet()) {
+  private static void generateFiles(GenerationStatus status, List<TextGenerationResult> results, boolean generateDebugInfo, List<IMessage> errors, StreamHandler streamHandler) {
+    for (TextGenerationResult result : results) {
+      SNode outputRootNode = result.getRoot();
+
       String name = getFileName(outputRootNode);
       if (name == null) {
         Message m = new Message(MessageKind.ERROR, "Can't create file with no name. Root node [" + outputRootNode.getSNodeId() + "] in model " + outputRootNode.getModel().getSModelFqName());
@@ -133,7 +115,7 @@ public class TextGenerator {
         errors.add(m);
         continue;
       }
-      Object contents = outputNodeContents.get(outputRootNode);
+      Object contents = result.getResult();
       if (contents instanceof String) {
         streamHandler.saveStream(name, (String) contents, false);
       } else {
