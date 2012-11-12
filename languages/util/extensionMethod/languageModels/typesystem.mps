@@ -217,6 +217,18 @@
           </node>
         </node>
       </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7769835591074328290">
+        <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7769835591074328291">
+          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpeh.1176897069499" resolveInfo="RulesFunctions_BaseLanguage" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpeh.7769835591074320050" resolveInfo="inference_matchConcreteTypesWithMethodTypeVariables" />
+          <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="4525411394274034215">
+            <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="5744862332973318446" resolveInfo="extensionMethodCall" />
+          </node>
+          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7769835591074328293">
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5744862332973319682" resolveInfo="mmap" />
+          </node>
+        </node>
+      </node>
       <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5744862332973319699">
         <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5744862332973470309">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5744862332973447882" resolveInfo="inference_equateApplicableType" />
