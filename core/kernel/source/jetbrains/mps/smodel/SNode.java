@@ -450,21 +450,30 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   public SNode getPrevChild(org.jetbrains.mps.openapi.model.SNode child) {
-    String childRole = ((SNode) child).getRole();
+    SNode schild = (SNode) child;
+    String childRole = schild.getRoleInParent();
     assert childRole != null : "role must be not null";
-    List<SNode> children = getChildren(childRole);
-    int index = children.indexOf(child);
-    if (index <= 0) return null;
-    return children.get(index - 1);
+
+    SNode fc = firstChild();
+    while (schild != fc) {
+      schild = schild.treePrevious();
+      if (schild.getRoleInParent().equals(childRole)) return schild;
+    }
+
+    return null;
   }
 
   public SNode getNextChild(org.jetbrains.mps.openapi.model.SNode child) {
-    String childRole = ((SNode) child).getRole();
+    SNode schild = (SNode) child;
+    String childRole = schild.getRoleInParent();
     assert childRole != null : "role must be not null";
-    List<SNode> children = getChildren(childRole);
-    int index = children.indexOf(child);
-    if (index < 0 || index >= children.size() - 1) return null;
-    return children.get(index + 1);
+
+    while (schild.treeNext() != null) {
+      schild = schild.treeNext();
+      if (schild.getRoleInParent().equals(childRole)) return schild;
+    }
+
+    return null;
   }
 
   public SNodeReference getReference() {
@@ -1801,7 +1810,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   public SNode prevSibling() {
     if (getParent() == null) return null;
-    return getParent().firstChild() == this ? null : (SNode) treePrevious();
+    return getParent().firstChild() == this ? null : treePrevious();
   }
 
   @Deprecated
