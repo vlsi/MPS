@@ -82,8 +82,8 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     for (SNode newInputNode : inputNodes) {
       Collection<SNode> _outputNodes =
         newInputNode.getModel() == generator.getInputModel() && newInputNode.getModel() != null
-          ? generator.copyNodeFromInputNode(mappingName, templateNode, templateId, newInputNode, reductionContext, new boolean[]{false})
-          : generator.copyNodeFromExternalNode(mappingName, templateNode, templateId, newInputNode, reductionContext);
+          ? generator.copySrc(mappingName, templateNode, templateId, newInputNode, reductionContext, new boolean[]{false})
+          : generator.copySrcExternal(mappingName, templateNode, templateId, newInputNode, reductionContext);
       if (_outputNodes != null) {
         // check node languages : prevent 'input node' query from returning node, which language was not counted when
         // planning the generation steps.
