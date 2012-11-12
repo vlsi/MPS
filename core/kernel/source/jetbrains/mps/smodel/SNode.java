@@ -450,6 +450,10 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   public SNode getPrevChild(org.jetbrains.mps.openapi.model.SNode child) {
+    ModelAccess.assertLegalRead(this);
+    assertDisposed();
+    fireNodeReadAccess();
+
     SNode schild = (SNode) child;
     String childRole = schild.getRoleInParent();
     assert childRole != null : "role must be not null";
@@ -464,6 +468,10 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   public SNode getNextChild(org.jetbrains.mps.openapi.model.SNode child) {
+    ModelAccess.assertLegalRead(this);
+    assertDisposed();
+    fireNodeReadAccess();
+
     SNode schild = (SNode) child;
     String childRole = schild.getRoleInParent();
     assert childRole != null : "role must be not null";
