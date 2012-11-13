@@ -749,7 +749,7 @@
     <nodeInfo nodeId="4362914091961474289" fileName="WriteHelper.java" startLine="111" startPosition="5" endLine="112" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6031791847596807227" fileName="WriteHelper.java" startLine="116" startPosition="39" endLine="117" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4362914091961474762" fileName="WriteHelper.java" startLine="118" startPosition="5" endLine="119" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4362914091961474824" fileName="WriteHelper.java" startLine="126" startPosition="46" endLine="127" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4362914091961474824" fileName="WriteHelper.java" startLine="126" startPosition="46" endLine="127" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4362914091961474870" fileName="WriteHelper.java" startLine="130" startPosition="50" endLine="131" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5437197702624234062" fileName="WriteHelper.java" startLine="135" startPosition="50" endLine="136" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4653378063118824995" fileName="WriteHelper.java" startLine="138" startPosition="39" endLine="139" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -819,7 +819,7 @@
     <scopeInfo nodeId="4362914091961472262" fileName="WriteHelper.java" startLine="98" startPosition="53" endLine="99" endPosition="98" />
     <scopeInfo nodeId="3436588812410759344" fileName="WriteHelper.java" startLine="107" startPosition="26" endLine="108" endPosition="45" />
     <scopeInfo nodeId="2472791738395988992" fileName="WriteHelper.java" startLine="116" startPosition="39" endLine="117" endPosition="70" />
-    <scopeInfo nodeId="4362914091961474812" fileName="WriteHelper.java" startLine="126" startPosition="46" endLine="127" endPosition="26" />
+    <scopeInfo nodeId="4362914091961474812" fileName="WriteHelper.java" startLine="126" startPosition="46" endLine="127" endPosition="34" />
     <scopeInfo nodeId="4362914091961474848" fileName="WriteHelper.java" startLine="130" startPosition="50" endLine="131" endPosition="40" />
     <scopeInfo nodeId="5437197702624234049" fileName="WriteHelper.java" startLine="135" startPosition="50" endLine="136" endPosition="18" />
     <scopeInfo nodeId="2472791738395988985" fileName="WriteHelper.java" startLine="138" startPosition="39" endLine="139" endPosition="71" />

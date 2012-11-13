@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.refactorings.MoveNodes;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.structure.scripts.RefUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
@@ -48,7 +49,7 @@ public class MovePropertyUp extends BaseLoggableRefactoring {
       if ((linkToReplace != null)) {
         refactoringContext.replaceRefsToNodeWithNode(node, linkToReplace);
       } else {
-        refactoringContext.moveNodeToNode(node, node.getRole(), ((SNode) refactoringContext.getParameter("targetConcept")));
+        refactoringContext.moveNodeToNode(node, node.getRoleInParent(), ((SNode) refactoringContext.getParameter("targetConcept")));
       }
     */
     refactoringContext.moveNodeToNode(node, node.getRoleInParent(), ((SNode) refactoringContext.getParameter("targetConcept")));
