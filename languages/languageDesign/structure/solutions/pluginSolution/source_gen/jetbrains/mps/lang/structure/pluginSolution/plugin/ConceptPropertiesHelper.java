@@ -48,6 +48,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior;
@@ -310,7 +311,7 @@ public class ConceptPropertiesHelper {
     return method;
   }
 
-  private void replaceConceptPropertyUsages(SNode conceptProperty, SNode overridenMethod) {
+  private void replaceConceptPropertyUsages(final SNode conceptProperty, SNode overridenMethod) {
     if (SNodeOperations.getAncestor(SLinkOperations.getTarget(conceptProperty, "conceptPropertyDeclaration", false), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false) == SNodeOperations.getAncestor(conceptProperty, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false)) {
       return;
     }
@@ -350,6 +351,26 @@ public class ConceptPropertiesHelper {
         return;
       } else {
         ListSequence.fromList(SLinkOperations.getTargets(conceptBehavior, "method", true)).addElement(method);
+      }
+      if (SNodeOperations.isInstanceOf(conceptProperty, "jetbrains.mps.lang.structure.structure.BooleanConceptProperty") && !(SPropertyOperations.getBoolean(SLinkOperations.getTarget(conceptProperty, "conceptPropertyDeclaration", false), "inheritable"))) {
+        for (SNode child : ListSequence.fromList(SConceptOperations.getDirectSuperConcepts(((SNode) conceptNode), false))) {
+          if (ListSequence.fromList(SLinkOperations.getTargets(child, "conceptProperty", true)).select(new ISelector<SNode, SNode>() {
+            public SNode select(SNode it) {
+              return SLinkOperations.setTarget(it, "conceptPropertyDeclaration", SLinkOperations.getTarget(conceptProperty, "conceptPropertyDeclaration", false), false);
+            }
+          }).isEmpty()) {
+            SNode childMethod = createMethod(SPropertyOperations.getString(method, "name"), false, method, SLinkOperations.getTarget(method, "returnType", true));
+            ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(new ConceptPropertiesHelper.QuotationClass_azpnkk_a0a0b0a0a0h0a4a9().createNode());
+            SNode childConceptBehavior = getConceptBehavior(child);
+            if (childConceptBehavior == null) {
+              return;
+            } else {
+              ListSequence.fromList(SLinkOperations.getTargets(childConceptBehavior, "method", true)).addElement(childMethod);
+            }
+
+          }
+        }
+
       }
     }
   }
@@ -1201,6 +1222,29 @@ public class ConceptPropertiesHelper {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode1_4.setProperty("value", "true");
+          quotedNode_1.addChild("expression", quotedNode1_4);
+        }
+        result = quotedNode1_3;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_azpnkk_a0a0b0a0a0h0a4a9 {
+    public QuotationClass_azpnkk_a0a0b0a0a0h0a4a9() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_4 = quotedNode_2;
           quotedNode_1.addChild("expression", quotedNode1_4);
         }
         result = quotedNode1_3;
