@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import com.sun.corba.se.impl.orbutil.ObjectUtility;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -571,6 +572,12 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   public String getRoleInParent() {
+    if (getParent()==null){
+      if (!EqualUtil.equals(myRoleInParent, getUserObject("role"))){
+        LOG.error(new IllegalStateException());
+      }
+      return null;
+    }
     return myRoleInParent;
   }
 
