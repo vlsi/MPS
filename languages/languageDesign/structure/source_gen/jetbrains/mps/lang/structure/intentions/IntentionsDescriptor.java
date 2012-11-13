@@ -15,6 +15,8 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public void init() {
     IntentionsManager.getInstance().registerIntentionFactory(new AddDeprecatedAnnotation_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new CreateReferenceConcept_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new MakeAbsrtract_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new MakeFinal_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeRootable_Intention());
   }
 }

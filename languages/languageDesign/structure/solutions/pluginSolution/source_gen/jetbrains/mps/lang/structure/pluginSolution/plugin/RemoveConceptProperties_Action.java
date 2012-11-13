@@ -4,8 +4,7 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
@@ -16,7 +15,7 @@ import jetbrains.mps.project.MPSProject;
 
 public class RemoveConceptProperties_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(RemoveConceptProperties_Action.class);
+  private static Logger LOG = Logger.getLogger(RemoveConceptProperties_Action.class);
 
   public RemoveConceptProperties_Action() {
     super("Get rid of concept properties", "", ICON);
@@ -40,9 +39,7 @@ public class RemoveConceptProperties_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RemoveConceptProperties", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "RemoveConceptProperties", t);
       this.disable(event.getPresentation());
     }
   }
@@ -66,9 +63,7 @@ public class RemoveConceptProperties_Action extends BaseAction {
     try {
       new ConceptPropertiesHelper(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).migrateNextStep();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RemoveConceptProperties", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "RemoveConceptProperties", t);
     }
   }
 }

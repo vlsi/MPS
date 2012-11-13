@@ -9,7 +9,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
@@ -66,7 +66,7 @@ public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory
       return false;
     }
     SNode selectedNodeConcept = SNodeOperations.getConceptDeclaration(node);
-    return SConceptPropertyOperations.getBoolean(selectedNodeConcept, "abstract");
+    return SPropertyOperations.getBoolean(selectedNodeConcept, "abstract");
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -102,26 +102,6 @@ public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Replace with instance of  " + BehaviorReflection.invokeVirtual(String.class, myParameter, "virtual_getPresentation_1213877396640", new Object[]{}) + " concept";
-    }
-
-    public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-      if (!(isApplicableToNode(node, editorContext))) {
-        return false;
-      }
-      return true;
-    }
-
-    private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-      SModelDescriptor sm = SNodeOperations.getModel(node).getModelDescriptor();
-      if (sm == null || !(sm.getModule() instanceof Generator)) {
-        return false;
-      }
-      SNode selectedNodeConcept = SNodeOperations.getConceptDeclaration(node);
-      return SConceptPropertyOperations.getBoolean(selectedNodeConcept, "abstract");
-    }
-
-    public boolean isAvailableInChildNodes() {
-      return false;
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

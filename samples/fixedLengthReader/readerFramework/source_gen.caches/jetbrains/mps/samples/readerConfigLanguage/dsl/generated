@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="7sdmzgt30h4m3l380bt24wyt072xeqf">
-  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-cjp3x7kpslsgnhml4bi405qvj66t1vk" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-3223m9cg8337am9br9ikluvywbkblf4" />
-  <common hash="aictlosp5jqfw731v085n1gyhuwpvv2">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
+  <common hash="aictlosp5jqfw731v085n1gyhuwpvv2" />
   <source id="3515521059660696284" name="Usage" hash="-6kmli3s0w42nvkwju4sd7hn6rfc2zwi">
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="Usage.java" />
   </source>
   <source id="3515521059660696310" name="ServiceCall" hash="8qtmj4c3d8qlar2ojwjpe2spmqwxt1w">
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="ServiceCall.java" />
   </source>
 </dependencies>
