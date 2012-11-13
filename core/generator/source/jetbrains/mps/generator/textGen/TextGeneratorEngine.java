@@ -23,7 +23,10 @@ import jetbrains.mps.textGen.TextGenerationResult;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -75,27 +78,47 @@ public class TextGeneratorEngine {
   public void generateModels(Iterable<SModel> models, final GenerateCallback callback) {
     ModelAccess.assertLegalRead();
 
-    int size = 0;
+    List<SNode> roots = new ArrayList<SNode>();
+    final Map<SModel, List<TextGenerationResult>> resultsForModel = new ConcurrentHashMap<SModel, List<TextGenerationResult>>();
+    final Map<SModel, Integer> rootsCounts = new ConcurrentHashMap<SModel, Integer>();
+
     for (SModel model : models) {
       if (model == null) {
         throw new IllegalArgumentException();
       }
-      size++;
+
+      resultsForModel.put(model, new ArrayList<TextGenerationResult>());
+      int rootsCount = 0;
+      for (SNode root : model.roots()) {
+        roots.add(root);
+        rootsCount++;
+        assert root.getModel() == model;
+      }
+      rootsCounts.put(model, rootsCount);
+
+      if (rootsCount == 0) {
+        callback.modelGenerated(model, Collections.<TextGenerationResult>emptyList());
+      }
     }
 
-    final CountDownLatch latch = new CountDownLatch(size);
-    for (final SModel model : models) {
+    final CountDownLatch latch = new CountDownLatch(roots.size());
+    for (final SNode root : roots) {
       executor.submit(new Runnable() {
         @Override
         public void run() {
           boolean oldFlag = ModelAccess.instance().setReadEnabledFlag(true);
           try {
-            List<TextGenerationResult> results = new ArrayList<TextGenerationResult>();
-            for (SNode outputNode : model.roots()) {
-              results.add(TextGen.generateText(outputNode, failIfNoTextgen, generateDebugInfo, buffers.get()));
-            }
+            SModel model = root.getModel();
+            TextGenerationResult result = TextGen.generateText(root, failIfNoTextgen, generateDebugInfo, buffers.get());
+            int modelRootsCount = rootsCounts.get(model);
+            List<TextGenerationResult> modelResults = resultsForModel.get(model);
 
-            callback.modelGenerated(model, results);
+            synchronized (modelResults) {
+              modelResults.add(result);
+              if (modelResults.size() == modelRootsCount) {
+                callback.modelGenerated(model, modelResults);
+              }
+            }
           } finally {
             ModelAccess.instance().setReadEnabledFlag(oldFlag);
             latch.countDown();
