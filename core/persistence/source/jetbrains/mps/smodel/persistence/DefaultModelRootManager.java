@@ -15,18 +15,18 @@
  */
 package jetbrains.mps.smodel.persistence;
 
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.library.ModelsMiner;
 import jetbrains.mps.library.ModelsMiner.ModelHandle;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.persistence.DefaultModelPersistence;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -45,7 +45,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     for (ModelHandle handle : models) {
-      SModelDescriptor modelDescriptor = getInstance(root.getModule(), new RegularModelDataSource(handle.getFile(), root), handle.getReference(), handle.getLoadResult());
+      SModelDescriptor modelDescriptor = getInstance(new FileDataSource(handle.getFile(), root), handle.getReference(), handle.getLoadResult());
       LOG.debug("Read model descriptor " + modelDescriptor.getSModelReference() + "\n" + "Model root is " + root.getPath());
       result.add(modelDescriptor);
     }
@@ -55,22 +55,21 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   @Override
   public boolean canCreateModel(@Nullable SModelRoot root, @Nullable SModelFqName fqName) {
     if (root == null) return true;
-    if (fqName == null) return !RegularModelDataSource.isUnderLanguageModels(root.getModule(), root);
+    if (fqName == null) return !DefaultModelPersistence.isUnderLanguageModels(root.getModule(), root);
     return true;
   }
 
   @Override
   public SModelDescriptor createModel(@NotNull SModelRoot root, @NotNull SModelFqName fqName) {
-    RegularModelDataSource modelSource = RegularModelDataSource.createSourceForModelUID(root, fqName, root.getModule());
+    FileDataSource modelSource = DefaultModelPersistence.createSourceForModelUID(root, fqName, root.getModule());
     SModelReference ref = new SModelReference(fqName, SModelId.generate());
     return new DefaultSModelDescriptor(modelSource, ref, new DescriptorLoadResult());
   }
 
-  private static SModelDescriptor getInstance(SModule module, RegularModelDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
+  private static SModelDescriptor getInstance(FileDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
     LOG.debug("Getting model " + modelReference + " from " + source);
 
-    SModelRepository modelRepository = SModelRepository.getInstance();
-    SModelDescriptor modelDescriptor = modelRepository.getModelDescriptor(modelReference);
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
     if (modelDescriptor == null) return new DefaultSModelDescriptor(source, modelReference, d);
 
     //todo rewrite

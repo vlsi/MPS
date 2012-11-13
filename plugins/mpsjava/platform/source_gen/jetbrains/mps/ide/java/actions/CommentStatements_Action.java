@@ -4,8 +4,7 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -22,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CommentStatements_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(CommentStatements_Action.class);
+  private static Logger LOG = Logger.getLogger(CommentStatements_Action.class);
 
   public CommentStatements_Action() {
     super("Comment Statements", "", ICON);
@@ -46,9 +45,7 @@ public class CommentStatements_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "CommentStatements", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "CommentStatements", t);
       this.disable(event.getPresentation());
     }
   }
@@ -89,9 +86,7 @@ public class CommentStatements_Action extends BaseAction {
       SNode commentedStatementsBlock = SNodeOperations.insertNewPrevSiblingChild(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first(), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");
       ListSequence.fromList(SLinkOperations.getTargets(commentedStatementsBlock, "statement", true)).addSequence(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "CommentStatements", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "CommentStatements", t);
     }
   }
 }

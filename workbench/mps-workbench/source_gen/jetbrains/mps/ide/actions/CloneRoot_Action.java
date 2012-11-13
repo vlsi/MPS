@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -22,7 +21,7 @@ import jetbrains.mps.smodel.IOperationContext;
 
 public class CloneRoot_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(CloneRoot_Action.class);
+  private static Logger LOG = Logger.getLogger(CloneRoot_Action.class);
 
   public CloneRoot_Action() {
     super("Clone Root", "", ICON);
@@ -40,9 +39,7 @@ public class CloneRoot_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "CloneRoot", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "CloneRoot", t);
       this.disable(event.getPresentation());
     }
   }
@@ -90,9 +87,7 @@ public class CloneRoot_Action extends BaseAction {
         NavigationSupport.getInstance().selectInTree(((IOperationContext) MapSequence.fromMap(_params).get("context")), copy, false);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "CloneRoot", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "CloneRoot", t);
     }
   }
 }

@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
@@ -26,7 +25,7 @@ import com.intellij.openapi.project.Project;
 
 public class OptimizeModelImports_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(OptimizeModelImports_Action.class);
+  private static Logger LOG = Logger.getLogger(OptimizeModelImports_Action.class);
 
   public OptimizeModelImports_Action() {
     super("Optimize Imports", "", ICON);
@@ -55,9 +54,7 @@ public class OptimizeModelImports_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "OptimizeModelImports", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "OptimizeModelImports", t);
       this.disable(event.getPresentation());
     }
   }
@@ -92,9 +89,7 @@ public class OptimizeModelImports_Action extends BaseAction {
       });
       Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("project")), report.value, "Optimize Imports", Messages.getInformationIcon());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "OptimizeModelImports", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "OptimizeModelImports", t);
     }
   }
 }

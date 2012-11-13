@@ -182,7 +182,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.datesInternal" />
         <fileset file="${mps_home}/languages/util/dates/runtime/lib/joda-time-2.1.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -191,7 +191,6 @@
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
@@ -229,7 +228,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
         <fileset file="${mps_home}/languages/util/dates/runtime/lib/joda-time-2.1.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -238,7 +237,6 @@
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />

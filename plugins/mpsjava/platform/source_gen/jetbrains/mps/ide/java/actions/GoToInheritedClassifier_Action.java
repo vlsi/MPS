@@ -4,8 +4,7 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -43,7 +42,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 
 public class GoToInheritedClassifier_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(GoToInheritedClassifier_Action.class);
+  private static Logger LOG = Logger.getLogger(GoToInheritedClassifier_Action.class);
 
   public GoToInheritedClassifier_Action() {
     super("Go to Inherited Classifiers", "", ICON);
@@ -67,9 +66,7 @@ public class GoToInheritedClassifier_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GoToInheritedClassifier", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "GoToInheritedClassifier", t);
       this.disable(event.getPresentation());
     }
   }
@@ -166,9 +163,7 @@ public class GoToInheritedClassifier_Action extends BaseAction {
 
       GoToHelper.showInheritedClassesMenu(nodes, relPoint, ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GoToInheritedClassifier", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "GoToInheritedClassifier", t);
     }
   }
 }

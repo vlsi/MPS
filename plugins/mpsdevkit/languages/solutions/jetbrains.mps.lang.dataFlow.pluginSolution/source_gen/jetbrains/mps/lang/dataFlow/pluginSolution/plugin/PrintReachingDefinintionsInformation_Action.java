@@ -4,8 +4,7 @@ package jetbrains.mps.lang.dataFlow.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -21,7 +20,7 @@ import jetbrains.mps.lang.dataFlow.framework.analyzers.ReachingDefinitionsAnalyz
 
 public class PrintReachingDefinintionsInformation_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(PrintReachingDefinintionsInformation_Action.class);
+  private static Logger LOG = Logger.getLogger(PrintReachingDefinintionsInformation_Action.class);
 
   public PrintReachingDefinintionsInformation_Action() {
     super("Print DFA Reaching Definitions Information", "", ICON);
@@ -38,9 +37,7 @@ public class PrintReachingDefinintionsInformation_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "PrintReachingDefinintionsInformation", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "PrintReachingDefinintionsInformation", t);
       this.disable(event.getPresentation());
     }
   }
@@ -67,9 +64,7 @@ public class PrintReachingDefinintionsInformation_Action extends BaseAction {
       AnalysisResult<Set<WriteInstruction>> result = program.analyze(new ReachingDefinitionsAnalyzer());
       System.out.println(result.toString());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "PrintReachingDefinintionsInformation", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "PrintReachingDefinintionsInformation", t);
     }
   }
 }

@@ -5,16 +5,17 @@ package jetbrains.mps.baseLanguage.math.intentions;
 import jetbrains.mps.intentions.BaseIntentionsDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
-    super(new ModuleReference("jetbrains.mps.baseLanguage.math", "3304fc6e-7c6b-401e-a016-b944934bb21f"), SModelReference.fromString("r:57529505-426f-4f87-bbc0-2843f12bd318(jetbrains.mps.baseLanguage.math.intentions)"));
+    super(new ModuleReference("3304fc6e-7c6b-401e-a016-b944934bb21f(jetbrains.mps.baseLanguage.math)"), SModelReference.fromString("r:57529505-426f-4f87-bbc0-2843f12bd318(jetbrains.mps.baseLanguage.math.intentions)"));
   }
 
   public void init() {
-    add(new DeleteMathContext_Intention(), "1238942880468");
-    add(new DivExpressionDivToFraction_Intention(), "1237104500799");
-    add(new DivExpressionFractionToDiv_Intention(), "1237104496404");
-    add(new SpecifyMathContext_Intention(), "1238402928175");
+    IntentionsManager.getInstance().registerIntentionFactory(new DeleteMathContext_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new DivExpressionDivToFraction_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new DivExpressionFractionToDiv_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SpecifyMathContext_Intention());
   }
 }

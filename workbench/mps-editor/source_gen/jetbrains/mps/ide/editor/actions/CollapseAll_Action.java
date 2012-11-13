@@ -4,8 +4,7 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
@@ -18,7 +17,7 @@ import jetbrains.mps.nodeEditor.CellActionType;
 
 public class CollapseAll_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(CollapseAll_Action.class);
+  private static Logger LOG = Logger.getLogger(CollapseAll_Action.class);
 
   public CollapseAll_Action() {
     super("Collapse All", "", ICON);
@@ -43,9 +42,7 @@ public class CollapseAll_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "CollapseAll", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "CollapseAll", t);
       this.disable(event.getPresentation());
     }
   }
@@ -69,9 +66,7 @@ public class CollapseAll_Action extends BaseAction {
     try {
       CollapseAll_Action.this.getAction(_params).execute((EditorContext) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "CollapseAll", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "CollapseAll", t);
     }
   }
 

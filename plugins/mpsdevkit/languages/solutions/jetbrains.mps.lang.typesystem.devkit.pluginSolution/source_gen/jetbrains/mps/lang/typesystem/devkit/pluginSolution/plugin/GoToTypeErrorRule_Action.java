@@ -4,8 +4,7 @@ package jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.errors.IErrorReporter;
@@ -20,7 +19,7 @@ import jetbrains.mps.util.Pair;
 
 public class GoToTypeErrorRule_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(GoToTypeErrorRule_Action.class);
+  private static Logger LOG = Logger.getLogger(GoToTypeErrorRule_Action.class);
 
   public GoToTypeErrorRule_Action() {
     super("Go to Rule Which Caused Error", "", ICON);
@@ -45,9 +44,7 @@ public class GoToTypeErrorRule_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GoToTypeErrorRule", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "GoToTypeErrorRule", t);
       this.disable(event.getPresentation());
     }
   }
@@ -76,9 +73,7 @@ public class GoToTypeErrorRule_Action extends BaseAction {
       IErrorReporter error = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getErrorReporterFor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectedCell());
       GoToTypeErrorRuleUtil.goToRuleById(((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), new Pair<String, String>(error.getRuleModel(), error.getRuleId()));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GoToTypeErrorRule", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "GoToTypeErrorRule", t);
     }
   }
 }

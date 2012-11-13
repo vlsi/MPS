@@ -4,8 +4,7 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -27,7 +26,7 @@ import java.awt.Frame;
 
 public class InlineMethod_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(InlineMethod_Action.class);
+  private static Logger LOG = Logger.getLogger(InlineMethod_Action.class);
 
   public InlineMethod_Action() {
     super("Inline Method", "", ICON);
@@ -57,9 +56,7 @@ public class InlineMethod_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "InlineMethod", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "InlineMethod", t);
       this.disable(event.getPresentation());
     }
   }
@@ -103,9 +100,7 @@ public class InlineMethod_Action extends BaseAction {
       dialog.tryToShow(((Frame) MapSequence.fromMap(_params).get("frame")));
       dialog.pack();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "InlineMethod", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "InlineMethod", t);
     }
   }
 }

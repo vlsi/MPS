@@ -24,6 +24,7 @@
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.sandbox.SimpleRunner" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.Ignore" />
     <classNode dependClassName="org.junit.Test" />
     <classNode dependClassName="org.junit.runner.RunWith" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.sandbox.AbstractTest4Class" />

@@ -4,26 +4,26 @@ package jetbrains.mps.lang.generator.intentions;
 
 import jetbrains.mps.intentions.IntentionFactory;
 import jetbrains.mps.intentions.IntentionType;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
-import jetbrains.mps.intentions.Intention;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.intentions.IntentionExecutable;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory {
   public ReplaceWithConcreteSubconcept_Intention() {
@@ -49,12 +49,32 @@ public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory
     return IntentionType.NORMAL;
   }
 
+  public boolean isAvailableInChildNodes() {
+    return false;
+  }
+
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(isApplicableToNode(node, editorContext))) {
+      return false;
+    }
+    return true;
+  }
+
+  private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
+    SModelDescriptor sm = SNodeOperations.getModel(node).getModelDescriptor();
+    if (sm == null || !(sm.getModule() instanceof Generator)) {
+      return false;
+    }
+    SNode selectedNodeConcept = SNodeOperations.getConceptDeclaration(node);
+    return SConceptPropertyOperations.getBoolean(selectedNodeConcept, "abstract");
+  }
+
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1210374656847760938");
   }
 
-  public Collection<Intention> instances(final SNode node, final EditorContext context) {
-    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
+  public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
+    List<IntentionExecutable> list = ListSequence.fromList(new ArrayList<IntentionExecutable>());
     List<SNode> paramList = parameter(node, context);
     if (paramList != null) {
       for (SNode param : paramList) {
@@ -73,35 +93,11 @@ public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory
     }).toListSequence();
   }
 
-  public class IntentionImplementation extends BaseIntention {
+  public class IntentionImplementation implements IntentionExecutable {
     private SNode myParameter;
 
     public IntentionImplementation(SNode parameter) {
       myParameter = parameter;
-    }
-
-    public String getConcept() {
-      return ReplaceWithConcreteSubconcept_Intention.this.getConcept();
-    }
-
-    public String getPresentation() {
-      return ReplaceWithConcreteSubconcept_Intention.this.getPresentation();
-    }
-
-    public String getPersistentStateKey() {
-      return ReplaceWithConcreteSubconcept_Intention.this.getPersistentStateKey();
-    }
-
-    public String getLanguageFqName() {
-      return ReplaceWithConcreteSubconcept_Intention.this.getLanguageFqName();
-    }
-
-    public IntentionType getType() {
-      return ReplaceWithConcreteSubconcept_Intention.this.getType();
-    }
-
-    public SNodeReference getIntentionNodeReference() {
-      return ReplaceWithConcreteSubconcept_Intention.this.getIntentionNodeReference();
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
@@ -121,7 +117,7 @@ public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory
         return false;
       }
       SNode selectedNodeConcept = SNodeOperations.getConceptDeclaration(node);
-      return SPropertyOperations.getBoolean(selectedNodeConcept, "abstract");
+      return SConceptPropertyOperations.getBoolean(selectedNodeConcept, "abstract");
     }
 
     public boolean isAvailableInChildNodes() {
@@ -132,6 +128,10 @@ public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory
       SNode concreteConceptInstance = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(myParameter), null);
       SNodeOperations.replaceWithAnother(node, concreteConceptInstance);
       SNodeOperations.deleteNode(node);
+    }
+
+    public IntentionDescriptor getDescriptor() {
+      return ReplaceWithConcreteSubconcept_Intention.this;
     }
   }
 }

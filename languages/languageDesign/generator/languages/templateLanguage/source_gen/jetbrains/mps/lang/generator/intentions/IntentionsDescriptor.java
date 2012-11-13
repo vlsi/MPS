@@ -9,38 +9,38 @@ import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
-    super(new ModuleReference("jetbrains.mps.lang.generator", "b401a680-8325-4110-8fd3-84331ff25bef"), SModelReference.fromString("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)"));
+    super(new ModuleReference("b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)"), SModelReference.fromString("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)"));
   }
 
   public void init() {
-    add(new AddContext_Intention(), "3462145372628250475");
-    add(new AddNodeMacro_Intention(), "1207152859258");
-    add(new AddPropertyMacro_Intention(), "1207154194671");
-    add(new AddReferenceMacro_Intention(), "1207154220489");
-    add(new ConvertClassConceptToExtract_Intention(), "34229510189607557");
-    add(new ConvertInlineTemplateToTemplateFragment_Intention(), "1203775431223");
-    add(new ConvertLoopWithCopySrc_Intention(), "7834938100936599479");
-    add(new ConvertTemplateDeclRefToInlineTemplate_Intention(), "1205436780371");
-    add(new CreateScript_Intention(), "2357139912674486242");
-    add(new NewCreateRootRule_Intention(), "1227216572218");
-    add(new NewRootMappingRule_Intention(), "1227221178632");
-    add(new NewTemplateFragment_Intention(), "9092065972411421046");
-    add(new NewTemplateInCreateRootRule_Intention(), "1216337594117");
-    add(new NewTemplateInInlineSwitchCase_Intention(), "8004199436029429362");
-    add(new NewTemplateInInlineSwitchDefault_Intention(), "8004199436029429270");
-    add(new NewTemplateInReductionRule_Intention(), "1216320260188");
-    add(new NewTemplateInRootMappingRule_Intention(), "1216334426557");
-    add(new NewTemplateInSwitchCase_Intention(), "8004199436029426156");
-    add(new NewTemplateInSwitchDefault_Intention(), "1216323872536");
-    add(new NewTemplateInWeaveEach_Intention(), "1216319039419");
-    add(new NewTemplateInWeavingRule_Intention(), "8699312839322230162");
+    IntentionsManager.getInstance().registerIntentionFactory(new AddContext_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddNodeMacro_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddNodeMacroParam_copySrcMacro_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddNodeMacroParam_copySrclMacro_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddNodeMacroParam_ifMacro_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddNodeMacroParam_loopMacro_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddNodeMacroParam_switch_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddPropertyMacro_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddPropertyMacroParam_property_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddReferenceMacro_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddReferenceMacroParam_link_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new ConvertClassConceptToExtract_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new ConvertInlineTemplateToTemplateFragment_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new ConvertLoopWithCopySrc_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new ConvertTemplateDeclRefToInlineTemplate_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new CreateScript_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new NewCreateRootRule_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new NewRootMappingRule_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new NewTemplateFragment_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new NewTemplateInCreateRootRule_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new NewTemplateInInlineSwitchCase_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new NewTemplateInInlineSwitchDefault_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new NewTemplateInReductionRule_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new NewTemplateInRootMappingRule_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new NewTemplateInSwitchCase_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new NewTemplateInSwitchDefault_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new NewTemplateInWeaveEach_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new NewTemplateInWeavingRule_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ReplaceWithConcreteSubconcept_Intention());
   }
 }

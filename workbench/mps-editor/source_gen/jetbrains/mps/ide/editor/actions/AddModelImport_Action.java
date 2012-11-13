@@ -4,8 +4,7 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -19,7 +18,7 @@ import jetbrains.mps.project.IModule;
 
 public class AddModelImport_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(AddModelImport_Action.class);
+  private static Logger LOG = Logger.getLogger(AddModelImport_Action.class);
 
   public AddModelImport_Action() {
     super("Add Model Import", "", ICON);
@@ -43,9 +42,7 @@ public class AddModelImport_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "AddModelImport", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "AddModelImport", t);
       this.disable(event.getPresentation());
     }
   }
@@ -73,9 +70,7 @@ public class AddModelImport_Action extends BaseAction {
     try {
       ImportHelper.addModelImport(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), AddModelImport_Action.this);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "AddModelImport", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "AddModelImport", t);
     }
   }
 }

@@ -9,12 +9,12 @@ import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
-    super(new ModuleReference("jetbrains.mps.lang.core", "ceab5195-25ea-4f22-9b92-103b95ca8c0c"), SModelReference.fromString("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)"));
+    super(new ModuleReference("ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)"), SModelReference.fromString("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)"));
   }
 
   public void init() {
-    add(new AddMissingLanguageImport_Intention(), "1209383918929");
-    add(new SuppressErrors_Intention(), "4222318806802430725");
+    IntentionsManager.getInstance().registerIntentionFactory(new AddMissingLanguageImport_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new SetExportAnnotation_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SuppressErrors_Intention());
   }
 }

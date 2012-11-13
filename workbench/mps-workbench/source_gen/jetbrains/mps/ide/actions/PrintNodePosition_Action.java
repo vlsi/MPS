@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -18,7 +17,7 @@ import jetbrains.mps.traceInfo.PositionInfo;
 
 public class PrintNodePosition_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(PrintNodePosition_Action.class);
+  private static Logger LOG = Logger.getLogger(PrintNodePosition_Action.class);
 
   public PrintNodePosition_Action() {
     super("Print Node Line", "", ICON);
@@ -35,9 +34,7 @@ public class PrintNodePosition_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "PrintNodePosition", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "PrintNodePosition", t);
       this.disable(event.getPresentation());
     }
   }
@@ -74,9 +71,7 @@ public class PrintNodePosition_Action extends BaseAction {
         System.out.println(positionInfo);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "PrintNodePosition", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "PrintNodePosition", t);
     }
   }
 }

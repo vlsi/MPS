@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.persistence;
+package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -43,6 +43,11 @@ public abstract class ModelRootBase implements ModelRoot {
   public void setModule(SModule module) {
     checkNotRegistered();
     myModule = module;
+  }
+
+  @Override
+  public boolean isReadOnly() {
+    return getModule().isPackaged();
   }
 
   public void attach() {

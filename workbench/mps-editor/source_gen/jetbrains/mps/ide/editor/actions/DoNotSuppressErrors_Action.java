@@ -4,8 +4,7 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -18,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class DoNotSuppressErrors_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(DoNotSuppressErrors_Action.class);
+  private static Logger LOG = Logger.getLogger(DoNotSuppressErrors_Action.class);
 
   public DoNotSuppressErrors_Action() {
     super("Do not Supress Errors", "", ICON);
@@ -35,9 +34,7 @@ public class DoNotSuppressErrors_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "DoNotSuppressErrors", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "DoNotSuppressErrors", t);
       this.disable(event.getPresentation());
     }
   }
@@ -57,9 +54,7 @@ public class DoNotSuppressErrors_Action extends BaseAction {
     try {
       AttributeOperations.setAttribute(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")), null);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "DoNotSuppressErrors", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "DoNotSuppressErrors", t);
     }
   }
 }

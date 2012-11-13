@@ -5,16 +5,17 @@ package jetbrains.mps.build.mps.intentions;
 import jetbrains.mps.intentions.BaseIntentionsDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
-    super(new ModuleReference("jetbrains.mps.build.mps", "0cf935df-4699-4e9c-a132-fa109541cba3"), SModelReference.fromString("r:e8fca550-89ba-41bb-ae28-dc9cae640a8a(jetbrains.mps.build.mps.intentions)"));
+    super(new ModuleReference("0cf935df-4699-4e9c-a132-fa109541cba3(jetbrains.mps.build.mps)"), SModelReference.fromString("r:e8fca550-89ba-41bb-ae28-dc9cae640a8a(jetbrains.mps.build.mps.intentions)"));
   }
 
   public void init() {
-    add(new AddCustomLocationDependency_Intention(), "2798275735916376328");
-    add(new AddCustomLocationRuntime_Intention(), "202934866058893735");
-    add(new AddCustomPackaging_Intention(), "4034578608468929409");
-    add(new ToggleCompactMpsModule_Intention(), "8369506495128778230");
+    IntentionsManager.getInstance().registerIntentionFactory(new AddCustomLocationDependency_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddCustomLocationRuntime_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddCustomPackaging_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new ToggleCompactMpsModule_Intention());
   }
 }

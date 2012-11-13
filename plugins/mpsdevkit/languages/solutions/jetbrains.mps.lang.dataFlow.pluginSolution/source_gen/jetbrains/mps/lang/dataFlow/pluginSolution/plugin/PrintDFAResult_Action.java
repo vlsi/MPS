@@ -4,8 +4,7 @@ package jetbrains.mps.lang.dataFlow.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -17,7 +16,7 @@ import jetbrains.mps.lang.dataFlow.DataFlowManager;
 
 public class PrintDFAResult_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(PrintDFAResult_Action.class);
+  private static Logger LOG = Logger.getLogger(PrintDFAResult_Action.class);
 
   public PrintDFAResult_Action() {
     super("Print DFA", "", ICON);
@@ -34,9 +33,7 @@ public class PrintDFAResult_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "PrintDFAResult", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "PrintDFAResult", t);
       this.disable(event.getPresentation());
     }
   }
@@ -62,9 +59,7 @@ public class PrintDFAResult_Action extends BaseAction {
       Program program = DataFlowManager.getInstance().buildProgramFor(((SNode) MapSequence.fromMap(_params).get("node")));
       System.out.println(program.toString(true));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "PrintDFAResult", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "PrintDFAResult", t);
     }
   }
 }

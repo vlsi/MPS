@@ -5,17 +5,18 @@ package jetbrains.mps.bash.intentions;
 import jetbrains.mps.intentions.BaseIntentionsDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
-    super(new ModuleReference("jetbrains.mps.bash", "4a1e4a24-105b-44ed-959c-6586fc957db3"), SModelReference.fromString("r:0c717a24-7cfd-444b-8c1a-bb7f81471ed8(jetbrains.mps.bash.intentions)"));
+    super(new ModuleReference("4a1e4a24-105b-44ed-959c-6586fc957db3(jetbrains.mps.bash)"), SModelReference.fromString("r:0c717a24-7cfd-444b-8c1a-bb7f81471ed8(jetbrains.mps.bash.intentions)"));
   }
 
   public void init() {
-    add(new AddCommentedText_Intention(), "2362837471607836376");
-    add(new AsyncExecution_Intention(), "2362837471608610775");
-    add(new CommentOutCommand_Intention(), "1109366303090554669");
-    add(new CreateProperVariableReferance_Intention(), "1635896182103803015");
-    add(new UncommentCommand_Intention(), "3138930635767444923");
+    IntentionsManager.getInstance().registerIntentionFactory(new AddCommentedText_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AsyncExecution_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new CommentOutCommand_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new CreateProperVariableReferance_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new UncommentCommand_Intention());
   }
 }

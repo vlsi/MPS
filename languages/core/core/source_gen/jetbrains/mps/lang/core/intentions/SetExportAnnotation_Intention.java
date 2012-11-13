@@ -4,25 +4,25 @@ package jetbrains.mps.lang.core.intentions;
 
 import jetbrains.mps.intentions.IntentionFactory;
 import jetbrains.mps.intentions.IntentionType;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
-import jetbrains.mps.intentions.Intention;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.intentions.IntentionExecutable;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.intentions.BaseIntention;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class SetExportAnnotation_Intention implements IntentionFactory {
   public SetExportAnnotation_Intention() {
@@ -48,12 +48,27 @@ public class SetExportAnnotation_Intention implements IntentionFactory {
     return IntentionType.NORMAL;
   }
 
+  public boolean isAvailableInChildNodes() {
+    return false;
+  }
+
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(isApplicableToNode(node, editorContext))) {
+      return false;
+    }
+    return true;
+  }
+
+  private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
+    return SNodeOperations.isRoot(node);
+  }
+
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)", "4075196924244322258");
   }
 
-  public Collection<Intention> instances(final SNode node, final EditorContext context) {
-    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
+  public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
+    List<IntentionExecutable> list = ListSequence.fromList(new ArrayList<IntentionExecutable>());
     List<SNode> paramList = parameter(node, context);
     if (paramList != null) {
       for (SNode param : paramList) {
@@ -67,69 +82,34 @@ public class SetExportAnnotation_Intention implements IntentionFactory {
     SNode[] all = {null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScopeModule"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScopePublic"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScopeNamespace")};
     return Sequence.fromIterable(Sequence.fromArray(all)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it != SNodeOperations.getConceptDeclaration(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))));
+        return it != jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))));
       }
     }).toListSequence();
   }
 
-  public class IntentionImplementation extends BaseIntention {
+  public class IntentionImplementation implements IntentionExecutable {
     private SNode myParameter;
 
     public IntentionImplementation(SNode parameter) {
       myParameter = parameter;
     }
 
-    public String getConcept() {
-      return SetExportAnnotation_Intention.this.getConcept();
-    }
-
-    public String getPresentation() {
-      return SetExportAnnotation_Intention.this.getPresentation();
-    }
-
-    public String getPersistentStateKey() {
-      return SetExportAnnotation_Intention.this.getPersistentStateKey();
-    }
-
-    public String getLanguageFqName() {
-      return SetExportAnnotation_Intention.this.getLanguageFqName();
-    }
-
-    public IntentionType getType() {
-      return SetExportAnnotation_Intention.this.getType();
-    }
-
-    public SNodeReference getIntentionNodeReference() {
-      return SetExportAnnotation_Intention.this.getIntentionNodeReference();
-    }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return ((myParameter == null) ?
         "Remove @export() Annotation" :
-        "Set " + SPropertyOperations.getString(SNodeOperations.castConcept(myParameter, "jetbrains.mps.lang.core.structure.ExportScope"), "conceptAlias") + " Annotation"
+        "Set " + SConceptPropertyOperations.getString(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.castConcept(myParameter, "jetbrains.mps.lang.core.structure.ExportScope"), "alias") + " Annotation"
       );
     }
 
-    public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-      if (!(isApplicableToNode(node, editorContext))) {
-        return false;
-      }
-      return true;
-    }
-
-    private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-      return jetbrains.mps.util.SNodeOperations.isRoot(node);
-    }
-
-    public boolean isAvailableInChildNodes() {
-      return false;
-    }
-
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeOperations.deleteNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))));
+      jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.deleteNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))));
       if ((myParameter != null)) {
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope")), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(myParameter), null));
       }
+    }
+
+    public IntentionDescriptor getDescriptor() {
+      return SetExportAnnotation_Intention.this;
     }
   }
 }

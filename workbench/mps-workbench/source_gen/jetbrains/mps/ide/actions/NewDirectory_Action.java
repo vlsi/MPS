@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -25,7 +24,7 @@ import jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane;
 
 public class NewDirectory_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(NewDirectory_Action.class);
+  private static Logger LOG = Logger.getLogger(NewDirectory_Action.class);
 
   public NewDirectory_Action() {
     super("Directory", "", ICON);
@@ -42,9 +41,7 @@ public class NewDirectory_Action extends BaseAction {
     try {
       event.getPresentation().setIcon(IdeIcons.OPENED_FOLDER);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "NewDirectory", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "NewDirectory", t);
       this.disable(event.getPresentation());
     }
   }
@@ -104,9 +101,7 @@ public class NewDirectory_Action extends BaseAction {
         });
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "NewDirectory", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "NewDirectory", t);
     }
   }
 }

@@ -482,7 +482,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -491,7 +491,6 @@
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
@@ -532,7 +531,7 @@
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
         <pathelement path="${build.tmp}/java/out/execution" />
         <pathelement path="${build.tmp}/java/out/typesystem-ui" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -541,7 +540,6 @@
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
@@ -583,7 +581,7 @@
         <pathelement path="${build.tmp}/java/out/mps-workbench" />
         <pathelement path="${build.tmp}/java/out/execution" />
         <pathelement path="${build.tmp}/java/out/typesystem-ui" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -592,7 +590,6 @@
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
@@ -632,7 +629,7 @@
         <pathelement path="${build.tmp}/java/out/execution" />
         <pathelement path="${build.tmp}/java/out/typesystem-ui" />
         <pathelement path="${build.tmp}/java/out/uiLanguage.runtime" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -641,7 +638,6 @@
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
@@ -685,7 +681,7 @@
         <pathelement path="${build.tmp}/java/out/execution" />
         <pathelement path="${build.tmp}/java/out/typesystem-ui" />
         <pathelement path="${build.tmp}/java/out/uiLanguage.runtime" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -694,7 +690,6 @@
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
@@ -728,7 +723,7 @@
         <pathelement path="${build.tmp}/java/out/execution" />
         <pathelement path="${build.tmp}/java/out/typesystem-ui" />
         <pathelement path="${build.tmp}/java/out/uiLanguage.runtime" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -737,7 +732,6 @@
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
@@ -779,7 +773,7 @@
         <pathelement path="${build.tmp}/java/out/execution" />
         <pathelement path="${build.tmp}/java/out/typesystem-ui" />
         <pathelement path="${build.tmp}/java/out/uiLanguage.runtime" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -788,7 +782,6 @@
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />

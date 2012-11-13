@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -17,7 +16,7 @@ import jetbrains.mps.smodel.IOperationContext;
 
 public class EditGivenNode_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(EditGivenNode_Action.class);
+  private static Logger LOG = Logger.getLogger(EditGivenNode_Action.class);
 
   private SNodePointer targetNode;
   private String text;
@@ -39,9 +38,7 @@ public class EditGivenNode_Action extends BaseAction {
     try {
       event.getPresentation().setText(EditGivenNode_Action.this.text);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "EditGivenNode", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "EditGivenNode", t);
       this.disable(event.getPresentation());
     }
   }
@@ -65,9 +62,7 @@ public class EditGivenNode_Action extends BaseAction {
     try {
       NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), EditGivenNode_Action.this.targetNode.getNode(), true, true);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "EditGivenNode", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "EditGivenNode", t);
     }
   }
 

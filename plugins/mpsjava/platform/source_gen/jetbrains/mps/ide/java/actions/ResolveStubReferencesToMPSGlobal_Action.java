@@ -4,8 +4,7 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -19,7 +18,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class ResolveStubReferencesToMPSGlobal_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ResolveStubReferencesToMPSGlobal_Action.class);
+  private static Logger LOG = Logger.getLogger(ResolveStubReferencesToMPSGlobal_Action.class);
 
   public ResolveStubReferencesToMPSGlobal_Action() {
     super("Resolve Stub References to MPS Code in the Whole Project", "", ICON);
@@ -36,9 +35,7 @@ public class ResolveStubReferencesToMPSGlobal_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ResolveStubReferencesToMPSGlobal", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ResolveStubReferencesToMPSGlobal", t);
       this.disable(event.getPresentation());
     }
   }
@@ -63,9 +60,7 @@ public class ResolveStubReferencesToMPSGlobal_Action extends BaseAction {
       new StubResolver().resolveInProject(((MPSProject) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ResolveStubReferencesToMPSGlobal", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ResolveStubReferencesToMPSGlobal", t);
     }
   }
 }

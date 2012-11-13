@@ -4,8 +4,7 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -16,7 +15,7 @@ import jetbrains.mps.nodeEditor.CellActionType;
 
 public class SelectPrevious_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(SelectPrevious_Action.class);
+  private static Logger LOG = Logger.getLogger(SelectPrevious_Action.class);
 
   public SelectPrevious_Action() {
     super("Select Previous", "", ICON);
@@ -40,9 +39,7 @@ public class SelectPrevious_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "SelectPrevious", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "SelectPrevious", t);
       this.disable(event.getPresentation());
     }
   }
@@ -62,9 +59,7 @@ public class SelectPrevious_Action extends BaseAction {
     try {
       ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().executeAction(CellActionType.SELECT_PREVIOUS);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "SelectPrevious", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "SelectPrevious", t);
     }
   }
 }

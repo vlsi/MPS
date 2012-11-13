@@ -37,6 +37,10 @@ public class BaseIntentionDeclaration_BehaviorDescriptor extends BaseConcept_Beh
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
+  public String virtual_getGeneratedName_6263518417926802289(SNode thisNode) {
+    return BaseIntentionDeclaration_Behavior.virtual_getGeneratedName_6263518417926802289(thisNode);
+  }
+
   public List<PropertyReference> virtual_getPropertiesToCheck_4844813484172611445(SNode thisNode) {
     return BaseIntentionDeclaration_Behavior.virtual_getPropertiesToCheck_4844813484172611445(thisNode);
   }

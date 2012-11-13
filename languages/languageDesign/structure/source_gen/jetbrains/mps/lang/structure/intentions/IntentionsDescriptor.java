@@ -5,17 +5,16 @@ package jetbrains.mps.lang.structure.intentions;
 import jetbrains.mps.intentions.BaseIntentionsDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
-    super(new ModuleReference("jetbrains.mps.lang.structure", "c72da2b9-7cce-4447-8389-f407dc1158b7"), SModelReference.fromString("r:e5a8b5c7-85b5-4d59-9e4e-850a142e2560(jetbrains.mps.lang.structure.intentions)"));
+    super(new ModuleReference("c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)"), SModelReference.fromString("r:e5a8b5c7-85b5-4d59-9e4e-850a142e2560(jetbrains.mps.lang.structure.intentions)"));
   }
 
   public void init() {
-    add(new AddDeprecatedAnnotation_Intention(), "1224245135252");
-    add(new CreateReferenceConcept_Intention(), "6895093993902311021");
-    add(new MakeAbsrtract_Intention(), "4672725010143198841");
-    add(new MakeFinal_Intention(), "4672725010143787708");
-    add(new MakeRootable_Intention(), "2799938697970315260");
+    IntentionsManager.getInstance().registerIntentionFactory(new AddDeprecatedAnnotation_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new CreateReferenceConcept_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new MakeRootable_Intention());
   }
 }

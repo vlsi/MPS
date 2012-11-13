@@ -4,8 +4,7 @@ package jetbrains.mps.nanoc.pluginSolution.plugin;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.lib.NodeByConcept_Configuration;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -32,7 +31,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class NanoCFile_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
-  protected static Log log = LogFactory.getLog(NanoCFile_Configuration.class);
+  private static Logger LOG = Logger.getLogger(NanoCFile_Configuration.class);
 
   @NotNull
   private NanoCFile_Configuration.MyState myState = new NanoCFile_Configuration.MyState();
@@ -71,9 +70,7 @@ public class NanoCFile_Configuration extends BaseMpsRunConfiguration implements 
       if (fieldElement != null) {
         myNode.readExternal(fieldElement);
       } else {
-        if (log.isDebugEnabled()) {
-          log.debug("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
-        }
+        LOG.debug("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
       }
     }
   }
@@ -91,9 +88,7 @@ public class NanoCFile_Configuration extends BaseMpsRunConfiguration implements 
       clone.myNode = (NodeByConcept_Configuration) myNode.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      if (log.isErrorEnabled()) {
-        log.error("", ex);
-      }
+      LOG.error("", ex);
     }
     return clone;
   }

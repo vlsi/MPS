@@ -5,15 +5,16 @@ package jetbrains.mps.lang.textGen.intentions;
 import jetbrains.mps.intentions.BaseIntentionsDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
-    super(new ModuleReference("jetbrains.mps.lang.textGen", "b83431fe-5c8f-40bc-8a36-65e25f4dd253"), SModelReference.fromString("r:7651b6e0-753b-4bcf-af83-d3dfc31e29e7(jetbrains.mps.lang.textGen.intentions)"));
+    super(new ModuleReference("b83431fe-5c8f-40bc-8a36-65e25f4dd253(jetbrains.mps.lang.textGen)"), SModelReference.fromString("r:7651b6e0-753b-4bcf-af83-d3dfc31e29e7(jetbrains.mps.lang.textGen.intentions)"));
   }
 
   public void init() {
-    add(new AddRemoveSeparator_Intention(), "1237984182824");
-    add(new SetUniqueNameInFile_Intention(), "590757823759470534");
-    add(new SetWithIndent_Intention(), "1236698667104");
+    IntentionsManager.getInstance().registerIntentionFactory(new AddRemoveSeparator_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SetUniqueNameInFile_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SetWithIndent_Intention());
   }
 }

@@ -5,29 +5,30 @@ package org.jetbrains.mps.samples.ParallelFor.intentions;
 import jetbrains.mps.intentions.BaseIntentionsDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
-    super(new ModuleReference("org.jetbrains.mps.samples.ParallelFor", "cb7388e8-f182-4cda-bd83-9796e8634856"), SModelReference.fromString("r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)"));
+    super(new ModuleReference("cb7388e8-f182-4cda-bd83-9796e8634856(org.jetbrains.mps.samples.ParallelFor)"), SModelReference.fromString("r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)"));
   }
 
   public void init() {
-    add(new DetachFromThreadPool_Intention(), "633195941006988431");
-    add(new MarkAsNonThreadSafe_Intention(), "2975785153735230347");
-    add(new MarkAsThreadSafe_Intention(), "2975785153735208385");
-    add(new MarkInstanceMethodCallAsThreadSafe_Intention(), "5384012304952490058");
-    add(new MarkLocalInstanceMethodCallAsThreadSafe_Intention(), "3540747636396581099");
-    add(new MarkLocalStaticMethodCallAsThreadSafe_Intention(), "3540747636396475561");
-    add(new MarkStaticMethodCallAsThreadSafe_Intention(), "5384012304952498864");
-    add(new MarkVariableDeclarationAsThreadSafe_Intention(), "2975785153735290139");
-    add(new TurnToForEachStatement_Intention(), "5384012304952504715");
-    add(new TurnToParallelForEachStatement_Intention(), "5384012304952529816");
-    add(new UnmarkAsNonThreadSafe_Intention(), "2975785153735235995");
-    add(new UnmarkAsThreadSafe_Intention(), "2975785153735222149");
-    add(new UnmarkInstanceMethodCallAsThreadSafe_Intention(), "5384012304952537573");
-    add(new UnmarkLocalInstanceMethodCallAsThreadSafe_Intention(), "3540747636396569349");
-    add(new UnmarkLocalStaticMethodCallAsThreadSafe_Intention(), "3540747636396569313");
-    add(new UnmarkStaticMethodCallAsThreadSafe_Intention(), "5384012304952503177");
-    add(new UnmarkVariableAsThreadSafe_Intention(), "2975785153735291445");
+    IntentionsManager.getInstance().registerIntentionFactory(new DetachFromThreadPool_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new MarkAsNonThreadSafe_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new MarkAsThreadSafe_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new MarkInstanceMethodCallAsThreadSafe_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new MarkLocalInstanceMethodCallAsThreadSafe_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new MarkLocalStaticMethodCallAsThreadSafe_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new MarkStaticMethodCallAsThreadSafe_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new MarkVariableDeclarationAsThreadSafe_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new TurnToForEachStatement_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new TurnToParallelForEachStatement_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new UnmarkAsNonThreadSafe_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new UnmarkAsThreadSafe_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new UnmarkInstanceMethodCallAsThreadSafe_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new UnmarkLocalInstanceMethodCallAsThreadSafe_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new UnmarkLocalStaticMethodCallAsThreadSafe_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new UnmarkStaticMethodCallAsThreadSafe_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new UnmarkVariableAsThreadSafe_Intention());
   }
 }

@@ -48,6 +48,7 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 
 /**
  * @author Kostik
@@ -79,16 +80,20 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   public void disposeComponent() {
   }
 
+  private void refreshFSInternal() {
+    VirtualFile[] contentRoots = ProjectRootManager.getInstance(myProject).getContentRoots();
+    for (VirtualFile contentRoot : contentRoots) {
+      contentRoot.refresh(false, true);
+    }
+  }
+
   public void refreshFS() {
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
           ApplicationManager.getApplication().runWriteAction(new Runnable() {
             public void run() {
-              VirtualFile[] contentRoots = ProjectRootManager.getInstance(myProject).getContentRoots();
-              for (VirtualFile contentRoot : contentRoots) {
-                contentRoot.refresh(false, true);
-              }
+              refreshFSInternal();
             }
           });
         }
@@ -101,51 +106,46 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   }
 
   public CompilationResult buildModules(final String[] paths) {
-    final Object lock = new Object() {
-    };
+    final CountDownLatch latch = new CountDownLatch(1);
     final CompilationResult[] result = new CompilationResult[1];
-    synchronized (lock) {
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        public void run() {
-          ApplicationManager.getApplication().runWriteAction(new Runnable() {
-            public void run() {
-              List<Module> modules = new ArrayList<Module>();
-              for (String path : paths) {
-                Module module = findModule(path);
-                if (module != null) {
-                  modules.add(module);
-                }
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          public void run() {
+            refreshFSInternal();
+
+            List<Module> modules = new ArrayList<Module>();
+            for (String path : paths) {
+              Module module = findModule(path);
+              if (module != null) {
+                modules.add(module);
               }
-
-              if (modules.isEmpty()) {
-                synchronized (lock) {
-                  lock.notifyAll();
-                }
-                return;
-              }
-
-              CompilerManager compilerManager = CompilerManager.getInstance(myProject);
-              compilerManager.make(myProject, modules.toArray(new Module[modules.size()]), new CompileStatusNotification() {
-                public void finished(boolean aborted, int errors, int warnings, CompileContext compileContext) {
-                  compilationFinished(aborted, errors, warnings);
-                }
-
-                private void compilationFinished(boolean aborted, int errorsNumber, int warningsNumber) {
-                  synchronized (lock) {
-                    result[0] = new CompilationResult(errorsNumber, warningsNumber, aborted);
-                    lock.notifyAll();
-                  }
-                }
-              });
             }
-          });
-        }
-      });
-      try {
-        lock.wait();
-      } catch (InterruptedException e) {
-        e.printStackTrace();
+
+            if (modules.isEmpty()) {
+              latch.countDown();
+              return;
+            }
+
+            CompilerManager compilerManager = CompilerManager.getInstance(myProject);
+            compilerManager.make(myProject, modules.toArray(new Module[modules.size()]), new CompileStatusNotification() {
+              public void finished(boolean aborted, int errors, int warnings, CompileContext compileContext) {
+                compilationFinished(aborted, errors, warnings);
+              }
+
+              private void compilationFinished(boolean aborted, int errorsNumber, int warningsNumber) {
+                result[0] = new CompilationResult(errorsNumber, warningsNumber, aborted);
+                latch.countDown();
+              }
+            });
+          }
+        });
       }
+    });
+    try {
+      latch.await();
+    } catch (InterruptedException e) {
+      e.printStackTrace();
     }
     return result[0];
   }

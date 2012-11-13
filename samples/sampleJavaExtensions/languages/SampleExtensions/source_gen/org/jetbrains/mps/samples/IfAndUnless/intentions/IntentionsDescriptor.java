@@ -5,18 +5,19 @@ package org.jetbrains.mps.samples.IfAndUnless.intentions;
 import jetbrains.mps.intentions.BaseIntentionsDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
-    super(new ModuleReference("org.jetbrains.mps.samples.IfAndUnless", "67b828fd-8fbc-4496-b7f7-8b64ac097c62"), SModelReference.fromString("r:c94a864e-ad51-4b38-a592-c0d7623187a1(org.jetbrains.mps.samples.IfAndUnless.intentions)"));
+    super(new ModuleReference("67b828fd-8fbc-4496-b7f7-8b64ac097c62(org.jetbrains.mps.samples.IfAndUnless)"), SModelReference.fromString("r:c94a864e-ad51-4b38-a592-c0d7623187a1(org.jetbrains.mps.samples.IfAndUnless.intentions)"));
   }
 
   public void init() {
-    add(new ConvertIfToMyIf_Intention(), "954830572076084528");
-    add(new ConvertMyIfToIf_Intention(), "954830572076058611");
-    add(new SplitIf_Intention(), "8008559088281289910");
-    add(new SurroundWithUnless_Intention(), "393299394024647596");
-    add(new TurnToIfStatement_Intention(), "393299394024668987");
-    add(new UnwrapUnlessBlock_Intention(), "393299394024667052");
+    IntentionsManager.getInstance().registerIntentionFactory(new ConvertIfToMyIf_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new ConvertMyIfToIf_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SplitIf_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SurroundWithUnless_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new TurnToIfStatement_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new UnwrapUnlessBlock_Intention());
   }
 }
