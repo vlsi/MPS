@@ -82,16 +82,22 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3364660638048049745">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="1169194664001" value="LinkAttribute" />
       <property name="virtualPackage" nameId="1193676396447" value="attributes" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5169995583184591161" resolveInfo="Attribute" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3364660638048049748">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="1169194664001" value="NodeAttribute" />
       <property name="virtualPackage" nameId="1193676396447" value="attributes" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5169995583184591161" resolveInfo="Attribute" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3364660638048049750">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="1169194664001" value="PropertyAttribute" />
       <property name="virtualPackage" nameId="1193676396447" value="attributes" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5169995583184591161" resolveInfo="Attribute" />
