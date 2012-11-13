@@ -19,8 +19,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.InputStream;
 import java.util.Arrays;
-import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
+import jetbrains.mps.util.JDOMUtil;
 
 /*package*/ class FileProcessor {
   private static final Logger LOG = Logger.getLogger(FileProcessor.class);
@@ -69,6 +69,14 @@ import org.jdom.Document;
     ModelGenerationStatusManager.getInstance().invalidateData(myModels);
   }
 
+  /*package*/ int calcApproximateSize() {
+    int size = 0;
+    for (FileProcessor.FileAndContent fileAndContent : myFilesAndContents) {
+      size += fileAndContent.myContent.calcApproximateSize();
+    }
+    return size;
+  }
+
   private static class FileAndContent {
     private IFile myFile;
     private FileProcessor.FileContent myContent;
@@ -90,6 +98,7 @@ import org.jdom.Document;
 
   private static interface FileContent {
     public void saveToFile(IFile file);
+    public int calcApproximateSize();
   }
 
   private static class StringFileContent implements FileProcessor.FileContent {
@@ -141,6 +150,10 @@ import org.jdom.Document;
           return false;
         }
       }
+    }
+
+    public int calcApproximateSize() {
+      return myContent.getBytes().length;
     }
   }
 
@@ -198,20 +211,32 @@ import org.jdom.Document;
         }
       }
     }
+
+    public int calcApproximateSize() {
+      return myContent.length;
+    }
   }
 
   private static class XMLFileContent implements FileProcessor.FileContent {
-    private Element myElement;
+    private Document myDocument;
 
     private XMLFileContent(Element element) {
-      myElement = element;
+      myDocument = new Document(element);
     }
 
     public void saveToFile(IFile file) {
       try {
-        JDOMUtil.writeDocument(new Document(myElement), file);
+        JDOMUtil.writeDocument(myDocument, file);
       } catch (IOException e) {
         FileProcessor.LOG.error(e);
+      }
+    }
+
+    public int calcApproximateSize() {
+      try {
+        return JDOMUtil.printDocument(myDocument).length;
+      } catch (Exception e) {
+        throw new RuntimeException(e);
       }
     }
   }
