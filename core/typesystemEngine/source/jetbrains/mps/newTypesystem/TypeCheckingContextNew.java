@@ -146,7 +146,7 @@ public class TypeCheckingContextNew extends BaseTypecheckingContext {
 
   @Override
   public List<IErrorReporter> getTypeMessagesDontCheck(SNode node) {
-    return getBaseNodeTypesComponent().getErrors(node);
+    return getNodeTypesComponent().getErrors(node);
   }
 
   @Override
@@ -242,7 +242,7 @@ public class TypeCheckingContextNew extends BaseTypecheckingContext {
   }
 
   @Override
-  public NodeTypesComponent getBaseNodeTypesComponent() {
+  public final NodeTypesComponent getBaseNodeTypesComponent() {
     return getNodeTypesComponent();
   }
 
@@ -443,7 +443,7 @@ public class TypeCheckingContextNew extends BaseTypecheckingContext {
     synchronized (TYPECHECKING_LOCK) {
       checkRoot(refreshTypes);
       //non-typesystem checks
-      getBaseNodeTypesComponent().applyNonTypesystemRulesToRoot(null, this);
+      getNodeTypesComponent().applyNonTypesystemRulesToRoot(null, this);
 
       return new THashSet<Pair<SNode, List<IErrorReporter>>>(getNodeTypesComponent().getNodesWithErrors());
     }

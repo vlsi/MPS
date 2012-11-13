@@ -48,8 +48,6 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
 
   private NonTypeSystemComponent myNonTypeSystemComponent;
 
-  private boolean myIsSpecial = false;
-
   private static final Logger LOG = Logger.getLogger(NodeTypesComponent.class);
 
   private boolean myIsNonTypeSystemCheckingInProgress = false;
@@ -134,13 +132,6 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
     return computeTypesForNode_special(initialNode, Collections.<SNode>emptyList());
   }
 
-  private SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
-    myIsSpecial = true;
-    SNode result = getTypeSystemComponent().computeTypesForNode_special(initialNode, givenAdditionalNodes);
-    myIsSpecial = false;
-    return result;
-  }
-
   public void setNonTypeSystemCheckingInProgress(boolean inProgress) {
     myIsNonTypeSystemCheckingInProgress = inProgress;
   }
@@ -168,22 +159,6 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
 
   public Map<SNode, SNode> getMainContext() {
     return null;
-  }
-
-  public InequalitySystem computeInequalitiesForHole(SNode hole, boolean holeIsAType) {
-    State state = myTypeCheckingContext.getState();
-    if (state == null) return null;
-    try {
-      state.initHole(hole);
-      computeTypesForNode_special(hole.getParent(), Collections.singleton(hole));
-      state.getInequalitySystem().expandAll(state.getEquations());
-      /* for (String s : state.getInequalitySystem().getPresentation()) {
-         System.out.println(s);
-       } */
-      return state.getInequalitySystem();
-    } finally {
-      state.disposeHole();
-    }
   }
 
   public void computeTypes(boolean refreshTypes) {

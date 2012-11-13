@@ -161,6 +161,7 @@ public abstract class TypeCheckingContext {
 
   public abstract State getState();
 
+  @Deprecated
   public abstract NodeTypesComponent getBaseNodeTypesComponent();
 
   public abstract void runTypeCheckingAction(Runnable r);

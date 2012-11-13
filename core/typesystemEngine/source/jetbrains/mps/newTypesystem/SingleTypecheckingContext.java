@@ -79,7 +79,7 @@ public class SingleTypecheckingContext extends TypeCheckingContextNew {
     SNode result = LanguageScopeExecutor.execWithModelScope(node.getModel(), new Computable<SNode>() {
       @Override
       public SNode compute() {
-        return getBaseNodeTypesComponent().computeTypesForNodeDuringGeneration(node);
+        return getNodeTypesComponent().computeTypesForNodeDuringGeneration(node);
       }
     });
     TypeSystemReporter.getInstance().reportTypeOf(node, (System.nanoTime() - start));
@@ -92,7 +92,7 @@ public class SingleTypecheckingContext extends TypeCheckingContextNew {
     if (pair.o2) {
       return pair.o1;
     }
-    SNode resultType = getBaseNodeTypesComponent().computeTypesForNodeDuringResolving(node);
+    SNode resultType = getNodeTypesComponent().computeTypesForNodeDuringResolving(node);
     typeChecker.putTypeComputedForCompletion(node, resultType);
     return resultType;
   }

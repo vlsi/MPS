@@ -20,6 +20,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
+import jetbrains.mps.newTypesystem.BaseTypecheckingContext;
 import jetbrains.mps.newTypesystem.InferenceTypecheckingContext;
 import jetbrains.mps.newTypesystem.RuntimeSupportNew;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
@@ -267,8 +268,8 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   }
 
   public InequalitySystem getInequalitiesForHole(SNode hole, boolean holeIsAType) {
-    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(hole.getContainingRoot());
-    InequalitySystem inequalitySystem = typeCheckingContext.getBaseNodeTypesComponent().computeInequalitiesForHole(hole, holeIsAType);
+    BaseTypecheckingContext typeCheckingContext = (BaseTypecheckingContext) TypeContextManager.getInstance().createTypeCheckingContext(hole.getContainingRoot());
+    InequalitySystem inequalitySystem = typeCheckingContext.getNodeTypesComponent().computeInequalitiesForHole(hole, holeIsAType);
     typeCheckingContext.dispose();
     return inequalitySystem;
   }
