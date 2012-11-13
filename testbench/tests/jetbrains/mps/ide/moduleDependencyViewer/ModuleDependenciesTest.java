@@ -239,6 +239,27 @@ public class ModuleDependenciesTest {
     testUsedLanguage(testTree, languages[1], languages[6], 0); //extended DevKit+extended language
   }
 
+  @Test
+  public void testExtendedLanguageAsDependencies() {
+    final Solution[] solutions = new Solution[2];
+    final Language[] languages = new Language[2];
+    for (int i = 0; i < solutions.length; i++)  solutions[i] = createSolution();
+    for (int i = 0; i < languages.length; i++)  languages[i] = createLanguage();
+    final DependencyPathTree testTree = new DependencyPathTree(null);
+
+    solutions[0].addDependency(solutions[1].getModuleReference(), false);
+    solutions[1].addDependency(languages[0].getModuleReference(), false);
+    languages[0].addExtendedLanguage(languages[1].getModuleReference());
+    /*
+    s[0]------>s[1]------->l[0]----extends---->l[1]
+    */
+    testDependency(testTree, languages[0], languages[1], 1);  // extends is dependency
+    testDependency(testTree, solutions[1], languages[1], 1);  // extends is re-exported dependency
+    testDependency(testTree, solutions[0], languages[1], 0);  // extends is re-exported dependency, cannot go through nonexported dependency
+    testTree.setShowRuntime(true);
+    testDependency(testTree, solutions[0], languages[1], 1);  // runtime dependencies can go through other dependencies
+  }
+
   //----------------------------------------------
 
   private Solution createSolution() {
