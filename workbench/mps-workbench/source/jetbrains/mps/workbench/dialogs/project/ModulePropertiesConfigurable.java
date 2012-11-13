@@ -22,6 +22,7 @@ import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.ui.ComboBox;
+import com.intellij.openapi.ui.Splitter;
 import com.intellij.openapi.util.EmptyRunnable;
 import com.intellij.ui.AnActionButton;
 import com.intellij.ui.AnActionButtonRunnable;
@@ -76,6 +77,7 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.editors.RuleOper
 import jetbrains.mps.workbench.dialogs.project.components.parts.editors.RuleTypeEditor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer;
 import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleTypeRenderer;
+import jetbrains.mps.workbench.dialogs.project.roots.editor.ContentEntriesEditor;
 import jetbrains.mps.workbench.dialogs.project.tmodels.DependTableModel;
 import jetbrains.mps.workbench.dialogs.project.tmodels.DependenciesTableItemRole;
 import jetbrains.mps.workbench.dialogs.project.tmodels.MPSPropertiesAnActionButton;
@@ -149,6 +151,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
 
     private ModuleDependenciesTab myModuleDependenciesTab;
     private ModuleRootsTableModel myRootsTableModel;
+    private ContentEntriesEditor myEntriesEditor;
 
     @Override
     protected String getConfigItemName() {
@@ -226,14 +229,20 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
 
       JPanel table = decorator.createPanel();
       table.setBorder(IdeBorderFactory.createTitledBorder(PropertiesBundle.message("mps.properties.configurable.module.commontab.modelrootsborder"), false));
-      component.add(table, new GridConstraints(2, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+
+      myEntriesEditor = new ContentEntriesEditor(myModuleDescriptor);
+      Splitter splitter = new Splitter(true);
+      splitter.setFirstComponent(table);
+      splitter.setSecondComponent(myEntriesEditor.createComponent());
+      component.add(splitter, new GridConstraints(2, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
       setTabComponent(component);
     }
 
     @Override
     public boolean isModified() {
-      return super.isModified() || (myConfigurableItem instanceof DevKit ? myModuleDependenciesTab.isModified() : myRootsTableModel.isModified());
+      return super.isModified()
+        || (myConfigurableItem instanceof DevKit ? myModuleDependenciesTab.isModified() : myEntriesEditor.isModified());
     }
 
     @Override
