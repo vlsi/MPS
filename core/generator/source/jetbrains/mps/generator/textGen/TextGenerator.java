@@ -91,11 +91,14 @@ public class TextGenerator {
         errors.add(m);
         continue;
       }
+
       Object contents = result.getResult();
-      if (contents instanceof String) {
-        streamHandler.saveStream(name, (String) contents, false);
-      } else {
-        streamHandler.saveStream(name, (byte[]) contents, false);
+      if (contents != TextGen.NO_TEXTGEN) {
+        if (contents instanceof String) {
+          streamHandler.saveStream(name, (String) contents, false);
+        } else {
+          streamHandler.saveStream(name, (byte[]) contents, false);
+        }
       }
     }
   }
