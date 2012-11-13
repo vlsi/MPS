@@ -33,8 +33,6 @@ import java.util.Set;
 
 public abstract class TypeCheckingContext {
 
-  public abstract Map<SNode, SNode> getMainContext();
-
   public abstract SNode getRepresentative(SNode node);
 
   public abstract boolean isIncrementalMode();
@@ -56,14 +54,10 @@ public abstract class TypeCheckingContext {
 
   public abstract SNode createNewRuntimeTypesVariable();
 
-  public abstract void registerTypeVariable(SNode variable);
-
   //for special cases
   public abstract SNode typeOf(SNode node);
 
   public abstract SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency);
-
-  public abstract SNode[] getRegisteredTypeVariables(String varName);
 
   public abstract void addDependencyForCurrent(SNode node);
 

@@ -33,7 +33,6 @@ import java.util.*;
 
 class NonTypeSystemComponent extends CheckingComponent {
 
-  private boolean myInvalidationResultNT = false;
   private Set<Pair<SNode, String>> myCurrentPropertiesToInvalidate = new HashSet<Pair<SNode, String>>();
   private Set<SNode> myCurrentTypedTermsToInvalidate = new HashSet<SNode>();
   private Set<Pair<SNode, NonTypesystemRule_Runtime>> myCheckedNodes
@@ -63,19 +62,24 @@ class NonTypeSystemComponent extends CheckingComponent {
   private SNode myCurrentCheckedNode;
 
   public NonTypeSystemComponent(TypeChecker typeChecker, NodeTypesComponent nodeTypesComponent) {
-    super(typeChecker, nodeTypesComponent);
+    super(typeChecker, null, nodeTypesComponent);
   }
 
+  @Override
   public void clear() {
-    myIsChecked = false;
+    super.clear();
     clearCaches();
   }
 
   public void clearNodeTypes() {
-    myCurrentNodesToInvalidate.clear();
+    clearAllExceptErrors();
+    myNodesToErrorsMap.clear();
+  }
+
+  private void clearAllExceptErrors() {
+    super.clearNodeTypes();
     myCurrentPropertiesToInvalidate.clear();
     myCurrentTypedTermsToInvalidate.clear();
-    myNodesToErrorsMap.clear();
   }
 
   void clearCaches() {
@@ -110,13 +114,14 @@ class NonTypeSystemComponent extends CheckingComponent {
   }
 
   //returns true if something was invalidated
+  @Override
   protected boolean doInvalidate() {
-    if (myInvalidationWasPerformed) {
-      return myInvalidationResultNT;
+    if (isInvalidationWasPerformed()) {
+      return isInvalidationResult();
     }
     Set<Pair<SNode, NonTypesystemRule_Runtime>> invalidatedNodesAndRules = new THashSet<Pair<SNode, NonTypesystemRule_Runtime>>(1);
     //nodes
-    for (SNode node : myCurrentNodesToInvalidate) {
+    for (SNode node : getCurrentNodesToInvalidate()) {
       doInvalidate(myNodesToDependentNodesWithNTRules.get(node), invalidatedNodesAndRules);
     }
     //properties
@@ -131,7 +136,7 @@ class NonTypeSystemComponent extends CheckingComponent {
     }
 
     //cache-dependent
-    if (myCacheWasRebuilt) {
+    if (isCacheWasRebuilt()) {
       for (SNode nodeOfRule : myNodesDependentOnCachesWithNTRules.keySet()) {
         Set<NonTypesystemRule_Runtime> rules = myNodesDependentOnCachesWithNTRules.get(nodeOfRule);
         if (rules != null) {
@@ -159,12 +164,8 @@ class NonTypeSystemComponent extends CheckingComponent {
         }
       }
     }
-    myCurrentNodesToInvalidate.clear();
-    myCurrentPropertiesToInvalidate.clear();
-    myCurrentTypedTermsToInvalidate.clear();
-    myCacheWasRebuilt = false;
-    myInvalidationWasPerformed = true;
-    myInvalidationResultNT = result;
+    clearAllExceptErrors();
+    setInvalidationResult(result);
     return result;
   }
 
@@ -289,7 +290,7 @@ class NonTypeSystemComponent extends CheckingComponent {
       //all error reporters must be simple reporters, no error expansion needed
     } finally {
       getNodeTypesComponent().setNonTypeSystemCheckingInProgress(false);
-      myInvalidationWasPerformed = false;
+      setInvalidationWasPerformed(false);
     }
   }
 
@@ -345,6 +346,7 @@ class NonTypeSystemComponent extends CheckingComponent {
     myCurrentCheckedNode = oldCheckedNode;
   }
 
+  @Override
   protected boolean isIncrementalMode() {
     return false; // can never be
   }

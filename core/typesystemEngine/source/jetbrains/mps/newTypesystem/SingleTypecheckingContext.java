@@ -15,13 +15,11 @@
  */
 package jetbrains.mps.newTypesystem;
 
-import com.sun.corba.se.impl.encoding.CodeSetConversion.BTCConverter;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
@@ -32,7 +30,7 @@ import jetbrains.mps.util.Pair;
  * Time: 3:35 PM
  * To change this template use File | Settings | File Templates.
  */
-public class SingleTypecheckingContext extends TypeCheckingContextNew {
+public class SingleTypecheckingContext extends BaseTypecheckingContext {
 
   public SingleTypecheckingContext (SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
@@ -44,14 +42,10 @@ public class SingleTypecheckingContext extends TypeCheckingContextNew {
   }
 
   @Override
-  public final boolean isSingleTypeComputation() {
+  public boolean isSingleTypeComputation() {
     return true;
   }
 
-  @Override
-  protected void processDependency(SNode node, String ruleModel, String ruleId, boolean addDependency) {
-    // do nothing
-  }
 
   @Override
   public void addDependencyForCurrent(SNode node) {
@@ -104,6 +98,26 @@ public class SingleTypecheckingContext extends TypeCheckingContextNew {
     synchronized (TYPECHECKING_LOCK) {
       return getTypeOf_resolveMode(node, typeChecker);
     }
+  }
+
+  @Override
+  public void setIsNonTypesystemComputation() {
+    assert false;
+  }
+
+  @Override
+  public void resetIsNonTypesystemComputation() {
+    assert false;
+  }
+
+  @Override
+  public boolean isNonTypesystemComputation() {
+    return false;
+  }
+
+  @Override
+  protected void applyNonTypesystemRules() {
+    // do nothing
   }
 
 }

@@ -24,6 +24,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.LanguageHierarchyCache.CacheChangeListener;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -33,10 +34,8 @@ import java.util.*;
 /*
  *   Non-reenterable.
  */
-/*package*/ class TypeSystemComponent extends SingleTypeSystemComponent {
+/*package*/ class TypeSystemComponent extends CheckingComponent {
   protected static final Logger LOG = Logger.getLogger(TypeSystemComponent.class);
-
-  private boolean myInvalidationResult = false;
 
   private Map<SNode, Set<SNode>> myNodesToDependentNodes_A;
   private Map<SNode, Set<SNode>> myNodesToDependentNodes_B;
@@ -47,9 +46,10 @@ import java.util.*;
   protected Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
   private Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
   private Set<SNode> myNodesDependentOnCaches;
-  private Queue<SNode> myQueue = new LinkedList<SNode>();
   private SNode myCurrentCheckedNode;
   private boolean myCurrentTypeAffected = false;
+
+  private MyLanguageCacheListener myLanguageCacheListener = new MyLanguageCacheListener();
 
 
   public TypeSystemComponent(TypeChecker typeChecker, State state, NodeTypesComponent component) {
@@ -61,21 +61,26 @@ import java.util.*;
     myNodesToDependentNodes_B = new THashMap<SNode, Set<SNode>>();
   }
 
+  @Override
+  public void dispose() {
+    LanguageHierarchyCache.getInstance().removeCacheChangeListener(myLanguageCacheListener);
+  }
+
   //returns true if something was invalidated
   @Override
   protected boolean doInvalidate() {
-    if (myInvalidationWasPerformed) {
-      return myInvalidationResult;
+    if (isInvalidationWasPerformed()) {
+      return isInvalidationResult();
     }
     boolean result;
     Set<SNode> invalidatedNodes_A = new THashSet<SNode>();
     Set<SNode> invalidatedNodes_B = new THashSet<SNode>();
     Set<SNode> newNodesToInvalidate_A = new THashSet<SNode>();
     Set<SNode> newNodesToInvalidate_B = new THashSet<SNode>();
-    Set<SNode> currentNodesToInvalidate_A = myCurrentNodesToInvalidate;
+    Set<SNode> currentNodesToInvalidate_A = getCurrentNodesToInvalidate();
     Set<SNode> currentNodesToInvalidate_B = new THashSet<SNode>();
 
-    if (myCacheWasRebuilt) {
+    if (isCacheWasRebuilt()) {
       currentNodesToInvalidate_A.addAll(myNodesDependentOnCaches);
     }
 
@@ -116,10 +121,8 @@ import java.util.*;
       newNodesToInvalidate_B = new THashSet<SNode>();
     }
     result = !invalidatedNodes_A.isEmpty() || !invalidatedNodes_B.isEmpty();
-    myCurrentNodesToInvalidate.clear();
-    myCacheWasRebuilt = false;
-    myInvalidationWasPerformed = true;
-    myInvalidationResult = result;
+    clearNodeTypes();
+    setInvalidationResult(result);
     return result;
   }
 
@@ -135,23 +138,17 @@ import java.util.*;
     myNodesToRules.remove(node);
   }
 
+  @Override
   public Map<SNode, List<IErrorReporter>> getNodesToErrorsMap() {
     return myState.getNodeMaps().getNodesToErrors();
   }
 
+  @Override
   public void clear() {
-    myIsChecked = false;
+    super.clear();
     clearCaches();
     clearState();
     clearNodeTypes();
-  }
-
-  private void clearState() {
-    myState.clear(true);
-  }
-
-  public void clearNodeTypes() {
-    myCurrentNodesToInvalidate.clear();
   }
 
   public void typeOfNodeCalled(SNode node) {
@@ -199,6 +196,7 @@ import java.util.*;
     solveInequalitiesAndExpandTypes(finalExpansion);
   }
 
+  @Override
   protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
     try {
       if (refreshTypes) {
@@ -216,7 +214,7 @@ import java.util.*;
       performActionsAfterChecking();
       myState.performActionsAfterChecking();
     } finally {
-      myInvalidationWasPerformed = false;
+      setInvalidationWasPerformed(false);
     }
   }
 
@@ -415,10 +413,6 @@ import java.util.*;
     myState.addError(node, reporter, null);
   }
 
-  public void computeTypes(boolean refreshTypes) {
-    computeTypes(getNodeTypesComponent().getNode(), refreshTypes, true, Collections.<SNode>emptyList(), true, null);
-  }
-
   @Override
   protected void performActionsAfterChecking() {
     getNodeTypesComponent().getModelListenerManager().updateGCedNodes();
@@ -443,16 +437,25 @@ import java.util.*;
     return result;
   }
 
+  @Override
   public void addNodeToFrontier(SNode node) {
     if (node == null || myPartlyCheckedNodes.contains(node)) return;
-    myQueue.add(node);
+    super.addNodeToFrontier(node);
   }
 
   private void addCacheDependentNodesTypesystem(SNode node) {
     myNodesDependentOnCaches.add(node);
   }
 
+  @Override
   protected boolean isIncrementalMode() {
     return myState.getTypeCheckingContext().isIncrementalMode();
+  }
+
+  private class MyLanguageCacheListener implements CacheChangeListener {
+    public void languageCacheChanged() {
+      setCacheWasRebuild(true);
+      setInvalidationWasPerformed(false);
+    }
   }
 }

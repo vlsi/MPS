@@ -15,14 +15,20 @@
  */
 package jetbrains.mps.newTypesystem;
 
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.util.annotation.UseCarefully;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
 
 /**
  * Created with IntelliJ IDEA.
@@ -31,16 +37,19 @@ import java.util.Collections;
  * Time: 10:07 AM
  * To change this template use File | Settings | File Templates.
  */
-/*package*/ class SingleTypeSystemComponent extends CheckingComponent {
+/*package*/ class SingleTypeSystemComponent  {
 
   protected final State myState;
+  protected Queue<SNode> myQueue = new LinkedList<SNode>();
+  protected boolean myIsChecked = false;
+  protected SingleNodeTypesComponent myNodeTypesComponent;
 
-  public SingleTypeSystemComponent (TypeChecker typeChecker, State state, SingleNodeTypesComponent component) {
-    super (typeChecker, component);
+
+  public SingleTypeSystemComponent(State state, SingleNodeTypesComponent component) {
     myState = state;
+    myNodeTypesComponent = component;
   }
 
-  @Override
   protected boolean isIncrementalMode() {
     return false;
   }
@@ -84,5 +93,46 @@ import java.util.Collections;
   protected SNode computeTypesForNode_special_(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
     assert false;
     return null;
+  }
+
+  public Map<SNode, List<IErrorReporter>> getNodesToErrorsMap() {
+    return Collections.emptyMap();
+  }
+
+  protected void clearState() {
+    myState.clear(true);
+  }
+
+
+  public void addNodeToFrontier(SNode node) {
+    if (node == null) return;
+    myQueue.add(node);
+  }
+
+  public void computeTypes(boolean refreshTypes) {
+    computeTypes(getNodeTypesComponent().getNode(), refreshTypes, true, Collections.<SNode>emptyList(), true, null);
+  }
+
+
+
+  protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
+
+  }
+
+  @UseCarefully
+  public void setChecked() {
+    myIsChecked = true;
+  }
+
+  public boolean isChecked() {
+    return myIsChecked && !doInvalidate();
+  }
+
+  protected SingleNodeTypesComponent getNodeTypesComponent() {
+    return myNodeTypesComponent;
+  }
+
+  public void dispose() {
+
   }
 }

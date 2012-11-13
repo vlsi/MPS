@@ -31,4 +31,7 @@ public class InferenceTypecheckingContext extends SingleTypecheckingContext {
     super(rootNode, typeChecker);
   }
 
+  protected void applyNonTypesystemRules() {
+    getNodeTypesComponent().applyNonTypesystemRulesToRoot(null, this);
+  }
 }

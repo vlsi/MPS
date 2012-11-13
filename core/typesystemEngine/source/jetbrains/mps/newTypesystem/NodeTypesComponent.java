@@ -80,10 +80,6 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
     getTypeSystemComponent().clear();
   }
 
-  public SNode getNode() {
-    return myRootNode;
-  }
-
   public MyModelListenerManager getModelListenerManager() {
     return myModelListenerManager;
   }
@@ -120,17 +116,6 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
     }
   }
 
-  public SNode computeTypesForNodeDuringGeneration(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, Collections.<SNode>emptyList());
-  }
-
-  public SNode computeTypesForNodeDuringResolving(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, Collections.<SNode>emptyList());
-  }
-
-  public SNode computeTypesForNodeInferenceMode(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, Collections.<SNode>emptyList());
-  }
 
   public void setNonTypeSystemCheckingInProgress(boolean inProgress) {
     myIsNonTypeSystemCheckingInProgress = inProgress;
@@ -144,6 +129,7 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
     }
   }
 
+  @Override
   public void dispose() {
     if (!myTypeCheckingContext.isSingleTypeComputation()) {
       if (myModelListenerManager != null) {
@@ -157,13 +143,6 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
     getTypeSystemComponent().dispose();
   }
 
-  public Map<SNode, SNode> getMainContext() {
-    return null;
-  }
-
-  public void computeTypes(boolean refreshTypes) {
-    getTypeSystemComponent().computeTypes(refreshTypes);
-  }
 
   public void setCheckedNonTypesystem() {
     myNonTypeSystemComponent.setChecked();
@@ -189,50 +168,35 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
     getTypeSystemComponent().addDependencyOnCurrent(node);
   }
 
+  @Override
   public void applyNonTypesystemRulesToRoot(IOperationContext context, TypeCheckingContext typeCheckingContext) {
     myNonTypeSystemComponent.applyNonTypeSystemRulesToRoot(context, typeCheckingContext);
-  }
-
-  public void addNodeToFrontier(SNode node) {
-    getTypeSystemComponent().addNodeToFrontier(node);
   }
 
   public SNode getType(SNode node) {
     return getTypeSystemComponent().getType(node);
   }
 
+  @Override
   @NotNull
   public List<IErrorReporter> getErrors(SNode node) {
-    Map<SNode, List<IErrorReporter>> nodesToErrorsMap = getTypeSystemComponent().getNodesToErrorsMap();
+    List<IErrorReporter> result = new ArrayList<IErrorReporter>(super.getErrors(node));
     Map<SNode, List<IErrorReporter>> nodesToErrorsMapNT = myNonTypeSystemComponent.getNodesToErrorsMap();
-
-    List<IErrorReporter> result = new ArrayList<IErrorReporter>(4);
-    List<IErrorReporter> iErrorReporters = nodesToErrorsMap.get(node);
-    if (iErrorReporters != null) {
-      result.addAll(iErrorReporters);
-    }
-    iErrorReporters = nodesToErrorsMapNT.get(node);
+    List<IErrorReporter> iErrorReporters = nodesToErrorsMapNT.get(node);
     if (iErrorReporters != null) {
       result.addAll(iErrorReporters);
     }
     return result;
   }
 
-  public SNode[] getVariables(String varName) {
-    return new SNode[0];
-  }
-
-  public void registerTypeVariable(SNode variable) {
-
-  }
-
   //--------------------------------------------------
+  @Override
   public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
-    Map<SNode, List<IErrorReporter>> nodesToErrorsMap = getTypeSystemComponent().getNodesToErrorsMap();
     Map<SNode, List<IErrorReporter>> nodesToErrorsMapNT = myNonTypeSystemComponent.getNodesToErrorsMap();
-    Set<Pair<SNode, List<IErrorReporter>>> result = new THashSet<Pair<SNode, List<IErrorReporter>>>(1);
-    Set<SNode> keySet = new THashSet<SNode>(nodesToErrorsMap.keySet());
+    Set<SNode> keySet = new THashSet<SNode>(nodesToErrorsMapNT.keySet());
     keySet.addAll(nodesToErrorsMapNT.keySet());
+
+    Set<Pair<SNode, List<IErrorReporter>>> result = new THashSet<Pair<SNode, List<IErrorReporter>>>(super.getNodesWithErrors());
     for (SNode key : keySet) {
       List<IErrorReporter> reporters = getErrors(key);
       if (!reporters.isEmpty()) {
@@ -262,13 +226,10 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
     return myNonTypeSystemComponent.isChecked();
   }
 
-  public void setCheckedTypesystem() {
-    getTypeSystemComponent().setChecked();
-  }
-
+  @Override
   public boolean isChecked(boolean considerNonTypeSystemRules) {
     processPendingEvents();
-    boolean typesChecked = getTypeSystemComponent().isChecked();
+    boolean typesChecked = super.isChecked(considerNonTypeSystemRules);
     if (considerNonTypeSystemRules) {
       return typesChecked && myNonTypeSystemComponent.isChecked();
     } else {

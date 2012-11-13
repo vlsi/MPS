@@ -28,28 +28,18 @@ import jetbrains.mps.util.annotation.UseCarefully;
 
 import java.util.Set;
 
-/*package*/ abstract class CheckingComponent {
-  protected boolean myInvalidationWasPerformed = false;
-  protected boolean myCacheWasRebuilt = false;
+/*package*/ abstract class CheckingComponent extends SingleTypeSystemComponent {
   protected TypeChecker myTypeChecker;
-  private SingleNodeTypesComponent myNodeTypesComponent;
-  protected boolean myIsChecked = false;
-  protected MyLanguageCacheListener myLanguageCacheListener = new MyLanguageCacheListener();
 
-  protected Set<SNode> myCurrentNodesToInvalidate = new THashSet<SNode>();
+  private boolean myInvalidationWasPerformed = false;
+  private boolean myCacheWasRebuilt = false;
+  private boolean myInvalidationResult = false;
 
-  protected CheckingComponent (TypeChecker typeChecker, SingleNodeTypesComponent component) {
+  private Set<SNode> myCurrentNodesToInvalidate = new THashSet<SNode>();
+
+  protected CheckingComponent (TypeChecker typeChecker, State state, SingleNodeTypesComponent component) {
+    super(state, component);
     myTypeChecker = typeChecker;
-    myNodeTypesComponent = component;
-  }
-
-  @UseCarefully
-  public void setChecked() {
-    myIsChecked = true;
-  }
-
-  public boolean isChecked() {
-    return myIsChecked && !doInvalidate();
   }
 
   protected abstract boolean doInvalidate();
@@ -67,14 +57,29 @@ import java.util.Set;
     setInvalidationWasPerformed(false);
   }
 
-  protected abstract boolean isIncrementalMode();
 
-  public void dispose() {
-    LanguageHierarchyCache.getInstance().removeCacheChangeListener(myLanguageCacheListener);
+  public void clear() {
+    myIsChecked = false;
   }
 
-  protected SingleNodeTypesComponent getNodeTypesComponent() {
-    return myNodeTypesComponent;
+  public void clearNodeTypes() {
+    myCurrentNodesToInvalidate.clear();
+  }
+
+  protected boolean isInvalidationWasPerformed() {
+    return myInvalidationWasPerformed;
+  }
+
+  protected boolean isCacheWasRebuilt() {
+    return myCacheWasRebuilt;
+  }
+
+  protected boolean isInvalidationResult() {
+    return myInvalidationResult;
+  }
+
+  protected Set<SNode> getCurrentNodesToInvalidate() {
+    return new THashSet<SNode>(myCurrentNodesToInvalidate);
   }
 
   /*
@@ -139,6 +144,12 @@ import java.util.Set;
     }
   }
 
+
+  protected void setInvalidationResult(boolean result) {
+    myCacheWasRebuilt = false;
+    myInvalidationWasPerformed = true;
+    myInvalidationResult = result;
+  }
   /*
    *  Single-threaded.
    */
@@ -165,10 +176,5 @@ import java.util.Set;
     }
   }
 
-  private class MyLanguageCacheListener implements CacheChangeListener {
-    public void languageCacheChanged() {
-      setCacheWasRebuild(true);
-      setInvalidationWasPerformed(false);
-    }
-  }
+
 }

@@ -15,14 +15,23 @@
  */
 package jetbrains.mps.newTypesystem;
 
+import gnu.trove.THashSet;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -46,9 +55,12 @@ public class SingleNodeTypesComponent {
   }
 
   protected SingleTypeSystemComponent createTypeSystemComponent(State state) {
-    return new SingleTypeSystemComponent(TypeChecker.getInstance(), state, this);
+    return new SingleTypeSystemComponent(state, this);
   }
 
+  public SNode getNode() {
+    return myRootNode;
+  }
 
   protected SingleTypeSystemComponent getTypeSystemComponent() {
     return myTypeSystemComponent;
@@ -75,5 +87,75 @@ public class SingleNodeTypesComponent {
     } finally {
       state.disposeHole();
     }
+  }
+
+  public SNode computeTypesForNodeDuringGeneration(SNode initialNode) {
+    return computeTypesForNode_special(initialNode, Collections.<SNode>emptyList());
+  }
+
+  public SNode computeTypesForNodeDuringResolving(SNode initialNode) {
+    return computeTypesForNode_special(initialNode, Collections.<SNode>emptyList());
+  }
+
+  public SNode computeTypesForNodeInferenceMode(SNode initialNode) {
+    return computeTypesForNode_special(initialNode, Collections.<SNode>emptyList());
+  }
+
+  @NotNull
+  public List<IErrorReporter> getErrors(SNode node) {
+    Map<SNode, List<IErrorReporter>> nodesToErrorsMap = getTypeSystemComponent().getNodesToErrorsMap();
+
+    List<IErrorReporter> result = new ArrayList<IErrorReporter>(4);
+    List<IErrorReporter> iErrorReporters = nodesToErrorsMap.get(node);
+    if (iErrorReporters != null) {
+      result.addAll(iErrorReporters);
+    }
+    return result;
+  }
+
+  public void addNodeToFrontier(SNode node) {
+    getTypeSystemComponent().addNodeToFrontier(node);
+  }
+
+  public void dispose() {
+
+  }
+
+  public void computeTypes(boolean refreshTypes) {
+    getTypeSystemComponent().computeTypes(refreshTypes);
+  }
+
+
+  public void setCheckedTypesystem() {
+    getTypeSystemComponent().setChecked();
+  }
+
+  public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
+    Map<SNode, List<IErrorReporter>> nodesToErrorsMap = getTypeSystemComponent().getNodesToErrorsMap();
+    Set<SNode> keySet = new THashSet<SNode>(nodesToErrorsMap.keySet());
+
+    Set<Pair<SNode, List<IErrorReporter>>> result = new THashSet<Pair<SNode, List<IErrorReporter>>>(1);
+    for (SNode key : keySet) {
+      List<IErrorReporter> reporters = getErrors(key);
+      if (!reporters.isEmpty()) {
+        if (key.getContainingRoot() == null) {
+          /*  LOG.warning("Type system reports error for node without containing root. Node: " + key);
+                    for (IErrorReporter reporter : reporters) {
+                      LOG.warning("This error was reported from: model: " + reporter.getRuleModel() + " id: " + reporter.getRuleId());
+                    }     */
+          continue;
+        }
+        result.add(new Pair<SNode, List<IErrorReporter>>(key, reporters));
+      }
+    }
+    return result;
+  }
+
+  public boolean isChecked(boolean considerNonTypeSystemRules) {
+    return getTypeSystemComponent().isChecked();
+  }
+
+  public void applyNonTypesystemRulesToRoot(IOperationContext context, TypeCheckingContext typeCheckingContext) {
+    // do nothing
   }
 }
