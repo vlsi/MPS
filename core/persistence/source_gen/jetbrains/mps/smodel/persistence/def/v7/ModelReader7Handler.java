@@ -438,7 +438,8 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
         if (child != null) {
-          result.addChild(child.getRoleInParent(), child);
+          result.addChild(((String) child.getUserObject("role")), child);
+          child.putUserObject("role", null);
         }
         return;
       }
@@ -473,7 +474,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
         return;
       }
       if ("role".equals(name)) {
-        result.setRoleInParent(fieldhelper.readRole(value));
+        result.putUserObject("role", fieldhelper.readRole(value));
         return;
       }
       if ("roleId".equals(name)) {
@@ -533,7 +534,8 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
-        result.addChild(child.getRoleInParent(), child);
+        result.addChild(((String) child.getUserObject("role")), child);
+        child.putUserObject("role",null);
         return;
       }
       super.handleChild(resultObject, tagName, value);
