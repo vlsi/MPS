@@ -713,20 +713,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //----------------------------------------------------------
-  //-------------MIGRATE TOGETHER WITH MODELS CODE------------
-  //----------------------------------------------------------
-
-  public void setId(@Nullable SNodeId id) {
-    if (EqualUtil.equals(id, myId)) return;
-
-    if (myModel == null) {
-      myId = id;
-    } else {
-      LOG.error("can't set id to registered node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this), new Throwable());
-    }
-  }
-
-  //----------------------------------------------------------
   //-----------WORKING WITH CONCEPT ON A NODE LEVEL-----------
   //----------------------------------------------------------
 
@@ -752,6 +738,16 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   //----------------USAGES IN REFACTORINGS ONLY---------------
   //----------------------------------------------------------
 
+  public void setId(@Nullable SNodeId id) {
+    if (EqualUtil.equals(id, myId)) return;
+
+    if (myModel == null) {
+      myId = id;
+    } else {
+      LOG.error("can't set id to registered node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this), new Throwable());
+    }
+  }
+
   void changePropertyName(String oldPropertyName, String newPropertyName) {
     //todo make undo?
     if (myProperties == null) return;
@@ -773,6 +769,42 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     myModel = newModel;
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
       child.changeModel(newModel);
+    }
+  }
+
+  void unRegisterFromModel() {
+    if (myModel == null) return;
+
+    for (SReference ref : myReferences) {
+      ref.makeDirect();
+    }
+
+    myModel.unregisterNode(this);
+
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
+      child.unRegisterFromModel();
+    }
+
+    myModel = null;
+  }
+
+  void registerInModel(SModel model) {
+    if (model != myModel) {
+      if (myModel != null) {
+        LOG.errorWithTrace("couldn't register node which is already registered in '" + myModel.getSModelReference() + "'");
+        return;
+      }
+    }
+
+    model.registerNode(this);
+    myModel = model;
+
+    for (SReference ref : myReferences) {
+      ref.makeIndirect();
+    }
+
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
+      child.registerInModel(model);
     }
   }
 
@@ -811,44 +843,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     int len = fromNode.myProperties.length;
     myProperties = new String[len];
     System.arraycopy(fromNode.myProperties, 0, myProperties, 0, len);
-  }
-
-  //--------private (SNode and SModel usages)-------
-
-  void unRegisterFromModel() {
-    if (myModel == null) return;
-
-    for (SReference ref : myReferences) {
-      ref.makeDirect();
-    }
-
-    myModel.unregisterNode(this);
-
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      child.unRegisterFromModel();
-    }
-
-    myModel = null;
-  }
-
-  void registerInModel(SModel model) {
-    if (model != myModel) {
-      if (myModel != null) {
-        LOG.errorWithTrace("couldn't register node which is already registered in '" + myModel.getSModelReference() + "'");
-        return;
-      }
-    }
-
-    model.registerNode(this);
-    myModel = model;
-
-    for (SReference ref : myReferences) {
-      ref.makeIndirect();
-    }
-
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      child.registerInModel(model);
-    }
   }
 
   //--------seems theese methods are not needed-------
