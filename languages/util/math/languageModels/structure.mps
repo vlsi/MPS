@@ -349,6 +349,7 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1236428507726" resolveInfo="ExtrSymbol" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1236428893250">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ArithmSymbol" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="bigSymbols" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1236426954905" resolveInfo="MathSymbol" />

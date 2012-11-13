@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7h8a2ri9ensex33xqasj114vvopaumo">
+<dependencies version="2" modelHash="-6m0j8d66c877ohppbrkgvg7vqvuidmf">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="32r4fwoqxvjm4c9ivtrpwu9rluuq7jx" />
@@ -218,7 +218,7 @@
   <source id="1236428482381" name="BigMinExpression" hash="dft3i8stx278p1uwwg9aylbpjne4jbc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1236428893250" name="ArithmSymbol" hash="-cmhucod68vplghn1k14amj2fm63np1w">
+  <source id="1236428893250" name="ArithmSymbol" hash="alfj1rdm2f3l575zuuglodijirz7vxl">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1236426954905" name="MathSymbol" hash="-1iyhdltjj1fqxdi8w8jcmssmylh0p3n">
