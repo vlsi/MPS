@@ -6171,6 +6171,49 @@
                       </node>
                     </node>
                   </node>
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="5551240657280290644">
+                    <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5551240657280290645">
+                      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5551240657280290646">
+                        <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="5551240657280290647">
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="978271742633845162" resolveInfo="addDeps" />
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5551240657280290648">
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="978271742633845003" resolveInfo="result" />
+                          </node>
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5551240657280290649">
+                            <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="5551240657280290650">
+                              <node role="expression" roleId="tpee.1079359253376" type="tpee.AsExpression" typeId="tpee.1224071154655" id="5551240657280290651">
+                                <node role="classifierType" roleId="tpee.1224071154657" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5551240657280290652">
+                                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kqhl.~LanguageDescriptor" resolveInfo="LanguageDescriptor" />
+                                </node>
+                                <node role="expression" roleId="tpee.1224071154656" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5551240657280290653">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="978271742633845010" resolveInfo="descr" />
+                                </node>
+                              </node>
+                            </node>
+                            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5551240657280290654">
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="kqhl.~LanguageDescriptor%dgetExtendedLanguages()%cjava%dutil%dSet" resolveInfo="getExtendedLanguages" />
+                            </node>
+                          </node>
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5551240657280290662">
+                            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="7693590883518970025" resolveInfo="RTDependency" />
+                            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="7693590883518970021" resolveInfo="DependencyUtil.Role" />
+                          </node>
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5551240657280290656">
+                            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="7693590883518970009" resolveInfo="ExtendsLanguage" />
+                            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="7693590883518970005" resolveInfo="DependencyUtil.LinkType" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="condition" roleId="tpee.1068580123160" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="5551240657280290657">
+                      <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5551240657280290658">
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kqhl.~LanguageDescriptor" resolveInfo="LanguageDescriptor" />
+                      </node>
+                      <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5551240657280290659">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="978271742633845010" resolveInfo="descr" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
                 <node role="condition" roleId="tpee.1068580123160" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3805046970175494619">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="978271742633844999" resolveInfo="trackRuntime" />

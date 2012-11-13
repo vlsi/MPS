@@ -107,6 +107,9 @@ public class DependencyUtil {
           addDeps(result, getNonreexportDeps(descr), DependencyUtil.Role.RTDependency, DependencyUtil.LinkType.Depends);
           addDeps(result, descr.getUsedLanguages(), DependencyUtil.Role.DependencyLanguage, DependencyUtil.LinkType.UsesLanguage);
           addDeps(result, descr.getUsedDevkits(), DependencyUtil.Role.DependencyDevkit, DependencyUtil.LinkType.UsesDevkit);
+          if (descr instanceof LanguageDescriptor) {
+            addDeps(result, (as_he47wm_a0a1a0a4a0a7d0a(descr, LanguageDescriptor.class)).getExtendedLanguages(), DependencyUtil.Role.RTDependency, DependencyUtil.LinkType.ExtendsLanguage);
+          }
         }
         break;
 
@@ -274,6 +277,13 @@ public class DependencyUtil {
   }
 
   private static <T> T as_he47wm_a0a1a0a1a5d0a(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_he47wm_a0a1a0a4a0a7d0a(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
