@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.generator;
 
 import com.intellij.ide.IdeEventQueue;
-import com.intellij.openapi.extensions.ExtensionPointName;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.MPSCore;
@@ -36,7 +35,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.ModelCommandExecutor.RunnableWithProgress;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -55,17 +53,8 @@ public class GeneratorUIFacade {
     return INSTANCE;
   }
 
-  public static ExtensionPointName<GenerationHandlerProvider> EP_NAME =
-    ExtensionPointName.create("com.intellij.mps.GenerationHandler");
-
-  public interface GenerationHandlerProvider {
-    IGenerationHandler create();
-  }
-
   public IGenerationHandler getDefaultGenerationHandler() {
-    GenerationHandlerProvider[] ext = EP_NAME.getExtensions();
-    if (ext.length == 0) return new JavaGenerationHandler();
-    return ext[0].create();
+    return new JavaGenerationHandler();
   }
 
   /**

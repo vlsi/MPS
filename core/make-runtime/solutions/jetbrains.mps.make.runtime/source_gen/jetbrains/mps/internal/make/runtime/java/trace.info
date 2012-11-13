@@ -82,7 +82,7 @@
     <nodeInfo nodeId="4572289200694849045" fileName="FileProcessor.java" startLine="236" startPosition="11" endLine="237" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4572289200694818317" fileName="FileProcessor.java" startLine="238" startPosition="29" endLine="239" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="4328738523548225979" fileName="FileProcessor.java" startLine="33" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FileProcessor#()V" />
-    <nodeInfo nodeId="4328738523548225988" fileName="FileProcessor.java" startLine="36" startPosition="65" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="4328738523548225988" fileName="FileProcessor.java" startLine="36" startPosition="55" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="4328738523548225996" fileName="FileProcessor.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveContent#(Ljetbrains/mps/vfs/IFile;Ljava/lang/String;)V" />
     <nodeInfo nodeId="4328738523548226012" fileName="FileProcessor.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveContent#(Ljetbrains/mps/vfs/IFile;Lorg/jdom/Element;)V" />
     <nodeInfo nodeId="4145682539058277846" fileName="FileProcessor.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveContent#(Ljetbrains/mps/vfs/IFile;[B)V" />
@@ -107,7 +107,7 @@
     <nodeInfo nodeId="4328738523548225906" fileName="FileProcessor.java" startLine="93" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
     <nodeInfo nodeId="4328738523548226126" fileName="FileProcessor.java" startLine="123" startPosition="29" endLine="127" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="4145682539058277914" fileName="FileProcessor.java" startLine="179" startPosition="29" endLine="183" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4328738523548225982" fileName="FileProcessor.java" startLine="36" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invalidateModel#(Ljetbrains/mps/smodel/SModelDescriptor;)V" />
+    <nodeInfo nodeId="4328738523548225982" fileName="FileProcessor.java" startLine="36" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invalidateModel#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
     <nodeInfo nodeId="798733910009264754" fileName="FileProcessor.java" startLine="205" startPosition="29" endLine="210" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="4328738523548226159" fileName="FileProcessor.java" startLine="227" startPosition="40" endLine="232" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="4572289200694735235" fileName="FileProcessor.java" startLine="235" startPosition="38" endLine="240" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
@@ -203,7 +203,7 @@
     <scopeInfo nodeId="4328738523548226078" fileName="FileProcessor.java" startLine="84" startPosition="75" endLine="86" endPosition="26" />
     <scopeInfo nodeId="4328738523548226136" fileName="FileProcessor.java" startLine="117" startPosition="11" endLine="119" endPosition="32" />
     <scopeInfo nodeId="4145682539058277924" fileName="FileProcessor.java" startLine="173" startPosition="11" endLine="175" endPosition="32" />
-    <scopeInfo nodeId="4328738523548225987" fileName="FileProcessor.java" startLine="36" startPosition="65" endLine="39" endPosition="5" />
+    <scopeInfo nodeId="4328738523548225987" fileName="FileProcessor.java" startLine="36" startPosition="55" endLine="39" endPosition="5" />
     <scopeInfo nodeId="4328738523548225996" fileName="FileProcessor.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="4328738523548226001" varName="content" />
       <varInfo nodeId="4328738523548225999" varName="file" />

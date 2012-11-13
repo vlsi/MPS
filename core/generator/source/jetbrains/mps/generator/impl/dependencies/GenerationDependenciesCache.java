@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -113,7 +114,7 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
   public SModelDescriptor invalidateCacheForFile(IFile file) {
     SModelDescriptor md = super.invalidateCacheForFile(file);
     if (md != null && md.getModule() != null) {
-      ModelGenerationStatusManager.getInstance().invalidateData(Arrays.asList(md));
+      ModelGenerationStatusManager.getInstance().invalidateData(Collections.singleton(md));
     }
     return md;
   }

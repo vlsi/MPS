@@ -15,18 +15,24 @@
  */
 package jetbrains.mps.generator.generationTypes;
 
+import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -47,7 +53,7 @@ public class DiffGenerationHandler extends InMemoryJavaGenerationHandler {
   }
 
   @Override
-  public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ProgressMonitor progressMonitor) {
+  public boolean compile(IOperationContext operationContext, List<Pair<SModule, List<org.jetbrains.mps.openapi.model.SModel>>> input, boolean generationOK, ProgressMonitor progressMonitor) throws IOException, GenerationCanceledException {
     return true;
   }
 
@@ -57,8 +63,8 @@ public class DiffGenerationHandler extends InMemoryJavaGenerationHandler {
   }
 
   @Override
-  public boolean collectSources(IModule module, SModelDescriptor inputModel, IOperationContext context, SModel outputModel) {
-    String outputDir = module.getOutputFor(inputModel);
+  public boolean collectSources(SModule module, org.jetbrains.mps.openapi.model.SModel inputModel, IOperationContext context, SModel outputModel) {
+    String outputDir = ((IModule) module).getOutputFor(inputModel);
     myLastOutputDir = new File(context.getModule().getGeneratorOutputPath());
     myOutputModelToPath.put(outputModel, outputDir);
     myOutputModelRefToPath.put(outputModel.getSModelReference(), outputDir);
@@ -198,9 +204,9 @@ public class DiffGenerationHandler extends InMemoryJavaGenerationHandler {
         }
 
         final String filePath = this.getOutputDir(outputModel) + File.separator + filename;
-        if(excludedFromDiffFiles != null) {
+        if (excludedFromDiffFiles != null) {
           final File expectedFile = new File(filePath);
-          if(excludedFromDiffFiles.contains(expectedFile)) {
+          if (excludedFromDiffFiles.contains(expectedFile)) {
             files.remove(filename);
             continue;
           }
@@ -246,7 +252,7 @@ public class DiffGenerationHandler extends InMemoryJavaGenerationHandler {
   }
 
   private static String getDiffReportTitle(String nodeFQName, String fileName,
-                                           boolean added, boolean deleted) {
+                       boolean added, boolean deleted) {
     return nodeFQName + ((added) ? " (created)" : ((deleted) ? " (deleted)" : "")) + "\n"
       + "  (file: " + fileName + ")";
   }

@@ -33,7 +33,10 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeGroupTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -96,7 +99,8 @@ public class SModelNodeListeners implements NodeListeners {
   }
 
   private class MyGenerationStatusListener implements ModelGenerationStatusListener {
-    public void generatedFilesChanged(SModelDescriptor sm) {
+    @Override
+    public void generatedFilesChanged(org.jetbrains.mps.openapi.model.SModel sm) {
       if (sm != myModel) return;
       myGenStatusVisitor.visitNode(myTreeNode);
     }

@@ -20,12 +20,12 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.generator.ModelGenerationStatusManager" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.internal.make.runtime.java.FileContent" />
   </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.java.IdeaJavaCompiler" file="IdeaJavaCompiler.java">
