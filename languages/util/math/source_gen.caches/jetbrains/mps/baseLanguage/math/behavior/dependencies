@@ -26,7 +26,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.behavior.AbsExpression_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.math.behavior.ArithmSymbol_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.behavior.BigComplexType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.behavior.BigDecimalType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.behavior.BigIntegerType_BehaviorDescriptor" />
