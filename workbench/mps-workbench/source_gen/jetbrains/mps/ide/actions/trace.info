@@ -2742,22 +2742,23 @@
     <nodeInfo nodeId="1217431777694" fileName="ModuleActions_ActionGroup.java" startLine="22" startPosition="107" endLine="23" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1217431777694" fileName="ModuleActions_ActionGroup.java" startLine="23" startPosition="66" endLine="24" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217431777694" fileName="ModuleActions_ActionGroup.java" startLine="24" startPosition="92" endLine="25" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217431643713" fileName="ModuleActions_ActionGroup.java" startLine="27" startPosition="27" endLine="28" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="574098046356414473" fileName="ModuleActions_ActionGroup.java" startLine="26" startPosition="7" endLine="27" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217431643713" fileName="ModuleActions_ActionGroup.java" startLine="28" startPosition="27" endLine="29" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217431777694" fileName="ModuleActions_ActionGroup.java" startLine="20" startPosition="9" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217431643713" fileName="ModuleActions_ActionGroup.java" startLine="19" startPosition="25" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1217431643713" fileName="ModuleActions_ActionGroup.java" startLine="16" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleActions_ActionGroup#()V" />
-    <scopeInfo nodeId="1217431643713" fileName="ModuleActions_ActionGroup.java" startLine="27" startPosition="0" endLine="28" endPosition="39">
+    <nodeInfo nodeId="1217431643713" fileName="ModuleActions_ActionGroup.java" startLine="19" startPosition="25" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1217431643713" fileName="ModuleActions_ActionGroup.java" startLine="16" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleActions_ActionGroup#()V" />
+    <scopeInfo nodeId="1217431643713" fileName="ModuleActions_ActionGroup.java" startLine="28" startPosition="0" endLine="29" endPosition="39">
       <varInfo nodeId="1217431643713" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="1217431643713" fileName="ModuleActions_ActionGroup.java" startLine="27" startPosition="27" endLine="28" endPosition="39" />
+    <scopeInfo nodeId="1217431643713" fileName="ModuleActions_ActionGroup.java" startLine="28" startPosition="27" endLine="29" endPosition="39" />
     <scopeInfo nodeId="1217431777694" fileName="ModuleActions_ActionGroup.java" startLine="21" startPosition="7" endLine="25" endPosition="57">
       <varInfo nodeId="1217431777694" varName="action" />
       <varInfo nodeId="1217431777694" varName="manager" />
     </scopeInfo>
-    <scopeInfo nodeId="1217431643713" fileName="ModuleActions_ActionGroup.java" startLine="20" startPosition="9" endLine="26" endPosition="7" />
-    <scopeInfo nodeId="1217431643713" fileName="ModuleActions_ActionGroup.java" startLine="16" startPosition="38" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="1217431643713" fileName="ModuleActions_ActionGroup.java" startLine="16" startPosition="0" endLine="31" endPosition="0" />
-    <unitInfo nodeId="1217431643713" fileName="ModuleActions_ActionGroup.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ide.actions.ModuleActions_ActionGroup" />
+    <scopeInfo nodeId="1217431643713" fileName="ModuleActions_ActionGroup.java" startLine="20" startPosition="9" endLine="27" endPosition="100" />
+    <scopeInfo nodeId="1217431643713" fileName="ModuleActions_ActionGroup.java" startLine="16" startPosition="38" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="1217431643713" fileName="ModuleActions_ActionGroup.java" startLine="16" startPosition="0" endLine="32" endPosition="0" />
+    <unitInfo nodeId="1217431643713" fileName="ModuleActions_ActionGroup.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ide.actions.ModuleActions_ActionGroup" />
   </root>
   <root nodeId="1222173496701" modelId="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)">
     <nodeInfo nodeId="1222173496701" fileName="ModelRefactoring_ActionGroup.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
