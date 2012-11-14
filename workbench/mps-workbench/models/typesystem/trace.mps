@@ -7817,7 +7817,7 @@
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="866755926374576887" resolveInfo="myCurrentContext" />
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2861086863977863737">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uekr.~TypeCheckingContextNew%dgetState()%cjetbrains%dmps%dnewTypesystem%dstate%dState" resolveInfo="getState" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uekr.~BaseTypecheckingContext%dgetState()%cjetbrains%dmps%dnewTypesystem%dstate%dState" resolveInfo="getState" />
                               </node>
                             </node>
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2861086863977863738">
@@ -8828,7 +8828,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="866755926374576975" resolveInfo="context" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="866755926374576986">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uekr.~TypeCheckingContextNew%dgetTypeInGenerationMode(jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getTypeInGenerationMode" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uekr.~SingleTypecheckingContext%dgetTypeInGenerationMode(jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getTypeInGenerationMode" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="866755926374576987">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="866755926374576890" resolveInfo="mySelectedNode" />
                   </node>
@@ -8870,7 +8870,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="866755926374576975" resolveInfo="context" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="866755926374577003">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uekr.~TypeCheckingContextNew%dgetState()%cjetbrains%dmps%dnewTypesystem%dstate%dState" resolveInfo="getState" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uekr.~BaseTypecheckingContext%dgetState()%cjetbrains%dmps%dnewTypesystem%dstate%dState" resolveInfo="getState" />
                   </node>
                 </node>
               </node>
@@ -9059,7 +9059,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="866755926374577009" resolveInfo="tcc" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="866755926374577077">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uekr.~TypeCheckingContextNew%dgetState()%cjetbrains%dmps%dnewTypesystem%dstate%dState" resolveInfo="getState" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uekr.~BaseTypecheckingContext%dgetState()%cjetbrains%dmps%dnewTypesystem%dstate%dState" resolveInfo="getState" />
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="866755926374577078">
@@ -9554,7 +9554,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="866755926374576887" resolveInfo="myCurrentContext" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7469000189634347606">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uekr.~TypeCheckingContextNew%dgetState()%cjetbrains%dmps%dnewTypesystem%dstate%dState" resolveInfo="getState" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uekr.~BaseTypecheckingContext%dgetState()%cjetbrains%dmps%dnewTypesystem%dstate%dState" resolveInfo="getState" />
                     </node>
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="7469000189634347607">

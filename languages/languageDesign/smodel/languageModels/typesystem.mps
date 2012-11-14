@@ -4505,17 +4505,17 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6778875025222420524">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6778875025222420525">
             <property name="name" nameId="tpck.1169194664001" value="leastCommonSupertypes" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2749118708857168703">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uekr.~SubtypingUtil%dleastCommonSuperTypes(java%dutil%dList,jetbrains%dmps%dtypesystem%dinference%dTypeCheckingContext)%cjava%dutil%dList" resolveInfo="leastCommonSuperTypes" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="uekr.~SubtypingUtil" resolveInfo="SubtypingUtil" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2749118708857168704">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6778875025222463864" resolveInfo="allTypes" />
+              </node>
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2749118708857168705" />
+            </node>
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7046362353157013002">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
               <node role="parameter" roleId="tpee.1109201940907" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7046362353157013004" />
-            </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7046362353157012997">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uekr.~SubtypingUtil%dleastCommonSuperTypes(java%dutil%dList,jetbrains%dmps%dnewTypesystem%dTypeCheckingContextNew)%cjava%dutil%dList" resolveInfo="leastCommonSuperTypes" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="uekr.~SubtypingUtil" resolveInfo="SubtypingUtil" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7046362353157012998">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6778875025222463864" resolveInfo="allTypes" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="7046362353157013000" />
             </node>
           </node>
         </node>

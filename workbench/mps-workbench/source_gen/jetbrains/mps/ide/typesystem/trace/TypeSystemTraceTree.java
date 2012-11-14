@@ -108,12 +108,12 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   /*package*/ MPSTree getDetailsTree() {
     return myDetailsTree;
   }
-//
-//  public void rebuildTrace() {
-//    myTypeCheckingContextNew.checkRootInTraceMode(true);
-//    this.rebuildNow();
-//    this.expandAll();
-//  }
+
+  public void rebuildTrace() {
+    myTypeCheckingContextNew.checkRootInTraceMode(true);
+    this.rebuildNow();
+    this.expandAll();
+  }
 
   public void setGenerationMode(boolean generationMode) {
     if (generationMode == this.generationMode) {
@@ -122,7 +122,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     this.generationMode = generationMode;
     myOldOperation = null;
     if (this.generationMode) {
-      TypeCheckingContextNew context = (TypeCheckingContextNew) TypeContextManager.getInstance().createTracingTypeCheckingContext(mySelectedNode);
+      TypeCheckingContextNew context = (TypeCheckingContextNew) TypeContextManager.getInstance().createTypeCheckingContext(mySelectedNode);
       context.getTypeInGenerationMode(mySelectedNode);
       myOperation = context.getOperation();
       myCurrentContext = context;
