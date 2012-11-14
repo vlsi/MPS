@@ -40,11 +40,7 @@ import java.util.*;
   private Map<SNode, Set<SNode>> myNodesToDependentNodes_A;
   private Map<SNode, Set<SNode>> myNodesToDependentNodes_B;
 
-  private Set<SNode> myNodes = new THashSet<SNode>();
-
   private Map<SNode, Set<Pair<String, String>>> myNodesToRules;
-  protected Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
-  private Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
   private Set<SNode> myNodesDependentOnCaches;
   private SNode myCurrentCheckedNode;
   private boolean myCurrentTypeAffected = false;
@@ -129,9 +125,7 @@ import java.util.*;
 
   @Override
   protected void invalidateNodeTypeSystem(SNode node, boolean typeWillBeRecalculated) {
-    myPartlyCheckedNodes.remove(node);
-    myFullyCheckedNodes.remove(node);
-    myState.clearNode(node);
+    super.invalidateNodeTypeSystem(node, typeWillBeRecalculated);
     if (typeWillBeRecalculated) {
       TypeChecker.getInstance().fireTypeWillBeRecalculatedForTerm(node);
     }
@@ -190,12 +184,6 @@ import java.util.*;
     addDependentNodesTypeSystem(myCurrentCheckedNode, hashSet, true);
   }
 
-  protected void computeTypesSpecial(SNode nodeToCheck, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
-    computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, initialNode);
-    if (typeCalculated(initialNode) != null) return;
-    solveInequalitiesAndExpandTypes(finalExpansion);
-  }
-
   @Override
   protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
     try {
@@ -208,9 +196,7 @@ import java.util.*;
         myPartlyCheckedNodes.addAll(myFullyCheckedNodes);
         myFullyCheckedNodes.clear();
       }
-      computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, initialNode);
-      if (typeCalculated(initialNode) != null) return;
-      solveInequalitiesAndExpandTypes(finalExpansion);
+      computeTypesSpecial(nodeToCheck, forceChildrenCheck, additionalNodes, finalExpansion, initialNode);
       performActionsAfterChecking();
       myState.performActionsAfterChecking();
     } finally {
@@ -236,60 +222,8 @@ import java.util.*;
 
   @Override
   protected SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
-    assert myState.getInequalitySystem() !=null;
+    assert myState.getInequalitySystem() != null;
     return computeTypesForNode_special_(initialNode, givenAdditionalNodes);
-  }
-
-  @Override
-  protected final SNode computeTypesForNode_special_(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
-    assert myFullyCheckedNodes.isEmpty();
-    SNode type = null;
-    SNode prevNode = null;
-    SNode node = initialNode;
-    long start = System.currentTimeMillis();
-    myState.setTargetNode(initialNode);
-    while (node != null) {
-      Collection<SNode> additionalNodes = givenAdditionalNodes;
-      if (prevNode != null) {
-        additionalNodes = new ArrayList<SNode>(additionalNodes);
-        additionalNodes.add(prevNode);
-      }
-      computeTypesSpecial(node, false, additionalNodes, false, initialNode);
-      type = typeCalculated(initialNode);
-      if (type == null) {
-        if (node.isRoot()) {
-          //System.out.println("Root: " + initialNode.getDebugText());
-          if (myState.getInequalitySystem() == null) {
-            computeTypes(node,true, true, Collections.<SNode>emptyList(), true, initialNode);
-          }
-          type = getType(initialNode);
-          if (type == null && node != initialNode && myTypeChecker.isGenerationMode()) {
-            LOG.error("No typesystem rule for " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(initialNode) + " in root " + initialNode.getTopmostAncestor() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new SNodePointer(initialNode));
-          }
-          return type;
-        }
-        prevNode = node;
-        node = node.getParent();
-      } else {
-        type = typeCalculated(initialNode);
-        return type;
-      }
-    }
-    return type;
-  }
-
-  public SNode getType(SNode node) {
-    if (myFullyCheckedNodes.contains(node)) {
-      return getRawTypeFromContext(node);
-    }
-    return null;
-  }
-
-  private SNode getRawTypeFromContext(SNode node) {
-    return myState.getTypeCheckingContext().getTypeDontCheck(node);
-//    synchronized (TYPECHECKING_LOCK) {
-//      return myState.getNodeMaps().getType(node);
-//    }
   }
 
   @Override
@@ -308,77 +242,9 @@ import java.util.*;
     return new THashSet<Pair<String, String>>(set);
   }
 
-  private void computeTypesForNode(SNode node, boolean forceChildrenCheck, Collection<SNode> additionalNodes, SNode targetNode) {
-    if (node == null) return;
-    boolean incrementalMode = isIncrementalMode();
-    MyEventsReadListener nodesReadListener = incrementalMode ? new MyEventsReadListener() : null;
-
-    myQueue.add(node);
-    myQueue.addAll(additionalNodes);
-    for (SNode sNode = myQueue.poll(); sNode != null; sNode = myQueue.poll()) {
-      if (myFullyCheckedNodes.contains(sNode)) {
-        continue;
-      }
-      Set<SNode> candidatesForFrontier = new LinkedHashSet<SNode>();
-      if (forceChildrenCheck) {
-        candidatesForFrontier.addAll(sNode.getChildren());
-      }
-      for (SNode candidate : candidatesForFrontier) {
-        if (candidate == null || myFullyCheckedNodes.contains(candidate)) continue;
-        myQueue.add(candidate);
-      }
-      if (!myPartlyCheckedNodes.contains(sNode)) {
-        MyLanguageCachesReadListener languageCachesReadListener = null;
-        if (incrementalMode) {
-          languageCachesReadListener = new MyLanguageCachesReadListener();
-          nodesReadListener.clear();
-          NodeReadEventsCaster.setNodesReadListener(nodesReadListener);
-          LanguageHierarchyCache.getInstance().setReadAccessListener(languageCachesReadListener);
-        }
-        boolean typeAffected = false;
-        try {
-          myNodes.add(sNode);
-          typeAffected = applyRulesToNode(sNode);
-        } finally {
-          if (incrementalMode) {
-            LanguageHierarchyCache.getInstance().removeReadAccessListener();
-            NodeReadEventsCaster.removeNodesReadListener();
-          }
-        }
-        if (incrementalMode) {
-          nodesReadListener.setAccessReport(true);
-          Set<SNode> accessedNodes = nodesReadListener.getAccessedNodes();
-          addDependentNodesTypeSystem(sNode, accessedNodes, typeAffected);
-          nodesReadListener.setAccessReport(false);
-          if (languageCachesReadListener != null) { //redundant checking, in fact; but without this IDEA underlines the next line with red
-            languageCachesReadListener.setAccessReport(true);
-            if (languageCachesReadListener.isCacheAccessed()) {
-              addCacheDependentNodesTypesystem(sNode);
-            }
-            languageCachesReadListener.setAccessReport(false);
-          }
-          nodesReadListener.clear();
-        }
-        myPartlyCheckedNodes.add(sNode);
-      }
-      myFullyCheckedNodes.add(sNode);
-      if (typeCalculated(targetNode) != null) return;
-    }
-  }
-
-  protected SNode typeCalculated(SNode initialNode) {
-    if (myState.getInequalitySystem() != null) {
-      SNode expectedType = myState.getInequalitySystem().getExpectedType();
-      if (expectedType != null && !TypesUtil.hasVariablesInside(expectedType) && !HUtil.isRuntimeHoleType(expectedType)) {
-        return expectedType;
-      }
-    } else {
-      if (initialNode == null) return null;
-      if (!myState.isTargetTypeCalculated()) return null;
-      SNode type = myState.expand(getType(initialNode));
-      if (type != null && !TypesUtil.hasVariablesInside(type)) return type;
-    }
-    return null;
+  @Override
+  protected MyAccessTracking createAccessTracking() {
+    return new MyAccessTracking();
   }
 
   @Override
@@ -403,12 +269,6 @@ import java.util.*;
     }
   }
 
-  public void solveInequalitiesAndExpandTypes(boolean finalExpansion) {
-    myState.solveInequalities();
-    myState.expandAll(myNodes, finalExpansion);
-    myNodes.clear();
-  }
-
   public void addError(SNode node, IErrorReporter reporter) {
     myState.addError(node, reporter, null);
   }
@@ -420,6 +280,7 @@ import java.util.*;
     LanguageHierarchyCache.getInstance().addCacheChangeListener(myLanguageCacheListener);
   }
 
+  @Override
   protected boolean applyRulesToNode(SNode node) {
     List<Pair<InferenceRule_Runtime, IsApplicableStatus>> newRules = myTypeChecker.getRulesManager().getInferenceRules(node);
     boolean result = false;
@@ -427,9 +288,7 @@ import java.util.*;
       myCurrentTypeAffected = false;
       SNode oldCheckedNode = myCurrentCheckedNode;
       myCurrentCheckedNode = node;
-      for (Pair<InferenceRule_Runtime, IsApplicableStatus> rule : newRules) {
-        myState.applyRuleToNode(node, rule.o1, rule.o2);
-      }
+      applyRulesToNode(node, newRules);
       myCurrentCheckedNode = oldCheckedNode;
       result = myCurrentTypeAffected;
       myCurrentTypeAffected = false;
@@ -450,6 +309,53 @@ import java.util.*;
   @Override
   protected boolean isIncrementalMode() {
     return myState.getTypeCheckingContext().isIncrementalMode();
+  }
+
+  private class MyAccessTracking extends AccessTracking {
+
+    private MyEventsReadListener nodesReadListener;
+    private MyLanguageCachesReadListener languageCachesReadListener;
+
+    public MyAccessTracking() {
+      this.nodesReadListener = isIncrementalMode() ? new MyEventsReadListener() : null;
+    }
+
+    @Override
+    protected void installReadListeners() {
+      if (isIncrementalMode()) {
+        this.languageCachesReadListener = new MyLanguageCachesReadListener();
+        nodesReadListener.clear();
+        NodeReadEventsCaster.setNodesReadListener(nodesReadListener);
+        LanguageHierarchyCache.getInstance().setReadAccessListener(languageCachesReadListener);
+      }
+    }
+
+    @Override
+    protected void removeReadListeners() {
+      if (isIncrementalMode()) {
+        LanguageHierarchyCache.getInstance().removeReadAccessListener();
+        NodeReadEventsCaster.removeNodesReadListener();
+      }
+    }
+
+    @Override
+    protected void postProcess(SNode sNode, boolean typeAffected) {
+      if (isIncrementalMode()) {
+        nodesReadListener.setAccessReport(true);
+        Set<SNode> accessedNodes = nodesReadListener.getAccessedNodes();
+        addDependentNodesTypeSystem(sNode, accessedNodes, typeAffected);
+        nodesReadListener.setAccessReport(false);
+        if (languageCachesReadListener != null) { //redundant checking, in fact; but without this IDEA underlines the next line with red
+          languageCachesReadListener.setAccessReport(true);
+          if (languageCachesReadListener.isCacheAccessed()) {
+            addCacheDependentNodesTypesystem(sNode);
+          }
+          languageCachesReadListener.setAccessReport(false);
+        }
+        nodesReadListener.clear();
+        this.languageCachesReadListener = null;
+      }
+    }
   }
 
   private class MyLanguageCacheListener implements CacheChangeListener {

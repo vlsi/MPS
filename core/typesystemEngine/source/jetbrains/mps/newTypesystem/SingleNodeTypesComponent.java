@@ -55,7 +55,7 @@ public class SingleNodeTypesComponent {
   }
 
   protected SingleTypeSystemComponent createTypeSystemComponent(State state) {
-    return new SingleTypeSystemComponent(state, this);
+    return new SingleTypeSystemComponent(state, this, TypeChecker.getInstance());
   }
 
   public SNode getNode() {

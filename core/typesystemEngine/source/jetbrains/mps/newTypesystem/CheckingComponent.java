@@ -29,7 +29,6 @@ import jetbrains.mps.util.annotation.UseCarefully;
 import java.util.Set;
 
 /*package*/ abstract class CheckingComponent extends SingleTypeSystemComponent {
-  protected TypeChecker myTypeChecker;
 
   private boolean myInvalidationWasPerformed = false;
   private boolean myCacheWasRebuilt = false;
@@ -38,8 +37,7 @@ import java.util.Set;
   private Set<SNode> myCurrentNodesToInvalidate = new THashSet<SNode>();
 
   protected CheckingComponent (TypeChecker typeChecker, State state, SingleNodeTypesComponent component) {
-    super(state, component);
-    myTypeChecker = typeChecker;
+    super(state, component, typeChecker);
   }
 
   protected abstract boolean doInvalidate();
