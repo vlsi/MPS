@@ -21,10 +21,10 @@ import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
@@ -130,23 +130,22 @@ public class Module_Behavior {
   }
 
   public static List<SNode> call_getModelRootPaths_2739262311775052381(SNode thisNode) {
-    List<SModelRoot> paths = ListSequence.fromListWithValues(new ArrayList<SModelRoot>(), ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getSModelRoots());
+    List<org.jetbrains.mps.openapi.persistence.ModelRoot> paths = ListSequence.fromListWithValues(new ArrayList<org.jetbrains.mps.openapi.persistence.ModelRoot>(), Module_Behavior.call_getModule_1213877515148(thisNode).getModelRoots());
     if (Module_Behavior.call_getModule_1213877515148(thisNode) instanceof Language) {
-      paths = ListSequence.fromListWithValues(new ArrayList<SModelRoot>(), paths);
-      ListSequence.fromList(paths).addSequence(Sequence.fromIterable(((Iterable<Generator>) ((Language) Module_Behavior.call_getModule_1213877515148(thisNode)).getGenerators())).translate(new ITranslator2<Generator, SModelRoot>() {
-        public Iterable<SModelRoot> translate(Generator it) {
-          return it.getSModelRoots();
+      ListSequence.fromList(paths).addSequence(Sequence.fromIterable(((Iterable<Generator>) ((Language) Module_Behavior.call_getModule_1213877515148(thisNode)).getGenerators())).translate(new ITranslator2<Generator, org.jetbrains.mps.openapi.persistence.ModelRoot>() {
+        public Iterable<org.jetbrains.mps.openapi.persistence.ModelRoot> translate(Generator it) {
+          return it.getModelRoots();
         }
       }));
     }
-    paths = ListSequence.fromList(paths).where(new IWhereFilter<SModelRoot>() {
-      public boolean accept(SModelRoot it) {
-        return it.getModelRoot().getManager() == null;
+    paths = ListSequence.fromList(paths).where(new IWhereFilter<org.jetbrains.mps.openapi.persistence.ModelRoot>() {
+      public boolean accept(org.jetbrains.mps.openapi.persistence.ModelRoot it) {
+        return it instanceof DefaultModelRoot;
       }
     }).toListSequence();
-    List<SNode> pathHolders = Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).select(new ISelector<SModelRoot, String>() {
-      public String select(SModelRoot it) {
-        return it.getPath().replace(File.separator, Util.SEPARATOR);
+    List<SNode> pathHolders = Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).select(new ISelector<org.jetbrains.mps.openapi.persistence.ModelRoot, String>() {
+      public String select(org.jetbrains.mps.openapi.persistence.ModelRoot it) {
+        return (((DefaultModelRoot) it)).getPath().replace(File.separator, Util.SEPARATOR);
       }
     }).distinct().toListSequence(), true);
     return ListSequence.fromList(pathHolders).sort(new ISelector<SNode, String>() {

@@ -20,8 +20,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
@@ -164,21 +162,11 @@ public abstract class ProjectStructureBuilder {
 
   private SNode convert(ModelRootDescriptor source) {
     SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.ModelRoot");
-    ModelRoot root = source.getRoot();
-    if (root != null) {
-      SPropertyOperations.set(result, "path", root.getPath());
-      SLinkOperations.setTarget(result, "manager", convert(root.getManager()), true);
+    SPropertyOperations.set(result, "type", source.getType());
+    String path = source.getMemento().get("path");
+    if ((path != null && path.length() > 0)) {
+      SPropertyOperations.set(result, "path", path);
     }
-    return result;
-  }
-
-  private SNode convert(ModelRootManager source) {
-    if (source == null) {
-      return null;
-    }
-    SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.ModelRootManager");
-    SPropertyOperations.set(result, "moduleId", source.getModuleId());
-    SPropertyOperations.set(result, "className", source.getClassName());
     return result;
   }
 
@@ -200,7 +188,7 @@ public abstract class ProjectStructureBuilder {
     fill(generator, source);
     SPropertyOperations.set(generator, "generatorUID", source.getGeneratorUID());
     SPropertyOperations.set(generator, "generateTemplates", "" + (source.isGenerateTemplates()));
-    SPropertyOperations.set(generator, "namespace", (isNotEmpty_5cil7k_a0a0e0l(source.getNamespace()) ?
+    SPropertyOperations.set(generator, "namespace", (isNotEmpty_5cil7k_a0a0e0k(source.getNamespace()) ?
       source.getNamespace() :
       null
     ));
@@ -283,7 +271,7 @@ public abstract class ProjectStructureBuilder {
 
   public abstract Iterable<org.jetbrains.mps.openapi.model.SModelReference> loadReferences(SNode module, ModuleDescriptor descriptor);
 
-  public static boolean isNotEmpty_5cil7k_a0a0e0l(String str) {
+  public static boolean isNotEmpty_5cil7k_a0a0e0k(String str) {
     return str != null && str.length() > 0;
   }
 }

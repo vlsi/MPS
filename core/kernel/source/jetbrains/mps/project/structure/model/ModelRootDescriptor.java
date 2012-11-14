@@ -42,6 +42,7 @@ public class ModelRootDescriptor {
     return memento;
   }
 
+  @Deprecated
   public ModelRoot getRoot() {
     if (!PersistenceRegistry.OBSOLETE_MODEL_ROOT.equals(getType())) {
       return null;

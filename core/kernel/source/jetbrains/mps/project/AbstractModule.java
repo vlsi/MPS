@@ -101,7 +101,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   @Override
-  public final EditableSModelDescriptor createModel(String name, ModelRoot root, ModelAdjuster adj) {
+  public final EditableSModelDescriptor createModel(String name, @NotNull ModelRoot root, ModelAdjuster adj) {
     if (!root.canCreateModel(name)) {
       LOG.error("Can't create a model " + name + " under model root " + root.getPresentation());
       return null;
