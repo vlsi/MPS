@@ -41,6 +41,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.misc.hash.HashMap;
 import jetbrains.mps.util.misc.hash.HashSet;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
@@ -49,6 +50,7 @@ import java.util.*;
  * Date: 6/8/12
  */
 public class ModuleRuntimeLibrariesManager {
+  public static final String LIBRARY_PREFIX = "mps.";
   private FacetEditorContext myContext;
   private Collection<ModuleReference> myAddedModules;
   private ModifiableRootModel myModifiableRootModel;
@@ -129,7 +131,7 @@ public class ModuleRuntimeLibrariesManager {
 
   private Library createProjectLibrary(String moduleName, Collection<VirtualFile> libraryFiles) {
     VirtualFile[] roots = libraryFiles.toArray(new VirtualFile[libraryFiles.size()]);
-    String libName = "mps." + moduleName;
+    String libName = LIBRARY_PREFIX + moduleName;
     if (myContext != null) {
       return myContext.createProjectLibrary(libName, roots, new VirtualFile[0]);
     } else {
@@ -162,7 +164,7 @@ public class ModuleRuntimeLibrariesManager {
   private void collectRuntimeModules(Set<IModule> runtimeDependencies, Solution solution) {
     GlobalModuleDependenciesManager manager = new GlobalModuleDependenciesManager(Collections.singleton((IModule) solution));
     runtimeDependencies.add(solution);
-    for (IModule module : manager.getModules(Deptype.COMPILE)){
+    for (IModule module : manager.getModules(Deptype.COMPILE)) {
       if (module instanceof Solution) {
         runtimeDependencies.add(module);
       }
@@ -185,5 +187,11 @@ public class ModuleRuntimeLibrariesManager {
       return null;
     }
     return JarFileSystem.getInstance().findFileByPath(vFile.getPath() + JarFileSystem.JAR_SEPARATOR);
+  }
+
+  @Nullable
+  public static IModule getModuleForLibrary(Library l) {
+    // todo better way to learn that a lib comes from MPS
+    return ModuleRepositoryFacade.getInstance().getModule(l.getName().substring(LIBRARY_PREFIX.length()), Solution.class);
   }
 }

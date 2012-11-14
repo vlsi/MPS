@@ -20,6 +20,7 @@ import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryTable;
 import com.intellij.openapi.roots.libraries.LibraryTable.Listener;
+import jetbrains.mps.idea.core.project.ModuleRuntimeLibrariesManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
@@ -43,6 +44,9 @@ public abstract class BaseLibImporter extends AbstractJavaStubSolutionManager {
   protected abstract LibraryTable getLibTable();
 
   protected void addModuleForLibrary(Library l) {
+    if (ModuleRuntimeLibrariesManager.getModuleForLibrary(l) != null) {
+      return;
+    }
     addSolution(l.getName(), l.getFiles(OrderRootType.CLASSES));
   }
 
