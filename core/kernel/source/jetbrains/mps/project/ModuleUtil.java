@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.BootstrapLanguages;
@@ -25,6 +26,7 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.iterable.CollectingManyIterator;
 import jetbrains.mps.util.iterable.RecursiveIterator;
 import jetbrains.mps.util.iterable.TranslatingIterator;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
@@ -161,10 +163,9 @@ public class ModuleUtil {
     return result;
   }
 
-  @Deprecated
-  public static SModelRoot findModelRoot(IModule module, String path) {
+  public static ModelRoot findModelRoot(SModule module, String path) {
     for (ModelRoot root : module.getModelRoots()) {
-      if (root instanceof SModelRoot && path.equals(((SModelRoot) root).getPath())) return (SModelRoot) root;
+      if (root instanceof FolderModelRootBase && path.equals(((FolderModelRootBase) root).getPath())) return root;
     }
     return null;
   }

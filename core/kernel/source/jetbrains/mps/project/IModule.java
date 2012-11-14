@@ -82,9 +82,6 @@ public interface IModule extends SModule {
 
   //----
 
-  @Deprecated
-  SModelDescriptor createModel(SModelFqName fqName, SModelRoot root, @Nullable ModelAdjuster adj);
-
   SModelDescriptor createModel(String fqName, ModelRoot root, @Nullable ModelAdjuster adj);
 
   List<SModelDescriptor> getOwnModelDescriptors();

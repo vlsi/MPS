@@ -15,24 +15,11 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.SModelRoot;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 public class ModelRootUtil {
-  /**
-   * Calculates true model root of the model. Can take time!
-   */
-  @Deprecated
-  public static SModelRoot getSModelRoot(SModelDescriptor model) {
-    ModelRoot root = getModelRoot(model);
-    if (root instanceof SModelRoot) {
-      return (SModelRoot) root;
-    }
-    return null;
-  }
-
   /**
    * Calculates true model root of the model. Can take time!
    */
