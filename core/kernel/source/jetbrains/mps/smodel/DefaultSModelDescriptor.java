@@ -377,6 +377,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     if (needsReloading()) {
       LOG.warning("Model file " + getSModel().getSModelFqName() + " was modified externally!\n" +
         "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
+      LOG.info("file ts="+getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(), new Throwable());  // more information
       resolveDiskConflict();
       return false;
     }

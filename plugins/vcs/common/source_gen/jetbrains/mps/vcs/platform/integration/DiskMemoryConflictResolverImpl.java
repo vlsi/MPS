@@ -8,17 +8,17 @@ import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import java.io.File;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import jetbrains.mps.util.Computable;
-import java.io.File;
-import java.io.IOException;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
+import java.io.IOException;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
@@ -33,22 +33,15 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
   }
 
   public void resolveDiskMemoryConflict(final IFile file, final SModel model, final DefaultSModelDescriptor modelDescriptor) {
+    final File backupFile = doBackup(file, model);
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         boolean needSave = FSChangesWatcher.instance().executeUnderBlockedReload(new Computable<Boolean>() {
           public Boolean compute() {
-            try {
-              File backupFile = doBackup(file, model);
-              if (file.exists()) {
-                return showDiskMemoryQuestion(file, model, backupFile);
-              } else {
-                return showDeletedFromDiskQuestion(model, backupFile);
-              }
-            } catch (IOException e) {
-              if (log.isErrorEnabled()) {
-                log.error("", e);
-              }
-              throw new RuntimeException(e);
+            if (file.exists()) {
+              return showDiskMemoryQuestion(file, model, backupFile);
+            } else {
+              return showDeletedFromDiskQuestion(model, backupFile);
             }
           }
         });
@@ -97,17 +90,24 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
     }
   }
 
-  private static File doBackup(IFile modelFile, SModel inMemory) throws IOException {
-    File tmp = FileUtil.createTmpDir();
-    MergeDriverBackupUtil.writeContentsToFile(ModelPersistence.modelToString(inMemory), modelFile.getName(), tmp, DiskMemoryConflictResolverImpl.DiskMemoryConflictVersion.MEMORY.getSuffix());
-    if (modelFile.exists()) {
-      com.intellij.openapi.util.io.FileUtil.copy(new File(modelFile.getPath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + DiskMemoryConflictResolverImpl.DiskMemoryConflictVersion.FILE_SYSTEM.getSuffix()));
+  private static File doBackup(IFile modelFile, SModel inMemory) {
+    try {
+      File tmp = FileUtil.createTmpDir();
+      MergeDriverBackupUtil.writeContentsToFile(ModelPersistence.modelToString(inMemory), modelFile.getName(), tmp, DiskMemoryConflictResolverImpl.DiskMemoryConflictVersion.MEMORY.getSuffix());
+      if (modelFile.exists()) {
+        com.intellij.openapi.util.io.FileUtil.copy(new File(modelFile.getPath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + DiskMemoryConflictResolverImpl.DiskMemoryConflictVersion.FILE_SYSTEM.getSuffix()));
+      }
+      File zipfile = MergeBackupUtil.chooseZipFileForModelFile(modelFile);
+      zipfile.getParentFile().mkdirs();
+      FileUtil.zip(tmp, zipfile);
+      FileUtil.delete(tmp);
+      return zipfile;
+    } catch (IOException e) {
+      if (log.isErrorEnabled()) {
+        log.error("Cannot create backup during resolving disk-memory conflict for " + inMemory.getLongName(), e);
+      }
+      throw new RuntimeException(e);
     }
-    File zipfile = MergeBackupUtil.chooseZipFileForModelFile(modelFile);
-    zipfile.getParentFile().mkdirs();
-    FileUtil.zip(tmp, zipfile);
-    FileUtil.delete(tmp);
-    return zipfile;
   }
 
   private static void openDiffDialog(IFile modelFile, SModel inMemory) {
