@@ -165,7 +165,6 @@ import java.util.*;
 
   //"type affected" means that *type* of this node depends on current
   // used to decide whether call "type will be recalculated" if current invalidated
-  @Override
   public void addDependencyOnCurrent(SNode node, boolean typeAffected) {
     Set<SNode> hashSet = new THashSet<SNode>(1);
     hashSet.add(myCurrentCheckedNode);
@@ -178,7 +177,6 @@ import java.util.*;
     addDependentNodesTypeSystem(node, hashSet, typeAffected);
   }
 
-  @Override
   public void addDependencyForCurrent(SNode node, SNode nonTSCurrent) {
     Set<SNode> hashSet = new THashSet<SNode>(1);
     hashSet.add(node);
@@ -215,7 +213,6 @@ import java.util.*;
     return computeTypesForNode_special_(initialNode, givenAdditionalNodes);
   }
 
-  @Override
   public void markNodeAsAffectedByRule(SNode node, String ruleModel, String ruleId) {
     Set<Pair<String, String>> rulesWhichAffectNodesType = myNodesToRules.get(node);
     if (rulesWhichAffectNodesType == null) {

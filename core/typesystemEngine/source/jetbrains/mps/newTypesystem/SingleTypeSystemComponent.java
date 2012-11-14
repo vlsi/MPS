@@ -66,19 +66,8 @@ import java.util.Set;
     return false;
   }
 
-  /*package*/ void addDependencyForCurrent(SNode node, SNode nonTSCurrent) {
-    assert false;
-  }
-
-  //"type affected" means that *type* of this node depends on current
-  // used to decide whether call "type will be recalculated" if current invalidated
-  /*package*/ void addDependencyOnCurrent(SNode node, boolean typeAffected) {
-    assert false;
-  }
-
   //returns true if something was invalidated
   protected boolean doInvalidate() {
-    assert false;
     return false;
   }
 
@@ -88,12 +77,8 @@ import java.util.Set;
     myState.clearNode(node);
   }
 
-  /*package*/ void markNodeAsAffectedByRule(SNode node, String ruleModel, String ruleId) {
-    assert false;
-  }
-
   protected void performActionsAfterChecking() {
-    assert false;
+    // do nothing
   }
 
   protected SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
