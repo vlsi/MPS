@@ -243,7 +243,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       if (myReferences != null) {
         for (SReference reference : myReferences) {
           if (!reference.getRole().equals(role)) continue;
-          removeReferenceAt(reference);
+          removeReferenceInternal(reference);
           break;
         }
       }
@@ -344,7 +344,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public void setReference(String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
     for (SReference r : myReferences) {
       if (r.getRole().equals(role)) {
-        removeReferenceAt(r);
+        removeReferenceInternal(r);
         break;
       }
     }
@@ -663,9 +663,21 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     if (propertyValue == null && oldValue == null) return;
 
     if (propertyValue == null) {
-      removeProperty(index);
+      String[] oldProperties = myProperties;
+      int newLength = oldProperties.length - 2;
+      if (newLength == 0) {
+        myProperties = null;
+        return;
+      }
+      myProperties = new String[newLength];
+      System.arraycopy(oldProperties, 0, myProperties, 0, index);
+      System.arraycopy(oldProperties, index + 2, myProperties, index, newLength - index);
     } else if (oldValue == null) {
-      addProperty(propertyName, propertyValue);
+      String[] oldProperties = myProperties == null ? EMPTY_ARRAY : myProperties;
+      myProperties = new String[oldProperties.length + 2];
+      System.arraycopy(oldProperties, 0, myProperties, 0, oldProperties.length);
+      myProperties[myProperties.length - 2] = propertyName;
+      myProperties[myProperties.length - 1] = propertyValue;
     } else {
       myProperties[index + 1] = propertyValue;
     }
@@ -869,7 +881,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     //remove all references
     while (myReferences.length > 0) {
-      removeReferenceAt(myReferences[0]);
+      removeReferenceInternal(myReferences[0]);
     }
     myReferences = SReference.EMPTY_ARRAY;
 
@@ -887,7 +899,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   private SReference doSetReference(String role, SNode newReferent, List<SReference> toDelete) {
     for (SReference reference : toDelete) {
-      removeReferenceAt(reference);
+      removeReferenceInternal(reference);
     }
 
     SReference resultReference = null;
@@ -896,26 +908,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       addReferenceInternal(resultReference);
     }
     return resultReference;
-  }
-
-  private void removeProperty(int index) {
-    String[] oldProperties = myProperties;
-    int newLength = oldProperties.length - 2;
-    if (newLength == 0) {
-      myProperties = null;
-      return;
-    }
-    myProperties = new String[newLength];
-    System.arraycopy(oldProperties, 0, myProperties, 0, index);
-    System.arraycopy(oldProperties, index + 2, myProperties, index, newLength - index);
-  }
-
-  private void addProperty(String propertyName, String propertyValue) {
-    String[] oldProperties = myProperties == null ? EMPTY_ARRAY : myProperties;
-    myProperties = new String[oldProperties.length + 2];
-    System.arraycopy(oldProperties, 0, myProperties, 0, oldProperties.length);
-    myProperties[myProperties.length - 2] = propertyName;
-    myProperties[myProperties.length - 1] = propertyValue;
   }
 
   private void enforceModelLoad() {
@@ -996,7 +988,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
-  private void removeReferenceAt(SReference ref) {
+  private void removeReferenceInternal(SReference ref) {
     ModelChange.assertLegalNodeChange(myModel, this);
 
     int index = -1;
