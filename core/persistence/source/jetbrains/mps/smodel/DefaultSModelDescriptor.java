@@ -407,6 +407,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   public void resolveDiskConflict() {
+    LOG.warning("Model=" + getSModel().getSModelFqName()+ ", file ts="+getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(), new Throwable());  // more information
     DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getModelFile(), getSModel(), this);
   }
 
