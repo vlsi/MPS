@@ -6,15 +6,15 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${project}/languages/Constants/Constants.mpl" />
-      <modulePath path="${project}/languages/DecisionTable/DecisionTable.mpl" />
-      <modulePath path="${project}/languages/Money/Money.mpl" />
-      <modulePath path="${project}/languages/ParallelFor/ParallelFor.mpl" />
-      <modulePath path="${project}/languages/SampleExtensions/SampleExtensions.mpl" />
+      <modulePath path="${project}/languages/Constants/Constants.mpl" folder="" />
+      <modulePath path="${project}/languages/DecisionTable/DecisionTable.mpl" folder="" />
+      <modulePath path="${project}/languages/Money/Money.mpl" folder="" />
+      <modulePath path="${project}/languages/ParallelFor/ParallelFor.mpl" folder="" />
+      <modulePath path="${project}/languages/SampleExtensions/SampleExtensions.mpl" folder="" />
       <modulePath path="${project}/solutions/Build/Build.msd" folder="" />
-      <modulePath path="${project}/solutions/MoneyRuntime/MoneyRuntime.msd" />
-      <modulePath path="${project}/solutions/ParallelForUtils/ParallelForUtils.msd" />
-      <modulePath path="${project}/solutions/SampleJavaExtensions.sandbox/SampleJavaExtensions.sandbox.msd" />
+      <modulePath path="${project}/solutions/MoneyRuntime/MoneyRuntime.msd" folder="" />
+      <modulePath path="${project}/solutions/ParallelForUtils/ParallelForUtils.msd" folder="" />
+      <modulePath path="${project}/solutions/SampleJavaExtensions.sandbox/SampleJavaExtensions.sandbox.msd" folder="" />
     </projectModules>
     <genConfs />
   </component>

@@ -4,8 +4,7 @@ package jetbrains.mps.lang.test.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -29,7 +28,7 @@ import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 
 public class RunTestInMPS_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(RunTestInMPS_Action.class);
+  private static Logger LOG = Logger.getLogger(RunTestInMPS_Action.class);
 
   public RunTestInMPS_Action() {
     super("Run Test in MPS Process", "", ICON);
@@ -53,9 +52,7 @@ public class RunTestInMPS_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RunTestInMPS", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "RunTestInMPS", t);
       this.disable(event.getPresentation());
     }
   }
@@ -98,9 +95,7 @@ public class RunTestInMPS_Action extends BaseAction {
         RunTestInMPS_Action.this.runTest(test, _params);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RunTestInMPS", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "RunTestInMPS", t);
     }
   }
 

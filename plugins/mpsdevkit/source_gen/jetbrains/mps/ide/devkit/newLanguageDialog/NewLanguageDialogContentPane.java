@@ -209,7 +209,7 @@ public class NewLanguageDialogContentPane extends JPanel {
   /*package*/ void onOk() {
     String message = NewModuleUtil.check(MPSExtentions.DOT_LANGUAGE, myThis.getLanguageNamespace(), myThis.getLanguagePath());
     if (message != null) {
-      myThis.getDialog().setErrorText(message);
+      myThis.getDialog().setError(message);
       return;
     }
 

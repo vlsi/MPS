@@ -4,8 +4,7 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefactoring;
@@ -26,7 +25,7 @@ import javax.swing.JOptionPane;
 
 public class IntroduceConstant_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(IntroduceConstant_Action.class);
+  private static Logger LOG = Logger.getLogger(IntroduceConstant_Action.class);
 
   public IntroduceConstant_Action() {
     super("Introduce Constant...", "", ICON);
@@ -50,9 +49,7 @@ public class IntroduceConstant_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "IntroduceConstant", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "IntroduceConstant", t);
       this.disable(event.getPresentation());
     }
   }
@@ -103,9 +100,7 @@ public class IntroduceConstant_Action extends BaseAction {
         JOptionPane.showMessageDialog(((EditorComponent) MapSequence.fromMap(_params).get("component")), error.value, "Error", JOptionPane.ERROR_MESSAGE);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "IntroduceConstant", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "IntroduceConstant", t);
     }
   }
 }

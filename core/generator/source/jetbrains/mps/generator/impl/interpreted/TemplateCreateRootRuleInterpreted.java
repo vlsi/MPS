@@ -35,47 +35,52 @@ import java.util.Collection;
 public class TemplateCreateRootRuleInterpreted implements TemplateCreateRootRule {
 
   private final SNode ruleNode;
+  private final String conditionMethod;
+  private final String ruleMappingName;
 
   public TemplateCreateRootRuleInterpreted(SNode ruleNode) {
     this.ruleNode = ruleNode;
+    SNode conditionFunction = RuleUtil.getCreateRootRuleCondition(ruleNode);
+    this.conditionMethod = conditionFunction == null ? null : TemplateFunctionMethodName.createRootRule_Condition(conditionFunction);
+    this.ruleMappingName = RuleUtil.getCreateRootRuleLabel(ruleNode);
   }
 
+  @Override
   public SNodePointer getRuleNode() {
     return new SNodePointer(ruleNode);
   }
 
+  @Override
   public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
-    SNode conditionFunction = RuleUtil.getCreateRootRuleCondition(ruleNode);
-    if (conditionFunction == null) {
+    if (conditionMethod == null) {
       return true;
     }
-    String methodName = TemplateFunctionMethodName.createRootRule_Condition(conditionFunction);
+
     try {
       return (Boolean) QueryMethodGenerated.invoke(
-        methodName,
+        conditionMethod,
         environment.getGenerator().getGeneratorSessionContext(),
         new CreateRootRuleContext(ruleNode, environment.getGenerator()),
         ruleNode.getModel(),
         true);
     } catch (ClassNotFoundException e) {
-      environment.getGenerator().getLogger().warning(ruleNode, "cannot find condition method '" + methodName + "' : evaluate to FALSE");
+      environment.getGenerator().getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
     } catch (NoSuchMethodException e) {
-      environment.getGenerator().getLogger().warning(ruleNode, "cannot find condition method '" + methodName + "' : evaluate to FALSE");
+      environment.getGenerator().getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
     } catch (Throwable t) {
       environment.getGenerator().getLogger().handleException(t);
-      environment.getGenerator().getLogger().error(ruleNode, "error executing condition " + methodName + " (see exception)");
+      environment.getGenerator().getLogger().error(ruleNode, "error executing condition " + conditionMethod + " (see exception)");
       throw new GenerationFailureException(t);
     }
     return false;
   }
 
+  @Override
   public Collection<SNode> apply(TemplateExecutionEnvironment environment) throws GenerationCanceledException, TemplateProcessingFailureException, GenerationFailureException, DismissTopMappingRuleException {
     SNode templateNode = RuleUtil.getCreateRootRuleTemplateNode(ruleNode);
     if (templateNode != null) {
-      String ruleMappingName = RuleUtil.getCreateRootRuleLabel(ruleNode);
-
       return new TemplateProcessor(environment.getGenerator(), environment.getReductionContext())
-        .processTemplateNode(ruleMappingName, templateNode, new DefaultTemplateContext(null));
+        .apply(ruleMappingName, templateNode, new DefaultTemplateContext(null));
     } else {
       environment.getGenerator().showErrorMessage(null, null, ruleNode, "'create root' rule has no template");
       return null;

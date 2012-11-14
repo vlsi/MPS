@@ -31,7 +31,8 @@ public abstract class BaseStretchingBindedDialog extends BaseBindedDialog {
     myContentPanel = new JPanel(new GridBagLayout());
   }
 
-  public JComponent getMainComponent() {
+  @Override
+  protected JComponent createCenterPanel() {
     return myContentPanel;
   }
 

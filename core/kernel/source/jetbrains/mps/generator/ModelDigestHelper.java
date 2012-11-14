@@ -16,9 +16,9 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
@@ -45,32 +45,31 @@ public class ModelDigestHelper {
     myProviders.add(provider);
   }
 
-  public Map<String, String> getGenerationHashes(@NotNull IFile modelFile, IOperationContext operationContext) {
+  public Map<String, String> getGenerationHashes(@NotNull SModelDescriptor descriptor, IOperationContext operationContext) {
+    DataSource source = descriptor.getSource();
     for (DigestProvider p : myProviders) {
-      Map<String, String> result = p.getGenerationHashes(operationContext, modelFile);
+      Map<String, String> result = p.getGenerationHashes(operationContext, source);
       if (result != null) return result;
     }
 
-    return ModelDigestUtil.getDigestMap(modelFile);
+    if (source instanceof FileDataSource && descriptor instanceof DefaultSModelDescriptor) {
+      return ModelDigestUtil.getDigestMap(((FileDataSource) source).getFile());
+    }
+
+    return null;
   }
 
   public String getModelHashFast(@NotNull SModelDescriptor descriptor, IOperationContext operationContext) {
     DataSource source = descriptor.getSource();
-    if (!(source instanceof FileDataSource)) return descriptor.getModelHash();
-
-    IFile modelFile = ((FileDataSource) source).getFile();
-    if (modelFile == null) return descriptor.getModelHash();
-
     for (DigestProvider p : myProviders) {
-      Map<String, String> result = p.getGenerationHashes(operationContext, modelFile);
+      Map<String, String> result = p.getGenerationHashes(operationContext, source);
       if (result != null) return result.get(FILE);
     }
-
     return descriptor.getModelHash();
   }
 
 
   public interface DigestProvider {
-    Map<String, String> getGenerationHashes(IOperationContext operationContext, @NotNull IFile f);
+    Map<String, String> getGenerationHashes(IOperationContext operationContext, @NotNull DataSource f);
   }
 }

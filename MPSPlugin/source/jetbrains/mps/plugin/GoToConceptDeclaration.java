@@ -64,7 +64,6 @@ public class GoToConceptDeclaration extends AnAction {
     return null;
   }
 
-
   public void actionPerformed(AnActionEvent e) {
     PsiClass cls = getConceptClass(PluginUtil.getCurrentElement(e));
     Project project = (Project) e.getData(DataKeys.PROJECT);

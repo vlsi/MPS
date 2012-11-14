@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
@@ -25,7 +24,7 @@ import javax.swing.JOptionPane;
 
 public class SubmitToTracker_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(SubmitToTracker_Action.class);
+  private static Logger LOG = Logger.getLogger(SubmitToTracker_Action.class);
 
   public SubmitToTracker_Action() {
     super("Submit to Issue Tracker", "", ICON);
@@ -54,9 +53,7 @@ public class SubmitToTracker_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "SubmitToTracker", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "SubmitToTracker", t);
       this.disable(event.getPresentation());
     }
   }
@@ -109,15 +106,11 @@ public class SubmitToTracker_Action extends BaseAction {
           JOptionPane.showMessageDialog(null, message, "Submit OK", JOptionPane.INFORMATION_MESSAGE);
         } else {
           JOptionPane.showMessageDialog(null, message, "Submit Failed", JOptionPane.ERROR_MESSAGE);
-          if (log.isErrorEnabled()) {
-            log.error("Submit failed: " + message, response.getThrowable());
-          }
+          LOG.error("Submit failed: " + message, response.getThrowable());
         }
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "SubmitToTracker", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "SubmitToTracker", t);
     }
   }
 }

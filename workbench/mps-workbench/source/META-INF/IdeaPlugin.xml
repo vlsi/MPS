@@ -20,8 +20,6 @@
 
     <extensionPoint name="mps.NavigationProvider" interface="jetbrains.mps.ide.navigation.NavigationProvider"/>
     <extensionPoint name="mps.ModelValidator" interface="jetbrains.mps.ide.generator.ModelValidator"/>
-    <extensionPoint name="mps.GenerationHandler"
-                    interface="jetbrains.mps.ide.generator.GeneratorUIFacade$GenerationHandlerProvider"/>
     <extensionPoint name="mps.TabColorProvider" area="IDEA_PROJECT" interface="jetbrains.mps.ide.editorTabs.TabColorProvider"/>
     <extensionPoint name="mps.treeCreationHandler" area="IDEA_PROJECT" interface="jetbrains.mps.ide.ui.TreeHighlighterExtension"/>
     <extensionPoint name="mps.projectPrefsPanel" interface="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPrefsExtraPanel" area="IDEA_PROJECT"/>

@@ -136,8 +136,8 @@ public class Generator_TabDescriptor extends RelationDescriptor {
 
     final List<Generator> genList = ListSequence.fromListWithValues(new ArrayList<Generator>(), language.value.getGenerators());
     if (ListSequence.fromList(genList).isEmpty()) {
-      NewGeneratorDialog dialog = new NewGeneratorDialog(frame, language.value);
-      dialog.showDialog();
+      NewGeneratorDialog dialog = new NewGeneratorDialog(project, language.value);
+      dialog.show();
       Generator createdGenerator = dialog.getResult();
       if (createdGenerator == null) {
         return null;
@@ -196,7 +196,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
     final Wrappers._T<SNode> mapping = new Wrappers._T<SNode>();
     if (ListSequence.fromList(mappings).count() > 1) {
       MappingDialog configurationDialog = new MappingDialog(project, language.value);
-      configurationDialog.showDialog();
+      configurationDialog.show();
       mapping.value = configurationDialog.getResult();
     } else {
       mapping.value = ListSequence.fromList(mappings).first();

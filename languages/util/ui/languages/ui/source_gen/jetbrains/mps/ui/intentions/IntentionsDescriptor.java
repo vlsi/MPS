@@ -9,12 +9,12 @@ import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
-    super(new ModuleReference("jetbrains.mps.ui", "fb26dccf-fa54-4e9a-8ddb-b66311a34393"), SModelReference.fromString("r:8cdffe0e-82a6-47c0-9a63-88679c2baa24(jetbrains.mps.ui.intentions)"));
+    super(new ModuleReference("fb26dccf-fa54-4e9a-8ddb-b66311a34393(jetbrains.mps.ui)"), SModelReference.fromString("r:8cdffe0e-82a6-47c0-9a63-88679c2baa24(jetbrains.mps.ui.intentions)"));
   }
 
   public void init() {
-    add(new View_wrap_with_ValidatingView_Intention(), "8381258131358771407");
-    add(new replace_UIObjectStatement_AppendUIObjectStatement_Intention(), "1576918603588812821");
     IntentionsManager.getInstance().registerIntentionFactory(new Classifier_add_GenerateVariant_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new View_wrap_with_ValidatingView_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new replace_UIObjectStatement_AppendUIObjectStatement_Intention());
   }
 }

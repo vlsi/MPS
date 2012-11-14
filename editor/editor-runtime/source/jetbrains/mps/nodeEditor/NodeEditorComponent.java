@@ -28,6 +28,7 @@ import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
 
@@ -117,10 +118,10 @@ public class NodeEditorComponent extends EditorComponent {
 
   protected boolean isValidEditor() {
     SNode node = getEditedNode();
-    if (node == null || jetbrains.mps.util.SNodeOperations.isDisposed(node)) return false;
-    SNode root = getEditedNode().getContainingRoot();
-
-    return root != null;
+    if (node == null) return false;
+    SModel model = node.getModel();
+    if (model != null && model.isDisposed()) return false;
+    return true;
   }
 
   public void rebuildEditorContent() {
@@ -130,7 +131,7 @@ public class NodeEditorComponent extends EditorComponent {
   }
 
   public EditorCell createRootCell(List<SModelEvent> events) {
-    if (getEditedNode() == null || getEditedNode().isDeleted()) {
+    if (getEditedNode() == null || getEditedNode().getModel() == null) {
       jetbrains.mps.openapi.editor.EditorContext editorContext = getEditorContext();
       return new EditorCell_Constant(editorContext, getEditedNode(), "<no editor info>");
     }

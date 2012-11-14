@@ -4,8 +4,7 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -18,7 +17,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 
 public class ShowDefaultHelp_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ShowDefaultHelp_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowDefaultHelp_Action.class);
 
   public ShowDefaultHelp_Action() {
     super("Show Default Help", "", ICON);
@@ -43,9 +42,7 @@ public class ShowDefaultHelp_Action extends BaseAction {
         event.getPresentation().setText("Show Help for " + NameUtil.capitalize(defaultHelp.getName()));
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowDefaultHelp", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowDefaultHelp", t);
       this.disable(event.getPresentation());
     }
   }
@@ -69,9 +66,7 @@ public class ShowDefaultHelp_Action extends BaseAction {
     try {
       HelpHelper.showHelpFor(((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowDefaultHelp", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowDefaultHelp", t);
     }
   }
 }

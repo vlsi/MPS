@@ -15,33 +15,31 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
-import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
 public class ModelFindOperations {
   private SModelDescriptor myModelDescriptor;
-  private RegularModelDataSource myDataSource;
+  private FileDataSource myDataSource;
   private boolean myNeedSearchForStrings;
 
   public ModelFindOperations(SModelDescriptor descriptor) {
     myModelDescriptor = descriptor;
-    ModelDataSource source = descriptor instanceof BaseSModelDescriptorWithSource ? ((BaseSModelDescriptorWithSource) myModelDescriptor).getSource() : null;
-    myDataSource = source instanceof RegularModelDataSource ? (RegularModelDataSource) source : null;
+    DataSource source = descriptor != null ? myModelDescriptor.getSource() : null;
+    myDataSource = source instanceof FileDataSource ? (FileDataSource) source : null;
     myNeedSearchForStrings =
       (myModelDescriptor instanceof DefaultSModelDescriptor) &&
         ((DefaultSModelDescriptor) myModelDescriptor).getUpdateableModel().getState() != ModelLoadingState.FULLY_LOADED &&
@@ -115,7 +113,7 @@ public class ModelFindOperations {
         try {
           r.close();
         } catch (IOException e) {
-  //        LOG.error(e);
+          //        LOG.error(e);
         }
       }
     }

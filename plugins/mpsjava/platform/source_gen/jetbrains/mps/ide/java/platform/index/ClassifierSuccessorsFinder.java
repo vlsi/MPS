@@ -18,8 +18,10 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -50,11 +52,15 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
     List<SNode> modifiedClasses = ListSequence.fromList(new ArrayList<SNode>());
     List<SNode> modifiedInterfaces = ListSequence.fromList(new ArrayList<SNode>());
     for (SModelDescriptor md : scope.getModelDescriptors()) {
-      if (!((md instanceof DefaultSModelDescriptor))) {
+      if (!((md instanceof EditableSModelDescriptor))) {
         continue;
       }
-      DefaultSModelDescriptor emd = (DefaultSModelDescriptor) md;
-      IFile modelFile = emd.getModelFile();
+      EditableSModelDescriptor emd = (EditableSModelDescriptor) md;
+      DataSource source = emd.getSource();
+      IFile modelFile = (source instanceof FileDataSource ?
+        ((FileDataSource) source).getFile() :
+        null
+      );
       if (modelFile == null) {
         continue;
       }

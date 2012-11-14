@@ -5,15 +5,13 @@ package jetbrains.mps.lang.core.plugin;
 import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.resources.GResource;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.smodel.IOperationContext;
-import java.util.List;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.generator.GenerationCanceledException;
-import java.io.IOException;
-import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.smodel.SModelStereotype;
 
@@ -24,19 +22,18 @@ public class MakeGenerationHandler extends GenerationHandlerBase {
     this.resourceHandler = resourceHandler;
   }
 
-  public boolean compile(IOperationContext context, List<Pair<IModule, List<SModelDescriptor>>> list, boolean b, ProgressMonitor helper) throws GenerationCanceledException, IOException {
-    return true;
-  }
-
+  @Override
   public int estimateCompilationMillis() {
     return 0;
   }
 
-  public boolean handleOutput(IModule module, SModelDescriptor descriptor, GenerationStatus status, IOperationContext context, ProgressMonitor helper) {
-    return resourceHandler.invoke(new GResource(module, descriptor, null, status));
+  @Override
+  public boolean handleOutput(SModule module, SModel descriptor, GenerationStatus status, IOperationContext context, ProgressMonitor helper) {
+    return resourceHandler.invoke(new GResource(((IModule) module), (SModelDescriptor) descriptor, null, status));
   }
 
-  public boolean canHandle(SModelDescriptor descriptor) {
-    return descriptor != null && (ProjectModels.isProjectModel(descriptor.getSModelReference()) || SModelStereotype.isUserModel(descriptor));
+  @Override
+  public boolean canHandle(SModel descriptor) {
+    return descriptor != null && (ProjectModels.isProjectModel(descriptor.getModelReference()) || SModelStereotype.isUserModel(descriptor));
   }
 }

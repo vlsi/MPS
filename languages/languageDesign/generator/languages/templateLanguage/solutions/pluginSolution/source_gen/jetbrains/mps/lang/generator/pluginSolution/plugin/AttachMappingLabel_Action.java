@@ -4,8 +4,7 @@ package jetbrains.mps.lang.generator.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
@@ -34,11 +33,10 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.ide.project.ProjectHelper;
 
 public class AttachMappingLabel_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(AttachMappingLabel_Action.class);
+  private static Logger LOG = Logger.getLogger(AttachMappingLabel_Action.class);
 
   public AttachMappingLabel_Action() {
     super("Attach Mapping Label", "", ICON);
@@ -98,9 +96,7 @@ public class AttachMappingLabel_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "AttachMappingLabel", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "AttachMappingLabel", t);
       this.disable(event.getPresentation());
     }
   }
@@ -123,7 +119,7 @@ public class AttachMappingLabel_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final SNode node = ((SNode) MapSequence.fromMap(_params).get("nodeSelected"));
-      final IOperationContext operationContext = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext();
+      IOperationContext operationContext = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext();
       IModule module = operationContext.getModule();
       List<SNode> mappings;
       if (module instanceof Generator) {
@@ -181,14 +177,12 @@ __switch__:
       }).toListSequence();
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          AttachMappingLabelDialog dialog = new AttachMappingLabelDialog(node, existingLabels, ProjectHelper.toMainFrame(operationContext.getProject()), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
-          dialog.showDialog();
+          AttachMappingLabelDialog dialog = new AttachMappingLabelDialog(node, existingLabels, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+          dialog.show();
         }
       });
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "AttachMappingLabel", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "AttachMappingLabel", t);
     }
   }
 }

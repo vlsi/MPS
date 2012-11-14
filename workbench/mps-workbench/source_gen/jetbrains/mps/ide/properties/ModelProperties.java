@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
@@ -40,7 +40,7 @@ public class ModelProperties extends BaseBean {
     myUsedLanguages.addAll(model.importedLanguages());
     myUsedDevKits.addAll(model.importedDevkits());
     myLanguagesEngagedOnGeneration.addAll(model.engagedOnGenerationLanguages());
-    myDoNotGenerate = myModelDescriptor instanceof DefaultSModelDescriptor && ((DefaultSModelDescriptor) myModelDescriptor).isDoNotGenerate();
+    myDoNotGenerate = myModelDescriptor instanceof GeneratableSModelDescriptor && ((GeneratableSModelDescriptor) myModelDescriptor).isDoNotGenerate();
   }
 
   public SModelDescriptor getModelDescriptor() {
@@ -85,8 +85,8 @@ public class ModelProperties extends BaseBean {
         removeUnusedDevKits();
         addNewEngagedOnGenerationLanguages();
         removeUnusedEngagedOnGenerationLanguages();
-        if (myModelDescriptor instanceof DefaultSModelDescriptor) {
-          DefaultSModelDescriptor dmd = (DefaultSModelDescriptor) myModelDescriptor;
+        if (myModelDescriptor instanceof GeneratableSModelDescriptor) {
+          GeneratableSModelDescriptor dmd = (GeneratableSModelDescriptor) myModelDescriptor;
           if (dmd.isDoNotGenerate() != myDoNotGenerate) {
             dmd.setDoNotGenerate(myDoNotGenerate);
           }

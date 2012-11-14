@@ -24,7 +24,6 @@ import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -124,7 +123,7 @@ public class DelayedChanges {
             }
           }
 
-          if (jetbrains.mps.util.SNodeOperations.isRegistered(child)) {
+          if (child.getModel() != null) {
             // must be "in air"
             child = CopyUtil.copy(child);
           }
@@ -135,7 +134,7 @@ public class DelayedChanges {
           SNode parent = myChildToReplace.getParent();
           if (parent == null) {
             // root?
-            if (myChildToReplace.isRoot()) {
+            if (myChildToReplace.getModel() != null && myChildToReplace.getModel().isRoot(myChildToReplace)) {
               myChildToReplace.getModel().addRoot(child);
               myChildToReplace.getModel().removeRoot(myChildToReplace);
               myGenerator.rootReplaced(myChildToReplace, child);

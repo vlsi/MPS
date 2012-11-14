@@ -5,8 +5,7 @@ package jetbrains.mps.build.mps.pluginSolution.plugin;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -33,7 +32,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 
 public class ImportAllModulesFromFolder_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("import.png");
-  protected static Log log = LogFactory.getLog(ImportAllModulesFromFolder_Action.class);
+  private static Logger LOG = Logger.getLogger(ImportAllModulesFromFolder_Action.class);
 
   public ImportAllModulesFromFolder_Action() {
     super("Import All Modules from Folder", "", ICON);
@@ -50,9 +49,7 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ImportAllModulesFromFolder", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ImportAllModulesFromFolder", t);
       this.disable(event.getPresentation());
     }
   }
@@ -104,9 +101,7 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
         }
       });
       if (basePath.value == null) {
-        if (log.isErrorEnabled()) {
-          log.error("working directory is not available");
-        }
+        LOG.error("working directory is not available");
         return;
       }
       if (projectFolder.value != null) {
@@ -146,9 +141,7 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
         }
       }, ((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ImportAllModulesFromFolder", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ImportAllModulesFromFolder", t);
     }
   }
 

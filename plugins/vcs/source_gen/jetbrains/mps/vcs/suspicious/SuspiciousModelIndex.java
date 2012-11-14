@@ -6,6 +6,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.annotations.NonNls;
@@ -46,8 +47,10 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     myVirtualFileManager = vfManager;
   }
 
-  public void addModel(DefaultSModelDescriptor model, boolean isInConflict) {
-    myTaskQueue.addTask(new ConflictableModelAdapter(model, isInConflict));
+  public void addModel(SModel model, boolean isInConflict) {
+    if (model instanceof DefaultSModelDescriptor) {
+      myTaskQueue.addTask(new ConflictableModelAdapter((DefaultSModelDescriptor) model, isInConflict));
+    }
   }
 
   public void addModule(AbstractModule abstractModule, boolean inConflict) {
@@ -66,7 +69,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     }
     myTaskQueue = new SuspiciousModelIndex.MyTaskQueue(myProjectManager, myWatcher, myVirtualFileManager);
     SuspiciousModelHandler.setHandler(new SuspiciousModelHandler() {
-      public void handleSuspiciousModel(DefaultSModelDescriptor model, boolean inConflict) {
+      public void handleSuspiciousModel(SModel model, boolean inConflict) {
         addModel(model, inConflict);
       }
 

@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -13,11 +12,11 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.Solution;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.refactoring.RenameSolutionDialog;
-import java.awt.Frame;
+import jetbrains.mps.project.MPSProject;
 
 public class RenameSolution_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(RenameSolution_Action.class);
+  private static Logger LOG = Logger.getLogger(RenameSolution_Action.class);
 
   public RenameSolution_Action() {
     super("Rename Solution", "", ICON);
@@ -41,9 +40,7 @@ public class RenameSolution_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RenameSolution", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "RenameSolution", t);
       this.disable(event.getPresentation());
     }
   }
@@ -60,16 +57,18 @@ public class RenameSolution_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new RenameSolutionDialog(((Frame) MapSequence.fromMap(_params).get("frame")), ((Solution) ((IModule) MapSequence.fromMap(_params).get("module")))).showDialog();
+      new RenameSolutionDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((Solution) ((IModule) MapSequence.fromMap(_params).get("module")))).show();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RenameSolution", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "RenameSolution", t);
     }
   }
 }

@@ -110,7 +110,6 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointsProvider" file="JavaBreakpointsProvider.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
     <classNode dependClassName="com.intellij.util.xmlb.XmlSerializer" />
     <classNode dependClassName="com.sun.jdi.request.EventRequest" />
     <classNode dependClassName="java.awt.FlowLayout" />

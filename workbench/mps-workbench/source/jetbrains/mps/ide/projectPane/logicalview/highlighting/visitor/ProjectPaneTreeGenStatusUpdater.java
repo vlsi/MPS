@@ -24,10 +24,12 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.GenStatusNodeUpdate;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -46,6 +48,8 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
 
   protected void visitModelNode(final SModelTreeNode modelNode) {
     if (!ProjectPane.isShowGenStatus()) return;
+    if (IMakeService.INSTANCE.isSessionActive()) return;
+
     Application application = ApplicationManager.getApplication();
     if (application.isDisposed() || application.isDisposeInProgress()) return;
 
@@ -140,8 +144,8 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
 
   private boolean isDoNotGenerate(SModelTreeNode node) {
     SModelDescriptor md = node.getSModelDescriptor();
-    if (!(md instanceof DefaultSModelDescriptor)) return false;
-    return ((DefaultSModelDescriptor) md).isDoNotGenerate();
+    if (!(md instanceof GeneratableSModelDescriptor)) return false;
+    return ((GeneratableSModelDescriptor) md).isDoNotGenerate();
   }
 
   public static enum GenerationStatus {

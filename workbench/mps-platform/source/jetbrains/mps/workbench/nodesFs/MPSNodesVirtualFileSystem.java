@@ -21,8 +21,22 @@ import com.intellij.openapi.vfs.DeprecatedVirtualFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
+import jetbrains.mps.smodel.SModelRepositoryListener;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.event.SModelCommandListener;
+import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
+import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
@@ -34,7 +48,12 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.SwingUtilities;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
@@ -212,7 +231,8 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
       if (jetbrains.mps.util.SNodeOperations.isDisposed(event.getNode())) return;
 
       MPSNodeVirtualFile vf = myVirtualFiles.get(new SNodePointer(event.getModel().getSModelReference(), event.getNode().getSNodeId()));
-      if (!event.getNode().isRoot() || vf == null) return;
+      if (!(event.getNode().getModel() != null && event.getNode().getModel().isRoot(event.getNode())) || vf == null)
+        return;
       String newName = event.getNode().getPresentation();
       if (!newName.equals(vf.getName())) {
         myRenamedFiles.add(new Pair<MPSNodeVirtualFile, String>(vf, newName));
@@ -241,8 +261,10 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
   private class MyModelListener extends SModelAdapter {
     public void eventFired(SModelEvent event) {
-      if (event.getAffectedRoot() == null) return;
-      updateModificationStamp(event.getAffectedRoot());
+      SNode root = event.getAffectedRoot();
+      if (root == null) return;
+      if (root.getModel() == null) return;
+      updateModificationStamp(root);
     }
 
     public void modelReplaced(final SModelDescriptor sm) {

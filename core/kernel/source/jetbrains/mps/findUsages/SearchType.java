@@ -17,7 +17,10 @@ package jetbrains.mps.findUsages;
 
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.containers.MultiMap;
@@ -50,6 +53,10 @@ public abstract class SearchType<T, R> {
   private static FastFindSupport getFastFindSupport(SModelDescriptor model) {
     if (!(model instanceof BaseSModelDescriptorWithSource)) return null;
     if ((model instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) model).isChanged())) return null;
+
+    if (model instanceof FastFindSupportProvider) return ((FastFindSupportProvider) model).getFastFindSupport();
+
+    // TODO return null; (+remove the following lines)
 
     BaseSModelDescriptorWithSource mws = (BaseSModelDescriptorWithSource) model;
     if (!(mws.getSource() instanceof FastFindSupportProvider)) return null;

@@ -108,7 +108,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
 
     setText(caclulateNodeTextPresentation());
-    setAutoExpandable(myNode != null && !myNode.isRoot());
+    setAutoExpandable(myNode != null && !(myNode.getModel() != null && myNode.getModel().isRoot(myNode)));
   }
 
   public SModelTreeNode getSModelModelTreeNode() {
@@ -207,7 +207,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        if (jetbrains.mps.util.SNodeOperations.isDisposed(myNode) || !jetbrains.mps.util.SNodeOperations.isRegistered(myNode) || myNode.getModel().getModelDescriptor() == null) {
+        if (jetbrains.mps.util.SNodeOperations.isDisposed(myNode) || !(myNode.getModel() != null) || myNode.getModel().getModelDescriptor() == null) {
           return;
         }
         treeView.editNode(myNode, getOperationContext(), focus);

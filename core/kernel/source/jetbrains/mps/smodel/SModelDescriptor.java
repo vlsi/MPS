@@ -36,8 +36,12 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
 
   //------
 
+  void forceLoad();
+
+  // TODO remove
   boolean isGeneratable();
 
+  // TODO remove
   String getModelHash();
 
   //------

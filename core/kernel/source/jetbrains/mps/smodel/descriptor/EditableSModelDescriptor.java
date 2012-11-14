@@ -29,6 +29,11 @@ public interface EditableSModelDescriptor extends SModelDescriptor {
 
   void rename(SModelFqName newModelFqName, boolean changeFile);
 
-  @Deprecated
   boolean isReadOnly();
+
+  void updateDiskTimestamp();
+
+  boolean needsReloading();
+
+  void reloadFromDisk();
 }

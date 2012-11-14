@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.descriptor.NodesNavigationContributor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.smodel.descriptor.NodeDescriptor;
-import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import java.util.List;
@@ -27,13 +27,18 @@ public class JavaSourceStubModelDescriptor extends BaseStubModelDescriptor imple
     super(modelReference, source, module);
   }
 
+  @NotNull
+  @Override
+  public JavaSourceStubModelDS getSource() {
+    return (JavaSourceStubModelDS) super.getSource();
+  }
+
   public Collection<NodeDescriptor> getNodeDescriptors() {
-    return ((JavaSourceStubModelDS) getSource()).getNodeDescriptors();
+    return getSource().getNodeDescriptors();
   }
 
   public void reparseOneFile(final String contents) {
-    final ModelDataSource ds = getSource();
-    assert ds instanceof JavaSourceStubModelDS;
+    final JavaSourceStubModelDS ds = getSource();
 
 
     // FIXME change write actions, commands 
@@ -43,7 +48,7 @@ public class JavaSourceStubModelDescriptor extends BaseStubModelDescriptor imple
       public void run() {
         try {
           final SModel myModel = getSModel();
-          List<SNode> nodes = ((JavaSourceStubModelDS) ds).parseFile(contents, myModel);
+          List<SNode> nodes = ds.parseFile(contents, myModel);
 
           // replace existing nodes with matching names 
           List<SNode> roots = SModelOperations.getRoots(myModel, null);

@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import javax.swing.tree.TreeNode;
@@ -19,7 +18,7 @@ import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 public class ShowModuleDependencyLoop_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ShowModuleDependencyLoop_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowModuleDependencyLoop_Action.class);
 
   public ShowModuleDependencyLoop_Action() {
     super("Show Cycle Paths", "Show All Cycle Paths for Selected Module", ICON);
@@ -43,9 +42,7 @@ public class ShowModuleDependencyLoop_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowModuleDependencyLoop", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowModuleDependencyLoop", t);
       this.disable(event.getPresentation());
     }
   }
@@ -69,9 +66,7 @@ public class ShowModuleDependencyLoop_Action extends BaseAction {
     try {
       ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class).ShowLoops(as_hir9am_a0a0a0a0e(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.class));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowModuleDependencyLoop", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowModuleDependencyLoop", t);
     }
   }
 

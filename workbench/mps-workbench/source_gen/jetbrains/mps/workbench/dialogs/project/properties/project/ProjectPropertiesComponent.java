@@ -29,16 +29,6 @@ public class ProjectPropertiesComponent extends JPanel {
     initUI();
   }
 
-  public void addNotify() {
-    super.addNotify();
-    myPropertiesDialog.bindData();
-  }
-
-  public void removeNotify() {
-    super.removeNotify();
-    myPropertiesDialog.unbindData();
-  }
-
   private void initUI() {
     setLayout(new BorderLayout());
     add(myPropertiesDialog.getMainComponent(), BorderLayout.CENTER);

@@ -4,24 +4,24 @@ package jetbrains.mps.lang.generator.intentions;
 
 import jetbrains.mps.intentions.IntentionFactory;
 import jetbrains.mps.intentions.IntentionType;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.lang.generator.editor.QueriesUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
-import jetbrains.mps.intentions.Intention;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.intentions.IntentionExecutable;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.lang.generator.editor.QueriesUtil;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddNodeMacroParam_switch_Intention implements IntentionFactory {
   public AddNodeMacroParam_switch_Intention() {
@@ -47,12 +47,31 @@ public class AddNodeMacroParam_switch_Intention implements IntentionFactory {
     return IntentionType.NORMAL;
   }
 
+  public boolean isAvailableInChildNodes() {
+    return false;
+  }
+
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(isApplicableToNode(node, editorContext))) {
+      return false;
+    }
+    return true;
+  }
+
+  private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
+    SModelDescriptor sm = SNodeOperations.getModel(node).getModelDescriptor();
+    if (sm == null || !(sm.getModule() instanceof Generator)) {
+      return false;
+    }
+    return QueriesUtil.isNodeMacroApplicable(node);
+  }
+
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "3644457381597319727");
   }
 
-  public Collection<Intention> instances(final SNode node, final EditorContext context) {
-    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
+  public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
+    List<IntentionExecutable> list = ListSequence.fromList(new ArrayList<IntentionExecutable>());
     List<SNode> paramList = parameter(node, context);
     if (paramList != null) {
       for (SNode param : paramList) {
@@ -66,58 +85,15 @@ public class AddNodeMacroParam_switch_Intention implements IntentionFactory {
     return SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.TemplateSwitch");
   }
 
-  public class IntentionImplementation extends BaseIntention {
+  public class IntentionImplementation implements IntentionExecutable {
     private SNode myParameter;
 
     public IntentionImplementation(SNode parameter) {
       myParameter = parameter;
     }
 
-    public String getConcept() {
-      return AddNodeMacroParam_switch_Intention.this.getConcept();
-    }
-
-    public String getPresentation() {
-      return AddNodeMacroParam_switch_Intention.this.getPresentation();
-    }
-
-    public String getPersistentStateKey() {
-      return AddNodeMacroParam_switch_Intention.this.getPersistentStateKey();
-    }
-
-    public String getLanguageFqName() {
-      return AddNodeMacroParam_switch_Intention.this.getLanguageFqName();
-    }
-
-    public IntentionType getType() {
-      return AddNodeMacroParam_switch_Intention.this.getType();
-    }
-
-    public SNodeReference getIntentionNodeReference() {
-      return AddNodeMacroParam_switch_Intention.this.getIntentionNodeReference();
-    }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Add Node Macro Switch: " + BehaviorReflection.invokeVirtual(String.class, myParameter, "virtual_getPresentation_1213877396640", new Object[]{});
-    }
-
-    public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-      if (!(isApplicableToNode(node, editorContext))) {
-        return false;
-      }
-      return true;
-    }
-
-    private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-      SModelDescriptor sm = SNodeOperations.getModel(node).getModelDescriptor();
-      if (sm == null || !(sm.getModule() instanceof Generator)) {
-        return false;
-      }
-      return QueriesUtil.isNodeMacroApplicable(node);
-    }
-
-    public boolean isAvailableInChildNodes() {
-      return false;
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
@@ -127,6 +103,10 @@ public class AddNodeMacroParam_switch_Intention implements IntentionFactory {
       SLinkOperations.setTarget(switchMacro, "templateSwitch", myParameter, false);
       // set caret 
       editorContext.selectAndSetCaret(switchMacro, 1);
+    }
+
+    public IntentionDescriptor getDescriptor() {
+      return AddNodeMacroParam_switch_Intention.this;
     }
   }
 }

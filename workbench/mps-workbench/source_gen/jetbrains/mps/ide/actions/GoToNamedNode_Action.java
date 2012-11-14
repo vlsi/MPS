@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -13,7 +12,7 @@ import java.util.Map;
 
 public class GoToNamedNode_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(GoToNamedNode_Action.class);
+  private static Logger LOG = Logger.getLogger(GoToNamedNode_Action.class);
 
   private AnAction action;
 
@@ -33,9 +32,7 @@ public class GoToNamedNode_Action extends BaseAction {
     try {
       GoToNamedNode_Action.this.action.update(event);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GoToNamedNode", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "GoToNamedNode", t);
       this.disable(event.getPresentation());
     }
   }
@@ -51,9 +48,7 @@ public class GoToNamedNode_Action extends BaseAction {
     try {
       GoToNamedNode_Action.this.action.actionPerformed(event);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GoToNamedNode", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "GoToNamedNode", t);
     }
   }
 

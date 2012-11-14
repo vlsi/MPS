@@ -4,8 +4,7 @@ package jetbrains.mps.calculator.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
@@ -18,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ExecuteCalculator_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ExecuteCalculator_Action.class);
+  private static Logger LOG = Logger.getLogger(ExecuteCalculator_Action.class);
 
   public ExecuteCalculator_Action() {
     super("Execute Calculator", "", ICON);
@@ -42,9 +41,7 @@ public class ExecuteCalculator_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ExecuteCalculator", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ExecuteCalculator", t);
       this.disable(event.getPresentation());
     }
   }
@@ -87,9 +84,7 @@ public class ExecuteCalculator_Action extends BaseAction {
         e.printStackTrace();
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ExecuteCalculator", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ExecuteCalculator", t);
     }
   }
 

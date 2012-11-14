@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -17,7 +16,7 @@ import jetbrains.mps.smodel.SNode;
 
 public class SetBookmark_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(SetBookmark_Action.class);
+  private static Logger LOG = Logger.getLogger(SetBookmark_Action.class);
 
   private int num;
 
@@ -37,9 +36,7 @@ public class SetBookmark_Action extends BaseAction {
     try {
       event.getPresentation().setText("Set Bookmark " + SetBookmark_Action.this.num);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "SetBookmark", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "SetBookmark", t);
       this.disable(event.getPresentation());
     }
   }
@@ -63,9 +60,7 @@ public class SetBookmark_Action extends BaseAction {
     try {
       ((Project) MapSequence.fromMap(_params).get("project")).getComponent(BookmarkManager.class).setBookmark(((SNode) MapSequence.fromMap(_params).get("node")), SetBookmark_Action.this.num);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "SetBookmark", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "SetBookmark", t);
     }
   }
 

@@ -46,6 +46,7 @@ public class HighlightUtil {
       checker);
     error.setErrorReporter(errorReporter);
     for (QuickFixProvider quickFixProvider : errorReporter.getIntentionProviders()) {
+      quickFixProvider.setIsError(error.getStatus() == MessageStatus.ERROR);
       error.addIntentionProvider(quickFixProvider);
     }
     return error;

@@ -43,7 +43,7 @@ public class TemplateModuleInterpreted implements TemplateModule {
     this.models = new ArrayList<TemplateModel>();
     for (SModelDescriptor sModelDescriptor : generator.getOwnTemplateModels()) {
       SModel sModel = sModelDescriptor.getSModel();
-      if(sModel != null) {
+      if (sModel != null) {
         models.add(new TemplateModelInterpreted(this, sModel));
       }
     }

@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -17,11 +16,10 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.refactoring.RenameModelDialog;
 import com.intellij.openapi.project.Project;
-import java.awt.Frame;
 
 public class RenameModel_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(RenameModel_Action.class);
+  private static Logger LOG = Logger.getLogger(RenameModel_Action.class);
 
   public RenameModel_Action() {
     super("Rename Model", "", ICON);
@@ -51,9 +49,7 @@ public class RenameModel_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RenameModel", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "RenameModel", t);
       this.disable(event.getPresentation());
     }
   }
@@ -86,11 +82,9 @@ public class RenameModel_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new RenameModelDialog(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")), (EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).showDialog();
+      new RenameModelDialog(((Project) MapSequence.fromMap(_params).get("project")), (EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).show();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RenameModel", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "RenameModel", t);
     }
   }
 }

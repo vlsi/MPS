@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -43,7 +44,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
   private final SModelAdapter mySmodelReloadListener = new SModelAdapter() {
     @Override
     public void modelReplaced(SModelDescriptor sm) {
-      ModelGenerationStatusManager.this.invalidateData(Collections.singletonList(sm));
+      ModelGenerationStatusManager.this.invalidateData(Collections.singleton(sm));
     }
   };
 
@@ -86,12 +87,12 @@ public class ModelGenerationStatusManager implements CoreComponent {
     return getLastGenerationHash(sm);
   }
 
-  public void invalidateData(List<SModelDescriptor> models) {
+  public void invalidateData(Iterable<? extends SModel> models) {
     ModelGenerationStatusListener[] copy;
     synchronized (myListeners) {
       copy = myListeners.toArray(new ModelGenerationStatusListener[myListeners.size()]);
     }
-    for (SModelDescriptor model : models) {
+    for (SModel model : models) {
       GenerationDependenciesCache.getInstance().clean(model);
       for (ModelGenerationStatusListener l : copy) {
         l.generatedFilesChanged(model);

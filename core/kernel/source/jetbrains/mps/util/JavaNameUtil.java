@@ -16,10 +16,10 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 /**
  * User: Dmitriev.
@@ -43,7 +43,9 @@ public final class JavaNameUtil {
   }
 
   public static String packageNameForModelUID(@NotNull SModelReference modelReference) {
-    return modelReference.getLongName();
+    String packageName = modelReference.getModelName();
+    int atIndex = packageName.indexOf('@');
+    return atIndex == -1 ? packageName : packageName.substring(0, atIndex);
   }
 
   public static String packageName(@NotNull SModel model) {

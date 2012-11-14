@@ -33,6 +33,6 @@ public class DevKitChooser implements Computable<List<ModuleReference>> {
         }).toListSequence();
       }
     });
-    return CommonChoosers.showDialogModuleCollectionChooser(myOwner.getMainComponent(), "devkit", dkRefs.value, null);
+    return CommonChoosers.showDialogModuleCollectionChooser(null, myOwner.getMainComponent(), "devkit", dkRefs.value, null);
   }
 }

@@ -4,14 +4,12 @@ package jetbrains.mps.stubs.util;
 
 import jetbrains.mps.util.annotation.ImmutableObject;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
-import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
@@ -30,23 +28,14 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.persistence.ModelRootBase;
+import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Collections;
 
 @ImmutableObject
-public class FileStubSource extends FileDataSource implements ModelDataSource {
-  private SModelReference ref;
-
+public class FileStubSource extends FileDataSource implements StubModelDataSource {
   public FileStubSource(IFile file, ModelRoot modelRoot, SModelReference ref) {
     super(file, modelRoot);
-    this.ref = ref;
-  }
-
-  public DescriptorLoadResult loadDescriptor(IModule module, SModelFqName name) {
-    DescriptorLoadResult result = new DescriptorLoadResult();
-    result.setUID(ref.getSModelId().toString());
-    return result;
   }
 
   public ModelLoadResult loadSModel(IModule module, SModelDescriptor descriptor, ModelLoadingState state) {
@@ -66,10 +55,6 @@ public class FileStubSource extends FileDataSource implements ModelDataSource {
     model.addLanguage(lang);
     module.addUsedLanguage(lang);
     return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
-  }
-
-  public boolean saveModel(SModelDescriptor descriptor) {
-    throw new UnsupportedOperationException();
   }
 
   private Iterable<org.jetbrains.mps.openapi.model.SModelReference> loadModels(ModelRootDescriptor root, ModuleDescriptor md) {

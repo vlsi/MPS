@@ -26,8 +26,11 @@ import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.CompositeClassPathItem;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.runtime.ProtectionDomainUtil;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
@@ -205,7 +208,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   }
 
   public int getVersion() {
-    return ((DefaultSModelDescriptor) getStructureModelDescriptor()).getVersion();
+    return ((RefactorableSModelDescriptor) getStructureModelDescriptor()).getVersion();
   }
 
   public Collection<Generator> getGenerators() {
@@ -303,6 +306,11 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     super.invalidateCaches();
     myNameToConceptCache.clear();
     myNamesWithNoConcepts.clear();
+  }
+
+  @Deprecated
+  public IClassPathItem getLanguageRuntimeClasspath() {
+    return new CompositeClassPathItem();
   }
 
   public SNode findConceptDeclaration(@NotNull final String conceptName) {

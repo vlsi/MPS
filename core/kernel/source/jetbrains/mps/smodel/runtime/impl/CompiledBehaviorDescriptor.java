@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.runtime.impl;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -60,8 +61,17 @@ public abstract class CompiledBehaviorDescriptor extends InterpretedBehaviorDesc
 
   @Override
   public Object invoke(@NotNull SNode node, String methodName, Object[] parameters) {
+    return genericInvoke(node, methodName, parameters);
+  }
+
+  @Override
+  public Object invokeStatic(@NotNull SConcept concept, String methodName, Object[] parameters) {
+    return genericInvoke(concept, methodName, parameters);
+  }
+
+  private Object genericInvoke(@NotNull Object arg, String methodName, Object[] parameters) {
     Object[] params = new Object[parameters.length + 1];
-    params[0] = node;
+    params[0] = arg;
     System.arraycopy(parameters, 0, params, 1, parameters.length);
 
     Method method = methods.get(methodName);

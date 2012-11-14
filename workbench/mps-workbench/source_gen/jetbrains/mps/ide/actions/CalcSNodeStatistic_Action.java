@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -20,7 +19,7 @@ import jetbrains.mps.util.SNodeOperations;
 
 public class CalcSNodeStatistic_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(CalcSNodeStatistic_Action.class);
+  private static Logger LOG = Logger.getLogger(CalcSNodeStatistic_Action.class);
 
   public CalcSNodeStatistic_Action() {
     super("Calc properties/refs/children statistic for SNodes", "", ICON);
@@ -37,9 +36,7 @@ public class CalcSNodeStatistic_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "CalcSNodeStatistic", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "CalcSNodeStatistic", t);
       this.disable(event.getPresentation());
     }
   }
@@ -88,22 +85,12 @@ public class CalcSNodeStatistic_Action extends BaseAction {
         }
       });
 
-      if (log.isWarnEnabled()) {
-        log.warn("Property size statistic: " + propertiesStatistic);
-      }
-      if (log.isWarnEnabled()) {
-        log.warn("Refs size statistic: " + refsStatistic);
-      }
-      if (log.isWarnEnabled()) {
-        log.warn("Children size statistic: " + childrenStatistic);
-      }
-      if (log.isWarnEnabled()) {
-        log.warn("Zeros statistic: " + zeros.value);
-      }
+      LOG.warning("Property size statistic: " + propertiesStatistic);
+      LOG.warning("Refs size statistic: " + refsStatistic);
+      LOG.warning("Children size statistic: " + childrenStatistic);
+      LOG.warning("Zeros statistic: " + zeros.value);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "CalcSNodeStatistic", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "CalcSNodeStatistic", t);
     }
   }
 }

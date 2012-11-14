@@ -332,7 +332,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5181507218630412258" resolveInfo="dialog" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5181507218630412276">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7kbf.~MyBaseNodeDialog%dshowDialog()%cvoid" resolveInfo="showDialog" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7kbf.~BaseNodeDialog%dshow()%cvoid" resolveInfo="show" />
             </node>
           </node>
         </node>
@@ -469,7 +469,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5181507218630412317" resolveInfo="dialog" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5181507218630412335">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7kbf.~MyBaseNodeDialog%dshowDialog()%cvoid" resolveInfo="showDialog" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7kbf.~BaseNodeDialog%dshow()%cvoid" resolveInfo="show" />
             </node>
           </node>
         </node>

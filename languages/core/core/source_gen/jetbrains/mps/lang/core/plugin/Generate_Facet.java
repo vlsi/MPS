@@ -37,9 +37,7 @@ import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -430,13 +428,11 @@ public class Generate_Facet extends IFacet.Stub {
                   monitor.currentProgress().advanceWork("Pre-loading models", 100);
                   Sequence.fromIterable(mres.models()).visitAll(new IVisitor<SModelDescriptor>() {
                     public void visit(final SModelDescriptor smd) {
-                      if (smd instanceof DefaultSModelDescriptor) {
-                        ModelAccess.instance().runReadAction(new Runnable() {
-                          public void run() {
-                            ((DefaultSModelDescriptor) smd).getUpdateableModel().getModel(ModelLoadingState.FULLY_LOADED);
-                          }
-                        });
-                      }
+                      ModelAccess.instance().runReadAction(new Runnable() {
+                        public void run() {
+                          smd.forceLoad();
+                        }
+                      });
                     }
                   });
                 }

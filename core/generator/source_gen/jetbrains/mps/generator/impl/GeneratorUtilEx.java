@@ -20,34 +20,50 @@ import java.util.Collections;
 
 public class GeneratorUtilEx {
   private static final Logger LOG = Logger.getLogger(GeneratorUtilEx.class);
+  public static final String link_BaseConcept_attrs = "smodelAttribute";
 
   public GeneratorUtilEx() {
   }
 
   public static boolean isTemplateLanguageElement(SNode n) {
+    if (!(n.getConcept().getId().startsWith("jetbrains.mps.lang.generator"))) {
+      // optimization 
+      return false;
+    }
     return SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.generator.structure.NodeMacro") || SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.generator.structure.ReferenceMacro") || SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.generator.structure.PropertyMacro") || SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.generator.structure.TemplateFragment") || SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation");
   }
 
   public static String getMappingName(SNode node, String defaultValue) {
     SNode mappingLabel = null;
 
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.BaseMappingRule")) {
+      mappingLabel = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), "labelDeclaration", false);
+    } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.NodeMacro")) {
+      mappingLabel = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.NodeMacro"), "mappingLabel", false);
+    } else
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.CreateRootRule")) {
       mappingLabel = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.CreateRootRule"), "label", false);
     } else
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.BaseMappingRule")) {
-      mappingLabel = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), "labelDeclaration", false);
-    } else
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.TemplateFragment")) {
       mappingLabel = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateFragment"), "labelDeclaration", false);
-    } else
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.NodeMacro")) {
-      mappingLabel = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.NodeMacro"), "mappingLabel", false);
     } else
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule")) {
       mappingLabel = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"), "labelDeclaration", false);
     } else {
       LOG.errorWithTrace("unexpected input " + jetbrains.mps.util.SNodeOperations.getDebugText(node));
     }
+    String mappingName = (mappingLabel != null ?
+      SPropertyOperations.getString(mappingLabel, "name") :
+      null
+    );
+    if (mappingName == null) {
+      return defaultValue;
+    }
+    return mappingName;
+  }
+
+  public static String getMappingName_NodeMacro(SNode node, String defaultValue) {
+    SNode mappingLabel = SLinkOperations.getTarget(node, "mappingLabel", false);
     String mappingName = (mappingLabel != null ?
       SPropertyOperations.getString(mappingLabel, "name") :
       null

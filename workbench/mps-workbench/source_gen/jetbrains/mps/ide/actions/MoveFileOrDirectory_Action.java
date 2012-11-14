@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -27,7 +26,7 @@ import java.io.File;
 
 public class MoveFileOrDirectory_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(MoveFileOrDirectory_Action.class);
+  private static Logger LOG = Logger.getLogger(MoveFileOrDirectory_Action.class);
 
   public MoveFileOrDirectory_Action() {
     super("Move...", "", ICON);
@@ -44,9 +43,7 @@ public class MoveFileOrDirectory_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "MoveFileOrDirectory", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "MoveFileOrDirectory", t);
       this.disable(event.getPresentation());
     }
   }
@@ -98,9 +95,7 @@ public class MoveFileOrDirectory_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "MoveFileOrDirectory", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "MoveFileOrDirectory", t);
     }
   }
 

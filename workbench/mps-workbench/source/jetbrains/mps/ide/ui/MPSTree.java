@@ -35,7 +35,6 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.AbstractAction;
@@ -389,7 +388,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       public void run() {
         ModelAccess.instance().runReadInEDT(new Runnable() {
           public void run() {
-            if (isDisposed()) return;
+            if (MPSTree.this.isDisposed()) return;
             rebuildNow();
           }
         });

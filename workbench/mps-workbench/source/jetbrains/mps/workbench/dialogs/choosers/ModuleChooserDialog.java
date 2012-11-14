@@ -15,65 +15,39 @@
  */
 package jetbrains.mps.workbench.dialogs.choosers;
 
-import com.intellij.ide.DataManager;
-import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
 import com.intellij.navigation.NavigationItem;
-import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.dialogs.BaseDialog;
-import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.actions.goTo.matcher.ChooseByNamePanel;
-import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
+import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import javax.swing.JComponent;
-import java.awt.Dialog;
-import java.awt.Frame;
 import java.awt.HeadlessException;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
 
-class ModuleChooserDialog extends BaseDialog {
-  private List<SModuleReference> myModules = new ArrayList<SModuleReference>();
-  private List<SModuleReference> myNonProjectModules = new ArrayList<SModuleReference>();
-  private ChooseByNamePanel myChooser;
-  private boolean myIsCancelled = true;
-  private boolean myOkDone = false;
-  private boolean myIsMultipleSelection = false;
+class ModuleChooserDialog extends BaseReferenceChooserDialog<SModuleReference> {
 
-  ModuleChooserDialog(Frame owner, Collection<? extends SModuleReference> modules, @Nullable Collection<? extends SModuleReference> nonProjectModules, String entityString, boolean multiSelection) throws HeadlessException {
-    super(owner, "Choose " + entityString);
-    myIsMultipleSelection = multiSelection;
-    doInit(modules, nonProjectModules, NameUtil.capitalize(entityString));
+  ModuleChooserDialog(Project project, Collection<? extends SModuleReference> modules, @Nullable Collection<? extends SModuleReference> nonProjectModules, String entityString, boolean multiSelection) throws HeadlessException {
+    super(project, modules, nonProjectModules, entityString, multiSelection);
   }
 
-  ModuleChooserDialog(Dialog owner, Collection<? extends SModuleReference> modules, @Nullable Collection<? extends SModuleReference> nonProjectModules, String entityString, boolean multiSelection) throws HeadlessException {
-    super(owner, "Choose " + entityString);
-    myIsMultipleSelection = multiSelection;
-    doInit(modules, nonProjectModules, NameUtil.capitalize(entityString));
+  @Override
+  protected boolean checkType(Object item) {
+    return (item instanceof BaseModuleItem);
   }
 
-  private void doInit(final Collection<? extends SModuleReference> options, Collection<? extends SModuleReference> nonProjectLanguages, final String entityString) {
-    setModal(true);
-    myModules.addAll(options);
-    if (nonProjectLanguages != null) {
-      myNonProjectModules.addAll(nonProjectLanguages);
-    }
+  @Override
+  protected SModuleReference convert(Object item) {
+    BaseModuleItem moduleItem = (BaseModuleItem) item;
+    return moduleItem.getModuleReference();
+  }
 
-    DataContext dataContext = DataManager.getInstance().getDataContext();
-    final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
-    BaseModuleModel goToModuleModel = new BaseModuleModel(project, entityString) {
+  @Override
+  protected BaseMPSChooseModel<SModuleReference> getMPSChooseModel(Project project, String entityString) {
+    return new BaseModuleModel(project, entityString) {
       @Override
       public NavigationItem doGetNavigationItem(final SModuleReference module) {
         return new BaseModuleItem(module) {
@@ -85,9 +59,9 @@ class ModuleChooserDialog extends BaseDialog {
       @Override
       public SModuleReference[] find(boolean checkboxState) {
         if (checkboxState) {
-          return myNonProjectModules.toArray(new SModuleReference[myNonProjectModules.size()]);
+          return myNonProjectReferences.toArray(new SModuleReference[myNonProjectReferences.size()]);
         } else {
-          return myModules.toArray(new SModuleReference[myModules.size()]);
+          return myReferences.toArray(new SModuleReference[myReferences.size()]);
         }
       }
 
@@ -101,51 +75,5 @@ class ModuleChooserDialog extends BaseDialog {
         return false;
       }
     };
-
-    myChooser = MpsPopupFactory.createPanelForPackage(goToModuleModel, !myNonProjectModules.isEmpty());
-    myChooser.invoke(new Callback() {
-      public void elementChosen(Object element) {
-        if (!myOkDone) {
-          myOkDone = true;
-          onOk();
-        }
-      }
-    }, ModalityState.current(), myIsMultipleSelection);
-  }
-
-  public boolean stretchMainComponent() {
-    return true;
-  }
-
-  public DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensions(100, 100, 500, 600);
-  }
-
-  protected JComponent getMainComponent() {
-    return myChooser.getPanel();
-  }
-
-  public List<ModuleReference> getResult() {
-    List<ModuleReference> result = new ArrayList<ModuleReference>();
-    if (myIsCancelled) return result;
-    List<Object> choosen = Collections.unmodifiableList(myChooser.getChosenElements());
-    for (Object item : choosen) {
-      if (item instanceof BaseModuleItem) {
-        BaseModuleItem moduleItem = (BaseModuleItem) item;
-        result.add((ModuleReference)moduleItem.getModuleReference());
-      }
-    }
-    return result;
-  }
-
-  @Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
-  public void onOk() {
-    myIsCancelled = false;
-    dispose();
-  }
-
-  @Button(position = 1, name = "Cancel", mnemonic = 'C', defaultButton = false)
-  public void onCancel() {
-    dispose();
   }
 }

@@ -5,8 +5,7 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
@@ -21,7 +20,7 @@ import java.util.List;
 
 public class RenameFavoritesList_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("menu-replace.png");
-  protected static Log log = LogFactory.getLog(RenameFavoritesList_Action.class);
+  private static Logger LOG = Logger.getLogger(RenameFavoritesList_Action.class);
 
   public RenameFavoritesList_Action() {
     super("Rename Favorites List", "", ICON);
@@ -45,9 +44,7 @@ public class RenameFavoritesList_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RenameFavoritesList", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "RenameFavoritesList", t);
       this.disable(event.getPresentation());
     }
   }
@@ -80,9 +77,7 @@ public class RenameFavoritesList_Action extends BaseAction {
       favoritesManager.addRoots(newName, objects);
       favoritesManager.removeFavoritesList(oldName);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RenameFavoritesList", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "RenameFavoritesList", t);
     }
   }
 }

@@ -20,12 +20,8 @@ import com.intellij.util.LocalTimeCounter;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.ide.datatransfer.TextPasteUtil;
-import jetbrains.mps.nodeEditor.CaretPosition;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.CellSide;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.IntelligentInputUtil;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
@@ -34,6 +30,7 @@ import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.openapi.editor.*;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -45,10 +42,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Rectangle;
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.lang.ref.WeakReference;
@@ -59,7 +53,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   protected TextLine myNullTextLine;
   protected boolean myCaretIsVisible = true;
 
-  protected EditorCell_Label(@NotNull EditorContext editorContext, SNode node, String text) {
+  protected EditorCell_Label(@NotNull jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node, String text) {
     super(editorContext, node);
     myTextLine = new TextLine("", getStyle(), false);
     myNullTextLine = new TextLine("", getStyle(), true);
@@ -606,13 +600,17 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     EditorComponent editor = getEditor();
     CellInfo cellInfo = getCellInfo();
 
-    if (getSNode() != null && !EqualUtil.equals(oldText, text) && !isValidText(text) && CommandProcessor.getInstance().getCurrentCommand() != null) {
-      UndoHelper.getInstance().addUndoableAction(new MySNodeUndoableAction(getSNode(), cellInfo, editor, oldText, text));
+    SNode node = getSNode();
+    if (node == null) return;
+    if (CommandProcessor.getInstance().getCurrentCommand() == null)return;
+    if (EqualUtil.equals(oldText, text)) return;
+    if (isValidText(text)) return;
 
-      if (getSNode().getContainingRoot() != null) {
-        MPSNodesVirtualFileSystem.getInstance().getFileFor(getSNode().getContainingRoot()).setModificationStamp(LocalTimeCounter.currentTime());
-      }
-    }
+    UndoHelper.getInstance().addUndoableAction(new MySNodeUndoableAction(node, cellInfo, editor, oldText, text));
+
+    if (node.getModel()==null) return;
+
+    MPSNodesVirtualFileSystem.getInstance().getFileFor(node.getTopmostAncestor()).setModificationStamp(LocalTimeCounter.currentTime());
   }
 
   public void insertText(String text) {

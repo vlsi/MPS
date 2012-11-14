@@ -9,10 +9,9 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import java.util.Map;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import java.util.Collections;
+import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.generator.ModelDigestHelper;
-import jetbrains.mps.vfs.IFile;
+import java.util.Collections;
 
 public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
   private final GenerationCacheContainer cache;
@@ -35,27 +34,23 @@ public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
   }
 
   public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext context) {
-    if (sm == null) {
+    if (!(sm instanceof GeneratableSModelDescriptor)) {
       return null;
     }
     if (!(sm.isGeneratable())) {
       return null;
     }
-    if (!(sm instanceof DefaultSModelDescriptor)) {
-      String hash = sm.getModelHash();
-      return (hash != null ?
-        Collections.singletonMap(ModelDigestHelper.FILE, hash) :
-        null
-      );
-    }
-    DefaultSModelDescriptor esm = (DefaultSModelDescriptor) sm;
 
-    IFile modelFile = esm.getModelFile();
-    if (modelFile == null) {
-      return null;
+    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, context);
+    if (generationHashes != null) {
+      return generationHashes;
     }
 
-    return ModelDigestHelper.getInstance().getGenerationHashes(modelFile, context);
+    String hash = sm.getModelHash();
+    return (hash != null ?
+      Collections.singletonMap(ModelDigestHelper.FILE, hash) :
+      null
+    );
   }
 
   public boolean isIncrementalEnabled() {

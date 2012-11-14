@@ -37,7 +37,8 @@ public abstract class BaseScrollingBindedDialog extends BaseBindedDialog {
     myMainComponent.setBorder(new EmptyBorder(0, 0, 0, 0));
   }
 
-  public JComponent getMainComponent() {
+  @Override
+  protected JComponent createCenterPanel() {
     return myMainComponent;
   }
 

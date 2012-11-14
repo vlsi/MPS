@@ -19,10 +19,12 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -38,7 +40,8 @@ public abstract class GenerationHandlerBase implements IGenerationHandler {
     myLogger = logger;
   }
 
-  public void startModule(IModule module, List<SModelDescriptor> inputModels, IOperationContext operationContext) {
+  @Override
+  public void startModule(SModule module, List<SModel> inputModels, IOperationContext operationContext) {
   }
 
   @Override
@@ -46,20 +49,25 @@ public abstract class GenerationHandlerBase implements IGenerationHandler {
     myLogger = null;
   }
 
-  protected void info(String text) {
+  protected final void info(String text) {
     myLogger.info(text);
   }
 
-  protected void warning(String text) {
+  protected final void warning(String text) {
     myLogger.warning(text);
   }
 
-  protected void error(String text) {
+  protected final void error(String text) {
     myLogger.error(text);
   }
 
-  protected void checkMonitorCanceled(ProgressMonitor progressMonitor) throws GenerationCanceledException {
+  protected final void checkMonitorCanceled(ProgressMonitor progressMonitor) throws GenerationCanceledException {
     if (progressMonitor.isCanceled()) throw new GenerationCanceledException();
+  }
+
+  @Override
+  public boolean compile(IOperationContext operationContext, List<Pair<SModule, List<SModel>>> input, boolean generationOK, ProgressMonitor progressMonitor) throws IOException, GenerationCanceledException {
+    return true;
   }
 
   @Override

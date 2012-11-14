@@ -15,37 +15,16 @@
  */
 package jetbrains.mps.smodel.descriptor.source;
 
-import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelId;
-import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
-public abstract class StubModelDataSource extends FolderSetDataSource implements ModelDataSource {
+public interface StubModelDataSource extends DataSource {
 
-  public StubModelDataSource() {
-  }
+  ModelLoadResult loadSModel(IModule contextModule, SModelDescriptor descriptor, ModelLoadingState targetState);
 
-  public String toString() {
-    return "stub " + super.toString();
-  }
-
-  public DescriptorLoadResult loadDescriptor(IModule module, SModelFqName modelName) {
-    DescriptorLoadResult result = new DescriptorLoadResult();
-
-    SModelId modelId = SModelId.foreign(modelName.getStereotype(), module.getModuleReference().getModuleId().toString(), modelName.getLongName());
-    result.setUID(modelId.toString());
-
-    return result;
-  }
-
-  public final boolean saveModel(SModelDescriptor descriptor) {
-    throw new UnsupportedOperationException();
-  }
-
-  //todo more precise
-  public boolean hasModel(SModelDescriptor md) {
-    return !getPaths().isEmpty();
-  }
+  // todo move to loadSModel - return null in case no model is there
+  boolean hasModel(SModelDescriptor d);
 }

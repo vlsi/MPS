@@ -38,7 +38,7 @@ public class SModelChildEvent extends SModelEvent {
   }
 
   public SNode getAffectedRoot() {
-    return myParent.getContainingRoot();
+    return myParent.getTopmostAncestor();
   }
 
   public boolean isAdded() {

@@ -33,7 +33,7 @@ class NodePointerNavigationHandler implements INavigationHandler<SNodePointer> {
     SNode realNode = object.getNode();
     if (realNode == null) return false;
 
-    if (!jetbrains.mps.util.SNodeOperations.isRegistered(realNode)) return false;
+    if (!(realNode.getModel() != null)) return false;
 
     SModelDescriptor modelDescriptor = realNode.getModel().getModelDescriptor();
     if (modelDescriptor == null) return false;

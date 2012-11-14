@@ -343,7 +343,7 @@ public class LanguageHierarchyCache implements CoreComponent {
 
     void build() {
       for (SNode cd : myLanguage.getConceptDeclarations()) {
-        if (!cd.isRoot()) continue;
+        if (!(cd.getModel() != null && cd.getModel().isRoot(cd))) continue;
         if (!SNodeUtil.isDefaultSubstitutable(cd)) {
           continue;
         }

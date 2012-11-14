@@ -17,12 +17,12 @@ package jetbrains.mps.generator.generationTypes.java;
 
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -33,13 +33,13 @@ import java.util.List;
 class FileProcessor {
   private static final Logger LOG = Logger.getLogger(FileProcessor.class);
 
-  private final List<SModelDescriptor> myModels = new ArrayList<SModelDescriptor>();
+  private final List<SModel> myModels = new ArrayList<SModel>();
   private final List<FileAndContent> myFilesAndContents = new ArrayList<FileAndContent>();
   private final List<IFile> myFilesToDelete = new ArrayList<IFile>();
 
   private final Object LOCK = new Object();
 
-  public void invalidateModel(SModelDescriptor modelDescriptor) {
+  public void invalidateModel(SModel modelDescriptor) {
     synchronized (LOCK) {
       myModels.add(modelDescriptor);
     }

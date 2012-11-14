@@ -96,11 +96,11 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   }
 
   @Override
-  protected void copyRootNodeFromInput(@NotNull final SNode inputRootNode, @NotNull final TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
+  protected void copyRootInputNode(@NotNull final SNode inputRootNode, @NotNull final TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
     pushTask(new RootGenerationTask() {
       @Override
       public void run() throws GenerationCanceledException, GenerationFailureException {
-        ParallelTemplateGenerator.super.copyRootNodeFromInput(inputRootNode, environment);
+        ParallelTemplateGenerator.super.copyRootInputNode(inputRootNode, environment);
       }
     }, new Pair(inputRootNode, null), environment.getReductionContext().getQueryExecutor());
   }
@@ -108,7 +108,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   @Override
   protected QueryExecutionContext getDefaultExecutionContext(SNode inputNode) {
     if (ROOT_PER_THREAD) {
-      if (inputNode == null || !jetbrains.mps.util.SNodeOperations.isRegistered(inputNode)) {
+      if (inputNode == null || !(inputNode.getModel() != null)) {
         return super.getDefaultExecutionContext(null);
       }
       inputNode = inputNode.getTopmostAncestor();

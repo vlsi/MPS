@@ -35,6 +35,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -149,8 +150,8 @@ public class GenerationFacade {
     ModelAccess.instance().requireWrite(new Runnable() {
       public void run() {
         for (SModelDescriptor d : inputModels) {
-          if (d instanceof DefaultSModelDescriptor && ((DefaultSModelDescriptor) d).needsReloading()) {
-            ((DefaultSModelDescriptor) d).reloadFromDisk();
+          if (d instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) d).needsReloading()) {
+            ((EditableSModelDescriptor) d).reloadFromDisk();
             LOG.info("Model " + d + " reloaded from disk.");
           }
           transientModelsComponent.createModule(d.getModule());

@@ -80,7 +80,7 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
         String mappingName = GeneratorUtilEx.getMappingName(fragment, null);
         TemplateProcessor p = new TemplateProcessor(environment.getGenerator(), environment.getReductionContext());
         try {
-          outputNodes.addAll(p.processTemplateNode(mappingName, templateForInclude, context.subContext(mappingName)));
+          outputNodes.addAll(p.apply(mappingName, templateForInclude, context.subContext(mappingName)));
         } catch (TemplateProcessingFailureException ex) {
           /* ignore */
         }
@@ -88,7 +88,7 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
       return outputNodes;
     } else {
       return new TemplateProcessor(environment.getGenerator(), environment.getReductionContext())
-        .processTemplateNode(null, myTemplateNode, applyContext);
+        .apply(null, myTemplateNode, applyContext);
     }
   }
 

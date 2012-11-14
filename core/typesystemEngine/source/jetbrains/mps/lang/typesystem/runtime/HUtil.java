@@ -33,7 +33,7 @@ public class HUtil {
   //todo: this method can be called from inference rules - by calling behavior methods,
   // todo: in which there are no typechecking context(
   public static SNode copyIfNecessary(SNode node) {
-    if (node != null && (node.getParent() != null || node.isRoot())) {
+    if (node != null && (node.getParent() != null || node.getModel() != null && node.getModel().isRoot(node))) {
       // this copies all the atributes, because can be used in migration scripts
       SNode copy = CopyUtil.copy(node, new THashMap<SNode, SNode>(1), true);
       return copy;
@@ -43,7 +43,7 @@ public class HUtil {
   }
 
   public static SNode copyIfNecessary(SNode node, TypeCheckingContext typeCheckingContext) {
-    if (node != null && (node.getParent() != null || node.isRoot())) {
+    if (node != null && (node.getParent() != null || node.getModel() != null && node.getModel().isRoot(node))) {
 
       // this method is used only when quotations create a type
       // so it should not copy attributes, for instance generator macros of a certain type

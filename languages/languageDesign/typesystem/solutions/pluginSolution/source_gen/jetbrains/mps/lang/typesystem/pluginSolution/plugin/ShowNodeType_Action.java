@@ -5,8 +5,7 @@ package jetbrains.mps.lang.typesystem.pluginSolution.plugin;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -26,7 +25,7 @@ import jetbrains.mps.smodel.IOperationContext;
 
 public class ShowNodeType_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("types.png");
-  protected static Log log = LogFactory.getLog(ShowNodeType_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowNodeType_Action.class);
 
   public ShowNodeType_Action() {
     super("Show Type", "Show node's HELGINS type", ICON);
@@ -43,9 +42,7 @@ public class ShowNodeType_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowNodeType", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowNodeType", t);
       this.disable(event.getPresentation());
     }
   }
@@ -100,7 +97,7 @@ public class ShowNodeType_Action extends BaseAction {
             tmpModel.getSModel().addRoot(type.value);
           }
         });
-        new MyBaseNodeDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, reporter.value).showDialog();
+        new MyBaseNodeDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, reporter.value).show();
       } finally {
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
@@ -110,9 +107,7 @@ public class ShowNodeType_Action extends BaseAction {
         });
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowNodeType", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowNodeType", t);
     }
   }
 }

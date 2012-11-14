@@ -447,8 +447,8 @@
     <nodeInfo nodeId="7788464498752623470" fileName="DiskMemoryConflictResolverImpl.java" startLine="113" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="openDiffDialog#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/smodel/SModel;)V" />
     <nodeInfo nodeId="7788464498752623301" fileName="DiskMemoryConflictResolverImpl.java" startLine="78" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showDiskMemoryQuestion#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/smodel/SModel;Ljava/io/File;)Z" />
     <nodeInfo nodeId="7788464498752623167" fileName="DiskMemoryConflictResolverImpl.java" startLine="37" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7788464498752623163" fileName="DiskMemoryConflictResolverImpl.java" startLine="35" startPosition="126" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623153" fileName="DiskMemoryConflictResolverImpl.java" startLine="35" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolveDiskMemoryConflict#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/DefaultSModelDescriptor;)V" />
+    <nodeInfo nodeId="7788464498752623163" fileName="DiskMemoryConflictResolverImpl.java" startLine="35" startPosition="127" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623153" fileName="DiskMemoryConflictResolverImpl.java" startLine="35" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolveDiskMemoryConflict#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;)V" />
     <scopeInfo nodeId="7788464498752623269" fileName="DiskMemoryConflictResolverImpl.java" startLine="32" startPosition="43" endLine="32" endPosition="43" />
     <scopeInfo nodeId="7788464498752623206" fileName="DiskMemoryConflictResolverImpl.java" startLine="42" startPosition="34" endLine="43" endPosition="71" />
     <scopeInfo nodeId="7788464498752623201" fileName="DiskMemoryConflictResolverImpl.java" startLine="44" startPosition="22" endLine="45" endPosition="70" />
@@ -532,7 +532,7 @@
       <varInfo nodeId="7788464498752623170" varName="needSave" />
     </scopeInfo>
     <scopeInfo nodeId="7788464498752623167" fileName="DiskMemoryConflictResolverImpl.java" startLine="37" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="7788464498752623162" fileName="DiskMemoryConflictResolverImpl.java" startLine="35" startPosition="126" endLine="70" endPosition="7" />
+    <scopeInfo nodeId="7788464498752623162" fileName="DiskMemoryConflictResolverImpl.java" startLine="35" startPosition="127" endLine="70" endPosition="7" />
     <scopeInfo nodeId="7788464498752623153" fileName="DiskMemoryConflictResolverImpl.java" startLine="35" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="7788464498752623156" varName="file" />
       <varInfo nodeId="7788464498752623158" varName="model" />

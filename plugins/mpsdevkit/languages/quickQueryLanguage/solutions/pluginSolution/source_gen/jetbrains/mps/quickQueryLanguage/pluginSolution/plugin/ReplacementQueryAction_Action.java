@@ -4,8 +4,7 @@ package jetbrains.mps.quickQueryLanguage.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -19,7 +18,7 @@ import jetbrains.mps.smodel.IOperationContext;
 
 public class ReplacementQueryAction_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ReplacementQueryAction_Action.class);
+  private static Logger LOG = Logger.getLogger(ReplacementQueryAction_Action.class);
 
   public ReplacementQueryAction_Action() {
     super("Modify Instances by Condition", "", ICON);
@@ -43,9 +42,7 @@ public class ReplacementQueryAction_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ReplacementQueryAction", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ReplacementQueryAction", t);
       this.disable(event.getPresentation());
     }
   }
@@ -85,9 +82,7 @@ public class ReplacementQueryAction_Action extends BaseAction {
       }
       dialog.showDialog();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ReplacementQueryAction", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ReplacementQueryAction", t);
     }
   }
 }

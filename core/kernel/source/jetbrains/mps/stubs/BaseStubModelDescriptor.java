@@ -18,35 +18,29 @@ package jetbrains.mps.stubs;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
+import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.persistence.DataSource;
 
 public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource implements Cloneable {
   private static final Logger LOG = Logger.getLogger(BaseStubModelDescriptor.class);
   private SModule myModule;
   private SModel mySModel;
 
-  public BaseStubModelDescriptor(SModelReference modelReference, @NotNull DataSource source, SModule module) {
+  public BaseStubModelDescriptor(SModelReference modelReference, @NotNull StubModelDataSource source, SModule module) {
     super(modelReference, source);
     myModule = module;
   }
 
-  public BaseStubModelDescriptor copy() {
-    return new BaseStubModelDescriptor(myModelReference, getSource(), myModule);
-  }
-
   @Override
   @NotNull
-  public ModelDataSource getSource() {
-    return super.getSource();
+  public StubModelDataSource getSource() {
+    return (StubModelDataSource) super.getSource();
   }
 
   //------------common descriptor stuff-------------------
-
 
   @Override
   public synchronized SModel getSModel() {
@@ -59,7 +53,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   private SModel createModel() {
-    SModel model = getSource().loadSModel((IModule)myModule, this, ModelLoadingState.FULLY_LOADED).getModel();
+    SModel model = getSource().loadSModel((IModule) myModule, this, ModelLoadingState.FULLY_LOADED).getModel();
     updateDiskTimestamp();
     return model;
   }
@@ -97,7 +91,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
       return;
     }
     ModelLoadingState state = ModelLoadingState.FULLY_LOADED;
-    final ModelLoadResult result = getSource().loadSModel((IModule)myModule, this, state);
+    final ModelLoadResult result = getSource().loadSModel((IModule) myModule, this, state);
     updateDiskTimestamp();
     replaceModel(new Runnable() {
       public void run() {
@@ -107,6 +101,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   // FIXME temporary solution
-  public void reparseOneFile(String content) {}
+  public void reparseOneFile(String content) {
+  }
 
 }

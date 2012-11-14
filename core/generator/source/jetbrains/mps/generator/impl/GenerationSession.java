@@ -71,11 +71,11 @@ class GenerationSession {
   private int myMinorStep = -1;
   private GenerationOptions myGenerationOptions;
 
-  GenerationSession(@NotNull SModelDescriptor inputModel, IOperationContext invocationContext, ITaskPoolProvider taskPoolProvider,
+  GenerationSession(@NotNull org.jetbrains.mps.openapi.model.SModel inputModel, IOperationContext invocationContext, ITaskPoolProvider taskPoolProvider,
             ProgressMonitor progressMonitor, GeneratorLoggerAdapter logger, TransientModelsModule transientModelsModule,
             IPerformanceTracer tracer, GenerationOptions generationOptions) {
     myTaskPoolProvider = taskPoolProvider;
-    myOriginalInputModel = inputModel;
+    myOriginalInputModel = (SModelDescriptor) inputModel;
     myInvocationContext = invocationContext;
     myTransientModelsModule = transientModelsModule;
     myGenerationTracer = generationOptions.getGenerationTracer();
@@ -152,7 +152,7 @@ class GenerationSession {
 
       if (InternalFlag.isInternalMode() && myGenerationOptions.isRebuildAll() && myGenerationOptions.isDebugIncrementalDependencies() && myDependenciesBuilder instanceof IncrementalDependenciesBuilder) {
         myLogger.info("creating generated.trace");
-        ((IncrementalDependenciesBuilder)myDependenciesBuilder).traceDependencyOrigins();
+        ((IncrementalDependenciesBuilder) myDependenciesBuilder).traceDependencyOrigins();
       }
 
       boolean success = false;

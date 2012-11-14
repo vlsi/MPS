@@ -30,8 +30,8 @@ public class ProjectModels {
     return new MyBaseSModelDescriptor(ref, canFireEvents);
   }
 
-  public static boolean isProjectModel(@NotNull SModelReference reference) {
-    return SModelStereotype.INTERNAL.equals(reference.getStereotype());
+  public static boolean isProjectModel(@NotNull org.jetbrains.mps.openapi.model.SModelReference reference) {
+    return reference.getModelName().endsWith("@" + SModelStereotype.INTERNAL);
   }
 
   private static class MyBaseSModelDescriptor extends BaseSpecialModelDescriptor implements EditableSModelDescriptor {
@@ -68,6 +68,19 @@ public class ProjectModels {
 
     public boolean isReadOnly() {
       return false;
+    }
+
+    @Override
+    public void updateDiskTimestamp() {
+    }
+
+    @Override
+    public boolean needsReloading() {
+      return false;
+    }
+
+    @Override
+    public void reloadFromDisk() {
     }
 
     public IFile getModelFile() {

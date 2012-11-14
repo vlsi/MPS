@@ -5,8 +5,7 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -24,7 +23,7 @@ import com.intellij.openapi.project.Project;
 
 public class NewSolution_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("solution.png");
-  protected static Log log = LogFactory.getLog(NewSolution_Action.class);
+  private static Logger LOG = Logger.getLogger(NewSolution_Action.class);
 
   public NewSolution_Action() {
     super("Solution", "", ICON);
@@ -41,9 +40,7 @@ public class NewSolution_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "NewSolution", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "NewSolution", t);
       this.disable(event.getPresentation());
     }
   }
@@ -72,7 +69,7 @@ public class NewSolution_Action extends BaseAction {
     try {
       NewSolutionDialog dialog = new NewSolutionDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
       dialog.setProject(((MPSProject) MapSequence.fromMap(_params).get("project")));
-      dialog.showDialog();
+      dialog.show();
       final Solution s = dialog.getResult();
       if (s == null) {
         return;
@@ -89,9 +86,7 @@ public class NewSolution_Action extends BaseAction {
       projectPane.rebuildTree();
       projectPane.selectModule(s, false);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "NewSolution", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "NewSolution", t);
     }
   }
 }

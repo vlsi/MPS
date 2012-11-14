@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.MPSProject;
@@ -22,7 +21,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 public class SetModuleFolder_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(SetModuleFolder_Action.class);
+  private static Logger LOG = Logger.getLogger(SetModuleFolder_Action.class);
 
   public SetModuleFolder_Action() {
     super("Set Folder", "", ICON);
@@ -46,9 +45,7 @@ public class SetModuleFolder_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "SetModuleFolder", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "SetModuleFolder", t);
       this.disable(event.getPresentation());
     }
   }
@@ -91,9 +88,7 @@ public class SetModuleFolder_Action extends BaseAction {
         pane.rebuild();
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "SetModuleFolder", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "SetModuleFolder", t);
     }
   }
 }

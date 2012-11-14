@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -38,7 +37,7 @@ import com.intellij.openapi.application.ModalityState;
 
 public class NewRuntimeModule_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(NewRuntimeModule_Action.class);
+  private static Logger LOG = Logger.getLogger(NewRuntimeModule_Action.class);
 
   public NewRuntimeModule_Action() {
     super("New Runtime Module", "", ICON);
@@ -62,9 +61,7 @@ public class NewRuntimeModule_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "NewRuntimeModule", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "NewRuntimeModule", t);
       this.disable(event.getPresentation());
     }
   }
@@ -135,9 +132,7 @@ public class NewRuntimeModule_Action extends BaseAction {
         }
       }, ModalityState.current(), true);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "NewRuntimeModule", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "NewRuntimeModule", t);
     }
   }
 }

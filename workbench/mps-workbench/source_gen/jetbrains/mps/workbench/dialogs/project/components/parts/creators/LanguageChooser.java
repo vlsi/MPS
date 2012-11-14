@@ -33,6 +33,6 @@ public class LanguageChooser implements Computable<List<ModuleReference>> {
         }).toListSequence();
       }
     });
-    return CommonChoosers.showDialogModuleCollectionChooser(myOwner.getMainComponent(), "language", langRefs.value, null);
+    return CommonChoosers.showDialogModuleCollectionChooser(null, myOwner.getMainComponent(), "language", langRefs.value, null);
   }
 }

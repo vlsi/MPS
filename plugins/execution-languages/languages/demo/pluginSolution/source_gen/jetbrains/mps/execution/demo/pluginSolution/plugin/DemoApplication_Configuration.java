@@ -6,8 +6,7 @@ import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.lib.NodeByConcept_Configuration;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -36,7 +35,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class DemoApplication_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   private static final Icon ICON = IconUtil.getIcon("run.png");
-  protected static Log log = LogFactory.getLog(DemoApplication_Configuration.class);
+  private static Logger LOG = Logger.getLogger(DemoApplication_Configuration.class);
 
   @NotNull
   private DemoApplication_Configuration.MyState myState = new DemoApplication_Configuration.MyState();
@@ -75,9 +74,7 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
       if (fieldElement != null) {
         myNode.readExternal(fieldElement);
       } else {
-        if (log.isDebugEnabled()) {
-          log.debug("Element " + "node" + " in " + this.getClass().getName() + " was null.");
-        }
+        LOG.debug("Element " + "node" + " in " + this.getClass().getName() + " was null.");
       }
     }
   }
@@ -95,9 +92,7 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
       clone.myNode = (NodeByConcept_Configuration) myNode.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      if (log.isErrorEnabled()) {
-        log.error("", ex);
-      }
+      LOG.error("", ex);
     }
     return clone;
   }

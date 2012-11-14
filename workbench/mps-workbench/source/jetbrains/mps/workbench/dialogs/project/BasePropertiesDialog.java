@@ -15,35 +15,33 @@
  */
 package jetbrains.mps.workbench.dialogs.project;
 
-import jetbrains.mps.ide.dialogs.BaseDialog;
-import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.IOperationContext;
 
-import java.awt.*;
+import javax.swing.Action;
+import java.awt.Dimension;
+import java.awt.HeadlessException;
+import java.awt.event.ActionEvent;
+import java.util.List;
 
 public abstract class BasePropertiesDialog extends BaseTabbedBindedDialog {
   protected BasePropertiesDialog(String text, IOperationContext operationContext) throws HeadlessException {
     super(text, operationContext);
+
+    getWindow().setMinimumSize(new Dimension(500,600));
   }
 
-  public DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensions(100, 100, 500, 600);
-  }
-
-  @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
-  public void buttonOK() {
-    if (!saveChanges()) return;
-    dispose();
-  }
-
-  @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')
-  public void buttonCancel() {
-    dispose();
-  }
-
-  @BaseDialog.Button(position = 2, name = "Apply", mnemonic = 'A')
-  public void buttonApply() {
-    saveChanges();
+  @Override
+  protected Action[] createActions() {
+    return new Action[]{
+      getOKAction(),
+      getCancelAction(),
+      new DialogWrapperAction("Apply") {
+        @Override
+        protected void doAction(ActionEvent e) {
+          BasePropertiesDialog.super.saveChanges();
+      }
+    }};
   }
 
   protected String getErrorString() {

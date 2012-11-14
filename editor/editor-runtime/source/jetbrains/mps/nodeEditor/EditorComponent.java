@@ -15,8 +15,21 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.ide.*;
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.ide.CopyProvider;
+import com.intellij.ide.CutProvider;
+import com.intellij.ide.DataManager;
+import com.intellij.ide.PasteProvider;
+import com.intellij.ide.SelectInContext;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.KeyboardShortcut;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.DumbAware;
@@ -41,31 +54,63 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectView.ProjectViewSelectInProvider;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
-import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
-import jetbrains.mps.intentions.IntentionsManager;
-import jetbrains.mps.intentions.IntentionsManager.QueryDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.NodeEditorActions.CompleteSmart;
 import jetbrains.mps.nodeEditor.NodeEditorActions.ShowMessage;
-import jetbrains.mps.nodeEditor.cellActions.*;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_CopyNode;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_CutNode;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_PasteNode;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_PasteNodeRelative;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_SideTransform;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
-import jetbrains.mps.nodeEditor.cells.*;
-import jetbrains.mps.nodeEditor.folding.*;
+import jetbrains.mps.nodeEditor.cells.CellConditions;
+import jetbrains.mps.nodeEditor.cells.CellFinders;
+import jetbrains.mps.nodeEditor.cells.CellInfo;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ParentSettings;
+import jetbrains.mps.nodeEditor.folding.CallAction_ToggleCellFolding;
+import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
+import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
+import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
+import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
-import jetbrains.mps.nodeEditor.selection.*;
+import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
+import jetbrains.mps.nodeEditor.selection.Selection;
+import jetbrains.mps.nodeEditor.selection.SelectionListener;
+import jetbrains.mps.nodeEditor.selection.SelectionManager;
+import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.EventsCollector;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.event.EventUtil;
+import jetbrains.mps.smodel.event.SModelChildEvent;
+import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -83,20 +128,68 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
+import javax.swing.AbstractAction;
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
+import javax.swing.JScrollPane;
+import javax.swing.JViewport;
+import javax.swing.KeyStroke;
+import javax.swing.Scrollable;
+import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 import javax.swing.border.LineBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.plaf.ScrollBarUI;
 import javax.swing.plaf.basic.BasicScrollBarUI;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Adjustable;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.ComponentOrientation;
+import java.awt.Container;
+import java.awt.Cursor;
+import java.awt.Dimension;
+import java.awt.FocusTraversalPolicy;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.GridLayout;
+import java.awt.Insets;
+import java.awt.KeyboardFocusManager;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.RenderingHints;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.Stack;
+import java.util.TreeSet;
+import java.util.WeakHashMap;
 
 public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner, TooltipComponent, jetbrains.mps.openapi.editor.EditorComponent {
   private static final Logger LOG = Logger.getLogger(EditorComponent.class);
@@ -841,7 +934,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     setOperationContext(operationContext);
     editNode(node);
-    setReadOnly(node == null || node.isDeleted() || node.getModel().isNotEditable());
+    setReadOnly(node == null || node.getModel() == null || node.getModel().isNotEditable());
   }
 
   protected void editNode(final SNode node) {
@@ -1064,22 +1157,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
   }
 
-  private Set<Pair<Intention, SNode>> getAvailableIntentions() {
-    final Set<Pair<Intention, SNode>> result = new LinkedHashSet<Pair<Intention, SNode>>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        SNode node = getSelectedNode();
-        jetbrains.mps.openapi.editor.EditorContext editorContext = getEditorContext();
-        if (node != null && editorContext != null) {
-          QueryDescriptor query = new QueryDescriptor();
-          query.setIntentionClass(BaseIntention.class);
-          result.addAll(IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext));
-        }
-      }
-    });
-    return result;
-  }
-
   private DefaultActionGroup getCellActionsGroup() {
     DefaultActionGroup result = new DefaultActionGroup("Cell actions", true);
     result.setPopup(false);
@@ -1209,22 +1286,23 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void assertModelNotDisposed() {
-    assert myModelDisposedStackTrace == null : getModelDisposedMessage();
-    assert myNode == null || !jetbrains.mps.util.SNodeOperations.isDisposed(myNode) : getNodeDisposedMessage();
+    boolean old = ModelAccess.instance().setReadEnabledFlag(true);
+    try {
+      assert myModelDisposedStackTrace == null : getModelDisposedMessage();
+      if (myNode == null) return;
+      SModel model = myNode.getModel();
+      if (model == null) return;
+      assert !model.isDisposed() : getNodeDisposedMessage(model);
+    } finally {
+      ModelAccess.instance().setReadEnabledFlag(old);
+    }
   }
 
-  private String getNodeDisposedMessage() {
+  private String getNodeDisposedMessage(SModel model) {
     StringBuilder sb = new StringBuilder("editor (" + this + ") is invalid");
     if (myNode != null) {
       sb.append(", myNode is disposed");
-      StackTraceElement[] result;
-      SModel model = myNode.getModelInternal();
-      if (model != null) {
-        result = model.getDisposedStacktrace();
-      } else {
-        result = null;
-      }
-      StackTraceElement[] modelDisposedTrace = result;
+      StackTraceElement[] modelDisposedTrace = model.getDisposedStacktrace();
       if (modelDisposedTrace != null) {
         for (StackTraceElement element : modelDisposedTrace) {
           sb.append("\nat ");
@@ -1338,7 +1416,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     // Sometimes EditorComponent doesn't react on ModelReplaced notifications.
     // Adding this assertion to ensure the reason is not in incorrectly removed listener (dependencies collection logic)
-    if (myNode != null && !myNode.isDeleted() && myNode.getModel() != null) {
+    if (myNode != null && myNode.getModel() != null) {
       SModel model = myNode.getModel();
       SModelDescriptor modelDescriptor = model.getModelDescriptor();
       if (modelDescriptor != null && modelDescriptor.isRegistered() && !model.isUpdateMode()) {
@@ -2787,7 +2865,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     if (lastRemove != null) {
-      if (lastRemove instanceof SModelChildEvent && (lastSelectedNode == null || lastSelectedNode.isDeleted())) {
+      if (lastRemove instanceof SModelChildEvent && (lastSelectedNode == null || lastSelectedNode.getModel() == null)) {
         SModelChildEvent ce = (SModelChildEvent) lastRemove;
         int childIndex = ce.getChildIndex();
         String role = ce.getChildRole();

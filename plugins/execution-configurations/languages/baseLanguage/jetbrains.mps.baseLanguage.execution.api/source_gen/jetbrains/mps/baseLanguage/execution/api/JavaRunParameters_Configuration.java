@@ -4,8 +4,7 @@ package jetbrains.mps.baseLanguage.execution.api;
 
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
@@ -15,7 +14,7 @@ import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 
 public class JavaRunParameters_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
-  protected static Log log = LogFactory.getLog(JavaRunParameters_Configuration.class);
+  private static Logger LOG = Logger.getLogger(JavaRunParameters_Configuration.class);
 
   @NotNull
   private JavaRunParameters_Configuration.MyState myState = new JavaRunParameters_Configuration.MyState();
@@ -56,9 +55,7 @@ public class JavaRunParameters_Configuration implements IPersistentConfiguration
       clone.myState = (JavaRunParameters_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      if (log.isErrorEnabled()) {
-        log.error("", ex);
-      }
+      LOG.error("", ex);
     }
     return clone;
   }

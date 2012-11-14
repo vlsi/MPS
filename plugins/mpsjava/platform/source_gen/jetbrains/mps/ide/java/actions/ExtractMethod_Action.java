@@ -4,8 +4,7 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
@@ -30,7 +29,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 
 public class ExtractMethod_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ExtractMethod_Action.class);
+  private static Logger LOG = Logger.getLogger(ExtractMethod_Action.class);
 
   public ExtractMethod_Action() {
     super("Extract Method", "", ICON);
@@ -54,9 +53,7 @@ public class ExtractMethod_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ExtractMethod", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ExtractMethod", t);
       this.disable(event.getPresentation());
     }
   }
@@ -109,9 +106,7 @@ public class ExtractMethod_Action extends BaseAction {
       ExtractMethodDialog dialog = new ExtractMethodDialog(((Project) MapSequence.fromMap(_params).get("project")), ((EditorContext) MapSequence.fromMap(_params).get("context")), params.value, refactoring.value);
       dialog.show();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ExtractMethod", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ExtractMethod", t);
     }
   }
 }

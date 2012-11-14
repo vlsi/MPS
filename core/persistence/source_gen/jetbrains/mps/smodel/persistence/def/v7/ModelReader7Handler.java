@@ -4,8 +4,7 @@ package jetbrains.mps.smodel.persistence.def.v7;
 
 import jetbrains.mps.util.xml.XMLSAXHandler;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import java.util.Stack;
 import org.xml.sax.Locator;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -27,7 +26,7 @@ import jetbrains.mps.smodel.StaticReference;
 
 public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
   private static String[] EMPTY_ARRAY = new String[0];
-  protected static Log log = LogFactory.getLog(ModelReader7Handler.class);
+  private static Logger LOG = Logger.getLogger(ModelReader7Handler.class);
 
   private ModelReader7Handler.ModelElementHandler modelhandler = new ModelReader7Handler.ModelElementHandler();
   private ModelReader7Handler.PersistenceElementHandler persistencehandler = new ModelReader7Handler.PersistenceElementHandler();
@@ -522,9 +521,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
         Pair<Boolean, SNodePointer> pptr = fieldhelper.readLink_internal(child[1]);
         SNodePointer ptr = pptr.o2;
         if (ptr == null || ptr.getModelReference() == null) {
-          if (log.isErrorEnabled()) {
-            log.error("couldn't create reference '" + child[0] + "' from " + child[1]);
-          }
+          LOG.error("couldn't create reference '" + child[0] + "' from " + child[1]);
           return;
         }
         StaticReference ref = new StaticReference(fieldhelper.readRole(child[0]), result, ptr.getModelReference(), ptr.getNodeId(), child[2]);

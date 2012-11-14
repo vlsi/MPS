@@ -4,15 +4,14 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
 
 public class ShowErrorMessage_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ShowErrorMessage_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowErrorMessage_Action.class);
 
   public ShowErrorMessage_Action() {
     super("Show Error Message", "", ICON);
@@ -36,9 +35,7 @@ public class ShowErrorMessage_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowErrorMessage", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowErrorMessage", t);
       this.disable(event.getPresentation());
     }
   }
@@ -53,9 +50,7 @@ public class ShowErrorMessage_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowErrorMessage", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowErrorMessage", t);
     }
   }
 }

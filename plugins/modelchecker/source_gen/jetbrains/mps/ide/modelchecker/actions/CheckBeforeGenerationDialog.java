@@ -14,7 +14,6 @@ import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import javax.swing.JLabel;
-import javax.swing.Action;
 
 /*package*/ class CheckBeforeGenerationDialog extends DialogWrapper {
   private String myDialogMessage;
@@ -23,7 +22,10 @@ import javax.swing.Action;
     super(project, true);
     myDialogMessage = String.format("Model checker found %d errors and %d warnings. " + "Review them and don't generate models or ignore them?", errors, warnings);
     setTitle("Check Before Generation");
+    setOKButtonText("Review Errors");
+    setCancelButtonText("Ignore Errors");
     setButtonsAlignment(SwingUtilities.CENTER);
+
     init();
   }
 
@@ -42,19 +44,5 @@ import javax.swing.Action;
     panel.add(new JLabel(myDialogMessage), BorderLayout.CENTER);
     panel.add(checkBox, BorderLayout.SOUTH);
     return panel;
-  }
-
-  @Override
-  protected Action getCancelAction() {
-    Action cancelAction = super.getCancelAction();
-    cancelAction.putValue(Action.NAME, "Ignore Errors");
-    return cancelAction;
-  }
-
-  @Override
-  protected Action getOKAction() {
-    Action okAction = super.getOKAction();
-    okAction.putValue(Action.NAME, "Review Errors");
-    return okAction;
   }
 }

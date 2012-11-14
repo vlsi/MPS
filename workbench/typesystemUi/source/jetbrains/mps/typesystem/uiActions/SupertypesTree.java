@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.typesystem.uiActions;
 
-import jetbrains.mps.ide.dialogs.BaseNodeDialog;
-import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyView;
 import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
@@ -25,11 +23,7 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.PresentationManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
-import javax.swing.AbstractAction;
-import javax.swing.JButton;
-import javax.swing.SwingUtilities;
-import java.awt.HeadlessException;
-import java.awt.event.ActionEvent;
+import javax.swing.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -67,12 +61,7 @@ public class SupertypesTree extends AbstractHierarchyTree {
   }
 
   public boolean doubleClick(final HierarchyTreeNode hierarchyTreeNode) {
-    final BaseNodeDialog dialog = new MyBaseNodeDialog(hierarchyTreeNode);
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        dialog.showDialog();
-      }
-    });
+    (new MyBaseNodeDialog(hierarchyTreeNode)).show();
     return true;
   }
 
@@ -87,30 +76,29 @@ public class SupertypesTree extends AbstractHierarchyTree {
   private class MyBaseNodeDialog extends BaseNodeDialog {
     private final HierarchyTreeNode myHierarchyTreeNode;
 
-    public MyBaseNodeDialog(HierarchyTreeNode hierarchyTreeNode) throws HeadlessException {
+    public MyBaseNodeDialog(HierarchyTreeNode hierarchyTreeNode) {
       super("", SupertypesTree.this.myOperationContext);
       myHierarchyTreeNode = hierarchyTreeNode;
+
+      setHorizontalStretch(2f);
+      setVerticalStretch(2f);
+
+      init();
     }
 
-    protected boolean saveChanges() {
-      return true;
-    }
-
+    @Override
     protected SNode getNode() {
       return myHierarchyTreeNode.getNode();
     }
 
-    public DialogDimensions getDefaultDimensionSettings() {
-      return new DialogDimensions(200, 200, 200, 150);
+    @Override
+    protected JComponent createCenterPanel() {
+      return super.getMainComponent();
     }
 
-    protected JButton[] createButtons() {
-      JButton button = new JButton(new AbstractAction("OK") {
-        public void actionPerformed(ActionEvent e) {
-          MyBaseNodeDialog.this.dispose();
-        }
-      });
-      return new JButton[]{button};
+    @Override
+    protected Action[] createActions() {
+      return new Action[]{getOKAction()};
     }
   }
 }

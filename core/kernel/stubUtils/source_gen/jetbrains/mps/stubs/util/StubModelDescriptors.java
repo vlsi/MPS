@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.smodel.SModelFqName;
@@ -55,7 +55,7 @@ public abstract class StubModelDescriptors {
         if (descById != null) {
           assert descById.getModule() == module;
           SetSequence.fromSet(result).addElement(((BaseStubModelDescriptor) descById));
-          ModelDataSource dataSource = ((BaseStubModelDescriptor) descById).getSource();
+          DataSource dataSource = ((BaseStubModelDescriptor) descById).getSource();
           if (dataSource instanceof MultiRootModelDataSource) {
             ((MultiRootModelDataSource) dataSource).addRoot(path);
           }

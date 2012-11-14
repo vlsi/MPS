@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 
 public class JavaSourceStubs extends ModelRootManagerBase {
   public JavaSourceStubs() {
@@ -73,7 +72,7 @@ public class JavaSourceStubs extends ModelRootManagerBase {
         smd = new JavaSourceStubModelDescriptor(modelReference, new JavaSourceStubModelDS(), modelRoot.getModule());
 
         for (IFile file : ListSequence.fromList(files)) {
-          ((StubModelDataSource) smd.getSource()).addPath(file.getPath(), modelRoot);
+          ((JavaSourceStubModelDescriptor) smd).getSource().addPath(file.getPath(), modelRoot);
         }
 
       }

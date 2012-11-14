@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -15,6 +14,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -26,13 +26,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(CalcClassifiersInRootsStatistic_Action.class);
+  private static Logger LOG = Logger.getLogger(CalcClassifiersInRootsStatistic_Action.class);
 
   public CalcClassifiersInRootsStatistic_Action() {
     super("Calc classifiers in roots statistic", "", ICON);
@@ -49,9 +48,7 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "CalcClassifiersInRootsStatistic", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "CalcClassifiersInRootsStatistic", t);
       this.disable(event.getPresentation());
     }
   }
@@ -74,7 +71,7 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
 
       InternalActionsUtils.executeActionOnAllNodesInModal("find used concepts", ((Project) MapSequence.fromMap(_params).get("project")), new _FunctionTypes._void_P1_E0<SNode>() {
         public void invoke(final SNode node) {
-          if (node.isRoot()) {
+          if (SNodeOperations.isRoot(node)) {
             rootsCount.value++;
 
             String nodeName = node + "@" + node.getModel().getModelDescriptor().getLongName();
@@ -134,9 +131,7 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
 
       System.out.println("Members average time: " + membersOverallTime.value * 0.001 / rootsCount.value);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "CalcClassifiersInRootsStatistic", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "CalcClassifiersInRootsStatistic", t);
     }
   }
 
@@ -145,10 +140,10 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
     context.checkRoot();
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
 
-    for (SNode node : SNodeOperations.getDescendants(rootNode, "jetbrains.mps.lang.core.structure.BaseConcept", true, new String[]{})) {
+    for (SNode node : jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getDescendants(rootNode, "jetbrains.mps.lang.core.structure.BaseConcept", true, new String[]{})) {
       SNode type = context.typeOf(node);
-      if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-        ListSequence.fromList(result).addElement(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+      if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+        ListSequence.fromList(result).addElement(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
       }
     }
     context.dispose();

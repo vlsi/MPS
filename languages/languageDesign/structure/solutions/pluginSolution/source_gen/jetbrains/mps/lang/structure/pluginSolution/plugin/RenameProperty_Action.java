@@ -4,8 +4,7 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
@@ -25,7 +24,7 @@ import java.util.Arrays;
 
 public class RenameProperty_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(RenameProperty_Action.class);
+  private static Logger LOG = Logger.getLogger(RenameProperty_Action.class);
 
   public RenameProperty_Action() {
     super("Rename Property", "", ICON);
@@ -49,9 +48,7 @@ public class RenameProperty_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RenameProperty", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "RenameProperty", t);
       this.disable(event.getPresentation());
     }
   }
@@ -93,7 +90,8 @@ public class RenameProperty_Action extends BaseAction {
       }
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {
-          if (!(jetbrains.mps.util.SNodeOperations.isRegistered(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) {
+          SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("target")));
+          if (!(node.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) {
             return;
           }
           RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.structure.refactorings.RenameProperty", Arrays.asList("newName"), Arrays.asList(newName), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
@@ -101,9 +99,7 @@ public class RenameProperty_Action extends BaseAction {
       });
 
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RenameProperty", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "RenameProperty", t);
     }
   }
 }

@@ -67,11 +67,11 @@ public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodePoint
               node == null ||
                 node.getModel() == null ||
                 node.getModel().isDisposed() ||
-                node.getModel().getModelDescriptor() != null) {
+                node.getModel().getModelDescriptor() == null) {
               return;
             }
             ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
-            NavigationSupport.getInstance().openNode(context, node, true, !(node.isRoot()));
+            NavigationSupport.getInstance().openNode(context, node, true, !(node.getModel() != null && node.getModel().isRoot(node)));
           }
         });
       }

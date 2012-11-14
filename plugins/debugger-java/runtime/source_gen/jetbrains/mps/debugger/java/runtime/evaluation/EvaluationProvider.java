@@ -102,7 +102,7 @@ public class EvaluationProvider implements IEvaluationProvider {
             @Override
             public void run() {
               EvaluationDialog evaluationDialog = new EvaluationDialog(context, EvaluationProvider.this, model);
-              evaluationDialog.showDialog();
+              evaluationDialog.show();
             }
           });
         }
@@ -113,13 +113,13 @@ public class EvaluationProvider implements IEvaluationProvider {
   public void showEditWatchDialog(IOperationContext context, final AbstractEvaluationModel model) {
     ApplicationManager.getApplication().assertIsDispatchThread();
     final EditWatchDialog editWatchDialog = new EditWatchDialog(context, this, model);
-    editWatchDialog.addWindowListener(new WindowAdapter() {
+    editWatchDialog.getWindow().addWindowListener(new WindowAdapter() {
       @Override
       public void windowClosed(WindowEvent e) {
         fireWatchUpdated(model);
       }
     });
-    editWatchDialog.showDialog();
+    editWatchDialog.show();
   }
 
   @Override
@@ -154,7 +154,7 @@ public class EvaluationProvider implements IEvaluationProvider {
                 addWatch(model);
               }
             });
-            editWatchDialog.showDialog();
+            editWatchDialog.show();
           }
         });
       }

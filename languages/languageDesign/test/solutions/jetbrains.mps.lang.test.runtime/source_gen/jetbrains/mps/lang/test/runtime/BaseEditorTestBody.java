@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import jetbrains.mps.intentions.IntentionsManager;
 import java.util.Collection;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.intentions.Intention;
+import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
@@ -141,9 +141,9 @@ public class BaseEditorTestBody extends BaseTestBody {
             editor.getEditorContext().select(node);
             IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
             query.setCurrentNodeOnly(true);
-            Collection<Pair<Intention, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, editor.getEditorContext());
-            for (Pair<Intention, SNode> intention : intentions) {
-              if (intention.o1.getClass().getCanonicalName().equals(name)) {
+            Collection<Pair<IntentionExecutable, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, editor.getEditorContext());
+            for (Pair<IntentionExecutable, SNode> intention : intentions) {
+              if (intention.o1.getDescriptor().getPersistentStateKey().equals(name)) {
                 intention.o1.execute(intention.o2, editor.getEditorContext());
               }
             }
@@ -155,7 +155,7 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   public static Editor openEditor(Project project, SModelDescriptor model, SNode node) {
     IOperationContext context = new ModuleContext(model.getModule(), project);
-    return NavigationSupport.getInstance().openNode(context, node, true, !(node.isRoot()));
+    return NavigationSupport.getInstance().openNode(context, node, true, !(jetbrains.mps.util.SNodeOperations.isRoot(node)));
   }
 
   public static void closeEditor(Project project, SNode node) {

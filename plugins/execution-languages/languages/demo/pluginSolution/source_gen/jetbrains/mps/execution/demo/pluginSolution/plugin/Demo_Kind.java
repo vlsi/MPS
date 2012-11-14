@@ -10,8 +10,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.ide.icons.IconManager;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import java.util.List;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -26,23 +25,19 @@ public class Demo_Kind implements ConfigurationType {
     public Icon invoke() {
       IModule module = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("22e72e4c-0f69-46ce-8403-6750153aa615"));
       if (module == null) {
-        if (log.isErrorEnabled()) {
-          log.error("Can't find language jetbrains.mps.execution.configurations, turn on \"Execution Languages\" plugin.");
-        }
+        LOG.error("Can't find language jetbrains.mps.execution.configurations, turn on \"Execution Languages\" plugin.");
         return null;
       }
       String shortPath = "${language_descriptor}/icons/runApp.png";
       String path = MacrosFactory.forModuleFile(module.getDescriptorFile()).expandPath(shortPath);
       if ((path == null || path.length() == 0)) {
-        if (log.isErrorEnabled()) {
-          log.error("Can't expand path " + shortPath + " with module " + module + ".");
-        }
+        LOG.error("Can't expand path " + shortPath + " with module " + module + ".");
         return null;
       }
       return IconManager.loadIcon(path, true);
     }
   }.invoke();
-  protected static Log log = LogFactory.getLog(Demo_Kind.class);
+  private static Logger LOG = Logger.getLogger(Demo_Kind.class);
 
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
 

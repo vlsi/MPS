@@ -20,7 +20,7 @@ import jetbrains.mps.debug.api.programState.IThread;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.ILocation;
-import jetbrains.mps.smodel.IOperationContext;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 
@@ -94,11 +94,11 @@ public class ExportThreads_Action extends BaseAction {
         sb.append('\n');
       }
 
-      final ExportThreadsDialog dialog = new ExportThreadsDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")), sb);
+      final ExportThreadsDialog dialog = new ExportThreadsDialog(((Project) MapSequence.fromMap(_params).get("project")), sb);
 
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          dialog.showDialog();
+          dialog.show();
         }
       }, ModalityState.NON_MODAL);
     } catch (Throwable t) {

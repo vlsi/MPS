@@ -4,8 +4,7 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -22,7 +21,7 @@ import jetbrains.mps.project.MPSProject;
 
 public class GetModuleContentsFromSource_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(GetModuleContentsFromSource_Action.class);
+  private static Logger LOG = Logger.getLogger(GetModuleContentsFromSource_Action.class);
 
   public GetModuleContentsFromSource_Action() {
     super("Get Module Contents from Source", "", ICON);
@@ -39,9 +38,7 @@ public class GetModuleContentsFromSource_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GetModuleContentsFromSource", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "GetModuleContentsFromSource", t);
       this.disable(event.getPresentation());
     }
   }
@@ -80,9 +77,7 @@ public class GetModuleContentsFromSource_Action extends BaseAction {
         javaCompiler.compile();
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GetModuleContentsFromSource", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "GetModuleContentsFromSource", t);
     }
   }
 }

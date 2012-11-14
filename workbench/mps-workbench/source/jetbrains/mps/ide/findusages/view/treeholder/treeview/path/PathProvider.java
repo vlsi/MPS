@@ -36,20 +36,13 @@ public class PathProvider {
 
     if (o instanceof SNode) {
       SNode node = (SNode) o;
-      if (node.getContainingRoot() == null) {
-        SModel model = node.getModel();
-        LOG.error("Node with null containing root in model checker results: " +
-          "id=" + node.getSNodeId() + ", concept=" + node.getConcept().getId()
-          + ", model=" + (model != null ? model.getSModelReference(): "") + ", registered=", jetbrains.mps.util.SNodeOperations.isRegistered(node));
-        return (List<PathItem>) Collections.EMPTY_LIST;
-      }
       res.add(new PathItem(PathItemRole.ROLE_TARGET_NODE, node));
 
       if (node.getParent() != null) {
         appendNodePathThroughNamedConcepts(res, node.getParent());
       }
 
-      SNode rootNode = node.getContainingRoot();
+      SNode rootNode = node.getTopmostAncestor();
       if (node != rootNode) {
         res.add(new PathItem(PathItemRole.ROLE_ROOT, rootNode));
       }
@@ -88,7 +81,7 @@ public class PathProvider {
       name = "<getName() caused an exception on this node>";
     }
     if (name != null) {
-      if (node != node.getContainingRoot()) {
+      if (node != node.getTopmostAncestor()) {
         path.add(new PathItem(PathItemRole.ROLE_ROOT_TO_TARGET_NODE, node));
       }
     }

@@ -5,17 +5,18 @@ package jetbrains.mps.lang.typesystem.intentions;
 import jetbrains.mps.intentions.BaseIntentionsDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
-    super(new ModuleReference("jetbrains.mps.lang.typesystem", "7a5dda62-9140-4668-ab76-d5ed1746f2b2"), SModelReference.fromString("r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)"));
+    super(new ModuleReference("7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)"), SModelReference.fromString("r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)"));
   }
 
   public void init() {
-    add(new ConvertInferenceRuleToNonTypesystemRule_Intention(), "1195490883262");
-    add(new CreateTypesystemIntention_Intention(), "3302086321380606109");
-    add(new FlipInequality_Intention(), "6840209722389643031");
-    add(new MakeInequalityCheckOnly_Intention(), "6840209722389750234");
-    add(new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention(), "8293956702610699517");
+    IntentionsManager.getInstance().registerIntentionFactory(new ConvertInferenceRuleToNonTypesystemRule_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new CreateTypesystemIntention_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new FlipInequality_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new MakeInequalityCheckOnly_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention());
   }
 }

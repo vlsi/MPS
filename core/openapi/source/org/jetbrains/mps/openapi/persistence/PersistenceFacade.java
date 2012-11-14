@@ -32,7 +32,11 @@ public abstract class PersistenceFacade {
 
   public abstract ModelRootFactory getModelRootFactory(String id);
 
+  public abstract void setModelRootFactory(String type, ModelRootFactory factory);
+
   public abstract ModelFactory getModelFactory(String extension);
+
+  public abstract void setModelFactory(String extension, ModelFactory factory);
 
   public abstract SModelId getModelId(String text);
 }

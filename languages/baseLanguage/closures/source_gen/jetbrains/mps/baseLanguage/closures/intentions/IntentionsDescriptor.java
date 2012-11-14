@@ -5,18 +5,19 @@ package jetbrains.mps.baseLanguage.closures.intentions;
 import jetbrains.mps.intentions.BaseIntentionsDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
-    super(new ModuleReference("jetbrains.mps.baseLanguage.closures", "fd392034-7849-419d-9071-12563d152375"), SModelReference.fromString("r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)"));
+    super(new ModuleReference("fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)"), SModelReference.fromString("r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)"));
   }
 
   public void init() {
-    add(new ToggleMultiLine_Intention(), "890797661671409032");
-    add(new add_throws_to_FunctionType_Intention(), "1229717881949");
-    add(new convert_to_from_unrestricted_Intention(), "1230480249136");
-    add(new convert_to_restricted_Intention(), "1229783748457");
-    add(new convert_to_unrestricted_Intention(), "1229783473290");
-    add(new replace_invokeOperation_with_compactInvoke_Intention(), "1235748072133");
+    IntentionsManager.getInstance().registerIntentionFactory(new ToggleMultiLine_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new add_throws_to_FunctionType_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new convert_to_from_unrestricted_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new convert_to_restricted_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new convert_to_unrestricted_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new replace_invokeOperation_with_compactInvoke_Intention());
   }
 }

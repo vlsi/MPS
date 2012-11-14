@@ -5,20 +5,23 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.ide.properties.StandardDialogs;
+import jetbrains.mps.workbench.dialogs.project.MPSPropertiesConfigurable;
+import jetbrains.mps.workbench.dialogs.project.ModelPropertiesConfigurable;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
+import com.intellij.openapi.options.ex.SingleConfigurableEditor;
+import jetbrains.mps.ide.project.ProjectHelper;
+import javax.swing.SwingUtilities;
 
 public class ModelProperties_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("modelProperties.png");
-  protected static Log log = LogFactory.getLog(ModelProperties_Action.class);
+  private static Logger LOG = Logger.getLogger(ModelProperties_Action.class);
 
   public ModelProperties_Action() {
     super("Model Properties", "", ICON);
@@ -42,9 +45,7 @@ public class ModelProperties_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ModelProperties", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ModelProperties", t);
       this.disable(event.getPresentation());
     }
   }
@@ -74,11 +75,18 @@ public class ModelProperties_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      StandardDialogs.createModelPropertiesDialog(((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("context"))).showDialog();
+      MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject()), configurable, "#MPSPropertiesConfigurable");
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          configurableEditor.show();
+        }
+      });
+
+
+      // <node> 
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ModelProperties", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ModelProperties", t);
     }
   }
 }
