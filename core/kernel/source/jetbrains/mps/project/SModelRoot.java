@@ -95,7 +95,7 @@ public class SModelRoot extends FolderModelRootBase {
 
   @Override
   public String getPresentation() {
-    return getPath() + " (" + getManager().getClass().getSimpleName() + ")";
+    return getPath() + " (using " + getManager().getClass().getSimpleName() + ")";
   }
 
   @Override
