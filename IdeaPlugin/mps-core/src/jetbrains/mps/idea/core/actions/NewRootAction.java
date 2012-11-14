@@ -48,6 +48,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -55,7 +56,7 @@ public class NewRootAction extends AnAction {
   private EditableSModelDescriptor myModelDescriptor;
   private Project myProject;
   private IOperationContext myOperationContext;
-  private Map<String, SNodePointer> myConceptFqNameToNodePointerMap = new HashMap<String, SNodePointer>();
+  private Map<String, SNodePointer> myConceptFqNameToNodePointerMap = new LinkedHashMap<String, SNodePointer>();
 
   public NewRootAction() {
     super(MPSBundle.message("new.root.action"), null, IdeIcons.DEFAULT_ROOT_ICON);

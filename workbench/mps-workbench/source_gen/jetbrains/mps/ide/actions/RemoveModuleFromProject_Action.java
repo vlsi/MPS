@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -27,7 +26,7 @@ import jetbrains.mps.project.StandaloneMPSProject;
 
 public class RemoveModuleFromProject_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(RemoveModuleFromProject_Action.class);
+  private static Logger LOG = Logger.getLogger(RemoveModuleFromProject_Action.class);
 
   public RemoveModuleFromProject_Action() {
     super("Remove from Project", "", ICON);
@@ -55,9 +54,7 @@ public class RemoveModuleFromProject_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RemoveModuleFromProject", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "RemoveModuleFromProject", t);
       this.disable(event.getPresentation());
     }
   }
@@ -108,9 +105,7 @@ public class RemoveModuleFromProject_Action extends BaseAction {
       ((MPSProject) MapSequence.fromMap(_params).get("mpsproject")).removeModule(module.getModuleReference());
       ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("mpsproject"))).update();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RemoveModuleFromProject", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "RemoveModuleFromProject", t);
     }
   }
 }

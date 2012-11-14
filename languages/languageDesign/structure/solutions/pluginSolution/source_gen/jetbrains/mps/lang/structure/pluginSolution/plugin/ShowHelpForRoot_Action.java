@@ -4,8 +4,7 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
@@ -17,7 +16,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 
 public class ShowHelpForRoot_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ShowHelpForRoot_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowHelpForRoot_Action.class);
 
   public ShowHelpForRoot_Action() {
     super("Show Help for Root", "", ICON);
@@ -41,9 +40,7 @@ public class ShowHelpForRoot_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowHelpForRoot", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowHelpForRoot", t);
       this.disable(event.getPresentation());
     }
   }
@@ -70,9 +67,7 @@ public class ShowHelpForRoot_Action extends BaseAction {
     try {
       HelpHelper.showHelpForRoot(((SNode) MapSequence.fromMap(_params).get("node")));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowHelpForRoot", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowHelpForRoot", t);
     }
   }
 }

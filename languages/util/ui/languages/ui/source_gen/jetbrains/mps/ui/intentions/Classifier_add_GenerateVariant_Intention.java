@@ -4,12 +4,12 @@ package jetbrains.mps.ui.intentions;
 
 import jetbrains.mps.intentions.IntentionFactory;
 import jetbrains.mps.intentions.IntentionType;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
-import jetbrains.mps.intentions.Intention;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.intentions.IntentionExecutable;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -21,10 +21,10 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ui.pluginSolution.plugin.Variants;
-import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.ModuleUtil;
+import jetbrains.mps.intentions.IntentionDescriptor;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -57,12 +57,20 @@ public class Classifier_add_GenerateVariant_Intention implements IntentionFactor
     return IntentionType.NORMAL;
   }
 
+  public boolean isAvailableInChildNodes() {
+    return false;
+  }
+
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    return true;
+  }
+
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:8cdffe0e-82a6-47c0-9a63-88679c2baa24(jetbrains.mps.ui.intentions)", "8905126934806239993");
   }
 
-  public Collection<Intention> instances(final SNode node, final EditorContext context) {
-    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
+  public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
+    List<IntentionExecutable> list = ListSequence.fromList(new ArrayList<IntentionExecutable>());
     List<String> paramList = parameter(node, context);
     if (paramList != null) {
       for (String param : paramList) {
@@ -73,7 +81,7 @@ public class Classifier_add_GenerateVariant_Intention implements IntentionFactor
   }
 
   private List<String> parameter(final SNode node, final EditorContext editorContext) {
-    final SNode gv = SLinkOperations.getTarget(new Classifier_add_GenerateVariant_Intention.QuotationClass_iyz6y8_a0a0a0h().createNode(), "classifier", false);
+    final SNode gv = SLinkOperations.getTarget(new Classifier_add_GenerateVariant_Intention.QuotationClass_iyz6y8_a0a0a0j().createNode(), "classifier", false);
     Iterable<String> setgv = ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode ann) {
         return SLinkOperations.getTarget(ann, "annotation", false) == gv;
@@ -90,56 +98,28 @@ public class Classifier_add_GenerateVariant_Intention implements IntentionFactor
     return Sequence.fromIterable(Variants.availableVariants()).subtract(Sequence.fromIterable(setgv)).toListSequence();
   }
 
-  public class IntentionImplementation extends BaseIntention {
+  public class IntentionImplementation implements IntentionExecutable {
     private String myParameter;
 
     public IntentionImplementation(String parameter) {
       myParameter = parameter;
     }
 
-    public String getConcept() {
-      return Classifier_add_GenerateVariant_Intention.this.getConcept();
-    }
-
-    public String getPresentation() {
-      return Classifier_add_GenerateVariant_Intention.this.getPresentation();
-    }
-
-    public String getPersistentStateKey() {
-      return Classifier_add_GenerateVariant_Intention.this.getPersistentStateKey();
-    }
-
-    public String getLanguageFqName() {
-      return Classifier_add_GenerateVariant_Intention.this.getLanguageFqName();
-    }
-
-    public IntentionType getType() {
-      return Classifier_add_GenerateVariant_Intention.this.getType();
-    }
-
-    public SNodeReference getIntentionNodeReference() {
-      return Classifier_add_GenerateVariant_Intention.this.getIntentionNodeReference();
-    }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Add Generation Variant: " + myParameter;
     }
 
-    public boolean isAvailableInChildNodes() {
-      return false;
-    }
-
     public void execute(final SNode node, final EditorContext editorContext) {
-      final SNode gv = SLinkOperations.getTarget(new Classifier_add_GenerateVariant_Intention.QuotationClass_iyz6y8_a0a0a0i0().createNode(), "classifier", false);
+      final SNode gv = SLinkOperations.getTarget(new Classifier_add_GenerateVariant_Intention.QuotationClass_iyz6y8_a0a0a0b0().createNode(), "classifier", false);
       SNode ann = ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode ann) {
           return SLinkOperations.getTarget(ann, "annotation", false) == gv;
         }
       });
       if ((ann == null)) {
-        ann = ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).addElement(new Classifier_add_GenerateVariant_Intention.QuotationClass_iyz6y8_a0a0a0a2a8a().createNode());
+        ann = ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).addElement(new Classifier_add_GenerateVariant_Intention.QuotationClass_iyz6y8_a0a0a0a2a1a().createNode());
       }
-      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(ann, "value", true)).first(), "value", true), "jetbrains.mps.baseLanguage.structure.ArrayLiteral"), "item", true)).addElement(new Classifier_add_GenerateVariant_Intention.QuotationClass_iyz6y8_a0a0d0i0().createNode(myParameter));
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(ann, "value", true)).first(), "value", true), "jetbrains.mps.baseLanguage.structure.ArrayLiteral"), "item", true)).addElement(new Classifier_add_GenerateVariant_Intention.QuotationClass_iyz6y8_a0a0d0b0().createNode(myParameter));
       IModule langToDep = Variants.moduleToGenerate(myParameter);
       ModuleReference langRefToEng = langToDep.getModuleReference();
       IModule module = SNodeOperations.getModel(node).getModelDescriptor().getModule();
@@ -162,10 +142,14 @@ public class Classifier_add_GenerateVariant_Intention implements IntentionFactor
         SNodeOperations.getModel(node).addEngagedOnGenerationLanguage(langRefToEng);
       }
     }
+
+    public IntentionDescriptor getDescriptor() {
+      return Classifier_add_GenerateVariant_Intention.this;
+    }
   }
 
-  public static class QuotationClass_iyz6y8_a0a0a0i0 {
-    public QuotationClass_iyz6y8_a0a0a0i0() {
+  public static class QuotationClass_iyz6y8_a0a0a0b0 {
+    public QuotationClass_iyz6y8_a0a0a0b0() {
     }
 
     public SNode createNode() {
@@ -182,8 +166,8 @@ public class Classifier_add_GenerateVariant_Intention implements IntentionFactor
     }
   }
 
-  public static class QuotationClass_iyz6y8_a0a0a0a2a8a {
-    public QuotationClass_iyz6y8_a0a0a0a2a8a() {
+  public static class QuotationClass_iyz6y8_a0a0a0a2a1a {
+    public QuotationClass_iyz6y8_a0a0a0a2a1a() {
     }
 
     public SNode createNode() {
@@ -213,8 +197,8 @@ public class Classifier_add_GenerateVariant_Intention implements IntentionFactor
     }
   }
 
-  public static class QuotationClass_iyz6y8_a0a0d0i0 {
-    public QuotationClass_iyz6y8_a0a0d0i0() {
+  public static class QuotationClass_iyz6y8_a0a0d0b0 {
+    public QuotationClass_iyz6y8_a0a0d0b0() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -231,8 +215,8 @@ public class Classifier_add_GenerateVariant_Intention implements IntentionFactor
     }
   }
 
-  public static class QuotationClass_iyz6y8_a0a0a0h {
-    public QuotationClass_iyz6y8_a0a0a0h() {
+  public static class QuotationClass_iyz6y8_a0a0a0j {
+    public QuotationClass_iyz6y8_a0a0a0j() {
     }
 
     public SNode createNode() {

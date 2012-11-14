@@ -5,41 +5,42 @@ package jetbrains.mps.lang.editor.intentions;
 import jetbrains.mps.intentions.BaseIntentionsDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
-    super(new ModuleReference("jetbrains.mps.lang.editor", "18bc6592-03a6-4e29-a83a-7ff23bde13ba"), SModelReference.fromString("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)"));
+    super(new ModuleReference("18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)"), SModelReference.fromString("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)"));
   }
 
   public void init() {
-    add(new AddExtendsClause_Intention(), "1239735706419");
-    add(new AddIndent_Intention(), "1237395366590");
-    add(new AddNewLine_Intention(), "1237395176004");
-    add(new AddOnNewLine_Intention(), "1237395444116");
-    add(new AddRemoveNewLineForChildren_Intention(), "1445505956982000110");
-    add(new BooleanQuery_Intention(), "1223387565994");
-    add(new ChangeNonEmptyProperty_Intention(), "5137527105085214125");
-    add(new ChangeOrientationAlternation_Intention(), "1227111553026");
-    add(new ChangeOrientationCollection_Intention(), "1227110056528");
-    add(new ChangeOrientationList_Intention(), "1227111401175");
-    add(new ChangeProperty_Intention(), "1235489867936");
-    add(new ChangePropertyWithNonEmpty_Intention(), "5137527105084909325");
-    add(new ChangeTransactionalProperty_Intention(), "1235490923121");
-    add(new ColorQuery_Intention(), "1221475845846");
-    add(new ExtractComponent_Intention(), "98380422618971761");
-    add(new FontStyleQuery_Intention(), "1221476558282");
-    add(new GenerateMultiLineDefaultEditor_Intention(), "1239368960873");
-    add(new GenerateSingleLineDefaultEditor_Intention(), "5469351333089013987");
-    add(new MigrateToIndentLayout_Intention(), "1237485920293");
-    add(new RemoveIndent_Intention(), "1237403857170");
-    add(new RemoveNewLine_Intention(), "1237403993138");
-    add(new RemoveOnNewLine_Intention(), "1237404019413");
-    add(new SplitConstantCellIntoWords_Intention(), "1224529494087");
-    add(new SurrondWithHorizontalCollection_Intention(), "1216916774011");
-    add(new SurrondWithIndentCollection_Intention(), "8868282734708519353");
-    add(new SurrondWithVerticalCollection_Intention(), "1216916605972");
-    add(new TrimConstantCell_Intention(), "1224530037892");
-    add(new UseIndentLayoutInCollection_Intention(), "1237386546176");
-    add(new UseIndentLayoutInRefNodeList_Intention(), "1237386846745");
+    IntentionsManager.getInstance().registerIntentionFactory(new AddExtendsClause_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddIndent_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddNewLine_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddOnNewLine_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddRemoveNewLineForChildren_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new BooleanQuery_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new ChangeNonEmptyProperty_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new ChangeOrientationAlternation_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new ChangeOrientationCollection_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new ChangeOrientationList_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new ChangeProperty_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new ChangePropertyWithNonEmpty_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new ChangeTransactionalProperty_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new ColorQuery_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new ExtractComponent_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new FontStyleQuery_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new GenerateMultiLineDefaultEditor_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new GenerateSingleLineDefaultEditor_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new MigrateToIndentLayout_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new RemoveIndent_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new RemoveNewLine_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new RemoveOnNewLine_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SplitConstantCellIntoWords_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SurrondWithHorizontalCollection_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SurrondWithIndentCollection_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SurrondWithVerticalCollection_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new TrimConstantCell_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new UseIndentLayoutInCollection_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new UseIndentLayoutInRefNodeList_Intention());
   }
 }

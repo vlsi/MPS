@@ -4,8 +4,7 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -17,7 +16,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 
 public class ShowHelpForAspect_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ShowHelpForAspect_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowHelpForAspect_Action.class);
 
   public ShowHelpForAspect_Action() {
     super("Show Help for Aspect", "", ICON);
@@ -41,9 +40,7 @@ public class ShowHelpForAspect_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowHelpForAspect", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowHelpForAspect", t);
       this.disable(event.getPresentation());
     }
   }
@@ -73,9 +70,7 @@ public class ShowHelpForAspect_Action extends BaseAction {
     try {
       HelpHelper.showHelpForAspect(((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowHelpForAspect", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowHelpForAspect", t);
     }
   }
 }

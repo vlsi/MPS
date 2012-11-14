@@ -33,8 +33,8 @@
   </roots>
   <root id="6648795410103988025">
     <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="6648795410103988026">
-      <property name="name" nameId="tpck.1169194664001" value="copyBinaries" />
       <property name="weight" nameId="vvvw.184542595914096177" value="100" />
+      <property name="name" nameId="tpck.1169194664001" value="copyBinaries" />
       <node role="dependency" roleId="vvvw.6418371274763146553" type="vvvw.TargetDependency" typeId="vvvw.6418371274763029600" id="6648795410103988027">
         <link role="dependsOn" roleId="vvvw.6418371274763029603" targetNodeId="tpcq.8096124782826059849" resolveInfo="make" />
       </node>
@@ -178,7 +178,7 @@
                                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6648795410103988053" resolveInfo="module" />
                                             </node>
                                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6648795410103988083">
-                                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~IModule%dgetOutputFor(jetbrains%dmps%dsmodel%dSModelDescriptor)%cjava%dlang%dString" resolveInfo="getOutputFor" />
+                                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~IModule%dgetOutputFor(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cjava%dlang%dString" resolveInfo="getOutputFor" />
                                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6648795410103988084">
                                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6648795410103988191" resolveInfo="smd" />
                                               </node>
@@ -634,10 +634,10 @@
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%d&lt;init&gt;()" resolveInfo="Object" />
                                     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3736430118459669526" />
                                     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3736430118459669527">
+                                      <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
                                       <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
                                       <property name="name" nameId="tpck.1169194664001" value="run" />
                                       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
-                                      <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
                                       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3736430118459669528" />
                                       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3736430118459669529" />
                                       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3736430118459669530">

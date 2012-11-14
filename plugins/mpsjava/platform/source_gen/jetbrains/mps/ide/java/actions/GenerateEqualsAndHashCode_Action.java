@@ -4,8 +4,7 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
@@ -34,7 +33,7 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class GenerateEqualsAndHashCode_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(GenerateEqualsAndHashCode_Action.class);
+  private static Logger LOG = Logger.getLogger(GenerateEqualsAndHashCode_Action.class);
 
   public GenerateEqualsAndHashCode_Action() {
     super("equals() and hashCode", "", ICON);
@@ -63,9 +62,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GenerateEqualsAndHashCode", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "GenerateEqualsAndHashCode", t);
       this.disable(event.getPresentation());
     }
   }
@@ -185,9 +182,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", true)).addElement(new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0jb0a0e().createNode(resultReference));
       ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(equalsDeclaration);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GenerateEqualsAndHashCode", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "GenerateEqualsAndHashCode", t);
     }
   }
 

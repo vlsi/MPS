@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -15,7 +14,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 
 public class FileDelete_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(FileDelete_Action.class);
+  private static Logger LOG = Logger.getLogger(FileDelete_Action.class);
 
   private AnAction action;
 
@@ -35,9 +34,7 @@ public class FileDelete_Action extends BaseAction {
     try {
       FileDelete_Action.this.action.update(event);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "FileDelete", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "FileDelete", t);
       this.disable(event.getPresentation());
     }
   }
@@ -61,9 +58,7 @@ public class FileDelete_Action extends BaseAction {
     try {
       FileDelete_Action.this.action.actionPerformed(event);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "FileDelete", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "FileDelete", t);
     }
   }
 

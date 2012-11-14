@@ -188,8 +188,9 @@ public class TypeNameResolver {
         return SReference.create(role, source, javaLangNode);
       }
 
+      // using short name, as it must be accessible 
       String fqname = myPackage + "." + unqualName;
-      return new DynamicReference(role, source, null, fqname);
+      return new DynamicReference(role, source, null, unqualName);
 
       // <node> 
 

@@ -29,6 +29,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +38,7 @@ import java.util.WeakHashMap;
 
 public abstract class BaseModelCache<T> implements CoreComponent {
 
-  protected final Map<SModelDescriptor, T> myCache = new WeakHashMap<SModelDescriptor, T>();
+  protected final Map<SModel, T> myCache = new WeakHashMap<SModel, T>();
   protected final BidirectionalMap<IFile, SModelDescriptor> myFilesToModels = new BidirectionalMap<IFile, SModelDescriptor>();
   private final BaseModelCache<T>.MyCacheGenerator myCacheGenerator;
   private SModelRepository myModelRepository;
@@ -201,7 +202,7 @@ public abstract class BaseModelCache<T> implements CoreComponent {
     }
   }
 
-  public void clean(SModelDescriptor model) {
+  public void clean(SModel model) {
     synchronized (myCache) {
       myCache.remove(model);
     }

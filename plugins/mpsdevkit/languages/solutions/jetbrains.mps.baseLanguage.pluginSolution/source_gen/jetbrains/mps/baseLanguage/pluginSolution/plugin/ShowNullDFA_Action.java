@@ -4,8 +4,7 @@ package jetbrains.mps.baseLanguage.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -28,7 +27,7 @@ import com.intellij.openapi.project.Project;
 
 public class ShowNullDFA_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ShowNullDFA_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowNullDFA_Action.class);
 
   public ShowNullDFA_Action() {
     super("Show Nullable DFA", "", ICON);
@@ -45,9 +44,7 @@ public class ShowNullDFA_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowNullDFA", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowNullDFA", t);
       this.disable(event.getPresentation());
     }
   }
@@ -89,9 +86,7 @@ public class ShowNullDFA_Action extends BaseAction {
       });
       new ShowCFGDialog(graph.value, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project"))).show();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowNullDFA", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowNullDFA", t);
     }
   }
 }

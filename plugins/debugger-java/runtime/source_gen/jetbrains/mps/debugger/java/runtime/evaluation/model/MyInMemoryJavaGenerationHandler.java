@@ -11,10 +11,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import java.util.Set;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.reloading.ClassPathFactory;
@@ -22,7 +22,6 @@ import java.io.IOException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder;
 
@@ -37,12 +36,12 @@ import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder
   }
 
   @Override
-  public boolean canHandle(SModelDescriptor inputModel) {
+  public boolean canHandle(SModel inputModel) {
     return inputModel != null;
   }
 
   @Override
-  protected CompositeClassPathItem getClassPath(Set<IModule> contextModules) {
+  protected CompositeClassPathItem getClassPath(Set<SModule> contextModules) {
     CompositeClassPathItem result = super.getClassPath(contextModules);
 
     String path = PathManager.getHomePath() + NameUtil.pathFromNamespace(".lib.") + "tools.jar";
@@ -58,8 +57,8 @@ import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder
   }
 
   @Override
-  public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext context, ProgressMonitor monitor) {
-    SModel model = status.getOutputModel();
+  public boolean handleOutput(SModule module, SModel inputModel, GenerationStatus status, IOperationContext context, ProgressMonitor monitor) {
+    jetbrains.mps.smodel.SModel model = status.getOutputModel();
     if (model != null) {
       final SNode evaluator = SModelOperations.getRootByName(model, AbstractEvaluationModel.EVALUATOR_NAME);
 

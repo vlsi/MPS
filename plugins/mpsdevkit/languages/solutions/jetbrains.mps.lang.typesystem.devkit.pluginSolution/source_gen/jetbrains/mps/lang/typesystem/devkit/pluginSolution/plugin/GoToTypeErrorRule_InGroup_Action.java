@@ -4,8 +4,7 @@ package jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -17,7 +16,7 @@ import jetbrains.mps.smodel.IOperationContext;
 
 public class GoToTypeErrorRule_InGroup_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(GoToTypeErrorRule_InGroup_Action.class);
+  private static Logger LOG = Logger.getLogger(GoToTypeErrorRule_InGroup_Action.class);
 
   private Pair<String, String> errorId;
   private boolean immediate;
@@ -45,9 +44,7 @@ public class GoToTypeErrorRule_InGroup_Action extends BaseAction {
         event.getPresentation().setText(text);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GoToTypeErrorRule_InGroup", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "GoToTypeErrorRule_InGroup", t);
       this.disable(event.getPresentation());
     }
   }
@@ -71,9 +68,7 @@ public class GoToTypeErrorRule_InGroup_Action extends BaseAction {
     try {
       GoToTypeErrorRuleUtil.goToRuleById(((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), new Pair<String, String>(GoToTypeErrorRule_InGroup_Action.this.errorId.o1, GoToTypeErrorRule_InGroup_Action.this.errorId.o2));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GoToTypeErrorRule_InGroup", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "GoToTypeErrorRule_InGroup", t);
     }
   }
 

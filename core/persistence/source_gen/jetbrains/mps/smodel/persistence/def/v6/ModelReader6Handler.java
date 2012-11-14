@@ -4,8 +4,7 @@ package jetbrains.mps.smodel.persistence.def.v6;
 
 import jetbrains.mps.util.xml.XMLSAXHandler;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import java.util.Stack;
 import org.xml.sax.Locator;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -24,7 +23,7 @@ import jetbrains.mps.smodel.SReference;
 
 public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
   private static String[] EMPTY_ARRAY = new String[0];
-  protected static Log log = LogFactory.getLog(ModelReader6Handler.class);
+  private static Logger LOG = Logger.getLogger(ModelReader6Handler.class);
 
   private ModelReader6Handler.ModelElementHandler modelhandler = new ModelReader6Handler.ModelElementHandler();
   private ModelReader6Handler.PersistenceElementHandler persistencehandler = new ModelReader6Handler.PersistenceElementHandler();
@@ -443,9 +442,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("link".equals(tagName)) {
         String[] child = (String[]) value;
         if (child[2] == null) {
-          if (log.isErrorEnabled()) {
-            log.error("couldn't create reference '" + child[0] + "' : traget node id is null");
-          }
+          LOG.error("couldn't create reference '" + child[0] + "' : traget node id is null");
           return;
         }
         SReference ref = fieldhelper.readLink(result, child[0], child[2], child[1]);

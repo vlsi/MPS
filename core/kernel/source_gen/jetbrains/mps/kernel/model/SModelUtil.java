@@ -6,8 +6,7 @@ import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.smodel.SNode;
 import java.util.concurrent.ConcurrentHashMap;
 import jetbrains.mps.smodel.Language;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.NameUtil;
@@ -37,7 +36,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 public class SModelUtil {
   private static ConcurrentMap<String, SNode> myFQNameToConcepDecl = new ConcurrentHashMap<String, SNode>();
   private static ConcurrentMap<SNode, Language> myConceptToLanguage = new ConcurrentHashMap<SNode, Language>();
-  protected static Log log = LogFactory.getLog(SModelUtil.class);
+  private static Logger LOG = Logger.getLogger(SModelUtil.class);
 
   public SModelUtil() {
   }
@@ -69,9 +68,7 @@ public class SModelUtil {
         }
       }
     }
-    if (log.isWarnEnabled()) {
-      log.warn("couldn't find node by fqname: " + nodeFQName);
-    }
+    LOG.warning("couldn't find node by fqname: " + nodeFQName);
     return null;
   }
 

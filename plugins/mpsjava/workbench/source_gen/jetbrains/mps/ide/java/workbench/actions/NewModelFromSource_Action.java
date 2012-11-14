@@ -4,8 +4,7 @@ package jetbrains.mps.ide.java.workbench.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -38,7 +37,7 @@ import jetbrains.mps.ide.StereotypeProvider;
 
 public class NewModelFromSource_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(NewModelFromSource_Action.class);
+  private static Logger LOG = Logger.getLogger(NewModelFromSource_Action.class);
 
   public NewModelFromSource_Action() {
     super("Models from Java Sources", "", ICON);
@@ -71,9 +70,7 @@ public class NewModelFromSource_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "NewModelFromSource", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "NewModelFromSource", t);
       this.disable(event.getPresentation());
     }
   }
@@ -185,9 +182,7 @@ public class NewModelFromSource_Action extends BaseAction {
         ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).selectModel(modelDescriptor, false);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "NewModelFromSource", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "NewModelFromSource", t);
     }
   }
 

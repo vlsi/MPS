@@ -5,16 +5,17 @@ package jetbrains.mps.lang.behavior.intentions;
 import jetbrains.mps.intentions.BaseIntentionsDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
-    super(new ModuleReference("jetbrains.mps.lang.behavior", "af65afd8-f0dd-4942-87d9-63a55f2a9db1"), SModelReference.fromString("r:dbb111e4-8af4-4e6d-b49d-e07620d0c285(jetbrains.mps.lang.behavior.intentions)"));
+    super(new ModuleReference("af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)"), SModelReference.fromString("r:dbb111e4-8af4-4e6d-b49d-e07620d0c285(jetbrains.mps.lang.behavior.intentions)"));
   }
 
   public void init() {
-    add(new MakeAbstract_Intention(), "1225201879279");
-    add(new MakeStatic_Intention(), "4748945189160275754");
-    add(new MakeVirtual_Intention(), "1225201879322");
-    add(new RemoveTVD_Intention(), "6678378332547031548");
+    IntentionsManager.getInstance().registerIntentionFactory(new MakeAbstract_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new MakeStatic_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new MakeVirtual_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new RemoveTVD_Intention());
   }
 }

@@ -18,7 +18,7 @@ package jetbrains.mps.project;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.persistence.ModelRootBase;
+import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
@@ -739,7 +739,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   @Override
-  public String getOutputFor(SModelDescriptor model) {
+  public String getOutputFor(SModel model) {
     if (SModelStereotype.isTestModel(model)) {
       return getTestsGeneratorOutputPath();
     } else {

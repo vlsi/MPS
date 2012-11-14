@@ -5,8 +5,7 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
@@ -23,7 +22,7 @@ import com.intellij.openapi.project.Project;
 
 public class CutNode_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("menu-cut.png");
-  protected static Log log = LogFactory.getLog(CutNode_Action.class);
+  private static Logger LOG = Logger.getLogger(CutNode_Action.class);
 
   public CutNode_Action() {
     super("Cut", "", ICON);
@@ -53,9 +52,7 @@ public class CutNode_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "CutNode", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "CutNode", t);
       this.disable(event.getPresentation());
     }
   }
@@ -103,9 +100,7 @@ public class CutNode_Action extends BaseAction {
         SNodeOperations.deleteNode(node);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "CutNode", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "CutNode", t);
     }
   }
 

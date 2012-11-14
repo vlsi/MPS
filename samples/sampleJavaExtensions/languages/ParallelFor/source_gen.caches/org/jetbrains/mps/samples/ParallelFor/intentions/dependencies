@@ -2,15 +2,20 @@
 <dependenciesRoot>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.DetachFromThreadPool_Intention" file="DetachFromThreadPool_Intention.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.intentions.DetachFromThreadPool_Intention" />
@@ -34,6 +39,9 @@
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.MarkAsNonThreadSafe_Intention" file="MarkAsNonThreadSafe_Intention.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
@@ -43,10 +51,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.MarkAsThreadSafe_Intention" file="MarkAsThreadSafe_Intention.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
@@ -56,10 +68,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.MarkInstanceMethodCallAsThreadSafe_Intention" file="MarkInstanceMethodCallAsThreadSafe_Intention.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
@@ -71,10 +87,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.MarkLocalInstanceMethodCallAsThreadSafe_Intention" file="MarkLocalInstanceMethodCallAsThreadSafe_Intention.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
@@ -86,10 +106,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.MarkLocalStaticMethodCallAsThreadSafe_Intention" file="MarkLocalStaticMethodCallAsThreadSafe_Intention.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
@@ -101,10 +125,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.MarkStaticMethodCallAsThreadSafe_Intention" file="MarkStaticMethodCallAsThreadSafe_Intention.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
@@ -115,10 +143,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.MarkVariableDeclarationAsThreadSafe_Intention" file="MarkVariableDeclarationAsThreadSafe_Intention.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
@@ -128,10 +160,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToForEachStatement_Intention" file="TurnToForEachStatement_Intention.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -144,10 +180,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToParallelForEachStatement_Intention" file="TurnToParallelForEachStatement_Intention.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -161,10 +201,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkAsNonThreadSafe_Intention" file="UnmarkAsNonThreadSafe_Intention.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
@@ -174,10 +218,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkAsThreadSafe_Intention" file="UnmarkAsThreadSafe_Intention.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
@@ -187,10 +235,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkInstanceMethodCallAsThreadSafe_Intention" file="UnmarkInstanceMethodCallAsThreadSafe_Intention.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
@@ -201,10 +253,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkLocalInstanceMethodCallAsThreadSafe_Intention" file="UnmarkLocalInstanceMethodCallAsThreadSafe_Intention.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
@@ -215,10 +271,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkLocalStaticMethodCallAsThreadSafe_Intention" file="UnmarkLocalStaticMethodCallAsThreadSafe_Intention.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
@@ -229,10 +289,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkStaticMethodCallAsThreadSafe_Intention" file="UnmarkStaticMethodCallAsThreadSafe_Intention.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
@@ -242,10 +306,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkVariableAsThreadSafe_Intention" file="UnmarkVariableAsThreadSafe_Intention.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
@@ -255,7 +323,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
 </dependenciesRoot>
 

@@ -4,8 +4,7 @@ package jetbrains.mps.lang.dataFlow.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -27,7 +26,7 @@ import com.intellij.openapi.project.Project;
 
 public class ShowDFA_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ShowDFA_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowDFA_Action.class);
 
   public ShowDFA_Action() {
     super("Show Data Flow Graph", "", ICON);
@@ -44,9 +43,7 @@ public class ShowDFA_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowDFA", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowDFA", t);
       this.disable(event.getPresentation());
     }
   }
@@ -87,9 +84,7 @@ public class ShowDFA_Action extends BaseAction {
       });
       new ShowCFGDialog(graph.value, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project"))).show();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowDFA", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowDFA", t);
     }
   }
 }

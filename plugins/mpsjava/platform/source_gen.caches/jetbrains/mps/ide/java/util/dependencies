@@ -78,6 +78,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.OptimizeImportsHelper" />
@@ -99,8 +100,6 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeContextManager" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
   </dependency>
 </dependenciesRoot>
 

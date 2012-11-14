@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public interface ModelGenerationStatusListener {
-  void generatedFilesChanged(SModelDescriptor sm);
+  void generatedFilesChanged(SModel sm);
 }

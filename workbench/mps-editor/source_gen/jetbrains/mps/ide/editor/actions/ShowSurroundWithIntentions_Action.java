@@ -4,8 +4,7 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -28,7 +27,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.intentions.Intention;
+import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.smodel.SNode;
 import java.util.Comparator;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -38,7 +37,7 @@ import jetbrains.mps.intentions.SurroundWithIntention;
 
 public class ShowSurroundWithIntentions_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ShowSurroundWithIntentions_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowSurroundWithIntentions_Action.class);
 
   public ShowSurroundWithIntentions_Action() {
     super("Surround with...", "", ICON);
@@ -65,9 +64,7 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowSurroundWithIntentions", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowSurroundWithIntentions", t);
       this.disable(event.getPresentation());
     }
   }
@@ -114,9 +111,7 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
       RelativePoint relativePoint = new RelativePoint((EditorComponent) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent(), new Point(x, y));
       popup.value.show(relativePoint);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowSurroundWithIntentions", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowSurroundWithIntentions", t);
     }
   }
 
@@ -135,14 +130,14 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
   private ActionGroup getActionGroup(final Map<String, Object> _params) {
     DefaultActionGroup actionGroup = new DefaultActionGroup();
 
-    Iterable<Pair<Intention, SNode>> availableIntentions = Sequence.fromIterable(ShowSurroundWithIntentions_Action.this.getAvailableIntentions(_params)).sort(new Comparator<Pair<Intention, SNode>>() {
-      public int compare(Pair<Intention, SNode> a, Pair<Intention, SNode> b) {
+    Iterable<Pair<IntentionExecutable, SNode>> availableIntentions = Sequence.fromIterable(ShowSurroundWithIntentions_Action.this.getAvailableIntentions(_params)).sort(new Comparator<Pair<IntentionExecutable, SNode>>() {
+      public int compare(Pair<IntentionExecutable, SNode> a, Pair<IntentionExecutable, SNode> b) {
         return ShowSurroundWithIntentions_Action.this.getDescriptior(a, _params).compareTo(ShowSurroundWithIntentions_Action.this.getDescriptior(b, _params));
       }
     }, true);
 
-    for (Pair<Intention, SNode> pair : Sequence.fromIterable(availableIntentions)) {
-      final Pair<Intention, SNode> finalPair = pair;
+    for (Pair<IntentionExecutable, SNode> pair : Sequence.fromIterable(availableIntentions)) {
+      final Pair<IntentionExecutable, SNode> finalPair = pair;
       actionGroup.add(new AnAction(ShowSurroundWithIntentions_Action.this.getDescriptior(pair, _params)) {
         public void actionPerformed(AnActionEvent event) {
           ModelAccess.instance().runCommandInEDT(new Runnable() {
@@ -157,14 +152,14 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
     return actionGroup;
   }
 
-  private Iterable<Pair<Intention, SNode>> getAvailableIntentions(final Map<String, Object> _params) {
+  private Iterable<Pair<IntentionExecutable, SNode>> getAvailableIntentions(final Map<String, Object> _params) {
     IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
     query.setIntentionClass(SurroundWithIntention.class);
     query.setCurrentNodeOnly(true);
     return IntentionsManager.getInstance().getAvailableIntentions(query, ((SNode) MapSequence.fromMap(_params).get("node")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
   }
 
-  private String getDescriptior(Pair<Intention, SNode> pair, final Map<String, Object> _params) {
+  private String getDescriptior(Pair<IntentionExecutable, SNode> pair, final Map<String, Object> _params) {
     return pair.o1.getDescription(pair.o2, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
   }
 }

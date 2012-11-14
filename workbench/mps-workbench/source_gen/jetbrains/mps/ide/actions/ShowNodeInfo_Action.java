@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -21,7 +20,7 @@ import jetbrains.mps.nodeEditor.NodeInformationDialog;
 
 public class ShowNodeInfo_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ShowNodeInfo_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowNodeInfo_Action.class);
 
   public ShowNodeInfo_Action() {
     super("Show Node Info", "", ICON);
@@ -38,9 +37,7 @@ public class ShowNodeInfo_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowNodeInfo", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowNodeInfo", t);
       this.disable(event.getPresentation());
     }
   }
@@ -81,9 +78,7 @@ public class ShowNodeInfo_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowNodeInfo", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowNodeInfo", t);
     }
   }
 }

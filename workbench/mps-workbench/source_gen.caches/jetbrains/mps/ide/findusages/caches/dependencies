@@ -58,6 +58,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.ModuleId" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
@@ -72,8 +73,6 @@
     <classNode dependClassName="jetbrains.mps.util.containers.MultiMap" />
     <classNode dependClassName="jetbrains.mps.util.containers.SetBasedMultiMap" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
@@ -91,11 +90,10 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMClass" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.caches.ClassifierCacher" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.fileSystem.MPSWorkbenchFileTypeFactory" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.reloading.AbstractClassPathItem" />
     <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.ClassifierKind" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.objectweb.asm.ClassReader" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />

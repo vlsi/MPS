@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.test;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -37,8 +36,6 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class TestModule extends ClassLoadingModule {
 
-  private static final Logger LOG = Logger.getLogger(TestModule.class);
-
   private IModule myPeer;
   private Map<SModelFqName, SModelDescriptor> myModels = new ConcurrentHashMap<SModelFqName, SModelDescriptor>();
   private Map<SModelDescriptor, SModelDescriptor> myOriginalModels = new HashMap<SModelDescriptor, SModelDescriptor>();
@@ -54,10 +51,10 @@ public class TestModule extends ClassLoadingModule {
     super.dispose();
   }
 
-  public String getOutputFor(SModelDescriptor model) {
+  public String getOutputFor(org.jetbrains.mps.openapi.model.SModel model) {
     if (myOriginalModels.containsKey(model)) {
       model = myOriginalModels.get(model);
-      return model.getModule().getOutputFor(model);
+      return ((IModule) model.getModule()).getOutputFor(model);
     }
     return super.getOutputFor(model);
   }

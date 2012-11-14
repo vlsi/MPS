@@ -4,8 +4,7 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import com.intellij.openapi.actionSystem.ActionGroup;
@@ -26,7 +25,7 @@ import java.awt.Point;
 
 public class ShowGenerationActions_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ShowGenerationActions_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowGenerationActions_Action.class);
 
   public ShowGenerationActions_Action() {
     super("Insert...", "", ICON);
@@ -52,9 +51,7 @@ public class ShowGenerationActions_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowGenerationActions", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowGenerationActions", t);
       this.disable(event.getPresentation());
     }
   }
@@ -96,9 +93,7 @@ public class ShowGenerationActions_Action extends BaseAction {
       RelativePoint relativePoint = new RelativePoint((EditorComponent) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent(), new Point(x, y));
       popup.value.show(relativePoint);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowGenerationActions", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowGenerationActions", t);
     }
   }
 }

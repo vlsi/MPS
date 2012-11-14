@@ -4,8 +4,7 @@ package jetbrains.mps.lang.dataFlow.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -20,7 +19,7 @@ import jetbrains.mps.lang.dataFlow.framework.analyzers.InitializedVariablesAnaly
 
 public class PrintInitializationInformation_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(PrintInitializationInformation_Action.class);
+  private static Logger LOG = Logger.getLogger(PrintInitializationInformation_Action.class);
 
   public PrintInitializationInformation_Action() {
     super("Print DFA Initialization Information", "", ICON);
@@ -37,9 +36,7 @@ public class PrintInitializationInformation_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "PrintInitializationInformation", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "PrintInitializationInformation", t);
       this.disable(event.getPresentation());
     }
   }
@@ -66,9 +63,7 @@ public class PrintInitializationInformation_Action extends BaseAction {
       AnalysisResult<VarSet> result = program.analyze(new InitializedVariablesAnalyzer());
       System.out.println(result.toString());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "PrintInitializationInformation", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "PrintInitializationInformation", t);
     }
   }
 }

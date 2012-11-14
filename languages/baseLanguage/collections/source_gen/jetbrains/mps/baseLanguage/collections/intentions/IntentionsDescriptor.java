@@ -5,23 +5,24 @@ package jetbrains.mps.baseLanguage.collections.intentions;
 import jetbrains.mps.intentions.BaseIntentionsDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
-    super(new ModuleReference("jetbrains.mps.baseLanguage.collections", "83888646-71ce-4f1c-9c53-c54016f6ad4f"), SModelReference.fromString("r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)"));
+    super(new ModuleReference("83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)"), SModelReference.fromString("r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)"));
   }
 
   public void init() {
-    add(new AddAllSetElementsOperation_replace_Intention(), "4863683935051516260");
-    add(new AddSetElementOperation_replace_Intention(), "4863683935051469795");
-    add(new Add_Comparator_Intention(), "2261417478149151571");
-    add(new ConvertForEachStatementToForeachStatement_Intention(), "1193396656620");
-    add(new CreateInitializer_Intention(), "1206658014161");
-    add(new IterateOverSequence_Intention(), "309173295241374789");
-    add(new RemoveAllSetElementsOperation_replace_Intention(), "4863683935051516296");
-    add(new RemoveSetElementOperation_replace_Intention(), "4863683935051453872");
-    add(new add_copy_from_Intention(), "1237739246401");
-    add(new add_init_values_Intention(), "1237739140549");
-    add(new add_sequence_initializer_Intention(), "2826767102480497650");
+    IntentionsManager.getInstance().registerIntentionFactory(new AddAllSetElementsOperation_replace_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddSetElementOperation_replace_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new Add_Comparator_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new ConvertForEachStatementToForeachStatement_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new CreateInitializer_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new IterateOverSequence_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new RemoveAllSetElementsOperation_replace_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new RemoveSetElementOperation_replace_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new add_copy_from_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new add_init_values_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new add_sequence_initializer_Intention());
   }
 }

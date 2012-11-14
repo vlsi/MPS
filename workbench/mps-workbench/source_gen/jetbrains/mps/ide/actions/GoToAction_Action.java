@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -14,7 +13,7 @@ import com.intellij.featureStatistics.FeatureUsageTracker;
 
 public class GoToAction_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(GoToAction_Action.class);
+  private static Logger LOG = Logger.getLogger(GoToAction_Action.class);
 
   private AnAction action;
 
@@ -34,9 +33,7 @@ public class GoToAction_Action extends BaseAction {
     try {
       GoToAction_Action.this.action.update(event);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GoToAction", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "GoToAction", t);
       this.disable(event.getPresentation());
     }
   }
@@ -53,9 +50,7 @@ public class GoToAction_Action extends BaseAction {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.popup.action");
       GoToAction_Action.this.action.actionPerformed(event);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GoToAction", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "GoToAction", t);
     }
   }
 

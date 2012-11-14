@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -17,7 +16,7 @@ import jetbrains.mps.project.MPSProject;
 
 public class RenameSolution_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(RenameSolution_Action.class);
+  private static Logger LOG = Logger.getLogger(RenameSolution_Action.class);
 
   public RenameSolution_Action() {
     super("Rename Solution", "", ICON);
@@ -41,9 +40,7 @@ public class RenameSolution_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RenameSolution", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "RenameSolution", t);
       this.disable(event.getPresentation());
     }
   }
@@ -71,9 +68,7 @@ public class RenameSolution_Action extends BaseAction {
     try {
       new RenameSolutionDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((Solution) ((IModule) MapSequence.fromMap(_params).get("module")))).show();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RenameSolution", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "RenameSolution", t);
     }
   }
 }

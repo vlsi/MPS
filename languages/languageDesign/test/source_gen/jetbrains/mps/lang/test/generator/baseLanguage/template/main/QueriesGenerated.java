@@ -16,7 +16,6 @@ import jetbrains.mps.lang.test.generator.baseLanguage.template.util.TestsUtil;
 import jetbrains.mps.lang.test.behavior.TestInfo_Behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
-import jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -138,7 +137,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1225991473951(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "intention", false)).getLongName() + "." + IntentionDeclaration_Behavior.call_getGeneratedName_1213877237628(SLinkOperations.getTarget(_context.getNode(), "intention", false));
+    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "intention", false)).getLongName() + "." + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "intention", false), "virtual_getGeneratedName_6263518417926802289", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_5364632142688376317(final IOperationContext operationContext, final PropertyMacroContext _context) {

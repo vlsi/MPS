@@ -5,8 +5,7 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -24,7 +23,7 @@ import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class FindModelUsages_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("find.png");
-  protected static Log log = LogFactory.getLog(FindModelUsages_Action.class);
+  private static Logger LOG = Logger.getLogger(FindModelUsages_Action.class);
 
   public FindModelUsages_Action() {
     super("Find Usages", "", ICON);
@@ -41,9 +40,7 @@ public class FindModelUsages_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "FindModelUsages", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "FindModelUsages", t);
       this.disable(event.getPresentation());
     }
   }
@@ -81,9 +78,7 @@ public class FindModelUsages_Action extends BaseAction {
       });
       ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false, "Model has no usages");
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "FindModelUsages", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "FindModelUsages", t);
     }
   }
 }

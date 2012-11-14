@@ -16,12 +16,11 @@
 package jetbrains.mps.generator.fileGenerator;
 
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import java.io.File;
 
@@ -36,8 +35,8 @@ public class FileGenerationUtil {
     return FileSystem.getInstance().getFileByPath(outputDir.getPath() + CACHES_SUFFIX);
   }
 
-  public static IFile getDefaultOutputDir(SModelDescriptor inputModelDescriptor, @NotNull IFile outputRootDir) {
-    SModelReference reference = inputModelDescriptor.getSModelReference();
+  public static IFile getDefaultOutputDir(org.jetbrains.mps.openapi.model.SModel inputModelDescriptor, @NotNull IFile outputRootDir) {
+    SModelReference reference = inputModelDescriptor.getModelReference();
     return getDefaultOutputDir(reference, outputRootDir);
   }
 

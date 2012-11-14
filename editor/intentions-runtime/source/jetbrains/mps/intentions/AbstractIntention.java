@@ -152,4 +152,9 @@ public abstract class AbstractIntention implements Intention {
   public String getPersistentStateKey() {
     return this.getClass().getName();
   }
+
+  @Override
+  public IntentionDescriptor getDescriptor() {
+    return this;
+  }
 }

@@ -18,7 +18,7 @@ public class BaseIntentionDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static String call_getGeneratedName_6263518417926802289(SNode thisNode) {
+  public static String virtual_getGeneratedName_6263518417926802289(SNode thisNode) {
     return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_Intention";
   }
 
@@ -62,6 +62,11 @@ public class BaseIntentionDeclaration_Behavior {
   }
 
   @Deprecated
+  public static String call_getGeneratedName_6263518417926802289(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getGeneratedName_6263518417926802289", new Object[]{});
+  }
+
+  @Deprecated
   public static boolean call_isParameterized_6263518417926802310(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isParameterized_6263518417926802310", new Object[]{});
   }
@@ -74,6 +79,11 @@ public class BaseIntentionDeclaration_Behavior {
   @Deprecated
   public static void call_setBaseConcept_6261424444345979509(SNode thisNode, SNode baseConcept) {
     BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
+  }
+
+  @Deprecated
+  public static String callSuper_getGeneratedName_6263518417926802289(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), callerConceptFqName, "virtual_getGeneratedName_6263518417926802289", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated

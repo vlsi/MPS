@@ -5,14 +5,15 @@ package jetbrains.mps.lang.dataFlow.intentions;
 import jetbrains.mps.intentions.BaseIntentionsDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
-    super(new ModuleReference("jetbrains.mps.lang.dataFlow", "7fa12e9c-b949-4976-b4fa-19accbc320b4"), SModelReference.fromString("r:00000000-0000-4000-0000-011c8959037b(jetbrains.mps.lang.dataFlow.intentions)"));
+    super(new ModuleReference("7fa12e9c-b949-4976-b4fa-19accbc320b4(jetbrains.mps.lang.dataFlow)"), SModelReference.fromString("r:00000000-0000-4000-0000-011c8959037b(jetbrains.mps.lang.dataFlow.intentions)"));
   }
 
   public void init() {
-    add(new AddMayBeUnreachable_Intention(), "1206534589230");
-    add(new RemoveMayBeUnreachable_Intention(), "1206534526647");
+    IntentionsManager.getInstance().registerIntentionFactory(new AddMayBeUnreachable_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new RemoveMayBeUnreachable_Intention());
   }
 }

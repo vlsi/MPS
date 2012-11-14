@@ -13,11 +13,10 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.ImportHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -40,6 +39,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo" />
@@ -51,8 +51,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.action.INodeSubstituteAction" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -69,11 +67,10 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.ImportHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -88,10 +85,9 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -105,12 +101,11 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorCellAction" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -124,12 +119,11 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorCellAction" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -151,11 +145,10 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -179,6 +172,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent" />
@@ -187,8 +181,6 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -203,10 +195,9 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -221,10 +212,9 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -241,9 +231,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -282,10 +271,9 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -300,9 +288,8 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -316,12 +303,11 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorCellAction" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -335,12 +321,11 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorCellAction" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -357,11 +342,10 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -375,12 +359,11 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorCellAction" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -396,13 +379,12 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.navigation.NavigationSupport" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -417,10 +399,9 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -435,9 +416,8 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -452,11 +432,10 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Label" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -471,10 +450,9 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -489,10 +467,9 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -508,11 +485,10 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selection.Selection" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -527,9 +503,8 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -544,9 +519,8 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -561,11 +535,10 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selection.Selection" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -580,11 +553,10 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selection.Selection" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -599,11 +571,10 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selection.Selection" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -618,10 +589,9 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -636,10 +606,9 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -654,10 +623,9 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -672,11 +640,10 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SingularSelection" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -691,12 +658,11 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Label" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -711,12 +677,11 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Label" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -731,10 +696,9 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -749,10 +713,9 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -767,11 +730,10 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SingularSelection" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -786,10 +748,9 @@
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -811,13 +772,12 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Label" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -843,12 +803,13 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
-    <classNode dependClassName="jetbrains.mps.intentions.Intention" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
     <classNode dependClassName="jetbrains.mps.intentions.SurroundWithIntention" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selection.Selection" />
@@ -858,8 +819,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.util.Pair" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>

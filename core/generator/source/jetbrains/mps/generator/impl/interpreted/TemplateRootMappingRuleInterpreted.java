@@ -37,11 +37,20 @@ import java.util.Collection;
 public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRule {
 
   private final SNode ruleNode;
-  private final SNode applicableConcept;
+  private final String applicableConcept;
+  private final String conditionMethod;
+  private final String ruleMappingName;
+  private final SNode templateNode;
 
   public TemplateRootMappingRuleInterpreted(SNode rule) {
     ruleNode = rule;
-    applicableConcept = RuleUtil.getBaseRuleApplicableConcept(rule);
+    applicableConcept = NameUtil.nodeFQName(RuleUtil.getBaseRuleApplicableConcept(rule));
+
+    SNode condition = RuleUtil.getBaseRuleCondition(ruleNode);
+    conditionMethod = condition == null ? null : TemplateFunctionMethodName.baseMappingRule_Condition(condition);
+
+    ruleMappingName = RuleUtil.getBaseRuleLabel(ruleNode);
+    templateNode = RuleUtil.getRootRuleTemplateNode(ruleNode);
   }
 
   @Override
@@ -51,7 +60,7 @@ public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRu
 
   @Override
   public String getApplicableConcept() {
-    return NameUtil.nodeFQName(this.applicableConcept);
+    return this.applicableConcept;
   }
 
   @Override
@@ -66,26 +75,24 @@ public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRu
 
   @Override
   public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
-    SNode condition = RuleUtil.getBaseRuleCondition(ruleNode);
-    if (condition == null) {
-      return true;
-    }
-
-    String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(condition);
     try {
+      if(conditionMethod == null) {
+        return true;
+      }
+
       return (Boolean) QueryMethodGenerated.invoke(
-        methodName,
+        conditionMethod,
         environment.getGenerator().getGeneratorSessionContext(),
         new BaseMappingRuleContext(context.getInput(), ruleNode, environment.getGenerator()),
         ruleNode.getModel(),
         true);
     } catch (ClassNotFoundException e) {
-      environment.getGenerator().getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to FALSE");
+      environment.getGenerator().getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
     } catch (NoSuchMethodException e) {
-      environment.getGenerator().getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to FALSE");
+      environment.getGenerator().getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
     } catch (Throwable t) {
       environment.getGenerator().getLogger().handleException(t);
-      environment.getGenerator().getLogger().error(condition, "error executing condition " + methodName + " (see exception)");
+      environment.getGenerator().getLogger().error(ruleNode, "error executing condition " + conditionMethod + " (see exception)");
       throw new GenerationFailureException(t);
     }
     return false;
@@ -93,12 +100,9 @@ public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRu
 
   @Override
   public Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    SNode templateNode = RuleUtil.getRootRuleTemplateNode(ruleNode);
     if (templateNode != null) {
-      String ruleMappingName = RuleUtil.getBaseRuleLabel(ruleNode);
-
       return new TemplateProcessor(environment.getGenerator(), environment.getReductionContext())
-        .processTemplateNode(ruleMappingName, templateNode, context);
+        .apply(ruleMappingName, templateNode, context);
     } else {
       environment.getGenerator().showErrorMessage(context.getInput(), null, ruleNode, "no template is defined for the rule");
     }

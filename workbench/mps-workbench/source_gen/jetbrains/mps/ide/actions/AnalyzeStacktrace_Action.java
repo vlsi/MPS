@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -20,7 +19,7 @@ import jetbrains.mps.smodel.IOperationContext;
 
 public class AnalyzeStacktrace_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(AnalyzeStacktrace_Action.class);
+  private static Logger LOG = Logger.getLogger(AnalyzeStacktrace_Action.class);
 
   public AnalyzeStacktrace_Action() {
     super("Analyze Stacktrace...", "Open console with the navigation stacktrace", ICON);
@@ -48,9 +47,7 @@ public class AnalyzeStacktrace_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "AnalyzeStacktrace", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "AnalyzeStacktrace", t);
       this.disable(event.getPresentation());
     }
   }
@@ -87,9 +84,7 @@ public class AnalyzeStacktrace_Action extends BaseAction {
       final AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(((Project) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       dialog.show();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "AnalyzeStacktrace", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "AnalyzeStacktrace", t);
     }
   }
 }

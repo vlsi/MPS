@@ -67,9 +67,9 @@ public class TextGen {
       if (node != null && node.getModel() != null && !node.getModel().isTransient()) {
         m.setHintObject(new SNodePointer(node));
       }
-      return new TextGenerationResult(NO_TEXTGEN, true, Collections.<IMessage>singleton(m), null, null, null, null);
+      return new TextGenerationResult(node, NO_TEXTGEN, true, Collections.<IMessage>singleton(m), null, null, null, null);
     } else {
-      return new TextGenerationResult(NO_TEXTGEN, false, null, null, null, null, null);
+      return new TextGenerationResult(node, NO_TEXTGEN, false, Collections.<IMessage>emptyList(), null, null, null, null);
     }
   }
 
@@ -115,7 +115,7 @@ public class TextGen {
         }
       }
     }
-    return new TextGenerationResult(result, buffer.hasErrors(), buffer.problems(), positionInfo, scopeInfo, unitInfo, deps);
+    return new TextGenerationResult(node, result, buffer.hasErrors(), buffer.problems(), positionInfo, scopeInfo, unitInfo, deps);
   }
 
   // compatibility stuff

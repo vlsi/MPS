@@ -4,8 +4,7 @@ package jetbrains.mps.lang.script.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
@@ -27,7 +26,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 
 public class RunMigrationScripts_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(RunMigrationScripts_Action.class);
+  private static Logger LOG = Logger.getLogger(RunMigrationScripts_Action.class);
 
   private List<SNode> scripts;
   private boolean selectionOnly;
@@ -49,9 +48,7 @@ public class RunMigrationScripts_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RunMigrationScripts", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "RunMigrationScripts", t);
       this.disable(event.getPresentation());
     }
   }
@@ -96,9 +93,7 @@ public class RunMigrationScripts_Action extends BaseAction {
         NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), selectedScript, true, true);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RunMigrationScripts", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "RunMigrationScripts", t);
     }
   }
 

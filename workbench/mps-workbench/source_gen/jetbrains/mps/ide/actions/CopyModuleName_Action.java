@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -15,7 +14,7 @@ import jetbrains.mps.project.IModule;
 
 public class CopyModuleName_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(CopyModuleName_Action.class);
+  private static Logger LOG = Logger.getLogger(CopyModuleName_Action.class);
 
   public CopyModuleName_Action() {
     super("Copy Module Name", "", ICON);
@@ -32,9 +31,7 @@ public class CopyModuleName_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "CopyModuleName", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "CopyModuleName", t);
       this.disable(event.getPresentation());
     }
   }
@@ -54,9 +51,7 @@ public class CopyModuleName_Action extends BaseAction {
     try {
       CopyPasteUtil.copyTextToClipboard(((IModule) MapSequence.fromMap(_params).get("module")).getModuleFqName());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "CopyModuleName", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "CopyModuleName", t);
     }
   }
 }

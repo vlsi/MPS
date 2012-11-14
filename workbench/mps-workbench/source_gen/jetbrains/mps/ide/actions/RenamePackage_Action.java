@@ -4,8 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import javax.swing.tree.TreeNode;
@@ -23,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class RenamePackage_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(RenamePackage_Action.class);
+  private static Logger LOG = Logger.getLogger(RenamePackage_Action.class);
 
   public RenamePackage_Action() {
     super("Rename", "", ICON);
@@ -47,9 +46,7 @@ public class RenamePackage_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RenamePackage", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "RenamePackage", t);
       this.disable(event.getPresentation());
     }
   }
@@ -96,9 +93,7 @@ public class RenamePackage_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RenamePackage", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "RenamePackage", t);
     }
   }
 }

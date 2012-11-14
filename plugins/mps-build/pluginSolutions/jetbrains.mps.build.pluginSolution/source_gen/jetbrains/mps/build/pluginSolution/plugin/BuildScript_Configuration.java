@@ -4,8 +4,7 @@ package jetbrains.mps.build.pluginSolution.plugin;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.lib.NodeByConcept_Configuration;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -32,7 +31,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildScript_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
-  protected static Log log = LogFactory.getLog(BuildScript_Configuration.class);
+  private static Logger LOG = Logger.getLogger(BuildScript_Configuration.class);
 
   @NotNull
   private BuildScript_Configuration.MyState myState = new BuildScript_Configuration.MyState();
@@ -76,9 +75,7 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
       if (fieldElement != null) {
         myNode.readExternal(fieldElement);
       } else {
-        if (log.isDebugEnabled()) {
-          log.debug("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
-        }
+        LOG.debug("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
       }
     }
     {
@@ -86,9 +83,7 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
       if (fieldElement != null) {
         mySettings.readExternal(fieldElement);
       } else {
-        if (log.isDebugEnabled()) {
-          log.debug("Element " + "mySettings" + " in " + this.getClass().getName() + " was null.");
-        }
+        LOG.debug("Element " + "mySettings" + " in " + this.getClass().getName() + " was null.");
       }
     }
   }
@@ -111,9 +106,7 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
       clone.mySettings = (AntSettings_Configuration) mySettings.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      if (log.isErrorEnabled()) {
-        log.error("", ex);
-      }
+      LOG.error("", ex);
     }
     return clone;
   }

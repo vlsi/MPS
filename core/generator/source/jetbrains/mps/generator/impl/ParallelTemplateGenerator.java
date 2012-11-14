@@ -96,11 +96,11 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   }
 
   @Override
-  protected void copyRootNodeFromInput(@NotNull final SNode inputRootNode, @NotNull final TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
+  protected void copyRootInputNode(@NotNull final SNode inputRootNode, @NotNull final TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
     pushTask(new RootGenerationTask() {
       @Override
       public void run() throws GenerationCanceledException, GenerationFailureException {
-        ParallelTemplateGenerator.super.copyRootNodeFromInput(inputRootNode, environment);
+        ParallelTemplateGenerator.super.copyRootInputNode(inputRootNode, environment);
       }
     }, new Pair(inputRootNode, null), environment.getReductionContext().getQueryExecutor());
   }

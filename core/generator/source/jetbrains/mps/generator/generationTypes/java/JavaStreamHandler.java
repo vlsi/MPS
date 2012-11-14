@@ -17,9 +17,9 @@ package jetbrains.mps.generator.generationTypes.java;
 
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -27,16 +27,16 @@ import java.util.List;
 import java.util.Set;
 
 /**
-* Evgeny Gryaznov, Sep 16, 2010
-*/
+ * Evgeny Gryaznov, Sep 16, 2010
+ */
 class JavaStreamHandler implements StreamHandler {
-  private final SModelDescriptor myModelDescriptor;
+  private final SModel myModelDescriptor;
   private final IFile myOutputDir;
   private final IFile myCachesOutputDir;
   private final Set<IFile> mySavedFiles = new HashSet<IFile>();
   private FileProcessor myProcessor;
 
-  JavaStreamHandler(SModelDescriptor modelDescriptor, IFile outputDir, FileProcessor processor) {
+  JavaStreamHandler(SModel modelDescriptor, IFile outputDir, FileProcessor processor) {
     myModelDescriptor = modelDescriptor;
     myOutputDir = outputDir;
     myCachesOutputDir = FileGenerationUtil.getCachesDir(outputDir);
