@@ -28,15 +28,18 @@ import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.IOException;
 import java.util.List;
@@ -54,7 +57,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public boolean canHandle(SModelDescriptor inputModel) {
+  public boolean canHandle(SModel inputModel) {
     return SModelStereotype.isUserModel(inputModel);
   }
 
@@ -66,11 +69,11 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext invocationContext, ProgressMonitor monitor) {
+  public boolean handleOutput(SModule module, SModel inputModel, GenerationStatus status, IOperationContext invocationContext, ProgressMonitor monitor) {
     monitor.start("generating files", 1);
     try {
       info("handling output...");
-      IFile targetDir = FileSystem.getInstance().getFileByPath(module.getOutputFor(inputModel));
+      IFile targetDir = FileSystem.getInstance().getFileByPath(((IModule) module).getOutputFor(inputModel));
 
       long startJobTime = System.currentTimeMillis();
 
@@ -101,8 +104,9 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     }
   }
 
-  public void startModule(IModule module, List<SModelDescriptor> inputModels, IOperationContext operationContext) {
-    String outputFolder = module != null ? module.getGeneratorOutputPath() : null;
+  @Override
+  public void startModule(SModule module, List<SModel> inputModels, IOperationContext operationContext) {
+    String outputFolder = module != null ? ((IModule) module).getGeneratorOutputPath() : null;
 
     if (myLogger.needsInfo()) {
       myLogger.info("module " + module + "; folder = " + outputFolder + "");
@@ -110,7 +114,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ProgressMonitor monitor) throws IOException, GenerationCanceledException {
+  public boolean compile(IOperationContext operationContext, List<Pair<SModule, List<SModel>>> input, boolean generationOK, ProgressMonitor monitor) throws IOException, GenerationCanceledException {
     boolean compiledSuccessfully = generationOK;
 
     monitor.start("", 3 + (generationOK ? input.size() * 4 : 0));
@@ -122,9 +126,9 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
         long compilationStart = System.currentTimeMillis();
         boolean needToReload = false;
 
-        for (Pair<IModule, List<SModelDescriptor>> moduleListPair : input) {
-          IModule module = moduleListPair.o1;
-          if (module != null && module.reloadClassesAfterGeneration()) {
+        for (Pair<SModule, List<SModel>> moduleListPair : input) {
+          SModule module = moduleListPair.o1;
+          if (module instanceof ClassLoadingModule && ((ClassLoadingModule) module).reloadClassesAfterGeneration()) {
             needToReload = true;
           }
           boolean compilationResult = compileModuleInMPS(module, monitor.subTask(4));
@@ -144,11 +148,11 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     }
   }
 
-  protected boolean compileModuleInMPS(IModule module, ProgressMonitor monitor) throws IOException, GenerationCanceledException {
+  protected boolean compileModuleInMPS(SModule module, ProgressMonitor monitor) throws IOException, GenerationCanceledException {
     boolean compiledSuccessfully = true;
 
-    if (module != null) {
-      if (!module.isCompileInMPS()) {
+    if (module instanceof AbstractModule) {
+      if (!((AbstractModule) module).isCompileInMPS()) {
         error("Module is compiled in IntelliJ IDEA, can't compile it.");
         compiledSuccessfully = false;
       } else {

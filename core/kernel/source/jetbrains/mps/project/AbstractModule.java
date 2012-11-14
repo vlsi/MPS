@@ -739,7 +739,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   @Override
-  public String getOutputFor(SModelDescriptor model) {
+  public String getOutputFor(SModel model) {
     if (SModelStereotype.isTestModel(model)) {
       return getTestsGeneratorOutputPath();
     } else {

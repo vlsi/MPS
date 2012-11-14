@@ -30,7 +30,6 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <mps.NavigationProvider implementation="jetbrains.mps.plugin.IdeaNavigationProvider"/>
-    <mps.GenerationHandler implementation="jetbrains.mps.plugin.IdeaHandlerProvider"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
   </extensions>
 </idea-plugin>

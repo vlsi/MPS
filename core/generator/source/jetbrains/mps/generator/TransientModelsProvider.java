@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ import java.util.concurrent.ConcurrentMap;
 
 public class TransientModelsProvider {
 
-  private final ConcurrentMap<IModule, TransientModelsModule> myModuleMap = new ConcurrentHashMap<IModule, TransientModelsModule>();
+  private final ConcurrentMap<SModule, TransientModelsModule> myModuleMap = new ConcurrentHashMap<SModule, TransientModelsModule>();
   private int myModelsToKeepMax = 0; /* unlimited */
   private Project myProject;
   private int myKeptModels;
@@ -71,7 +71,7 @@ public class TransientModelsProvider {
     });
   }
 
-  public void createModule(final IModule module) {
+  public void createModule(final SModule module) {
     if (myModuleMap.containsKey(module)) {
       return;
     }
@@ -81,7 +81,7 @@ public class TransientModelsProvider {
     myModuleMap.put(module, transientModelsModule);
   }
 
-  public TransientModelsModule getModule(final IModule module) {
+  public TransientModelsModule getModule(final SModule module) {
     TransientModelsModule transientModelsModule = ModelAccess.instance().requireRead(new Computable<TransientModelsModule>() {
       @Override
       public TransientModelsModule compute() {

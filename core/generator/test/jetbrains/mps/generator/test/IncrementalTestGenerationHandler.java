@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.test;
 
-import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
@@ -33,24 +32,23 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Assert;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -117,14 +115,14 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public boolean canHandle(SModelDescriptor inputModel) {
+  public boolean canHandle(SModel inputModel) {
     return true;
   }
 
   @Override
-  public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext invocationContext, ProgressMonitor progressMonitor) {
+  public boolean handleOutput(SModule module, SModel inputModel, GenerationStatus status, IOperationContext invocationContext, ProgressMonitor progressMonitor) {
     myLastDependencies = null;
-    IFile targetDir = FileSystem.getInstance().getFileByPath(module.getOutputFor(inputModel));
+    IFile targetDir = FileSystem.getInstance().getFileByPath(((IModule) module).getOutputFor(inputModel));
 
     Assert.assertTrue(status.isOk());
     Assert.assertTrue("should be called once", timesCalled++ == 0);
@@ -133,7 +131,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
       GenerationDependencies dep = status.getDependencies();
       if (dep.getFromCacheCount() + dep.getSkippedCount() == 0) {
         final StringBuilder sb = new StringBuilder("Not optimized:\n");
-        new IncrementalGenerationHandler(inputModel, invocationContext, myGenOptions, new GenerationPlan(inputModel.getSModel()).getSignature(), null, new IncrementalReporter() {
+        new IncrementalGenerationHandler(inputModel, invocationContext, myGenOptions, new GenerationPlan(((SModelDescriptor) inputModel).getSModel()).getSignature(), null, new IncrementalReporter() {
           @Override
           public void report(String message) {
             sb.append(message);
@@ -169,11 +167,6 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
   @Override
   public int estimateCompilationMillis() {
     return 0;
-  }
-
-  @Override
-  public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ProgressMonitor progressMonitor) throws GenerationCanceledException, IOException {
-    return true;
   }
 
   public class CollectingStreamHandler implements StreamHandler {

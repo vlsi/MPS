@@ -38,6 +38,8 @@ import jetbrains.mps.util.Pair;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.IOException;
 import java.util.*;
@@ -55,7 +57,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
 
   private final Map<String, String> mySources = new HashMap<String, String>();
   private final Set<String> myJavaSources = new HashSet<String>();
-  private Set<IModule> myContextModules = new HashSet<IModule>();
+  private Set<SModule> myContextModules = new HashSet<SModule>();
   @Nullable
   private CompilationResultListener myCompilationListener;
 
@@ -69,7 +71,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public boolean canHandle(SModelDescriptor inputModel) {
+  public boolean canHandle(SModel inputModel) {
     return SModelStereotype.isUserModel(inputModel);
   }
 
@@ -80,10 +82,10 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext invocationContext, ProgressMonitor progressMonitor) {
+  public boolean handleOutput(SModule module, SModel inputModel, GenerationStatus status, IOperationContext invocationContext, ProgressMonitor progressMonitor) {
     info("handling output...");
 
-    SModel outputModel = status.getOutputModel();
+    jetbrains.mps.smodel.SModel outputModel = status.getOutputModel();
     if (outputModel != null) {
       boolean result = collectSources(module, inputModel, invocationContext, outputModel);
 
@@ -95,7 +97,8 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     return true;
   }
 
-  public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ProgressMonitor monitor) throws IOException, GenerationCanceledException {
+  @Override
+  public boolean compile(IOperationContext operationContext, List<Pair<SModule, List<SModel>>> input, boolean generationOK, ProgressMonitor monitor) throws IOException, GenerationCanceledException {
     try {
       monitor.start("compiling in memory..", 1);
       return compile(monitor, myCompilationListener);
@@ -109,7 +112,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     return 1;
   }
 
-  protected boolean collectSources(IModule module, SModelDescriptor inputModel, IOperationContext context, SModel outputModel) {
+  protected boolean collectSources(SModule module, SModel inputModel, IOperationContext context, jetbrains.mps.smodel.SModel outputModel) {
     boolean wereErrors = false;
 
     myContextModules.add(context.getModule());
@@ -205,11 +208,11 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     return new JavaCompiler();
   }
 
-  protected CompositeClassPathItem getClassPath(Set<IModule> contextModules) {
+  protected CompositeClassPathItem getClassPath(Set<SModule> contextModules) {
     Set<IModule> notNullModules = new HashSet<IModule>();
-    for (IModule m : contextModules) {
-      if (m != null) {
-        notNullModules.add(m);
+    for (SModule m : contextModules) {
+      if (m instanceof IModule) {
+        notNullModules.add((IModule) m);
       }
     }
     CompositeClassPathItem result = (CompositeClassPathItem) AbstractModule.getDependenciesClasspath(notNullModules, true);
@@ -241,6 +244,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   private class MyCompilationResultListener extends CompilationResultAdapter {
     private boolean myHasErrors = false;
 
+    @Override
     public void onCompilationResult(CompilationResult cr) {
       if (!cr.hasErrors()) return;
       myHasErrors = true;

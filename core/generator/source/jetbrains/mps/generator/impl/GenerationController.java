@@ -15,14 +15,16 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.SimpleGenerationTaskPool;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.progress.SubProgressKind;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -32,6 +34,8 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.util.performance.PerformanceTracer;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,10 +52,10 @@ public class GenerationController implements ITaskPoolProvider {
   private final ProgressMonitor myCancellationMonitor;
   private IGenerationTaskPool myParallelTaskPool;
 
-  protected List<Pair<IModule, List<SModelDescriptor>>> myModuleSequence = new ArrayList<Pair<IModule, List<SModelDescriptor>>>();
+  protected List<Pair<SModule, List<SModel>>> myModuleSequence = new ArrayList<Pair<SModule, List<SModel>>>();
 
   public GenerationController(List<SModelDescriptor> _inputModels, TransientModelsProvider transientModelsProvider, GenerationOptions options,
-                              IGenerationHandler generationHandler, GeneratorLoggerAdapter generatorLogger, IOperationContext operationContext, ProgressMonitor cancellationMonitor) {
+                IGenerationHandler generationHandler, GeneratorLoggerAdapter generatorLogger, IOperationContext operationContext, ProgressMonitor cancellationMonitor) {
     myTransientModelsProvider = transientModelsProvider;
     myInputModels = _inputModels;
     myOperationContext = operationContext;
@@ -62,19 +66,19 @@ public class GenerationController implements ITaskPoolProvider {
   }
 
   private void initMaps() {
-    IModule current = null;
-    ArrayList<SModelDescriptor> currentList = null;
-    for (SModelDescriptor inputModel : myInputModels) {
-      IModule newModule = inputModel.getModule();
+    SModule current = null;
+    ArrayList<SModel> currentList = null;
+    for (SModel inputModel : myInputModels) {
+      SModule newModule = inputModel.getModule();
       if (newModule == null) {
-        myLogger.warning("Model " + inputModel.getLongName() + " won't be generated");
+        myLogger.warning("Model " + inputModel.getModelName() + " won't be generated");
         continue;
       }
 
       if (current == null || newModule != current) {
         current = newModule;
-        currentList = new ArrayList<SModelDescriptor>();
-        myModuleSequence.add(new Pair<IModule, List<SModelDescriptor>>(current, currentList));
+        currentList = new ArrayList<SModel>();
+        myModuleSequence.add(new Pair<SModule, List<SModel>>(current, currentList));
       }
       currentList.add(inputModel);
     }
@@ -90,13 +94,13 @@ public class GenerationController implements ITaskPoolProvider {
       boolean generationOK = true;
       final int compileWork = myGenerationHandler.estimateCompilationMillis();
       int totalWork = compileWork;
-      for (Pair<IModule, List<SModelDescriptor>> moduleAndDescriptors : myModuleSequence) {
+      for (Pair<SModule, List<SModel>> moduleAndDescriptors : myModuleSequence) {
         totalWork += moduleAndDescriptors.o2 != null ? moduleAndDescriptors.o2.size() : 0;
       }
       monitor.start("", totalWork);
       try {
-        for (Pair<IModule, List<SModelDescriptor>> moduleAndDescriptors : myModuleSequence) {
-          final List<SModelDescriptor> mlist = moduleAndDescriptors.o2;
+        for (Pair<SModule, List<SModel>> moduleAndDescriptors : myModuleSequence) {
+          final List<SModel> mlist = moduleAndDescriptors.o2;
           boolean result = generateModelsInModule(moduleAndDescriptors.o1, mlist, monitor.subTask(mlist != null ? mlist.size() : 0));
           monitor.advance(0);
           generationOK = generationOK && result;
@@ -136,9 +140,9 @@ public class GenerationController implements ITaskPoolProvider {
     }
   }
 
-  protected boolean generateModelsInModule(IModule module, List<SModelDescriptor> inputModels, ProgressMonitor monitor) throws Exception {
+  protected boolean generateModelsInModule(SModule module, List<SModel> inputModels, ProgressMonitor monitor) throws Exception {
     boolean currentGenerationOK = true;
-    monitor.start(module.getModuleFqName(), inputModels.size());
+    monitor.start(module.getModuleName(), inputModels.size());
 
     // TODO fix context
     IOperationContext invocationContext = new ModuleContext(module, myOperationContext.getProject());
@@ -151,7 +155,7 @@ public class GenerationController implements ITaskPoolProvider {
         wasLoggingThreshold = Logger.setThreshold("ERROR");
       }
 
-      for (SModelDescriptor inputModel : inputModels) {
+      for (SModel inputModel : inputModels) {
         currentGenerationOK = currentGenerationOK && generateModel(inputModel, module, invocationContext, monitor.subTask(1, SubProgressKind.REPLACING));
         monitor.advance(0);
       }
@@ -168,11 +172,11 @@ public class GenerationController implements ITaskPoolProvider {
     return currentGenerationOK;
   }
 
-  private boolean generateModel(final SModelDescriptor inputModel, final IModule module, final IOperationContext invocationContext, final ProgressMonitor monitor) throws GenerationCanceledException {
+  private boolean generateModel(final SModel inputModel, final SModule module, final IOperationContext invocationContext, final ProgressMonitor monitor) throws GenerationCanceledException {
     boolean currentGenerationOK = false;
 
     IPerformanceTracer ttrace = myOptions.getTracingMode() != GenerationOptions.TRACE_OFF
-      ? new PerformanceTracer("model " + NameUtil.shortNameFromLongName(inputModel.getLongName()))
+      ? new PerformanceTracer("model " + NameUtil.shortNameFromLongName(inputModel.getModelName()))
       : new NullPerformanceTracer();
 
     boolean traceTypes = myOptions.getTracingMode() == GenerationOptions.TRACE_TYPES;
@@ -181,17 +185,17 @@ public class GenerationController implements ITaskPoolProvider {
     final GenerationSession generationSession = new GenerationSession(inputModel, invocationContext, this,
       myCancellationMonitor, myLogger, myTransientModelsProvider.getModule(module), ttrace, myOptions);
 
-    monitor.start(inputModel.getLongName(), 10);
+    monitor.start(inputModel.getModelName(), 10);
     try {
       Logger.addLoggingHandler(generationSession.getLoggingHandler());
       if (!myGenerationHandler.canHandle(inputModel)) {
-        LOG.error("Can't generate " + inputModel.getSModelReference().getSModelFqName());
+        LOG.error("Can't generate " + inputModel.getModelName());
         return true;
       }
 
       if (myLogger.needsInfo()) {
         myLogger.info("");
-        myLogger.info("[model " + inputModel.getSModelReference().getSModelFqName() +
+        myLogger.info("[model " + inputModel.getModelName() +
           (myOptions.isRebuildAll()
             ? ", rebuilding"
             : "") +

@@ -106,4 +106,8 @@ public class JavaStreamHandler implements StreamHandler {
       myOutputFileDelta
     ));
   }
+
+  public int calcApproximateSize_internal() {
+    return myProcessor.calcApproximateSize();
+  }
 }

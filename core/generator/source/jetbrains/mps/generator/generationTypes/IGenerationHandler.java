@@ -19,10 +19,10 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.IOException;
 import java.util.List;
@@ -36,17 +36,17 @@ public interface IGenerationHandler {
 
   void finishGeneration();
 
-  boolean canHandle(SModelDescriptor inputModel);
+  boolean canHandle(SModel inputModel);
 
   /**
    * Next module started.
    */
-  void startModule(IModule module, List<SModelDescriptor> inputModels, IOperationContext operationContext);
+  void startModule(SModule module, List<SModel> inputModels, IOperationContext operationContext);
 
   /**
    * Handle generation result of a model.
    */
-  boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext invocationContext, ProgressMonitor progressMonitor);
+  boolean handleOutput(SModule module, SModel inputModel, GenerationStatus status, IOperationContext invocationContext, ProgressMonitor progressMonitor);
 
   /**
    * Estimates execution time of compile() method in milliseconds.
@@ -56,7 +56,7 @@ public interface IGenerationHandler {
   /**
    * Post-process generated output: compile, reload, etc. Once per generation cycle.
    */
-  boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ProgressMonitor progressMonitor) throws GenerationCanceledException, IOException;
+  boolean compile(IOperationContext operationContext, List<Pair<SModule, List<SModel>>> input, boolean generationOK, ProgressMonitor progressMonitor) throws GenerationCanceledException, IOException;
 
   /**
    * This method is invoked outside of a model lock after generation

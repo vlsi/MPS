@@ -100,8 +100,8 @@ public class GenerationStatus extends Status {
     return myOriginalInputModel;
   }
 
-  public void setOriginalInputModel(SModelDescriptor originalInputModel) {
-    myOriginalInputModel = originalInputModel;
+  public void setOriginalInputModel(org.jetbrains.mps.openapi.model.SModel originalInputModel) {
+    myOriginalInputModel = (SModelDescriptor) originalInputModel;
   }
 
   public static class ERROR extends GenerationStatus {

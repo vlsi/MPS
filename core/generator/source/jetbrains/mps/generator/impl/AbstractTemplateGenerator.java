@@ -44,8 +44,8 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   private final boolean myShowBadChildWarning;
 
   protected AbstractTemplateGenerator(IOperationContext operationContext,
-                                      ProgressMonitor progressMonitor, IGeneratorLogger logger,
-                                      SModel inputModel, SModel outputModel, boolean showBadChildWarning) {
+                    ProgressMonitor progressMonitor, IGeneratorLogger logger,
+                    SModel inputModel, SModel outputModel, boolean showBadChildWarning) {
     myOperationContext = operationContext;
     myProgressMonitor = progressMonitor;
     myLogger = logger;
@@ -156,7 +156,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   @Override
   public SNode findCopiedOutputNodeForInputNode(SNode inputNode) {
-    if(inputNode == null) return null;
+    if (inputNode == null) return null;
 
     SNode outputNode = myMappings.findCopiedOutputNodeForInputNode(inputNode);
     if (outputNode == null) {
@@ -197,21 +197,21 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   private RoleValidationStatus validateRole(SNode sourceNode, String role, SNode targetNode, boolean child) {
-    if (child && AttributesRolesUtil.isAttributeRole(role)) {
+    if (child && role.equals(GeneratorUtilEx.link_BaseConcept_attrs)) {
       //unnecessary warning removed
       return null; //todo maybe add check for attribule links
     }
-    String relationKind = child ? "child" : "referent";
     SNode concept = sourceNode.getConceptDeclarationNode();
     if (concept == null) {
       return new RoleValidationStatus(sourceNode, "cannot find concept '" + sourceNode.getConcept().getId() + "'");
     }
     SNode link = SModelSearchUtil.findMostSpecificLinkDeclaration(concept, role);
     if (link == null) {
+      String relationKind = child ? "child" : "referent";
       return new RoleValidationStatus(sourceNode, "concept '" + concept.getName() + "' cannot have " + relationKind + " with role '" + role + "'",
         GeneratorUtil.describe(targetNode, relationKind + (child ? "" : " (hidden in editor)")));
     }
-    if(!myShowBadChildWarning) {
+    if (!myShowBadChildWarning) {
       // ignore
       return null;
     }
@@ -223,6 +223,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
       SNode linkDeclarationTarget = SModelUtil.getLinkDeclarationTarget(link);
       String expected = linkDeclarationTarget != null ? linkDeclarationTarget.getName() : "<unknown>";
       String was = NameUtil.shortNameFromLongName(targetNode.getConcept().getId());
+      String relationKind = child ? "child" : "referent";
       return new RoleValidationStatus(sourceNode, relationKind + " '" + expected + "' is expected for role '" + role + "' but was '" + was + "'",
         GeneratorUtil.describe(targetNode, relationKind));
     }

@@ -34,10 +34,6 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
     myModule = module;
   }
 
-  public BaseStubModelDescriptor copy() {
-    return new BaseStubModelDescriptor(myModelReference, getSource(), myModule);
-  }
-
   @Override
   @NotNull
   public StubModelDataSource getSource() {
@@ -45,7 +41,6 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   //------------common descriptor stuff-------------------
-
 
   @Override
   public synchronized SModel getSModel() {

@@ -4,7 +4,7 @@ package jetbrains.mps.internal.make.runtime.java;
 
 import jetbrains.mps.logging.Logger;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
@@ -19,13 +19,13 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.InputStream;
 import java.util.Arrays;
-import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
+import jetbrains.mps.util.JDOMUtil;
 
 /*package*/ class FileProcessor {
   private static final Logger LOG = Logger.getLogger(FileProcessor.class);
 
-  private final List<SModelDescriptor> myModels = new ArrayList<SModelDescriptor>();
+  private final List<SModel> myModels = new ArrayList<SModel>();
   private final List<FileProcessor.FileAndContent> myFilesAndContents = new ArrayList<FileProcessor.FileAndContent>();
   private final List<IFile> myFilesToDelete = new ArrayList<IFile>();
   private final Object LOCK = new Object();
@@ -33,7 +33,7 @@ import org.jdom.Document;
   public FileProcessor() {
   }
 
-  public void invalidateModel(SModelDescriptor modelDescriptor) {
+  public void invalidateModel(SModel modelDescriptor) {
     synchronized (LOCK) {
       myModels.add(modelDescriptor);
     }
@@ -69,6 +69,14 @@ import org.jdom.Document;
     ModelGenerationStatusManager.getInstance().invalidateData(myModels);
   }
 
+  /*package*/ int calcApproximateSize() {
+    int size = 0;
+    for (FileProcessor.FileAndContent fileAndContent : myFilesAndContents) {
+      size += fileAndContent.myContent.calcApproximateSize();
+    }
+    return size;
+  }
+
   private static class FileAndContent {
     private IFile myFile;
     private FileProcessor.FileContent myContent;
@@ -90,6 +98,7 @@ import org.jdom.Document;
 
   private static interface FileContent {
     public void saveToFile(IFile file);
+    public int calcApproximateSize();
   }
 
   private static class StringFileContent implements FileProcessor.FileContent {
@@ -141,6 +150,10 @@ import org.jdom.Document;
           return false;
         }
       }
+    }
+
+    public int calcApproximateSize() {
+      return myContent.getBytes().length;
     }
   }
 
@@ -198,20 +211,32 @@ import org.jdom.Document;
         }
       }
     }
+
+    public int calcApproximateSize() {
+      return myContent.length;
+    }
   }
 
   private static class XMLFileContent implements FileProcessor.FileContent {
-    private Element myElement;
+    private Document myDocument;
 
     private XMLFileContent(Element element) {
-      myElement = element;
+      myDocument = new Document(element);
     }
 
     public void saveToFile(IFile file) {
       try {
-        JDOMUtil.writeDocument(new Document(myElement), file);
+        JDOMUtil.writeDocument(myDocument, file);
       } catch (IOException e) {
         FileProcessor.LOG.error(e);
+      }
+    }
+
+    public int calcApproximateSize() {
+      try {
+        return JDOMUtil.printDocument(myDocument).length;
+      } catch (Exception e) {
+        throw new RuntimeException(e);
       }
     }
   }

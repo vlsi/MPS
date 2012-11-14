@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
@@ -31,6 +32,7 @@ import java.util.Map;
 * Evgeny Gryaznov, 1/18/11
 */
 public class TextGenerationResult {
+  private final SNode myRoot;
   private Object myResult;
   private boolean myContainErrors;
   private final Collection<IMessage> myProblems;
@@ -39,13 +41,15 @@ public class TextGenerationResult {
   private final Map<SNode, UnitPositionInfo> myUnitPositions;
   private Map<String, List<String>> myDependencies;
 
-  public TextGenerationResult(Object contents,
+  public TextGenerationResult(SNode root,
+                              Object contents,
                               boolean containErrors,
-                              Collection<IMessage> problems,
+                              @NotNull Collection<IMessage> problems,
                               @Nullable Map<SNode, TraceablePositionInfo> positions,
                               @Nullable Map<SNode, ScopePositionInfo> scopePositions,
                               @Nullable Map<SNode, UnitPositionInfo> unitPositions,
                               Map<String, List<String>> dependencies) {
+    myRoot = root;
     myResult = contents;
     myContainErrors = containErrors;
     myProblems = problems;
@@ -53,6 +57,10 @@ public class TextGenerationResult {
     myScopePositions = scopePositions;
     myUnitPositions = unitPositions;
     myDependencies = dependencies;
+  }
+
+  public SNode getRoot() {
+    return myRoot;
   }
 
   public Object getResult() {

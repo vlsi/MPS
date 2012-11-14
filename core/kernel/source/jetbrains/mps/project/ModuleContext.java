@@ -16,11 +16,12 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class ModuleContext extends StandaloneMPSContext {
   private static final Logger LOG = Logger.getLogger(ModuleContext.class);
@@ -29,9 +30,9 @@ public class ModuleContext extends StandaloneMPSContext {
 
   //we need to store module reference this way because generator are recreated on every reload
   //and if we store generator reference here it will be stale
-  private ModuleReference myModuleReference;
+  private SModuleReference myModuleReference;
 
-  public ModuleContext(@NotNull final IModule module, @NotNull final Project project) {
+  public ModuleContext(@NotNull final SModule module, @NotNull final Project project) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myModuleReference = module.getModuleReference();
@@ -40,6 +41,11 @@ public class ModuleContext extends StandaloneMPSContext {
     myProject = project;
   }
 
+  public ModuleContext(@NotNull final IModule module, @NotNull final Project project) {
+    this((SModule) module, project);
+  }
+
+  @Override
   public <T> T getComponent(Class<T> clazz) {
     T component = myProject.getComponent(clazz);
     if (component != null) return component;
@@ -51,15 +57,18 @@ public class ModuleContext extends StandaloneMPSContext {
     return myProject;
   }
 
+  @Override
   public IModule getModule() {
-    return MPSModuleRepository.getInstance().getModule(myModuleReference);
+    return ModuleRepositoryFacade.getInstance().getModule(myModuleReference);
   }
 
+  @Override
   public boolean isValid() {
     if (myProject.isDisposed()) return false;
     return getModule() != null;
   }
 
+  @Override
   @NotNull
   public IScope getScope() {
     IModule module = getModule();

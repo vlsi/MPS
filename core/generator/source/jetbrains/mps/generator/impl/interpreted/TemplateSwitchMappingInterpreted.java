@@ -98,7 +98,7 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
         String innerMappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : mappingName;
         try {
           TemplateProcessor templateProcessor = new TemplateProcessor(environment.getGenerator(), environment.getReductionContext());
-          collection.addAll(templateProcessor.processTemplateNode(innerMappingName, altTemplateNode, context));
+          collection.addAll(templateProcessor.apply(innerMappingName, altTemplateNode, context));
         } catch (TemplateProcessingFailureException e) {
           environment.getGenerator().showErrorMessage(context.getInput(), templateSwitch.getNode(), "error processing template fragment");
         }

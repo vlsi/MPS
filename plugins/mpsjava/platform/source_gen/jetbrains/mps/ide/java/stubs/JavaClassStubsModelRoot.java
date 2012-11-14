@@ -16,11 +16,10 @@ import java.io.IOException;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
-import jetbrains.mps.stubs.BaseStubModelDescriptor;
+import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.stubs.util.JavaStubModelDescriptor;
-import jetbrains.mps.stubs.util.JavaStubModelDataSource;
+import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 
@@ -92,17 +91,17 @@ public class JavaClassStubsModelRoot extends ModelRootBase {
     for (String subpackage : cp.getSubpackages(prefix)) {
       if (cp.getRootClasses(subpackage).iterator().hasNext()) {
         SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage, languageId, module.getModuleReference());
-        BaseStubModelDescriptor smd;
+        BaseSModelDescriptor smd;
         if (SModelRepository.getInstance().getModelDescriptor(modelReference) != null) {
           SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
-          assert descriptor instanceof BaseStubModelDescriptor;
-          smd = (BaseStubModelDescriptor) descriptor;
+          assert descriptor instanceof JavaClassStubModelDescriptor;
+          smd = (JavaClassStubModelDescriptor) descriptor;
           ListSequence.fromList(result).addElement(descriptor);
         } else {
-          smd = new JavaStubModelDescriptor(modelReference, new JavaStubModelDataSource(false), module);
+          smd = new JavaClassStubModelDescriptor(modelReference, new FolderSetDataSource(), this);
           ListSequence.fromList(result).addElement(smd);
         }
-        ((JavaStubModelDataSource) smd.getSource()).addPath(child(startPath, subpackage), this);
+        ((FolderSetDataSource) smd.getSource()).addPath(child(startPath, subpackage), this);
       }
       getModelDescriptors(result, startPath, cp, subpackage, languageId, module);
     }
@@ -117,5 +116,21 @@ public class JavaClassStubsModelRoot extends ModelRootBase {
       file = file.getDescendant(child);
     }
     return file.getPath();
+  }
+
+  @Override
+  public int hashCode() {
+    return myPath.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object object) {
+    if (this == object) {
+      return true;
+    }
+    if (object == null || getClass() != object.getClass()) {
+      return false;
+    }
+    return myPath.equals(((JavaClassStubsModelRoot) object).myPath);
   }
 }

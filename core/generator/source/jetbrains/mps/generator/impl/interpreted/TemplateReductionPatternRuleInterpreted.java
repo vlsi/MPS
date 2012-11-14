@@ -128,7 +128,7 @@ public class TemplateReductionPatternRuleInterpreted implements TemplateReductio
       SNode templateNode = nodeAndMappingNamePair.o1;
       String mappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : ruleMappingName;
       try {
-        result.addAll(templateProcessor.processTemplateNode(mappingName, templateNode, conseqContext));
+        result.addAll(templateProcessor.apply(mappingName, templateNode, conseqContext));
       } catch (DismissTopMappingRuleException e) {
         throw e;
       } catch (TemplateProcessingFailureException e) {

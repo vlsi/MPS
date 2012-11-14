@@ -25,6 +25,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -35,7 +36,7 @@ public class TransientModelsModule extends ClassLoadingModule {
 
   private static final AtomicInteger ourModuleCounter = new AtomicInteger();
 
-  private final IModule myOriginalModule;
+  private final SModule myOriginalModule;
   private final TransientModelsProvider myComponent;
 
   private Set<String> myModelsToKeep = new ConcurrentHashSet<String>();
@@ -46,20 +47,20 @@ public class TransientModelsModule extends ClassLoadingModule {
   //MPSProject must be disposed after TransientModelsModule for
   //the module's models to be disposed
 
-  public TransientModelsModule(IModule original, TransientModelsProvider component) {
+  public TransientModelsModule(SModule original, TransientModelsProvider component) {
     assert !(original instanceof TransientModelsModule);
     myComponent = component;
     myOriginalModule = original;
-    String fqName = original.getModuleFqName() + "@transient" + ourModuleCounter.getAndIncrement();
+    String fqName = original.getModuleName() + "@transient" + ourModuleCounter.getAndIncrement();
     ModuleReference reference = new ModuleReference(fqName, ModuleId.regular());
     setModuleReference(reference);
   }
 
   public Class getClass(String fqName) {
-    if (myOriginalModule == null) {
+    if (!(myOriginalModule instanceof ClassLoadingModule)) {
       throw new IllegalStateException();
     }
-    return myOriginalModule.getClass(fqName);
+    return ((ClassLoadingModule) myOriginalModule).getClass(fqName);
   }
 
   public String getGeneratorOutputPath() {
