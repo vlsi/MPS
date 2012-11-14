@@ -455,7 +455,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
         return;
       }
       if ("role".equals(name)) {
-        result.setRoleInParent(VersionUtil.getRole(value));
+        result.putUserObject("role", VersionUtil.getRole(value));
         VersionUtil.fetchChildNodeRoleVersion(value, result, fieldversionsInfo);
         return;
       }
@@ -503,7 +503,8 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
-        result.addChild(child.getRoleInParent(), child);
+        result.addChild(((String) child.getUserObject("role")), child);
+        child.putUserObject("role", null);
         return;
       }
       super.handleChild(resultObject, tagName, value);
