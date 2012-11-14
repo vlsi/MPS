@@ -17,6 +17,7 @@ package jetbrains.mps.util;
 
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
 import java.nio.charset.Charset;
@@ -518,5 +519,14 @@ public class FileUtil {
       name = name.substring(0, i);
     }
     return name;
+  }
+
+  @Nullable
+  public static String getExtension(@NotNull String name) {
+    int i = name.lastIndexOf('.');
+    if (i != -1) {
+      return name.substring(i + 1);
+    }
+    return null;
   }
 }

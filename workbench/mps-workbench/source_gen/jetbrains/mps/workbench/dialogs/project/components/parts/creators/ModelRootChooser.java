@@ -12,7 +12,7 @@ import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.ide.persistence.ModelRootSettingsEditor;
 import jetbrains.mps.ide.persistence.PersistenceComponent;
 import jetbrains.mps.ide.dialogs.BaseDialog;
@@ -49,7 +49,7 @@ public class ModelRootChooser implements Computable<ModelRootDescriptor> {
         return null;
       }
 
-      SModelRoot result = new SModelRoot(null);
+      DefaultModelRoot result = new DefaultModelRoot();
       result.setPath(dir.getPath());
       return result.toDescriptor();
     }

@@ -15,11 +15,10 @@ import java.awt.HeadlessException;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.DefaultComboBoxModel;
-import jetbrains.mps.project.SModelRoot;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import javax.swing.DefaultListCellRenderer;
 import java.awt.Component;
 import javax.swing.JList;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.KeyAdapter;
@@ -27,12 +26,12 @@ import java.awt.event.KeyEvent;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.workbench.dialogs.project.MPSPropertiesConfigurable;
 import jetbrains.mps.workbench.dialogs.project.ModelPropertiesConfigurable;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -79,7 +78,7 @@ public class NewModelDialog extends DialogWrapper {
     mainPanel.add(new JLabel("Model root:"));
     mainPanel.add(myModelRoots);
     DefaultComboBoxModel model = new DefaultComboBoxModel();
-    for (SModelRoot root : myModule.getSModelRoots()) {
+    for (ModelRoot root : myModule.getModelRoots()) {
       if (!(root.isReadOnly())) {
         model.addElement(root);
       }
@@ -143,8 +142,8 @@ public class NewModelDialog extends DialogWrapper {
 
     myResult = ModelAccess.instance().runWriteActionInCommand(new Computable<SModelDescriptor>() {
       public SModelDescriptor compute() {
-        SModelFqName fqName = getFqName();
-        SModelRoot mr = (SModelRoot) myModelRoots.getSelectedItem();
+        String fqName = getFqName();
+        ModelRoot mr = (ModelRoot) myModelRoots.getSelectedItem();
         return myModule.createModel(fqName, mr, null);
       }
     }, myContext.getProject());
@@ -163,18 +162,23 @@ public class NewModelDialog extends DialogWrapper {
     super.doOKAction();
   }
 
-  private SModelFqName getFqName() {
-    return new SModelFqName(myModelName.getText(), myModelStereotype.getSelectedItem().toString());
+  private String getFqName() {
+    String stereo = myModelStereotype.getSelectedItem().toString().trim();
+    return myModelName.getText() + ((stereo != null && stereo.length() > 0 ?
+      "@" + stereo :
+      ""
+    ));
+
   }
 
   private boolean check() {
     Object selected = myModelRoots.getSelectedItem();
-    if (!((selected instanceof SModelRoot))) {
+    if (!((selected instanceof ModelRoot))) {
       setErrorText("Model root is not selected");
       return false;
     }
 
-    SModelRoot mr = ((SModelRoot) selected);
+    ModelRoot mr = ((ModelRoot) selected);
 
     String modelName = myModelName.getText();
     if (modelName.length() == 0) {
@@ -208,7 +212,7 @@ public class NewModelDialog extends DialogWrapper {
       return false;
     }
 
-    if (!(mr.canCreateModel(getFqName().toString()))) {
+    if (!(mr.canCreateModel(getFqName()))) {
       setErrorText("Can't create a model with this name under this model root");
       return false;
     }

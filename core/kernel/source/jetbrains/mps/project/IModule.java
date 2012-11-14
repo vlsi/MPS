@@ -82,12 +82,14 @@ public interface IModule extends SModule {
 
   //----
 
+  @Deprecated
   SModelDescriptor createModel(SModelFqName fqName, SModelRoot root, @Nullable ModelAdjuster adj);
 
   SModelDescriptor createModel(String fqName, ModelRoot root, @Nullable ModelAdjuster adj);
 
   List<SModelDescriptor> getOwnModelDescriptors();
 
+  @Deprecated
   Collection<SModelRoot> getSModelRoots();
 
   String getOutputFor(org.jetbrains.mps.openapi.model.SModel model);

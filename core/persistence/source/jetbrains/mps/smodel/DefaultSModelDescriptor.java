@@ -21,8 +21,8 @@ import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.persistence.DefaultModelPersistence;
-import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
@@ -41,6 +41,7 @@ import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.Collections;
 import java.util.Map;
@@ -428,13 +429,15 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
       save();
     } else {
       IFile oldFile = getSource().getFile();
-      SModelRoot root = ModelRootUtil.getSModelRoot(this);
-      IFile newFile = DefaultModelPersistence.createFileForModelUID(root, newModelFqName, DefaultModelPersistence.isLanguageAspect(root, getModule(), newModelFqName));
-      newFile.getParent().mkdirs();
-      newFile.createNewFile();
-      changeModelFile(newFile);
-      save();
-      oldFile.delete();
+      ModelRoot root = ModelRootUtil.getModelRoot(this);
+      if (root instanceof DefaultModelRoot) {
+        IFile newFile = ((DefaultModelRoot) root).createSource(newModelFqName.toString(), MPSExtentions.MODEL).getFile();
+        newFile.getParent().mkdirs();
+        newFile.createNewFile();
+        changeModelFile(newFile);
+        save();
+        oldFile.delete();
+      }
     }
 
     myModelReference = newModelReference;
