@@ -15,13 +15,11 @@
  */
 package jetbrains.mps.newTypesystem;
 
-import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.NullErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.newTypesystem.operation.TraceMessageOperation;
-import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.blocks.MultipleWhenConcreteBlock;
 import jetbrains.mps.newTypesystem.state.blocks.WhenConcreteBlock;
@@ -30,12 +28,8 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.Pair;
 
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -52,53 +46,20 @@ public abstract class BaseTypecheckingContext extends TypeCheckingContext {
 
   protected TypeChecker myTypeChecker;
 
-  private SingleNodeTypesComponent myNodeTypesComponent;
   private State myState;
 
   public BaseTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
     myRootNode = rootNode;
     myTypeChecker = typeChecker;
-    setState(new State(this));
-    setNodeTypesComponent(createNodeTypesComponent());
+    myState = new State(this);
+
   }
 
-  @Override
-  public SNode getTypeOf(SNode node, TypeChecker typeChecker) {
-    if (node == null) return null;
-    synchronized (TYPECHECKING_LOCK) {
-      return  getTypeOf_normalMode(node);
-    }
-  }
-
-  public SingleNodeTypesComponent getNodeTypesComponent() {
-    return myNodeTypesComponent;
-  }
 
   public State getState() {
     assert myState != null;
     return myState;
   }
-
-  protected final void setNodeTypesComponent(SingleNodeTypesComponent nodeTypesComponent) {
-    assert myNodeTypesComponent == null;
-    assert nodeTypesComponent != null;
-    myNodeTypesComponent = nodeTypesComponent;
-  }
-
-  protected final void setState(State state) {
-    assert myState == null;
-    assert state != null;
-    myState = state;
-  }
-
-  protected SingleNodeTypesComponent createNodeTypesComponent() {
-    return new NodeTypesComponent(this, getState());
-  }
-
-  @Override
-  public void clear() {
-  }
-
 
   @Override
   public SNode getRepresentative(SNode node) {
@@ -123,28 +84,6 @@ public abstract class BaseTypecheckingContext extends TypeCheckingContext {
   @Override
   public SNode createNewRuntimeTypesVariable() {
     return getState().createNewRuntimeTypesVariable();
-  }
-
-  @Override
-  public SNode typeOf(SNode node) {
-    return typeOf(node, null, null, true);
-  }
-
-  @Override
-  public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
-    EquationInfo info = new EquationInfo(node, "typeOf", ruleModel, ruleId);
-    if (node == null) return null;
-    SingleNodeTypesComponent currentTypesComponent = getNodeTypesComponent();   //first, in current component
-    if (currentTypesComponent != null) {
-      //--- for incremental algorithm:
-      currentTypesComponent.addNodeToFrontier(node);
-      processDependency(node, ruleModel, ruleId, addDependency);
-    }
-    return getState().typeOf(node, info);
-  }
-
-  protected void processDependency(SNode node, String ruleModel, String ruleId, boolean addDependency) {
-    // do nothing
   }
 
   @Override
@@ -271,12 +210,6 @@ public abstract class BaseTypecheckingContext extends TypeCheckingContext {
   }
 
   @Override
-  public NodeTypesComponent getBaseNodeTypesComponent() {
-    assert false;
-    return null;
-  }
-
-  @Override
   public void runTypeCheckingAction(Runnable r) {
     synchronized (TYPECHECKING_LOCK) {
       r.run();
@@ -289,81 +222,6 @@ public abstract class BaseTypecheckingContext extends TypeCheckingContext {
       return c.compute();
     }
   }
-
-  public SNode computeTypeInferenceMode(SNode node) {
-    synchronized (TYPECHECKING_LOCK) {
-//      myIsInferenceMode = true;
-      try {
-        return getNodeTypesComponent().computeTypesForNodeInferenceMode(node);
-      } finally {
-//        myIsInferenceMode = false;
-      }
-    }
-  }
-
-  @Override
-  public SNode getTypeInGenerationMode(SNode node) {
-    try {
-      return getTypeOf_generationMode(node);
-    } finally {
-      // TODO [ts] move dispose -> trace tree
-      getNodeTypesComponent().dispose();
-    }
-  }
-
-  @Override
-  public boolean checkIfNotChecked(SNode node, boolean useNonTypesystemRules) {
-    synchronized (TYPECHECKING_LOCK) {
-      if (!isCheckedRoot(useNonTypesystemRules)) {
-        checkRoot();
-        if (useNonTypesystemRules) {
-          applyNonTypesystemRules();
-        }
-      }
-      return true;
-    }
-  }
-
-  protected abstract void applyNonTypesystemRules();
-
-  @Override
-  public void checkRoot() {
-    checkRoot(false);
-  }
-
-  @Override
-  public void checkRoot(final boolean refreshTypes) {
-    synchronized (TYPECHECKING_LOCK) {
-      LanguageScopeExecutor.execWithModelScope(myRootNode.getModel(), new Computable<Object>() {
-        @Override
-        public Object compute() {
-          getNodeTypesComponent().computeTypes(refreshTypes);
-          getNodeTypesComponent().setCheckedTypesystem();
-          return null;
-        }
-      });
-    }
-  }
-
-  @Override
-  public Set<Pair<SNode, List<IErrorReporter>>> checkRootAndGetErrors(boolean refreshTypes) {
-    synchronized (TYPECHECKING_LOCK) {
-      checkRoot(refreshTypes);
-      //non-typesystem checks
-      applyNonTypesystemRules();
-      return new THashSet<Pair<SNode, List<IErrorReporter>>>(getNodeTypesComponent().getNodesWithErrors());
-    }
-  }
-
-  @Override
-  public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
-    return getNodeTypesComponent().getNodesWithErrors();
-  }
-
-  public boolean isCheckedRoot(boolean considerNonTypesystemRules) {
-    return getNodeTypesComponent().isChecked(considerNonTypesystemRules);
-  }
-
 
   @Override
   public boolean messagesChanged(Object requesting) {
@@ -381,27 +239,5 @@ public abstract class BaseTypecheckingContext extends TypeCheckingContext {
   public SNode getExpandedNode(SNode node) {
     return getState().expand(node);
   }
-
-
-  @Override
-  public List<IErrorReporter> getTypeMessagesDontCheck(SNode node) {
-    return getNodeTypesComponent().getErrors(node);
-  }
-
-
-  @Override
-  public IErrorReporter getTypeMessageDontCheck(SNode node) {
-    List<IErrorReporter> messages = getTypeMessagesDontCheck(node);
-    if (messages.isEmpty()) {
-      return null;
-    }
-    Collections.sort(messages, new Comparator<IErrorReporter>() {
-      public int compare(IErrorReporter o1, IErrorReporter o2) {
-        return o2.getMessageStatus().compareTo(o1.getMessageStatus());
-      }
-    });
-    return messages.get(0);
-  }
-
 
 }

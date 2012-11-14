@@ -93,6 +93,14 @@ public class TypeCheckingContextNew extends SingleTypecheckingContext {
     getNodeTypesComponent().addDependencyForCurrent(node);
   }
 
+  @Override
+  public SNode getTypeOf(SNode node, TypeChecker typeChecker) {
+    if (node == null) return null;
+    synchronized (TYPECHECKING_LOCK) {
+      return  getTypeOf_normalMode(node);
+    }
+  }
+
   public SNode getTypeOf_generationMode(final SNode node) {
     throw new IllegalStateException("Invalid usage of TypeCheckingContextNew");
   }

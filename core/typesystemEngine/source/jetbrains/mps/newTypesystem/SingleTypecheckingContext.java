@@ -15,13 +15,20 @@
  */
 package jetbrains.mps.newTypesystem;
 
+import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.TypeSystemReporter;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -32,11 +39,13 @@ import jetbrains.mps.util.Pair;
  */
 public class SingleTypecheckingContext extends BaseTypecheckingContext {
 
+  private SingleNodeTypesComponent myNodeTypesComponent;
+
   public SingleTypecheckingContext (SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
+    setNodeTypesComponent(createNodeTypesComponent());
   }
 
-  @Override
   protected SingleNodeTypesComponent createNodeTypesComponent() {
     return new SingleNodeTypesComponent(this, getState());
   }
@@ -115,9 +124,140 @@ public class SingleTypecheckingContext extends BaseTypecheckingContext {
     return false;
   }
 
-  @Override
   protected void applyNonTypesystemRules() {
     // do nothing
   }
 
+  @Override
+  public void clear() {
+  }
+
+  @Override
+  public NodeTypesComponent getBaseNodeTypesComponent() {
+    assert false;
+    return null;
+  }
+
+  public SingleNodeTypesComponent getNodeTypesComponent() {
+    return myNodeTypesComponent;
+  }
+
+  protected final void setNodeTypesComponent(SingleNodeTypesComponent nodeTypesComponent) {
+    assert myNodeTypesComponent == null;
+    assert nodeTypesComponent != null;
+    myNodeTypesComponent = nodeTypesComponent;
+  }
+
+  @Override
+  public SNode typeOf(SNode node) {
+    return typeOf(node, null, null, true);
+  }
+
+  @Override
+  public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
+    EquationInfo info = new EquationInfo(node, "typeOf", ruleModel, ruleId);
+    if (node == null) return null;
+    SingleNodeTypesComponent currentTypesComponent = getNodeTypesComponent();   //first, in current component
+    if (currentTypesComponent != null) {
+      //--- for incremental algorithm:
+      currentTypesComponent.addNodeToFrontier(node);
+      processDependency(node, ruleModel, ruleId, addDependency);
+    }
+    return getState().typeOf(node, info);
+  }
+
+  public SNode computeTypeInferenceMode(SNode node) {
+    synchronized (TYPECHECKING_LOCK) {
+//      myIsInferenceMode = true;
+      try {
+        return getNodeTypesComponent().computeTypesForNodeInferenceMode(node);
+      } finally {
+//        myIsInferenceMode = false;
+      }
+    }
+  }
+
+  @Override
+  public SNode getTypeInGenerationMode(SNode node) {
+    try {
+      return getTypeOf_generationMode(node);
+    } finally {
+      // TODO [ts] move dispose -> trace tree
+      getNodeTypesComponent().dispose();
+    }
+  }
+
+  @Override
+  public boolean checkIfNotChecked(SNode node, boolean useNonTypesystemRules) {
+    synchronized (TYPECHECKING_LOCK) {
+      if (!isCheckedRoot(useNonTypesystemRules)) {
+        checkRoot();
+        if (useNonTypesystemRules) {
+          applyNonTypesystemRules();
+        }
+      }
+      return true;
+    }
+  }
+
+  @Override
+  public void checkRoot() {
+    checkRoot(false);
+  }
+
+  @Override
+  public void checkRoot(final boolean refreshTypes) {
+    synchronized (TYPECHECKING_LOCK) {
+      LanguageScopeExecutor.execWithModelScope(myRootNode.getModel(), new Computable<Object>() {
+        @Override
+        public Object compute() {
+          getNodeTypesComponent().computeTypes(refreshTypes);
+          getNodeTypesComponent().setCheckedTypesystem();
+          return null;
+        }
+      });
+    }
+  }
+
+  @Override
+  public Set<Pair<SNode, List<IErrorReporter>>> checkRootAndGetErrors(boolean refreshTypes) {
+    synchronized (TYPECHECKING_LOCK) {
+      checkRoot(refreshTypes);
+      //non-typesystem checks
+      applyNonTypesystemRules();
+      return new THashSet<Pair<SNode, List<IErrorReporter>>>(getNodeTypesComponent().getNodesWithErrors());
+    }
+  }
+
+  @Override
+  public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
+    return getNodeTypesComponent().getNodesWithErrors();
+  }
+
+  public boolean isCheckedRoot(boolean considerNonTypesystemRules) {
+    return getNodeTypesComponent().isChecked(considerNonTypesystemRules);
+  }
+
+  @Override
+  public List<IErrorReporter> getTypeMessagesDontCheck(SNode node) {
+    return getNodeTypesComponent().getErrors(node);
+  }
+
+  @Override
+  public IErrorReporter getTypeMessageDontCheck(SNode node) {
+    List<IErrorReporter> messages = getTypeMessagesDontCheck(node);
+    if (messages.isEmpty()) {
+      return null;
+    }
+    Collections.sort(messages, new Comparator<IErrorReporter>() {
+      public int compare(IErrorReporter o1, IErrorReporter o2) {
+        return o2.getMessageStatus().compareTo(o1.getMessageStatus());
+      }
+    });
+    return messages.get(0);
+  }
+
+  protected void processDependency(SNode node, String ruleModel, String ruleId, boolean addDependency) {
+    // do nothing
+  }
 }
