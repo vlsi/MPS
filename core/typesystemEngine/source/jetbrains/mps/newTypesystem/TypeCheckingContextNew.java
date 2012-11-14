@@ -45,6 +45,11 @@ public class TypeCheckingContextNew extends SingleTypecheckingContext {
   }
 
   @Override
+  protected NodeTypesComponent createNodeTypesComponent() {
+    return new NodeTypesComponent(this, getState());
+  }
+
+  @Override
   public NodeTypesComponent getNodeTypesComponent() {
     return (NodeTypesComponent) super.getNodeTypesComponent();
   }
