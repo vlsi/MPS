@@ -667,11 +667,11 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       int newLength = oldProperties.length - 2;
       if (newLength == 0) {
         myProperties = null;
-        return;
+      } else {
+        myProperties = new String[newLength];
+        System.arraycopy(oldProperties, 0, myProperties, 0, index);
+        System.arraycopy(oldProperties, index + 2, myProperties, index, newLength - index);
       }
-      myProperties = new String[newLength];
-      System.arraycopy(oldProperties, 0, myProperties, 0, index);
-      System.arraycopy(oldProperties, index + 2, myProperties, index, newLength - index);
     } else if (oldValue == null) {
       String[] oldProperties = myProperties == null ? EMPTY_ARRAY : myProperties;
       myProperties = new String[oldProperties.length + 2];
