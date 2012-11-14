@@ -27,6 +27,7 @@ import com.intellij.openapi.wm.impl.IdeFrameImpl;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.actions.MPSActions;
+import jetbrains.mps.ide.actions.ModuleActions_ActionGroup;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.workbench.ActionPlace;
@@ -67,6 +68,8 @@ public class GroupAdjuster {
 
     addPlace(ProjectPaneActionGroups.PROJECT_PANE_FILE_ACTIONS, ActionPlace.PROJECT_PANE_FILE);
     addPlace(ProjectPaneActionGroups.PROJECT_PANE_FOLDER_ACTIONS, ActionPlace.PROJECT_PANE_FOLDER);
+
+    addPlace(ModuleActions_ActionGroup.ID, ActionPlace.MODULE_DEPENDENCIES);
 
     DefaultActionGroup editorPopupGroup = ActionUtils.getDefaultGroup(EditorComponent.EDITOR_POPUP_MENU_ACTIONS);
     List<AnAction> actionList = Arrays.asList(editorPopupGroup.getChildren(null));
