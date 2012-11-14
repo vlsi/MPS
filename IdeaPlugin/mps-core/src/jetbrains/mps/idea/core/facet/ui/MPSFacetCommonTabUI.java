@@ -24,7 +24,7 @@ import com.intellij.ui.TabbedPaneWrapper;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.icons.MPSIcons;
-import jetbrains.mps.idea.core.project.ModuleRuntimeLibrariesManager;
+import jetbrains.mps.idea.core.project.ModuleRuntimeLibrariesImporter;
 import jetbrains.mps.idea.core.ui.IModuleConfigurationTab;
 import jetbrains.mps.idea.core.ui.ImportedSolutionsTable;
 import jetbrains.mps.idea.core.ui.UsedLanguagesTable;
@@ -104,7 +104,7 @@ public class MPSFacetCommonTabUI implements IModuleConfigurationTab {
       @Override
       protected void doAddElements(Set<ModuleReference> elementsToAdd) {
         super.doAddElements(elementsToAdd);
-        new ModuleRuntimeLibrariesManager(myContext, elementsToAdd).addMissingLibraries();
+        new ModuleRuntimeLibrariesImporter(myContext, elementsToAdd).addMissingLibraries();
       }
     };
     ImportedSolutionsTable importedSolutionsTable = new ImportedSolutionsTable() {
@@ -115,7 +115,7 @@ public class MPSFacetCommonTabUI implements IModuleConfigurationTab {
         for (Dependency dependency : elementsToAdd) {
           referencesToAdd.add(dependency.getModuleRef());
         }
-        new ModuleRuntimeLibrariesManager(myContext, referencesToAdd).addMissingLibraries();
+        new ModuleRuntimeLibrariesImporter(myContext, referencesToAdd).addMissingLibraries();
       }
     };
 

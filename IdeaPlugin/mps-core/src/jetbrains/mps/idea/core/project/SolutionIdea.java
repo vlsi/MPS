@@ -176,7 +176,7 @@ public class SolutionIdea extends Solution {
   public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
     super.addDependency(moduleRef, reexport);
     ModifiableRootModel modifiableModel = ModuleRootManager.getInstance(myModule).getModifiableModel();
-    new ModuleRuntimeLibrariesManager(myModule, Collections.singleton(moduleRef), modifiableModel).addMissingLibraries();
+    new ModuleRuntimeLibrariesImporter(myModule, Collections.singleton(moduleRef), modifiableModel).addMissingLibraries();
     modifiableModel.commit();
     invalidateDependencies();
   }
@@ -185,7 +185,7 @@ public class SolutionIdea extends Solution {
   public void addUsedLanguage(ModuleReference langRef) {
     super.addUsedLanguage(langRef);
     ModifiableRootModel modifiableModel = ModuleRootManager.getInstance(myModule).getModifiableModel();
-    new ModuleRuntimeLibrariesManager(myModule, Collections.singletonList(langRef), modifiableModel).addMissingLibraries();
+    new ModuleRuntimeLibrariesImporter(myModule, Collections.singletonList(langRef), modifiableModel).addMissingLibraries();
     modifiableModel.commit();
   }
 
