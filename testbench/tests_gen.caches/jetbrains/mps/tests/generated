@@ -2,7 +2,7 @@
 <dependencies version="2" modelHash="c1deummalidv3yomdz88i44tkse43lr">
   <dep model="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)" hash="-6kq3x9o3igdmekatfvuw0x4v25oxymd" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-cjp3x7kpslsgnhml4bi405qvj66t1vk" />
-  <dep model="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)" hash="550x0fzpidjfapkaa9gkqymvy0oc1zc" />
+  <dep model="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)" hash="4z2a5d2pd7zj4uo4ttfawp1ygyvmkd2" />
   <dep model="r:00000000-0000-4000-0000-011c895903bf(jetbrains.mps.baseLanguage.collections.unittest.generics_test)" hash="-bjc927m4eawby0jrk7voqkl3kq2ho8x" />
   <dep model="r:00000000-0000-4000-0000-011c895903c0(jetbrains.mps.baseLanguage.collections.unittest.query_operations)" hash="-68wvqmbsrqx0edwrovybhrfs18kz5ob" />
   <dep model="r:00000000-0000-4000-0000-011c895903c1(jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration)" hash="cnuzu8n26ofmlkgoydq592naprg40sn" />
