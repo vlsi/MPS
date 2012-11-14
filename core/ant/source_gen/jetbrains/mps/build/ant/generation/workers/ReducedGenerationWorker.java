@@ -48,7 +48,8 @@ import java.io.File;
 import jetbrains.mps.internal.make.runtime.util.DirUtil;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.project.SModelRoot;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.impl.JarEntryFile;
 
@@ -259,13 +260,17 @@ public class ReducedGenerationWorker extends GeneratorWorker {
         }
       }));
 
-      this.sortedModelDirs = DirUtil.sortDirs(Sequence.fromIterable(modules).translate(new ITranslator2<IModule, SModelRoot>() {
-        public Iterable<SModelRoot> translate(IModule mod) {
-          return mod.getSModelRoots();
+      this.sortedModelDirs = DirUtil.sortDirs(Sequence.fromIterable(modules).translate(new ITranslator2<IModule, ModelRoot>() {
+        public Iterable<ModelRoot> translate(IModule mod) {
+          return mod.getModelRoots();
         }
-      }).select(new ISelector<SModelRoot, String>() {
-        public String select(SModelRoot smr) {
-          return smr.getModelRoot().getPath();
+      }).where(new IWhereFilter<ModelRoot>() {
+        public boolean accept(ModelRoot it) {
+          return it instanceof FolderModelRootBase;
+        }
+      }).select(new ISelector<ModelRoot, String>() {
+        public String select(ModelRoot smr) {
+          return ((FolderModelRootBase) smr).getPath();
         }
       }).select(new ISelector<String, IFile>() {
         public IFile select(String path) {

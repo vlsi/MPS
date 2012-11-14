@@ -119,7 +119,7 @@ public class DefaultModelRoot extends FolderModelRootBase {
       filenameSuffix = NameUtil.shortNameFromLongName(filenameSuffix);
     }
 
-    IFile file = FileSystem.getInstance().getFileByPath(path + File.separator + NameUtil.pathFromNamespace(filenameSuffix) + extension);
+    IFile file = FileSystem.getInstance().getFileByPath(path + File.separator + NameUtil.pathFromNamespace(filenameSuffix) + "." + extension);
     return new FileDataSource(file, this);
   }
 

@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
@@ -111,16 +111,17 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     if (adj != null) {
       adj.adjust(model);
     }
-    SModelRepository.getInstance().registerModelDescriptor(model, this);
+    model.getSModel();
     model.setChanged(true);
+    model.save();
+
+    ((ModelRootBase) root).register(model);
 
     for (ModelCreationListener listener : ourModelCreationListeners) {
       if (listener.isApplicable(this, model)) {
         listener.onCreate(this, model);
       }
     }
-
-    model.save();
 
     new MissingDependenciesFixer(model).fix(false);
 
@@ -469,11 +470,6 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     throw new UnsupportedOperationException();
   }
 //----
-
-  @Deprecated
-  public Collection<SModelRoot> getSModelRoots() {
-    return (Collection) Collections.unmodifiableCollection(mySModelRoots);
-  }
 
   @Override
   public Iterable<ModelRoot> getModelRoots() {

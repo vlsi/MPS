@@ -58,7 +58,7 @@ public class NewModelDialog extends DialogWrapper {
       "" :
       namespace
     );
-    assert myModule.getSModelRoots().size() > 0 : "Can't create a model in solution with no model roots";
+    assert myModule.getModelRoots().iterator().hasNext() : "Can't create a model in solution with no model roots";
     initContentPane();
     if (stereotype != null) {
       myModelStereotype.setSelectedItem(stereotype);

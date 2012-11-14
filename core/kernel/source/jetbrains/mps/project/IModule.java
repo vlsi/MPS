@@ -89,9 +89,6 @@ public interface IModule extends SModule {
 
   List<SModelDescriptor> getOwnModelDescriptors();
 
-  @Deprecated
-  Collection<SModelRoot> getSModelRoots();
-
   String getOutputFor(org.jetbrains.mps.openapi.model.SModel model);
 
   IFile getClassesGen();

@@ -25,6 +25,7 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.iterable.CollectingManyIterator;
 import jetbrains.mps.util.iterable.RecursiveIterator;
 import jetbrains.mps.util.iterable.TranslatingIterator;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -162,8 +163,8 @@ public class ModuleUtil {
 
   @Deprecated
   public static SModelRoot findModelRoot(IModule module, String path) {
-    for (SModelRoot root : module.getSModelRoots()) {
-      if (path.equals(root.getPath())) return root;
+    for (ModelRoot root : module.getModelRoots()) {
+      if (root instanceof SModelRoot && path.equals(((SModelRoot) root).getPath())) return (SModelRoot) root;
     }
     return null;
   }

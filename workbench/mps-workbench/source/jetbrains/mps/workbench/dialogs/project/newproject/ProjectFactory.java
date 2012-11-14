@@ -102,7 +102,7 @@ public class ProjectFactory {
               myCreatedSolution.save();
 
               if (myOptions.getCreateModel()) {
-                EditableSModelDescriptor model = myCreatedSolution.createModel(SModelFqName.fromString(myCreatedSolution.getModuleReference().getModuleFqName() + ".sandbox"), myCreatedSolution.getSModelRoots().iterator().next(), null);
+                EditableSModelDescriptor model = myCreatedSolution.createModel(myCreatedSolution.getModuleReference().getModuleFqName() + ".sandbox", myCreatedSolution.getModelRoots().iterator().next(), null);
                 model.getSModel().addLanguage(myCreatedLanguage.getModuleReference());
                 model.save();
               }
