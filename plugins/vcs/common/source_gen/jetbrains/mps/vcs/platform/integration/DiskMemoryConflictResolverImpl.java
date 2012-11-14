@@ -71,22 +71,21 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
   private static boolean showDiskMemoryQuestion(IFile modelFile, SModel inMemory, File backupFile) {
     String message = "Changes have been made to " + inMemory + " model in memory and on disk.\n" + "Backup of both versions was saved to \"" + backupFile.getAbsolutePath() + "\"\n" + "Which version to use?";
     String title = "Model Versions Conflict";
-    String diskVersion = "Load &File System Version";
-    String memoryVersion = "Save &Memory Version";
-    String showDiffDialog = "Show &Difference";
-    String[] options = {diskVersion, memoryVersion, showDiffDialog};
-    int result = Messages.showDialog(message, title, options, 0, Messages.getQuestionIcon());
-    if (result == -1) {
-      result = 2;
-    }
-    if (options[result].equals(diskVersion)) {
-      return false;
-    } else
-    if (options[result].equals(memoryVersion)) {
-      return true;
-    } else {
-      openDiffDialog(modelFile, inMemory);
-      return true;
+    String[] options = {"Load &File System Version", "Save &Memory Version", "Show &Difference"};
+    while (true) {
+      int result = Messages.showDialog(message, title, options, 0, Messages.getQuestionIcon());
+      switch (result) {
+        case 0:
+          // disk version 
+          return false;
+        case 1:
+          // memory version 
+          return true;
+        case 2:
+        default:
+          // diff dialog or cancel 
+          openDiffDialog(modelFile, inMemory);
+      }
     }
   }
 
@@ -121,12 +120,12 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
     }
     Project project = ProjectManager.getInstance().getOpenProjects()[0];
     final ModelDifferenceDialog dialog = new ModelDifferenceDialog(onDisk, inMemory, project, "Filesystem version (Read-Only)", "Memory Version");
-    dialog.show();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         dialog.toFront();
       }
     });
+    dialog.show();
   }
 
   public static   enum DiskMemoryConflictVersion implements ModelVersion {
