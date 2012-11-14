@@ -249,7 +249,7 @@ import java.util.Set;
       computeTypesSpecial(node, false, additionalNodes, false, initialNode);
       type = typeCalculated(initialNode);
       if (type == null) {
-        if (node.isRoot()) {
+        if (node.getModel() != null && node.getModel().isRoot(node)) {
           //System.out.println("Root: " + initialNode.getDebugText());
           if (myState.getInequalitySystem() == null) {
             computeTypes(node,true, true, Collections.<SNode>emptyList(), true, initialNode);

@@ -138,7 +138,7 @@ public class SingleNodeTypesComponent {
     for (SNode key : keySet) {
       List<IErrorReporter> reporters = getErrors(key);
       if (!reporters.isEmpty()) {
-        if (key.getContainingRoot() == null) {
+        if (key.getTopmostAncestor() == null) {
           /*  LOG.warning("Type system reports error for node without containing root. Node: " + key);
                     for (IErrorReporter reporter : reporters) {
                       LOG.warning("This error was reported from: model: " + reporter.getRuleModel() + " id: " + reporter.getRuleId());
