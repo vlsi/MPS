@@ -82,6 +82,15 @@ public class ModuleRuntimeLibrariesManager implements ProjectComponent, Persiste
     myLibraryToReferenceMap.remove(library);
   }
 
+  public Library getModuleLibrary(ModuleReference reference) {
+    for (Entry<Library, ModuleReference> entry : myLibraryToReferenceMap.entrySet()) {
+      if (entry.getValue().equals(reference)){
+        return entry.getKey();
+      }
+    }
+    return null;
+  }
+
   @Override
   public MyState getState() {
     MyState state = new MyState();

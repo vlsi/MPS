@@ -19,12 +19,15 @@ package jetbrains.mps.idea.core.facet.ui;
 import com.intellij.facet.ui.FacetEditorContext;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.module.ModifiableModuleModel;
+import com.intellij.openapi.roots.LibraryOrderEntry;
+import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.ui.configuration.ProjectStructureConfigurable;
 import com.intellij.ui.TabbedPaneWrapper;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.project.ModuleRuntimeLibrariesImporter;
+import jetbrains.mps.idea.core.project.ModuleRuntimeLibrariesManager;
 import jetbrains.mps.idea.core.ui.IModuleConfigurationTab;
 import jetbrains.mps.idea.core.ui.ImportedSolutionsTable;
 import jetbrains.mps.idea.core.ui.UsedLanguagesTable;
@@ -80,7 +83,7 @@ public class MPSFacetCommonTabUI implements IModuleConfigurationTab {
   }
 
   public boolean isModified(MPSConfigurationBean data) {
-    for (IModuleConfigurationTab tab : myTabs){
+    for (IModuleConfigurationTab tab : myTabs) {
       if (tab.isModified(data)) {
         return true;
       }
@@ -117,6 +120,19 @@ public class MPSFacetCommonTabUI implements IModuleConfigurationTab {
         }
         new ModuleRuntimeLibrariesImporter(myContext, referencesToAdd).addMissingLibraries();
       }
+
+      @Override
+      protected void check(Dependency element, boolean value) {
+        super.check(element, value);
+        // If we reexport mps module then we should reexport its lib as well.
+        Library moduleLibrary = ModuleRuntimeLibrariesManager.getInstance(myContext.getProject()).getModuleLibrary(element.getModuleRef());
+        if (moduleLibrary != null) {
+          LibraryOrderEntry libraryOrderEntry = myContext.getModifiableRootModel().findLibraryOrderEntry(moduleLibrary);
+          if (libraryOrderEntry != null) {
+            libraryOrderEntry.setExported(value);
+          }
+        }
+      }
     };
 
     // can not make it final and init in declaration since idea forms generator does not like it and put $$$setupUI$$$ call before setting the field
@@ -137,7 +153,7 @@ public class MPSFacetCommonTabUI implements IModuleConfigurationTab {
 
   public void onTabEntering() {
     refreshSolutionDescriptorName();
-    for (IModuleConfigurationTab tab : myTabs){
+    for (IModuleConfigurationTab tab : myTabs) {
       tab.onTabEntering();
     }
   }
