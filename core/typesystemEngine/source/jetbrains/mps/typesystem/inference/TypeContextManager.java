@@ -26,7 +26,15 @@ import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import jetbrains.mps.smodel.event.SModelRootEvent;
@@ -34,7 +42,11 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class TypeContextManager implements CoreComponent {
 

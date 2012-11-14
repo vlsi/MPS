@@ -8,7 +8,6 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import junit.framework.Assert;
 import jetbrains.mps.newTypesystem.TypesUtil;
-import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import java.util.List;
@@ -34,8 +33,8 @@ public class TypeSystemCheckUtil {
   }
 
   public static void checkRollBacks(SNode node) {
-    TypeCheckingContext typeCheckingContext =TypeContextManager.getInstance().createTracingTypeCheckingContext(node.getTopmostAncestor());
-    State state = (typeCheckingContext).getState();
+    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTracingTypeCheckingContext(node.getTopmostAncestor());
+    State state = typeCheckingContext.getState();
     State state2 = new State(state.getTypeCheckingContext());
     AbstractOperation rootOperation = state.getOperation();
     List<AbstractOperation> operations = state.getOperationsAsList();
