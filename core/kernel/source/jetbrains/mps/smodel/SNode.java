@@ -849,51 +849,20 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
-  //--------private-------
+  //--------seems theese methods are not needed-------
 
-  private static Set<String> ourErroredModels = new ConcurrentHashSet<String>();
+  private String getProperty_internal(String propertyName) {
+    Set<Pair<SNode, String>> getters = ourPropertyGettersInProgress.get();
+    Pair<SNode, String> current = new Pair<SNode, String>(this, propertyName);
+    if (getters.contains(current)) return getPersistentProperty(propertyName);
 
-  private void assertDisposed() {
-    //this is only while exceptions are not fixed
-    //actually, detached models should not be distinguishable by some "disposed" property
-    if (myModel == null || !myModel.isDisposed()) return;
-
-    String modelName = myModel.getLongName();
-    if (ourErroredModels.add(modelName)) {
-      System.err.println("CRITICAL: INVALID OPERATION DETECTED");
-      System.err.println("model: " + modelName);
-      new IllegalModelAccessError("Accessing disposed node").printStackTrace(System.err);
-    }
-  }
-
-  private String getProperty_simple(String propertyName) {
-    int index = getPropertyIndex(propertyName);
-    if (index == -1) return null;
-    return myProperties[index + 1];
-  }
-
-  private void delete_internal() {
-    //delete all children
-    List<SNode> children = new ArrayList<SNode>(getChildren());
-    for (SNode child : children) {
-      child.delete_internal();
-    }
-
-    //remove all references
-    while (myReferences.length > 0) {
-      removeReferenceInternal(myReferences[0]);
-    }
-    myReferences = SReference.EMPTY_ARRAY;
-
-    //remove from parent
-    SNode parent = getParent();
-    if (parent != null) {
-      parent.removeChild(this);
-    } else {
-      SModel model = getModel();
-      if (model != null && model.isRoot(this)) {
-        model.removeRoot(this);
-      }
+    getters.add(current);
+    try {
+      PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(this.getConcept().getId()).getProperty(propertyName);
+      Object getterValue = descriptor.getValue(this, GlobalScope.getInstance());
+      return getterValue == null ? null : String.valueOf(getterValue);
+    } finally {
+      getters.remove(current);
     }
   }
 
@@ -910,55 +879,10 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return resultReference;
   }
 
-  private void enforceModelLoad() {
-    if (myModel == null) return;
-    if (!myModel.isRoot(this)) return;
-    myModel.enforceFullLoad();
-  }
-
-  private void fireNodeUnclassifiedReadAccess() {
-    if (myModel == null || !myModel.canFireEvent()) return;
-    NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
-  }
-
-  private void fireNodeReadAccess() {
-    if (myModel == null || !myModel.canFireEvent()) return;
-    NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
-  }
-
-  private void fireNodeChildReadAccess(String role, SNode child) {
-    if (myModel == null || !myModel.canFireReadEvent()) return;
-    NodeReadEventsCaster.fireNodeChildReadAccess(this, role, child);
-  }
-
-  private void fireNodePropertyReadAccess(String propertyName, String propertyValue) {
-    if (myModel == null || !myModel.canFireReadEvent()) return;
-    NodeReadEventsCaster.fireNodePropertyReadAccess(this, propertyName, propertyValue);
-  }
-
-  private void fireNodeReferentReadAccess(String referentRole, SNode referent) {
-    if (myModel == null || !myModel.canFireReadEvent()) return;
-    NodeReadEventsCaster.fireNodeReferentReadAccess(this, referentRole, referent);
-  }
-
-  private void firePropertyReadAccessInEditor(String propertyName, boolean propertyExistenceCheck) {
-    if (myModel == null || !myModel.canFireEvent()) return;
-    NodeReadAccessCasterInEditor.firePropertyReadAccessed(this, propertyName, propertyExistenceCheck);
-  }
-
-  private String getProperty_internal(String propertyName) {
-    Set<Pair<SNode, String>> getters = ourPropertyGettersInProgress.get();
-    Pair<SNode, String> current = new Pair<SNode, String>(this, propertyName);
-    if (getters.contains(current)) return getPersistentProperty(propertyName);
-
-    getters.add(current);
-    try {
-      PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(this.getConcept().getId()).getProperty(propertyName);
-      Object getterValue = descriptor.getValue(this, GlobalScope.getInstance());
-      return getterValue == null ? null : String.valueOf(getterValue);
-    } finally {
-      getters.remove(current);
-    }
+  private String getProperty_simple(String propertyName) {
+    int index = getPropertyIndex(propertyName);
+    if (index == -1) return null;
+    return myProperties[index + 1];
   }
 
   private int getPropertyIndex(String propertyName) {
@@ -1017,6 +941,84 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     if (ModelChange.needFireEvents(model, this)) {
       model.fireReferenceRemovedEvent(ref);
     }
+  }
+
+  //--------private-------
+
+  private static Set<String> ourErroredModels = new ConcurrentHashSet<String>();
+
+  private void assertDisposed() {
+    //this is only while exceptions are not fixed
+    //actually, detached models should not be distinguishable by some "disposed" property
+    if (myModel == null || !myModel.isDisposed()) return;
+
+    String modelName = myModel.getLongName();
+    if (ourErroredModels.add(modelName)) {
+      System.err.println("CRITICAL: INVALID OPERATION DETECTED");
+      System.err.println("model: " + modelName);
+      new IllegalModelAccessError("Accessing disposed node").printStackTrace(System.err);
+    }
+  }
+
+  private void delete_internal() {
+    //delete all children
+    List<SNode> children = new ArrayList<SNode>(getChildren());
+    for (SNode child : children) {
+      child.delete_internal();
+    }
+
+    //remove all references
+    while (myReferences.length > 0) {
+      removeReferenceInternal(myReferences[0]);
+    }
+    myReferences = SReference.EMPTY_ARRAY;
+
+    //remove from parent
+    SNode parent = getParent();
+    if (parent != null) {
+      parent.removeChild(this);
+    } else {
+      SModel model = getModel();
+      if (model != null && model.isRoot(this)) {
+        model.removeRoot(this);
+      }
+    }
+  }
+
+  private void enforceModelLoad() {
+    if (myModel == null) return;
+    if (!myModel.isRoot(this)) return;
+    myModel.enforceFullLoad();
+  }
+
+  private void fireNodeUnclassifiedReadAccess() {
+    if (myModel == null || !myModel.canFireEvent()) return;
+    NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
+  }
+
+  private void fireNodeReadAccess() {
+    if (myModel == null || !myModel.canFireEvent()) return;
+    NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
+  }
+
+  private void fireNodeChildReadAccess(String role, SNode child) {
+    if (myModel == null || !myModel.canFireReadEvent()) return;
+    NodeReadEventsCaster.fireNodeChildReadAccess(this, role, child);
+  }
+
+  private void fireNodePropertyReadAccess(String propertyName, String propertyValue) {
+    if (myModel == null || !myModel.canFireReadEvent()) return;
+    NodeReadEventsCaster.fireNodePropertyReadAccess(this, propertyName, propertyValue);
+  }
+
+  private void fireNodeReferentReadAccess(String referentRole, SNode referent) {
+    if (myModel == null || !myModel.canFireReadEvent()) return;
+    NodeReadEventsCaster.fireNodeReferentReadAccess(this, referentRole, referent);
+  }
+
+  private void firePropertyReadAccessInEditor(String propertyName, boolean propertyExistenceCheck) {
+    if (myModel == null || !myModel.canFireEvent()) return;
+    NodeReadAccessCasterInEditor.firePropertyReadAccessed(this, propertyName, propertyExistenceCheck);
   }
 
   //--------private classes-------
