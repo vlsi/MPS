@@ -122,6 +122,14 @@ import java.util.*;
     return result;
   }
 
+  @Override
+  protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
+    try {
+      super.computeTypes(nodeToCheck, refreshTypes, forceChildrenCheck, additionalNodes, finalExpansion, initialNode);
+    } finally {
+      setInvalidationWasPerformed(false);
+    }
+  }
 
   @Override
   protected void invalidateNodeTypeSystem(SNode node, boolean typeWillBeRecalculated) {
@@ -184,25 +192,6 @@ import java.util.*;
     addDependentNodesTypeSystem(myCurrentCheckedNode, hashSet, true);
   }
 
-  @Override
-  protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
-    try {
-      if (refreshTypes) {
-        clear();
-        setTargetNode(initialNode);
-      } else {
-        myState.clearStateObjects();
-        doInvalidate();
-        myPartlyCheckedNodes.addAll(myFullyCheckedNodes);
-        myFullyCheckedNodes.clear();
-      }
-      computeTypesSpecial(nodeToCheck, forceChildrenCheck, additionalNodes, finalExpansion, initialNode);
-      performActionsAfterChecking();
-      myState.performActionsAfterChecking();
-    } finally {
-      setInvalidationWasPerformed(false);
-    }
-  }
 
   @Override
   protected void setTargetNode(SNode initialNode) {

@@ -55,7 +55,7 @@ import java.util.Set;
     setInvalidationWasPerformed(false);
   }
 
-
+  @Override
   public void clear() {
     myIsChecked = false;
   }

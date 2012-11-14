@@ -113,7 +113,6 @@ import java.util.Set;
     myState.clear(true);
   }
 
-
   public void addNodeToFrontier(SNode node) {
     if (node == null) return;
     myQueue.add(node);
@@ -124,8 +123,18 @@ import java.util.Set;
   }
 
   protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
-    assert false;
-  }
+    if (refreshTypes) {
+      clear();
+      setTargetNode(initialNode);
+    } else {
+      myState.clearStateObjects();
+      doInvalidate();
+      myPartlyCheckedNodes.addAll(myFullyCheckedNodes);
+      myFullyCheckedNodes.clear();
+    }
+    computeTypesSpecial(nodeToCheck, forceChildrenCheck, additionalNodes, finalExpansion, initialNode);
+    performActionsAfterChecking();
+    myState.performActionsAfterChecking();  }
 
   @UseCarefully
   public void setChecked() {
@@ -274,6 +283,10 @@ import java.util.Set;
       }
     }
     return type;
+  }
+
+  public void clear() {
+
   }
 
   protected static class AccessTracking {
