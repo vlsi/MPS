@@ -804,8 +804,10 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   void unRegisterFromModel() {
     if (myModel == null) return;
 
-    for (SReference ref : myReferences) {
-      ref.makeDirect();
+    if (!myModel.isUpdateMode()) {
+      for (SReference ref : myReferences) {
+        ref.makeDirect();
+      }
     }
 
     myModel.unregisterNode(this);
