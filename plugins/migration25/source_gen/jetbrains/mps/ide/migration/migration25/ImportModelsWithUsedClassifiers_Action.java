@@ -27,8 +27,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SReference;
 
 public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -84,10 +83,12 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
           // collect dependencies by classifiers 
           // collect model dependencies from ClassifierType 
           // todo: classifier extends and implements references? 
-          for (SNode classifierType : ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
-            SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
-            if ((classifier != null)) {
-              SetSequence.fromSet(dependencies).addElement(SNodeOperations.getModel(classifier).getSModelReference());
+          for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
+            for (SReference ref : ListSequence.fromList(node.getReferences())) {
+              SModelReference mref = check_rft9c_a0a0a0h0d0c0a(check_rft9c_a0a0a0a7a3a2a0(ref.getTargetNodeSilently()));
+              if (mref != null) {
+                SetSequence.fromSet(dependencies).addElement(mref);
+              }
             }
           }
           // remove all imported already models 
@@ -106,5 +107,19 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
         log.error("User's action execute method failed. Action:" + "ImportModelsWithUsedClassifiers", t);
       }
     }
+  }
+
+  private static SModelReference check_rft9c_a0a0a0h0d0c0a(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSModelReference();
+    }
+    return null;
+  }
+
+  private static SModel check_rft9c_a0a0a0a7a3a2a0(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModel();
+    }
+    return null;
   }
 }
