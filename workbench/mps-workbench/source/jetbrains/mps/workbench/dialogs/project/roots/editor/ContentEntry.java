@@ -32,8 +32,14 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyVetoException;
+import java.beans.VetoableChangeListener;
 import java.util.EventListener;
 
 public abstract class ContentEntry<T> {
@@ -59,6 +65,10 @@ public abstract class ContentEntry<T> {
   public ContentEntry(T entry) {
     myEntry = entry;
     myEventDispatcher = EventDispatcher.create(ContentEntryEditorListener.class);
+  }
+
+  public T getEntry() {
+    return myEntry;
   }
 
   public void initUI() {
@@ -106,14 +116,15 @@ public abstract class ContentEntry<T> {
     }
     final IconActionComponent deleteIconComponent = new IconActionComponent(IdeIcons.DELETE_CONTENT_ROOT,
       IdeIcons.DELETE_CONTENT_ROOT_ROLL_OVER,
-      "", new Runnable() {
+      "Delete Model Root", new Runnable() {
       public void run() {
+        myEventDispatcher.getMulticaster().delete(ContentEntry.this);
       }
     });
     final ResizingWrapper wrapper = new ResizingWrapper(myHeaderLabel);
     panel.add(wrapper, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.HORIZONTAL, new Insets(0, 2, 0, 0), 0, 0));
     panel.add(deleteIconComponent, new GridBagConstraints(1, GridBagConstraints.RELATIVE, 1, 1, 0.0, 1.0, GridBagConstraints.EAST, GridBagConstraints.NONE, new Insets(0, 0, 0, 2), 0, 0));
-    FilePathClipper.install(myHeaderLabel, wrapper);
+//    FilePathClipper.install(myHeaderLabel, wrapper);
     return panel;
   }
 
@@ -149,7 +160,9 @@ public abstract class ContentEntry<T> {
 
   protected void reset() {
     myHeaderLabel.setText(getHeaderText());
-    myDetailsComponent = createDetailsComponent();
+    updateDetailsComponent();
+  }
+  protected void updateDetailsComponent() {
   }
 
   protected abstract String getHeaderText();
@@ -158,5 +171,7 @@ public abstract class ContentEntry<T> {
 
   public interface ContentEntryEditorListener extends EventListener {
     void focused(ContentEntry<?> entry);
+    void delete(ContentEntry<?> entry);
+    void dataChanged(ContentEntry<?> entry);
   }
 }

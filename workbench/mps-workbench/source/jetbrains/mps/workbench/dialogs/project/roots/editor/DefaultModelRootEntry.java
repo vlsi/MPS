@@ -17,94 +17,77 @@ package jetbrains.mps.workbench.dialogs.project.roots.editor;
 
 import com.intellij.ide.util.treeView.AbstractTreeUi;
 import com.intellij.openapi.Disposable;
-import com.intellij.openapi.editor.DisposableEditorPanel;
-import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.fileChooser.FileSystemTree.Listener;
 import com.intellij.openapi.fileChooser.ex.FileSystemTreeImpl;
-import com.intellij.openapi.fileChooser.impl.FileChooserUtil;
-import com.intellij.openapi.roots.ui.configuration.ContentEntryTreeEditor;
+import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.ui.ComboBox;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
-import com.intellij.openapi.vfs.impl.VirtualFileManagerImpl;
-import com.intellij.openapi.vfs.newvfs.impl.VirtualDirectoryImpl;
-import com.intellij.openapi.vfs.newvfs.impl.VirtualFileImpl;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBLabel;
-import com.intellij.ui.roots.FilePathClipper;
-import com.intellij.ui.roots.IconActionComponent;
-import com.intellij.ui.roots.ResizingWrapper;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
-import com.intellij.util.ui.JBInsets;
-import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.workbench.dialogs.project.roots.editor.EntryEditor.CallBack;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-import javax.swing.BorderFactory;
-import javax.swing.Box;
 import javax.swing.JComponent;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.util.List;
 
-public class DefaultModelRootEntry extends ContentEntry<ModelRootDescriptor> implements ModelRootCallBack  {
-  public DefaultModelRootEntry(ModelRootDescriptor entry) {
-    super(entry);
-    myEditor = new DefaultModelRootEntryEditor(myEntry, this);
+public class DefaultModelRootEntry extends ContentEntry<ModelRootDescriptor> {
+
+  private JBLabel myLabel;
+  private final ModuleDescriptor myModuleDescriptor;
+
+  public DefaultModelRootEntry(ModelRootDescriptor entry, ModuleDescriptor moduleDescriptor) {
+    super(new ModelRootDescriptor(entry.getType(), entry.getMemento().clone()));
+    myModuleDescriptor = moduleDescriptor;
+    myEditor = new DefaultModelRootEntryEditor(myEntry);
 
     initUI();
   }
 
   @Override
   public String getHeaderText() {
-    ModelRoot root = PersistenceFacade.getInstance().getModelRootFactory(myEntry.getType()).create();
-    root.load(myEntry.getMemento());
-
-    return myEntry.getRoot().getPath();
+    return myEntry.getMemento().getPath("path");
   }
 
   @Override
   public JComponent createDetailsComponent() {
-    JBLabel label = new JBLabel();
-
+    myLabel = new JBLabel();
+    myLabel.setText(getHeaderText());
+    return myLabel;
+  }
+  private String getDetailsText() {
     final StringBuilder messageText = new StringBuilder();
     messageText.append("<html>");
-    messageText.append("Path : ").append(myEntry.getRoot().getPath()).append("<br>");
+    messageText.append("Path : ").append(myEntry.getMemento().getPath("path")).append("<br>");
     messageText.append("Type : ").append(myEntry.getType()).append("<br>");
-
-    label.setText(messageText.toString());
-    return label;
+    return messageText.toString();
   }
 
   @Override
-  public void pathChanged(String path) {
-    myEntry.getRoot().setPath(path);
-    reset();
-  }
-
-  @Override
-  public void typeChanged(String type) {
-
+  protected void updateDetailsComponent() {
+    myLabel.setText(getDetailsText());
   }
 
   private class DefaultModelRootEntryEditor extends EntryEditor<ModelRootDescriptor> {
 
-    public DefaultModelRootEntryEditor(ModelRootDescriptor entry, ModelRootCallBack callBack) {
-      super(entry, callBack);
+    private JPanel myTreePanel;
+
+    public DefaultModelRootEntryEditor(ModelRootDescriptor entry) {
+      super(entry);
       initUI();
     }
 
@@ -125,32 +108,65 @@ public class DefaultModelRootEntry extends ContentEntry<ModelRootDescriptor> imp
       panel.add(comboBox,
         new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
+      comboBox.addItemListener(new ItemListener() {
+        @Override
+        public void itemStateChanged(ItemEvent e) {
+          if(e.getStateChange() == ItemEvent.SELECTED)
+            if(!DefaultModelRootEntry.this.myEntry.getType().equals(e.getItem())) {
+              DefaultModelRootEntry.this.myEntry = new ModelRootDescriptor((String)e.getItem(), DefaultModelRootEntry.this.myEntry.getMemento().clone());
+              DefaultModelRootEntry.this.reset();
+              updateTree();
+            }
+        }
+      });
 
-      FileSystemTreeImpl fileSystemTree = new FileSystemTreeImpl(null, FileChooserDescriptorFactory.createSingleFolderDescriptor());
+
+      myTreePanel = new JPanel(new BorderLayout());
+      updateTree();
+      final JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myTreePanel);
+      panel.add(scrollPane,
+        new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, null, null, null));
+
+      myEditorComponent = panel;
+    }
+
+    private void updateTree() {
+      FileSystemTreeImpl fileSystemTree = new FileSystemTreeImpl(
+        null,
+        myEntry.getType() == PersistenceRegistry.DEFAULT_MODEL_ROOT
+          ? FileChooserDescriptorFactory.createSingleFolderDescriptor()
+          : FileChooserDescriptorFactory.createSingleFileDescriptor(FileTypeManager.getInstance().getFileTypeByExtension("jar"))
+      );
       AbstractTreeUi ui = fileSystemTree.getTreeBuilder().getUi();
       VirtualFile virtualFile =  VirtualFileManager.getInstance().findFileByUrl(
-        VirtualFileManager.constructUrl("file", myEntry.getRoot().getPath()));
+        VirtualFileManager.constructUrl(
+          "file",
+          myEntry.getMemento().getPath("path").equals("")
+            ? MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getModuleReference().getModuleId()).getBundleHome().getPath()
+            : myEntry.getMemento().getPath("path")
+        )
+      );
       fileSystemTree.select(virtualFile,null);
 
       fileSystemTree.addListener(
         new Listener() {
           @Override
           public void selectionChanged(List<VirtualFile> selection) {
-            if(selection.size() > 0)
-              ((ModelRootCallBack)myCallBack).pathChanged(selection.get(0).getPath());
+            if (selection.size() > 0) {
+              DefaultModelRootEntry.this.myEntry.getMemento().putPath("path", selection.get(0).getPath());
+              DefaultModelRootEntry.this.reset();
+            }
           }
         }, new Disposable() {
           @Override
           public void dispose() {
-            //To change body of implemented methods use File | Settings | File Templates.
           }
-        });
+        }
+      );
 
-      JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(ui.getTree());
-      panel.add(ui.getTree(),
-        new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, null, null, null));
-
-      myEditorComponent = panel;
+      myTreePanel.removeAll();
+      myTreePanel.add(ui.getTree(), BorderLayout.CENTER);
+      ui.scrollSelectionToVisible(null, true);
     }
   }
 }

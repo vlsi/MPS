@@ -15,50 +15,40 @@
  */
 package jetbrains.mps.workbench.dialogs.project.tmodels;
 
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.workbench.dialogs.project.components.parts.validators.ModelValidator;
+import jetbrains.mps.workbench.choose.models.ModelPresentation;
+import jetbrains.mps.workbench.dialogs.project.components.parts.StateUtil;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 import javax.swing.Icon;
 
 public class ModelDepTableItem extends DependenciesTableItem<SModelReference> {
   private IScope myScope;
+  private ModelPresentation myModelPresentation;
 
   public ModelDepTableItem(SModelReference value, DependenciesTableItemRole role, IScope scope) {
     super(value, role);
     myScope = scope;
+    myModelPresentation = new ModelPresentation((jetbrains.mps.smodel.SModelReference)myItem);
   }
 
   public ModelDepTableItem(SModelReference value, DependenciesTableItemRole role) {
-    super(value, role);
+    this(value, role, null);
   }
 
   @Override
   public String getPresentation() {
-    return myItem.getModelName();
+    return myModelPresentation.doGetPresentableText();
   }
 
   @Override
   public boolean isValid() {
-    if(myScope == null)
-      return true;
-    ModelValidator validator = new ModelValidator(myScope);
-    return !(validator.isBrokenValue(myItem));
+    return  StateUtil.isAvailable((jetbrains.mps.smodel.SModelReference)myItem)
+      && StateUtil.isInScope(myScope, (jetbrains.mps.smodel.SModelReference)myItem);
   }
 
   @Override
   public Icon getIcon() {
-    IModule module = SModelRepository.getInstance().getModelDescriptor(myItem).getModule();
-    if(module instanceof Language) {
-      LanguageAspect aspect = ((Language) module).getAspectForModel(SModelRepository.getInstance().getModelDescriptor(myItem));
-      return IconManager.getIconForAspect(aspect);
-    }
-    return IdeIcons.MODEL_ICON;
+    return myModelPresentation.doGetIcon();
   }
 }

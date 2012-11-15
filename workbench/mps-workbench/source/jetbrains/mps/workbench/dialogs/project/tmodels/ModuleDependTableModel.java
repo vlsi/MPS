@@ -51,14 +51,6 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
       for(ModuleReference moduleReference : languageDescriptor.getExtendedLanguages()) {
         myTableItems.add(new ModuleDepTableItem(moduleReference, DependenciesTableItemRole.EXTEND));
       }
-
-      for(ModuleReference moduleReference : languageDescriptor.getRuntimeModules()) {
-        myTableItems.add(new ModuleDepTableItem(moduleReference, DependenciesTableItemRole.RUNTIME));
-      }
-
-      for(SModelReference model : languageDescriptor.getAccessoryModels()) {
-        myTableItems.add(new ModelDepTableItem(model, DependenciesTableItemRole.ACCESSORY));
-      }
     }
     else if(myItem instanceof SolutionDescriptor) {
     }
@@ -100,12 +92,6 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
 
       languageDescriptor.getExtendedLanguages().clear();
       languageDescriptor.getExtendedLanguages().addAll(getExtendedModules());
-
-      languageDescriptor.getRuntimeModules().clear();
-      languageDescriptor.getRuntimeModules().addAll(getRuntimeModules());
-
-      languageDescriptor.getAccessoryModels().clear();
-      languageDescriptor.getAccessoryModels().addAll(getAccessoryModels());
     }
     else if(myItem instanceof SolutionDescriptor) {
     }
@@ -138,8 +124,6 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
     if(myItem instanceof LanguageDescriptor) {
       LanguageDescriptor languageDescriptor = (LanguageDescriptor) myItem;
       equals = equals && languageDescriptor.getExtendedLanguages().containsAll(getExtendedModules()) && getExtendedModules().containsAll(languageDescriptor.getExtendedLanguages());
-      equals = equals && languageDescriptor.getRuntimeModules().containsAll(getRuntimeModules()) && getRuntimeModules().containsAll(languageDescriptor.getRuntimeModules());
-      equals = equals && languageDescriptor.getAccessoryModels().containsAll(getAccessoryModels()) && getAccessoryModels().containsAll(languageDescriptor.getAccessoryModels());
     }
     else if(myItem instanceof SolutionDescriptor) {
     }
@@ -167,28 +151,10 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
     return dependencies;
   }
 
-  private Set<SModelReference> getAccessoryModels() {
-    Set<SModelReference> set = new HashSet<SModelReference>();
-    for(DependenciesTableItem<?> tableItem : myTableItems)
-      if(tableItem instanceof ModelDepTableItem && tableItem.getRole() == DependenciesTableItemRole.ACCESSORY)
-        set.add((SModelReference)((ModelDepTableItem)tableItem).getItem());
-
-    return set;
-  }
-
   private Set<ModuleReference> getExtendedModules() {
     Set<ModuleReference> set = new HashSet<ModuleReference>();
     for(DependenciesTableItem<?> tableItem : myTableItems)
       if(tableItem instanceof ModuleDepTableItem && tableItem.getRole() == DependenciesTableItemRole.EXTEND)
-        set.add(((ModuleDepTableItem)tableItem).getItem());
-
-    return set;
-  }
-
-  private Set<ModuleReference> getRuntimeModules() {
-    Set<ModuleReference> set = new HashSet<ModuleReference>();
-    for(DependenciesTableItem<?> tableItem : myTableItems)
-      if(tableItem instanceof ModuleDepTableItem && tableItem.getRole() == DependenciesTableItemRole.RUNTIME)
         set.add(((ModuleDepTableItem)tableItem).getItem());
 
     return set;

@@ -20,11 +20,9 @@ import javax.swing.JComponent;
 public abstract class EntryEditor<T> {
   private T myEntry;
   protected JComponent myEditorComponent;
-  protected CallBack myCallBack;
 
-  public EntryEditor(T entry, CallBack callBack) {
+  public EntryEditor(T entry) {
     myEntry = entry;
-    myCallBack = callBack;
   }
 
   public JComponent getComponent() {
@@ -32,7 +30,4 @@ public abstract class EntryEditor<T> {
   }
 
   protected abstract void initUI();
-
-  public interface CallBack {
-  }
 }

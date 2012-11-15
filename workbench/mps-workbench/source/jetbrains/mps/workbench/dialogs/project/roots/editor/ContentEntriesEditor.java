@@ -27,22 +27,31 @@ import com.intellij.ui.roots.ToolbarPanel;
 import com.intellij.util.ui.JBInsets;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.persistence.PathAwareJDOMMemento;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.workbench.dialogs.project.PropertiesBundle;
 import jetbrains.mps.workbench.dialogs.project.roots.editor.ContentEntry.ContentEntryEditorListener;
+import org.jdom.Element;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import javax.swing.BorderFactory;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.SwingUtilities;
+import javax.swing.border.BevelBorder;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 public class ContentEntriesEditor {
 
@@ -55,25 +64,29 @@ public class ContentEntriesEditor {
 
   protected JPanel myEditorsListPanel;
   protected JPanel myEditorPanel;
+  private JPanel myMainPanel;
 
   public ContentEntriesEditor(ModuleDescriptor moduleDescriptor) {
     myModuleDescriptor = moduleDescriptor;
     for(ModelRootDescriptor descriptor : myModuleDescriptor.getModelRootDescriptors()) {
-      ContentEntry entry = new DefaultModelRootEntry(descriptor);
+      if(descriptor.getRoot() != null)
+        continue;
+      ContentEntry entry = new DefaultModelRootEntry(descriptor, myModuleDescriptor);
       entry.addContentEntryEditorListener(myEditorListener);
       myContentEntries.add(entry);
     }
+    initUI();
   }
 
-  public JComponent createComponent() {
-    final JPanel mainPanel = new JPanel(new BorderLayout());
-    mainPanel.setBorder(BorderFactory.createEmptyBorder(6, 6, 6, 6));
+  public void initUI() {
+    myMainPanel = new JPanel(new BorderLayout());
+    myMainPanel.setBorder(BorderFactory.createEmptyBorder(6, 6, 6, 6));
 
     final JPanel entriesPanel = new JPanel(new BorderLayout());
 
     final DefaultActionGroup group = new DefaultActionGroup();
     final AddContentEntryAction action = new AddContentEntryAction();
-    action.registerCustomShortcutSet(KeyEvent.VK_M, KeyEvent.ALT_DOWN_MASK, mainPanel);
+    action.registerCustomShortcutSet(KeyEvent.VK_M, KeyEvent.ALT_DOWN_MASK, myMainPanel);
     group.add(action);
 
     myEditorsListPanel = new ScrollablePanel(new VerticalStackLayout());
@@ -83,55 +96,98 @@ public class ContentEntriesEditor {
 
     Splitter splitter = new Splitter(false);
     splitter.setHonorComponentsMinimumSize(true);
-    mainPanel.add(splitter, BorderLayout.CENTER);
+    myMainPanel.add(splitter, BorderLayout.CENTER);
 
     final JPanel editorsPanel = new JPanel(new GridBagLayout());
     splitter.setFirstComponent(editorsPanel);
     editorsPanel.add(entriesPanel,
       new GridBagConstraints(0, 0, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, JBInsets.NONE, 0, 0));
 
+    final JPanel editorPanel = new JPanel(new BorderLayout());
+    editorPanel.setBorder(BorderFactory.createEtchedBorder());
     myEditorPanel = new JPanel(new BorderLayout());
-    final JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myEditorPanel);
-    splitter.setSecondComponent(scrollPane);
+    editorPanel.add(myEditorPanel, BorderLayout.CENTER);
+    splitter.setSecondComponent(editorPanel);
 
-    for(ContentEntry entry : myContentEntries)
+    for(ContentEntry entry : myContentEntries) {
       myEditorsListPanel.add(entry.getComponent());
+    }
 
     if(myContentEntries.size() > 0)
       selectEntry(myContentEntries.get(0));
-    //myRootTreeEditor = createContentEntryTreeEditor(project);
-    //final JComponent treeEditorComponent = myRootTreeEditor.createComponent();
-    //mySplitter.setSecondComponent(treeEditorComponent);
-
-//    final ModifiableRootModel model = getModel();
-//    if (model != null) {
-//      final ContentEntry[] contentEntries = model.getContentEntries();
-//      if (contentEntries.length > 0) {
-//        for (final ContentEntry contentEntry : contentEntries) {
-//          addContentEntryPanel(contentEntry.getUrl());
-//        }
-//        selectContentEntry(contentEntries[0].getUrl());
-//      }
-//    }
-
-    return mainPanel;
+    else
+      selectEntry(null);
   }
 
   private void selectEntry(ContentEntry<?> entry) {
-    if(entry != null && entry.equals(myFocucedContentEntry))
+    try
+    {
+      if(entry != null && entry.equals(myFocucedContentEntry))
+        return;
+
+      if(myFocucedContentEntry != null)
+        myFocucedContentEntry.setFocuced(false);
+
+      if(entry == null) {
+        myFocucedContentEntry = null;
+        myEditorPanel.removeAll();
+        return;
+      }
+
+      entry.setFocuced(true);
+      myEditorPanel.removeAll();
+      myEditorPanel.add(entry.getEditor().getComponent(), BorderLayout.CENTER);
+      myFocucedContentEntry = entry;
+    }
+    finally {
+      myMainPanel.updateUI();
+    }
+  }
+
+  private void deleteEntry(ContentEntry<?> entry) {
+    if(!myContentEntries.contains(entry))
       return;
 
-    if(myFocucedContentEntry != null)
-      myFocucedContentEntry.setFocuced(false);
-    entry.setFocuced(true);
-    myEditorPanel.removeAll();
-    myEditorPanel.add(entry.getEditor().getComponent());
-    myFocucedContentEntry = entry;
+    myEditorsListPanel.remove(entry.getComponent());
+    int idx = myContentEntries.indexOf(entry);
+    myContentEntries.remove(entry);
+    if(myFocucedContentEntry.equals(entry))
+      selectEntry(myContentEntries.size() > 0 ?
+        myContentEntries.get(Math.max(idx - 1, 0))
+        : null);
+    else
+      myMainPanel.updateUI();
   }
 
   public boolean isModified() {
+    Set<ModelRootDescriptor> newSet = getDescriptors();
+    Set<ModelRootDescriptor> oldSet = new HashSet<ModelRootDescriptor>();
+    for(ModelRootDescriptor descriptor : myModuleDescriptor.getModelRootDescriptors())
+      if(descriptor.getRoot() == null)
+        oldSet.add(descriptor);
+    return !(oldSet.containsAll(newSet) && newSet.containsAll(oldSet));
+  }
 
-    return false;
+  public void apply() {
+    Iterator<ModelRootDescriptor> it = myModuleDescriptor.getModelRootDescriptors().iterator();
+    do {
+      ModelRootDescriptor descriptor = it.next();
+      if(descriptor.getRoot() == null)
+        it.remove();
+    } while(it.hasNext());
+
+    myModuleDescriptor.getModelRootDescriptors().addAll(getDescriptors());
+  }
+
+  private Set<ModelRootDescriptor> getDescriptors() {
+    Set<ModelRootDescriptor> descriptorSet = new HashSet<ModelRootDescriptor>();
+    for(ContentEntry entry : myContentEntries)
+      descriptorSet.add(((DefaultModelRootEntry)entry).getEntry());
+    return descriptorSet;
+  }
+
+  public JComponent getComponent() {
+    return myMainPanel;
   }
 
   private class AddContentEntryAction extends IconWithTextAction implements DumbAware {
@@ -140,6 +196,16 @@ public class ContentEntriesEditor {
     }
 
     public void actionPerformed(AnActionEvent e) {
+      ModelRoot mr = PersistenceRegistry.getInstance().getModelRootFactory("java_class_stub").create();
+      PathAwareJDOMMemento memento = new PathAwareJDOMMemento(new Element("modelRoot"), null);
+      mr.save(memento);
+      ContentEntry entry = new DefaultModelRootEntry(new ModelRootDescriptor(mr.getType(), memento), myModuleDescriptor);
+      entry.addContentEntryEditorListener(myEditorListener);
+      myContentEntries.add(entry);
+      myEditorsListPanel.add(entry.getComponent());
+      selectEntry(entry);
+      myEditorsListPanel.revalidate();
+      myEditorsListPanel.repaint();
     }
   }
 
@@ -147,6 +213,16 @@ public class ContentEntriesEditor {
     @Override
     public void focused(ContentEntry<?> entry) {
       selectEntry(entry);
+    }
+
+    @Override
+    public void delete(ContentEntry<?> entry) {
+      deleteEntry(entry);
+    }
+
+    @Override
+    public void dataChanged(ContentEntry<?> entry) {
+      int i = myContentEntries.indexOf(entry);
     }
   }
 }
