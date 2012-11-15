@@ -30,7 +30,7 @@ public class typeof_PatternVariableDeclaration_InferenceRule extends AbstractInf
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202488469553", true), (SNode) new typeof_PatternVariableDeclaration_InferenceRule.QuotationClass_6f7aax_a0a0a2a0().createNode(typeCheckingContext), _info_12389875345);
       }
     } else {
-      String role = attributedNode.getRole();
+      String role = attributedNode.getRoleInParent();
       SNode linkDeclaration = AbstractConceptDeclaration_Behavior.call_findLinkDeclaration_1213877394467(SNodeOperations.getConceptDeclaration(parent), role);
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;

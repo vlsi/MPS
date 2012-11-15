@@ -139,7 +139,7 @@ public class CopyPasteUtil {
         }
       }
       SNode targetChild = CopyPasteUtil.copyNode_internal(sourceChild, nodesAndAttributes, sourceNodesToNewNodes, allReferences);
-      String role = sourceChild.getRole();
+      String role = sourceChild.getRoleInParent();
       assert role != null;
       targetNode.addChild(role, targetChild);
     }

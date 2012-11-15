@@ -130,7 +130,7 @@ public class AttributeOperations {
     if (node == null) {
       return false;
     }
-    String role = ((SNode) node).getRole();
+    String role = ((SNode) node).getRoleInParent();
     if (role == null) {
       return false;
     }
