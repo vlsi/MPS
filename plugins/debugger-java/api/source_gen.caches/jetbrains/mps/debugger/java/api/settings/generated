@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="75hm9dfpxrmm6bdinc2dya02onpkz1z">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2eqrjs8emy551teprj5no9utk82ifsq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-cjp3x7kpslsgnhml4bi405qvj66t1vk" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-3223m9cg8337am9br9ikluvywbkblf4" />
-  <common hash="-8j3qjfkga55eruzc3244hiljh2wjqxw">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
+  <common hash="-8j3qjfkga55eruzc3244hiljh2wjqxw" />
   <source id="3432969378036013784" name="RemoteConnectionSettings" hash="4k5gn0qi3x9pcsx5lg698ykaru5truq">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="RemoteConnectionSettings.java" />
   </source>
   <source id="3432969378036013783" name="DebugConnectionSettings" hash="-4joq5d470bzkvd9zxsbvylro80ackiw">
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="DebugConnectionSettings.java" />
   </source>
   <source id="3432969378036017435" name="LocalConnectionSettings" hash="-bpzegam1qkq5k5zkbir743e0tn8huxf">
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="LocalConnectionSettings.java" />
   </source>
 </dependencies>
