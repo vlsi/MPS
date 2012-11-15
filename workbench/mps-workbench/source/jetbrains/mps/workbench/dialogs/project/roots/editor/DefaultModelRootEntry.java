@@ -30,6 +30,7 @@ import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -74,6 +75,11 @@ public class DefaultModelRootEntry extends ContentEntry<ModelRootDescriptor> {
     messageText.append("<html>");
     messageText.append("Path : ").append(myEntry.getMemento().getPath("path")).append("<br>");
     messageText.append("Type : ").append(myEntry.getType()).append("<br>");
+    if(myEntry.getType() == PersistenceRegistry.OBSOLETE_MODEL_ROOT) {
+      ModelRoot root = PersistenceFacade.getInstance().getModelRootFactory(myEntry.getType()).create();
+      root.load(myEntry.getMemento());
+      messageText.append("Obsolete presentation : ").append(root.getPresentation()).append("<br>");;
+    }
     return messageText.toString();
   }
 
@@ -93,9 +99,6 @@ public class DefaultModelRootEntry extends ContentEntry<ModelRootDescriptor> {
 
     @Override
     protected void initUI() {
-      ModelRoot root = PersistenceFacade.getInstance().getModelRootFactory(myEntry.getType()).create();
-      root.load(myEntry.getMemento());
-
       JPanel panel = new JPanel(new GridLayoutManager(2,1));
 
       PersistenceFacade pReg = PersistenceRegistry.getInstance();
@@ -104,7 +107,7 @@ public class DefaultModelRootEntry extends ContentEntry<ModelRootDescriptor> {
       for(String s : ti)
         comboBox.addItem(s);
 
-      comboBox.setSelectedItem(root.getType());
+      comboBox.setSelectedItem(myEntry.getType());
       panel.add(comboBox,
         new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
@@ -139,14 +142,18 @@ public class DefaultModelRootEntry extends ContentEntry<ModelRootDescriptor> {
       );
       AbstractTreeUi ui = fileSystemTree.getTreeBuilder().getUi();
       VirtualFile virtualFile =  VirtualFileManager.getInstance().findFileByUrl(
-        VirtualFileManager.constructUrl(
-          "file",
-          myEntry.getMemento().getPath("path").equals("")
-            ? MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getModuleReference().getModuleId()).getBundleHome().getPath()
-            : myEntry.getMemento().getPath("path")
-        )
+        VirtualFileManager.constructUrl("file", myEntry.getMemento().getPath("path"))
       );
-      fileSystemTree.select(virtualFile,null);
+      if(virtualFile == null || myEntry.getMemento().getPath("path").equals(""))
+      virtualFile = VirtualFileManager.getInstance().findFileByUrl(
+          VirtualFileManager.constructUrl(
+            "file",
+            MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getModuleReference().getModuleId()).getBundleHome().getPath()
+          )
+      );
+
+      if(virtualFile != null)
+        fileSystemTree.select(virtualFile,null);
 
       fileSystemTree.addListener(
         new Listener() {

@@ -51,6 +51,7 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -138,26 +139,14 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
   }
 
   private boolean dependOnBL() {
-    Queue<ModuleDescriptor> queue = new LinkedList<ModuleDescriptor>();
-    queue.add(myModuleDescriptor);
-    return dependOnBL(queue);
-  }
+    ModuleDependenciesManager dependenciesManager = new ModuleDependenciesManager(
+      MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId())
+    );
 
-  private boolean dependOnBL(Queue<ModuleDescriptor> queue) {
-    ModuleDescriptor descriptor = queue.poll();
-    if(descriptor == null)
-      return false;
+    IModule bl = MPSModuleRepository.getInstance().getModuleByFqName("jetbrains.mps.baseLanguage");
 
-    for(Dependency dependency : descriptor.getDependencies()) {
-      if(dependency.getModuleRef().getModuleFqName().equals("jetbrains.mps.baseLanguage"))
-        return true;
-      else {
-        IModule module = MPSModuleRepository.getInstance().getModuleById(dependency.getModuleRef().getModuleId());
-        if(module != null)
-          queue.add(module.getModuleDescriptor());
-      }
-    }
-    return dependOnBL(queue);
+    return dependenciesManager.directlyUsedLanguages().contains(bl)
+      || dependenciesManager.directlyUsedModules(true,true).contains(bl);
   }
 
   @Override
@@ -274,7 +263,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
       Splitter splitter = new Splitter(true);
       splitter.setFirstComponent(table);
       splitter.setSecondComponent(myEntriesEditor.getComponent());
-      component.add(splitter, new GridConstraints(2, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+      component.add(myEntriesEditor.getComponent(), new GridConstraints(2, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
       setTabComponent(component);
     }
@@ -285,7 +274,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
         || (
         myConfigurableItem instanceof DevKit
           ? myModuleDependenciesTab.isModified()
-          : (myEntriesEditor.isModified() || myEntriesEditor.isModified())
+          : myEntriesEditor.isModified()
       );
     }
 

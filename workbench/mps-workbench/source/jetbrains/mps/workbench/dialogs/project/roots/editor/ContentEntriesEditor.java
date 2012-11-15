@@ -27,10 +27,12 @@ import com.intellij.ui.roots.ToolbarPanel;
 import com.intellij.util.ui.JBInsets;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.PathAwareJDOMMemento;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.workbench.dialogs.project.PropertiesBundle;
 import jetbrains.mps.workbench.dialogs.project.roots.editor.ContentEntry.ContentEntryEditorListener;
@@ -69,8 +71,6 @@ public class ContentEntriesEditor {
   public ContentEntriesEditor(ModuleDescriptor moduleDescriptor) {
     myModuleDescriptor = moduleDescriptor;
     for(ModelRootDescriptor descriptor : myModuleDescriptor.getModelRootDescriptors()) {
-      if(descriptor.getRoot() != null)
-        continue;
       ContentEntry entry = new DefaultModelRootEntry(descriptor, myModuleDescriptor);
       entry.addContentEntryEditorListener(myEditorListener);
       myContentEntries.add(entry);
@@ -161,21 +161,11 @@ public class ContentEntriesEditor {
 
   public boolean isModified() {
     Set<ModelRootDescriptor> newSet = getDescriptors();
-    Set<ModelRootDescriptor> oldSet = new HashSet<ModelRootDescriptor>();
-    for(ModelRootDescriptor descriptor : myModuleDescriptor.getModelRootDescriptors())
-      if(descriptor.getRoot() == null)
-        oldSet.add(descriptor);
-    return !(oldSet.containsAll(newSet) && newSet.containsAll(oldSet));
+    return !(myModuleDescriptor.getModelRootDescriptors().containsAll(newSet) && newSet.containsAll(myModuleDescriptor.getModelRootDescriptors()));
   }
 
   public void apply() {
-    Iterator<ModelRootDescriptor> it = myModuleDescriptor.getModelRootDescriptors().iterator();
-    do {
-      ModelRootDescriptor descriptor = it.next();
-      if(descriptor.getRoot() == null)
-        it.remove();
-    } while(it.hasNext());
-
+    myModuleDescriptor.getModelRootDescriptors().clear();
     myModuleDescriptor.getModelRootDescriptors().addAll(getDescriptors());
   }
 
@@ -196,10 +186,9 @@ public class ContentEntriesEditor {
     }
 
     public void actionPerformed(AnActionEvent e) {
-      ModelRoot mr = PersistenceRegistry.getInstance().getModelRootFactory("java_class_stub").create();
-      PathAwareJDOMMemento memento = new PathAwareJDOMMemento(new Element("modelRoot"), null);
-      mr.save(memento);
-      ContentEntry entry = new DefaultModelRootEntry(new ModelRootDescriptor(mr.getType(), memento), myModuleDescriptor);
+      DefaultModelRoot modelRoot = new DefaultModelRoot();
+      modelRoot.setPath(MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getModuleReference().getModuleId()).getBundleHome().getPath());
+      ContentEntry entry = new DefaultModelRootEntry(modelRoot.toDescriptor(), myModuleDescriptor);
       entry.addContentEntryEditorListener(myEditorListener);
       myContentEntries.add(entry);
       myEditorsListPanel.add(entry.getComponent());
