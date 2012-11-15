@@ -79,7 +79,7 @@ public class ChangeTransactionalProperty_Intention implements IntentionFactory {
       SLinkOperations.setTarget(node, "property", null, false);
       SNodeOperations.detachNode(SLinkOperations.getTarget(node, "handlerBlock", true));
       for (SNode child : ListSequence.fromList(jetbrains.mps.util.SNodeOperations.getChildren(node))) {
-        String role = child.getRoleInParent();
+        String role = child.getRole();
         node.removeChild(child);
         transactional.addChild(role, child);
       }

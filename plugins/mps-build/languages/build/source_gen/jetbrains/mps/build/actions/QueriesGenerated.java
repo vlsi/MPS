@@ -351,8 +351,8 @@ public class QueriesGenerated {
                 );
                 if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.build.structure.BuildStringContainer")) {
                   if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(container, "jetbrains.mps.build.structure.BuildStringContainer"), "virtual_isValidPart_9184644532456897464", new Object[]{pattern, (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.structure.BuildString") ?
-                    _context.getParentNode().getRoleInParent() :
-                    _context.getCurrentTargetNode().getRoleInParent()
+                    _context.getParentNode().getRole() :
+                    _context.getCurrentTargetNode().getRole()
                   )})) {
                     return pattern;
                   }

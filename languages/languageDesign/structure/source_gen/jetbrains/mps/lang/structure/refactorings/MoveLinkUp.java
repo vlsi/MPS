@@ -74,7 +74,7 @@ public class MoveLinkUp extends BaseLoggableRefactoring {
     if ((((SNode) refactoringContext.getParameter("linkToReplace")) != null)) {
       refactoringContext.replaceRefsToNodeWithNode(node, ((SNode) refactoringContext.getParameter("linkToReplace")));
     } else {
-      refactoringContext.moveNodeToNode(node, node.getRoleInParent(), ((SNode) refactoringContext.getParameter("targetConcept")));
+      refactoringContext.moveNodeToNode(node, node.getRole(), ((SNode) refactoringContext.getParameter("targetConcept")));
     }
   }
 

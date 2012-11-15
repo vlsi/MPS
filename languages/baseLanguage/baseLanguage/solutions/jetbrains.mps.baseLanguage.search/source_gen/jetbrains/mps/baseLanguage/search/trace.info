@@ -1716,7 +1716,7 @@
     <nodeInfo nodeId="4378856834018954330" fileName="LocalVariablesScope.java" startLine="113" startPosition="113" endLine="114" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="4378856834018954337" fileName="LocalVariablesScope.java" startLine="115" startPosition="7" endLine="116" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4378856834018954347" fileName="LocalVariablesScope.java" startLine="117" startPosition="29" endLine="118" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581140650" fileName="LocalVariablesScope.java" startLine="125" startPosition="51" endLine="126" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="3161373106581140650" fileName="LocalVariablesScope.java" startLine="125" startPosition="43" endLine="126" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="3161373106581140656" fileName="LocalVariablesScope.java" startLine="128" startPosition="113" endLine="129" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1117290657069342407" fileName="LocalVariablesScope.java" startLine="130" startPosition="7" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="364702023370469538" fileName="LocalVariablesScope.java" startLine="131" startPosition="0" endLine="132" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -1808,7 +1808,7 @@
     <scopeInfo nodeId="4378856834018954335" fileName="LocalVariablesScope.java" startLine="110" startPosition="37" endLine="111" endPosition="14" />
     <scopeInfo nodeId="4378856834018954329" fileName="LocalVariablesScope.java" startLine="113" startPosition="113" endLine="114" endPosition="17" />
     <scopeInfo nodeId="4378856834018954346" fileName="LocalVariablesScope.java" startLine="117" startPosition="29" endLine="118" endPosition="29" />
-    <scopeInfo nodeId="3161373106581140649" fileName="LocalVariablesScope.java" startLine="125" startPosition="51" endLine="126" endPosition="17" />
+    <scopeInfo nodeId="3161373106581140649" fileName="LocalVariablesScope.java" startLine="125" startPosition="43" endLine="126" endPosition="17" />
     <scopeInfo nodeId="3161373106581140655" fileName="LocalVariablesScope.java" startLine="128" startPosition="113" endLine="129" endPosition="26" />
     <scopeInfo nodeId="364702023370475299" fileName="LocalVariablesScope.java" startLine="136" startPosition="43" endLine="137" endPosition="77" />
     <scopeInfo nodeId="364702023370475299" fileName="LocalVariablesScope.java" startLine="140" startPosition="41" endLine="141" endPosition="67" />

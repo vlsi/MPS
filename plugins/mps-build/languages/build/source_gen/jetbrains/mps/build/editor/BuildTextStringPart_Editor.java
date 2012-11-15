@@ -178,7 +178,7 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_zen9g6_a0(SNode node, EditorContext editorContext, IScope scope) {
-    return (BuildTextStringPart_Behavior.call_getContainer_6083230236994622122(node) != null) && BehaviorReflection.invokeVirtual(Color.class, BuildTextStringPart_Behavior.call_getContainer_6083230236994622122(node), "virtual_getColorForTextPart_6083230236994422116", new Object[]{SNodeOperations.getParent(node).getRoleInParent()}) != null;
+    return (BuildTextStringPart_Behavior.call_getContainer_6083230236994622122(node) != null) && BehaviorReflection.invokeVirtual(Color.class, BuildTextStringPart_Behavior.call_getContainer_6083230236994622122(node), "virtual_getColorForTextPart_6083230236994422116", new Object[]{SNodeOperations.getParent(node).getRole_()}) != null;
   }
 
   private static boolean renderingCondition_zen9g6_a0a_0(SNode node, EditorContext editorContext, IScope scope) {
@@ -188,7 +188,7 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
   private static Color _StyleParameter_QueryFunction_zen9g6_a1a0a(SNode node, EditorContext editorContext) {
     SNode container = BuildTextStringPart_Behavior.call_getContainer_6083230236994622122(node);
     if ((container != null)) {
-      Color colorForTextPart = BehaviorReflection.invokeVirtual(Color.class, container, "virtual_getColorForTextPart_6083230236994422116", new Object[]{SNodeOperations.getParent(node).getRoleInParent()});
+      Color colorForTextPart = BehaviorReflection.invokeVirtual(Color.class, container, "virtual_getColorForTextPart_6083230236994422116", new Object[]{SNodeOperations.getParent(node).getRole_()});
       if (colorForTextPart != null) {
         return colorForTextPart;
       }
@@ -199,7 +199,7 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
   private static Color _StyleParameter_QueryFunction_zen9g6_a0a0a(SNode node, EditorContext editorContext) {
     SNode container = BuildTextStringPart_Behavior.call_getContainer_6083230236994622122(node);
     if ((container != null)) {
-      Color colorForTextPart = BehaviorReflection.invokeVirtual(Color.class, container, "virtual_getColorForTextPart_6083230236994422116", new Object[]{SNodeOperations.getParent(node).getRoleInParent()});
+      Color colorForTextPart = BehaviorReflection.invokeVirtual(Color.class, container, "virtual_getColorForTextPart_6083230236994422116", new Object[]{SNodeOperations.getParent(node).getRole_()});
       if (colorForTextPart != null) {
         return colorForTextPart;
       }

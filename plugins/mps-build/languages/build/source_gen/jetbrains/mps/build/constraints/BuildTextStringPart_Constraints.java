@@ -46,7 +46,7 @@ public class BuildTextStringPart_Constraints extends BaseConstraintsDescriptor {
         {
           SNode container = BuildTextStringPart_Behavior.call_getContainer_6083230236994622122(node);
           if (container != null) {
-            return BehaviorReflection.invokeVirtual(Boolean.TYPE, container, "virtual_isValidPart_9184644532456897464", new Object[]{(SPropertyOperations.getString(propertyValue)), SNodeOperations.getParent(node).getRoleInParent()});
+            return BehaviorReflection.invokeVirtual(Boolean.TYPE, container, "virtual_isValidPart_9184644532456897464", new Object[]{(SPropertyOperations.getString(propertyValue)), SNodeOperations.getParent(node).getRole()});
           }
           return !((SPropertyOperations.getString(propertyValue)).contains("$"));
         }

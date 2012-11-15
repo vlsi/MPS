@@ -152,7 +152,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
     boolean sym = true;
     while (parent != null) {
-      int index = parent.getChildren(node.getRoleInParent()).indexOf(node);
+      int index = parent.getChildren(node.getRole()).indexOf(node);
       if (index == 0) {
         sb.append(sym ? 'a' : '0');
       }

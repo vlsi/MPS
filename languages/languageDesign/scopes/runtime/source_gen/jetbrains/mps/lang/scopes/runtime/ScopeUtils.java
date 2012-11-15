@@ -14,7 +14,7 @@ public class ScopeUtils {
     while ((child != null) && SNodeOperations.getParent(child) != thisNode) {
       child = SNodeOperations.getParent(child);
     }
-    return (child != null) && expectedRole.equals(child.getRoleInParent());
+    return (child != null) && expectedRole.equals(child.getRole());
   }
 
   public static boolean comeFrom(String expectedRole, SNode thisNode, String role, int index) {

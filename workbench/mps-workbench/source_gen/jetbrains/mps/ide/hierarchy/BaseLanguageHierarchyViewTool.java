@@ -90,13 +90,13 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView {
         if ("classifier".equals(usage.getRole())) {
           if (SNodeOperations.isInstanceOf(sourceNode, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
             SNode classifierType = SNodeOperations.cast(sourceNode, "jetbrains.mps.baseLanguage.structure.ClassifierType");
-            if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(classifierType), "jetbrains.mps.baseLanguage.structure.ClassConcept") && "superclass".equals(classifierType.getRoleInParent())) {
+            if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(classifierType), "jetbrains.mps.baseLanguage.structure.ClassConcept") && "superclass".equals(classifierType.getRole())) {
               result.add(SNodeOperations.getParent(classifierType));
             }
-            if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(classifierType), "jetbrains.mps.baseLanguage.structure.ClassConcept") && "implementedInterface".equals(classifierType.getRoleInParent())) {
+            if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(classifierType), "jetbrains.mps.baseLanguage.structure.ClassConcept") && "implementedInterface".equals(classifierType.getRole())) {
               result.add(SNodeOperations.getParent(classifierType));
             }
-            if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(classifierType), "jetbrains.mps.baseLanguage.structure.Interface") && "extendedInterface".equals(classifierType.getRoleInParent())) {
+            if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(classifierType), "jetbrains.mps.baseLanguage.structure.Interface") && "extendedInterface".equals(classifierType.getRole())) {
               result.add(SNodeOperations.getParent(classifierType));
             }
           }

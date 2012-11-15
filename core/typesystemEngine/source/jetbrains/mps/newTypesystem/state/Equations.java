@@ -183,7 +183,7 @@ public class Equations {
     for (SNode child : node.getChildren()) {
       SNode newChild = expandNode(child, variablesMet, finalExpansion, copy);
       if (finalExpansion && TypesUtil.isVariable(newChild)) {
-        newChild = convertReferentVariable(node, child.getRoleInParent(), child);
+        newChild = convertReferentVariable(node, child.getRole(), child);
       }
       if (newChild != child) {
         childrenReplacement.put(child, newChild);

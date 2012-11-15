@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-cl5tdflq3bpdot8grljn6ytxdan0y69">
-  <common hash="-9hkme91ymmdth3x60jsd31mhg238nnz" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-3223m9cg8337am9br9ikluvywbkblf4" />
+  <common hash="-9hkme91ymmdth3x60jsd31mhg238nnz">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
   <source id="4990394870453870416" name="Foo" hash="6zsont1qjdaumkq0z5cbusdnkdk3w6x">
     <file name="Foo.java" />
   </source>

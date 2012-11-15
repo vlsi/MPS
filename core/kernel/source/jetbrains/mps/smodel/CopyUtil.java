@@ -142,7 +142,7 @@ public final class CopyUtil {
     jetbrains.mps.util.SNodeOperations.copyUserObjects(node, result);
     for (SNode child : node.getChildren()) {
       if (!copyAttributes && AttributeOperations.isAttribute(child)) continue;
-      String role = child.getRoleInParent();
+      String role = child.getRole();
       assert role != null;
       result.addChild(role, clone(child, mapping, copyAttributes));
     }

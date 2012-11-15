@@ -167,7 +167,7 @@ public class CellAction_PasteNode extends EditorCellAction {
     SNode anchor = selectedCell.getSNode();
     if (anchor.getParent() == null) return false;
 
-    NodeAndRole nodeAndRole = new NodePaster(pasteNodes).getActualAnchorNode(anchor, anchor.getRoleInParent());
+    NodeAndRole nodeAndRole = new NodePaster(pasteNodes).getActualAnchorNode(anchor, anchor.getRole());
     if (nodeAndRole == null) return false;
 
     EditorCell targetCell = selectedCell.getEditor().findNodeCell(nodeAndRole.myNode);

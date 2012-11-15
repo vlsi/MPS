@@ -126,7 +126,7 @@ public class MatchingUtil {
     }
     for (SNode child : node.getChildren()) {
       if (AttributeOperations.isAttribute(child)) continue;
-      result = 31 * result + child.getRoleInParent().hashCode();
+      result = 31 * result + child.getRole().hashCode();
       result = 31 * result + hash(child);
     }
     return result;

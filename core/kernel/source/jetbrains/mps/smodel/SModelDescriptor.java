@@ -62,7 +62,6 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
 
   //------
 
-  //not used, left for compatibility
   public boolean isTransient();
 
   //------

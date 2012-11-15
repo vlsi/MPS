@@ -402,7 +402,7 @@ public class RefactoringContext {
             if (delete) {
               linkAttribute.delete();
             } else {
-              String linkAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(linkAttribute.getRoleInParent());
+              String linkAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(linkAttribute.getRole());
               linkAttribute.setRoleInParent(AttributesRolesUtil.childRoleFromLinkAttributeRole(linkAttributeRole, newRole));
             }
           }
@@ -414,7 +414,7 @@ public class RefactoringContext {
             newRole = newConceptFeature.getFeatureName();
           }
           for (SNode child : new ArrayList<SNode>(jetbrains.mps.util.SNodeOperations.getChildren(node))) {
-            String childRole = child.getRoleInParent();
+            String childRole = child.getRole();
             if (childRole != null && childRole.equals(oldRole)) {
               if (delete) {
                 child.delete();
@@ -437,7 +437,7 @@ public class RefactoringContext {
             if (delete) {
               propertyAttribute.delete();
             } else {
-              String propertyAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(propertyAttribute.getRoleInParent());
+              String propertyAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(propertyAttribute.getRole());
               propertyAttribute.setRoleInParent(AttributesRolesUtil.childRoleFromPropertyAttributeRole(propertyAttributeRole, newName));
             }
           }

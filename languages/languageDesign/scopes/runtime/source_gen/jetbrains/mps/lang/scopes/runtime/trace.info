@@ -52,7 +52,7 @@
   </root>
   <root nodeId="3032204829141796677" modelId="r:6e9ad488-5df2-49e4-8c01-8a7f3812adf7(jetbrains.mps.lang.scopes.runtime)">
     <nodeInfo nodeId="3032204829141802656" fileName="ScopeUtils.java" startLine="14" startPosition="77" endLine="15" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3032204829141803746" fileName="ScopeUtils.java" startLine="16" startPosition="5" endLine="17" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3032204829141803746" fileName="ScopeUtils.java" startLine="16" startPosition="5" endLine="17" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3032204829141803762" fileName="ScopeUtils.java" startLine="20" startPosition="95" endLine="21" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8317913688490451452" fileName="ScopeUtils.java" startLine="24" startPosition="59" endLine="25" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4819084825497329969" fileName="ScopeUtils.java" startLine="28" startPosition="63" endLine="29" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -82,7 +82,7 @@
       <varInfo nodeId="4819084825497329966" varName="kind" />
       <varInfo nodeId="4819084825497329964" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3032204829141796687" fileName="ScopeUtils.java" startLine="13" startPosition="84" endLine="17" endPosition="75" />
+    <scopeInfo nodeId="3032204829141796687" fileName="ScopeUtils.java" startLine="13" startPosition="84" endLine="17" endPosition="67" />
     <scopeInfo nodeId="3032204829141796684" fileName="ScopeUtils.java" startLine="13" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="3032204829141802061" varName="child" />
       <varInfo nodeId="3032204829141802056" varName="expectedRole" />

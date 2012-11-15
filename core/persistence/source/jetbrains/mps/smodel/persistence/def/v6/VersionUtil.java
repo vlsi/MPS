@@ -94,7 +94,7 @@ public class VersionUtil {
   }
 
   public String genRole(@NotNull SNode node) {
-    return node.getRoleInParent() == null ? null : genReferenceString(AttributeOperations.isAttribute(node) ? null : node.getRoleLink(), node.getRoleInParent(), true);
+    return node.getRole() == null ? null : genReferenceString(AttributeOperations.isAttribute(node) ? null : node.getRoleLink(), node.getRole(), true);
   }
 
   public String genRole(@NotNull SReference ref) {

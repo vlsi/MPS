@@ -94,10 +94,10 @@ public class GeneratorUtilEx {
     if (fragments.size() > 1) {
       SNode templateNode = SNodeOperations.getParent(fragments.get(0));
       SNode parent = SNodeOperations.getParent(templateNode);
-      String role = templateNode.getRoleInParent();
+      String role = templateNode.getRole();
       for (SNode fragment : fragments) {
         templateNode = SNodeOperations.getParent(fragment);
-        if (!((parent == SNodeOperations.getParent(templateNode) && role.equals(templateNode.getRoleInParent())))) {
+        if (!((parent == SNodeOperations.getParent(templateNode) && role.equals(templateNode.getRole())))) {
           generator.showErrorMessage(inputNode, templateContainer, ruleNode, "couldn't process template: all template fragments must reside in the same parent node");
           return false;
         }

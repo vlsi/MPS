@@ -166,7 +166,7 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
       public String getText() {
         SNode parent = SNodeOperations.getParent(node);
         if ((parent != null)) {
-          return parent.getRoleInParent();
+          return parent.getRole();
         } else {
           return "";
         }

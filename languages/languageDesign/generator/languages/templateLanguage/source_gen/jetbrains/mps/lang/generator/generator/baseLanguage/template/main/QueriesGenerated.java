@@ -290,7 +290,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1246578104714226066(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getRoleInParent();
+    return _context.getNode().getRole();
   }
 
   public static Object propertyMacro_GetPropertyValue_1246578104714225930(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -298,7 +298,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1246578104714225971(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getRoleInParent();
+    return _context.getNode().getRole();
   }
 
   public static Object propertyMacro_GetPropertyValue_8196331069071119405(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -825,12 +825,12 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1368513600865902766(final IOperationContext operationContext, final PropertyMacroContext _context) {
     // TODO check 
-    return SNodeOperations.getParent(_context.getNode()).getRoleInParent();
+    return SNodeOperations.getParent(_context.getNode()).getRole();
   }
 
   public static Object propertyMacro_GetPropertyValue_1368513600865961746(final IOperationContext operationContext, final PropertyMacroContext _context) {
     // TODO check 
-    return SNodeOperations.getParent(_context.getNode()).getRoleInParent();
+    return SNodeOperations.getParent(_context.getNode()).getRole();
   }
 
   public static Object propertyMacro_GetPropertyValue_9196441569928398217(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -3588,7 +3588,7 @@ public class QueriesGenerated {
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return it.getRoleInParent();
+        return it.getRole();
       }
     }, true);
   }
@@ -3663,7 +3663,7 @@ public class QueriesGenerated {
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return it.getRoleInParent();
+        return it.getRole();
       }
     }, true);
   }

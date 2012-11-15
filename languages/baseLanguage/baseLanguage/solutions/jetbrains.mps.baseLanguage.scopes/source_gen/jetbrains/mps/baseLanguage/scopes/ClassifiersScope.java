@@ -216,7 +216,7 @@ public class ClassifiersScope extends FilteringScope {
       }
     }).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor it) {
-        return it.isRegistered();
+        return !(it.isTransient());
       }
     }));
     return visibleModels;

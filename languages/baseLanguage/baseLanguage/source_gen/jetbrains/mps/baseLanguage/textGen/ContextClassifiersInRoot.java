@@ -48,7 +48,7 @@ public class ContextClassifiersInRoot {
     // find first classifier in path 
     String sourceChildRole = null;
     while ((contextNode != null) && !(SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
-      sourceChildRole = contextNode.getRoleInParent();
+      sourceChildRole = contextNode.getRole();
       contextNode = SNodeOperations.getParent(contextNode);
     }
 
@@ -90,7 +90,7 @@ public class ContextClassifiersInRoot {
 
       // todo: specialized links? 
       // should not be a problem: superclass/extendedInterface/implementedInterface not specialized 
-      sourceChildRole = current.getRoleInParent();
+      sourceChildRole = current.getRole();
       current = SNodeOperations.getParent(current);
     }
 

@@ -99,7 +99,7 @@
     <nodeInfo nodeId="1226062536560" fileName="Antiquotation_Editor.java" startLine="160" startPosition="42" endLine="161" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1226062536560" fileName="Antiquotation_Editor.java" startLine="162" startPosition="5" endLine="163" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1226062535317" fileName="Antiquotation_Editor.java" startLine="168" startPosition="31" endLine="169" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226062535325" fileName="Antiquotation_Editor.java" startLine="170" startPosition="31" endLine="171" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1226062535325" fileName="Antiquotation_Editor.java" startLine="170" startPosition="31" endLine="171" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1226062535335" fileName="Antiquotation_Editor.java" startLine="172" startPosition="16" endLine="173" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1226062535313" fileName="Antiquotation_Editor.java" startLine="180" startPosition="44" endLine="181" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1226062535313" fileName="Antiquotation_Editor.java" startLine="183" startPosition="13" endLine="184" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -215,7 +215,7 @@
     <scopeInfo nodeId="1226062536571" fileName="Antiquotation_Editor.java" startLine="143" startPosition="56" endLine="144" endPosition="127" />
     <scopeInfo nodeId="1226062536586" fileName="Antiquotation_Editor.java" startLine="145" startPosition="16" endLine="146" endPosition="20" />
     <scopeInfo nodeId="1226062536560" fileName="Antiquotation_Editor.java" startLine="153" startPosition="44" endLine="154" endPosition="46" />
-    <scopeInfo nodeId="1226062535324" fileName="Antiquotation_Editor.java" startLine="170" startPosition="31" endLine="171" endPosition="42" />
+    <scopeInfo nodeId="1226062535324" fileName="Antiquotation_Editor.java" startLine="170" startPosition="31" endLine="171" endPosition="34" />
     <scopeInfo nodeId="1226062535334" fileName="Antiquotation_Editor.java" startLine="172" startPosition="16" endLine="173" endPosition="20" />
     <scopeInfo nodeId="1226062535313" fileName="Antiquotation_Editor.java" startLine="180" startPosition="44" endLine="181" endPosition="46" />
     <scopeInfo nodeId="1214399678592" fileName="Antiquotation_Editor.java" startLine="243" startPosition="107" endLine="244" endPosition="24" />
@@ -480,7 +480,7 @@
     <nodeInfo nodeId="1226062528943" fileName="ListAntiquotation_Editor.java" startLine="158" startPosition="42" endLine="159" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1226062528943" fileName="ListAntiquotation_Editor.java" startLine="160" startPosition="5" endLine="161" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1226062532125" fileName="ListAntiquotation_Editor.java" startLine="166" startPosition="31" endLine="167" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226062532133" fileName="ListAntiquotation_Editor.java" startLine="168" startPosition="31" endLine="169" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1226062532133" fileName="ListAntiquotation_Editor.java" startLine="168" startPosition="31" endLine="169" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1226062532143" fileName="ListAntiquotation_Editor.java" startLine="170" startPosition="16" endLine="171" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1226062532121" fileName="ListAntiquotation_Editor.java" startLine="178" startPosition="44" endLine="179" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1226062532121" fileName="ListAntiquotation_Editor.java" startLine="181" startPosition="13" endLine="182" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -596,7 +596,7 @@
     <scopeInfo nodeId="1226062528954" fileName="ListAntiquotation_Editor.java" startLine="141" startPosition="56" endLine="142" endPosition="127" />
     <scopeInfo nodeId="1226062528969" fileName="ListAntiquotation_Editor.java" startLine="143" startPosition="16" endLine="144" endPosition="20" />
     <scopeInfo nodeId="1226062528943" fileName="ListAntiquotation_Editor.java" startLine="151" startPosition="44" endLine="152" endPosition="46" />
-    <scopeInfo nodeId="1226062532132" fileName="ListAntiquotation_Editor.java" startLine="168" startPosition="31" endLine="169" endPosition="42" />
+    <scopeInfo nodeId="1226062532132" fileName="ListAntiquotation_Editor.java" startLine="168" startPosition="31" endLine="169" endPosition="34" />
     <scopeInfo nodeId="1226062532142" fileName="ListAntiquotation_Editor.java" startLine="170" startPosition="16" endLine="171" endPosition="20" />
     <scopeInfo nodeId="1226062532121" fileName="ListAntiquotation_Editor.java" startLine="178" startPosition="44" endLine="179" endPosition="46" />
     <scopeInfo nodeId="1214399677895" fileName="ListAntiquotation_Editor.java" startLine="241" startPosition="107" endLine="242" endPosition="24" />

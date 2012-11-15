@@ -122,7 +122,7 @@ public class LocalVariablesScope extends AbstractSearchScope {
 
   private void _populateLocalVariables(SNode loopStatement, List<SNode> result) {
     for (SNode child : SNodeOperations.getChildren(loopStatement)) {
-      if (child.getRoleInParent().equals("body")) {
+      if (child.getRole().equals("body")) {
         continue;
       }
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {

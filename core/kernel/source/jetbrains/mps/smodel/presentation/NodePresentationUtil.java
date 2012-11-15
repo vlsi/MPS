@@ -125,7 +125,7 @@ public class NodePresentationUtil {
       return NameUtil.shortNameFromLongName(node.getConcept().getId()) + " (" + node.getModel().getSModelReference().getCompactPresentation() + ")";
     }
 
-    return node.getRoleInParent() + " (" + NameUtil.compactNodeFQName(node.getTopmostAncestor()) + ")";
+    return node.getRole() + " (" + NameUtil.compactNodeFQName(node.getTopmostAncestor()) + ")";
   }
 
   public static String getAliasOrConceptName(SNode node) {
@@ -138,7 +138,7 @@ public class NodePresentationUtil {
   }
 
   public static String getRoleInParentOrConceptName(SNode node) {
-    String role = node.getRoleInParent();
+    String role = node.getRole();
     if (role != null) {
       return role;
     }

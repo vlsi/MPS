@@ -87,7 +87,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6283201779507549521(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getParent().getChildren(_context.getNode().getRoleInParent()).indexOf(_context.getNode());
+    return _context.getNode().getParent().getChildren(_context.getNode().getRole()).indexOf(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_6283201779507549541(final IOperationContext operationContext, final PropertyMacroContext _context) {

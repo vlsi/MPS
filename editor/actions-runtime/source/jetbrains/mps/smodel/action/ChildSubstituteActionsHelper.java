@@ -239,7 +239,7 @@ public class ChildSubstituteActionsHelper {
     int index = 0;
     if (currentChild != null) {
       linkDeclaration = currentChild.getRoleLink();
-      index = parentNode.getChildren(currentChild.getRoleInParent()).indexOf(currentChild);
+      index = parentNode.getChildren(currentChild.getRole()).indexOf(currentChild);
     }
 //    TODO generate wrapping setter to have access to original link
 //    if(childSetter instanceof WrappingSetter) {

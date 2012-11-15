@@ -92,12 +92,12 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
         SNodeTreeNode childNode = (SNodeTreeNode) child;
         int index = parentNode.getChildren().indexOf(childNode.getSNode());
         if (index <= indexof) continue;
-        SNodeTreeNode newTreeNode = new SNodeTreeNode(added, added.getRoleInParent(), getOperationContext());
+        SNodeTreeNode newTreeNode = new SNodeTreeNode(added, added.getRole(), getOperationContext());
         treeModel.insertNodeInto(newTreeNode,
           parent, treeModel.getIndexOfChild(parent, childNode));
         continue outer;
       }
-      treeModel.insertNodeInto(new SNodeTreeNode(added, added.getRoleInParent(), getOperationContext()), parent, parent.getChildCount());
+      treeModel.insertNodeInto(new SNodeTreeNode(added, added.getRole(), getOperationContext()), parent, parent.getChildCount());
     }
   }
 

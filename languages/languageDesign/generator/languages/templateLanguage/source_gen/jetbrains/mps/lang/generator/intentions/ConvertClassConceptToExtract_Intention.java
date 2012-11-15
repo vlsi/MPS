@@ -90,7 +90,7 @@ public class ConvertClassConceptToExtract_Intention implements IntentionFactory 
       List<SNode> children = jetbrains.mps.util.SNodeOperations.getChildren(node);
       CopyUtil.copy(children, mapping);
       for (SNode child : children) {
-        newNode.addChild(child.getRoleInParent(), mapping.get(child));
+        newNode.addChild(child.getRole(), mapping.get(child));
       }
       for (SReference reference : node.getReferences()) {
         newNode.setReferenceTarget(reference.getRole(), reference.getTargetNode());

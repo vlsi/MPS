@@ -65,11 +65,11 @@ public class NodePaster {
   }
 
   public void paste(SNode pasteTarget, PasteEnv pasteEnv) {
-    paste(pasteTarget, pasteTarget.getRoleInParent(), pasteEnv);
+    paste(pasteTarget, pasteTarget.getRole(), pasteEnv);
   }
 
   private void paste(SNode pasteTarget, String role, PasteEnv pasteEnv) {
-    String role_ = role != null ? role : pasteTarget.getRoleInParent();
+    String role_ = role != null ? role : pasteTarget.getRole();
     int status = canPaste(pasteTarget, role_, pasteEnv);
 
     if (status == PASTE_TO_TARGET) {
@@ -107,14 +107,14 @@ public class NodePaster {
   }
 
   public boolean canPasteRelative(SNode anchorNode) {
-    return canPasteToParent(anchorNode, anchorNode.getRoleInParent());
+    return canPasteToParent(anchorNode, anchorNode.getRole());
   }
 
   public void pasteRelative(SNode anchorNode, PastePlaceHint placeHint) {
     if (anchorNode.getParent() == null) {
       pasteAsRoots(anchorNode.getModel());
     } else {
-      pasteToParent(anchorNode, anchorNode.getRoleInParent(), placeHint);
+      pasteToParent(anchorNode, anchorNode.getRole(), placeHint);
     }
   }
 
@@ -123,7 +123,7 @@ public class NodePaster {
       return PASTE_N_A;
     }
 
-    String role_ = role != null ? role : pasteTarget.getRoleInParent();
+    String role_ = role != null ? role : pasteTarget.getRole();
 
     boolean canPasteAsRoot = (pasteTarget.getParent() == null) && canPasteAsRoots(); // root selected and ..
     boolean canPasteToTarget = canPasteToTarget(pasteTarget, role_, true);
@@ -233,7 +233,7 @@ public class NodePaster {
         return new NodeAndRole(anchorNode, role);
       }
       anchorNode = container;
-      role = anchorNode.getRoleInParent();
+      role = anchorNode.getRole();
     }
     return null;
   }
@@ -286,7 +286,7 @@ public class NodePaster {
 
     if (role == null) {
       SNode pasteTarget = targetCell.getSNode();
-      role = pasteTarget.getRoleInParent();
+      role = pasteTarget.getRole();
     }
     return role;
   }

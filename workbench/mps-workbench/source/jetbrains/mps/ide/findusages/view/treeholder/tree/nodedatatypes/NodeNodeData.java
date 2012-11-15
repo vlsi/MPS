@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.StringUtil;
+import jetbrains.mps.util.StringUtil;
 import org.jdom.Element;
 
 import javax.swing.Icon;
@@ -133,7 +134,7 @@ public class NodeNodeData extends BaseNodeData {
         if (node.getParent() == null) return "";
         return "role: " +
           "<i>" +
-          StringUtil.escapeXml(node.getRoleInParent()) +
+          StringUtil.escapeXml(node.getRole()) +
           "</i>" +
           "; " +
           "in: " +
