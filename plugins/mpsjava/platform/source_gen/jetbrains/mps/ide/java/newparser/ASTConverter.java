@@ -310,26 +310,19 @@ public class ASTConverter {
   }
 
   private SNode convertField(SNode cls, FieldDeclaration f, boolean attach) throws JavaParseException {
-    List<SNode> container;
-    SNode fDecl;
-
     if (f.name == null || isEnumConstant(f)) {
       return null;
     }
 
-    container = null;
-    fDecl = null;
+    SNode fDecl = null;
 
     if (flagSet(f.modifiers, ClassFileConstants.AccStatic) || SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.Interface")) {
       // interfaces in java can have fields not declared as static, but they are static 
-      container = SLinkOperations.getTargets(cls, "staticField", true);
       SNode staticDecl = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", null);
       fDecl = staticDecl;
-
     } else {
       assert SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept");
 
-      container = SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true);
       SNode fieldDecl = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null);
 
       SPropertyOperations.set(fieldDecl, "isVolatile", "" + (flagSet(f.modifiers, ClassFileConstants.AccVolatile)));
@@ -353,7 +346,7 @@ public class ASTConverter {
       }
 
       if (attach) {
-        ListSequence.fromList(container).addElement(fDecl);
+        ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).addElement(SNodeOperations.cast(fDecl, "jetbrains.mps.baseLanguage.structure.ClassifierMember"));
       }
     }
 
@@ -378,7 +371,6 @@ public class ASTConverter {
   }
 
   private SNode convertMethod(SNode cls, AbstractMethodDeclaration method, boolean attach) throws JavaParseException, ReflectException {
-    List<SNode> methods;
     SNode result = null;
 
     SNodeId sNodeId = cls.getSNodeId();
@@ -389,33 +381,28 @@ public class ASTConverter {
     );
 
     if (method instanceof MethodDeclaration) {
-
       if (flagSet(method.modifiers, ClassFileConstants.AccStatic) && SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-        methods = SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticMethod", true);
         result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", null);
       } else if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.Annotation")) {
-        methods = SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.Annotation"), "method", true);
         result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration", null);
       } else {
-        methods = SLinkOperations.getTargets(cls, "method", true);
         result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null);
       }
 
       if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.Interface")) {
         SPropertyOperations.set(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "isAbstract", "" + (true));
-        SLinkOperations.setTarget(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "visibility", new ASTConverter.QuotationClass_rbndtb_a0a1a3a7a5().createNode(), true);
+        SLinkOperations.setTarget(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "visibility", new ASTConverter.QuotationClass_rbndtb_a0a1a2a6a5().createNode(), true);
       }
 
       convertMethodGuts((MethodDeclaration) method, clsStringId, result);
 
       if (attach) {
-        methods.add(result);
+        ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).addElement(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.ClassifierMember"));
       }
-
     } else if (method instanceof ConstructorDeclaration) {
 
       result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", null);
-      SLinkOperations.setTarget(result, "returnType", new ASTConverter.QuotationClass_rbndtb_a0a2a0h0f().createNode(), true);
+      SLinkOperations.setTarget(result, "returnType", new ASTConverter.QuotationClass_rbndtb_a0a2a0g0f().createNode(), true);
 
       convertMethodGuts(method, clsStringId, result);
 
@@ -2029,8 +2016,8 @@ public class ASTConverter {
     }
   }
 
-  public static class QuotationClass_rbndtb_a0a1a3a7a5 {
-    public QuotationClass_rbndtb_a0a1a3a7a5() {
+  public static class QuotationClass_rbndtb_a0a1a2a6a5 {
+    public QuotationClass_rbndtb_a0a1a2a6a5() {
     }
 
     public SNode createNode() {
@@ -2046,8 +2033,8 @@ public class ASTConverter {
     }
   }
 
-  public static class QuotationClass_rbndtb_a0a2a0h0f {
-    public QuotationClass_rbndtb_a0a2a0h0f() {
+  public static class QuotationClass_rbndtb_a0a2a0g0f {
+    public QuotationClass_rbndtb_a0a2a0g0f() {
     }
 
     public SNode createNode() {
