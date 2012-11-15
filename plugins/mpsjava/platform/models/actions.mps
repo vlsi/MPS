@@ -90,24 +90,24 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2872212824181502651">
       <property name="name" nameId="tpck.1169194664001" value="PasteAsJavaClass" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Paste as Java Class" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2872212824181502669">
       <property name="name" nameId="tpck.1169194664001" value="PasteAsJavaMethods" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Paste as Java Class Content" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2872212824181502686">
       <property name="name" nameId="tpck.1169194664001" value="PasteAsJavaStatements" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Paste as Java Statements" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1366781238034254686">
       <property name="name" nameId="tpck.1169194664001" value="GetModelContentsFromSource" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Get Model Contents from Source" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1366781238034254898">
       <property name="name" nameId="tpck.1169194664001" value="SolutionActionsEx" />
@@ -117,59 +117,59 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1366781238034254903">
       <property name="name" nameId="tpck.1169194664001" value="GetModuleContentsFromSource" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Get Module Contents from Source" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5175352797999992329">
       <property name="name" nameId="tpck.1169194664001" value="ResolveStubReferencesToMPS" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Resolve Stub References to MPS Code" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Resolve Stub References to MPS Code" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="4326588611400152009">
       <property name="name" nameId="tpck.1169194664001" value="ResolveStubReferencesToMPSGlobal" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Resolve Stub References to MPS Code in the Whole Project" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Resolve Stub References to MPS Code in the Whole Project" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="4326588611400156604">
       <property name="name" nameId="tpck.1169194664001" value="MigrateSourcesToMPS" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Migrate Sources to MPS" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Migrate Sources to MPS" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="225095413451945131">
       <property name="name" nameId="tpck.1169194664001" value="ConvertAnonymousClass" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Convert Anonymous Class" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Convert Anonymous Class" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="225095413451945327">
       <property name="name" nameId="tpck.1169194664001" value="RenameMethod" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Rename Method" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Rename Method" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="225095413451945446">
       <property name="name" nameId="tpck.1169194664001" value="MakeFieldFinal" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Make Field Final" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="225095413451945486">
       <property name="name" nameId="tpck.1169194664001" value="MakeFieldStatic" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Make Field Static" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Make Field Static" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="225095413451945509">
       <property name="name" nameId="tpck.1169194664001" value="MoveStaticField" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Move Static Field" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Move Static Field" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="225095413451945586">
       <property name="name" nameId="tpck.1169194664001" value="MoveStaticMethod" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Move Static Method" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Move Static Method" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="225095413451945663">
       <property name="name" nameId="tpck.1169194664001" value="RefactoringAdditions" />
@@ -190,23 +190,23 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7111916581652589824">
       <property name="name" nameId="tpck.1169194664001" value="GenerateConstructor" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Constructor" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="generate" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Constructor" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7111916581652590289">
       <property name="name" nameId="tpck.1169194664001" value="GenerateEqualsAndHashCode" />
-      <property name="caption" nameId="tp4k.1205250923097" value="equals() and hashCode" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="generate" />
+      <property name="caption" nameId="tp4k.1205250923097" value="equals() and hashCode" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7111916581652591322">
       <property name="name" nameId="tpck.1169194664001" value="GenerateGetters" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="generate" />
       <property name="caption" nameId="tp4k.1205250923097" value="Getter" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="generate" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7111916581652591619">
       <property name="name" nameId="tpck.1169194664001" value="GenerateGettersAndSetters" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Getter and Setter" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="generate" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Getter and Setter" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7111916581652592071">
       <property name="name" nameId="tpck.1169194664001" value="GenerateGettersAndSettersUtil" />
@@ -214,18 +214,18 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7111916581652592343">
       <property name="name" nameId="tpck.1169194664001" value="GenerateMainMethod" />
-      <property name="caption" nameId="tp4k.1205250923097" value="main(Strins[] args)" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="generate" />
+      <property name="caption" nameId="tp4k.1205250923097" value="main(Strins[] args)" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7111916581652592453">
       <property name="name" nameId="tpck.1169194664001" value="GenerateSetters" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Setter" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="generate" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Setter" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7111916581652592773">
       <property name="name" nameId="tpck.1169194664001" value="GenerateToString" />
-      <property name="caption" nameId="tp4k.1205250923097" value="toString()" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="generate" />
+      <property name="caption" nameId="tp4k.1205250923097" value="toString()" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7111916581652593091">
       <property name="name" nameId="tpck.1169194664001" value="SelectConstructorsDialog" />
@@ -251,15 +251,15 @@
       <property name="mnemonic" nameId="tp4k.1215865999894" value="I" />
       <property name="name" nameId="tpck.1169194664001" value="ImplementMethod" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="overridemethod" />
       <property name="caption" nameId="tp4k.1205250923097" value="Implement Method..." />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="overridemethod" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8838506468326694071">
       <property name="mnemonic" nameId="tp4k.1215865999894" value="O" />
       <property name="name" nameId="tpck.1169194664001" value="OverrideMethod" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="overridemethod" />
       <property name="caption" nameId="tp4k.1205250923097" value="Override Method..." />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="overridemethod" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="8838506468326694132">
       <property name="name" nameId="tpck.1169194664001" value="CodeOverrideImplementMenu" />
@@ -273,13 +273,13 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8838506468326707812">
       <property name="name" nameId="tpck.1169194664001" value="ImplementMethodsAsIntention" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Implement Methods" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="overridemethod" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Implement Methods" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8838506468326707862">
       <property name="name" nameId="tpck.1169194664001" value="OverrideMethodsAsIntention" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Override Methods" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="overridemethod" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Override Methods" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8838506468326925850">
       <property name="name" nameId="tpck.1169194664001" value="OverrideImplementMethodComponent" />
@@ -288,14 +288,14 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2808756344206305969">
       <property name="name" nameId="tpck.1169194664001" value="GoToOverridenMethod" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="overridemethod" />
       <property name="caption" nameId="tp4k.1205250923097" value="Go to Overriden Method" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="overridemethod" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2808756344206306210">
       <property name="name" nameId="tpck.1169194664001" value="GoToInheritedClassifier" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="overridemethod" />
       <property name="caption" nameId="tp4k.1205250923097" value="Go to Inherited Classifiers" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="overridemethod" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="2808756344206306425">
       <property name="name" nameId="tpck.1169194664001" value="EditorPopup" />
@@ -305,8 +305,8 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2808756344206465415">
       <property name="name" nameId="tpck.1169194664001" value="GoToOverridingMethod" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Go to Overriding Methods" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="overridemethod" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Go to Overriding Methods" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="6354194863340390594">
       <property name="name" nameId="tpck.1169194664001" value="CodeCommentMenu" />
@@ -316,67 +316,67 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6354194863340390600">
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="CommentLine" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Comment Line" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6354194863340390762">
       <property name="name" nameId="tpck.1169194664001" value="UncommentStatements" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Uncomment Statements" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6354194863340390815">
       <property name="name" nameId="tpck.1169194664001" value="CommentStatements" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Comment Statements" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="202368237201627122">
       <property name="name" nameId="tpck.1169194664001" value="ShowMembers" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Show Members" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2370003301088191">
       <property name="name" nameId="tpck.1169194664001" value="ExtractMethod" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Extract Method" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2370003301088263">
       <property name="name" nameId="tpck.1169194664001" value="InlineLocalVariable" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Inline Local Variable" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2370003301088480">
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="InlineMethod" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Inline Method" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2370003301088552">
       <property name="name" nameId="tpck.1169194664001" value="IntroduceConstant" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Introduce Constant..." />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2370003301088636">
       <property name="name" nameId="tpck.1169194664001" value="IntroduceField" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Introduce Field..." />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2370003301088717">
       <property name="name" nameId="tpck.1169194664001" value="IntroduceVariable" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Introduce Variable..." />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2370003301088804">
       <property name="name" nameId="tpck.1169194664001" value="RenameVariable" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Rename Variable" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8178553721056072523">
       <property name="name" nameId="tpck.1169194664001" value="MemberContainerStructureModel" />
@@ -12657,39 +12657,76 @@
                 </node>
               </node>
               <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8838506468326693538">
-                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8838506468326693539">
-                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8838506468326693540">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8838506468326693541">
-                      <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8838506468326693542">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8838506468326693981" resolveInfo="myClassConcept" />
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4417492373324474938">
+                  <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4417492373324474941">
+                    <property name="name" nameId="tpck.1169194664001" value="index" />
+                    <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="4417492373324474936" />
+                    <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4417492373323184965">
+                      <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetIndexOfOperation" typeId="tp2q.1171391069720" id="4417492373323205472">
+                        <node role="argument" roleId="tp2q.1171391518575" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4417492373323210239">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8838506468326693984" resolveInfo="myContextMethod" />
+                        </node>
                       </node>
-                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="8838506468326693543">
-                        <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.1107880067339" />
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4417492373323160991">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="4417492373323171180">
+                          <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.5375687026011219971" />
+                        </node>
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4417492373323146951">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8838506468326693981" resolveInfo="myClassConcept" />
+                        </node>
                       </node>
                     </node>
-                    <node role="operation" roleId="tpee.1197027833540" type="tp2q.InsertElementOperation" typeId="tp2q.1225621920911" id="8838506468326693544">
-                      <node role="index" roleId="tp2q.1225621960341" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="8838506468326693545">
-                        <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="8838506468326693546">
-                          <property name="value" nameId="tpee.1068580320021" value="1" />
-                        </node>
-                        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8838506468326693547">
-                          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8838506468326693548">
-                            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8838506468326693549">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8838506468326693981" resolveInfo="myClassConcept" />
-                            </node>
-                            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="8838506468326693550">
-                              <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.1107880067339" />
-                            </node>
+                  </node>
+                </node>
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="4417492373324522910">
+                  <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="4417492373324533965">
+                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4417492373324538181">
+                      <property name="value" nameId="tpee.1068580320021" value="-1" />
+                    </node>
+                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4417492373324527464">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4417492373324474941" resolveInfo="index" />
+                    </node>
+                  </node>
+                  <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="4417492373324522912">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4417492373324550422">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4417492373324580111">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="4417492373324598777">
+                          <node role="argument" roleId="tp2q.1160612519549" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4417492373324603474">
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8838506468326693504" resolveInfo="method" />
                           </node>
-                          <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetIndexOfOperation" typeId="tp2q.1171391069720" id="8838506468326693551">
-                            <node role="argument" roleId="tp2q.1171391518575" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8838506468326693552">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8838506468326693984" resolveInfo="myContextMethod" />
-                            </node>
+                        </node>
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4417492373324560391">
+                          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="4417492373324570222">
+                            <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.5375687026011219971" />
+                          </node>
+                          <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4417492373324554827">
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8838506468326693981" resolveInfo="myClassConcept" />
                           </node>
                         </node>
                       </node>
-                      <node role="element" roleId="tp2q.1225621943565" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8838506468326693553">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8838506468326693504" resolveInfo="method" />
+                    </node>
+                  </node>
+                  <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="4417492373324612619">
+                    <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="4417492373324612620">
+                      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4417492373324615713">
+                        <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4417492373324642715">
+                          <node role="operation" roleId="tpee.1197027833540" type="tp2q.InsertElementOperation" typeId="tp2q.1225621920911" id="4417492373324662860">
+                            <node role="element" roleId="tp2q.1225621943565" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4417492373324677692">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8838506468326693504" resolveInfo="method" />
+                            </node>
+                            <node role="index" roleId="tp2q.1225621960341" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4417492373324672797">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4417492373324474941" resolveInfo="index" />
+                            </node>
+                          </node>
+                          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4417492373324622577">
+                            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="4417492373324632584">
+                              <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.5375687026011219971" />
+                            </node>
+                            <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4417492373324615712">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8838506468326693981" resolveInfo="myClassConcept" />
+                            </node>
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
