@@ -26,18 +26,18 @@ import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.concurrent.atomic.AtomicLong;
 import jetbrains.mps.generator.textGen.TextGeneratorEngine;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
 import java.util.Map;
+import jetbrains.mps.smodel.SModel;
+import java.util.Collections;
+import java.util.HashMap;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
 import jetbrains.mps.internal.make.runtime.java.JavaStreamHandler;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.messages.IMessage;
-import java.util.Collections;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.make.java.BLDependenciesCache;
@@ -149,42 +149,35 @@ public class TextGen_Facet extends IFacet.Stub {
 
               int MAX_ROOTS_COUNT = 1000;
               final List<GResource> currentInput = ListSequence.fromList(new ArrayList<GResource>());
-              int currentRootsCount = 0;
+              final Wrappers._int currentRootsCount = new Wrappers._int(0);
 
               monitor.currentProgress().beginWork("Writing", Sequence.fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
 
               final TextGeneratorEngine engine = new TextGeneratorEngine(_generateDebugInfo, _failIfNoTextgen);
               try {
                 IResource lastResource = Sequence.fromIterable(resources).last();
-                for (final GResource currentResource : Sequence.fromIterable(resources)) {
-                  final Wrappers._int rootsCount = new Wrappers._int(0);
-                  final Wrappers._boolean ignoreResource = new Wrappers._boolean(false);
 
-                  // this action is time consuming! 
+                // out map and hashmap doesn't have asSynchronized method 
+                final Map<SModel, GResource> currentModelsToInput = Collections.synchronizedMap(new HashMap<SModel, GResource>());
+
+                for (final GResource currentResource : Sequence.fromIterable(resources)) {
+                  // this action is time consuming (load model)! 
                   prepareTime += TextGenUtil.withTimeTracking(new Runnable() {
                     public void run() {
                       ModelAccess.instance().runReadAction(new Runnable() {
                         public void run() {
                           SModel outputModel = currentResource.status().getOutputModel();
-                          if (outputModel == null) {
-                            ignoreResource.value = true;
-                          } else {
-                            rootsCount.value = outputModel.rootsCount();
+                          if (outputModel != null) {
+                            currentRootsCount.value += outputModel.rootsCount();
+                            currentModelsToInput.put(outputModel, currentResource);
                           }
                         }
                       });
                     }
                   });
 
-                  if (ignoreResource.value) {
-                    continue;
-                  }
-                  currentRootsCount += rootsCount.value;
                   ListSequence.fromList(currentInput).addElement(currentResource);
-                  if (currentRootsCount < MAX_ROOTS_COUNT && currentResource != lastResource) {
-                    continue;
-                  }
-                  if (ListSequence.fromList(currentInput).isEmpty()) {
+                  if (currentRootsCount.value < MAX_ROOTS_COUNT && currentResource != lastResource) {
                     continue;
                   }
 
@@ -223,15 +216,9 @@ public class TextGen_Facet extends IFacet.Stub {
                     public void run() {
                       generateTime.value += TextGenUtil.withTimeTracking(new Runnable() {
                         public void run() {
-                          // out map and hashmap doesn't have asSynchronized method 
-                          final Map<SModel, GResource> modelToInput = Collections.synchronizedMap(new HashMap<SModel, GResource>());
-                          for (GResource resource : ListSequence.fromList(currentInput)) {
-                            modelToInput.put(resource.status().getOutputModel(), resource);
-                          }
-
-                          engine.generateModels(modelToInput.keySet(), new TextGeneratorEngine.GenerateCallback() {
+                          engine.generateModels(currentModelsToInput.keySet(), new TextGeneratorEngine.GenerateCallback() {
                             public void modelGenerated(SModel model, List<TextGenerationResult> results) {
-                              GResource generatedResource = modelToInput.get(model);
+                              GResource generatedResource = currentModelsToInput.get(model);
                               try {
                                 CacheGenerator[] cacheGenerators = new CacheGenerator[]{BLDependenciesCache.getInstance().getGenerator(), (_generateDebugInfo ?
                                   TraceInfoCache.getInstance().getGenerator() :
@@ -248,6 +235,8 @@ public class TextGen_Facet extends IFacet.Stub {
                       });
                     }
                   });
+
+                  currentModelsToInput.clear();
 
                   if (ListSequence.fromList(errors).isNotEmpty()) {
                     {
@@ -331,7 +320,7 @@ public class TextGen_Facet extends IFacet.Stub {
                     return new IResult.FAILURE(_output_21gswx_a0a);
                   }
 
-                  currentRootsCount = 0;
+                  currentRootsCount.value = 0;
                   ListSequence.fromList(currentInput).clear();
                 }
               } catch (Exception e) {

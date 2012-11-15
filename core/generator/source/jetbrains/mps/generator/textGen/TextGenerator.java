@@ -48,7 +48,7 @@ public class TextGenerator {
                                                     boolean generateDebugInfo,
                                                     StreamHandler streamHandler,
                                                     CacheGenerator[] cacheGenerators) {
-    if (sourceStatus.getOutputModel() == null || !sourceStatus.isOk()) {
+    if (!sourceStatus.isOk()) {
       throw new IllegalArgumentException();
     }
 
