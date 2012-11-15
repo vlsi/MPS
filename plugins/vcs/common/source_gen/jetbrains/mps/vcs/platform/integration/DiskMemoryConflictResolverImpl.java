@@ -36,6 +36,13 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
     final File backupFile = doBackup(file, model);
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
+        // do nothing if conflict was already resolved and model was saved or reloaded 
+        if (!(modelDescriptor.isChanged())) {
+          backupFile.delete();
+          return;
+        }
+        assert model.isDisposed() == false;
+
         boolean needSave = FSChangesWatcher.instance().executeUnderBlockedReload(new Computable<Boolean>() {
           public Boolean compute() {
             if (file.exists()) {
