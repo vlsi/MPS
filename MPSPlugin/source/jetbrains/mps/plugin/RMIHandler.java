@@ -25,7 +25,7 @@ import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
 public class RMIHandler {
-  public static final int REGISTRY_PORT = 2390;
+  public static final int REGISTRY_PORT = 2391;
 
   private static IDEAHandler ourProjectCreator;
   private static MyMPSPlugin ourPlugin;
