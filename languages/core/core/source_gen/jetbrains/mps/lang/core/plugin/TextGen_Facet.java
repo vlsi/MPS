@@ -26,14 +26,14 @@ import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.concurrent.atomic.AtomicLong;
 import jetbrains.mps.generator.textGen.TextGeneratorEngine;
-import java.util.Map;
-import jetbrains.mps.smodel.SModel;
-import java.util.Collections;
-import java.util.HashMap;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import java.util.Map;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import jetbrains.mps.internal.make.runtime.java.JavaStreamHandler;
+import java.util.Collections;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
@@ -157,9 +157,6 @@ public class TextGen_Facet extends IFacet.Stub {
               try {
                 IResource lastResource = Sequence.fromIterable(resources).last();
 
-                // out map and hashmap doesn't have asSynchronized method 
-                final Map<SModel, GResource> currentModelsToInput = Collections.synchronizedMap(new HashMap<SModel, GResource>());
-
                 for (final GResource currentResource : Sequence.fromIterable(resources)) {
                   // this action is time consuming (load model)! 
                   prepareTime += TextGenUtil.withTimeTracking(new Runnable() {
@@ -169,7 +166,6 @@ public class TextGen_Facet extends IFacet.Stub {
                           SModel outputModel = currentResource.status().getOutputModel();
                           if (outputModel != null) {
                             currentRootsCount.value += outputModel.rootsCount();
-                            currentModelsToInput.put(outputModel, currentResource);
                           }
                         }
                       });
@@ -184,7 +180,7 @@ public class TextGen_Facet extends IFacet.Stub {
                   // prepare retainedFilesDelta, retainedCachedDelta and streamHandlers 
                   final Map<IResource, Iterable<IDelta>> retainedFilesDelta = MapSequence.fromMap(new HashMap<IResource, Iterable<IDelta>>());
                   final Map<IResource, Iterable<IDelta>> retainedCachesDelta = MapSequence.fromMap(new HashMap<IResource, Iterable<IDelta>>());
-                  final Map<IResource, JavaStreamHandler> streamHandlers = MapSequence.fromMap(new HashMap<IResource, JavaStreamHandler>());
+                  final Map<IResource, JavaStreamHandler> streamHandlers = Collections.synchronizedMap(new HashMap<IResource, JavaStreamHandler>());
 
                   prepareTime += TextGenUtil.withTimeTracking(new Runnable() {
                     public void run() {
@@ -216,18 +212,17 @@ public class TextGen_Facet extends IFacet.Stub {
                     public void run() {
                       generateTime.value += TextGenUtil.withTimeTracking(new Runnable() {
                         public void run() {
-                          engine.generateModels(currentModelsToInput.keySet(), new TextGeneratorEngine.GenerateCallback() {
-                            public void modelGenerated(SModel model, List<TextGenerationResult> results) {
-                              GResource generatedResource = currentModelsToInput.get(model);
+                          TextGenUtil.generateText(engine, currentInput, new TextGenUtil.TextGenerationCallback() {
+                            public void textGenerated(GResource inputResource, List<TextGenerationResult> results) {
                               try {
                                 CacheGenerator[] cacheGenerators = new CacheGenerator[]{BLDependenciesCache.getInstance().getGenerator(), (_generateDebugInfo ?
                                   TraceInfoCache.getInstance().getGenerator() :
                                   null
                                 ), GenerationDependenciesCache.getInstance().getGenerator()};
 
-                                ListSequence.fromList(errors).addSequence(ListSequence.fromList(TextGenerator.handleTextGenResults(generatedResource.status(), results, _generateDebugInfo, MapSequence.fromMap(streamHandlers).get(generatedResource), cacheGenerators)));
+                                ListSequence.fromList(errors).addSequence(ListSequence.fromList(TextGenerator.handleTextGenResults(inputResource.status(), results, _generateDebugInfo, MapSequence.fromMap(streamHandlers).get(inputResource), cacheGenerators)));
                               } finally {
-                                MapSequence.fromMap(streamHandlers).get(generatedResource).dispose();
+                                MapSequence.fromMap(streamHandlers).get(inputResource).dispose();
                               }
                             }
                           });
@@ -235,8 +230,6 @@ public class TextGen_Facet extends IFacet.Stub {
                       });
                     }
                   });
-
-                  currentModelsToInput.clear();
 
                   if (ListSequence.fromList(errors).isNotEmpty()) {
                     {
