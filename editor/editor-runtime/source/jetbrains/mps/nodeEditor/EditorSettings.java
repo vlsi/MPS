@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.application.options.editor.EditorOptionsProviderEP;
+import com.intellij.ide.ui.UISettings;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
@@ -407,6 +407,22 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
 
     public boolean isShow() {
       return show;
+    }
+
+    public boolean isMRUEditorActivatesOnClose() {
+      return UISettings.getInstance().ACTIVATE_MRU_EDITOR_ON_CLOSE;
+    }
+
+    public void setMRUEditorActivatesOnClose(boolean activates) {
+      UISettings.getInstance().ACTIVATE_MRU_EDITOR_ON_CLOSE = activates;
+    }
+
+    public boolean isRightEditorActivatesOnClose() {
+      return UISettings.getInstance().ACTIVATE_RIGHT_EDITOR_ON_CLOSE;
+    }
+
+    public void setRightEditorActivatesOnClose(boolean activates) {
+      UISettings.getInstance().ACTIVATE_RIGHT_EDITOR_ON_CLOSE = activates;
     }
   }
 }
