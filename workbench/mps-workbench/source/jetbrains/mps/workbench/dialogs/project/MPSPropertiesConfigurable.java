@@ -73,11 +73,6 @@ public abstract class MPSPropertiesConfigurable<T> implements Configurable, Disp
   }
 
   @Override
-  public Icon getIcon() {
-    return null;
-  }
-
-  @Override
   public String getHelpTopic() {
     return null;
   }

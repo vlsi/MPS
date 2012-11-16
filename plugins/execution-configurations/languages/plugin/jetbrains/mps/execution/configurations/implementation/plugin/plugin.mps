@@ -93,14 +93,14 @@
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="6893245555985399815">
       <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.execution.configurations" />
       <property name="handleErrors" nameId="tp4k.1573568368168371217" value="true" />
-      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Execution configurations for MPS" />
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
+      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Execution configurations for MPS" />
       <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
-      <property name="name" nameId="tpck.1169194664001" value="Execution Configurations" />
       <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="/MPS_16.png" />
-      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="117.105" />
+      <property name="name" nameId="tpck.1169194664001" value="Execution Configurations" />
+      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="122.746" />
       <property name="loadModules" nameId="tp4k.8842945788826116904" value="true" />
-      <property name="version" nameId="tp4k.5023285075122009369" value="2.5.1" />
+      <property name="version" nameId="tp4k.5023285075122009369" value="3.0" />
     </node>
     <node type="uhxm.RunConfiguration" typeId="uhxm.2401501559171345993" id="6062668769033909448">
       <property name="name" nameId="tpck.1169194664001" value="Java" />
@@ -4574,7 +4574,7 @@
         <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="1282994116698447465">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6062668769034024568">
             <node role="expression" roleId="tpee.1068580123156" type="rzqf.CommandBuilderExpression" typeId="rzqf.856705193941281780" id="6062668769034024569">
-              <link role="commandPart" roleId="rzqf.6129022259108621329" targetNodeId="go48.1240470842553275125" resolveInfo="java" />
+              <link role="commandPart" roleId="rzqf.6129022259108621329" targetNodeId="go48.1240470842553275125" />
               <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="6062668769034024570">
                 <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="go48.1240470842553275140" resolveInfo="className" />
                 <node role="value" roleId="rzqf.856705193941281766" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6062668769034024571">
@@ -4617,7 +4617,7 @@
               <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="6062668769034024585">
                 <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="go48.1240470842553275422" resolveInfo="debuggerSettings" />
                 <node role="value" roleId="rzqf.856705193941281766" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="1282994116698452442">
-                  <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="6062668769034024431" />
+                  <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="6062668769034024431" resolveInfo="debuggerSettings" />
                 </node>
               </node>
               <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="6062668769034024587">

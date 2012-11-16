@@ -66,7 +66,7 @@ public class ChooseByNamePanel extends ChooseByNamePopup {
   protected void hideList() {
   }
 
-  protected void close(boolean isOk) {
+  public void close(boolean isOk) {
     for (Object element : getChosenElements()) {
       myActionListener.elementChosen(element);
     }

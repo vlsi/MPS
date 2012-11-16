@@ -20,6 +20,7 @@ import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.workbench.dialogs.project.components.parts.validators.ModelValidator;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -39,7 +40,11 @@ public class ModelDepTableItem extends DependenciesTableItem<SModelReference> {
 
   @Override
   public boolean isValid() {
-    IModule module = SModelRepository.getInstance().getModelDescriptor(myItem).getModule();
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(myItem);
+    if (modelDescriptor == null) {
+      return false;
+    }
+    IModule module = modelDescriptor.getModule();
     ModelValidator validator = new ModelValidator(module.getScope());
 
     return !(validator.isBrokenValue(myItem));
@@ -47,10 +52,13 @@ public class ModelDepTableItem extends DependenciesTableItem<SModelReference> {
 
   @Override
   public Icon getIcon() {
-    IModule module = SModelRepository.getInstance().getModelDescriptor(myItem).getModule();
-    if(module instanceof Language) {
-      LanguageAspect aspect = ((Language) module).getAspectForModel(SModelRepository.getInstance().getModelDescriptor(myItem));
-      return IconManager.getIconForAspect(aspect);
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(myItem);
+    if (modelDescriptor != null) {
+      IModule module = modelDescriptor.getModule();
+      if(module instanceof Language) {
+        LanguageAspect aspect = ((Language) module).getAspectForModel(modelDescriptor);
+        return IconManager.getIconForAspect(aspect);
+      }
     }
     return IdeIcons.MODEL_ICON;
   }

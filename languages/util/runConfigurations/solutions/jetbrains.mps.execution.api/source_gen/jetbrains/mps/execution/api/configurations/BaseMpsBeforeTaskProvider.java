@@ -7,12 +7,15 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import java.lang.reflect.Method;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.lang.reflect.InvocationTargetException;
 import com.intellij.execution.BeforeRunTask;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.util.Key;
 import com.intellij.openapi.project.Project;
 
 public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvider.BaseMpsBeforeRunTask> extends BeforeRunTaskProvider<T> {
@@ -32,8 +35,12 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
 
   protected abstract T createTaskImpl();
 
+  public String getName() {
+    return myAlias;
+  }
+
   @Override
-  public String getDescription(RunConfiguration runConfiguration, T task) {
+  public String getDescription(T task) {
     return myAlias;
   }
 
@@ -56,7 +63,7 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
   }
 
   @Override
-  public boolean executeTask(DataContext context, RunConfiguration configuration, T task) {
+  public boolean executeTask(DataContext context, RunConfiguration configuration, ExecutionEnvironment env, T task) {
     if (!(configure(configuration, task))) {
       return false;
     }
@@ -79,7 +86,7 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
       Object[] parameters = (Object[]) method.invoke(runConfiguration);
       Method configureMethod = Sequence.fromIterable(Sequence.fromArray(task.getClass().getMethods())).findFirst(new IWhereFilter<Method>() {
         public boolean accept(Method it) {
-          return eq_xh6sei_a0a0a0a0a0a3a0a5(it.getName(), getConfigureMethodName());
+          return eq_xh6sei_a0a0a0a0a0a3a0a6(it.getName(), getConfigureMethodName());
         }
       });
       return (Boolean) configureMethod.invoke(task, parameters);
@@ -105,13 +112,17 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
   }
 
   @Override
-  public boolean hasConfigurationButton() {
+  public boolean isConfigurable() {
     return false;
   }
 
   @Override
   public boolean configureTask(RunConfiguration runConfiguration, T task) {
     return hasExecuteMethod(runConfiguration);
+  }
+
+  public boolean canExecuteTask(RunConfiguration configuration, T task) {
+    return true;
   }
 
   public static String getCreateMethodName(String name) {
@@ -122,15 +133,16 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
     return "configure";
   }
 
-  private static boolean eq_xh6sei_a0a0a0a0a0a3a0a5(Object a, Object b) {
+  private static boolean eq_xh6sei_a0a0a0a0a0a3a0a6(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  public static abstract class BaseMpsBeforeRunTask extends BeforeRunTask {
-    public BaseMpsBeforeRunTask() {
+  public static abstract class BaseMpsBeforeRunTask<T extends BaseMpsBeforeTaskProvider.BaseMpsBeforeRunTask> extends BeforeRunTask<T> {
+    public BaseMpsBeforeRunTask(@NotNull Key<T> providerId) {
+      super(providerId);
       setEnabled(true);
     }
 

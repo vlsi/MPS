@@ -177,4 +177,8 @@ import org.jetbrains.annotations.NotNull;
   public String getHelpId() {
     return null;
   }
+
+  public boolean useMiddleMatching() {
+    return true;
+  }
 }

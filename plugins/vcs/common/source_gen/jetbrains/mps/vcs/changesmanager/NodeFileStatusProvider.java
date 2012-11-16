@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.editor.MPSEditorUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.editor.Document;
+import com.intellij.util.ThreeState;
 
 public class NodeFileStatusProvider implements FileStatusProvider {
   private Project myProject;
@@ -42,5 +43,9 @@ public class NodeFileStatusProvider implements FileStatusProvider {
   }
 
   public void refreshFileStatusFromDocument(VirtualFile file, Document document) {
+  }
+
+  public ThreeState getNotChangedDirectoryParentingStatus(VirtualFile file) {
+    return ThreeState.NO;
   }
 }

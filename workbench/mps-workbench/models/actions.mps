@@ -921,8 +921,8 @@
       <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
       <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="/MPS_16.png" />
       <property name="name" nameId="tpck.1169194664001" value="IDE" />
-      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="117.105" />
-      <property name="version" nameId="tp4k.5023285075122009369" value="2.5.1" />
+      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="122.746" />
+      <property name="version" nameId="tp4k.5023285075122009369" value="3.0" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2010440180771532928">
       <property name="name" nameId="tpck.1169194664001" value="EditGivenNode" />
@@ -21245,37 +21245,22 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.ProtectedVisibility" typeId="tpee.1146644641414" id="6077424174311570189" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="6077424174311570190" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6077424174311570191">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6077424174311570202">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6077424174311570203">
-            <property name="name" nameId="tpck.1169194664001" value="consoleView" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6077424174311570204">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vstq.~ConsoleView" resolveInfo="ConsoleView" />
-            </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6077424174311570205">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="saga.~AnalyzeStacktraceUtil" resolveInfo="AnalyzeStacktraceUtil" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="saga.~AnalyzeStacktraceUtil%daddConsole(com%dintellij%dopenapi%dproject%dProject,com%dintellij%dunscramble%dAnalyzeStacktraceUtil$ConsoleFactory,java%dlang%dString)%ccom%dintellij%dexecution%dui%dConsoleView" resolveInfo="addConsole" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="6077424174311570206">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4533699301447536561" resolveInfo="myProject" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="6077424174311570207" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6077424174311570208">
-                <property name="value" nameId="tpee.1070475926801" value="&lt;Stacktrace&gt;" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6077424174311570209">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6077424174311570210">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="saga.~AnalyzeStacktraceUtil%dprintStacktrace(com%dintellij%dexecution%dui%dConsoleView,java%dlang%dString)%cvoid" resolveInfo="printStacktrace" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1462058189369669550">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1462058189369669552">
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="saga.~AnalyzeStacktraceUtil" resolveInfo="AnalyzeStacktraceUtil" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6077424174311570211">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6077424174311570203" resolveInfo="consoleView" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="saga.~AnalyzeStacktraceUtil%daddConsole(com%dintellij%dopenapi%dproject%dProject,com%dintellij%dunscramble%dAnalyzeStacktraceUtil$ConsoleFactory,java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="addConsole" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="1462058189369669553">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4533699301447536561" resolveInfo="myProject" />
             </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6077424174311570212">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="6077424174311570213">
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1462058189369669554" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1462058189369669555">
+              <property name="value" nameId="tpee.1070475926801" value="&lt;Stacktrace&gt;" />
+            </node>
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1462058189369669556">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="1462058189369669557">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4533699301447536558" resolveInfo="myText" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6077424174311570214">
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1462058189369669558">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oj8w.~JTextComponent%dgetText()%cjava%dlang%dString" resolveInfo="getText" />
               </node>
             </node>

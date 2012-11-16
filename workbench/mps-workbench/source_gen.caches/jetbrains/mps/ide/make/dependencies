@@ -112,9 +112,10 @@
     <classNode extendsClassName="jetbrains.mps.make.service.CoreMakeTask" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.TextPreviewFile" file="TextPreviewFile.java">
-    <classNode dependClassName="com.intellij.openapi.util.io.FileUtil" />
+    <classNode dependClassName="com.intellij.openapi.util.io.FileAttributes" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileSystem" />
+    <classNode dependClassName="com.intellij.util.ArrayUtil" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.io.OutputStream" />

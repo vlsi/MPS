@@ -67,7 +67,6 @@ public class PlainTabsComponent extends BaseTabsComponent {
     myJbTabs = new AsJBTabs(project, SwingConstants.BOTTOM, navigation, myJbTabsDisposable);
     myJbTabs.getTabs().getPresentation()
       .setPaintBorder(0, 0, 0, 0)
-      .setAdjustBorders(true)
       .setGhostsAlwaysVisible(true);
 
     getComponent().add(myJbTabs.getTabs().getComponent(), BorderLayout.CENTER);

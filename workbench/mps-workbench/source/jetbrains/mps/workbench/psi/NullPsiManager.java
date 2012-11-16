@@ -19,7 +19,12 @@ import com.intellij.openapi.Disposable;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.psi.*;
+import com.intellij.psi.FileViewProvider;
+import com.intellij.psi.LanguageInjector;
+import com.intellij.psi.PsiDirectory;
+import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiFile;
+import com.intellij.psi.PsiTreeChangeListener;
 import com.intellij.psi.codeStyle.CodeStyleManager;
 import com.intellij.psi.impl.PsiManagerEx;
 import com.intellij.psi.impl.PsiTreeChangeEventImpl;
@@ -39,6 +44,7 @@ import java.util.List;
 
 class NullPsiManager extends PsiManagerEx {
   private Project myProject;
+  private FileManager myFileManager;
 
   NullPsiManager(Project project) {
     myProject = project;
@@ -81,7 +87,10 @@ class NullPsiManager extends PsiManagerEx {
   }
 
   public FileManager getFileManager() {
-    return null;
+    if (myFileManager == null) {
+      myFileManager = new NullFileManager();
+    }
+    return myFileManager;
   }
 
   @Override
@@ -98,7 +107,7 @@ class NullPsiManager extends PsiManagerEx {
   }
 
   public void beforeChildReplacement(@NotNull PsiTreeChangeEventImpl psiTreeChangeEvent) {
-    
+
   }
 
   @Override

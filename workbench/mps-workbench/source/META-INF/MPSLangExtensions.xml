@@ -1,0 +1,96 @@
+<extensions>
+  <applicationService serviceInterface="com.intellij.lang.cacheBuilder.CacheBuilderRegistry"
+                      serviceImplementation="com.intellij.lang.cacheBuilder.CacheBuilderRegistryImpl"/>
+
+  <applicationService serviceInterface="com.intellij.concurrency.JobLauncher"
+                      serviceImplementation="com.intellij.concurrency.JobLauncherImpl"/>
+
+  <applicationService serviceInterface="com.intellij.codeStyle.CodeStyleFacade"
+                      serviceImplementation="com.intellij.codeStyle.DefaultCodeStyleFacade"/>
+
+  <applicationService serviceInterface="com.intellij.openapi.project.ProjectLocator"
+                      serviceImplementation="com.intellij.openapi.project.impl.DefaultProjectLocator"/>
+
+  <applicationService serviceInterface="com.intellij.execution.ui.layout.impl.RunnerLayoutSettings"
+                      serviceImplementation="com.intellij.execution.ui.layout.impl.RunnerLayoutSettings"/>
+
+  <projectService serviceInterface="com.intellij.psi.search.PsiSearchHelper"
+                  serviceImplementation="jetbrains.mps.EmptyPsiSearchHelper"/>
+
+  <applicationService serviceInterface="com.intellij.psi.statistics.StatisticsManager"
+                      serviceImplementation="com.intellij.psi.statistics.impl.StatisticsManagerImpl"/>
+
+  <applicationService serviceInterface="com.intellij.find.FindSettings"
+                      serviceImplementation="com.intellij.find.impl.FindSettingsImpl"/>
+
+  <applicationService serviceInterface="com.intellij.ui.IconDeferrer"
+                      serviceImplementation="com.intellij.ui.DefaultIconDeferrer"/>
+
+  <applicationService serviceInterface="com.intellij.ui.mac.MacMessages"
+                      serviceImplementation="com.intellij.ui.mac.MacMessagesImpl"/>
+
+  <projectService serviceInterface="com.intellij.ui.EditorTextFieldProvider"
+                  serviceImplementation="jetbrains.mps.EditorTextFieldProviderImpl"/>
+
+  <projectService serviceInterface="com.intellij.psi.PsiFileFactory"
+                  serviceImplementation="jetbrains.mps.EmptyPsiFileFactory"/>
+
+  <projectService serviceInterface="com.intellij.psi.search.ProjectScopeBuilder"
+                  serviceImplementation="com.intellij.psi.search.ProjectScopeBuilderImpl"/>
+
+  <projectService serviceInterface="com.intellij.codeStyle.CodeStyleFacade"
+                  serviceImplementation="jetbrains.mps.codeStyle.MPSCodeStyleFacade"/>
+
+  <projectService serviceInterface="com.intellij.usages.UsageViewManager"
+                  serviceImplementation="com.intellij.usages.impl.UsageViewManagerImpl"/>
+
+  <projectService serviceInterface="com.intellij.find.FindManager"
+                  serviceImplementation="com.intellij.find.impl.FindManagerImpl"/>
+
+  <projectService serviceInterface="com.intellij.psi.search.scope.packageSet.NamedScopeManager"
+                  serviceImplementation="com.intellij.psi.search.scope.packageSet.NamedScopeManager"/>
+  <projectService serviceInterface="com.intellij.packageDependencies.DependencyValidationManager"
+                  serviceImplementation="com.intellij.packageDependencies.DependencyValidationManagerImpl"/>
+
+  <projectService serviceInterface="com.intellij.openapi.roots.ProjectFileIndex"
+                  serviceImplementation="com.intellij.openapi.roots.impl.ProjectFileIndexImpl"/>
+
+  <projectService serviceInterface="com.intellij.ui.FileColorManager"
+                  serviceImplementation="com.intellij.ui.tabs.FileColorManagerImpl"/>
+
+  <applicationConfigurable instance="com.intellij.openapi.fileTypes.impl.FileTypeConfigurable" id="preferences.fileTypes"
+                           key="filetype.settings.title" bundle="messages.FileTypesBundle"/>
+
+  <customScopesProvider implementation="com.intellij.packageDependencies.DefaultScopesProvider"/>
+  <customScopesProvider implementation="com.intellij.packageDependencies.ChangeListsScopesProvider" order="last"/>
+  <!-- MPS Patch start: somehow I was not able to find the place where TestScopeProvider was registered in IDEA. Seems like we should set platform prefix different from IDEA/community so this scope will not be necessary anymore. -->
+  <customScopesProvider implementation="com.intellij.packageDependencies.TestScopeProvider"/>
+  <!-- MPS Patch end -->
+
+  <fileBasedIndex implementation="com.intellij.psi.impl.cache.impl.id.IdIndex"/>
+  <!--        <fileBasedIndex implementation="NamedNodeIndex"/> -->
+  <fileBasedIndex implementation="jetbrains.mps.ide.generator.index.LanguageModelDigestIndex"/>
+  <fileBasedIndex implementation="jetbrains.mps.ide.generator.index.ModelDigestIndex"/>
+  <fileBasedIndex implementation="com.intellij.psi.search.FilenameIndex"/>
+  <indexedRootsProvider implementation="jetbrains.mps.ide.findusages.caches.MPSIndexedRootsProvider"/>
+
+  <syntaxHighlighter key="JAVA" implementationClass="jetbrains.mps.ide.java.JavaFileHighlighter"/>
+  <syntaxHighlighter key="XML" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
+  <syntaxHighlighter key="Model" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
+  <syntaxHighlighter key="Solution" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
+  <syntaxHighlighter key="Language" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
+  <syntaxHighlighter key="Devkit" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
+  <syntaxHighlighter key="MPS Project" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
+
+  <executor implementation="com.intellij.execution.executors.DefaultRunExecutor" order="first" id="run"/>
+
+  <projectService serviceInterface="com.intellij.ide.structureView.StructureViewFactory"
+                  serviceImplementation="com.intellij.ide.structureView.impl.StructureViewFactoryImpl"/>
+  <projectService serviceInterface="com.intellij.execution.ui.RunnerLayoutUi$Factory"
+                  serviceImplementation="com.intellij.execution.ui.layout.impl.RunnerLayoutUiFactoryImpl"/>
+
+  <toolWindow id="Structure" anchor="left" icon="AllIcons.Toolwindows.ToolWindowStructure" secondary="true"
+              factoryClass="com.intellij.ide.structureView.impl.StructureViewToolWindowFactory"/>
+
+  <fileIconProvider implementation="jetbrains.mps.workbench.editors.MPSIconProvider"/>
+</extensions>
