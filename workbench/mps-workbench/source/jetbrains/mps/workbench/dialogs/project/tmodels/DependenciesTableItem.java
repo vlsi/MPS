@@ -15,14 +15,11 @@
  */
 package jetbrains.mps.workbench.dialogs.project.tmodels;
 
-import com.intellij.openapi.roots.ui.util.SimpleTextCellAppearance;
 import com.intellij.ui.BooleanTableCellRenderer;
 import com.intellij.ui.ColoredTableCellRenderer;
 import com.intellij.ui.SimpleTextAttributes;
-import jetbrains.mps.workbench.dialogs.project.components.parts.validators.ModelValidator;
 
 import javax.swing.BorderFactory;
-import javax.swing.Icon;
 import javax.swing.JTable;
 import javax.swing.table.TableCellRenderer;
 import java.awt.Component;
@@ -99,5 +96,4 @@ public abstract class DependenciesTableItem<T> extends ConnectionsTableItem<T> {
       }
     };
   }
-
 }

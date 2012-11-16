@@ -17,10 +17,10 @@ package jetbrains.mps.workbench.dialogs.project.tmodels;
 
 import com.intellij.util.ui.ItemRemovable;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.workbench.dialogs.project.PropertiesBundle;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
@@ -31,7 +31,7 @@ public abstract class UsedLangsTableModel<T> extends AbstractTableModel implemen
   protected T myItem;
 
   public static final int ITEM_COLUMN = 0;
-  private static final String ITEM_COLUMN_NAME = "Lang/DevKit";
+  private static final String ITEM_COLUMN_NAME = PropertiesBundle.message("mps.properties.configurable.tablemodel.usedlanguages.column.item");
 
 
   public UsedLangsTableModel(T value) {

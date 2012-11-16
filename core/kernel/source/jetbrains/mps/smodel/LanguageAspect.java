@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.*;
 
@@ -228,13 +228,13 @@ public enum LanguageAspect {
     assert get(l) == null;
 
     SModelDescriptor structureModel = l.getStructureModelDescriptor();
-    SModelRoot modelRoot;
+    ModelRoot modelRoot;
     if (structureModel == null) {
-      modelRoot = l.getSModelRoots().iterator().next();
+      modelRoot = l.getModelRoots().iterator().next();
     } else {
-      modelRoot = ModelRootUtil.getSModelRoot(structureModel);
+      modelRoot = ModelRootUtil.getModelRoot(structureModel);
     }
-    return l.createModel(getModuleUID(l), modelRoot, null);
+    return l.createModel(l.getModuleName() + "." + getName(), modelRoot, null);
   }
 
   public List<ModuleReference> getAllLanguagesToImport(Language l) {
@@ -249,10 +249,6 @@ public enum LanguageAspect {
   public abstract String getHelpURL();
 
   public abstract ModuleReference getMainLanguage();
-
-  private SModelFqName getModuleUID(Language l) {
-    return new SModelFqName(l.getModuleName() + "." + getName(), "");
-  }
 
   public static Collection<EditableSModelDescriptor> getAspectModels(Language l) {
     Set<EditableSModelDescriptor> result = new HashSet<EditableSModelDescriptor>();

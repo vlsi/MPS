@@ -22,7 +22,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.IModule.ModelAdjuster;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
@@ -31,10 +30,10 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.dialogs.project.BaseStretchingBindedDialog;
 import org.jdesktop.beansbinding.*;
 import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import javax.swing.*;
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
+import java.awt.*;
 
 public class CloneModelDialog extends BaseStretchingBindedDialog {
   private static final Logger LOG = Logger.getLogger(CloneModelDialog.class);
@@ -140,7 +139,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
 
   private String getErrorString() {
     if (myModelProperties.getRoot() == null) return "Please specify root";
-    if (myModelProperties.getLongName() == null || myModelProperties.getLongName().length() == 0)
+    if (myModelProperties.getModelName() == null || myModelProperties.getModelName().length() == 0)
       return "Please specify name";
     if (myModelProperties.getImportedLanguages().size() < 1) return "Model must have at least one language";
     return null;
@@ -153,8 +152,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
       return false;
     }
 
-    final String stereotype = myModelProperties.getStereotype();
-    final String modelName = myModelProperties.getLongName();
+    final String modelName = myModelProperties.getModelName();
     RootReference reference = myModelProperties.getRoot();
 
     IOperationContext operationContext = getOperationContext();
@@ -164,18 +162,18 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     Project project = getOperationContext().getProject();
     assert project != null;
 
-    for (SModelDescriptor model : module.getOwnModelDescriptors()) {
-      if (model.getLongName().equals(modelName)) {
+    for (org.jetbrains.mps.openapi.model.SModel model : module.getModels()) {
+      if (model.getModelName().equals(modelName)) {
         setErrorText("Model with the same name already exists. Please choose another name");
         return false;
       }
     }
 
-    final SModelRoot modelRoot = ModuleUtil.findModelRoot(module, reference.getPath());
+    final ModelRoot modelRoot = ModuleUtil.findModelRoot(module, reference.getPath());
     final SModelDescriptor modelDescriptor = ModelAccess.instance().runWriteActionInCommand(
       new Computable<SModelDescriptor>() {
         public SModelDescriptor compute() {
-          return module.createModel(new SModelFqName(modelName, stereotype), modelRoot, new ModelAdjuster() {
+          return module.createModel(modelName, modelRoot, new ModelAdjuster() {
             public void adjust(SModelDescriptor model) {
               for (SModelReference ref : myModelProperties.getImportedModels()) {
                 model.getSModel().addModelImport(ref, false);

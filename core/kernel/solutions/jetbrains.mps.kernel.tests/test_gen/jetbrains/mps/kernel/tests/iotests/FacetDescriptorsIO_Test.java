@@ -92,7 +92,7 @@ public class FacetDescriptorsIO_Test extends TestCase {
     Assert.assertEquals("4f50af0c-4cd4-11e1-a072-6cf049e62fe5", sd.getUUID());
     Assert.assertEquals(moduleFile.getParent().getDescendant("source_gen").getPath(), sd.getOutputPath());
     Assert.assertSame(1, sd.getModelRootDescriptors().size());
-    Assert.assertEquals(moduleFile.getParent().getDescendant("models").getPath(), Sequence.fromIterable(((Iterable<ModelRootDescriptor>) sd.getModelRootDescriptors())).first().getRoot().getPath());
+    Assert.assertEquals(moduleFile.getParent().getDescendant("models").getPath(), Sequence.fromIterable(((Iterable<ModelRootDescriptor>) sd.getModelRootDescriptors())).first().getMemento().getPath("path"));
     Assert.assertSame(1, sd.getUsedLanguages().size());
     Assert.assertEquals(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), Sequence.fromIterable(((Iterable<ModuleReference>) sd.getUsedLanguages())).first().getModuleId());
   }

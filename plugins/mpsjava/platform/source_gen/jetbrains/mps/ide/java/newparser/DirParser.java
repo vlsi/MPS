@@ -26,8 +26,8 @@ import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.NameUtil;
 
 public class DirParser {
@@ -173,16 +173,15 @@ public class DirParser {
       return null;
     }
 
-    SModelFqName modelFqName = SModelFqName.fromString(packageName);
-    SModelDescriptor modelDescr = myModule.createModel(modelFqName, getRootToCreateModel(packageName), null);
+    SModelDescriptor modelDescr = myModule.createModel(packageName, getRootToCreateModel(packageName), null);
     assert modelDescr != null;
 
     return modelDescr.getSModel();
   }
 
   @Nullable
-  private SModelRoot getRootToCreateModel(String packageName) {
-    for (SModelRoot root : CollectionSequence.fromCollection(myModule.getSModelRoots())) {
+  private ModelRoot getRootToCreateModel(String packageName) {
+    for (ModelRoot root : Sequence.fromIterable(myModule.getModelRoots())) {
       if (root.canCreateModel(packageName)) {
         return root;
       }

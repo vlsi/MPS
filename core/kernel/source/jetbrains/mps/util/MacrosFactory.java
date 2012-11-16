@@ -60,13 +60,33 @@ public class MacrosFactory {
    * @deprecated use forModuleFile
    */
   @Deprecated
-  public static Macros moduleDescriptor(IModule module) {
+  public static OldMacros moduleDescriptor(IModule module) {
     IFile descriptorFile = ((AbstractModule) module).getDescriptorFile();
     MacroHelper macroHelper = forModuleFile(descriptorFile);
-    if (macroHelper instanceof MacroHelperImpl) {
-      return ((MacroHelperImpl) macroHelper).macros;
+    Macros macros = macroHelper instanceof MacroHelperImpl
+      ? ((MacroHelperImpl) macroHelper).macros
+      : new HomeMacros();
+    return new OldMacros(macros);
+  }
+
+  @Deprecated
+  public static class OldMacros {
+
+    private final Macros macros;
+
+    private OldMacros(Macros macros) {
+      this.macros = macros;
     }
-    return new HomeMacros();
+
+    @Deprecated
+    public String shrinkPath(String absolutePath, IFile anchorFile) {
+      return macros.shrink(absolutePath, anchorFile);
+    }
+
+    @Deprecated
+    public String expandPath(String path, IFile anchorFile) {
+      return macros.expand(path, anchorFile);
+    }
   }
 
   private static class ModuleMacros extends HomeMacros {

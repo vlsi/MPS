@@ -32,6 +32,9 @@ public class ModelRootDescriptor {
   }
 
   public String getType() {
+    if (type == null) {
+      return getMemento().getChild("manager") != null ? PersistenceRegistry.OBSOLETE_MODEL_ROOT : PersistenceRegistry.DEFAULT_MODEL_ROOT;
+    }
     return type;
   }
 
@@ -39,8 +42,9 @@ public class ModelRootDescriptor {
     return memento;
   }
 
+  @Deprecated
   public ModelRoot getRoot() {
-    if (type != null && type.length() > 0 && !type.equals(PersistenceRegistry.DEFAULT_MODEL_ROOT)) {
+    if (!PersistenceRegistry.OBSOLETE_MODEL_ROOT.equals(getType())) {
       return null;
     }
     ModelRoot modelRoot = new ModelRoot();

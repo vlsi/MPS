@@ -76,6 +76,9 @@ public class SModelRepository implements CoreComponent {
 
   //--------------------register/unregister----------------------
 
+  /**
+   * NOTE: use only through ModelRootBase.register
+   */
   public void registerModelDescriptor(SModelDescriptor modelDescriptor, SModule container) {
     synchronized (myModelsLock) {
       SModule prevModule = myModelOwner.get(modelDescriptor);

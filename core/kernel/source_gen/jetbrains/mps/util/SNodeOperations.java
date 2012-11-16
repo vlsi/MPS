@@ -39,13 +39,6 @@ public class SNodeOperations {
     return isAncestor(ancestor, parentOfChild);
   }
 
-  public static String getRoleInParent(jetbrains.mps.smodel.SNode n) {
-    return (n.getParent() == null ?
-      null :
-      n.getParent().getRoleOf(n)
-    );
-  }
-
   public static List<jetbrains.mps.smodel.SNode> getChildren(SNode node, boolean includeAttributes) {
     List<jetbrains.mps.smodel.SNode> res = new ArrayList<jetbrains.mps.smodel.SNode>();
     for (SNode child : node.getChildren()) {

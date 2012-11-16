@@ -164,7 +164,7 @@ public class ModuleDescriptorPersistence {
       PathAwareJDOMMemento memento = root.getMemento();
       Element modelRoot = memento.cloneElement(macroHelper);
       String type = root.getType();
-      if ((type != null && type.length() > 0) && !("default".equals(type))) {
+      if ((type != null && type.length() > 0) && !("default".equals(type) || "obsolete".equals(type))) {
         modelRoot.setAttribute("type", type);
       } else {
         modelRoot.removeAttribute("type");

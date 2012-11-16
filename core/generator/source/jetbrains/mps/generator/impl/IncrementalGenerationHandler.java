@@ -54,8 +54,8 @@ public class IncrementalGenerationHandler {
   private GenerationDependencies mySavedDependencies;
   private IntermediateModelsCache myCache;
 
-  public IncrementalGenerationHandler(SModelDescriptor model, IOperationContext operationContext, GenerationOptions options, String planSignature, Map<String, Object> genParameters, IncrementalReporter tracer) {
-    myModel = model;
+  public IncrementalGenerationHandler(org.jetbrains.mps.openapi.model.SModel model, IOperationContext operationContext, GenerationOptions options, String planSignature, Map<String, Object> genParameters, IncrementalReporter tracer) {
+    myModel = (SModelDescriptor) model;
     myGenerationOptions = options;
     myOperationContext = operationContext;
     myPlanSignature = planSignature;

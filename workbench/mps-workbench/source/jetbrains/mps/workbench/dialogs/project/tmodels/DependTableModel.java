@@ -16,6 +16,7 @@
 package jetbrains.mps.workbench.dialogs.project.tmodels;
 
 import com.intellij.util.ui.ItemRemovable;
+import jetbrains.mps.workbench.dialogs.project.PropertiesBundle;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
@@ -25,8 +26,8 @@ public abstract class DependTableModel<T> extends AbstractTableModel implements 
   protected List<DependenciesTableItem<?>> myTableItems = new ArrayList<DependenciesTableItem<?>>();
   protected T myItem;
 
-  public static final String EXPORT_COLUMN_NAME = "Export";
-  private static final String ROLE_COLUMN_NAME = "Scope";
+  public static final String EXPORT_COLUMN_NAME = PropertiesBundle.message("mps.properties.configurable.tablemodel.dependency.column.export");
+  private static final String ROLE_COLUMN_NAME = PropertiesBundle.message("mps.properties.configurable.tablemodel.dependency.column.scope");
   public static final int EXPORT_COLUMN = 0;
   public static final int ITEM_COLUMN = 1;
   public static final int ROLE_COLUMN = 2;
@@ -41,6 +42,10 @@ public abstract class DependTableModel<T> extends AbstractTableModel implements 
       return;
     myTableItems.add(item);
     fireTableDataChanged();
+  }
+
+  public T getItem() {
+    return myItem;
   }
 
   @Override

@@ -307,10 +307,10 @@
     <nodeInfo nodeId="6930463558351181264" fileName="NewModelFromSource_Action.java" startLine="97" startPosition="5" endLine="98" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6930463558351181264" fileName="NewModelFromSource_Action.java" startLine="99" startPosition="63" endLine="100" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6930463558351181264" fileName="NewModelFromSource_Action.java" startLine="101" startPosition="5" endLine="102" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6930463558351181329" fileName="NewModelFromSource_Action.java" startLine="107" startPosition="96" endLine="108" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6930463558351181329" fileName="NewModelFromSource_Action.java" startLine="107" startPosition="107" endLine="108" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6930463558351181341" fileName="NewModelFromSource_Action.java" startLine="109" startPosition="45" endLine="110" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6930463558351181347" fileName="NewModelFromSource_Action.java" startLine="111" startPosition="16" endLine="112" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6930463558351181366" fileName="NewModelFromSource_Action.java" startLine="115" startPosition="96" endLine="116" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6930463558351181366" fileName="NewModelFromSource_Action.java" startLine="115" startPosition="107" endLine="116" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6930463558351181374" fileName="NewModelFromSource_Action.java" startLine="116" startPosition="196" endLine="117" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6930463558351181384" fileName="NewModelFromSource_Action.java" startLine="118" startPosition="7" endLine="119" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6930463558351181387" fileName="NewModelFromSource_Action.java" startLine="119" startPosition="83" endLine="120" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -432,7 +432,7 @@
       <varInfo nodeId="6930463558351181264" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="6930463558351181264" fileName="NewModelFromSource_Action.java" startLine="72" startPosition="27" endLine="74" endPosition="44" />
-    <scopeInfo nodeId="6930463558351181365" fileName="NewModelFromSource_Action.java" startLine="115" startPosition="96" endLine="117" endPosition="15" />
+    <scopeInfo nodeId="6930463558351181365" fileName="NewModelFromSource_Action.java" startLine="115" startPosition="107" endLine="117" endPosition="15" />
     <scopeInfo nodeId="6930463558351181410" fileName="NewModelFromSource_Action.java" startLine="126" startPosition="27" endLine="128" endPosition="244">
       <varInfo nodeId="6930463558351181412" varName="stereotype" />
     </scopeInfo>
@@ -459,7 +459,7 @@
       <varInfo nodeId="6930463558351181639" varName="availableStereotype" />
     </scopeInfo>
     <scopeInfo nodeId="1023591392840835098" fileName="NewModelFromSource_Action.java" startLine="169" startPosition="31" endLine="174" endPosition="15" />
-    <scopeInfo nodeId="6930463558351181328" fileName="NewModelFromSource_Action.java" startLine="107" startPosition="96" endLine="113" endPosition="9">
+    <scopeInfo nodeId="6930463558351181328" fileName="NewModelFromSource_Action.java" startLine="107" startPosition="107" endLine="113" endPosition="9">
       <varInfo nodeId="6930463558351181330" varName="code" />
     </scopeInfo>
     <scopeInfo nodeId="6930463558351181265" fileName="NewModelFromSource_Action.java" startLine="189" startPosition="0" endLine="195" endPosition="0">

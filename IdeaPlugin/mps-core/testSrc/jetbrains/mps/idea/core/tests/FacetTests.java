@@ -27,10 +27,10 @@ import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.ModuleOrderEntry;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.OrderEntry;
+import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
-import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -41,10 +41,7 @@ import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NonNls;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class FacetTests extends AbstractMPSFixtureTestCase {
 
@@ -59,7 +56,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
 
     // Default Solution settings
     Solution solution = myFacet.getSolution();
-    assertEmpty(solution.getSModelRoots());
+    assertFalse(solution.getModelRoots().iterator().hasNext());
     // JDK solution should be always returned as module dependencies for now
     assertEquals(1, solution.getDependencies().size());
     assertEmpty(solution.getUsedLanguagesReferences());
@@ -120,17 +117,20 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
 
     Solution repositorySolution = ModuleRepositoryFacade.getInstance().getModule(solutionReference, Solution.class);
     assertEquals(myFacet.getSolution(), repositorySolution);
-    Collection<SModelRoot> modelRoots = repositorySolution.getSModelRoots();
-    assertEquals(1, modelRoots.size());
-    SModelRoot theModelRoot = modelRoots.iterator().next();
-    assertEquals(modelRootDir.getPath(), theModelRoot.getPath());
+    Iterable<org.jetbrains.mps.openapi.persistence.ModelRoot> modelRoots = repositorySolution.getModelRoots();
+
+    Iterator<org.jetbrains.mps.openapi.persistence.ModelRoot> iterator = modelRoots.iterator();
+    assertTrue(iterator.hasNext());
+    org.jetbrains.mps.openapi.persistence.ModelRoot theModelRoot = iterator.next();
+    assertFalse(iterator.hasNext());
+    assertEquals(modelRootDir.getPath(), ((FolderModelRootBase)theModelRoot).getPath());
 
     configurationBean = myFacet.getConfiguration().getState();
     configurationBean.setModelRoots(new ArrayList<ModelRoot>());
     myFacet.setConfiguration(configurationBean);
     flushEDT();
 
-    assertEmpty(repositorySolution.getSModelRoots());
+    assertFalse(repositorySolution.getModelRoots().iterator().hasNext());
   }
 
   public void testAddRemoveUsedLanguage() throws InterruptedException {

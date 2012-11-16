@@ -1,34 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.plugin.IdeaAwareJavaGenerationHandler" file="IdeaAwareJavaGenerationHandler.java">
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.MPSCore" />
-    <classNode dependClassName="jetbrains.mps.generator.GenerationCanceledException" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
-    <classNode dependClassName="jetbrains.mps.plugin.CompilationResult" />
-    <classNode dependClassName="jetbrains.mps.plugin.IProjectHandler" />
-    <classNode dependClassName="jetbrains.mps.plugin.MPSPlugin" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.util.Pair" />
-    <classNode extendsClassName="jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler" />
-  </dependency>
-  <dependency className="jetbrains.mps.plugin.IdeaHandlerProvider" file="IdeaHandlerProvider.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.generator.generationTypes.IGenerationHandler" />
-    <classNode dependClassName="jetbrains.mps.ide.generator.GeneratorUIFacade" />
-    <classNode dependClassName="jetbrains.mps.plugin.IdeaAwareJavaGenerationHandler" />
-    <classNode extendsClassName="jetbrains.mps.ide.generator.GenerationHandlerProvider" />
-  </dependency>
   <dependency className="jetbrains.mps.plugin.IdeaJavaCompilerImpl" file="IdeaJavaCompilerImpl.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Runnable" />

@@ -4,7 +4,7 @@ package jetbrains.mps.internal.make.runtime.java;
 
 import jetbrains.mps.logging.Logger;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
@@ -25,7 +25,7 @@ import jetbrains.mps.util.JDOMUtil;
 /*package*/ class FileProcessor {
   private static final Logger LOG = Logger.getLogger(FileProcessor.class);
 
-  private final List<SModelDescriptor> myModels = new ArrayList<SModelDescriptor>();
+  private final List<SModel> myModels = new ArrayList<SModel>();
   private final List<FileProcessor.FileAndContent> myFilesAndContents = new ArrayList<FileProcessor.FileAndContent>();
   private final List<IFile> myFilesToDelete = new ArrayList<IFile>();
   private final Object LOCK = new Object();
@@ -33,7 +33,7 @@ import jetbrains.mps.util.JDOMUtil;
   public FileProcessor() {
   }
 
-  public void invalidateModel(SModelDescriptor modelDescriptor) {
+  public void invalidateModel(SModel modelDescriptor) {
     synchronized (LOCK) {
       myModels.add(modelDescriptor);
     }

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-51qk0mazltmlh0p4ecptl6fvclw9nnu">
-  <dep model="r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)" hash="-2b3v4nn8qhw0j2wabzy4mu1b0mvncx0" />
-  <common>
-    <dep model="r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)" />
-    <file name="Language.java" />
-  </common>
-</dependencies>
-

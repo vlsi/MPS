@@ -45,12 +45,11 @@ import javax.swing.SwingUtilities;
 import java.util.concurrent.ExecutionException;
 import jetbrains.mps.compiler.IClassesData;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.generator.GeneratorUIFacade;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
@@ -189,12 +188,12 @@ public class EmbeddableEditor {
     }
     InMemoryJavaGenerationHandler handler = new InMemoryJavaGenerationHandler(false, false) {
       @Override
-      public boolean canHandle(SModelDescriptor inputModel) {
+      public boolean canHandle(SModel inputModel) {
         return inputModel != null;
       }
 
       @Override
-      protected CompositeClassPathItem getClassPath(Set<IModule> contextModules) {
+      protected CompositeClassPathItem getClassPath(Set<SModule> contextModules) {
         CompositeClassPathItem result = super.getClassPath(contextModules);
         for (IClassPathItem item : additionalClasspath) {
           result.add(item);

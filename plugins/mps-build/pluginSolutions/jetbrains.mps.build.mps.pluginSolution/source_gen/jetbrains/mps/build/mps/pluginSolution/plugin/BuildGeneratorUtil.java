@@ -35,7 +35,7 @@ public class BuildGeneratorUtil {
     if (modelDescriptor.value == null) {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          modelDescriptor.value = solution.createModel(newModelFQName, solution.getSModelRoots().iterator().next(), null);
+          modelDescriptor.value = solution.createModel(newModelFQName.toString(), solution.getModelRoots().iterator().next(), null);
         }
       });
     }

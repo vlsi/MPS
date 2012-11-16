@@ -17,13 +17,13 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.persistence.PathAwareJDOMMemento;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.InvalidModelRootManager;
 import org.jdom.Element;
@@ -37,6 +37,13 @@ import org.jetbrains.mps.openapi.persistence.Memento;
 import java.util.Collection;
 import java.util.Collections;
 
+/**
+ * @deprecated used to adapt obsolete IModelRootManagers to the new ModelRoot interface
+ * default models are loaded by DefaultModelRoot
+ * java stubs are handled by JavaClassStubsModelRoot
+ * consider ModelRootBase/FolderModelRootBase as base classes for new ModelRoots
+ */
+@Deprecated
 public class SModelRoot extends FolderModelRootBase {
   @NotNull
   private ModelRoot myModelRoot;
@@ -53,13 +60,18 @@ public class SModelRoot extends FolderModelRootBase {
     setModule(module);
   }
 
+  @Override
+  public String getType() {
+    return PersistenceRegistry.OBSOLETE_MODEL_ROOT;
+  }
+
   private IModelRootManager createManager() {
     if (myModelRoot.getManager() != null) {
       String moduleId = myModelRoot.getManager().getModuleId();
       String className = myModelRoot.getManager().getClassName();
       return create(moduleId, className);
     }
-    return new DefaultModelRootManager();
+    return new InvalidModelRootManager(null, null, "no model root manager");
   }
 
   private IModelRootManager getManager() {
@@ -82,13 +94,8 @@ public class SModelRoot extends FolderModelRootBase {
   }
 
   @Override
-  public String getType() {
-    return "default";
-  }
-
-  @Override
   public String getPresentation() {
-    return getPath() + " (" + getManager().getClass().getSimpleName() + ")";
+    return getPath() + " (using " + getManager().getClass().getSimpleName() + ")";
   }
 
   @Override
@@ -135,6 +142,7 @@ public class SModelRoot extends FolderModelRootBase {
     myManager = createManager();
   }
 
+  @Deprecated
   public ModelRootDescriptor toDescriptor() {
     ModelRootDescriptor result = new ModelRootDescriptor(null, new PathAwareJDOMMemento(new Element("modelRoot"), null));
     save(result.getMemento());

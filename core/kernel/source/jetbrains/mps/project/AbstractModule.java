@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
@@ -95,13 +95,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   @Override
-  @Deprecated
-  public final EditableSModelDescriptor createModel(SModelFqName name, SModelRoot root, ModelAdjuster adj) {
-    return createModel(name.toString(), root, adj);
-  }
-
-  @Override
-  public final EditableSModelDescriptor createModel(String name, ModelRoot root, ModelAdjuster adj) {
+  public final EditableSModelDescriptor createModel(String name, @NotNull ModelRoot root, ModelAdjuster adj) {
     if (!root.canCreateModel(name)) {
       LOG.error("Can't create a model " + name + " under model root " + root.getPresentation());
       return null;
@@ -111,16 +105,17 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     if (adj != null) {
       adj.adjust(model);
     }
-    SModelRepository.getInstance().registerModelDescriptor(model, this);
+    model.getSModel();
     model.setChanged(true);
+    model.save();
+
+    ((ModelRootBase) root).register(model);
 
     for (ModelCreationListener listener : ourModelCreationListeners) {
       if (listener.isApplicable(this, model)) {
         listener.onCreate(this, model);
       }
     }
-
-    model.save();
 
     new MissingDependenciesFixer(model).fix(false);
 
@@ -470,11 +465,6 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 //----
 
-  @Deprecated
-  public Collection<SModelRoot> getSModelRoots() {
-    return (Collection) Collections.unmodifiableCollection(mySModelRoots);
-  }
-
   @Override
   public Iterable<ModelRoot> getModelRoots() {
     return Collections.unmodifiableCollection(mySModelRoots);
@@ -739,7 +729,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   @Override
-  public String getOutputFor(SModelDescriptor model) {
+  public String getOutputFor(SModel model) {
     if (SModelStereotype.isTestModel(model)) {
       return getTestsGeneratorOutputPath();
     } else {

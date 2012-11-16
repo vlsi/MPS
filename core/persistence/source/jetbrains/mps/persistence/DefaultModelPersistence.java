@@ -17,86 +17,83 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
-
-import java.io.File;
 
 /**
  * evgeny, 11/9/12
  */
 public class DefaultModelPersistence implements CoreComponent, ModelFactory {
+
+  private static final Logger LOG = Logger.getLogger(DefaultModelPersistence.class);
+
   @Override
   public void init() {
-    PersistenceRegistry.getInstance().setModelFactory("mps", this);
+    PersistenceRegistry.getInstance().setModelFactory(MPSExtentions.MODEL, this);
   }
 
   @Override
   public void dispose() {
-    PersistenceRegistry.getInstance().setModelFactory("mps", null);
+    PersistenceRegistry.getInstance().setModelFactory(MPSExtentions.MODEL, null);
   }
 
+  @Override
+  public SModel load(StreamDataSource dataSource) {
+    if (!(dataSource instanceof FileDataSource)) return null;
+    FileDataSource source = (FileDataSource) dataSource;
+
+    DescriptorLoadResult dr;
+    try {
+      dr = ModelPersistence.loadDescriptor(source.getFile());
+    } catch (ModelReadException ignored) {
+      dr = new DescriptorLoadResult();
+    }
+
+    SModelReference modelReference;
+    assert dr.getUID() != null : "wrong model: " + source.getFile().getPath();
+
+    modelReference = SModelReference.fromString(dr.getUID());
+
+    SModelDescriptor modelDescriptor = getInstance(source, modelReference, dr);
+    LOG.debug("Read model descriptor " + modelDescriptor.getSModelReference() + " from " + source.getFile());
+    return modelDescriptor;
+  }
 
   @Override
-  public boolean canCreate(StreamDataSource dataSource) {
+  public SModel create(String modelName, StreamDataSource dataSource) {
+    if (!(dataSource instanceof FileDataSource)) return null;
+    SModelReference ref = new SModelReference(SModelFqName.fromString(modelName), jetbrains.mps.smodel.SModelId.generate());
+    return new DefaultSModelDescriptor((FileDataSource) dataSource, ref, new DescriptorLoadResult());
+  }
+
+  @Override
+  public boolean canCreate(String modelName, StreamDataSource dataSource) {
     return dataSource instanceof FileDataSource;
   }
 
-  @Override
-  public SModel create(StreamDataSource dataSource) {
-    // TODO
-    return null;
-  }
+  private static SModelDescriptor getInstance(FileDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
+    LOG.debug("Getting model " + modelReference + " from " + source);
 
-  public static IFile createFileForModelUID(SModelRoot root, SModelFqName fqName, boolean languageModel) {
-    String path = root.getPath();
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
+    if (modelDescriptor == null) return new DefaultSModelDescriptor(source, modelReference, d);
 
-    String filenameSuffix = fqName.getLongName();
-    if (languageModel) {
-      filenameSuffix = NameUtil.shortNameFromLongName(filenameSuffix);
-    }
-    if (fqName.hasStereotype()) {
-      filenameSuffix = filenameSuffix + '@' + fqName.getStereotype();
+    //todo rewrite
+    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) modelDescriptor;
+    IFile newFile = dsm.getModelFile();
+    if (!newFile.equals(dsm.getModelFile())) {
+      // file might be not the same if user, for example, moved model file using external file manager
+      ((DefaultSModelDescriptor) modelDescriptor).changeModelFile(newFile);
     }
 
-    return FileSystem.getInstance().getFileByPath(path + File.separator + NameUtil.pathFromNamespace(filenameSuffix) + MPSExtentions.DOT_MODEL);
-  }
-
-  public static FileDataSource createSourceForModelUID(SModelRoot root, SModelFqName fqName, SModule module) {
-    IFile file = createFileForModelUID(root, fqName, isLanguageAspect(root, module, fqName));
-    return new FileDataSource(file, root);
-  }
-
-  public static boolean isLanguageAspect(SModelRoot root, SModule module, SModelFqName modelFqName) {
-    if (!isUnderLanguageModels(module, root)) return false;
-    //prefixed with language namespace
-    if (!NameUtil.namespaceFromLongName(modelFqName.getLongName()).equals(module.getModuleName())) return false;
-    //is aspect model name
-    String name = NameUtil.shortNameFromLongName(modelFqName.getLongName());
-    for (LanguageAspect la : LanguageAspect.values()) {
-      if (la.getName().equals(name)) return true;
-    }
-    return false;
-    //is non-stereotyped (? test models)
-    //if (modelFqName.getStereotype() != null && !modelFqName.getStereotype().equals("")) return false;
-  }
-
-  public static boolean isUnderLanguageModels(SModule module, SModelRoot root) {
-    //in language
-    if (!(module instanceof Language)) return false;
-    //is under languageModels
-    if (!FileSystem.getInstance().getFileByPath(root.getPath()).getName().equals(Language.LANGUAGE_MODELS))
-      return false;
-    return true;
+    //todo modelRepository.registerModelDescriptor(modelDescriptor);
+    return modelDescriptor;
   }
 }

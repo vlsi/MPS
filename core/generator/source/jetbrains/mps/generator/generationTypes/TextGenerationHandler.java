@@ -19,12 +19,15 @@ import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.textGen.TextGenerationUtil;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.File;
 import java.util.List;
@@ -34,7 +37,7 @@ import java.util.List;
  */
 public class TextGenerationHandler extends GenerationHandlerBase {
   @Override
-  public boolean canHandle(SModelDescriptor inputModel) {
+  public boolean canHandle(SModel inputModel) {
     return SModelStereotype.isUserModel(inputModel);
   }
 
@@ -44,9 +47,10 @@ public class TextGenerationHandler extends GenerationHandlerBase {
     info("generating text");
   }
 
-  public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext ocontext, ProgressMonitor progressMonitor) {
-    String targetDir = module.getOutputFor(inputModel);
-    SModel outputModel = status.getOutputModel();
+  @Override
+  public boolean handleOutput(SModule module, SModel inputModel, GenerationStatus status, IOperationContext ocontext, ProgressMonitor progressMonitor) {
+    String targetDir = ((IModule) module).getOutputFor(inputModel);
+    jetbrains.mps.smodel.SModel outputModel = status.getOutputModel();
     if (outputModel == null) return true;
     boolean generatedOk = true;
     // generate files
@@ -74,7 +78,7 @@ public class TextGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public void startModule(IModule module, List<SModelDescriptor> inputModels, IOperationContext operationContext) {
+  public void startModule(SModule module, List<SModel> inputModels, IOperationContext operationContext) {
     String message = "module " + module;
     info(message);
   }
@@ -82,11 +86,6 @@ public class TextGenerationHandler extends GenerationHandlerBase {
   @Override
   public int estimateCompilationMillis() {
     return 0;
-  }
-
-  @Override
-  public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ProgressMonitor progressMonitor) {
-    return true;
   }
 
   @Override

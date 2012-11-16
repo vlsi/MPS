@@ -908,6 +908,7 @@ public class ASTConverter {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
     SLinkOperations.setTarget(result, "localVariableDeclaration", decl, true);
 
+    SPropertyOperations.set(decl, "isFinal", "" + (flagSet(x.modifiers, ClassFileConstants.AccFinal)));
     SLinkOperations.setTarget(decl, "type", convertTypeRef(x.type), true);
     SPropertyOperations.set(decl, "name", new String(x.name));
     SLinkOperations.setTarget(decl, "initializer", convertExpressionRefl(x.initialization), true);
@@ -1445,7 +1446,8 @@ public class ASTConverter {
   }
 
   /*package*/ SNode convertExpression(SuperReference x) throws JavaParseException {
-    throw new JavaParseException("we have no super-references; this case should be analyzed as method call");
+    // <node> 
+    return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null);
   }
 
   /*package*/ SNode convertExpression(ThisReference x) {
@@ -1565,7 +1567,7 @@ public class ASTConverter {
         SNode instCall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null);
         SLinkOperations.setTarget(dotExpr, "operation", instCall, true);
 
-        SReference sref = new DynamicReference("instanceMethodDeclaration", instCall, null, methodName);
+        SReference sref = new DynamicReference("baseMethodDeclaration", instCall, null, methodName);
         instCall.addReference(sref);
 
         result = dotExpr;

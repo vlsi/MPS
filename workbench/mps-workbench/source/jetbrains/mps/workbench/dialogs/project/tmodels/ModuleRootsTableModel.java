@@ -18,27 +18,31 @@ package jetbrains.mps.workbench.dialogs.project.tmodels;
 import com.intellij.util.ui.ItemRemovable;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.misc.hash.HashSet;
+import jetbrains.mps.workbench.dialogs.project.PropertiesBundle;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 public class ModuleRootsTableModel extends AbstractTableModel implements ItemRemovable {
   private List<ModelRootDescriptor> myTableItems = new ArrayList<ModelRootDescriptor>();
   private ModuleDescriptor myModuleDescriptor;
 
   public static final int PATH_COLUMN = 0;
+  public static final String PATH_COLUMN_NAME = PropertiesBundle.message("mps.properties.configurable.tablemodel.modelroots.column.item");
 
   public ModuleRootsTableModel(ModuleDescriptor moduleDescriptor){
     myModuleDescriptor = moduleDescriptor;
 
-    for (ModelRootDescriptor modelRoot : moduleDescriptor.getModelRootDescriptors()) {
-      myTableItems.add(modelRoot);
-    }
-
+    for (ModelRootDescriptor modelRoot : moduleDescriptor.getModelRootDescriptors())
+      if(modelRoot.getRoot() != null)
+        myTableItems.add(modelRoot);
   }
 
   @Override
@@ -66,7 +70,7 @@ public class ModuleRootsTableModel extends AbstractTableModel implements ItemRem
   @Override
   public String getColumnName(int column) {
     if(column == PATH_COLUMN)
-      return "model root path";
+      return PATH_COLUMN_NAME;
     return super.getColumnName(column);
   }
 
@@ -91,14 +95,24 @@ public class ModuleRootsTableModel extends AbstractTableModel implements ItemRem
   }
 
   public boolean isModified() {
+    Set<ModelRootDescriptor> oldSet = new HashSet<ModelRootDescriptor>();
+    for(ModelRootDescriptor descriptor : myModuleDescriptor.getModelRootDescriptors())
+      if(descriptor.getRoot() != null)
+        oldSet.add(descriptor);
     return !(
-      myModuleDescriptor.getModelRootDescriptors().containsAll(myTableItems)
-        && myTableItems.containsAll(myModuleDescriptor.getModelRootDescriptors())
+      oldSet.containsAll(myTableItems)
+        && myTableItems.containsAll(oldSet)
     );
   }
 
   public void apply() {
-    myModuleDescriptor.getModelRootDescriptors().clear();
+    Iterator<ModelRootDescriptor> it = myModuleDescriptor.getModelRootDescriptors().iterator();
+    do {
+      ModelRootDescriptor descriptor = it.next();
+      if(descriptor.getRoot() != null)
+        it.remove();
+    } while(it.hasNext());
+
     myModuleDescriptor.getModelRootDescriptors().addAll(myTableItems);
   }
 }

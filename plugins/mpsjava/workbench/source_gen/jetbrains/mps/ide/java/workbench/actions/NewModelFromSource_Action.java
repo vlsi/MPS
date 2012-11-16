@@ -104,7 +104,7 @@ public class NewModelFromSource_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      if (((IModule) MapSequence.fromMap(_params).get("module")).getSModelRoots().size() == 0) {
+      if (!(((IModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
         int code = JOptionPane.showConfirmDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "There are no model roots. Do you want to create one?", "", JOptionPane.YES_NO_OPTION);
         if (code != JOptionPane.YES_OPTION) {
           return;
@@ -112,7 +112,7 @@ public class NewModelFromSource_Action extends BaseAction {
           NewModelUtil.ShowModulePropertiesDialog(((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
         }
       }
-      if (((IModule) MapSequence.fromMap(_params).get("module")).getSModelRoots().size() == 0) {
+      if (!(((IModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't create a model in solution with no model roots", "Can't create model", JOptionPane.ERROR_MESSAGE);
         return;
       }

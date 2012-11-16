@@ -49,25 +49,28 @@ public abstract class MigrationScriptsController {
 
   public void process(final ProgressMonitor pmonitor, final Collection<SearchResult<SNode>> searchResults) {
     pmonitor.start("", searchResults.size());
-    for (SearchResult<SNode> seachResult : searchResults) {
+    for (final SearchResult<SNode> seachResult : searchResults) {
       runCommand(new Runnable() {
         public void run() {
           pmonitor.advance(1);
         }
       });
-      final SNode node = seachResult.getObject();
-      // still alive? 
-      if (node != null && node.getModel() != null) {
-        // still applicable? 
-        final AbstractMigrationRefactoring migrationRefactoring = myFinder.getRefactoring(seachResult);
-        runCommand(new Runnable() {
-          public void run() {
-            if (MigrationScriptUtil.isApplicableRefactoring(node, migrationRefactoring)) {
-              MigrationScriptUtil.performRefactoring(node, migrationRefactoring);
-            }
+      runCommand(new Runnable() {
+        public void run() {
+          final SNode node = seachResult.getObject();
+          if (node == null || node.getModel() == null) {
+            return;
           }
-        });
-      }
+
+          final AbstractMigrationRefactoring migrationRefactoring = myFinder.getRefactoring(seachResult);
+          if (!(MigrationScriptUtil.isApplicableRefactoring(node, migrationRefactoring))) {
+            return;
+          }
+
+          MigrationScriptUtil.performRefactoring(node, migrationRefactoring);
+        }
+      });
+
     }
     runCommand(new Runnable() {
       public void run() {

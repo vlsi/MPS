@@ -33,7 +33,9 @@ public enum ActionPlace {
   PROJECT_PANE_ACCESSORIES("MPS_ProjectPane_Accessories"),
   PROJECT_PANE_FILE("MPS_ProjectPane_File"),
   PROJECT_PANE_FOLDER("MPS_ProjectPane_Folder"),
-  PROJECT_PANE("MPS_ProjectPane");
+  PROJECT_PANE("MPS_ProjectPane"),
+
+  MODULE_DEPENDENCIES("MPS_Module_Dependencies");
 
   private String myId = "";
 

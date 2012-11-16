@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel;
 
+import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -22,6 +23,7 @@ import jetbrains.mps.smodel.ModelRootUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,8 +51,16 @@ public class CloneModelProperties {
     myLanguagesInGeneration = new ArrayList<ModuleReference>();
   }
 
+  /**
+   * use getModelName (which includes stereotype)
+   */
+  @Deprecated
   public String getLongName() {
     return myLongName;
+  }
+
+  public String getModelName() {
+    return myLongName + (myStereotype != null && myStereotype.length() > 0 ? "@" + myStereotype : "");
   }
 
   public void setLongName(String longName) {
@@ -101,10 +111,10 @@ public class CloneModelProperties {
     myLongName = model.getLongName();
 
     myStereotype = model.getStereotype();
-    SModelRoot modelRoot = ModelRootUtil.getSModelRoot(model.getModelDescriptor());
-    if (modelRoot != null) {
+    ModelRoot modelRoot = ModelRootUtil.getModelRoot(model.getModelDescriptor());
+    if (modelRoot instanceof FolderModelRootBase) {
       myRoot = new RootReference();
-      myRoot.setPath(modelRoot.getPath());
+      myRoot.setPath(((FolderModelRootBase)modelRoot).getPath());
     }
 
     myImportedLanguages.addAll(model.importedLanguages());
