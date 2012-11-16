@@ -64,7 +64,7 @@ public class MoveNodes extends BaseLoggableRefactoring {
             }
           });
           for (SNode node : refactoringContext.getSelectedNodes()) {
-            String childRole = node.getRole();
+            String childRole = node.getRoleInParent();
             if (!(Sequence.fromIterable(childLinksRoles).contains(childRole))) {
               return;
             }
@@ -100,7 +100,7 @@ public class MoveNodes extends BaseLoggableRefactoring {
     }
     if (((Object) refactoringContext.getParameter("target")) instanceof SNode) {
       SNode targetNode = (SNode) ((Object) refactoringContext.getParameter("target"));
-      movedNodes = refactoringContext.moveNodesToNode(nodes, ListSequence.fromList(nodes).first().getRole(), targetNode);
+      movedNodes = refactoringContext.moveNodesToNode(nodes, ListSequence.fromList(nodes).first().getRoleInParent(), targetNode);
       targetModel = SNodeOperations.getModel(targetNode);
     }
     if (targetModel != null) {

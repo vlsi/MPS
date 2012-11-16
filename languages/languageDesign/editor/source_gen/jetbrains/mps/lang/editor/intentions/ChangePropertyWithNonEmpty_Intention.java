@@ -86,7 +86,7 @@ public class ChangePropertyWithNonEmpty_Intention implements IntentionFactory {
       SLinkOperations.setTarget(nonEmpty, "relationDeclaration", SLinkOperations.getTarget(node, "relationDeclaration", false), false);
       SLinkOperations.setTarget(node, "relationDeclaration", null, false);
       for (SNode child : ListSequence.fromList(jetbrains.mps.util.SNodeOperations.getChildren(node))) {
-        String role = child.getRole();
+        String role = child.getRoleInParent();
         node.removeChild(child);
         nonEmpty.addChild(role, child);
       }

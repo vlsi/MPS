@@ -77,7 +77,7 @@ public class MPSPlugin {
 
   private IMPSPlugin getPlugin() {
     try {
-      myPlugin = (IMPSPlugin) Naming.lookup("//localhost:2391/MPSPlugin");
+      myPlugin = (IMPSPlugin) Naming.lookup("//localhost:2390/MPSPlugin");
     } catch (Exception e) {
       if (!(myMessageShown)) {
         myMessageShown = true;

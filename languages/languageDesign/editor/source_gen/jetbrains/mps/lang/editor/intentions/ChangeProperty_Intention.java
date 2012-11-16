@@ -78,7 +78,7 @@ public class ChangeProperty_Intention implements IntentionFactory {
       SLinkOperations.setTarget(transactional, "property", SLinkOperations.getTarget(node, "relationDeclaration", false), false);
       SLinkOperations.setTarget(node, "relationDeclaration", null, false);
       for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
-        String role = child.getRole();
+        String role = child.getRoleInParent();
         node.removeChild(child);
         transactional.addChild(role, child);
       }

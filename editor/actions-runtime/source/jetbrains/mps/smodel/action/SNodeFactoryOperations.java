@@ -113,7 +113,7 @@ public class SNodeFactoryOperations {
 
   private static void copyAllAttributes(SNode oldChild, SNode newChild) {
     for (SNode attribute : AttributeOperations.getAllAttributes(oldChild)) {
-      String role = attribute.getRole();
+      String role = attribute.getRoleInParent();
       if (AttributesRolesUtil.isPropertyAttributeRole(role)) {
         String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(role);
         if (SModelSearchUtil.findPropertyDeclaration(newChild.getConceptDeclarationNode(), propertyName) == null) {
@@ -141,7 +141,7 @@ public class SNodeFactoryOperations {
     SNode parent = node.getParent();
     SNode newChild = NodeFactoryManager.createNode(conceptFQName, null, parent, node.getModel());
     if (newChild == null) return null;
-    String role = node.getRole();
+    String role = node.getRoleInParent();
     assert parent != null && role != null;
     parent.insertChild(role, newChild, node);
     return newChild;
@@ -153,7 +153,7 @@ public class SNodeFactoryOperations {
     if (parent == null) return null;
     SNode newChild = NodeFactoryManager.createNode(conceptFqName, null, parent, node.getModel());
     if (newChild == null) return null;
-    String role = node.getRole();
+    String role = node.getRoleInParent();
     assert role != null;
     parent.insertChild(role, newChild, parent.getPrevChild(node));
     return newChild;
