@@ -236,6 +236,10 @@ public class DebugInfo {
     });
   }
 
+  /*package*/ Iterable<DebugInfoRoot> getRoots() {
+    return MapSequence.fromMap(myRoots).values();
+  }
+
   public Element toXml() {
     Element element = new Element(DebugInfo.DEBUG_INFO);
     if (myRoots != null) {
@@ -246,7 +250,7 @@ public class DebugInfo {
       }, true);
       for (Tuples._2<String, String> id : sorted) {
         DebugInfoRoot dir = MapSequence.fromMap(myRoots).get(id);
-        if (isEmpty_exfyrk_a0b0b0b0r(id._0())) {
+        if (isEmpty_exfyrk_a0b0b0b0s(id._0())) {
           dir.toXml(element);
         } else {
           Element e = new Element(DebugInfo.ROOT);
@@ -343,7 +347,7 @@ public class DebugInfo {
     );
   }
 
-  public static boolean isEmpty_exfyrk_a0b0b0b0r(String str) {
+  public static boolean isEmpty_exfyrk_a0b0b0b0s(String str) {
     return str == null || str.length() == 0;
   }
 

@@ -117,16 +117,14 @@ public class TextGenerator {
     // we get debug info for them from cache
     DebugInfo cachedDebugInfo = TraceInfoCache.getInstance().getLastGeneratedDebugInfo(sourceStatus.getOriginalInputModel());
     if (cachedDebugInfo != null) {
-      List<SNodePointer> unchangedRoots = new ArrayList<SNodePointer>();
+      List<String> unchangedFiles = new ArrayList<String>();
       String inputModelUid = sourceStatus.getOriginalInputModel().getSModelReference().toString();
 
       for (GenerationRootDependencies dependency : unchangedDependencies) {
-        String rootId = dependency.getRootId();
-        if (rootId == null) continue;
-        unchangedRoots.add(new SNodePointer(inputModelUid, rootId));
+        unchangedFiles.addAll(dependency.getFiles());
       }
 
-      DebugInfoBuilder.completeDebugInfoFromCache(cachedDebugInfo, generatedDebugInfo, unchangedRoots);
+      DebugInfoBuilder.completeDebugInfoFromCache(cachedDebugInfo, generatedDebugInfo, unchangedFiles);
     }
 
     sourceStatus.setDebugInfo(generatedDebugInfo);
