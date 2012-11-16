@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2dzzgfr3hpvrmoo9hp071h4a6i4qpo0">
+<dependencies version="2" modelHash="eqjmclonbaferhdiznxy2f7osww2u63">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.navigation(MPS.Editor/jetbrains.mps.openapi.navigation@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
@@ -43,7 +43,7 @@
     <dep root="8632185942131072152" />
     <dep root="8632185942131072990" />
   </common>
-  <source id="8632185942131070856" name="MPSPlugin" hash="a05ap7snnil49ci8ed4vnqxbldr40f1">
+  <source id="8632185942131070856" name="MPSPlugin" hash="el4121mzwm0ywbl0sxog0dpj4c4b58l">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MPSPlugin.java" />
   </source>
