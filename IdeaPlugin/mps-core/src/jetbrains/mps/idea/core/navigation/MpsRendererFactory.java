@@ -18,18 +18,12 @@ package jetbrains.mps.idea.core.navigation;
 
 import com.intellij.ide.util.ModuleRendererFactory;
 import com.intellij.ide.util.PlatformModuleRendererFactory.PlatformModuleRenderer;
-import com.intellij.navigation.ItemPresentation;
-import com.intellij.navigation.NavigationItem;
-import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.idea.core.icons.MPSIcons;
-import jetbrains.mps.nodeEditor.icons.Icons;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.workbench.choose.nodes.BaseNodeItem;
+import jetbrains.mps.workbench.choose.nodes.BaseNodePointerItem;
 
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.JList;
@@ -39,7 +33,7 @@ public class MpsRendererFactory extends ModuleRendererFactory {
 
   @Override
   protected boolean handles(Object element) {
-    return element instanceof BaseNodeItem;
+    return element instanceof BaseNodePointerItem;
   }
 
   @Override
@@ -59,14 +53,9 @@ public class MpsRendererFactory extends ModuleRendererFactory {
                                                   final boolean isSelected,
                                                   final boolean cellHasFocus) {
       final Component component = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-      if (value instanceof BaseNodeItem) {
-        final BaseNodeItem item = (BaseNodeItem) value;
-        IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
-          @Override
-          public IModule compute() {
-            return item.getNode().getModel().getModelDescriptor().getModule();
-          }
-        });
+      if (value instanceof BaseNodePointerItem) {
+        final BaseNodePointerItem item = (BaseNodePointerItem) value;
+        IModule module = item.getNodePointer().getModel().getModule();
         if (module instanceof Solution) {
           setIcon(FileIcons.SOLUTION_ICON);
         } else if (module instanceof Language) {

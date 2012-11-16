@@ -19,15 +19,11 @@ package jetbrains.mps.workbench.actions.goTo;
 import com.intellij.navigation.GotoClassContributor;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
-import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
-import jetbrains.mps.workbench.choose.nodes.NodePresentation;
+import jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel;
+import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,10 +37,10 @@ public class GoToClassMPSContributor implements GotoClassContributor {
     return createModel(project).getElementsByName(name, includeNonProjectItems, pattern);
   }
 
-  private BaseNodeModel createModel(final Project project) {
-    return new BaseNodeModel(project, "root") {
-      public SNode[] find(IScope scope) {
-        final List<SNode> nodes = new ArrayList<SNode>();
+  private BaseNodePointerModel createModel(final Project project) {
+    return new BaseNodePointerModel(project, "root") {
+      public SNodePointer[] find(IScope scope) {
+        final List<SNodePointer> nodes = new ArrayList<SNodePointer>();
         Iterable<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
 
         Condition<SNode> cond = new Condition<SNode>() {
@@ -58,9 +54,11 @@ public class GoToClassMPSContributor implements GotoClassContributor {
           if (!SModelStereotype.isUserModel(modelDescriptor)) continue;
 
           Iterable<SNode> iter = new ConditionalIterable<SNode>(modelDescriptor.getSModel().roots(), cond);
-          nodes.addAll(IterableUtil.asCollection(iter));
+          for (SNode node : iter){
+            nodes.add(new SNodePointer(node));
+          }
         }
-        return nodes.toArray(new SNode[nodes.size()]);
+        return nodes.toArray(new SNodePointer[nodes.size()]);
       }
 
       public boolean willOpenEditor() {
@@ -71,11 +69,11 @@ public class GoToClassMPSContributor implements GotoClassContributor {
 
   @Override
   public String getQualifiedName(NavigationItem item) {
-    return (item.getPresentation() instanceof NodePresentation) ? createModel(null).doGetFullName(item) : null;
+    return (item.getPresentation() instanceof NodePointerPresentation) ? createModel(null).doGetFullName(item) : null;
   }
 
   @Override
   public String getQualifiedNameSeparator() {
-    return BaseNodeModel.SEPARATOR;
+    return BaseNodePointerModel.SEPARATOR;
   }
 }
