@@ -9,6 +9,9 @@ import javax.swing.JLabel;
 import javax.swing.Action;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.project.Project;
+import javax.swing.AbstractAction;
+import java.awt.event.ActionEvent;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import java.awt.GridBagLayout;
@@ -17,20 +20,31 @@ import java.awt.Insets;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.ModelAccess;
-import javax.swing.AbstractAction;
-import java.awt.event.ActionEvent;
 
 public class ConceptPropertiesMigrationDialog extends DialogWrapper {
   private MPSProject mpsProject;
   private JPanel myPanel;
   protected JLabel myLabel = new JLabel();
   private Action myMigrateAction;
+  private Action myNextAction;
   private _FunctionTypes._void_P0_E0 action;
+  private _FunctionTypes._void_P0_E0 nextAction;
 
   public ConceptPropertiesMigrationDialog(Project project, MPSProject mpsProject) {
     super(project);
     this.mpsProject = mpsProject;
+    myNextAction = new AbstractAction() {
+      public void actionPerformed(ActionEvent p0) {
+        ConceptPropertiesMigrationDialog.this.close(OK_EXIT_CODE);
+        ModelAccess.instance().runReadInEDT(new Runnable() {
+          public void run() {
+            ConceptPropertiesMigrationDialog.this.nextAction.invoke();
+          }
+        });
+      }
+    };
+    myNextAction.putValue(Action.NAME, "Next Step");
+
     init();
     setResizable(false);
     setTitle("Get rid of concept properties");
@@ -53,6 +67,10 @@ public class ConceptPropertiesMigrationDialog extends DialogWrapper {
     this.action = action;
   }
 
+  public void setNextAction(_FunctionTypes._void_P0_E0 action) {
+    this.nextAction = action;
+  }
+
   public void setText(String labelText) {
     myLabel.setText(labelText);
   }
@@ -61,6 +79,7 @@ public class ConceptPropertiesMigrationDialog extends DialogWrapper {
     List<Action> actions = ListSequence.fromList(new ArrayList<Action>());
     ListSequence.fromList(actions).addElement(getCancelAction());
     ListSequence.fromList(actions).addElement(myMigrateAction);
+    ListSequence.fromList(actions).addElement(myNextAction);
     return ListSequence.fromList(actions).toGenericArray(Action.class);
   }
 

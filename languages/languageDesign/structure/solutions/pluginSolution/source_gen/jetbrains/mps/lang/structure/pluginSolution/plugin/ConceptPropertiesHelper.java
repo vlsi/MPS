@@ -89,6 +89,12 @@ public class ConceptPropertiesHelper {
       return;
     }
     final ConceptPropertiesMigrationDialog dialog = new ConceptPropertiesMigrationDialog(ideaProject, project);
+    dialog.setNextAction(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        step++;
+        migrateNextStep();
+      }
+    });
     switch (step) {
       case 1:
         dialog.setAction(new _FunctionTypes._void_P0_E0() {
@@ -104,7 +110,6 @@ public class ConceptPropertiesHelper {
           }
         });
         break;
-      case 3:
       default:
         return;
     }
