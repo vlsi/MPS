@@ -118,7 +118,6 @@ public class TextGenerator {
     DebugInfo cachedDebugInfo = TraceInfoCache.getInstance().getLastGeneratedDebugInfo(sourceStatus.getOriginalInputModel());
     if (cachedDebugInfo != null) {
       List<String> unchangedFiles = new ArrayList<String>();
-      String inputModelUid = sourceStatus.getOriginalInputModel().getSModelReference().toString();
 
       for (GenerationRootDependencies dependency : unchangedDependencies) {
         unchangedFiles.addAll(dependency.getFiles());

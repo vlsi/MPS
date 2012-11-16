@@ -9,9 +9,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.uiLanguage.runtime.events.Events;
 
-public class ModuleChooserComponent extends JPanel {
-  public ModuleChooserComponent myThis;
-  private String myText;
+public class ListPanel_Component extends JPanel {
+  public ListPanel_Component myThis;
   public List<AutoBinding> myBindings = ListSequence.fromList(new ArrayList<AutoBinding>());
   private Events myEvents = new Events(null) {
     {
@@ -21,9 +20,9 @@ public class ModuleChooserComponent extends JPanel {
     }
   };
 
-  public ModuleChooserComponent() {
+  public ListPanel_Component() {
     this.myThis = this;
-    ModuleChooserComponent component = this;
+    ListPanel_Component component = this;
     this.myEvents.initialize();
   }
 
@@ -50,15 +49,5 @@ public class ModuleChooserComponent extends JPanel {
         binding.unbind();
       }
     }
-  }
-
-  public String getText() {
-    return this.myText;
-  }
-
-  public void setText(String newValue) {
-    String oldValue = this.myText;
-    this.myText = newValue;
-    this.firePropertyChange("text", oldValue, newValue);
   }
 }
