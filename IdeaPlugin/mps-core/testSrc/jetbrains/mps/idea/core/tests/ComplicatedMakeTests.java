@@ -24,11 +24,13 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.make.MPSCompiler2;
 import jetbrains.mps.idea.core.make.MPSCompilerPaths;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ComplicatedMakeTests extends AbstractMakeTest {
 
@@ -41,9 +43,9 @@ public class ComplicatedMakeTests extends AbstractMakeTest {
     final IFile dataModel = copyResource("models", "data.mps", "data.mps", "/tests/makeTests/models/data.mps");
     final IFile code2Model = copyResource("models", "code2.mps", "code2.mps", "/tests/makeTests/models/code2.mps");
     final IFile data2Model = copyResource("models", "data2.mps", "data2.mps", "/tests/makeTests/models/data2.mps");
-    ArrayList<ModelRoot> roots = new ArrayList<ModelRoot>();
-    roots.add(new ModelRoot(codeModel.getParent().getPath()));
-    configuration.getState().setModelRoots(roots);
+    DefaultModelRoot root = new DefaultModelRoot();
+    root.setPath(codeModel.getParent().getPath());
+    configuration.getState().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));
     prepareTestData(configuration, codeModel.getParent());
   }
 

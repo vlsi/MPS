@@ -25,12 +25,14 @@ import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.make.*;
 import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
 import jetbrains.mps.library.contributor.PluginLibrariesContributor;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
@@ -42,9 +44,9 @@ public class MainMakeTests extends AbstractMakeTest {
     copyResource(moduleFileName, "blProject.iml", "/tests/blProject/blProject.iml");
     final IFile model = copyResource("models", "main.mps", "main.mps", "/tests/blProject/models/main.mps");
     final IFile source = model.getParent();
-    ArrayList<ModelRoot> roots = new ArrayList<ModelRoot>();
-    roots.add(new ModelRoot(model.getParent().getPath()));
-    configuration.getState().setModelRoots(roots);
+    DefaultModelRoot e = new DefaultModelRoot();
+    e.setPath(model.getParent().getPath());
+    configuration.getState().setModelRoots(Arrays.<ModelRoot>asList(e));
     prepareTestData(configuration, source);
   }
 
@@ -65,7 +67,7 @@ public class MainMakeTests extends AbstractMakeTest {
     MPSMakeConfiguration makeConfiguration = new MPSMakeConfiguration();
     makeConfiguration.addConfiguredModels(modelsToMake);
     makeConfiguration.addConfiguredLibrary(myModule.getProject().getName(),
-        new File(myModule.getProject().getBaseDir().getPath()), false);
+      new File(myModule.getProject().getBaseDir().getPath()), false);
 
     PluginLibrariesContributor pluginLibContributor = ApplicationManager.getApplication().getComponent(PluginLibrariesContributor.class);
     for (LibDescriptor library : pluginLibContributor.getLibraries()) {

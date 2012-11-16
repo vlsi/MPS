@@ -31,14 +31,15 @@ import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
 import java.util.*;
@@ -109,21 +110,21 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
 
     String modelRootPath = modelRootDir.getPath();
     MPSConfigurationBean configurationBean = myFacet.getConfiguration().getState();
-    ArrayList<ModelRoot> roots = new ArrayList<ModelRoot>();
-    roots.add(new ModelRoot(modelRootPath));
-    configurationBean.setModelRoots(roots);
+    DefaultModelRoot root = new DefaultModelRoot();
+    root.setPath(modelRootPath);
+    configurationBean.setModelRoots(Arrays.<ModelRoot>asList(root));
     myFacet.setConfiguration(configurationBean);
     flushEDT();
 
     Solution repositorySolution = ModuleRepositoryFacade.getInstance().getModule(solutionReference, Solution.class);
     assertEquals(myFacet.getSolution(), repositorySolution);
-    Iterable<org.jetbrains.mps.openapi.persistence.ModelRoot> modelRoots = repositorySolution.getModelRoots();
+    Iterable<ModelRoot> modelRoots = repositorySolution.getModelRoots();
 
-    Iterator<org.jetbrains.mps.openapi.persistence.ModelRoot> iterator = modelRoots.iterator();
+    Iterator<ModelRoot> iterator = modelRoots.iterator();
     assertTrue(iterator.hasNext());
-    org.jetbrains.mps.openapi.persistence.ModelRoot theModelRoot = iterator.next();
+    ModelRoot theModelRoot = iterator.next();
     assertFalse(iterator.hasNext());
-    assertEquals(modelRootDir.getPath(), ((FolderModelRootBase)theModelRoot).getPath());
+    assertEquals(modelRootDir.getPath(), ((FolderModelRootBase) theModelRoot).getPath());
 
     configurationBean = myFacet.getConfiguration().getState();
     configurationBean.setModelRoots(new ArrayList<ModelRoot>());

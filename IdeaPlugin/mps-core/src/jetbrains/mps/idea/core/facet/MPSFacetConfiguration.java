@@ -58,6 +58,7 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
     // ignore
   }
 
+  @NotNull
   public MPSConfigurationBean getState() {
     return myConfigurationBean;
   }

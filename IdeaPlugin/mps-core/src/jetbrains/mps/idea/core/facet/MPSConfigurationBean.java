@@ -18,11 +18,13 @@ package jetbrains.mps.idea.core.facet;
 
 import com.intellij.util.xmlb.annotations.Transient;
 import jetbrains.mps.persistence.PathAwareJDOMMemento;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import org.jdom.Element;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -83,17 +85,19 @@ public class MPSConfigurationBean {
   public Collection<ModelRoot> getModelRoots() {
     List<ModelRoot> roots = new ArrayList<ModelRoot>();
     for (ModelRootDescriptor modelRootDescriptor : myDescriptor.getModelRootDescriptors()) {
-      ModelRoot root = modelRootDescriptor.getRoot();
-      if (root != null) {
-        roots.add(root);
-      }
+      ModelRootFactory factory = PersistenceRegistry.getInstance().getModelRootFactory(modelRootDescriptor.getType());
+      if (factory == null) continue;
+      ModelRoot root = factory.create();
+      if (root == null) continue;
+      root.load(modelRootDescriptor.getMemento());
+      roots.add(root);
     }
     return roots;
   }
 
-  public void setModelRoots(Collection<ModelRoot> paths) {
+  public void setModelRoots(Collection<ModelRoot> roots) {
     myDescriptor.getModelRootDescriptors().clear();
-    for (ModelRoot path : paths) {
+    for (ModelRoot path : roots) {
       ModelRootDescriptor descr = new ModelRootDescriptor(null, new PathAwareJDOMMemento(new Element("modelRoot"), null));
       path.save(descr.getMemento());
       myDescriptor.getModelRootDescriptors().add(descr);

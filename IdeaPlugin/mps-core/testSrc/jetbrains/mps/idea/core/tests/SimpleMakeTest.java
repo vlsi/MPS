@@ -24,17 +24,14 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.make.MPSCompiler2;
 import jetbrains.mps.idea.core.make.MPSCompilerPaths;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
- * Created by IntelliJ IDEA.
  * User: fyodor
- * Date: 2/15/12
- * Time: 10:36 AM
- * To change this template use File | Settings | File Templates.
  */
 public class SimpleMakeTest extends AbstractMakeTest {
 
@@ -43,9 +40,9 @@ public class SimpleMakeTest extends AbstractMakeTest {
     String moduleFileName = configuration.getFacet().getModule().getModuleFilePath();
     copyResource(moduleFileName, "simple.iml", "/tests/simple/simple.iml");
     final IFile model = copyResource("models", "simple.mps", "simple.mps", "/tests/simple/models/simple.mps");
-    ArrayList<ModelRoot> roots = new ArrayList<ModelRoot>();
-    roots.add(new ModelRoot(model.getParent().getPath()));
-    configuration.getState().setModelRoots(roots);
+    DefaultModelRoot defaultModelRoot = new DefaultModelRoot();
+    defaultModelRoot.setPath(model.getParent().getPath());
+    configuration.getState().setModelRoots(Arrays.<ModelRoot>asList(defaultModelRoot));
     prepareTestData(configuration, model.getParent());
   }
 
