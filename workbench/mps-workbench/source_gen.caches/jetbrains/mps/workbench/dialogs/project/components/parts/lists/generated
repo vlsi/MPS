@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-5ur20djfni6i2kzdisbhdjctkek2664">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-40jj815fe1rn0p1bhi0382dg47350y2" />
+  <common hash="-2vz9g5llfwxgtw8lo2w48x414pojf9f" />
+  <source id="1560298786499489584" name="SortedList" hash="d8zyw8ufqk90n26mu483avlzygsdv67">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="SortedList.java" />
+  </source>
+  <source id="1560298786499493498" name="ListsFactory" hash="dxltkuf9coor10by5xnmie28gdxneji">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ListsFactory.java" />
+  </source>
+</dependencies>
+

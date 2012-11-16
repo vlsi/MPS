@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-v01qrkic4whbqqp9vsyg0clnbor6by">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-40jj815fe1rn0p1bhi0382dg47350y2" />
+  <common hash="th874tzqmyules596nwk57nqsulzcw" />
+  <source id="5231630840089786268" name="TypesystemChecker" hash="eca68yud0d9sgvh64gqefefu85vs4n">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="TypesystemChecker.java" />
+  </source>
+  <source id="3364928926666865010" name="TypesystemCheckerComponent" hash="-ci686su81hslbpodblol1ktv8jot71h">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="TypesystemCheckerComponent.java" />
+  </source>
+</dependencies>
+

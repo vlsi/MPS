@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-kz2chpnt3lljf3e6on1bj41t3wo6ib">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-40jj815fe1rn0p1bhi0382dg47350y2" />
+  <common hash="c5qmg4krw7uvunelb10ehu9hkbdbxp4" />
+  <source id="8984393347190225578" name="DifferanceItem" hash="5h35x5n0hs20o578f2gg10rvrauz0iw">
+    <file name="DifferanceItem.java" />
+  </source>
+  <source id="8984393347190225584" name="NodeDifference" hash="8afflzhk37v8ges8xp7fjazacnybbd3">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="NodeDifference.java" />
+  </source>
+  <source id="8984393347190227556" name="NodesMatcher" hash="3v43q1jrqfinybi0slvqo2fjtx9wilg">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="NodesMatcher.java" />
+  </source>
+  <source id="8984393347190228267" name="PropertyDifferense" hash="-3xsye8943lh7pkha57hbnaqnv6x6non">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="PropertyDifferense.java" />
+  </source>
+  <source id="8984393347190228335" name="ReferenceDifferense" hash="-3o63lspce43qfcq69z9g5agfs5s4lb5">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ReferenceDifferense.java" />
+  </source>
+  <source id="8984393347190228418" name="ConceptDifference" hash="21vlcscgrm1w6taiupxxhsg8ihw3ngs">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ConceptDifference.java" />
+  </source>
+  <source id="8984393347190228497" name="ChildrenCountDifference" hash="-18vrcxvfxj6ysosbsyk3hwjkjusppu3">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ChildrenCountDifference.java" />
+  </source>
+</dependencies>
+

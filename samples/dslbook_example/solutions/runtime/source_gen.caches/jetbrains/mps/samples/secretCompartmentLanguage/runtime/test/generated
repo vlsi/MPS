@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="73yzokur13o12mwmf6qppta6ps004u8">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-40jj815fe1rn0p1bhi0382dg47350y2" />
+  <common hash="-4rkarnjomm181pv2k78bvwj1y5daamm" />
+  <source id="6877931680625740364" name="Test" hash="-1x6yy217g82p2c78ov2s816aixj5zir">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="Test.java" />
+  </source>
+  <source id="6877931680625741277" name="HStateMachineFactory" hash="-4qengf3661rm8ogor67onsp0ndb97r1">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="HStateMachineFactory.java" />
+  </source>
+</dependencies>
+

@@ -1,0 +1,1142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-40jj815fe1rn0p1bhi0382dg47350y2">
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-x1ogwyd9mt21udwfewospcds8s5qdd" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="drfxt8i63upja5k7zfj1z568c5k4586" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="4owbxbs8ql65a8recge1up294uklza3" />
+  <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" hash="78ysfrpjuhuyadt3m03y6bbyt3b17tp" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6r1gsoq3dd0l5ofyes4ojz73yszw60" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-alf2ogeiijb2ox8l3f57xq8a4vsqut" />
+  <common hash="-9r4gvvfk2dhzkc65jhp43hgqpyhg16l">
+    <dep root="1023687332192347378" />
+    <dep root="1068390468198" />
+    <dep root="1068390468200" />
+    <dep root="1068431474542" />
+    <dep root="1068431790189" />
+    <dep root="1068431790191" />
+    <dep root="1068498886292" />
+    <dep root="1068498886294" />
+    <dep root="1068498886296" />
+    <dep root="1068499141036" />
+    <dep root="1068580123132" />
+    <dep root="1068580123136" />
+    <dep root="1068580123137" />
+    <dep root="1068580123140" />
+    <dep root="1068580123152" />
+    <dep root="1068580123155" />
+    <dep root="1068580123157" />
+    <dep root="1068580123159" />
+    <dep root="1068580123165" />
+    <dep root="1068580320020" />
+    <dep root="1068581242863" />
+    <dep root="1068581242864" />
+    <dep root="1068581242866" />
+    <dep root="1068581242867" />
+    <dep root="1068581242869" />
+    <dep root="1068581242874" />
+    <dep root="1068581242875" />
+    <dep root="1068581242878" />
+    <dep root="1068581517677" />
+    <dep root="1070462154015" />
+    <dep root="1070475354124" />
+    <dep root="1070475587102" />
+    <dep root="1070475926800" />
+    <dep root="1070533707846" />
+    <dep root="1070533982221" />
+    <dep root="1070534058343" />
+    <dep root="1070534370425" />
+    <dep root="1070534436861" />
+    <dep root="1070534513062" />
+    <dep root="1070534555686" />
+    <dep root="1070534604311" />
+    <dep root="1070534644030" />
+    <dep root="1070534760951" />
+    <dep root="1070534934090" />
+    <dep root="1073063089578" />
+    <dep root="1073239437375" />
+    <dep root="1076505808687" />
+    <dep root="1079359253375" />
+    <dep root="1080120340718" />
+    <dep root="1080223426719" />
+    <dep root="1081236700937" />
+    <dep root="1081236700938" />
+    <dep root="1081256982272" />
+    <dep root="1081506762703" />
+    <dep root="1081506773034" />
+    <dep root="1081516740877" />
+    <dep root="1081773326031" />
+    <dep root="1081855346303" />
+    <dep root="1082113931046" />
+    <dep root="1082485599095" />
+    <dep root="1083245097125" />
+    <dep root="1083245299891" />
+    <dep root="1083260308424" />
+    <dep root="1092119917967" />
+    <dep root="1095950406618" />
+    <dep root="1107135704075" />
+    <dep root="1107461130800" />
+    <dep root="1107535904670" />
+    <dep root="1107796713796" />
+    <dep root="1109279763828" />
+    <dep root="1109279851642" />
+    <dep root="1109283449304" />
+    <dep root="1111509017652" />
+    <dep root="1116615150612" />
+    <dep root="1137021947720" />
+    <dep root="1144226303539" />
+    <dep root="1144230876926" />
+    <dep root="1144231330558" />
+    <dep root="1145552809883" />
+    <dep root="1145552977093" />
+    <dep root="1146644584814" />
+    <dep root="1146644602865" />
+    <dep root="1146644623116" />
+    <dep root="1146644641414" />
+    <dep root="1152728232947" />
+    <dep root="1153179527848" />
+    <dep root="1153179560115" />
+    <dep root="1153417849900" />
+    <dep root="1153422105332" />
+    <dep root="1153422305557" />
+    <dep root="1153952380246" />
+    <dep root="1154032098014" />
+    <dep root="1154542696413" />
+    <dep root="1157103807699" />
+    <dep root="1160998861373" />
+    <dep root="1163668896201" />
+    <dep root="1163670490218" />
+    <dep root="1163670641947" />
+    <dep root="1164118113764" />
+    <dep root="1164879751025" />
+    <dep root="1164903280175" />
+    <dep root="1164991038168" />
+    <dep root="1168622733562" />
+    <dep root="1170075670744" />
+    <dep root="1170345865475" />
+    <dep root="1171903607971" />
+    <dep root="1171903862077" />
+    <dep root="1171903916106" />
+    <dep root="1172008963197" />
+    <dep root="1172058436953" />
+    <dep root="1173175405605" />
+    <dep root="1177326519037" />
+    <dep root="1177666668936" />
+    <dep root="1177714083117" />
+    <dep root="1178285077437" />
+    <dep root="1178549954367" />
+    <dep root="1178893518978" />
+    <dep root="1179360813171" />
+    <dep root="1179362310214" />
+    <dep root="1182160077978" />
+    <dep root="1184950988562" />
+    <dep root="1184952934362" />
+    <dep root="1188206331916" />
+    <dep root="1188206574119" />
+    <dep root="1188207840427" />
+    <dep root="1188208481402" />
+    <dep root="1188214482800" />
+    <dep root="1188214545140" />
+    <dep root="1188220165133" />
+    <dep root="1194952169813" />
+    <dep root="1197027756228" />
+    <dep root="1197027803184" />
+    <dep root="1197029447546" />
+    <dep root="1199653749349" />
+    <dep root="1200397529627" />
+    <dep root="1201183863028" />
+    <dep root="1201370618622" />
+    <dep root="1201372346056" />
+    <dep root="1201372606839" />
+    <dep root="1201385106094" />
+    <dep root="1201398722958" />
+    <dep root="1201402044357" />
+    <dep root="1201476912089" />
+    <dep root="1202003934320" />
+    <dep root="1202065242027" />
+    <dep root="1202077725299" />
+    <dep root="1202948039474" />
+    <dep root="1204053956946" />
+    <dep root="1204200696010" />
+    <dep root="1206036041805" />
+    <dep root="1206060495898" />
+    <dep root="1206629501431" />
+    <dep root="1207665819089" />
+    <dep root="1208623485264" />
+    <dep root="1208890769693" />
+    <dep root="1212170275853" />
+    <dep root="1212685548494" />
+    <dep root="1214918800624" />
+    <dep root="1214918975462" />
+    <dep root="1215693861676" />
+    <dep root="1215695189714" />
+    <dep root="1215695201514" />
+    <dep root="1219920932475" />
+    <dep root="1221393582612" />
+    <dep root="1221737317277" />
+    <dep root="1222174328436" />
+    <dep root="1223985693348" />
+    <dep root="1224071154655" />
+    <dep root="1224071180699" />
+    <dep root="1224500579375" />
+    <dep root="1224500764161" />
+    <dep root="1224500790866" />
+    <dep root="1224500799915" />
+    <dep root="1224573963862" />
+    <dep root="1224575136086" />
+    <dep root="1224609861009" />
+    <dep root="1224848483129" />
+    <dep root="1225271177708" />
+    <dep root="1225271221393" />
+    <dep root="1225271283259" />
+    <dep root="1225271315873" />
+    <dep root="1225271369338" />
+    <dep root="1225271408483" />
+    <dep root="1225271443097" />
+    <dep root="1225271484915" />
+    <dep root="1225271546410" />
+    <dep root="1225280593310" />
+    <dep root="1225892208569" />
+    <dep root="1225892319711" />
+    <dep root="1225894555487" />
+    <dep root="1232461062092" />
+    <dep root="1233920926773" />
+    <dep root="1237545921771" />
+    <dep root="1238803202705" />
+    <dep root="1238805530342" />
+    <dep root="1239354281271" />
+    <dep root="1239448985469" />
+    <dep root="1239709250944" />
+    <dep root="1239709577448" />
+    <dep root="1239714755177" />
+    <dep root="1241450588333" />
+    <dep root="1241540912639" />
+    <dep root="1251851371723515367" />
+    <dep root="1461424660015405635" />
+    <dep root="1465982738277781862" />
+    <dep root="1830039279190439966" />
+    <dep root="229277139747537782" />
+    <dep root="2406048883599609633" />
+    <dep root="2406048883599831972" />
+    <dep root="2580416627845338977" />
+    <dep root="2621000434129552854" />
+    <dep root="2621000434129553333" />
+    <dep root="2948164764175055168" />
+    <dep root="3066917033203108594" />
+    <dep root="320030840061144153" />
+    <dep root="320030840061612167" />
+    <dep root="3262277503800813724" />
+    <dep root="3262277503800813725" />
+    <dep root="3304084122476667220" />
+    <dep root="3425520165286454670" />
+    <dep root="363746191845175146" />
+    <dep root="363746191845183785" />
+    <dep root="3718132079121388578" />
+    <dep root="4107091686347010317" />
+    <dep root="4269842503726207156" />
+    <dep root="4564374268190696673" />
+    <dep root="4609636120081351393" />
+    <dep root="4790782560812794334" />
+    <dep root="4836112446988635817" />
+    <dep root="4898614932449915862" />
+    <dep root="4957392803029437192" />
+    <dep root="4972933694980447171" />
+    <dep root="501006281268604400" />
+    <dep root="5205855332950442198" />
+    <dep root="5279705229678483897" />
+    <dep root="5293379017992965193" />
+    <dep root="5432666129547687712" />
+    <dep root="5497648299878491908" />
+    <dep root="5620135147607645642" />
+    <dep root="5862977038373003187" />
+    <dep root="6329021646629104954" />
+    <dep root="6329021646629104955" />
+    <dep root="6329021646629104957" />
+    <dep root="6329021646629175143" />
+    <dep root="6617045035157661092" />
+    <dep root="6694311595176645018" />
+    <dep root="6823176311001356881" />
+    <dep root="7024111702304495340" />
+    <dep root="7024111702304501412" />
+    <dep root="7024111702304501414" />
+    <dep root="7024111702304501416" />
+    <dep root="7024111702304501418" />
+    <dep root="7024111702304501420" />
+    <dep root="7024111702304501422" />
+    <dep root="7024111702304501424" />
+    <dep root="7405920559687209277" />
+    <dep root="7405920559687209278" />
+    <dep root="7405920559687237502" />
+    <dep root="7785501532031639928" />
+    <dep root="7812454656619025412" />
+    <dep root="7812454656619025416" />
+    <dep root="7812779912047922391" />
+    <dep root="8064396509828172209" />
+    <dep root="8136348407761606757" />
+    <dep root="8277080359323839091" />
+    <dep root="8412076637103718467" />
+    <dep root="8473865358220097975" />
+    <dep root="8972672481958095232" />
+    <dep root="9100188248702352244" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="BaseLanguage_Language.java" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="1068498886294" name="AssignmentExpression" hash="36cu1qx7lwpkt98lfuejv6abs8frll5">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068499141036" name="BaseMethodCall" hash="-45q0mrgz4llb5uidbhkemy66h4q3guw">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068431790191" name="Expression" hash="62snlrd03fppwo4xuabsmf1rjyonyq0">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068390468198" name="ClassConcept" hash="-38nh6bklwld9oq3rd9t89nfn19mosji">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068498886292" name="ParameterDeclaration" hash="42q9pq5x8uqnxwrmz6ctqg6801z02ou">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068431790189" name="Type" hash="-7r0bxgeqnxts447a0ttae8eycqyfj8i">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068580123132" name="BaseMethodDeclaration" hash="-djlj5obut6sa67dp5wfbfz8ei5hxq11">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068580123136" name="StatementList" hash="97bnr09ts7b2ij03ycse7cax5sm0xke">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068580123152" name="EqualsExpression" hash="-4q8yxh339th5t2olwtqba43zfw6le62">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068580123155" name="ExpressionStatement" hash="-bvliap8e8wlwkhpxe6b0qkwhx6i7172">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068580123157" name="Statement" hash="etxh4u0g31tvi41m8ledkn2kvct1l6s">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068580123159" name="IfStatement" hash="6ibos2j8cldzrn7ycofv05znrdexf84">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068580123165" name="InstanceMethodDeclaration" hash="-6y2h2j3dw8q5kgjwtzgjd02it7k8ibc">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068580320020" name="IntegerConstant" hash="aozrlsouscvvj1y8gsxixh66suqawl5">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068581242863" name="LocalVariableDeclaration" hash="-qzgnajg3b97x9crxxv1xwcocljtb2s">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068581242864" name="LocalVariableDeclarationStatement" hash="-8ejyihi168gpjgev7czazi7c3hocsgm">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068581242866" name="LocalVariableReference" hash="-91ofowtnurt2nbcd2i0bup8835av83k">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068581242867" name="LongType" hash="6sef1jxt4q4lyx2w2shtj3casgz90ym">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068581242869" name="MinusExpression" hash="-rb9bw0tua94hoais8o4ifcnwthg7db">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068581242874" name="ParameterReference" hash="-489jckaum05vut9mz4rux1ua60gkwre">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068581242875" name="PlusExpression" hash="-8r6dnlzgb1zrmfaa30kp0pg1eukx9ib">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068581242878" name="ReturnStatement" hash="ciy8dlqkdd6oyfne7nufvdgyq4areai">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068581517677" name="VoidType" hash="7jppsazivovh54xz1ggk3qc3shpliwm">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1070462154015" name="StaticFieldDeclaration" hash="-d2j8uo34vp8s3qasjuctipv24qji500">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1070475587102" name="SuperConstructorInvocation" hash="-2tec7ctsvk4g0b4m8mqz2vmvuepa7ze">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1070475926800" name="StringLiteral" hash="cdet6cqiy97bdkyawh0u61rpwap1wrk">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1070533707846" name="StaticFieldReference" hash="-5zetab9atf01u2egxz1s7l3ae54ldtg">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1070533982221" name="ShortType" hash="-9zvuqxc0zbscqqz18sbh68avpbexdrp">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1070534058343" name="NullLiteral" hash="8d5stc5buk3mrodavl732bjbx94ullt">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1070534370425" name="IntegerType" hash="e9l3kq9mioswlyl1qwud0yp75l0anac">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1070534436861" name="FloatType" hash="-82xern7wclctc5yt6o9gcq5kofir5r6">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1070534513062" name="DoubleType" hash="-hgd2d5vtdeu383rhhzoof19s3tvz41">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1070534555686" name="CharType" hash="de3ytqwk0x9w02l4yrzkc3qiwdd5yzc">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1070534604311" name="ByteType" hash="-edpff6ccu18a1wsrrclauv10zml4ccl">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1070534644030" name="BooleanType" hash="agxs9bea2i1tqt8f5o0rwgvy4avi0xm">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1070534760951" name="ArrayType" hash="-esi19jxv5prnpnlujc9ncloq3qo6vqy">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1070534934090" name="CastExpression" hash="-ap5zu3frk3l14j686bq0g9ce2k54red">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1073063089578" name="SuperMethodCall" hash="2xnrxjljncnntvkjjzsnkros3zbao13">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1073239437375" name="NotEqualsExpression" hash="-ek6x875n6xtzs2mc1ozn9x0byd0kj5g">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1076505808687" name="WhileStatement" hash="8uyc4ac30gyb16387hm9ena9ibsmz7u">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1079359253375" name="ParenthesizedExpression" hash="-6wj7jppdzigvth9fzi5q8xool68iocu">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1080120340718" name="AndExpression" hash="1quppvho9857ydmp3frzkt9irudmkv">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1080223426719" name="OrExpression" hash="-22dnf463fxe19rin1nykqkostvd97yi">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1081236700937" name="StaticMethodCall" hash="-t801ghis8byi8xxpz4raevfnk4fa6z">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1081236700938" name="StaticMethodDeclaration" hash="etdvzgbwlpbbdkptcgd5e2kupz52npx">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1081256982272" name="InstanceOfExpression" hash="ea0ayp15fzujx1qdrjtpai3m29jmvbr">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1081516740877" name="NotExpression" hash="-ah1c7k6kfr4ok2zdh12e0nplycgbqbp">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1081855346303" name="BreakStatement" hash="blrntg54pyyk4zbdvs2l4qsiqeqpgno">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1081773326031" name="BinaryOperation" hash="amad8dczggwn7kjj1j8noz7l4tzy0np">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1082113931046" name="ContinueStatement" hash="2387elbzpvolchgr8wg6zsih1mrbi8t">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1082485599095" name="BlockStatement" hash="1f0y77oqej4c9ym6h05c0xi7za2jejb">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1083065718921" name="_Identifier_String" hash="azsxcyyy2d4k6qovboyn041hb7u0xk5">
+    <dep root="1202948039474" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <file name="_Identifier_String_PropertySupport.java" />
+  </source>
+  <source id="1083245097125" name="EnumClass" hash="-5xju2shv8zjcnb2oxn135711nnj9zoq">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1083245299891" name="EnumConstantDeclaration" hash="92l0sd8trl94vhrexe1qj5eq6i6fb4b">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1083260308424" name="EnumConstantReference" hash="-ajk1v5k76rpqtcursvgvogq2q2zsope">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1092119917967" name="MulExpression" hash="-7lyfpxivcyfuluho3i9leixpcwuhyll">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1095950406618" name="DivExpression" hash="-4biiwco3vc8g8akuumbnl6rtwe413wv">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1107135704075" name="ConceptFunctionParameter" hash="53uokg0s2nm4pvjknzxd7ojer0mfqw2">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1107461130800" name="Classifier" hash="9djhu2if8egyig3ns7w1doc994f2k0m">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1107535904670" name="ClassifierType" hash="-1xks5izrqmnje8223lkrq8zawb6wqvc">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1107796713796" name="Interface" hash="4yc7shkn38xeqejx3qumr0vg0h0f4o5">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1109279763828" name="TypeVariableDeclaration" hash="-cyzrc7wzxxdkv20ekzhjkfa42x8weqw">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1109279851642" name="GenericDeclaration" hash="e564nenslal7b7x2uasg7hc5dmda28o">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1109283449304" name="TypeVariableReference" hash="-1tpx7nhzqph7ep5hy7ngz5smcdlz6uf">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1113006251687" name="_FPNumber_String" hash="-2crvttr0a6qz54l5fnxvz4bissegcsc">
+    <dep root="1202948039474" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <file name="_FPNumber_String_PropertySupport.java" />
+  </source>
+  <source id="1116615150612" name="ClassifierClassExpression" hash="5n854rscw1pqg309aa398e5tql8tfck">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1137021947720" name="ConceptFunction" hash="7o43ci4lses1a476gjaotedokf79a58">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1144226303539" name="ForeachStatement" hash="-5w56ppg1gecvxd6cdd9j6k9c1d1xv32">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1144230876926" name="AbstractForStatement" hash="5cd7ht5qqeihmzjk2qmg6fvic6h1p76">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1144231330558" name="ForStatement" hash="4zvz9i7ig4ye1d65h3dzvvaoxgz680v">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1145552809883" name="AbstractCreator" hash="-9t73p2z9xaf1zyxepaddqwba9hts0s3">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1145552977093" name="GenericNewExpression" hash="-4ltwtfdom1wbcnvzfjbbmxxp6e9u1fj">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1146644584814" name="Visibility" hash="364cgziyybr7jy4vw9zk45mypoh4hyw">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1146644602865" name="PublicVisibility" hash="-6ba5nurk2240cz0waeqzwtvhnjx2j8k">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1146644623116" name="PrivateVisibility" hash="4iqu4z4gcv7m6shf8vxysoipqoyzrob">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1146644641414" name="ProtectedVisibility" hash="-86bfg0zh2dk6v2wlz4n0zgy28sgnuz2">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1152728232947" name="Closure" hash="-4ty7drq4bzc4w5vlr2o567fz9j5ad3w">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1153179527848" name="ClosureParameter" hash="5h1pu1fu1cb82akrhlya7eyk5dqhi8y">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1153179560115" name="ClosureParameterReference" hash="-2ri16cxtn6dt9wir7myvalal9810t8b">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1153952380246" name="TryStatement" hash="-1xkqbysndeitk62vyamiyb4arck83sd">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1154032098014" name="AbstractLoopStatement" hash="asg01qpvkbo7z4cdftk49w76xlxs80r">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1154542696413" name="ArrayCreatorWithInitializer" hash="-2argksnqc5bh6st5rer93b2jhe7mg86">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1160998861373" name="AssertStatement" hash="-881lpumn7dj0fp4201udhtoamwbxaea">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1070475354124" name="ThisExpression" hash="6abhen4z0zgae26le2dikmywk5lyuw2">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1163668896201" name="TernaryOperatorExpression" hash="1r8mcs1qjxwftdloueg7fi7bgiu1yuk">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1163670490218" name="SwitchStatement" hash="b8828gkffvuxx31pmog65co5kq2z33i">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1163670641947" name="SwitchCase" hash="-ck3dpth8zg1y8rypjb2op9trnt056wj">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1164118113764" name="PrimitiveType" hash="67ocnp4e9umhpe4gcfnat3zebmra4f7">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1164879751025" name="TryCatchStatement" hash="-15mkncwjhsrs881f6br1pis4gxr69no">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1164903280175" name="CatchClause" hash="-ad7jasclkv3wesr726dh8ptqb5cmepq">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1164991038168" name="ThrowStatement" hash="-824ru4bwzsz5onxqpbc9kqpn8y90pad">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1168622733562" name="RemarkStatement" hash="bpuau5gix5cunvimyi5ocrz288pbwve">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1170075670744" name="SynchronizedStatement" hash="-a3460to34lto3ph13gpx58jekox5ov0">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1170345865475" name="AnonymousClass" hash="8s1u5mivpbphx208c8d1j2t6zb7ujh5">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1171903607971" name="WildCardType" hash="-2pg4id6jr8mzzgqbgwb74it7og5yap1">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1171903862077" name="LowerBoundType" hash="-1srzihyblkuutomvekdb185zyulhyif">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1171903916106" name="UpperBoundType" hash="-30d7x71apayvj68lbf7btrh540krras">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1172058436953" name="LocalStaticMethodCall" hash="-6jj7z3uko7joqgpwfpx2td4ficep74p">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1173175405605" name="ArrayAccessExpression" hash="1pgi5s33n736ytxtayr84krkj2dwfim">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1177326519037" name="CommentedStatementsBlock" hash="-4frh95vczhrcp0xin80aqxaasu2q1d4">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1177666668936" name="DoWhileStatement" hash="9ja7wx8pxomghi3enzrb4sk4by7v8b1">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1177714083117" name="VarType" hash="96x6xuh2d3kfscn72syrxzwj2kf4q11">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1178285077437" name="ClassifierMember" hash="-c7cw3elv8ejxrgayt0eyhaqpax7p7en">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1178893518978" name="ThisConstructorInvocation" hash="-c76luqb045djo700mwk9erd2lceiihj">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1179362310214" name="IntegerLiteral" hash="df83606qvpzd1un4eccpssc52w533na">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1182160077978" name="AnonymousClassCreator" hash="-csi8p4w7jh4t2iojeme8ouaehb1p7vs">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1184950988562" name="ArrayCreator" hash="-dzii30s3y2vr4wiohgvhior06uujwxm">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1184952934362" name="DimensionExpression" hash="c474aef37tjp4cs1dtr3vmmkrhkd32c">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1188206331916" name="Annotation" hash="-6drq8adflrwtplhrq3jghqtk4ija7w2">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1188206574119" name="AnnotationMethodDeclaration" hash="-6kn5ro80mp99x0v7qpfqlndnlfy94h5">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1188207840427" name="AnnotationInstance" hash="9l7b9d53k9jlo2ym4feq2niu1xfvmru">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1188214482800" name="AnnotationInstanceExpression" hash="-6i7e40qsvs74xqe5gi3pf5bof0h3j5a">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1188214545140" name="AnnotationInstanceValue" hash="3zfqpudyb1i52fswqgsbp0mo34tsju2">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1188220165133" name="ArrayLiteral" hash="2abm5emund610p8xr10qpobkcycmpdf">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1194952169813" name="IMemberContainer" hash="-ddvw4hhi7pa0tssmy5uqqtyx6amcrni">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1197027756228" name="DotExpression" hash="-cih3jfynoli8w6lasuu3t6skpg1c6by">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1197027803184" name="IOperation" hash="-2oviqzn9m9eil1pxiukcdak3kcnv4n">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1197029447546" name="FieldReferenceOperation" hash="6x5lk02yrae0pv03dtwwla2kdq4hnjc">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1199653749349" name="IStatementListContainer" hash="egl8d3udl788b9wpzc4s534mx6n2gbi">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1200397549879" name="_CharConstant_String" hash="b2l40vv19m2m9wpivovknfju3h908nr">
+    <dep root="1202948039474" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <file name="_CharConstant_String_PropertySupport.java" />
+  </source>
+  <source id="1201183863028" name="TypeDerivable" hash="c24inmtmyyd17u051duqsnhu5xy8ab8">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1201370618622" name="Property" hash="-8g32qtuxm1sqshuxi3i48ripx4uf3n1">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1201372346056" name="PropertyImplementation" hash="-2yervqrtldz8xqfpkk4sftcuuvwkc9u">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1201372606839" name="DefaultPropertyImplementation" hash="7g21bev065mnimtlae6zg6mdyy2st1d">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1201385106094" name="PropertyReference" hash="-7y2ae473xgdea7emiml66128h6o9ac8">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1201398722958" name="CustomPropertyImplementation" hash="dkt9at7lueb4miffbvleh94pwrqid45">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1201402044357" name="GetAccessor" hash="-bbzaqx2e2tc6ecrzucm6kpl01d7o9vl">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1201476912089" name="SetAccessor" hash="-30wkf2xdyl74lcotplbsyawj33vhwvg">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1202003934320" name="ValueParameter" hash="2j2wyhyvg45ev3ngyiu8258cedupvby">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1202065242027" name="DefaultGetAccessor" hash="-bwu4zpcloxn7qdnosfco6udiqk7s17m">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1202077725299" name="DefaultSetAccessor" hash="-e9dzepxitbmmu9hlh4rb9gobafvl100">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1202948039474" name="InstanceMethodCallOperation" hash="614o3608tsfggaj4uuoxo94ehyatb0u">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1204053956946" name="IMethodCall" hash="-59v5ileokm9q9nr4wbrbkgyp9dj1qco">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1204200696010" name="NullType" hash="-9e3qiy40p09y0luvd0a34kvkba00yan">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1206036041805" name="IInternalType" hash="-v43u3l65texgx0c4zxykuq31cbf1hi">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1206060495898" name="ElsifClause" hash="e4r6zarx1urqkyheeug63jeg8jun0yh">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1206629501431" name="InstanceInitializer" hash="aicqy3ygglukemdy2frqled20vzs45x">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1207665819089" name="Closureoid" hash="d7w4sp15qvaczt6ym8wm7l8aos1z6vp">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1208623485264" name="AbstractOperation" hash="7f20qdiebh6z3iwdsxh65zil0otzm8d">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1208890769693" name="ArrayLengthOperation" hash="34et0tuys192uom7mouldaut0exbctm">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1212170275853" name="IValidIdentifier" hash="56ut3hcrpfn60ev98einthjkcyrzo21">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1212685548494" name="ClassCreator" hash="7835fgguzyxvgs1o0u8l1tufqrldfrn">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1214918800624" name="PostfixIncrementExpression" hash="-2igt9evcw4udrnsy60vagltuxxzfcd8">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1214918975462" name="PostfixDecrementExpression" hash="1eicf76qejgqcrrt11fk0d2l4oqk7fr">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1215693861676" name="BaseAssignmentExpression" hash="-d4dvsl0z5o0nkb12o4qti6oz7pi76oi">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1215695189714" name="PlusAssignmentExpression" hash="-aocjofl9gx8kveu0khh4nqsreg5dmd1">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1215695201514" name="MinusAssignmentExpression" hash="be23rwdy8m615h96fnacn3ci0maldk1">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1219920932475" name="VariableArityType" hash="6krs4pxj5uenvv93gszris6okwr0a5z">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1221393582612" name="IExtractMethodAvailable" hash="6jusgdun441egbb547vfgkoidds16r9">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1221737317277" name="StaticInitializer" hash="37pwyfxahhrcod3nzbmg2bockpfrksd">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1222174328436" name="IStaticContainerForMethods" hash="-2ymc4m908bchjc349l8i9yu3t4p12fb">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1223985693348" name="IVariableAssignment" hash="753viovqquim5bpxjnvrhm3ogbjncse">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1224071154655" name="AsExpression" hash="6t39byfli19jap5erfooxpyq9w2jyz6">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1224071180699" name="UsingStatement" hash="kvbdruts6q2ltgswtpue2e91b79uf9">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1224573963862" name="EnumValuesExpression" hash="bj25ik3rulnimih9xse5wdbtzxauaea">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1224500799915" name="BitwiseXorExpression" hash="-2xmg74o4sw9fr7ol1xk2wwvetioyaj0">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1224575136086" name="EnumValueOfExpression" hash="4m1sc4dydo9baaj9dhs3ggid6z5flck">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1224500579375" name="BinaryBitwiseOperation" hash="-e4gqymg8fyazuo2avwjr9o8sw3vfjl6">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1224500790866" name="BitwiseOrExpression" hash="-ci2vwanjed162qkumhutjfm71j21r71">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1224500764161" name="BitwiseAndExpression" hash="2a9f39bnt3cogm08yd8jag0rqxiq7bh">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1224609861009" name="IThisExpression" hash="-2cykoi68454mydxs6h2uqu4zr769z3b">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1224848483129" name="IBLDeprecatable" hash="-7uhdig0l1lgt88euic28feobi8yy2z6">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1225271177708" name="StringType" hash="33v6ssgdef86x25x6qytundrjxkm4gk">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1225271221393" name="NPENotEqualsExpression" hash="eprwsrgoojlyq9ffshphgs5hhu7a8ut">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1225271283259" name="NPEEqualsExpression" hash="aefdsf1v5bf7shbjhlo9gwrgvwiso86">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1225271315873" name="BaseStringOperation" hash="9tfdoh8a73tu6ria8h9aucq8woecskn">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1225271369338" name="IsEmptyOperation" hash="d9w2j97ji0n3szimbbdbi77yurhikpc">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1225271408483" name="IsNotEmptyOperation" hash="qmdl69b6vwf2brqepqgmp9q87zxv0v">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1225271443097" name="StringBooleanOperation" hash="-ca0ztv0ony1ixjri9kc6ujox8edbwfe">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1225271484915" name="SubstringExpression" hash="8824j9eohxj7nq3yzh18zuzp73qpi73">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1225271514374" name="TrimKind" hash="-ovy39xu5azzthpzvaei2dkcysj8vdl">
+    <dep root="1068431474542" />
+    <dep root="1068581242863" />
+    <dep root="1070475926800" />
+    <dep root="1197029447546" />
+    <dep root="1202948039474" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="TrimKind.java" />
+    <file name="TrimKind_PropertySupport.java" />
+  </source>
+  <source id="1225271546410" name="TrimOperation" hash="40hjtvlx9ds4y63q5qfnhqt1wg7nirn">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1225280593310" name="IParameter" hash="-15nkdg1mnhlak1yiapdg5qo7ngsdiiq">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1225894555487" name="BitwiseNotExpression" hash="-etcxnkzzpes3n6f561px2nrowua3a34">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1232461062092" name="CommentedStatement" hash="-h2qam7qkxsrnj1t8lb17rixqybn2g9">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1233920926773" name="TypeAnnotable" hash="-8gfkekfjg31rcfxjfquokqasozo53gf">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1237545921771" name="IContainsStatementList" hash="-6kdqeh4xj1ef73mgti4ptrhi5nmemde">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1238803202705" name="ILocalVariableElement" hash="k41i0nnylfzahotycfea7slr6xe4nr">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1238805530342" name="ILocalVariableElementList" hash="-725rfsl204t2laku479f5dhhoinjj70">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1239354281271" name="IMethodLike" hash="au0hmnfar8zzuwmx50gq9dczjjcsyd3">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1239448985469" name="BinaryCompareOperation" hash="4b61leau8a11fdbu8mija2bi3a6vnlg">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1239709250944" name="PrefixIncrementExpression" hash="-b7it46umini5zn5y9fx6g4wgcpt3y0o">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1239709577448" name="PrefixDecrementExpression" hash="yalbmvn071xxx8chsiw9rsdx3bdrvx">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1239714755177" name="AbstractUnaryNumberOperation" hash="-9bb3rqg7hlv71wpffixsuhrzm45k9ji">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1241450588333" name="BLBottomType" hash="-35vtr1c92tz4fm5daqfa6mg4ttn1qjs">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1241540912639" name="ConstructorInvocationStatement" hash="-d608px0y5p51f8ft1smy94zn0vkip5b">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="4269842503726207818" name="_LongType_String" hash="-bcnetit2ozgdbsonixpd1jhmyuo8gyp">
+    <dep root="1202948039474" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <file name="_LongType_String_PropertySupport.java" />
+  </source>
+  <source id="5279705229678483898" name="_FloatNumberValue" hash="9yvrj684tkauyg21segk5fnk0qx66nk">
+    <dep root="1202948039474" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <file name="_FloatNumberValue_PropertySupport.java" />
+  </source>
+  <source id="6734604082923916973" name="_HexNumberValue" hash="-92duoenf8uagc4j36fkr1p81yjevloc">
+    <dep root="1202948039474" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <file name="_HexNumberValue_PropertySupport.java" />
+  </source>
+  <source id="4972933694980447171" name="BaseVariableDeclaration" hash="9kprwwhyaxsouy3lv9ug8pof6i3tmju">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="5497648299878491908" name="BaseVariableReference" hash="-3njjij8cv6w5f08ibaninop6bucdjrq">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="363746191845175146" name="LoopLabel" hash="eu2rrg5eijmmc1mx6cvbgopubh59o7k">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="363746191845183785" name="LoopLabelReference" hash="ej7t6q7puz7jescxnq6zvkscmov7mgb">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6329021646629104955" name="CommentPart" hash="ehqbo7yq4z7uhtnu75ch5kjann33iho">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7024111702304495340" name="MulAssignmentExpression" hash="-4c1shu7pfoc1velquurhurkiixxdwxw">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7024111702304501412" name="DivAssignmentExpression" hash="5dbn0miikvsqhbbve9ryeu463sh7tm2">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7024111702304501414" name="RemAssignmentExpression" hash="2fxktngszgz8q777gn5jc2nc167zl8a">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7024111702304501416" name="OrAssignmentExpression" hash="c68guxo841bl8ry8rm8rc3609rp86fr">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7024111702304501418" name="AndAssignmentExpression" hash="-dd4s3as1dlvquf5787vbssdcmlpbj44">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7024111702304501420" name="XorAssignmentExpression" hash="27uvn36talm6l3p7blizvbcvbnoxibf">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7024111702304501422" name="LeftShiftAssignmentExpression" hash="-7ntjmmrw7nczrrkh096a1m5ugqr2uf9">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7024111702304501424" name="RightShiftAssignmentExpression" hash="-3exeja727thhugynqaixea6ph430l5z">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1830039279190439966" name="AdditionalForLoopVariable" hash="euuscod5jg5ggo25llv691ypg3qauhl">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7812779912047922391" name="AbstractClassifierReference" hash="-9valt5lbf2y8abdmrlnuk9gxfh95m6s">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2580416627845338977" name="ImplicitAnnotationInstanceValue" hash="asye6ypeihrm6avzg7ie27lwft3o3l3">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="4564374268190696673" name="PrimitiveClassExpression" hash="d8ofj9hu625ryz6tqlez6aeqr6hxwp6">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="5432666129547687712" name="IVariableDeclaration" hash="3iy2cqvvrgw9zfe0f75djxexmubani3">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="3718132079121388578" name="ITryCatchStatement" hash="-3rak17w7dvu8jp6rew7k386u8hnyfhf">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="3066917033203108594" name="LocalInstanceMethodCall" hash="aizahnjy35x2j5xml0k37pelwlo9o7m">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="3262277503800813724" name="ILocalDeclaration" hash="ct9rlvbe8nat38jvepz8sih81cmavnl">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="3262277503800813725" name="ILocalReference" hash="-r6en044elqvvayang4d8cadeqj2be7">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="5205855332950442198" name="ArrayCloneOperation" hash="6vomq8h8wolpbp8r1y7iwmyt7rigqt5">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2948164764175055168" name="UnresolvedNameReference" hash="9tj26j1t51xz1qtee4hr0bdt6g19ewq">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="5293379017992965193" name="StubStatementList" hash="2gj5j7v7smbur90uhb2j3k4lh6mflij">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="4957392803029437192" name="OperationAssignmentExpression" hash="dchzvb7okg8uv4mpn5zzkknoj2eoja8">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="8972672481958095232" name="IControlFlowInterrupter" hash="ehi0s13eopshz7olwad0axuxrkyb273">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="4609636120081351393" name="IWillBeClassifier" hash="141d13p2oumfspvtfw7s26446ocxs8p">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1461424660015405635" name="EscapeOperation" hash="e41ni393mqqz5o25cys31rylr6v3s8e">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="4836112446988635817" name="UndefinedType" hash="-dvpoi04173bs7i90soeum4buakvw5zp">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="5620135147607645642" name="IFinalWrapper" hash="1rogglom5rj3wvo5psxdzxkal8u6pc9">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="3425520165286454670" name="IAnonymousClass" hash="-ecedqu5cize6ft032sz675jzrv4hw8g">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="320030840061612167" name="UnsignedRightShiftAssignmentExpression" hash="-71vg3mwqo664aoqbn0wor8t1v045ezo">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1023687332192347378" name="IVariableReference" hash="-7a2u9oy1tgi4vi0cfs12e6igcw7600l">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="8412076637103718467" name="ISkipsReturn" hash="81dp70t7nha2caccey2eyr1yw6d9pgl">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="5862977038373003187" name="LocalPropertyReference" hash="8m1b8yectrv5si5c2wrxurwtxrl28do">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="229277139747537782" name="ContextClassifierKind" hash="-af2e0ztcmr2onipsjack5iomupajyux">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6694311595176645018" name="ImplicitAnnotationMethodKind" hash="1kzzy3inwnu57iu27sltibqjm8yeii">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6617045035157661092" name="SuperMethodKind" hash="-4mfki4h8spvrpenrtd418fdnt05zsno">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="4790782560812794334" name="StaticKind" hash="8cvzmcx37y7az6h6gqg9xqcq92lnvyy">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2406048883599831972" name="ThisConstructorKind" hash="-2t2kouop0xgj5figdztwe5uxm7ssqqn">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="501006281268604400" name="LocalToMethodKind" hash="627v6zq1w2hdcooroato0kr6wqcsiva">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2406048883599609633" name="SuperConstructorKind" hash="-hksjloog7ecb8xgkrpj1qr6yx5rvoe">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1251851371723515367" name="ArrayClassExpression" hash="89lgx1ebiilhyv1la04h1io7kbybkx2">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7405920559687209277" name="IClassifier" hash="-3psh0hr6587zuqqnraa0440jrsbdrl0">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7405920559687209278" name="IClassifierMember" hash="-bv85r8ltwxmj66cztah2j4l98os1y75">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7405920559687237502" name="IClassifierType" hash="b8wf1x5jf5wqvo3ncusu3w774sh65m3">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068390468200" name="FieldDeclaration" hash="a2wf224i21advmbmn9ls484egfex7n8">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068580123140" name="ConstructorDeclaration" hash="4utyyycgy7jeag2y7jifiq1p73zq2sy">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1172008963197" name="LocalStaticFieldReference" hash="e3va5qy8p0d68w1n765ia51vfq5vdlk">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1188208481402" name="HasAnnotation" hash="1kbrl1vnqmmwxych66wsf5y7zmbzk6r">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1178549954367" name="IVisible" hash="cw52mpwvdszdx3o60t7byn9h9j0nln9">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="4898614932449915862" name="PlaceholderMethodDeclaration" hash="918gapgfa0w4omlfhii0e1bi6lvt60u">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6329021646629104957" name="TextCommentPart" hash="adzu8m3mreglmetl55eboeki0exci39">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6329021646629175143" name="StatementCommentPart" hash="-48poxd6tb0q9uxuov4jxlyp15xqvi4q">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6329021646629104954" name="SingleLineComment" hash="-bx280x3ck6lcww7jybvr9axcv3edqzx">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7785501532031639928" name="LocalInstanceFieldReference" hash="-8u27pza440tvveu0s3k56vngjdgbzqz">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1225892208569" name="ShiftLeftExpression" hash="-5v6rud1l1mdqxqds0g93qtsk37pdxx8">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1225892319711" name="ShiftRightExpression" hash="9ahjigsfpm359ofpprm61jlojr98b16">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="320030840061144153" name="ShiftRightUnsignedExpression" hash="-5u8zl58x6qa37gog3kj4ms59jz76y14">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1153422105332" name="RemExpression" hash="-2ufuh3kff78b0lsathe7mzlo6aryyzo">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1081506773034" name="LessThanExpression" hash="-9t5jd54q8i6wzjxskxapyhao1yuut1z">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1153422305557" name="LessThanOrEqualsExpression" hash="-633c0ynff619rtmhau9r2w0mh9q9d2n">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1153417849900" name="GreaterThanOrEqualsExpression" hash="dp44uhvumnt4isz5m72zfx83unuwrhj">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1081506762703" name="GreaterThanExpression" hash="-1ojotph46zsh4a0jxdkmmc6wni9bjhu">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="8064396509828172209" name="UnaryMinus" hash="-df610tjcwle46yp806avc52bs7smoqz">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1179360813171" name="HexIntegerLiteral" hash="-4mhmxrhfd65kfm4qr48jkw1mvlf9oia">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="4269842503726207156" name="LongLiteral" hash="-dykz6kglwvynzik4qv1k181vd6kqy5z">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="5279705229678483897" name="FloatingPointFloatConstant" hash="-dpvjylxyfcy29xh8f9p7e0ffvk0zu5m">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1111509017652" name="FloatingPointConstant" hash="-c5526qzf6r2lseqiml9iekymv8l4frr">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068580123137" name="BooleanConstant" hash="emytdac8g8bhynwlw9jgrq4qe7gqasc">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1200397529627" name="CharConstant" hash="5mbpysnigdif5it7woi37vvmajvpedk">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1157103807699" name="Number" hash="1o9dwou88hs127qi39p8x27b5uzphv5">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068431474542" name="VariableDeclaration" hash="a9512rfmt8x61s8apx50pm4tedcjwtf">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1068498886296" name="VariableReference" hash="1mhw3i61kduy8ma6zi0r41trlctyb8e">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="8136348407761606757" name="IYetUnresolved" hash="bmnzebo27xa60ox3alboy2ptq1iqx2">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7812454656619025416" name="MethodDeclaration" hash="-4z7gweerc6g9onmyblu321t0uii8wwm">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="8277080359323839091" name="ITypeApplicable" hash="15zb9xmflzzzljtxlzczm2nalwzgzul">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7812454656619025412" name="LocalMethodCall" hash="-6lj9xyhhhuu45zt45yzkgpx1zuv2ecl">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="3304084122476667220" name="UnknownNew" hash="-3fvp56ce50gukjuk5etawcypelhcw5z">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="8473865358220097975" name="UnknownNameRef" hash="3ipen1k4jk49r90qkbodz4p6cylur5l">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="4107091686347010317" name="IGenericType" hash="-4hx6akah2zxzjctsrrjls0ai0rjjjj5">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6823176311001356881" name="StringToken" hash="-4f2n2afcqnkherhgxgq8n7as3vyqwvv">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="9100188248702352244" name="UnknownConsCall" hash="-amk7sfo199l86bh2pk8ffmpgp9pk7">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2621000434129552854" name="UnknownLocalCall" hash="45h0h86rtzg7odexx80ou2zw41oj280">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2621000434129553333" name="UnknownDotCall" hash="7yo0vkaq45yav19hc57imwbezjup4e6">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1465982738277781862" name="PlaceholderMember" hash="4tys5m9i4p77munfdyqikd1dhsyropy">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+</dependencies>
+

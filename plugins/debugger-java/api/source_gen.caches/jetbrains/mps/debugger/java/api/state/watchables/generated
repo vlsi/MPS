@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-zz328lxs0tczrjnrfin2u46442yd2n">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-40jj815fe1rn0p1bhi0382dg47350y2" />
+  <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" hash="-ct2x2ctqjzor68ht409gjyw255v9psb" />
+  <dep model="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)" hash="-66pd4zysd35umliln5z8wmgzfb0d05u" />
+  <common hash="41up8xts5s7ck548evo2ik353g75338" />
+  <source id="3432969378036013923" name="JavaField" hash="-5mavhsyj4kqyiv6u3cuidjdinpqzz7b">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" />
+    <file name="JavaField.java" />
+  </source>
+  <source id="3432969378036014056" name="JavaWatchable" hash="-4pesp1ghihjov7tb4autuw6un2vard2">
+    <file name="JavaWatchable.java" />
+  </source>
+  <source id="3432969378036014277" name="JavaThisObject" hash="ebkshify1a90ke1pyo9a8kzfvnwdt9s">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="JavaThisObject.java" />
+  </source>
+  <source id="3432969378036015831" name="CustomJavaWatchable" hash="-cxp3s2r0a4z6kmpgxg3brllc9dzk25i">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" />
+    <file name="CustomJavaWatchable.java" />
+  </source>
+  <source id="3432969378036015904" name="JavaStaticContext" hash="bse4dwk8g357qw0vrr170dcf58tfawg">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)" />
+    <file name="JavaStaticContext.java" />
+  </source>
+  <source id="3432969378036016095" name="JavaStaticField" hash="7ak8osmwhv6oiqff8905jum1uhswj4v">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" />
+    <file name="JavaStaticField.java" />
+  </source>
+  <source id="3432969378036014276" name="JavaLocalVariable" hash="-3t8nc3tykukpg5d64ykxpgt6ast8zpv">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="JavaLocalVariable.java" />
+  </source>
+  <source id="3432969378036017747" name="CalculatedWatchable" hash="dt5e9s8mb0afca76nf7qdqvolsjfj5t">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="CalculatedWatchable.java" />
+  </source>
+  <source id="4352118152439509012" name="JavaWatchablesCategory" hash="-bs6ddf99rnmvzmj4uohauwl4z514uu2">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="JavaWatchablesCategory.java" />
+  </source>
+</dependencies>
+

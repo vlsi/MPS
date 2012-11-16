@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-dvoza5z0nwa425bjktk09vsx7jedwp8">
+  <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" hash="3i4nt2m87aztszy5o3kij0cpl2feff9" />
+  <dep model="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" hash="-cagvkddx8ryfkwh4rgt0b8ggdgyywjs" />
+  <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" hash="9pqhyb7uevhfjg654dpasof02myz246" />
+  <dep model="r:581bb25d-517d-4f18-b7c0-d3f6a738994e(jetbrains.mps.build.generictasks.generator.template.main@generator)" hash="6lci1fmcl54mbzoq5z3yfoy5novjdgx" />
+  <dep model="r:7a6a35c6-e369-4565-b91b-c7c8dfa2c8d7(jetbrains.mps.build.generictasks.generated)" />
+  <dep model="r:9eaefcec-a5af-4365-b04c-b6940eebe416(jetbrains.mps.build.startup.generator.template.main@generator)" hash="-6dv5t254ly77zsvp91p88ks0pvljb6s" />
+  <dep model="r:a8223385-58f6-47fc-9412-c59396fbedb5(jetbrains.mps.bash.builtin)" />
+  <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" hash="-34rt6spclo7op2zzvnzd8djnha363m3" />
+  <common hash="cc9r5s9ow0ugphufb9k1g90sqoena9k" />
+  <source id="3885435385580582779" name="mps" hash="cw0ot3roxi3tkawcrkwj1d43o8ze6vl">
+    <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
+    <dep model="r:9eaefcec-a5af-4365-b04c-b6940eebe416(jetbrains.mps.build.startup.generator.template.main@generator)" />
+    <dep model="r:a8223385-58f6-47fc-9412-c59396fbedb5(jetbrains.mps.bash.builtin)" />
+    <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" />
+    <file name="Info.plist.xml" />
+    <file name="mps.bat" />
+    <file name="mps.sh" />
+    <file name="mps.vmoptions" />
+  </source>
+  <source id="3765863190879880927" name="MPS-os-specific" hash="-51xz5crx7frt7q448u3zk876w9czg39">
+    <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" />
+    <dep model="r:581bb25d-517d-4f18-b7c0-d3f6a738994e(jetbrains.mps.build.generictasks.generator.template.main@generator)" />
+    <dep model="r:7a6a35c6-e369-4565-b91b-c7c8dfa2c8d7(jetbrains.mps.build.generictasks.generated)" />
+    <file name="MPS-os-specific.xml" />
+  </source>
+  <source id="4514696390935059944" name="installer" hash="4r7rvr5fqmsh1kvxsrwut888i28h2c5">
+    <file name="installer.nsi" />
+  </source>
+</dependencies>
+

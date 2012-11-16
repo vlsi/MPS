@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="c6zvq9vmtsevhgaeermfsnsztm3gfsc">
+  <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.core.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.core.client@java_stub)" />
+  <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.resources.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.resources.client@java_stub)" />
+  <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client.ui(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client.ui@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-40jj815fe1rn0p1bhi0382dg47350y2" />
+  <dep model="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" hash="-bjm41joiinsaf4eq4vwvx8oxwy3uze2" />
+  <dep model="r:61c770cf-d088-4c1b-909e-3424021db8f2(jetbrains.mps.ui.sandbox)" hash="-3hy8xbe6sxoee2wdlsg77prx51kv3sq" />
+  <dep model="r:66bbcfbe-bddf-4df7-8bd5-fa076512c024(jetbrains.mps.ui.generator.template.variants@generator)" hash="-ara98zc0lg7riuy7td7ocist285mb66" />
+  <common hash="-15xdv9ucwl1o03t7pi8v7nl6v5211bv" />
+  <source id="7046856741208198535" name="gwtdemo" hash="-2sgkglv68p3fsnbdn1jyzl32fgywgbq">
+    <file name="gwtdemo.css" />
+  </source>
+  <source id="7046856741208198647" name="MyResources" hash="-1zyn2894ez05od6dtoi1jwg5026ncc9">
+    <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.resources.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.resources.client@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="MyResources.java" />
+  </source>
+  <source id="1880762541167901524" name="GWTDemo" hash="-oyoiy6s99rux0xkzntowy3514k87i6">
+    <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.core.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.core.client@java_stub)" />
+    <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client.ui(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client.ui@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" />
+    <dep model="r:61c770cf-d088-4c1b-909e-3424021db8f2(jetbrains.mps.ui.sandbox)" />
+    <dep model="r:66bbcfbe-bddf-4df7-8bd5-fa076512c024(jetbrains.mps.ui.generator.template.variants@generator)" />
+    <file name="GWTDemo.java" />
+  </source>
+</dependencies>
+

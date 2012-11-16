@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="d6r0f3kpm492yigextc9rda47u5rs2w">
+  <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" hash="9pqhyb7uevhfjg654dpasof02myz246" />
+  <dep model="r:a8223385-58f6-47fc-9412-c59396fbedb5(jetbrains.mps.bash.builtin)" />
+  <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" hash="-34rt6spclo7op2zzvnzd8djnha363m3" />
+  <common hash="8v3uda0jmln5kscfilxrtxvi1xwapag" />
+  <source id="6382090206696966895" name="mps_shellscript" hash="40k0vkj9wqhnuhm85z7gp0j7kdwb7e6">
+    <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
+    <dep model="r:a8223385-58f6-47fc-9412-c59396fbedb5(jetbrains.mps.bash.builtin)" />
+    <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" />
+    <file name="mps_shellscript.sh" />
+  </source>
+  <source id="9034131902186148363" name="example1" hash="-9chq47o3h4rea8o4b2brak2deqe2bi7">
+    <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
+    <dep model="r:a8223385-58f6-47fc-9412-c59396fbedb5(jetbrains.mps.bash.builtin)" />
+    <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" />
+    <file name="example1.sh" />
+  </source>
+  <source id="2362837471612273215" name="hello_world" hash="-7whprv3h8exgcbq2no9yg0s5xmltsf1">
+    <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
+    <dep model="r:a8223385-58f6-47fc-9412-c59396fbedb5(jetbrains.mps.bash.builtin)" />
+    <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" />
+    <file name="hello_world.sh" />
+  </source>
+  <source id="3835416431562293713" name="example2" hash="-5u5xhfnw5q756rgbgmdg8thul7023pq">
+    <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
+    <dep model="r:a8223385-58f6-47fc-9412-c59396fbedb5(jetbrains.mps.bash.builtin)" />
+    <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" />
+    <file name="example2.sh" />
+  </source>
+  <source id="3835416431562615951" name="example3" hash="-a8ejjpkhullqjtnx4eo4xydno8v1i5t">
+    <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
+    <dep model="r:a8223385-58f6-47fc-9412-c59396fbedb5(jetbrains.mps.bash.builtin)" />
+    <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" />
+    <file name="example3.sh" />
+  </source>
+  <source id="3835416431562846467" name="test" hash="7uovpamtxpf45lm9hcipl7b7xwyhxfh">
+    <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
+    <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" />
+    <file name="test.sh" />
+  </source>
+  <source id="3835416431564591990" name="example4" hash="-4uwmd69wvm04fj63r24cp7ormz65g8r">
+    <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
+    <dep model="r:a8223385-58f6-47fc-9412-c59396fbedb5(jetbrains.mps.bash.builtin)" />
+    <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" />
+    <file name="example4.sh" />
+  </source>
+</dependencies>
+
