@@ -67,14 +67,11 @@ public abstract class NodeNavigatable implements Navigatable {
   }
 
   public void openEditor(final boolean focus) {
-
-
     SModelDescriptor modelDescriptor = myNode.getModel().getModelDescriptor();
     if (modelDescriptor == null) return;
 
     IModule module = modelDescriptor.getModule();
     if (module == null) return;
-
 
     jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(myProject);
     if (project == null) return;
