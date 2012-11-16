@@ -347,7 +347,7 @@
     <nodeInfo nodeId="4372437818008127785" fileName="ConfReader.java" startLine="347" startPosition="44" endLine="351" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4372437818008128172" fileName="ConfReader.java" startLine="423" startPosition="0" endLine="427" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="elements#(Lorg/jdom/Element;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="4372437818008128322" fileName="ConfReader.java" startLine="444" startPosition="53" endLine="448" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4372437818008126206" fileName="ConfReader.java" startLine="463" startPosition="24" endLine="467" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4372437818008126206" fileName="ConfReader.java" startLine="463" startPosition="24" endLine="467" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4372437818008126601" fileName="ConfReader.java" startLine="135" startPosition="39" endLine="140" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4372437818008126629" fileName="ConfReader.java" startLine="141" startPosition="94" endLine="146" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4372437818008127010" fileName="ConfReader.java" startLine="200" startPosition="63" endLine="205" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -531,7 +531,7 @@
     <scopeInfo nodeId="4372437818008128172" fileName="ConfReader.java" startLine="423" startPosition="0" endLine="427" endPosition="0">
       <varInfo nodeId="4372437818008128173" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="4372437818008126205" fileName="ConfReader.java" startLine="463" startPosition="24" endLine="467" endPosition="16" />
+    <scopeInfo nodeId="4372437818008126205" fileName="ConfReader.java" startLine="463" startPosition="24" endLine="467" endPosition="9" />
     <scopeInfo nodeId="4372437818008126601" fileName="ConfReader.java" startLine="135" startPosition="39" endLine="140" endPosition="5">
       <varInfo nodeId="4372437818008126620" varName="elm" />
     </scopeInfo>

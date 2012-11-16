@@ -234,16 +234,16 @@
     <nodeInfo nodeId="2742566862758589518" fileName="ModelLinkMap.java" startLine="123" startPosition="38" endLine="124" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2742566862758589533" fileName="ModelLinkMap.java" startLine="128" startPosition="38" endLine="129" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2742566862758589581" fileName="ModelLinkMap.java" startLine="133" startPosition="42" endLine="134" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2742566862758589601" fileName="ModelLinkMap.java" startLine="138" startPosition="52" endLine="139" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2742566862758589601" fileName="ModelLinkMap.java" startLine="138" startPosition="52" endLine="139" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2742566862758589499" fileName="ModelLinkMap.java" startLine="141" startPosition="7" endLine="142" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2742566862758589636" fileName="ModelLinkMap.java" startLine="145" startPosition="63" endLine="146" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2742566862758589668" fileName="ModelLinkMap.java" startLine="148" startPosition="38" endLine="149" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2742566862758589683" fileName="ModelLinkMap.java" startLine="149" startPosition="90" endLine="150" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2742566862758589802" fileName="ModelLinkMap.java" startLine="154" startPosition="52" endLine="155" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2742566862758589713" fileName="ModelLinkMap.java" startLine="155" startPosition="62" endLine="156" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2742566862758589773" fileName="ModelLinkMap.java" startLine="156" startPosition="62" endLine="157" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2742566862758589737" fileName="ModelLinkMap.java" startLine="157" startPosition="50" endLine="158" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2742566862758589749" fileName="ModelLinkMap.java" startLine="158" startPosition="23" endLine="159" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2742566862758589773" fileName="ModelLinkMap.java" startLine="156" startPosition="62" endLine="157" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2742566862758589737" fileName="ModelLinkMap.java" startLine="157" startPosition="43" endLine="158" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2742566862758589749" fileName="ModelLinkMap.java" startLine="158" startPosition="23" endLine="159" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2742566862758589642" fileName="ModelLinkMap.java" startLine="161" startPosition="7" endLine="162" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2742566862758589799" fileName="ModelLinkMap.java" startLine="165" startPosition="63" endLine="166" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2742566862758589646" fileName="ModelLinkMap.java" startLine="166" startPosition="55" endLine="167" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -410,7 +410,7 @@
     <scopeInfo nodeId="2742566862758589514" fileName="ModelLinkMap.java" startLine="123" startPosition="38" endLine="124" endPosition="41" />
     <scopeInfo nodeId="2742566862758589532" fileName="ModelLinkMap.java" startLine="128" startPosition="38" endLine="129" endPosition="41" />
     <scopeInfo nodeId="2742566862758589567" fileName="ModelLinkMap.java" startLine="133" startPosition="42" endLine="134" endPosition="49" />
-    <scopeInfo nodeId="2742566862758589600" fileName="ModelLinkMap.java" startLine="138" startPosition="52" endLine="139" endPosition="50" />
+    <scopeInfo nodeId="2742566862758589600" fileName="ModelLinkMap.java" startLine="138" startPosition="52" endLine="139" endPosition="43" />
     <scopeInfo nodeId="2742566862758589815" fileName="ModelLinkMap.java" startLine="169" startPosition="38" endLine="170" endPosition="35" />
     <scopeInfo nodeId="2742566862758589841" fileName="ModelLinkMap.java" startLine="174" startPosition="42" endLine="175" endPosition="26" />
     <scopeInfo nodeId="1233603318757025269" fileName="ModelLinkMap.java" startLine="191" startPosition="54" endLine="192" endPosition="44" />
@@ -551,7 +551,7 @@
     <scopeInfo nodeId="2742566862758589393" fileName="ModelLinkMap.java" startLine="96" startPosition="0" endLine="101" endPosition="0">
       <varInfo nodeId="2742566862758589393" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2742566862758589705" fileName="ModelLinkMap.java" startLine="154" startPosition="52" endLine="159" endPosition="48">
+    <scopeInfo nodeId="2742566862758589705" fileName="ModelLinkMap.java" startLine="154" startPosition="52" endLine="159" endPosition="41">
       <varInfo nodeId="2742566862758589714" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="6383770312891639023" fileName="ModelLinkMap.java" startLine="189" startPosition="5" endLine="194" endPosition="5">

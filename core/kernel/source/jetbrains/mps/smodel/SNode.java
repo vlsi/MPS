@@ -765,15 +765,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   @Deprecated
-  public void setProperty(String propertyName, String propertyValue, boolean usePropertySetter) {
-    if (usePropertySetter) {
-      SNodeAccessUtil.setProperty(this, propertyName, propertyValue);
-    } else {
-      setProperty(propertyName, propertyValue);
-    }
-  }
-
-  @Deprecated
   /**
    * Inline content in java code, use migration in MPS
    * @Deprecated in 3.0
@@ -1036,6 +1027,19 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Inline. Not supposed to be used
+   * @Deprecated in 3.0
+   */
+  public void setProperty(String propertyName, String propertyValue, boolean usePropertySetter) {
+    if (usePropertySetter) {
+      SNodeAccessUtil.setProperty(this, propertyName, propertyValue);
+    } else {
+      setProperty(propertyName, propertyValue);
+    }
+  }
 
   @Deprecated
   /**

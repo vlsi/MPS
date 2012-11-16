@@ -430,7 +430,7 @@ public class RefactoringContext {
             newName = newConceptFeature.getFeatureName();
             HackSNodeUtil.changePropertyName(node, oldName, newName);
           } else {
-            node.setProperty(oldName, null, false);
+            node.setProperty(oldName, null);
           }
           for (SNode propertyAttribute : AttributeOperations.getPropertyAttributeForPropertyName(node, oldName)) {
             if (delete) {

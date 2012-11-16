@@ -158,7 +158,7 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     if (setterDescriptor != null) {
       setterDescriptor.setValue(node, value, scope);
     } else {
-      node.setProperty(getName(), value, false);
+      node.setProperty(getName(), value);
     }
   }
 
