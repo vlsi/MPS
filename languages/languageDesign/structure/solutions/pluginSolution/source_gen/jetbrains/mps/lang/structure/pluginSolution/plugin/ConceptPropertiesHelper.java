@@ -32,6 +32,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.MakeSession;
@@ -49,7 +51,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior;
@@ -202,20 +203,23 @@ public class ConceptPropertiesHelper {
   }
 
   private void makeAllAndContinue(final Set<SModelDescriptor> sourceModels) {
-    if (sourceModels.isEmpty()) {
+    if (SetSequence.fromSet(sourceModels).isEmpty()) {
       return;
     }
     final List<org.jetbrains.mps.openapi.model.SModel> descriptors = new ArrayList<org.jetbrains.mps.openapi.model.SModel>();
     SModelRepository.getInstance().saveAll();
     //  save all before launching make 
-    for (SModelDescriptor descriptor : sourceModels) {
-      if (descriptor == null) {
-        continue;
+    Iterable<SModelDescriptor> allModels = SModelRepository.getInstance().getModelDescriptors();
+    ListSequence.fromList(descriptors).addSequence(Sequence.fromIterable(allModels).where(new IWhereFilter<SModelDescriptor>() {
+      public boolean accept(SModelDescriptor it) {
+        return it.isGeneratable() && LanguageAspect.BEHAVIOR.is(it);
       }
-      if (!(descriptor.getSModel().isDisposed()) && descriptor.isGeneratable()) {
-        descriptors.add(descriptor);
+    }));
+    ListSequence.fromList(descriptors).addSequence(SetSequence.fromSet(sourceModels).where(new IWhereFilter<SModelDescriptor>() {
+      public boolean accept(SModelDescriptor it) {
+        return it != null && !(it.getSModel().isDisposed()) && it.isGeneratable();
       }
-    }
+    }));
     final IOperationContext operationContext = new ProjectOperationContext(project);
     new Thread() {
       public void run() {
@@ -297,7 +301,7 @@ public class ConceptPropertiesHelper {
       if (!(valueIsDefault)) {
         SPropertyOperations.set(result, "value", SPropertyOperations.getString(SNodeOperations.cast(sameConceptProperty, "jetbrains.mps.lang.structure.structure.StringConceptProperty"), "value"));
       } else {
-        result = null;
+        SPropertyOperations.set(result, "value", null);
       }
       returnStatement = new ConceptPropertiesHelper.QuotationClass_azpnkk_a0a4a0j0j().createNode(result);
     } else if (SNodeOperations.isInstanceOf(conceptPropertyDeclaration, "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration")) {
