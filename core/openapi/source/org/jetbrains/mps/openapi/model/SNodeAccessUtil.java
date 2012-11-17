@@ -22,7 +22,10 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescriptor;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -32,6 +35,7 @@ public class SNodeAccessUtil {
 
   private static ThreadLocal<Set<Pair<SNode, String>>> ourPropertySettersInProgress = new InProgressThreadLocal();
   private static ThreadLocal<Set<Pair<SNode, String>>> ourPropertyGettersInProgress = new InProgressThreadLocal();
+  private static ThreadLocal<Set<Pair<SNode, String>>> ourSetReferentEventHandlersInProgress = new InProgressThreadLocal();
 
   public static boolean hasProperty(jetbrains.mps.smodel.SNode node, String name) {
     node.hasProperty(name); //todo this is to invoke corresponding read access. try to remove it by merging 2 types of access
@@ -79,6 +83,47 @@ public class SNodeAccessUtil {
     } finally {
       threadSet.remove(pair);
     }
+  }
+
+  public static void setReferenceTarget(jetbrains.mps.smodel.SNode node, String role, @Nullable jetbrains.mps.smodel.SNode target) {
+    SModel model = node.getModel();
+    if (model == null || !model.canFireEvent()) {
+      //todo[Mihail Muhin]: why?
+      node.setReferenceTarget(role, target);
+      return;
+    }
+
+    // invoke custom referent set event handler
+    Set<Pair<SNode, String>> threadSet = ourSetReferentEventHandlersInProgress.get();
+    Pair<SNode, String> pair = new Pair<SNode, String>(node, role);
+    if (threadSet.contains(pair)) {
+      node.setReferenceTarget(role, target);
+      return;
+    }
+
+    ReferenceConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getId()).getReference(role);
+
+    if (descriptor instanceof IllegalReferenceConstraintsDescriptor) {
+      node.setReferenceTarget(role, target);
+      return;
+    }
+
+    threadSet.add(pair);
+
+    try {
+      jetbrains.mps.smodel.SNode oldReferent = node.getReferenceTarget(role);
+      if (descriptor.validate(node, oldReferent, target, GlobalScope.getInstance())) {
+        node.setReferenceTarget(role, target);
+        descriptor.onReferenceSet(node, oldReferent, target, GlobalScope.getInstance());
+      }
+    } finally {
+      threadSet.remove(pair);
+    }
+  }
+
+
+  public void setReference(jetbrains.mps.smodel.SNode node, String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
+    //todo for symmetry
   }
 
   private static class InProgressThreadLocal extends ThreadLocal<Set<Pair<SNode, String>>> {
