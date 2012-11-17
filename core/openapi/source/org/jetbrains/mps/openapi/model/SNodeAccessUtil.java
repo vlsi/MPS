@@ -40,10 +40,22 @@ public class SNodeAccessUtil {
   }
 
   public static String getProperty(jetbrains.mps.smodel.SNode node, String name) {
-    if (MPSCore.getInstance().isMergeDriverMode()) {
-      return node.getProperty(name);
-    } else {
-      return getPropertyInternal(node, name);
+    if (MPSCore.getInstance().isMergeDriverMode()) return node.getProperty(name);
+
+    Set<Pair<SNode, String>> getters = ourPropertyGettersInProgress.get();
+    Pair<SNode, String> current = new Pair<SNode, String>(node, name);
+    if (getters.contains(current)) return node.getProperty(name);
+
+    getters.add(current);
+    try {
+      PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getId()).getProperty(name);
+      Object getterValue = descriptor.getValue(node, GlobalScope.getInstance());
+      return getterValue == null ? null : String.valueOf(getterValue);
+    } catch (Throwable t) {
+      LOG.error(t);
+      return null;
+    } finally {
+      getters.remove(current);
     }
   }
 
@@ -66,24 +78,6 @@ public class SNodeAccessUtil {
       LOG.error(t);
     } finally {
       threadSet.remove(pair);
-    }
-  }
-
-  private static String getPropertyInternal(jetbrains.mps.smodel.SNode node, String propertyName) {
-    Set<Pair<SNode, String>> getters = ourPropertyGettersInProgress.get();
-    Pair<SNode, String> current = new Pair<SNode, String>(node, propertyName);
-    if (getters.contains(current)) return node.getProperty(propertyName);
-
-    getters.add(current);
-    try {
-      PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getId()).getProperty(propertyName);
-      Object getterValue = descriptor.getValue(node, GlobalScope.getInstance());
-      return getterValue == null ? null : String.valueOf(getterValue);
-    } catch (Throwable t) {
-      LOG.error(t);
-      return null;
-    } finally {
-      getters.remove(current);
     }
   }
 
