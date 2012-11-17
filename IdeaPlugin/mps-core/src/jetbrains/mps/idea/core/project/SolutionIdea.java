@@ -23,6 +23,7 @@ import com.intellij.facet.FacetManagerAdapter;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.roots.*;
 import com.intellij.openapi.roots.libraries.Library;
+import com.intellij.openapi.roots.libraries.LibraryTable.Listener;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.Processor;
 import com.intellij.util.messages.MessageBusConnection;
@@ -46,13 +47,16 @@ import java.util.*;
 
 public class SolutionIdea extends Solution {
   @NotNull
-  private Module myModule;
+  private final Module myModule;
   private List<Dependency> myDependencies;
   private MessageBusConnection myConnection;
+  private final MyLibraryTableListener myLibraryTableListener = new MyLibraryTableListener();
 
   public SolutionIdea(@NotNull Module module, SolutionDescriptor descriptor) {
     super(descriptor, null);
     myModule = module;
+//    uncomment after (if) idea fixes IDEA-95190
+//    ModuleRootManager.getInstance(myModule).getModifiableModel().getModuleLibraryTable().addListener(myLibraryTableListener);
     // TODO: simply set solution descriptor local variable?
     setSolutionDescriptor(descriptor, false);
     myConnection = myModule.getProject().getMessageBus().connect();
@@ -103,6 +107,8 @@ public class SolutionIdea extends Solution {
   @Override
   public void dispose() {
     super.dispose();
+//    uncomment after (if) idea fixes IDEA-95190
+//    ModuleRootManager.getInstance(myModule).getModifiableModel().getModuleLibraryTable().removeListener(myLibraryTableListener);
     myConnection.disconnect();
   }
 
@@ -114,8 +120,8 @@ public class SolutionIdea extends Solution {
   @Override
   public List<Dependency> getDependencies() {
     if (myDependencies == null) {
-      // TODO: move to Solution descriptor & try to use common Solution implementation here?
       myDependencies = new ArrayList<Dependency>();
+      // stubs?
       for (Map.Entry<ModuleId, ModuleReference> e : LibrariesLoader.getInstance().getLoadedSolutions().entrySet()) {
         ModuleReference lang = e.getValue();
         if (getUsedLanguagesReferences().contains(lang)) {
@@ -125,6 +131,7 @@ public class SolutionIdea extends Solution {
           myDependencies.add(dep);
         }
       }
+      // used
       ArrayList<Module> usedModules = new ArrayList<Module>(Arrays.asList(ModuleRootManager.getInstance(myModule).getDependencies()));
       for (Module usedModule : usedModules) {
         MPSFacet usedModuleMPSFacet = FacetManager.getInstance(usedModule).getFacetByType(MPSFacetType.ID);
@@ -139,13 +146,11 @@ public class SolutionIdea extends Solution {
       addUsedLibraries(myDependencies);
 
       // adding JDK module to a set of dependencies
+      // why, oh, why are we doing it?
+      // FIXME, PLEASE!
       Solution jdkSolution = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065"));
       if (jdkSolution != null) {
         myDependencies.add(new Dependency(jdkSolution.getModuleReference(), false));
-      }
-
-      for (Dependency dependency : getModuleDescriptor().getDependencies()) {
-        myDependencies.add(dependency);
       }
     }
     return myDependencies;
@@ -159,13 +164,21 @@ public class SolutionIdea extends Solution {
           return true;
         }
         LibraryOrderEntry loe = (LibraryOrderEntry) oe;
-        if (loe.isModuleLevel() || loe.getLibrary() == null) {
+        Library library = loe.getLibrary();
+        if (loe.isModuleLevel() || library == null) {
           return true;
         }
 
-        Solution s = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.foreign(loe.getLibrary().getName()));
-        if (s != null) {
-          dependencies.add(new Dependency(s.getModuleReference(), false));
+        // try to find mps solution
+        ModuleReference moduleReference = ModuleRuntimeLibrariesManager.getInstance(myModule.getProject()).getModule(library);
+        if (moduleReference != null) {
+          dependencies.add(new Dependency(moduleReference, loe.isExported()));
+        } else {
+          // try to find stub solution
+          Solution s = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.foreign(library.getName()));
+          if (s != null) {
+            dependencies.add(new Dependency(s.getModuleReference(), loe.isExported()));
+          }
         }
         return true;
       }
@@ -174,11 +187,10 @@ public class SolutionIdea extends Solution {
 
   @Override
   public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
-    super.addDependency(moduleRef, reexport);
+    // we do not add a dependency into solution, we add dependency to idea module instead
     ModifiableRootModel modifiableModel = ModuleRootManager.getInstance(myModule).getModifiableModel();
     new ModuleRuntimeLibrariesImporter(myModule, Collections.singleton(moduleRef), modifiableModel).addMissingLibraries();
     modifiableModel.commit();
-    invalidateDependencies();
   }
 
   @Override
@@ -270,5 +282,25 @@ public class SolutionIdea extends Solution {
 
   public Module getIdeaModule(){
     return myModule;
+  }
+
+  private class MyLibraryTableListener implements Listener {
+    @Override
+    public void afterLibraryAdded(Library newLibrary) {
+      invalidateDependencies();
+    }
+
+    @Override
+    public void afterLibraryRenamed(Library library) {
+    }
+
+    @Override
+    public void beforeLibraryRemoved(Library library) {
+    }
+
+    @Override
+    public void afterLibraryRemoved(Library library) {
+      invalidateDependencies();
+    }
   }
 }

@@ -24,6 +24,7 @@ import com.intellij.openapi.roots.libraries.LibraryTable.Listener;
 import jetbrains.mps.idea.core.project.ModuleRuntimeLibrariesManager.MyState;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -82,13 +83,19 @@ public class ModuleRuntimeLibrariesManager implements ProjectComponent, Persiste
     myLibraryToReferenceMap.remove(library);
   }
 
-  public Library getModuleLibrary(ModuleReference reference) {
+  @Nullable
+  public Library getLibrary(ModuleReference reference) {
     for (Entry<Library, ModuleReference> entry : myLibraryToReferenceMap.entrySet()) {
       if (entry.getValue().equals(reference)){
         return entry.getKey();
       }
     }
     return null;
+  }
+
+  @Nullable
+  public ModuleReference getModule(Library library) {
+    return myLibraryToReferenceMap.get(library);
   }
 
   @Override

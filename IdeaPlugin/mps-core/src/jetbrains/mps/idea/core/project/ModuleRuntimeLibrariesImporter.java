@@ -20,6 +20,7 @@ import com.intellij.facet.ui.FacetEditorContext;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileTypes.FileTypes;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.roots.libraries.Library;
@@ -52,6 +53,7 @@ import java.util.*;
  */
 public class ModuleRuntimeLibrariesImporter {
   public static final String LIBRARY_PREFIX = "mps.";
+  @Nullable
   private FacetEditorContext myContext;
   private Collection<ModuleReference> myAddedModules;
   private ModifiableRootModel myModifiableRootModel;
@@ -127,7 +129,13 @@ public class ModuleRuntimeLibrariesImporter {
     for (ModuleReference moduleReference : projectLibs2Create.keySet()) {
       Collection<VirtualFile> libraryFiles = projectLibs2Create.get(moduleReference);
       Library projectLibrary = createProjectLibrary(moduleReference.getModuleFqName(), libraryFiles);
-      ModuleRuntimeLibrariesManager.getInstance(myContext.getProject()).addLibrary(projectLibrary, moduleReference);
+      Project project;
+      if (myContext != null) {
+        project = myContext.getProject();
+      } else {
+        project = myLibrariesContainer.getProject();
+      }
+      ModuleRuntimeLibrariesManager.getInstance(project).addLibrary(projectLibrary, moduleReference);
       myModifiableRootModel.addLibraryEntry(projectLibrary);
     }
   }

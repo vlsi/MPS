@@ -18,7 +18,6 @@ package jetbrains.mps.idea.core.ui;
 
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
-import jetbrains.mps.idea.core.facet.MPSConfigurationBean.DependencyBean;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.Solution;
@@ -107,23 +106,12 @@ public class ImportedSolutionsTable extends MpsElementsWithCheckboxesTable<Depen
   }
 
   private List<Dependency> getImportedSolutions(MPSConfigurationBean data) {
-    List<Dependency> moduleReferences = new ArrayList<Dependency>();
-    for (DependencyBean bean : data.getDependencies()) {
-      moduleReferences.add(new Dependency(ModuleReference.fromString(bean.myModuleReference), bean.myReExported));
-    }
-    return moduleReferences;
+    //todo
+    return new ArrayList<Dependency>();
   }
 
   @Override
   public void apply(MPSConfigurationBean data) {
-    List<Dependency> elements = getElements();
-    DependencyBean[] beans = new DependencyBean[elements.size()];
-    int i = 0;
-    for (Dependency dependency : elements) {
-      beans[i] = new DependencyBean(dependency.getModuleRef().toString(), dependency.isReexport());
-      i++;
-    }
-    data.setDependencies(beans);
   }
 
   @Override
