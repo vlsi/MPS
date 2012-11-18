@@ -312,7 +312,7 @@ public class ConceptPropertiesHelper {
       SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
       SPropertyOperations.set(result, "value", "" + (!(valueIsDefault)));
       returnStatement = new ConceptPropertiesHelper.QuotationClass_azpnkk_a0a3a1k0i().createNode(result);
-      name = NameUtil.capitalize(conceptName);
+      name = conceptName;
     } else {
       return null;
     }
