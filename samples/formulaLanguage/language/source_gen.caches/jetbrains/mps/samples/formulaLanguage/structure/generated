@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ey6swzcpfsdcd5hrcndb44695onpwdu">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-x1ogwyd9mt21udwfewospcds8s5qdd" />
+<dependencies version="2" modelHash="86rtcvmut31xyp58std598g450l03ds">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="by8wrmxeu23gqhvlixfl23oms1hmpko" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="drfxt8i63upja5k7zfj1z568c5k4586" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-40jj815fe1rn0p1bhi0382dg47350y2" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="4owbxbs8ql65a8recge1up294uklza3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-1ihd91yw3a40igfainvusyvruq3rigo" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="7lf0iqjorq20auygoq2bcy92g63vr4w" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6r1gsoq3dd0l5ofyes4ojz73yszw60" />
   <common hash="3ja2draiv5uvsoz82dme49xxocb7u5w">
     <dep root="1111784210516" />
@@ -54,10 +54,10 @@
   <source id="1111784562907" name="Operation" hash="74ifp1fop7xp3kd5dv0hazlmmh70z7n">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1111784858617" name="IntegerConstant" hash="-5onltckahk8jgwrmzjoa4s6aebsjyh3">
+  <source id="1111784858617" name="IntegerConstant" hash="-9ohbvinx6ypwm91y4e0ky6znh569b77">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1111784926012" name="FloatingPointConstant" hash="-2ezpweri97ss6145jgdtrdrzj221bap">
+  <source id="1111784926012" name="FloatingPointConstant" hash="lpoi8jt4dyt25i3ddi1issgjt7quio">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1111785030296" name="IfFunction" hash="-74weud22otyb6bguuwj30e54fmjv4e">

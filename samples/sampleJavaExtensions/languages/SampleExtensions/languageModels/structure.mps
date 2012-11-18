@@ -71,25 +71,11 @@
     </node>
   </root>
   <root id="954830572075912399">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="954830572076035654">
-      <property name="value" nameId="tpce.1105725733873" value="Abstract flow here" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="954830572075998497" resolveInfo="title" />
-    </node>
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="954830572075998497">
       <property name="name" nameId="tpck.1169194664001" value="title" />
     </node>
   </root>
-  <root id="954830572075998495">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="954830572075998499">
-      <property name="value" nameId="tpce.1105725733873" value="do" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="954830572075998497" resolveInfo="title" />
-    </node>
-  </root>
-  <root id="954830572075998500">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="954830572075998501">
-      <property name="value" nameId="tpce.1105725733873" value="otherwise" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="954830572075998497" resolveInfo="title" />
-    </node>
-  </root>
+  <root id="954830572075998495" />
+  <root id="954830572075998500" />
 </model>
 

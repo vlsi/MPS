@@ -30,19 +30,29 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.DoNotTransformAnnotation_Behavior" file="DoNotTransformAnnotation_Behavior.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.DoNotTransformAnnotation_BehaviorDescriptor" file="DoNotTransformAnnotation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.behavior.DoNotTransformAnnotation_Behavior" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.behavior.GenerationHelperAnnotation_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.DownCastToLowLevel_BehaviorDescriptor" file="DownCastToLowLevel_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorConcept_Behavior" file="EvaluatorConcept_Behavior.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
@@ -53,7 +63,6 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -63,8 +72,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.SConceptNodeAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorConcept_BehaviorDescriptor" file="EvaluatorConcept_BehaviorDescriptor.java">
@@ -136,10 +147,17 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BaseVariableDeclaration_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.ToEvaluateAnnotation_Behavior" file="ToEvaluateAnnotation_Behavior.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.ToEvaluateAnnotation_BehaviorDescriptor" file="ToEvaluateAnnotation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.behavior.GenerationHelperAnnotation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.behavior.ToEvaluateAnnotation_Behavior" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.UnitNode_BehaviorDescriptor" file="UnitNode_BehaviorDescriptor.java">
@@ -148,10 +166,17 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.UnprocessedAnnotation_Behavior" file="UnprocessedAnnotation_Behavior.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.UnprocessedAnnotation_BehaviorDescriptor" file="UnprocessedAnnotation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.behavior.GenerationHelperAnnotation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.behavior.UnprocessedAnnotation_Behavior" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
 </dependenciesRoot>

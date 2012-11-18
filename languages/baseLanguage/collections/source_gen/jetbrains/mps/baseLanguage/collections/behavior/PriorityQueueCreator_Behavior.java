@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -16,6 +17,10 @@ public class PriorityQueueCreator_Behavior {
 
   public static SNode virtual_createType_1237722437229(SNode thisNode) {
     return new PriorityQueueCreator_Behavior.QuotationClass_ag90u1_a0a0b().createNode(SLinkOperations.getTarget(thisNode, "elementType", true));
+  }
+
+  public static boolean virtual_hasInitSize_1262430001741498238(SConcept thisConcept) {
+    return true;
   }
 
   public static class QuotationClass_ag90u1_a0a0b {

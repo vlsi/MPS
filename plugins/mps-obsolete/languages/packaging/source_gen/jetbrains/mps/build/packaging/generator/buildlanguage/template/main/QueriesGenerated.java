@@ -32,7 +32,8 @@ import java.util.List;
 import jetbrains.mps.buildlanguage.behavior.PropertyReference_Behavior;
 import jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.build.packaging.behavior.Path_Behavior;
 import jetbrains.mps.build.packaging.behavior.PluginModule_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -883,7 +884,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1203619982544(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SConceptPropertyOperations.getBoolean(_context.getNode(), "cleanAfterTheJob");
+    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_cleanAfterTheJob_1262430001741498148", new Object[]{});
   }
 
   public static boolean ifMacro_Condition_1240398963466(final IOperationContext operationContext, final IfMacroContext _context) {

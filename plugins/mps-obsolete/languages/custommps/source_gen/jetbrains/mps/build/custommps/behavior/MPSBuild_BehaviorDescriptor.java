@@ -5,11 +5,20 @@ package jetbrains.mps.build.custommps.behavior;
 import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_BehaviorDescriptor;
 import jetbrains.mps.build.packaging.behavior.ICompositeComponent_BehaviorDescriptor;
 import jetbrains.mps.build.packaging.behavior.INotBuildableComponent_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.build.packaging.behavior.ICompositeComponent_Behavior;
+import jetbrains.mps.smodel.SNode;
 
 public class MPSBuild_BehaviorDescriptor extends AbstractProjectComponent_BehaviorDescriptor implements ICompositeComponent_BehaviorDescriptor, INotBuildableComponent_BehaviorDescriptor {
   public MPSBuild_BehaviorDescriptor() {
+  }
+
+  public boolean virtual_acceptFiles_1262430001741497846(SConcept thisConcept) {
+    return MPSBuild_Behavior.virtual_acceptFiles_1262430001741497846(thisConcept);
+  }
+
+  public boolean virtual_cleanAfterTheJob_1262430001741498148(SConcept thisConcept) {
+    return ICompositeComponent_Behavior.virtual_cleanAfterTheJob_1262430001741498148(thisConcept);
   }
 
   public String virtual_getChildrenTargetDir_1237389224202(SNode thisNode) {

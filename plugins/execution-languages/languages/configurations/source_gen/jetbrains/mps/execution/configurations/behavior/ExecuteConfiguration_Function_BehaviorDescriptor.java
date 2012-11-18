@@ -6,6 +6,7 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.ILocalVariableElementList_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class ExecuteConfiguration_Function_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor implements ILocalVariableElementList_BehaviorDescriptor {
   public ExecuteConfiguration_Function_BehaviorDescriptor() {
@@ -21,6 +22,10 @@ public class ExecuteConfiguration_Function_BehaviorDescriptor extends ConceptFun
 
   public List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     return ExecuteConfiguration_Function_Behavior.virtual_getParameters_1213877374450(thisNode);
+  }
+
+  public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
+    return ExecuteConfiguration_Function_Behavior.virtual_showName_1262430001741498082(thisConcept);
   }
 
   @Override

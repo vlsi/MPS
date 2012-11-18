@@ -17,11 +17,11 @@ import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.lang.smodel.behavior.Node_GetChildrenOperation_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.structure.behavior.PropertyDeclaration_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.behavior.Node_ConceptMethodCall_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.behavior.behavior.BehaviorMethodNames;
@@ -305,7 +305,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_6407023681583039952(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode qualifier = SLinkOperations.getTarget(_context.getNode(), "qualifier", true);
-    return SNodeOperations.isInstanceOf(qualifier, "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier") || SConceptPropertyOperations.getBoolean(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), qualifier, "virtual_getTargetConcept_6407023681583066586", new Object[]{}), "multiple");
+    return SNodeOperations.isInstanceOf(qualifier, "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier") || BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), qualifier, "virtual_getTargetConcept_6407023681583066586", new Object[]{}))), "virtual_multiple_1262430001741497972", new Object[]{});
   }
 
   public static boolean baseMappingRule_Condition_6407023681583065537(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

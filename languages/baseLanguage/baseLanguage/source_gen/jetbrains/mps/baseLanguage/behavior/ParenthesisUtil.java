@@ -7,7 +7,9 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.util.NameUtil;
 
 public class ParenthesisUtil {
   public ParenthesisUtil() {
@@ -138,6 +140,6 @@ public class ParenthesisUtil {
   }
 
   public static boolean isBadPriority(SNode child, SNode parent, boolean isRight) {
-    return SConceptPropertyOperations.getInteger(child, "priority") < SConceptPropertyOperations.getInteger(parent, "priority") || (isRight && SConceptPropertyOperations.getInteger(child, "priority") == SConceptPropertyOperations.getInteger(parent, "priority"));
+    return BehaviorReflection.invokeVirtualStatic(Integer.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))), "virtual_getPriority_1262430001741497858", new Object[]{}) < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497858", new Object[]{}) || (isRight && BehaviorReflection.invokeVirtualStatic(Integer.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))), "virtual_getPriority_1262430001741497858", new Object[]{}) == BehaviorReflection.invokeVirtualStatic(Integer.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497858", new Object[]{}));
   }
 }

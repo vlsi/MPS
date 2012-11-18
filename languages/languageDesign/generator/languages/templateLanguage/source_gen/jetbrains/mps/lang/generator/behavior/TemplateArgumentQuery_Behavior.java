@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
@@ -26,6 +27,10 @@ public class TemplateArgumentQuery_Behavior {
       return SNodeOperations.copyNode(SLinkOperations.getTarget(templateParameter, "type", true));
     }
     return new TemplateArgumentQuery_Behavior.QuotationClass_8mmc34_a0e0b().createNode();
+  }
+
+  public static boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
+    return true;
   }
 
   @Deprecated

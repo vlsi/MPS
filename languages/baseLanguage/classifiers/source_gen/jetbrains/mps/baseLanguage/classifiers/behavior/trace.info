@@ -2,9 +2,9 @@
 <debugInfo>
   <unitInfo fileName="BaseClassifierType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="DefaultClassifierFieldAccessOperation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierFieldAccessOperation_BehaviorDescriptor" />
+  <unitInfo fileName="DefaultClassifierFieldAccessOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierFieldAccessOperation_BehaviorDescriptor" />
   <unitInfo fileName="DefaultClassifierFieldDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierFieldDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="DefaultClassifierMethodCallOperation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierMethodCallOperation_BehaviorDescriptor" />
+  <unitInfo fileName="DefaultClassifierMethodCallOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierMethodCallOperation_BehaviorDescriptor" />
   <unitInfo fileName="DefaultClassifierMethodDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierMethodDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="DefaultClassifierType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierType_BehaviorDescriptor" />
   <unitInfo fileName="DefaultClassifier_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifier_BehaviorDescriptor" />
@@ -511,6 +511,20 @@
       <varInfo nodeId="1217434042657" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="1217434042657" fileName="SuperClassifierExpresson_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.SuperClassifierExpresson_Behavior" />
+  </root>
+  <root nodeId="1262430001741642949" modelId="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)">
+    <nodeInfo nodeId="1262430001741642947" fileName="DefaultClassifierFieldAccessOperation_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741642949" fileName="DefaultClassifierFieldAccessOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741642949" fileName="DefaultClassifierFieldAccessOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_lvalue_1262430001741498364#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <scopeInfo nodeId="1262430001741642951" fileName="DefaultClassifierFieldAccessOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741642946" fileName="DefaultClassifierFieldAccessOperation_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1262430001741642949" fileName="DefaultClassifierFieldAccessOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741642949" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741642949" fileName="DefaultClassifierFieldAccessOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741642949" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741642949" fileName="DefaultClassifierFieldAccessOperation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierFieldAccessOperation_Behavior" />
   </root>
 </debugInfo>
 

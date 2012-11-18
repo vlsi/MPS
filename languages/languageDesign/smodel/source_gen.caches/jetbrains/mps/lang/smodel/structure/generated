@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-242rtlq3ci4ppezbczqxpfah3kmbko3">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-x1ogwyd9mt21udwfewospcds8s5qdd" />
+<dependencies version="2" modelHash="c21d4f6614n7nz0bnw6v205d6en648f">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="by8wrmxeu23gqhvlixfl23oms1hmpko" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="drfxt8i63upja5k7zfj1z568c5k4586" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-40jj815fe1rn0p1bhi0382dg47350y2" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="4owbxbs8ql65a8recge1up294uklza3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-1ihd91yw3a40igfainvusyvruq3rigo" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="7lf0iqjorq20auygoq2bcy92g63vr4w" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6r1gsoq3dd0l5ofyes4ojz73yszw60" />
-  <common hash="a8zc9l9fy502wybuanr24zqx7686btp">
+  <common hash="-70mhlxt9fcn2jcvt7nv33qn5xmhnrt4">
     <dep root="1138055754698" />
     <dep root="1138056022639" />
     <dep root="1138056143562" />
@@ -189,7 +189,7 @@
   <source id="1139184414036" name="LinkList_AddNewChildOperation" hash="5xwmdv39bb1wbxydd2g98d7art3e8x5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1139613262185" name="Node_GetParentOperation" hash="ae3526q3w7gtgb3jp0j5sigfgilkp3v">
+  <source id="1139613262185" name="Node_GetParentOperation" hash="-408p5yzo4ju1u0tmlkwy4ukdx8951nr">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1139621453865" name="Node_IsInstanceOfOperation" hash="-9w9fh9vhxaexvi3lyqyzu6ujfuk6aqj">
@@ -201,13 +201,13 @@
   <source id="1139867745658" name="Node_ReplaceWithNewOperation" hash="1q9vryuxuhw8y9zi0d995daslmx4wjc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1139870260207" name="LinkList_AddChildOperation" hash="4hbqt4wkewojxdijqdp6xem4ejytwzs">
+  <source id="1139870260207" name="LinkList_AddChildOperation" hash="-5lbsk9jvkcqb40tbibf0kznyl7l84fg">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1140029532506" name="LinkList_InsertChildFirstOperation" hash="-40uusvyr2wfbez1i9wf1nmjhwa0ygl5">
+  <source id="1140029532506" name="LinkList_InsertChildFirstOperation" hash="2tkl9raucejecibp17j8e7ds622frxs">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1140129518788" name="Link_DeleteChildOperation" hash="6wwrxc1oe0x0y5uqpskcful9ljnczqa">
+  <source id="1140129518788" name="Link_DeleteChildOperation" hash="-4mhl9fqj0qv3uxgg6zg6oxbrmi2g0b8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1140131837776" name="Node_ReplaceWithAnotherOperation" hash="-1oq96ovg3igc6711eojrsqdjqwsxlq5">
@@ -216,7 +216,7 @@
   <source id="1140133623887" name="Node_DeleteOperation" hash="-7redhgk2vk5a26nyl6jrem6v3hpnkmo">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1140137987495" name="SNodeTypeCastExpression" hash="-2e9wk6893yiam08b4vljlktuc3zv23r">
+  <source id="1140137987495" name="SNodeTypeCastExpression" hash="-60fdrperz6mra87i9alaq00vcmfzuhb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1140725362528" name="Link_SetTargetOperation" hash="11du1ldfl8mfsl69fpgy8td7a1q5t2b">
@@ -234,28 +234,28 @@
   <source id="1143226024141" name="SModelType" hash="3gawgltcl3gi83fr1154r5v1nssqg1n">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1143234257716" name="Node_GetModelOperation" hash="9bwmjfjse0f971dto1iiswj7ki38ywz">
+  <source id="1143234257716" name="Node_GetModelOperation" hash="-erv93khs29fkleglb6fpe8f9y60qvx8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1143235216708" name="Model_CreateNewNodeOperation" hash="-asogokwlt4bjqidsff20kra6axm7bka">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1143511969223" name="Node_GetPrevSiblingOperation" hash="1ludvkywojcvhdp71692s057royl2h1">
+  <source id="1143511969223" name="Node_GetPrevSiblingOperation" hash="-2ipmjq51ahi2nuf67l8ot8y9m5g2ldt">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1143512015885" name="Node_GetNextSiblingOperation" hash="37gtr809u69jghx0e5aoepmn6qwvapx">
+  <source id="1143512015885" name="Node_GetNextSiblingOperation" hash="3flkdh4orrxmd9i3dariv80ad15z1v0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1144100743722" name="AbstractOperationParameter" hash="7lcq9gwq2i2i2ksd45r8jtrm3fpbr2g">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1144100932627" name="OperationParm_Inclusion" hash="7mbfxei97nw6vko3q0xs8kpmzqo6aaj">
+  <source id="1144100932627" name="OperationParm_Inclusion" hash="1zjdlj6n8ytfpzia89tkc7fd959jto1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1144101597970" name="OperationParm_Root" hash="-g6oibzi5jbddflvjfwfnr4i7bdfwzu">
+  <source id="1144101597970" name="OperationParm_Root" hash="-cwie9crp4uloalc3lee41kb56ltslaq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1144101972840" name="OperationParm_Concept" hash="-9hnk6j4rptpd8bna283hscqdtcjcrxq">
+  <source id="1144101972840" name="OperationParm_Concept" hash="2n3uoju77tvjqdvhh2jrxuk0by70h9u">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1144146199828" name="Node_CopyOperation" hash="-97tjprrdp1wj70wy2o4avcfnrl7x1bf">
@@ -267,19 +267,19 @@
   <source id="1145383075378" name="SNodeListType" hash="-7da2p1ftt7c4ev68laus7qisqe0ze3o">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1145404486709" name="SemanticDowncastExpression" hash="3d12ukec020qqcftxdiso4plj8hu6i3">
+  <source id="1145404486709" name="SemanticDowncastExpression" hash="-7z8ynhl9fwk84v2dyj8ygelubsopht3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1145567426890" name="SNodeListCreator" hash="-1vj34brnrsbskpnzrn20z1ua8ds4wl1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1145570846907" name="Node_GetNextSiblingsOperation" hash="-118l4k9sjq08yxs4cmpdw5qpulf7zot">
+  <source id="1145570846907" name="Node_GetNextSiblingsOperation" hash="clgg7hq0jk7obbx7w0954uugz8rxhm5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1145572800087" name="Node_GetPrevSiblingsOperation" hash="-bk2q76w17o5tr9v5o7zy2ru9lrbt2xp">
+  <source id="1145572800087" name="Node_GetPrevSiblingsOperation" hash="88efbhbu7h60z8o1x8zbhuswhp6fu33">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1145573345940" name="Node_GetAllSiblingsOperation" hash="ar2hq6l34z2vxex7zs74lk61y1alp56">
+  <source id="1145573345940" name="Node_GetAllSiblingsOperation" hash="-58qenk9ot1171o5at670q0c8jjspkh3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1145994841052" name="SConceptPropertyAccess" hash="-5xgd1orw9t66z8xgauhsu8tslvjor0t">
@@ -291,7 +291,7 @@
   <source id="1146253292180" name="Property_HasValue_Simple" hash="-5rth9c29foei7143jpy2e2b5qybtsvc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1154546920561" name="OperationParm_ConceptList" hash="5ao7kul24vgmk6z3b6swbeq814lc8b3">
+  <source id="1154546920561" name="OperationParm_ConceptList" hash="-a89rj1i540st07iuwsiovdahi0karnw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1154546950173" name="ConceptReference" hash="24jcjovmqzy1899jptfcg49b1066hbf">
@@ -303,7 +303,7 @@
   <source id="1171305280644" name="Node_GetDescendantsOperation" hash="3ar65lreywrwkbgctlqrv3ybjnaaq0o">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1171310072040" name="Node_GetContainingRootOperation" hash="-cf9jibz8mn83a5kzjhme6tu8etn6n5g">
+  <source id="1171310072040" name="Node_GetContainingRootOperation" hash="-bmwlqiare5jhx0ex54ubzoob57jcg3v">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1171315804604" name="Model_RootsOperation" hash="1zu18dj994zku7p176ptb9ozt664wdn">
@@ -324,7 +324,7 @@
   <source id="1172008320231" name="Node_IsNotNullOperation" hash="-an4t9w0ehp8bewcpgy91ymt4x59lcts">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1172244025706" name="LinkList_AddAllOperation" hash="2v323urn0ijkt4f2piw9u4hnltp108n">
+  <source id="1172244025706" name="LinkList_AddAllOperation" hash="-26dlqwsbzr7klwerz9qcrqv68wytkf0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1172323065820" name="Node_GetConceptOperation" hash="eaibf7kucz1p5qnon7k52t2ikbwamsi">
@@ -354,7 +354,7 @@
   <source id="1179168000618" name="Node_GetIndexInParentOperation" hash="-cb1afwjsy8olva4njt8il68dazx0cv8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1179350041460" name="Concept_GetDirectSuperConcepts" hash="5yglq5498yt5rwx59x1wgpv9yiwm9rr">
+  <source id="1179350041460" name="Concept_GetDirectSuperConcepts" hash="37uhfiorgc03hm6773uvyjfyfiy2coc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1179409122411" name="Node_ConceptMethodCall" hash="-33zx0ye72bdmufp542mt946rdic17nb">
@@ -366,10 +366,10 @@
   <source id="1180031783296" name="Concept_IsSubConceptOfOperation" hash="-7pdvhvzxsw4200bu3m27cl17bi73vqv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1180457458947" name="Concept_GetAllSuperConcepts" hash="a6reqxk1ppb561tu7lj48hdb37j913n">
+  <source id="1180457458947" name="Concept_GetAllSuperConcepts" hash="-9fn2f9r0rwtpx80o38gblz7apsssbra">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1180458444893" name="Concept_GetHierarchy" hash="-8wtfrc4bc8v6fwnkh80jfh7sc5rb1d9">
+  <source id="1180458444893" name="Concept_GetHierarchy" hash="-b4hc6j2bwlui866w3n35qdmkowd5pwn">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1180636770613" name="SNodeCreator" hash="-8gbfi8p5m8xaz8ykslp1iah8hzmxu8p">
@@ -417,7 +417,7 @@
   <source id="1212008292747" name="Model_GetLongNameOperation" hash="242pyiz72a7bsxpk44r1k4upvwsif9c">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1215103457144" name="LinkList_RemoveAllChildrenOperation" hash="-aw3qhgpvzakhlpwvg2eo2kdfaez8k6r">
+  <source id="1215103457144" name="LinkList_RemoveAllChildrenOperation" hash="-665pkp4qmwzt5m1jhfqudcn082ofkve">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1215467301810" name="Property_RemoveOperation" hash="9kew9n8b6sk2g6b3ksfewvs7bcl0w8f">
@@ -474,7 +474,7 @@
   <source id="1241015185235" name="SEnumMemberOperation" hash="2mncwzvvp0yr7l4so553nkbozod1s2s">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1803469493727536395" name="OperationParm_StopConceptList" hash="bfjgauq2tf1faov6prvm322t8egkik5">
+  <source id="1803469493727536395" name="OperationParm_StopConceptList" hash="-djmy8lqp818d45izq29inc2uc0h4rye">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2648652578096473304" name="ConceptProperty_SetOperation" hash="6dndb9c2bf1aqf8xzdg2aio45amr3e4">
@@ -486,7 +486,7 @@
   <source id="3562215692195599741" name="SLinkImplicitSelect" hash="2kgpg2acfw4ilqjt5ncr1u1azs559mz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8758390115028452779" name="Node_GetReferencesOperation" hash="2ng1ksrqz4lswdgtapw81vrjduhjg36">
+  <source id="8758390115028452779" name="Node_GetReferencesOperation" hash="-8exsejfhucn1mbe0zev1in5qkw3331h">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="8758390115029295477" name="SReferenceType" hash="-7ec9syw8l7ht86jwu8j5soo9ryge7s7">
@@ -504,13 +504,13 @@
   <source id="5692182839349412519" name="Reference_GetRoleOperation" hash="-5zwsplt84pyzpc2ma1ox0eatix78l35">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5820409030208923287" name="Node_GetContainingLinkOperation" hash="5ukuydi37lnmnmndv9ad571dvpfx1d1">
+  <source id="5820409030208923287" name="Node_GetContainingLinkOperation" hash="-6cbbag2wipp4u7i1j934sc18nkqomhn">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1960721196051541146" name="Node_GetContainingRoleOperation" hash="ac5fqwp1d19l6alc27iye5a913jxm2x">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3609773094169249792" name="Node_GetReferenceOperation" hash="-a7vkenfs92wfqjyn6bvbpe25jla5f0p">
+  <source id="3609773094169249792" name="Node_GetReferenceOperation" hash="a4zrxo3qm8ai6115cwr5jm03cslod7y">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="3542758363529077353" name="ILinkAccessQualifierContainer" hash="-bcezcc77dpkdcbpxzdi2r0e7hqr6ovp">
@@ -525,7 +525,7 @@
   <source id="4357968816427488499" name="CheckedModuleReference" hash="20ep3o34v2blemqfv37tescifkzl8g3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1540150895035667832" name="OperationParm_SameMetaLevel" hash="-4w8oos5o1ycf830loyh6f6i1ol3t420">
+  <source id="1540150895035667832" name="OperationParm_SameMetaLevel" hash="21cz0di761qi6wi6590htmi1p9o3r3y">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="8339862546319741524" name="ConceptFqNameRefExpression" hash="-4ajaha38d014rbsy77ooleoaa5ctyfa">
@@ -579,7 +579,7 @@
   <source id="5897605856268838718" name="ConceptPropertyNameRefExpression" hash="e8369j0k0pb5s5ztfpvgv8t9ngg1yvj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6995935425733782641" name="Model_GetModule" hash="-2jv2fng6gdq8a7a8k6fxd7ww0f1sioq">
+  <source id="6995935425733782641" name="Model_GetModule" hash="31en0mnfaodrbq1wc5r9qr6ntopjw2">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="4040588429969021681" name="ModuleReferenceExpression" hash="-4a0ot05x4bi9f97970cxbd7o3l9osg3">
@@ -603,7 +603,7 @@
   <source id="1828409047608048457" name="NodePointerExpression" hash="-726pixso95bb6y92jaq33i1rsrbdp95">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8866923313515890008" name="AsNodeOperation" hash="5atpo8s16lg5ou5xjh7p77dasdwkhmo">
+  <source id="8866923313515890008" name="AsNodeOperation" hash="95ie8qq70ln76r4oo5tfudhidslxdck">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

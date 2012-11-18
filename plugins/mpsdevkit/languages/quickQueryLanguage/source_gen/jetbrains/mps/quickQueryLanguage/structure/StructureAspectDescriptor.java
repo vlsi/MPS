@@ -26,7 +26,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 4:
         return new CompiledConceptDescriptor("jetbrains.mps.quickQueryLanguage.structure.QueryReplace", "jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction", false, new String[]{"jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction"}, new String[]{}, new String[]{});
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.quickQueryLanguage.structure.Query_node_Parameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.quickQueryLanguage.structure.Query_node_Parameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 6:
         return new CompiledConceptDescriptor("jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery", "jetbrains.mps.quickQueryLanguage.structure.BaseQuery", false, new String[]{"jetbrains.mps.quickQueryLanguage.structure.BaseQuery"}, new String[]{}, new String[]{});
       default:

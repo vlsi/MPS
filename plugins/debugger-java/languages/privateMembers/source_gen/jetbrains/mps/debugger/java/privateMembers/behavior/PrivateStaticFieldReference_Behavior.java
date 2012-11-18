@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class PrivateStaticFieldReference_Behavior {
   public static void init(SNode thisNode) {
@@ -20,5 +21,9 @@ public class PrivateStaticFieldReference_Behavior {
       classifierPresentation = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "classifier", false), "virtual_getPresentation_1213877396640", new Object[]{}) + ".";
     }
     return classifierPresentation + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "name");
+  }
+
+  public static boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
+    return false;
   }
 }

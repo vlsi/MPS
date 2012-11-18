@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class GetElementOperation_BehaviorDescriptor extends SingleArgumentSequenceOperation_BehaviorDescriptor implements IListOperation_BehaviorDescriptor {
   public GetElementOperation_BehaviorDescriptor() {
@@ -23,6 +24,10 @@ public class GetElementOperation_BehaviorDescriptor extends SingleArgumentSequen
 
   public boolean virtual_isLValue_1213877410080(SNode thisNode) {
     return IOperation_Behavior.virtual_isLValue_1213877410080(thisNode);
+  }
+
+  public boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
+    return IOperation_Behavior.virtual_lvalue_1262430001741498364(thisConcept);
   }
 
   public boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {

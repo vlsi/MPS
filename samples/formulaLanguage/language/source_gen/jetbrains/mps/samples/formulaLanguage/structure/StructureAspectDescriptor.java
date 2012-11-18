@@ -24,7 +24,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 3:
         return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", "jetbrains.mps.samples.formulaLanguage.structure.Constant", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Constant"}, new String[]{"value"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", "jetbrains.mps.samples.formulaLanguage.structure.Constant", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Constant", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"value"}, new String[]{});
       case 5:
         return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.Formula", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 6:
@@ -34,7 +34,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 8:
         return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.IfFunction", "jetbrains.mps.samples.formulaLanguage.structure.Function", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Function"}, new String[]{}, new String[]{});
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant", "jetbrains.mps.samples.formulaLanguage.structure.Constant", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Constant"}, new String[]{"value"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant", "jetbrains.mps.samples.formulaLanguage.structure.Constant", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Constant", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"value"}, new String[]{});
       case 10:
         return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.IsNullOperation", "jetbrains.mps.samples.formulaLanguage.structure.Operation", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Operation"}, new String[]{}, new String[]{});
       case 11:

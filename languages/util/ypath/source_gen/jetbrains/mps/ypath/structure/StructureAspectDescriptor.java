@@ -18,13 +18,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.ChildrenBlock", "jetbrains.mps.ypath.structure.LambdaMethod", false, new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{}, new String[]{});
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.ExpressionFunctionParam", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.ypath.structure.IFunctionParam"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.ExpressionFunctionParam", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.ypath.structure.IFunctionParam", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.FeatureGetFun", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.FeatureGetFun", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.FeatureSequenceFun", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.FeatureSequenceFun", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.FeatureSizeFun", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.FeatureSizeFun", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 5:
         return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.FromOperation", "jetbrains.mps.ypath.structure.TreePathOperation", false, new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{}, new String[]{});
       case 6:
@@ -36,7 +36,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 9:
         return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.GFGetterParamFun", "jetbrains.mps.ypath.structure.GFGetterFun", false, new String[]{"jetbrains.mps.ypath.structure.GFGetterFun", "jetbrains.mps.ypath.structure.IParamFeatureFun", "jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{}, new String[]{});
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.GeneratorFunctionParam", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.ypath.structure.IFunctionParam"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.GeneratorFunctionParam", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.ypath.structure.IFunctionParam", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 11:
         return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.GenericFeature", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.ypath.structure.IGenericFeature", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.ypath.structure.IFeature"}, new String[]{}, new String[]{});
       case 12:
@@ -56,7 +56,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 19:
         return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.ITreePathExpression", null, true, new String[]{}, new String[]{}, new String[]{});
       case 20:
-        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.IndexFunctionParam", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.IndexFunctionParam", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 21:
         return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.IterateOperation", "jetbrains.mps.ypath.structure.TreePathOperation", false, new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{"axis", "useDefault"}, new String[]{"usedFeature"});
       case 22:
@@ -66,7 +66,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 24:
         return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.LambdaMethodParameter", "jetbrains.mps.baseLanguage.structure.ClosureParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ClosureParameter"}, new String[]{}, new String[]{});
       case 25:
-        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.ListFeature", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.ypath.structure.IFeature"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.ListFeature", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.ypath.structure.IFeature", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 26:
         return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation", "jetbrains.mps.ypath.structure.TreePathOperation", false, new String[]{"jetbrains.mps.ypath.structure.TreePathOperation"}, new String[]{}, new String[]{});
       case 27:
@@ -74,7 +74,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 28:
         return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.MatchPropertyOperation", "jetbrains.mps.ypath.structure.MatchKindOperation", false, new String[]{"jetbrains.mps.ypath.structure.MatchKindOperation"}, new String[]{}, new String[]{"property"});
       case 29:
-        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.NodeFunctionParam", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.NodeFunctionParam", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 30:
         return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.NodeKindCase", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 31:
@@ -82,7 +82,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 32:
         return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.NodeKindSpecificCase", "jetbrains.mps.ypath.structure.NodeKindCase", false, new String[]{"jetbrains.mps.ypath.structure.NodeKindCase"}, new String[]{}, new String[]{"treeNodeKind"});
       case 33:
-        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.NodeTypeFunctionParam", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.NodeTypeFunctionParam", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 34:
         return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.ParamFeatureGetFun", "jetbrains.mps.ypath.structure.FeatureGetFun", false, new String[]{"jetbrains.mps.ypath.structure.FeatureGetFun", "jetbrains.mps.ypath.structure.IParamFeatureFun"}, new String[]{}, new String[]{});
       case 35:
@@ -90,23 +90,23 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 36:
         return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.ParamFeatureSizeFun", "jetbrains.mps.ypath.structure.FeatureSizeFun", false, new String[]{"jetbrains.mps.ypath.structure.FeatureSizeFun", "jetbrains.mps.ypath.structure.IParamFeatureFun"}, new String[]{}, new String[]{});
       case 37:
-        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.ParamFunctionParam", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.ypath.structure.IFunctionParam"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.ParamFunctionParam", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.ypath.structure.IFunctionParam", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 38:
-        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.ParamListFeature", "jetbrains.mps.ypath.structure.ListFeature", false, new String[]{"jetbrains.mps.ypath.structure.ListFeature", "jetbrains.mps.ypath.structure.IParamFeature"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.ParamListFeature", "jetbrains.mps.ypath.structure.ListFeature", false, new String[]{"jetbrains.mps.ypath.structure.ListFeature", "jetbrains.mps.ypath.structure.IParamFeature", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 39:
-        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.ParamSequenceFeature", "jetbrains.mps.ypath.structure.SequenceFeature", false, new String[]{"jetbrains.mps.ypath.structure.SequenceFeature", "jetbrains.mps.ypath.structure.IFeature", "jetbrains.mps.ypath.structure.IParamFeature"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.ParamSequenceFeature", "jetbrains.mps.ypath.structure.SequenceFeature", false, new String[]{"jetbrains.mps.ypath.structure.SequenceFeature", "jetbrains.mps.ypath.structure.IFeature", "jetbrains.mps.ypath.structure.IParamFeature", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 40:
         return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.ParameterQueryFun", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{}, new String[]{});
       case 41:
-        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.ParameterWrapper", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"paramValue"}, new String[]{"paramRef"});
+        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.ParameterWrapper", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"paramValue"}, new String[]{"paramRef"});
       case 42:
         return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.ParentBlock", "jetbrains.mps.ypath.structure.LambdaMethod", false, new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{}, new String[]{});
       case 43:
         return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.PropertyGetter", "jetbrains.mps.ypath.structure.LambdaMethod", false, new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{}, new String[]{});
       case 44:
-        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.SequenceFeature", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.ypath.structure.IFeature"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.SequenceFeature", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.ypath.structure.IFeature", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 45:
-        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.SwitchNodeKindStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.SwitchNodeKindStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 46:
         return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.TargetTypeFun", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.ypath.structure.IDesignFunction"}, new String[]{}, new String[]{});
       case 47:
@@ -134,11 +134,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 58:
         return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.TreePathType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
       case 59:
-        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.ValueFunctionParam", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.ValueFunctionParam", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 60:
         return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.VisitBlock", "jetbrains.mps.ypath.structure.LambdaMethod", false, new String[]{"jetbrains.mps.ypath.structure.LambdaMethod"}, new String[]{}, new String[]{});
       case 61:
-        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.VisitChildrenExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.VisitChildrenExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 62:
         return new CompiledConceptDescriptor("jetbrains.mps.ypath.structure.VisitNodesStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{});
       case 63:

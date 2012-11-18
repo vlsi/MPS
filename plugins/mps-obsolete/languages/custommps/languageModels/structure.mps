@@ -28,9 +28,6 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1240832859448">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tps4.1240832649054" resolveInfo="INotBuildableComponent" />
     </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="1237394818532">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tps4.1233309050521" resolveInfo="acceptFiles" />
-    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1234290845440">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="pathToBuildToolsZip" />

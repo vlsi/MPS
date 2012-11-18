@@ -112,8 +112,8 @@
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tps4.1212485154251" resolveInfo="Replace" />
     </node>
     <node type="tpsj.ProjectDescription" typeId="tpsj.1216745453338" id="1216902420773">
-      <property name="propertiesFile" nameId="tpsj.4738159245302261806" value="project.properties" />
       <property name="name" nameId="tpck.1169194664001" value="compile.modules" />
+      <property name="propertiesFile" nameId="tpsj.4738159245302261806" value="project.properties" />
       <property name="basedir" nameId="tpsj.7857794759871997326" value="." />
     </node>
     <node type="tpf8.MappingScript" typeId="tpf8.1195499912406" id="1217435006859">
@@ -505,8 +505,8 @@
       <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpsk.1196851099544" resolveInfo="TargetDeclaration" />
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1234978497168">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="generate" />
       <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="false" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="generate" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tps4.1219228952036" resolveInfo="Macro" />
       <link role="labelDeclaration" roleId="tpf8.1200917515464" targetNodeId="1219167110931" resolveInfo="MacroToPropertyDeclaration" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1234978510166">
@@ -542,16 +542,16 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1233308633767">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="projectComponents" />
       <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="true" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="projectComponents" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tps4.1203598512427" resolveInfo="Folder" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1233308633768">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1203620846457" resolveInfo="reduce_Folder" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1233308633769">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="projectComponents" />
       <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="true" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="projectComponents" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tps4.1203599702327" resolveInfo="Module" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1233308633770">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1203621003012" resolveInfo="reduce_Module" />
@@ -1379,10 +1379,13 @@
           <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="1203619982544">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1203619982545">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1203620001671">
-                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204118516022">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1203620001672" />
-                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SConceptPropertyAccess" typeId="tp25.1145994841052" id="1203620007317">
-                    <link role="conceptProperty" roleId="tp25.1145994841055" targetNodeId="tps4.1203619938976" resolveInfo="cleanAfterTheJob" />
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1262430001741726102">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1262430001741726103">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1262430001741726104" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetConceptOperation" typeId="tp25.1172323065820" id="1262430001741726105" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1262430001741726106">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1262430001741498148" resolveInfo="cleanAfterTheJob" />
                   </node>
                 </node>
               </node>

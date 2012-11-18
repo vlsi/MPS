@@ -4,13 +4,15 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import java.util.List;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ConceptFunctionParameter_Behavior {
@@ -25,7 +27,7 @@ public class ConceptFunctionParameter_Behavior {
   }
 
   public static boolean virtual_isParameterObjectUsed_1213877522926(SNode thisNode) {
-    return !(SConceptPropertyOperations.getBoolean(thisNode, "dontUseParameterObject"));
+    return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_dontUseParameterObject_1262430001741498340", new Object[]{}));
   }
 
   public static SNode call_findConceptFunction_1213877522934(SNode thisNode) {
@@ -57,6 +59,10 @@ public class ConceptFunctionParameter_Behavior {
     } else {
       return null;
     }
+  }
+
+  public static boolean virtual_dontUseParameterObject_1262430001741498340(SConcept thisConcept) {
+    return false;
   }
 
   @Deprecated

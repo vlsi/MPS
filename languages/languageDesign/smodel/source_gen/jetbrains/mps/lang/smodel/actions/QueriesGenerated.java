@@ -32,7 +32,7 @@ import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import java.util.Iterator;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 
 public class QueriesGenerated {
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_SNodeOperation_1154637518825(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -472,13 +472,13 @@ public class QueriesGenerated {
             if (SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.lang.smodel.structure.SPropertyAccess")) {
               SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(leftOperation, "jetbrains.mps.lang.smodel.structure.SPropertyAccess"), "property", false), "dataType", false);
               if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")) {
-                return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToEnumProperty"));
+                return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(parameterOp)), "virtual_applicableToEnumProperty_1262430001741498259", new Object[]{}));
               } else {
-                return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToSimpleProperty"));
+                return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(parameterOp)), "virtual_applicableToSimpleProperty_1262430001741498100", new Object[]{}));
               }
             }
             if (SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess")) {
-              return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToConceptProperty"));
+              return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(parameterOp)), "virtual_applicableToConceptProperty_1262430001741497945", new Object[]{}));
             }
           }
           // ========== 
@@ -486,24 +486,24 @@ public class QueriesGenerated {
           if (linkAccess != null) {
             if (BehaviorReflection.invokeVirtual(Boolean.TYPE, linkAccess, "virtual_isSingularCardinality_4024382256428848847", new Object[]{})) {
               // some ops are only applicable to 'link to concept' 
-              if (SConceptPropertyOperations.getBoolean(parameterOp, "applicableToConcept") && !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToNode"))) {
-                return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToLink") && appTypesInfo.myLinkToConcept);
+              if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(parameterOp)), "virtual_applicableToConcept_1262430001741498358", new Object[]{}) && !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(parameterOp)), "virtual_applicableToNode_1262430001741498076", new Object[]{}))) {
+                return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(parameterOp)), "virtual_applicableToLink_1262430001741498352", new Object[]{}) && appTypesInfo.myLinkToConcept);
               }
-              return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToLink"));
+              return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(parameterOp)), "virtual_applicableToLink_1262430001741498352", new Object[]{}));
             }
-            return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToLinkList"));
+            return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(parameterOp)), "virtual_applicableToLinkList_1262430001741498382", new Object[]{}));
           }
           // is concept ? 
           if (appTypesInfo.myToConcept) {
-            return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToConcept"));
+            return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(parameterOp)), "virtual_applicableToConcept_1262430001741498358", new Object[]{}));
           }
           // is node ? 
           if (appTypesInfo.myToNode) {
-            return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToNode"));
+            return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(parameterOp)), "virtual_applicableToNode_1262430001741498076", new Object[]{}));
           }
           // is smodel ? 
           if (appTypesInfo.myToModel) {
-            return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToModel"));
+            return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(parameterOp)), "virtual_applicableToModel_1262430001741492322", new Object[]{}));
           }
           return true;
         }

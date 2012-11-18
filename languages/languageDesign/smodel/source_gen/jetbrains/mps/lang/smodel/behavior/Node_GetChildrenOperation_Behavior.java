@@ -5,6 +5,7 @@ package jetbrains.mps.lang.smodel.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class Node_GetChildrenOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -12,5 +13,13 @@ public class Node_GetChildrenOperation_Behavior {
 
   public static SNode call_getLinkQualifier_3476105411552591984(SNode thisNode) {
     return SNodeOperations.cast(SNodeOperation_Behavior.call_getParameter_1213877508972(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier")), "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier");
+  }
+
+  public static boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
+    return true;
+  }
+
+  public static boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
+    return true;
   }
 }

@@ -168,9 +168,6 @@
       <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="1205756909548" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1213999088275" resolveInfo="DefaultClassifierFieldDeclaration" />
     </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="1214304228587">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpee.1197029536315" resolveInfo="lvalue" />
-    </node>
   </root>
   <root id="1217433449852" />
   <root id="1029302639053433191">

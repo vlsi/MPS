@@ -4,6 +4,7 @@ package jetbrains.mps.debugger.java.privateMembers.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.StaticFieldReference_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class PrivateStaticFieldReference_BehaviorDescriptor extends StaticFieldReference_BehaviorDescriptor {
   public PrivateStaticFieldReference_BehaviorDescriptor() {
@@ -11,6 +12,10 @@ public class PrivateStaticFieldReference_BehaviorDescriptor extends StaticFieldR
 
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return PrivateStaticFieldReference_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  }
+
+  public boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
+    return PrivateStaticFieldReference_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
   }
 
   @Override

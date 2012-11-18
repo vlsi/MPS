@@ -13,6 +13,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.lang.reflect.Method;
 import jetbrains.mps.reloading.ReflectionUtil;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class DotExpression_Behavior {
@@ -57,6 +58,10 @@ public class DotExpression_Behavior {
 
   public static boolean virtual_allowsNullOperand_4585239809762176541(SNode thisNode) {
     return false;
+  }
+
+  public static boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
+    return true;
   }
 
   @Deprecated

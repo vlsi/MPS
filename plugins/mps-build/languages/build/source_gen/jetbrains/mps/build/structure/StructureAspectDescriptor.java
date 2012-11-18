@@ -72,7 +72,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 27:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet", null, true, new String[]{}, new String[]{}, new String[]{});
       case 28:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildLayout_Copy", "jetbrains.mps.build.structure.BuildLayout_AbstractCopy", false, new String[]{"jetbrains.mps.build.structure.BuildLayout_AbstractCopy", "jetbrains.mps.build.structure.BuildLayout_FileSet"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildLayout_Copy", "jetbrains.mps.build.structure.BuildLayout_AbstractCopy", false, new String[]{"jetbrains.mps.build.structure.BuildLayout_AbstractCopy", "jetbrains.mps.build.structure.BuildLayout_FileSet", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 29:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildLayout_CopyFilter", "jetbrains.mps.build.structure.BuildLayout_CopyHandler", false, new String[]{"jetbrains.mps.build.structure.BuildLayout_CopyHandler"}, new String[]{}, new String[]{});
       case 30:
@@ -94,7 +94,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 38:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildLayout_CopyRegexMapper", "jetbrains.mps.build.structure.BuildLayout_CopyMapper", false, new String[]{"jetbrains.mps.build.structure.BuildLayout_CopyMapper"}, new String[]{"pattern", "replace"}, new String[]{});
       case 39:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildLayout_CustomCopy", "jetbrains.mps.build.structure.BuildLayout_AbstractCopy", false, new String[]{"jetbrains.mps.build.structure.BuildLayout_AbstractCopy"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildLayout_CustomCopy", "jetbrains.mps.build.structure.BuildLayout_AbstractCopy", false, new String[]{"jetbrains.mps.build.structure.BuildLayout_AbstractCopy", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 40:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildLayout_EchoProperties", "jetbrains.mps.build.structure.BuildLayout_Node", false, new String[]{"jetbrains.mps.build.structure.BuildLayout_Node", "jetbrains.mps.build.structure.BuildStringContainer"}, new String[]{}, new String[]{});
       case 41:
@@ -162,7 +162,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 72:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildRelativePath", "jetbrains.mps.build.structure.BuildSourcePath", false, new String[]{"jetbrains.mps.build.structure.BuildSourcePath"}, new String[]{}, new String[]{});
       case 73:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildSourceArchiveRelativePath", "jetbrains.mps.build.structure.BuildRelativePath", false, new String[]{"jetbrains.mps.build.structure.BuildRelativePath", "jetbrains.mps.build.structure.BuildExternalDependency", "jetbrains.mps.build.structure.IWorkflowParticipant"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildSourceArchiveRelativePath", "jetbrains.mps.build.structure.BuildRelativePath", false, new String[]{"jetbrains.mps.build.structure.BuildRelativePath", "jetbrains.mps.build.structure.BuildExternalDependency", "jetbrains.mps.build.structure.IWorkflowParticipant", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 74:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", "jetbrains.mps.build.structure.BuildRelativePath", false, new String[]{"jetbrains.mps.build.structure.BuildRelativePath"}, new String[]{}, new String[]{"macro"});
       case 75:
@@ -192,7 +192,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 87:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildSource_JavaDependencyFileset", "jetbrains.mps.build.structure.BuildSource_JavaDependency", false, new String[]{"jetbrains.mps.build.structure.BuildSource_JavaDependency"}, new String[]{}, new String[]{});
       case 88:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildSource_JavaDependencyJar", "jetbrains.mps.build.structure.BuildSource_JavaDependency", false, new String[]{"jetbrains.mps.build.structure.BuildSource_JavaDependency"}, new String[]{"reexport"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildSource_JavaDependencyJar", "jetbrains.mps.build.structure.BuildSource_JavaDependency", false, new String[]{"jetbrains.mps.build.structure.BuildSource_JavaDependency", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"reexport"}, new String[]{});
       case 89:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary", "jetbrains.mps.build.structure.BuildSource_JavaDependency", false, new String[]{"jetbrains.mps.build.structure.BuildSource_JavaDependency", "jetbrains.mps.build.structure.BuildExternalDependency"}, new String[]{"reexport"}, new String[]{"library"});
       case 90:
@@ -202,7 +202,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 92:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jar"});
       case 93:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildSource_JavaFiles", "jetbrains.mps.build.structure.BuildSource_JavaSources", false, new String[]{"jetbrains.mps.build.structure.BuildSource_JavaSources"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildSource_JavaFiles", "jetbrains.mps.build.structure.BuildSource_JavaSources", false, new String[]{"jetbrains.mps.build.structure.BuildSource_JavaSources", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 94:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildSource_JavaJar", "jetbrains.mps.build.structure.BuildSource_JavaCP", false, new String[]{"jetbrains.mps.build.structure.BuildSource_JavaCP"}, new String[]{}, new String[]{});
       case 95:
@@ -210,7 +210,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 96:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildSource_JavaLibrary", "jetbrains.mps.build.structure.BuildProjectPart", false, new String[]{"jetbrains.mps.build.structure.BuildProjectPart", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
       case 97:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildSource_JavaLibraryCP", "jetbrains.mps.build.structure.BuildSource_JavaLibraryElement", false, new String[]{"jetbrains.mps.build.structure.BuildSource_JavaLibraryElement"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildSource_JavaLibraryCP", "jetbrains.mps.build.structure.BuildSource_JavaLibraryElement", false, new String[]{"jetbrains.mps.build.structure.BuildSource_JavaLibraryElement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 98:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildSource_JavaLibraryElement", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 99:
@@ -232,7 +232,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 107:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildSource_SingleFolder", null, true, new String[]{}, new String[]{}, new String[]{});
       case 108:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildString", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildString", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 109:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildStringContainer", null, true, new String[]{}, new String[]{}, new String[]{});
       case 110:
@@ -240,9 +240,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 111:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildStringPart", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
       case 112:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildTextStringPart", "jetbrains.mps.build.structure.BuildStringPart", false, new String[]{"jetbrains.mps.build.structure.BuildStringPart"}, new String[]{"text"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildTextStringPart", "jetbrains.mps.build.structure.BuildStringPart", false, new String[]{"jetbrains.mps.build.structure.BuildStringPart", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"text"}, new String[]{});
       case 113:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildVarRefStringPart", "jetbrains.mps.build.structure.BuildStringPart", false, new String[]{"jetbrains.mps.build.structure.BuildStringPart"}, new String[]{}, new String[]{"macro"});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildVarRefStringPart", "jetbrains.mps.build.structure.BuildStringPart", false, new String[]{"jetbrains.mps.build.structure.BuildStringPart", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{"macro"});
       case 114:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildVariableMacro", "jetbrains.mps.build.structure.BuildMacro", false, new String[]{"jetbrains.mps.build.structure.BuildMacro"}, new String[]{}, new String[]{});
       case 115:
@@ -250,7 +250,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 116:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildVariableMacroInitWithDate", "jetbrains.mps.build.structure.BuildVariableMacroInitValue", false, new String[]{"jetbrains.mps.build.structure.BuildVariableMacroInitValue"}, new String[]{"pattern"}, new String[]{});
       case 117:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildVariableMacroInitWithString", "jetbrains.mps.build.structure.BuildVariableMacroInitValue", false, new String[]{"jetbrains.mps.build.structure.BuildVariableMacroInitValue"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildVariableMacroInitWithString", "jetbrains.mps.build.structure.BuildVariableMacroInitValue", false, new String[]{"jetbrains.mps.build.structure.BuildVariableMacroInitValue", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 118:
         return new CompiledConceptDescriptor("jetbrains.mps.build.structure.BuildVariableMacroInitWithValueFromFile", "jetbrains.mps.build.structure.BuildVariableMacroInitValue", false, new String[]{"jetbrains.mps.build.structure.BuildVariableMacroInitValue"}, new String[]{"propertyName"}, new String[]{});
       case 119:

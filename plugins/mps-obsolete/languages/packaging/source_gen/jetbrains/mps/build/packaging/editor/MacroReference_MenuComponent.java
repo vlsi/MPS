@@ -12,7 +12,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -27,7 +28,7 @@ public class MacroReference_MenuComponent extends AbstractCellMenuComponent {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      List<String> allMacroNames = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SNodeOperations.getAncestor(node, "jetbrains.mps.build.packaging.structure.IMacroHolder", true, false), "virtual_getAllMacroNames_1234975567387", new Object[]{SConceptPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.build.packaging.structure.IPath"), "canStartFromBasedir")});
+      List<String> allMacroNames = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SNodeOperations.getAncestor(node, "jetbrains.mps.build.packaging.structure.IMacroHolder", true, false), "virtual_getAllMacroNames_1234975567387", new Object[]{BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.build.packaging.structure.IPath")))), "virtual_canStartFromBasedir_1262430001741498253", new Object[]{})});
       ListSequence.fromList(allMacroNames).addElement("no macro");
       return allMacroNames;
     }

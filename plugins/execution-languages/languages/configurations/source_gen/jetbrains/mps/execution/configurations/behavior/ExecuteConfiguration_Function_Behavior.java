@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
@@ -36,6 +37,10 @@ public class ExecuteConfiguration_Function_Behavior {
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return new ExecuteConfiguration_Function_Behavior.QuotationClass_cw5ucd_a0a0d().createNode();
+  }
+
+  public static boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
+    return true;
   }
 
   @Deprecated

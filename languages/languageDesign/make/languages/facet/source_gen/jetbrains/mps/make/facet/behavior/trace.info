@@ -3,23 +3,85 @@
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="ExtendsFacetReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ExtendsFacetReference_BehaviorDescriptor" />
   <unitInfo fileName="FacetDeclaration_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="FacetReferenceExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetReferenceExpression_BehaviorDescriptor" />
+  <unitInfo fileName="FacetReferenceExpression_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetReferenceExpression_BehaviorDescriptor" />
   <unitInfo fileName="FacetReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetReference_BehaviorDescriptor" />
-  <unitInfo fileName="ForeignParametersComponentExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ForeignParametersComponentExpression_BehaviorDescriptor" />
-  <unitInfo fileName="ForeignParametersExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ForeignParametersExpression_BehaviorDescriptor" />
+  <unitInfo fileName="ForeignParametersComponentExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ForeignParametersComponentExpression_BehaviorDescriptor" />
+  <unitInfo fileName="ForeignParametersExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ForeignParametersExpression_BehaviorDescriptor" />
   <unitInfo fileName="IFacet_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.IFacet_BehaviorDescriptor" />
   <unitInfo fileName="IPropertyExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.IPropertyExpression_BehaviorDescriptor" />
-  <unitInfo fileName="LocalParametersComponentExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.LocalParametersComponentExpression_BehaviorDescriptor" />
-  <unitInfo fileName="LocalParametersExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.LocalParametersExpression_BehaviorDescriptor" />
+  <unitInfo fileName="LocalParametersComponentExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.LocalParametersComponentExpression_BehaviorDescriptor" />
+  <unitInfo fileName="LocalParametersExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.LocalParametersExpression_BehaviorDescriptor" />
   <unitInfo fileName="NamedFacetReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.NamedFacetReference_BehaviorDescriptor" />
-  <unitInfo fileName="ParametersDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ParametersDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="ParametersDeclaration_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ParametersDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="RelatedFacetReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.RelatedFacetReference_BehaviorDescriptor" />
   <unitInfo fileName="ResourceClassifierType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ResourceClassifierType_BehaviorDescriptor" />
   <unitInfo fileName="ResourceSpecificPropertiesExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ResourceSpecificPropertiesExpression_BehaviorDescriptor" />
   <unitInfo fileName="ResourceTypeDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ResourceTypeDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="TargetDeclaration_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.TargetDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="TargetDependency_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.TargetDependency_BehaviorDescriptor" />
-  <unitInfo fileName="TargetReferenceExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.TargetReferenceExpression_BehaviorDescriptor" />
+  <unitInfo fileName="TargetReferenceExpression_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.TargetReferenceExpression_BehaviorDescriptor" />
+  <root nodeId="1262430001741641704" modelId="r:32324a64-526d-42e5-8157-b55154efce2d(jetbrains.mps.make.facet.behavior)">
+    <nodeInfo nodeId="1262430001741641702" fileName="TargetReferenceExpression_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741641704" fileName="TargetReferenceExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741641704" fileName="TargetReferenceExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_legalAsStatement_1262430001741498032#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <scopeInfo nodeId="1262430001741641706" fileName="TargetReferenceExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741641701" fileName="TargetReferenceExpression_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1262430001741641704" fileName="TargetReferenceExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741641704" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741641704" fileName="TargetReferenceExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741641704" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741641704" fileName="TargetReferenceExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.TargetReferenceExpression_Behavior" />
+  </root>
+  <root nodeId="1262430001741647428" modelId="r:32324a64-526d-42e5-8157-b55154efce2d(jetbrains.mps.make.facet.behavior)">
+    <nodeInfo nodeId="1262430001741647427" fileName="ParametersDeclaration_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718424" fileName="ParametersDeclaration_Behavior.java" startLine="16" startPosition="89" endLine="17" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741647428" fileName="ParametersDeclaration_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741647428" fileName="ParametersDeclaration_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRightBracket_1262430001741498115#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1262430001741647428" fileName="ParametersDeclaration_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getLeftBracket_1262430001741497804#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1262430001741647430" fileName="ParametersDeclaration_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741647425" fileName="ParametersDeclaration_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" />
+    <scopeInfo nodeId="1262430001741718422" fileName="ParametersDeclaration_Behavior.java" startLine="16" startPosition="89" endLine="17" endPosition="15" />
+    <scopeInfo nodeId="1262430001741647428" fileName="ParametersDeclaration_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741647428" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741647428" fileName="ParametersDeclaration_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741647428" varName="thisConcept" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741647428" fileName="ParametersDeclaration_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="1262430001741647428" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741647428" fileName="ParametersDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ParametersDeclaration_Behavior" />
+  </root>
+  <root nodeId="1262430001741718779" modelId="r:32324a64-526d-42e5-8157-b55154efce2d(jetbrains.mps.make.facet.behavior)">
+    <nodeInfo nodeId="1262430001741718777" fileName="LocalParametersComponentExpression_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718779" fileName="LocalParametersComponentExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741718779" fileName="LocalParametersComponentExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_lvalue_1262430001741497939#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <scopeInfo nodeId="1262430001741718781" fileName="LocalParametersComponentExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741718776" fileName="LocalParametersComponentExpression_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="17" />
+    <scopeInfo nodeId="1262430001741718779" fileName="LocalParametersComponentExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741718779" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741718779" fileName="LocalParametersComponentExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741718779" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741718779" fileName="LocalParametersComponentExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.LocalParametersComponentExpression_Behavior" />
+  </root>
+  <root nodeId="1262430001741718794" modelId="r:32324a64-526d-42e5-8157-b55154efce2d(jetbrains.mps.make.facet.behavior)">
+    <nodeInfo nodeId="1262430001741718792" fileName="ForeignParametersComponentExpression_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718794" fileName="ForeignParametersComponentExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741718794" fileName="ForeignParametersComponentExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_lvalue_1262430001741497939#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <scopeInfo nodeId="1262430001741718796" fileName="ForeignParametersComponentExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741718791" fileName="ForeignParametersComponentExpression_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="17" />
+    <scopeInfo nodeId="1262430001741718794" fileName="ForeignParametersComponentExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741718794" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741718794" fileName="ForeignParametersComponentExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741718794" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741718794" fileName="ForeignParametersComponentExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ForeignParametersComponentExpression_Behavior" />
+  </root>
   <root nodeId="1919086248986828152" modelId="r:32324a64-526d-42e5-8157-b55154efce2d(jetbrains.mps.make.facet.behavior)">
     <nodeInfo nodeId="1919086248986828152" fileName="IFacet_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1919086248986828154" fileName="IFacet_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
@@ -29,12 +91,18 @@
     <unitInfo nodeId="1919086248986828152" fileName="IFacet_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.IFacet_Behavior" />
   </root>
   <root nodeId="1919086248986855422" modelId="r:32324a64-526d-42e5-8157-b55154efce2d(jetbrains.mps.make.facet.behavior)">
-    <nodeInfo nodeId="1919086248986855422" fileName="FacetReferenceExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="1919086248986855424" fileName="FacetReferenceExpression_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1919086248986855422" fileName="FacetReferenceExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
+    <nodeInfo nodeId="1262430001741717517" fileName="FacetReferenceExpression_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1919086248986855422" fileName="FacetReferenceExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1919086248986855422" fileName="FacetReferenceExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_legalAsStatement_1262430001741498032#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <scopeInfo nodeId="1919086248986855424" fileName="FacetReferenceExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741717516" fileName="FacetReferenceExpression_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1919086248986855422" fileName="FacetReferenceExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1919086248986855422" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1919086248986855422" fileName="FacetReferenceExpression_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetReferenceExpression_Behavior" />
+    <scopeInfo nodeId="1919086248986855422" fileName="FacetReferenceExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1919086248986855422" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1919086248986855422" fileName="FacetReferenceExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetReferenceExpression_Behavior" />
   </root>
   <root nodeId="7854369758457864777" modelId="r:32324a64-526d-42e5-8157-b55154efce2d(jetbrains.mps.make.facet.behavior)">
     <nodeInfo nodeId="6447445394688471871" fileName="FacetDeclaration_Behavior.java" startLine="26" startPosition="85" endLine="27" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

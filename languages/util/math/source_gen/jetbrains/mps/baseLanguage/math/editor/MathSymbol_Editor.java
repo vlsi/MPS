@@ -12,15 +12,22 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.CellAlign;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.ScriptKind;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.editor.runtime.EditorCell_Empty;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MathSymbol_Editor extends DefaultNodeEditor {
@@ -53,7 +60,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     if (renderingCondition_b0ego6_a0b0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_b0ego6_a1a(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConceptProperty_b0ego6_b1a(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_b0ego6_b1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_b0ego6_c1a(editorContext, node));
     if (renderingCondition_b0ego6_a3b0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_b0ego6_d1a(editorContext, node));
@@ -85,7 +92,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b0ego6_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_b0ego6_a_0");
-    editorCell.addEditorCell(this.createConceptProperty_b0ego6_a0(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_b0ego6_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_b0ego6_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_b0ego6_c0_0(editorContext, node));
     return editorCell;
@@ -94,6 +101,49 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_b0ego6_b0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ShortDescriptionEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
+  private EditorCell createReadOnlyModelAccessor_b0ego6_b1a(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        return BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getOpName_1262430001741497894", new Object[]{});
+      }
+
+      public void setText(String s) {
+      }
+
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    editorCell.setCellId("ReadOnlyModelAccessor_b0ego6_b1a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.BASE_LINE_CELL, true);
+      style.set(StyleAttributes.FONT_SIZE, 25);
+      style.set(StyleAttributes.EDITABLE, false);
+      style.set(StyleAttributes.SELECTABLE, true);
+    }
+    return editorCell;
+  }
+
+  private EditorCell createReadOnlyModelAccessor_b0ego6_a0(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        return BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getOpName_1262430001741497894", new Object[]{});
+      }
+
+      public void setText(String s) {
+      }
+
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    editorCell.setCellId("ReadOnlyModelAccessor_b0ego6_a0");
     return editorCell;
   }
 
@@ -187,49 +237,6 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no precondition>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConceptProperty_b0ego6_b1a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-    provider.setRole("opName");
-    provider.setNoTargetText("<no opName>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("conceptProperty_opName");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.BASE_LINE_CELL, true);
-      style.set(StyleAttributes.FONT_SIZE, 25);
-      style.set(StyleAttributes.EDITABLE, false);
-      style.set(StyleAttributes.SELECTABLE, true);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConceptProperty_b0ego6_a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-    provider.setRole("opName");
-    provider.setNoTargetText("<no opName>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("conceptProperty_opName_1");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

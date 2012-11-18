@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
@@ -23,6 +24,10 @@ public class TreeSetCreator_Behavior {
 
   public static boolean virtual_canHaveParameter_2261417478150191157(SNode thisNode) {
     return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.collections.structure.HashSetCreator", "virtual_canHaveParameter_2261417478150191157", new Object[]{}) && (SLinkOperations.getTarget(thisNode, "comparator", true) == null);
+  }
+
+  public static boolean virtual_hasInitSize_1262430001741498238(SConcept thisConcept) {
+    return false;
   }
 
   @Deprecated

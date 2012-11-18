@@ -4,6 +4,7 @@ package jetbrains.mps.lang.generator.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class ReferenceMacro_Behavior {
   public static void init(SNode thisNode) {
@@ -11,5 +12,9 @@ public class ReferenceMacro_Behavior {
 
   public static boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
     return SLinkOperations.getTarget(thisNode, "referentFunction", true) != child;
+  }
+
+  public static String virtual_getRole_1262430001741497900(SConcept thisConcept) {
+    return "referenceMacro";
   }
 }

@@ -94,7 +94,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 38:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.refactoring.structure.InitialValueClause", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
       case 39:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.refactoring.structure.IntMPSParameterType", "jetbrains.mps.lang.refactoring.structure.MPSParameterType", false, new String[]{"jetbrains.mps.lang.refactoring.structure.MPSParameterType"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.refactoring.structure.IntMPSParameterType", "jetbrains.mps.lang.refactoring.structure.MPSParameterType", false, new String[]{"jetbrains.mps.lang.refactoring.structure.MPSParameterType", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 40:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.refactoring.structure.IsApplicableClause", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
       case 41:

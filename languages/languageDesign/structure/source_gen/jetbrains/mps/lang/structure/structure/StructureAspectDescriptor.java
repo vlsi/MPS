@@ -22,7 +22,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 2:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration", false, new String[]{"jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"}, new String[]{}, new String[]{});
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"role", "stereotype", "sourceCardinality"}, new String[]{"source", "target"});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"role", "stereotype", "sourceCardinality"}, new String[]{"source", "target"});
       case 4:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.BooleanConceptProperty", "jetbrains.mps.lang.structure.structure.ConceptProperty", false, new String[]{"jetbrains.mps.lang.structure.structure.ConceptProperty"}, new String[]{}, new String[]{"booleanConceptPropertyDeclaration"});
       case 5:

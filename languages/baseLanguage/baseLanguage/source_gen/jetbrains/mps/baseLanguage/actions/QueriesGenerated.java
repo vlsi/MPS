@@ -50,7 +50,6 @@ import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
@@ -1981,7 +1980,7 @@ __switch__:
             for (SNode conceptDeclaration : SModelOperations.getRoots(blStructure, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
               if (SConceptOperations.isSubConceptOf(conceptDeclaration, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
                 SNode param = (SNode) conceptDeclaration;
-                if (isEmpty_x583g4_a0a0b0a0c0a0a0a0a2a0a1a901(SPropertyOperations.getString(param, "conceptAlias")) || SConceptPropertyOperations.getBoolean(param, "dontSubstituteByDefault") || SPropertyOperations.getBoolean(param, "abstract")) {
+                if (isEmpty_x583g4_a0a0b0a0c0a0a0a0a2a0a1a901(SPropertyOperations.getString(param, "conceptAlias")) || SConceptOperations.isSubConceptOf(((SNode) param), "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault") || SPropertyOperations.getBoolean(param, "abstract")) {
                   continue;
                 }
                 ListSequence.fromList(result).addElement(param);

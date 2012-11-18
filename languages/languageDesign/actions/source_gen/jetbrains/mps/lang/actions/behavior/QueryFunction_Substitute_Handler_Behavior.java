@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -26,6 +27,10 @@ public class QueryFunction_Substitute_Handler_Behavior {
     SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.actions.structure.AddMenuPart", false, false);
     SNode concept = SLinkOperations.getTarget(ancestor, "concept", false);
     return new QueryFunction_Substitute_Handler_Behavior.QuotationClass_srv9hy_a0c0c().createNode(concept);
+  }
+
+  public static boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
+    return true;
   }
 
   public static class QuotationClass_srv9hy_a0c0c {

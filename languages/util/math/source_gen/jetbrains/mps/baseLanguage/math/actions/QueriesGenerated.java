@@ -24,7 +24,8 @@ import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
@@ -211,7 +212,7 @@ public class QueriesGenerated {
           }
 
           public String getMatchingText(String pattern) {
-            return "^" + SConceptPropertyOperations.getString((item), "operationSymbol");
+            return "^" + BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName((item))), "virtual_getOperationSymbol_1262430001741497831", new Object[]{});
           }
 
           public String getVisibleMatchingText(String pattern) {

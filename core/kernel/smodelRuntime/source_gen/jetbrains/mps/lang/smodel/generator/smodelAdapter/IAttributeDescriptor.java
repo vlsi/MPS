@@ -5,6 +5,8 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 
 public interface IAttributeDescriptor {
   public boolean match(@NotNull SNode attribute);
@@ -79,7 +81,7 @@ public interface IAttributeDescriptor {
     }
 
     public boolean match(@NotNull SNode attribute) {
-      return myAttributeRole == null || myAttributeRole.equals(SConceptPropertyOperations.getString(attribute, "role"));
+      return myAttributeRole == null || myAttributeRole.equals(BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(attribute))), "virtual_getRole_1262430001741497900", new Object[]{}));
     }
 
     public void update(@NotNull SNode attribute) {

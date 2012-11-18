@@ -56,7 +56,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 19:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.InlineSwitch_Case", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 20:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence", "jetbrains.mps.lang.generator.structure.RuleConsequence", false, new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence", "jetbrains.mps.lang.generator.structure.RuleConsequence", false, new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 21:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence", "jetbrains.mps.lang.generator.structure.RuleConsequence", false, new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{}, new String[]{});
       case 22:
@@ -94,7 +94,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 38:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.generator.structure.ReductionRule"}, new String[]{}, new String[]{"labelDeclaration"});
       case 39:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.PropertyMacro", "jetbrains.mps.lang.core.structure.PropertyAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.PropertyAttribute", "jetbrains.mps.lang.generator.structure.AbstractMacro"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.PropertyMacro", "jetbrains.mps.lang.core.structure.PropertyAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.PropertyAttribute", "jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 40:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue", "jetbrains.mps.lang.generator.structure.TemplateQueryBase", false, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{}, new String[]{});
       case 41:
@@ -144,17 +144,17 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 63:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.TemplateFragment_ContextNodeQuery", "jetbrains.mps.lang.generator.structure.TemplateQueryBase", false, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{}, new String[]{});
       case 64:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_mainContextNode", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_mainContextNode", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 65:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 66:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_parentOutputNode", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_parentOutputNode", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 67:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 68:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templatePropertyValue", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templatePropertyValue", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 69:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templateReferent", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templateReferent", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 70:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier"}, new String[]{}, new String[]{});
       case 71:
@@ -170,7 +170,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 76:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.VarMacro_ValueQuery", "jetbrains.mps.lang.generator.structure.TemplateQueryBase", false, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{}, new String[]{});
       case 77:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence", "jetbrains.mps.lang.generator.structure.RuleConsequence", false, new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence"}, new String[]{}, new String[]{"template"});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence", "jetbrains.mps.lang.generator.structure.RuleConsequence", false, new String[]{"jetbrains.mps.lang.generator.structure.RuleConsequence", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{"template"});
       case 78:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.WeaveMacro", "jetbrains.mps.lang.generator.structure.NodeMacro", false, new String[]{"jetbrains.mps.lang.generator.structure.NodeMacro"}, new String[]{}, new String[]{});
       case 79:

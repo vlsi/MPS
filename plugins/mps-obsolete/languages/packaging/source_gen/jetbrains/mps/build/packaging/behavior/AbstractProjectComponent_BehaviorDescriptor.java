@@ -4,12 +4,17 @@ package jetbrains.mps.build.packaging.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SNode;
 import java.io.File;
 import java.util.List;
 
 public abstract class AbstractProjectComponent_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
   public AbstractProjectComponent_BehaviorDescriptor() {
+  }
+
+  public boolean virtual_acceptFiles_1262430001741497846(SConcept thisConcept) {
+    return AbstractProjectComponent_Behavior.virtual_acceptFiles_1262430001741497846(thisConcept);
   }
 
   public boolean virtual_equals_1213877333900(SNode thisNode, SNode snode) {

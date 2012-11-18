@@ -4,6 +4,7 @@ package jetbrains.mps.lang.actions.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class ConceptFunctionParameter_nodeToCopyPreProcess_Behavior {
   public static void init(SNode thisNode) {
@@ -11,5 +12,9 @@ public class ConceptFunctionParameter_nodeToCopyPreProcess_Behavior {
 
   public static SNode call_getPreProcessor_5948027493682405569(SNode thisNode) {
     return SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.actions.structure.CopyPreProcessor", false, false);
+  }
+
+  public static boolean virtual_dontUseParameterObject_1262430001741498340(SConcept thisConcept) {
+    return true;
   }
 }

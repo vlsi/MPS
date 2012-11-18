@@ -101,14 +101,6 @@
     </node>
   </roots>
   <root id="2882388703616155296">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.IntegerConceptProperty" typeId="tpce.1105725498741" id="3498420608933701886">
-      <property name="value" nameId="tpce.1105725713309" value="5" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="3498420608933701884" resolveInfo="initialRowCount" />
-    </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.IntegerConceptProperty" typeId="tpce.1105725498741" id="3498420608933765544">
-      <property name="value" nameId="tpce.1105725713309" value="3" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="3498420608933765542" resolveInfo="initialColumnCount" />
-    </node>
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.IntegerConceptPropertyDeclaration" typeId="tpce.1105725141344" id="3498420608933701884">
       <property name="name" nameId="tpck.1169194664001" value="initialRowCount" />
     </node>
@@ -221,14 +213,6 @@
     </node>
   </root>
   <root id="8506335436194701777">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.IntegerConceptProperty" typeId="tpce.1105725498741" id="2422839104779453101">
-      <property name="value" nameId="tpce.1105725713309" value="5" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="3498420608933701884" resolveInfo="initialRowCount" />
-    </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.IntegerConceptProperty" typeId="tpce.1105725498741" id="2422839104779453099">
-      <property name="value" nameId="tpce.1105725713309" value="3" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="3498420608933765542" resolveInfo="initialColumnCount" />
-    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8506335436194701780">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="headers" />

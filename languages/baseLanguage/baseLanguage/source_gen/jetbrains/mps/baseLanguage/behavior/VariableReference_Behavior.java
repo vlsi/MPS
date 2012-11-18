@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.reloading.ReflectionUtil;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 public class VariableReference_Behavior {
@@ -113,6 +114,10 @@ public class VariableReference_Behavior {
     } else {
       return null;
     }
+  }
+
+  public static boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
+    return true;
   }
 
   private static IModule check_gidzrl_a0e0a0e(SModelDescriptor checkedDotOperand) {

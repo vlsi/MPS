@@ -4,6 +4,7 @@ package jetbrains.mps.lang.quotation.behavior;
 
 import jetbrains.mps.lang.core.behavior.LinkAttribute_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.scope.Scope;
 
 public class ReferenceAntiquotation_BehaviorDescriptor extends LinkAttribute_BehaviorDescriptor implements AbstractAntiquotation_BehaviorDescriptor {
@@ -12,6 +13,10 @@ public class ReferenceAntiquotation_BehaviorDescriptor extends LinkAttribute_Beh
 
   public int virtual_getMetaLevelChange_201537367881074474(SNode thisNode) {
     return AbstractAntiquotation_Behavior.virtual_getMetaLevelChange_201537367881074474(thisNode);
+  }
+
+  public String virtual_getRole_1262430001741497900(SConcept thisConcept) {
+    return ReferenceAntiquotation_Behavior.virtual_getRole_1262430001741497900(thisConcept);
   }
 
   public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {

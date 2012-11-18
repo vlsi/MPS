@@ -7,6 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -23,6 +24,10 @@ public class PropertyMacro_GetPropertyValue_Behavior {
       return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), dataType, "virtual_toBaseLanguageType_1213877229718", new Object[]{});
     }
     return new PropertyMacro_GetPropertyValue_Behavior.QuotationClass_90g9ox_a0d0b().createNode();
+  }
+
+  public static boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
+    return true;
   }
 
   public static class QuotationClass_90g9ox_a0d0b {

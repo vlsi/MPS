@@ -74,7 +74,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 28:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.dataFlow.structure.LabelPosition", "jetbrains.mps.lang.dataFlow.structure.Position", false, new String[]{"jetbrains.mps.lang.dataFlow.structure.Position"}, new String[]{}, new String[]{"label"});
       case 29:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.dataFlow.structure.NodeParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.dataFlow.structure.NodeParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 30:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.dataFlow.structure.Position", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 31:

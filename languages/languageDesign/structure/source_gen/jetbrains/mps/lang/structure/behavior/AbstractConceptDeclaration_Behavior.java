@@ -25,7 +25,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.util.Pair;
 import java.util.Set;
@@ -267,7 +266,7 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static boolean call_isDefaultSubstitutable_7429110134803670673(SNode thisNode) {
-    return !(SPropertyOperations.getBoolean(thisNode, "abstract")) && !(SConceptPropertyOperations.getBoolean(thisNode, "dontSubstituteByDefault"));
+    return !(SPropertyOperations.getBoolean(thisNode, "abstract")) && !(SConceptOperations.isSubConceptOf(((SNode) thisNode), "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"));
   }
 
   public static boolean call_isDefaultSubstitutableConcept_1213877394594(SNode thisNode, SNode expectedConcept, IScope scope) {

@@ -5,6 +5,7 @@ package jetbrains.mps.lang.actions.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -20,6 +21,10 @@ public class QueryFunction_PasteWrapper_Behavior {
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return new QueryFunction_PasteWrapper_Behavior.QuotationClass_cqz97t_a0a0c().createNode(SLinkOperations.getTarget(QueryFunction_PasteWrapper_Behavior.call_getWrapper_1221137519379(thisNode), "targetConcept", false));
+  }
+
+  public static boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
+    return true;
   }
 
   public static class QuotationClass_cqz97t_a0a0c {

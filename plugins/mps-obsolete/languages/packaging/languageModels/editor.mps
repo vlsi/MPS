@@ -1908,16 +1908,19 @@
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1226514924195">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1234975567387" resolveInfo="getAllMacroNames" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1226514924196">
-                      <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1226514924197">
-                        <link role="concept" roleId="tp25.1140138128738" targetNodeId="tps4.1233321544558" resolveInfo="IPath" />
-                        <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1226514924198">
-                          <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellMenuPart_Abstract_editedNode" typeId="tpc2.1163613822479" id="1226514924199" />
-                          <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="1226514924200" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1262430001741827378">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1262430001741827379">
+                        <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1262430001741827380">
+                          <link role="concept" roleId="tp25.1140138128738" targetNodeId="tps4.1233321544558" resolveInfo="IPath" />
+                          <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1262430001741827381">
+                            <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellMenuPart_Abstract_editedNode" typeId="tpc2.1163613822479" id="1262430001741827382" />
+                            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="1262430001741827383" />
+                          </node>
                         </node>
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetConceptOperation" typeId="tp25.1172323065820" id="1262430001741827384" />
                       </node>
-                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SConceptPropertyAccess" typeId="tp25.1145994841052" id="1226514924201">
-                        <link role="conceptProperty" roleId="tp25.1145994841055" targetNodeId="tps4.1233321577500" resolveInfo="canStartFromBasedir" />
+                      <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1262430001741827385">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1262430001741498253" resolveInfo="canStartFromBasedir" />
                       </node>
                     </node>
                   </node>

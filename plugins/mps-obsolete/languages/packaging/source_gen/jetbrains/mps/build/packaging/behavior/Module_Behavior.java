@@ -31,6 +31,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.PathManager;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.DevKit;
 
@@ -280,6 +281,10 @@ public class Module_Behavior {
       module.getAllStubPaths() :
       module.getStubPaths()
     );
+  }
+
+  public static boolean virtual_acceptFiles_1262430001741497846(SConcept thisConcept) {
+    return true;
   }
 
   public static List<IModule> getAllAvailableModules_1222444746697() {

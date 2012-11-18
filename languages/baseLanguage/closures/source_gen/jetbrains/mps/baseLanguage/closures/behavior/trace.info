@@ -2,20 +2,20 @@
 <debugInfo>
   <unitInfo fileName="AbstractFunctionType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.AbstractFunctionType_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="ClosureControlStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.ClosureControlStatement_BehaviorDescriptor" />
+  <unitInfo fileName="ClosureControlStatement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.ClosureControlStatement_BehaviorDescriptor" />
   <unitInfo fileName="ClosureLiteral_BehaviorDescriptor.java" startLine="20" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.ClosureLiteral_BehaviorDescriptor" />
-  <unitInfo fileName="CompactInvokeFunctionExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.CompactInvokeFunctionExpression_BehaviorDescriptor" />
+  <unitInfo fileName="CompactInvokeFunctionExpression_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.CompactInvokeFunctionExpression_BehaviorDescriptor" />
   <unitInfo fileName="ControlAbstractionContainer_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.ControlAbstractionContainer_BehaviorDescriptor" />
   <unitInfo fileName="ControlAbstractionDeclaration_BehaviorDescriptor.java" startLine="15" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.ControlAbstractionDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="ControlClosureLiteral_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.ControlClosureLiteral_BehaviorDescriptor" />
   <unitInfo fileName="FunctionMethodDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="FunctionType_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_BehaviorDescriptor" />
-  <unitInfo fileName="InvokeExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.InvokeExpression_BehaviorDescriptor" />
-  <unitInfo fileName="InvokeFunctionExpression_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.InvokeFunctionExpression_BehaviorDescriptor" />
-  <unitInfo fileName="InvokeFunctionOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.InvokeFunctionOperation_BehaviorDescriptor" />
+  <unitInfo fileName="InvokeExpression_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.InvokeExpression_BehaviorDescriptor" />
+  <unitInfo fileName="InvokeFunctionExpression_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.InvokeFunctionExpression_BehaviorDescriptor" />
+  <unitInfo fileName="InvokeFunctionOperation_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.InvokeFunctionOperation_BehaviorDescriptor" />
   <unitInfo fileName="PairOfInts_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.PairOfInts_BehaviorDescriptor" />
   <unitInfo fileName="StringPropertyHolder_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.StringPropertyHolder_BehaviorDescriptor" />
-  <unitInfo fileName="UnboundClosureParameterDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.UnboundClosureParameterDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="UnboundClosureParameterDeclaration_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.UnboundClosureParameterDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="UnrestrictedClosureLiteral_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.UnrestrictedClosureLiteral_BehaviorDescriptor" />
   <unitInfo fileName="UnrestrictedFunctionType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.UnrestrictedFunctionType_BehaviorDescriptor" />
   <unitInfo fileName="YieldAllStatement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.YieldAllStatement_BehaviorDescriptor" />
@@ -1429,6 +1429,20 @@
       <varInfo nodeId="1251851371723365254" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="1251851371723365254" fileName="ControlAbstractionDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.ControlAbstractionDeclaration_Behavior" />
+  </root>
+  <root nodeId="1262430001741523513" modelId="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
+    <nodeInfo nodeId="1262430001741523511" fileName="CompactInvokeFunctionExpression_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741523513" fileName="CompactInvokeFunctionExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741523513" fileName="CompactInvokeFunctionExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_legalAsStatement_1262430001741498032#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <scopeInfo nodeId="1262430001741523515" fileName="CompactInvokeFunctionExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741523510" fileName="CompactInvokeFunctionExpression_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1262430001741523513" fileName="CompactInvokeFunctionExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741523513" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741523513" fileName="CompactInvokeFunctionExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741523513" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741523513" fileName="CompactInvokeFunctionExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.CompactInvokeFunctionExpression_Behavior" />
   </root>
   <root nodeId="2857237956452412448" modelId="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
     <nodeInfo nodeId="2857237956452413113" fileName="FunctionMethodDeclaration_Behavior.java" startLine="23" startPosition="37" endLine="24" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

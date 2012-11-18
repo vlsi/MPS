@@ -1,3 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="Core_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.core.structure.Core_Language" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.core.structure.StructureAspectDescriptor" />
+</debugInfo>
 

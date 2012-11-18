@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class TreePathOperationExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -18,5 +19,9 @@ public class TreePathOperationExpression_Behavior {
       }
     }).first();
     return (tpae != null) && TreePathAdapterExpression_Behavior.call_isGeneric_1213877411663(SNodeOperations.cast(tpae, "jetbrains.mps.ypath.structure.TreePathAdapterExpression"));
+  }
+
+  public static boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
+    return false;
   }
 }
