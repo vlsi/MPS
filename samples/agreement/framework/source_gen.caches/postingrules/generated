@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="6nlyalo6jp6cks8dft8a72b9bhxgspa">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-40jj815fe1rn0p1bhi0382dg47350y2" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="bavz98vwxhwhpog89k63m5eu2e8cbl3" />
   <dep model="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)" hash="9ezmkm2dz6dbfribgkkkjhypn9cbp5q" />
   <common hash="36v8klws4t8sel72wp89s0z3jp4cj8n" />
   <source id="6531435794299649861" name="AccountingException" hash="-3ycelhhffkozkde08sh40tj333x8y0b">

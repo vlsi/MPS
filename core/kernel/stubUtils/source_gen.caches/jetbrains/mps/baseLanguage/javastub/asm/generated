@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-2ipxghf50qgfa8h4ro3ef8ao55w3z5z">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.objectweb.asm(MPS.Core/org.objectweb.asm@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-40jj815fe1rn0p1bhi0382dg47350y2" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="bavz98vwxhwhpog89k63m5eu2e8cbl3" />
   <common hash="39f6h223hqn5s8df1on2jv5rsmat9jv" />
   <source id="7241381882860002146" name="ASMArrayType" hash="-4mp6vv6j47pjhjhvaojfhs103i68beq">
     <file name="ASMArrayType.java" />

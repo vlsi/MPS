@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6052sgpdl9pqoarag4fmu4t59mvfo3h">
+<dependencies version="2" modelHash="1t3pchjmom9f5xkl64tumgsveazbvds">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="by8wrmxeu23gqhvlixfl23oms1hmpko" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="72jgettirgdze5zodlg3xz1jp5r3et8" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="drfxt8i63upja5k7zfj1z568c5k4586" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-1ihd91yw3a40igfainvusyvruq3rigo" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="7lf0iqjorq20auygoq2bcy92g63vr4w" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="bavz98vwxhwhpog89k63m5eu2e8cbl3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-baumsvy45qwk0i0m1tzx9fili68fouh" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6r1gsoq3dd0l5ofyes4ojz73yszw60" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-alf2ogeiijb2ox8l3f57xq8a4vsqut" />
   <common hash="-6iz8goxq4a9ytisaxv06vy40nxqysfc">
@@ -134,7 +134,7 @@
   <source id="1105741578420" name="ReferenceConceptLinkDeclaration" hash="67pe17y1v5esjgys70y6p0g4ll2ldm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1149608206811" name="AnnotationLinkDeclaration" hash="-7z85yzl7czy767brrg2lqp0ixkiflwt">
+  <source id="1149608206811" name="AnnotationLinkDeclaration" hash="-10b6tpjbnop847z8uqzrp83nm1zxuzv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1149608316235" name="AnnotationLinkStereotype" hash="-577129ceei7zul2cq8k1c248ef1mjtl">
@@ -179,7 +179,7 @@
     <file name="AnnotationLinkCardinality.java" />
     <file name="AnnotationLinkCardinality_PropertySupport.java" />
   </source>
-  <source id="1224240836180" name="DeprecatedNodeAnnotation" hash="9mhfcqnxb2xouoho5hrhs6xg1k83yy">
+  <source id="1224240836180" name="DeprecatedNodeAnnotation" hash="-5ipdsfzzl0aheqkzqhlw12q8i30dqde">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1224848324737" name="IStructureDeprecatable" hash="7jw4l05q3vwyialqb9h0hnvysohkhwe">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="1bvurv7o61a9cpvxxfore08okmj01r9">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-40jj815fe1rn0p1bhi0382dg47350y2" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="bavz98vwxhwhpog89k63m5eu2e8cbl3" />
   <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" hash="-7egvml7dl4d346df6ljrjmjmovfisa7" />
   <common hash="-c3cfoylwqc9ajxapg2tbrn97rwho5c3" />
   <source id="4003657351907889940" name="ConsoleMessageFormat" hash="4uh3mmgyv537jxr2ixgtro3xn12yraa">

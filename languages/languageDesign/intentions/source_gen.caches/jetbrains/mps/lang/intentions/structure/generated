@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7gxol4s0d9iemyq8dggy1bbgcwsf2v3">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="by8wrmxeu23gqhvlixfl23oms1hmpko" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-6052sgpdl9pqoarag4fmu4t59mvfo3h" />
+<dependencies version="2" modelHash="-2mgo35vlj51cjlr0gth0gtjuhimde1u">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="72jgettirgdze5zodlg3xz1jp5r3et8" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="1t3pchjmom9f5xkl64tumgsveazbvds" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="drfxt8i63upja5k7zfj1z568c5k4586" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-1ihd91yw3a40igfainvusyvruq3rigo" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="7lf0iqjorq20auygoq2bcy92g63vr4w" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="bavz98vwxhwhpog89k63m5eu2e8cbl3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-baumsvy45qwk0i0m1tzx9fili68fouh" />
   <dep model="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" hash="60b6ox1q136tykeqjkfgdkqt4lyz2i8" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6r1gsoq3dd0l5ofyes4ojz73yszw60" />
   <common hash="d27kpx5qz2l5bm3n3ezaw29l3awpqa6">
@@ -34,22 +34,22 @@
   <source id="1192794744107" name="IntentionDeclaration" hash="-c7cojx4jnhabvnjy4wk3w408vsrsqu4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1192794782375" name="DescriptionBlock" hash="-3d23km214wa3kq11sutv4co0j65sdju">
+  <source id="1192794782375" name="DescriptionBlock" hash="-6ndiysrc3t8loo3wdnrc4z6fgtlkonw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1192795771125" name="IsApplicableBlock" hash="-1z8nq3dcorjfnf2cwof12rxdcpbeomg">
+  <source id="1192795771125" name="IsApplicableBlock" hash="-3o4y2qis2s7crxoqtjrvhyqi8zr2rss">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1192795911897" name="ExecuteBlock" hash="6q0guy0lbtdxtwos1xbti3lr1r1z1vh">
+  <source id="1192795911897" name="ExecuteBlock" hash="c4e316om7w61bkug74ohqpn4biftibu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1192796902958" name="ConceptFunctionParameter_node" hash="-4cxvd33l0v7hltkk6wsf9rlul0c6f4p">
+  <source id="1192796902958" name="ConceptFunctionParameter_node" hash="edmp0q1nibet8zapl3glrhdt3ptsbmz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1240316299033" name="QueryBlock" hash="c9o7k7elhqpz8wtgibf30xvobmdo4yf">
+  <source id="1240316299033" name="QueryBlock" hash="excap7hgv0onmyjlhj79wtvb7aul2jo">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1240322627579" name="IntentionParameter" hash="d9er973blk2t2gzi9gyi50x18c5p3qg">
+  <source id="1240322627579" name="IntentionParameter" hash="bnuedcdjfgj9yyi8tkjb0mpd38h1bnv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1240395258925" name="ParameterizedIntentionDeclaration" hash="-87uu6tre5d7pvyp30kr01fuvkkia7mi">
@@ -61,7 +61,7 @@
   <source id="3618415754251190715" name="ChildFilterFunction" hash="afs1ipjg3hdh6hx9uzxpf6d37ctmnb0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3618415754251192144" name="ConceptFunctionParameter_childNode" hash="-5s1gq5xqm1k1q6n95gp34jjbfl2oquf">
+  <source id="3618415754251192144" name="ConceptFunctionParameter_childNode" hash="926c0ymapbbdkjl8eb40zpj35rp64kq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2522969319638091381" name="BaseIntentionDeclaration" hash="vfe2ks8u2ci5ob1g63gvxjc24bnfhf">

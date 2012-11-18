@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-ct2x2ctqjzor68ht409gjyw255v9psb">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-40jj815fe1rn0p1bhi0382dg47350y2" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="bavz98vwxhwhpog89k63m5eu2e8cbl3" />
   <common hash="-9b9h0c9hjj23w6p7zmim5hjyodx6guo" />
   <source id="4474271214082913243" name="IThread" hash="dmwv2sx8be420iqiseh0tngler67ykl">
     <file name="IThread.java" />

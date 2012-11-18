@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3d38s46csl91td595nownpygy58qii5">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="by8wrmxeu23gqhvlixfl23oms1hmpko" />
+<dependencies version="2" modelHash="iuvtl60pbjarb1g3haiftyswyxzu3v">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="72jgettirgdze5zodlg3xz1jp5r3et8" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="drfxt8i63upja5k7zfj1z568c5k4586" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-1ihd91yw3a40igfainvusyvruq3rigo" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="7lf0iqjorq20auygoq2bcy92g63vr4w" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="bavz98vwxhwhpog89k63m5eu2e8cbl3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-baumsvy45qwk0i0m1tzx9fili68fouh" />
   <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" hash="78ysfrpjuhuyadt3m03y6bbyt3b17tp" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6r1gsoq3dd0l5ofyes4ojz73yszw60" />
   <common hash="7lcx55bzsgba0bncuy95c243f7zx1ro">
@@ -46,7 +46,7 @@
   <source id="6786756355279841993" name="XmlDocument" hash="3tqrqaecw0f3pwanvh6lynvvs32lk66">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6666499814681299051" name="XmlContent" hash="8v1xaa61nyi9wd7bmb2mka3xrsmuzoc">
+  <source id="6666499814681299051" name="XmlContent" hash="-6tooy7fhmxespr2oznyhg31hc6n944g">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6666499814681299053" name="XmlBaseElement" hash="eho4mzqy0vvba1odd5l2kdzngyjey52">
@@ -55,22 +55,22 @@
   <source id="6666499814681299057" name="XmlProlog" hash="-d9vac799ay4i6166agyfw5ltydvc7c1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6666499814681299061" name="XmlProcessingInstruction" hash="-8zzq0xn5rvphy0xk7k2tos4qwj2etxn">
+  <source id="6666499814681299061" name="XmlProcessingInstruction" hash="5299qmb2e1jdizfliyo2ivjii1fh6ww">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6666499814681299064" name="XmlComment" hash="dhqsrqoheouyaeknoallnkbs03s7w3u">
+  <source id="6666499814681299064" name="XmlComment" hash="4fez0fxmd1py7d3iaalfyvysx52sma3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6666499814681299066" name="XmlCDATA" hash="-e5reba6ikb1nz6pjm0smiwtjzk6zcva">
+  <source id="6666499814681299066" name="XmlCDATA" hash="-6ty5fc3vn17qcb3pbevfw4rkxo5hro5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6666499814681415858" name="XmlElement" hash="ajjlnd868xr9l7neqie0uz5z68muzn2">
+  <source id="6666499814681415858" name="XmlElement" hash="9248nv53y6sffrivxcmmb556p4kbiah">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6666499814681415859" name="XmlBaseAttribute" hash="-48eqpajmoki9a7iwnrr6dha7ibxgbdl">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6666499814681447923" name="XmlAttribute" hash="-26x8l21eox5vxah5in4upwfntvec0i6">
+  <source id="6666499814681447923" name="XmlAttribute" hash="cebkz254a4487styhkglmirp32e2ge3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6666499814681515200" name="XmlFile" hash="bkv98wywbfnxwz0vkcrzj85xd9tp3cf">
@@ -79,25 +79,25 @@
   <source id="6666499814681541916" name="XmlValuePart" hash="e9t1ja3q1qdzkc8gs8kopbfc55d1r82">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6666499814681541919" name="XmlTextValue" hash="dw8h3jfjgr20vdxyy2ri7wkbvefg7zt">
+  <source id="6666499814681541919" name="XmlTextValue" hash="-d5omy6jijmrgk5c1k44t3ri3x29392y">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6666499814681541921" name="XmlEntityRefValue" hash="1oohrbneb5sagx1a5374cmhzt3ebduk">
+  <source id="6666499814681541921" name="XmlEntityRefValue" hash="4feryb1jun6xyyokeqagevtngojkpjy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1622293396948952339" name="XmlText" hash="-cut6h8qx1kizazzgvxjqnw6wdj8uah5">
+  <source id="1622293396948952339" name="XmlText" hash="-4hg2be2cwia0ymz5c8sxoztja52uqb8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1622293396949036126" name="XmlCommentLine" hash="265vi83izl4kzarsxzl4nsfmzok88r4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1622293396949069645" name="XmlEntityRef" hash="-biyez9rx4uetvs0rs5emuexiw3z0wfp">
+  <source id="1622293396949069645" name="XmlEntityRef" hash="-37sjxugfw6vi7mt1nmnqmf9iwkpuc5e">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3080189811177199750" name="XmlCharRef" hash="8vrjo3i65lyzejbb5bnr6vuzsclcrxh">
+  <source id="3080189811177199750" name="XmlCharRef" hash="-7rrc6gvb4gk9s5hjhw4k08b5hxpxp8x">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3080189811177215998" name="XmlCharRefValue" hash="-5ig71ehl9g2q4ympprh1u84ti6n4vyt">
+  <source id="3080189811177215998" name="XmlCharRefValue" hash="c5o6b3cathc6ugofhxhwx0db0kefktn">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="3080189811177426492" name="XmlNoSpaceValue" hash="-6tcyui3b1m5lurjuw6a6qskcwpml66u">
@@ -106,10 +106,10 @@
   <source id="7604553062773674213" name="XmlPrologElement" hash="b8wgmhzvni6ruv3da6288ydpe7n2kr">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7604553062773750440" name="XmlWhitespace" hash="-af4sswpvxkkmkepz8umnv0hgariokru">
+  <source id="7604553062773750440" name="XmlWhitespace" hash="8r8bif2zya7igzllq3wm2g9s1amhb46">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5228786488744996718" name="XmlDeclaration" hash="6jycjf0bmoshk3hhbz8zqtb25khz6hz">
+  <source id="5228786488744996718" name="XmlDeclaration" hash="-8bohg6ohrpjget2dyv89c95gl1zjb5p">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="5491461270226117666" name="xmlVersionString" hash="-6azbwyz63j12mt8vkrp3cgrvwo9lktq">
@@ -123,7 +123,7 @@
   <source id="2133624044437669768" name="XmlBasePrologElement" hash="-9s9eptm7yuc0jdukl5cxnfdwz5m1c3a">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2133624044437898907" name="XmlDoctypeDeclaration" hash="4lrv4360z63myku0ly7iidyysj2yrlu">
+  <source id="2133624044437898907" name="XmlDoctypeDeclaration" hash="-3pofj0hkft7zr88580fnfx0wuedpli4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2133624044438029119" name="XmlExternalId" hash="-6533uh3vn6a6xz7o58w0qhw0kp4aem8">

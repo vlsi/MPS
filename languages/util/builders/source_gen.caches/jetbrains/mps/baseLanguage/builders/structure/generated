@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9ix8vk8646fqz972w16dt12lqevmxvx">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="by8wrmxeu23gqhvlixfl23oms1hmpko" />
+<dependencies version="2" modelHash="bcc1p3x5z2086dxtlstje1vkikm8txu">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="72jgettirgdze5zodlg3xz1jp5r3et8" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="drfxt8i63upja5k7zfj1z568c5k4586" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-1ihd91yw3a40igfainvusyvruq3rigo" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="7lf0iqjorq20auygoq2bcy92g63vr4w" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="bavz98vwxhwhpog89k63m5eu2e8cbl3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-baumsvy45qwk0i0m1tzx9fili68fouh" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6r1gsoq3dd0l5ofyes4ojz73yszw60" />
   <common hash="-b0y6mw0qsrbhm2zsdotsj6e11evelpj">
     <dep root="2679357232283750087" />
@@ -84,13 +84,13 @@
   <source id="7802271442981792228" name="BuilderContainer" hash="62pzj6unckyeey9t6wt8hvvzq0oa6eb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2679357232283750087" name="BeanPropertyBuilder" hash="-cil14fdqg0netyy6yabjh1dwg0rs0nc">
+  <source id="2679357232283750087" name="BeanPropertyBuilder" hash="-ahmfs2olbmfj9wn2akbi3l082ho5rp7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6666322667909540799" name="BeanBuilder" hash="bh9asb53kjq2i3q7ayg5d86knoqgg83">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5389689214216557332" name="AsTypeBuilder" hash="7rbg3z7n9k095uq1iuaf1d720vvcrek">
+  <source id="5389689214216557332" name="AsTypeBuilder" hash="-cdc7wiz565tgvl888lzg4p0hvo0t9dy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="5389689214216990954" name="SimpleBuilderProperty" hash="-bwxjkml2u7898i0mgxgrb3l2d4hdbvp">
