@@ -11,6 +11,7 @@
   <unitInfo fileName="ICanSuppressErrors_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ICanSuppressErrors_BehaviorDescriptor" />
   <unitInfo fileName="IContainer_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor" />
   <unitInfo fileName="IDeprecatable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IDeprecatable_BehaviorDescriptor" />
+  <unitInfo fileName="IDontSubstituteByDefault_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
   <unitInfo fileName="IMetaLevelChanger_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IMetaLevelChanger_BehaviorDescriptor" />
   <unitInfo fileName="INamedConcept_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
   <unitInfo fileName="IResolveInfo_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor" />

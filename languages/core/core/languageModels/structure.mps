@@ -118,6 +118,9 @@
       <property name="name" nameId="1169194664001" value="SuppressErrorsAnnotation" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3364660638048049748" resolveInfo="NodeAttribute" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1835621062190663819">
+      <property name="name" nameId="1169194664001" value="IDontSubstituteByDefault" />
+    </node>
   </roots>
   <root id="1082983041843" />
   <root id="1082983657062" />
@@ -245,5 +248,6 @@
       <link role="target" roleId="tpce.1105736807942" targetNodeId="3393165121846091586" resolveInfo="ICanSuppressErrors" />
     </node>
   </root>
+  <root id="1835621062190663819" />
 </model>
 
