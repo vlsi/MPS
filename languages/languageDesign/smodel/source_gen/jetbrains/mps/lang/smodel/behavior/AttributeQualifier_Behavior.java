@@ -16,9 +16,12 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class AttributeQualifier_Behavior {
@@ -45,22 +48,14 @@ public class AttributeQualifier_Behavior {
         return (SNode) SModelUtil.findConceptDeclaration(fqName, scope);
       }
     }).where(new IWhereFilter<SNode>() {
-      public boolean accept(final SNode attr) {
-        return modelScope.isInScope(attr) && ListSequence.fromList(SLinkOperations.getTargets(attr, "conceptProperty", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode attr) {
+        return modelScope.isInScope(attr) && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(((SNode) attr), LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "method", true)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return (SLinkOperations.getTarget(it, "conceptPropertyDeclaration", false) != null);
+            return eq_h001dt_a0a0a0a0a0a0a0a0a0a0a6a3(SPropertyOperations.getString(it, "name"), "getRole");
           }
-        }).select(new ISelector<SNode, SNode>() {
-          public SNode select(SNode it) {
-            return SLinkOperations.getTarget(it, "conceptPropertyDeclaration", false);
-          }
-        }).any(new IWhereFilter<SNode>() {
-          public boolean accept(SNode decl) {
-            return SPropertyOperations.hasValue(decl, "name", "role") && ListSequence.fromList(SLinkOperations.getConceptLinkTargets(attr, "attributed")).any(new IWhereFilter<SNode>() {
-              public boolean accept(SNode it) {
-                return SConceptOperations.isSubConceptOf(container, NameUtil.nodeFQName(it));
-              }
-            });
+        }) && BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(attr)), "virtual_getRole_1262430001741497900", new Object[]{}) != null && ListSequence.fromList(SLinkOperations.getConceptLinkTargets(attr, "attributed")).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SConceptOperations.isSubConceptOf(container, NameUtil.nodeFQName(it));
           }
         });
       }
@@ -75,5 +70,12 @@ public class AttributeQualifier_Behavior {
   @Deprecated
   public static SNode callSuper_getTargetConcept_6407023681583066586(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeQualifier"), callerConceptFqName, "virtual_getTargetConcept_6407023681583066586", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  private static boolean eq_h001dt_a0a0a0a0a0a0a0a0a0a0a6a3(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }
