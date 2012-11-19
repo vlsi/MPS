@@ -1496,7 +1496,7 @@ public class JavaConverterTreeBuilder {
     SNode body;
     if (initializer.isStatic()) {
       SNode staticInitializer = SModelOperations.createNewNode(myCurrentModel, null, "jetbrains.mps.baseLanguage.structure.StaticInitializer");
-      SLinkOperations.setTarget(classConcept, "classInitializer", staticInitializer, true);
+      ListSequence.fromList(SLinkOperations.getTargets(classConcept, "member", true)).addElement(staticInitializer);
       SLinkOperations.setTarget(staticInitializer, "statementList", SModelOperations.createNewNode(myCurrentModel, null, "jetbrains.mps.baseLanguage.structure.StatementList"), true);
       addBlock(SLinkOperations.getTarget(staticInitializer, "statementList", true), initializer.declarationSourceStart, initializer.declarationSourceEnd);
       body = SLinkOperations.getTarget(staticInitializer, "statementList", true);
