@@ -8,8 +8,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNode;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -23,26 +21,15 @@ public class Variant_CustomApplicationPlugin extends BaseCustomApplicationPlugin
   public void doInit() {
     Variants.register(new _FunctionTypes._void_P1_E0<Variants>() {
       public void invoke(Variants vars) {
-        vars.addVariant("Swing", SNodeOperations.getModel(SLinkOperations.getTarget(new Variant_CustomApplicationPlugin.QuotationClass_ks96zg_a0a0a0b0a0a0a0a0a0a().createNode(), "plugin", false)).getModelDescriptor().getModule());
+        vars.addVariant("Swing", SNodeOperations.getModel(SLinkOperations.getTarget(_quotation_createNode_fq17w2_a0a0a1a0a0a0a0a(), "plugin", false)).getModelDescriptor().getModule());
       }
     });
   }
 
-  public static class QuotationClass_ks96zg_a0a0a0b0a0a0a0a0a0a {
-    public QuotationClass_ks96zg_a0a0a0b0a0a0a0a0a0a() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("plugin", SReference.create("plugin", quotedNode1_2, SModelReference.fromString("r:aa1c012e-5fdf-4d29-906b-e1278df6785e(jetbrains.mps.ui.swing.pluginSolution.plugin)"), SNodeId.fromString("5487985028841950024")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_fq17w2_a0a0a1a0a0a0a0a() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("plugin", SReference.create("plugin", quotedNode_1, SModelReference.fromString("r:aa1c012e-5fdf-4d29-906b-e1278df6785e(jetbrains.mps.ui.swing.pluginSolution.plugin)"), SNodeId.fromString("5487985028841950024")));
+    return quotedNode_1;
   }
 }

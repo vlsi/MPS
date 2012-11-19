@@ -13,8 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
 
 public class supertypesOf_ContainerType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -25,14 +23,14 @@ public class supertypesOf_ContainerType_SubtypingRule extends SubtypingRule_Runt
     List<SNode> res = new ArrayList<SNode>();
     if ((SLinkOperations.getTarget(ct, "container", false) != null)) {
       if ((SLinkOperations.getTarget(SLinkOperations.getTarget(ct, "container", false), "specializes", false) != null)) {
-        ListSequence.fromList(res).addElement(new supertypesOf_ContainerType_SubtypingRule.QuotationClass_d3sbvm_a0a0a0a0b0a().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(ct, "container", false), "specializes", false), SNodeOperations.as(SNodeOperations.getParent(SLinkOperations.getTarget(SLinkOperations.getTarget(ct, "container", false), "specializes", false)), "jetbrains.mps.ui.modeling.structure.UIObject"), typeCheckingContext));
+        ListSequence.fromList(res).addElement(_quotation_createNode_d3sbvm_a0a0a0a1a0(SLinkOperations.getTarget(SLinkOperations.getTarget(ct, "container", false), "specializes", false), SNodeOperations.as(SNodeOperations.getParent(SLinkOperations.getTarget(SLinkOperations.getTarget(ct, "container", false), "specializes", false)), "jetbrains.mps.ui.modeling.structure.UIObject")));
       }
-      ListSequence.fromList(res).addElement(new supertypesOf_ContainerType_SubtypingRule.QuotationClass_d3sbvm_a0a0b0b0a().createNode(SLinkOperations.getTarget(ct, "uiObject", false), typeCheckingContext));
+      ListSequence.fromList(res).addElement(_quotation_createNode_d3sbvm_a0a1a1a0(SLinkOperations.getTarget(ct, "uiObject", false)));
     }
     if ((SLinkOperations.getTarget(ct, "uiObject", false) != null)) {
-      ListSequence.fromList(res).addElement(new supertypesOf_ContainerType_SubtypingRule.QuotationClass_d3sbvm_a0a0a0c0a().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(ct, "uiObject", false), "extends", false), typeCheckingContext));
+      ListSequence.fromList(res).addElement(_quotation_createNode_d3sbvm_a0a0a2a0(SLinkOperations.getTarget(SLinkOperations.getTarget(ct, "uiObject", false), "extends", false)));
     }
-    ListSequence.fromList(res).addElement(new supertypesOf_ContainerType_SubtypingRule.QuotationClass_d3sbvm_a0a0d0a().createNode(SLinkOperations.getTarget(ct, "uiObject", false), typeCheckingContext));
+    ListSequence.fromList(res).addElement(_quotation_createNode_d3sbvm_a0a3a0(SLinkOperations.getTarget(ct, "uiObject", false)));
     return res;
   }
 
@@ -51,129 +49,32 @@ public class supertypesOf_ContainerType_SubtypingRule extends SubtypingRule_Runt
     return false;
   }
 
-  public static class QuotationClass_d3sbvm_a0a0a0a0b0a {
-    public QuotationClass_d3sbvm_a0a0a0a0b0a() {
-    }
-
-    public SNode createNode(Object parameter_3, Object parameter_4, final TypeCheckingContext typeCheckingContext) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("container", (SNode) parameter_3);
-        quotedNode1_2.setReferenceTarget("uiObject", (SNode) parameter_4);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-
-    public SNode createNode(Object parameter_3, Object parameter_4) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("container", (SNode) parameter_3);
-        quotedNode1_2.setReferenceTarget("uiObject", (SNode) parameter_4);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_d3sbvm_a0a0a0a1a0(Object parameter_1, Object parameter_2) {
+    SNode quotedNode_3 = null;
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.setReferenceTarget("container", (SNode) parameter_1);
+    quotedNode_3.setReferenceTarget("uiObject", (SNode) parameter_2);
+    return quotedNode_3;
   }
 
-  public static class QuotationClass_d3sbvm_a0a0b0b0a {
-    public QuotationClass_d3sbvm_a0a0b0b0a() {
-    }
-
-    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("uiObject", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("uiObject", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_d3sbvm_a0a1a1a0(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("uiObject", (SNode) parameter_1);
+    return quotedNode_2;
   }
 
-  public static class QuotationClass_d3sbvm_a0a0a0c0a {
-    public QuotationClass_d3sbvm_a0a0a0c0a() {
-    }
-
-    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("uiObject", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("uiObject", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_d3sbvm_a0a0a2a0(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("uiObject", (SNode) parameter_1);
+    return quotedNode_2;
   }
 
-  public static class QuotationClass_d3sbvm_a0a0d0a {
-    public QuotationClass_d3sbvm_a0a0d0a() {
-    }
-
-    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.UIObjectType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("uiObject", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.UIObjectType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("uiObject", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_d3sbvm_a0a3a0(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.UIObjectType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("uiObject", (SNode) parameter_1);
+    return quotedNode_2;
   }
 }

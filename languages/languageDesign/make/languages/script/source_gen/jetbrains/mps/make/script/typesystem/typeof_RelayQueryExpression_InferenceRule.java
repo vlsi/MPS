@@ -11,8 +11,6 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
 
 public class typeof_RelayQueryExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -23,7 +21,7 @@ public class typeof_RelayQueryExpression_InferenceRule extends AbstractInference
     {
       SNode _nodeToCheck_1029348928467 = rqe;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)", "1977954644795311540", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)", "1977954644795311552", true), (SNode) new typeof_RelayQueryExpression_InferenceRule.QuotationClass_7onn49_a0a0a0().createNode(SNodeOperations.as(SLinkOperations.getTarget(SLinkOperations.getTarget(rqe, "query", false), "expected", true), "jetbrains.mps.make.script.structure.ExpectedOption"), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)", "1977954644795311552", true), (SNode) _quotation_createNode_7onn49_a0a0a(SNodeOperations.as(SLinkOperations.getTarget(SLinkOperations.getTarget(rqe, "query", false), "expected", true), "jetbrains.mps.make.script.structure.ExpectedOption")), _info_12389875345);
     }
   }
 
@@ -42,34 +40,10 @@ public class typeof_RelayQueryExpression_InferenceRule extends AbstractInference
     return false;
   }
 
-  public static class QuotationClass_7onn49_a0a0a0 {
-    public QuotationClass_7onn49_a0a0a0() {
-    }
-
-    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.OptionType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("expectedOption", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.OptionType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("expectedOption", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_7onn49_a0a0a(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.OptionType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("expectedOption", (SNode) parameter_1);
+    return quotedNode_2;
   }
 }

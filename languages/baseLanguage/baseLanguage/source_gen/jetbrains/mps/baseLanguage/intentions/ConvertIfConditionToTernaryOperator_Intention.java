@@ -13,13 +13,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.intentions.IntentionDescriptor;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ConvertIfConditionToTernaryOperator_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -73,6 +71,27 @@ public class ConvertIfConditionToTernaryOperator_Intention implements IntentionF
     return myCachedExecutable;
   }
 
+  private static SNode _quotation_createNode_78c6t8_a0a0a(Object parameter_1, Object parameter_2, Object parameter_3) {
+    SNode quotedNode_4 = null;
+    SNode quotedNode_5 = null;
+    SNode quotedNode_6 = null;
+    SNode quotedNode_7 = null;
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", null, null, GlobalScope.getInstance(), false);
+    quotedNode_5 = (SNode) parameter_1;
+    if (quotedNode_5 != null) {
+      quotedNode_4.addChild("condition", HUtil.copyIfNecessary(quotedNode_5));
+    }
+    quotedNode_6 = (SNode) parameter_2;
+    if (quotedNode_6 != null) {
+      quotedNode_4.addChild("ifTrue", HUtil.copyIfNecessary(quotedNode_6));
+    }
+    quotedNode_7 = (SNode) parameter_3;
+    if (quotedNode_7 != null) {
+      quotedNode_4.addChild("ifFalse", HUtil.copyIfNecessary(quotedNode_7));
+    }
+    return quotedNode_4;
+  }
+
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
@@ -82,71 +101,12 @@ public class ConvertIfConditionToTernaryOperator_Intention implements IntentionF
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode ternaryOperator = new ConvertIfConditionToTernaryOperator_Intention.QuotationClass_5h38jn_a0a0a1a().createNode(SLinkOperations.getTarget(node, "condition", true), IntentionUtils.getExpressionFromNode(SLinkOperations.getTarget(node, "ifTrue", true)), IntentionUtils.getExpressionFromNode(SLinkOperations.getTarget(node, "ifFalseStatement", true)));
+      SNode ternaryOperator = _quotation_createNode_78c6t8_a0a0a(SLinkOperations.getTarget(node, "condition", true), IntentionUtils.getExpressionFromNode(SLinkOperations.getTarget(node, "ifTrue", true)), IntentionUtils.getExpressionFromNode(SLinkOperations.getTarget(node, "ifFalseStatement", true)));
       SNodeOperations.replaceWithAnother(node, ternaryOperator);
     }
 
     public IntentionDescriptor getDescriptor() {
       return ConvertIfConditionToTernaryOperator_Intention.this;
-    }
-  }
-
-  public static class QuotationClass_5h38jn_a0a0a1a {
-    public QuotationClass_5h38jn_a0a0a1a() {
-    }
-
-    public SNode createNode(Object parameter_9, Object parameter_10, Object parameter_11) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
-      SNode quotedNode_4 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_5 = quotedNode_1;
-        {
-          quotedNode_2 = (SNode) parameter_9;
-          SNode quotedNode1_6;
-          if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_2);
-          } else {
-            _parameterValues_129834374.add(quotedNode_2);
-            quotedNode1_6 = quotedNode_2;
-          }
-          if (quotedNode1_6 != null) {
-            quotedNode_1.addChild("condition", HUtil.copyIfNecessary(quotedNode1_6));
-          }
-        }
-        {
-          quotedNode_3 = (SNode) parameter_10;
-          SNode quotedNode1_7;
-          if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_7 = HUtil.copyIfNecessary(quotedNode_3);
-          } else {
-            _parameterValues_129834374.add(quotedNode_3);
-            quotedNode1_7 = quotedNode_3;
-          }
-          if (quotedNode1_7 != null) {
-            quotedNode_1.addChild("ifTrue", HUtil.copyIfNecessary(quotedNode1_7));
-          }
-        }
-        {
-          quotedNode_4 = (SNode) parameter_11;
-          SNode quotedNode1_8;
-          if (_parameterValues_129834374.contains(quotedNode_4)) {
-            quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_4);
-          } else {
-            _parameterValues_129834374.add(quotedNode_4);
-            quotedNode1_8 = quotedNode_4;
-          }
-          if (quotedNode1_8 != null) {
-            quotedNode_1.addChild("ifFalse", HUtil.copyIfNecessary(quotedNode1_8));
-          }
-        }
-        result = quotedNode1_5;
-      }
-      return result;
     }
   }
 }

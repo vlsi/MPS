@@ -3,8 +3,6 @@
   <dependency className="jetbrains.mps.baseLanguage.overloadedOperators.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.overloadedOperators.typesystem.typeof_LeftOperand_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.overloadedOperators.typesystem.typeof_RightOperand_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.overloadedOperators.util.BinaryOperationUtil" />

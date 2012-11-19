@@ -2,8 +2,6 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.baseLanguage.money.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyCreator_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyGetAmountMethodCall_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyGetCurrencyMethodCall_InferenceRule" />
@@ -18,8 +16,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyCreator_InferenceRule" file="typeof_MoneyCreator_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -31,8 +27,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyGetAmountMethodCall_InferenceRule" file="typeof_MoneyGetAmountMethodCall_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -44,8 +38,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyGetCurrencyMethodCall_InferenceRule" file="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -57,8 +49,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyIsZeroMethodCall_InferenceRule" file="typeof_MoneyIsZeroMethodCall_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -70,8 +60,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyLiteral_InferenceRule" file="typeof_MoneyLiteral_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

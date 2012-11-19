@@ -17,8 +17,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -129,7 +127,7 @@ public class Potentially_not_migratable_usages_Finder extends GeneratedFinder {
           }
 
           if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.lang.textGen.structure.CollectionAppendPart") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(dotExpression), "jetbrains.mps.lang.textGen.structure.CollectionAppendPart"), "list", true) == dotExpression) {
-            expectedType = new Potentially_not_migratable_usages_Finder.QuotationClass_cbnudw_a0a0a22a0a0a1a3().createNode();
+            expectedType = _quotation_createNode_456pda_a0a0w0a0a0a();
           }
 
           if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.lang.textGen.structure.OperationCall")) {
@@ -181,26 +179,12 @@ public class Potentially_not_migratable_usages_Finder extends GeneratedFinder {
     }
   }
 
-  public static class QuotationClass_cbnudw_a0a0a22a0a0a1a3 {
-    public QuotationClass_cbnudw_a0a0a22a0a0a1a3() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_4 = quotedNode_2;
-          quotedNode_1.addChild("elementType", quotedNode1_4);
-        }
-        result = quotedNode1_3;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_456pda_a0a0w0a0a0a() {
+    SNode quotedNode_1 = null;
+    SNode quotedNode_2 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.addChild("elementType", quotedNode_2);
+    return quotedNode_1;
   }
 }

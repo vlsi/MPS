@@ -4,8 +4,6 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -15,65 +13,36 @@ public class UnrestrictedClosureLiteral_Behavior {
   }
 
   public static SNode virtual_getType_1229718192182(SNode thisNode, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {
-    return new UnrestrictedClosureLiteral_Behavior.QuotationClass_8me3g4_a0a0b().createNode(paramTypes, termType, returnType, throwsTypes);
+    return _quotation_createNode_8me3g4_a0a0(paramTypes, termType, returnType, throwsTypes);
   }
 
-  public static class QuotationClass_8me3g4_a0a0b {
-    public QuotationClass_8me3g4_a0a0b() {
-    }
-
-    public SNode createNode(Object parameter_9, Object parameter_10, Object parameter_11, Object parameter_12) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
-      SNode quotedNode_4 = null;
-      SNode quotedNode_5 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_6 = quotedNode_1;
-        {
-          List<SNode> nodes = (List<SNode>) parameter_9;
-          for (SNode child : nodes) {
-            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(child));
-          }
-        }
-        {
-          quotedNode_3 = (SNode) parameter_10;
-          SNode quotedNode1_7;
-          if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_7 = HUtil.copyIfNecessary(quotedNode_3);
-          } else {
-            _parameterValues_129834374.add(quotedNode_3);
-            quotedNode1_7 = quotedNode_3;
-          }
-          if (quotedNode1_7 != null) {
-            quotedNode_1.addChild("terminateType", HUtil.copyIfNecessary(quotedNode1_7));
-          }
-        }
-        {
-          quotedNode_4 = (SNode) parameter_11;
-          SNode quotedNode1_8;
-          if (_parameterValues_129834374.contains(quotedNode_4)) {
-            quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_4);
-          } else {
-            _parameterValues_129834374.add(quotedNode_4);
-            quotedNode1_8 = quotedNode_4;
-          }
-          if (quotedNode1_8 != null) {
-            quotedNode_1.addChild("resultType", HUtil.copyIfNecessary(quotedNode1_8));
-          }
-        }
-        {
-          List<SNode> nodes = (List<SNode>) parameter_12;
-          for (SNode child : nodes) {
-            quotedNode_1.addChild("throwsType", HUtil.copyIfNecessary(child));
-          }
-        }
-        result = quotedNode1_6;
+  private static SNode _quotation_createNode_8me3g4_a0a0(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
+    SNode quotedNode_5 = null;
+    SNode quotedNode_6 = null;
+    SNode quotedNode_7 = null;
+    SNode quotedNode_8 = null;
+    SNode quotedNode_9 = null;
+    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType", null, null, GlobalScope.getInstance(), false);
+    {
+      List<SNode> nodes = (List<SNode>) parameter_1;
+      for (SNode child : nodes) {
+        quotedNode_5.addChild("parameterType", HUtil.copyIfNecessary(child));
       }
-      return result;
     }
+    quotedNode_7 = (SNode) parameter_2;
+    if (quotedNode_7 != null) {
+      quotedNode_5.addChild("terminateType", HUtil.copyIfNecessary(quotedNode_7));
+    }
+    quotedNode_8 = (SNode) parameter_3;
+    if (quotedNode_8 != null) {
+      quotedNode_5.addChild("resultType", HUtil.copyIfNecessary(quotedNode_8));
+    }
+    {
+      List<SNode> nodes = (List<SNode>) parameter_4;
+      for (SNode child : nodes) {
+        quotedNode_5.addChild("throwsType", HUtil.copyIfNecessary(child));
+      }
+    }
+    return quotedNode_5;
   }
 }

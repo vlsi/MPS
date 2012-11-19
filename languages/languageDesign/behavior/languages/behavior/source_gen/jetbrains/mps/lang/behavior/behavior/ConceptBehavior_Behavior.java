@@ -112,7 +112,7 @@ public class ConceptBehavior_Behavior {
       }
 
       public SNode createMethodCall(SNode method, List<SNode> arguments) {
-        return new ConceptBehavior_Behavior.QuotationClass_xahq23_a0a0b0a0a0e().createNode(SLinkOperations.getTarget(SNodeOperations.cast(this.myStaticContainer, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false), method, arguments);
+        return _quotation_createNode_xahq23_a0a1a0a0a3(SLinkOperations.getTarget(SNodeOperations.cast(this.myStaticContainer, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false), method, arguments);
       }
     };
   }
@@ -226,29 +226,18 @@ public class ConceptBehavior_Behavior {
     BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", new Class[]{SNode.class, SNode.class}, new Object[]{baseConcept});
   }
 
-  public static class QuotationClass_xahq23_a0a0b0a0a0e {
-    public QuotationClass_xahq23_a0a0b0a0a0e() {
-    }
-
-    public SNode createNode(Object parameter_4, Object parameter_5, Object parameter_6) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_5);
-        quotedNode1_3.setReferenceTarget("concept", (SNode) parameter_4);
-        {
-          List<SNode> nodes = (List<SNode>) parameter_6;
-          for (SNode child : nodes) {
-            quotedNode_1.addChild("actualArgument", HUtil.copyIfNecessary(child));
-          }
-        }
-        result = quotedNode1_3;
+  private static SNode _quotation_createNode_xahq23_a0a1a0a0a3(Object parameter_1, Object parameter_2, Object parameter_3) {
+    SNode quotedNode_4 = null;
+    SNode quotedNode_5 = null;
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", null, null, GlobalScope.getInstance(), false);
+    quotedNode_4.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_2);
+    quotedNode_4.setReferenceTarget("concept", (SNode) parameter_1);
+    {
+      List<SNode> nodes = (List<SNode>) parameter_3;
+      for (SNode child : nodes) {
+        quotedNode_4.addChild("actualArgument", HUtil.copyIfNecessary(child));
       }
-      return result;
     }
+    return quotedNode_4;
   }
 }

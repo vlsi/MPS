@@ -11,8 +11,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -41,7 +39,7 @@ public class FetchDependenciesProcessor {
     if (!(ListSequence.fromList(statements).isEmpty())) {
       SNode wf = SModelOperations.createNewNode(SNodeOperations.getModel(project), null, "jetbrains.mps.build.structure.BuildCustomWorkflow");
       SNode taskpart = SModelOperations.createNewNode(SNodeOperations.getModel(project), null, "jetbrains.mps.build.workflow.structure.BwfTaskPart");
-      SLinkOperations.setTarget(taskpart, "task", SLinkOperations.getTarget(new FetchDependenciesProcessor.QuotationClass_t02zqv_a0a0c0h0a().createNode(), "target", false), false);
+      SLinkOperations.setTarget(taskpart, "task", SLinkOperations.getTarget(_quotation_createNode_t02zqv_a0a2a7a0(), "target", false), false);
       ListSequence.fromList(SLinkOperations.getTargets(wf, "parts", true)).addElement(taskpart);
       SNode stask = SModelOperations.createNewNode(SNodeOperations.getModel(project), null, "jetbrains.mps.build.workflow.structure.BwfSubTask");
       SPropertyOperations.set(stask, "name", "fetch");
@@ -49,6 +47,13 @@ public class FetchDependenciesProcessor {
       ListSequence.fromList(SLinkOperations.getTargets(stask, "statements", true)).addSequence(ListSequence.fromList(statements));
       ListSequence.fromList(SLinkOperations.getTargets(project, "aspects", true)).addElement(wf);
     }
+  }
+
+  private static SNode _quotation_createNode_t02zqv_a0a2a7a0() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskDependency", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("target", SReference.create("target", quotedNode_1, SModelReference.fromString("r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)"), SNodeId.fromString("7128123785277844790")));
+    return quotedNode_1;
   }
 
   private class RequiredDependenciesBuilderImpl implements RequiredDependenciesBuilder {
@@ -104,24 +109,6 @@ public class FetchDependenciesProcessor {
         return false;
       }
       return true;
-    }
-  }
-
-  public static class QuotationClass_t02zqv_a0a0c0h0a {
-    public QuotationClass_t02zqv_a0a0c0h0a() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskDependency", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("target", SReference.create("target", quotedNode1_2, SModelReference.fromString("r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)"), SNodeId.fromString("7128123785277844790")));
-        result = quotedNode1_2;
-      }
-      return result;
     }
   }
 }

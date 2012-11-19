@@ -13,13 +13,11 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
-import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 public class IterateOverSequence_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -60,7 +58,7 @@ public class IterateOverSequence_Intention implements IntentionFactory {
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     // TODO replace with isSubtype() when MPS-10610 is fixed 
-    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.collections.structure.SequenceType") || SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.collections.structure.ListType") || SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.collections.structure.SetType") || TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(node), new IterateOverSequence_Intention.QuotationClass_wo71su_a1a0a1a7().createNode());
+    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.collections.structure.SequenceType") || SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.collections.structure.ListType") || SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.collections.structure.SetType") || TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(node), _quotation_createNode_7wizo7_b0a0b0a());
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -72,6 +70,15 @@ public class IterateOverSequence_Intention implements IntentionFactory {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new IterateOverSequence_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
+  }
+
+  private static SNode _quotation_createNode_7wizo7_b0a0b0a() {
+    SNode quotedNode_1 = null;
+    SNode quotedNode_2 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.addChild("elementType", quotedNode_2);
+    return quotedNode_1;
   }
 
   public class IntentionImplementation implements IntentionExecutable {
@@ -96,29 +103,6 @@ public class IterateOverSequence_Intention implements IntentionFactory {
 
     public IntentionDescriptor getDescriptor() {
       return IterateOverSequence_Intention.this;
-    }
-  }
-
-  public static class QuotationClass_wo71su_a1a0a1a7 {
-    public QuotationClass_wo71su_a1a0a1a7() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_4 = quotedNode_2;
-          quotedNode_1.addChild("elementType", quotedNode1_4);
-        }
-        result = quotedNode1_3;
-      }
-      return result;
     }
   }
 }

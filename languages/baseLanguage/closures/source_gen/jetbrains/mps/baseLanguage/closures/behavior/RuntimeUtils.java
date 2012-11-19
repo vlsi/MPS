@@ -13,8 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -28,7 +26,7 @@ public class RuntimeUtils {
   }
 
   public static SModel getRuntimeModel() {
-    return SNodeOperations.getModel(SLinkOperations.getTarget(new RuntimeUtils.QuotationClass_hadnfw_a0a0a0a().createNode(), "classifier", false));
+    return SNodeOperations.getModel(SLinkOperations.getTarget(_quotation_createNode_hadnfw_a0a0a0(), "classifier", false));
   }
 
   public static Map<String, SNode> getRuntimeClassifiersMap() {
@@ -51,21 +49,10 @@ public class RuntimeUtils {
     return runtimeClassifiers;
   }
 
-  public static class QuotationClass_hadnfw_a0a0a0a {
-    public QuotationClass_hadnfw_a0a0a0a() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)"), SNodeId.fromString("3812443517665722916")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_hadnfw_a0a0a0() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)"), SNodeId.fromString("3812443517665722916")));
+    return quotedNode_1;
   }
 }

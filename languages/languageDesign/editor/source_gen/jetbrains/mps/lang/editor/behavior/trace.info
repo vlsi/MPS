@@ -319,55 +319,42 @@
     <unitInfo nodeId="1213877273474" fileName="CellKeyMapKeystroke_Behavior.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellKeyMapKeystroke_Behavior" />
   </root>
   <root nodeId="1213877280244" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
-    <nodeInfo nodeId="1213877280252" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="18" startPosition="27" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877280254" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="20" startPosition="5" endLine="21" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877280269" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="21" startPosition="138" endLine="22" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877280274" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="22" startPosition="101" endLine="23" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877280280" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="23" startPosition="82" endLine="24" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="31" startPosition="49" endLine="32" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="32" startPosition="26" endLine="33" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="33" startPosition="67" endLine="34" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="35" startPosition="7" endLine="36" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="36" startPosition="163" endLine="37" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="37" startPosition="43" endLine="38" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="38" startPosition="73" endLine="39" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="40" startPosition="7" endLine="41" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877280244" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="28" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_tzpw84_a0e0b#()V" />
-    <nodeInfo nodeId="1213877280247" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="17" startPosition="83" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="34" startPosition="32" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="34" startPosition="32" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877280244" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="17" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="31" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="1213877280287" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="28" startPosition="42" endLine="28" endPosition="42" />
-    <scopeInfo nodeId="1213877280251" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="18" startPosition="27" endLine="19" endPosition="18" />
-    <scopeInfo nodeId="1213877280244" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="1213877280252" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="16" startPosition="27" endLine="17" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877280254" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="18" startPosition="5" endLine="19" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877280269" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="19" startPosition="138" endLine="20" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877280274" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="20" startPosition="101" endLine="21" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877280280" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="21" startPosition="82" endLine="22" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="25" startPosition="78" endLine="26" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="26" startPosition="30" endLine="27" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="27" startPosition="159" endLine="28" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="28" startPosition="68" endLine="29" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877280244" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="26" startPosition="30" endLine="28" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="26" startPosition="30" endLine="28" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877280247" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="15" startPosition="83" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="25" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_tzpw84_a4a0#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1213877280244" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="15" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="1213877280287" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="1213877280251" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="16" startPosition="27" endLine="17" endPosition="18" />
+    <scopeInfo nodeId="1213877280244" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="1213877280244" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="28" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="35" startPosition="7" endLine="39" endPosition="31">
-      <varInfo nodeId="1213877280281" varName="quotedNode1_2" />
+    <scopeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="26" startPosition="30" endLine="28" endPosition="68" />
+    <scopeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="25" startPosition="78" endLine="29" endPosition="24">
+      <varInfo nodeId="1213877280281" varName="quotedNode_2" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="34" startPosition="32" endLine="40" endPosition="7" />
-    <scopeInfo nodeId="1213877280246" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="17" startPosition="83" endLine="24" endPosition="120">
+    <scopeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="25" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="1213877280281" varName="parameter_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877280246" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="15" startPosition="83" endLine="22" endPosition="61">
       <varInfo nodeId="1213877280275" varName="conceptOfChild" />
       <varInfo nodeId="1213877280270" varName="editedLink" />
       <varInfo nodeId="1213877280255" varName="hostMenuPart" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877280244" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="17" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="1213877280244" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="15" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="1213877280244" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="31" startPosition="49" endLine="41" endPosition="20">
-      <varInfo nodeId="1213877280281" varName="_parameterValues_129834374" />
-      <varInfo nodeId="1213877280281" varName="quotedNode_1" />
-      <varInfo nodeId="1213877280281" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="31" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="1213877280281" varName="parameter_3" />
-    </scopeInfo>
-    <unitInfo nodeId="1213877280281" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="27" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Create_Behavior$QuotationClass_tzpw84_a0e0b" />
-    <unitInfo nodeId="1213877280244" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Create_Behavior" />
+    <unitInfo nodeId="1213877280244" fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Create_Behavior" />
   </root>
   <root nodeId="1213877296560" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
     <nodeInfo nodeId="1216812512094" fileName="CellModel_Component_Behavior.java" startLine="14" startPosition="100" endLine="15" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -452,107 +439,66 @@
     <unitInfo nodeId="1213877313327" fileName="CellMenuComponentFeature_Link_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuComponentFeature_Link_Behavior" />
   </root>
   <root nodeId="1213877323455" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
-    <nodeInfo nodeId="1213877323458" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877323465" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="19" startPosition="154" endLine="20" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877323473" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="21" startPosition="38" endLine="22" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877323480" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="23" startPosition="5" endLine="24" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="31" startPosition="31" endLine="32" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="32" startPosition="26" endLine="33" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="33" startPosition="67" endLine="34" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="34" startPosition="32" endLine="35" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="36" startPosition="7" endLine="37" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="37" startPosition="175" endLine="38" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="39" startPosition="9" endLine="40" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="40" startPosition="169" endLine="41" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="41" startPosition="45" endLine="42" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="43" startPosition="9" endLine="44" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="45" startPosition="7" endLine="46" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="54" startPosition="49" endLine="55" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="55" startPosition="26" endLine="56" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="56" startPosition="67" endLine="57" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="57" startPosition="32" endLine="58" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="59" startPosition="7" endLine="60" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="60" startPosition="175" endLine="61" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="62" startPosition="9" endLine="63" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="63" startPosition="45" endLine="64" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="65" startPosition="66" endLine="66" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="67" startPosition="18" endLine="68" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="68" startPosition="57" endLine="69" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="71" startPosition="38" endLine="72" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="74" startPosition="9" endLine="75" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="76" startPosition="7" endLine="77" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877323455" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="28" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_ygqhl6_a0a0c0b#()V" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="51" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_ygqhl6_a0a3a1#()V" />
-    <nodeInfo nodeId="1213877323471" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="20" startPosition="101" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="67" startPosition="16" endLine="70" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="70" startPosition="11" endLine="73" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="38" startPosition="43" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="38" startPosition="43" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="64" startPosition="30" endLine="70" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877323455" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="18" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="35" startPosition="32" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="35" startPosition="32" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="61" startPosition="43" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="61" startPosition="43" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="31" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="58" startPosition="32" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="58" startPosition="32" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="54" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="1213877323490" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="28" startPosition="44" endLine="28" endPosition="44" />
-    <scopeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="51" startPosition="43" endLine="51" endPosition="43" />
-    <scopeInfo nodeId="1213877323472" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="21" startPosition="38" endLine="22" endPosition="109" />
-    <scopeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="65" startPosition="66" endLine="66" endPosition="64" />
-    <scopeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="71" startPosition="38" endLine="72" endPosition="87" />
-    <scopeInfo nodeId="1213877323455" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="1213877323458" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877323465" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="17" startPosition="154" endLine="18" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877323473" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="19" startPosition="38" endLine="20" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877323480" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="25" startPosition="62" endLine="26" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="26" startPosition="30" endLine="27" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="27" startPosition="30" endLine="28" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="28" startPosition="171" endLine="29" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="29" startPosition="163" endLine="30" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="30" startPosition="55" endLine="31" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="34" startPosition="79" endLine="35" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="35" startPosition="30" endLine="36" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="36" startPosition="30" endLine="37" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="37" startPosition="171" endLine="38" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="39" startPosition="31" endLine="40" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="41" startPosition="5" endLine="42" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877323455" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="28" startPosition="171" endLine="30" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="28" startPosition="171" endLine="30" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877323471" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="18" startPosition="101" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="27" startPosition="30" endLine="30" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="27" startPosition="30" endLine="30" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="38" startPosition="39" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="37" startPosition="171" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="37" startPosition="171" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="36" startPosition="30" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="36" startPosition="30" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877323455" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="16" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="25" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_ygqhl6_a0a2a0#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="34" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_ygqhl6_a0d0a#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="1213877323490" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="1213877323472" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="19" startPosition="38" endLine="20" endPosition="51" />
+    <scopeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="39" startPosition="31" endLine="40" endPosition="80" />
+    <scopeInfo nodeId="1213877323455" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="1213877323455" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="28" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="51" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="67" startPosition="18" endLine="69" endPosition="41" />
-    <scopeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="39" startPosition="9" endLine="42" endPosition="62">
-      <varInfo nodeId="1213877323474" varName="quotedNode1_4" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="38" startPosition="43" endLine="43" endPosition="9" />
-    <scopeInfo nodeId="1213877323457" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="18" startPosition="83" endLine="24" endPosition="151">
+    <scopeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="28" startPosition="171" endLine="30" endPosition="55" />
+    <scopeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="27" startPosition="30" endLine="30" endPosition="55" />
+    <scopeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="37" startPosition="171" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="36" startPosition="30" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="1213877323457" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="16" startPosition="83" endLine="22" endPosition="93">
       <varInfo nodeId="1213877323459" varName="hostMenuPart" />
       <varInfo nodeId="1213877323466" varName="parameterObjectType" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877323455" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="18" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="1213877323455" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="36" startPosition="7" endLine="44" endPosition="31">
-      <varInfo nodeId="1213877323474" varName="quotedNode1_3" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="35" startPosition="32" endLine="45" endPosition="7" />
-    <scopeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="62" startPosition="9" endLine="73" endPosition="11">
-      <varInfo nodeId="1213877323482" varName="quotedNode1_4" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="61" startPosition="43" endLine="74" endPosition="9" />
-    <scopeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="31" startPosition="31" endLine="46" endPosition="20">
-      <varInfo nodeId="1213877323474" varName="_parameterValues_129834374" />
+    <scopeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="25" startPosition="62" endLine="31" endPosition="24">
       <varInfo nodeId="1213877323474" varName="quotedNode_1" />
       <varInfo nodeId="1213877323474" varName="quotedNode_2" />
-      <varInfo nodeId="1213877323474" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="59" startPosition="7" endLine="75" endPosition="31">
-      <varInfo nodeId="1213877323482" varName="quotedNode1_3" />
+    <scopeInfo nodeId="1213877323455" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="16" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1213877323455" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="31" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="58" startPosition="32" endLine="76" endPosition="7" />
-    <scopeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="54" startPosition="49" endLine="77" endPosition="20">
-      <varInfo nodeId="1213877323482" varName="_parameterValues_129834374" />
-      <varInfo nodeId="1213877323482" varName="quotedNode_1" />
+    <scopeInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="25" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="34" startPosition="79" endLine="42" endPosition="24">
       <varInfo nodeId="1213877323482" varName="quotedNode_2" />
-      <varInfo nodeId="1213877323482" varName="result" />
+      <varInfo nodeId="1213877323482" varName="quotedNode_3" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="54" startPosition="0" endLine="79" endPosition="0">
-      <varInfo nodeId="1213877323482" varName="parameter_5" />
+    <scopeInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="34" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1213877323482" varName="parameter_1" />
     </scopeInfo>
-    <unitInfo nodeId="1213877323474" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="27" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Query_Behavior$QuotationClass_ygqhl6_a0a0c0b" />
-    <unitInfo nodeId="1213877323482" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="50" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Query_Behavior$QuotationClass_ygqhl6_a0a3a1" />
-    <unitInfo nodeId="1213877323455" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="14" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Query_Behavior" />
+    <unitInfo nodeId="1213877323455" fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Query_Behavior" />
   </root>
   <root nodeId="1213877329110" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
     <nodeInfo nodeId="1216377921925" fileName="CellModel_WithRole_Behavior.java" startLine="16" startPosition="77" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1159,55 +1105,42 @@
     <unitInfo nodeId="1213877395571" fileName="SelectOperation_Behavior.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.SelectOperation_Behavior" />
   </root>
   <root nodeId="1213877438486" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
-    <nodeInfo nodeId="1213877438494" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="18" startPosition="27" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877438496" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="20" startPosition="5" endLine="21" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877438511" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="21" startPosition="138" endLine="22" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877438516" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="22" startPosition="101" endLine="23" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877438522" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="23" startPosition="82" endLine="24" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="31" startPosition="49" endLine="32" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="32" startPosition="26" endLine="33" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="33" startPosition="67" endLine="34" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="35" startPosition="7" endLine="36" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="36" startPosition="163" endLine="37" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="37" startPosition="43" endLine="38" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="38" startPosition="73" endLine="39" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="40" startPosition="7" endLine="41" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877438486" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="28" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_jf8h0a_a0e0b#()V" />
-    <nodeInfo nodeId="1213877438489" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="17" startPosition="83" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="34" startPosition="32" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="34" startPosition="32" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877438486" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="17" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="31" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="1213877438529" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="28" startPosition="42" endLine="28" endPosition="42" />
-    <scopeInfo nodeId="1213877438493" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="18" startPosition="27" endLine="19" endPosition="18" />
-    <scopeInfo nodeId="1213877438486" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="1213877438494" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="16" startPosition="27" endLine="17" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877438496" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="18" startPosition="5" endLine="19" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877438511" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="19" startPosition="138" endLine="20" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877438516" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="20" startPosition="101" endLine="21" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877438522" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="21" startPosition="82" endLine="22" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="25" startPosition="78" endLine="26" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="26" startPosition="30" endLine="27" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="27" startPosition="159" endLine="28" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="28" startPosition="68" endLine="29" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877438486" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="26" startPosition="30" endLine="28" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="26" startPosition="30" endLine="28" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877438489" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="15" startPosition="83" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="25" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_jf8h0a_a4a0#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1213877438486" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="15" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="1213877438529" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="1213877438493" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="16" startPosition="27" endLine="17" endPosition="18" />
+    <scopeInfo nodeId="1213877438486" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="1213877438486" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="28" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="35" startPosition="7" endLine="39" endPosition="31">
-      <varInfo nodeId="1213877438523" varName="quotedNode1_2" />
+    <scopeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="26" startPosition="30" endLine="28" endPosition="68" />
+    <scopeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="25" startPosition="78" endLine="29" endPosition="24">
+      <varInfo nodeId="1213877438523" varName="quotedNode_2" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="34" startPosition="32" endLine="40" endPosition="7" />
-    <scopeInfo nodeId="1213877438488" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="17" startPosition="83" endLine="24" endPosition="119">
+    <scopeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="25" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="1213877438523" varName="parameter_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877438488" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="15" startPosition="83" endLine="22" endPosition="61">
       <varInfo nodeId="1213877438517" varName="conceptOfChild" />
       <varInfo nodeId="1213877438512" varName="editedLink" />
       <varInfo nodeId="1213877438497" varName="hostMenuPart" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877438486" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="17" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="1213877438486" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="15" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="1213877438486" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="31" startPosition="49" endLine="41" endPosition="20">
-      <varInfo nodeId="1213877438523" varName="_parameterValues_129834374" />
-      <varInfo nodeId="1213877438523" varName="quotedNode_1" />
-      <varInfo nodeId="1213877438523" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="31" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="1213877438523" varName="parameter_3" />
-    </scopeInfo>
-    <unitInfo nodeId="1213877438523" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="27" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Item_Create_Behavior$QuotationClass_jf8h0a_a0e0b" />
-    <unitInfo nodeId="1213877438486" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Item_Create_Behavior" />
+    <unitInfo nodeId="1213877438486" fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Item_Create_Behavior" />
   </root>
   <root nodeId="1213877510877" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
     <nodeInfo nodeId="8952337903384643339" fileName="ConceptEditorDeclaration_Behavior.java" startLine="18" startPosition="82" endLine="19" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1330,72 +1263,48 @@
     <unitInfo nodeId="1213877515584" fileName="StyleSheet_Behavior.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleSheet_Behavior" />
   </root>
   <root nodeId="1213877516036" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
-    <nodeInfo nodeId="1213877516039" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877516047" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="19" startPosition="144" endLine="20" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877516055" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="21" startPosition="38" endLine="22" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877516060" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="23" startPosition="5" endLine="24" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="31" startPosition="49" endLine="32" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="32" startPosition="26" endLine="33" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="33" startPosition="67" endLine="34" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="34" startPosition="32" endLine="35" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="36" startPosition="7" endLine="37" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="37" startPosition="175" endLine="38" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="39" startPosition="9" endLine="40" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="40" startPosition="45" endLine="41" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="42" startPosition="66" endLine="43" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="44" startPosition="18" endLine="45" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="45" startPosition="57" endLine="46" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="48" startPosition="38" endLine="49" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="51" startPosition="9" endLine="52" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="53" startPosition="7" endLine="54" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877516036" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="28" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_b08ikr_a0d0b#()V" />
-    <nodeInfo nodeId="1213877516053" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="20" startPosition="102" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="44" startPosition="16" endLine="47" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="47" startPosition="11" endLine="50" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="41" startPosition="30" endLine="47" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877516036" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="18" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="38" startPosition="43" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="38" startPosition="43" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="35" startPosition="32" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="35" startPosition="32" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="31" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="1213877516068" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="28" startPosition="42" endLine="28" endPosition="42" />
-    <scopeInfo nodeId="1213877516054" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="21" startPosition="38" endLine="22" endPosition="18" />
-    <scopeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="42" startPosition="66" endLine="43" endPosition="64" />
-    <scopeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="48" startPosition="38" endLine="49" endPosition="87" />
-    <scopeInfo nodeId="1213877516036" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="1213877516039" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877516047" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="17" startPosition="144" endLine="18" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877516055" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="19" startPosition="38" endLine="20" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877516060" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="25" startPosition="78" endLine="26" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="26" startPosition="30" endLine="27" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="27" startPosition="30" endLine="28" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="28" startPosition="171" endLine="29" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="30" startPosition="31" endLine="31" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="32" startPosition="5" endLine="33" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877516036" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1213877516053" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="18" startPosition="102" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="29" startPosition="39" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="28" startPosition="171" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="28" startPosition="171" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="27" startPosition="30" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="27" startPosition="30" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877516036" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="16" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="25" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_b08ikr_a3a0#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="1213877516068" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="1213877516054" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="19" startPosition="38" endLine="20" endPosition="18" />
+    <scopeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="30" startPosition="31" endLine="31" endPosition="80" />
+    <scopeInfo nodeId="1213877516036" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="1213877516036" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="28" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="44" startPosition="18" endLine="46" endPosition="41" />
-    <scopeInfo nodeId="1213877516038" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="18" startPosition="83" endLine="24" endPosition="119">
+    <scopeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="28" startPosition="171" endLine="32" endPosition="5" />
+    <scopeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="27" startPosition="30" endLine="32" endPosition="5" />
+    <scopeInfo nodeId="1213877516038" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="16" startPosition="83" endLine="22" endPosition="66">
       <varInfo nodeId="1213877516040" varName="hostMenuGroup" />
       <varInfo nodeId="1213877516048" varName="parameterObjectType" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877516036" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="18" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="1213877516036" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="16" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="1213877516036" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="39" startPosition="9" endLine="50" endPosition="11">
-      <varInfo nodeId="1213877516061" varName="quotedNode1_4" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="38" startPosition="43" endLine="51" endPosition="9" />
-    <scopeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="36" startPosition="7" endLine="52" endPosition="31">
-      <varInfo nodeId="1213877516061" varName="quotedNode1_3" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="35" startPosition="32" endLine="53" endPosition="7" />
-    <scopeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="31" startPosition="49" endLine="54" endPosition="20">
-      <varInfo nodeId="1213877516061" varName="_parameterValues_129834374" />
-      <varInfo nodeId="1213877516061" varName="quotedNode_1" />
+    <scopeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="25" startPosition="78" endLine="33" endPosition="24">
       <varInfo nodeId="1213877516061" varName="quotedNode_2" />
-      <varInfo nodeId="1213877516061" varName="result" />
+      <varInfo nodeId="1213877516061" varName="quotedNode_3" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="31" startPosition="0" endLine="56" endPosition="0">
-      <varInfo nodeId="1213877516061" varName="parameter_5" />
+    <scopeInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="25" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1213877516061" varName="parameter_1" />
     </scopeInfo>
-    <unitInfo nodeId="1213877516061" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="27" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_AbstractGroup_Query_Behavior$QuotationClass_b08ikr_a0d0b" />
-    <unitInfo nodeId="1213877516036" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_AbstractGroup_Query_Behavior" />
+    <unitInfo nodeId="1213877516036" fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_AbstractGroup_Query_Behavior" />
   </root>
   <root nodeId="1213877538771" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
     <nodeInfo nodeId="1213877538771" fileName="CellMenuComponentFeature_Property_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -3494,120 +3403,79 @@
     <unitInfo nodeId="7667708318090936716" fileName="IndentLayoutWrapAnchorStyleClassItem_Behavior.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.IndentLayoutWrapAnchorStyleClassItem_Behavior" />
   </root>
   <root nodeId="7806530711846755629" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
-    <nodeInfo nodeId="7806530711846849288" fileName="QueryFunction_ParametersList_Behavior.java" startLine="20" startPosition="83" endLine="21" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7806530711846849312" fileName="QueryFunction_ParametersList_Behavior.java" startLine="21" startPosition="139" endLine="22" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7806530711846849332" fileName="QueryFunction_ParametersList_Behavior.java" startLine="23" startPosition="31" endLine="24" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6552123473822749317" fileName="QueryFunction_ParametersList_Behavior.java" startLine="25" startPosition="5" endLine="26" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="30" startPosition="86" endLine="31" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="35" startPosition="119" endLine="36" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="43" startPosition="31" endLine="44" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="44" startPosition="26" endLine="45" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="45" startPosition="67" endLine="46" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="46" startPosition="32" endLine="47" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="48" startPosition="7" endLine="49" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="49" startPosition="179" endLine="50" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="51" startPosition="9" endLine="52" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="52" startPosition="169" endLine="53" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="53" startPosition="45" endLine="54" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="55" startPosition="9" endLine="56" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="57" startPosition="7" endLine="58" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="66" startPosition="49" endLine="67" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="67" startPosition="26" endLine="68" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="68" startPosition="67" endLine="69" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="69" startPosition="32" endLine="70" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="71" startPosition="7" endLine="72" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="72" startPosition="179" endLine="73" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="74" startPosition="9" endLine="75" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="75" startPosition="45" endLine="76" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="77" startPosition="66" endLine="78" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="79" startPosition="18" endLine="80" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="80" startPosition="57" endLine="81" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="83" startPosition="38" endLine="84" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="86" startPosition="9" endLine="87" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="88" startPosition="7" endLine="89" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="40" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_1gao1h_a0a0c0b#()V" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="63" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_1gao1h_a0d0b#()V" />
-    <nodeInfo nodeId="7806530711846849330" fileName="QueryFunction_ParametersList_Behavior.java" startLine="22" startPosition="75" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="79" startPosition="16" endLine="82" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="82" startPosition="11" endLine="85" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getExpectedReturnType_7806530711846755632#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getExpectedReturnType_7806530711846755632#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="50" startPosition="43" endLine="55" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="50" startPosition="43" endLine="55" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="76" startPosition="30" endLine="82" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="20" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="47" startPosition="32" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="47" startPosition="32" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="73" startPosition="43" endLine="86" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="73" startPosition="43" endLine="86" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="43" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="70" startPosition="32" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="70" startPosition="32" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="66" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="7806530711846755631" fileName="QueryFunction_ParametersList_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
-    <scopeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="40" startPosition="44" endLine="40" endPosition="44" />
-    <scopeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="63" startPosition="42" endLine="63" endPosition="42" />
-    <scopeInfo nodeId="7806530711846849331" fileName="QueryFunction_ParametersList_Behavior.java" startLine="23" startPosition="31" endLine="24" endPosition="100" />
-    <scopeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="30" startPosition="86" endLine="31" endPosition="156" />
-    <scopeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="35" startPosition="119" endLine="36" endPosition="302" />
-    <scopeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="77" startPosition="66" endLine="78" endPosition="64" />
-    <scopeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="83" startPosition="38" endLine="84" endPosition="87" />
-    <scopeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0">
+    <nodeInfo nodeId="7806530711846849288" fileName="QueryFunction_ParametersList_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7806530711846849312" fileName="QueryFunction_ParametersList_Behavior.java" startLine="19" startPosition="139" endLine="20" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7806530711846849332" fileName="QueryFunction_ParametersList_Behavior.java" startLine="21" startPosition="31" endLine="22" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6552123473822749317" fileName="QueryFunction_ParametersList_Behavior.java" startLine="23" startPosition="5" endLine="24" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="28" startPosition="86" endLine="29" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="33" startPosition="119" endLine="34" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="37" startPosition="62" endLine="38" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="38" startPosition="30" endLine="39" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="39" startPosition="30" endLine="40" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="40" startPosition="175" endLine="41" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="41" startPosition="163" endLine="42" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="42" startPosition="55" endLine="43" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="46" startPosition="78" endLine="47" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="47" startPosition="30" endLine="48" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="48" startPosition="30" endLine="49" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="49" startPosition="175" endLine="50" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="51" startPosition="31" endLine="52" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="53" startPosition="5" endLine="54" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="40" startPosition="175" endLine="42" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="40" startPosition="175" endLine="42" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7806530711846849330" fileName="QueryFunction_ParametersList_Behavior.java" startLine="20" startPosition="75" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="39" startPosition="30" endLine="42" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="39" startPosition="30" endLine="42" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="50" startPosition="39" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getExpectedReturnType_7806530711846755632#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getExpectedReturnType_7806530711846755632#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="49" startPosition="175" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="49" startPosition="175" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="48" startPosition="30" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="48" startPosition="30" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="18" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="37" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_1gao1h_a0a2a0#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="46" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_1gao1h_a3a0#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="7806530711846755631" fileName="QueryFunction_ParametersList_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="7806530711846849331" fileName="QueryFunction_ParametersList_Behavior.java" startLine="21" startPosition="31" endLine="22" endPosition="51" />
+    <scopeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="28" startPosition="86" endLine="29" endPosition="156" />
+    <scopeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="33" startPosition="119" endLine="34" endPosition="302" />
+    <scopeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="51" startPosition="31" endLine="52" endPosition="80" />
+    <scopeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="7806530711846755629" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="40" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="63" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="79" startPosition="18" endLine="81" endPosition="41" />
-    <scopeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="51" startPosition="9" endLine="54" endPosition="62">
-      <varInfo nodeId="7806530711846849333" varName="quotedNode1_4" />
-    </scopeInfo>
-    <scopeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="40" startPosition="175" endLine="42" endPosition="55" />
+    <scopeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="39" startPosition="30" endLine="42" endPosition="55" />
+    <scopeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="7806530711846755629" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="7806530711846755629" varName="callerConceptFqName" />
       <varInfo nodeId="7806530711846755629" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="50" startPosition="43" endLine="55" endPosition="9" />
-    <scopeInfo nodeId="7806530711846755634" fileName="QueryFunction_ParametersList_Behavior.java" startLine="20" startPosition="83" endLine="26" endPosition="108">
+    <scopeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="49" startPosition="175" endLine="53" endPosition="5" />
+    <scopeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="48" startPosition="30" endLine="53" endPosition="5" />
+    <scopeInfo nodeId="7806530711846755634" fileName="QueryFunction_ParametersList_Behavior.java" startLine="18" startPosition="83" endLine="24" endPosition="59">
       <varInfo nodeId="7806530711846849289" varName="ancestor" />
       <varInfo nodeId="7806530711846849313" varName="expectedType" />
     </scopeInfo>
-    <scopeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="20" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="7806530711846755629" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="48" startPosition="7" endLine="56" endPosition="31">
-      <varInfo nodeId="7806530711846849333" varName="quotedNode1_3" />
-    </scopeInfo>
-    <scopeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="47" startPosition="32" endLine="57" endPosition="7" />
-    <scopeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="74" startPosition="9" endLine="85" endPosition="11">
-      <varInfo nodeId="6552123473822749318" varName="quotedNode1_4" />
-    </scopeInfo>
-    <scopeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="73" startPosition="43" endLine="86" endPosition="9" />
-    <scopeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="43" startPosition="31" endLine="58" endPosition="20">
-      <varInfo nodeId="7806530711846849333" varName="_parameterValues_129834374" />
+    <scopeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="37" startPosition="62" endLine="43" endPosition="24">
       <varInfo nodeId="7806530711846849333" varName="quotedNode_1" />
       <varInfo nodeId="7806530711846849333" varName="quotedNode_2" />
-      <varInfo nodeId="7806530711846849333" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="71" startPosition="7" endLine="87" endPosition="31">
-      <varInfo nodeId="6552123473822749318" varName="quotedNode1_3" />
+    <scopeInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="18" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="7806530711846755629" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="43" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="70" startPosition="32" endLine="88" endPosition="7" />
-    <scopeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="66" startPosition="49" endLine="89" endPosition="20">
-      <varInfo nodeId="6552123473822749318" varName="_parameterValues_129834374" />
-      <varInfo nodeId="6552123473822749318" varName="quotedNode_1" />
+    <scopeInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="37" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="46" startPosition="78" endLine="54" endPosition="24">
       <varInfo nodeId="6552123473822749318" varName="quotedNode_2" />
-      <varInfo nodeId="6552123473822749318" varName="result" />
+      <varInfo nodeId="6552123473822749318" varName="quotedNode_3" />
     </scopeInfo>
-    <scopeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="66" startPosition="0" endLine="91" endPosition="0">
-      <varInfo nodeId="6552123473822749318" varName="parameter_5" />
+    <scopeInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="46" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="6552123473822749318" varName="parameter_1" />
     </scopeInfo>
-    <unitInfo nodeId="7806530711846849333" fileName="QueryFunction_ParametersList_Behavior.java" startLine="39" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_ParametersList_Behavior$QuotationClass_1gao1h_a0a0c0b" />
-    <unitInfo nodeId="6552123473822749318" fileName="QueryFunction_ParametersList_Behavior.java" startLine="62" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_ParametersList_Behavior$QuotationClass_1gao1h_a0d0b" />
-    <unitInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="16" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_ParametersList_Behavior" />
+    <unitInfo nodeId="7806530711846755629" fileName="QueryFunction_ParametersList_Behavior.java" startLine="14" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_ParametersList_Behavior" />
   </root>
   <root nodeId="8255250703325737458" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
     <nodeInfo nodeId="8255250703325740974" fileName="ScriptKindClassItem_Behavior.java" startLine="15" startPosition="5" endLine="16" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

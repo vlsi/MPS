@@ -7,8 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -17,7 +15,7 @@ public class CreateUIObjectStatement_Behavior {
   }
 
   public static SNode virtual_getType_6410919744913609596(SNode thisNode) {
-    return new CreateUIObjectStatement_Behavior.QuotationClass_qpbyzc_a0a0b().createNode(SLinkOperations.getTarget(thisNode, "uiObject", false));
+    return _quotation_createNode_qpbyzc_a0a0(SLinkOperations.getTarget(thisNode, "uiObject", false));
   }
 
   @Deprecated
@@ -30,21 +28,10 @@ public class CreateUIObjectStatement_Behavior {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CreateUIObjectStatement"), callerConceptFqName, "virtual_getType_6410919744913609596", new Class[]{SNode.class}, new Object[]{});
   }
 
-  public static class QuotationClass_qpbyzc_a0a0b {
-    public QuotationClass_qpbyzc_a0a0b() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.UIObjectType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("uiObject", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_qpbyzc_a0a0(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.UIObjectType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("uiObject", (SNode) parameter_1);
+    return quotedNode_2;
   }
 }

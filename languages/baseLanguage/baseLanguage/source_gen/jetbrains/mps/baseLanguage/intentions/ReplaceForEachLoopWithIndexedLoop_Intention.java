@@ -14,6 +14,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
@@ -21,10 +23,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.intentions.IntentionDescriptor;
-import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 public class ReplaceForEachLoopWithIndexedLoop_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -78,6 +76,12 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention implements IntentionFac
     return myCachedExecutable;
   }
 
+  private static SNode _quotation_createNode_zgbvoa_a0a31a0() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
+  }
+
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
@@ -117,7 +121,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention implements IntentionFac
         name :
         name + nameSuffix
       ));
-      SLinkOperations.setTarget(forVariableDeclaration, "type", new ReplaceForEachLoopWithIndexedLoop_Intention.QuotationClass_nfmyw1_a2a31a1a().createNode(), true);
+      SLinkOperations.setTarget(forVariableDeclaration, "type", _quotation_createNode_zgbvoa_a0a31a0(), true);
       SNodeFactoryOperations.setNewChild(forVariableDeclaration, "initializer", "jetbrains.mps.baseLanguage.structure.IntegerConstant");
       SPropertyOperations.set(SNodeOperations.cast(SLinkOperations.getTarget(forVariableDeclaration, "initializer", true), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value", "" + (0));
 
@@ -178,23 +182,6 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention implements IntentionFac
 
     public IntentionDescriptor getDescriptor() {
       return ReplaceForEachLoopWithIndexedLoop_Intention.this;
-    }
-  }
-
-  public static class QuotationClass_nfmyw1_a2a31a1a {
-    public QuotationClass_nfmyw1_a2a31a1a() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
     }
   }
 }

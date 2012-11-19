@@ -9,8 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -20,7 +18,7 @@ public class SNodeTypeCastExpression_Behavior {
 
   public static boolean call_isSNodeCast_1238686302573(SNode thisNode) {
     SNode leftType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "leftExpression", true));
-    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new SNodeTypeCastExpression_Behavior.QuotationClass_cjhknp_a1a0a1a1().createNode(), false));
+    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, _quotation_createNode_cjhknp_b0a0b0a(), false));
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
@@ -40,20 +38,9 @@ public class SNodeTypeCastExpression_Behavior {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"), callerConceptFqName, "virtual_getPresentation_1213877396640", new Class[]{SNode.class}, new Object[]{});
   }
 
-  public static class QuotationClass_cjhknp_a1a0a1a1 {
-    public QuotationClass_cjhknp_a1a0a1a1() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_cjhknp_b0a0b0a() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
   }
 }
