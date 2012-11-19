@@ -26,7 +26,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeRecalculatedListener;
@@ -50,11 +49,12 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
 
   private static final Logger LOG = Logger.getLogger(NodeTypesComponent.class);
 
-  private boolean myIsNonTypeSystemCheckingInProgress = false;
+  private NodeTypeAccess myNodeTypeAccess = new NodeTypeAccess();
 
+  private ITypeErrorComponent myTypeErrorComponent;
 
-  public NodeTypesComponent(TypeCheckingContext typeCheckingContext, State state) {
-    super(typeCheckingContext, state);
+  public NodeTypesComponent(SNode node, State state) {
+    super(node, state);
     myNonTypeSystemComponent = new NonTypeSystemComponent(TypeChecker.getInstance(), this);
     myModelListener = new MyModelListener();
     myModelListenerManager = new MyModelListenerManager(myModelListener);
@@ -93,16 +93,16 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
     myNonTypeSystemComponent.clearNodeTypes();
   }
 
-  public void putError(SNode node, IErrorReporter reporter) {
-    if (myIsSpecial) return;
+  private void putError(SNode node, IErrorReporter reporter) {
     if (!ErrorReportUtil.shouldReportError(node)) return;
-    if (myIsNonTypeSystemCheckingInProgress) {
-      myNonTypeSystemComponent.putError(node, reporter);
-    } else {
-      getTypeSystemComponent().addError(node, reporter);
-    }
+    getTypeErrorComponent().addError(node, reporter);
   }
 
+  private ITypeErrorComponent getTypeErrorComponent() {
+    return myTypeErrorComponent != null ? myTypeErrorComponent : getTypeSystemComponent();
+  }
+
+  @Deprecated
   public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
     if (nodeWithError != null) {
       SimpleErrorReporter errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
@@ -116,11 +116,6 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
     }
   }
 
-
-  public void setNonTypeSystemCheckingInProgress(boolean inProgress) {
-    myIsNonTypeSystemCheckingInProgress = inProgress;
-  }
-
   public void applyRuleToNode(SNode node, ICheckingRule_Runtime rule, IsApplicableStatus status, TypeCheckingContext typeCheckingContext) {
     try {
       rule.applyRule(node, typeCheckingContext, status);
@@ -129,18 +124,29 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
     }
   }
 
+  /**
+   * Returns true if the node's type is affected.
+   */
+  public boolean runApplyRulesTo(SNode node, Runnable run) {
+    myNodeTypeAccess.pushNode(node);
+    try{
+      run.run();
+    }
+    finally {
+      return myNodeTypeAccess.popNode();
+    }
+  }
+
   @Override
   public void dispose() {
-    if (!myTypeCheckingContext.isSingleTypeComputation()) {
-      if (myModelListenerManager != null) {
-        myModelListenerManager.dispose();
-      }
-      TypeChecker.getInstance().removeTypeRecalculatedListener(myTypeRecalculatedListener);
-      if (myNonTypeSystemComponent != null) {
-        myNonTypeSystemComponent.dispose();
-      }
+    if (myModelListenerManager != null) {
+      myModelListenerManager.dispose();
     }
-    getTypeSystemComponent().dispose();
+    TypeChecker.getInstance().removeTypeRecalculatedListener(myTypeRecalculatedListener);
+    if (myNonTypeSystemComponent != null) {
+      myNonTypeSystemComponent.dispose();
+    }
+    super.dispose();
   }
 
 
@@ -149,28 +155,52 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
   }
 
   public void typeOfNodeCalled(SNode node) {
-    getTypeSystemComponent().typeOfNodeCalled(node);
+    myNodeTypeAccess.nodeTypeAccessed(node);
   }
 
   public void addDependencyOnCurrent(SNode node, boolean typeAffected) {
-    getTypeSystemComponent().addDependencyOnCurrent(node, typeAffected);
-  }
-
-  public void addDependencyForCurrent(SNode node) {
-    SNode current = null;
-    if (myIsNonTypeSystemCheckingInProgress) {
-      current = myNonTypeSystemComponent.getCurrentCheckedNode();
-    }
-    getTypeSystemComponent().addDependencyForCurrent(node, current);
+    addDependencyOnCurrent_(node, typeAffected);
   }
 
   public void addDependencyOnCurrent(SNode node) {
-    getTypeSystemComponent().addDependencyOnCurrent(node);
+    addDependencyOnCurrent_(node, true);
+  }
+
+  //"type affected" means that *type* of this node depends on current
+  // used to decide whether call "type will be recalculated" if current invalidated
+  private void addDependencyOnCurrent_(SNode node, boolean typeAffected) {
+    if (node == null) {
+      LOG.error("Typesystem dependency not tracked. ");
+      return;
+    }
+
+    Set<SNode> hashSet = new THashSet<SNode>(1);
+    hashSet.add(myNodeTypeAccess.peekNode());
+    getTypeSystemComponent().addDependentNodesTypeSystem(node, hashSet, typeAffected);
+  }
+
+  public void addDependencyForCurrent(SNode node) {
+    SNode current = myNodeTypeAccess.peekNode();
+    if (current == null) {
+      LOG.error("Typesystem dependency not tracked. ");
+      return;
+    }
+
+    Set<SNode> hashSet = new THashSet<SNode>(1);
+    hashSet.add(node);
+    getTypeSystemComponent().addDependentNodesTypeSystem(current, hashSet, true);
   }
 
   @Override
   public void applyNonTypesystemRulesToRoot(IOperationContext context, TypeCheckingContext typeCheckingContext) {
-    myNonTypeSystemComponent.applyNonTypeSystemRulesToRoot(context, typeCheckingContext);
+    ITypeErrorComponent oldTypeErrorComponent = myTypeErrorComponent;
+    myTypeErrorComponent = myNonTypeSystemComponent;
+    try {
+      myNonTypeSystemComponent.applyNonTypeSystemRulesToRoot(typeCheckingContext, getNode());
+    }
+    finally {
+      myTypeErrorComponent = oldTypeErrorComponent;
+    }
   }
 
   public SNode getType(SNode node) {
@@ -234,10 +264,6 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
     } else {
       return typesChecked;
     }
-  }
-
-  public boolean isSpecial() {
-    return myIsSpecial;
   }
 
   private void processPendingEvents() {
@@ -368,6 +394,31 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
       for (SModelDescriptor sm : Collections.unmodifiableCollection(myNodesCount.keySet())) {
         sm.removeModelListener(myListener);
       }
+    }
+  }
+
+  private static class NodeTypeAccess {
+    private LinkedList<Pair<SNode, Boolean>> myStack = new LinkedList<Pair<SNode, Boolean>>();
+
+    private void pushNode(SNode node) {
+      myStack.push(new Pair<SNode, Boolean>(node, false));
+    }
+
+    private boolean popNode () {
+      return myStack.pop().o2;
+    }
+
+    private void nodeTypeAccessed (SNode node) {
+      for (Pair<SNode, Boolean> p: myStack) {
+        if (p.o1 == node) {
+          p.o2 = true;
+        }
+      }
+    }
+
+    private SNode peekNode () {
+      if (myStack.isEmpty()) return null;
+      return myStack.peek().o1;
     }
   }
 }

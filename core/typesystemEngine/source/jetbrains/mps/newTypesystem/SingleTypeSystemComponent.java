@@ -50,16 +50,14 @@ import java.util.Set;
   protected Queue<SNode> myQueue = new LinkedList<SNode>();
   protected boolean myIsChecked = false;
   protected SingleNodeTypesComponent myNodeTypesComponent;
-  protected TypeChecker myTypeChecker;
   protected Set<SNode> myNodes = new THashSet<SNode>();
   protected Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
   protected Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
 
 
-  public SingleTypeSystemComponent(State state, SingleNodeTypesComponent component, TypeChecker typeChecker) {
+  public SingleTypeSystemComponent(State state, SingleNodeTypesComponent component) {
     myState = state;
     myNodeTypesComponent = component;
-    myTypeChecker = typeChecker;
   }
 
   protected boolean isIncrementalMode() {
@@ -155,7 +153,7 @@ import java.util.Set;
   }
 
   protected boolean applyRulesToNode(SNode node) {
-    List<Pair<InferenceRule_Runtime, IsApplicableStatus>> newRules = myTypeChecker.getRulesManager().getInferenceRules(node);
+    List<Pair<InferenceRule_Runtime, IsApplicableStatus>> newRules = TypeChecker.getInstance().getRulesManager().getInferenceRules(node);
     if (newRules != null) {
       applyRulesToNode(node, newRules);
     }
@@ -255,7 +253,7 @@ import java.util.Set;
             computeTypes(node,true, true, Collections.<SNode>emptyList(), true, initialNode);
           }
           type = getType(initialNode);
-          if (type == null && node != initialNode && myTypeChecker.isGenerationMode()) {
+          if (type == null && node != initialNode) {
             TypeSystemComponent.LOG.error("No typesystem rule for " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(initialNode) + " in root " + initialNode.getTopmostAncestor() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new SNodePointer(initialNode));
           }
           return type;
@@ -272,6 +270,10 @@ import java.util.Set;
 
   public void clear() {
 
+  }
+
+  /*package*/ State getState() {
+    return myState;
   }
 
   protected static class AccessTracking {

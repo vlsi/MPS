@@ -18,7 +18,6 @@ package jetbrains.mps.newTypesystem;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
@@ -34,7 +33,7 @@ import java.util.*;
 /*
  *   Non-reenterable.
  */
-/*package*/ class TypeSystemComponent extends CheckingComponent {
+/*package*/ class TypeSystemComponent extends CheckingComponent implements ITypeErrorComponent {
   protected static final Logger LOG = Logger.getLogger(TypeSystemComponent.class);
 
   private Map<SNode, Set<SNode>> myNodesToDependentNodes_A;
@@ -42,8 +41,6 @@ import java.util.*;
 
   private Map<SNode, Set<Pair<String, String>>> myNodesToRules;
   private Set<SNode> myNodesDependentOnCaches;
-  private SNode myCurrentCheckedNode;
-  private boolean myCurrentTypeAffected = false;
 
   private MyLanguageCacheListener myLanguageCacheListener = new MyLanguageCacheListener();
 
@@ -153,43 +150,6 @@ import java.util.*;
     clearNodeTypes();
   }
 
-  public void typeOfNodeCalled(SNode node) {
-    if (myCurrentCheckedNode == node) {
-      myCurrentTypeAffected = true;
-    }
-  }
-
-  public void addDependencyOnCurrent(SNode node) {
-    addDependencyOnCurrent(node, true);
-  }
-
-  //"type affected" means that *type* of this node depends on current
-  // used to decide whether call "type will be recalculated" if current invalidated
-  public void addDependencyOnCurrent(SNode node, boolean typeAffected) {
-    Set<SNode> hashSet = new THashSet<SNode>(1);
-    hashSet.add(myCurrentCheckedNode);
-
-    if (node == null) {
-      LOG.error("Typesystem dependency not tracked. ");
-      return;
-    }
-
-    addDependentNodesTypeSystem(node, hashSet, typeAffected);
-  }
-
-  public void addDependencyForCurrent(SNode node, SNode nonTSCurrent) {
-    Set<SNode> hashSet = new THashSet<SNode>(1);
-    hashSet.add(node);
-    if (myCurrentCheckedNode == null) {
-      myCurrentCheckedNode = nonTSCurrent;
-    }
-    if (myCurrentCheckedNode == null) {
-      LOG.error("Typesystem dependency not tracked. ");
-      return;
-    }
-    addDependentNodesTypeSystem(myCurrentCheckedNode, hashSet, true);
-  }
-
 
   @Override
   protected void setTargetNode(SNode initialNode) {
@@ -240,7 +200,7 @@ import java.util.*;
 
   //"type affected" means that *type* of this node depends on this set
   // used to decide whether call "type will be recalculated" if node from set invalidated
-  private void addDependentNodesTypeSystem(@NotNull SNode sNode, Set<SNode> nodesToDependOn, boolean typesAffected) {
+  void addDependentNodesTypeSystem(@NotNull SNode sNode, Set<SNode> nodesToDependOn, boolean typesAffected) {
     Map<SNode, Set<SNode>> dependencies = typesAffected ? myNodesToDependentNodes_A : myNodesToDependentNodes_B;
     for (SNode nodeToDependOn : nodesToDependOn) {
       if (nodeToDependOn == null) continue;
@@ -255,6 +215,7 @@ import java.util.*;
     }
   }
 
+  @Override
   public void addError(SNode node, IErrorReporter reporter) {
     myState.addError(node, reporter, null);
   }
@@ -267,19 +228,15 @@ import java.util.*;
   }
 
   @Override
-  protected boolean applyRulesToNode(SNode node) {
-    List<Pair<InferenceRule_Runtime, IsApplicableStatus>> newRules = myTypeChecker.getRulesManager().getInferenceRules(node);
-    boolean result = false;
-    if (newRules != null) {
-      myCurrentTypeAffected = false;
-      SNode oldCheckedNode = myCurrentCheckedNode;
-      myCurrentCheckedNode = node;
-      applyRulesToNode(node, newRules);
-      myCurrentCheckedNode = oldCheckedNode;
-      result = myCurrentTypeAffected;
-      myCurrentTypeAffected = false;
-    }
-    return result;
+  protected boolean applyRulesToNode(final SNode node) {
+    final List<Pair<InferenceRule_Runtime, IsApplicableStatus>> newRules = TypeChecker.getInstance().getRulesManager().getInferenceRules(node);
+    if (newRules == null) return false;
+    return getNodeTypesComponent().runApplyRulesTo(node, new Runnable() {
+      @Override
+      public void run() {
+        applyRulesToNode(node, newRules);
+      }
+    });
   }
 
   @Override

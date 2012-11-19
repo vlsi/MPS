@@ -47,7 +47,7 @@ public class SingleTypecheckingContext extends BaseTypecheckingContext {
   }
 
   protected SingleNodeTypesComponent createNodeTypesComponent() {
-    return new SingleNodeTypesComponent(this, getState());
+    return new SingleNodeTypesComponent(getNode(), getState());
   }
 
   @Override

@@ -31,7 +31,7 @@ import jetbrains.mps.util.Pair;
 
 import java.util.*;
 
-class NonTypeSystemComponent extends CheckingComponent {
+class NonTypeSystemComponent extends CheckingComponent implements ITypeErrorComponent {
 
   private Set<Pair<SNode, String>> myCurrentPropertiesToInvalidate = new HashSet<Pair<SNode, String>>();
   private Set<SNode> myCurrentTypedTermsToInvalidate = new HashSet<SNode>();
@@ -59,7 +59,6 @@ class NonTypeSystemComponent extends CheckingComponent {
     new THashMap<SNode, Map<NonTypesystemRule_Runtime, Set<IErrorReporter>>>();
 
   private Pair<SNode, NonTypesystemRule_Runtime> myRuleAndNodeBeingChecked = null;
-  private SNode myCurrentCheckedNode;
 
   public NonTypeSystemComponent(TypeChecker typeChecker, NodeTypesComponent nodeTypesComponent) {
     super(typeChecker, null, nodeTypesComponent);
@@ -169,10 +168,6 @@ class NonTypeSystemComponent extends CheckingComponent {
     return result;
   }
 
-  public SNode getCurrentCheckedNode() {
-    return myCurrentCheckedNode;
-  }
-
   public void addPropertyToInvalidate(SNode eventNode, String propertyName) {
     myCurrentPropertiesToInvalidate.add(new Pair<SNode, String>(eventNode, propertyName));
     setInvalidationWasPerformed(false);
@@ -184,7 +179,8 @@ class NonTypeSystemComponent extends CheckingComponent {
   }
 
 
-  void putError(SNode node, IErrorReporter errorReporter) {
+  @Override
+  public void addError(SNode node, IErrorReporter errorReporter) {
     Map<SNode, List<IErrorReporter>> errorMap = myNodesToErrorsMap;
 
     List<IErrorReporter> iErrorReporters = errorMap.get(node);
@@ -274,14 +270,12 @@ class NonTypeSystemComponent extends CheckingComponent {
     addDependentNodes(sNode, rule, nodesToDependOn, false);
   }
 
-  public void applyNonTypeSystemRulesToRoot(IOperationContext context, TypeCheckingContext typeCheckingContext) {
-    SNode root = getNodeTypesComponent().getNode();
-    if (root == null) return;
+  public void applyNonTypeSystemRulesToRoot(TypeCheckingContext typeCheckingContext, SNode rootNode) {
+    if (rootNode == null) return;
     doInvalidate();
-    getNodeTypesComponent().setNonTypeSystemCheckingInProgress(true);
     try {
       Queue<SNode> frontier = new LinkedList<SNode>();
-      frontier.add(root);
+      frontier.add(rootNode);
       while (!(frontier.isEmpty())) {
         SNode sNode = frontier.remove();
         applyNonTypesystemRulesToNode(sNode, typeCheckingContext);
@@ -289,61 +283,62 @@ class NonTypeSystemComponent extends CheckingComponent {
       }
       //all error reporters must be simple reporters, no error expansion needed
     } finally {
-      getNodeTypesComponent().setNonTypeSystemCheckingInProgress(false);
       setInvalidationWasPerformed(false);
     }
   }
 
-  private void applyNonTypesystemRulesToNode(SNode node, TypeCheckingContext typeCheckingContext) {
-    SNode oldCheckedNode = myCurrentCheckedNode;
-    myCurrentCheckedNode = node;
-    List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> nonTypesystemRules = myTypeChecker.getRulesManager().getNonTypesystemRules(node);
-    MyEventsReadListener nodesReadListener = new MyEventsReadListener();
-    if (nonTypesystemRules == null) return;
+  private void applyNonTypesystemRulesToNode(final SNode node, final TypeCheckingContext typeCheckingContext) {
+    getNodeTypesComponent().runApplyRulesTo(node, new Runnable() {
+      @Override
+      public void run() {
+        List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> nonTypesystemRules = TypeChecker.getInstance().getRulesManager().getNonTypesystemRules(node);
+        MyEventsReadListener nodesReadListener = new MyEventsReadListener();
+        if (nonTypesystemRules == null) return;
 
-    boolean incrementalMode = isIncrementalMode();
-    for (Pair<NonTypesystemRule_Runtime, IsApplicableStatus> rule : nonTypesystemRules) {
-      Pair<SNode, NonTypesystemRule_Runtime> nodeAndRule = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
-      MyTypesReadListener typesReadListener = new MyTypesReadListener();
-      MyLanguageCachesReadListener languageCachesReadListener = new MyLanguageCachesReadListener();
-      if (incrementalMode) {
-        if (myCheckedNodes.contains(nodeAndRule)) continue;
-        nodesReadListener.clear();
-        NodeReadEventsCaster.setNodesReadListener(nodesReadListener);
-        TypeChecker.getInstance().addTypesReadListener(typesReadListener);
-        LanguageHierarchyCache.getInstance().setReadAccessListener(languageCachesReadListener);
-        myRuleAndNodeBeingChecked = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
-      }
-      try {
-        getNodeTypesComponent().applyRuleToNode(node, rule.o1, rule.o2, typeCheckingContext);
-      } finally {
-        myRuleAndNodeBeingChecked = null;
-        if (incrementalMode) {
-          LanguageHierarchyCache.getInstance().removeReadAccessListener();
-          TypeChecker.getInstance().removeTypesReadListener(typesReadListener);
-          NodeReadEventsCaster.removeNodesReadListener();
+        boolean incrementalMode = isIncrementalMode();
+        for (Pair<NonTypesystemRule_Runtime, IsApplicableStatus> rule : nonTypesystemRules) {
+          Pair<SNode, NonTypesystemRule_Runtime> nodeAndRule = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
+          MyTypesReadListener typesReadListener = new MyTypesReadListener();
+          MyLanguageCachesReadListener languageCachesReadListener = new MyLanguageCachesReadListener();
+          if (incrementalMode) {
+            if (myCheckedNodes.contains(nodeAndRule)) continue;
+            nodesReadListener.clear();
+            NodeReadEventsCaster.setNodesReadListener(nodesReadListener);
+            TypeChecker.getInstance().addTypesReadListener(typesReadListener);
+            LanguageHierarchyCache.getInstance().setReadAccessListener(languageCachesReadListener);
+            myRuleAndNodeBeingChecked = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
+          }
+          try {
+            getNodeTypesComponent().applyRuleToNode(node, rule.o1, rule.o2, typeCheckingContext);
+          } finally {
+            myRuleAndNodeBeingChecked = null;
+            if (incrementalMode) {
+              LanguageHierarchyCache.getInstance().removeReadAccessListener();
+              TypeChecker.getInstance().removeTypesReadListener(typesReadListener);
+              NodeReadEventsCaster.removeNodesReadListener();
+            }
+          }
+          if (incrementalMode) {
+            nodesReadListener.setAccessReport(true);
+            addDependentNodes(node, rule.o1, new THashSet<SNode>(nodesReadListener.getAccessedNodes()));
+            addDependentProperties(node, rule.o1, new THashSet<Pair<SNode, String>>(nodesReadListener.getAccessedProperties()));
+            nodesReadListener.setAccessReport(false);
+
+            languageCachesReadListener.setAccessReport(true);
+            if (languageCachesReadListener.isCacheAccessed()) {
+              addCacheDependentNodesNonTypesystem(node, rule.o1);
+            }
+            languageCachesReadListener.setAccessReport(false);
+
+            typesReadListener.setAccessReport(true);
+            addDependentTypeTerms(node, rule.o1, typesReadListener.getAccessedNodes());
+            typesReadListener.setAccessReport(false);
+            nodesReadListener.clear();
+          }
+          myCheckedNodes.add(nodeAndRule);
         }
       }
-      if (incrementalMode) {
-        nodesReadListener.setAccessReport(true);
-        addDependentNodes(node, rule.o1, new THashSet<SNode>(nodesReadListener.getAccessedNodes()));
-        addDependentProperties(node, rule.o1, new THashSet<Pair<SNode, String>>(nodesReadListener.getAccessedProperties()));
-        nodesReadListener.setAccessReport(false);
-
-        languageCachesReadListener.setAccessReport(true);
-        if (languageCachesReadListener.isCacheAccessed()) {
-          addCacheDependentNodesNonTypesystem(node, rule.o1);
-        }
-        languageCachesReadListener.setAccessReport(false);
-
-        typesReadListener.setAccessReport(true);
-        addDependentTypeTerms(node, rule.o1, typesReadListener.getAccessedNodes());
-        typesReadListener.setAccessReport(false);
-        nodesReadListener.clear();
-      }
-      myCheckedNodes.add(nodeAndRule);
-    }
-    myCurrentCheckedNode = oldCheckedNode;
+    });
   }
 
   @Override

@@ -21,7 +21,6 @@ import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -43,19 +42,15 @@ import java.util.Set;
 public class SingleNodeTypesComponent {
 
   protected final SNode myRootNode;
-  protected final TypeCheckingContext myTypeCheckingContext;
   private final SingleTypeSystemComponent myTypeSystemComponent;
-  protected boolean myIsSpecial = false;
 
-  public SingleNodeTypesComponent(TypeCheckingContext typeCheckingContext, State state) {
-    myRootNode = typeCheckingContext.getNode();
-    myTypeCheckingContext = typeCheckingContext;
+  public SingleNodeTypesComponent(SNode node, State state) {
+    myRootNode = node;
     myTypeSystemComponent = createTypeSystemComponent(state);
-
   }
 
   protected SingleTypeSystemComponent createTypeSystemComponent(State state) {
-    return new SingleTypeSystemComponent(state, this, TypeChecker.getInstance());
+    return new SingleTypeSystemComponent(state, this);
   }
 
   public SNode getNode() {
@@ -67,14 +62,12 @@ public class SingleNodeTypesComponent {
   }
 
   protected SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
-    myIsSpecial = true;
     SNode result = getTypeSystemComponent().computeTypesForNode_special(initialNode, givenAdditionalNodes);
-    myIsSpecial = false;
     return result;
   }
 
   public InequalitySystem computeInequalitiesForHole(SNode hole, boolean holeIsAType) {
-    State state = myTypeCheckingContext.getState();
+    State state = myTypeSystemComponent.getState();
     if (state == null) return null;
     try {
       state.initHole(hole);
@@ -118,7 +111,7 @@ public class SingleNodeTypesComponent {
   }
 
   public void dispose() {
-
+    getTypeSystemComponent().dispose();
   }
 
   public void computeTypes(boolean refreshTypes) {

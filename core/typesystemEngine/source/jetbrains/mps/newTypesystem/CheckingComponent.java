@@ -18,13 +18,10 @@ package jetbrains.mps.newTypesystem;
 import gnu.trove.THashSet;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.AbstractNodesReadListener;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
-import jetbrains.mps.smodel.LanguageHierarchyCache.CacheChangeListener;
 import jetbrains.mps.smodel.LanguageHierarchyCache.CacheReadAccessListener;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.annotation.UseCarefully;
 
 import java.util.Set;
 
@@ -37,7 +34,7 @@ import java.util.Set;
   private Set<SNode> myCurrentNodesToInvalidate = new THashSet<SNode>();
 
   protected CheckingComponent (TypeChecker typeChecker, State state, SingleNodeTypesComponent component) {
-    super(state, component, typeChecker);
+    super(state, component);
   }
 
   protected abstract boolean doInvalidate();
