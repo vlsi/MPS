@@ -52,13 +52,6 @@ public class TemplateModelImpl implements TemplateModel {
     SNodeId id = template.getNodeId();
     if (id instanceof SNodeId.Regular) {
       long idValue = ((SNodeId.Regular) id).getId();
-      if (idValue == 1196351886669L) {
-        if (arguments.length != 0) {
-          // TODO report `wrong arguments count` 
-          return null;
-        }
-        return new TemplateQuotation__to__methodCall();
-      }
       if (idValue == 1196351886726L) {
         if (arguments.length != 0) {
           // TODO report `wrong arguments count` 
