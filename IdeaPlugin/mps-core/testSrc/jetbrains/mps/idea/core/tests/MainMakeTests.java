@@ -46,7 +46,7 @@ public class MainMakeTests extends AbstractMakeTest {
     final IFile source = model.getParent();
     DefaultModelRoot e = new DefaultModelRoot();
     e.setPath(model.getParent().getPath());
-    configuration.getState().setModelRoots(Arrays.<ModelRoot>asList(e));
+    configuration.getBean().setModelRoots(Arrays.<ModelRoot>asList(e));
     prepareTestData(configuration, source);
   }
 

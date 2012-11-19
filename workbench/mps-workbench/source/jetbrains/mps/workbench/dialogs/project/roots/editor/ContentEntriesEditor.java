@@ -28,30 +28,17 @@ import com.intellij.util.ui.JBInsets;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.persistence.PathAwareJDOMMemento;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.workbench.dialogs.project.PropertiesBundle;
 import jetbrains.mps.workbench.dialogs.project.roots.editor.ContentEntry.ContentEntryEditorListener;
-import org.jdom.Element;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import javax.swing.BorderFactory;
-import javax.swing.JComponent;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.SwingUtilities;
-import javax.swing.border.BevelBorder;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -70,7 +57,7 @@ public class ContentEntriesEditor {
 
   public ContentEntriesEditor(ModuleDescriptor moduleDescriptor) {
     myModuleDescriptor = moduleDescriptor;
-    for(ModelRootDescriptor descriptor : myModuleDescriptor.getModelRootDescriptors()) {
+    for (ModelRootDescriptor descriptor : myModuleDescriptor.getModelRootDescriptors()) {
       ContentEntry entry = new DefaultModelRootEntry(descriptor, myModuleDescriptor);
       entry.addContentEntryEditorListener(myEditorListener);
       myContentEntries.add(entry);
@@ -109,26 +96,25 @@ public class ContentEntriesEditor {
     editorPanel.add(myEditorPanel, BorderLayout.CENTER);
     splitter.setSecondComponent(editorPanel);
 
-    for(ContentEntry entry : myContentEntries) {
+    for (ContentEntry entry : myContentEntries) {
       myEditorsListPanel.add(entry.getComponent());
     }
 
-    if(myContentEntries.size() > 0)
+    if (myContentEntries.size() > 0)
       selectEntry(myContentEntries.get(0));
     else
       selectEntry(null);
   }
 
   private void selectEntry(ContentEntry<?> entry) {
-    try
-    {
-      if(entry != null && entry.equals(myFocucedContentEntry))
+    try {
+      if (entry != null && entry.equals(myFocucedContentEntry))
         return;
 
-      if(myFocucedContentEntry != null)
+      if (myFocucedContentEntry != null)
         myFocucedContentEntry.setFocuced(false);
 
-      if(entry == null) {
+      if (entry == null) {
         myFocucedContentEntry = null;
         myEditorPanel.removeAll();
         return;
@@ -138,20 +124,19 @@ public class ContentEntriesEditor {
       myEditorPanel.removeAll();
       myEditorPanel.add(entry.getEditor().getComponent(), BorderLayout.CENTER);
       myFocucedContentEntry = entry;
-    }
-    finally {
+    } finally {
       myMainPanel.updateUI();
     }
   }
 
   private void deleteEntry(ContentEntry<?> entry) {
-    if(!myContentEntries.contains(entry))
+    if (!myContentEntries.contains(entry))
       return;
 
     myEditorsListPanel.remove(entry.getComponent());
     int idx = myContentEntries.indexOf(entry);
     myContentEntries.remove(entry);
-    if(myFocucedContentEntry.equals(entry))
+    if (myFocucedContentEntry.equals(entry))
       selectEntry(myContentEntries.size() > 0 ?
         myContentEntries.get(Math.max(idx - 1, 0))
         : null);
@@ -171,8 +156,8 @@ public class ContentEntriesEditor {
 
   private Set<ModelRootDescriptor> getDescriptors() {
     Set<ModelRootDescriptor> descriptorSet = new HashSet<ModelRootDescriptor>();
-    for(ContentEntry entry : myContentEntries)
-      descriptorSet.add(((DefaultModelRootEntry)entry).getEntry());
+    for (ContentEntry entry : myContentEntries)
+      descriptorSet.add(((DefaultModelRootEntry) entry).getEntry());
     return descriptorSet;
   }
 
@@ -181,7 +166,7 @@ public class ContentEntriesEditor {
   }
 
   private class AddContentEntryAction extends IconWithTextAction implements DumbAware {
-      public AddContentEntryAction() {
+    public AddContentEntryAction() {
       super(PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.title"), PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.tip"), IdeIcons.ADD_MODEL_ROOT_ICON);
     }
 

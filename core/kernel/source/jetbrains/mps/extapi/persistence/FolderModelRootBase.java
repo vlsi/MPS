@@ -48,14 +48,14 @@ public abstract class FolderModelRootBase extends ModelRootBase implements FileS
 
   @Override
   public void save(Memento memento) {
-    memento.putPath("path", path);
+    memento.put("path", path);
   }
 
   @Override
   public void load(Memento memento) {
     checkNotRegistered();
 
-    path = memento.getPath("path");
+    path = memento.get("path");
   }
 
   @Override

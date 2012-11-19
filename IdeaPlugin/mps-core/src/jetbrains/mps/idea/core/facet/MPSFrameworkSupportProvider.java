@@ -63,7 +63,7 @@ public class MPSFrameworkSupportProvider extends FacetBasedFrameworkSupportProvi
     });
 
     MPSFacet mpsFacet = (MPSFacet) facet;
-    MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getState();
+    MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getBean();
     DefaultModelRoot mr = new DefaultModelRoot();
     mr.setPath(modelDirectoryPath);
     Collection<ModelRoot> oldRoots = configurationBean.getModelRoots();

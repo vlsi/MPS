@@ -61,7 +61,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
     IFile test = copyResource("models", "test.mps", "test.mps", "/tests/editorTests/models/test.mps");
     DefaultModelRoot root = new DefaultModelRoot();
     root.setPath(test.getParent().getPath());
-    configuration.getState().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));
+    configuration.getBean().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));
   }
 
   @Override

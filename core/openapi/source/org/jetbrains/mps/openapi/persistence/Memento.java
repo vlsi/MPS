@@ -40,4 +40,6 @@ public interface Memento {
   Iterable<Memento> getChildren();
 
   Memento createChild(String type);
+
+  Memento copy();
 }

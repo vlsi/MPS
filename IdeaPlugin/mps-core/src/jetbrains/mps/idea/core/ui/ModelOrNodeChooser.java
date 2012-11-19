@@ -96,7 +96,7 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
     MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
     if (mpsFacet == null || !mpsFacet.wasInitialized()) return false;
 
-    MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getState();
+    MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getBean();
     return configurationBean != null && !(configurationBean.getModelRoots().isEmpty());
   }
 
@@ -108,7 +108,7 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
     MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
     if (mpsFacet == null || !(mpsFacet.wasInitialized())) return false;
 
-    MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getState();
+    MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getBean();
     if (configurationBean == null) return false;
 
     String url = virtualFile.getUrl();

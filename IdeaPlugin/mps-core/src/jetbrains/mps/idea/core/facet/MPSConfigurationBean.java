@@ -16,25 +16,28 @@
 
 package jetbrains.mps.idea.core.facet;
 
+import com.intellij.util.xmlb.annotations.AbstractCollection;
+import com.intellij.util.xmlb.annotations.Attribute;
+import com.intellij.util.xmlb.annotations.Tag;
 import com.intellij.util.xmlb.annotations.Transient;
-import jetbrains.mps.persistence.PathAwareJDOMMemento;
+import jetbrains.mps.persistence.MementoImpl;
+import jetbrains.mps.persistence.MementoUtil;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import org.jdom.Element;
+import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * evgeny, 10/26/11
  */
 public class MPSConfigurationBean {
+
   @Transient
   private final SolutionDescriptor myDescriptor;
   private boolean myUseModuleSourceFolder = false;
@@ -82,6 +85,7 @@ public class MPSConfigurationBean {
     myDescriptor.setOutputPath(outputPath);
   }
 
+  @Transient
   public Collection<ModelRoot> getModelRoots() {
     List<ModelRoot> roots = new ArrayList<ModelRoot>();
     for (ModelRootDescriptor modelRootDescriptor : myDescriptor.getModelRootDescriptors()) {
@@ -95,10 +99,12 @@ public class MPSConfigurationBean {
     return roots;
   }
 
+
+  @Transient
   public void setModelRoots(Collection<ModelRoot> roots) {
     myDescriptor.getModelRootDescriptors().clear();
     for (ModelRoot path : roots) {
-      ModelRootDescriptor descr = new ModelRootDescriptor(null, new PathAwareJDOMMemento(new Element("modelRoot"), null));
+      ModelRootDescriptor descr = new ModelRootDescriptor();
       path.save(descr.getMemento());
       myDescriptor.getModelRootDescriptors().add(descr);
     }
@@ -120,5 +126,79 @@ public class MPSConfigurationBean {
     for (String usedLanguage : usedLanguages) {
       usedLanguageReferences.add(ModuleReference.fromString(usedLanguage));
     }
+  }
+
+  public void loadFrom(State state) {
+    setUUID(state.UUID);
+    setGeneratorOutputPath(state.generatorOutputPath);
+    setUseModuleSourceFolder(state.useModuleSourceFolder);
+    setUseTransientOutputFolder(state.useTransientOutputFolder);
+    if (state.usedLanguages != null) {
+      setUsedLanguages(state.usedLanguages);
+    }
+    List<ModelRootDescriptor> roots = new ArrayList<ModelRootDescriptor>();
+    if (state.modelRoots != null) {
+      for (jetbrains.mps.project.structure.model.ModelRoot modelRoot : state.modelRoots) {
+        Memento m = new MementoImpl();
+        modelRoot.save(m);
+        roots.add(new ModelRootDescriptor(null, m));
+      }
+    }
+    if (state.descriptors != null) {
+      for (RootDescriptor descriptor : state.descriptors) {
+        Memento m = new MementoImpl();
+        MementoUtil.readMemento(m, descriptor.settings);
+        roots.add(new ModelRootDescriptor(descriptor.type, m));
+
+      }
+    }
+    myDescriptor.getModelRootDescriptors().clear();
+    myDescriptor.getModelRootDescriptors().addAll(roots);
+  }
+
+  public State toState() {
+    State result = new State();
+    result.UUID = myDescriptor.getUUID();
+    result.generatorOutputPath = myDescriptor.getOutputPath();
+    result.useModuleSourceFolder = myUseModuleSourceFolder;
+    result.useTransientOutputFolder = myUseTransientOutputFolder;
+    result.modelRoots = null;
+    result.usedLanguages = getUsedLanguages();
+    if (result.usedLanguages != null && result.usedLanguages.length == 0) {
+      result.usedLanguages = null;
+    }
+    Collection<ModelRootDescriptor> modelRootDescriptors = myDescriptor.getModelRootDescriptors();
+    if (!modelRootDescriptors.isEmpty()) {
+      result.descriptors = new RootDescriptor[modelRootDescriptors.size()];
+      int i = 0;
+      for (ModelRootDescriptor mrd : modelRootDescriptors) {
+        RootDescriptor d = new RootDescriptor();
+        d.type = mrd.getType();
+        d.settings = new Element("settings");
+        MementoUtil.writeMemento(mrd.getMemento(), d.settings);
+        result.descriptors[i++] = d;
+      }
+    }
+    return result;
+  }
+
+  public static class State {
+    public String UUID;
+    public String generatorOutputPath;
+    public boolean useModuleSourceFolder = false;
+    public boolean useTransientOutputFolder = false;
+    public Set<jetbrains.mps.project.structure.model.ModelRoot> modelRoots = new LinkedHashSet<jetbrains.mps.project.structure.model.ModelRoot>();
+    public String[] usedLanguages;
+    @Tag("modelRoots")
+    @AbstractCollection(surroundWithTag = false)
+    public RootDescriptor[] descriptors;
+  }
+
+  @Tag("modelRoot")
+  public static class RootDescriptor {
+    @Attribute("type")
+    String type;
+    @Tag("settings")
+    public Element settings;
   }
 }

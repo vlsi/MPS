@@ -53,7 +53,7 @@ public class UnmarkModelRootAction extends AnAction {
     MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
     assert mpsFacet != null;
 
-    MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getState();
+    MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getBean();
     List<ModelRoot> modelRoots = new ArrayList<ModelRoot>(configurationBean.getModelRoots());
     Map<String, DefaultModelRoot> rootsMap = new HashMap<String, DefaultModelRoot>();
     for (ModelRoot modelRoot : modelRoots) {
@@ -84,7 +84,7 @@ public class UnmarkModelRootAction extends AnAction {
     if (mpsFacet == null || !mpsFacet.wasInitialized()) return false;
 
     Set<ModelRoot> modelRoots = new HashSet<ModelRoot>();
-    modelRoots.addAll(mpsFacet.getConfiguration().getState().getModelRoots());
+    modelRoots.addAll(mpsFacet.getConfiguration().getBean().getModelRoots());
     Map<String, DefaultModelRoot> rootsMap = new HashMap<String, DefaultModelRoot>();
     for (ModelRoot modelRoot : modelRoots) {
       if (modelRoot instanceof DefaultModelRoot) {

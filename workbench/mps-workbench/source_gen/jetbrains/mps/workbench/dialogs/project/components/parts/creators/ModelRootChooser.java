@@ -18,8 +18,7 @@ import jetbrains.mps.ide.persistence.ModelRootSettingsEditor;
 import jetbrains.mps.ide.persistence.PersistenceComponent;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import javax.swing.JComponent;
-import jetbrains.mps.persistence.PathAwareJDOMMemento;
-import org.jdom.Element;
+import jetbrains.mps.persistence.MementoImpl;
 
 public class ModelRootChooser implements Computable<ModelRootDescriptor> {
   private final IBindedDialog myOwner;
@@ -70,7 +69,7 @@ public class ModelRootChooser implements Computable<ModelRootDescriptor> {
     }.showDialog();
     editor.apply(mr);
 
-    PathAwareJDOMMemento memento = new PathAwareJDOMMemento(new Element("modelRoot"), null);
+    MementoImpl memento = new MementoImpl();
     mr.save(memento);
     return new ModelRootDescriptor(mr.getType(), memento);
   }

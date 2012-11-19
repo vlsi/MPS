@@ -109,7 +109,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     ModuleReference solutionReference = myFacet.getSolution().getModuleReference();
 
     String modelRootPath = modelRootDir.getPath();
-    MPSConfigurationBean configurationBean = myFacet.getConfiguration().getState();
+    MPSConfigurationBean configurationBean = myFacet.getConfiguration().getBean();
     DefaultModelRoot root = new DefaultModelRoot();
     root.setPath(modelRootPath);
     configurationBean.setModelRoots(Arrays.<ModelRoot>asList(root));
@@ -126,7 +126,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     assertFalse(iterator.hasNext());
     assertEquals(modelRootDir.getPath(), ((FolderModelRootBase) theModelRoot).getPath());
 
-    configurationBean = myFacet.getConfiguration().getState();
+    configurationBean = myFacet.getConfiguration().getBean();
     configurationBean.setModelRoots(new ArrayList<ModelRoot>());
     myFacet.setConfiguration(configurationBean);
     flushEDT();
@@ -143,7 +143,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     String[] usedLanguageStrings = new String[]{baseLanguage.toString(), editorLanguage.toString()};
     Language[] usedLanguages = new Language[]{baseLanguage, editorLanguage};
 
-    MPSConfigurationBean configurationBean = myFacet.getConfiguration().getState();
+    MPSConfigurationBean configurationBean = myFacet.getConfiguration().getBean();
     configurationBean.setUsedLanguages(usedLanguageStrings);
     myFacet.setConfiguration(configurationBean);
     flushEDT();
@@ -167,7 +167,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
 
   public void testSetGeneratorOutputPath() throws InterruptedException {
     @NonNls String generatorOutputPath = getModuleHome() + "/generatorOut";
-    MPSConfigurationBean configurationBean = myFacet.getConfiguration().getState();
+    MPSConfigurationBean configurationBean = myFacet.getConfiguration().getBean();
     configurationBean.setGeneratorOutputPath(generatorOutputPath);
     myFacet.setConfiguration(configurationBean);
     flushEDT();
@@ -176,7 +176,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
   }
 
   public void testDefaultOutput() {
-    MPSConfigurationBean configurationBean = myFacet.getConfiguration().getState();
+    MPSConfigurationBean configurationBean = myFacet.getConfiguration().getBean();
     assertFalse(configurationBean.isUseTransientOutputFolder());
     assertFalse(configurationBean.isUseModuleSourceFolder());
   }

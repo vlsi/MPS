@@ -29,19 +29,14 @@ import com.intellij.ui.components.JBLabel;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-import javax.swing.JComponent;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import java.awt.BorderLayout;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.List;
@@ -52,7 +47,7 @@ public class DefaultModelRootEntry extends ContentEntry<ModelRootDescriptor> {
   private final ModuleDescriptor myModuleDescriptor;
 
   public DefaultModelRootEntry(ModelRootDescriptor entry, ModuleDescriptor moduleDescriptor) {
-    super(new ModelRootDescriptor(entry.getType(), entry.getMemento().clone()));
+    super(new ModelRootDescriptor(entry.getType(), entry.getMemento().copy()));
     myModuleDescriptor = moduleDescriptor;
     myEditor = new DefaultModelRootEntryEditor(myEntry);
 
@@ -61,7 +56,7 @@ public class DefaultModelRootEntry extends ContentEntry<ModelRootDescriptor> {
 
   @Override
   public String getHeaderText() {
-    return myEntry.getMemento().getPath("path");
+    return myEntry.getMemento().get("path");
   }
 
   @Override
@@ -70,15 +65,17 @@ public class DefaultModelRootEntry extends ContentEntry<ModelRootDescriptor> {
     myLabel.setText(getHeaderText());
     return myLabel;
   }
+
   private String getDetailsText() {
     final StringBuilder messageText = new StringBuilder();
     messageText.append("<html>");
-    messageText.append("Path : ").append(myEntry.getMemento().getPath("path")).append("<br>");
+    messageText.append("Path : ").append(myEntry.getMemento().get("path")).append("<br>");
     messageText.append("Type : ").append(myEntry.getType()).append("<br>");
-    if(myEntry.getType() == PersistenceRegistry.OBSOLETE_MODEL_ROOT) {
+    if (myEntry.getType() == PersistenceRegistry.OBSOLETE_MODEL_ROOT) {
       ModelRoot root = PersistenceFacade.getInstance().getModelRootFactory(myEntry.getType()).create();
       root.load(myEntry.getMemento());
-      messageText.append("Obsolete presentation : ").append(root.getPresentation()).append("<br>");;
+      messageText.append("Obsolete presentation : ").append(root.getPresentation()).append("<br>");
+      ;
     }
     return messageText.toString();
   }
@@ -99,12 +96,12 @@ public class DefaultModelRootEntry extends ContentEntry<ModelRootDescriptor> {
 
     @Override
     protected void initUI() {
-      JPanel panel = new JPanel(new GridLayoutManager(2,1));
+      JPanel panel = new JPanel(new GridLayoutManager(2, 1));
 
       PersistenceFacade pReg = PersistenceRegistry.getInstance();
       Iterable<String> ti = pReg.getTypeIds();
       ComboBox comboBox = new ComboBox();
-      for(String s : ti)
+      for (String s : ti)
         comboBox.addItem(s);
 
       comboBox.setSelectedItem(myEntry.getType());
@@ -114,9 +111,9 @@ public class DefaultModelRootEntry extends ContentEntry<ModelRootDescriptor> {
       comboBox.addItemListener(new ItemListener() {
         @Override
         public void itemStateChanged(ItemEvent e) {
-          if(e.getStateChange() == ItemEvent.SELECTED)
-            if(!DefaultModelRootEntry.this.myEntry.getType().equals(e.getItem())) {
-              DefaultModelRootEntry.this.myEntry = new ModelRootDescriptor((String)e.getItem(), DefaultModelRootEntry.this.myEntry.getMemento().clone());
+          if (e.getStateChange() == ItemEvent.SELECTED)
+            if (!DefaultModelRootEntry.this.myEntry.getType().equals(e.getItem())) {
+              DefaultModelRootEntry.this.myEntry = new ModelRootDescriptor((String) e.getItem(), DefaultModelRootEntry.this.myEntry.getMemento().copy());
               DefaultModelRootEntry.this.reset();
               updateTree();
             }
@@ -141,26 +138,26 @@ public class DefaultModelRootEntry extends ContentEntry<ModelRootDescriptor> {
           : FileChooserDescriptorFactory.createSingleFileDescriptor(FileTypeManager.getInstance().getFileTypeByExtension("jar"))
       );
       AbstractTreeUi ui = fileSystemTree.getTreeBuilder().getUi();
-      VirtualFile virtualFile =  VirtualFileManager.getInstance().findFileByUrl(
-        VirtualFileManager.constructUrl("file", myEntry.getMemento().getPath("path"))
+      VirtualFile virtualFile = VirtualFileManager.getInstance().findFileByUrl(
+        VirtualFileManager.constructUrl("file", myEntry.getMemento().get("path"))
       );
-      if(virtualFile == null || myEntry.getMemento().getPath("path").equals(""))
-      virtualFile = VirtualFileManager.getInstance().findFileByUrl(
+      if (virtualFile == null || myEntry.getMemento().get("path").equals(""))
+        virtualFile = VirtualFileManager.getInstance().findFileByUrl(
           VirtualFileManager.constructUrl(
             "file",
             MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getModuleReference().getModuleId()).getBundleHome().getPath()
           )
-      );
+        );
 
-      if(virtualFile != null)
-        fileSystemTree.select(virtualFile,null);
+      if (virtualFile != null)
+        fileSystemTree.select(virtualFile, null);
 
       fileSystemTree.addListener(
         new Listener() {
           @Override
           public void selectionChanged(List<VirtualFile> selection) {
             if (selection.size() > 0) {
-              DefaultModelRootEntry.this.myEntry.getMemento().putPath("path", selection.get(0).getPath());
+              DefaultModelRootEntry.this.myEntry.getMemento().put("path", selection.get(0).getPath());
               DefaultModelRootEntry.this.reset();
             }
           }

@@ -73,7 +73,7 @@ public class ProjectViewTests extends BaseProjectViewTestCase {
     String path = VirtualFileManager.extractPath(getContentRoot().findChild("src").getUrl());
     DefaultModelRoot root = new DefaultModelRoot();
     root.setPath(path);
-    configuration.getState().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));
+    configuration.getBean().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));
 
     final ModifiableFacetModel facetModel = facetManager.createModifiableModel();
     facetModel.addFacet(facet);

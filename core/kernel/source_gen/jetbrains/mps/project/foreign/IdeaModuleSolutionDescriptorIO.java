@@ -10,11 +10,10 @@ import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.persistence.PathAwareJDOMMemento;
-import org.jdom.Element;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.io.IOException;
 import org.jdom.JDOMException;
+import org.jdom.Element;
 
 public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDescriptor> {
   public IdeaModuleSolutionDescriptorIO() {
@@ -52,7 +51,7 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
           for (ModelRoot mrp : mpsConf.getModelRoots()) {
             // TODO: model root manager 
             mrp.setPath(macroHelper.expandPath(mrp.getPath()));
-            ModelRootDescriptor res = new ModelRootDescriptor(null, new PathAwareJDOMMemento(new Element("modelRoot"), null));
+            ModelRootDescriptor res = new ModelRootDescriptor();
             mrp.save(res.getMemento());
             result_56japk_a0a0e0a.getModelRootDescriptors().add(res);
           }
