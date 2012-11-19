@@ -14,8 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -56,7 +54,7 @@ public class SModelLanguageEnhancements_MigrationScript extends BaseMigrationScr
         if (SNodeOperations.isInstanceOf(realType, "jetbrains.mps.lang.smodel.structure.SNodeType")) {
           return true;
         }
-        if ((SNodeOperations.isInstanceOf(realType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(realType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(realType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.cast(SLinkOperations.getTarget(new SModelLanguageEnhancements_MigrationScript.QuotationClass_nvfrp3_a0a0a3a0a7a3a0a0a0a1a0().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")}))) {
+        if ((SNodeOperations.isInstanceOf(realType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(realType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(realType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_z38w7e_a0a0a0a7a0a(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")}))) {
           return true;
         }
         return false;
@@ -125,7 +123,7 @@ public class SModelLanguageEnhancements_MigrationScript extends BaseMigrationScr
         if (!(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
           return false;
         }
-        if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.cast(SLinkOperations.getTarget(new SModelLanguageEnhancements_MigrationScript.QuotationClass_nvfrp3_a0a0a3a0e0d0a0a0a0d0a().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")}))) {
+        if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_z38w7e_a0a0a0e0a2(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")}))) {
           return false;
         }
         return true;
@@ -163,7 +161,7 @@ public class SModelLanguageEnhancements_MigrationScript extends BaseMigrationScr
         if (!(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
           return false;
         }
-        if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.cast(SLinkOperations.getTarget(new SModelLanguageEnhancements_MigrationScript.QuotationClass_nvfrp3_a0a0a3a0e0d0a0a0a0e0a().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")}))) {
+        if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_z38w7e_a0a0a0e0a3(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")}))) {
           return false;
         }
         return true;
@@ -194,7 +192,7 @@ public class SModelLanguageEnhancements_MigrationScript extends BaseMigrationScr
         if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
           return false;
         }
-        if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.cast(SLinkOperations.getTarget(new SModelLanguageEnhancements_MigrationScript.QuotationClass_nvfrp3_a0a0a3a0b0d0a0a0a0f0a().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")}))) {
+        if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_z38w7e_a0a0a0b0a4(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")}))) {
           return false;
         }
         return true;
@@ -224,7 +222,7 @@ public class SModelLanguageEnhancements_MigrationScript extends BaseMigrationScr
         if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
           return false;
         }
-        if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.cast(SLinkOperations.getTarget(new SModelLanguageEnhancements_MigrationScript.QuotationClass_nvfrp3_a0a0a3a0b0d0a0a0a0g0a().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")}))) {
+        if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_z38w7e_a0a0a0b0a5(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")}))) {
           return false;
         }
         return true;
@@ -239,93 +237,38 @@ public class SModelLanguageEnhancements_MigrationScript extends BaseMigrationScr
     });
   }
 
-  public static class QuotationClass_nvfrp3_a0a0a3a0a7a3a0a0a0a1a0 {
-    public QuotationClass_nvfrp3_a0a0a3a0a7a3a0a0a0a1a0() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_z38w7e_a0a0a0a7a0a() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
+    return quotedNode_1;
   }
 
-  public static class QuotationClass_nvfrp3_a0a0a3a0e0d0a0a0a0d0a {
-    public QuotationClass_nvfrp3_a0a0a3a0e0d0a0a0a0d0a() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_z38w7e_a0a0a0e0a2() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
+    return quotedNode_1;
   }
 
-  public static class QuotationClass_nvfrp3_a0a0a3a0e0d0a0a0a0e0a {
-    public QuotationClass_nvfrp3_a0a0a3a0e0d0a0a0a0e0a() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModel")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_z38w7e_a0a0a0e0a3() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModel")));
+    return quotedNode_1;
   }
 
-  public static class QuotationClass_nvfrp3_a0a0a3a0b0d0a0a0a0f0a {
-    public QuotationClass_nvfrp3_a0a0a3a0b0d0a0a0a0f0a() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_z38w7e_a0a0a0b0a4() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
+    return quotedNode_1;
   }
 
-  public static class QuotationClass_nvfrp3_a0a0a3a0b0d0a0a0a0g0a {
-    public QuotationClass_nvfrp3_a0a0a3a0b0d0a0a0a0g0a() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModel")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_z38w7e_a0a0a0b0a5() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModel")));
+    return quotedNode_1;
   }
 }

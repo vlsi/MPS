@@ -12,8 +12,6 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
 
 public class supertypesOf_UIObjectType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -23,7 +21,7 @@ public class supertypesOf_UIObjectType_SubtypingRule extends SubtypingRule_Runti
   public List<SNode> getSubOrSuperTypes(SNode uiot, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> res = new ArrayList<SNode>();
     if ((SLinkOperations.getTarget(uiot, "uiObject", false) != null)) {
-      ListSequence.fromList(res).addElement(new supertypesOf_UIObjectType_SubtypingRule.QuotationClass_bsrb1x_a0a0a0b0a().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(uiot, "uiObject", false), "extends", false), typeCheckingContext));
+      ListSequence.fromList(res).addElement(_quotation_createNode_bsrb1x_a0a0a1a0(SLinkOperations.getTarget(SLinkOperations.getTarget(uiot, "uiObject", false), "extends", false)));
     }
     return res;
   }
@@ -43,34 +41,10 @@ public class supertypesOf_UIObjectType_SubtypingRule extends SubtypingRule_Runti
     return false;
   }
 
-  public static class QuotationClass_bsrb1x_a0a0a0b0a {
-    public QuotationClass_bsrb1x_a0a0a0b0a() {
-    }
-
-    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.UIObjectType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("uiObject", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.UIObjectType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("uiObject", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_bsrb1x_a0a0a1a0(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.UIObjectType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("uiObject", (SNode) parameter_1);
+    return quotedNode_2;
   }
 }

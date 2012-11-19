@@ -15,8 +15,6 @@ import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -37,28 +35,17 @@ public class AddThrowDeclaration_Test extends BaseTransformationTest4 {
       this.addNodeById("1230052902926");
       this.addNodeById("1230052902935");
       ChangeMethodSignatureParameters params = new ChangeMethodSignatureParameters(SNodeOperations.cast(this.getNodeById("1230052902928"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
-      ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "throwsItem", true)).addElement(new AddThrowDeclaration_Test.TestBody.QuotationClass_njbq9a_a0a0d0a0().createNode());
+      ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "throwsItem", true)).addElement(_quotation_createNode_imjg6i_a0a1a0());
       ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(params, SNodeOperations.cast(this.getNodeById("1230052902928"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       ref.doRefactoring();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052902927"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052902936"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
 
-    public static class QuotationClass_njbq9a_a0a0d0a0 {
-      public QuotationClass_njbq9a_a0a0d0a0() {
-      }
-
-      public SNode createNode() {
-        SNode result = null;
-        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_1 = null;
-        {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_2 = quotedNode_1;
-          quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~NullPointerException")));
-          result = quotedNode1_2;
-        }
-        return result;
-      }
+    private static SNode _quotation_createNode_imjg6i_a0a1a0() {
+      SNode quotedNode_1 = null;
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~NullPointerException")));
+      return quotedNode_1;
     }
   }
 }

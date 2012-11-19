@@ -11,15 +11,13 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.baseLanguage.actions.ExpectedType_FactoryUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
-import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class SurroundWithTypeCast_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -73,6 +71,25 @@ public class SurroundWithTypeCast_Intention implements IntentionFactory {
     return myCachedExecutable;
   }
 
+  private static SNode _quotation_createNode_3zfq0u_a0b0a(Object parameter_1, Object parameter_2) {
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    SNode quotedNode_5 = null;
+    SNode quotedNode_6 = null;
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", null, null, GlobalScope.getInstance(), false);
+    quotedNode_5 = (SNode) parameter_1;
+    if (quotedNode_5 != null) {
+      quotedNode_4.addChild("expression", HUtil.copyIfNecessary(quotedNode_5));
+    }
+    quotedNode_6 = (SNode) parameter_2;
+    if (quotedNode_6 != null) {
+      quotedNode_4.addChild("type", HUtil.copyIfNecessary(quotedNode_6));
+    }
+    quotedNode_3.addChild("expression", quotedNode_4);
+    return quotedNode_3;
+  }
+
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
@@ -83,7 +100,7 @@ public class SurroundWithTypeCast_Intention implements IntentionFactory {
 
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(node);
-      SNode castExpression = new SurroundWithTypeCast_Intention.QuotationClass_598b5x_a0a1a1a().createNode(SNodeOperations.copyNode(node), expectedType);
+      SNode castExpression = _quotation_createNode_3zfq0u_a0b0a(SNodeOperations.copyNode(node), expectedType);
       SNodeOperations.replaceWithAnother(node, castExpression);
       if (expectedType != null) {
         editorContext.select(castExpression);
@@ -94,57 +111,6 @@ public class SurroundWithTypeCast_Intention implements IntentionFactory {
 
     public IntentionDescriptor getDescriptor() {
       return SurroundWithTypeCast_Intention.this;
-    }
-  }
-
-  public static class QuotationClass_598b5x_a0a1a1a {
-    public QuotationClass_598b5x_a0a1a1a() {
-    }
-
-    public SNode createNode(Object parameter_9, Object parameter_10) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
-      SNode quotedNode_4 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_5 = quotedNode_1;
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_6 = quotedNode_2;
-          {
-            quotedNode_3 = (SNode) parameter_9;
-            SNode quotedNode1_7;
-            if (_parameterValues_129834374.contains(quotedNode_3)) {
-              quotedNode1_7 = HUtil.copyIfNecessary(quotedNode_3);
-            } else {
-              _parameterValues_129834374.add(quotedNode_3);
-              quotedNode1_7 = quotedNode_3;
-            }
-            if (quotedNode1_7 != null) {
-              quotedNode_2.addChild("expression", HUtil.copyIfNecessary(quotedNode1_7));
-            }
-          }
-          {
-            quotedNode_4 = (SNode) parameter_10;
-            SNode quotedNode1_8;
-            if (_parameterValues_129834374.contains(quotedNode_4)) {
-              quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_4);
-            } else {
-              _parameterValues_129834374.add(quotedNode_4);
-              quotedNode1_8 = quotedNode_4;
-            }
-            if (quotedNode1_8 != null) {
-              quotedNode_2.addChild("type", HUtil.copyIfNecessary(quotedNode1_8));
-            }
-          }
-          quotedNode_1.addChild("expression", quotedNode1_6);
-        }
-        result = quotedNode1_5;
-      }
-      return result;
     }
   }
 }

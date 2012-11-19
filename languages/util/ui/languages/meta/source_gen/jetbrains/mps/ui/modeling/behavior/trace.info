@@ -599,80 +599,56 @@
     <unitInfo nodeId="7655275107718262758" fileName="UIObjectFactory_Behavior.java" startLine="16" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.UIObjectFactory_Behavior" />
   </root>
   <root nodeId="7798684637310718699" modelId="r:c33653ee-1be0-4ff5-9822-83365da4e9b7(jetbrains.mps.ui.modeling.behavior)">
-    <nodeInfo nodeId="7798684637310724160" fileName="ContainerItemIterator_Behavior.java" startLine="20" startPosition="83" endLine="21" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7798684637310719316" fileName="ContainerItemIterator_Behavior.java" startLine="21" startPosition="172" endLine="22" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="26" startPosition="86" endLine="27" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="31" startPosition="119" endLine="32" endPosition="295" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="39" startPosition="49" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="40" startPosition="26" endLine="41" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="41" startPosition="67" endLine="42" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="42" startPosition="32" endLine="43" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="44" startPosition="7" endLine="45" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="45" startPosition="188" endLine="46" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="47" startPosition="9" endLine="48" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="48" startPosition="45" endLine="49" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="50" startPosition="66" endLine="51" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="52" startPosition="18" endLine="53" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="53" startPosition="57" endLine="54" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="56" startPosition="38" endLine="57" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="59" startPosition="9" endLine="60" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="61" startPosition="7" endLine="62" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="36" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_4yrdx3_a0b0b#()V" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="52" startPosition="16" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="55" startPosition="11" endLine="58" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getExpectedReturnType_7798684637310718747#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getExpectedReturnType_7798684637310718747#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="49" startPosition="30" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="46" startPosition="43" endLine="59" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="46" startPosition="43" endLine="59" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="43" startPosition="32" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="43" startPosition="32" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="39" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="7798684637310718701" fileName="ContainerItemIterator_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
-    <scopeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="36" startPosition="42" endLine="36" endPosition="42" />
-    <scopeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="26" startPosition="86" endLine="27" endPosition="156" />
-    <scopeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="31" startPosition="119" endLine="32" endPosition="295" />
-    <scopeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="50" startPosition="66" endLine="51" endPosition="64" />
-    <scopeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="56" startPosition="38" endLine="57" endPosition="87" />
-    <scopeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0">
+    <nodeInfo nodeId="7798684637310724160" fileName="ContainerItemIterator_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7798684637310719316" fileName="ContainerItemIterator_Behavior.java" startLine="19" startPosition="172" endLine="20" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="24" startPosition="86" endLine="25" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="29" startPosition="119" endLine="30" endPosition="295" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="33" startPosition="78" endLine="34" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="34" startPosition="30" endLine="35" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="35" startPosition="30" endLine="36" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="36" startPosition="184" endLine="37" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="38" startPosition="31" endLine="39" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="40" startPosition="5" endLine="41" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="37" startPosition="39" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getExpectedReturnType_7798684637310718747#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getExpectedReturnType_7798684637310718747#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="36" startPosition="184" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="36" startPosition="184" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="35" startPosition="30" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="35" startPosition="30" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="33" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_4yrdx3_a1a0#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="7798684637310718701" fileName="ContainerItemIterator_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="24" startPosition="86" endLine="25" endPosition="156" />
+    <scopeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="29" startPosition="119" endLine="30" endPosition="295" />
+    <scopeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="38" startPosition="31" endLine="39" endPosition="80" />
+    <scopeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="7798684637310718699" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7798684637310718749" fileName="ContainerItemIterator_Behavior.java" startLine="20" startPosition="83" endLine="22" endPosition="94">
+    <scopeInfo nodeId="7798684637310718749" fileName="ContainerItemIterator_Behavior.java" startLine="18" startPosition="83" endLine="20" endPosition="52">
       <varInfo nodeId="7798684637310724161" varName="itype" />
     </scopeInfo>
-    <scopeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="36" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="52" startPosition="18" endLine="54" endPosition="41" />
-    <scopeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="7798684637310718699" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="7798684637310718699" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="7798684637310718699" varName="callerConceptFqName" />
       <varInfo nodeId="7798684637310718699" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="47" startPosition="9" endLine="58" endPosition="11">
-      <varInfo nodeId="7798684637310719317" varName="quotedNode1_4" />
-    </scopeInfo>
-    <scopeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="46" startPosition="43" endLine="59" endPosition="9" />
-    <scopeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="44" startPosition="7" endLine="60" endPosition="31">
-      <varInfo nodeId="7798684637310719317" varName="quotedNode1_3" />
-    </scopeInfo>
-    <scopeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="43" startPosition="32" endLine="61" endPosition="7" />
-    <scopeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="39" startPosition="49" endLine="62" endPosition="20">
-      <varInfo nodeId="7798684637310719317" varName="_parameterValues_129834374" />
-      <varInfo nodeId="7798684637310719317" varName="quotedNode_1" />
+    <scopeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="36" startPosition="184" endLine="40" endPosition="5" />
+    <scopeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="35" startPosition="30" endLine="40" endPosition="5" />
+    <scopeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="33" startPosition="78" endLine="41" endPosition="24">
       <varInfo nodeId="7798684637310719317" varName="quotedNode_2" />
-      <varInfo nodeId="7798684637310719317" varName="result" />
+      <varInfo nodeId="7798684637310719317" varName="quotedNode_3" />
     </scopeInfo>
-    <scopeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="39" startPosition="0" endLine="64" endPosition="0">
-      <varInfo nodeId="7798684637310719317" varName="parameter_5" />
+    <scopeInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="33" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="7798684637310719317" varName="parameter_1" />
     </scopeInfo>
-    <unitInfo nodeId="7798684637310719317" fileName="ContainerItemIterator_Behavior.java" startLine="35" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.ContainerItemIterator_Behavior$QuotationClass_4yrdx3_a0b0b" />
-    <unitInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="16" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.ContainerItemIterator_Behavior" />
+    <unitInfo nodeId="7798684637310718699" fileName="ContainerItemIterator_Behavior.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.ContainerItemIterator_Behavior" />
   </root>
   <root nodeId="8115675450774407589" modelId="r:c33653ee-1be0-4ff5-9822-83365da4e9b7(jetbrains.mps.ui.modeling.behavior)">
     <nodeInfo nodeId="8115675450774407605" fileName="UIObject_Behavior.java" startLine="57" startPosition="27" endLine="57" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

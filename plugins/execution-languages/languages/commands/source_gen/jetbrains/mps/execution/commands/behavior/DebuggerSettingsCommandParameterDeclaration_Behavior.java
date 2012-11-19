@@ -4,30 +4,17 @@ package jetbrains.mps.execution.commands.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class DebuggerSettingsCommandParameterDeclaration_Behavior {
   public static void init(SNode thisNode) {
-    SLinkOperations.setTarget(thisNode, "type", new DebuggerSettingsCommandParameterDeclaration_Behavior.QuotationClass_9qz3p8_a2a0a0().createNode(), true);
+    SLinkOperations.setTarget(thisNode, "type", _quotation_createNode_9qz3p8_a0a0a0(), true);
   }
 
-  public static class QuotationClass_9qz3p8_a2a0a0 {
-    public QuotationClass_9qz3p8_a2a0a0() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_9qz3p8_a0a0a0() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
   }
 }

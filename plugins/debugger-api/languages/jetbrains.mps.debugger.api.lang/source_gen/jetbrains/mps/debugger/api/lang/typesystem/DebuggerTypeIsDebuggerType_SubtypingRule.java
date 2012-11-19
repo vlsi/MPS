@@ -8,8 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
 
 public class DebuggerTypeIsDebuggerType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -17,7 +15,7 @@ public class DebuggerTypeIsDebuggerType_SubtypingRule extends SubtypingRule_Runt
   }
 
   public SNode getSubOrSuperType(SNode debuggerType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return new DebuggerTypeIsDebuggerType_SubtypingRule.QuotationClass_ueeq0q_a0a0a().createNode(typeCheckingContext);
+    return _quotation_createNode_ueeq0q_a0a0();
   }
 
   public String getApplicableConceptFQName() {
@@ -39,32 +37,9 @@ public class DebuggerTypeIsDebuggerType_SubtypingRule extends SubtypingRule_Runt
     return true;
   }
 
-  public static class QuotationClass_ueeq0q_a0a0a {
-    public QuotationClass_ueeq0q_a0a0a() {
-    }
-
-    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debugger.api.lang.structure.DebuggerType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debugger.api.lang.structure.DebuggerType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_ueeq0q_a0a0() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debugger.api.lang.structure.DebuggerType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
   }
 }

@@ -17,8 +17,6 @@ import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -65,10 +63,10 @@ public class NamedTupleDeclaration_Behavior {
   public static SNode virtual_getThisType_3305065273710880775(SNode thisNode) {
     _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> tvd2tvr = new _FunctionTypes._return_P1_E0<SNode, SNode>() {
       public SNode invoke(SNode tvr) {
-        return new NamedTupleDeclaration_Behavior.QuotationClass_ds5lpv_a0a0a0a0a0a4().createNode(tvr);
+        return _quotation_createNode_ds5lpv_a0a0a0a3(tvr);
       }
     };
-    return new NamedTupleDeclaration_Behavior.QuotationClass_ds5lpv_a0b0e().createNode(thisNode, ListSequence.fromList(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true)).select(tvd2tvr).toListSequence());
+    return _quotation_createNode_ds5lpv_a1a3(thisNode, ListSequence.fromList(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true)).select(tvd2tvr).toListSequence());
   }
 
   public static void virtual_populateMembers_7405920559687241403(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
@@ -105,46 +103,24 @@ public class NamedTupleDeclaration_Behavior {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"), callerConceptFqName, "virtual_getThisType_3305065273710880775", new Class[]{SNode.class}, new Object[]{});
   }
 
-  public static class QuotationClass_ds5lpv_a0a0a0a0a0a4 {
-    public QuotationClass_ds5lpv_a0a0a0a0a0a4() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_ds5lpv_a0a0a0a3(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_1);
+    return quotedNode_2;
   }
 
-  public static class QuotationClass_ds5lpv_a0b0e {
-    public QuotationClass_ds5lpv_a0b0e() {
-    }
-
-    public SNode createNode(Object parameter_4, Object parameter_5) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferenceTarget("classifier", (SNode) parameter_4);
-        {
-          List<SNode> nodes = (List<SNode>) parameter_5;
-          for (SNode child : nodes) {
-            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child));
-          }
-        }
-        result = quotedNode1_3;
+  private static SNode _quotation_createNode_ds5lpv_a1a3(Object parameter_1, Object parameter_2) {
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.setReferenceTarget("classifier", (SNode) parameter_1);
+    {
+      List<SNode> nodes = (List<SNode>) parameter_2;
+      for (SNode child : nodes) {
+        quotedNode_3.addChild("parameter", HUtil.copyIfNecessary(child));
       }
-      return result;
     }
+    return quotedNode_3;
   }
 }

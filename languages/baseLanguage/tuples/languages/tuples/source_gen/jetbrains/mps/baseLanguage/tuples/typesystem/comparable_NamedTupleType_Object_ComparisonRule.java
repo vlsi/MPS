@@ -8,8 +8,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
@@ -20,7 +18,7 @@ public class comparable_NamedTupleType_Object_ComparisonRule extends ComparisonR
   }
 
   public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
-    return SLinkOperations.getTarget(node2, "classifier", false) == SLinkOperations.getTarget(new comparable_NamedTupleType_Object_ComparisonRule.QuotationClass_6f56oq_a0a0a0a().createNode(), "classifier", false);
+    return SLinkOperations.getTarget(node2, "classifier", false) == SLinkOperations.getTarget(_quotation_createNode_6f56oq_a0a0a0(), "classifier", false);
   }
 
   public boolean isWeak() {
@@ -49,21 +47,10 @@ public class comparable_NamedTupleType_Object_ComparisonRule extends ComparisonR
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
 
-  public static class QuotationClass_6f56oq_a0a0a0a {
-    public QuotationClass_6f56oq_a0a0a0a() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_6f56oq_a0a0a0() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+    return quotedNode_1;
   }
 }

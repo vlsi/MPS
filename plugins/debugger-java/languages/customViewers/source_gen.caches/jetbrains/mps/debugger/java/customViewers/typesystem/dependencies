@@ -12,8 +12,6 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.customViewers.typesystem.WatchableListIsAListOrWatchables_SubtypingRule" file="WatchableListIsAListOrWatchables_SubtypingRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
@@ -27,8 +25,6 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.customViewers.typesystem.WatchableListIsAList_SubtypingRule" file="WatchableListIsAList_SubtypingRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
@@ -54,8 +50,6 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.customViewers.typesystem.typeof_HighLevelWatchableCreator_InferenceRule" file="typeof_HighLevelWatchableCreator_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -67,8 +61,6 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.customViewers.typesystem.typeof_WatchablesListCreator_InferenceRule" file="typeof_WatchablesListCreator_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

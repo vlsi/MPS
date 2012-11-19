@@ -5,8 +5,6 @@ package jetbrains.mps.debugger.java.customViewers.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -19,30 +17,16 @@ public class WatchableListType_Behavior {
 
   public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
     BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType", "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
-    BehaviorReflection.invokeVirtual(Void.class, new WatchableListType_Behavior.QuotationClass_za89pk_a1a1a1().createNode(), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
+    BehaviorReflection.invokeVirtual(Void.class, _quotation_createNode_za89pk_a0b0a(), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
   }
 
-  public static class QuotationClass_za89pk_a1a1a1 {
-    public QuotationClass_za89pk_a1a1a1() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReference("classifier", SReference.create("classifier", quotedNode1_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~List")));
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debugger.java.customViewers.structure.WatchableType", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_4 = quotedNode_2;
-          quotedNode_1.addChild("parameter", quotedNode1_4);
-        }
-        result = quotedNode1_3;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_za89pk_a0b0a() {
+    SNode quotedNode_1 = null;
+    SNode quotedNode_2 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~List")));
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debugger.java.customViewers.structure.WatchableType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.addChild("parameter", quotedNode_2);
+    return quotedNode_1;
   }
 }

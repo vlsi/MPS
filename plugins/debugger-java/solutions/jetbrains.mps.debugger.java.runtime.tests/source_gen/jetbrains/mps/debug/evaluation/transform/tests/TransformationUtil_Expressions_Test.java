@@ -16,8 +16,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -1005,7 +1003,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.init();
       SNode instanceMethodDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("5543996881668550288"), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
       List<SNode> arguments = SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("5543996881668550288"), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "actualArgument", true);
-      SNode localInstanceMethodCall = new TransformationUtil_Expressions_Test.TestBody.QuotationClass_n7zrdh_a0a75a21a().createNode(arguments);
+      SNode localInstanceMethodCall = _quotation_createNode_per9gj_a0d0m(arguments);
       SLinkOperations.setTarget(localInstanceMethodCall, "baseMethodDeclaration", instanceMethodDeclaration, false);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("5543996881668550288"), "jetbrains.mps.baseLanguage.structure.DotExpression"), localInstanceMethodCall);
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("5543996881668550286"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
@@ -1193,7 +1191,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.init();
       SNode staticMethodDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("607759879653675061"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "baseMethodDeclaration", false);
       List<SNode> arguments = SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("607759879653675061"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "actualArgument", true);
-      SNode localStaticMethodCall = new TransformationUtil_Expressions_Test.TestBody.QuotationClass_n7zrdh_a0a75a51a().createNode(arguments);
+      SNode localStaticMethodCall = _quotation_createNode_per9gj_a0d0p(arguments);
       SLinkOperations.setTarget(localStaticMethodCall, "baseMethodDeclaration", staticMethodDeclaration, false);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("607759879653675061"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), localStaticMethodCall);
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("607759879653675044"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
@@ -2065,52 +2063,30 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       DebuggerInitializer.dispose();
     }
 
-    public static class QuotationClass_n7zrdh_a0a75a21a {
-      public QuotationClass_n7zrdh_a0a75a21a() {
-      }
-
-      public SNode createNode(Object parameter_4) {
-        SNode result = null;
-        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_1 = null;
-        SNode quotedNode_2 = null;
-        {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_3 = quotedNode_1;
-          {
-            List<SNode> nodes = (List<SNode>) parameter_4;
-            for (SNode child : nodes) {
-              quotedNode_1.addChild("actualArgument", HUtil.copyIfNecessary(child));
-            }
-          }
-          result = quotedNode1_3;
+    private static SNode _quotation_createNode_per9gj_a0d0m(Object parameter_1) {
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null, null, GlobalScope.getInstance(), false);
+      {
+        List<SNode> nodes = (List<SNode>) parameter_1;
+        for (SNode child : nodes) {
+          quotedNode_2.addChild("actualArgument", HUtil.copyIfNecessary(child));
         }
-        return result;
       }
+      return quotedNode_2;
     }
 
-    public static class QuotationClass_n7zrdh_a0a75a51a {
-      public QuotationClass_n7zrdh_a0a75a51a() {
-      }
-
-      public SNode createNode(Object parameter_4) {
-        SNode result = null;
-        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_1 = null;
-        SNode quotedNode_2 = null;
-        {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_3 = quotedNode_1;
-          {
-            List<SNode> nodes = (List<SNode>) parameter_4;
-            for (SNode child : nodes) {
-              quotedNode_1.addChild("actualArgument", HUtil.copyIfNecessary(child));
-            }
-          }
-          result = quotedNode1_3;
+    private static SNode _quotation_createNode_per9gj_a0d0p(Object parameter_1) {
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null, null, GlobalScope.getInstance(), false);
+      {
+        List<SNode> nodes = (List<SNode>) parameter_1;
+        for (SNode child : nodes) {
+          quotedNode_2.addChild("actualArgument", HUtil.copyIfNecessary(child));
         }
-        return result;
       }
+      return quotedNode_2;
     }
   }
 }
