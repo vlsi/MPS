@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ltgo5mvfp5xc8g7q3u1dbl7dx9jksd">
+<dependencies version="2" modelHash="-40tspvo2mrefk2e8xkv6vyqrb20mbsl">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -59,7 +59,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TemplateQuotedNode__to__statementList.java" />
   </source>
-  <source id="1196351887556" name="main" hash="8sz1zpcy0bqcawyfax4hs5o505lhkca">
+  <source id="1196351887556" name="main" hash="-25tc0dkbf6as7jwe28epuzy1mqfsb9s">
     <dep root="1025590056396628814" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
