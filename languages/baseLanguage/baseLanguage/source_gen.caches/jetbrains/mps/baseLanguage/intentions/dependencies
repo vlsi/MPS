@@ -97,21 +97,6 @@
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.intentions.AddInstanceInitializer_Intention" file="AddInstanceInitializer_Intention.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.intentions.AddMainMethod_Intention" file="AddMainMethod_Intention.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -623,7 +608,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.AddElsifClause_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.AddFieldForUnUsedParameter_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.AddFinalModifierToAny_Intention" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.AddInstanceInitializer_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.AddMainMethod_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.AddNewLine_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.AddRemoveStaticMethodModifier_Intention" />

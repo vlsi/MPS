@@ -13,6 +13,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -36,7 +38,7 @@ public class check_FinalFieldWasAssigned_NonTypesystemRule extends AbstractNonTy
     }
 
     List<SNode> mayInitialize = new ArrayList<SNode>();
-    ListSequence.fromList(mayInitialize).addElement(SLinkOperations.getTarget(classifier, "instanceInitializer", true));
+    ListSequence.fromList(mayInitialize).addSequence(Sequence.fromIterable(ClassConcept_Behavior.call_instanceInitializers_7702003619977535145(classifier)));
     ListSequence.fromList(mayInitialize).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classifier, "constructor", true)));
     for (SNode member : mayInitialize) {
       if (member != null) {

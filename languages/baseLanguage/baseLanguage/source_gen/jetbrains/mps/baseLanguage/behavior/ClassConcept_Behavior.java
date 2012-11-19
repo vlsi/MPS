@@ -315,6 +315,23 @@ public class ClassConcept_Behavior {
     }
   }
 
+  public static Iterable<SNode> call_instanceInitializers_7702003619977535145(SNode thisNode) {
+    List<SNode> initializers = ListSequence.fromList(new ArrayList<SNode>());
+    if ((SLinkOperations.getTarget(thisNode, "instanceInitializer", true) != null)) {
+      ListSequence.fromList(initializers).addElement(SLinkOperations.getTarget(thisNode, "instanceInitializer", true));
+    }
+    ListSequence.fromList(initializers).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "member", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceInitializer");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceInitializer");
+      }
+    }));
+    return initializers;
+  }
+
   public static SNode getContextClass_8008512149545173402(SNode expr) {
     SNode contextNode = expr;
     SNode parent = SNodeOperations.getAncestor(expr, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);

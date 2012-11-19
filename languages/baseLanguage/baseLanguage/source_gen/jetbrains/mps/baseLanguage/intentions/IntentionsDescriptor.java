@@ -18,7 +18,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new AddElsifClause_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddFieldForUnUsedParameter_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddFinalModifierToAny_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddInstanceInitializer_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddMainMethod_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddNewLine_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddRemoveStaticMethodModifier_Intention());
