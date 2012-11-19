@@ -2189,7 +2189,7 @@
     <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="1215479323001">
       <property name="name" nameId="tpck.1169194664001" value="parametersFromExpressions" />
       <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpee.1068498886292" resolveInfo="ParameterDeclaration" />
-      <link role="sourceConcept" roleId="tpf8.1200911342686" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <link role="sourceConcept" roleId="tpf8.1200911342686" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="1525847198352075380">
       <property name="name" nameId="tpck.1169194664001" value="map" />
