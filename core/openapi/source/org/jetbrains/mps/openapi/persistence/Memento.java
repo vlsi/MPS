@@ -25,10 +25,6 @@ public interface Memento {
 
   Iterable<String> getKeys();
 
-  String getPath(String key);
-
-  void putPath(String key, String path);
-
   String getText();
 
   void setText(String text);

@@ -8,7 +8,6 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.io.DescriptorIOException;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.io.IOException;
@@ -33,7 +32,7 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
         final String result_56japk_a1a0a0e0a = file.getName();
         result_56japk_a0a0e0a.setNamespace(result_56japk_a1a0a0e0a);
 
-        final String result_56japk_a3a0a0e0a = mpsConf.getUUID();
+        final String result_56japk_a3a0a0e0a = mpsConf.UUID;
         result_56japk_a0a0e0a.setUUID(result_56japk_a3a0a0e0a);
 
         // TODO: pluginKind 
@@ -41,19 +40,19 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
         final boolean result_56japk_a7a0a0e0a = true;
         result_56japk_a0a0e0a.setCompileInMPS(result_56japk_a7a0a0e0a);
 
-        final boolean result_56japk_a9a0a0e0a = mpsConf.getUseTransientOutputFolder();
+        final boolean result_56japk_a9a0a0e0a = mpsConf.useTransientOutputFolder;
         result_56japk_a0a0e0a.setUseTransientOutput(result_56japk_a9a0a0e0a);
 
-        final String result_56japk_a11a0a0e0a = macroHelper.expandPath(mpsConf.getGeneratorOutputPath());
+        final String result_56japk_a11a0a0e0a = macroHelper.expandPath(mpsConf.generatorOutputPath);
         result_56japk_a0a0e0a.setOutputPath(result_56japk_a11a0a0e0a);
 
-        if (mpsConf.getModelRoots() != null) {
-          for (ModelRoot mrp : mpsConf.getModelRoots()) {
+        if (mpsConf.rootDescriptors != null) {
+          for (ModelRootDescriptor mrp : mpsConf.rootDescriptors) {
             // TODO: model root manager 
-            mrp.setPath(macroHelper.expandPath(mrp.getPath()));
-            ModelRootDescriptor res = new ModelRootDescriptor();
-            mrp.save(res.getMemento());
-            result_56japk_a0a0e0a.getModelRootDescriptors().add(res);
+            if (mrp.getMemento().get("path") != null) {
+              mrp.getMemento().put("path", macroHelper.expandPath(mrp.getMemento().get("path")));
+            }
+            result_56japk_a0a0e0a.getModelRootDescriptors().add(mrp);
           }
 
         }
@@ -61,8 +60,8 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
         // TODO: stub model entries 
 
         // TODO: dependencies 
-        if (mpsConf.getUsedLanguages() != null) {
-          for (String usedLang : mpsConf.getUsedLanguages()) {
+        if (mpsConf.usedLanguages != null) {
+          for (String usedLang : mpsConf.usedLanguages) {
             result_56japk_a0a0e0a.getUsedLanguages().add(ModuleReference.fromString(usedLang));
           }
         }

@@ -144,8 +144,8 @@ public class MPSConfigurationBean {
         roots.add(new ModelRootDescriptor(null, m));
       }
     }
-    if (state.descriptors != null) {
-      for (RootDescriptor descriptor : state.descriptors) {
+    if (state.rootDescriptors != null) {
+      for (RootDescriptor descriptor : state.rootDescriptors) {
         Memento m = new MementoImpl();
         MementoUtil.readMemento(m, descriptor.settings);
         roots.add(new ModelRootDescriptor(descriptor.type, m));
@@ -169,14 +169,14 @@ public class MPSConfigurationBean {
     }
     Collection<ModelRootDescriptor> modelRootDescriptors = myDescriptor.getModelRootDescriptors();
     if (!modelRootDescriptors.isEmpty()) {
-      result.descriptors = new RootDescriptor[modelRootDescriptors.size()];
+      result.rootDescriptors = new RootDescriptor[modelRootDescriptors.size()];
       int i = 0;
       for (ModelRootDescriptor mrd : modelRootDescriptors) {
         RootDescriptor d = new RootDescriptor();
         d.type = mrd.getType();
         d.settings = new Element("settings");
         MementoUtil.writeMemento(mrd.getMemento(), d.settings);
-        result.descriptors[i++] = d;
+        result.rootDescriptors[i++] = d;
       }
     }
     return result;
@@ -191,13 +191,13 @@ public class MPSConfigurationBean {
     public String[] usedLanguages;
     @Tag("modelRoots")
     @AbstractCollection(surroundWithTag = false)
-    public RootDescriptor[] descriptors;
+    public RootDescriptor[] rootDescriptors;
   }
 
   @Tag("modelRoot")
   public static class RootDescriptor {
     @Attribute("type")
-    String type;
+    public String type;
     @Tag("settings")
     public Element settings;
   }

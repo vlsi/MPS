@@ -60,16 +60,6 @@ public class MementoImpl implements Memento {
   }
 
   @Override
-  public String getPath(String key) {
-    return get(key);
-  }
-
-  @Override
-  public void putPath(String key, String path) {
-    put(key, path);
-  }
-
-  @Override
   public String getText() {
     return text;
   }
