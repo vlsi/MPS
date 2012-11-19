@@ -25,7 +25,7 @@ public class TemplateModelImpl implements TemplateModel {
 
   public TemplateModelImpl(TemplateModule module) {
     mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mappingmain(this));
-    switches = TemplateUtil.<TemplateSwitchMapping>asCollection(new SwitchQuotation__switch());
+    switches = TemplateUtil.<TemplateSwitchMapping>asCollection();
     templateModule = module;
   }
 

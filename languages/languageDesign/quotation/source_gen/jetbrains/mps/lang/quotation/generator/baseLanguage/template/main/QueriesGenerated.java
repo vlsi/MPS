@@ -304,7 +304,7 @@ public class QueriesGenerated {
     return _context.getNode();
   }
 
-  public static SNode sourceNodeQuery_1025590056396681326(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_767161977424634934(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "quotedNode", true);
   }
 

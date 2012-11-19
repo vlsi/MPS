@@ -53,20 +53,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.SwitchQuotation__switch" file="SwitchQuotation__switch.java">
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateExecutionEnvironment" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateReductionRule" />
-    <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateModelImpl" file="TemplateModelImpl.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -78,7 +64,6 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Mappingmain" />
-    <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.SwitchQuotation__switch" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotation__to__staticMethodCall" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
@@ -94,7 +79,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationTracerUtil" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
@@ -107,6 +91,7 @@
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.QueriesGenerated" />
+    <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
