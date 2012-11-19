@@ -12,16 +12,16 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.IfMacroContext;
-import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SReference;
@@ -246,13 +246,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1196351887167(final IOperationContext operationContext, final IfMacroContext _context) {
-    List<SNode> children = SNodeOperations.getChildren(_context.getNode());
-    for (SNode child : children) {
-      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.Antiquotation") || SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
-        return false;
+    return ListSequence.fromList(SNodeOperations.getChildren(_context.getNode())).all(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.quotation.structure.Antiquotation") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.quotation.structure.ListAntiquotation"));
       }
-    }
-    return true;
+    });
   }
 
   public static boolean ifMacro_Condition_1196860193035(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -260,13 +258,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1196351887377(final IOperationContext operationContext, final IfMacroContext _context) {
-    List<SNode> children = SNodeOperations.getChildren(_context.getNode());
-    for (SNode child : children) {
-      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.Antiquotation")) {
-        return true;
+    return ListSequence.fromList(SNodeOperations.getChildren(_context.getNode())).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.quotation.structure.Antiquotation");
       }
-    }
-    return false;
+    });
   }
 
   public static boolean ifMacro_Condition_1196351887517(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -274,13 +270,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1196351887529(final IOperationContext operationContext, final IfMacroContext _context) {
-    List<SNode> children = SNodeOperations.getChildren(_context.getNode());
-    for (SNode child : children) {
-      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
-        return true;
+    return ListSequence.fromList(SNodeOperations.getChildren(_context.getNode())).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.quotation.structure.ListAntiquotation");
       }
-    }
-    return false;
+    });
   }
 
   public static SNode sourceNodeQuery_1025590056396691788(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
