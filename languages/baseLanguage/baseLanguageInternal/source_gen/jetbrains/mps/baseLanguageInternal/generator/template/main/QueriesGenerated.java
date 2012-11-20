@@ -166,10 +166,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "superclass", true);
   }
 
-  public static SNode sourceNodeQuery_7805405506192339204(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "classInitializer", true);
-  }
-
   public static SNode sourceNodeQuery_7805405506192339213(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "instanceInitializer", true);
   }
@@ -247,10 +243,6 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_7805405506192339094(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "field", true);
-  }
-
-  public static Iterable sourceNodesQuery_7805405506192339104(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "staticField", true);
   }
 
   public static Iterable sourceNodesQuery_7805405506192339123(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
