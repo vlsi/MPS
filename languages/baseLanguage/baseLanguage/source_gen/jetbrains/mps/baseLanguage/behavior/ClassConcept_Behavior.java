@@ -5,11 +5,11 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import javax.swing.Icon;
 import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior;
@@ -43,15 +43,6 @@ public class ClassConcept_Behavior {
   private static Logger LOG = Logger.getLogger(ClassConcept_Behavior.class);
 
   public static void init(SNode thisNode) {
-  }
-
-  public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
-    List<SNode> members = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", "virtual_getMembers_1213877531970", new Object[]{});
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "field", true)));
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)));
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "constructor", true)));
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticInnerClassifiers", true)));
-    return members;
   }
 
   public static List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
@@ -192,7 +183,7 @@ public class ClassConcept_Behavior {
     }
     return ((SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false) != null) ?
       SLinkOperations.getTarget(thisNode, "superclass", true) :
-      new ClassConcept_Behavior.QuotationClass_xjj00_a0a1a11().createNode()
+      new ClassConcept_Behavior.QuotationClass_xjj00_a0a1a01().createNode()
     );
   }
 
@@ -246,7 +237,7 @@ public class ClassConcept_Behavior {
         }
       }
     }
-    SNode obj = new ClassConcept_Behavior.QuotationClass_xjj00_a0a5a41().createNode();
+    SNode obj = new ClassConcept_Behavior.QuotationClass_xjj00_a0a5a31().createNode();
     if (seen.add(SLinkOperations.getTarget(obj, "classifier", false))) {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(obj, "classifier", false));
     }
@@ -406,8 +397,8 @@ public class ClassConcept_Behavior {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), callerConceptFqName, "virtual_getUnitName_5067982036267369911", new Class[]{SNode.class}, new Object[]{});
   }
 
-  public static class QuotationClass_xjj00_a0a1a11 {
-    public QuotationClass_xjj00_a0a1a11() {
+  public static class QuotationClass_xjj00_a0a1a01 {
+    public QuotationClass_xjj00_a0a1a01() {
     }
 
     public SNode createNode() {
@@ -424,8 +415,8 @@ public class ClassConcept_Behavior {
     }
   }
 
-  public static class QuotationClass_xjj00_a0a5a41 {
-    public QuotationClass_xjj00_a0a5a41() {
+  public static class QuotationClass_xjj00_a0a5a31 {
+    public QuotationClass_xjj00_a0a5a31() {
     }
 
     public SNode createNode() {

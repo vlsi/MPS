@@ -27,10 +27,6 @@ public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescript
     return ClassConcept_Behavior.virtual_getMarkIcons_3923831204883340393(thisNode);
   }
 
-  public List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
-    return ClassConcept_Behavior.virtual_getMembers_1213877531970(thisNode);
-  }
-
   public Scope virtual_getMembers_2201875424515824604(SNode thisNode, SNode kind) {
     return ClassConcept_Behavior.virtual_getMembers_2201875424515824604(thisNode, kind);
   }
