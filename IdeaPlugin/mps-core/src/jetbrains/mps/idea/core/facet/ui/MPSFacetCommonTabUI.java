@@ -18,6 +18,7 @@ package jetbrains.mps.idea.core.facet.ui;
 
 import com.intellij.facet.ui.FacetEditorContext;
 import com.intellij.openapi.Disposable;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.module.ModifiableModuleModel;
 import com.intellij.openapi.roots.LibraryOrderEntry;
 import com.intellij.openapi.roots.libraries.Library;
@@ -26,8 +27,8 @@ import com.intellij.ui.TabbedPaneWrapper;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.icons.MPSIcons;
+import jetbrains.mps.idea.core.library.SolutionLibrariesIndex;
 import jetbrains.mps.idea.core.project.ModuleRuntimeLibrariesImporter;
-import jetbrains.mps.idea.core.project.ModuleRuntimeLibrariesManager;
 import jetbrains.mps.idea.core.ui.IModuleConfigurationTab;
 import jetbrains.mps.idea.core.ui.ImportedSolutionsTable;
 import jetbrains.mps.idea.core.ui.UsedLanguagesTable;
@@ -105,27 +106,37 @@ public class MPSFacetCommonTabUI implements IModuleConfigurationTab {
     MPSFacetPathsTab mpsFacetPathsTab = new MPSFacetPathsTab(myContext);
     UsedLanguagesTable usedLanguagesTable = new UsedLanguagesTable() {
       @Override
-      protected void doAddElements(Set<ModuleReference> elementsToAdd) {
+      protected void doAddElements(final Set<ModuleReference> elementsToAdd) {
         super.doAddElements(elementsToAdd);
-        new ModuleRuntimeLibrariesImporter(myContext, elementsToAdd).addMissingLibraries();
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          @Override
+          public void run() {
+            new ModuleRuntimeLibrariesImporter(myContext, elementsToAdd).addMissingLibraries();
+          }
+        });
       }
     };
     ImportedSolutionsTable importedSolutionsTable = new ImportedSolutionsTable() {
       @Override
       protected void doAddElements(Set<Dependency> elementsToAdd) {
         super.doAddElements(elementsToAdd);
-        Collection<ModuleReference> referencesToAdd = new ArrayList<ModuleReference>();
+        final Collection<ModuleReference> referencesToAdd = new ArrayList<ModuleReference>();
         for (Dependency dependency : elementsToAdd) {
           referencesToAdd.add(dependency.getModuleRef());
         }
-        new ModuleRuntimeLibrariesImporter(myContext, referencesToAdd).addMissingLibraries();
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          @Override
+          public void run() {
+            new ModuleRuntimeLibrariesImporter(myContext, referencesToAdd).addMissingLibraries();
+          }
+        });
       }
 
       @Override
       protected void check(Dependency element, boolean value) {
         super.check(element, value);
         // If we reexport mps module then we should reexport its lib as well.
-        Library moduleLibrary = ModuleRuntimeLibrariesManager.getInstance(myContext.getProject()).getLibrary(element.getModuleRef());
+        Library moduleLibrary = SolutionLibrariesIndex.getInstance(myContext.getProject()).getLibrary(element.getModuleRef());
         if (moduleLibrary != null) {
           LibraryOrderEntry libraryOrderEntry = myContext.getModifiableRootModel().findLibraryOrderEntry(moduleLibrary);
           if (libraryOrderEntry != null) {

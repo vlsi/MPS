@@ -21,22 +21,19 @@ import com.intellij.openapi.roots.impl.libraries.ProjectLibraryTable;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryTable;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.idea.core.project.ModuleRuntimeLibrariesManager;
+import jetbrains.mps.idea.core.library.SolutionLibraryType;
 
 public class MPSProjectLibImporter extends BaseLibImporter implements ProjectComponent {
   private final ProjectLibraryTable myLibTable;
-  private final ModuleRuntimeLibrariesManager myRuntimeLibrariesManager;
 
-  //todo adding/removing libs
   @SuppressWarnings("UnusedParameters") //creation time dependency
-  public MPSProjectLibImporter(ModuleRuntimeLibrariesManager runtimeLibrariesManager, MPSCoreComponents core, ProjectLibraryTable libTable) {
+  public MPSProjectLibImporter(MPSCoreComponents core, ProjectLibraryTable libTable) {
     myLibTable = libTable;
-    myRuntimeLibrariesManager = runtimeLibrariesManager;
   }
 
   @Override
   protected void addModuleForLibrary(Library l) {
-    if (myRuntimeLibrariesManager.isMpsModuleLibrary(l)) {
+    if (SolutionLibraryType.isSolutionLibrary(l)) {
       return;
     }
     super.addModuleForLibrary(l);

@@ -1,0 +1,171 @@
+/*
+ * Copyright 2003-2012 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package jetbrains.mps.idea.core.library;
+
+import com.intellij.ide.util.ChooseElementsDialog;
+import com.intellij.openapi.fileTypes.FileTypes;
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.roots.OrderRootType;
+import com.intellij.openapi.roots.impl.libraries.LibraryEx;
+import com.intellij.openapi.roots.libraries.*;
+import com.intellij.openapi.roots.libraries.ui.LibraryEditorComponent;
+import com.intellij.openapi.roots.libraries.ui.LibraryPropertiesEditor;
+import com.intellij.openapi.roots.libraries.ui.LibraryRootsComponentDescriptor;
+import com.intellij.openapi.roots.libraries.ui.OrderRoot;
+import com.intellij.openapi.roots.ui.configuration.FacetsProvider;
+import com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditor;
+import com.intellij.openapi.vfs.JarFileSystem;
+import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileManager;
+import jetbrains.mps.idea.core.MPSBundle;
+import jetbrains.mps.idea.core.facet.MPSFacetType;
+import jetbrains.mps.idea.core.icons.MPSIcons;
+import jetbrains.mps.idea.core.project.SolutionIdea;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.StubSolution;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import java.util.*;
+
+public class SolutionLibraryType extends LibraryType<DummyLibraryProperties> {
+  public static final LibraryKind SOLUTION_KIND = new LibraryKind("mps.solution.library");
+
+  public SolutionLibraryType() {
+    super(SOLUTION_KIND);
+  }
+
+  @Nullable
+  public static VirtualFile getJarFile(String path) {
+    VirtualFile vFile = VirtualFileManager.getInstance().findFileByUrl(VirtualFileManager.constructUrl(LocalFileSystem.PROTOCOL, path));
+    if (vFile == null || vFile.isDirectory() || vFile.getFileType() != FileTypes.ARCHIVE) {
+      return null;
+    }
+    return JarFileSystem.getInstance().findFileByPath(vFile.getPath() + JarFileSystem.JAR_SEPARATOR);
+  }
+
+  public static Set<VirtualFile> getSolutionJars(Solution usedModule) {
+    Set<VirtualFile> stubFiles = new HashSet<VirtualFile>();
+    for (String stubPath : usedModule.getAllStubPaths()) {
+      VirtualFile jarFile = getJarFile(stubPath);
+      if (jarFile != null) {
+        stubFiles.add(jarFile);
+      }
+    }
+    return stubFiles;
+  }
+
+  @Override
+  public String getCreateActionName() {
+    return MPSBundle.message("mps.solutions.library");
+  }
+
+  @Override
+  public NewLibraryConfiguration createNewLibrary(@NotNull JComponent parentComponent, @Nullable VirtualFile contextDirectory, @NotNull final Project project) {
+    final List<ModuleReference> availableSolutions = new ArrayList<ModuleReference>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        for (Solution solution : ModuleRepositoryFacade.getInstance().getAllModules(Solution.class)) {
+          if (solution instanceof SolutionIdea || solution instanceof StubSolution) {
+            continue;
+          }
+          availableSolutions.add(solution.getModuleReference());
+        }
+      }
+    });
+
+    ChooseElementsDialog<ModuleReference> chooser = new ChooseElementsDialog<ModuleReference>(project, availableSolutions, MPSBundle.message("used.solutions.chooser.title"), null) {
+      @Override
+      protected String getItemText(ModuleReference item) {
+        return item.getModuleFqName();
+      }
+
+      @Override
+      protected Icon getItemIcon(ModuleReference item) {
+        return MPSIcons.SOLUTION_ICON;
+      }
+    };
+    chooser.show();
+    List<ModuleReference> chosenElements = chooser.getChosenElements();
+    if (chosenElements.isEmpty()) {
+      return null;
+    }
+    String name = chosenElements.get(0).getModuleFqName();
+    if (chosenElements.size() > 1) {
+      name += "...";
+    }
+
+    final Set<OrderRoot> roots = new LinkedHashSet<OrderRoot>();
+    for (ModuleReference module : chosenElements) {
+      for (VirtualFile virtualFile : getSolutionJars((Solution) ModuleRepositoryFacade.getInstance().getModule(module))) {
+        roots.add(new OrderRoot(virtualFile, OrderRootType.CLASSES, false));
+      }
+    }
+
+    return new NewLibraryConfiguration(name, this, createDefaultProperties()) {
+      @Override
+      public void addRoots(@NotNull LibraryEditor editor) {
+        editor.addRoots(roots);
+      }
+    };
+  }
+
+  @NotNull
+  @Override
+  public DummyLibraryProperties createDefaultProperties() {
+    return new DummyLibraryProperties();
+  }
+
+  @Override
+  public LibraryPropertiesEditor createPropertiesEditor(@NotNull LibraryEditorComponent editorComponent) {
+    return null;
+  }
+
+  @Override
+  public Icon getIcon() {
+    return MPSIcons.SOLUTION_ICON;
+  }
+
+  @Override
+  public DummyLibraryProperties detect(@NotNull List<VirtualFile> classesRoots) {
+    return super.detect(classesRoots);
+  }
+
+  @Override
+  public boolean isSuitableModule(@NotNull Module module, @NotNull FacetsProvider facetsProvider) {
+    return !facetsProvider.getFacetsByType(module, MPSFacetType.ID).isEmpty();
+  }
+
+  public static boolean isSolutionLibrary(Library l) {
+    if (l instanceof LibraryEx) {
+      return ((LibraryEx) l).getType() instanceof SolutionLibraryType;
+    }
+    return false;
+  }
+
+  public static SolutionLibraryType getInstance() {
+    return LibraryType.EP_NAME.findExtension(SolutionLibraryType.class);
+  }
+}

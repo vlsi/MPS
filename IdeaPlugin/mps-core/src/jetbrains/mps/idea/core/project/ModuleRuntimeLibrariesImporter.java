@@ -16,23 +16,21 @@
 
 package jetbrains.mps.idea.core.project;
 
+import com.intellij.facet.impl.ui.FacetEditorContextBase;
 import com.intellij.facet.ui.FacetEditorContext;
-import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.fileTypes.FileTypes;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.roots.libraries.Library;
-import com.intellij.openapi.roots.libraries.LibraryTablesRegistrar;
+import com.intellij.openapi.roots.libraries.LibraryType;
+import com.intellij.openapi.roots.ui.configuration.libraryEditor.NewLibraryEditor;
 import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainer;
 import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainer.LibraryLevel;
 import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainerFactory;
-import com.intellij.openapi.vfs.JarFileSystem;
-import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileManager;
-import com.intellij.util.Processor;
+import jetbrains.mps.idea.core.library.SolutionLibrariesIndex;
+import jetbrains.mps.idea.core.library.SolutionLibraryType;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
@@ -41,9 +39,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.util.misc.hash.HashMap;
-import jetbrains.mps.util.misc.hash.HashSet;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
@@ -53,46 +48,26 @@ import java.util.*;
  */
 public class ModuleRuntimeLibrariesImporter {
   public static final String LIBRARY_PREFIX = "mps.";
-  @Nullable
-  private FacetEditorContext myContext;
-  private Collection<ModuleReference> myAddedModules;
-  private ModifiableRootModel myModifiableRootModel;
-  private Library[] myProjectLibraries;
-  private LibrariesContainer myLibrariesContainer;
+  private final Collection<ModuleReference> myAddedModules;
+  private final ModifiableRootModel myModifiableRootModel;
+  private final LibrariesContainer myLibrariesContainer;
 
   public ModuleRuntimeLibrariesImporter(FacetEditorContext context, Collection<ModuleReference> addedModules) {
-    myContext = context;
-    myAddedModules = addedModules;
-    myModifiableRootModel = myContext.getModifiableRootModel();
-    myProjectLibraries = myContext.getLibraries();
+    this(addedModules, context.getModifiableRootModel(), ((FacetEditorContextBase) context).getContainer());
   }
 
   public ModuleRuntimeLibrariesImporter(Module ideaModule, Collection<ModuleReference> addedModules, ModifiableRootModel modifiableModel) {
+    this(addedModules, modifiableModel, LibrariesContainerFactory.createContainer(ideaModule));
+  }
+
+  private ModuleRuntimeLibrariesImporter(Collection<ModuleReference> addedModules, ModifiableRootModel modifiableModel, LibrariesContainer container) {
     myAddedModules = addedModules;
     myModifiableRootModel = modifiableModel;
-    myProjectLibraries = LibraryTablesRegistrar.getInstance().getLibraryTable(ideaModule.getProject()).getLibraries();
-    myLibrariesContainer = LibrariesContainerFactory.createContainer(ideaModule);
+    myLibrariesContainer = container;
   }
 
   public void addMissingLibraries() {
-    // local library files form IDEA module
-    final Set<String> libFiles = new HashSet<String>();
-    myModifiableRootModel.orderEntries().forEachLibrary(new Processor<Library>() {
-      @Override
-      public boolean process(Library library) {
-        for (VirtualFile vFile : library.getFiles(OrderRootType.CLASSES)) {
-          libFiles.add(vFile.getName());
-        }
-        return true;
-      }
-    });
-
-    Map<String, Library> projectLibFiles = new HashMap<String, Library>();
-    for (Library library : myProjectLibraries) {
-      for (VirtualFile file : library.getFiles(OrderRootType.CLASSES)) {
-        projectLibFiles.put(file.getName(), library);
-      }
-    }
+    Project project = getProject();
 
     Collection<Library> projectLibs2Add = new HashSet<Library>();
     Map<ModuleReference, Collection<VirtualFile>> projectLibs2Create = new HashMap<ModuleReference, Collection<VirtualFile>>();
@@ -102,23 +77,12 @@ public class ModuleRuntimeLibrariesImporter {
         continue;
       }
 
-      for (String stubPath : ((Solution) usedModule).getAllStubPaths()) {
-        VirtualFile jarFile = getJarFile(stubPath);
-        if (jarFile == null || libFiles.contains(jarFile.getName())) {
-          continue;
-        }
-
-        Library projectLibrary = projectLibFiles.get(jarFile.getName());
-        if (projectLibrary != null) {
-          projectLibs2Add.add(projectLibrary);
-        } else {
-          Collection<VirtualFile> virtualFiles = projectLibs2Create.get(usedModule.getModuleReference());
-          if (virtualFiles == null) {
-            virtualFiles = new LinkedHashSet<VirtualFile>();
-            projectLibs2Create.put(usedModule.getModuleReference(), virtualFiles);
-          }
-          virtualFiles.add(jarFile);
-        }
+      Library library = SolutionLibrariesIndex.getInstance(project).getLibrary(usedModule.getModuleReference());
+      if (library != null) {
+        projectLibs2Add.add(library);
+      } else {
+        Set<VirtualFile> stubFiles = SolutionLibraryType.getSolutionJars((Solution) usedModule);
+        projectLibs2Create.put(usedModule.getModuleReference(), stubFiles);
       }
     }
 
@@ -129,25 +93,26 @@ public class ModuleRuntimeLibrariesImporter {
     for (ModuleReference moduleReference : projectLibs2Create.keySet()) {
       Collection<VirtualFile> libraryFiles = projectLibs2Create.get(moduleReference);
       Library projectLibrary = createProjectLibrary(moduleReference.getModuleFqName(), libraryFiles);
-      Project project;
-      if (myContext != null) {
-        project = myContext.getProject();
-      } else {
-        project = myLibrariesContainer.getProject();
-      }
-      ModuleRuntimeLibrariesManager.getInstance(project).addLibrary(projectLibrary, moduleReference);
+      SolutionLibrariesIndex.getInstance(project).addLibrary(projectLibrary, moduleReference);
       myModifiableRootModel.addLibraryEntry(projectLibrary);
     }
   }
 
+  private Project getProject() {
+    return myLibrariesContainer.getProject();
+  }
+
   private Library createProjectLibrary(String moduleName, Collection<VirtualFile> libraryFiles) {
-    VirtualFile[] roots = libraryFiles.toArray(new VirtualFile[libraryFiles.size()]);
     String libName = LIBRARY_PREFIX + moduleName;
-    if (myContext != null) {
-      return myContext.createProjectLibrary(libName, roots, new VirtualFile[0]);
-    } else {
-      return myLibrariesContainer.createLibrary(libName, LibraryLevel.PROJECT, roots, new VirtualFile[0]);
+
+    NewLibraryEditor editor = new NewLibraryEditor();
+    editor.setName(libName);
+    for (VirtualFile classRoot : libraryFiles) {
+      editor.addRoot(classRoot, OrderRootType.CLASSES);
     }
+    editor.setType(SolutionLibraryType.getInstance());
+    editor.setProperties(SolutionLibraryType.getInstance().createDefaultProperties());
+    return myLibrariesContainer.createLibrary(editor, LibraryLevel.PROJECT);
   }
 
   private Set<IModule> collectRuntimeModules(Collection<ModuleReference> moduleReferences) {
@@ -192,11 +157,4 @@ public class ModuleRuntimeLibrariesImporter {
     }
   }
 
-  private VirtualFile getJarFile(String path) {
-    VirtualFile vFile = VirtualFileManager.getInstance().findFileByUrl(VirtualFileManager.constructUrl(LocalFileSystem.PROTOCOL, path));
-    if (vFile == null || vFile.isDirectory() || vFile.getFileType() != FileTypes.ARCHIVE) {
-      return null;
-    }
-    return JarFileSystem.getInstance().findFileByPath(vFile.getPath() + JarFileSystem.JAR_SEPARATOR);
-  }
 }

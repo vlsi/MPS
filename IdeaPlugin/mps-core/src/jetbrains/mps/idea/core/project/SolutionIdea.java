@@ -29,6 +29,8 @@ import com.intellij.util.Processor;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
+import jetbrains.mps.idea.core.library.SolutionLibrariesIndex;
+import jetbrains.mps.idea.core.library.SolutionLibraryType;
 import jetbrains.mps.idea.core.project.stubs.AbstractJavaStubSolutionManager;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
@@ -169,10 +171,11 @@ public class SolutionIdea extends Solution {
           return true;
         }
 
-        // try to find mps solution
-        ModuleReference moduleReference = ModuleRuntimeLibrariesManager.getInstance(myModule.getProject()).getModule(library);
-        if (moduleReference != null) {
-          dependencies.add(new Dependency(moduleReference, loe.isExported()));
+        if (SolutionLibraryType.isSolutionLibrary(library)) {
+          Set<ModuleReference> moduleReferences = SolutionLibrariesIndex.getInstance(myModule.getProject()).getModules(library);
+          for (ModuleReference moduleReference : moduleReferences) {
+            dependencies.add(new Dependency(moduleReference, loe.isExported()));
+          }
         } else {
           // try to find stub solution
           Solution s = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.foreign(library.getName()));
@@ -280,7 +283,7 @@ public class SolutionIdea extends Solution {
     }
   }
 
-  public Module getIdeaModule(){
+  public Module getIdeaModule() {
     return myModule;
   }
 
