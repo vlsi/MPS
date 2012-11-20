@@ -15,18 +15,24 @@
  */
 package jetbrains.mps.workbench.dialogs.project.roots.editor;
 
+import jetbrains.mps.project.SModelRoot;
+
 import javax.swing.JComponent;
+import javax.swing.JPanel;
 
-public abstract class EntryEditor {
-  protected JComponent myEditorComponent;
-
-  public EntryEditor() {
-    initUI();
+public class SModelRootEntry extends ModelRootEntry<SModelRoot> {
+  @Override
+  protected JComponent createDetailsComponent() {
+    return new JPanel();
   }
 
-  public JComponent getComponent() {
-    return myEditorComponent;
+  @Override
+  protected EntryEditor createEditor() {
+    return new EntryEditor() {
+      @Override
+      protected void initUI() {
+        myEditorComponent = new JPanel();
+      }
+    };
   }
-
-  protected abstract void initUI();
 }

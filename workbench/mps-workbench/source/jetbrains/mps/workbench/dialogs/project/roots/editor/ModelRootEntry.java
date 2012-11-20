@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.workbench.dialogs.project.roots.editor;
 
-import com.intellij.ui.roots.FilePathClipper;
 import com.intellij.ui.roots.IconActionComponent;
 import com.intellij.ui.roots.ResizingWrapper;
 import com.intellij.util.EventDispatcher;
 import com.intellij.util.ui.JBInsets;
 import jetbrains.mps.ide.icons.IdeIcons;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import javax.swing.Box;
 import javax.swing.JComponent;
@@ -32,17 +32,11 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyVetoException;
-import java.beans.VetoableChangeListener;
 import java.util.EventListener;
 
-public abstract class ContentEntry<T> {
+public abstract class ModelRootEntry<T extends ModelRoot> {
 
   protected static final Color SOURCES_COLOR = new Color(0x0A50A1);
   private static final Color SELECTED_HEADER_COLOR = new Color(0xDEF2FF);
@@ -51,8 +45,8 @@ public abstract class ContentEntry<T> {
   private static final Color CONTENT_COLOR = Color.WHITE;
   private static final Color UNSELECTED_TEXT_COLOR = new Color(0x333333);
 
-  protected T myEntry;
-  protected EntryEditor<T> myEditor;
+  protected T myModelRoot;
+  protected EntryEditor myEditor;
   protected EventDispatcher<ContentEntryEditorListener> myEventDispatcher;
   protected boolean myIsSelected = false;
 
@@ -62,13 +56,23 @@ public abstract class ContentEntry<T> {
   protected JComponent myBottom;
   private JLabel myHeaderLabel;
 
-  public ContentEntry(T entry) {
-    myEntry = entry;
+  public ModelRootEntry() {
     myEventDispatcher = EventDispatcher.create(ContentEntryEditorListener.class);
   }
 
-  public T getEntry() {
-    return myEntry;
+  public ModelRootEntry(T modelRoot) {
+    this();
+    setModelRoot(myModelRoot);
+  }
+
+  public T getModelRoot() {
+    return myModelRoot;
+  }
+
+  public void setModelRoot(T modelRoot) {
+    myModelRoot = modelRoot;
+    myEditor = createEditor();
+    initUI();
   }
 
   public void initUI() {
@@ -79,7 +83,7 @@ public abstract class ContentEntry<T> {
       @Override
       public void mouseClicked(MouseEvent e) {
         myIsSelected = true;
-        myEventDispatcher.getMulticaster().focused(ContentEntry.this);
+        myEventDispatcher.getMulticaster().focused(ModelRootEntry.this);
       }
 
       @Override
@@ -108,7 +112,7 @@ public abstract class ContentEntry<T> {
 
   protected JComponent createHeader() {
     final JPanel panel = new JPanel(new GridBagLayout());
-    myHeaderLabel = new JLabel(getHeaderText());
+    myHeaderLabel = new JLabel(myModelRoot.getPresentation());
     myHeaderLabel.setFont(myHeaderLabel.getFont().deriveFont(Font.BOLD));
     myHeaderLabel.setOpaque(false);
     if (false) {//check model root?
@@ -118,7 +122,7 @@ public abstract class ContentEntry<T> {
       IdeIcons.DELETE_CONTENT_ROOT_ROLL_OVER,
       "Delete Model Root", new Runnable() {
       public void run() {
-        myEventDispatcher.getMulticaster().delete(ContentEntry.this);
+        myEventDispatcher.getMulticaster().delete(ModelRootEntry.this);
       }
     });
     final ResizingWrapper wrapper = new ResizingWrapper(myHeaderLabel);
@@ -154,24 +158,24 @@ public abstract class ContentEntry<T> {
     myEventDispatcher.addListener(listener);
   }
 
-  public EntryEditor<T> getEditor() {
+  public EntryEditor getEditor() {
     return myEditor;
   }
 
+  protected abstract EntryEditor createEditor();
+
   protected void reset() {
-    myHeaderLabel.setText(getHeaderText());
+    myHeaderLabel.setText(myModelRoot.getPresentation());
     updateDetailsComponent();
   }
   protected void updateDetailsComponent() {
   }
 
-  protected abstract String getHeaderText();
   protected abstract JComponent createDetailsComponent();
 
-
   public interface ContentEntryEditorListener extends EventListener {
-    void focused(ContentEntry<?> entry);
-    void delete(ContentEntry<?> entry);
-    void dataChanged(ContentEntry<?> entry);
+    void focused(ModelRootEntry<?> entry);
+    void delete(ModelRootEntry<?> entry);
+    void dataChanged(ModelRootEntry<?> entry);
   }
 }
