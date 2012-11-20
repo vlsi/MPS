@@ -117,6 +117,7 @@ public class MementoImpl implements Memento {
       }
     }
     if (children != null) {
+      m.children = new LinkedHashMap<String, List<Memento>>();
       for (Map.Entry<String, List<Memento>> entry : children.entrySet()) {
         List<Memento> copy = new ArrayList<Memento>();
         for (Memento memento : entry.getValue()) {
