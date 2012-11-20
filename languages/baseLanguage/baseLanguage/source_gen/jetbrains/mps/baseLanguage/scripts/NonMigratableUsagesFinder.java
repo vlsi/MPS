@@ -36,13 +36,6 @@ public class NonMigratableUsagesFinder {
         }
       }
 
-      // editor 
-      if (SNodeOperations.isInstanceOf(nodeUsage, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList")) {
-        if (SLinkOperations.getTarget(SNodeOperations.cast(nodeUsage, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), "relationDeclaration", false) == linkDeclaration) {
-          continue;
-        }
-      }
-
       ListSequence.fromList(result).addElement(nodeUsage);
     }
     return result;
