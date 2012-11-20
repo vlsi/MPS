@@ -220,13 +220,13 @@ public class PsiChangesWatcher implements ProjectComponent {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
         @Override
         public void run() {
-          ModelAccess.instance().runWriteAction(new Runnable() {
+          ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
             public void run() {
               for (PsiListener l: myListeners) {
                 l.psiChanged(data);
               }
             }
-          });
+          }, null);
         }
       });
       myCollectedData = new PsiChangeData();

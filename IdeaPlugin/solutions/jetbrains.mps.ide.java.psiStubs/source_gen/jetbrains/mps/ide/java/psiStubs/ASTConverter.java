@@ -17,9 +17,11 @@ import com.intellij.psi.PsiField;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiModifier;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import com.intellij.psi.PsiParameter;
+import com.intellij.psi.PsiClassType;
 import com.intellij.psi.PsiType;
 import com.intellij.psi.PsiPrimitiveType;
-import com.intellij.psi.PsiClassType;
 import com.intellij.psi.PsiArrayType;
 import com.intellij.psi.PsiWildcardType;
 import com.intellij.psi.PsiTypeParameter;
@@ -29,7 +31,6 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.DynamicReference;
 import com.intellij.psi.PsiModifierListOwner;
 import com.intellij.psi.PsiTypeParameterListOwner;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class ASTConverter {
   public ASTConverter() {
@@ -39,12 +40,12 @@ public class ASTConverter {
 
     final Wrappers._T<SNode> classifier = new Wrappers._T<SNode>();
 
-    if (x.isInterface()) {
-      classifier.value = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Interface", null);
+    if (x.isAnnotationType()) {
+      classifier.value = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Annotation", null);
     } else if (x.isEnum()) {
       classifier.value = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumClass", null);
-    } else if (x.isAnnotationType()) {
-      classifier.value = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Annotation", null);
+    } else if (x.isInterface()) {
+      classifier.value = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Interface", null);
     } else {
       classifier.value = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassConcept", null);
     }
@@ -115,6 +116,8 @@ public class ASTConverter {
     SNode method;
     if (x.isConstructor()) {
       method = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", null);
+    } else if (SConceptOperations.isSubConceptOf(parentConcept, "jetbrains.mps.baseLanguage.structure.Annotation")) {
+      method = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration", null);
     } else if (!(isStatic(x)) || SConceptOperations.isSubConceptOf(parentConcept, "jetbrains.mps.baseLanguage.structure.Interface")) {
       method = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null);
     } else {
@@ -127,8 +130,29 @@ public class ASTConverter {
     SPropertyOperations.set(method, "isSynchronized", "" + (x.hasModifierProperty(PsiModifier.SYNCHRONIZED)));
 
     SLinkOperations.setTarget(method, "returnType", convertType(x.getReturnType()), true);
+    ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).addSequence(Sequence.fromIterable(Sequence.fromArray(x.getParameterList().getParameters())).select(new ISelector<PsiParameter, SNode>() {
+      public SNode select(PsiParameter it) {
+        SNode param = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
+        SPropertyOperations.set(param, "name", it.getName());
+        SLinkOperations.setTarget(param, "type", convertType(it.getType()), true);
+        SPropertyOperations.set(param, "isFinal", "" + (isFinal(it)));
 
-    SLinkOperations.setTarget(method, "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StubStatementList", null), true);
+        return param;
+      }
+    }));
+
+    ListSequence.fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addSequence(Sequence.fromIterable(Sequence.fromArray(x.getThrowsList().getReferencedTypes())).select(new ISelector<PsiClassType, SNode>() {
+      public SNode select(PsiClassType it) {
+        SNode typ = resolveClass(it);
+        return typ;
+      }
+    }));
+
+    addTypeParams(x, method);
+
+    if (x.getBody() != null) {
+      SLinkOperations.setTarget(method, "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StubStatementList", null), true);
+    }
 
     return method;
   }
@@ -173,7 +197,17 @@ public class ASTConverter {
   public SNode convertTypeParameter(PsiTypeParameter x) {
     SNode typeVar = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", null);
     SPropertyOperations.set(typeVar, "name", x.getName());
-    // TODO extends, super, etc 
+
+    if (x.getExtendsListTypes().length > 0) {
+      Iterable<PsiClassType> extend = Sequence.fromArray(x.getExtendsListTypes());
+      SLinkOperations.setTarget(typeVar, "bound", resolveClass(Sequence.fromIterable(extend).first()), true);
+      ListSequence.fromList(SLinkOperations.getTargets(typeVar, "auxBounds", true)).addSequence(Sequence.fromIterable(extend).skip(1).select(new ISelector<PsiClassType, SNode>() {
+        public SNode select(PsiClassType it) {
+          return resolveClass(it);
+        }
+      }));
+    }
+
     return typeVar;
   }
 

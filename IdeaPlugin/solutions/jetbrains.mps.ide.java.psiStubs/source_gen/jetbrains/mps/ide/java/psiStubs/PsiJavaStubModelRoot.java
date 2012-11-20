@@ -20,6 +20,7 @@ import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.psi.PsiManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.psi.PsiJavaFile;
+import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import jetbrains.mps.idea.core.psi.PsiChangesWatcher;
@@ -93,8 +94,8 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
     if (Sequence.fromIterable(Sequence.fromArray(dir.getFiles())).ofType(PsiJavaFile.class).isNotEmpty()) {
       PsiJavaStubDataSource ds = new PsiJavaStubDataSource(myModule, dir);
       String relativeDirName = dir.toString().substring(skipPrefix);
-      // FIXME check different separators 
 
+      // FIXME check different separators 
       String packageName = relativeDirName.replace('/', '.');
       if (packageName.length() > 0 && packageName.charAt(0) == '.') {
         packageName = packageName.substring(1);
@@ -103,8 +104,10 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
         packageName = "<default package>";
       }
 
-      LOG.debug("Package name: " + packageName);
-      SModelReference modelRef = new SModelReference(packageName, "java_stub_zzz");
+      SModelFqName fqName = new SModelFqName(packageName, "java_stub_zzz");
+      jetbrains.mps.smodel.SModelId modelId = jetbrains.mps.smodel.SModelId.foreign(fqName.getStereotype(), getModule().getModuleId().toString(), fqName.getLongName());
+      SModelReference modelRef = new SModelReference(fqName, modelId);
+
       PsiJavaStubModelDescriptor model = new PsiJavaStubModelDescriptor(modelRef, ds);
 
       MapSequence.fromMap(myDataSources).put(dir, ds);

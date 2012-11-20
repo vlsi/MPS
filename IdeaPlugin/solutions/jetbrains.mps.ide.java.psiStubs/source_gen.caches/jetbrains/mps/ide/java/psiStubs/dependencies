@@ -10,11 +10,13 @@
     <classNode dependClassName="com.intellij.psi.PsiMethod" />
     <classNode dependClassName="com.intellij.psi.PsiModifier" />
     <classNode dependClassName="com.intellij.psi.PsiModifierListOwner" />
+    <classNode dependClassName="com.intellij.psi.PsiParameter" />
     <classNode dependClassName="com.intellij.psi.PsiPrimitiveType" />
     <classNode dependClassName="com.intellij.psi.PsiType" />
     <classNode dependClassName="com.intellij.psi.PsiTypeParameter" />
     <classNode dependClassName="com.intellij.psi.PsiTypeParameterListOwner" />
     <classNode dependClassName="com.intellij.psi.PsiWildcardType" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
@@ -32,6 +34,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.java.psiStubs.Annot" file="Annot.java" />
   <dependency className="jetbrains.mps.ide.java.psiStubs.JavaPsiMergeChangesWatcher" file="JavaPsiMergeChangesWatcher.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.psi.PsiClass" />
@@ -170,6 +173,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelId" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelId" />

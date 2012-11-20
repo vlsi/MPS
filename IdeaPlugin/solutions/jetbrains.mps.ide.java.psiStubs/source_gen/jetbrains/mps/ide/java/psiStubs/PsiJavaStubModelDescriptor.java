@@ -131,11 +131,12 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
         if (elem instanceof PsiFile) {
           continue;
         }
-        // going up to class 
+        // going up to one of top-level classes 
         PsiElement e = elem;
         do {
           e = e.getParent();
-        } while (e != null && !(e instanceof PsiClass));
+        } while (e != null && !(e instanceof PsiClass && e.getParent() instanceof PsiFile));
+
         if (e != null) {
 
           SNode node = converter.convertClass((PsiClass) e);
