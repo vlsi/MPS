@@ -362,7 +362,7 @@ public class CheckProjectStructureHelper {
     StringBuilder errorMessages = new StringBuilder();
     List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
-        return new ModelValidator(sm.getSModel()).validate(scope);
+        return new ModelValidator(sm).validate(scope);
       }
     });
     if (!validationResult.isEmpty()) {

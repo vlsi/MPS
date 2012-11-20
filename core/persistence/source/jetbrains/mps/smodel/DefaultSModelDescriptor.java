@@ -89,7 +89,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     myMetadata = d.getMetadata();
   }
 
-  @Override
   public ModelLoadingState getLoadingState() {
     return myModel.getState();
   }
@@ -184,6 +183,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   @NotNull
   public FileDataSource getSource() {
     return (FileDataSource) super.getSource();
+  }
+
+  @Override
+  public boolean isLoaded() {
+    return getLoadingState() != ModelLoadingState.NOT_LOADED;
   }
 
   @Override

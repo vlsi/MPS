@@ -30,9 +30,6 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
   SModel getSModel();
 
   // TODO remove
-  ModelLoadingState getLoadingState();
-
-  // TODO remove
   @Override
   IModule getModule();
 

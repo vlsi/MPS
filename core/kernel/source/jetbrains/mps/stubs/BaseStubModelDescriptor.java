@@ -59,8 +59,8 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   @Override
-  public ModelLoadingState getLoadingState() {
-    return mySModel == null ? ModelLoadingState.NOT_LOADED : ModelLoadingState.FULLY_LOADED;
+  public boolean isLoaded() {
+    return mySModel !=null;
   }
 
   @Override

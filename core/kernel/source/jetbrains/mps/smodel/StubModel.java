@@ -33,10 +33,6 @@ public class StubModel extends SModel implements InvalidSModel {
     myCause = cause;
   }
 
-  public ModelReadException getCause() {
-    return myCause;
-  }
-
   @Override
   public Collection<IMessage> getProblems() {
     return Collections.<IMessage>singleton(

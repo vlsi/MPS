@@ -116,11 +116,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     myRegistered = registered;
   }
 
-  @Override
-  public boolean isLoaded() {
-    return getLoadingState() != ModelLoadingState.NOT_LOADED;
-  }
-
   @NotNull
   public SModelReference getModelReference() {
     return myModelReference;

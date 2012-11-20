@@ -28,14 +28,6 @@ import java.util.List;
 public class ModelValidator {
   private SModel myModel;
 
-  /**
-   * use ModelValidator(openapi.model.SModel)
-   */
-  @Deprecated
-  public ModelValidator(SModel model) {
-    myModel = model;
-  }
-
   public ModelValidator(org.jetbrains.mps.openapi.model.SModel model) {
     myModel = ((SModelDescriptor) model).getSModel();
   }
@@ -59,7 +51,10 @@ public class ModelValidator {
           }
         }
       }
-      if (!errors.isEmpty()) return errors;
+      if (errors.isEmpty()) {
+        errors.add("Couldn't read model.");
+      }
+      return errors;
     }
 
     for (SModelReference reference : SModelOperations.getImportedModelUIDs(myModel)) {

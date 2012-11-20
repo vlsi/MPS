@@ -100,11 +100,9 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
     return m;
   }
 
-  public ModelLoadingState getLoadingState() {
-    return (myModel == null ?
-      ModelLoadingState.NOT_LOADED :
-      ModelLoadingState.FULLY_LOADED
-    );
+  @Override
+  public boolean isLoaded() {
+    return myModel != null;
   }
 
   public void reloadFromDisk() {
