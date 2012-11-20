@@ -94,20 +94,12 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     clearListeners();
   }
 
-  public void refresh() {
-    ModelAccess.assertLegalWrite();
-
-    SModel smodel = getCurrentModelInternal();
-    if (smodel == null) return;
-
-    getSModel().refreshRefactoringHistory();
-  }
-
   @Override
   public boolean isGeneratable() {
     return false;
   }
 
+  @Override
   public boolean isRegistered() {
     return myRegistered;
   }

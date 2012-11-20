@@ -20,6 +20,7 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -31,7 +32,9 @@ import java.util.Collections;
  */
 public class DefaultSModel extends SModel {
 
+  private boolean fullLoadUpdateMode;
   private final SModelHeader myHeader = new SModelHeader();
+  private Element myStructureModificationHistory;
 
   public DefaultSModel(@NotNull SModelReference modelReference) {
     super(modelReference);
@@ -49,6 +52,16 @@ public class DefaultSModel extends SModel {
     return myHeader.getPersistenceVersion();
   }
 
+  public void setUpdateMode(boolean value) {
+    // update mode means we are attaching newly loaded children
+    this.fullLoadUpdateMode = value;
+  }
+
+  @Override
+  public boolean isUpdateMode() {
+    return fullLoadUpdateMode;
+  }
+
   public SModelHeader getSModelHeader() {
     return myHeader;
   }
@@ -61,6 +74,21 @@ public class DefaultSModel extends SModel {
   @Override
   public void setVersion(int version) {
     myHeader.setVersion(version);
+  }
+
+  /**
+   * @deprecated Use SModelDescriptor.getRefactoringsHistory()
+   */
+  @Deprecated
+  public Element getRefactoringHistoryElement() {
+    return myStructureModificationHistory;
+  }
+
+  @Deprecated
+  public void setRefactoringHistoryElement(Element history) {
+    ModelChange.assertLegalChange(this);
+
+    myStructureModificationHistory = history;
   }
 
   public static class InvalidDefaultSModel extends DefaultSModel implements InvalidSModel {
