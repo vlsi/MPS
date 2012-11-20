@@ -129,7 +129,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   private ModelLoadResult loadSModel(ModelLoadingState state) {
     SModelReference dsmRef = getModelReference();
 
-    IFile modelFile = getModelFile();
+    IFile modelFile = getSource().getFile();
     if (!modelFile.isReadOnly() && !modelFile.exists()) {
       SModel model = new SModel(dsmRef, new RegularNodeIdMap());
       return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
@@ -236,7 +236,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
       // we do not save stub model to not overwrite the real model
       return false;
     }
-    IFile modelFile = getModelFile();
+    IFile modelFile = getSource().getFile();
     assert modelFile != null;
     return ModelPersistence.saveModel(smodel, modelFile) != null;
   }
@@ -316,19 +316,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     return Collections.unmodifiableMap(myMetadata);
   }
 
-  /**
-   * use getSource() -> openInputStream/etc.
-   *
-   * @return
-   */
-  @Deprecated
-  public IFile getModelFile() {
-    return getSource().getFile();
-  }
-
   public void changeModelFile(IFile newModelFile) {
     ModelAccess.assertLegalWrite();
-    if (getModelFile().getPath().equals(newModelFile.getPath())) return;
+    if (getSource().getFile().getPath().equals(newModelFile.getPath())) return;
 
     IFile oldFile = getSource().getFile();
     SModel model = getSModel();
@@ -353,7 +343,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   public void reloadFromDisk() {
     ModelAccess.assertLegalWrite();
 
-    if (!getModelFile().exists()) {
+    if (!getSource().getFile().exists()) {
       SModelRepository.getInstance().removeModelDescriptor(this);
       return;
     }
@@ -407,7 +397,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   public void resolveDiskConflict() {
     LOG.warning("Model=" + getSModel().getSModelFqName() + ", file ts=" + getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(), new Throwable());  // more information
-    DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getModelFile(), getSModel(), this);
+    DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getSource().getFile(), getSModel(), this);
   }
 
   public String toString() {

@@ -19,9 +19,10 @@ import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 
 public class UpgradePersistence_Action extends BaseAction {
@@ -68,7 +69,7 @@ public class UpgradePersistence_Action extends BaseAction {
         for (SModel smd : module.getModels()) {
           if (smd instanceof DefaultSModelDescriptor) {
             int modelVersion = ((DefaultSModelDescriptor) smd).getPersistenceVersion();
-            if (modelVersion <= 4) {
+            if (modelVersion < ModelPersistence.LAST_VERSION) {
               modelDescriptors.add(((DefaultSModelDescriptor) smd));
             }
           }
@@ -76,10 +77,11 @@ public class UpgradePersistence_Action extends BaseAction {
       }
 
       for (final DefaultSModelDescriptor modelDescriptor : modelDescriptors) {
-        IFile file = modelDescriptor.getModelFile();
-        if (file != null && file.isReadOnly()) {
+        FileDataSource source = modelDescriptor.getSource();
+        if (source.isReadOnly()) {
           continue;
         }
+        IFile file = source.getFile();
         boolean wasInitialized = modelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED;
         if (wasInitialized) {
           modelDescriptor.save();

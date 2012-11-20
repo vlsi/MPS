@@ -39,6 +39,7 @@ import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 
 import javax.swing.*;
 import javax.swing.event.HyperlinkEvent;
@@ -85,7 +86,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     }
   };
 
-  
+
   public MigrationAssistantWizard(Project project) {
     super("Migration Assistant Wizard", project, Arrays.asList(
       new InitialStep(project),
@@ -101,7 +102,8 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     super.addStep(step);
     step.addStepListener(new Listener() {
       @Override
-      public void doNextAction() {}
+      public void doNextAction() {
+      }
 
       @Override
       public void stateChanged() {
@@ -126,16 +128,16 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     step.onAfterUpdate();
   }
 
-  protected boolean canCancel () {
+  protected boolean canCancel() {
     for (AbstractWizardStepEx step : mySteps) {
-      if (((MyStep)step).isPostComplete()) {
+      if (((MyStep) step).isPostComplete()) {
         return false;
       }
     }
     return true;
   }
 
-  private static abstract class MyStep extends  AbstractWizardStepEx {
+  private static abstract class MyStep extends AbstractWizardStepEx {
 
     protected Project myProject;
     protected JComponent myComponent;
@@ -158,7 +160,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       int idx = STEP_IDS.indexOf(myId) + 1;
       return idx < STEP_IDS.size() ? STEP_IDS.get(idx) : null;
     }
-    
+
     protected Object getSkipNextStepId() {
       int idx = STEP_IDS.indexOf(myId) + 2;
       return idx < STEP_IDS.size() ? STEP_IDS.get(idx) : null;
@@ -204,15 +206,16 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       return false;
     }
 
-    public void onAfterUpdate() {}
+    public void onAfterUpdate() {
+    }
 
     protected void createComponent() {
-      this.myComponent = new JPanel(new BorderLayout(5,5));
+      this.myComponent = new JPanel(new BorderLayout(5, 5));
       myComponent.setBorder(BorderFactory.createCompoundBorder(
         BorderFactory.createEtchedBorder(), BorderFactory.createEmptyBorder(2, 2, 2, 2)));
     }
   }
-  
+
   private static class InitialStep extends MyStep {
 
     private JBCheckBox mySelectActions;
@@ -228,11 +231,11 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
       GridBagLayout layout = new GridBagLayout();
       JPanel pagePanel = new JPanel(layout);
-      Insets insets = new Insets(0,0,0,0);
-      GridBagConstraints gbc = new GridBagConstraints(0,0,1,1,1.,1.,GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, insets, 0, 0);
+      Insets insets = new Insets(0, 0, 0, 0);
+      GridBagConstraints gbc = new GridBagConstraints(0, 0, 1, 1, 1., 1., GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, insets, 0, 0);
 
       JPanel infoHolder = new JPanel(new BorderLayout());
-      infoHolder.setBorder(BorderFactory.createEmptyBorder(2,2,2,2));
+      infoHolder.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
 
       JTextPane info = new JTextPane();
       info.setContentType("text/html");
@@ -298,8 +301,8 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
       GridBagLayout layout = new GridBagLayout();
       JPanel pagePanel = new JPanel(layout);
-      Insets insets = new Insets(0,0,0,0);
-      GridBagConstraints gbc = new GridBagConstraints(0,0,1,1,1.,1.,GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, insets, 0, 0);
+      Insets insets = new Insets(0, 0, 0, 0);
+      GridBagConstraints gbc = new GridBagConstraints(0, 0, 1, 1, 1., 1., GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, insets, 0, 0);
 
       final JPanel infoHolder = new JPanel(new BorderLayout());
       infoHolder.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
@@ -356,7 +359,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       return true;
     }
 
-    private List<String> getModelPaths () {
+    private List<String> getModelPaths() {
       return new ModelPersistenceDetector(myProject).getModelsWithPersistenceVersionAtMost(ModelPersistenceDetector.OLD_VERSION);
     }
   }
@@ -396,9 +399,9 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       });
       myList.setCellRenderer(new MyListCellRenderer(myExcludedActions, Collections.emptySet(), Collections.emptySet()));
 
-      JPanel listPanel = new JPanel(new BorderLayout(5,5));
+      JPanel listPanel = new JPanel(new BorderLayout(5, 5));
       listPanel.setBorder(BorderFactory.createCompoundBorder(
-        BorderFactory.createEmptyBorder(2,0,0,0),
+        BorderFactory.createEmptyBorder(2, 0, 0, 0),
         BorderFactory.createEtchedBorder()));
       listPanel.add(new JBScrollPane(myList), BorderLayout.CENTER);
 
@@ -413,7 +416,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       JPanel buttonsPanel = new JPanel(layout);
 
       Insets insets = new Insets(2, 2, 2, 2);
-      GridBagConstraints gbc = new GridBagConstraints(0, 0,1,1,1.,0.,GridBagConstraints.FIRST_LINE_START, GridBagConstraints.HORIZONTAL, insets, 0, 0);
+      GridBagConstraints gbc = new GridBagConstraints(0, 0, 1, 1, 1., 0., GridBagConstraints.FIRST_LINE_START, GridBagConstraints.HORIZONTAL, insets, 0, 0);
 
       myIncludeBtn = new JButton("Include");
       myIncludeBtn.setMnemonic('I');
@@ -489,7 +492,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
     private void handleSelectAll() {
       if (myList.getModel().getSize() > 0) {
-        myList.getSelectionModel().setSelectionInterval(0, myList.getModel().getSize()-1);
+        myList.getSelectionModel().setSelectionInterval(0, myList.getModel().getSize() - 1);
         updateButtons();
       }
     }
@@ -510,7 +513,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       fireStateChanged();
     }
 
-    private void updateButtons () {
+    private void updateButtons() {
       List<Object> selectedValues = Arrays.asList(myList.getSelectedValues());
       if (selectedValues.isEmpty()) {
         myIncludeBtn.setEnabled(false);
@@ -523,12 +526,10 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       if (!anyExcluded) {
         myIncludeBtn.setEnabled(false);
         myExcludeBtn.setEnabled(true);
-      }
-      else if (myExcludedActions.containsAll(selectedValues)){
+      } else if (myExcludedActions.containsAll(selectedValues)) {
         myIncludeBtn.setEnabled(true);
         myExcludeBtn.setEnabled(false);
-      }
-      else {
+      } else {
         myIncludeBtn.setEnabled(true);
         myExcludeBtn.setEnabled(true);
       }
@@ -567,7 +568,8 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     private boolean myFinished;
     private final Task myTask;
     private InlineProgressIndicator myProgressIndicator;
-    private final Set<Object> myMarked = Collections.synchronizedSet(new HashSet<Object>());;
+    private final Set<Object> myMarked = Collections.synchronizedSet(new HashSet<Object>());
+    ;
     private final Set<Object> myExcluded = Collections.synchronizedSet(new HashSet<Object>());
     private final Set<Object> myFailed = Collections.synchronizedSet(new HashSet<Object>());
     private JBList myList;
@@ -672,16 +674,16 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
     private void runProcessWithProgressSynchronously(final Task task, final ProgressIndicator progressIndicator) {
       ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
-          public void run() {
-            ProgressManager.getInstance().runProcess(new Runnable() {
-              @Override
-              public void run() {
-                task.run(progressIndicator);
+        public void run() {
+          ProgressManager.getInstance().runProcess(new Runnable() {
+            @Override
+            public void run() {
+              task.run(progressIndicator);
 
-              }
-            }, progressIndicator);
-          }
-        });
+            }
+          }, progressIndicator);
+        }
+      });
     }
 
     @Override
@@ -718,7 +720,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       super.createComponent();
 
       JPanel infoHolder = new JPanel(new BorderLayout());
-      infoHolder.setBorder(BorderFactory.createEmptyBorder(2,2,2,2));
+      infoHolder.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
 
       JTextPane info = new JTextPane();
       info.setContentType("text/html");
@@ -780,7 +782,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       super.createComponent();
 
       JPanel infoHolder = new JPanel(new BorderLayout());
-      infoHolder.setBorder(BorderFactory.createEmptyBorder(2,2,2,2));
+      infoHolder.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
 
       JTextPane info = new JTextPane();
       info.setContentType("text/html");
@@ -856,18 +858,15 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
         setIcon(EXCLUDE_ICON);
         setEnabled(false);
         setFont(getStrikeFont());
-      }
-      else if (myMarked.contains(value)) {
+      } else if (myMarked.contains(value)) {
         setIcon(CHECK_ICON);
         setEnabled(true);
         setFont(getOriginalFont());
-      }
-      else if (myFailed.contains(value)) {
+      } else if (myFailed.contains(value)) {
         setIcon(ERROR_ICON);
         setEnabled(true);
         setFont(getErrorFont());
-      }
-      else {
+      } else {
         setIcon(EMPTY_ICON);
         setEnabled(true);
         setFont(getOriginalFont());
@@ -877,7 +876,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
     private Font getStrikeFont() {
       if (myStrikeFont == null) {
-        Map<TextAttribute,Object> attributes = new HashMap<TextAttribute, Object>(getFont().getAttributes());
+        Map<TextAttribute, Object> attributes = new HashMap<TextAttribute, Object>(getFont().getAttributes());
         attributes.put(TextAttribute.STRIKETHROUGH, TextAttribute.STRIKETHROUGH_ON);
         myStrikeFont = getOriginalFont().deriveFont(attributes);
       }
@@ -886,14 +885,14 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
     private Font getErrorFont() {
       if (myErrorFont == null) {
-        Map<TextAttribute,Object> attributes = new HashMap<TextAttribute, Object>(getFont().getAttributes());
+        Map<TextAttribute, Object> attributes = new HashMap<TextAttribute, Object>(getFont().getAttributes());
         attributes.put(TextAttribute.FOREGROUND, Color.RED);
         myErrorFont = getOriginalFont().deriveFont(attributes);
       }
       return myErrorFont;
     }
 
-    private Font getOriginalFont () {
+    private Font getOriginalFont() {
       if (myOriginalFont == null) {
         this.myOriginalFont = getFont();
       }
@@ -903,7 +902,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
   private static class ModelPersistenceDetector {
 
-    private static final int OLD_VERSION = 3;
+    private static final int OLD_VERSION = ModelPersistence.LAST_VERSION - 1;
 
     private final Project myProject;
 
@@ -924,9 +923,10 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
           for (IModule module : mpsProject.getModulesWithGenerators()) {
             for (SModelDescriptor smd : SModelRepository.getInstance().getModelDescriptors(module)) {
               if (smd instanceof DefaultSModelDescriptor) {
-                int modelVersion = ((DefaultSModelDescriptor) smd).getPersistenceVersion();
+                DefaultSModelDescriptor md = (DefaultSModelDescriptor) smd;
+                int modelVersion = md.getPersistenceVersion();
                 if (modelVersion <= version) {
-                  result.add(((DefaultSModelDescriptor) smd).getModelFile().getPath());
+                  result.add(md.getSource().getFile().getPath());
                 }
               }
             }

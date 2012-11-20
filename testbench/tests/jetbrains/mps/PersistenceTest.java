@@ -125,13 +125,12 @@ public class PersistenceTest extends BaseMPSTest {
                   });
                 }
                 ModelAccess.instance().flushEventQueue();
-                assertTrue(testModel.getModelFile() != null);
                 assertTrue(testModel.getPersistenceVersion() == version[0]);
 
                 final ModelLoadResult resultFrom = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
                   public ModelLoadResult compute() {
                     try {
-                      ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[0]), testModel.getModelFile(), ModelLoadingState.FULLY_LOADED);
+                      ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[0]), testModel.getSource().getFile(), ModelLoadingState.FULLY_LOADED);
                       assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
                       return result;
                     } catch (ModelReadException e) {
@@ -147,13 +146,12 @@ public class PersistenceTest extends BaseMPSTest {
                   }
                 });
                 ModelAccess.instance().flushEventQueue();
-                assertTrue(testModel.getModelFile() != null);
                 assertTrue(testModel.getPersistenceVersion() == version[1]);
 
                 final ModelLoadResult resultTo = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
                   public ModelLoadResult compute() {
                     try {
-                      ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[1]), testModel.getModelFile(), ModelLoadingState.FULLY_LOADED);
+                      ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[1]), testModel.getSource().getFile(), ModelLoadingState.FULLY_LOADED);
                       assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
                       ModelAssert.assertDeepModelEquals(resultFrom.getModel(), result.getModel());
                       return result;
@@ -187,8 +185,8 @@ public class PersistenceTest extends BaseMPSTest {
     for (final DefaultSModelDescriptor modelDescriptor : modelDescriptors) {
       assert ThreadUtils.isEventDispatchThread() : "you must be in EDT to write files";
 
-      IFile file = modelDescriptor.getModelFile();
-      if (file != null && file.isReadOnly()) continue;
+      IFile file = modelDescriptor.getSource().getFile();
+      if (file.isReadOnly()) continue;
 
       boolean wasInitialized = modelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED;
       if (wasInitialized) {

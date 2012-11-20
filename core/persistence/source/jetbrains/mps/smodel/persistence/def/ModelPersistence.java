@@ -268,7 +268,7 @@ public class ModelPersistence {
           metadata.put(SModelHeader.DO_NOT_GENERATE, "true");
         }
       }
-      saveMetadata(md.getModelFile(), metadata);
+      saveMetadata(md.getSource().getFile(), metadata);
     }
 
     // save model

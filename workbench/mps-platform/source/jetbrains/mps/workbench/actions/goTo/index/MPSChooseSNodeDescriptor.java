@@ -80,8 +80,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
 
       if (!(sm instanceof DefaultSModelDescriptor)) continue;
       DefaultSModelDescriptor esm = (DefaultSModelDescriptor) sm;
-      IFile modelFile = esm.getModelFile();
-      if (modelFile == null) continue;
+      IFile modelFile = esm.getSource().getFile();
       VirtualFile vf = VirtualFileUtils.getVirtualFile(modelFile);
       if (vf == null) continue; // e.g. model was deleted
 
