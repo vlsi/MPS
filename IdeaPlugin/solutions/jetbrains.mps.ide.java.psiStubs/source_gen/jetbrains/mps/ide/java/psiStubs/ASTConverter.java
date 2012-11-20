@@ -17,6 +17,7 @@ import com.intellij.psi.PsiField;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiModifier;
+import com.intellij.psi.PsiAnnotationMethod;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.psi.PsiParameter;
 import com.intellij.psi.PsiClassType;
@@ -29,8 +30,10 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiJavaFile;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.DynamicReference;
+import com.intellij.psi.PsiAnnotation;
 import com.intellij.psi.PsiModifierListOwner;
 import com.intellij.psi.PsiTypeParameterListOwner;
+import com.intellij.psi.PsiNameValuePair;
 
 public class ASTConverter {
   public ASTConverter() {
@@ -90,7 +93,6 @@ public class ASTConverter {
       }
     });
 
-
     return classifier.value;
   }
 
@@ -108,18 +110,29 @@ public class ASTConverter {
     SLinkOperations.setTarget(SNodeOperations.cast(field, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "visibility", getVisibility(x), true);
     SPropertyOperations.set(field, "isFinal", "" + (isFinal(x)));
     SLinkOperations.setTarget(field, "type", convertType(x.getType()), true);
+    addAnnotations(x, field);
 
     return field;
   }
 
   public SNode convertMethod(PsiMethod x, SNode parentConcept) {
     SNode method;
+
     if (x.isConstructor()) {
       method = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", null);
-    } else if (SConceptOperations.isSubConceptOf(parentConcept, "jetbrains.mps.baseLanguage.structure.Annotation")) {
+
+    } else if (x instanceof PsiAnnotationMethod && SConceptOperations.isSubConceptOf(parentConcept, "jetbrains.mps.baseLanguage.structure.Annotation")) {
       method = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration", null);
+
+      if (((PsiAnnotationMethod) x).getDefaultValue() != null) {
+        SNode str = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
+        SPropertyOperations.set(str, "value", "TODO: SUPPORT EXPRESSIONS IN PSI STUBS?");
+        SLinkOperations.setTarget(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration"), "defaultValue", str, true);
+      }
+
     } else if (!(isStatic(x)) || SConceptOperations.isSubConceptOf(parentConcept, "jetbrains.mps.baseLanguage.structure.Interface")) {
       method = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null);
+
     } else {
       method = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", null);
     }
@@ -137,6 +150,8 @@ public class ASTConverter {
         SLinkOperations.setTarget(param, "type", convertType(it.getType()), true);
         SPropertyOperations.set(param, "isFinal", "" + (isFinal(it)));
 
+        addAnnotations(it, param);
+
         return param;
       }
     }));
@@ -150,8 +165,11 @@ public class ASTConverter {
 
     addTypeParams(x, method);
 
+    // not strictly necessary 
     if (x.getBody() != null) {
       SLinkOperations.setTarget(method, "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StubStatementList", null), true);
+    } else {
+      SLinkOperations.setTarget(method, "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);
     }
 
     return method;
@@ -167,8 +185,30 @@ public class ASTConverter {
       PsiPrimitiveType t = (PsiPrimitiveType) x;
       if (x.equals(PsiPrimitiveType.BYTE)) {
         return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ByteType", null);
+
       } else if (x.equals(PsiPrimitiveType.INT)) {
         return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerType", null);
+
+      } else if (x.equals(PsiPrimitiveType.SHORT)) {
+        return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ShortType", null);
+
+      } else if (x.equals(PsiPrimitiveType.LONG)) {
+        return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LongType", null);
+
+      } else if (x.equals(PsiPrimitiveType.SHORT)) {
+        return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ShortType", null);
+
+      } else if (x.equals(PsiPrimitiveType.FLOAT)) {
+        return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FloatType", null);
+
+      } else if (x.equals(PsiPrimitiveType.DOUBLE)) {
+        return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DoubleType", null);
+
+      } else if (x.equals(PsiPrimitiveType.CHAR)) {
+        return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CharType", null);
+
+      } else if (x.equals(PsiPrimitiveType.BOOLEAN)) {
+        return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanType", null);
 
       } else if (x.equals(PsiPrimitiveType.VOID)) {
         return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VoidType", null);
@@ -183,6 +223,7 @@ public class ASTConverter {
       return resolveClass(t);
 
     } else if (x instanceof PsiArrayType) {
+
 
 
     } else if (x instanceof PsiWildcardType) {
@@ -241,6 +282,22 @@ public class ASTConverter {
     return clsType;
   }
 
+  public SNode resolveAnnotation(PsiAnnotation a) {
+    String fqName = a.getQualifiedName();
+
+    // TODO q: handle this case? create dynamic reference? 
+    if (fqName == null) {
+      return null;
+    }
+
+    System.out.println("Anno resolved: " + fqName);
+
+    SNode anno = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null);
+    anno.setReference("annotation", new DynamicReference("annotation", anno, null, fqName));
+
+    return anno;
+  }
+
   private SNode getVisibility(PsiModifierListOwner x) {
     if (x.hasModifierProperty(PsiModifier.PUBLIC)) {
       return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PublicVisibility", null);
@@ -265,6 +322,33 @@ public class ASTConverter {
     ListSequence.fromList(SLinkOperations.getTargets(to, "typeVariableDeclaration", true)).addSequence(Sequence.fromIterable(Sequence.fromArray(from.getTypeParameters())).select(new ISelector<PsiTypeParameter, SNode>() {
       public SNode select(PsiTypeParameter it) {
         return convertTypeParameter(it);
+      }
+    }));
+  }
+
+  private void addAnnotations(PsiModifierListOwner from, SNode to) {
+
+    ListSequence.fromList(SLinkOperations.getTargets(to, "annotation", true)).addSequence(Sequence.fromIterable(Sequence.fromArray(from.getModifierList().getAnnotations())).select(new ISelector<PsiAnnotation, SNode>() {
+      public SNode select(PsiAnnotation it) {
+        PsiAnnotation psiAnno = it;
+        SNode anno = resolveAnnotation(psiAnno);
+        if ((anno == null)) {
+          return null;
+        }
+        ListSequence.fromList(SLinkOperations.getTargets(anno, "value", true)).addSequence(Sequence.fromIterable(Sequence.fromArray(psiAnno.getParameterList().getAttributes())).select(new ISelector<PsiNameValuePair, SNode>() {
+          public SNode select(PsiNameValuePair it) {
+
+            SNode annoParam = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", null);
+
+            String paramName = it.getName();
+            annoParam.setReference("key", new DynamicReference("key", annoParam, null, paramName));
+
+            return annoParam;
+
+          }
+        }));
+
+        return anno;
       }
     }));
   }
