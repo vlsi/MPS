@@ -18,9 +18,11 @@ package jetbrains.mps.workbench.dialogs.project.roots.editor;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.util.misc.hash.HashMap;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.Map;
+import java.util.Set;
 
 public class ModelRootEntryPersistence {
   private static ModelRootEntryPersistence ourPersistence;
@@ -32,34 +34,35 @@ public class ModelRootEntryPersistence {
     return ourPersistence;
   }
 
-  private Map<String, ModelRootEntry<?>> myModelRootEntries = new HashMap<String, ModelRootEntry<?>>();
+  private Map<String, Class<? extends ModelRootEntry>> myModelRootEntries = new HashMap<String, Class<? extends ModelRootEntry>>();
 
   private ModelRootEntryPersistence() {
     init();
   }
 
   private void init() {
-    addModelRootEntry(PersistenceRegistry.DEFAULT_MODEL_ROOT, new DefaultModelRootEntry());
-    addModelRootEntry(PersistenceRegistry.OBSOLETE_MODEL_ROOT, new SModelRootEntry());
+    addModelRootEntry(PersistenceRegistry.DEFAULT_MODEL_ROOT, DefaultModelRootEntry.class);
+    addModelRootEntry(PersistenceRegistry.OBSOLETE_MODEL_ROOT, SModelRootEntry.class);
   }
 
-  public void addModelRootEntry(String type, ModelRootEntry<?> entry) {
-    if(entry == null || myModelRootEntries.containsKey(type))
-      return;
+  public void addModelRootEntry(String type, @NotNull Class<? extends ModelRootEntry> entry) {
     myModelRootEntries.put(type, entry);
   }
 
   public ModelRootEntry<?> getModelRootEntry(ModelRoot modelRoot) {
     ModelRootEntry entry = null;
     try {
-      entry = myModelRootEntries.get(modelRoot.getType()).getClass().newInstance();
-    } catch (InstantiationException e) {
-      e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-    } catch (IllegalAccessException e) {
-      e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-    }
+      entry = myModelRootEntries.get(modelRoot.getType()).newInstance();
+    } catch (InstantiationException e) {}
+    catch (IllegalAccessException e) {}
+
+    if(entry == null) return null;
     entry.setModelRoot(modelRoot);
     return entry;
+  }
+
+  public Set<String> getModelRootTypes() {
+    return myModelRootEntries.keySet();
   }
 
   public ModelRootEntry<?> getModelRootEntry(ModelRootDescriptor descriptor) {

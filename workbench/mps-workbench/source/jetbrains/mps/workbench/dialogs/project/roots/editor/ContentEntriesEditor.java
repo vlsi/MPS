@@ -23,7 +23,13 @@ import com.intellij.openapi.roots.ui.componentsList.components.ScrollablePanel;
 import com.intellij.openapi.roots.ui.componentsList.layout.VerticalStackLayout;
 import com.intellij.openapi.roots.ui.configuration.actions.IconWithTextAction;
 import com.intellij.openapi.ui.Splitter;
+import com.intellij.openapi.ui.popup.JBPopup;
+import com.intellij.openapi.ui.popup.JBPopupFactory;
+import com.intellij.openapi.ui.popup.PopupStep;
+import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
+import com.intellij.ui.AnActionButton;
 import com.intellij.ui.ScrollPaneFactory;
+import com.intellij.ui.awt.RelativePoint;
 import com.intellij.ui.roots.ToolbarPanel;
 import com.intellij.util.ui.JBInsets;
 import com.intellij.util.ui.UIUtil;
@@ -70,12 +76,53 @@ public class ContentEntriesEditor {
     initUI();
   }
 
-  private Collection<AnAction> getContentEntryActions() {
-    List<AnAction> list = new ArrayList<AnAction>();
-    list.add(new AddContentEntryAction(PersistenceRegistry.DEFAULT_MODEL_ROOT));
-    list.add(new AddContentEntryAction(PersistenceRegistry.OBSOLETE_MODEL_ROOT));
-    list.add(new AddContentEntryAction("java_class_stub"));
-    return list;
+  private AnAction getContentEntryActions() {
+    final List<AddContentEntryAction> list = new ArrayList<AddContentEntryAction>();
+    for(String type : ModelRootEntryPersistence.getInstance().getModelRootTypes()) {
+      list.add(new AddContentEntryAction(type));
+    }
+
+    return new IconWithTextAction(
+      PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.title"),
+      PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.tip"),
+      IdeIcons.ADD_MODEL_ROOT_ICON) {
+      @Override
+      public void actionPerformed(AnActionEvent e) {
+        final JBPopup popup = JBPopupFactory.getInstance().createListPopup(
+          new BaseListPopupStep<AddContentEntryAction>(null, list) {
+            @Override
+            public Icon getIconFor(AddContentEntryAction aValue) {
+              return aValue.getTemplatePresentation().getIcon();
+            }
+
+            @Override
+            public boolean hasSubstep(AddContentEntryAction selectedValue) {
+              return false;
+            }
+
+            @Override
+            public boolean isMnemonicsNavigationEnabled() {
+              return true;
+            }
+
+            @Override
+            public PopupStep onChosen(final AddContentEntryAction selectedValue, final boolean finalChoice) {
+              return doFinalStep(new Runnable() {
+                public void run() {
+                  selectedValue.actionPerformed(null);
+                }
+              });
+            }
+
+            @Override
+            @NotNull
+            public String getTextFor(AddContentEntryAction value) {
+              return value.getTemplatePresentation().getText();
+            }
+          });
+        popup.show(new RelativePoint(myEditorsListPanel, new Point(0,0)));
+      }
+    };
   }
 
   public void initUI() {
@@ -85,7 +132,7 @@ public class ContentEntriesEditor {
     final JPanel entriesPanel = new JPanel(new BorderLayout());
 
     final DefaultActionGroup group = new DefaultActionGroup();
-    group.addAll(getContentEntryActions());
+    group.add(getContentEntryActions());
 
     myEditorsListPanel = new ScrollablePanel(new VerticalStackLayout());
     myEditorsListPanel.setBackground(BACKGROUND_COLOR);
@@ -185,7 +232,7 @@ public class ContentEntriesEditor {
     private String myType;
 
     public AddContentEntryAction(@NotNull String type) {
-      super(PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.title"), PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.tip"), IdeIcons.ADD_MODEL_ROOT_ICON);
+      super(type);
       myType = type;
     }
 
