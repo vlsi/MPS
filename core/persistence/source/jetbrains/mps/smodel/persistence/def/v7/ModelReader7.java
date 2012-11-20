@@ -45,11 +45,12 @@ public class ModelReader7 implements IModelReader {
     return 7;
   }
 
-  public SModel readModel(Document document, SModelHeader header) {
+  @Override
+  public DefaultSModel readModel(Document document, SModelHeader header) {
     Element rootElement = document.getRootElement();
 
     SModelReference modelReference = SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
-    SModel model = new SModel(modelReference);
+    DefaultSModel model = new DefaultSModel(modelReference);
     model.setPersistenceVersion(getVersion());
     model.getSModelHeader().updateDefaults(header);
 

@@ -22,10 +22,13 @@ import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.ID;
 import jetbrains.mps.FilteredGlobalScope;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.project.*;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
@@ -73,15 +76,20 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
     for (SModelDescriptor sm : scope.getModelDescriptors()) {
       if (!SModelStereotype.isUserModel(sm)) continue;
 
-      if (sm.getLoadingState() == ModelLoadingState.FULLY_LOADED) {
+      if (!(sm instanceof DefaultSModelDescriptor)) {
+        if (sm.isLoaded()) {
+          findDirectly.add(sm);
+        }
+        continue;
+      }
+
+      DefaultSModelDescriptor esm = (DefaultSModelDescriptor) sm;
+      if (esm.getLoadingState() == ModelLoadingState.FULLY_LOADED) {
         findDirectly.add(sm);
         continue;
       }
 
-      if (!(sm instanceof DefaultSModelDescriptor)) continue;
-      DefaultSModelDescriptor esm = (DefaultSModelDescriptor) sm;
-      IFile modelFile = esm.getModelFile();
-      if (modelFile == null) continue;
+      IFile modelFile = esm.getSource().getFile();
       VirtualFile vf = VirtualFileUtils.getVirtualFile(modelFile);
       if (vf == null) continue; // e.g. model was deleted
 
@@ -160,7 +168,6 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
     assert presentation != null;
     return presentation.getModelName() + "." + presentation.getPresentableText();
   }
-
 
 
   protected String doGetCheckBoxName() {

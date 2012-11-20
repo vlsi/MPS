@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.stubs.util.FileStubSource" file="FileStubSource.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.ModelRootBase" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -21,8 +22,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadResult" />
-    <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
     <classNode dependClassName="jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap" />
     <classNode dependClassName="jetbrains.mps.util.annotation.ImmutableObject" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
@@ -64,8 +63,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.NodeDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadResult" />
-    <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
     <classNode dependClassName="jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap" />
     <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.ClassifierKind" />
     <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.StubHelper" />

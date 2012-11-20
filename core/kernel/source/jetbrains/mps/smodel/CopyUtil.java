@@ -34,7 +34,7 @@ public final class CopyUtil {
     }
   }
 
-  private static void copyModelContentAndPreserveIds(SModel from, SModel to) {
+  public static void copyModelContentAndPreserveIds(SModel from, SModel to) {
     for (SNode root : from.roots()) {
       to.addRoot(copyAndPreserveId(root, true));
     }
@@ -47,7 +47,7 @@ public final class CopyUtil {
     for (ImportElement ie : new ArrayList<ImportElement>(model.importedModels())) {
       model.deleteModelImport(ie.getModelReference());
     }
-    for (ModuleReference mr :  new ArrayList<ModuleReference>(model.importedDevkits())) {
+    for (ModuleReference mr : new ArrayList<ModuleReference>(model.importedDevkits())) {
       model.deleteDevKit(mr);
     }
     for (ModuleReference mr : new ArrayList<ModuleReference>(model.importedLanguages())) {
@@ -77,8 +77,10 @@ public final class CopyUtil {
     for (ModuleReference mr : from.engagedOnGenerationLanguages()) {
       to.addEngagedOnGenerationLanguage(mr);
     }
-    to.setPersistenceVersion(from.getPersistenceVersion());
-    to.getSModelHeader().setVersion(from.getSModelHeader().getVersion());
+    if (from instanceof DefaultSModel && to instanceof DefaultSModel) {
+      ((DefaultSModel) to).setPersistenceVersion(((DefaultSModel) from).getPersistenceVersion());
+    }
+    to.setVersion(from.getVersion());
   }
 
   public static SModel copyModel(SModel model) {
@@ -99,7 +101,7 @@ public final class CopyUtil {
 
   public static List<SNode> copy(List<SNode> nodes, Map<SNode, SNode> mapping) {
     List<SNode> result = clone(nodes, mapping);
-    for(SNode node : nodes) {
+    for (SNode node : nodes) {
       addReferences(node, mapping, false);
     }
     return result;
@@ -112,7 +114,7 @@ public final class CopyUtil {
   public static SNode copyAndPreserveId(SNode node) {
     return copyAndPreserveId(node, true);
   }
-  
+
   public static SNode copyAndPreserveId(SNode node, boolean cloneRefs) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     SNode result = clone(node, mapping, true);
@@ -159,7 +161,7 @@ public final class CopyUtil {
   }
 
   private static void addReferences(SNode root, Map<SNode, SNode> mapping, boolean forceCloneRefs) {
-    if(root == null) return;
+    if (root == null) return;
     Iterable<SNode> thisAndDesc = IterableUtil.merge(Collections.singleton(root), root.getDescendants());
     for (SNode inputNode : thisAndDesc) {
       SNode outputNode = mapping.get(inputNode);

@@ -35,8 +35,10 @@ public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor {
     return mySModel;
   }
 
-  public final ModelLoadingState getLoadingState() {
-    return mySModel == null ? ModelLoadingState.NOT_LOADED : ModelLoadingState.FULLY_LOADED;
+
+  @Override
+  public boolean isLoaded() {
+    return mySModel != null;
   }
 
   @Override

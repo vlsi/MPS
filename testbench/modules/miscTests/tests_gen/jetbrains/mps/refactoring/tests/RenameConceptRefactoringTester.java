@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 
 public class RenameConceptRefactoringTester implements IRefactoringTester {
   private static final String STRMD = "strmd";
@@ -54,7 +53,7 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             try {
-              if (sandbox1.getLoadingState() != ModelLoadingState.NOT_LOADED) {
+              if (sandbox1.isLoaded()) {
                 System.err.println("test environment is invalid: model sandbox1 is already initialized, should be not");
                 result[0] = false;
                 return;

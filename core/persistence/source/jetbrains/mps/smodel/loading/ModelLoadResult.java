@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.smodel.loading;
 
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.DefaultSModel;
 import org.jetbrains.annotations.NotNull;
 
 public class ModelLoadResult {
   private ModelLoadingState state;
-  private SModel model;
+  private DefaultSModel model;
 
-  public ModelLoadResult(@NotNull SModel model, ModelLoadingState state) {
+  public ModelLoadResult(@NotNull DefaultSModel model, ModelLoadingState state) {
     this.model = model;
     this.state = state;
   }
@@ -36,7 +36,7 @@ public class ModelLoadResult {
   }
 
   @NotNull
-  public SModel getModel() {
+  public DefaultSModel getModel() {
     return model;
   }
 }

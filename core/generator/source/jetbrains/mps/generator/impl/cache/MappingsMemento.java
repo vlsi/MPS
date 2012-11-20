@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.generator.impl.cache;
 
+import jetbrains.mps.persistence.binary.ModelInputStream;
+import jetbrains.mps.persistence.binary.ModelOutputStream;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 
@@ -74,19 +76,19 @@ public class MappingsMemento {
 
     /* mapping,input -> output */
     os.writeInt(myMappingNameAndInputNodeToOutputNodeMap.size());
-    for(Entry<String, Map<SNodeId, Object>> e : myMappingNameAndInputNodeToOutputNodeMap.entrySet()) {
+    for (Entry<String, Map<SNodeId, Object>> e : myMappingNameAndInputNodeToOutputNodeMap.entrySet()) {
       os.writeString(e.getKey());
       Map<SNodeId, Object> innerMap = e.getValue();
       os.writeInt(innerMap.size());
-      for(Entry<SNodeId, Object> v : innerMap.entrySet()) {
+      for (Entry<SNodeId, Object> v : innerMap.entrySet()) {
         os.writeNodeId(v.getKey());
         Object value = v.getValue();
-        if(value instanceof SNodeId) {
+        if (value instanceof SNodeId) {
           os.writeInt(1);
           os.writeNodeId((SNodeId) value);
-        } else if(value instanceof List) {
+        } else if (value instanceof List) {
           os.writeInt(((List) value).size());
-          for(SNodeId id : (List<SNodeId>)value) {
+          for (SNodeId id : (List<SNodeId>) value) {
             os.writeNodeId(id);
           }
         }
@@ -95,14 +97,14 @@ public class MappingsMemento {
 
     /* input -> output */
     os.writeInt(myCopiedOutputNodeForInputNode.size());
-    for(Entry<SNodeId, Object> e : myCopiedOutputNodeForInputNode.entrySet()) {
+    for (Entry<SNodeId, Object> e : myCopiedOutputNodeForInputNode.entrySet()) {
       os.writeNodeId(e.getKey());
       Object val = e.getValue();
-      if(val instanceof SNodeId) {
-        os.writeNodeId((SNodeId)val);
+      if (val instanceof SNodeId) {
+        os.writeNodeId((SNodeId) val);
         os.writeBoolean(true);
       } else {
-        os.writeNodeId(((List<SNodeId>)val).get(0));
+        os.writeNodeId(((List<SNodeId>) val).get(0));
         os.writeBoolean(false);
       }
     }
@@ -115,28 +117,28 @@ public class MappingsMemento {
     MappingsMemento mappingsMemento = new MappingsMemento();
 
     /* mapping,input -> output */
-    for(int size = is.readInt(); size > 0; size--) {
+    for (int size = is.readInt(); size > 0; size--) {
       String label = is.readString();
       int mapSize = is.readInt();
       Map<SNodeId, Object> innerMap = new HashMap<SNodeId, Object>(mapSize);
-      for(; mapSize > 0; mapSize--) {
+      for (; mapSize > 0; mapSize--) {
         SNodeId key = is.readNodeId();
         int valSize = is.readInt();
-        if(valSize == 1) {
-          innerMap.put(key,is.readNodeId());
+        if (valSize == 1) {
+          innerMap.put(key, is.readNodeId());
         } else {
           List<SNodeId> list = new ArrayList<SNodeId>(valSize);
-          for(; valSize > 0; valSize--) {
+          for (; valSize > 0; valSize--) {
             list.add(is.readNodeId());
           }
-          innerMap.put(key,list);
+          innerMap.put(key, list);
         }
       }
       mappingsMemento.myMappingNameAndInputNodeToOutputNodeMap.put(label, innerMap);
     }
 
     /* input -> output */
-    for(int size = is.readInt(); size > 0; size--) {
+    for (int size = is.readInt(); size > 0; size--) {
       SNodeId inputNode = is.readNodeId();
       SNodeId outputNode = is.readNodeId();
       boolean isUnique = is.readBoolean();
@@ -144,7 +146,7 @@ public class MappingsMemento {
     }
 
     /* check */
-    if(is.readByte() != '!') {
+    if (is.readByte() != '!') {
       throw new IOException("inconsistent cache");
     }
     return mappingsMemento;

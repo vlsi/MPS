@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator.impl.cache;
+package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
@@ -42,14 +42,14 @@ public class NodesWriter {
     this.myModelReference = modelReference;
   }
 
-  protected void writeNodes(Collection<SNode> nodes, ModelOutputStream os) throws IOException {
+  public void writeNodes(Collection<SNode> nodes, ModelOutputStream os) throws IOException {
     os.writeInt(nodes.size());
     for (SNode n : nodes) {
       writeNode(n, os);
     }
   }
 
-  protected void writeNode(SNode node, ModelOutputStream os) throws IOException {
+  public void writeNode(SNode node, ModelOutputStream os) throws IOException {
     os.writeString(node.getConcept().getId());
     os.writeNodeId(node.getSNodeId());
     os.writeString(node.getRole_());

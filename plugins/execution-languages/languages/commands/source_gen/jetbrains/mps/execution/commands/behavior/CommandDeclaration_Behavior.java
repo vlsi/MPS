@@ -16,8 +16,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -36,7 +34,7 @@ public class CommandDeclaration_Behavior {
   }
 
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    return new CommandDeclaration_Behavior.QuotationClass_5aznw1_a0a0d().createNode(thisNode, thisNode);
+    return _quotation_createNode_5aznw1_a0a2(thisNode, thisNode);
   }
 
   public static List<SNode> call_getDistinctFieldParameters_6129022259108623165(SNode thisNode) {
@@ -128,6 +126,14 @@ public class CommandDeclaration_Behavior {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", new Class[]{SNode.class}, new Object[]{});
   }
 
+  private static SNode _quotation_createNode_5aznw1_a0a2(Object parameter_1, Object parameter_2) {
+    SNode quotedNode_3 = null;
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.setReferenceTarget("classifier", (SNode) parameter_2);
+    quotedNode_3.setReferenceTarget("command", (SNode) parameter_1);
+    return quotedNode_3;
+  }
+
   private static boolean eq_5aznw1_a0a0a0a0a0a0a0a0a0a0d0e(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
@@ -140,24 +146,5 @@ public class CommandDeclaration_Behavior {
       a.equals(b) :
       a == b
     );
-  }
-
-  public static class QuotationClass_5aznw1_a0a0d {
-    public QuotationClass_5aznw1_a0a0d() {
-    }
-
-    public SNode createNode(Object parameter_3, Object parameter_4) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_4);
-        quotedNode1_2.setReferenceTarget("command", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
   }
 }

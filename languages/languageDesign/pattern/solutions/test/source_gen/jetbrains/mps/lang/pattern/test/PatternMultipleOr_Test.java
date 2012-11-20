@@ -13,8 +13,6 @@ import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
@@ -41,7 +39,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
     }
 
     public boolean match() {
-      SNode nodeToMatch = new PatternMultipleOr_Test.TestBody.QuotationClass_ay21uv_a0a0a1a().createNode();
+      SNode nodeToMatch = _quotation_createNode_ay21uv_a0a0b0();
       GeneratedMatchingPattern pattern = new PatternMultipleOr_Test.TestBody.Pattern_ay21uv_a0a1a1a();
       boolean matchNeeded = true;
       boolean matches = pattern.match(nodeToMatch);
@@ -51,81 +49,52 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
       if (!(matchNeeded)) {
         return true;
       }
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), new PatternMultipleOr_Test.TestBody.QuotationClass_ay21uv_a1a0g0b0().createNode()), ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) pattern.getFieldValue("patternVar_s"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_ay21uv_a6a1a()), ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) pattern.getFieldValue("patternVar_s"))));
       return true;
     }
 
-    public static class QuotationClass_ay21uv_a0a0a1a {
-      public QuotationClass_ay21uv_a0a0a1a() {
-      }
+    private static SNode _quotation_createNode_ay21uv_a0a0b0() {
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      SNode quotedNode_5 = null;
+      SNode quotedNode_6 = null;
+      SNode quotedNode_7 = null;
+      SNode quotedNode_8 = null;
+      SNode quotedNode_9 = null;
+      SNode quotedNode_10 = null;
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", null, null, GlobalScope.getInstance(), false);
+      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AndExpression", null, null, GlobalScope.getInstance(), false);
+      quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EqualsExpression", null, null, GlobalScope.getInstance(), false);
+      quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
+      quotedNode_6.setProperty("value", "3");
+      quotedNode_4.addChild("rightExpression", quotedNode_6);
+      quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
+      quotedNode_7.setProperty("value", "4");
+      quotedNode_4.addChild("leftExpression", quotedNode_7);
+      quotedNode_2.addChild("rightExpression", quotedNode_4);
+      quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotEqualsExpression", null, null, GlobalScope.getInstance(), false);
+      quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
+      quotedNode_5.addChild("leftExpression", quotedNode_8);
+      quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", null, null, GlobalScope.getInstance(), false);
+      quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_9.addChild("primitiveType", quotedNode_10);
+      quotedNode_5.addChild("rightExpression", quotedNode_9);
+      quotedNode_2.addChild("leftExpression", quotedNode_5);
+      quotedNode_1.addChild("condition", quotedNode_2);
+      quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1.addChild("ifTrue", quotedNode_3);
+      return quotedNode_1;
+    }
 
-      public SNode createNode() {
-        SNode result = null;
-        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_1 = null;
-        SNode quotedNode_2 = null;
-        SNode quotedNode_3 = null;
-        SNode quotedNode_4 = null;
-        SNode quotedNode_5 = null;
-        SNode quotedNode_6 = null;
-        SNode quotedNode_7 = null;
-        SNode quotedNode_8 = null;
-        SNode quotedNode_9 = null;
-        SNode quotedNode_10 = null;
-        {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_11 = quotedNode_1;
-          {
-            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AndExpression", null, null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_12 = quotedNode_2;
-            {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EqualsExpression", null, null, GlobalScope.getInstance(), false);
-              SNode quotedNode1_13 = quotedNode_4;
-              {
-                quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-                SNode quotedNode1_14 = quotedNode_6;
-                quotedNode1_14.setProperty("value", "3");
-                quotedNode_4.addChild("rightExpression", quotedNode1_14);
-              }
-              {
-                quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-                SNode quotedNode1_15 = quotedNode_7;
-                quotedNode1_15.setProperty("value", "4");
-                quotedNode_4.addChild("leftExpression", quotedNode1_15);
-              }
-              quotedNode_2.addChild("rightExpression", quotedNode1_13);
-            }
-            {
-              quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotEqualsExpression", null, null, GlobalScope.getInstance(), false);
-              SNode quotedNode1_16 = quotedNode_5;
-              {
-                quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
-                SNode quotedNode1_17 = quotedNode_8;
-                quotedNode_5.addChild("leftExpression", quotedNode1_17);
-              }
-              {
-                quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", null, null, GlobalScope.getInstance(), false);
-                SNode quotedNode1_18 = quotedNode_9;
-                {
-                  quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, null, GlobalScope.getInstance(), false);
-                  SNode quotedNode1_19 = quotedNode_10;
-                  quotedNode_9.addChild("primitiveType", quotedNode1_19);
-                }
-                quotedNode_5.addChild("rightExpression", quotedNode1_18);
-              }
-              quotedNode_2.addChild("leftExpression", quotedNode1_16);
-            }
-            quotedNode_1.addChild("condition", quotedNode1_12);
-          }
-          {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_20 = quotedNode_3;
-            quotedNode_1.addChild("ifTrue", quotedNode1_20);
-          }
-          result = quotedNode1_11;
-        }
-        return result;
-      }
+    private static SNode _quotation_createNode_ay21uv_a6a1a() {
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", null, null, GlobalScope.getInstance(), false);
+      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1.addChild("primitiveType", quotedNode_2);
+      return quotedNode_1;
     }
 
     public static class Pattern_ay21uv_a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
@@ -510,29 +479,6 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
 
         public void performActions(Object o) {
         }
-      }
-    }
-
-    public static class QuotationClass_ay21uv_a1a0g0b0 {
-      public QuotationClass_ay21uv_a1a0g0b0() {
-      }
-
-      public SNode createNode() {
-        SNode result = null;
-        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_1 = null;
-        SNode quotedNode_2 = null;
-        {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_3 = quotedNode_1;
-          {
-            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_4 = quotedNode_2;
-            quotedNode_1.addChild("primitiveType", quotedNode1_4);
-          }
-          result = quotedNode1_3;
-        }
-        return result;
       }
     }
   }

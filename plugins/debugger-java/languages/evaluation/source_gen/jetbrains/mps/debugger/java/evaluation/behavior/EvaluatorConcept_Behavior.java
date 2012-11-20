@@ -15,8 +15,6 @@ import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -36,7 +34,7 @@ public class EvaluatorConcept_Behavior {
   }
 
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
-    return new EvaluatorConcept_Behavior.QuotationClass_29c8r0_a0a0d().createNode();
+    return _quotation_createNode_29c8r0_a0a2();
   }
 
   public static String virtual_getEvaluatorPresentation_9172312269976647295(SNode thisNode) {
@@ -141,25 +139,14 @@ public class EvaluatorConcept_Behavior {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), callerConceptFqName, "virtual_getExpectedRetType_1239354342632", new Class[]{SNode.class}, new Object[]{});
   }
 
-  public static boolean isNotEmpty_29c8r0_a0b0g(String str) {
-    return str != null && str.length() > 0;
+  private static SNode _quotation_createNode_29c8r0_a0a2() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+    return quotedNode_1;
   }
 
-  public static class QuotationClass_29c8r0_a0a0d {
-    public QuotationClass_29c8r0_a0a0d() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  public static boolean isNotEmpty_29c8r0_a0b0g(String str) {
+    return str != null && str.length() > 0;
   }
 }

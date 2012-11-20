@@ -293,7 +293,7 @@ public class TreeHighlighter implements TreeMessageOwner {
 
   @Nullable
   private static FileStatus getModelFileStatus(@NotNull DefaultSModelDescriptor ed, @NotNull Project project) {
-    VirtualFile vf = VirtualFileUtils.getVirtualFile(ed.getModelFile());
+    VirtualFile vf = VirtualFileUtils.getVirtualFile(ed.getSource().getFile());
     return (vf == null ?
       null :
       FileStatusManager.getInstance(project).getStatus(vf)

@@ -6,8 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -21,9 +19,9 @@ public class _LinkAccessT_Behavior {
 
   public static SNode virtual_getPublicType_1213877443338(SNode thisNode) {
     if (SPropertyOperations.getBoolean(thisNode, "singularCradinality")) {
-      return new _LinkAccessT_Behavior.QuotationClass_bquv25_a0a0a0c().createNode(SLinkOperations.getTarget(thisNode, "targetConcept", false));
+      return _quotation_createNode_bquv25_a0a0a1(SLinkOperations.getTarget(thisNode, "targetConcept", false));
     }
-    return new _LinkAccessT_Behavior.QuotationClass_bquv25_a0b0c().createNode(SLinkOperations.getTarget(thisNode, "targetConcept", false));
+    return _quotation_createNode_bquv25_a1a1(SLinkOperations.getTarget(thisNode, "targetConcept", false));
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
@@ -41,39 +39,17 @@ public class _LinkAccessT_Behavior {
     return sb.toString();
   }
 
-  public static class QuotationClass_bquv25_a0a0a0c {
-    public QuotationClass_bquv25_a0a0a0c() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("concept", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_bquv25_a0a0a1(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);
+    return quotedNode_2;
   }
 
-  public static class QuotationClass_bquv25_a0b0c {
-    public QuotationClass_bquv25_a0b0c() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("elementConcept", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_bquv25_a1a1(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("elementConcept", (SNode) parameter_1);
+    return quotedNode_2;
   }
 }

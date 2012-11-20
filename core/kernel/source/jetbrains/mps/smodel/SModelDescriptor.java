@@ -29,8 +29,7 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
    */
   SModel getSModel();
 
-  ModelLoadingState getLoadingState();
-
+  // TODO remove
   @Override
   IModule getModule();
 
@@ -40,9 +39,6 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
 
   // TODO remove
   boolean isGeneratable();
-
-  // TODO remove
-  String getModelHash();
 
   //------
 

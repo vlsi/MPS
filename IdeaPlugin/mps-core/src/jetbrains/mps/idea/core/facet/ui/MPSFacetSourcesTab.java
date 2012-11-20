@@ -44,8 +44,9 @@ import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.facet.ui.ModelRootContentEntryEditor.DummyContentEntry;
 import jetbrains.mps.idea.core.icons.MPSIcons;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.util.EqualUtil;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import javax.swing.BorderFactory;
 import javax.swing.JComponent;
@@ -83,15 +84,15 @@ public class MPSFacetSourcesTab {
 
   public void setData(MPSConfigurationBean data) {
     for (ModelRoot modelRoot : data.getModelRoots()) {
-      if (modelRoot.getManager() != null) continue;
-      addModelRoot(modelRoot);
+      if (!(modelRoot instanceof DefaultModelRoot)) continue;
+      addModelRoot((DefaultModelRoot) modelRoot);
     }
   }
 
   public void getData(MPSConfigurationBean data) {
     Collection<ModelRoot> modelRoots = getModelRoots();
-    for (ModelRoot mr:data.getModelRoots()){
-      if (mr.getManager()==null)continue;
+    for (ModelRoot mr : data.getModelRoots()) {
+      if (mr instanceof DefaultModelRoot) continue;
       modelRoots.add(mr);
     }
 
@@ -172,7 +173,7 @@ public class MPSFacetSourcesTab {
     myModelRootsPanel.repaint();
   }
 
-  private ContentEntryEditor addModelRoot(ModelRoot root) {
+  private ContentEntryEditor addModelRoot(DefaultModelRoot root) {
     final ModelRootContentEntryEditor contentEntryEditor = new ModelRootContentEntryEditor(root, myParentDisposable);
     contentEntryEditor.initUI();
     contentEntryEditor.addContentEntryEditorListener(myModelRootEditorListener);
@@ -196,7 +197,9 @@ public class MPSFacetSourcesTab {
   private void addModelRoots(VirtualFile[] files) {
     ContentEntryEditor lastEditor = null;
     for (VirtualFile file : files) {
-      lastEditor = addModelRoot(new ModelRoot(file.getPath()));
+      DefaultModelRoot root = new DefaultModelRoot();
+      root.setPath(file.getPath());
+      lastEditor = addModelRoot(root);
     }
     selectModelRoot(lastEditor);
     myModelRootsPanel.revalidate();

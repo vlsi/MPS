@@ -60,7 +60,7 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
         ModelAccess.instance().runWriteAction(new Runnable() {
           @Override
           public void run() {
-            SolutionDescriptor solutionDescriptor = getConfiguration().getState().getSolutionDescriptor();
+            SolutionDescriptor solutionDescriptor = getConfiguration().getBean().getSolutionDescriptor();
             Solution solution = new SolutionIdea(getModule(), solutionDescriptor);
             com.intellij.openapi.project.Project project = getModule().getProject();
             myMpsProject = ProjectHelper.toMPSProject(project);

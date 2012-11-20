@@ -26,8 +26,6 @@ import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -64,7 +62,7 @@ public class JUnit4TestCaseRef_Constraints extends BaseConstraintsDescriptor {
               @NotNull
               @Override
               public List<SNode> getClassifiers() {
-                final SNode testAnn = SLinkOperations.getTarget(new JUnit4TestCaseRef_Constraints.QuotationClass_qd3c0x_a0a0a0a0a0b0a0a0a0b0a1a0b0a().createNode(), "annotation", false);
+                final SNode testAnn = SLinkOperations.getTarget(_quotation_createNode_qd3c0x_a0a0a0a0a1a0a(), "annotation", false);
                 List<SNode> res = super.getClassifiers();
                 for (Iterator<SNode> it = ListSequence.fromList(res).iterator(); it.hasNext();) {
                   if (!(ListSequence.fromList(SLinkOperations.getTargets(it.next(), "method", true)).translate(new ITranslator2<SNode, SNode>() {
@@ -94,21 +92,10 @@ public class JUnit4TestCaseRef_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  public static class QuotationClass_qd3c0x_a0a0a0a0a0b0a0a0a0b0a1a0b0a {
-    public QuotationClass_qd3c0x_a0a0a0a0a0b0a0a0a0b0a1a0b0a() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("annotation", SReference.create("annotation", quotedNode1_2, SModelReference.fromString("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), SNodeId.fromString("~Test")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_qd3c0x_a0a0a0a0a1a0a() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, SModelReference.fromString("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), SNodeId.fromString("~Test")));
+    return quotedNode_1;
   }
 }

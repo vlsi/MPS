@@ -28,8 +28,8 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.TransformationTestRunner;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -38,6 +38,7 @@ import org.jetbrains.annotations.NotNull;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class EditorTests extends DataMPSFixtureTestCase {
@@ -58,9 +59,9 @@ public class EditorTests extends DataMPSFixtureTestCase {
   @Override
   protected void prepareTestData(MPSFacetConfiguration configuration) throws Exception {
     IFile test = copyResource("models", "test.mps", "test.mps", "/tests/editorTests/models/test.mps");
-    ArrayList<ModelRoot> roots = new ArrayList<ModelRoot>();
-    roots.add(new ModelRoot(test.getParent().getPath()));
-    configuration.getState().setModelRoots(roots);
+    DefaultModelRoot root = new DefaultModelRoot();
+    root.setPath(test.getParent().getPath());
+    configuration.getBean().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));
   }
 
   @Override

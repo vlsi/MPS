@@ -108,22 +108,12 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return false;
   }
 
-  @Override
-  public String getModelHash() {
-    return null;
-  }
-
   public boolean isRegistered() {
     return myRegistered;
   }
 
   void setRegistered(boolean registered) {
     myRegistered = registered;
-  }
-
-  @Override
-  public boolean isLoaded() {
-    return getLoadingState() != ModelLoadingState.NOT_LOADED;
   }
 
   @NotNull

@@ -13,11 +13,9 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.ide.java.newparser.JavaParser;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
@@ -54,7 +52,7 @@ public class JavaSourceStubModelDS extends FolderSetDataSource implements FastFi
   }
 
   @Override
-  public ModelLoadResult loadSModel(IModule module, SModelDescriptor descriptor, ModelLoadingState state) {
+  public SModel loadSModel(IModule module, SModelDescriptor descriptor) {
 
     SModel model = new SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
 
@@ -82,7 +80,7 @@ public class JavaSourceStubModelDS extends FolderSetDataSource implements FastFi
 
     myModelLoaded = true;
 
-    return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+    return model;
   }
 
   public List<SNode> parseFile(String contents, SModel model) throws JavaParseException {

@@ -29,8 +29,9 @@ import com.intellij.openapi.roots.SourceFolder;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
 import java.util.Collection;
@@ -62,8 +63,8 @@ public class MPSFrameworkSupportProvider extends FacetBasedFrameworkSupportProvi
     });
 
     MPSFacet mpsFacet = (MPSFacet) facet;
-    MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getState();
-    ModelRoot mr = new ModelRoot();
+    MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getBean();
+    DefaultModelRoot mr = new DefaultModelRoot();
     mr.setPath(modelDirectoryPath);
     Collection<ModelRoot> oldRoots = configurationBean.getModelRoots();
     oldRoots.add(mr);

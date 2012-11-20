@@ -4,8 +4,6 @@ package jetbrains.mps.baseLanguage.search;
 
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -25,24 +23,13 @@ public class ClassifierVisibleStaticMembersScope extends ClassifierVisibleMember
     if (classifier == null) {
       return null;
     }
-    return new ClassifierVisibleStaticMembersScope.QuotationClass_ctg1ot_a0b0a().createNode(classifier);
+    return _quotation_createNode_ctg1ot_a1a0(classifier);
   }
 
-  public static class QuotationClass_ctg1ot_a0b0a {
-    public QuotationClass_ctg1ot_a0b0a() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_ctg1ot_a1a0(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("classifier", (SNode) parameter_1);
+    return quotedNode_2;
   }
 }

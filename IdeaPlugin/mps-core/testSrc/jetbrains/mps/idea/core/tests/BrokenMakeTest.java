@@ -24,10 +24,11 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.make.MPSCompiler2;
 import jetbrains.mps.idea.core.make.MPSCompilerPaths;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
 public class BrokenMakeTest extends AbstractMakeTest {
   @Override
@@ -36,9 +37,9 @@ public class BrokenMakeTest extends AbstractMakeTest {
     String moduleFileName = module.getModuleFilePath();
     copyResource(moduleFileName, "makeTestBroken.iml", "/tests/makeTestBroken/makeTestBroken.iml");
     final IFile brokenModel = copyResource("models", "broken.mps", "broken.mps", "/tests/makeTestBroken/models/broken.mps");
-    ArrayList<ModelRoot> roots = new ArrayList<ModelRoot>();
-    roots.add(new ModelRoot(brokenModel.getParent().getPath()));
-    configuration.getState().setModelRoots(roots);
+    DefaultModelRoot root = new DefaultModelRoot();
+    root.setPath(brokenModel.getParent().getPath());
+    configuration.getBean().setModelRoots(Arrays.<ModelRoot>asList(root));
     prepareTestData(configuration, brokenModel.getParent());
   }
 

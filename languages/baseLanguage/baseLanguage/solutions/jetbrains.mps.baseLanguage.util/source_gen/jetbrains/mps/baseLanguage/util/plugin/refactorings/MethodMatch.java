@@ -109,7 +109,7 @@ public class MethodMatch {
     List<SNode> callActualParams = new ArrayList<SNode>();
     for (SNode parameter : ListSequence.fromList(this.myParametersOrder)) {
       if (ListSequence.fromList(MapSequence.fromMap(this.myParamsToNodes).get(parameter)).isEmpty()) {
-        ListSequence.fromList(callActualParams).addElement(new MethodMatch.QuotationClass_5zfyci_a0a0a0a0b0l().createNode());
+        ListSequence.fromList(callActualParams).addElement(_quotation_createNode_5zfyci_a0a0a0a1a11());
       } else {
         ListSequence.fromList(callActualParams).addElement(SNodeOperations.cast(SNodeOperations.copyNode(ListSequence.fromList(MapSequence.fromMap(this.myParamsToNodes).get(parameter)).getElement(0)), "jetbrains.mps.baseLanguage.structure.Expression"));
       }
@@ -117,20 +117,9 @@ public class MethodMatch {
     return callActualParams;
   }
 
-  public static class QuotationClass_5zfyci_a0a0a0a0b0l {
-    public QuotationClass_5zfyci_a0a0a0a0b0l() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_5zfyci_a0a0a0a1a11() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
   }
 }

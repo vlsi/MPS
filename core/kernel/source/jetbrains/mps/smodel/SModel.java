@@ -55,8 +55,6 @@ public class SModel {
 
   private Element myStructureModificationHistory;
 
-  private final SModelHeader myHeader = new SModelHeader();
-
   private SModelDescriptor myModelDescriptor;
   private boolean fullLoadUpdateMode;
 
@@ -805,16 +803,11 @@ public class SModel {
 
   //---------persistance-related refactorings--------
 
-  public void setPersistenceVersion(int persistenceVersion) {
-    myHeader.setPersistenceVersion(persistenceVersion);
+  public int getVersion() {
+    return -1;
   }
 
-  public int getPersistenceVersion() {
-    return myHeader.getPersistenceVersion();
-  }
-
-  public SModelHeader getSModelHeader() {
-    return myHeader;
+  public void setVersion(int version) {
   }
 
   public void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion) {
