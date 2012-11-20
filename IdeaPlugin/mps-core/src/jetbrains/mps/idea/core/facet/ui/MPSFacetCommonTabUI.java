@@ -116,7 +116,7 @@ public class MPSFacetCommonTabUI implements IModuleConfigurationTab {
         });
       }
     };
-    ImportedSolutionsTable importedSolutionsTable = new ImportedSolutionsTable() {
+    ImportedSolutionsTable importedSolutionsTable = new ImportedSolutionsTable(myContext) {
       @Override
       protected void doAddElements(Set<Dependency> elementsToAdd) {
         super.doAddElements(elementsToAdd);

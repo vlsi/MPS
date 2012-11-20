@@ -16,9 +16,13 @@
 
 package jetbrains.mps.idea.core.ui;
 
+import com.intellij.facet.ui.FacetEditorContext;
+import com.intellij.openapi.roots.LibraryOrderEntry;
+import com.intellij.openapi.roots.OrderEntry;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.icons.MPSIcons;
+import jetbrains.mps.idea.core.library.SolutionLibrariesIndex;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
@@ -31,8 +35,15 @@ import javax.swing.JComponent;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 
 public class ImportedSolutionsTable extends MpsElementsWithCheckboxesTable<Dependency, ModuleReference> implements IModuleConfigurationTab {
+  private final FacetEditorContext myContext;
+
+  public ImportedSolutionsTable(FacetEditorContext context) {
+    myContext = context;
+  }
+
   @Override
   protected Class<Dependency> getCheckedElementClass() {
     return Dependency.class;
@@ -106,8 +117,17 @@ public class ImportedSolutionsTable extends MpsElementsWithCheckboxesTable<Depen
   }
 
   private List<Dependency> getImportedSolutions(MPSConfigurationBean data) {
-    //todo
-    return new ArrayList<Dependency>();
+    OrderEntry[] orderEntries = myContext.getModifiableRootModel().getOrderEntries();
+    ArrayList<Dependency> dependencies = new ArrayList<Dependency>();
+    for (OrderEntry orderEntry : orderEntries) {
+      if (orderEntry instanceof LibraryOrderEntry) {
+        Set<ModuleReference> modules = SolutionLibrariesIndex.getInstance(myContext.getProject()).getModules(((LibraryOrderEntry) orderEntry).getLibrary());
+        for (ModuleReference reference : modules) {
+          dependencies.add(new Dependency(reference, ((LibraryOrderEntry) orderEntry).isExported()));
+        }
+      }
+    }
+    return dependencies;
   }
 
   @Override
