@@ -67,7 +67,7 @@ public class UpgradePersistence_Action extends BaseAction {
       for (SModule module : mpsProject.getModulesWithGenerators()) {
         for (SModel smd : module.getModels()) {
           if (smd instanceof DefaultSModelDescriptor) {
-            int modelVersion = ((DefaultSModelDescriptor) smd).getSModelHeader().getPersistenceVersion();
+            int modelVersion = ((DefaultSModelDescriptor) smd).getPersistenceVersion();
             if (modelVersion <= 4) {
               modelDescriptors.add(((DefaultSModelDescriptor) smd));
             }
@@ -80,7 +80,7 @@ public class UpgradePersistence_Action extends BaseAction {
         if (file != null && file.isReadOnly()) {
           continue;
         }
-        boolean wasInitialized = modelDescriptor.getUpdateableModel().getState() != ModelLoadingState.NOT_LOADED;
+        boolean wasInitialized = modelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED;
         if (wasInitialized) {
           modelDescriptor.save();
         }

@@ -190,7 +190,7 @@ public class PersistenceTest extends BaseMPSTest {
       IFile file = modelDescriptor.getModelFile();
       if (file != null && file.isReadOnly()) continue;
 
-      boolean wasInitialized = modelDescriptor.getUpdateableModel().getState() != ModelLoadingState.NOT_LOADED;
+      boolean wasInitialized = modelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED;
       if (wasInitialized) {
         modelDescriptor.save();
       }

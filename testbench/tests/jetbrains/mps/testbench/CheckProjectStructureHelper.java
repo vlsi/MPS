@@ -38,6 +38,7 @@ import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
@@ -48,7 +49,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLink;
 
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -216,7 +217,9 @@ public class CheckProjectStructureHelper {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (SModelDescriptor sm : models) {
+        for (SModelDescriptor md : models) {
+          if (!(md instanceof GeneratableSModelDescriptor)) continue;
+          GeneratableSModelDescriptor sm = (GeneratableSModelDescriptor) md;
           if (!sm.isGeneratable()) continue;
 
           IModule module = sm.getModule();
@@ -296,20 +299,20 @@ public class CheckProjectStructureHelper {
         continue;
       }
 
-      for (String name: node.getPropertyNames()){
+      for (String name : node.getPropertyNames()) {
         if (concept.findProperty(name) == null) {
           result.add("unknown property: `" + name + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
         }
       }
 
-      for (SReference ref:node.getReferences()){
+      for (SReference ref : node.getReferences()) {
         SLink link = concept.findLink(ref.getRole());
         if (link == null || !link.isReference()) {
           result.add("unknown link role: `" + ref.getRole() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
         }
       }
 
-      for (SNode child:node.getChildren()){
+      for (SNode child : node.getChildren()) {
         String role = child.getRoleInParent();
         SLink link = concept.findLink(role);
         if (link == null || link.isReference()) {

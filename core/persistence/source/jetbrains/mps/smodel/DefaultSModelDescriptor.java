@@ -87,10 +87,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     myMetadata = d.getMetadata();
   }
 
-  public UpdateableModel getUpdateableModel() {
-    return myModel;
-  }
-
   @Override
   public ModelLoadingState getLoadingState() {
     return myModel.getState();
@@ -112,7 +108,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   @Override
   public void forceLoad() {
-    getUpdateableModel().getModel(ModelLoadingState.FULLY_LOADED);
+    myModel.getModel(ModelLoadingState.FULLY_LOADED);
   }
 
   @Override
@@ -212,7 +208,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   public void save() {
     ModelAccess.assertLegalWrite();
 
-    if (getUpdateableModel().getState() == ModelLoadingState.NOT_LOADED) return;
+    if (myModel.getState() == ModelLoadingState.NOT_LOADED) return;
 
     //we must be in command since model save might change model by adding model/language imports
     //if (!mySModel.isLoading()) LOG.assertInCommand();
@@ -224,7 +220,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     setChanged(false);
     boolean reload = saveModel();
     if (reload) {
-      ModelLoadResult res = loadSModel(getUpdateableModel().getState());
+      ModelLoadResult res = loadSModel(myModel.getState());
       updateDiskTimestamp();
       replaceModel(res.getModel(), res.getState());
     }
@@ -247,7 +243,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   @Override
   public boolean isGeneratable() {
-    return !isDoNotGenerate() && !isReadOnly() && SModelStereotype.isUserModel(this);
+    return !isDoNotGenerate() && !getSource().isReadOnly() && SModelStereotype.isUserModel(this);
   }
 
   @Override
@@ -278,16 +274,18 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   @Override
   public void dispose() {
-    UnregisteredNodes.instance().clear(getSModelReference());
+    UnregisteredNodes.instance().clear(getModelReference());
     super.dispose();
   }
 
+  @Override
   public void setDoNotGenerate(boolean value) {
     ModelAccess.assertLegalWrite();
 
     getSModelHeader().setDoNotGenerate(value);
   }
 
+  @Override
   public boolean isDoNotGenerate() {
     return getSModelHeader().isDoNotGenerate();
   }
@@ -304,11 +302,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     getSModelHeader().setVersion(newVersion);
   }
 
-  public SModelHeader getDescriptorSModelHeader() {
+  private SModelHeader getDescriptorSModelHeader() {
     return myHeader;
   }
 
-  public SModelHeader getSModelHeader() {
+  private SModelHeader getSModelHeader() {
     SModel model = getCurrentModelInternal();
     if (model == null) return myHeader;
     return model.getSModelHeader();
@@ -351,6 +349,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     }
   }
 
+  @Override
   public void reloadFromDisk() {
     ModelAccess.assertLegalWrite();
 
@@ -387,9 +386,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
     updateDiskTimestamp();
 
-    if (getUpdateableModel().getState() == ModelLoadingState.NOT_LOADED) return;
+    if (myModel.getState() == ModelLoadingState.NOT_LOADED) return;
 
-    ModelLoadResult result = load(getUpdateableModel().getState());
+    ModelLoadResult result = load(myModel.getState());
     replaceModel(result.getModel(), result.getState());
   }
 
@@ -407,7 +406,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   public void resolveDiskConflict() {
-    LOG.warning("Model=" + getSModel().getSModelFqName()+ ", file ts="+getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(), new Throwable());  // more information
+    LOG.warning("Model=" + getSModel().getSModelFqName() + ", file ts=" + getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(), new Throwable());  // more information
     DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getModelFile(), getSModel(), this);
   }
 

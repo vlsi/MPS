@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator.impl.cache;
+package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;

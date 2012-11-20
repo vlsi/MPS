@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -70,7 +71,9 @@ public class ModelGenerationStatusManager implements CoreComponent {
     return ModelDigestHelper.getInstance().getModelHashFast(sm, operationContext);
   }
 
-  public boolean generationRequired(SModelDescriptor sm, IOperationContext operationContext) {
+  public boolean generationRequired(SModelDescriptor md, IOperationContext operationContext) {
+    if (!(md instanceof GeneratableSModelDescriptor)) return false;
+    GeneratableSModelDescriptor sm = (GeneratableSModelDescriptor) md;
     if (!sm.isGeneratable()) return false;
     if (sm instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) sm).isChanged()) return true;
 

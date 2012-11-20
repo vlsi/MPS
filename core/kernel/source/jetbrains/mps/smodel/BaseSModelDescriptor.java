@@ -108,11 +108,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return false;
   }
 
-  @Override
-  public String getModelHash() {
-    return null;
-  }
-
   public boolean isRegistered() {
     return myRegistered;
   }

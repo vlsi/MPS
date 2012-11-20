@@ -25,6 +25,7 @@ public class MPSExtentions {
   private static final String LIBRARY = "lib";
   public static final String DEVKIT = "devkit";
   public static final String MODEL = "mps";
+  public static final String MODEL_BINARY = "mpb";
   public static final String REFACTORINGS = "history";
   public static final String JAVAFILE = "java";
   public static final String CLASSFILE = "class";

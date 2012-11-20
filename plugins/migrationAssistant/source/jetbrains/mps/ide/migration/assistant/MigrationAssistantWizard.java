@@ -924,7 +924,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
           for (IModule module : mpsProject.getModulesWithGenerators()) {
             for (SModelDescriptor smd : SModelRepository.getInstance().getModelDescriptors(module)) {
               if (smd instanceof DefaultSModelDescriptor) {
-                int modelVersion = ((DefaultSModelDescriptor) smd).getSModelHeader().getPersistenceVersion();
+                int modelVersion = ((DefaultSModelDescriptor) smd).getPersistenceVersion();
                 if (modelVersion <= version) {
                   result.add(((DefaultSModelDescriptor) smd).getModelFile().getPath());
                 }
