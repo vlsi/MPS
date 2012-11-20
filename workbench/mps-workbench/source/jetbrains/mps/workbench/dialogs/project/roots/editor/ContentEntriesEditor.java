@@ -48,6 +48,7 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -82,7 +83,7 @@ public class ContentEntriesEditor {
       list.add(new AddContentEntryAction(type));
     }
 
-    return new IconWithTextAction(
+    AnAction action = new IconWithTextAction(
       PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.title"),
       PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.tip"),
       IdeIcons.ADD_MODEL_ROOT_ICON) {
@@ -123,6 +124,7 @@ public class ContentEntriesEditor {
         popup.show(new RelativePoint(myEditorsListPanel, new Point(0,0)));
       }
     };
+    return action;
   }
 
   public void initUI() {

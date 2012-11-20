@@ -61,8 +61,8 @@ public class DefaultModelRootEntry extends ModelRootEntry<DefaultModelRoot> {
   private String getDetailsText() {
     final StringBuilder messageText = new StringBuilder();
     messageText.append("<html>");
-    messageText.append("Path : ").append(myModelRoot.getPath()).append("<br>");
     messageText.append("Type : ").append(myModelRoot.getType()).append("<br>");
+    messageText.append("Path : ").append(myModelRoot.getPath()).append("<br>");
     return messageText.toString();
   }
 
