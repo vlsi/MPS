@@ -54,6 +54,12 @@
     <component>
       <implementation-class>jetbrains.mps.idea.sourceStubs.ProjectJavaSourceImporter</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.java.psiStubs.JavaPsiMergeChangesWatcher</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.sourceStubs.PsiTestBed</implementation-class>
+    </component>
   </project-components>
 
   <actions>

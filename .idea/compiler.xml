@@ -92,7 +92,6 @@
       <directory url="file://$PROJECT_DIR$/languages/util/math/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/money/runtimeSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/money/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/baseLanguage/methodDispatch/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/mps-lite/languages/mpslite/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/mps-lite/languages/nanoj/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/mps-lite/source" includeSubdirectories="true" />
@@ -346,6 +345,7 @@
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/languages/build.workflow/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runtime/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/languages/solutions/jetbrains.mps.build.pluginSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/baseLanguage/methodDispatch/source_gen" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions>
       <entry name=".+\.(properties|xml|html|dtd|tld)" />
