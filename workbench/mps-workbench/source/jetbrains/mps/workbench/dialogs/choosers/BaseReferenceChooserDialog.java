@@ -102,8 +102,12 @@ public abstract class BaseReferenceChooserDialog<T> extends DialogWrapper {
 
   @Override
   protected JComponent createCenterPanel() {
-    getWindow().setMinimumSize(new Dimension(500, 600));
     return myChooser.getPanel();
+  }
+
+  @Override
+  protected String getDimensionServiceKey() {
+    return BaseReferenceChooserDialog.class.getCanonicalName();
   }
 
   @Override
@@ -113,7 +117,7 @@ public abstract class BaseReferenceChooserDialog<T> extends DialogWrapper {
   }
 
   @Override
-  public void show() {
-    super.show();
+  public JComponent getPreferredFocusedComponent() {
+    return myChooser.getPreferredFocusedComponent();
   }
 }

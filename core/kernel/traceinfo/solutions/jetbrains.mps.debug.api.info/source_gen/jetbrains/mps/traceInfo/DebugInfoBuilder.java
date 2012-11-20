@@ -10,8 +10,11 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.template.TracingUtil;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SNodePointer;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class DebugInfoBuilder {
   private final DebugInfo myDebugInfo = new DebugInfo();
@@ -100,11 +103,28 @@ public class DebugInfoBuilder {
     return null;
   }
 
-  public static void completeDebugInfoFromCache(@NotNull DebugInfo cachedDebugInfo, @NotNull DebugInfo generatedDebugInfo, Iterable<SNodePointer> unchangedRoots) {
-    for (SNodePointer root : Sequence.fromIterable(unchangedRoots)) {
-      DebugInfoRoot cachedRootInfo = cachedDebugInfo.getRootInfo(root);
-      if (cachedRootInfo != null) {
-        generatedDebugInfo.putRootInfo(cachedRootInfo);
+  public static void completeDebugInfoFromCache(@NotNull DebugInfo cachedDebugInfo, @NotNull DebugInfo generatedDebugInfo, Iterable<String> unchangedFiles) {
+    Set<String> files = SetSequence.fromSetWithValues(new HashSet<String>(), unchangedFiles);
+    for (DebugInfoRoot cachedRoot : Sequence.fromIterable(cachedDebugInfo.getRoots())) {
+      DebugInfoRoot generatedRoot = generatedDebugInfo.getRootInfo(DebugInfo.nodePointerFrom(MultiTuple.<String,String>from(cachedRoot.getRootId(), cachedRoot.getModelId())));
+      if (generatedRoot == null) {
+        generatedRoot = new DebugInfoRoot(cachedRoot.getRootId(), cachedRoot.getModelId());
+        generatedDebugInfo.putRootInfo(generatedRoot);
+      }
+      for (TraceablePositionInfo position : SetSequence.fromSet(cachedRoot.getPositions())) {
+        if (SetSequence.fromSet(files).contains(position.getFileName())) {
+          generatedRoot.addPosition(position);
+        }
+      }
+      for (ScopePositionInfo position : SetSequence.fromSet(cachedRoot.getScopePositions())) {
+        if (SetSequence.fromSet(files).contains(position.getFileName())) {
+          generatedRoot.addScopePosition(position);
+        }
+      }
+      for (UnitPositionInfo position : SetSequence.fromSet(cachedRoot.getUnitPositions())) {
+        if (SetSequence.fromSet(files).contains(position.getFileName())) {
+          generatedRoot.addUnitPosition(position);
+        }
       }
     }
   }

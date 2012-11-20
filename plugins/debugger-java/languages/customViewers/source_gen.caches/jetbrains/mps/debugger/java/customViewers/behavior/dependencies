@@ -95,9 +95,7 @@
   <dependency className="jetbrains.mps.debugger.java.customViewers.behavior.WatchableListType_Behavior" file="WatchableListType_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Void" />
-    <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

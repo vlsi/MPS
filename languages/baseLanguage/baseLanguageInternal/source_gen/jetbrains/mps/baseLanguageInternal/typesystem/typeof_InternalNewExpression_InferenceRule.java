@@ -12,8 +12,6 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
@@ -30,12 +28,12 @@ public class typeof_InternalNewExpression_InferenceRule extends AbstractInferenc
     if ((SLinkOperations.getTarget(internalNewExpression, "type", true) != null)) {
       type = SLinkOperations.getTarget(internalNewExpression, "type", true);
     } else {
-      type = new typeof_InternalNewExpression_InferenceRule.QuotationClass_8luvtd_a0a0a0b0a().createNode(typeCheckingContext);
+      type = _quotation_createNode_8luvtd_a0a0a1a0();
     }
     {
       SNode _nodeToCheck_1029348928467 = internalNewExpression;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1196525371896", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1196525371898", true), (SNode) new typeof_InternalNewExpression_InferenceRule.QuotationClass_8luvtd_a0a2a0().createNode(SPropertyOperations.getString(internalNewExpression, "fqClassName"), SLinkOperations.getTarget(SNodeOperations.as(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), SLinkOperations.getTargets(SNodeOperations.as(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1196525371898", true), (SNode) _quotation_createNode_8luvtd_a0c0a(SPropertyOperations.getString(internalNewExpression, "fqClassName"), SLinkOperations.getTarget(SNodeOperations.as(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), SLinkOperations.getTargets(SNodeOperations.as(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)), _info_12389875345);
     }
   }
 
@@ -54,81 +52,25 @@ public class typeof_InternalNewExpression_InferenceRule extends AbstractInferenc
     return true;
   }
 
-  public static class QuotationClass_8luvtd_a0a0a0b0a {
-    public QuotationClass_8luvtd_a0a0a0b0a() {
-    }
-
-    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_8luvtd_a0a0a1a0() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+    return quotedNode_1;
   }
 
-  public static class QuotationClass_8luvtd_a0a2a0 {
-    public QuotationClass_8luvtd_a0a2a0() {
-    }
-
-    public SNode createNode(Object parameter_4, Object parameter_5, Object parameter_6, final TypeCheckingContext typeCheckingContext) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setProperty("fqClassName", (String) parameter_4);
-        quotedNode1_3.setReferenceTarget("classifier", (SNode) parameter_5);
-        {
-          List<SNode> nodes = (List<SNode>) parameter_6;
-          for (SNode child : nodes) {
-            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
-          }
-        }
-        result = quotedNode1_3;
+  private static SNode _quotation_createNode_8luvtd_a0c0a(Object parameter_1, Object parameter_2, Object parameter_3) {
+    SNode quotedNode_4 = null;
+    SNode quotedNode_5 = null;
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_4.setProperty("fqClassName", (String) parameter_1);
+    quotedNode_4.setReferenceTarget("classifier", (SNode) parameter_2);
+    {
+      List<SNode> nodes = (List<SNode>) parameter_3;
+      for (SNode child : nodes) {
+        quotedNode_4.addChild("parameter", HUtil.copyIfNecessary(child));
       }
-      return result;
     }
-
-    public SNode createNode(Object parameter_4, Object parameter_5, Object parameter_6) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setProperty("fqClassName", (String) parameter_4);
-        quotedNode1_3.setReferenceTarget("classifier", (SNode) parameter_5);
-        {
-          List<SNode> nodes = (List<SNode>) parameter_6;
-          for (SNode child : nodes) {
-            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child));
-          }
-        }
-        result = quotedNode1_3;
-      }
-      return result;
-    }
+    return quotedNode_4;
   }
 }

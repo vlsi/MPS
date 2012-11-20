@@ -48,7 +48,7 @@ public class RoleIdsComponent {
   public static void nodeRoleRead(SNode node, SNodePointer linkPointer) {
     if (ourHandler != null) {
       if (node.getParent() != null) {
-        ourHandler.nodeRoleRead(node.getParent().getConcept().getId(), node.getRole(), linkPointer);
+        ourHandler.nodeRoleRead(node.getParent().getConcept().getId(), node.getRoleInParent(), linkPointer);
       }
     }
   }
@@ -81,7 +81,7 @@ public class RoleIdsComponent {
 
   public static SNodePointer getNodeRolePointer(SNode node) {
     if (ourHandler != null) {
-      String linkRole = node.getRole();
+      String linkRole = node.getRoleInParent();
       if (linkRole == null) {
         return null;
       } else {

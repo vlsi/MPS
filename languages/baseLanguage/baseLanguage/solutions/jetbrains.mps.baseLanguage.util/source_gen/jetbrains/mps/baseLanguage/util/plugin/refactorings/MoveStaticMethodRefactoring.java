@@ -7,8 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -24,7 +22,7 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
         return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
       }
     })) {
-      SNodeOperations.replaceWithAnother(field, new MoveStaticMethodRefactoring.QuotationClass_f5lqsg_a0a0a0b0a().createNode(classNode, SLinkOperations.getTarget(field, "variableDeclaration", false)));
+      SNodeOperations.replaceWithAnother(field, _quotation_createNode_f5lqsg_a0a0a1a0(classNode, SLinkOperations.getTarget(field, "variableDeclaration", false)));
     }
   }
 
@@ -36,7 +34,7 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
       }
     }).toListSequence()) {
       if (SLinkOperations.getTarget(call, "baseMethodDeclaration", false) != this.myMoving) {
-        SNode newCall = new MoveStaticMethodRefactoring.QuotationClass_f5lqsg_a0a0a0a1a1().createNode(classNode, SLinkOperations.getTarget(call, "baseMethodDeclaration", false));
+        SNode newCall = _quotation_createNode_f5lqsg_a0a0a0b0b(classNode, SLinkOperations.getTarget(call, "baseMethodDeclaration", false));
         ListSequence.fromList(SLinkOperations.getTargets(newCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)));
         ListSequence.fromList(SLinkOperations.getTargets(newCall, "typeArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(call, "typeArgument", true)));
         SNodeOperations.replaceWithAnother(call, newCall);
@@ -56,9 +54,9 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
     if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
       SNode newCall;
       if (SNodeOperations.getAncestor(usage, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == this.myDestination) {
-        newCall = new MoveStaticMethodRefactoring.QuotationClass_f5lqsg_a0a0a1a1a3().createNode(this.myReplacing);
+        newCall = _quotation_createNode_f5lqsg_a0a0b0b0d(this.myReplacing);
       } else {
-        newCall = new MoveStaticMethodRefactoring.QuotationClass_f5lqsg_a0a0a0b0b0d().createNode(this.myDestination, this.myReplacing);
+        newCall = _quotation_createNode_f5lqsg_a0a0a1a1a3(this.myDestination, this.myReplacing);
       }
       ListSequence.fromList(SLinkOperations.getTargets(newCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(usage, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)));
       ListSequence.fromList(SLinkOperations.getTargets(newCall, "typeArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(usage, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "typeArgument", true)));
@@ -66,78 +64,34 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
     }
   }
 
-  public static class QuotationClass_f5lqsg_a0a0a0b0a {
-    public QuotationClass_f5lqsg_a0a0a0b0a() {
-    }
-
-    public SNode createNode(Object parameter_3, Object parameter_4) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_3);
-        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_4);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_f5lqsg_a0a0a1a0(Object parameter_1, Object parameter_2) {
+    SNode quotedNode_3 = null;
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.setReferenceTarget("classifier", (SNode) parameter_1);
+    quotedNode_3.setReferenceTarget("variableDeclaration", (SNode) parameter_2);
+    return quotedNode_3;
   }
 
-  public static class QuotationClass_f5lqsg_a0a0a0a1a1 {
-    public QuotationClass_f5lqsg_a0a0a0a1a1() {
-    }
-
-    public SNode createNode(Object parameter_3, Object parameter_4) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_4);
-        quotedNode1_2.setReferenceTarget("classConcept", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_f5lqsg_a0a0a0b0b(Object parameter_1, Object parameter_2) {
+    SNode quotedNode_3 = null;
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_2);
+    quotedNode_3.setReferenceTarget("classConcept", (SNode) parameter_1);
+    return quotedNode_3;
   }
 
-  public static class QuotationClass_f5lqsg_a0a0a1a1a3 {
-    public QuotationClass_f5lqsg_a0a0a1a1a3() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_f5lqsg_a0a0b0b0d(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_1);
+    return quotedNode_2;
   }
 
-  public static class QuotationClass_f5lqsg_a0a0a0b0b0d {
-    public QuotationClass_f5lqsg_a0a0a0b0b0d() {
-    }
-
-    public SNode createNode(Object parameter_3, Object parameter_4) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_4);
-        quotedNode1_2.setReferenceTarget("classConcept", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_f5lqsg_a0a0a1a1a3(Object parameter_1, Object parameter_2) {
+    SNode quotedNode_3 = null;
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_2);
+    quotedNode_3.setReferenceTarget("classConcept", (SNode) parameter_1);
+    return quotedNode_3;
   }
 }

@@ -9,8 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -23,7 +21,7 @@ public class RunConfigurationExecutor_Behavior {
   }
 
   public static boolean call_canBeSimple_6226796386650277682(SNode thisNode) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "execute", true)), new RunConfigurationExecutor_Behavior.QuotationClass_wnz9gp_a1a0a0c().createNode());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "execute", true)), _quotation_createNode_wnz9gp_b0a0a1());
   }
 
   public static boolean call_isSimple_6226796386650421097(SNode thisNode) {
@@ -45,20 +43,9 @@ public class RunConfigurationExecutor_Behavior {
     return null;
   }
 
-  public static class QuotationClass_wnz9gp_a1a0a0c {
-    public QuotationClass_wnz9gp_a1a0a0c() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandProcessType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_wnz9gp_b0a0a1() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandProcessType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
   }
 }

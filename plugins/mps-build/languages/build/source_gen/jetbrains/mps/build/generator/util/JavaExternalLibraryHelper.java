@@ -15,8 +15,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -107,7 +105,7 @@ public class JavaExternalLibraryHelper {
         continue;
       }
       SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-      propertyNode.addChild("attrs", new JavaExternalLibraryHelper.QuotationClass_g6ffke_a1a0d0j0a().createNode(val));
+      propertyNode.addChild("attrs", _quotation_createNode_g6ffke_b0a3a9a0(val));
       ListSequence.fromList(result).addElement(propertyNode);
     }
     for (SNode pe : jarContainers) {
@@ -117,85 +115,43 @@ public class JavaExternalLibraryHelper {
         continue;
       }
       SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-      propertyNode.addChild("attrs", new JavaExternalLibraryHelper.QuotationClass_g6ffke_a1a0d0k0a().createNode(val));
-      propertyNode.addChild("attrs", new JavaExternalLibraryHelper.QuotationClass_g6ffke_a1a0e0k0a().createNode());
+      propertyNode.addChild("attrs", _quotation_createNode_g6ffke_b0a3a01a0(val));
+      propertyNode.addChild("attrs", _quotation_createNode_g6ffke_b0a4a01a0());
       ListSequence.fromList(result).addElement(propertyNode);
     }
     return result;
   }
 
-  public static class QuotationClass_g6ffke_a1a0d0j0a {
-    public QuotationClass_g6ffke_a1a0d0j0a() {
-    }
-
-    public SNode createNode(Object parameter_5) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setProperty("attrName", "file");
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.setProperty("text", (String) parameter_5);
-          quotedNode_1.addChild("value", quotedNode1_4);
-        }
-        result = quotedNode1_3;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_g6ffke_b0a3a9a0(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setProperty("attrName", "file");
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.setProperty("text", (String) parameter_1);
+    quotedNode_2.addChild("value", quotedNode_3);
+    return quotedNode_2;
   }
 
-  public static class QuotationClass_g6ffke_a1a0d0k0a {
-    public QuotationClass_g6ffke_a1a0d0k0a() {
-    }
-
-    public SNode createNode(Object parameter_5) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setProperty("attrName", "dir");
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.setProperty("text", (String) parameter_5);
-          quotedNode_1.addChild("value", quotedNode1_4);
-        }
-        result = quotedNode1_3;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_g6ffke_b0a3a01a0(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setProperty("attrName", "dir");
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.setProperty("text", (String) parameter_1);
+    quotedNode_2.addChild("value", quotedNode_3);
+    return quotedNode_2;
   }
 
-  public static class QuotationClass_g6ffke_a1a0e0k0a {
-    public QuotationClass_g6ffke_a1a0e0k0a() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setProperty("attrName", "includes");
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.setProperty("text", "*.jar");
-          quotedNode_1.addChild("value", quotedNode1_4);
-        }
-        result = quotedNode1_3;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_g6ffke_b0a4a01a0() {
+    SNode quotedNode_1 = null;
+    SNode quotedNode_2 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setProperty("attrName", "includes");
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setProperty("text", "*.jar");
+    quotedNode_1.addChild("value", quotedNode_2);
+    return quotedNode_1;
   }
 }

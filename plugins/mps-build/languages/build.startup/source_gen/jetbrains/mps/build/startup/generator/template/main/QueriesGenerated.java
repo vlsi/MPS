@@ -12,8 +12,6 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -138,32 +136,18 @@ public class QueriesGenerated {
         continue;
       }
 
-      ListSequence.fromList(lines).addElement(new QueriesGenerated.QuotationClass_x583g4_a0a0c0c0y().createNode(option));
+      ListSequence.fromList(lines).addElement(_quotation_createNode_x583g4_a0a2a2a42(option));
     }
     return lines;
   }
 
-  public static class QuotationClass_x583g4_a0a0c0c0y {
-    public QuotationClass_x583g4_a0a0c0c0y() {
-    }
-
-    public SNode createNode(Object parameter_5) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GLine", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GText", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.setProperty("text", (String) parameter_5);
-          quotedNode_1.addChild("item", quotedNode1_4);
-        }
-        result = quotedNode1_3;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_x583g4_a0a2a2a42(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GLine", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GText", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.setProperty("text", (String) parameter_1);
+    quotedNode_2.addChild("item", quotedNode_3);
+    return quotedNode_2;
   }
 }

@@ -851,7 +851,7 @@ public class ChangesManagerTest {
       public void run() {
         String modelName = "newmodel";
         IModule module = myUiDiff.getModelDescriptor().getModule();
-        module.createModel(SModelFqName.fromString(MODEL_PREFIX + modelName), module.getSModelRoots().iterator().next(), null);
+        module.createModel(MODEL_PREFIX + modelName, module.getModelRoots().iterator().next(), null);
         newModelDiff.value = getCurrentDifference(modelName);
       }
     });

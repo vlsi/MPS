@@ -16,17 +16,23 @@
 
 package jetbrains.mps.persistence;
 
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -36,9 +42,12 @@ import java.util.List;
  */
 public class DefaultModelRoot extends FolderModelRootBase {
 
+  public DefaultModelRoot() {
+  }
+
   @Override
   public String getType() {
-    return "default";
+    return PersistenceRegistry.DEFAULT_MODEL_ROOT;
   }
 
   @Override
@@ -49,61 +58,108 @@ public class DefaultModelRoot extends FolderModelRootBase {
 
   @Override
   public Iterable<SModel> getModels() {
-//    List<ModelsMiner.ModelHandle> models = new ArrayList<ModelsMiner.ModelHandle>();
-//    ModelsMiner.collectModelDescriptors(FileSystem.getInstance().getFileByPath(getPath()), models);
-
     List<SModel> result = new ArrayList<SModel>();
-//    for (ModelsMiner.ModelHandle handle : models) {
-//      SModelDescriptor modelDescriptor = getInstance(getModule(), new RegularModelDataSource(handle.getFile(), this), handle.getReference(), handle.getLoadResult());
-//      LOG.debug("Read model descriptor " + modelDescriptor.getSModelReference() + "\n" + "Model root is " + root.getPath());
-//      result.add(modelDescriptor);
-//    }
+    collectModels(FileSystem.getInstance().getFileByPath(getPath()), result);
     return result;
   }
 
   @Override
+  public boolean isReadOnly() {
+    if (super.isReadOnly()) {
+      return true;
+    }
+    return isLanguageAspectsModelRoot();
+  }
+
+  @Override
   public boolean canCreateModel(String modelName) {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
+    ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL);
+    FileDataSource source = createSource(modelName, MPSExtentions.MODEL);
+    return modelFactory.canCreate(modelName, source);
   }
 
   @Override
   public SModel createModel(String modelName) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL);
+    FileDataSource source = createSource(modelName, MPSExtentions.MODEL);
+    return modelFactory.create(modelName, source);
   }
 
-  public static void collectModels(IFile dir, Collection<SModel> models) {
+  public void collectModels(IFile dir, Collection<SModel> models) {
     if (FileSystem.getInstance().isFileIgnored(dir.getName())) return;
     if (!dir.isDirectory()) return;
 
     List<IFile> files = dir.getChildren();
     for (IFile file : files) {
       String fileName = file.getName();
-      boolean isMPSModel = fileName.endsWith(MPSExtentions.DOT_MODEL);
-      if (!(isMPSModel)) continue;
+      String extension = FileUtil.getExtension(fileName);
 
-      DescriptorLoadResult dr;
-      try {
-        dr = ModelPersistence.loadDescriptor(file);
-      } catch (ModelReadException ignored) {
-        dr = new DescriptorLoadResult();
+      if (extension == null) continue;
+      ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(extension);
+      if (modelFactory == null) continue;
+
+      FileDataSource source = new FileDataSource(file, this);
+      SModel model = modelFactory.load(source);
+      // TODO handle errors
+      if (model != null) {
+        models.add(model);
       }
-
-      SModelReference modelReference;
-      assert dr.getUID() != null : "wrong model: " + file.getPath();
-
-      modelReference = SModelReference.fromString(dr.getUID());
-
-      //this code is for migration from old models (with no IDS)
-      if (modelReference.getSModelId() == null) {
-        modelReference = new SModelReference(modelReference.getSModelFqName(), jetbrains.mps.smodel.SModelId.generate());
-      }
-
-//      models.add(new ModelsMiner.ModelHandle(file, modelReference, dr));
     }
     for (IFile childDir : files) {
       if (childDir.isDirectory()) {
         collectModels(childDir, models);
       }
     }
+  }
+
+  public FileDataSource createSource(String modelName, String extension) {
+    String path = getPath();
+
+    String filenameSuffix = modelName;
+    if (isLanguageAspect(modelName)) {
+      filenameSuffix = NameUtil.shortNameFromLongName(filenameSuffix);
+    }
+
+    IFile file = FileSystem.getInstance().getFileByPath(path + File.separator + NameUtil.pathFromNamespace(filenameSuffix) + "." + extension);
+    return new FileDataSource(file, this);
+  }
+
+  public boolean isLanguageAspect(String modelName) {
+    if (!isLanguageAspectsModelRoot()) return false;
+    //prefixed with language namespace
+    if (!NameUtil.namespaceFromLongName(modelName).equals(getModule().getModuleName())) return false;
+    //is aspect model name
+    String name = NameUtil.shortNameFromLongName(modelName);
+    for (LanguageAspect la : LanguageAspect.values()) {
+      if (la.getName().equals(name)) return true;
+    }
+    return false;
+  }
+
+  public boolean isLanguageAspectsModelRoot() {
+    if (!(getModule() instanceof Language)) return false;
+    return FileSystem.getInstance().getFileByPath(getPath()).getName().equals(Language.LANGUAGE_MODELS);
+  }
+
+  @Deprecated
+  public ModelRootDescriptor toDescriptor() {
+    ModelRootDescriptor result = new ModelRootDescriptor();
+    save(result.getMemento());
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    DefaultModelRoot that = (DefaultModelRoot) o;
+
+    return getPath().equals(that.getPath());
+  }
+
+  @Override
+  public int hashCode() {
+    return getPath().hashCode();
   }
 }

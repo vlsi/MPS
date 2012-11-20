@@ -82,13 +82,9 @@ public interface IModule extends SModule {
 
   //----
 
-  SModelDescriptor createModel(SModelFqName fqName, SModelRoot root, @Nullable ModelAdjuster adj);
-
   SModelDescriptor createModel(String fqName, ModelRoot root, @Nullable ModelAdjuster adj);
 
   List<SModelDescriptor> getOwnModelDescriptors();
-
-  Collection<SModelRoot> getSModelRoots();
 
   String getOutputFor(org.jetbrains.mps.openapi.model.SModel model);
 

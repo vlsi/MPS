@@ -36,8 +36,6 @@ import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.nodeEditor.CellSide;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -179,7 +177,7 @@ __switch__:
                 SNode lve = SNodeFactoryOperations.createNewNode("jetbrains.mps.make.facet.structure.LocalParametersExpression", null);
                 SNode lvce = SNodeFactoryOperations.createNewNode("jetbrains.mps.make.facet.structure.LocalParametersComponentExpression", null);
                 SLinkOperations.setTarget(lvce, "operand", lve, true);
-                SLinkOperations.setTarget(lvce, "operation", new QueriesGenerated.QuotationClass_x583g4_a2a3a0a0a0a0a0a2a2a0a1a8().createNode((item)), true);
+                SLinkOperations.setTarget(lvce, "operation", _quotation_createNode_59frgq_a0d0a0a0((item)), true);
                 return lvce;
               }
 
@@ -232,9 +230,9 @@ __switch__:
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode fve = new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0a2a2a0a1a9().createNode(SNodeOperations.getAncestor((item), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false));
-                SNode op = new QueriesGenerated.QuotationClass_x583g4_a0a1a0a0a0a0a0a2a2a0a1a9().createNode((item));
-                return new QueriesGenerated.QuotationClass_x583g4_a0c0a0a0a0a0a0c0c0a0b0j().createNode(fve, op);
+                SNode fve = _quotation_createNode_gb3jz3_a0a0a0a0(SNodeOperations.getAncestor((item), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false));
+                SNode op = _quotation_createNode_gb3jz3_a0b0a0a0((item));
+                return _quotation_createNode_gb3jz3_a2a0a0a(fve, op);
               }
 
               public String getMatchingText(String pattern) {
@@ -268,7 +266,7 @@ __switch__:
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0k().createNode((item));
+                return _quotation_createNode_wcrlau_a0a0a0a((item));
               }
 
               public String getMatchingText(String pattern) {
@@ -385,126 +383,50 @@ __switch__:
     return result;
   }
 
-  public static class QuotationClass_x583g4_a2a3a0a0a0a0a0a2a2a0a1a8 {
-    public QuotationClass_x583g4_a2a3a0a0a0a0a0a2a2a0a1a8() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("component", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_59frgq_a0d0a0a0(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("component", (SNode) parameter_1);
+    return quotedNode_2;
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0a2a2a0a1a9 {
-    public QuotationClass_x583g4_a0a0a0a0a0a0a0a2a2a0a1a9() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.facet.structure.ForeignParametersExpression", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("target", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_gb3jz3_a0a0a0a0(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.facet.structure.ForeignParametersExpression", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("target", (SNode) parameter_1);
+    return quotedNode_2;
   }
 
-  public static class QuotationClass_x583g4_a0a1a0a0a0a0a0a2a2a0a1a9 {
-    public QuotationClass_x583g4_a0a1a0a0a0a0a0a2a2a0a1a9() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("component", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_gb3jz3_a0b0a0a0(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("component", (SNode) parameter_1);
+    return quotedNode_2;
   }
 
-  public static class QuotationClass_x583g4_a0c0a0a0a0a0a0c0c0a0b0j {
-    public QuotationClass_x583g4_a0c0a0a0a0a0a0c0c0a0b0j() {
+  private static SNode _quotation_createNode_gb3jz3_a2a0a0a(Object parameter_1, Object parameter_2) {
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    SNode quotedNode_5 = null;
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression", null, null, GlobalScope.getInstance(), false);
+    quotedNode_4 = (SNode) parameter_1;
+    if (quotedNode_4 != null) {
+      quotedNode_3.addChild("operand", HUtil.copyIfNecessary(quotedNode_4));
     }
-
-    public SNode createNode(Object parameter_7, Object parameter_8) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_4 = quotedNode_1;
-        {
-          quotedNode_2 = (SNode) parameter_7;
-          SNode quotedNode1_5;
-          if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
-          } else {
-            _parameterValues_129834374.add(quotedNode_2);
-            quotedNode1_5 = quotedNode_2;
-          }
-          if (quotedNode1_5 != null) {
-            quotedNode_1.addChild("operand", HUtil.copyIfNecessary(quotedNode1_5));
-          }
-        }
-        {
-          quotedNode_3 = (SNode) parameter_8;
-          SNode quotedNode1_6;
-          if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
-          } else {
-            _parameterValues_129834374.add(quotedNode_3);
-            quotedNode1_6 = quotedNode_3;
-          }
-          if (quotedNode1_6 != null) {
-            quotedNode_1.addChild("operation", HUtil.copyIfNecessary(quotedNode1_6));
-          }
-        }
-        result = quotedNode1_4;
-      }
-      return result;
+    quotedNode_5 = (SNode) parameter_2;
+    if (quotedNode_5 != null) {
+      quotedNode_3.addChild("operation", HUtil.copyIfNecessary(quotedNode_5));
     }
+    return quotedNode_3;
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0k {
-    public QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0k() {
-    }
-
-    public SNode createNode(Object parameter_5) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.facet.structure.FacetReferenceExpression", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.facet.structure.NamedFacetReference", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.setReferenceTarget("facet", (SNode) parameter_5);
-          quotedNode_1.addChild("reference", quotedNode1_4);
-        }
-        result = quotedNode1_3;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_wcrlau_a0a0a0a(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.facet.structure.FacetReferenceExpression", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.facet.structure.NamedFacetReference", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.setReferenceTarget("facet", (SNode) parameter_1);
+    quotedNode_2.addChild("reference", quotedNode_3);
+    return quotedNode_2;
   }
 }

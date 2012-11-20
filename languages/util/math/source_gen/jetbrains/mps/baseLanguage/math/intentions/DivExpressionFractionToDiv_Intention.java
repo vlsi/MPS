@@ -11,14 +11,12 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.intentions.IntentionDescriptor;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class DivExpressionFractionToDiv_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -65,6 +63,22 @@ public class DivExpressionFractionToDiv_Intention implements IntentionFactory {
     return myCachedExecutable;
   }
 
+  private static SNode _quotation_createNode_smjisl_a0a0a0(Object parameter_1, Object parameter_2) {
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    SNode quotedNode_5 = null;
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DivExpression", null, null, GlobalScope.getInstance(), false);
+    quotedNode_4 = (SNode) parameter_1;
+    if (quotedNode_4 != null) {
+      quotedNode_3.addChild("rightExpression", HUtil.copyIfNecessary(quotedNode_4));
+    }
+    quotedNode_5 = (SNode) parameter_2;
+    if (quotedNode_5 != null) {
+      quotedNode_3.addChild("leftExpression", HUtil.copyIfNecessary(quotedNode_5));
+    }
+    return quotedNode_3;
+  }
+
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
@@ -74,56 +88,11 @@ public class DivExpressionFractionToDiv_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeOperations.replaceWithAnother(node, new DivExpressionFractionToDiv_Intention.QuotationClass_2snbjg_a0a0a0b0().createNode(SLinkOperations.getTarget(node, "denominator", true), SLinkOperations.getTarget(node, "numerator", true)));
+      SNodeOperations.replaceWithAnother(node, _quotation_createNode_smjisl_a0a0a0(SLinkOperations.getTarget(node, "denominator", true), SLinkOperations.getTarget(node, "numerator", true)));
     }
 
     public IntentionDescriptor getDescriptor() {
       return DivExpressionFractionToDiv_Intention.this;
-    }
-  }
-
-  public static class QuotationClass_2snbjg_a0a0a0b0 {
-    public QuotationClass_2snbjg_a0a0a0b0() {
-    }
-
-    public SNode createNode(Object parameter_7, Object parameter_8) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DivExpression", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_4 = quotedNode_1;
-        {
-          quotedNode_2 = (SNode) parameter_7;
-          SNode quotedNode1_5;
-          if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
-          } else {
-            _parameterValues_129834374.add(quotedNode_2);
-            quotedNode1_5 = quotedNode_2;
-          }
-          if (quotedNode1_5 != null) {
-            quotedNode_1.addChild("rightExpression", HUtil.copyIfNecessary(quotedNode1_5));
-          }
-        }
-        {
-          quotedNode_3 = (SNode) parameter_8;
-          SNode quotedNode1_6;
-          if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
-          } else {
-            _parameterValues_129834374.add(quotedNode_3);
-            quotedNode1_6 = quotedNode_3;
-          }
-          if (quotedNode1_6 != null) {
-            quotedNode_1.addChild("leftExpression", HUtil.copyIfNecessary(quotedNode1_6));
-          }
-        }
-        result = quotedNode1_4;
-      }
-      return result;
     }
   }
 }

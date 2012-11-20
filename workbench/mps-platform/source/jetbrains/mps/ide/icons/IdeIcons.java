@@ -70,4 +70,6 @@ public class IdeIcons {
   // TODO: move to appropriate package and class
   public static final Icon ADD_MODEL_ROOT_ICON = new ImageIcon(IdeIcons.class.getResource("addModelRoot.png"));
   public static final Icon DEPENDENCIES_ICON = new ImageIcon(IdeIcons.class.getResource("dependencies.png"));
+  public static final Icon DELETE_CONTENT_ROOT = new ImageIcon(IdeIcons.class.getResource("deleteContentRoot.png"));
+  public static final Icon DELETE_CONTENT_ROOT_ROLL_OVER = new ImageIcon(IdeIcons.class.getResource("deleteContentRootRollover.png"));
 }

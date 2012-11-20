@@ -29,10 +29,12 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import junit.framework.Assert;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * evgeny, 1/25/12
@@ -69,9 +71,9 @@ public class ProjectViewTests extends BaseProjectViewTestCase {
     MPSFacet facet = facetManager.createFacet(facetType, "MPS", null);
     final MPSFacetConfiguration configuration = facet.getConfiguration();
     String path = VirtualFileManager.extractPath(getContentRoot().findChild("src").getUrl());
-    ArrayList<ModelRoot> roots = new ArrayList<ModelRoot>();
-    roots.add(new ModelRoot(path));
-    configuration.getState().setModelRoots(roots);
+    DefaultModelRoot root = new DefaultModelRoot();
+    root.setPath(path);
+    configuration.getBean().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));
 
     final ModifiableFacetModel facetModel = facetManager.createModifiableModel();
     facetModel.addFacet(facet);

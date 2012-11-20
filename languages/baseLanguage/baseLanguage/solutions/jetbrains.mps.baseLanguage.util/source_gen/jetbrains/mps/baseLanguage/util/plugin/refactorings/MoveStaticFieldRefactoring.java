@@ -4,8 +4,6 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -17,9 +15,9 @@ public class MoveStaticFieldRefactoring extends BasicMoveRefactoring {
   public void replaceSingleUsage(SNode usage) {
     super.replaceSingleUsage(usage);
     if (SNodeOperations.getAncestor(usage, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == this.myDestination) {
-      SNodeOperations.replaceWithAnother(usage, new MoveStaticFieldRefactoring.QuotationClass_fls06q_a0a0a0b0a().createNode(this.myReplacing));
+      SNodeOperations.replaceWithAnother(usage, _quotation_createNode_fls06q_a0a0a1a0(this.myReplacing));
     } else {
-      SNodeOperations.replaceWithAnother(usage, new MoveStaticFieldRefactoring.QuotationClass_fls06q_a0a0a0a1a0().createNode(this.myDestination, this.myReplacing));
+      SNodeOperations.replaceWithAnother(usage, _quotation_createNode_fls06q_a0a0a0b0a(this.myDestination, this.myReplacing));
     }
   }
 
@@ -27,40 +25,18 @@ public class MoveStaticFieldRefactoring extends BasicMoveRefactoring {
     return SNodeOperations.isInstanceOf(this.myDestination, "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
-  public static class QuotationClass_fls06q_a0a0a0b0a {
-    public QuotationClass_fls06q_a0a0a0b0a() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_fls06q_a0a0a1a0(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("variableDeclaration", (SNode) parameter_1);
+    return quotedNode_2;
   }
 
-  public static class QuotationClass_fls06q_a0a0a0a1a0 {
-    public QuotationClass_fls06q_a0a0a0a1a0() {
-    }
-
-    public SNode createNode(Object parameter_3, Object parameter_4) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_3);
-        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_4);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_fls06q_a0a0a0b0a(Object parameter_1, Object parameter_2) {
+    SNode quotedNode_3 = null;
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.setReferenceTarget("classifier", (SNode) parameter_1);
+    quotedNode_3.setReferenceTarget("variableDeclaration", (SNode) parameter_2);
+    return quotedNode_3;
   }
 }

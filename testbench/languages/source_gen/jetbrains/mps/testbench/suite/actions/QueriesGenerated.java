@@ -33,8 +33,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.search.ReachableClassifiersScope;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -96,7 +94,7 @@ public class QueriesGenerated {
             final IScope mscope = ModuleSuite_Behavior.call_scope_1280144168199518341(msuite);
             return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModelDescriptor, SNode>() {
               public Iterable<SNode> translate(SModelDescriptor smd) {
-                return new AllSubclassifiersScope(SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0a2a0a0a0a0c0a0b0b().createNode(), "classifier", false), smd.getSModel(), IClassifiersSearchScope.CLASS, (mscope != null ?
+                return new AllSubclassifiersScope(SLinkOperations.getTarget(_quotation_createNode_lmauyr_a0a0a0a0a0a2a0a1a(), "classifier", false), smd.getSModel(), IClassifiersSearchScope.CLASS, (mscope != null ?
                   mscope :
                   operationContext.getScope()
                 )).getNodes(new Condition<SNode>() {
@@ -145,7 +143,7 @@ public class QueriesGenerated {
           public Object compute() {
             SNode msuite = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false);
             final IScope mscope = ModuleSuite_Behavior.call_scope_1280144168199518341(msuite);
-            final SNode testAnn = SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0c0a0a0a0a2a0a1a2().createNode(), "annotation", false);
+            final SNode testAnn = SLinkOperations.getTarget(_quotation_createNode_wt5x6r_a0a2a0a1a(), "annotation", false);
 
             return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModelDescriptor, SNode>() {
               public Iterable<SNode> translate(SModelDescriptor smd) {
@@ -239,39 +237,17 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0a2a0a0a0a0c0a0b0b {
-    public QuotationClass_x583g4_a0a0a0a0a0a0a0a2a0a0a0a0c0a0b0b() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/junit.framework@java_stub)"), SNodeId.fromString("~TestCase")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_lmauyr_a0a0a0a0a0a2a0a1a() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/junit.framework@java_stub)"), SNodeId.fromString("~TestCase")));
+    return quotedNode_1;
   }
 
-  public static class QuotationClass_x583g4_a0a0c0a0a0a0a2a0a1a2 {
-    public QuotationClass_x583g4_a0a0c0a0a0a0a2a0a1a2() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("annotation", SReference.create("annotation", quotedNode1_2, SModelReference.fromString("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), SNodeId.fromString("~Test")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_wt5x6r_a0a2a0a1a() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, SModelReference.fromString("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), SNodeId.fromString("~Test")));
+    return quotedNode_1;
   }
 }

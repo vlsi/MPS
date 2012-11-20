@@ -65,7 +65,7 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
         ModelAccess.instance().runWriteAction(new Runnable() {
           @Override
           public void run() {
-            SolutionDescriptor solutionDescriptor = getConfiguration().getState().getSolutionDescriptor();
+            SolutionDescriptor solutionDescriptor = getConfiguration().getBean().getSolutionDescriptor();
             Solution solution = new SolutionIdea(getModule(), solutionDescriptor);
 
 //            for (ModelRoot root: myContributedModelRoots) {

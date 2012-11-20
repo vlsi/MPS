@@ -11,8 +11,6 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -59,41 +57,24 @@ public class AbstractClassifierReference_KeyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), new AbstractClassifierReference_KeyMap.AbstractClassifierReference_KeyMap_Action0.QuotationClass_l22mu2_a1a0a4a().createNode(SLinkOperations.getTarget(node, "classifier", false)));
+      SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), _quotation_createNode_l22mu2_a0a0a0a(SLinkOperations.getTarget(node, "classifier", false)));
     }
 
     public String getKeyStroke() {
       return "none SPACE";
     }
 
-    public static class QuotationClass_l22mu2_a1a0a4a {
-      public QuotationClass_l22mu2_a1a0a4a() {
-      }
-
-      public SNode createNode(Object parameter_7) {
-        SNode result = null;
-        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_1 = null;
-        SNode quotedNode_2 = null;
-        SNode quotedNode_3 = null;
-        {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_4 = quotedNode_1;
-          {
-            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null, null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_5 = quotedNode_2;
-            {
-              quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-              SNode quotedNode1_6 = quotedNode_3;
-              quotedNode1_6.setReferenceTarget("classifier", (SNode) parameter_7);
-              quotedNode_2.addChild("type", quotedNode1_6);
-            }
-            quotedNode_1.addChild("localVariableDeclaration", quotedNode1_5);
-          }
-          result = quotedNode1_4;
-        }
-        return result;
-      }
+    private static SNode _quotation_createNode_l22mu2_a0a0a0a(Object parameter_1) {
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null, null, GlobalScope.getInstance(), false);
+      quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null, null, GlobalScope.getInstance(), false);
+      quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_4.setReferenceTarget("classifier", (SNode) parameter_1);
+      quotedNode_3.addChild("type", quotedNode_4);
+      quotedNode_2.addChild("localVariableDeclaration", quotedNode_3);
+      return quotedNode_2;
     }
   }
 }

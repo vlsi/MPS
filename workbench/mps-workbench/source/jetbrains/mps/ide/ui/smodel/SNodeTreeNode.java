@@ -166,7 +166,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     List<SNode> children = n.getChildren();
     List<SNode> filteredChildren = CollectionUtil.filter(children, myCondition);
     for (SNode childNode : filteredChildren) {
-      SNodeTreeNode child = createChildTreeNode(childNode, childNode.getRole(), getOperationContext());
+      SNodeTreeNode child = createChildTreeNode(childNode, childNode.getRoleInParent(), getOperationContext());
       child.myCondition = myCondition;
       add(child);
     }

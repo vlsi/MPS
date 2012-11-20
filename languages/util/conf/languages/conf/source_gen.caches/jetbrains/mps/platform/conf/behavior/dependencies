@@ -77,8 +77,6 @@
   </dependency>
   <dependency className="jetbrains.mps.platform.conf.behavior.BeanUtil" file="BeanUtil.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />

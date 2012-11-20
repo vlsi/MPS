@@ -31,6 +31,7 @@ import java.util.Map;
 public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.PersistenceFacade implements CoreComponent {
 
   public static final String DEFAULT_MODEL_ROOT = "default";
+  public static final String OBSOLETE_MODEL_ROOT = "obsolete";
 
   private Map<String, ModelRootFactory> myRootFactories = new HashMap<String, ModelRootFactory>();
   private Map<String, ModelFactory> myExtensionToModelFactoryMap = new HashMap<String, ModelFactory>();
@@ -38,11 +39,12 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   @Override
   public ModelRootFactory getModelRootFactory(String type) {
     if (type == null || type.length() == 0) {
-      type = DEFAULT_MODEL_ROOT;
+      throw new IllegalArgumentException("type");
     }
     return myRootFactories.get(type);
   }
 
+  @Override
   public void setModelRootFactory(String type, ModelRootFactory factory) {
     if (factory == null) {
       myRootFactories.remove(type);
@@ -56,6 +58,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
     return myExtensionToModelFactoryMap.get(extension);
   }
 
+  @Override
   public void setModelFactory(String extension, ModelFactory factory) {
     if (factory == null) {
       myExtensionToModelFactoryMap.remove(extension);
@@ -82,6 +85,12 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
     INSTANCE = this;
 
     setModelRootFactory(DEFAULT_MODEL_ROOT, new ModelRootFactory() {
+      @Override
+      public ModelRoot create() {
+        return new DefaultModelRoot();
+      }
+    });
+    setModelRootFactory(OBSOLETE_MODEL_ROOT, new ModelRootFactory() {
       @Override
       public ModelRoot create() {
         return new SModelRoot(null);

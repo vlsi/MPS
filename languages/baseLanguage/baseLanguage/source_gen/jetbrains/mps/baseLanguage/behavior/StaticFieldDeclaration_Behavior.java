@@ -19,8 +19,6 @@ import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.baseLanguage.scopes.FieldSignature;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -88,7 +86,7 @@ public class StaticFieldDeclaration_Behavior {
   }
 
   public static SNode virtual_getQualifiedReference_4598334504606213641(SNode thisNode) {
-    return new StaticFieldDeclaration_Behavior.QuotationClass_ge0l0h_a0a0k().createNode(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.Classifier"), thisNode);
+    return _quotation_createNode_ge0l0h_a0a9(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.Classifier"), thisNode);
   }
 
   @Deprecated
@@ -161,22 +159,11 @@ public class StaticFieldDeclaration_Behavior {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getTraceableProperty_5067982036267369901", new Class[]{SNode.class}, new Object[]{});
   }
 
-  public static class QuotationClass_ge0l0h_a0a0k {
-    public QuotationClass_ge0l0h_a0a0k() {
-    }
-
-    public SNode createNode(Object parameter_3, Object parameter_4) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_3);
-        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_4);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_ge0l0h_a0a9(Object parameter_1, Object parameter_2) {
+    SNode quotedNode_3 = null;
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.setReferenceTarget("classifier", (SNode) parameter_1);
+    quotedNode_3.setReferenceTarget("variableDeclaration", (SNode) parameter_2);
+    return quotedNode_3;
   }
 }

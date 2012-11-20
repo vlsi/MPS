@@ -31,8 +31,6 @@
   <dependency className="jetbrains.mps.lang.editor.scripts.MigrateAttributeConstant_MigrationScript" file="MigrateAttributeConstant_MigrationScript.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.scripts.MigrationUtil" />
