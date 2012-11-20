@@ -125,9 +125,9 @@
     <classNode dependClassName="com.intellij.openapi.util.DimensionService" />
     <classNode dependClassName="com.intellij.openapi.util.Ref" />
     <classNode dependClassName="java.awt.BorderLayout" />
+    <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.DisplayMode" />
-    <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.awt.GraphicsDevice" />
     <classNode dependClassName="java.awt.GraphicsEnvironment" />
     <classNode dependClassName="java.awt.GridBagConstraints" />

@@ -214,11 +214,10 @@ public class ModelDifferenceDialog extends DialogWrapper {
     final Wrappers._T<RootDifferenceDialog> rootDialog = new Wrappers._T<RootDifferenceDialog>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        if (isVisible()) {
-          rootDialog.value = new RootDifferenceDialog(ModelDifferenceDialog.this, rootId, myTree.getNameForRoot(rootId), scrollTo);
-        } else {
-          rootDialog.value = new RootDifferenceDialog(ModelDifferenceDialog.this, rootId, myTree.getNameForRoot(rootId), WindowManager.getInstance().getFrame(myProject), scrollTo);
-        }
+        rootDialog.value = new RootDifferenceDialog(ModelDifferenceDialog.this, rootId, myTree.getNameForRoot(rootId), (isVisible() ?
+          getWindow() :
+          WindowManager.getInstance().getFrame(myProject)
+        ), scrollTo);
       }
     });
     SwingUtilities.invokeLater(new Runnable() {

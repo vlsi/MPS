@@ -19,9 +19,9 @@ import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.diff.ex.DiffStatusBar;
 import com.intellij.openapi.diff.impl.util.TextDiffType;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import java.awt.Component;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
-import java.awt.Frame;
 import javax.swing.JComponent;
 import javax.swing.JSplitPane;
 import jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser;
@@ -69,14 +69,8 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   private boolean myClosed;
   private DefaultActionGroup myActionGroup;
 
-  public RootDifferenceDialog(ModelDifferenceDialog modelDialog, SNodeId rootId, String rootName, @Nullable Bounds firstChange) {
-    super(modelDialog.getWindow(), true);
-    setTitle("Difference for " + rootName);
-    init(modelDialog, rootId, firstChange);
-  }
-
-  public RootDifferenceDialog(ModelDifferenceDialog modelDialog, SNodeId rootId, String rootName, Frame frame, @Nullable Bounds firstChange) {
-    super(frame, true);
+  public RootDifferenceDialog(ModelDifferenceDialog modelDialog, SNodeId rootId, String rootName, Component parent, @Nullable Bounds firstChange) {
+    super(parent, true);
     setTitle("Difference for " + rootName);
     init(modelDialog, rootId, firstChange);
   }
