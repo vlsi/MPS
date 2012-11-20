@@ -307,11 +307,7 @@ public class ClassConcept_Behavior {
   }
 
   public static Iterable<SNode> call_instanceInitializers_7702003619977535145(SNode thisNode) {
-    List<SNode> initializers = ListSequence.fromList(new ArrayList<SNode>());
-    if ((SLinkOperations.getTarget(thisNode, "instanceInitializer", true) != null)) {
-      ListSequence.fromList(initializers).addElement(SLinkOperations.getTarget(thisNode, "instanceInitializer", true));
-    }
-    ListSequence.fromList(initializers).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "member", true)).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceInitializer");
       }
@@ -319,16 +315,11 @@ public class ClassConcept_Behavior {
       public SNode select(SNode it) {
         return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceInitializer");
       }
-    }));
-    return initializers;
+    });
   }
 
   public static Iterable<SNode> call_staticInitializers_3136320261464948039(SNode thisNode) {
-    List<SNode> initializers = ListSequence.fromList(new ArrayList<SNode>());
-    if ((SLinkOperations.getTarget(thisNode, "classInitializer", true) != null)) {
-      ListSequence.fromList(initializers).addElement(SLinkOperations.getTarget(thisNode, "classInitializer", true));
-    }
-    ListSequence.fromList(initializers).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "member", true)).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticInitializer");
       }
@@ -336,8 +327,55 @@ public class ClassConcept_Behavior {
       public SNode select(SNode it) {
         return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.StaticInitializer");
       }
-    }));
-    return initializers;
+    });
+  }
+
+  public static Iterable<SNode> call_fields_5292274854859383272(SNode thisNode) {
+    return Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(thisNode)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+      }
+    });
+  }
+
+  public static Iterable<SNode> call_staticMethods_5292274854859435867(SNode thisNode) {
+    return Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(thisNode)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
+      }
+    });
+  }
+
+  public static Iterable<SNode> call_constructors_5292274854859503373(SNode thisNode) {
+    return Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(thisNode)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+      }
+    });
+  }
+
+  public static Iterable<SNode> call_properties_5292274854859513790(SNode thisNode) {
+    return Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(thisNode)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Property");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Property");
+      }
+    });
   }
 
   public static SNode getContextClass_8008512149545173402(SNode expr) {
