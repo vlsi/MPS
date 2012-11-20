@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.IOException;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.InputStream;
 import jetbrains.mps.smodel.ModelAccess;
@@ -74,14 +73,14 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
 
   public synchronized SModel getSModel() {
     if (myModel == null) {
-      myModel = loadSModel().getModel();
+      myModel = loadSModel();
       myModel.setModelDescriptor(this);
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return myModel;
   }
 
-  public ModelLoadResult loadSModel() {
+  public SModel loadSModel() {
     SModel m = new SModel(getSModelReference());
     MultiStreamDataSource source = (MultiStreamDataSource) getSource();
     for (String child : Sequence.fromIterable(source.getAvailableStreams())) {
@@ -98,7 +97,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
       }
     }
 
-    return new ModelLoadResult(m, ModelLoadingState.FULLY_LOADED);
+    return m;
   }
 
   public ModelLoadingState getLoadingState() {

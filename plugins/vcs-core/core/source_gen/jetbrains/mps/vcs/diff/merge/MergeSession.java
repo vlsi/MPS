@@ -17,7 +17,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.diff.changes.MetadataChange;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
@@ -34,6 +34,8 @@ import java.util.Comparator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
@@ -70,9 +72,12 @@ public class MergeSession {
         fillRootToChangesMap();
         fillNodeToChangesMap();
 
-        myResultModel = CopyUtil.copyModel(base);
-        int pv = Math.max(base.getPersistenceVersion(), Math.max(mine.getPersistenceVersion(), repository.getPersistenceVersion()));
-        myResultModel.setPersistenceVersion(pv);
+        // TODO generalize merge for any SModel 
+        myResultModel = copyModel(base);
+        int pv = Math.max(getPersistenceVersion(base), Math.max(getPersistenceVersion(mine), getPersistenceVersion(repository)));
+        if (myResultModel instanceof DefaultSModel) {
+          ((DefaultSModel) myResultModel).setPersistenceVersion(pv);
+        }
         myNodeCopier = new NodeCopier(myResultModel);
       }
     });
@@ -306,6 +311,25 @@ public class MergeSession {
       SetSequence.fromSet(myResolvedChanges).addSequence(Sequence.fromIterable(changes));
       check_bow6nj_a1a0a92(myChangesInvalidateHandler);
     }
+  }
+
+  private static int getPersistenceVersion(SModel m) {
+    SModel model = m;
+    if (model instanceof DefaultSModel) {
+      return ((DefaultSModel) model).getPersistenceVersion();
+    }
+    return -1;
+  }
+
+  public static SModel copyModel(SModel m) {
+    SModelReference ref = m.getSModelReference();
+    SModel copy = (m instanceof DefaultSModel ?
+      new DefaultSModel(ref) :
+      new SModel(ref)
+    );
+    CopyUtil.copyModelContentAndPreserveIds(m, copy);
+    CopyUtil.copyModelProperties(m, copy);
+    return copy;
   }
 
   private static void check_bow6nj_a1a0a92(MergeSession.ChangesInvalidateHandler checkedDotOperand) {

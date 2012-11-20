@@ -31,10 +31,10 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.StringUtil;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.xml.BreakParseSAXException;
 import jetbrains.mps.util.xml.XMLSAXHandler;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
@@ -229,14 +229,16 @@ public class ModelPersistence {
   /*
    *  Saves model and metadata.
    */
-  public static SModel saveModel(@NotNull SModel model, @NotNull IFile file) {
-    return saveModel(model, file, model.getPersistenceVersion());
+  public static DefaultSModel saveModel(@NotNull SModel model, @NotNull IFile file) {
+    int persistenceVersion =
+      model instanceof DefaultSModel ? ((DefaultSModel) model).getPersistenceVersion() : ModelPersistence.LAST_VERSION;
+    return saveModel(model, file, persistenceVersion);
   }
 
   /*
    *  returns upgraded model, or null if the model doesn't require update
    */
-  public static SModel saveModel(@NotNull SModel model, @NotNull IFile file, int persistenceVersion) {
+  public static DefaultSModel saveModel(@NotNull SModel model, @NotNull IFile file, int persistenceVersion) {
     LOG.debug("Save model " + model.getSModelReference() + " to file " + file.getPath());
 
     if (file.isReadOnly()) {
@@ -246,9 +248,13 @@ public class ModelPersistence {
 
 
     // upgrade?
-    int oldVersion = model.getPersistenceVersion();
-    if (oldVersion != persistenceVersion) {
-      model.setPersistenceVersion(persistenceVersion);
+    int oldVersion = persistenceVersion;
+    if (model instanceof DefaultSModel) {
+      DefaultSModel defaultSModel = (DefaultSModel) model;
+      oldVersion = defaultSModel.getPersistenceVersion();
+      if (oldVersion != persistenceVersion) {
+        defaultSModel.setPersistenceVersion(persistenceVersion);
+      }
     }
 
     // save metadata
@@ -258,17 +264,19 @@ public class ModelPersistence {
       Map<String, String> metadata = md.getMetaData();
 
       // for old persistence, push version/doNotGenerator options => metadata back
-      SModelHeader header = model.getSModelHeader();
-      if (persistenceVersion < 7 && (header.getVersion() != -1 || header.isDoNotGenerate())) {
-        metadata = new HashMap<String, String>(metadata);
-        if (header.getVersion() != -1) {
-          metadata.put(SModelHeader.VERSION, Integer.toString(header.getVersion()));
+      if(model instanceof DefaultSModel) {
+        SModelHeader header = ((DefaultSModel) model).getSModelHeader();
+        if (persistenceVersion < 7 && (header.getVersion() != -1 || header.isDoNotGenerate())) {
+          metadata = new HashMap<String, String>(metadata);
+          if (header.getVersion() != -1) {
+            metadata.put(SModelHeader.VERSION, Integer.toString(header.getVersion()));
+          }
+          if (header.isDoNotGenerate()) {
+            metadata.put(SModelHeader.DO_NOT_GENERATE, "true");
+          }
         }
-        if (header.isDoNotGenerate()) {
-          metadata.put(SModelHeader.DO_NOT_GENERATE, "true");
-        }
+        saveMetadata(md.getSource().getFile(), metadata);
       }
-      saveMetadata(md.getSource().getFile(), metadata);
     }
 
     // save model
@@ -281,7 +289,7 @@ public class ModelPersistence {
 
     if (oldVersion != persistenceVersion) {
       LOG.info("persistence upgraded: " + oldVersion + "->" + persistenceVersion + " " + model.getSModelReference());
-      return model;
+      return (DefaultSModel) model;
     }
     return null;
   }
@@ -291,13 +299,18 @@ public class ModelPersistence {
     //model persistence level update is performed on startup;
     // here model's persistence level is used, if a model has persistence level bigger than user-selected
     // (consider BL or third-party models which have a level 4 while user uses level 3 in his application)
-    int persistenceVersion = sourceModel.getPersistenceVersion();
-    if (persistenceVersion == -1) {
-      persistenceVersion = getCurrentPersistenceVersion();
-      sourceModel.setPersistenceVersion(persistenceVersion);
+    IModelPersistence modelPersistence = null;
+    if (sourceModel instanceof DefaultSModel) {
+      DefaultSModel defaultSModel = (DefaultSModel) sourceModel;
+      int persistenceVersion = defaultSModel.getPersistenceVersion();
+      if (persistenceVersion == -1) {
+        persistenceVersion = getCurrentPersistenceVersion();
+        defaultSModel.setPersistenceVersion(persistenceVersion);
+      }
+
+      modelPersistence = getModelPersistence(defaultSModel.getSModelHeader());
     }
 
-    IModelPersistence modelPersistence = getModelPersistence(sourceModel.getSModelHeader());
     if (modelPersistence == null) {
       modelPersistence = getCurrentModelPersistence();
     }
@@ -339,14 +352,14 @@ public class ModelPersistence {
   }
 
   @NotNull
-  public static SModel readModel(@NotNull final IFile file, boolean onlyRoots) throws ModelReadException {
+  public static DefaultSModel readModel(@NotNull final IFile file, boolean onlyRoots) throws ModelReadException {
     SModelHeader header = loadDescriptor(file).getHeader();
     ModelLoadingState state = onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED;
     return readModel(header, file, state).getModel();
   }
 
   @NotNull
-  public static SModel readModel(@NotNull final String content, boolean onlyRoots) throws ModelReadException {
+  public static DefaultSModel readModel(@NotNull final String content, boolean onlyRoots) throws ModelReadException {
     SModelHeader header = loadDescriptor(new InputSource(new StringReader(content))).getHeader();
     ModelLoadingState state = onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED;
     return readModel(header, new InputSource(new StringReader(content)), state).getModel();

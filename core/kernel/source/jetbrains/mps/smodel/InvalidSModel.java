@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2012 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,17 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.descriptor.source;
+package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import org.jetbrains.mps.openapi.persistence.DataSource;
+import jetbrains.mps.messages.IMessage;
 
-public interface StubModelDataSource extends DataSource {
+import java.util.Collection;
 
-  SModel loadSModel(IModule contextModule, SModelDescriptor descriptor);
+/**
+ * evgeny, 11/20/12
+ */
+public interface InvalidSModel {
 
-  // todo move to loadSModel - return null in case no model is there
-  boolean hasModel(SModelDescriptor d);
+  Collection<IMessage> getProblems();
 }

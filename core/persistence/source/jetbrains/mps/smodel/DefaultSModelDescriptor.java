@@ -46,22 +46,24 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import java.util.Collections;
 import java.util.Map;
 
+import static jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
+
 public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor, GeneratableSModelDescriptor, RefactorableSModelDescriptor, FastFindSupportProvider {
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
   public static String FAST_FIND_ID = "regular";
 
   private final UpdateableModel myModel = new UpdateableModel(this) {
     @Override
-    protected ModelLoadResult doLoad(ModelLoadingState state, @Nullable SModel current) {
+    protected ModelLoadResult doLoad(ModelLoadingState state, @Nullable DefaultSModel current) {
       if (state == ModelLoadingState.NOT_LOADED) return new ModelLoadResult(null, ModelLoadingState.NOT_LOADED);
       if (state == ModelLoadingState.ROOTS_LOADED) {
         ModelLoadResult result = load(ModelLoadingState.ROOTS_LOADED);
-        tryFixingVersion(result.getModel().getSModelHeader());
+        tryFixingVersion(result.getModel());
         updateDiskTimestamp();
         return result;
       }
       if (state == ModelLoadingState.FULLY_LOADED) {
-        SModel fullModel = load(ModelLoadingState.FULLY_LOADED).getModel();
+        DefaultSModel fullModel = load(ModelLoadingState.FULLY_LOADED).getModel();
         updateDiskTimestamp();
         if (current == null) return new ModelLoadResult(fullModel, ModelLoadingState.FULLY_LOADED);
         current.setUpdateMode(true);   //not to send events on changes
@@ -112,7 +114,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   @Override
-  protected SModel getCurrentModelInternal() {
+  protected DefaultSModel getCurrentModelInternal() {
     return myModel.getModel(null);
   }
 
@@ -131,7 +133,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
     IFile modelFile = getSource().getFile();
     if (!modelFile.isReadOnly() && !modelFile.exists()) {
-      SModel model = new SModel(dsmRef, new RegularNodeIdMap());
+      DefaultSModel model = new DefaultSModel(dsmRef, new RegularNodeIdMap());
       return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
 
@@ -141,7 +143,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
       result = ModelPersistence.readModel(getDescriptorSModelHeader(), modelFile, state);
     } catch (ModelReadException e) {
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
-      SModel newModel = new StubModel(getSModelReference(), e);
+      DefaultSModel newModel = new InvalidDefaultSModel(getSModelReference(), e);
       return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
     }
 
@@ -232,13 +234,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   private boolean saveModel() {
     SModel smodel = getSModel();
-    if (smodel instanceof StubModel) {
+    if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model
       return false;
     }
-    IFile modelFile = getSource().getFile();
-    assert modelFile != null;
-    return ModelPersistence.saveModel(smodel, modelFile) != null;
+    return ModelPersistence.saveModel(smodel, getSource().getFile()) != null;
   }
 
   @Override
@@ -251,7 +251,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     return Boolean.parseBoolean(getSModelHeader().getOptionalProperty("useModelFolderForGeneration"));
   }
 
-  public void replaceModel(final SModel newModel, final ModelLoadingState state) {
+  public void replaceModel(final DefaultSModel newModel, final ModelLoadingState state) {
     ModelAccess.assertLegalWrite();
 
     if (newModel == getCurrentModelInternal()) return;
@@ -307,7 +307,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   private SModelHeader getSModelHeader() {
-    SModel model = getCurrentModelInternal();
+    DefaultSModel model = getCurrentModelInternal();
     if (model == null) return myHeader;
     return model.getSModelHeader();
   }
@@ -328,13 +328,13 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
   }
 
-  private void tryFixingVersion(SModelHeader header) {
+  private void tryFixingVersion(SModel loadedSModel) {
     if (getVersion() != -1) return;
 
     int latestVersion = getStructureModificationLog().getLatestVersion(getSModelReference());
     myStructureModificationLog = null;  // we don't need to keep log in memory
     if (latestVersion != -1) {
-      header.setVersion(latestVersion);
+      loadedSModel.setVersion(latestVersion);
       LOG.error("Version for model " + getSModelReference().getSModelFqName() + " was not set.");
     }
   }

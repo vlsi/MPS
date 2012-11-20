@@ -34,7 +34,7 @@ public abstract class UpdateableModel {
   private final SModelDescriptor myDescriptor;
 
   private volatile ModelLoadingState myState = ModelLoadingState.NOT_LOADED;
-  private volatile SModel myModel = null;
+  private volatile DefaultSModel myModel = null;
 
   public UpdateableModel(SModelDescriptor descriptor) {
     myDescriptor = descriptor;
@@ -46,7 +46,7 @@ public abstract class UpdateableModel {
 
   //null in parameter means "give me th current model, don't attempt to load"
   //with null parameter, no synch should occur
-  public final SModel getModel(@Nullable ModelLoadingState state) {
+  public final DefaultSModel getModel(@Nullable ModelLoadingState state) {
     if (state == null) return myModel;
     if (!ModelAccess.instance().canWrite()) {
       synchronized (this) {
@@ -80,9 +80,9 @@ public abstract class UpdateableModel {
     myState = res.getState();
   }
 
-  protected abstract ModelLoadResult doLoad(ModelLoadingState state, @Nullable SModel current);
+  protected abstract ModelLoadResult doLoad(ModelLoadingState state, @Nullable DefaultSModel current);
 
-  public void replaceWith(SModel newModel, ModelLoadingState state) {
+  public void replaceWith(DefaultSModel newModel, ModelLoadingState state) {
     if (!ModelAccess.instance().canWrite()) {
       synchronized (this) {
         doReplace(newModel, state);
@@ -92,7 +92,7 @@ public abstract class UpdateableModel {
     }
   }
 
-  private void doReplace(SModel newModel, ModelLoadingState state) {
+  private void doReplace(DefaultSModel newModel, ModelLoadingState state) {
     myModel = newModel;
     myState = state;
   }

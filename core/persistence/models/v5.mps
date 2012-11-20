@@ -61,13 +61,13 @@
     </node>
     <node role="fields" roleId="nv7r.2264311582634140421" type="nv7r.XMLSAXFieldDeclaration" typeId="nv7r.2264311582634140381" id="4033117946318588975">
       <property name="name" nameId="tpck.1169194664001" value="model" />
-      <node role="type" roleId="nv7r.2264311582634140382" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4033117946318588977">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModel" resolveInfo="SModel" />
+      <node role="type" roleId="nv7r.2264311582634140382" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8788437410272281376">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~DefaultSModel" resolveInfo="DefaultSModel" />
       </node>
     </node>
     <node role="nodes" roleId="nv7r.2264311582634140420" type="nv7r.XMLSAXNodeRule" typeId="nv7r.2264311582634140402" id="2286463592495096553">
-      <property name="tagName" nameId="nv7r.2264311582634140409" value="model" />
       <property name="name" nameId="tpck.1169194664001" value="model" />
+      <property name="tagName" nameId="nv7r.2264311582634140409" value="model" />
       <node role="attrs" roleId="nv7r.2264311582634140404" type="nv7r.XMLSAXAttributeRule" typeId="nv7r.2264311582634140363" id="2286463592495104480">
         <property name="isRequired" nameId="nv7r.2264311582634140364" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="modelUID" />
@@ -354,7 +354,7 @@
               </node>
               <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4033117946318588984">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4033117946318588985">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModel%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSModelReference)" resolveInfo="SModel" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~DefaultSModel%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSModelReference)" resolveInfo="DefaultSModel" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4033117946318588986">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelReference%dfromString(java%dlang%dString)%cjetbrains%dmps%dsmodel%dSModelReference" resolveInfo="fromString" />
                     <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2c.~SModelReference" resolveInfo="SModelReference" />
@@ -372,7 +372,7 @@
                 <link role="declaration" roleId="nv7r.2264311582634140385" targetNodeId="4033117946318588975" resolveInfo="model" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4485356420335258679">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModel%dsetPersistenceVersion(int)%cvoid" resolveInfo="setPersistenceVersion" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~DefaultSModel%dsetPersistenceVersion(int)%cvoid" resolveInfo="setPersistenceVersion" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4485356420335258680">
                   <property name="value" nameId="tpee.1068580320021" value="5" />
                 </node>
@@ -386,7 +386,7 @@
                   <link role="declaration" roleId="nv7r.2264311582634140385" targetNodeId="4033117946318588975" resolveInfo="model" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7623696721876393282">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModel%dgetSModelHeader()%cjetbrains%dmps%dsmodel%dSModelHeader" resolveInfo="getSModelHeader" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~DefaultSModel%dgetSModelHeader()%cjetbrains%dmps%dsmodel%dSModelHeader" resolveInfo="getSModelHeader" />
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7623696721876393287">
@@ -400,7 +400,7 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4485356420335258681">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4813471910141010697">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4813471910141010699">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gznm.~ModelLoadResult%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSModel,jetbrains%dmps%dsmodel%dloading%dModelLoadingState)" resolveInfo="ModelLoadResult" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gznm.~ModelLoadResult%d&lt;init&gt;(jetbrains%dmps%dsmodel%dDefaultSModel,jetbrains%dmps%dsmodel%dloading%dModelLoadingState)" resolveInfo="ModelLoadResult" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="nv7r.XMLSAXFieldReference" typeId="nv7r.2264311582634140384" id="4813471910141047990">
                   <link role="declaration" roleId="nv7r.2264311582634140385" targetNodeId="4033117946318588975" resolveInfo="model" />
                 </node>
@@ -457,8 +457,8 @@
     </node>
     <node role="nodes" roleId="nv7r.2264311582634140420" type="nv7r.XMLSAXNodeRule" typeId="nv7r.2264311582634140402" id="2286463592495104481">
       <property name="isCompact" nameId="nv7r.2264311582634140410" value="true" />
-      <property name="tagName" nameId="nv7r.2264311582634140409" value="persistence" />
       <property name="name" nameId="tpck.1169194664001" value="persistence" />
+      <property name="tagName" nameId="nv7r.2264311582634140409" value="persistence" />
       <node role="attrs" roleId="nv7r.2264311582634140404" type="nv7r.XMLSAXAttributeRule" typeId="nv7r.2264311582634140363" id="2286463592495104484">
         <property name="isRequired" nameId="nv7r.2264311582634140364" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="version" />
@@ -482,8 +482,8 @@
     </node>
     <node role="nodes" roleId="nv7r.2264311582634140420" type="nv7r.XMLSAXNodeRule" typeId="nv7r.2264311582634140402" id="2286463592495217826">
       <property name="isCompact" nameId="nv7r.2264311582634140410" value="true" />
-      <property name="tagName" nameId="nv7r.2264311582634140409" value="maxImportIndex" />
       <property name="name" nameId="tpck.1169194664001" value="maxImportIndex" />
+      <property name="tagName" nameId="nv7r.2264311582634140409" value="maxImportIndex" />
       <node role="attrs" roleId="nv7r.2264311582634140404" type="nv7r.XMLSAXAttributeRule" typeId="nv7r.2264311582634140363" id="2286463592495342537">
         <property name="isRequired" nameId="nv7r.2264311582634140364" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="value" />
@@ -507,8 +507,8 @@
     </node>
     <node role="nodes" roleId="nv7r.2264311582634140420" type="nv7r.XMLSAXNodeRule" typeId="nv7r.2264311582634140402" id="2286463592495498085">
       <property name="isCompact" nameId="nv7r.2264311582634140410" value="true" />
-      <property name="tagName" nameId="nv7r.2264311582634140409" value="languageAspect" />
       <property name="name" nameId="tpck.1169194664001" value="languageAspect" />
+      <property name="tagName" nameId="nv7r.2264311582634140409" value="languageAspect" />
       <node role="attrs" roleId="nv7r.2264311582634140404" type="nv7r.XMLSAXAttributeRule" typeId="nv7r.2264311582634140363" id="2286463592495498086">
         <property name="isRequired" nameId="nv7r.2264311582634140364" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="modelUID" />
@@ -558,8 +558,8 @@
     </node>
     <node role="nodes" roleId="nv7r.2264311582634140420" type="nv7r.XMLSAXNodeRule" typeId="nv7r.2264311582634140402" id="2286463592495498288">
       <property name="isCompact" nameId="nv7r.2264311582634140410" value="true" />
-      <property name="tagName" nameId="nv7r.2264311582634140409" value="import" />
       <property name="name" nameId="tpck.1169194664001" value="import" />
+      <property name="tagName" nameId="nv7r.2264311582634140409" value="import" />
       <node role="attrs" roleId="nv7r.2264311582634140404" type="nv7r.XMLSAXAttributeRule" typeId="nv7r.2264311582634140363" id="2286463592495498289">
         <property name="isRequired" nameId="nv7r.2264311582634140364" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="index" />
@@ -628,8 +628,8 @@
     </node>
     <node role="nodes" roleId="nv7r.2264311582634140420" type="nv7r.XMLSAXNodeRule" typeId="nv7r.2264311582634140402" id="2286463592495498325">
       <property name="isCompact" nameId="nv7r.2264311582634140410" value="false" />
-      <property name="tagName" nameId="nv7r.2264311582634140409" value="node" />
       <property name="name" nameId="tpck.1169194664001" value="node" />
+      <property name="tagName" nameId="nv7r.2264311582634140409" value="node" />
       <node role="children" roleId="nv7r.2264311582634140405" type="nv7r.XMLSAXChildRule" typeId="nv7r.2264311582634140376" id="7707758858786147468">
         <link role="rule" roleId="nv7r.2264311582634140380" targetNodeId="7707758858786147469" resolveInfo="property" />
         <node role="handler" roleId="nv7r.2264311582634140377" type="nv7r.XMLSAXChildHandler" typeId="nv7r.2264311582634140370" id="7707758858786147473">
@@ -952,8 +952,8 @@
     </node>
     <node role="nodes" roleId="nv7r.2264311582634140420" type="nv7r.XMLSAXNodeRule" typeId="nv7r.2264311582634140402" id="7707758858786147469">
       <property name="isCompact" nameId="nv7r.2264311582634140410" value="true" />
-      <property name="tagName" nameId="nv7r.2264311582634140409" value="property" />
       <property name="name" nameId="tpck.1169194664001" value="property" />
+      <property name="tagName" nameId="nv7r.2264311582634140409" value="property" />
       <node role="attrs" roleId="nv7r.2264311582634140404" type="nv7r.XMLSAXAttributeRule" typeId="nv7r.2264311582634140363" id="7707758858786147475">
         <property name="isRequired" nameId="nv7r.2264311582634140364" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="name" />
@@ -997,8 +997,8 @@
     </node>
     <node role="nodes" roleId="nv7r.2264311582634140420" type="nv7r.XMLSAXNodeRule" typeId="nv7r.2264311582634140402" id="355506112072964453">
       <property name="isCompact" nameId="nv7r.2264311582634140410" value="true" />
-      <property name="tagName" nameId="nv7r.2264311582634140409" value="link" />
       <property name="name" nameId="tpck.1169194664001" value="link" />
+      <property name="tagName" nameId="nv7r.2264311582634140409" value="link" />
       <node role="attrs" roleId="nv7r.2264311582634140404" type="nv7r.XMLSAXAttributeRule" typeId="nv7r.2264311582634140363" id="4525774333072919124">
         <property name="name" nameId="tpck.1169194664001" value="role" />
         <node role="handler" roleId="nv7r.2264311582634140365" type="nv7r.XMLSAXAttributeHandler" typeId="nv7r.2264311582634140353" id="4525774333072921551">
@@ -1073,8 +1073,8 @@
     </node>
     <node role="nodes" roleId="nv7r.2264311582634140420" type="nv7r.XMLSAXNodeRule" typeId="nv7r.2264311582634140402" id="3912764103614069901">
       <property name="isCompact" nameId="nv7r.2264311582634140410" value="true" />
-      <property name="tagName" nameId="nv7r.2264311582634140409" value="visible" />
       <property name="name" nameId="tpck.1169194664001" value="visible" />
+      <property name="tagName" nameId="nv7r.2264311582634140409" value="visible" />
       <node role="attrs" roleId="nv7r.2264311582634140404" type="nv7r.XMLSAXAttributeRule" typeId="nv7r.2264311582634140363" id="3912764103614069905">
         <property name="isRequired" nameId="nv7r.2264311582634140364" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="index" />
@@ -1123,8 +1123,8 @@
       </node>
     </node>
     <node role="nodes" roleId="nv7r.2264311582634140420" type="nv7r.XMLSAXNodeRule" typeId="nv7r.2264311582634140402" id="651246788329828627">
-      <property name="tagName" nameId="nv7r.2264311582634140409" value="model" />
       <property name="name" nameId="tpck.1169194664001" value="model" />
+      <property name="tagName" nameId="nv7r.2264311582634140409" value="model" />
       <node role="children" roleId="nv7r.2264311582634140405" type="nv7r.XMLSAXChildRule" typeId="nv7r.2264311582634140376" id="7606567306781657921">
         <property name="tagName" nameId="nv7r.2264311582634140378" value="persistence" />
         <link role="rule" roleId="nv7r.2264311582634140380" targetNodeId="7606567306781655250" resolveInfo="null" />
@@ -1209,8 +1209,8 @@
     </node>
     <node role="nodes" roleId="nv7r.2264311582634140420" type="nv7r.XMLSAXNodeRule" typeId="nv7r.2264311582634140402" id="651246788329828898">
       <property name="isCompact" nameId="nv7r.2264311582634140410" value="false" />
-      <property name="tagName" nameId="nv7r.2264311582634140409" value="node" />
       <property name="name" nameId="tpck.1169194664001" value="node" />
+      <property name="tagName" nameId="nv7r.2264311582634140409" value="node" />
       <node role="children" roleId="nv7r.2264311582634140405" type="nv7r.XMLSAXChildRule" typeId="nv7r.2264311582634140376" id="651246788329828899">
         <link role="rule" roleId="nv7r.2264311582634140380" targetNodeId="651246788329829035" resolveInfo="property" />
         <node role="handler" roleId="nv7r.2264311582634140377" type="nv7r.XMLSAXChildHandler" typeId="nv7r.2264311582634140370" id="651246788329828900">
@@ -1316,8 +1316,8 @@
     </node>
     <node role="nodes" roleId="nv7r.2264311582634140420" type="nv7r.XMLSAXNodeRule" typeId="nv7r.2264311582634140402" id="651246788329829035">
       <property name="isCompact" nameId="nv7r.2264311582634140410" value="true" />
-      <property name="tagName" nameId="nv7r.2264311582634140409" value="property" />
       <property name="name" nameId="tpck.1169194664001" value="property" />
+      <property name="tagName" nameId="nv7r.2264311582634140409" value="property" />
       <node role="attrs" roleId="nv7r.2264311582634140404" type="nv7r.XMLSAXAttributeRule" typeId="nv7r.2264311582634140363" id="651246788329829036">
         <property name="isRequired" nameId="nv7r.2264311582634140364" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="name" />
@@ -1339,8 +1339,8 @@
     </node>
     <node role="nodes" roleId="nv7r.2264311582634140420" type="nv7r.XMLSAXNodeRule" typeId="nv7r.2264311582634140402" id="651246788329829056">
       <property name="isCompact" nameId="nv7r.2264311582634140410" value="true" />
-      <property name="tagName" nameId="nv7r.2264311582634140409" value="link" />
       <property name="name" nameId="tpck.1169194664001" value="link" />
+      <property name="tagName" nameId="nv7r.2264311582634140409" value="link" />
       <node role="attrs" roleId="nv7r.2264311582634140404" type="nv7r.XMLSAXAttributeRule" typeId="nv7r.2264311582634140363" id="651246788329829057">
         <property name="isRequired" nameId="nv7r.2264311582634140364" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="role" />

@@ -155,6 +155,7 @@ public class TestModule extends ClassLoadingModule {
       return TestModule.this;
     }
 
+    @Override
     public SModel createModel() {
       Document document = ModelPersistence.saveModel(myToCopy);
       Element rootElement = document.getRootElement();

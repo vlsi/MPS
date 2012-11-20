@@ -22,7 +22,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 
 public class UpgradePersistence_Action extends BaseAction {
@@ -82,7 +81,7 @@ public class UpgradePersistence_Action extends BaseAction {
           continue;
         }
         IFile file = source.getFile();
-        boolean wasInitialized = modelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED;
+        boolean wasInitialized = modelDescriptor.isLoaded();
         if (wasInitialized) {
           modelDescriptor.save();
         }

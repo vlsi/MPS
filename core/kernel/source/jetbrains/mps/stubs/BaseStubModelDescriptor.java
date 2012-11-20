@@ -53,7 +53,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   private SModel createModel() {
-    SModel model = getSource().loadSModel((IModule) myModule, this, ModelLoadingState.FULLY_LOADED).getModel();
+    SModel model = getSource().loadSModel((IModule) myModule, this);
     updateDiskTimestamp();
     return model;
   }
@@ -90,12 +90,11 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
       updateDiskTimestamp();
       return;
     }
-    ModelLoadingState state = ModelLoadingState.FULLY_LOADED;
-    final ModelLoadResult result = getSource().loadSModel((IModule) myModule, this, state);
+    final SModel result = getSource().loadSModel((IModule) myModule, this);
     updateDiskTimestamp();
     replaceModel(new Runnable() {
       public void run() {
-        mySModel = result.getModel();
+        mySModel = result;
       }
     });
   }

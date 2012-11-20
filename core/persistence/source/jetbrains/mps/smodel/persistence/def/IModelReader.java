@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.SModelHeader;
 import org.jdom.Document;
 
@@ -26,5 +26,5 @@ import org.jdom.Document;
 public interface IModelReader {
   int getVersion();
 
-  SModel readModel(Document document, SModelHeader header);
+  DefaultSModel readModel(Document document, SModelHeader header);
 }
