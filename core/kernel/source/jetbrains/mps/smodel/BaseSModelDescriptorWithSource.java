@@ -49,6 +49,9 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
 
   private long mySourceTimestamp = -1;
 
+  /*
+   *  Should resolve disk/memory conflicts if any.
+   */
   protected abstract void reloadFromDiskSafe();
 
   public long getSourceTimestamp() {
