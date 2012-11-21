@@ -43,17 +43,17 @@ public class RulesUtil {
     SNode LeftType = TypeChecker.getInstance().getTypeOf(leftExpression);
     boolean isGood = false;
     if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToModel_1262430001741492322", new Object[]{})) {
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(LeftType, new RulesUtil.QuotationClass_yxkngc_a1a0a0e0a().createNode(typeCheckingContext), false)) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(LeftType, _quotation_createNode_yxkngc_b0a0a4a0(), false)) {
         isGood = true;
       }
     }
     if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToConcept_1262430001741498358", new Object[]{})) {
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(LeftType, new RulesUtil.QuotationClass_yxkngc_a1a0a0f0a().createNode(typeCheckingContext))) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(LeftType, _quotation_createNode_yxkngc_b0a0a5a0())) {
         isGood = true;
       }
     }
     if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToNode_1262430001741498076", new Object[]{})) {
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(LeftType, new RulesUtil.QuotationClass_yxkngc_a1a0a0g0a().createNode(typeCheckingContext), false)) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(LeftType, _quotation_createNode_yxkngc_b0a0a6a0(), false)) {
         isGood = true;
       }
     }
@@ -65,7 +65,7 @@ public class RulesUtil {
         if (isGood) {
           // some of ops applicable to 'link' require left-expr to be a concept 
           if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToConcept_1262430001741498358", new Object[]{}) && !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToNode_1262430001741498076", new Object[]{}))) {
-            isGood = TypeChecker.getInstance().getSubtypingManager().isSubtype(LeftType, new RulesUtil.QuotationClass_yxkngc_a1a0a0a1a1a1a8a0().createNode(typeCheckingContext));
+            isGood = TypeChecker.getInstance().getSubtypingManager().isSubtype(LeftType, _quotation_createNode_yxkngc_b0a0a0b0b0b0i0a());
           }
         }
       }

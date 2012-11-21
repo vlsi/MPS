@@ -26,7 +26,7 @@ public class QueryFunction_STVariableInitializer_Behavior {
   public static boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
     return true;
   }
-  
+
   private static SNode _quotation_createNode_f9d5ph_a1a0() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="1bvurv7o61a9cpvxxfore08okmj01r9">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="bavz98vwxhwhpog89k63m5eu2e8cbl3" />
+  <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" hash="-5xtiszlq5zok223n8vb9hiddv6jowz" />
+  <common hash="-c3cfoylwqc9ajxapg2tbrn97rwho5c3" />
+  <source id="4003657351907889940" name="ConsoleMessageFormat" hash="4uh3mmgyv537jxr2ixgtro3xn12yraa">
+    <file name="ConsoleMessageFormat.java" />
+  </source>
+  <source id="4003657351907890045" name="PerfomanceReport" hash="3w7t2mc857h9m8lsa20bvftgnfe51d2">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="PerfomanceReport.java" />
+  </source>
+  <source id="4003657351907891908" name="TestGenerationOnTeamcity" hash="-ajql24r15esgum9hl6dewdhdlchimca">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" />
+    <file name="TestGenerationOnTeamcity.java" />
+  </source>
+  <source id="4003657351907886493" name="GenerateTask" hash="2dbzyes5jb1xeyjmndpv5akvr9dd5sn">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" />
+    <file name="GenerateTask.java" />
+  </source>
+</dependencies>
+
