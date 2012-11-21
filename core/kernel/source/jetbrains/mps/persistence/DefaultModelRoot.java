@@ -142,7 +142,7 @@ public class DefaultModelRoot extends FolderModelRootBase {
 
   @Deprecated
   public ModelRootDescriptor toDescriptor() {
-    ModelRootDescriptor result = new ModelRootDescriptor(null, new PathAwareJDOMMemento(new Element("modelRoot"), null));
+    ModelRootDescriptor result = new ModelRootDescriptor();
     save(result.getMemento());
     return result;
   }

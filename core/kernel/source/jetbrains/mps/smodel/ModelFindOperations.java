@@ -42,7 +42,7 @@ public class ModelFindOperations {
     myDataSource = source instanceof FileDataSource ? (FileDataSource) source : null;
     myNeedSearchForStrings =
       (myModelDescriptor instanceof DefaultSModelDescriptor) &&
-        ((DefaultSModelDescriptor) myModelDescriptor).getUpdateableModel().getState() != ModelLoadingState.FULLY_LOADED &&
+        ((DefaultSModelDescriptor) myModelDescriptor).getLoadingState() != ModelLoadingState.FULLY_LOADED &&
         !(
           myModelDescriptor instanceof EditableSModelDescriptor &&
             ((EditableSModelDescriptor) myModelDescriptor).isChanged()
@@ -90,7 +90,7 @@ public class ModelFindOperations {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
     if (dsm.isChanged()) return true;
 
-    IFile modelFile = dsm.getModelFile();
+    IFile modelFile = dsm.getSource().getFile();
     if (!modelFile.exists()) return true;
     BufferedReader r = null;
     try {

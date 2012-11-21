@@ -11,15 +11,13 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.generator.editor.QueriesUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
-import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class AddContext_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -66,6 +64,23 @@ public class AddContext_Intention implements IntentionFactory {
     return myCachedExecutable;
   }
 
+  private static SNode _quotation_createNode_4m6r5j_a0a0d0a(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    SNode quotedNode_5 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BlockStatement", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, GlobalScope.getInstance(), false);
+    quotedNode_5 = (SNode) parameter_1;
+    if (quotedNode_5 != null) {
+      quotedNode_4.addChild("expression", HUtil.copyIfNecessary(quotedNode_5));
+    }
+    quotedNode_3.addChild("statement", quotedNode_4);
+    quotedNode_2.addChild("statements", quotedNode_3);
+    return quotedNode_2;
+  }
+
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
@@ -79,7 +94,7 @@ public class AddContext_Intention implements IntentionFactory {
       SLinkOperations.setTarget(node, "templateNode", null, true);
       SNode result = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence");
       if (SNodeOperations.isInstanceOf(tNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
-        SLinkOperations.setTarget(result, "contentNode", new AddContext_Intention.QuotationClass_7sjj31_a2a0a3a1a().createNode(tNode), true);
+        SLinkOperations.setTarget(result, "contentNode", _quotation_createNode_4m6r5j_a0a0d0a(tNode), true);
       } else {
         SLinkOperations.setTarget(result, "contentNode", tNode, true);
       }
@@ -88,49 +103,6 @@ public class AddContext_Intention implements IntentionFactory {
 
     public IntentionDescriptor getDescriptor() {
       return AddContext_Intention.this;
-    }
-  }
-
-  public static class QuotationClass_7sjj31_a2a0a3a1a {
-    public QuotationClass_7sjj31_a2a0a3a1a() {
-    }
-
-    public SNode createNode(Object parameter_9) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
-      SNode quotedNode_4 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BlockStatement", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_5 = quotedNode_1;
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_6 = quotedNode_2;
-          {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_7 = quotedNode_3;
-            {
-              quotedNode_4 = (SNode) parameter_9;
-              SNode quotedNode1_8;
-              if (_parameterValues_129834374.contains(quotedNode_4)) {
-                quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_4);
-              } else {
-                _parameterValues_129834374.add(quotedNode_4);
-                quotedNode1_8 = quotedNode_4;
-              }
-              if (quotedNode1_8 != null) {
-                quotedNode_3.addChild("expression", HUtil.copyIfNecessary(quotedNode1_8));
-              }
-            }
-            quotedNode_2.addChild("statement", quotedNode1_7);
-          }
-          quotedNode_1.addChild("statements", quotedNode1_6);
-        }
-        result = quotedNode1_5;
-      }
-      return result;
     }
   }
 }

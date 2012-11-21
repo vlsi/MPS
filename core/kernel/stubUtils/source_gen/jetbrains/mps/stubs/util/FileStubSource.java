@@ -8,11 +8,9 @@ import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.library.ModulesMiner;
@@ -38,7 +36,8 @@ public class FileStubSource extends FileDataSource implements StubModelDataSourc
     super(file, modelRoot);
   }
 
-  public ModelLoadResult loadSModel(IModule module, SModelDescriptor descriptor, ModelLoadingState state) {
+  @Override
+  public SModel loadSModel(IModule module, SModelDescriptor descriptor) {
     SModel model = new SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
     final ModuleDescriptor moduleDesc = ModulesMiner.getInstance().loadModuleDescriptor(getFile());
     new ProjectStructureBuilder(moduleDesc, getFile(), model) {
@@ -54,7 +53,7 @@ public class FileStubSource extends FileDataSource implements StubModelDataSourc
     ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("86ef8290-12bb-4ca7-947f-093788f263a9")).getModuleReference();
     model.addLanguage(lang);
     module.addUsedLanguage(lang);
-    return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+    return model;
   }
 
   private Iterable<org.jetbrains.mps.openapi.model.SModelReference> loadModels(ModelRootDescriptor root, ModuleDescriptor md) {

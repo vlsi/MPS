@@ -18,27 +18,46 @@ package jetbrains.mps.smodel.persistence.def;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.annotations.Nullable;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
+
+import java.io.IOException;
 
 public class ModelReadException extends Exception {
   @Nullable
   private SModelReference myModelReference;
 
-  public ModelReadException(String s, @Nullable Throwable throwable, @Nullable SModelReference modelReference) {
-    super(s, throwable);
+  public ModelReadException(String message, @Nullable Throwable throwable, @Nullable SModelReference modelReference) {
+    super(message, throwable);
     myModelReference = modelReference;
   }
 
-  public ModelReadException(String s, @Nullable Throwable throwable, @Nullable SModelHeader modelHeader) {
-    super(s, throwable);
+  public ModelReadException(String message, @Nullable Throwable throwable, @Nullable SModelHeader modelHeader) {
+    super(message, throwable);
     myModelReference = modelHeader == null ? null : modelHeader.getModelReference();
   }
 
-  public ModelReadException(String s, @Nullable Throwable throwable) {
-    this(s, throwable, (SModelReference) null);
+  public ModelReadException(String message, @Nullable Throwable throwable) {
+    this(message, throwable, (SModelReference) null);
   }
 
   @Nullable
   public SModelReference getModelReference() {
     return myModelReference;
+  }
+
+  public String getMessageEx() {
+    Throwable cause = getCause();
+    if (cause instanceof IOException) {
+      return "Couldn't read model because of I/O error.\n" + cause.getMessage();
+    } else if (cause instanceof SAXParseException) {
+      return "Couldn't read model because of invalid XML markup.\n" + cause.getMessage();
+    } else if (cause instanceof SAXException) {
+      return "Couldn't read model because of invalid SAX error.\n" + cause.getMessage();
+    } else if (cause != null) {
+      return "Couldn't read model.\n" + cause.getMessage();
+    } else {
+      return getMessage();
+    }
   }
 }

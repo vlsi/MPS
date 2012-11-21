@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence.def.v5;
 
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.persistence.def.v4.ModelReader4;
 import org.jdom.Element;
 
@@ -30,7 +30,7 @@ public class ModelReader5 extends ModelReader4 {
   }
 
   @Override
-  protected void readRefactorings(Element rootElement, SModel model) {
+  protected void readRefactorings(Element rootElement, DefaultSModel model) {
     // refactorings are extracted into separate file in version 5
   }
 }

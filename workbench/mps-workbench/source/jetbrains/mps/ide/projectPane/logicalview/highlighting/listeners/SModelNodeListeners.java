@@ -39,7 +39,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.tree.DefaultTreeModel;
@@ -133,9 +132,10 @@ public class SModelNodeListeners implements NodeListeners {
       visitNode(myModelNode);
     }
 
+    @Override
     public boolean isValid() {
       if (!super.isValid()) return false;
-      if (myModel.getLoadingState() == ModelLoadingState.NOT_LOADED) return true;
+      if (!(myModel.isLoaded())) return true;
       return !myModel.getSModel().isDisposed();
     }
   }

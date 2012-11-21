@@ -18,19 +18,17 @@ package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 import com.intellij.ui.LayeredIcon;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.IconNodeUpdate;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 
-import javax.swing.Icon;
+import javax.swing.*;
 
 public class ProjectPaneModifiedMarker extends TreeNodeVisitor {
+  @Override
   protected void visitModelNode(final SModelTreeNode node) {
     SModelDescriptor md = node.getSModelDescriptor();
-    if (md.getLoadingState() == ModelLoadingState.NOT_LOADED) return;
+    if (!(md.isLoaded())) return;
     if (!(md instanceof EditableSModelDescriptor)) return;
 
     boolean changed = ((EditableSModelDescriptor) md).isChanged();

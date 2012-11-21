@@ -29,7 +29,7 @@ import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.pointers.VirtualFilePointer;
 import com.intellij.openapi.vfs.pointers.VirtualFilePointerManager;
 import jetbrains.mps.idea.core.MPSBundle;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -37,12 +37,12 @@ import java.io.File;
 public class ModelRootContentEntryEditor extends ContentEntryEditor {
   private DummyContentEntry myContentEntry;
 
-  public ModelRootContentEntryEditor(ModelRoot root, Disposable disposable) {
+  public ModelRootContentEntryEditor(DefaultModelRoot root, Disposable disposable) {
     super(pathToUrl(root), false, false);
     myContentEntry = new DummyContentEntry(root, disposable);
   }
 
-  private static String pathToUrl(ModelRoot root) {
+  private static String pathToUrl(DefaultModelRoot root) {
     return VirtualFileManager.constructUrl(LocalFileSystem.PROTOCOL, root.getPath());
   }
 
@@ -71,10 +71,10 @@ public class ModelRootContentEntryEditor extends ContentEntryEditor {
     private static final VirtualFile[] EMPTY_VIRTUAL_FILES = new VirtualFile[0];
     private static final ExcludeFolder[] EMPTY_EXCLUDE_FOLDERS = new ExcludeFolder[0];
 
-    private ModelRoot myModelRoot;
+    private DefaultModelRoot myModelRoot;
     private VirtualFilePointer myRoot;
 
-    public DummyContentEntry(ModelRoot root, Disposable disposable) {
+    public DummyContentEntry(DefaultModelRoot root, Disposable disposable) {
       myModelRoot = root;
       myRoot = VirtualFilePointerManager.getInstance().create(getUrl(), disposable, null);
     }
@@ -90,7 +90,7 @@ public class ModelRootContentEntryEditor extends ContentEntryEditor {
       return pathToUrl(myModelRoot);
     }
 
-    public ModelRoot getModelRoot() {
+    public DefaultModelRoot getModelRoot() {
       return myModelRoot;
     }
 
@@ -157,7 +157,7 @@ public class ModelRootContentEntryEditor extends ContentEntryEditor {
 
     @Override
     public boolean isSynthetic() {
-            return false;
+      return false;
     }
   }
 }

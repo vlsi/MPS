@@ -19,8 +19,6 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.util.MacrosFactory;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -43,8 +41,8 @@ public class Layout_Behavior {
       SLinkOperations.addChild(thisNode, "builtInVariable", var);
     }
     SPropertyOperations.set(thisNode, "compile", "" + (true));
-    SLinkOperations.setTarget(thisNode, "deployDirectory", new Layout_Behavior.QuotationClass_g9j203_a2a01a0().createNode(Layout_Behavior.getBasedirName_1226509010730()), true);
-    SLinkOperations.setTarget(thisNode, "scriptsDirectory", new Layout_Behavior.QuotationClass_g9j203_a2a11a0().createNode(Layout_Behavior.getBasedirName_1226509010730()), true);
+    SLinkOperations.setTarget(thisNode, "deployDirectory", _quotation_createNode_g9j203_a0a01a0(Layout_Behavior.getBasedirName_1226509010730()), true);
+    SLinkOperations.setTarget(thisNode, "scriptsDirectory", _quotation_createNode_g9j203_a0a11a0(Layout_Behavior.getBasedirName_1226509010730()), true);
   }
 
   public static String call_getFolderToGenerate_1229522949966(SNode thisNode) {
@@ -164,77 +162,37 @@ public class Layout_Behavior {
     ListSequence.fromList(list).addElement(component);
   }
 
-  public static class QuotationClass_g9j203_a2a01a0 {
-    public QuotationClass_g9j203_a2a01a0() {
-    }
-
-    public SNode createNode(Object parameter_9) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
-      SNode quotedNode_4 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Path", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_5 = quotedNode_1;
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_6 = quotedNode_2;
-          quotedNode1_6.setProperty("name", (String) parameter_9);
-          quotedNode_1.addChild("macro", quotedNode1_6);
-        }
-        {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.CompositePathComponent", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_7 = quotedNode_3;
-          {
-            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_8 = quotedNode_4;
-            quotedNode1_8.setProperty("path", "artifacts");
-            quotedNode_3.addChild("pathComponent", quotedNode1_8);
-          }
-          quotedNode_1.addChild("compositePathComponent", quotedNode1_7);
-        }
-        result = quotedNode1_5;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_g9j203_a0a01a0(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    SNode quotedNode_5 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Path", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.setProperty("name", (String) parameter_1);
+    quotedNode_2.addChild("macro", quotedNode_3);
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.CompositePathComponent", null, null, GlobalScope.getInstance(), false);
+    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
+    quotedNode_5.setProperty("path", "artifacts");
+    quotedNode_4.addChild("pathComponent", quotedNode_5);
+    quotedNode_2.addChild("compositePathComponent", quotedNode_4);
+    return quotedNode_2;
   }
 
-  public static class QuotationClass_g9j203_a2a11a0 {
-    public QuotationClass_g9j203_a2a11a0() {
-    }
-
-    public SNode createNode(Object parameter_9) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
-      SNode quotedNode_4 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Path", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_5 = quotedNode_1;
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_6 = quotedNode_2;
-          quotedNode1_6.setProperty("name", (String) parameter_9);
-          quotedNode_1.addChild("macro", quotedNode1_6);
-        }
-        {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.CompositePathComponent", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_7 = quotedNode_3;
-          {
-            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_8 = quotedNode_4;
-            quotedNode1_8.setProperty("path", "build");
-            quotedNode_3.addChild("pathComponent", quotedNode1_8);
-          }
-          quotedNode_1.addChild("compositePathComponent", quotedNode1_7);
-        }
-        result = quotedNode1_5;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_g9j203_a0a11a0(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    SNode quotedNode_5 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Path", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.setProperty("name", (String) parameter_1);
+    quotedNode_2.addChild("macro", quotedNode_3);
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.CompositePathComponent", null, null, GlobalScope.getInstance(), false);
+    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
+    quotedNode_5.setProperty("path", "build");
+    quotedNode_4.addChild("pathComponent", quotedNode_5);
+    quotedNode_2.addChild("compositePathComponent", quotedNode_4);
+    return quotedNode_2;
   }
 }

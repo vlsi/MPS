@@ -24,17 +24,30 @@ import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.properties.ModelProperties;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.LanguageChooser;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModelChooser;
-import jetbrains.mps.workbench.dialogs.project.tmodels.*;
+import jetbrains.mps.workbench.dialogs.project.tmodels.DependTableModel;
+import jetbrains.mps.workbench.dialogs.project.tmodels.DependenciesTableItemRole;
+import jetbrains.mps.workbench.dialogs.project.tmodels.MPSPropertiesAnActionButton;
+import jetbrains.mps.workbench.dialogs.project.tmodels.ModelDepTableItem;
+import jetbrains.mps.workbench.dialogs.project.tmodels.ModelDependTableModel;
+import jetbrains.mps.workbench.dialogs.project.tmodels.ModelUsedLangTableModel;
+import jetbrains.mps.workbench.dialogs.project.tmodels.ModuleDepTableItem;
+import jetbrains.mps.workbench.dialogs.project.tmodels.UsedLangsTableModel;
 import org.jdesktop.beansbinding.AutoBinding;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,7 +63,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable<SMode
   @Override
   public String getDisplayName() {
     StringBuilder builder = new StringBuilder();
-    builder.append("Model properties for ");
+    builder.append(PropertiesBundle.message("mps.properties.configurable.model.title"));
     builder.append(myConfigurableItem.getModelName());
     return builder.toString();
   }
@@ -94,7 +107,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable<SMode
       myModelDependenciesTab = new ModelDependenciesTab();
 
       JComponent component = getTabComponent();
-      component.add(myModelDependenciesTab.getTabComponent(), new GridConstraints(2, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+      //HACK: get component by idx to avoid insets intend.
+      component.add(myModelDependenciesTab.getTabComponent().getComponent(0), new GridConstraints(2, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
       setTabComponent(component);
     }
@@ -112,6 +126,11 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable<SMode
   }
 
   private class ModelDependenciesTab extends DependenciesTab {
+    @Override
+    protected void initUI() {
+      super.initUI();
+
+    }
 
     @Override
     protected DependTableModel getDependTableModel() {
@@ -202,7 +221,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable<SMode
   public class InfoTab extends Tab {
 
     public InfoTab() {
-      super("Info", IdeIcons.DEFAULT_ICON, "Model statistic info");
+      super(PropertiesBundle.message("mps.properties.configurable.model.infotab.title"), IdeIcons.DEFAULT_ICON, PropertiesBundle.message("mps.properties.configurable.model.infotab.tip"));
       initUI();
     }
 
@@ -213,7 +232,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable<SMode
     @Override
     protected void initUI() {
       final JPanel panel = new JPanel();
-      panel.setLayout(new GridLayoutManager(2, 1, new Insets(5, 5, 5, 5), -1, -1));
+      panel.setLayout(new GridLayoutManager(2, 1, INSETS, -1, -1));
 
       final JBLabel label = new JBLabel();
       label.setText(getInfoText());

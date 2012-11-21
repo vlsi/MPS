@@ -124,7 +124,11 @@ public class ModelRepositoryComponent {
           //setColor(new Color(0x00, 0x00, 0x90));
         }
         setColor(Color.BLACK);
-        setText(myModelDescriptor.getLongName() + ("(" + myModelDescriptor.getLoadingState().toString() + ")"));
+        String text = myModelDescriptor.getLongName();
+        if (myModelDescriptor instanceof DefaultSModelDescriptor) {
+          text += "(" + ((DefaultSModelDescriptor) myModelDescriptor).getLoadingState().toString() + ")";
+        }
+        setText(text);
       }
     }
 

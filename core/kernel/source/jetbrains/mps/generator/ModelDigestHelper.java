@@ -19,6 +19,7 @@ import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
@@ -65,7 +66,10 @@ public class ModelDigestHelper {
       Map<String, String> result = p.getGenerationHashes(operationContext, source);
       if (result != null) return result.get(FILE);
     }
-    return descriptor.getModelHash();
+    if (descriptor instanceof GeneratableSModelDescriptor) {
+      return ((GeneratableSModelDescriptor) descriptor).getModelHash();
+    }
+    return null;
   }
 
 

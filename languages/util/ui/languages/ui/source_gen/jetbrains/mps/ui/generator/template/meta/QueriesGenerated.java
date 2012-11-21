@@ -19,8 +19,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -49,7 +47,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_8568902829141717126(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    final SNode local = SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0b().createNode(), "classifier", false);
+    final SNode local = SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a1(), "classifier", false);
     return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "classifier", false)) != SNodeOperations.getModel(_context.getNode()) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "annotation", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode a) {
         return SLinkOperations.getTarget(a, "annotation", false) == local;
@@ -58,7 +56,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_600037073069865905(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    final SNode local = SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0c().createNode(), "classifier", false);
+    final SNode local = SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a2(), "classifier", false);
     return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "classifier", false)) != SNodeOperations.getModel(_context.getNode()) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "annotation", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode a) {
         return SLinkOperations.getTarget(a, "annotation", false) == local;
@@ -67,7 +65,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_2459884175396346605(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    final SNode local = SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0d().createNode(), "classifier", false);
+    final SNode local = SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a3(), "classifier", false);
     return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false)) != SNodeOperations.getModel(_context.getNode()) && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "annotation", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode a) {
         return SLinkOperations.getTarget(a, "annotation", false) == local;
@@ -76,7 +74,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_8568902829142100954(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "annotation", false) == SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0e().createNode(), "classifier", false);
+    return SLinkOperations.getTarget(_context.getNode(), "annotation", false) == SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a4(), "classifier", false);
   }
 
   public static Object propertyMacro_GetPropertyValue_8504596698668712449(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -212,75 +210,31 @@ public class QueriesGenerated {
     return _context.getNode();
   }
 
-  public static class QuotationClass_x583g4_a0a0a0b {
-    public QuotationClass_x583g4_a0a0a0b() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:51efe78a-da84-4c87-b8b1-cd2e544fddd2(jetbrains.mps.ui.modeling.ann)"), SNodeId.fromString("8568902829141635451")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_x583g4_a0a0a1() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:51efe78a-da84-4c87-b8b1-cd2e544fddd2(jetbrains.mps.ui.modeling.ann)"), SNodeId.fromString("8568902829141635451")));
+    return quotedNode_1;
   }
 
-  public static class QuotationClass_x583g4_a0a0a0c {
-    public QuotationClass_x583g4_a0a0a0c() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:51efe78a-da84-4c87-b8b1-cd2e544fddd2(jetbrains.mps.ui.modeling.ann)"), SNodeId.fromString("8568902829141635451")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_x583g4_a0a0a2() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:51efe78a-da84-4c87-b8b1-cd2e544fddd2(jetbrains.mps.ui.modeling.ann)"), SNodeId.fromString("8568902829141635451")));
+    return quotedNode_1;
   }
 
-  public static class QuotationClass_x583g4_a0a0a0d {
-    public QuotationClass_x583g4_a0a0a0d() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:51efe78a-da84-4c87-b8b1-cd2e544fddd2(jetbrains.mps.ui.modeling.ann)"), SNodeId.fromString("8568902829141635451")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_x583g4_a0a0a3() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:51efe78a-da84-4c87-b8b1-cd2e544fddd2(jetbrains.mps.ui.modeling.ann)"), SNodeId.fromString("8568902829141635451")));
+    return quotedNode_1;
   }
 
-  public static class QuotationClass_x583g4_a0a0a0e {
-    public QuotationClass_x583g4_a0a0a0e() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:51efe78a-da84-4c87-b8b1-cd2e544fddd2(jetbrains.mps.ui.modeling.ann)"), SNodeId.fromString("8568902829141635451")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_x583g4_a0a0a4() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:51efe78a-da84-4c87-b8b1-cd2e544fddd2(jetbrains.mps.ui.modeling.ann)"), SNodeId.fromString("8568902829141635451")));
+    return quotedNode_1;
   }
 }

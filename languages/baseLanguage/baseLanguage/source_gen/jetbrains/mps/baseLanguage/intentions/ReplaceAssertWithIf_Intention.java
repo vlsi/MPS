@@ -11,18 +11,16 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.intentions.IntentionDescriptor;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ReplaceAssertWithIf_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -76,6 +74,16 @@ public class ReplaceAssertWithIf_Intention implements IntentionFactory {
     return myCachedExecutable;
   }
 
+  private static SNode _quotation_createNode_a1x6vi_a0c0a() {
+    SNode quotedNode_1 = null;
+    SNode quotedNode_2 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~IllegalArgumentException.<init>()")));
+    quotedNode_1.addChild("creator", quotedNode_2);
+    return quotedNode_1;
+  }
+
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
@@ -87,7 +95,7 @@ public class ReplaceAssertWithIf_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       // produce throw statement 
       SNode throwStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThrowStatement", null);
-      SNode newExpr = new ReplaceAssertWithIf_Intention.QuotationClass_iey3o5_a0a2a1a().createNode();
+      SNode newExpr = _quotation_createNode_a1x6vi_a0c0a();
       SLinkOperations.setTarget(throwStatement, "throwable", newExpr, true);
       // produce if statement 
       SNode ifStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
@@ -101,30 +109,6 @@ public class ReplaceAssertWithIf_Intention implements IntentionFactory {
 
     public IntentionDescriptor getDescriptor() {
       return ReplaceAssertWithIf_Intention.this;
-    }
-  }
-
-  public static class QuotationClass_iey3o5_a0a2a1a {
-    public QuotationClass_iey3o5_a0a2a1a() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_4, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~IllegalArgumentException.<init>()")));
-          quotedNode_1.addChild("creator", quotedNode1_4);
-        }
-        result = quotedNode1_3;
-      }
-      return result;
     }
   }
 }

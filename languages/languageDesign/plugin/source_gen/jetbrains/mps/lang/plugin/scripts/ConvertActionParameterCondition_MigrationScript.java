@@ -11,8 +11,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -41,7 +39,7 @@ public class ConvertActionParameterCondition_MigrationScript extends BaseMigrati
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        ListSequence.fromList(SLinkOperations.getTargets(node, "condition", true)).addElement(new ConvertActionParameterCondition_MigrationScript.QuotationClass_pi1x0q_a0a0a0e0a0a0a0b0a().createNode());
+        ListSequence.fromList(SLinkOperations.getTargets(node, "condition", true)).addElement(_quotation_createNode_hmvibh_a0a0a0a());
       }
 
       public boolean isShowAsIntention() {
@@ -50,20 +48,9 @@ public class ConvertActionParameterCondition_MigrationScript extends BaseMigrati
     });
   }
 
-  public static class QuotationClass_pi1x0q_a0a0a0e0a0a0a0b0a {
-    public QuotationClass_pi1x0q_a0a0a0e0a0a0a0b0a() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.RequiredCondition", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_hmvibh_a0a0a0a() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.RequiredCondition", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
   }
 }

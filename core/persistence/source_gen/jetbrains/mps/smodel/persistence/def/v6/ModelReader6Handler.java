@@ -9,7 +9,7 @@ import java.util.Stack;
 import org.xml.sax.Locator;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModelHeader;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.DefaultSModel;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
@@ -39,7 +39,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
   private ModelLoadResult myResult;
   private ModelLoadingState fieldtoState;
   private SModelHeader fieldheader;
-  private SModel fieldmodel;
+  private DefaultSModel fieldmodel;
   private VersionUtil fieldhelper;
 
   public ModelReader6Handler(ModelLoadingState toState, SModelHeader header) {
@@ -158,7 +158,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected ModelLoadResult createObject(Attributes attrs) {
-      fieldmodel = new SModel(SModelReference.fromString(attrs.getValue("modelUID")));
+      fieldmodel = new DefaultSModel(SModelReference.fromString(attrs.getValue("modelUID")));
       fieldmodel.setPersistenceVersion(6);
       fieldmodel.getSModelHeader().updateDefaults(fieldheader);
       fieldhelper = new VersionUtil(fieldmodel.getSModelReference());
@@ -401,7 +401,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
         return;
       }
       if ("role".equals(name)) {
-        result.setRoleInParent(fieldhelper.readRole(value));
+        result.putUserObject("role", fieldhelper.readRole(value));
         return;
       }
       if ("id".equals(name)) {
@@ -453,7 +453,8 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
-        result.addChild(child.getRole(), child);
+        result.addChild(((String) child.getUserObject("role")), child);
+        child.putUserObject("role", null);
         return;
       }
       super.handleChild(resultObject, tagName, value);

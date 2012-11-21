@@ -77,7 +77,7 @@ class IntelligentNodeMover {
     if (current.getParent() == null) return;
 
     final SNode parent = current.getParent();
-    final String role = current.getRole();
+    final String role = current.getRoleInParent();
     assert parent != null && role != null;
 
     final SNode acd = parent.getConceptDeclarationNode();
@@ -149,14 +149,14 @@ class IntelligentNodeMover {
     if (forward()) {
       for (SNode node : myNodes.subList(0, myNodes.size() - 1)) {
         node.getParent().removeChild(node);
-        parent.insertChild(current.getRole(), node, parent.getPrevChild(current));
+        parent.insertChild(current.getRoleInParent(), node, parent.getPrevChild(current));
       }
     } else {
       List<SNode> list = new ArrayList<SNode>(myNodes.subList(1, myNodes.size()));
       Collections.reverse(list);
       for (SNode node : list) {
         node.getParent().removeChild(node);
-        parent.insertChild(current.getRole(), node, current);
+        parent.insertChild(current.getRoleInParent(), node, current);
       }
     }
   }
@@ -189,7 +189,7 @@ class IntelligentNodeMover {
   }
 
   private boolean isBoundary(SNode node) {
-    String role = node.getRole();
+    String role = node.getRoleInParent();
     assert role != null;
     List<SNode> siblings = node.getParent().getChildren(role);
     int index = siblings.indexOf(node);

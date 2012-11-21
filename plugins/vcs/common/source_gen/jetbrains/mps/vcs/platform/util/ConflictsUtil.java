@@ -30,7 +30,7 @@ public class ConflictsUtil {
   @Nullable
   public static VirtualFile getModelFileIfConflicting(@Nullable SModelDescriptor md, @NotNull Project project) {
     if (md instanceof DefaultSModelDescriptor) {
-      VirtualFile vf = VirtualFileUtils.getVirtualFile(((DefaultSModelDescriptor) md).getModelFile());
+      VirtualFile vf = VirtualFileUtils.getVirtualFile(((DefaultSModelDescriptor) md).getSource().getFile());
       if (vf != null) {
         FileStatus status = FileStatusManager.getInstance(project).getStatus(vf);
         if (FileStatus.MERGED_WITH_CONFLICTS == status || FileStatus.MERGED_WITH_BOTH_CONFLICTS == status) {

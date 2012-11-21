@@ -707,7 +707,7 @@ public class ModuleLoader {
         continue;
       }
 
-      String path = modelRootDescriptor.getMemento().getPath("path");
+      String path = modelRootDescriptor.getMemento().get("path");
       SNode p = ListSequence.fromList(convertPath(path, myOriginalModule)).first();
       if (p == null) {
         continue;

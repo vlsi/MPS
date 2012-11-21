@@ -13,8 +13,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -36,7 +34,7 @@ public class PersistentConfiguration_Behavior {
   }
 
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    return new PersistentConfiguration_Behavior.QuotationClass_4ves9l_a0a0e().createNode(thisNode);
+    return _quotation_createNode_4ves9l_a0a3(thisNode);
   }
 
   public static List<SNode> call_getTemplateProperties_946964771156066510(SNode thisNode) {
@@ -79,7 +77,7 @@ public class PersistentConfiguration_Behavior {
         configuration = SLinkOperations.getTarget(executor, "configuration", false);
       }
     }
-    return new PersistentConfiguration_Behavior.QuotationClass_4ves9l_a0c0j().createNode(configuration);
+    return _quotation_createNode_4ves9l_a2a0(configuration);
   }
 
   public static List<SNode> getContextPersistentProperties_946964771156066434(SNode node) {
@@ -104,39 +102,17 @@ public class PersistentConfiguration_Behavior {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), callerConceptFqName, "virtual_createType_1213877527970", new Class[]{SNode.class}, new Object[]{});
   }
 
-  public static class QuotationClass_4ves9l_a0a0e {
-    public QuotationClass_4ves9l_a0a0e() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("persistentConfiguration", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_4ves9l_a0a3(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("persistentConfiguration", (SNode) parameter_1);
+    return quotedNode_2;
   }
 
-  public static class QuotationClass_4ves9l_a0c0j {
-    public QuotationClass_4ves9l_a0c0j() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("persistentConfiguration", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_4ves9l_a2a0(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("persistentConfiguration", (SNode) parameter_1);
+    return quotedNode_2;
   }
 }

@@ -33,11 +33,11 @@ import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.make.runtime.java.JavaStreamHandler;
+import java.util.Collections;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.messages.IMessage;
-import java.util.Collections;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.make.java.BLDependenciesCache;
@@ -149,49 +149,38 @@ public class TextGen_Facet extends IFacet.Stub {
 
               int MAX_ROOTS_COUNT = 1000;
               final List<GResource> currentInput = ListSequence.fromList(new ArrayList<GResource>());
-              int currentRootsCount = 0;
+              final Wrappers._int currentRootsCount = new Wrappers._int(0);
 
               monitor.currentProgress().beginWork("Writing", Sequence.fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
 
               final TextGeneratorEngine engine = new TextGeneratorEngine(_generateDebugInfo, _failIfNoTextgen);
               try {
                 IResource lastResource = Sequence.fromIterable(resources).last();
-                for (final GResource currentResource : Sequence.fromIterable(resources)) {
-                  final Wrappers._int rootsCount = new Wrappers._int(0);
-                  final Wrappers._boolean ignoreResource = new Wrappers._boolean(false);
 
-                  // this action is time consuming! 
+                for (final GResource currentResource : Sequence.fromIterable(resources)) {
+                  // this action is time consuming (load model)! 
                   prepareTime += TextGenUtil.withTimeTracking(new Runnable() {
                     public void run() {
                       ModelAccess.instance().runReadAction(new Runnable() {
                         public void run() {
                           SModel outputModel = currentResource.status().getOutputModel();
-                          if (outputModel == null) {
-                            ignoreResource.value = true;
-                          } else {
-                            rootsCount.value = outputModel.rootsCount();
+                          if (outputModel != null) {
+                            currentRootsCount.value += outputModel.rootsCount();
                           }
                         }
                       });
                     }
                   });
 
-                  if (ignoreResource.value) {
-                    continue;
-                  }
-                  currentRootsCount += rootsCount.value;
                   ListSequence.fromList(currentInput).addElement(currentResource);
-                  if (currentRootsCount < MAX_ROOTS_COUNT && currentResource != lastResource) {
-                    continue;
-                  }
-                  if (ListSequence.fromList(currentInput).isEmpty()) {
+                  if (currentRootsCount.value < MAX_ROOTS_COUNT && currentResource != lastResource) {
                     continue;
                   }
 
                   // prepare retainedFilesDelta, retainedCachedDelta and streamHandlers 
                   final Map<IResource, Iterable<IDelta>> retainedFilesDelta = MapSequence.fromMap(new HashMap<IResource, Iterable<IDelta>>());
                   final Map<IResource, Iterable<IDelta>> retainedCachesDelta = MapSequence.fromMap(new HashMap<IResource, Iterable<IDelta>>());
-                  final Map<IResource, JavaStreamHandler> streamHandlers = MapSequence.fromMap(new HashMap<IResource, JavaStreamHandler>());
+                  final Map<IResource, JavaStreamHandler> streamHandlers = Collections.synchronizedMap(new HashMap<IResource, JavaStreamHandler>());
 
                   prepareTime += TextGenUtil.withTimeTracking(new Runnable() {
                     public void run() {
@@ -223,24 +212,17 @@ public class TextGen_Facet extends IFacet.Stub {
                     public void run() {
                       generateTime.value += TextGenUtil.withTimeTracking(new Runnable() {
                         public void run() {
-                          // out map and hashmap doesn't have asSynchronized method 
-                          final Map<SModel, GResource> modelToInput = Collections.synchronizedMap(new HashMap<SModel, GResource>());
-                          for (GResource resource : ListSequence.fromList(currentInput)) {
-                            modelToInput.put(resource.status().getOutputModel(), resource);
-                          }
-
-                          engine.generateModels(modelToInput.keySet(), new TextGeneratorEngine.GenerateCallback() {
-                            public void modelGenerated(SModel model, List<TextGenerationResult> results) {
-                              GResource generatedResource = modelToInput.get(model);
+                          TextGenUtil.generateText(engine, currentInput, new TextGenUtil.TextGenerationCallback() {
+                            public void textGenerated(GResource inputResource, List<TextGenerationResult> results) {
                               try {
                                 CacheGenerator[] cacheGenerators = new CacheGenerator[]{BLDependenciesCache.getInstance().getGenerator(), (_generateDebugInfo ?
                                   TraceInfoCache.getInstance().getGenerator() :
                                   null
                                 ), GenerationDependenciesCache.getInstance().getGenerator()};
 
-                                ListSequence.fromList(errors).addSequence(ListSequence.fromList(TextGenerator.handleTextGenResults(generatedResource.status(), results, _generateDebugInfo, MapSequence.fromMap(streamHandlers).get(generatedResource), cacheGenerators)));
+                                ListSequence.fromList(errors).addSequence(ListSequence.fromList(TextGenerator.handleTextGenResults(inputResource.status(), results, _generateDebugInfo, MapSequence.fromMap(streamHandlers).get(inputResource), cacheGenerators)));
                               } finally {
-                                MapSequence.fromMap(streamHandlers).get(generatedResource).dispose();
+                                MapSequence.fromMap(streamHandlers).get(inputResource).dispose();
                               }
                             }
                           });
@@ -331,7 +313,7 @@ public class TextGen_Facet extends IFacet.Stub {
                     return new IResult.FAILURE(_output_21gswx_a0a);
                   }
 
-                  currentRootsCount = 0;
+                  currentRootsCount.value = 0;
                   ListSequence.fromList(currentInput).clear();
                 }
               } catch (Exception e) {

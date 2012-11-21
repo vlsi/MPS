@@ -49,10 +49,10 @@ public class JUnitConfigEditor extends JPanel {
   private JTextField myProjectName_iqjve6_d3c0;
   private JPanel myModulePanel_iqjve6_e2a;
   private JLabel myComponent_iqjve6_c4c0;
-  private ModuleChooserComponent myModuleName_iqjve6_d4c0;
+  private ModuleChooser myModuleName_iqjve6_d4c0;
   private JPanel myModelPanel_iqjve6_f2a;
   private JLabel myComponent_iqjve6_c5c0;
-  private ModelChooserComponent myModelName_iqjve6_d5c0;
+  private ModelChooser myModelName_iqjve6_d5c0;
   private ListPanel myTestCases_iqjve6_d0;
   private ListPanel myTestMethods_iqjve6_e0;
   private MPSProject myProject;
@@ -276,8 +276,8 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private ModuleChooserComponent createComponent_iqjve6_d4c0() {
-    ModuleChooserComponent component = new ModuleChooserComponent();
+  private ModuleChooser createComponent_iqjve6_d4c0() {
+    ModuleChooser component = new ModuleChooser();
     this.myModuleName_iqjve6_d4c0 = component;
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
@@ -303,8 +303,8 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private ModelChooserComponent createComponent_iqjve6_d5c0() {
-    ModelChooserComponent component = new ModelChooserComponent();
+  private ModelChooser createComponent_iqjve6_d5c0() {
+    ModelChooser component = new ModelChooser();
     this.myModelName_iqjve6_d5c0 = component;
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {

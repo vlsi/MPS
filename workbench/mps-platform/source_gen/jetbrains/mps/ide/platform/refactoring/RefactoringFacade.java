@@ -37,7 +37,6 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.refactoring.framework.RefactoringNodeMembersAccessModifier;
@@ -247,7 +246,7 @@ public class RefactoringFacade {
     }));
 
     for (SModelDescriptor descr : modelRepository.getModelDescriptors()) {
-      if (!(SModelStereotype.isUserModel(descr)) || descr.getLoadingState() == ModelLoadingState.NOT_LOADED) {
+      if (!(SModelStereotype.isUserModel(descr)) || !(descr.isLoaded())) {
         continue;
       }
       //  we suppose that all models were saved before refactoring started => ImportElements are up to date 

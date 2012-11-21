@@ -61,10 +61,7 @@ public class AnnotationHelper {
     if (!((modelDescriptor instanceof DefaultSModelDescriptor))) {
       return false;
     }
-    IFile modelFile = ((DefaultSModelDescriptor) modelDescriptor).getModelFile();
-    if (modelFile == null) {
-      return false;
-    }
+    IFile modelFile = ((DefaultSModelDescriptor) modelDescriptor).getSource().getFile();
     final VirtualFile file = VirtualFileUtils.getVirtualFile(modelFile);
     final Project project = ProjectHelper.toIdeaProject(editorComponent.getOperationContext().getProject());
     final AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(file);

@@ -56,34 +56,42 @@ public class ChooseByNamePanel extends ChooseByNamePopup {
     return myTextField;
   }
 
+  @Override
   public List<Object> getChosenElements() {
     return super.getChosenElements();
   }
 
+  @Override
   protected void showList() {
   }
 
+  @Override
   protected void hideList() {
   }
 
+  @Override
   public void close(boolean isOk) {
     for (Object element : getChosenElements()) {
       myActionListener.elementChosen(element);
     }
   }
 
+  @Override
   protected boolean isShowListForEmptyPattern() {
     return true;
   }
 
+  @Override
   protected boolean isCloseByFocusLost() {
     return false;
   }
 
+  @Override
   protected boolean isCheckboxVisible() {
     return myCheckboxVisible;
   }
 
+  @Override
   protected void showTextFieldPanel() {
     return;
   }
