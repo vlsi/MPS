@@ -26,6 +26,7 @@ import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.extensions.PluginId;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.startup.StartupManager;
+import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
@@ -38,6 +39,10 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * evgeny, 10/26/11
@@ -60,8 +65,15 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
         ModelAccess.instance().runWriteAction(new Runnable() {
           @Override
           public void run() {
-            SolutionDescriptor solutionDescriptor = getConfiguration().getState().getSolutionDescriptor();
+            SolutionDescriptor solutionDescriptor = getConfiguration().getBean().getSolutionDescriptor();
             Solution solution = new SolutionIdea(getModule(), solutionDescriptor);
+
+//            for (ModelRoot root: myContributedModelRoots) {
+//              ((SolutionIdea)solution).addModelRoot(root);
+//              ((ModelRootBase)root).setModule(solution);
+//              ((ModelRootBase)root).attach();
+//            }
+
             com.intellij.openapi.project.Project project = getModule().getProject();
             myMpsProject = ProjectHelper.toMPSProject(project);
 
@@ -100,6 +112,16 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
 
   public boolean wasInitialized() {
     return mySolution != null;
+  }
+
+//  private List<ModelRoot> myContributedModelRoots = new ArrayList<ModelRoot>();
+//  public void contributeModelRoot(ModelRoot modelRoot) {
+//    myContributedModelRoots.add(modelRoot);
+//  }
+
+  public void updateModels() {
+    if (mySolution==null) return;
+    mySolution.updateModelsSet();
   }
 
   public void setConfiguration(final MPSConfigurationBean configurationBean) {

@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
@@ -62,8 +61,12 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
 
     modelReference = SModelReference.fromString(dr.getUID());
 
-    SModelDescriptor modelDescriptor = getInstance(source, modelReference, dr);
-    LOG.debug("Read model descriptor " + modelDescriptor.getSModelReference() + " from " + source.getFile());
+    LOG.debug("Getting model " + modelReference + " from " + source.getLocation());
+
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
+    if (modelDescriptor == null) {
+      modelDescriptor = new DefaultSModelDescriptor(source, modelReference, dr);
+    }
     return modelDescriptor;
   }
 
@@ -79,21 +82,4 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     return dataSource instanceof FileDataSource;
   }
 
-  private static SModelDescriptor getInstance(FileDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
-    LOG.debug("Getting model " + modelReference + " from " + source);
-
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
-    if (modelDescriptor == null) return new DefaultSModelDescriptor(source, modelReference, d);
-
-    //todo rewrite
-    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) modelDescriptor;
-    IFile newFile = dsm.getModelFile();
-    if (!newFile.equals(dsm.getModelFile())) {
-      // file might be not the same if user, for example, moved model file using external file manager
-      ((DefaultSModelDescriptor) modelDescriptor).changeModelFile(newFile);
-    }
-
-    //todo modelRepository.registerModelDescriptor(modelDescriptor);
-    return modelDescriptor;
-  }
 }

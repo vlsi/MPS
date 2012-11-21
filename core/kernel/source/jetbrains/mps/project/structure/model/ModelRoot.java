@@ -75,7 +75,7 @@ public class ModelRoot implements Comparable<ModelRoot> {
   }
 
   public void load(Memento memento) {
-    setPath(memento.getPath("path"));
+    setPath(memento.get("path"));
     Memento manager = memento.getChild("manager");
     if (manager != null) {
       String moduleId = manager.get("moduleId");
@@ -85,7 +85,7 @@ public class ModelRoot implements Comparable<ModelRoot> {
   }
 
   public void save(Memento memento) {
-    memento.putPath("path", getPath());
+    memento.put("path", getPath());
     if (myManager != null) {
       Memento manager = memento.createChild("manager");
       manager.put("moduleId", myManager.getModuleId());

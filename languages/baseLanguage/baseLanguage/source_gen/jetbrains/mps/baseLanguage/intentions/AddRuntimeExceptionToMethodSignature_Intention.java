@@ -18,14 +18,12 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.intentions.IntentionDescriptor;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddRuntimeExceptionToMethodSignature_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -80,7 +78,7 @@ public class AddRuntimeExceptionToMethodSignature_Intention implements Intention
       return false;
     }
     // check it's instance of RuntimeException 
-    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, exceptionJavaType, "virtual_isDescendant_7165541881557222913", new Object[]{(SNode) SLinkOperations.getTarget(new AddRuntimeExceptionToMethodSignature_Intention.QuotationClass_11l094_a0a0a3a0j0h().createNode(), "classifier", false)}))) {
+    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, exceptionJavaType, "virtual_isDescendant_7165541881557222913", new Object[]{(SNode) SLinkOperations.getTarget(_quotation_createNode_7gg82q_a0a0a0j0a(), "classifier", false)}))) {
       return false;
     }
     // check if it's not thrown by a method yet 
@@ -105,6 +103,13 @@ public class AddRuntimeExceptionToMethodSignature_Intention implements Intention
     return myCachedExecutable;
   }
 
+  private static SNode _quotation_createNode_7gg82q_a0a0a0j0a() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~RuntimeException")));
+    return quotedNode_1;
+  }
+
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
@@ -120,24 +125,6 @@ public class AddRuntimeExceptionToMethodSignature_Intention implements Intention
 
     public IntentionDescriptor getDescriptor() {
       return AddRuntimeExceptionToMethodSignature_Intention.this;
-    }
-  }
-
-  public static class QuotationClass_11l094_a0a0a3a0j0h {
-    public QuotationClass_11l094_a0a0a3a0j0h() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~RuntimeException")));
-        result = quotedNode1_2;
-      }
-      return result;
     }
   }
 }

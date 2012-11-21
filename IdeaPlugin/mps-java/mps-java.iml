@@ -10,6 +10,9 @@
       <sourceFolder url="file://$MODULE_DIR$/scopes/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/sourceStubs/src" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../solutions/jetbrains.mps.ide.java.psiStubs">
+      <sourceFolder url="file://$MODULE_DIR$/../solutions/jetbrains.mps.ide.java.psiStubs/source_gen" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/../../plugins/mpsjava/platform">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/platform/source_gen" isTestSource="false" />
     </content>

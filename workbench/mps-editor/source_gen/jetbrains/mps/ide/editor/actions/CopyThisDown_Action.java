@@ -83,7 +83,7 @@ public class CopyThisDown_Action extends BaseAction {
         SNode nodeToCopy = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).first();
         while (SNodeOperations.getParent(nodeToCopy) != null) {
           SNode parent = SNodeOperations.getParent(nodeToCopy);
-          String role = nodeToCopy.getRole();
+          String role = nodeToCopy.getRoleInParent();
           SNode link = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getConceptDeclaration(parent), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findLinkDeclaration_1213877394467", new Object[]{role});
           if (link == null) {
             return;
@@ -100,7 +100,7 @@ public class CopyThisDown_Action extends BaseAction {
       } else {
         SNode firstNode = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).first();
         SNode lastNode = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).last();
-        String role = firstNode.getRole();
+        String role = firstNode.getRoleInParent();
         SNode parent = SNodeOperations.getParent(firstNode);
         SNode link = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getConceptDeclaration(parent), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findLinkDeclaration_1213877394467", new Object[]{role});
         if (link == null) {

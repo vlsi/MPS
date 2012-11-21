@@ -21,7 +21,6 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
@@ -109,7 +108,7 @@ public class Type_Behavior {
       IMatchingPattern pattern_smb55n_a0n = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
       SNode coercedNode_smb55n_a0n = TypeChecker.getInstance().getRuntimeSupport().coerce_(thisNode, pattern_smb55n_a0n);
       if (coercedNode_smb55n_a0n != null) {
-        return new Type_Behavior.QuotationClass_smb55n_a0a0c0a0o().createNode(SLinkOperations.getTarget(coercedNode_smb55n_a0n, "classifier", false));
+        return _quotation_createNode_smb55n_a0a2a0a31(SLinkOperations.getTarget(coercedNode_smb55n_a0n, "classifier", false));
       } else {
         throw new UnsupportedOperationException();
       }
@@ -342,22 +341,11 @@ public class Type_Behavior {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_canBeCoerced_6321644624958501287", new Class[]{SNode.class, String.class}, new Object[]{conceptFqName});
   }
 
-  public static class QuotationClass_smb55n_a0a0c0a0o {
-    public QuotationClass_smb55n_a0a0c0a0o() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_smb55n_a0a2a0a31(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("classifier", (SNode) parameter_1);
+    return quotedNode_2;
   }
 
   public static class Pattern_smb55n_a0a0a0a51 extends GeneratedMatchingPattern implements IMatchingPattern {

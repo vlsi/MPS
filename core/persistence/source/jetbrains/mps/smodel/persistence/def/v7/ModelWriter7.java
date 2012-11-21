@@ -42,16 +42,19 @@ public class ModelWriter7 implements IModelWriter {
     Element rootElement = new Element(ModelPersistence.MODEL);
     rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getSModelReference().toString());
 
-    int version = myModel.getSModelHeader().getVersion();
-    if(version >= 0) {
+    int version = myModel.getVersion();
+    if (version >= 0) {
       rootElement.setAttribute(SModelHeader.VERSION, Integer.toString(version));
     }
-    if(myModel.getSModelHeader().isDoNotGenerate()) {
-      rootElement.setAttribute(SModelHeader.DO_NOT_GENERATE, "true");
-    }
-    
-    for (Map.Entry<String,String> en: myModel.getSModelHeader().getOptionalProperties().entrySet()) {
-      rootElement.setAttribute(en.getKey(), StringUtil.escapeXml(en.getValue()));
+    if (myModel instanceof DefaultSModel) {
+      SModelHeader header = ((DefaultSModel) myModel).getSModelHeader();
+      if (header.isDoNotGenerate()) {
+        rootElement.setAttribute(SModelHeader.DO_NOT_GENERATE, "true");
+      }
+
+      for (Map.Entry<String, String> en : header.getOptionalProperties().entrySet()) {
+        rootElement.setAttribute(en.getKey(), StringUtil.escapeXml(en.getValue()));
+      }
     }
 
     Element persistenceElement = new Element(ModelPersistence.PERSISTENCE);

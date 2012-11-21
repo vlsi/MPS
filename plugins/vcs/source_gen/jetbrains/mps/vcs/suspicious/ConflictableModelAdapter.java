@@ -19,7 +19,7 @@ public class ConflictableModelAdapter extends Conflictable {
   }
 
   public IFile getFile() {
-    return myModel.getModelFile();
+    return myModel.getSource().getFile();
   }
 
   public void reloadFromDisk() {

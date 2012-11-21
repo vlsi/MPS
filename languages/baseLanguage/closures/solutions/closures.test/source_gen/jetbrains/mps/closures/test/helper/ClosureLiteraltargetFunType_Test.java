@@ -14,8 +14,6 @@ import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior;
 import jetbrains.mps.baseLanguage.closures.helper.Values;
 import junit.framework.Assert;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -39,7 +37,7 @@ public class ClosureLiteraltargetFunType_Test extends BaseTransformationTest4 {
       SNode literal = SNodeOperations.cast(this.getNodeById("6374750171056867612"), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
       SNode funtype = SNodeOperations.cast(this.getNodeById("6374750171056867639"), "jetbrains.mps.baseLanguage.closures.structure.FunctionType");
       new ClosureLiteralTarget(genContext).setTarget(literal, FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(funtype));
-      this.assertLiteralTarget(genContext, literal, new ClosureLiteraltargetFunType_Test.TestBody.QuotationClass_7325qm_a2a0g0a0().createNode());
+      this.assertLiteralTarget(genContext, literal, _quotation_createNode_as9vne_c0a4a0());
     }
 
     public TemplateQueryContext getContext() {
@@ -52,36 +50,19 @@ public class ClosureLiteraltargetFunType_Test extends BaseTransformationTest4 {
       Assert.assertTrue(MatchingUtil.matchNodes(expected, target));
     }
 
-    public static class QuotationClass_7325qm_a2a0g0a0 {
-      public QuotationClass_7325qm_a2a0g0a0() {
-      }
-
-      public SNode createNode() {
-        SNode result = null;
-        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_1 = null;
-        SNode quotedNode_2 = null;
-        SNode quotedNode_3 = null;
-        {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_4 = quotedNode_1;
-          quotedNode1_4.setReference("classifier", SReference.create("classifier", quotedNode1_4, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), SNodeId.fromString("~_FunctionTypes$_void_P0_E2")));
-          {
-            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_5 = quotedNode_2;
-            quotedNode1_5.setReference("classifier", SReference.create("classifier", quotedNode1_5, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~InterruptedException")));
-            quotedNode_1.addChild("parameter", quotedNode1_5);
-          }
-          {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_6 = quotedNode_3;
-            quotedNode1_6.setReference("classifier", SReference.create("classifier", quotedNode1_6, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~IllegalAccessException")));
-            quotedNode_1.addChild("parameter", quotedNode1_6);
-          }
-          result = quotedNode1_4;
-        }
-        return result;
-      }
+    private static SNode _quotation_createNode_as9vne_c0a4a0() {
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), SNodeId.fromString("~_FunctionTypes$_void_P0_E2")));
+      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~InterruptedException")));
+      quotedNode_1.addChild("parameter", quotedNode_2);
+      quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_3.setReference("classifier", SReference.create("classifier", quotedNode_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~IllegalAccessException")));
+      quotedNode_1.addChild("parameter", quotedNode_3);
+      return quotedNode_1;
     }
   }
 }

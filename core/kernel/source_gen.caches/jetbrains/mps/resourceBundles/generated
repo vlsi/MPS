@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-1dyfza9r3bhuna1qnvlhe5idzbnjho">
-  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-cjp3x7kpslsgnhml4bi405qvj66t1vk" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-3223m9cg8337am9br9ikluvywbkblf4" />
-  <common hash="-8iht6k3ywqdm5zuqb5tpaxy21kv0242">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
+  <common hash="-8iht6k3ywqdm5zuqb5tpaxy21kv0242" />
   <source id="2939287019638088102" name="IconResourceBundle" hash="-9rq7h2fmxl9lfkhx6jglk2de9nx47g1">
     <file name="IconResourceBundle.java" />
   </source>
   <source id="2939287019638088106" name="PluginResourceBundle" hash="-8utsv6mo24gqzvkiesdo5o427ggepfi">
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="PluginResourceBundle.java" />
   </source>
 </dependencies>

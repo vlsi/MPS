@@ -77,8 +77,12 @@ public class ModulesMiner {
   }
 
   public List<ModuleHandle> collectModules(IFile dir, boolean refreshFiles) {
+    return collectModules(dir, new HashSet<IFile>(), refreshFiles);
+  }
+
+  public List<ModuleHandle> collectModules(IFile dir, Set<IFile> excludes, boolean refreshFiles) {
     List<ModuleHandle> result = new ArrayList<ModuleHandle>();
-    readModuleDescriptors(dir, new HashSet<IFile>(), result, refreshFiles, new DescriptorReader<ModuleHandle>() {
+    readModuleDescriptors(dir, excludes, result, refreshFiles, new DescriptorReader<ModuleHandle>() {
       @Override
       public ModuleHandle read(ModuleHandle handle) {
         return handle;

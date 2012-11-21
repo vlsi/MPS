@@ -19,13 +19,11 @@ import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.Er
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -39,12 +37,12 @@ public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor {
       public List<String> compute() {
         final SModelDescriptor modelDescriptor = node.getSModelDescriptor();
         if (modelDescriptor == null) return Collections.emptyList();
-        if (modelDescriptor.getLoadingState() == ModelLoadingState.NOT_LOADED) return Collections.emptyList();
+        if (!(modelDescriptor.isLoaded())) return Collections.emptyList();
         IOperationContext context = node.getOperationContext();
         if (!context.isValid()) return Collections.emptyList();
         final IScope scope = context.getScope();
 
-        return new ModelValidator(modelDescriptor.getSModel()).validate(scope);
+        return new ModelValidator(modelDescriptor).validate(scope);
       }
     });
 

@@ -44,7 +44,9 @@ public class ModelWriter4 implements IModelWriter {
     persistenceElement.setAttribute(ModelPersistence.PERSISTENCE_VERSION, getModelPersistenceVersion() + "");
     rootElement.addContent(persistenceElement);
 
-    saveRefactorings(rootElement, sourceModel);
+    if (sourceModel instanceof DefaultSModel) {
+      saveRefactorings(rootElement, (DefaultSModel) sourceModel);
+    }
 
     // languages
     Set<String> writtenAspects = new HashSet<String>();
@@ -110,7 +112,7 @@ public class ModelWriter4 implements IModelWriter {
     return document;
   }
 
-  protected void saveRefactorings(Element rootElement, SModel sourceModel) {
+  protected void saveRefactorings(Element rootElement, DefaultSModel sourceModel) {
     //noinspection deprecation
     Element history = sourceModel.getRefactoringHistoryElement();
     if (history != null) {
@@ -145,7 +147,7 @@ public class ModelWriter4 implements IModelWriter {
     int modelVersion = VersionUtil.getNodeLanguageVersion(node);
 
     Element element = new Element(theElementName);
-    final String role = node.getRole();
+    final String role = node.getRoleInParent();
     DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE, VersionUtil.formVersionedString(role, VersionUtil.getRoleVersion(node)));
     element.setAttribute(ModelPersistence.TYPE, VersionUtil.formVersionedString(node.getConcept().getId(), modelVersion));
     element.setAttribute(ModelPersistence.ID, node.getSNodeId().toString());

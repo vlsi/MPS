@@ -29,7 +29,8 @@ import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.persistence.DefaultModelRoot;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,10 +49,12 @@ public class MarkModelRootAction extends AnAction {
     MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
     assert mpsFacet != null;
 
-    MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getState();
+    MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getBean();
     List<ModelRoot> modelRootPaths = new ArrayList<ModelRoot>(configurationBean.getModelRoots());
     for (VirtualFile vFile : vFiles) {
-      modelRootPaths.add(new ModelRoot(VirtualFileManager.extractPath(vFile.getUrl())));
+      DefaultModelRoot root = new DefaultModelRoot();
+      root.setPath(VirtualFileManager.extractPath(vFile.getUrl()));
+      modelRootPaths.add(root);
     }
     configurationBean.setModelRoots(modelRootPaths);
     mpsFacet.setConfiguration(configurationBean);
@@ -79,9 +82,10 @@ public class MarkModelRootAction extends AnAction {
       if (!LocalFileSystem.PROTOCOL.equals(VirtualFileManager.extractProtocol(url))) return false;
 
       String path = VirtualFileManager.extractPath(url);
-      for (ModelRoot mr : mpsFacet.getConfiguration().getState().getModelRoots()) {
-        if (mr.getManager()!=null) continue;
-        if (mr.getPath().startsWith(path) || path.startsWith(mr.getPath())) return false;
+      for (ModelRoot mr : mpsFacet.getConfiguration().getBean().getModelRoots()) {
+        if (!(mr instanceof DefaultModelRoot)) continue;
+        DefaultModelRoot root = (DefaultModelRoot) mr;
+        if (root.getPath().startsWith(path) || path.startsWith(root.getPath())) return false;
       }
     }
     return true;

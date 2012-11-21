@@ -277,7 +277,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.persistence.PathAwareJDOMMemento" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRoot" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootManager" />
@@ -338,7 +337,6 @@
     <classNode dependClassName="org.jdesktop.beansbinding.BeanProperty" />
     <classNode dependClassName="org.jdesktop.beansbinding.Bindings" />
     <classNode dependClassName="org.jdesktop.beansbinding.Property" />
-    <classNode dependClassName="org.jdom.Element" />
   </dependency>
   <dependency className="jetbrains.mps.ide.properties.StandardDialogs" file="StandardDialogs.java">
     <classNode dependClassName="javax.swing.JComponent" />

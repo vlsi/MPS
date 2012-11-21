@@ -20,7 +20,9 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Collection;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.util.MacroHelper;
-import jetbrains.mps.persistence.PathAwareJDOMMemento;
+import org.jetbrains.mps.openapi.persistence.Memento;
+import jetbrains.mps.persistence.MementoImpl;
+import org.jdom.Attribute;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.FileUtil;
@@ -132,8 +134,41 @@ public class ModuleDescriptorPersistence {
   }
 
   private static ModelRootDescriptor loadModelRoot(Element modelRootElement, final MacroHelper macroHelper) {
-    Element elem = (Element) modelRootElement.clone();
-    return new ModelRootDescriptor(modelRootElement.getAttributeValue("type"), new PathAwareJDOMMemento(elem, macroHelper));
+    Memento m = new MementoImpl();
+    readMemento(m, modelRootElement, macroHelper);
+    return new ModelRootDescriptor(modelRootElement.getAttributeValue("type"), m);
+  }
+
+  public static void readMemento(Memento memento, Element element, final MacroHelper macroHelper) {
+    for (Attribute attr : (List<Attribute>) element.getAttributes()) {
+      String name = attr.getName();
+      memento.put(name, (isPathAttribute(name) ?
+        macroHelper.expandPath(attr.getValue()) :
+        attr.getValue()
+      ));
+    }
+    for (Element elem : (List<Element>) element.getChildren()) {
+      Memento child = memento.createChild(elem.getName());
+      readMemento(child, elem, macroHelper);
+    }
+  }
+
+  public static void writeMemento(Memento memento, Element element, final MacroHelper macroHelper) {
+    for (String key : memento.getKeys()) {
+      element.setAttribute(key, (isPathAttribute(key) ?
+        macroHelper.shrinkPath(memento.get(key)) :
+        memento.get(key)
+      ));
+    }
+    for (Memento childMemento : memento.getChildren()) {
+      Element child = new Element(childMemento.getType());
+      writeMemento(childMemento, child, macroHelper);
+      element.addContent(child);
+    }
+  }
+
+  private static boolean isPathAttribute(String name) {
+    return name.equals("path") || name.endsWith("Path");
   }
 
   public static List<String> loadStubModelEntries(Element stubModelEntriesElement, final MacroHelper macroHelper) {
@@ -161,8 +196,9 @@ public class ModuleDescriptorPersistence {
 
   public static void saveModelRoots(Element result, Collection<ModelRootDescriptor> modelRoots, MacroHelper macroHelper) {
     for (ModelRootDescriptor root : CollectionSequence.fromCollection(modelRoots)) {
-      PathAwareJDOMMemento memento = root.getMemento();
-      Element modelRoot = memento.cloneElement(macroHelper);
+      Memento memento = root.getMemento();
+      Element modelRoot = new Element("modelRoot");
+      writeMemento(memento, modelRoot, macroHelper);
       String type = root.getType();
       if ((type != null && type.length() > 0) && !("default".equals(type) || "obsolete".equals(type))) {
         modelRoot.setAttribute("type", type);

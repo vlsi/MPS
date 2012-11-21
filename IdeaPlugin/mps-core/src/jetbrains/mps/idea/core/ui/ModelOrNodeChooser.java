@@ -36,10 +36,10 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.projectView.MPSDataKeys;
 import jetbrains.mps.idea.core.projectView.MPSProjectViewNode;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.smodel.SModelFileTracker;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import javax.swing.JComponent;
 import java.util.ArrayList;
@@ -96,7 +96,7 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
     MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
     if (mpsFacet == null || !mpsFacet.wasInitialized()) return false;
 
-    MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getState();
+    MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getBean();
     return configurationBean != null && !(configurationBean.getModelRoots().isEmpty());
   }
 
@@ -108,7 +108,7 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
     MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
     if (mpsFacet == null || !(mpsFacet.wasInitialized())) return false;
 
-    MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getState();
+    MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getBean();
     if (configurationBean == null) return false;
 
     String url = virtualFile.getUrl();
@@ -117,7 +117,8 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
     String path = VirtualFileManager.extractPath(url);
 
     for (ModelRoot mr : configurationBean.getModelRoots()) {
-      if (mr.getPath().startsWith(path)) return true;
+      if (!(mr instanceof DefaultModelRoot)) continue;
+      if (((DefaultModelRoot) mr).getPath().startsWith(path)) return true;
     }
     return false;
   }

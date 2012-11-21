@@ -68,176 +68,106 @@
     <unitInfo nodeId="1608374556136057945" fileName="Remove_empty_unless_block_QuickFix.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.typesystem.Remove_empty_unless_block_QuickFix" />
   </root>
   <root nodeId="393299394024664262" modelId="r:7da49c71-e19f-4b55-806c-76b351ee48dd(org.jetbrains.mps.samples.IfAndUnless.typesystem)">
-    <nodeInfo nodeId="393299394024664269" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="393299394024664269" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="23" startPosition="90" endLine="24" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="393299394024664269" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="24" startPosition="213" endLine="25" endPosition="380" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="29" startPosition="46" endLine="30" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="34" startPosition="5" endLine="35" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="35" startPosition="119" endLine="36" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="40" startPosition="30" endLine="41" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="48" startPosition="76" endLine="49" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="49" startPosition="26" endLine="50" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="50" startPosition="67" endLine="51" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="52" startPosition="7" endLine="53" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="53" startPosition="166" endLine="54" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="54" startPosition="43" endLine="55" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="56" startPosition="7" endLine="57" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="60" startPosition="31" endLine="61" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="61" startPosition="26" endLine="62" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="62" startPosition="67" endLine="63" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="64" startPosition="7" endLine="65" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="65" startPosition="166" endLine="66" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="66" startPosition="43" endLine="67" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="68" startPosition="7" endLine="69" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_UnlessStatement_InferenceRule#()V" />
-    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="45" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_at9c8i_a0a0a0#()V" />
-    <nodeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="33" startPosition="68" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="393299394024664269" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="21" startPosition="115" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="51" startPosition="32" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="51" startPosition="32" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="63" startPosition="32" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="63" startPosition="32" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="48" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="60" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="18" startPosition="49" endLine="18" endPosition="49" />
-    <scopeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="45" startPosition="43" endLine="45" endPosition="43" />
-    <scopeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="29" startPosition="46" endLine="30" endPosition="77" />
-    <scopeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="40" startPosition="30" endLine="41" endPosition="17" />
-    <scopeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="34" startPosition="5" endLine="36" endPosition="45">
+    <nodeInfo nodeId="393299394024664269" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="393299394024664269" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="21" startPosition="90" endLine="22" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="393299394024664269" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="22" startPosition="213" endLine="23" endPosition="313" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="27" startPosition="46" endLine="28" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="32" startPosition="5" endLine="33" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="33" startPosition="119" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="38" startPosition="30" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="42" startPosition="61" endLine="43" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="44" startPosition="162" endLine="45" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_UnlessStatement_InferenceRule#()V" />
+    <nodeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="393299394024664269" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="19" startPosition="115" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="42" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_at9c8i_a0a0a#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="19" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="16" startPosition="49" endLine="16" endPosition="49" />
+    <scopeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="27" startPosition="46" endLine="28" endPosition="77" />
+    <scopeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="38" startPosition="30" endLine="39" endPosition="17" />
+    <scopeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="162" />
+    <scopeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="32" startPosition="5" endLine="34" endPosition="45">
       <varInfo nodeId="393299394024664262" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="45" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="393299394024664269" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="380">
+    <scopeInfo nodeId="393299394024664269" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="20" startPosition="5" endLine="23" endPosition="313">
       <varInfo nodeId="393299394024664269" varName="_info_12389875345" />
       <varInfo nodeId="393299394024664269" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="52" startPosition="7" endLine="55" endPosition="31">
-      <varInfo nodeId="393299394024664283" varName="quotedNode1_2" />
+    <scopeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="42" startPosition="61" endLine="45" endPosition="24">
+      <varInfo nodeId="393299394024664283" varName="quotedNode_1" />
     </scopeInfo>
-    <scopeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="64" startPosition="7" endLine="67" endPosition="31">
-      <varInfo nodeId="393299394024664283" varName="quotedNode1_2" />
-    </scopeInfo>
-    <scopeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="33" startPosition="68" endLine="37" endPosition="5" />
-    <scopeInfo nodeId="393299394024664263" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="21" startPosition="115" endLine="26" endPosition="5" />
-    <scopeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="51" startPosition="32" endLine="56" endPosition="7" />
-    <scopeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="63" startPosition="32" endLine="68" endPosition="7" />
-    <scopeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="33" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="393299394024664263" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="19" startPosition="115" endLine="24" endPosition="5" />
+    <scopeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="42" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="393299394024664262" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="19" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="393299394024664262" varName="status" />
       <varInfo nodeId="393299394024664262" varName="typeCheckingContext" />
       <varInfo nodeId="393299394024664262" varName="us" />
     </scopeInfo>
-    <scopeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="48" startPosition="76" endLine="57" endPosition="20">
-      <varInfo nodeId="393299394024664283" varName="_parameterValues_129834374" />
-      <varInfo nodeId="393299394024664283" varName="quotedNode_1" />
-      <varInfo nodeId="393299394024664283" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="60" startPosition="31" endLine="69" endPosition="20">
-      <varInfo nodeId="393299394024664283" varName="_parameterValues_129834374" />
-      <varInfo nodeId="393299394024664283" varName="quotedNode_1" />
-      <varInfo nodeId="393299394024664283" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="48" startPosition="0" endLine="59" endPosition="0">
-      <varInfo nodeId="393299394024664283" varName="typeCheckingContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="60" startPosition="0" endLine="71" endPosition="0" />
-    <unitInfo nodeId="393299394024664283" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.typesystem.typeof_UnlessStatement_InferenceRule$QuotationClass_at9c8i_a0a0a0" />
-    <unitInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.typesystem.typeof_UnlessStatement_InferenceRule" />
+    <unitInfo nodeId="393299394024664262" fileName="typeof_UnlessStatement_InferenceRule.java" startLine="15" startPosition="0" endLine="48" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.typesystem.typeof_UnlessStatement_InferenceRule" />
   </root>
   <root nodeId="954830572075912400" modelId="r:7da49c71-e19f-4b55-806c-76b351ee48dd(org.jetbrains.mps.samples.IfAndUnless.typesystem)">
-    <nodeInfo nodeId="954830572075948199" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="954830572075948199" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="23" startPosition="90" endLine="24" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="954830572075948199" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="24" startPosition="213" endLine="25" endPosition="378" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="29" startPosition="46" endLine="30" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="34" startPosition="5" endLine="35" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="35" startPosition="119" endLine="36" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="40" startPosition="30" endLine="41" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="48" startPosition="76" endLine="49" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="49" startPosition="26" endLine="50" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="50" startPosition="67" endLine="51" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="52" startPosition="7" endLine="53" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="53" startPosition="166" endLine="54" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="54" startPosition="43" endLine="55" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="56" startPosition="7" endLine="57" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="60" startPosition="31" endLine="61" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="61" startPosition="26" endLine="62" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="62" startPosition="67" endLine="63" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="64" startPosition="7" endLine="65" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="65" startPosition="166" endLine="66" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="66" startPosition="43" endLine="67" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="68" startPosition="7" endLine="69" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_MyIfStatement_InferenceRule#()V" />
-    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="45" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_n3h5rb_a0a0a0#()V" />
-    <nodeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="33" startPosition="68" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="954830572075948199" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="21" startPosition="115" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="51" startPosition="32" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="51" startPosition="32" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="63" startPosition="32" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="63" startPosition="32" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="48" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="60" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="18" startPosition="47" endLine="18" endPosition="47" />
-    <scopeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="45" startPosition="43" endLine="45" endPosition="43" />
-    <scopeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="29" startPosition="46" endLine="30" endPosition="75" />
-    <scopeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="40" startPosition="30" endLine="41" endPosition="17" />
-    <scopeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="34" startPosition="5" endLine="36" endPosition="45">
+    <nodeInfo nodeId="954830572075948199" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="954830572075948199" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="21" startPosition="90" endLine="22" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="954830572075948199" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="22" startPosition="213" endLine="23" endPosition="313" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="27" startPosition="46" endLine="28" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="32" startPosition="5" endLine="33" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="33" startPosition="119" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="38" startPosition="30" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="42" startPosition="61" endLine="43" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="44" startPosition="162" endLine="45" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_MyIfStatement_InferenceRule#()V" />
+    <nodeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="954830572075948199" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="19" startPosition="115" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="42" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_n3h5rb_a0a0a#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="19" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="16" startPosition="47" endLine="16" endPosition="47" />
+    <scopeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="27" startPosition="46" endLine="28" endPosition="75" />
+    <scopeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="38" startPosition="30" endLine="39" endPosition="17" />
+    <scopeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="162" />
+    <scopeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="32" startPosition="5" endLine="34" endPosition="45">
       <varInfo nodeId="954830572075912400" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="45" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="954830572075948199" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="378">
+    <scopeInfo nodeId="954830572075948199" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="20" startPosition="5" endLine="23" endPosition="313">
       <varInfo nodeId="954830572075948199" varName="_info_12389875345" />
       <varInfo nodeId="954830572075948199" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="52" startPosition="7" endLine="55" endPosition="31">
-      <varInfo nodeId="954830572075948204" varName="quotedNode1_2" />
+    <scopeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="42" startPosition="61" endLine="45" endPosition="24">
+      <varInfo nodeId="954830572075948204" varName="quotedNode_1" />
     </scopeInfo>
-    <scopeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="64" startPosition="7" endLine="67" endPosition="31">
-      <varInfo nodeId="954830572075948204" varName="quotedNode1_2" />
-    </scopeInfo>
-    <scopeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="33" startPosition="68" endLine="37" endPosition="5" />
-    <scopeInfo nodeId="954830572075912401" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="21" startPosition="115" endLine="26" endPosition="5" />
-    <scopeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="51" startPosition="32" endLine="56" endPosition="7" />
-    <scopeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="63" startPosition="32" endLine="68" endPosition="7" />
-    <scopeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="33" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="954830572075912401" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="19" startPosition="115" endLine="24" endPosition="5" />
+    <scopeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="42" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="954830572075912400" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="19" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="954830572075912400" varName="st" />
       <varInfo nodeId="954830572075912400" varName="status" />
       <varInfo nodeId="954830572075912400" varName="typeCheckingContext" />
     </scopeInfo>
-    <scopeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="48" startPosition="76" endLine="57" endPosition="20">
-      <varInfo nodeId="954830572075948204" varName="_parameterValues_129834374" />
-      <varInfo nodeId="954830572075948204" varName="quotedNode_1" />
-      <varInfo nodeId="954830572075948204" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="60" startPosition="31" endLine="69" endPosition="20">
-      <varInfo nodeId="954830572075948204" varName="_parameterValues_129834374" />
-      <varInfo nodeId="954830572075948204" varName="quotedNode_1" />
-      <varInfo nodeId="954830572075948204" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="48" startPosition="0" endLine="59" endPosition="0">
-      <varInfo nodeId="954830572075948204" varName="typeCheckingContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="60" startPosition="0" endLine="71" endPosition="0" />
-    <unitInfo nodeId="954830572075948204" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.typesystem.typeof_MyIfStatement_InferenceRule$QuotationClass_n3h5rb_a0a0a0" />
-    <unitInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.typesystem.typeof_MyIfStatement_InferenceRule" />
+    <unitInfo nodeId="954830572075912400" fileName="typeof_MyIfStatement_InferenceRule.java" startLine="15" startPosition="0" endLine="48" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.typesystem.typeof_MyIfStatement_InferenceRule" />
   </root>
 </debugInfo>
 

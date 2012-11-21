@@ -168,7 +168,7 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
       public String getText() {
         SNode parent = SNodeOperations.getParent(node);
         if ((parent != null)) {
-          return parent.getRole();
+          return parent.getRoleInParent();
         } else {
           return "";
         }

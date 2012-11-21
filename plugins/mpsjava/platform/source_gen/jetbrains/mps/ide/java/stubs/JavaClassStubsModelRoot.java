@@ -62,11 +62,11 @@ public class JavaClassStubsModelRoot extends ModelRootBase {
   }
 
   public void save(Memento memento) {
-    memento.putPath("path", myPath);
+    memento.put("path", myPath);
   }
 
   public void load(Memento memento) {
-    myPath = memento.getPath("path");
+    myPath = memento.get("path");
   }
 
   public String getPath() {

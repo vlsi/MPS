@@ -49,8 +49,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.persistence.PathAwareJDOMMemento;
-import org.jdom.Element;
 import javax.swing.JComponent;
 import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubSolutionChooser;
@@ -273,7 +271,7 @@ public class StandardComponents {
                       }
                     })
                   );
-                  ModelRootDescriptor newDescr = new ModelRootDescriptor(null, new PathAwareJDOMMemento(new Element("modelRoot"), null));
+                  ModelRootDescriptor newDescr = new ModelRootDescriptor();
                   root.setManager(manager);
                   root.save(newDescr.getMemento());
                   list.add(list.indexOf(desc), newDescr);

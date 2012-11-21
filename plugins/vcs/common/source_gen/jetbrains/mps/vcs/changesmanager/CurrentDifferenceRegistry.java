@@ -20,7 +20,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.SModelFileTracker;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.vcs.FileStatusListener;
@@ -83,7 +82,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
       return;
     }
     DefaultSModelDescriptor modelDescriptor = ((DefaultSModelDescriptor) SModelFileTracker.getInstance().findModel(iFile));
-    if (modelDescriptor == null || modelDescriptor.getLoadingState() == ModelLoadingState.NOT_LOADED) {
+    if (modelDescriptor == null || !(modelDescriptor.isLoaded())) {
       return;
     }
     updateModel(modelDescriptor);

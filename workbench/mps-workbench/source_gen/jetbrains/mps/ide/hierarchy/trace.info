@@ -861,9 +861,9 @@
     <nodeInfo nodeId="5797068448049411685" fileName="BaseLanguageHierarchyViewTool.java" startLine="86" startPosition="153" endLine="87" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5797068448049411697" fileName="BaseLanguageHierarchyViewTool.java" startLine="88" startPosition="39" endLine="89" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5797068448049411716" fileName="BaseLanguageHierarchyViewTool.java" startLine="91" startPosition="112" endLine="92" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049411738" fileName="BaseLanguageHierarchyViewTool.java" startLine="93" startPosition="192" endLine="94" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411761" fileName="BaseLanguageHierarchyViewTool.java" startLine="96" startPosition="202" endLine="97" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049411784" fileName="BaseLanguageHierarchyViewTool.java" startLine="99" startPosition="196" endLine="100" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411738" fileName="BaseLanguageHierarchyViewTool.java" startLine="93" startPosition="200" endLine="94" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411761" fileName="BaseLanguageHierarchyViewTool.java" startLine="96" startPosition="210" endLine="97" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049411784" fileName="BaseLanguageHierarchyViewTool.java" startLine="99" startPosition="204" endLine="100" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5797068448049411806" fileName="BaseLanguageHierarchyViewTool.java" startLine="105" startPosition="112" endLine="106" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5797068448049411814" fileName="BaseLanguageHierarchyViewTool.java" startLine="106" startPosition="123" endLine="107" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5797068448049411819" fileName="BaseLanguageHierarchyViewTool.java" startLine="110" startPosition="7" endLine="111" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -903,9 +903,9 @@
     <scopeInfo nodeId="5797068448049411654" fileName="BaseLanguageHierarchyViewTool.java" startLine="71" startPosition="27" endLine="72" endPosition="22" />
     <scopeInfo nodeId="5797068448049411667" fileName="BaseLanguageHierarchyViewTool.java" startLine="75" startPosition="108" endLine="76" endPosition="28" />
     <scopeInfo nodeId="5797068448049411634" fileName="BaseLanguageHierarchyViewTool.java" startLine="79" startPosition="97" endLine="80" endPosition="20" />
-    <scopeInfo nodeId="5797068448049411737" fileName="BaseLanguageHierarchyViewTool.java" startLine="93" startPosition="192" endLine="94" endPosition="68" />
-    <scopeInfo nodeId="5797068448049411760" fileName="BaseLanguageHierarchyViewTool.java" startLine="96" startPosition="202" endLine="97" endPosition="68" />
-    <scopeInfo nodeId="5797068448049411783" fileName="BaseLanguageHierarchyViewTool.java" startLine="99" startPosition="196" endLine="100" endPosition="68" />
+    <scopeInfo nodeId="5797068448049411737" fileName="BaseLanguageHierarchyViewTool.java" startLine="93" startPosition="200" endLine="94" endPosition="68" />
+    <scopeInfo nodeId="5797068448049411760" fileName="BaseLanguageHierarchyViewTool.java" startLine="96" startPosition="210" endLine="97" endPosition="68" />
+    <scopeInfo nodeId="5797068448049411783" fileName="BaseLanguageHierarchyViewTool.java" startLine="99" startPosition="204" endLine="100" endPosition="68" />
     <scopeInfo nodeId="5797068448049411805" fileName="BaseLanguageHierarchyViewTool.java" startLine="105" startPosition="112" endLine="107" endPosition="39">
       <varInfo nodeId="5797068448049411807" varName="anonymousClass" />
     </scopeInfo>

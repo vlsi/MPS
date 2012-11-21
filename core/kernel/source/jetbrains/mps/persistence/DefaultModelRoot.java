@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileDataSource;
@@ -142,7 +143,7 @@ public class DefaultModelRoot extends FolderModelRootBase {
 
   @Deprecated
   public ModelRootDescriptor toDescriptor() {
-    ModelRootDescriptor result = new ModelRootDescriptor(null, new PathAwareJDOMMemento(new Element("modelRoot"), null));
+    ModelRootDescriptor result = new ModelRootDescriptor();
     save(result.getMemento());
     return result;
   }

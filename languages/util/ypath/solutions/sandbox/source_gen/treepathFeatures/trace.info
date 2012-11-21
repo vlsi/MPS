@@ -374,60 +374,50 @@
     <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="133" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAscending#()Z" />
     <nodeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Feature_child#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
     <nodeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Feature_link#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1227876805076" fileName="SNODE_Design.java" startLine="22" startPosition="41" endLine="23" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227876794368" fileName="SNODE_Design.java" startLine="26" startPosition="40" endLine="27" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184851332821" fileName="SNODE_Design.java" startLine="32" startPosition="62" endLine="33" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1227876801388" fileName="SNODE_Design.java" startLine="35" startPosition="41" endLine="36" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184851401431" fileName="SNODE_Design.java" startLine="38" startPosition="17" endLine="39" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184851368404" fileName="SNODE_Design.java" startLine="39" startPosition="65" endLine="40" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1185011327979" fileName="SNODE_Design.java" startLine="43" startPosition="51" endLine="44" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="51" startPosition="51" endLine="52" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="52" startPosition="28" endLine="53" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="53" startPosition="69" endLine="54" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="55" startPosition="9" endLine="56" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="56" startPosition="165" endLine="57" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="57" startPosition="45" endLine="58" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="58" startPosition="75" endLine="59" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="60" startPosition="9" endLine="61" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227876799161" fileName="SNODE_Design.java" startLine="69" startPosition="41" endLine="70" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227876794651" fileName="SNODE_Design.java" startLine="73" startPosition="40" endLine="74" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184851740887" fileName="SNODE_Design.java" startLine="79" startPosition="62" endLine="80" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1227876800336" fileName="SNODE_Design.java" startLine="82" startPosition="41" endLine="83" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1185016481799" fileName="SNODE_Design.java" startLine="85" startPosition="17" endLine="86" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184688590556" fileName="SNODE_Design.java" startLine="86" startPosition="65" endLine="87" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1185011344775" fileName="SNODE_Design.java" startLine="90" startPosition="51" endLine="91" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="98" startPosition="51" endLine="99" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="99" startPosition="28" endLine="100" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="100" startPosition="69" endLine="101" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="102" startPosition="9" endLine="103" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="103" startPosition="165" endLine="104" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="104" startPosition="45" endLine="105" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="105" startPosition="75" endLine="106" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="107" startPosition="9" endLine="108" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="48" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_q37txg_a0d0b0#()V" />
-    <nodeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="95" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_q37txg_a0d0b1#()V" />
-    <nodeInfo nodeId="1227876805072" fileName="SNODE_Design.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1227876794364" fileName="SNODE_Design.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1227876801384" fileName="SNODE_Design.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parameterToString#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1227876799157" fileName="SNODE_Design.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1227876794647" fileName="SNODE_Design.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1227876800332" fileName="SNODE_Design.java" startLine="82" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parameterToString#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1184851363567" fileName="SNODE_Design.java" startLine="33" startPosition="34" endLine="38" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184851752333" fileName="SNODE_Design.java" startLine="80" startPosition="34" endLine="85" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="54" startPosition="34" endLine="60" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="54" startPosition="34" endLine="60" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="101" startPosition="34" endLine="107" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="101" startPosition="34" endLine="107" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1184685843618" fileName="SNODE_Design.java" startLine="20" startPosition="59" endLine="29" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184688403163" fileName="SNODE_Design.java" startLine="67" startPosition="59" endLine="76" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="32" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTargetType#(Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="79" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTargetType#(Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="20" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameters#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="67" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameters#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="51" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="98" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1227876805076" fileName="SNODE_Design.java" startLine="20" startPosition="41" endLine="21" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227876794368" fileName="SNODE_Design.java" startLine="24" startPosition="40" endLine="25" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184851332821" fileName="SNODE_Design.java" startLine="30" startPosition="62" endLine="31" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1227876801388" fileName="SNODE_Design.java" startLine="33" startPosition="41" endLine="34" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184851401431" fileName="SNODE_Design.java" startLine="36" startPosition="17" endLine="37" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1184851368404" fileName="SNODE_Design.java" startLine="37" startPosition="65" endLine="38" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1185011327979" fileName="SNODE_Design.java" startLine="41" startPosition="51" endLine="42" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="45" startPosition="80" endLine="46" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="46" startPosition="32" endLine="47" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="47" startPosition="161" endLine="48" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="48" startPosition="70" endLine="49" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227876799161" fileName="SNODE_Design.java" startLine="56" startPosition="41" endLine="57" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227876794651" fileName="SNODE_Design.java" startLine="60" startPosition="40" endLine="61" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184851740887" fileName="SNODE_Design.java" startLine="66" startPosition="62" endLine="67" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1227876800336" fileName="SNODE_Design.java" startLine="69" startPosition="41" endLine="70" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1185016481799" fileName="SNODE_Design.java" startLine="72" startPosition="17" endLine="73" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1184688590556" fileName="SNODE_Design.java" startLine="73" startPosition="65" endLine="74" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1185011344775" fileName="SNODE_Design.java" startLine="77" startPosition="51" endLine="78" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="81" startPosition="80" endLine="82" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="82" startPosition="32" endLine="83" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="83" startPosition="161" endLine="84" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="84" startPosition="70" endLine="85" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="46" startPosition="32" endLine="48" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="46" startPosition="32" endLine="48" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="82" startPosition="32" endLine="84" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="82" startPosition="32" endLine="84" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1227876805072" fileName="SNODE_Design.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1227876794364" fileName="SNODE_Design.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1227876801384" fileName="SNODE_Design.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parameterToString#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1227876799157" fileName="SNODE_Design.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1227876794647" fileName="SNODE_Design.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1227876800332" fileName="SNODE_Design.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parameterToString#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1184851363567" fileName="SNODE_Design.java" startLine="31" startPosition="34" endLine="36" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1184851752333" fileName="SNODE_Design.java" startLine="67" startPosition="34" endLine="72" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="45" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_nj78q_a3a0a#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="81" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_nj78q_a3a0b#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1184685843618" fileName="SNODE_Design.java" startLine="18" startPosition="59" endLine="27" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184688403163" fileName="SNODE_Design.java" startLine="54" startPosition="59" endLine="63" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="30" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTargetType#(Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="66" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTargetType#(Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="18" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameters#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="54" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameters#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
     <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="14" startPosition="18" endLine="14" endPosition="18" />
     <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="17" startPosition="35" endLine="18" endPosition="37" />
     <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="21" startPosition="63" endLine="22" endPosition="47" />
@@ -500,91 +490,77 @@
       <varInfo nodeId="1184688224775" varName="param" />
       <varInfo nodeId="1184688224775" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="48" startPosition="45" endLine="48" endPosition="45" />
-    <scopeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="95" startPosition="45" endLine="95" endPosition="45" />
-    <scopeInfo nodeId="1227876805075" fileName="SNODE_Design.java" startLine="22" startPosition="41" endLine="23" endPosition="103" />
-    <scopeInfo nodeId="1227876794367" fileName="SNODE_Design.java" startLine="26" startPosition="40" endLine="27" endPosition="59" />
-    <scopeInfo nodeId="1227876801387" fileName="SNODE_Design.java" startLine="35" startPosition="41" endLine="36" endPosition="74" />
-    <scopeInfo nodeId="1185011302720" fileName="SNODE_Design.java" startLine="43" startPosition="51" endLine="44" endPosition="19" />
-    <scopeInfo nodeId="1227876799160" fileName="SNODE_Design.java" startLine="69" startPosition="41" endLine="70" endPosition="176" />
-    <scopeInfo nodeId="1227876794650" fileName="SNODE_Design.java" startLine="73" startPosition="40" endLine="74" endPosition="59" />
-    <scopeInfo nodeId="1227876800335" fileName="SNODE_Design.java" startLine="82" startPosition="41" endLine="83" endPosition="74" />
-    <scopeInfo nodeId="1185011310500" fileName="SNODE_Design.java" startLine="90" startPosition="51" endLine="91" endPosition="19" />
-    <scopeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="48" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="95" startPosition="0" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="1227876805072" fileName="SNODE_Design.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+    <scopeInfo nodeId="1227876805075" fileName="SNODE_Design.java" startLine="20" startPosition="41" endLine="21" endPosition="103" />
+    <scopeInfo nodeId="1227876794367" fileName="SNODE_Design.java" startLine="24" startPosition="40" endLine="25" endPosition="59" />
+    <scopeInfo nodeId="1227876801387" fileName="SNODE_Design.java" startLine="33" startPosition="41" endLine="34" endPosition="74" />
+    <scopeInfo nodeId="1185011302720" fileName="SNODE_Design.java" startLine="41" startPosition="51" endLine="42" endPosition="19" />
+    <scopeInfo nodeId="1227876799160" fileName="SNODE_Design.java" startLine="56" startPosition="41" endLine="57" endPosition="176" />
+    <scopeInfo nodeId="1227876794650" fileName="SNODE_Design.java" startLine="60" startPosition="40" endLine="61" endPosition="59" />
+    <scopeInfo nodeId="1227876800335" fileName="SNODE_Design.java" startLine="69" startPosition="41" endLine="70" endPosition="74" />
+    <scopeInfo nodeId="1185011310500" fileName="SNODE_Design.java" startLine="77" startPosition="51" endLine="78" endPosition="19" />
+    <scopeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="46" startPosition="32" endLine="48" endPosition="70" />
+    <scopeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="82" startPosition="32" endLine="84" endPosition="70" />
+    <scopeInfo nodeId="1227876805072" fileName="SNODE_Design.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="1227876805072" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1227876794364" fileName="SNODE_Design.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="1227876794364" fileName="SNODE_Design.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="1227876794364" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1227876801384" fileName="SNODE_Design.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="1227876801384" fileName="SNODE_Design.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="1227876801384" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="43" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1184685688047" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="1227876799157" fileName="SNODE_Design.java" startLine="69" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="1227876799157" fileName="SNODE_Design.java" startLine="56" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="1227876799157" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1227876794647" fileName="SNODE_Design.java" startLine="73" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="1227876794647" fileName="SNODE_Design.java" startLine="60" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="1227876794647" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1227876800332" fileName="SNODE_Design.java" startLine="82" startPosition="0" endLine="85" endPosition="0">
+    <scopeInfo nodeId="1227876800332" fileName="SNODE_Design.java" startLine="69" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="1227876800332" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="90" startPosition="0" endLine="93" endPosition="0">
+    <scopeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="77" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="1184685688047" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="55" startPosition="9" endLine="59" endPosition="33">
-      <varInfo nodeId="1196853157154" varName="quotedNode1_2" />
+    <scopeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="45" startPosition="80" endLine="49" endPosition="26">
+      <varInfo nodeId="1196853157154" varName="quotedNode_2" />
     </scopeInfo>
-    <scopeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="102" startPosition="9" endLine="106" endPosition="33">
-      <varInfo nodeId="1196853157164" varName="quotedNode1_2" />
+    <scopeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="81" startPosition="80" endLine="85" endPosition="26">
+      <varInfo nodeId="1196853157164" varName="quotedNode_2" />
     </scopeInfo>
-    <scopeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="54" startPosition="34" endLine="60" endPosition="9" />
-    <scopeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="101" startPosition="34" endLine="107" endPosition="9" />
-    <scopeInfo nodeId="1184685792737" fileName="SNODE_Design.java" startLine="32" startPosition="62" endLine="40" endPosition="98">
+    <scopeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="45" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="1196853157154" varName="parameter_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="81" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="1196853157164" varName="parameter_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1184685792737" fileName="SNODE_Design.java" startLine="30" startPosition="62" endLine="38" endPosition="52">
       <varInfo nodeId="1184851332822" varName="_param" />
       <varInfo nodeId="1184851363568" varName="ld" />
       <varInfo nodeId="1184851401432" varName="trg" />
     </scopeInfo>
-    <scopeInfo nodeId="1184688224788" fileName="SNODE_Design.java" startLine="79" startPosition="62" endLine="87" endPosition="97">
+    <scopeInfo nodeId="1184688224788" fileName="SNODE_Design.java" startLine="66" startPosition="62" endLine="74" endPosition="52">
       <varInfo nodeId="1184851740888" varName="_param" />
       <varInfo nodeId="1184851752334" varName="ld" />
       <varInfo nodeId="1185016481800" varName="trg" />
     </scopeInfo>
-    <scopeInfo nodeId="1184685792735" fileName="SNODE_Design.java" startLine="20" startPosition="59" endLine="29" endPosition="9" />
-    <scopeInfo nodeId="1184688224786" fileName="SNODE_Design.java" startLine="67" startPosition="59" endLine="76" endPosition="9" />
-    <scopeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="32" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="1184685792735" fileName="SNODE_Design.java" startLine="18" startPosition="59" endLine="27" endPosition="9" />
+    <scopeInfo nodeId="1184688224786" fileName="SNODE_Design.java" startLine="54" startPosition="59" endLine="63" endPosition="9" />
+    <scopeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="30" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="1184685688047" varName="nodeType" />
       <varInfo nodeId="1184685688047" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="51" startPosition="51" endLine="61" endPosition="22">
-      <varInfo nodeId="1196853157154" varName="_parameterValues_129834374" />
-      <varInfo nodeId="1196853157154" varName="quotedNode_1" />
-      <varInfo nodeId="1196853157154" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="79" startPosition="0" endLine="89" endPosition="0">
+    <scopeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="66" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="1184685688047" varName="nodeType" />
       <varInfo nodeId="1184685688047" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="98" startPosition="51" endLine="108" endPosition="22">
-      <varInfo nodeId="1196853157164" varName="_parameterValues_129834374" />
-      <varInfo nodeId="1196853157164" varName="quotedNode_1" />
-      <varInfo nodeId="1196853157164" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="20" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="18" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="1184685688047" varName="nodeType" />
     </scopeInfo>
-    <scopeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="67" startPosition="0" endLine="78" endPosition="0">
+    <scopeInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="54" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="1184685688047" varName="nodeType" />
-    </scopeInfo>
-    <scopeInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="51" startPosition="0" endLine="63" endPosition="0">
-      <varInfo nodeId="1196853157154" varName="parameter_3" />
-    </scopeInfo>
-    <scopeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="98" startPosition="0" endLine="110" endPosition="0">
-      <varInfo nodeId="1196853157164" varName="parameter_3" />
     </scopeInfo>
     <unitInfo nodeId="1184685688053" fileName="SNODE.java" startLine="35" startPosition="0" endLine="37" endPosition="0" unitName="treepathFeatures.SNODE$Children" />
     <unitInfo nodeId="1184685688050" fileName="SNODE.java" startLine="29" startPosition="0" endLine="34" endPosition="0" unitName="treepathFeatures.SNODE$Parent" />
@@ -593,17 +569,15 @@
     <unitInfo nodeId="1184685688047" fileName="SNODE.java" startLine="82" startPosition="0" endLine="109" endPosition="0" unitName="treepathFeatures.SNODE$Desc_Feature_child" />
     <unitInfo nodeId="1184685688047" fileName="SNODE.java" startLine="110" startPosition="0" endLine="137" endPosition="0" unitName="treepathFeatures.SNODE$Desc_Feature_link" />
     <unitInfo nodeId="1184685688047" fileName="SNODE.java" startLine="13" startPosition="0" endLine="138" endPosition="0" unitName="treepathFeatures.SNODE" />
-    <unitInfo nodeId="1227876805072" fileName="SNODE_Design.java" startLine="21" startPosition="224" endLine="25" endPosition="7" unitName="treepathFeatures.SNODE_Design$1" />
-    <unitInfo nodeId="1227876794364" fileName="SNODE_Design.java" startLine="25" startPosition="20" endLine="29" endPosition="7" unitName="treepathFeatures.SNODE_Design$2" />
-    <unitInfo nodeId="1227876801384" fileName="SNODE_Design.java" startLine="34" startPosition="228" endLine="38" endPosition="7" unitName="treepathFeatures.SNODE_Design$3" />
-    <unitInfo nodeId="1227876799157" fileName="SNODE_Design.java" startLine="68" startPosition="224" endLine="72" endPosition="7" unitName="treepathFeatures.SNODE_Design$1" />
-    <unitInfo nodeId="1227876794647" fileName="SNODE_Design.java" startLine="72" startPosition="20" endLine="76" endPosition="7" unitName="treepathFeatures.SNODE_Design$2" />
-    <unitInfo nodeId="1227876800332" fileName="SNODE_Design.java" startLine="81" startPosition="228" endLine="85" endPosition="7" unitName="treepathFeatures.SNODE_Design$3" />
-    <unitInfo nodeId="1196853157154" fileName="SNODE_Design.java" startLine="47" startPosition="0" endLine="64" endPosition="0" unitName="treepathFeatures.SNODE_Design$Design_Feature_child$QuotationClass_q37txg_a0d0b0" />
-    <unitInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="94" startPosition="0" endLine="111" endPosition="0" unitName="treepathFeatures.SNODE_Design$Design_Feature_link$QuotationClass_q37txg_a0d0b1" />
-    <unitInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="19" startPosition="0" endLine="65" endPosition="0" unitName="treepathFeatures.SNODE_Design$Design_Feature_child" />
-    <unitInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="66" startPosition="0" endLine="112" endPosition="0" unitName="treepathFeatures.SNODE_Design$Design_Feature_link" />
-    <unitInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="18" startPosition="0" endLine="113" endPosition="0" unitName="treepathFeatures.SNODE_Design" />
+    <unitInfo nodeId="1227876805072" fileName="SNODE_Design.java" startLine="19" startPosition="224" endLine="23" endPosition="7" unitName="treepathFeatures.SNODE_Design$1" />
+    <unitInfo nodeId="1227876794364" fileName="SNODE_Design.java" startLine="23" startPosition="20" endLine="27" endPosition="7" unitName="treepathFeatures.SNODE_Design$2" />
+    <unitInfo nodeId="1227876801384" fileName="SNODE_Design.java" startLine="32" startPosition="228" endLine="36" endPosition="7" unitName="treepathFeatures.SNODE_Design$3" />
+    <unitInfo nodeId="1227876799157" fileName="SNODE_Design.java" startLine="55" startPosition="224" endLine="59" endPosition="7" unitName="treepathFeatures.SNODE_Design$1" />
+    <unitInfo nodeId="1227876794647" fileName="SNODE_Design.java" startLine="59" startPosition="20" endLine="63" endPosition="7" unitName="treepathFeatures.SNODE_Design$2" />
+    <unitInfo nodeId="1227876800332" fileName="SNODE_Design.java" startLine="68" startPosition="228" endLine="72" endPosition="7" unitName="treepathFeatures.SNODE_Design$3" />
+    <unitInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="treepathFeatures.SNODE_Design$Design_Feature_child" />
+    <unitInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="53" startPosition="0" endLine="88" endPosition="0" unitName="treepathFeatures.SNODE_Design$Design_Feature_link" />
+    <unitInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="16" startPosition="0" endLine="89" endPosition="0" unitName="treepathFeatures.SNODE_Design" />
   </root>
   <root nodeId="1184773002627" modelId="r:00000000-0000-4000-0000-011c895905bb(treepathFeatures)">
     <nodeInfo nodeId="1227876791921" fileName="SnodeDemo.java" startLine="41" startPosition="27" endLine="41" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1231,346 +1205,252 @@
     <unitInfo nodeId="1184773002627" fileName="SnodeDemo.java" startLine="19" startPosition="0" endLine="568" endPosition="0" unitName="treepathFeatures.SnodeDemo" />
   </root>
   <root nodeId="1191934136657" modelId="r:00000000-0000-4000-0000-011c895905bb(treepathFeatures)">
-    <nodeInfo nodeId="1227876802914" fileName="SNODE_GEN_Design.java" startLine="25" startPosition="41" endLine="26" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1192878414174" fileName="SNODE_GEN_Design.java" startLine="31" startPosition="61" endLine="32" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1192878414179" fileName="SNODE_GEN_Design.java" startLine="32" startPosition="23" endLine="33" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1192878414185" fileName="SNODE_GEN_Design.java" startLine="33" startPosition="65" endLine="34" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1192878421683" fileName="SNODE_GEN_Design.java" startLine="37" startPosition="50" endLine="38" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1193063049621" fileName="SNODE_GEN_Design.java" startLine="41" startPosition="96" endLine="42" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1193063049627" fileName="SNODE_GEN_Design.java" startLine="42" startPosition="114" endLine="43" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1193063049631" fileName="SNODE_GEN_Design.java" startLine="43" startPosition="15" endLine="44" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193063049648" fileName="SNODE_GEN_Design.java" startLine="45" startPosition="114" endLine="46" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193063049654" fileName="SNODE_GEN_Design.java" startLine="46" startPosition="103" endLine="47" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193063049671" fileName="SNODE_GEN_Design.java" startLine="48" startPosition="14" endLine="49" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193063049677" fileName="SNODE_GEN_Design.java" startLine="49" startPosition="107" endLine="50" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193063049685" fileName="SNODE_GEN_Design.java" startLine="51" startPosition="7" endLine="52" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193063049692" fileName="SNODE_GEN_Design.java" startLine="52" startPosition="63" endLine="53" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240330154189" fileName="SNODE_GEN_Design.java" startLine="56" startPosition="59" endLine="57" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="64" startPosition="51" endLine="65" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="65" startPosition="28" endLine="66" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="66" startPosition="69" endLine="67" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="68" startPosition="9" endLine="69" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="69" startPosition="165" endLine="70" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="70" startPosition="45" endLine="71" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="71" startPosition="75" endLine="72" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="73" startPosition="9" endLine="74" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227876796147" fileName="SNODE_GEN_Design.java" startLine="82" startPosition="41" endLine="83" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1192878512138" fileName="SNODE_GEN_Design.java" startLine="88" startPosition="61" endLine="89" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1192878512142" fileName="SNODE_GEN_Design.java" startLine="89" startPosition="23" endLine="90" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1192878512148" fileName="SNODE_GEN_Design.java" startLine="90" startPosition="65" endLine="91" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1192878518144" fileName="SNODE_GEN_Design.java" startLine="94" startPosition="50" endLine="95" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1193047912064" fileName="SNODE_GEN_Design.java" startLine="98" startPosition="96" endLine="99" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1193062933675" fileName="SNODE_GEN_Design.java" startLine="99" startPosition="114" endLine="100" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1193047912070" fileName="SNODE_GEN_Design.java" startLine="100" startPosition="15" endLine="101" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193062945628" fileName="SNODE_GEN_Design.java" startLine="102" startPosition="114" endLine="103" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193062970245" fileName="SNODE_GEN_Design.java" startLine="103" startPosition="103" endLine="104" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193062993616" fileName="SNODE_GEN_Design.java" startLine="105" startPosition="14" endLine="106" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193062993622" fileName="SNODE_GEN_Design.java" startLine="106" startPosition="107" endLine="107" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193047912090" fileName="SNODE_GEN_Design.java" startLine="108" startPosition="7" endLine="109" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193047912097" fileName="SNODE_GEN_Design.java" startLine="109" startPosition="63" endLine="110" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240330173351" fileName="SNODE_GEN_Design.java" startLine="113" startPosition="59" endLine="114" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="121" startPosition="51" endLine="122" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="122" startPosition="28" endLine="123" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="123" startPosition="69" endLine="124" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="125" startPosition="9" endLine="126" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="126" startPosition="165" endLine="127" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="127" startPosition="45" endLine="128" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="128" startPosition="75" endLine="129" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="130" startPosition="9" endLine="131" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1199450600150" fileName="SNODE_GEN_Design.java" startLine="137" startPosition="83" endLine="138" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="145" startPosition="51" endLine="146" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="146" startPosition="28" endLine="147" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="147" startPosition="69" endLine="148" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="148" startPosition="34" endLine="149" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="149" startPosition="34" endLine="150" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="151" startPosition="9" endLine="152" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="152" startPosition="170" endLine="153" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="154" startPosition="11" endLine="155" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="155" startPosition="47" endLine="156" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="157" startPosition="68" endLine="158" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="159" startPosition="20" endLine="160" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="160" startPosition="59" endLine="161" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="163" startPosition="40" endLine="164" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="167" startPosition="11" endLine="168" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="168" startPosition="183" endLine="169" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="169" startPosition="47" endLine="170" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="171" startPosition="11" endLine="172" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="173" startPosition="9" endLine="174" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1199450709521" fileName="SNODE_GEN_Design.java" startLine="180" startPosition="83" endLine="181" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="188" startPosition="52" endLine="189" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="189" startPosition="28" endLine="190" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="190" startPosition="69" endLine="191" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="191" startPosition="34" endLine="192" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="192" startPosition="34" endLine="193" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="193" startPosition="34" endLine="194" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="194" startPosition="34" endLine="195" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="195" startPosition="34" endLine="196" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="197" startPosition="9" endLine="198" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="198" startPosition="177" endLine="199" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="200" startPosition="11" endLine="201" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="201" startPosition="190" endLine="202" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="203" startPosition="13" endLine="204" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="204" startPosition="174" endLine="205" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="206" startPosition="15" endLine="207" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="207" startPosition="52" endLine="208" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="209" startPosition="72" endLine="210" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="211" startPosition="24" endLine="212" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="212" startPosition="63" endLine="213" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="215" startPosition="45" endLine="216" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="219" startPosition="15" endLine="220" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="220" startPosition="185" endLine="221" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="221" startPosition="52" endLine="222" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="223" startPosition="15" endLine="224" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="226" startPosition="13" endLine="227" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="227" startPosition="169" endLine="228" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="228" startPosition="50" endLine="229" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="230" startPosition="13" endLine="231" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="232" startPosition="11" endLine="233" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="234" startPosition="9" endLine="235" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="61" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_d0icvv_a0c0b0#()V" />
-    <nodeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="118" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_d0icvv_a0c0b1#()V" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="142" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_d0icvv_a0a0a2#()V" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="185" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_d0icvv_a0a0a3#()V" />
-    <nodeInfo nodeId="1227876802910" fileName="SNODE_GEN_Design.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parameterToString#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1193063049669" fileName="SNODE_GEN_Design.java" startLine="48" startPosition="12" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSingleTargetCardinality#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1227876796143" fileName="SNODE_GEN_Design.java" startLine="82" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="94" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parameterToString#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1193062897283" fileName="SNODE_GEN_Design.java" startLine="105" startPosition="12" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="113" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSingleTargetCardinality#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="137" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getterExpression#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="159" startPosition="18" endLine="162" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="162" startPosition="13" endLine="165" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="180" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getterExpression#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="211" startPosition="22" endLine="214" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="214" startPosition="17" endLine="217" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1192878399672" fileName="SNODE_GEN_Design.java" startLine="23" startPosition="58" endLine="28" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="31" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTargetType#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1192878498763" fileName="SNODE_GEN_Design.java" startLine="80" startPosition="58" endLine="85" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="88" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTargetType#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="166" startPosition="11" endLine="171" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="166" startPosition="11" endLine="171" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="218" startPosition="15" endLine="223" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="218" startPosition="15" endLine="223" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="225" startPosition="13" endLine="230" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="225" startPosition="13" endLine="230" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="67" startPosition="34" endLine="73" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="67" startPosition="34" endLine="73" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="124" startPosition="34" endLine="130" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="124" startPosition="34" endLine="130" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="156" startPosition="32" endLine="162" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="208" startPosition="37" endLine="214" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="23" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameters#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1193063049645" fileName="SNODE_GEN_Design.java" startLine="44" startPosition="69" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="80" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameters#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1193062887932" fileName="SNODE_GEN_Design.java" startLine="101" startPosition="69" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="64" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="121" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="153" startPosition="45" endLine="166" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="153" startPosition="45" endLine="166" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="205" startPosition="49" endLine="218" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="205" startPosition="49" endLine="218" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="41" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getterExpression#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="98" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getterExpression#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="150" startPosition="34" endLine="173" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="150" startPosition="34" endLine="173" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="202" startPosition="47" endLine="225" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="202" startPosition="47" endLine="225" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="145" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="199" startPosition="45" endLine="232" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="199" startPosition="45" endLine="232" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="196" startPosition="34" endLine="234" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="196" startPosition="34" endLine="234" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="188" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="61" startPosition="45" endLine="61" endPosition="45" />
-    <scopeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="118" startPosition="45" endLine="118" endPosition="45" />
-    <scopeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="142" startPosition="45" endLine="142" endPosition="45" />
-    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="185" startPosition="45" endLine="185" endPosition="45" />
-    <scopeInfo nodeId="1227876802913" fileName="SNODE_GEN_Design.java" startLine="25" startPosition="41" endLine="26" endPosition="103" />
-    <scopeInfo nodeId="1192878365683" fileName="SNODE_GEN_Design.java" startLine="37" startPosition="50" endLine="38" endPosition="58" />
-    <scopeInfo nodeId="1193058874207" fileName="SNODE_GEN_Design.java" startLine="56" startPosition="59" endLine="57" endPosition="115" />
-    <scopeInfo nodeId="1227876796146" fileName="SNODE_GEN_Design.java" startLine="82" startPosition="41" endLine="83" endPosition="176" />
-    <scopeInfo nodeId="1192878435120" fileName="SNODE_GEN_Design.java" startLine="94" startPosition="50" endLine="95" endPosition="58" />
-    <scopeInfo nodeId="1193059035160" fileName="SNODE_GEN_Design.java" startLine="113" startPosition="59" endLine="114" endPosition="115" />
-    <scopeInfo nodeId="1199450600145" fileName="SNODE_GEN_Design.java" startLine="137" startPosition="83" endLine="138" endPosition="115" />
-    <scopeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="157" startPosition="68" endLine="158" endPosition="66" />
-    <scopeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="163" startPosition="40" endLine="164" endPosition="85" />
-    <scopeInfo nodeId="1199450600159" fileName="SNODE_GEN_Design.java" startLine="180" startPosition="83" endLine="181" endPosition="110" />
-    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="209" startPosition="72" endLine="210" endPosition="71" />
-    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="215" startPosition="45" endLine="216" endPosition="90" />
-    <scopeInfo nodeId="1193063049646" fileName="SNODE_GEN_Design.java" startLine="45" startPosition="114" endLine="47" endPosition="133" />
-    <scopeInfo nodeId="1193063049670" fileName="SNODE_GEN_Design.java" startLine="48" startPosition="14" endLine="50" endPosition="137" />
-    <scopeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="61" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="1193062887933" fileName="SNODE_GEN_Design.java" startLine="102" startPosition="114" endLine="104" endPosition="133" />
-    <scopeInfo nodeId="1193062897284" fileName="SNODE_GEN_Design.java" startLine="105" startPosition="14" endLine="107" endPosition="137" />
-    <scopeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="118" startPosition="0" endLine="120" endPosition="0" />
-    <scopeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="142" startPosition="0" endLine="144" endPosition="0" />
-    <scopeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="159" startPosition="20" endLine="161" endPosition="43" />
-    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="185" startPosition="0" endLine="187" endPosition="0" />
-    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="211" startPosition="24" endLine="213" endPosition="48" />
-    <scopeInfo nodeId="1227876802910" fileName="SNODE_GEN_Design.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+    <nodeInfo nodeId="1227876802914" fileName="SNODE_GEN_Design.java" startLine="23" startPosition="41" endLine="24" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1192878414174" fileName="SNODE_GEN_Design.java" startLine="29" startPosition="61" endLine="30" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1192878414179" fileName="SNODE_GEN_Design.java" startLine="30" startPosition="23" endLine="31" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1192878414185" fileName="SNODE_GEN_Design.java" startLine="31" startPosition="65" endLine="32" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1192878421683" fileName="SNODE_GEN_Design.java" startLine="35" startPosition="50" endLine="36" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1193063049621" fileName="SNODE_GEN_Design.java" startLine="39" startPosition="96" endLine="40" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1193063049627" fileName="SNODE_GEN_Design.java" startLine="40" startPosition="114" endLine="41" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1193063049631" fileName="SNODE_GEN_Design.java" startLine="41" startPosition="15" endLine="42" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193063049648" fileName="SNODE_GEN_Design.java" startLine="43" startPosition="114" endLine="44" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193063049654" fileName="SNODE_GEN_Design.java" startLine="44" startPosition="103" endLine="45" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193063049671" fileName="SNODE_GEN_Design.java" startLine="46" startPosition="14" endLine="47" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193063049677" fileName="SNODE_GEN_Design.java" startLine="47" startPosition="107" endLine="48" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193063049685" fileName="SNODE_GEN_Design.java" startLine="49" startPosition="7" endLine="50" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193063049692" fileName="SNODE_GEN_Design.java" startLine="50" startPosition="63" endLine="51" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240330154189" fileName="SNODE_GEN_Design.java" startLine="54" startPosition="59" endLine="55" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="58" startPosition="81" endLine="59" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="59" startPosition="32" endLine="60" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="60" startPosition="161" endLine="61" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="61" startPosition="70" endLine="62" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227876796147" fileName="SNODE_GEN_Design.java" startLine="69" startPosition="41" endLine="70" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1192878512138" fileName="SNODE_GEN_Design.java" startLine="75" startPosition="61" endLine="76" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1192878512142" fileName="SNODE_GEN_Design.java" startLine="76" startPosition="23" endLine="77" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1192878512148" fileName="SNODE_GEN_Design.java" startLine="77" startPosition="65" endLine="78" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1192878518144" fileName="SNODE_GEN_Design.java" startLine="81" startPosition="50" endLine="82" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1193047912064" fileName="SNODE_GEN_Design.java" startLine="85" startPosition="96" endLine="86" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1193062933675" fileName="SNODE_GEN_Design.java" startLine="86" startPosition="114" endLine="87" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1193047912070" fileName="SNODE_GEN_Design.java" startLine="87" startPosition="15" endLine="88" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193062945628" fileName="SNODE_GEN_Design.java" startLine="89" startPosition="114" endLine="90" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193062970245" fileName="SNODE_GEN_Design.java" startLine="90" startPosition="103" endLine="91" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193062993616" fileName="SNODE_GEN_Design.java" startLine="92" startPosition="14" endLine="93" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193062993622" fileName="SNODE_GEN_Design.java" startLine="93" startPosition="107" endLine="94" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193047912090" fileName="SNODE_GEN_Design.java" startLine="95" startPosition="7" endLine="96" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193047912097" fileName="SNODE_GEN_Design.java" startLine="96" startPosition="63" endLine="97" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240330173351" fileName="SNODE_GEN_Design.java" startLine="100" startPosition="59" endLine="101" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="104" startPosition="81" endLine="105" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="105" startPosition="32" endLine="106" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="106" startPosition="161" endLine="107" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="107" startPosition="70" endLine="108" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1199450600150" fileName="SNODE_GEN_Design.java" startLine="113" startPosition="83" endLine="114" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="117" startPosition="81" endLine="118" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="118" startPosition="32" endLine="119" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="119" startPosition="32" endLine="120" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="120" startPosition="32" endLine="121" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="121" startPosition="166" endLine="122" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="123" startPosition="33" endLine="124" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="125" startPosition="7" endLine="126" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="126" startPosition="177" endLine="127" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="127" startPosition="55" endLine="128" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1199450709521" fileName="SNODE_GEN_Design.java" startLine="133" startPosition="83" endLine="134" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="137" startPosition="81" endLine="138" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="138" startPosition="32" endLine="139" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="139" startPosition="32" endLine="140" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="140" startPosition="32" endLine="141" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="141" startPosition="32" endLine="142" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="142" startPosition="32" endLine="143" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="143" startPosition="32" endLine="144" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="144" startPosition="173" endLine="145" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="145" startPosition="184" endLine="146" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="146" startPosition="166" endLine="147" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="148" startPosition="33" endLine="149" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="150" startPosition="7" endLine="151" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="151" startPosition="175" endLine="152" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="152" startPosition="55" endLine="153" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="153" startPosition="55" endLine="154" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="154" startPosition="161" endLine="155" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="155" startPosition="57" endLine="156" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="156" startPosition="53" endLine="157" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="59" startPosition="32" endLine="61" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="59" startPosition="32" endLine="61" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="105" startPosition="32" endLine="107" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="105" startPosition="32" endLine="107" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="125" startPosition="7" endLine="127" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="125" startPosition="7" endLine="127" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="150" startPosition="7" endLine="152" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="150" startPosition="7" endLine="152" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="153" startPosition="55" endLine="155" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="153" startPosition="55" endLine="155" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1227876802910" fileName="SNODE_GEN_Design.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parameterToString#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1193063049669" fileName="SNODE_GEN_Design.java" startLine="46" startPosition="12" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSingleTargetCardinality#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1227876796143" fileName="SNODE_GEN_Design.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parameterToString#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1193062897283" fileName="SNODE_GEN_Design.java" startLine="92" startPosition="12" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="100" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSingleTargetCardinality#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="113" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getterExpression#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="122" startPosition="41" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="133" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getterExpression#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="147" startPosition="41" endLine="150" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="121" startPosition="166" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="121" startPosition="166" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="146" startPosition="166" endLine="150" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="146" startPosition="166" endLine="150" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1192878399672" fileName="SNODE_GEN_Design.java" startLine="21" startPosition="58" endLine="26" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTargetType#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1192878498763" fileName="SNODE_GEN_Design.java" startLine="67" startPosition="58" endLine="72" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="75" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTargetType#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="58" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_iaikir_a2a0a#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="104" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_iaikir_a2a0b#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameters#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1193063049645" fileName="SNODE_GEN_Design.java" startLine="42" startPosition="69" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="67" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameters#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1193062887932" fileName="SNODE_GEN_Design.java" startLine="88" startPosition="69" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="120" startPosition="32" endLine="127" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="120" startPosition="32" endLine="127" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="145" startPosition="184" endLine="153" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="145" startPosition="184" endLine="153" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="144" startPosition="173" endLine="156" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="144" startPosition="173" endLine="156" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="117" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_iaikir_a0a0c#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="143" startPosition="32" endLine="156" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="143" startPosition="32" endLine="156" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="39" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getterExpression#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="85" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getterExpression#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="137" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_iaikir_a0a0d#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="1227876802913" fileName="SNODE_GEN_Design.java" startLine="23" startPosition="41" endLine="24" endPosition="103" />
+    <scopeInfo nodeId="1192878365683" fileName="SNODE_GEN_Design.java" startLine="35" startPosition="50" endLine="36" endPosition="58" />
+    <scopeInfo nodeId="1193058874207" fileName="SNODE_GEN_Design.java" startLine="54" startPosition="59" endLine="55" endPosition="115" />
+    <scopeInfo nodeId="1227876796146" fileName="SNODE_GEN_Design.java" startLine="69" startPosition="41" endLine="70" endPosition="176" />
+    <scopeInfo nodeId="1192878435120" fileName="SNODE_GEN_Design.java" startLine="81" startPosition="50" endLine="82" endPosition="58" />
+    <scopeInfo nodeId="1193059035160" fileName="SNODE_GEN_Design.java" startLine="100" startPosition="59" endLine="101" endPosition="115" />
+    <scopeInfo nodeId="1199450600145" fileName="SNODE_GEN_Design.java" startLine="113" startPosition="83" endLine="114" endPosition="60" />
+    <scopeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="123" startPosition="33" endLine="124" endPosition="78" />
+    <scopeInfo nodeId="1199450600159" fileName="SNODE_GEN_Design.java" startLine="133" startPosition="83" endLine="134" endPosition="60" />
+    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="148" startPosition="33" endLine="149" endPosition="78" />
+    <scopeInfo nodeId="1193063049646" fileName="SNODE_GEN_Design.java" startLine="43" startPosition="114" endLine="45" endPosition="133" />
+    <scopeInfo nodeId="1193063049670" fileName="SNODE_GEN_Design.java" startLine="46" startPosition="14" endLine="48" endPosition="137" />
+    <scopeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="59" startPosition="32" endLine="61" endPosition="70" />
+    <scopeInfo nodeId="1193062887933" fileName="SNODE_GEN_Design.java" startLine="89" startPosition="114" endLine="91" endPosition="133" />
+    <scopeInfo nodeId="1193062897284" fileName="SNODE_GEN_Design.java" startLine="92" startPosition="14" endLine="94" endPosition="137" />
+    <scopeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="105" startPosition="32" endLine="107" endPosition="70" />
+    <scopeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="125" startPosition="7" endLine="127" endPosition="55" />
+    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="150" startPosition="7" endLine="152" endPosition="55" />
+    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="153" startPosition="55" endLine="155" endPosition="57" />
+    <scopeInfo nodeId="1227876802910" fileName="SNODE_GEN_Design.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="1227876802910" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1192878365681" fileName="SNODE_GEN_Design.java" startLine="31" startPosition="61" endLine="34" endPosition="102">
+    <scopeInfo nodeId="1192878365681" fileName="SNODE_GEN_Design.java" startLine="29" startPosition="61" endLine="32" endPosition="53">
       <varInfo nodeId="1192878414175" varName="ld" />
       <varInfo nodeId="1192878414180" varName="trg" />
     </scopeInfo>
-    <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1191934136657" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="56" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="54" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="1191934136657" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="1227876796143" fileName="SNODE_GEN_Design.java" startLine="82" startPosition="0" endLine="85" endPosition="0">
+    <scopeInfo nodeId="1227876796143" fileName="SNODE_GEN_Design.java" startLine="69" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="1227876796143" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1192878435118" fileName="SNODE_GEN_Design.java" startLine="88" startPosition="61" endLine="91" endPosition="101">
+    <scopeInfo nodeId="1192878435118" fileName="SNODE_GEN_Design.java" startLine="75" startPosition="61" endLine="78" endPosition="53">
       <varInfo nodeId="1192878512139" varName="ld" />
       <varInfo nodeId="1192878512143" varName="trg" />
     </scopeInfo>
-    <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="94" startPosition="0" endLine="97" endPosition="0">
+    <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="81" startPosition="0" endLine="84" endPosition="0">
+      <varInfo nodeId="1191934136657" varName="param" />
+    </scopeInfo>
+    <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="100" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="1191934136657" varName="param" />
     </scopeInfo>
     <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="113" startPosition="0" endLine="116" endPosition="0">
-      <varInfo nodeId="1191934136657" varName="param" />
-    </scopeInfo>
-    <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="137" startPosition="0" endLine="140" endPosition="0">
       <varInfo nodeId="1191934136657" varName="expression" />
       <varInfo nodeId="1191934136657" varName="generator" />
     </scopeInfo>
-    <scopeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="167" startPosition="11" endLine="170" endPosition="62">
-      <varInfo nodeId="1199450600151" varName="quotedNode1_6" />
-    </scopeInfo>
-    <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="180" startPosition="0" endLine="183" endPosition="0">
+    <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="133" startPosition="0" endLine="136" endPosition="0">
       <varInfo nodeId="1191934136657" varName="expression" />
       <varInfo nodeId="1191934136657" varName="generator" />
     </scopeInfo>
-    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="219" startPosition="15" endLine="222" endPosition="67">
-      <varInfo nodeId="1199450709522" varName="quotedNode1_11" />
+    <scopeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="58" startPosition="81" endLine="62" endPosition="26">
+      <varInfo nodeId="1196853157182" varName="quotedNode_2" />
     </scopeInfo>
-    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="226" startPosition="13" endLine="229" endPosition="67">
-      <varInfo nodeId="1199450709522" varName="quotedNode1_12" />
+    <scopeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="104" startPosition="81" endLine="108" endPosition="26">
+      <varInfo nodeId="1196853157190" varName="quotedNode_2" />
     </scopeInfo>
-    <scopeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="68" startPosition="9" endLine="72" endPosition="33">
-      <varInfo nodeId="1196853157182" varName="quotedNode1_2" />
-    </scopeInfo>
-    <scopeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="125" startPosition="9" endLine="129" endPosition="33">
-      <varInfo nodeId="1196853157190" varName="quotedNode1_2" />
-    </scopeInfo>
-    <scopeInfo nodeId="1192878365679" fileName="SNODE_GEN_Design.java" startLine="23" startPosition="58" endLine="28" endPosition="9" />
-    <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="31" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="121" startPosition="166" endLine="125" endPosition="7" />
+    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="146" startPosition="166" endLine="150" endPosition="7" />
+    <scopeInfo nodeId="1192878365679" fileName="SNODE_GEN_Design.java" startLine="21" startPosition="58" endLine="26" endPosition="9" />
+    <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="29" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="1191934136657" varName="nodeType" />
       <varInfo nodeId="1191934136657" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="1192878435116" fileName="SNODE_GEN_Design.java" startLine="80" startPosition="58" endLine="85" endPosition="9" />
-    <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="88" startPosition="0" endLine="93" endPosition="0">
+    <scopeInfo nodeId="1192878435116" fileName="SNODE_GEN_Design.java" startLine="67" startPosition="58" endLine="72" endPosition="9" />
+    <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="75" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="1191934136657" varName="nodeType" />
       <varInfo nodeId="1191934136657" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="166" startPosition="11" endLine="171" endPosition="11" />
-    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="218" startPosition="15" endLine="223" endPosition="15" />
-    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="225" startPosition="13" endLine="230" endPosition="13" />
-    <scopeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="67" startPosition="34" endLine="73" endPosition="9" />
-    <scopeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="124" startPosition="34" endLine="130" endPosition="9" />
-    <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="23" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="58" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="1196853157182" varName="parameter_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="104" startPosition="0" endLine="110" endPosition="0">
+      <varInfo nodeId="1196853157190" varName="parameter_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="1191934136657" varName="nodeType" />
     </scopeInfo>
-    <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="80" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="67" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="1191934136657" varName="nodeType" />
     </scopeInfo>
-    <scopeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="64" startPosition="51" endLine="74" endPosition="22">
-      <varInfo nodeId="1196853157182" varName="_parameterValues_129834374" />
-      <varInfo nodeId="1196853157182" varName="quotedNode_1" />
-      <varInfo nodeId="1196853157182" varName="result" />
+    <scopeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="120" startPosition="32" endLine="127" endPosition="55" />
+    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="145" startPosition="184" endLine="153" endPosition="55" />
+    <scopeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="117" startPosition="81" endLine="128" endPosition="26">
+      <varInfo nodeId="1199450600151" varName="quotedNode_2" />
+      <varInfo nodeId="1199450600151" varName="quotedNode_3" />
+      <varInfo nodeId="1199450600151" varName="quotedNode_4" />
     </scopeInfo>
-    <scopeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="121" startPosition="51" endLine="131" endPosition="22">
-      <varInfo nodeId="1196853157190" varName="_parameterValues_129834374" />
-      <varInfo nodeId="1196853157190" varName="quotedNode_1" />
-      <varInfo nodeId="1196853157190" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="154" startPosition="11" endLine="165" endPosition="13">
-      <varInfo nodeId="1199450600151" varName="quotedNode1_5" />
-    </scopeInfo>
-    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="206" startPosition="15" endLine="217" endPosition="17">
-      <varInfo nodeId="1199450709522" varName="quotedNode1_10" />
-    </scopeInfo>
-    <scopeInfo nodeId="1192878365676" fileName="SNODE_GEN_Design.java" startLine="41" startPosition="96" endLine="53" endPosition="20">
+    <scopeInfo nodeId="1192878365676" fileName="SNODE_GEN_Design.java" startLine="39" startPosition="96" endLine="51" endPosition="20">
       <varInfo nodeId="1193063049628" varName="op" />
       <varInfo nodeId="1193063049622" varName="opExpr" />
     </scopeInfo>
-    <scopeInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="64" startPosition="0" endLine="76" endPosition="0">
-      <varInfo nodeId="1196853157182" varName="parameter_3" />
-    </scopeInfo>
-    <scopeInfo nodeId="1192878435113" fileName="SNODE_GEN_Design.java" startLine="98" startPosition="96" endLine="110" endPosition="20">
+    <scopeInfo nodeId="1192878435113" fileName="SNODE_GEN_Design.java" startLine="85" startPosition="96" endLine="97" endPosition="20">
       <varInfo nodeId="1193062933676" varName="op" />
       <varInfo nodeId="1193047912065" varName="opExpr" />
     </scopeInfo>
-    <scopeInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="121" startPosition="0" endLine="133" endPosition="0">
-      <varInfo nodeId="1196853157190" varName="parameter_3" />
+    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="144" startPosition="173" endLine="156" endPosition="53" />
+    <scopeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="117" startPosition="0" endLine="130" endPosition="0">
+      <varInfo nodeId="1199450600151" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="153" startPosition="45" endLine="166" endPosition="11" />
-    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="205" startPosition="49" endLine="218" endPosition="15" />
-    <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="41" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="143" startPosition="32" endLine="156" endPosition="53" />
+    <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="39" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="1191934136657" varName="expression" />
       <varInfo nodeId="1191934136657" varName="generator" />
       <varInfo nodeId="1191934136657" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="98" startPosition="0" endLine="112" endPosition="0">
+    <scopeInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="85" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="1191934136657" varName="expression" />
       <varInfo nodeId="1191934136657" varName="generator" />
       <varInfo nodeId="1191934136657" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="151" startPosition="9" endLine="172" endPosition="33">
-      <varInfo nodeId="1199450600151" varName="quotedNode1_4" />
-    </scopeInfo>
-    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="203" startPosition="13" endLine="224" endPosition="64">
-      <varInfo nodeId="1199450709522" varName="quotedNode1_9" />
-    </scopeInfo>
-    <scopeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="150" startPosition="34" endLine="173" endPosition="9" />
-    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="202" startPosition="47" endLine="225" endPosition="13" />
-    <scopeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="145" startPosition="51" endLine="174" endPosition="22">
-      <varInfo nodeId="1199450600151" varName="_parameterValues_129834374" />
-      <varInfo nodeId="1199450600151" varName="quotedNode_1" />
-      <varInfo nodeId="1199450600151" varName="quotedNode_2" />
-      <varInfo nodeId="1199450600151" varName="quotedNode_3" />
-      <varInfo nodeId="1199450600151" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="145" startPosition="0" endLine="176" endPosition="0">
-      <varInfo nodeId="1199450600151" varName="parameter_7" />
-    </scopeInfo>
-    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="200" startPosition="11" endLine="231" endPosition="60">
-      <varInfo nodeId="1199450709522" varName="quotedNode1_8" />
-    </scopeInfo>
-    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="199" startPosition="45" endLine="232" endPosition="11" />
-    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="197" startPosition="9" endLine="233" endPosition="33">
-      <varInfo nodeId="1199450709522" varName="quotedNode1_7" />
-    </scopeInfo>
-    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="196" startPosition="34" endLine="234" endPosition="9" />
-    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="188" startPosition="52" endLine="235" endPosition="22">
-      <varInfo nodeId="1199450709522" varName="_parameterValues_129834374" />
-      <varInfo nodeId="1199450709522" varName="quotedNode_1" />
+    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="137" startPosition="81" endLine="157" endPosition="26">
       <varInfo nodeId="1199450709522" varName="quotedNode_2" />
       <varInfo nodeId="1199450709522" varName="quotedNode_3" />
       <varInfo nodeId="1199450709522" varName="quotedNode_4" />
       <varInfo nodeId="1199450709522" varName="quotedNode_5" />
       <varInfo nodeId="1199450709522" varName="quotedNode_6" />
-      <varInfo nodeId="1199450709522" varName="result" />
+      <varInfo nodeId="1199450709522" varName="quotedNode_7" />
     </scopeInfo>
-    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="188" startPosition="0" endLine="237" endPosition="0">
-      <varInfo nodeId="1199450709522" varName="parameter_13" />
+    <scopeInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="137" startPosition="0" endLine="159" endPosition="0">
+      <varInfo nodeId="1199450709522" varName="parameter_1" />
     </scopeInfo>
-    <unitInfo nodeId="1227876802910" fileName="SNODE_GEN_Design.java" startLine="24" startPosition="153" endLine="28" endPosition="7" unitName="treepathFeatures.SNODE_GEN_Design$1" />
-    <unitInfo nodeId="1227876796143" fileName="SNODE_GEN_Design.java" startLine="81" startPosition="153" endLine="85" endPosition="7" unitName="treepathFeatures.SNODE_GEN_Design$1" />
-    <unitInfo nodeId="1196853157182" fileName="SNODE_GEN_Design.java" startLine="60" startPosition="0" endLine="77" endPosition="0" unitName="treepathFeatures.SNODE_GEN_Design$Design_Feature_child$QuotationClass_d0icvv_a0c0b0" />
-    <unitInfo nodeId="1196853157190" fileName="SNODE_GEN_Design.java" startLine="117" startPosition="0" endLine="134" endPosition="0" unitName="treepathFeatures.SNODE_GEN_Design$Design_Feature_link$QuotationClass_d0icvv_a0c0b1" />
-    <unitInfo nodeId="1199450600151" fileName="SNODE_GEN_Design.java" startLine="141" startPosition="0" endLine="177" endPosition="0" unitName="treepathFeatures.SNODE_GEN_Design$Design_Feature_allChildren$QuotationClass_d0icvv_a0a0a2" />
-    <unitInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="136" startPosition="0" endLine="178" endPosition="0" unitName="treepathFeatures.SNODE_GEN_Design$Design_Feature_allChildren" />
-    <unitInfo nodeId="1199450709522" fileName="SNODE_GEN_Design.java" startLine="184" startPosition="0" endLine="238" endPosition="0" unitName="treepathFeatures.SNODE_GEN_Design$Design_Feature_parent$QuotationClass_d0icvv_a0a0a3" />
-    <unitInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="22" startPosition="0" endLine="78" endPosition="0" unitName="treepathFeatures.SNODE_GEN_Design$Design_Feature_child" />
-    <unitInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="79" startPosition="0" endLine="135" endPosition="0" unitName="treepathFeatures.SNODE_GEN_Design$Design_Feature_link" />
-    <unitInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="179" startPosition="0" endLine="239" endPosition="0" unitName="treepathFeatures.SNODE_GEN_Design$Design_Feature_parent" />
-    <unitInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="21" startPosition="0" endLine="240" endPosition="0" unitName="treepathFeatures.SNODE_GEN_Design" />
+    <unitInfo nodeId="1227876802910" fileName="SNODE_GEN_Design.java" startLine="22" startPosition="153" endLine="26" endPosition="7" unitName="treepathFeatures.SNODE_GEN_Design$1" />
+    <unitInfo nodeId="1227876796143" fileName="SNODE_GEN_Design.java" startLine="68" startPosition="153" endLine="72" endPosition="7" unitName="treepathFeatures.SNODE_GEN_Design$1" />
+    <unitInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="112" startPosition="0" endLine="131" endPosition="0" unitName="treepathFeatures.SNODE_GEN_Design$Design_Feature_allChildren" />
+    <unitInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="132" startPosition="0" endLine="160" endPosition="0" unitName="treepathFeatures.SNODE_GEN_Design$Design_Feature_parent" />
+    <unitInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="20" startPosition="0" endLine="65" endPosition="0" unitName="treepathFeatures.SNODE_GEN_Design$Design_Feature_child" />
+    <unitInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="66" startPosition="0" endLine="111" endPosition="0" unitName="treepathFeatures.SNODE_GEN_Design$Design_Feature_link" />
+    <unitInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="19" startPosition="0" endLine="161" endPosition="0" unitName="treepathFeatures.SNODE_GEN_Design" />
   </root>
   <root nodeId="1240329957161" modelId="r:00000000-0000-4000-0000-011c895905bb(treepathFeatures)">
     <nodeInfo nodeId="1240330043367" fileName="SnodeGenUtil.java" startLine="9" startPosition="63" endLine="10" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

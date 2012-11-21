@@ -90,7 +90,7 @@ public class ModuleProperties {
   public void loadFrom(ModuleDescriptor descriptor) {
     myNamespace = descriptor.getNamespace();
     for (ModelRootDescriptor root : descriptor.getModelRootDescriptors()) {
-      myModelRoots.add(new ModelRootDescriptor(root.getType(), root.getMemento().clone()));
+      myModelRoots.add(new ModelRootDescriptor(root.getType(), root.getMemento().copy()));
     }
     for (Dependency dep : descriptor.getDependencies()) {
       myDependencies.add((dep != null ?

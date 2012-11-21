@@ -32,10 +32,8 @@ import jetbrains.mps.progress.CancellationMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -67,7 +65,9 @@ public class GenerationFacade {
   public static Collection<SModelDescriptor> getModifiedModels(Collection<SModelDescriptor> models, IOperationContext context) {
     Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>();
     ModelGenerationStatusManager statusManager = ModelGenerationStatusManager.getInstance();
-    for (SModelDescriptor sm : models) {
+    for (SModelDescriptor md : models) {
+      if (!(md instanceof GeneratableSModelDescriptor)) continue;
+      GeneratableSModelDescriptor sm = (GeneratableSModelDescriptor) md;
       if (!sm.isGeneratable()) continue;
 
       if (statusManager.generationRequired(sm, context)) {
@@ -128,17 +128,17 @@ public class GenerationFacade {
   }
 
   public static boolean canGenerate(org.jetbrains.mps.openapi.model.SModel sm) {
-    return sm instanceof SModelDescriptor && ((SModelDescriptor)sm).isGeneratable();
+    return sm instanceof GeneratableSModelDescriptor && ((GeneratableSModelDescriptor) sm).isGeneratable();
   }
 
   public static boolean generateModels(final Project p,
-                                       final List<SModelDescriptor> inputModels,
-                                       final IOperationContext invocationContext,
-                                       final IGenerationHandler generationHandler,
-                                       final ProgressMonitor monitor,
-                                       final IMessageHandler messages,
-                                       final GenerationOptions options,
-                                       final TransientModelsProvider tmProvider) {
+                     final List<SModelDescriptor> inputModels,
+                     final IOperationContext invocationContext,
+                     final IGenerationHandler generationHandler,
+                     final ProgressMonitor monitor,
+                     final IMessageHandler messages,
+                     final GenerationOptions options,
+                     final TransientModelsProvider tmProvider) {
     final boolean[] result = new boolean[1];
     final TransientModelsProvider transientModelsComponent = tmProvider;
 
@@ -209,7 +209,7 @@ public class GenerationFacade {
   public static ModelGenerationPlan getGenerationPlan(@NotNull SModelDescriptor inputModel, @Nullable Collection<String> additionalLanguages) {
     GenerationPlan generationPlan = new GenerationPlan(inputModel.getSModel(), additionalLanguages);
     final List<List<TemplateMappingConfiguration>> result = new ArrayList<List<TemplateMappingConfiguration>>(generationPlan.getStepCount());
-    for(int i = 0; i < generationPlan.getStepCount(); i++) {
+    for (int i = 0; i < generationPlan.getStepCount(); i++) {
       List<TemplateMappingConfiguration> oneStep = new ArrayList<TemplateMappingConfiguration>(generationPlan.getMappingConfigurations(i));
       result.add(oneStep);
     }

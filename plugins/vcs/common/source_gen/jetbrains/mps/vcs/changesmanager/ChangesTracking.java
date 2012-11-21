@@ -154,8 +154,8 @@ public class ChangesTracking {
       return;
     }
 
-    IFile modelFile = myModelDescriptor.getModelFile();
-    if (modelFile == null || !(modelFile.exists())) {
+    IFile modelFile = myModelDescriptor.getSource().getFile();
+    if (!(modelFile.exists())) {
       return;
     }
     VirtualFile modelVFile = VirtualFileUtils.getVirtualFile(modelFile);
