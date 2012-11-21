@@ -18,7 +18,6 @@ package jetbrains.mps.persistence.binary;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -65,21 +64,23 @@ public class BinaryPersistence {
     }
   }
 
-  public static void writeModel(@NotNull SModel model, @NotNull IFile file) {
+  public static boolean writeModel(@NotNull SModel model, @NotNull IFile file) {
     if (file.isReadOnly()) {
       LOG.error("Can't write to " + file);
-      return;
+      return false;
     }
 
     ModelOutputStream os = null;
     try {
       os = new ModelOutputStream(file.openOutputStream());
       saveModel(model, os);
+      return true;
     } catch (IOException e) {
       LOG.error("Can't write to " + file, e);
     } finally {
       FileUtil.closeFileSafe(os);
     }
+    return false;
   }
 
   private static final int HEADER = 0x91ABABA9;
