@@ -22,8 +22,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -354,12 +354,12 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
   }
 
-  private static boolean renderingCondition_y68cfu_a4d7a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(Classifier_Behavior.call_isInner_521412098689998677(node)) || Classifier_Behavior.call_isStatic_521412098689998668(node) || (SLinkOperations.getTarget(node, "classInitializer", true) != null);
-  }
-
   private static boolean renderingCondition_y68cfu_a3h0(SNode node, EditorContext editorContext, IScope scope) {
     return Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(node)).subtract(ListSequence.fromList(SLinkOperations.getTargets(node, "member", true))).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_y68cfu_a4d7a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(Classifier_Behavior.call_isInner_521412098689998677(node)) || Classifier_Behavior.call_isStatic_521412098689998668(node) || (SLinkOperations.getTarget(node, "classInitializer", true) != null);
   }
 
   private static boolean renderingCondition_y68cfu_a7a(SNode node, EditorContext editorContext, IScope scope) {

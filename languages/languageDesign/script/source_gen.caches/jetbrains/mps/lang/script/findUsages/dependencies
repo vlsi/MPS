@@ -1,34 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.script.findUsages.FindUsagesDescriptor" file="FindUsagesDescriptor.java">
-    <classNode dependClassName="jetbrains.mps.lang.script.findUsages.Potentially_not_migratable_usages_Finder" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
-    <classNode extendsClassName="jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.script.findUsages.Potentially_not_migratable_usages_Finder" file="Potentially_not_migratable_usages_Finder.java">
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
-  </dependency>
-</dependenciesRoot>
+<dependenciesRoot />
 
