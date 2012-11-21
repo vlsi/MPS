@@ -1,0 +1,162 @@
+/*
+ * Copyright 2003-2012 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package jetbrains.mps.persistence.binary;
+
+import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.refactoring.StructureModificationLog;
+import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
+import jetbrains.mps.smodel.InvalidSModel;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
+import org.jetbrains.annotations.NotNull;
+
+import static jetbrains.mps.persistence.binary.BinarySModel.InvalidBinarySModel;
+
+/**
+ * evgeny, 11/21/12
+ *
+ * TODO FastFindSupportProvider
+ */
+public class BinarySModelDescriptor extends BaseEditableSModelDescriptor implements GeneratableSModelDescriptor, RefactorableSModelDescriptor {
+
+  private volatile BinarySModel myModel = null;
+  private final BinaryModelHeader myHeader;
+
+  private final Object myRefactoringHistoryLock = new Object();
+  private StructureModificationLog myStructureModificationLog;
+
+  public BinarySModelDescriptor(FileDataSource source, BinaryModelHeader header) {
+    super(header.getReference(), source);
+    myHeader = header;
+  }
+
+  @Override
+  protected BinarySModel getCurrentModelInternal() {
+    return myModel;
+  }
+
+  @Override
+  public synchronized BinarySModel getSModel() {
+    if (myModel == null) {
+      myModel = loadSModel();
+      myModel.setModelDescriptor(this);
+      fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
+    }
+    return myModel;
+  }
+
+  @NotNull
+  private BinarySModel loadSModel() {
+    try {
+      return BinaryPersistence.readModel(getModelReference(), getSource().getFile());
+    } catch (ModelReadException e) {
+      return new InvalidBinarySModel(getModelReference(), e);
+    }
+  }
+
+  @Override
+  public boolean isLoaded() {
+    return myModel != null;
+  }
+
+  @Override
+  protected void reload() {
+    updateDiskTimestamp();
+
+    if (!isLoaded()) return;
+
+    final BinarySModel newModel = loadSModel();
+    myStructureModificationLog = null;
+    setChanged(false);
+    super.replaceModel(new Runnable() {
+      @Override
+      public void run() {
+        myModel = newModel;
+      }
+    });
+  }
+
+  @Override
+  protected boolean saveModel() {
+    SModel smodel = getSModel();
+    if (smodel instanceof InvalidSModel) {
+      // we do not save stub model to not overwrite the real model
+      return false;
+    }
+    BinaryPersistence.writeModel(smodel, getSource().getFile());
+    return false;
+  }
+
+  @Override
+  @NotNull
+  public StructureModificationLog getStructureModificationLog() {
+    synchronized (myRefactoringHistoryLock) {
+      if (myStructureModificationLog == null) {
+        myStructureModificationLog = RefactoringsPersistence.load(getSource().getFile());
+      }
+      if (myStructureModificationLog == null) {
+        myStructureModificationLog = new StructureModificationLog();
+      }
+    }
+    return myStructureModificationLog;
+  }
+
+  @Override
+  public void saveStructureModificationLog(@NotNull StructureModificationLog log) {
+    myStructureModificationLog = log;
+    RefactoringsPersistence.save(getSource().getFile(), log);
+  }
+
+  @Override
+  public int getVersion() {
+    SModel model = getCurrentModelInternal();
+    if (model != null) return model.getVersion();
+    return myHeader.getVersion();
+  }
+
+  @Override
+  public void setVersion(int newVersion) {
+    getSModel().setVersion(newVersion);
+    setChanged(true);
+  }
+
+  @Override
+  public boolean isGenerateIntoModelFolder() {
+    return false;
+  }
+
+  @Override
+  public String getModelHash() {
+    return null;
+  }
+
+  @Override
+  public void setDoNotGenerate(boolean value) {
+    getSModel().getHeader().setDoNotGenerate(value);
+    setChanged(true);
+  }
+
+  @Override
+  public boolean isDoNotGenerate() {
+    BinarySModel model = getCurrentModelInternal();
+    if (model != null) return model.getHeader().isDoNotGenerate();
+    return myHeader.isDoNotGenerate();
+  }
+}

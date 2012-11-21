@@ -251,7 +251,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
     }
   }
 
-  private void replaceModel(final DefaultSModel newModel, final ModelLoadingState state) {
+  public void replaceModel(final DefaultSModel newModel, final ModelLoadingState state) {
     ModelAccess.assertLegalWrite();
 
     if (newModel == getCurrentModelInternal()) return;
@@ -280,7 +280,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
 
     updateDiskTimestamp();
 
-    if (myModel.getState() == ModelLoadingState.NOT_LOADED) return;
+    if (!isLoaded()) return;
 
     ModelLoadResult result = loadSModel(myModel.getState());
     replaceModel(result.getModel(), result.getState());
