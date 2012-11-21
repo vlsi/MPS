@@ -196,14 +196,17 @@ public class ModelDifferenceDialog extends DialogWrapper {
 
   public void invokeRootDifference(final SNodeId rootId, @Nullable final Bounds scrollTo) {
     if (rootId == null) {
-      StringBuilder sb = new StringBuilder();
-      for (ModelChange mc : ListSequence.fromList(myMetadataChanges)) {
-        if (mc != ListSequence.fromList(myMetadataChanges).first()) {
-          sb.append("\n");
+      MetadataUtil.showMetadataDifference(myChangeSet.getOldModel(), myChangeSet.getNewModel(), myProject, myContentTitles[0], myContentTitles[1], scrollTo);
+      /*
+        StringBuilder sb = new StringBuilder();
+        for (ModelChange mc : ListSequence.fromList(myMetadataChanges)) {
+          if (mc != ListSequence.fromList(myMetadataChanges).first()) {
+            sb.append("\n");
+          }
+          sb.append(mc);
         }
-        sb.append(mc);
-      }
-      Messages.showInfoMessage(myPanel, sb.toString(), "Model Properties Difference");
+        Messages.showInfoMessage(myPanel, sb.toString(), "Model Properties Difference");
+      */
       return;
     }
     if (myRootsDialogInvoked) {
