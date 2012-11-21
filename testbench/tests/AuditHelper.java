@@ -46,11 +46,11 @@ public class AuditHelper {
 
     // solution doesn't belong to MPS project, but rather IdeaPlugin project
     // TODO properly handle exclusion at directory level, (see CheckProjectStructure)
-    DISABLED_MODULES.add("jetbrains.mps.ide.java.psiStubs");
+//    DISABLED_MODULES.add("jetbrains.mps.ide.java.psiStubs");
   }
 
   public static void init() {
-    CheckProjectStructureHelper.loadModules(ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), false));
+    CheckProjectStructureHelper.loadModules(ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), ProjectDirExclude.excludeSet, false));
   }
 
   private static String getDescription(ModuleHandle handle) {
@@ -65,7 +65,7 @@ public class AuditHelper {
   public static List<Object[]> filePathes(CheckProjectStructureHelper helper) {
     helper.init(new String[][]{{"samples_home", System.getProperty("user.dir") + "/samples"}});
 
-    List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), false);
+    List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), ProjectDirExclude.excludeSet, false);
 
     ArrayList<Object[]> res = new ArrayList<Object[]>();
     for (ModuleHandle moduleHandle : moduleHandles) {
