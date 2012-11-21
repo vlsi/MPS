@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
-public abstract class Modifier_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
+public class Modifier_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public Modifier_BehaviorDescriptor() {
   }
 
