@@ -29,6 +29,10 @@ public abstract class ModuleId implements SModuleId {
     return new Regular(UUID.randomUUID());
   }
 
+  public static ModuleId regular(UUID uuid) {
+    return new Regular(UUID.randomUUID());
+  }
+
   public static ModuleId foreign(String name) {
     return new Foreign(name);
   }
@@ -41,7 +45,7 @@ public abstract class ModuleId implements SModuleId {
     }
   }
 
-  private static class Regular extends ModuleId {
+  public static class Regular extends ModuleId {
     private final UUID myUid;
 
     private Regular(UUID uid) {
@@ -62,9 +66,13 @@ public abstract class ModuleId implements SModuleId {
     public String toString() {
       return myUid.toString();
     }
+
+    public UUID getUUID() {
+      return myUid;
+    }
   }
 
-  private static class Foreign extends ModuleId {
+  public static class Foreign extends ModuleId {
     private final String myName;
 
     private Foreign(String name) {
@@ -76,6 +84,10 @@ public abstract class ModuleId implements SModuleId {
 
       Foreign id = (Foreign) obj;
       return id.myName.equals(myName);
+    }
+
+    public String getName() {
+      return myName;
     }
 
     public int hashCode() {

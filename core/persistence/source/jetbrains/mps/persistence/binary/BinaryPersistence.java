@@ -16,6 +16,7 @@
 package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelReference;
@@ -28,7 +29,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+
+import static jetbrains.mps.smodel.SModel.ImportElement;
 
 /**
  * evgeny, 11/21/12
@@ -107,14 +111,27 @@ public class BinaryPersistence {
     BinaryModelHeader modelHeader = loadHeader(is);
     BinarySModel model = new BinarySModel(modelHeader);
 
+    for (ModuleReference ref : loadModuleRefList(is)) model.addLanguage(ref);
+    for (ModuleReference ref : loadModuleRefList(is)) model.addEngagedOnGenerationLanguage(ref);
+    for (ModuleReference ref : loadModuleRefList(is)) model.addDevKit(ref);
+
+    for (ImportElement imp : loadImports(is)) model.addModelImport(imp);
+    for (ImportElement imp : loadImports(is)) model.addAdditionalModelVersion(imp);
+
+    if (is.readInt() != 0xbaba) {
+      throw new IOException("bad stream, no sync token");
+    }
+
     List<Pair<String, SNode>> roots = new NodesReader(modelReference).readNodes(model, is);
     for (Pair<String, SNode> r : roots) {
       model.addRoot(r.o2);
     }
 
     // ensure imports are back
-    SModelOperations.validateLanguagesAndImports(model, false, false);
+    //SModelOperations.validateLanguagesAndImports(model, false, false);
 
+    // TODO
+    // new StructureModificationProcessor(myLinkMap, model).updateModelOnLoad();
     return model;
   }
 
@@ -127,10 +144,54 @@ public class BinaryPersistence {
     os.writeBoolean(model instanceof BinarySModel && ((BinarySModel) model).getHeader().isDoNotGenerate());
     os.writeInt(0xabab);
 
+    saveModuleRefList(model.importedLanguages(), os);
+    saveModuleRefList(model.engagedOnGenerationLanguages(), os);
+    saveModuleRefList(model.importedDevkits(), os);
+
+    // imports
+    saveImports(model.importedModels(), os);
+    saveImports(model.getAdditionalModelVersions(), os);
+
+    os.writeInt(0xbaba);
+
     ArrayList<SNode> roots = new ArrayList<SNode>(model.rootsCount());
     for (SNode root : model.roots()) {
       roots.add(root);
     }
     new NodesWriter(model.getSModelReference()).writeNodes(roots, os);
+  }
+
+  private static void saveModuleRefList(Collection<ModuleReference> refs, ModelOutputStream os) throws IOException {
+    os.writeInt(refs.size());
+    for (ModuleReference ref : refs) {
+      os.writeModuleReference(ref);
+    }
+  }
+
+  private static Collection<ModuleReference> loadModuleRefList(ModelInputStream is) throws IOException {
+    int size = is.readInt();
+    List<ModuleReference> result = new ArrayList<ModuleReference>();
+    for (int i = 0; i < size; i++) {
+      result.add(is.readModuleReference());
+    }
+    return result;
+  }
+
+  private static void saveImports(Collection<ImportElement> elements, ModelOutputStream os) throws IOException {
+    os.writeInt(elements.size());
+    for (ImportElement element : elements) {
+      os.writeModelReference(element.getModelReference());
+      os.writeInt(element.getUsedVersion());
+    }
+  }
+
+  private static List<ImportElement> loadImports(ModelInputStream is) throws IOException {
+    int size = is.readInt();
+    List<ImportElement> result = new ArrayList<ImportElement>();
+    for (int i = 0; i < size; i++) {
+      SModelReference ref = is.readModelReference();
+      result.add(new ImportElement(ref, 0, is.readInt()));
+    }
+    return result;
   }
 }
