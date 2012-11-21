@@ -94,6 +94,9 @@
       <modulePath path="${project}/languages/baseLanguage/collections/solutions/internalCollections.test/internalCollections.test.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/constructors/constructors.mpl" folder="baseLanguage.constructors" />
       <modulePath path="${project}/languages/baseLanguage/constructors/solutions/jetbrains.mps.baseLanguage.constructors.sandbox/jetbrains.mps.baseLanguage.constructors.sandbox.msd" folder="baseLanguage.constructors" />
+      <modulePath path="${project}/languages/baseLanguage/doubleDispatch/doubleDispatch.mpl" folder="baseLanguage.doubleDispatch" />
+      <modulePath path="${project}/languages/baseLanguage/doubleDispatch/solutions/sandbox/sandbox.msd" folder="baseLanguage.doubleDispatch" />
+      <modulePath path="${project}/languages/baseLanguage/doubleDispatch/solutions/test.msd" folder="baseLanguage.doubleDispatch" />
       <modulePath path="${project}/languages/baseLanguage/javadoc/javadoc.mpl" folder="baseLanguage.javadoc" />
       <modulePath path="${project}/languages/baseLanguage/javadoc/jetbrains.mps.baseLanguage.javadoc.sandbox/jetbrains.mps.baseLanguage.javadoc.sandbox.msd" folder="baseLanguage.javadoc" />
       <modulePath path="${project}/languages/baseLanguage/jdk7/languages/jdk7/jdk7.mpl" folder="baseLanguage.jdk7" />
@@ -308,7 +311,7 @@
       <modulePath path="${project}/plugins/execution-languages/languages/configurations/configurations.mpl" folder="languages.execution" />
       <modulePath path="${project}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/pluginSolution.msd" folder="languages.execution" />
       <modulePath path="${project}/plugins/execution-languages/languages/demo/demo.mpl" folder="languages.execution.languages-plugin" />
-      <modulePath path="${project}/plugins/execution-languages/languages/demo/pluginSolution/pluginSolution.msd" folder="languages.execution.languages-plugin" />
+      <modulePath path="${project}/plugins/execution-languages/languages/demo/pluginSolution/pluginSolution.msd" folder="languages.execution.demo" />
       <modulePath path="${project}/plugins/execution-languages/languages/deprecated.runtime/runtime.msd" folder="languages.execution.languages-plugin" />
       <modulePath path="${project}/plugins/execution-languages/languages/deprecated/runConfigurations.mpl" folder="languages.execution.languages-plugin" />
       <modulePath path="${project}/plugins/execution-languages/languages/devkit/devkit.devkit" folder="languages.execution" />

@@ -54,8 +54,6 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
 
   void dispose();
 
-  void refresh();
-
   //------
 
   //not used, left for compatibility

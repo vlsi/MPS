@@ -17,7 +17,7 @@ package jetbrains.mps.workbench.dialogs.project.roots.editor;
 
 import com.intellij.ide.util.treeView.AbstractTreeUi;
 import com.intellij.openapi.Disposable;
-import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileSystemTree.Listener;
 import com.intellij.openapi.fileChooser.ex.FileSystemTreeImpl;
 import com.intellij.openapi.ui.ComboBox;
@@ -33,7 +33,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.dialogs.project.components.parts.editors.ManagerTableCellEditor;
 
-import javax.swing.ComboBoxModel;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.JComponent;
 import javax.swing.JList;
@@ -131,7 +130,7 @@ public class SModelRootEntry extends ModelRootEntry<SModelRoot> {
     }
 
     private void updateTree() {
-      FileSystemTreeImpl fileSystemTree = new FileSystemTreeImpl(null, FileChooserDescriptorFactory.createSingleFolderDescriptor());
+      FileSystemTreeImpl fileSystemTree = new FileSystemTreeImpl(null, new FileChooserDescriptor(true, true, true, true, true, false));
       AbstractTreeUi ui = fileSystemTree.getTreeBuilder().getUi();
 
       String path = myModelRoot.getPath() == null ? "" : myModelRoot.getPath();

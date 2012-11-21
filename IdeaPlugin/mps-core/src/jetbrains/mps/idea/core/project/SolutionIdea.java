@@ -31,7 +31,6 @@ import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.project.stubs.AbstractJavaStubSolutionManager;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -43,6 +42,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.*;
 
@@ -112,6 +112,21 @@ public class SolutionIdea extends Solution {
   @Override
   protected SolutionDescriptor loadDescriptor() {
     return getModuleDescriptor();
+  }
+
+  @Override
+  protected Iterable<ModelRoot> loadRoots() {
+    List<ModelRoot> sum = new ArrayList<ModelRoot>();
+    for (ModelRoot mr: super.loadRoots()) {
+      sum.add(mr);
+    }
+    ModelRootContributorManager mgr = myModule.getProject().getComponent(ModelRootContributorManager.class);
+    for (ModelRootContributor contributor: mgr.getContributors()) {
+      for (ModelRoot root: contributor.getModelRoots(myModule)) {
+        sum.add(root);
+      }
+    }
+    return sum;
   }
 
   @Override
@@ -257,7 +272,7 @@ public class SolutionIdea extends Solution {
     // removing all existing libraries
     for (Iterator<ModelRootDescriptor> i = solutionDescriptor.getModelRootDescriptors().iterator(); i.hasNext(); ) {
       ModelRootDescriptor next = i.next();
-      ModelRoot root = next.getRoot();
+      jetbrains.mps.project.structure.model.ModelRoot root = next.getRoot();
       if (root == null || root.getManager() == null) continue;//regular model
       i.remove();
     }

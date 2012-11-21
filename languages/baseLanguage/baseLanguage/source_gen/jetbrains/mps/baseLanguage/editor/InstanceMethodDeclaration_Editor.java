@@ -29,9 +29,9 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 
 public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -94,6 +94,9 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     }
     if (renderingCondition_359zr8_a3c0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_359zr8_d2a(editorContext, node));
+    }
+    if (renderingCondition_359zr8_a4c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNodeList_359zr8_e2a(editorContext, node));
     }
     return editorCell;
   }
@@ -259,6 +262,14 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createRefNodeList_359zr8_e2a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new InstanceMethodDeclaration_Editor.modifiersListHandler_359zr8_e2a(node, "modifiers", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    editorCell.setCellId("refNodeList_modifiers");
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
+  }
+
   private EditorCell createRefNodeList_359zr8_h0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new InstanceMethodDeclaration_Editor.parameterListHandler_359zr8_h0(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -341,6 +352,10 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getBoolean(node, "isSynchronized");
   }
 
+  private static boolean renderingCondition_359zr8_a4c0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "modifiers", true)).isNotEmpty();
+  }
+
   private static boolean renderingCondition_359zr8_a3a(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
   }
@@ -359,6 +374,42 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_359zr8_a21a(SNode node, EditorContext editorContext, IScope scope) {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface")) && !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
+  }
+
+  private static class modifiersListHandler_359zr8_e2a extends RefNodeListHandler {
+    public modifiersListHandler_359zr8_e2a(SNode ownerNode, String childRole, EditorContext context) {
+      super(ownerNode, childRole, context, false);
+    }
+
+    public SNode createNodeToInsert(EditorContext editorContext) {
+      SNode listOwner = super.getOwner();
+      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
+    }
+
+    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
+      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
+      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+      return elementCell;
+    }
+
+    public EditorCell createEmptyCell(EditorContext editorContext) {
+      EditorCell emptyCell = null;
+      emptyCell = super.createEmptyCell(editorContext);
+      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
+      return emptyCell;
+    }
+
+    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
+        if (elementNode != null) {
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+        }
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
+        }
+      }
+    }
   }
 
   private static class parameterListHandler_359zr8_h0 extends RefNodeListHandler {

@@ -17,8 +17,8 @@ package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.refactoring.HistoryReaderHandler;
-import jetbrains.mps.refactoring.HistoryWriter;
+import jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler;
+import jetbrains.mps.smodel.persistence.def.refactoring.HistoryWriter;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
