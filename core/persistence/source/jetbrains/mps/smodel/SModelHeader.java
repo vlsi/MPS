@@ -18,7 +18,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.misc.hash.HashMap;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
 
@@ -34,7 +33,7 @@ public class SModelHeader {
   private int myPersistenceVersion = -1;
   private int myVersion = -1;
   private boolean doNotGenerate = false;
-  private Map<String,String> myOptionalProperties = new HashMap<String, String>();
+  private Map<String, String> myOptionalProperties = new HashMap<String, String>();
 
   public int getPersistenceVersion() {
     return myPersistenceVersion;
@@ -71,21 +70,21 @@ public class SModelHeader {
   public SModelReference getModelReference() {
     return myUID != null ? SModelReference.fromString(myUID) : null;
   }
-  
-  public Map<String, String> getOptionalProperties () {
+
+  public Map<String, String> getOptionalProperties() {
     return Collections.unmodifiableMap(myOptionalProperties);
   }
-  
-  public String getOptionalProperty (String key) {
+
+  public String getOptionalProperty(String key) {
     return myOptionalProperties.get(key);
   }
-  
+
   public void setOptionalProperty(String key, String value) {
     assert !VERSION.equals(key);
     assert !DO_NOT_GENERATE.equals(key);
     assert !ModelPersistence.MODEL_UID.equals(key);
     // roughly following http://www.w3.org/TR/2008/PER-xml-20080205/#NT-Name
-    assert key.matches("^[:A-Z_a-z][-:A-Z_a-z.0-9]*") : "bad key ["+key+"]";
+    assert key.matches("^[:A-Z_a-z][-:A-Z_a-z.0-9]*") : "bad key [" + key + "]";
 
     myOptionalProperties.put(key, value);
   }

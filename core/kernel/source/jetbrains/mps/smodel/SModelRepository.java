@@ -23,11 +23,9 @@ import jetbrains.mps.extapi.persistence.DataSourceBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -39,7 +37,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class SModelRepository implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(SModelRepository.class);
   private ClassLoaderManager myManager;
-  private final ReloadAdapter myHandler;
 
   public static SModelRepository getInstance() {
     return MPSCore.getInstance().getModelRepository();
@@ -59,19 +56,14 @@ public class SModelRepository implements CoreComponent {
 
   public SModelRepository(ClassLoaderManager manager) {
     myManager = manager;
-    myHandler = new ReloadAdapter() {
-      public void unload() {
-        refreshModels();
-      }
-    };
   }
 
+  @Override
   public void init() {
-    myManager.addReloadHandler(myHandler);
   }
 
+  @Override
   public void dispose() {
-    myManager.removeReloadHandler(myHandler);
   }
 
   //--------------------register/unregister----------------------
@@ -263,17 +255,6 @@ public class SModelRepository implements CoreComponent {
   }
 
   public void refreshModels() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        LOG.debug("Model refresh");
-
-        for (SModelDescriptor m : getModelDescriptors()) {
-          m.refresh();
-        }
-
-        LOG.debug("Model refresh done");
-      }
-    });
   }
 
   //---------------------------events----------------------------
@@ -376,14 +357,17 @@ public class SModelRepository implements CoreComponent {
       super(SModelListenerPriority.PLATFORM);
     }
 
+    @Override
     public void modelChanged(SModel model) {
       markChanged(model);
     }
 
+    @Override
     public void modelChangedDramatically(SModel model) {
       markChanged(model);
     }
 
+    @Override
     public void modelRenamed(SModelRenamedEvent event) {
       synchronized (myModelsLock) {
         myFqNameToModelDescriptorMap.remove(event.getOldName());

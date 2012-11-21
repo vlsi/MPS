@@ -46,8 +46,9 @@ public class ModelPresentation extends BasePresentation {
   }
 
   private String getModuleUID() {
-    IModule module = getModelDescriptor().getModule();
-    if (module == null) return "no module";
+    SModelDescriptor descriptor = getModelDescriptor();
+    IModule module;
+    if (descriptor == null || (module = descriptor.getModule()) == null) return "no module";
     return module.getModuleFqName();
   }
 

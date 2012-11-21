@@ -36,6 +36,7 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.vcs.diff.changes.DoNotGenerateOptionChange;
 import jetbrains.mps.vcs.diff.changes.ModelVersionChange;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -245,10 +246,12 @@ public class ChangeSetBuilder {
       }
     });
 
-    if (myNewModel.getSModelHeader().isDoNotGenerate() != myOldModel.getSModelHeader().isDoNotGenerate()) {
-      ListSequence.fromList(myNewChanges).addElement(new DoNotGenerateOptionChange(myChangeSet));
+    if (myNewModel instanceof DefaultSModel && myOldModel instanceof DefaultSModel) {
+      if (((DefaultSModel) myNewModel).getSModelHeader().isDoNotGenerate() != ((DefaultSModel) myOldModel).getSModelHeader().isDoNotGenerate()) {
+        ListSequence.fromList(myNewChanges).addElement(new DoNotGenerateOptionChange(myChangeSet));
+      }
     }
-    if (myNewModel.getSModelHeader().getVersion() != myOldModel.getSModelHeader().getVersion()) {
+    if (myNewModel.getVersion() != myOldModel.getVersion()) {
       ListSequence.fromList(myNewChanges).addElement(new ModelVersionChange(myChangeSet));
     }
   }

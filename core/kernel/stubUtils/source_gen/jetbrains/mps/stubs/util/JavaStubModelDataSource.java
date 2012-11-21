@@ -12,11 +12,9 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.baseLanguage.javastub.ASMModelLoader;
@@ -57,14 +55,14 @@ public class JavaStubModelDataSource extends FolderSetDataSource implements Fast
   }
 
   @Override
-  public ModelLoadResult loadSModel(IModule module, SModelDescriptor descriptor, ModelLoadingState targetState) {
+  public SModel loadSModel(IModule module, SModelDescriptor descriptor) {
     SModel model = new SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
     for (Language l : getLanguagesToImport()) {
       model.addLanguage(l.getModuleReference());
     }
     CompositeClassPathItem cp = this.createClassPath(descriptor);
     new ASMModelLoader(module, cp, model, skipPrivate).updateModel();
-    return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+    return model;
   }
 
   public Collection<NodeDescriptor> getNodeDescriptors(SModelDescriptor model) {

@@ -15,11 +15,17 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class StubModel extends SModel {
+import java.util.Collection;
+import java.util.Collections;
+
+public class StubModel extends SModel implements InvalidSModel {
   private ModelReadException myCause;
 
   public StubModel(@NotNull SModelReference modelReference, @Nullable ModelReadException cause) {
@@ -27,7 +33,9 @@ public class StubModel extends SModel {
     myCause = cause;
   }
 
-  public ModelReadException getCause() {
-    return myCause;
+  @Override
+  public Collection<IMessage> getProblems() {
+    return Collections.<IMessage>singleton(
+      new Message(MessageKind.ERROR, myCause == null ? "Couldn't read model." : myCause.getMessageEx()));
   }
 }

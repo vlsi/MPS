@@ -16,14 +16,13 @@
 package jetbrains.mps.smodel.descriptor.source;
 
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.loading.ModelLoadResult;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 public interface StubModelDataSource extends DataSource {
 
-  ModelLoadResult loadSModel(IModule contextModule, SModelDescriptor descriptor, ModelLoadingState targetState);
+  SModel loadSModel(IModule contextModule, SModelDescriptor descriptor);
 
   // todo move to loadSModel - return null in case no model is there
   boolean hasModel(SModelDescriptor d);

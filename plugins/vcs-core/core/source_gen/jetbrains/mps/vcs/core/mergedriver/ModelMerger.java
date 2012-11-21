@@ -9,7 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -40,9 +40,9 @@ import java.io.IOException;
     MergerRoleIdsHandler roleIdsHandler = new MergerRoleIdsHandler();
     RoleIdsComponent.setHandler(roleIdsHandler);
 
-    SModel baseModel;
-    SModel localModel;
-    SModel latestModel;
+    DefaultSModel baseModel;
+    DefaultSModel localModel;
+    DefaultSModel latestModel;
     try {
       if (log.isInfoEnabled()) {
         log.info("Reading models...");

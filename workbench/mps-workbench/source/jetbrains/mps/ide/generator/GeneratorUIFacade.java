@@ -35,6 +35,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.ModelCommandExecutor.RunnableWithProgress;
+import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -199,7 +200,9 @@ public class GeneratorUIFacade {
         final GenerationCacheContainer cache = incremental && settings.isIncrementalUseCache() ? GeneratorCacheComponent.getInstance().getCache() : null;
         IncrementalGenerationStrategy strategy = new IncrementalGenerationStrategy() {
           @Override
-          public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
+          public Map<String, String> getModelHashes(SModelDescriptor md, IOperationContext operationContext) {
+            if (!(md instanceof GeneratableSModelDescriptor)) return null;
+            GeneratableSModelDescriptor sm = (GeneratableSModelDescriptor) md;
             if (!sm.isGeneratable()) return null;
 
             Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext);

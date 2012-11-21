@@ -137,7 +137,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
   }
 
   private IFile getModelFile(final Map<String, Object> _params) {
-    return ((DefaultSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).getModelFile();
+    return ((DefaultSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).getSource().getFile();
   }
 
   private String selectMineModel(String currentModel, String backUpModel, final Map<String, Object> _params) {

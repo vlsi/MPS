@@ -53,6 +53,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
     this.myModelRoot = modelRoot;
   }
 
+  @NotNull
   public IFile getFile() {
     return myFile;
   }

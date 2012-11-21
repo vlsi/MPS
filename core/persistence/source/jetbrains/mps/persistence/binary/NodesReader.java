@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator.impl.cache;
+package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
@@ -43,7 +43,7 @@ public class NodesReader {
     return nodes;
   }
 
-  protected Pair<String, SNode> readNode(SModel model, ModelInputStream is) throws IOException {
+  public Pair<String, SNode> readNode(SModel model, ModelInputStream is) throws IOException {
     String conceptFqName = is.readString();
     SNodeId nodeId = is.readNodeId();
     String nodeRole = is.readString();

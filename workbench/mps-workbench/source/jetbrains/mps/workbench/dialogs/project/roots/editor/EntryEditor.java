@@ -17,12 +17,11 @@ package jetbrains.mps.workbench.dialogs.project.roots.editor;
 
 import javax.swing.JComponent;
 
-public abstract class EntryEditor<T> {
-  private T myEntry;
+public abstract class EntryEditor {
   protected JComponent myEditorComponent;
 
-  public EntryEditor(T entry) {
-    myEntry = entry;
+  public EntryEditor() {
+    initUI();
   }
 
   public JComponent getComponent() {

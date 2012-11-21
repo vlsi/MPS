@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.dialogs.project.roots.editor;
 
+import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.DumbAware;
@@ -22,23 +23,34 @@ import com.intellij.openapi.roots.ui.componentsList.components.ScrollablePanel;
 import com.intellij.openapi.roots.ui.componentsList.layout.VerticalStackLayout;
 import com.intellij.openapi.roots.ui.configuration.actions.IconWithTextAction;
 import com.intellij.openapi.ui.Splitter;
+import com.intellij.openapi.ui.popup.JBPopup;
+import com.intellij.openapi.ui.popup.JBPopupFactory;
+import com.intellij.openapi.ui.popup.PopupStep;
+import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
+import com.intellij.ui.AnActionButton;
 import com.intellij.ui.ScrollPaneFactory;
+import com.intellij.ui.awt.RelativePoint;
 import com.intellij.ui.roots.ToolbarPanel;
 import com.intellij.util.ui.JBInsets;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.persistence.MementoImpl;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.workbench.dialogs.project.PropertiesBundle;
-import jetbrains.mps.workbench.dialogs.project.roots.editor.ContentEntry.ContentEntryEditorListener;
+import jetbrains.mps.workbench.dialogs.project.roots.editor.ModelRootEntry.ContentEntryEditorListener;
+import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.persistence.Memento;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -47,8 +59,8 @@ public class ContentEntriesEditor {
   private static final Color BACKGROUND_COLOR = UIUtil.getListBackground();
 
   private final ModuleDescriptor myModuleDescriptor;
-  private List<ContentEntry<?>> myContentEntries = new ArrayList<ContentEntry<?>>();
-  private ContentEntry<?> myFocucedContentEntry;
+  private List<ModelRootEntry<?>> myModelRootEntries = new ArrayList<ModelRootEntry<?>>();
+  private ModelRootEntry<?> myFocucedModelRootEntry;
   private MyContentEntryEditorListener myEditorListener = new MyContentEntryEditorListener();
 
   protected JPanel myEditorsListPanel;
@@ -57,12 +69,62 @@ public class ContentEntriesEditor {
 
   public ContentEntriesEditor(ModuleDescriptor moduleDescriptor) {
     myModuleDescriptor = moduleDescriptor;
-    for (ModelRootDescriptor descriptor : myModuleDescriptor.getModelRootDescriptors()) {
-      ContentEntry entry = new DefaultModelRootEntry(descriptor, myModuleDescriptor);
+    for(ModelRootDescriptor descriptor : myModuleDescriptor.getModelRootDescriptors()) {
+      ModelRootEntry entry = ModelRootEntryPersistence.getInstance().getModelRootEntry(descriptor);
       entry.addContentEntryEditorListener(myEditorListener);
-      myContentEntries.add(entry);
+      myModelRootEntries.add(entry);
     }
     initUI();
+  }
+
+  private AnAction getContentEntryActions() {
+    final List<AddContentEntryAction> list = new ArrayList<AddContentEntryAction>();
+    for(String type : ModelRootEntryPersistence.getInstance().getModelRootTypes()) {
+      list.add(new AddContentEntryAction(type));
+    }
+
+    AnAction action = new IconWithTextAction(
+      PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.title"),
+      PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.tip"),
+      IdeIcons.ADD_MODEL_ROOT_ICON) {
+      @Override
+      public void actionPerformed(AnActionEvent e) {
+        final JBPopup popup = JBPopupFactory.getInstance().createListPopup(
+          new BaseListPopupStep<AddContentEntryAction>(null, list) {
+            @Override
+            public Icon getIconFor(AddContentEntryAction aValue) {
+              return aValue.getTemplatePresentation().getIcon();
+            }
+
+            @Override
+            public boolean hasSubstep(AddContentEntryAction selectedValue) {
+              return false;
+            }
+
+            @Override
+            public boolean isMnemonicsNavigationEnabled() {
+              return true;
+            }
+
+            @Override
+            public PopupStep onChosen(final AddContentEntryAction selectedValue, final boolean finalChoice) {
+              return doFinalStep(new Runnable() {
+                public void run() {
+                  selectedValue.actionPerformed(null);
+                }
+              });
+            }
+
+            @Override
+            @NotNull
+            public String getTextFor(AddContentEntryAction value) {
+              return value.getTemplatePresentation().getText();
+            }
+          });
+        popup.show(new RelativePoint(myEditorsListPanel, new Point(0,0)));
+      }
+    };
+    return action;
   }
 
   public void initUI() {
@@ -72,9 +134,7 @@ public class ContentEntriesEditor {
     final JPanel entriesPanel = new JPanel(new BorderLayout());
 
     final DefaultActionGroup group = new DefaultActionGroup();
-    final AddContentEntryAction action = new AddContentEntryAction();
-    action.registerCustomShortcutSet(KeyEvent.VK_M, KeyEvent.ALT_DOWN_MASK, myMainPanel);
-    group.add(action);
+    group.add(getContentEntryActions());
 
     myEditorsListPanel = new ScrollablePanel(new VerticalStackLayout());
     myEditorsListPanel.setBackground(BACKGROUND_COLOR);
@@ -96,26 +156,27 @@ public class ContentEntriesEditor {
     editorPanel.add(myEditorPanel, BorderLayout.CENTER);
     splitter.setSecondComponent(editorPanel);
 
-    for (ContentEntry entry : myContentEntries) {
+    for(ModelRootEntry entry : myModelRootEntries) {
       myEditorsListPanel.add(entry.getComponent());
     }
 
-    if (myContentEntries.size() > 0)
-      selectEntry(myContentEntries.get(0));
+    if(myModelRootEntries.size() > 0)
+      selectEntry(myModelRootEntries.get(0));
     else
       selectEntry(null);
   }
 
-  private void selectEntry(ContentEntry<?> entry) {
-    try {
-      if (entry != null && entry.equals(myFocucedContentEntry))
+  private void selectEntry(ModelRootEntry<?> entry) {
+    try
+    {
+      if(entry != null && entry.equals(myFocucedModelRootEntry))
         return;
 
-      if (myFocucedContentEntry != null)
-        myFocucedContentEntry.setFocuced(false);
+      if(myFocucedModelRootEntry != null)
+        myFocucedModelRootEntry.setFocuced(false);
 
-      if (entry == null) {
-        myFocucedContentEntry = null;
+      if(entry == null) {
+        myFocucedModelRootEntry = null;
         myEditorPanel.removeAll();
         return;
       }
@@ -123,22 +184,23 @@ public class ContentEntriesEditor {
       entry.setFocuced(true);
       myEditorPanel.removeAll();
       myEditorPanel.add(entry.getEditor().getComponent(), BorderLayout.CENTER);
-      myFocucedContentEntry = entry;
-    } finally {
+      myFocucedModelRootEntry = entry;
+    }
+    finally {
       myMainPanel.updateUI();
     }
   }
 
-  private void deleteEntry(ContentEntry<?> entry) {
-    if (!myContentEntries.contains(entry))
+  private void deleteEntry(ModelRootEntry<?> entry) {
+    if(!myModelRootEntries.contains(entry))
       return;
 
     myEditorsListPanel.remove(entry.getComponent());
-    int idx = myContentEntries.indexOf(entry);
-    myContentEntries.remove(entry);
-    if (myFocucedContentEntry.equals(entry))
-      selectEntry(myContentEntries.size() > 0 ?
-        myContentEntries.get(Math.max(idx - 1, 0))
+    int idx = myModelRootEntries.indexOf(entry);
+    myModelRootEntries.remove(entry);
+    if(myFocucedModelRootEntry.equals(entry))
+      selectEntry(myModelRootEntries.size() > 0 ?
+        myModelRootEntries.get(Math.max(idx - 1, 0))
         : null);
     else
       myMainPanel.updateUI();
@@ -156,8 +218,11 @@ public class ContentEntriesEditor {
 
   private Set<ModelRootDescriptor> getDescriptors() {
     Set<ModelRootDescriptor> descriptorSet = new HashSet<ModelRootDescriptor>();
-    for (ContentEntry entry : myContentEntries)
-      descriptorSet.add(((DefaultModelRootEntry) entry).getEntry());
+    for(ModelRootEntry entry : myModelRootEntries) {
+      Memento memento = new MementoImpl();
+      entry.getModelRoot().save(memento);
+      descriptorSet.add(new ModelRootDescriptor(entry.getModelRoot().getType(), memento));
+    }
     return descriptorSet;
   }
 
@@ -166,16 +231,18 @@ public class ContentEntriesEditor {
   }
 
   private class AddContentEntryAction extends IconWithTextAction implements DumbAware {
-    public AddContentEntryAction() {
-      super(PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.title"), PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.tip"), IdeIcons.ADD_MODEL_ROOT_ICON);
+    private String myType;
+
+    public AddContentEntryAction(@NotNull String type) {
+      super(type);
+      myType = type;
     }
 
     public void actionPerformed(AnActionEvent e) {
-      DefaultModelRoot modelRoot = new DefaultModelRoot();
-      modelRoot.setPath(MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getModuleReference().getModuleId()).getBundleHome().getPath());
-      ContentEntry entry = new DefaultModelRootEntry(modelRoot.toDescriptor(), myModuleDescriptor);
+      ModelRoot modelRoot = PersistenceRegistry.getInstance().getModelRootFactory(myType).create();
+      ModelRootEntry entry = ModelRootEntryPersistence.getInstance().getModelRootEntry(modelRoot);
       entry.addContentEntryEditorListener(myEditorListener);
-      myContentEntries.add(entry);
+      myModelRootEntries.add(entry);
       myEditorsListPanel.add(entry.getComponent());
       selectEntry(entry);
       myEditorsListPanel.revalidate();
@@ -185,18 +252,18 @@ public class ContentEntriesEditor {
 
   private final class MyContentEntryEditorListener implements ContentEntryEditorListener {
     @Override
-    public void focused(ContentEntry<?> entry) {
+    public void focused(ModelRootEntry<?> entry) {
       selectEntry(entry);
     }
 
     @Override
-    public void delete(ContentEntry<?> entry) {
+    public void delete(ModelRootEntry<?> entry) {
       deleteEntry(entry);
     }
 
     @Override
-    public void dataChanged(ContentEntry<?> entry) {
-      int i = myContentEntries.indexOf(entry);
+    public void dataChanged(ModelRootEntry<?> entry) {
+      int i = myModelRootEntries.indexOf(entry);
     }
   }
 }

@@ -35,5 +35,6 @@ public class MPSPersistence extends ComponentPlugin {
   public void init() {
     super.init();
     init(new DefaultModelPersistence());
+    init(new BinaryModelPersistence());
   }
 }

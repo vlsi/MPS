@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import java.util.Map;
 import java.util.Set;
@@ -59,7 +59,7 @@ public class StructureModificationProcessor {
   public List<StructureModification> getApplicableModifications() {
     List<StructureModification> result = ListSequence.fromList(new ArrayList<StructureModification>());
     for (SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(myModel))) {
-      DefaultSModelDescriptor usedModel = as_etzqsh_a0a0a1a2(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), DefaultSModelDescriptor.class);
+      RefactorableSModelDescriptor usedModel = as_etzqsh_a0a0a1a2(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), RefactorableSModelDescriptor.class);
       if (usedModel == null) {
         continue;
       }
@@ -132,7 +132,7 @@ lfind:
     }
     // add modification to all dependent models 
     for (IMapping<SModelReference, Integer> dependency : MapSequence.fromMap(data.getDependencies())) {
-      DefaultSModelDescriptor model = (DefaultSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(dependency.key());
+      RefactorableSModelDescriptor model = (RefactorableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(dependency.key());
       StructureModificationLog modificationLog = model.getStructureModificationLog();
       modificationLog.addStructureModification(data);
       model.setVersion(dependency.value() + 1);
@@ -144,7 +144,7 @@ lfind:
   public static boolean hasRefactoringsToPlay(@NotNull SModel model) {
     if (refactoringsPlaybackEnabled() && SModelStereotype.isUserModel(model)) {
       for (SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(model))) {
-        DefaultSModelDescriptor usedModel = as_etzqsh_a0a0a0a0a1(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), DefaultSModelDescriptor.class);
+        RefactorableSModelDescriptor usedModel = as_etzqsh_a0a0a0a0a1(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), RefactorableSModelDescriptor.class);
         if (usedModel != null && importElement.getUsedVersion() < usedModel.getVersion()) {
           return true;
         }

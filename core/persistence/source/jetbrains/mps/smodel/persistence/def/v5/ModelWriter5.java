@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.smodel.persistence.def.v5;
 
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.persistence.def.v4.ModelWriter4;
-import org.jdom.Document;
 import org.jdom.Element;
 
 /**
@@ -28,7 +27,7 @@ public class ModelWriter5 extends ModelWriter4 {
     return 5;
   }
 
-  protected void saveRefactorings(Element rootElement, SModel sourceModel) {
+  protected void saveRefactorings(Element rootElement, DefaultSModel sourceModel) {
     // refactorings are extracted into separate file in version 5
   }
 }

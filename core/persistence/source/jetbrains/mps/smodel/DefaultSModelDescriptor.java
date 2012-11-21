@@ -46,22 +46,24 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import java.util.Collections;
 import java.util.Map;
 
+import static jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
+
 public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor, GeneratableSModelDescriptor, RefactorableSModelDescriptor, FastFindSupportProvider {
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
   public static String FAST_FIND_ID = "regular";
 
   private final UpdateableModel myModel = new UpdateableModel(this) {
     @Override
-    protected ModelLoadResult doLoad(ModelLoadingState state, @Nullable SModel current) {
+    protected ModelLoadResult doLoad(ModelLoadingState state, @Nullable DefaultSModel current) {
       if (state == ModelLoadingState.NOT_LOADED) return new ModelLoadResult(null, ModelLoadingState.NOT_LOADED);
       if (state == ModelLoadingState.ROOTS_LOADED) {
         ModelLoadResult result = load(ModelLoadingState.ROOTS_LOADED);
-        tryFixingVersion(result.getModel().getSModelHeader());
+        tryFixingVersion(result.getModel());
         updateDiskTimestamp();
         return result;
       }
       if (state == ModelLoadingState.FULLY_LOADED) {
-        SModel fullModel = load(ModelLoadingState.FULLY_LOADED).getModel();
+        DefaultSModel fullModel = load(ModelLoadingState.FULLY_LOADED).getModel();
         updateDiskTimestamp();
         if (current == null) return new ModelLoadResult(fullModel, ModelLoadingState.FULLY_LOADED);
         current.setUpdateMode(true);   //not to send events on changes
@@ -87,11 +89,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     myMetadata = d.getMetadata();
   }
 
-  public UpdateableModel getUpdateableModel() {
-    return myModel;
-  }
-
-  @Override
   public ModelLoadingState getLoadingState() {
     return myModel.getState();
   }
@@ -112,11 +109,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   @Override
   public void forceLoad() {
-    getUpdateableModel().getModel(ModelLoadingState.FULLY_LOADED);
+    myModel.getModel(ModelLoadingState.FULLY_LOADED);
   }
 
   @Override
-  protected SModel getCurrentModelInternal() {
+  protected DefaultSModel getCurrentModelInternal() {
     return myModel.getModel(null);
   }
 
@@ -133,9 +130,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   private ModelLoadResult loadSModel(ModelLoadingState state) {
     SModelReference dsmRef = getModelReference();
 
-    IFile modelFile = getModelFile();
+    IFile modelFile = getSource().getFile();
     if (!modelFile.isReadOnly() && !modelFile.exists()) {
-      SModel model = new SModel(dsmRef, new RegularNodeIdMap());
+      DefaultSModel model = new DefaultSModel(dsmRef, new RegularNodeIdMap());
       return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
 
@@ -145,7 +142,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
       result = ModelPersistence.readModel(getDescriptorSModelHeader(), modelFile, state);
     } catch (ModelReadException e) {
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
-      SModel newModel = new StubModel(getSModelReference(), e);
+      DefaultSModel newModel = new InvalidDefaultSModel(getSModelReference(), e);
       return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
     }
 
@@ -189,6 +186,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   @Override
+  public boolean isLoaded() {
+    return getLoadingState() != ModelLoadingState.NOT_LOADED;
+  }
+
+  @Override
   @NotNull
   public StructureModificationLog getStructureModificationLog() {
     synchronized (myRefactoringHistoryLock) {
@@ -212,7 +214,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   public void save() {
     ModelAccess.assertLegalWrite();
 
-    if (getUpdateableModel().getState() == ModelLoadingState.NOT_LOADED) return;
+    if (myModel.getState() == ModelLoadingState.NOT_LOADED) return;
 
     //we must be in command since model save might change model by adding model/language imports
     //if (!mySModel.isLoading()) LOG.assertInCommand();
@@ -224,7 +226,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     setChanged(false);
     boolean reload = saveModel();
     if (reload) {
-      ModelLoadResult res = loadSModel(getUpdateableModel().getState());
+      ModelLoadResult res = loadSModel(myModel.getState());
       updateDiskTimestamp();
       replaceModel(res.getModel(), res.getState());
     }
@@ -236,18 +238,16 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   private boolean saveModel() {
     SModel smodel = getSModel();
-    if (smodel instanceof StubModel) {
+    if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model
       return false;
     }
-    IFile modelFile = getModelFile();
-    assert modelFile != null;
-    return ModelPersistence.saveModel(smodel, modelFile) != null;
+    return ModelPersistence.saveModel(smodel, getSource().getFile()) != null;
   }
 
   @Override
   public boolean isGeneratable() {
-    return !isDoNotGenerate() && !isReadOnly() && SModelStereotype.isUserModel(this);
+    return !isDoNotGenerate() && !getSource().isReadOnly() && SModelStereotype.isUserModel(this);
   }
 
   @Override
@@ -255,7 +255,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     return Boolean.parseBoolean(getSModelHeader().getOptionalProperty("useModelFolderForGeneration"));
   }
 
-  public void replaceModel(final SModel newModel, final ModelLoadingState state) {
+  public void replaceModel(final DefaultSModel newModel, final ModelLoadingState state) {
     ModelAccess.assertLegalWrite();
 
     if (newModel == getCurrentModelInternal()) return;
@@ -278,16 +278,18 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   @Override
   public void dispose() {
-    UnregisteredNodes.instance().clear(getSModelReference());
+    UnregisteredNodes.instance().clear(getModelReference());
     super.dispose();
   }
 
+  @Override
   public void setDoNotGenerate(boolean value) {
     ModelAccess.assertLegalWrite();
 
     getSModelHeader().setDoNotGenerate(value);
   }
 
+  @Override
   public boolean isDoNotGenerate() {
     return getSModelHeader().isDoNotGenerate();
   }
@@ -304,12 +306,12 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     getSModelHeader().setVersion(newVersion);
   }
 
-  public SModelHeader getDescriptorSModelHeader() {
+  private SModelHeader getDescriptorSModelHeader() {
     return myHeader;
   }
 
-  public SModelHeader getSModelHeader() {
-    SModel model = getCurrentModelInternal();
+  private SModelHeader getSModelHeader() {
+    DefaultSModel model = getCurrentModelInternal();
     if (model == null) return myHeader;
     return model.getSModelHeader();
   }
@@ -318,19 +320,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     return Collections.unmodifiableMap(myMetadata);
   }
 
-  /**
-   * use getSource() -> openInputStream/etc.
-   *
-   * @return
-   */
-  @Deprecated
-  public IFile getModelFile() {
-    return getSource().getFile();
-  }
-
   public void changeModelFile(IFile newModelFile) {
     ModelAccess.assertLegalWrite();
-    if (getModelFile().getPath().equals(newModelFile.getPath())) return;
+    if (getSource().getFile().getPath().equals(newModelFile.getPath())) return;
 
     IFile oldFile = getSource().getFile();
     SModel model = getSModel();
@@ -340,21 +332,22 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
   }
 
-  private void tryFixingVersion(SModelHeader header) {
+  private void tryFixingVersion(SModel loadedSModel) {
     if (getVersion() != -1) return;
 
     int latestVersion = getStructureModificationLog().getLatestVersion(getSModelReference());
     myStructureModificationLog = null;  // we don't need to keep log in memory
     if (latestVersion != -1) {
-      header.setVersion(latestVersion);
+      loadedSModel.setVersion(latestVersion);
       LOG.error("Version for model " + getSModelReference().getSModelFqName() + " was not set.");
     }
   }
 
+  @Override
   public void reloadFromDisk() {
     ModelAccess.assertLegalWrite();
 
-    if (!getModelFile().exists()) {
+    if (!getSource().getFile().exists()) {
       SModelRepository.getInstance().removeModelDescriptor(this);
       return;
     }
@@ -387,9 +380,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
     updateDiskTimestamp();
 
-    if (getUpdateableModel().getState() == ModelLoadingState.NOT_LOADED) return;
+    if (myModel.getState() == ModelLoadingState.NOT_LOADED) return;
 
-    ModelLoadResult result = load(getUpdateableModel().getState());
+    ModelLoadResult result = load(myModel.getState());
     replaceModel(result.getModel(), result.getState());
   }
 
@@ -407,8 +400,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   public void resolveDiskConflict() {
-    LOG.warning("Model=" + getSModel().getSModelFqName()+ ", file ts="+getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(), new Throwable());  // more information
-    DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getModelFile(), getSModel(), this);
+    LOG.warning("Model=" + getSModel().getSModelFqName() + ", file ts=" + getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(), new Throwable());  // more information
+    DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getSource().getFile(), getSModel(), this);
   }
 
   public String toString() {

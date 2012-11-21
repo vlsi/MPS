@@ -101,7 +101,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
           }).toListSequence();
           if (ListSequence.fromList(rootChanges).count() != 0) {
             if (ListSequence.fromList(rootChanges).first() instanceof AddRootChange) {
-              VirtualFile vf = VirtualFileUtils.getVirtualFile(md.getModelFile());
+              VirtualFile vf = VirtualFileUtils.getVirtualFile(md.getSource().getFile());
               if (vf != null) {
                 FileStatus modelStatus = FileStatusManager.getInstance(myProject).getStatus(vf);
                 if (BaseVersionUtil.isAddedFileStatus(modelStatus)) {

@@ -9,11 +9,9 @@ import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -53,7 +51,7 @@ public class ConfStubSource extends FolderSetDataSource implements MultiRootMode
   }
 
   @Override
-  public ModelLoadResult loadSModel(IModule module, SModelDescriptor descriptor, ModelLoadingState state) {
+  public SModel loadSModel(IModule module, SModelDescriptor descriptor) {
     SModel model = new SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
     ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("32d0a39c-772f-4490-8142-e50f9a9f19d4")).getModuleReference();
     model.addLanguage(lang);
@@ -108,8 +106,7 @@ public class ConfStubSource extends FolderSetDataSource implements MultiRootMode
       }
     }
     SNodeOperations.deleteNode(sample);
-
-    return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+    return model;
   }
 
   public long getTimestamp() {
