@@ -85,6 +85,18 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   @NotNull
   private String myConceptFqName;
 
+  //---------tree structure-------------
+
+  private SNode parent;
+
+  /**
+   * access only in firstChild()
+   */
+  private SNode first;
+
+  private SNode next;  // == null only for the last child in the list
+  private SNode prev;  // notNull, myFirstChild.myLeftSibling = the last child
+
   public SNode(@NotNull String conceptFqName) {
     myConceptFqName = conceptFqName;
     myId = SModel.generateUniqueId();
@@ -1086,22 +1098,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     protected Set<Pair<SNode, String>> initialValue() {
       return new HashSet<Pair<SNode, String>>();
     }
-  }
-
-  //---------tree structure-------------
-
-  private SNode parent;
-
-  /**
-   * access only in firstChild()
-   */
-  private SNode first;
-
-  private SNode next;  // == null only for the last child in the list
-  private SNode prev;  // notNull, myFirstChild.myLeftSibling = the last child
-
-  protected SNode() {
-
   }
 
   protected SNode firstChild() {
