@@ -33,10 +33,10 @@ public class TestClass {
   }
 
   public String arg(Arg1 arg1) {
-    if (arg1 instanceof Arg3) {
-      return arg((Arg3) arg1);
-    } else if (arg1 instanceof Arg2) {
+    if (arg1 instanceof Arg2) {
       return arg((Arg2) arg1);
+    } else if (arg1 instanceof Arg3) {
+      return arg((Arg3) arg1);
     } else {
       return "arg1";
     }

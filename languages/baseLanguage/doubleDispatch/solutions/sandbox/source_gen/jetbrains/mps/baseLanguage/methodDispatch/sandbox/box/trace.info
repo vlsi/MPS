@@ -5,9 +5,9 @@
     <nodeInfo nodeId="3112508579546709597" fileName="Descendant.java" startLine="14" startPosition="45" endLine="15" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3112508579547258715" fileName="Descendant.java" startLine="18" startPosition="42" endLine="19" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="143681448798971158" fileName="Descendant.java" startLine="23" startPosition="30" endLine="24" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="143681448798971158" fileName="Descendant.java" startLine="25" startPosition="38" endLine="26" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="143681448798971158" fileName="Descendant.java" startLine="27" startPosition="35" endLine="28" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="143681448798971158" fileName="Descendant.java" startLine="29" startPosition="36" endLine="30" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="143681448798971158" fileName="Descendant.java" startLine="25" startPosition="36" endLine="26" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="143681448798971158" fileName="Descendant.java" startLine="27" startPosition="38" endLine="28" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="143681448798971158" fileName="Descendant.java" startLine="29" startPosition="35" endLine="30" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="143681448798973315" fileName="Descendant.java" startLine="31" startPosition="12" endLine="32" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="143681448798971158" fileName="Descendant.java" startLine="33" startPosition="5" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3813896760028513896" fileName="Descendant.java" startLine="38" startPosition="28" endLine="39" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -44,9 +44,9 @@
     <scopeInfo nodeId="3112508579546704639" fileName="Descendant.java" startLine="14" startPosition="45" endLine="15" endPosition="13" />
     <scopeInfo nodeId="3112508579547251333" fileName="Descendant.java" startLine="18" startPosition="42" endLine="19" endPosition="13" />
     <scopeInfo nodeId="143681448798971158" fileName="Descendant.java" startLine="23" startPosition="30" endLine="24" endPosition="36" />
-    <scopeInfo nodeId="143681448798971158" fileName="Descendant.java" startLine="25" startPosition="38" endLine="26" endPosition="37" />
-    <scopeInfo nodeId="143681448798971158" fileName="Descendant.java" startLine="27" startPosition="35" endLine="28" endPosition="34" />
-    <scopeInfo nodeId="143681448798971158" fileName="Descendant.java" startLine="29" startPosition="36" endLine="30" endPosition="35" />
+    <scopeInfo nodeId="143681448798971158" fileName="Descendant.java" startLine="25" startPosition="36" endLine="26" endPosition="35" />
+    <scopeInfo nodeId="143681448798971158" fileName="Descendant.java" startLine="27" startPosition="38" endLine="28" endPosition="37" />
+    <scopeInfo nodeId="143681448798971158" fileName="Descendant.java" startLine="29" startPosition="35" endLine="30" endPosition="34" />
     <scopeInfo nodeId="143681448798971158" fileName="Descendant.java" startLine="31" startPosition="12" endLine="32" endPosition="15" />
     <scopeInfo nodeId="3813896760028513896" fileName="Descendant.java" startLine="38" startPosition="28" endLine="39" endPosition="27" />
     <scopeInfo nodeId="3813896760028513896" fileName="Descendant.java" startLine="40" startPosition="12" endLine="41" endPosition="24" />

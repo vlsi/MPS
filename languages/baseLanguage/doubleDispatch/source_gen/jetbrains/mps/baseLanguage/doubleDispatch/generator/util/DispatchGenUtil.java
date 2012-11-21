@@ -18,6 +18,9 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class DispatchGenUtil {
   public DispatchGenUtil() {
@@ -102,6 +105,16 @@ public class DispatchGenUtil {
         MapSequence.fromMap(classesToMethods).removeKey(it);
       }
     });
-    return MapSequence.fromMap(classesToMethods).values();
+
+    // take method declarations sorted by their parameter classes names alphabetically 
+    return MapSequence.fromMap(classesToMethods).sort(new ISelector<IMapping<SNode, SNode>, String>() {
+      public String select(IMapping<SNode, SNode> it) {
+        return SPropertyOperations.getString(it.key(), "name");
+      }
+    }, true).select(new ISelector<IMapping<SNode, SNode>, SNode>() {
+      public SNode select(IMapping<SNode, SNode> it) {
+        return it.value();
+      }
+    });
   }
 }
