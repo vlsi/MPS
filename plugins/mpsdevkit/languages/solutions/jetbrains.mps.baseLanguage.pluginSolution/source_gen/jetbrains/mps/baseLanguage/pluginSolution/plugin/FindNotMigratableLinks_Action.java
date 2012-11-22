@@ -20,9 +20,6 @@ import java.util.Arrays;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.scripts.NonMigratableUsagesFinder;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.actions.InternalActionsUtils;
 import com.intellij.openapi.project.Project;
 
@@ -69,22 +66,6 @@ public class FindNotMigratableLinks_Action extends BaseAction {
         public void run() {
           for (SNode link : Arrays.asList(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "method"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "staticField"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "staticInnerClassifiers"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "constructor"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "staticMethod"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "field"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "property"))) {
             for (SNode node : Sequence.fromIterable(NonMigratableUsagesFinder.findNonMigratableUsages(link))) {
-              SNode root = SNodeOperations.getContainingRoot(node);
-
-              if ("FindNotMigratableLinks".equals(SPropertyOperations.getString(SNodeOperations.as(root, "jetbrains.mps.lang.plugin.structure.ActionDeclaration"), "name"))) {
-                continue;
-              }
-              if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", false, false) == ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)", "1213877306256"), "method", true)).findFirst(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return SPropertyOperations.getString(it, "name").equals("members");
-                }
-              })) {
-                continue;
-              }
-              if (root == SNodeOperations.getNode("r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)", "1239360506533") || root == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1188206331916")) {
-                continue;
-              }
-
               ListSequence.fromList(usages).addElement(new SNodePointer(node));
             }
           }

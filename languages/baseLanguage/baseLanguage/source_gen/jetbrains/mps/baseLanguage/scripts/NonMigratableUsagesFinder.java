@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
@@ -27,6 +27,10 @@ public class NonMigratableUsagesFinder {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
 
     for (SNode nodeUsage : Sequence.fromIterable(linkUsages)) {
+      if (isExcluded(nodeUsage)) {
+        continue;
+      }
+
       if (SNodeOperations.isInstanceOf(nodeUsage, "jetbrains.mps.lang.smodel.structure.SLinkListAccess")) {
         if (isSequenceNeeded(SNodeOperations.cast(nodeUsage, "jetbrains.mps.lang.smodel.structure.SLinkListAccess"))) {
           continue;
@@ -39,6 +43,25 @@ public class NonMigratableUsagesFinder {
       ListSequence.fromList(result).addElement(nodeUsage);
     }
     return result;
+  }
+
+  public static boolean isExcluded(SNode nodeUsage) {
+    SNode root = SNodeOperations.getContainingRoot(nodeUsage);
+
+    if (SNodeOperations.getNode("r:dfc27cab-2d08-4c79-ac99-e95209e18392(jetbrains.mps.baseLanguage.pluginSolution.plugin)", "5909355414823772787") == root) {
+      return true;
+    }
+    if (SNodeOperations.getAncestor(nodeUsage, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", false, false) == ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)", "1213877306256"), "method", true)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getString(it, "name").equals("members");
+      }
+    })) {
+      return true;
+    }
+    if (root == SNodeOperations.getNode("r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)", "1239360506533") || root == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1188206331916")) {
+      return true;
+    }
+    return false;
   }
 
   public static boolean isSequenceNeeded(SNode nodeUsage) {
