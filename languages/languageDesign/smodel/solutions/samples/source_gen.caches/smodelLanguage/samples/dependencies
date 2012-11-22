@@ -60,11 +60,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="smodelLanguage.samples.LinkRef" file="LinkRef.java">
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
   </dependency>
   <dependency className="smodelLanguage.samples.ListOfNodes" file="ListOfNodes.java">
     <classNode dependClassName="java.lang.Iterable" />

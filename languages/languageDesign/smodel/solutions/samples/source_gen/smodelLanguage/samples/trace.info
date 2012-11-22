@@ -969,9 +969,9 @@
   </root>
   <root nodeId="1226362060907" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
     <nodeInfo nodeId="1226362136275" fileName="LinkRef.java" startLine="10" startPosition="23" endLine="11" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226362204661" fileName="LinkRef.java" startLine="11" startPosition="120" endLine="12" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226362204661" fileName="LinkRef.java" startLine="11" startPosition="120" endLine="12" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1226362100988" fileName="LinkRef.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test1#()V" />
-    <scopeInfo nodeId="1226362100991" fileName="LinkRef.java" startLine="10" startPosition="23" endLine="12" endPosition="186">
+    <scopeInfo nodeId="1226362100991" fileName="LinkRef.java" startLine="10" startPosition="23" endLine="12" endPosition="84">
       <varInfo nodeId="1226362136276" varName="link" />
       <varInfo nodeId="1226362204662" varName="singular" />
     </scopeInfo>
