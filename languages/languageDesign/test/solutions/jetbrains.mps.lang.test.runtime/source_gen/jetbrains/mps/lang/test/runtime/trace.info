@@ -518,7 +518,7 @@
     <nodeInfo nodeId="1228580960078" fileName="CellReference.java" startLine="42" startPosition="25" endLine="43" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1228580487321" fileName="CellReference.java" startLine="45" startPosition="7" endLine="46" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229529344680" fileName="CellReference.java" startLine="49" startPosition="45" endLine="50" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6268941039745707946" fileName="CellReference.java" startLine="50" startPosition="101" endLine="51" endPosition="231" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6268941039745707946" fileName="CellReference.java" startLine="50" startPosition="101" endLine="51" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5681471431307928017" fileName="CellReference.java" startLine="54" startPosition="66" endLine="55" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5681471431307948577" fileName="CellReference.java" startLine="56" startPosition="77" endLine="57" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5521353027966010533" fileName="CellReference.java" startLine="58" startPosition="5" endLine="59" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -559,7 +559,7 @@
     <scopeInfo nodeId="5681471431307948568" fileName="CellReference.java" startLine="56" startPosition="77" endLine="57" endPosition="67" />
     <scopeInfo nodeId="5097407566122005874" fileName="CellReference.java" startLine="81" startPosition="30" endLine="82" endPosition="78" />
     <scopeInfo nodeId="5097407566122005883" fileName="CellReference.java" startLine="83" startPosition="14" endLine="84" endPosition="65" />
-    <scopeInfo nodeId="1228589548294" fileName="CellReference.java" startLine="49" startPosition="45" endLine="51" endPosition="231">
+    <scopeInfo nodeId="1228589548294" fileName="CellReference.java" startLine="49" startPosition="45" endLine="51" endPosition="138">
       <varInfo nodeId="1229529344681" varName="editorComponent" />
     </scopeInfo>
     <scopeInfo nodeId="1226949310945" fileName="CellReference.java" startLine="29" startPosition="77" endLine="32" endPosition="21" />
