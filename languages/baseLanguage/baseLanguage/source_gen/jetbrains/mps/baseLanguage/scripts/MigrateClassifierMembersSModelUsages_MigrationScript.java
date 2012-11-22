@@ -13,9 +13,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
-public class MigrateClassifierMembers_MigrationScript extends BaseMigrationScript {
-  public MigrateClassifierMembers_MigrationScript(IOperationContext operationContext) {
-    super("Use member role for classifier members");
+public class MigrateClassifierMembersSModelUsages_MigrationScript extends BaseMigrationScript {
+  public MigrateClassifierMembersSModelUsages_MigrationScript(IOperationContext operationContext) {
+    super("Use member role for classifier members (smodel usages)");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "Use .fields() etc operation where it possible (replace for sequence access)";
