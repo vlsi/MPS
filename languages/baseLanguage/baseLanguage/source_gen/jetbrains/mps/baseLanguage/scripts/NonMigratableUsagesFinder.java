@@ -81,6 +81,13 @@ public class NonMigratableUsagesFinder {
       }
     }
 
+    // argument for AddAll or RemoveAll operation 
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation"), "argument", true) == dotExpression) {
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation") || SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.collections.structure.RemoveAllElementsOperation")) {
+        return true;
+      }
+    }
+
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.collections.structure.BinaryOperation") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.collections.structure.BinaryOperation"), "rightExpression", true) == dotExpression) {
       // sequence is enough 
       return true;
@@ -141,10 +148,6 @@ public class NonMigratableUsagesFinder {
       if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation")) {
         return true;
       }
-    }
-
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation")) {
-      return true;
     }
 
     return false;
