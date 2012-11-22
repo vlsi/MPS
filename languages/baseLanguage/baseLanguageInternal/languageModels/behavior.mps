@@ -45,6 +45,12 @@
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3650511996773376131">
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp68.1173990517731" resolveInfo="InternalStaticMethodCall" />
     </node>
+    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1262430001741642101">
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp68.3731567766880819155" resolveInfo="InternalSuperMethodCallOperation" />
+    </node>
+    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1262430001741703587">
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp68.1174294166120" resolveInfo="InternalPartialInstanceMethodCall" />
+    </node>
   </roots>
   <root id="1230552150899">
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1230552150900">
@@ -342,6 +348,22 @@
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="8881995820265485542">
         <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp68.3585982959253588676" resolveInfo="ExtractStaticMethodExpression" />
+      </node>
+    </node>
+    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1262430001741522257">
+      <property name="isStatic" nameId="1i04.5864038008284099149" value="true" />
+      <property name="isPrivate" nameId="1i04.1225194472833" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="substituteInAmbigousPosition" />
+      <property name="isVirtual" nameId="1i04.1225194472832" value="false" />
+      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="tpcu.1262430001741498020" resolveInfo="substituteInAmbigousPosition" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1262430001741522258" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1262430001741522256" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1262430001741522259">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1262430001741522260">
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1262430001741522261">
+            <property name="value" nameId="tpee.1068580123138" value="true" />
+          </node>
+        </node>
       </node>
     </node>
   </root>
@@ -835,6 +857,48 @@
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="3650511996773376137" />
+    </node>
+  </root>
+  <root id="1262430001741642101">
+    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1262430001741642102">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1262430001741642103" />
+    </node>
+    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1262430001741642096">
+      <property name="isStatic" nameId="1i04.5864038008284099149" value="true" />
+      <property name="isPrivate" nameId="1i04.1225194472833" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="legalAsStatement" />
+      <property name="isVirtual" nameId="1i04.1225194472832" value="false" />
+      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="tpek.1262430001741498032" resolveInfo="legalAsStatement" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1262430001741642097" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1262430001741642095" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1262430001741642098">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1262430001741642099">
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1262430001741642100">
+            <property name="value" nameId="tpee.1068580123138" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="1262430001741703587">
+    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1262430001741703588">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1262430001741703589" />
+    </node>
+    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1262430001741703582">
+      <property name="isStatic" nameId="1i04.5864038008284099149" value="true" />
+      <property name="isPrivate" nameId="1i04.1225194472833" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="legalAsStatement" />
+      <property name="isVirtual" nameId="1i04.1225194472832" value="false" />
+      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="tpek.1262430001741498032" resolveInfo="legalAsStatement" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1262430001741703583" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1262430001741703581" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1262430001741703584">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1262430001741703585">
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1262430001741703586">
+            <property name="value" nameId="tpee.1068580123138" value="true" />
+          </node>
+        </node>
+      </node>
     </node>
   </root>
 </model>

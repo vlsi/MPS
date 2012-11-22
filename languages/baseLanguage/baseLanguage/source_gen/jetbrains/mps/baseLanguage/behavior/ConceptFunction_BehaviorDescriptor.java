@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public abstract class ConceptFunction_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IMethodLike_BehaviorDescriptor, IStatementListContainer_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public ConceptFunction_BehaviorDescriptor() {
@@ -61,12 +62,20 @@ public abstract class ConceptFunction_BehaviorDescriptor extends BaseConcept_Beh
     return IStatementListContainer_Behavior.virtual_isExecuteSynchronous_1230212745736(thisNode);
   }
 
+  public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
+    return ConceptFunction_Behavior.virtual_showName_1262430001741498082(thisConcept);
+  }
+
   public boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
     return IMethodLike_Behavior.virtual_supportsCheckedExceptions_8510677279630867629(thisNode);
   }
 
   public boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
     return ConceptFunction_Behavior.virtual_usesParameterObjectFor_1213877374432(thisNode, parameter);
+  }
+
+  public boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
+    return ConceptFunction_Behavior.virtual_usesParameterObject_1262430001741497984(thisConcept);
   }
 
   @Override

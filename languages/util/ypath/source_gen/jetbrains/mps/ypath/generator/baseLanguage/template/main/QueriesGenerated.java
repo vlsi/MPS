@@ -18,7 +18,6 @@ import jetbrains.mps.ypath.behavior.MatchKindOperation_Behavior;
 import jetbrains.mps.ypath.behavior.TreeNodeKindProperty_Behavior;
 import jetbrains.mps.ypath.behavior.MatchDefaultPropertyOperation_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.ypath.behavior.ChildrenBlock_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -302,7 +301,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1184771402282(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode df = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.IDesignFunction", false, false);
     SNode stmts = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SNodeOperations.cast(df, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "body", true), "body");
-    final String paramAlias = SConceptPropertyOperations.getString(_context.getNode(), "alias");
+    final String paramAlias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), "conceptAlias");
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(stmts, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false), "parameter", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(paramAlias);
@@ -316,7 +315,7 @@ public class QueriesGenerated {
     SNode designClass = _context.getOutputNodeByInputNodeAndMappingLabel(feature, "feature_design");
     SNode method = ListSequence.fromList(SLinkOperations.getTargets(designClass, "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.getString(it, "name").equals(SConceptPropertyOperations.getString(fun, "alias"));
+        return SPropertyOperations.getString(it, "name").equals(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(fun), "conceptAlias"));
       }
     }).first();
     return ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).where(new IWhereFilter<SNode>() {

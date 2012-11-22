@@ -36,7 +36,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 9:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.math.structure.BigSumExpression", "jetbrains.mps.baseLanguage.math.structure.ArithmSymbol", false, new String[]{"jetbrains.mps.baseLanguage.math.structure.ArithmSymbol"}, new String[]{}, new String[]{});
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.math.structure.ComplexLiteral", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.math.structure.ComplexLiteral", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 11:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.math.structure.ComplexType", "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", false, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"}, new String[]{}, new String[]{});
       case 12:
@@ -60,7 +60,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 21:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.math.structure.ExponentExpression", "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression", false, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"}, new String[]{}, new String[]{});
       case 22:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 23:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.math.structure.ExtrSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbol", false, new String[]{"jetbrains.mps.baseLanguage.math.structure.MathSymbol"}, new String[]{}, new String[]{});
       case 24:
@@ -92,11 +92,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 37:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"indexRef"});
       case 38:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.math.structure.MathTypeCast", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{"target"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.math.structure.MathTypeCast", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"target"}, new String[]{});
       case 39:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixConstructor", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{"column"}, new String[]{});
       case 40:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 41:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", false, new String[]{"jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"}, new String[]{}, new String[]{});
       case 42:

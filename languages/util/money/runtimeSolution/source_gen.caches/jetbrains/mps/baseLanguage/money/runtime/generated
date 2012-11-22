@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-5pxblk6ymsr6su9yqtes1e7yx7xgepg">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2eqrjs8emy551teprj5no9utk82ifsq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-cjp3x7kpslsgnhml4bi405qvj66t1vk" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-3223m9cg8337am9br9ikluvywbkblf4" />
-  <common hash="-7in637t6v8xtd10odcvsvnctqaz8fxo">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="bavz98vwxhwhpog89k63m5eu2e8cbl3" />
+  <common hash="-7in637t6v8xtd10odcvsvnctqaz8fxo" />
   <source id="3840741013873804939" name="Currency" hash="3wx7t9yx9szn0gz5mthbm6fak5hsydf">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="Currency.java" />
   </source>
   <source id="3840741013873805187" name="NotCompatibleCurrencies" hash="5mxcgjh3nv2cp8gk216tav4wfbbvgvh">
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="NotCompatibleCurrencies.java" />
   </source>
 </dependencies>

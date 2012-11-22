@@ -41,7 +41,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.structure.modules.Dependency;
 import java.util.LinkedHashMap;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.ProjectPathUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.MacrosFactory;
@@ -703,12 +703,11 @@ public class ModuleLoader {
       }));
     }
     for (ModelRootDescriptor modelRootDescriptor : modelRoots) {
-      ModelRoot modelRoot = modelRootDescriptor.getRoot();
-      if (modelRoot == null || modelRoot.getManager() != null) {
+      if (!(PersistenceRegistry.DEFAULT_MODEL_ROOT.equals(modelRootDescriptor.getType()))) {
         continue;
       }
 
-      String path = modelRoot.getPath();
+      String path = modelRootDescriptor.getMemento().get("path");
       SNode p = ListSequence.fromList(convertPath(path, myOriginalModule)).first();
       if (p == null) {
         continue;

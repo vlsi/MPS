@@ -9,6 +9,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.build.packaging.behavior.Layout_Behavior;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
@@ -37,6 +38,10 @@ public class MPSBuild_Behavior {
       ListSequence.fromList(path).insertElement(0, SLinkOperations.getTarget(folder, "title", true));
     }
     return path;
+  }
+
+  public static boolean virtual_acceptFiles_1262430001741497846(SConcept thisConcept) {
+    return true;
   }
 
   public static String getMPSBuildToolsZipName_1234294616845() {

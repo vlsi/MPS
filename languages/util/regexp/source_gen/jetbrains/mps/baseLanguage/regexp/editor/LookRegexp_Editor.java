@@ -7,17 +7,19 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
-import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -38,9 +40,21 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vwuy6a_a");
     editorCell.addKeyMap(new RegexpSequenceByEnter());
-    editorCell.addEditorCell(this.createConceptProperty_vwuy6a_a0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_vwuy6a_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_vwuy6a_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vwuy6a_c0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_vwuy6a_a0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new AliasEditorComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    }
+    LookRegexp_Actions.setCellActions(editorCell, node, editorContext);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new LookRegexp_Editor.ReplaceWith_LookRegexp_cellMenu_a0a0(), new LookRegexp_Editor.LookRegexp_customReplace_cellMenu_b0a0()}));
     return editorCell;
   }
 
@@ -64,29 +78,6 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConceptProperty_vwuy6a_a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-    provider.setRole("alias");
-    provider.setNoTargetText("<no alias>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("conceptProperty_alias");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-    }
-    LookRegexp_Actions.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new LookRegexp_Editor.ReplaceWith_LookRegexp_cellMenu_a0a0(), new LookRegexp_Editor.LookRegexp_customReplace_cellMenu_b0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

@@ -12,13 +12,13 @@ import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.ide.persistence.ModelRootSettingsEditor;
 import jetbrains.mps.ide.persistence.PersistenceComponent;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import javax.swing.JComponent;
-import jetbrains.mps.persistence.PathAwareJDOMMemento;
-import org.jdom.Element;
+import jetbrains.mps.persistence.MementoImpl;
 
 public class ModelRootChooser implements Computable<ModelRootDescriptor> {
   private final IBindedDialog myOwner;
@@ -40,7 +40,7 @@ public class ModelRootChooser implements Computable<ModelRootDescriptor> {
     String selectedType = Sequence.fromIterable(ti).take(index + 1).last();
     ModelRoot mr = pReg.getModelRootFactory(selectedType).create();
 
-    if (selectedType.equals("default")) {
+    if (PersistenceRegistry.DEFAULT_MODEL_ROOT.equals(selectedType) || PersistenceRegistry.OBSOLETE_MODEL_ROOT.equals(selectedType)) {
       TreeFileChooser chooser = new TreeFileChooser();
       chooser.setInitialFile(myBundleHome);
       chooser.setMode(TreeFileChooser.MODE_FILES_AND_DIRECTORIES);
@@ -49,9 +49,15 @@ public class ModelRootChooser implements Computable<ModelRootDescriptor> {
         return null;
       }
 
-      SModelRoot result = new SModelRoot(null);
-      result.setPath(dir.getPath());
-      return result.toDescriptor();
+      if (PersistenceRegistry.DEFAULT_MODEL_ROOT.equals(selectedType)) {
+        DefaultModelRoot result = new DefaultModelRoot();
+        result.setPath(dir.getPath());
+        return result.toDescriptor();
+      } else {
+        SModelRoot result = new SModelRoot(null);
+        result.setPath(dir.getPath());
+        return result.toDescriptor();
+      }
     }
 
     final ModelRootSettingsEditor editor = PersistenceComponent.getModelRootSettingsEditor(mr.getType());
@@ -63,7 +69,7 @@ public class ModelRootChooser implements Computable<ModelRootDescriptor> {
     }.showDialog();
     editor.apply(mr);
 
-    PathAwareJDOMMemento memento = new PathAwareJDOMMemento(new Element("modelRoot"), null);
+    MementoImpl memento = new MementoImpl();
     mr.save(memento);
     return new ModelRootDescriptor(mr.getType(), memento);
   }

@@ -13,7 +13,9 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.behavior.AttributeQualifier_Behavior;
@@ -45,7 +47,7 @@ public class PropertyAttributeQualifier_Constraints extends BaseConstraintsDescr
 
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return SConceptPropertyOperations.getString(((SNode) _context.getParameterNode()), "role");
+            return BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(((SNode) _context.getParameterNode()))), "virtual_getRole_1262430001741497900", new Object[]{});
           }
 
           @Override

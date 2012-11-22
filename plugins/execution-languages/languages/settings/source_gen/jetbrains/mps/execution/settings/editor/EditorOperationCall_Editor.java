@@ -17,7 +17,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -97,25 +98,13 @@ public class EditorOperationCall_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createConceptProperty_jn1wx6_a0a0(editorContext, node);
+      return this.createComponent_jn1wx6_a0a0(editorContext, node);
     }
 
-    private EditorCell createConceptProperty_jn1wx6_a0a0(EditorContext editorContext, SNode node) {
-      CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-      provider.setRole("alias");
-      provider.setNoTargetText("<no alias>");
-      EditorCell editorCell;
-      editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("conceptProperty_alias");
+    private EditorCell createComponent_jn1wx6_a0a0(EditorContext editorContext, SNode node) {
+      AbstractCellProvider provider = new AliasEditorComponent(node);
+      EditorCell editorCell = provider.createEditorCell(editorContext);
       RunConfigurations_StyleSheet.getOperation(editorCell).apply(editorCell);
-      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-      SNode attributeConcept = provider.getRoleAttribute();
-      Class attributeKind = provider.getRoleAttributeClass();
-      if (attributeConcept != null) {
-        IOperationContext opContext = editorContext.getOperationContext();
-        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-        return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-      } else
       return editorCell;
     }
   }

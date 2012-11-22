@@ -7,8 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import java.util.Set;
-import java.util.HashSet;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -22,23 +21,16 @@ public class PropertyMacro_GetPropertyValue_Behavior {
     if (dataType != null) {
       return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), dataType, "virtual_toBaseLanguageType_1213877229718", new Object[]{});
     }
-    return new PropertyMacro_GetPropertyValue_Behavior.QuotationClass_90g9ox_a0d0b().createNode();
+    return _quotation_createNode_90g9ox_a3a0();
   }
 
-  public static class QuotationClass_90g9ox_a0d0b {
-    public QuotationClass_90g9ox_a0d0b() {
-    }
+  public static boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
+    return true;
+  }
 
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_90g9ox_a3a0() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
   }
 }

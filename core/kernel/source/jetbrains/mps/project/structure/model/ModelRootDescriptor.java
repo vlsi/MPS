@@ -15,32 +15,43 @@
  */
 package jetbrains.mps.project.structure.model;
 
-import jetbrains.mps.persistence.PathAwareJDOMMemento;
+import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import org.jetbrains.mps.openapi.persistence.Memento;
 
 /**
  * evgeny, 10/24/12
  */
+
 public class ModelRootDescriptor {
 
   private String type;
-  private PathAwareJDOMMemento memento;
+  private Memento memento;
 
-  public ModelRootDescriptor(String type, PathAwareJDOMMemento memento) {
+  public ModelRootDescriptor() {
+    this.type = null;
+    this.memento = new MementoImpl();
+  }
+
+  public ModelRootDescriptor(String type, Memento memento) {
     this.type = type;
     this.memento = memento;
   }
 
   public String getType() {
+    if (type == null) {
+      return getMemento().getChild("manager") != null ? PersistenceRegistry.OBSOLETE_MODEL_ROOT : PersistenceRegistry.DEFAULT_MODEL_ROOT;
+    }
     return type;
   }
 
-  public PathAwareJDOMMemento getMemento() {
+  public Memento getMemento() {
     return memento;
   }
 
+  @Deprecated
   public ModelRoot getRoot() {
-    if (type != null && type.length() > 0 && !type.equals(PersistenceRegistry.DEFAULT_MODEL_ROOT)) {
+    if (!PersistenceRegistry.OBSOLETE_MODEL_ROOT.equals(getType())) {
       return null;
     }
     ModelRoot modelRoot = new ModelRoot();

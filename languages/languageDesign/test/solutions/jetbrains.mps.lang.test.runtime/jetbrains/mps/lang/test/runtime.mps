@@ -1453,7 +1453,6 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1215609104512" resolveInfo="operation" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1215609104518">
-                              <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp5o.1215601182156" resolveInfo="perform" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1215609104519">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1215605336248" resolveInfo="nodeToCheck" />
@@ -3704,7 +3703,6 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="6268941039745707949" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="6268941039745719456">
-              <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp5o.6268941039745707957" resolveInfo="setupSelection" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6268941039745719457">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1229529344681" resolveInfo="editorComponent" />

@@ -7,15 +7,14 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1987251859606934913">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="DecisionTable" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="dectab" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
   </roots>
   <root id="1987251859606934913">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1987251859606934920">
-      <property name="value" nameId="tpce.1105725733873" value="dectab" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1987251859606934914">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="expectedType" />

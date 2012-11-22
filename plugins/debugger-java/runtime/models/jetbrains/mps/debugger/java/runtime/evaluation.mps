@@ -410,8 +410,8 @@
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="671562190169411338">
-      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="dispose" />
+      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="671562190169411339" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="671562190169411340" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="671562190169411341">
@@ -1593,8 +1593,8 @@
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3187167456722533883">
       <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
-      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="dispose" />
+      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3187167456722533884" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3187167456722533885" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3187167456722533886">
@@ -1617,8 +1617,8 @@
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3187167456722533894">
       <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
-      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="init" />
+      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3187167456722533895" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3187167456722533896" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3187167456722533897">
@@ -5356,7 +5356,6 @@
                                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="966640927460600638" resolveInfo="toString" />
                                             </node>
                                             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="3869828361677224216">
-                                              <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.8847328628797656446" resolveInfo="jniSignature" />
                                             </node>
                                           </node>

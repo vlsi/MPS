@@ -75,12 +75,12 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.persistence.PersistenceRegistry" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
     <classNode dependClassName="jetbrains.mps.project.ProjectPathUtil" />
     <classNode dependClassName="jetbrains.mps.project.persistence.DevkitDescriptorPersistence" />
     <classNode dependClassName="jetbrains.mps.project.persistence.LanguageDescriptorPersistence" />
     <classNode dependClassName="jetbrains.mps.project.persistence.SolutionDescriptorPersistence" />
-    <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRoot" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.Dependency" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.DevkitDescriptor" />

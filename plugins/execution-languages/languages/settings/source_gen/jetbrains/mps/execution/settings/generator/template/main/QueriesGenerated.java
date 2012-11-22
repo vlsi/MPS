@@ -21,8 +21,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -383,7 +381,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_5041115067675810374(final IOperationContext operationContext, final IfMacroContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(_context.getNode(), "type", true), new QueriesGenerated.QuotationClass_x583g4_a1a0a0id().createNode());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(_context.getNode(), "type", true), _quotation_createNode_x583g4_b0a0a68());
   }
 
   public static boolean ifMacro_Condition_5041115067675810429(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -731,28 +729,17 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToClass");
   }
 
+  private static SNode _quotation_createNode_x583g4_b0a0a68() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Cloneable")));
+    return quotedNode_1;
+  }
+
   private static boolean eq_x583g4_a0a1a49(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
-  }
-
-  public static class QuotationClass_x583g4_a1a0a0id {
-    public QuotationClass_x583g4_a1a0a0id() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Cloneable")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
   }
 }

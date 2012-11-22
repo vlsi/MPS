@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.PairMap;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 public class UnregisteredNodes {
   private static final Logger LOG = Logger.getLogger(UnregisteredNodes.class);
@@ -57,7 +58,7 @@ public class UnregisteredNodes {
   }
 
   void put(SNode node) {
-    if (myDisabled || !(node.getSNodeId() != null)) return;
+    if (myDisabled || node.getSNodeId() == null) return;
     add(node.getModel().getSModelReference(), node.getSNodeId(), node);
   }
 

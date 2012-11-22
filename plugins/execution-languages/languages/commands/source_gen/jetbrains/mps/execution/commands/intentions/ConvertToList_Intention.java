@@ -14,14 +14,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.intentions.IntentionDescriptor;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import java.util.List;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ConvertToList_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -82,6 +80,22 @@ public class ConvertToList_Intention implements IntentionFactory {
     return myCachedExecutable;
   }
 
+  private static SNode _quotation_createNode_mz75hy_a0a2a0(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit", null, null, GlobalScope.getInstance(), false);
+    {
+      List<SNode> nodes = (List<SNode>) parameter_1;
+      for (SNode child : nodes) {
+        quotedNode_3.addChild("initValue", HUtil.copyIfNecessary(child));
+      }
+    }
+    quotedNode_2.addChild("creator", quotedNode_3);
+    return quotedNode_2;
+  }
+
   private static boolean eq_63cojg_a0a0i(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
@@ -104,41 +118,11 @@ public class ConvertToList_Intention implements IntentionFactory {
           SNodeOperations.detachNode(it);
         }
       });
-      SLinkOperations.setTarget(node, "list", new ConvertToList_Intention.QuotationClass_63cojg_a0a0c0b0().createNode(items), true);
+      SLinkOperations.setTarget(node, "list", _quotation_createNode_mz75hy_a0a2a0(items), true);
     }
 
     public IntentionDescriptor getDescriptor() {
       return ConvertToList_Intention.this;
-    }
-  }
-
-  public static class QuotationClass_63cojg_a0a0c0b0 {
-    public QuotationClass_63cojg_a0a0c0b0() {
-    }
-
-    public SNode createNode(Object parameter_6) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_4 = quotedNode_1;
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_5 = quotedNode_2;
-          {
-            List<SNode> nodes = (List<SNode>) parameter_6;
-            for (SNode child : nodes) {
-              quotedNode_2.addChild("initValue", HUtil.copyIfNecessary(child));
-            }
-          }
-          quotedNode_1.addChild("creator", quotedNode1_5);
-        }
-        result = quotedNode1_4;
-      }
-      return result;
     }
   }
 }

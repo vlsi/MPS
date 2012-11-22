@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.tuples.behavior;
 import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class NamedTupleDeclaration_BehaviorDescriptor extends Classifier_BehaviorDescriptor {
@@ -15,8 +16,16 @@ public class NamedTupleDeclaration_BehaviorDescriptor extends Classifier_Behavio
     return NamedTupleDeclaration_Behavior.virtual_getExtendedClassifierTypes_2201875424516179426(thisNode);
   }
 
+  public String virtual_getLeftBracket_1262430001741497804(SConcept thisConcept) {
+    return NamedTupleDeclaration_Behavior.virtual_getLeftBracket_1262430001741497804(thisConcept);
+  }
+
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return NamedTupleDeclaration_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  }
+
+  public String virtual_getRightBracket_1262430001741498115(SConcept thisConcept) {
+    return NamedTupleDeclaration_Behavior.virtual_getRightBracket_1262430001741498115(thisConcept);
   }
 
   public SNode virtual_getThisType_3305065273710880775(SNode thisNode) {

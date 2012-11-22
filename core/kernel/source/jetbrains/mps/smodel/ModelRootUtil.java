@@ -15,17 +15,18 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.SModelRoot;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 public class ModelRootUtil {
   /**
    * Calculates true model root of the model. Can take time!
    */
-  public static SModelRoot getSModelRoot(SModelDescriptor model) {
-    IModule module = model.getModule();
-    for (SModelRoot modelRoot : module.getSModelRoots()) {
-      for (org.jetbrains.mps.openapi.model.SModel descriptor : modelRoot.getModels()) {
+  public static ModelRoot getModelRoot(SModel model) {
+    SModule module = model.getModule();
+    for (ModelRoot modelRoot : module.getModelRoots()) {
+      for (SModel descriptor : modelRoot.getModels()) {
         if (descriptor.getModelReference().equals(model.getModelReference())) {
           return modelRoot;
         }

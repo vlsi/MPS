@@ -29,12 +29,14 @@ import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.util.misc.hash.HashMap;
 import jetbrains.mps.util.misc.hash.HashSet;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class UnmarkModelRootAction extends AnAction {
@@ -51,10 +53,16 @@ public class UnmarkModelRootAction extends AnAction {
     MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
     assert mpsFacet != null;
 
-    MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getState();
+    MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getBean();
     List<ModelRoot> modelRoots = new ArrayList<ModelRoot>(configurationBean.getModelRoots());
+    Map<String, DefaultModelRoot> rootsMap = new HashMap<String, DefaultModelRoot>();
+    for (ModelRoot modelRoot : modelRoots) {
+      if (modelRoot instanceof DefaultModelRoot) {
+        rootsMap.put(((DefaultModelRoot) modelRoot).getPath(), (DefaultModelRoot) modelRoot);
+      }
+    }
     for (VirtualFile vFile : vFiles) {
-      modelRoots.remove(new ModelRoot(VirtualFileManager.extractPath(vFile.getUrl())));
+      modelRoots.remove(rootsMap.get(VirtualFileManager.extractPath(vFile.getUrl())));
     }
     configurationBean.setModelRoots(modelRoots);
     mpsFacet.setConfiguration(configurationBean);
@@ -76,7 +84,13 @@ public class UnmarkModelRootAction extends AnAction {
     if (mpsFacet == null || !mpsFacet.wasInitialized()) return false;
 
     Set<ModelRoot> modelRoots = new HashSet<ModelRoot>();
-    modelRoots.addAll(mpsFacet.getConfiguration().getState().getModelRoots());
+    modelRoots.addAll(mpsFacet.getConfiguration().getBean().getModelRoots());
+    Map<String, DefaultModelRoot> rootsMap = new HashMap<String, DefaultModelRoot>();
+    for (ModelRoot modelRoot : modelRoots) {
+      if (modelRoot instanceof DefaultModelRoot) {
+        rootsMap.put(((DefaultModelRoot) modelRoot).getPath(), (DefaultModelRoot) modelRoot);
+      }
+    }
     for (VirtualFile vFile : vFiles) {
       if (!vFile.isDirectory()) return false;
 
@@ -84,7 +98,7 @@ public class UnmarkModelRootAction extends AnAction {
       if (!LocalFileSystem.PROTOCOL.equals(VirtualFileManager.extractProtocol(url))) return false;
 
       String path = VirtualFileManager.extractPath(url);
-      if (!modelRoots.contains(new ModelRoot(path))) return false;
+      if (!rootsMap.containsKey(path)) return false;
     }
     return true;
   }

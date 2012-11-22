@@ -91,12 +91,12 @@ public class MoveNodes_Action extends BaseAction {
           targetModelDescriptor.value = ((SModel) SNodeOperations.getModel(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target"))).first())).getModelDescriptor();
         }
       });
-      final Object newNode = MoveNodesDialog.getSelectedObject(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), targetModelDescriptor.value, new MoveNodesDialog.ModelFilter("Choose Node or Model") {
+      final Object newLocation = MoveNodesDialog.getSelectedObject(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), targetModelDescriptor.value, new MoveNodesDialog.ModelFilter("Choose Node or Model") {
         public boolean check(Object selectedObject, SModelDescriptor model) {
           return selectedObject instanceof SNode || selectedObject instanceof SModelDescriptor;
         }
       });
-      if (newNode == null) {
+      if (newLocation == null) {
         return;
       }
       ModelAccess.instance().runReadInEDT(new Runnable() {
@@ -107,15 +107,14 @@ public class MoveNodes_Action extends BaseAction {
               return;
             }
           }
-          SNode node = ((SNode) newNode);
-          if (newNode instanceof SNode && (!(node.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) newNode)))) {
+          if (newLocation instanceof SNode && (!(((SNode) newLocation).getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) newLocation)))) {
             return;
           }
-          if (newNode instanceof SModelDescriptor && (!(((SModelDescriptor) newNode).isRegistered()))) {
+          if (newLocation instanceof SModelDescriptor && (!(((SModelDescriptor) newLocation).isRegistered()))) {
             return;
           }
 
-          RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.MoveNodes", Arrays.asList("target"), Arrays.asList(newNode), ((List<SNode>) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+          RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.MoveNodes", Arrays.asList("target"), Arrays.asList(newLocation), ((List<SNode>) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
         }
       });
     } catch (Throwable t) {

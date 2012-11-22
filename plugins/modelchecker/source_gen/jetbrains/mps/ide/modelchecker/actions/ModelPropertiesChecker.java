@@ -28,7 +28,7 @@ public class ModelPropertiesChecker extends SpecificChecker {
     SModelDescriptor modelDescriptor = model.getModelDescriptor();
     IScope scope = check_t4d01o_a0f0a(check_t4d01o_a0a5a0(modelDescriptor));
     if (scope != null) {
-      List<String> errors = new ModelValidator(modelDescriptor.getSModel()).validate(scope);
+      List<String> errors = new ModelValidator(modelDescriptor).validate(scope);
       if (!(ListSequence.fromList(errors).isEmpty())) {
         String extraMessage = ListSequence.fromList(errors).getElement(0);
         if ((int) ListSequence.fromList(errors).count() == 2) {

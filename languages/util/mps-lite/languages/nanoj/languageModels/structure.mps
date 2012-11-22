@@ -8,29 +8,33 @@
   <import index="tpkz" modelUID="r:00000000-0000-4000-0000-011c895905df(jetbrains.mps.nanoj.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="689680155165915335">
-      <property name="name" nameId="tpck.1169194664001" value="MinusExpression" />
       <property name="rootable" nameId="tpce.1096454100552" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="MinusExpression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="689680155165915337">
-      <property name="name" nameId="tpck.1169194664001" value="NanoClass" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="NanoClass" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="689680155165915339">
-      <property name="name" nameId="tpck.1169194664001" value="VarDecl" />
       <property name="rootable" nameId="tpce.1096454100552" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="VarDecl" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="689680155165915342">
-      <property name="name" nameId="tpck.1169194664001" value="NanoStatementList" />
       <property name="rootable" nameId="tpce.1096454100552" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="NanoStatementList" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="689680155165915346" resolveInfo="NanoStatement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="689680155165915344">
-      <property name="name" nameId="tpck.1169194664001" value="NanoExpression" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="rootable" nameId="tpce.1096454100552" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="NanoExpression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="689680155165915346">
-      <property name="name" nameId="tpck.1169194664001" value="NanoStatement" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="rootable" nameId="tpce.1096454100552" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="NanoStatement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="689680155165915348">
       <property name="name" nameId="tpck.1169194664001" value="VarDeclReference" />
@@ -56,8 +60,8 @@
   <root id="689680155165915339">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="689680155165915340">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <property name="role" nameId="tpce.1071599776563" value="varType" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="689680155165915341">
@@ -67,27 +71,19 @@
   </root>
   <root id="689680155165915342">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="689680155165915343">
-      <property name="role" nameId="tpce.1071599776563" value="body" />
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="body" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="689680155165915346" resolveInfo="NanoStatement" />
     </node>
   </root>
-  <root id="689680155165915344">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="689680155165915345">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
-    </node>
-  </root>
-  <root id="689680155165915346">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="689680155165915347">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
-    </node>
-  </root>
+  <root id="689680155165915344" />
+  <root id="689680155165915346" />
   <root id="689680155165915348">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="689680155165915349">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <property name="role" nameId="tpce.1071599776563" value="declaration" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="689680155165915339" resolveInfo="VarDecl" />
     </node>
   </root>

@@ -356,54 +356,35 @@
     <unitInfo nodeId="1216860146346" fileName="GenerationContextOp_GetOutputByLabel_Editor.java" startLine="18" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GetOutputByLabel_Editor" />
   </root>
   <root nodeId="1217004808034" modelId="r:00000000-0000-4000-0000-011c895902f0(jetbrains.mps.lang.generator.generationContext.editor)">
-    <nodeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="23" startPosition="94" endLine="24" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="24" startPosition="89" endLine="25" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="25" startPosition="30" endLine="26" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="26" startPosition="43" endLine="27" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="27" startPosition="26" endLine="28" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="28" startPosition="58" endLine="29" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="29" startPosition="50" endLine="30" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="31" startPosition="5" endLine="32" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="32" startPosition="42" endLine="33" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="34" startPosition="5" endLine="35" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="35" startPosition="73" endLine="36" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="36" startPosition="57" endLine="37" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="38" startPosition="35" endLine="39" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="39" startPosition="72" endLine="40" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="40" startPosition="78" endLine="41" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="42" startPosition="10" endLine="43" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="30" startPosition="76" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="28" startPosition="58" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="37" startPosition="59" endLine="43" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="27" startPosition="26" endLine="35" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="23" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConceptProperty_a81d8a_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <scopeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="68" />
-    <scopeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="31" startPosition="5" endLine="33" endPosition="81">
-      <varInfo nodeId="1217004816051" varName="style" />
+    <nodeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2886182022232400728" fileName="GenerationContextOp_Base_Editor.java" startLine="21" startPosition="88" endLine="22" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400728" fileName="GenerationContextOp_Base_Editor.java" startLine="22" startPosition="67" endLine="23" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400728" fileName="GenerationContextOp_Base_Editor.java" startLine="23" startPosition="69" endLine="24" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2886182022232400728" fileName="GenerationContextOp_Base_Editor.java" startLine="25" startPosition="5" endLine="26" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400728" fileName="GenerationContextOp_Base_Editor.java" startLine="26" startPosition="42" endLine="27" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2886182022232400728" fileName="GenerationContextOp_Base_Editor.java" startLine="28" startPosition="5" endLine="29" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2886182022232400728" fileName="GenerationContextOp_Base_Editor.java" startLine="24" startPosition="76" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2886182022232400728" fileName="GenerationContextOp_Base_Editor.java" startLine="23" startPosition="69" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2886182022232400728" fileName="GenerationContextOp_Base_Editor.java" startLine="21" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_a81d8a_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="62" />
+    <scopeInfo nodeId="2886182022232400728" fileName="GenerationContextOp_Base_Editor.java" startLine="25" startPosition="5" endLine="27" endPosition="81">
+      <varInfo nodeId="2886182022232400728" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
+    <scopeInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1217004808034" varName="editorContext" />
       <varInfo nodeId="1217004808034" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="38" startPosition="35" endLine="41" endPosition="105">
-      <varInfo nodeId="1217004816051" varName="manager" />
-      <varInfo nodeId="1217004816051" varName="opContext" />
+    <scopeInfo nodeId="2886182022232400728" fileName="GenerationContextOp_Base_Editor.java" startLine="23" startPosition="69" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="2886182022232400728" fileName="GenerationContextOp_Base_Editor.java" startLine="21" startPosition="88" endLine="29" endPosition="22">
+      <varInfo nodeId="2886182022232400728" varName="editorCell" />
+      <varInfo nodeId="2886182022232400728" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="28" startPosition="58" endLine="34" endPosition="5" />
-    <scopeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="27" startPosition="26" endLine="35" endPosition="73" />
-    <scopeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="23" startPosition="94" endLine="43" endPosition="22">
-      <varInfo nodeId="1217004816051" varName="attributeConcept" />
-      <varInfo nodeId="1217004816051" varName="attributeKind" />
-      <varInfo nodeId="1217004816051" varName="editorCell" />
-      <varInfo nodeId="1217004816051" varName="provider" />
+    <scopeInfo nodeId="2886182022232400728" fileName="GenerationContextOp_Base_Editor.java" startLine="21" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="2886182022232400728" varName="editorContext" />
+      <varInfo nodeId="2886182022232400728" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1217004816051" fileName="GenerationContextOp_Base_Editor.java" startLine="23" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="1217004816051" varName="editorContext" />
-      <varInfo nodeId="1217004816051" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="18" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_Base_Editor" />
+    <unitInfo nodeId="1217004808034" fileName="GenerationContextOp_Base_Editor.java" startLine="16" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_Base_Editor" />
   </root>
   <root nodeId="1217882105986" modelId="r:00000000-0000-4000-0000-011c895902f0(jetbrains.mps.lang.generator.generationContext.editor)">
     <nodeInfo nodeId="1217882105986" fileName="GenerationContextOp_GetPrevInputByLabel_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -648,311 +629,275 @@
     <unitInfo nodeId="1217884859679" fileName="GenerationContextOp_GetCopiedOutputByInput_Editor.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GetCopiedOutputByInput_Editor" />
   </root>
   <root nodeId="1217890062975" modelId="r:00000000-0000-4000-0000-011c895902f0(jetbrains.mps.lang.generator.generationContext.editor)">
-    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="62" startPosition="58" endLine="62" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="27" startPosition="89" endLine="28" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="28" startPosition="96" endLine="29" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="28" startPosition="96" endLine="29" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="29" startPosition="48" endLine="30" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="29" startPosition="48" endLine="30" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="30" startPosition="88" endLine="31" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="30" startPosition="88" endLine="31" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="31" startPosition="81" endLine="32" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="31" startPosition="81" endLine="32" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="32" startPosition="80" endLine="33" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="32" startPosition="80" endLine="33" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="37" startPosition="88" endLine="38" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="38" startPosition="87" endLine="39" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="39" startPosition="47" endLine="40" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="41" startPosition="5" endLine="42" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="42" startPosition="42" endLine="43" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="44" startPosition="5" endLine="45" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="45" startPosition="34" endLine="46" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217890683011" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="49" startPosition="88" endLine="50" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217890683011" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="50" startPosition="87" endLine="51" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217890683011" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="51" startPosition="47" endLine="52" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217890683011" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="52" startPosition="76" endLine="53" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217890683011" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="53" startPosition="34" endLine="54" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="57" startPosition="87" endLine="58" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="58" startPosition="81" endLine="59" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="59" startPosition="32" endLine="60" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="60" startPosition="45" endLine="61" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="61" startPosition="26" endLine="62" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="62" startPosition="58" endLine="63" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="63" startPosition="73" endLine="64" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="64" startPosition="57" endLine="65" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="66" startPosition="35" endLine="67" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="67" startPosition="72" endLine="68" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="68" startPosition="78" endLine="69" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="70" startPosition="10" endLine="71" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="74" startPosition="95" endLine="75" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="75" startPosition="89" endLine="76" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="76" startPosition="30" endLine="77" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="77" startPosition="43" endLine="78" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="78" startPosition="26" endLine="79" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="79" startPosition="58" endLine="80" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="80" startPosition="50" endLine="81" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="81" startPosition="76" endLine="82" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="82" startPosition="255" endLine="83" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="83" startPosition="57" endLine="84" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="85" startPosition="35" endLine="86" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="86" startPosition="72" endLine="87" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="87" startPosition="78" endLine="88" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="89" startPosition="10" endLine="90" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217890126936" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="97" startPosition="47" endLine="98" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217890683011" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="50" startPosition="87" endLine="52" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="61" startPosition="26" endLine="63" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="79" startPosition="58" endLine="81" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217890126936" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="94" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu_a0a0#()V" />
-    <nodeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1217890126936" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReplacementConceptName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="40" startPosition="76" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="78" startPosition="26" endLine="82" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="38" startPosition="87" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="65" startPosition="59" endLine="71" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="84" startPosition="59" endLine="90" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1217890683011" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="49" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_4ccleb_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="27" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_4ccleb_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="37" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_4ccleb_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="57" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_4ccleb_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="74" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConceptProperty_4ccleb_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <scopeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="62" startPosition="58" endLine="62" endPosition="58" />
-    <scopeInfo nodeId="1217890126936" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="94" startPosition="81" endLine="94" endPosition="81" />
-    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" />
-    <scopeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="28" startPosition="96" endLine="29" endPosition="48" />
-    <scopeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="29" startPosition="48" endLine="30" endPosition="88" />
-    <scopeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="30" startPosition="88" endLine="31" endPosition="81" />
-    <scopeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="31" startPosition="81" endLine="32" endPosition="80" />
-    <scopeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="32" startPosition="80" endLine="33" endPosition="81" />
-    <scopeInfo nodeId="1217890126936" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="97" startPosition="47" endLine="98" endPosition="113" />
-    <scopeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="41" startPosition="5" endLine="43" endPosition="51">
+    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="72" startPosition="58" endLine="72" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="29" startPosition="89" endLine="30" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="31" startPosition="48" endLine="32" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="31" startPosition="48" endLine="32" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="32" startPosition="82" endLine="33" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="32" startPosition="82" endLine="33" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="34" startPosition="80" endLine="35" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="34" startPosition="80" endLine="35" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="35" startPosition="81" endLine="36" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2886182022232400628" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="39" startPosition="89" endLine="40" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400628" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="40" startPosition="67" endLine="41" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400628" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="41" startPosition="69" endLine="42" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2886182022232400628" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="41" startPosition="69" endLine="42" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2886182022232400628" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="42" startPosition="76" endLine="43" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2886182022232400628" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="43" startPosition="256" endLine="44" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="47" startPosition="88" endLine="48" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="48" startPosition="87" endLine="49" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="49" startPosition="47" endLine="50" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="51" startPosition="5" endLine="52" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="52" startPosition="42" endLine="53" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="54" startPosition="5" endLine="55" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="55" startPosition="34" endLine="56" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1217890683011" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="59" startPosition="88" endLine="60" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217890683011" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="60" startPosition="87" endLine="61" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217890683011" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="61" startPosition="47" endLine="62" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217890683011" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="62" startPosition="76" endLine="63" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217890683011" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="63" startPosition="34" endLine="64" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="67" startPosition="87" endLine="68" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="68" startPosition="81" endLine="69" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="69" startPosition="32" endLine="70" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="70" startPosition="45" endLine="71" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="71" startPosition="26" endLine="72" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="72" startPosition="58" endLine="73" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="73" startPosition="73" endLine="74" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="74" startPosition="57" endLine="75" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="76" startPosition="35" endLine="77" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="77" startPosition="72" endLine="78" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="78" startPosition="78" endLine="79" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="80" startPosition="10" endLine="81" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2886182022232400630" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="88" startPosition="47" endLine="89" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1217890683011" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="60" startPosition="87" endLine="62" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="71" startPosition="26" endLine="73" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2886182022232400630" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="85" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu_a0a0#()V" />
+    <nodeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2886182022232400630" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="88" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReplacementConceptName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="50" startPosition="76" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="48" startPosition="87" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="75" startPosition="59" endLine="81" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2886182022232400628" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="39" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_4ccleb_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1217890683011" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="59" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_4ccleb_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="29" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_4ccleb_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="47" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_4ccleb_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="67" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_4ccleb_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="72" startPosition="58" endLine="72" endPosition="58" />
+    <scopeInfo nodeId="2886182022232400630" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="85" startPosition="81" endLine="85" endPosition="81" />
+    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" />
+    <scopeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="48" />
+    <scopeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="31" startPosition="48" endLine="32" endPosition="82" />
+    <scopeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="32" startPosition="82" endLine="33" endPosition="81" />
+    <scopeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="80" />
+    <scopeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="34" startPosition="80" endLine="35" endPosition="81" />
+    <scopeInfo nodeId="2886182022232400628" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="41" startPosition="69" endLine="42" endPosition="76" />
+    <scopeInfo nodeId="2886182022232400630" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="88" startPosition="47" endLine="89" endPosition="113" />
+    <scopeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="51" startPosition="5" endLine="53" endPosition="51">
       <varInfo nodeId="1217890672213" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1217890683011" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="50" startPosition="87" endLine="52" endPosition="76" />
-    <scopeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="61" startPosition="26" endLine="63" endPosition="73" />
-    <scopeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="79" startPosition="58" endLine="81" endPosition="76" />
-    <scopeInfo nodeId="1217890126936" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="94" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="1217890683011" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="60" startPosition="87" endLine="62" endPosition="76" />
+    <scopeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="71" startPosition="26" endLine="73" endPosition="73" />
+    <scopeInfo nodeId="2886182022232400630" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="85" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="1217890062975" varName="editorContext" />
       <varInfo nodeId="1217890062975" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="66" startPosition="35" endLine="69" endPosition="105">
+    <scopeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="76" startPosition="35" endLine="79" endPosition="105">
       <varInfo nodeId="1217890728561" varName="manager" />
       <varInfo nodeId="1217890728561" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="85" startPosition="35" endLine="88" endPosition="105">
-      <varInfo nodeId="1217890083480" varName="manager" />
-      <varInfo nodeId="1217890083480" varName="opContext" />
+    <scopeInfo nodeId="2886182022232400630" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="88" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="2886182022232400628" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="39" startPosition="89" endLine="44" endPosition="22">
+      <varInfo nodeId="2886182022232400628" varName="editorCell" />
+      <varInfo nodeId="2886182022232400628" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1217890126936" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="97" startPosition="0" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="78" startPosition="26" endLine="82" endPosition="255" />
-    <scopeInfo nodeId="1217890683011" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="49" startPosition="88" endLine="54" endPosition="22">
+    <scopeInfo nodeId="1217890683011" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="59" startPosition="88" endLine="64" endPosition="22">
       <varInfo nodeId="1217890683011" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="38" startPosition="87" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="27" startPosition="89" endLine="34" endPosition="22">
+    <scopeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="48" startPosition="87" endLine="54" endPosition="5" />
+    <scopeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="29" startPosition="89" endLine="36" endPosition="22">
       <varInfo nodeId="1217890066571" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1217890683011" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="49" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="2886182022232400628" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="39" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="2886182022232400628" varName="editorContext" />
+      <varInfo nodeId="2886182022232400628" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217890683011" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="59" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="1217890683011" varName="editorContext" />
       <varInfo nodeId="1217890683011" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="27" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="1217890066571" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="29" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1217890066571" varName="editorContext" />
       <varInfo nodeId="1217890066571" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="37" startPosition="88" endLine="46" endPosition="22">
+    <scopeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="47" startPosition="88" endLine="56" endPosition="22">
       <varInfo nodeId="1217890672213" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="37" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1217890672213" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="47" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="1217890672213" varName="editorContext" />
       <varInfo nodeId="1217890672213" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="57" startPosition="87" endLine="71" endPosition="22">
+    <scopeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="67" startPosition="87" endLine="81" endPosition="22">
       <varInfo nodeId="1217890728561" varName="attributeConcept" />
       <varInfo nodeId="1217890728561" varName="attributeKind" />
       <varInfo nodeId="1217890728561" varName="editorCell" />
       <varInfo nodeId="1217890728561" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="57" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="1217890728561" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="67" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="1217890728561" varName="editorContext" />
       <varInfo nodeId="1217890728561" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="74" startPosition="95" endLine="90" endPosition="22">
-      <varInfo nodeId="1217890083480" varName="attributeConcept" />
-      <varInfo nodeId="1217890083480" varName="attributeKind" />
-      <varInfo nodeId="1217890083480" varName="editorCell" />
-      <varInfo nodeId="1217890083480" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="1217890083480" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="74" startPosition="0" endLine="92" endPosition="0">
-      <varInfo nodeId="1217890083480" varName="editorContext" />
-      <varInfo nodeId="1217890083480" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="1217890126936" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="93" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_UserObjectAccessBase_Editor$ReplaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu_a0a0" />
-    <unitInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="22" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_UserObjectAccessBase_Editor" />
+    <unitInfo nodeId="2886182022232400630" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="84" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_UserObjectAccessBase_Editor$ReplaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu_a0a0" />
+    <unitInfo nodeId="1217890062975" fileName="GenerationContextOp_UserObjectAccessBase_Editor.java" startLine="24" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_UserObjectAccessBase_Editor" />
   </root>
   <root nodeId="1217960436029" modelId="r:00000000-0000-4000-0000-011c895902f0(jetbrains.mps.lang.generator.generationContext.editor)">
-    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="54" startPosition="58" endLine="54" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="71" startPosition="58" endLine="71" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="27" startPosition="89" endLine="28" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="28" startPosition="96" endLine="29" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="28" startPosition="96" endLine="29" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="29" startPosition="48" endLine="30" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="29" startPosition="48" endLine="30" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="30" startPosition="88" endLine="31" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="30" startPosition="88" endLine="31" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="31" startPosition="80" endLine="32" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="31" startPosition="80" endLine="32" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="32" startPosition="81" endLine="33" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="32" startPosition="81" endLine="33" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="33" startPosition="80" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="37" startPosition="88" endLine="38" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="38" startPosition="88" endLine="39" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="39" startPosition="47" endLine="40" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="41" startPosition="5" endLine="42" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="42" startPosition="42" endLine="43" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="44" startPosition="5" endLine="45" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="45" startPosition="34" endLine="46" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="49" startPosition="87" endLine="50" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="50" startPosition="81" endLine="51" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="51" startPosition="36" endLine="52" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="52" startPosition="42" endLine="53" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="53" startPosition="26" endLine="54" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="54" startPosition="58" endLine="55" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="55" startPosition="73" endLine="56" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="56" startPosition="57" endLine="57" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="58" startPosition="35" endLine="59" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="59" startPosition="72" endLine="60" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="60" startPosition="78" endLine="61" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="62" startPosition="10" endLine="63" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="66" startPosition="87" endLine="67" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="67" startPosition="81" endLine="68" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="68" startPosition="38" endLine="69" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="69" startPosition="39" endLine="70" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="70" startPosition="26" endLine="71" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="71" startPosition="58" endLine="72" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="72" startPosition="73" endLine="73" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="73" startPosition="57" endLine="74" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="75" startPosition="35" endLine="76" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="76" startPosition="72" endLine="77" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="77" startPosition="78" endLine="78" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="79" startPosition="10" endLine="80" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="83" startPosition="95" endLine="84" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="84" startPosition="89" endLine="85" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="85" startPosition="30" endLine="86" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="86" startPosition="43" endLine="87" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="87" startPosition="26" endLine="88" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="88" startPosition="58" endLine="89" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="89" startPosition="50" endLine="90" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="90" startPosition="76" endLine="91" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="91" startPosition="245" endLine="92" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="92" startPosition="57" endLine="93" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="94" startPosition="35" endLine="95" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="95" startPosition="72" endLine="96" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="96" startPosition="78" endLine="97" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="98" startPosition="10" endLine="99" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217960617889" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="106" startPosition="47" endLine="107" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="53" startPosition="26" endLine="55" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="70" startPosition="26" endLine="72" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="88" startPosition="58" endLine="90" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217960617889" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="103" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceWith_GenerationContextOp_ShowMessageBase_cellMenu_a0a0#()V" />
-    <nodeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1217960617889" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="106" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReplacementConceptName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="40" startPosition="76" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="87" startPosition="26" endLine="91" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="38" startPosition="88" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="57" startPosition="59" endLine="63" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="74" startPosition="59" endLine="80" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="93" startPosition="59" endLine="99" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="27" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_53ih5o_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="37" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_53ih5o_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="49" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_53ih5o_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="66" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_53ih5o_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="83" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConceptProperty_53ih5o_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <scopeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="54" startPosition="58" endLine="54" endPosition="58" />
-    <scopeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="71" startPosition="58" endLine="71" endPosition="58" />
-    <scopeInfo nodeId="1217960617889" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="103" startPosition="76" endLine="103" endPosition="76" />
-    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" />
-    <scopeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="28" startPosition="96" endLine="29" endPosition="48" />
-    <scopeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="29" startPosition="48" endLine="30" endPosition="88" />
-    <scopeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="30" startPosition="88" endLine="31" endPosition="80" />
-    <scopeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="31" startPosition="80" endLine="32" endPosition="81" />
-    <scopeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="32" startPosition="81" endLine="33" endPosition="80" />
-    <scopeInfo nodeId="1217960617889" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="106" startPosition="47" endLine="107" endPosition="108" />
-    <scopeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="41" startPosition="5" endLine="43" endPosition="51">
+    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="64" startPosition="58" endLine="64" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="81" startPosition="58" endLine="81" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="29" startPosition="89" endLine="30" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="31" startPosition="48" endLine="32" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="31" startPosition="48" endLine="32" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="32" startPosition="82" endLine="33" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="32" startPosition="82" endLine="33" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="33" startPosition="80" endLine="34" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="33" startPosition="80" endLine="34" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="34" startPosition="81" endLine="35" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="34" startPosition="81" endLine="35" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="35" startPosition="80" endLine="36" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2886182022232400707" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="39" startPosition="89" endLine="40" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400707" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="40" startPosition="67" endLine="41" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400707" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="41" startPosition="69" endLine="42" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2886182022232400707" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="41" startPosition="69" endLine="42" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2886182022232400707" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="42" startPosition="76" endLine="43" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2886182022232400707" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="43" startPosition="246" endLine="44" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="47" startPosition="88" endLine="48" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="48" startPosition="88" endLine="49" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="49" startPosition="47" endLine="50" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="51" startPosition="5" endLine="52" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="52" startPosition="42" endLine="53" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="54" startPosition="5" endLine="55" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="55" startPosition="34" endLine="56" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="59" startPosition="87" endLine="60" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="60" startPosition="81" endLine="61" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="61" startPosition="36" endLine="62" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="62" startPosition="42" endLine="63" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="63" startPosition="26" endLine="64" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="64" startPosition="58" endLine="65" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="65" startPosition="73" endLine="66" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="66" startPosition="57" endLine="67" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="68" startPosition="35" endLine="69" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="69" startPosition="72" endLine="70" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="70" startPosition="78" endLine="71" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="72" startPosition="10" endLine="73" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="76" startPosition="87" endLine="77" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="77" startPosition="81" endLine="78" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="78" startPosition="38" endLine="79" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="79" startPosition="39" endLine="80" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="80" startPosition="26" endLine="81" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="81" startPosition="58" endLine="82" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="82" startPosition="73" endLine="83" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="83" startPosition="57" endLine="84" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="85" startPosition="35" endLine="86" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="86" startPosition="72" endLine="87" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="87" startPosition="78" endLine="88" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="89" startPosition="10" endLine="90" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2886182022232400709" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="97" startPosition="47" endLine="98" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="63" startPosition="26" endLine="65" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="80" startPosition="26" endLine="82" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2886182022232400709" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="94" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceWith_GenerationContextOp_ShowMessageBase_cellMenu_a0a0#()V" />
+    <nodeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2886182022232400709" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReplacementConceptName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="50" startPosition="76" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="48" startPosition="88" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="67" startPosition="59" endLine="73" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="84" startPosition="59" endLine="90" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2886182022232400707" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="39" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_53ih5o_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="29" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_53ih5o_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="47" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_53ih5o_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="59" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_53ih5o_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="76" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_53ih5o_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="64" startPosition="58" endLine="64" endPosition="58" />
+    <scopeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="81" startPosition="58" endLine="81" endPosition="58" />
+    <scopeInfo nodeId="2886182022232400709" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="94" startPosition="76" endLine="94" endPosition="76" />
+    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" />
+    <scopeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="48" />
+    <scopeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="31" startPosition="48" endLine="32" endPosition="82" />
+    <scopeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="32" startPosition="82" endLine="33" endPosition="80" />
+    <scopeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="33" startPosition="80" endLine="34" endPosition="81" />
+    <scopeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="34" startPosition="81" endLine="35" endPosition="80" />
+    <scopeInfo nodeId="2886182022232400707" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="41" startPosition="69" endLine="42" endPosition="76" />
+    <scopeInfo nodeId="2886182022232400709" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="97" startPosition="47" endLine="98" endPosition="108" />
+    <scopeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="51" startPosition="5" endLine="53" endPosition="51">
       <varInfo nodeId="1217960507306" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="53" startPosition="26" endLine="55" endPosition="73" />
-    <scopeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="70" startPosition="26" endLine="72" endPosition="73" />
-    <scopeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="88" startPosition="58" endLine="90" endPosition="76" />
-    <scopeInfo nodeId="1217960617889" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="103" startPosition="0" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="63" startPosition="26" endLine="65" endPosition="73" />
+    <scopeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="80" startPosition="26" endLine="82" endPosition="73" />
+    <scopeInfo nodeId="2886182022232400709" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="94" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="1217960436029" varName="editorContext" />
       <varInfo nodeId="1217960436029" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="58" startPosition="35" endLine="61" endPosition="105">
+    <scopeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="68" startPosition="35" endLine="71" endPosition="105">
       <varInfo nodeId="1217960469679" varName="manager" />
       <varInfo nodeId="1217960469679" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="75" startPosition="35" endLine="78" endPosition="105">
+    <scopeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="85" startPosition="35" endLine="88" endPosition="105">
       <varInfo nodeId="1218048531617" varName="manager" />
       <varInfo nodeId="1218048531617" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="94" startPosition="35" endLine="97" endPosition="105">
-      <varInfo nodeId="1217960446064" varName="manager" />
-      <varInfo nodeId="1217960446064" varName="opContext" />
+    <scopeInfo nodeId="2886182022232400709" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="97" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="2886182022232400707" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="39" startPosition="89" endLine="44" endPosition="22">
+      <varInfo nodeId="2886182022232400707" varName="editorCell" />
+      <varInfo nodeId="2886182022232400707" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1217960617889" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="106" startPosition="0" endLine="109" endPosition="0" />
-    <scopeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="87" startPosition="26" endLine="91" endPosition="245" />
-    <scopeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="38" startPosition="88" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="27" startPosition="89" endLine="34" endPosition="22">
+    <scopeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="48" startPosition="88" endLine="54" endPosition="5" />
+    <scopeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="29" startPosition="89" endLine="36" endPosition="22">
       <varInfo nodeId="1217960440453" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="27" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="2886182022232400707" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="39" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="2886182022232400707" varName="editorContext" />
+      <varInfo nodeId="2886182022232400707" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217960440453" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="29" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1217960440453" varName="editorContext" />
       <varInfo nodeId="1217960440453" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="37" startPosition="88" endLine="46" endPosition="22">
+    <scopeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="47" startPosition="88" endLine="56" endPosition="22">
       <varInfo nodeId="1217960507306" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="37" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1217960507306" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="47" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="1217960507306" varName="editorContext" />
       <varInfo nodeId="1217960507306" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="49" startPosition="87" endLine="63" endPosition="22">
+    <scopeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="59" startPosition="87" endLine="73" endPosition="22">
       <varInfo nodeId="1217960469679" varName="attributeConcept" />
       <varInfo nodeId="1217960469679" varName="attributeKind" />
       <varInfo nodeId="1217960469679" varName="editorCell" />
       <varInfo nodeId="1217960469679" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="66" startPosition="87" endLine="80" endPosition="22">
+    <scopeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="76" startPosition="87" endLine="90" endPosition="22">
       <varInfo nodeId="1218048531617" varName="attributeConcept" />
       <varInfo nodeId="1218048531617" varName="attributeKind" />
       <varInfo nodeId="1218048531617" varName="editorCell" />
       <varInfo nodeId="1218048531617" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="49" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="1217960469679" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="59" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="1217960469679" varName="editorContext" />
       <varInfo nodeId="1217960469679" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="66" startPosition="0" endLine="82" endPosition="0">
+    <scopeInfo nodeId="1218048531617" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="76" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="1218048531617" varName="editorContext" />
       <varInfo nodeId="1218048531617" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="83" startPosition="95" endLine="99" endPosition="22">
-      <varInfo nodeId="1217960446064" varName="attributeConcept" />
-      <varInfo nodeId="1217960446064" varName="attributeKind" />
-      <varInfo nodeId="1217960446064" varName="editorCell" />
-      <varInfo nodeId="1217960446064" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="1217960446064" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="83" startPosition="0" endLine="101" endPosition="0">
-      <varInfo nodeId="1217960446064" varName="editorContext" />
-      <varInfo nodeId="1217960446064" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="1217960617889" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="102" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_ShowMessageBase_Editor$ReplaceWith_GenerationContextOp_ShowMessageBase_cellMenu_a0a0" />
-    <unitInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="22" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_ShowMessageBase_Editor" />
+    <unitInfo nodeId="2886182022232400709" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="93" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_ShowMessageBase_Editor$ReplaceWith_GenerationContextOp_ShowMessageBase_cellMenu_a0a0" />
+    <unitInfo nodeId="1217960436029" fileName="GenerationContextOp_ShowMessageBase_Editor.java" startLine="24" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_ShowMessageBase_Editor" />
   </root>
   <root nodeId="1218047951855" modelId="r:00000000-0000-4000-0000-011c895902f0(jetbrains.mps.lang.generator.generationContext.editor)">
     <nodeInfo nodeId="1218048120849" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="89" startPosition="58" endLine="89" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

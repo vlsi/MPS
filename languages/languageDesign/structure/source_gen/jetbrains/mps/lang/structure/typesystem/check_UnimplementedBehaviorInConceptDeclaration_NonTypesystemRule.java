@@ -10,13 +10,12 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_UnimplementedBehaviorInConceptDeclaration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -25,7 +24,7 @@ public class check_UnimplementedBehaviorInConceptDeclaration_NonTypesystemRule e
 
   public void applyRule(final SNode abstractConceptDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> methodDeclarations = AbstractConceptDeclaration_Behavior.call_getNotImplementedConceptMethods_1213877394339(abstractConceptDeclaration, GlobalScope.getInstance());
-    if (SConceptPropertyOperations.getBoolean(abstractConceptDeclaration, "abstract")) {
+    if (SPropertyOperations.getBoolean(abstractConceptDeclaration, "abstract")) {
       return;
     }
     if (SNodeOperations.isInstanceOf(abstractConceptDeclaration, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {

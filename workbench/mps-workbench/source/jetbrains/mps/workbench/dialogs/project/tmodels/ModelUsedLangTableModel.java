@@ -17,10 +17,6 @@ package jetbrains.mps.workbench.dialogs.project.tmodels;
 
 import jetbrains.mps.ide.properties.ModelProperties;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModel;
-
-import java.util.HashSet;
-import java.util.Set;
 
 public class ModelUsedLangTableModel extends UsedLangsTableModel<ModelProperties> {
   public ModelUsedLangTableModel(ModelProperties properties) {

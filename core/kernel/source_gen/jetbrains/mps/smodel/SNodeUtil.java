@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -174,11 +173,11 @@ public class SNodeUtil {
   }
 
   public static String getConceptShortDescription(SNode concept) {
-    return SConceptPropertyOperations.getString(concept, "shortDescription");
+    return SPropertyOperations.getString(concept, "conceptShortDescription");
   }
 
   public static String getConceptAlias(SNode concept) {
-    return SConceptPropertyOperations.getString(concept, "alias");
+    return SPropertyOperations.getString(concept, "conceptAlias");
   }
 
   public static String getResolveInfo(SNode node) {

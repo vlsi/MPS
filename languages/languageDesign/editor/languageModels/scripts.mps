@@ -29,14 +29,14 @@
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1234198385755">
-      <property name="category" nameId="tp33.1206123296179" value="editor language" />
       <property name="title" nameId="tp33.1177457669450" value="Horizontal Gap Migration" />
-      <property name="name" nameId="tpck.1169194664001" value="HorizontalGapMigration" />
+      <property name="category" nameId="tp33.1206123296179" value="editor language" />
       <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
+      <property name="name" nameId="tpck.1169194664001" value="HorizontalGapMigration" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1237726848485">
-      <property name="category" nameId="tp33.1206123296179" value="editor language" />
       <property name="title" nameId="tp33.1177457669450" value="Migration to Indent Layout" />
+      <property name="category" nameId="tp33.1206123296179" value="editor language" />
       <property name="name" nameId="tpck.1169194664001" value="MigrationToIndentLayout" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="113254018726283913">
@@ -1307,7 +1307,6 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8921588707434230752" resolveInfo="conceptAspect" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="8921588707434161194">
-              <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcn.6261424444345963020" resolveInfo="setBaseConcept" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8921588707434161209">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2970389781193035832" resolveInfo="applicableNode" />

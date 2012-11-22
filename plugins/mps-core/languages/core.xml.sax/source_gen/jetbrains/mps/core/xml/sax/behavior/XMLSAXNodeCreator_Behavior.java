@@ -4,6 +4,7 @@ package jetbrains.mps.core.xml.sax.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -14,6 +15,10 @@ public class XMLSAXNodeCreator_Behavior {
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode rule = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", false, false);
     return XMLSAXNodeRule_Behavior.call_getType_2264311582634140653(rule);
+  }
+
+  public static boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
+    return true;
   }
 
   @Deprecated

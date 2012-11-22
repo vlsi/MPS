@@ -7,14 +7,15 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.lang.core.editor.AliasEditorComponent;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -26,10 +27,17 @@ public class CommandType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2uesqr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2uesqr_a");
-    editorCell.addEditorCell(this.createConceptProperty_2uesqr_a0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_2uesqr_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_2uesqr_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_2uesqr_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_2uesqr_d0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_2uesqr_a0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new AliasEditorComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     return editorCell;
   }
 
@@ -56,25 +64,6 @@ public class CommandType_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new CommandType_Editor._Inline_2uesqr_a2a());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConceptProperty_2uesqr_a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-    provider.setRole("alias");
-    provider.setNoTargetText("<no alias>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("conceptProperty_alias");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

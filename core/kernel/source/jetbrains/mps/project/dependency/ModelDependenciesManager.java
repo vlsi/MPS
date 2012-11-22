@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project.dependency;
 
-import gnu.trove.THashSet;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -23,15 +23,17 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ModelDependenciesManager {
+
+  private static final Logger LOG = Logger.getLogger(ModelDependenciesManager.class);
 
   private SModel myModel;
   private MySModelWatcher mySModelWatcher;
@@ -48,7 +50,7 @@ public class ModelDependenciesManager {
   }
 
   public Iterable<ModuleReference> getAllImportedLanguages() {
-    if(myModel == null) throw new IllegalStateException("access after disposal");
+    if (myModel == null) throw new IllegalStateException("access after disposal");
 
     if (myInvalidatedFlag.compareAndSet(true, false)) {
       // lazy initialization
@@ -60,9 +62,14 @@ public class ModelDependenciesManager {
 
       Set<ModuleReference> result = new LinkedHashSet<ModuleReference>();
 
-      for (ModuleReference lang: myModel.importedLanguages()) {
+      for (ModuleReference lang : myModel.importedLanguages()) {
         result.add(lang);
-        myModuleWatcher.watchLanguage(ModuleRepositoryFacade.getInstance().getModule(lang, Language.class));
+        Language module = ModuleRepositoryFacade.getInstance().getModule(lang, Language.class);
+        if (module != null) {
+          myModuleWatcher.watchLanguage(module);
+        } else {
+          LOG.error("cannot find used language in repository " + lang.toString());
+        }
       }
 
       for (ModuleReference dk : myModel.importedDevkits()) {
@@ -75,18 +82,19 @@ public class ModelDependenciesManager {
           myModuleWatcher.watchLanguage(dkLang);
         }
 
-        for (DevKit exDevKit: devkit.getAllExtendedDevkits()) {
+        for (DevKit exDevKit : devkit.getAllExtendedDevkits()) {
           myModuleWatcher.watchDevKit(exDevKit);
         }
       }
       this.myCachedDeps = Collections.unmodifiableSet(result);
       myCacheInitGuard.countDown();
     }
-    while(true) {
+    while (true) {
       try {
         myCacheInitGuard.await();
         break;
-      } catch (InterruptedException e) {}
+      } catch (InterruptedException e) {
+      }
     }
     return myCachedDeps;
   }
@@ -179,22 +187,22 @@ public class ModelDependenciesManager {
       unregisterSelf();
     }
 
-    private void watchDevKit (DevKit devKit) {
+    private void watchDevKit(@NotNull DevKit devKit) {
       myWatchedModules.add(devKit);
     }
 
-    private void watchLanguage (Language language) {
+    private void watchLanguage(@NotNull Language language) {
       myWatchedModules.add(language);
     }
 
-    private void invalidateIfWatching (IModule module) {
+    private void invalidateIfWatching(IModule module) {
       if (myWatchedModules.contains(module)) {
         invalidate();
         unregisterSelf();
       }
     }
 
-    private void clear () {
+    private void clear() {
       myWatchedModules.clear();
     }
 

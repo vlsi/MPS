@@ -28,7 +28,7 @@ import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.PathUtil;
-import com.intellij.util.xmlb.XmlSerializerUtil;
+import jetbrains.mps.idea.core.facet.MPSConfigurationBean.State;
 import jetbrains.mps.idea.core.facet.ui.MPSFacetCommonTabUI;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.smodel.BootstrapLanguages;
@@ -43,7 +43,7 @@ import javax.swing.JComponent;
 /**
  * evgeny, 10/26/11
  */
-public class MPSFacetConfiguration implements FacetConfiguration, PersistentStateComponent<MPSConfigurationBean> {
+public class MPSFacetConfiguration implements FacetConfiguration, PersistentStateComponent<State> {
   private static final String FILE_SEPARATOR = "/";
   @NonNls
   private static final String SOURCE_GEN = "source_gen";
@@ -58,12 +58,18 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
     // ignore
   }
 
-  public MPSConfigurationBean getState() {
+  @NotNull
+  public MPSConfigurationBean getBean() {
     return myConfigurationBean;
   }
 
-  public void loadState(MPSConfigurationBean state) {
-    XmlSerializerUtil.copyBean(state, myConfigurationBean);
+  @Override
+  public State getState() {
+    return myConfigurationBean.toState();
+  }
+
+  public void loadState(State state) {
+    myConfigurationBean.loadFrom(state);
   }
 
   public FacetEditorTab[] createEditorTabs(FacetEditorContext facetEditorContext, FacetValidatorsManager facetValidatorsManager) {

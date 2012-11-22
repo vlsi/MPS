@@ -196,7 +196,7 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
       MPSFacet facet = chunk.getKey();
       final Set<File> modelsToMake = new HashSet<File>();
       for (final SModelDescriptor model : chunk.getValue()) {
-        modelsToMake.add(new File(((DefaultSModelDescriptor) model).getModelFile().getPath()));
+        modelsToMake.add(new File(((DefaultSModelDescriptor) model).getSource().getFile().getPath()));
       }
 
       // TODO: report actually generated models only

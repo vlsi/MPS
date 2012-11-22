@@ -1579,7 +1579,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7314351270975463289" resolveInfo="myModelDescriptor" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7314351270975463826">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~DefaultSModelDescriptor%disChanged()%cboolean" resolveInfo="isChanged" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~BaseEditableSModelDescriptor%disChanged()%cboolean" resolveInfo="isChanged" />
                     </node>
                   </node>
                 </node>
@@ -1855,7 +1855,7 @@
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7314351270975463289" resolveInfo="myModelDescriptor" />
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7314351270975463933">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~DefaultSModelDescriptor%dreloadFromDiskSafe()%cvoid" resolveInfo="reloadFromDiskSafe" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~BaseEditableSModelDescriptor%dreloadFromDiskSafe()%cvoid" resolveInfo="reloadFromDiskSafe" />
                                   </node>
                                 </node>
                               </node>
@@ -2267,14 +2267,19 @@
                                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7314351270975463283" resolveInfo="myModule" />
                                         </node>
                                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7314351270975464096">
-                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dcreateModel(jetbrains%dmps%dsmodel%dSModelFqName,jetbrains%dmps%dproject%dSModelRoot,jetbrains%dmps%dproject%dIModule$ModelAdjuster)%cjetbrains%dmps%dsmodel%ddescriptor%dEditableSModelDescriptor" resolveInfo="createModel" />
-                                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7314351270975464097">
-                                            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7314351270975464098">
-                                              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="7314351270975463225" resolveInfo="DiskMemoryConflictsTest" />
-                                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7314351270975463268" resolveInfo="MODEL_REFERENCE" />
+                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dcreateModel(java%dlang%dString,org%djetbrains%dmps%dopenapi%dpersistence%dModelRoot,jetbrains%dmps%dproject%dIModule$ModelAdjuster)%cjetbrains%dmps%dsmodel%ddescriptor%dEditableSModelDescriptor" resolveInfo="createModel" />
+                                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1666927970460415915">
+                                            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1666927970460442012">
+                                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelFqName%dtoString()%cjava%dlang%dString" resolveInfo="toString" />
                                             </node>
-                                            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7314351270975464099">
-                                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelReference%dgetSModelFqName()%cjetbrains%dmps%dsmodel%dSModelFqName" resolveInfo="getSModelFqName" />
+                                            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7314351270975464097">
+                                              <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7314351270975464098">
+                                                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="7314351270975463225" resolveInfo="DiskMemoryConflictsTest" />
+                                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7314351270975463268" resolveInfo="MODEL_REFERENCE" />
+                                              </node>
+                                              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7314351270975464099">
+                                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelReference%dgetSModelFqName()%cjetbrains%dmps%dsmodel%dSModelFqName" resolveInfo="getSModelFqName" />
+                                              </node>
                                             </node>
                                           </node>
                                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5013162914354700457">
@@ -2284,11 +2289,11 @@
                                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7314351270975463283" resolveInfo="myModule" />
                                                 </node>
                                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7314351270975464103">
-                                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetSModelRoots()%cjava%dutil%dCollection" resolveInfo="getSModelRoots" />
+                                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetModelRoots()%cjava%dlang%dIterable" resolveInfo="getModelRoots" />
                                                 </node>
                                               </node>
                                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5013162914354700454">
-                                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~Collection%diterator()%cjava%dutil%dIterator" resolveInfo="iterator" />
+                                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Iterable%diterator()%cjava%dutil%dIterator" resolveInfo="iterator" />
                                               </node>
                                             </node>
                                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5013162914354700463">
@@ -2333,7 +2338,7 @@
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7314351270975463289" resolveInfo="myModelDescriptor" />
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7314351270975464119">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~DefaultSModelDescriptor%dsave()%cvoid" resolveInfo="save" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~BaseEditableSModelDescriptor%dsave()%cvoid" resolveInfo="save" />
                                   </node>
                                 </node>
                               </node>
@@ -2398,7 +2403,7 @@
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7314351270975463289" resolveInfo="myModelDescriptor" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7314351270975464143">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~DefaultSModelDescriptor%dreloadFromDisk()%cvoid" resolveInfo="reloadFromDisk" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~BaseEditableSModelDescriptor%dreloadFromDisk()%cvoid" resolveInfo="reloadFromDisk" />
                                 </node>
                               </node>
                             </node>

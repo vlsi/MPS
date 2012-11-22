@@ -5,18 +5,19 @@ package jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1199879576743(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.getGetterName(SConceptPropertyOperations.getString(_context.getNode(), "alias"));
+    return NameUtil.getGetterName(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), "conceptAlias"));
   }
 
   public static Object referenceMacro_GetReferent_1170351924342(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SConceptPropertyOperations.getString(_context.getNode(), "alias");
+    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), "conceptAlias");
   }
 
   public static Object referenceMacro_GetReferent_1199971770629(final IOperationContext operationContext, final ReferenceMacroContext _context) {

@@ -19,7 +19,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
-import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -53,14 +52,14 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   private SModel createModel() {
-    SModel model = getSource().loadSModel((IModule) myModule, this, ModelLoadingState.FULLY_LOADED).getModel();
+    SModel model = getSource().loadSModel((IModule) myModule, this);
     updateDiskTimestamp();
     return model;
   }
 
   @Override
-  public ModelLoadingState getLoadingState() {
-    return mySModel == null ? ModelLoadingState.NOT_LOADED : ModelLoadingState.FULLY_LOADED;
+  public boolean isLoaded() {
+    return mySModel !=null;
   }
 
   @Override
@@ -90,12 +89,11 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
       updateDiskTimestamp();
       return;
     }
-    ModelLoadingState state = ModelLoadingState.FULLY_LOADED;
-    final ModelLoadResult result = getSource().loadSModel((IModule) myModule, this, state);
+    final SModel result = getSource().loadSModel((IModule) myModule, this);
     updateDiskTimestamp();
     replaceModel(new Runnable() {
       public void run() {
-        mySModel = result.getModel();
+        mySModel = result;
       }
     });
   }

@@ -51,8 +51,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.textGen.typesystem.typeof_AbstractAppendPart_InferenceRule" file="typeof_AbstractAppendPart_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -90,8 +88,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.textGen.typesystem.typeof_ConceptTextGenDeclaration_InferenceRule" file="typeof_ConceptTextGenDeclaration_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
@@ -104,8 +100,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.textGen.typesystem.typeof_FoundErrorOperation_InferenceRule" file="typeof_FoundErrorOperation_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
@@ -119,8 +113,6 @@
   <dependency className="jetbrains.mps.lang.textGen.typesystem.typeof_NodeParameter_InferenceRule" file="typeof_NodeParameter_InferenceRule.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -134,8 +126,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.textGen.typesystem.typeof_NodePart_InferenceRule" file="typeof_NodePart_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
@@ -159,8 +149,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.textGen.typesystem.typeof_ReferenceAppendPart_InferenceRule" file="typeof_ReferenceAppendPart_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
@@ -173,8 +161,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.textGen.typesystem.typeof_SimplestTextGenOperation_InferenceRule" file="typeof_SimplestTextGenOperation_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

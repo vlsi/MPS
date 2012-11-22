@@ -4,6 +4,7 @@ package jetbrains.mps.ui.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -14,6 +15,10 @@ public class UIObjectReference_Behavior {
 
   public static SNode virtual_getDeclaration_3262277503800831941(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "declaration", false);
+  }
+
+  public static boolean virtual_legalAsStatement_1262430001741498032(SConcept thisConcept) {
+    return true;
   }
 
   @Deprecated

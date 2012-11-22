@@ -18,7 +18,9 @@ import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.testbench.CheckProjectStructureHelper;
 import jetbrains.mps.testbench.junit.Order;
 import jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithMake;
+import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -26,10 +28,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 
 /**
  * User: fyodor
@@ -55,7 +59,15 @@ public class CheckProjectStructure {
     HELPER = new CheckProjectStructureHelper();
     HELPER.init(new String[][]{{"samples_home", System.getProperty("user.dir") + "/samples"}});
 
-    List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), false);
+//    String[] excludes = new String[] { "IdeaPlugin" };
+//
+//    String mpsDir = System.getProperty("user.dir");
+//    Set<IFile> excludeSet = new HashSet<IFile>();
+//    for (String e: excludes) {
+//      excludeSet.add( FileSystem.getInstance().getFileByPath(mpsDir + File.separator + e) );
+//    }
+
+    List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), ProjectDirExclude.excludeSet, false);
 
     ArrayList<Object[]> res = new ArrayList<Object[]>();
     for (ModuleHandle moduleHandle : moduleHandles) {
@@ -78,7 +90,7 @@ public class CheckProjectStructure {
 
   @BeforeClass
   public static void init() {
-    CheckProjectStructureHelper.loadModules(ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), false));
+    CheckProjectStructureHelper.loadModules(ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), ProjectDirExclude.excludeSet, false));
   }
 
   @AfterClass

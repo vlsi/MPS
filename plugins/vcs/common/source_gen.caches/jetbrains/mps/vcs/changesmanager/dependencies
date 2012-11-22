@@ -157,7 +157,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepositoryListener" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifference" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceBroadcaster" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceListener" />

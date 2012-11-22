@@ -4,6 +4,7 @@ package jetbrains.mps.lang.actions.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class QueryFunction_ParameterizedSubstitute_Handler_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public QueryFunction_ParameterizedSubstitute_Handler_BehaviorDescriptor() {
@@ -15,6 +16,10 @@ public class QueryFunction_ParameterizedSubstitute_Handler_BehaviorDescriptor ex
 
   public boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
     return QueryFunction_ParameterizedSubstitute_Handler_Behavior.virtual_usesParameterObjectFor_1213877374432(thisNode, parameter);
+  }
+
+  public boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
+    return QueryFunction_ParameterizedSubstitute_Handler_Behavior.virtual_usesParameterObject_1262430001741497984(thisConcept);
   }
 
   @Override

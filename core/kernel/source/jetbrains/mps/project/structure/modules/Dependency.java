@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.structure.modules;
 
+import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 
 public class Dependency {
@@ -57,5 +58,18 @@ public class Dependency {
     result.myReexport = myReexport;
 
     return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if(!(obj instanceof Dependency))
+      return false;
+    Dependency dependency = (Dependency)obj;
+    return myReexport == dependency.myReexport && myModuleRef.equals(dependency.myModuleRef);
+  }
+
+  @Override
+  public int hashCode() {
+    return (new Pair<ModuleReference,Boolean>(myModuleRef, myReexport)).hashCode();
   }
 }

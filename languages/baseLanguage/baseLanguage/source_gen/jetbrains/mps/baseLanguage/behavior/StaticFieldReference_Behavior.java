@@ -10,6 +10,7 @@ import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 public class StaticFieldReference_Behavior {
@@ -49,6 +50,10 @@ public class StaticFieldReference_Behavior {
         null
       );
     }
+  }
+
+  public static boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
+    return true;
   }
 
   private static IModule check_o8sx3d_a0d0a(SModelDescriptor checkedDotOperand) {

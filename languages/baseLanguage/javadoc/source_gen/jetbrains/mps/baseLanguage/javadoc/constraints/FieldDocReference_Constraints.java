@@ -18,8 +18,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -47,7 +45,7 @@ public class FieldDocReference_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration")).removeWhere(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return SLinkOperations.getTarget(it, "visibility", true) == new FieldDocReference_Constraints.QuotationClass_z69vxe_a0a0a0a0a0a0a0a0a0a1a0b0a1a0().createNode();
+                return SLinkOperations.getTarget(it, "visibility", true) == _quotation_createNode_z69vxe_a0a0a0a0a0a();
               }
             });
           }
@@ -62,20 +60,9 @@ public class FieldDocReference_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  public static class QuotationClass_z69vxe_a0a0a0a0a0a0a0a0a0a1a0b0a1a0 {
-    public QuotationClass_z69vxe_a0a0a0a0a0a0a0a0a0a1a0b0a1a0() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_z69vxe_a0a0a0a0a0a() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
   }
 }

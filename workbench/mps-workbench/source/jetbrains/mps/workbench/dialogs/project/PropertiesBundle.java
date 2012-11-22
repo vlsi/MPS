@@ -27,13 +27,9 @@ public class PropertiesBundle {
   private static Reference<ResourceBundle> ourBundle;
 
   @NonNls
-  private static final String BUNDLE = "jetbrains.mps.idea.core.MPSBundle";
+  private static final String BUNDLE = "jetbrains.mps.workbench.dialogs.project.UIStrings";
 
   public static String message(@PropertyKey(resourceBundle = BUNDLE) String key, Object... params) {
-    return CommonBundle.message(getBundle(), key, params);
-  }
-
-  public static String getString(@PropertyKey(resourceBundle = BUNDLE) String key, Object... params) {
     return CommonBundle.message(getBundle(), key, params);
   }
 

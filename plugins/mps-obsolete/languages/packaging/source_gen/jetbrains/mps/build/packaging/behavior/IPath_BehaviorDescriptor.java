@@ -4,7 +4,9 @@ package jetbrains.mps.build.packaging.behavior;
 
 import java.io.File;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public interface IPath_BehaviorDescriptor {
   public File virtual_getFile_1233322718999(SNode thisNode);
+  public boolean virtual_canStartFromBasedir_1262430001741498253(SConcept thisConcept);
 }

@@ -5,6 +5,7 @@ package jetbrains.mps.ui.behavior;
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.ILocalReference_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class UIObjectReference_BehaviorDescriptor extends Expression_BehaviorDescriptor implements ILocalReference_BehaviorDescriptor {
   public UIObjectReference_BehaviorDescriptor() {
@@ -12,6 +13,10 @@ public class UIObjectReference_BehaviorDescriptor extends Expression_BehaviorDes
 
   public SNode virtual_getDeclaration_3262277503800831941(SNode thisNode) {
     return UIObjectReference_Behavior.virtual_getDeclaration_3262277503800831941(thisNode);
+  }
+
+  public boolean virtual_legalAsStatement_1262430001741498032(SConcept thisConcept) {
+    return UIObjectReference_Behavior.virtual_legalAsStatement_1262430001741498032(thisConcept);
   }
 
   @Override

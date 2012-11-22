@@ -53,12 +53,13 @@ public class ModelReader4 implements IModelReader {
     return 4;
   }
 
-  public SModel readModel(Document document, SModelHeader header) {
+  @Override
+  public DefaultSModel readModel(Document document, SModelHeader header) {
     SModelVersionsInfo versionsInfo = new SModelVersionsInfo();
     Element rootElement = document.getRootElement();
 
     SModelReference modelReference = SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
-    SModel model = new SModel(modelReference);
+    DefaultSModel model = new DefaultSModel(modelReference);
     model.setPersistenceVersion(getVersion());
     model.getSModelHeader().updateDefaults(header);
 
@@ -163,7 +164,7 @@ public class ModelReader4 implements IModelReader {
     return model;
   }
 
-  protected void readRefactorings(Element rootElement, SModel model) {
+  protected void readRefactorings(Element rootElement, DefaultSModel model) {
     Element history = rootElement.getChild("refactoringHistory");
     if (history != null) {
       Element copy = (Element) history.clone();

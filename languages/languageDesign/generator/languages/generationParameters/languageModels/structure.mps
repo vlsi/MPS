@@ -9,20 +9,29 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8484425748929510068">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="generation parameter" />
       <property name="name" nameId="tpck.1169194664001" value="DefaultGeneratorParameter" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="parameter" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8484425748929510072">
-      <property name="name" nameId="tpck.1169194664001" value="DefaultGeneratorParameterContainer" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/parameters.png" />
+      <property name="name" nameId="tpck.1169194664001" value="DefaultGeneratorParameterContainer" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="parameter" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="generator parameters" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3064182000795631740">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="parameter" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="DefaultGenerationParameterId" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="parameter" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="genParameter&lt;..&gt;" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
   </roots>
@@ -33,16 +42,8 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8484425748929510070">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="8484425748929510071">
-      <property name="value" nameId="tpce.1105725733873" value="generation parameter" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
-    </node>
   </root>
   <root id="8484425748929510072">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="650531548512004879">
-      <property name="value" nameId="tpce.1105725733873" value="generator parameters" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8484425748929510073">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="parameters" />
@@ -54,10 +55,6 @@
     </node>
   </root>
   <root id="3064182000795631740">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="3064182000795663207">
-      <property name="value" nameId="tpce.1105725733873" value="genParameter&lt;..&gt;" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3064182000795631810">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
       <property name="role" nameId="tpce.1071599776563" value="container" />

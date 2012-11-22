@@ -9,13 +9,15 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.lang.core.editor.AliasEditorComponent;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
-import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
@@ -41,8 +43,16 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, true);
     }
     editorCell.addEditorCell(this.createRefNode_89tgy3_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConceptProperty_89tgy3_b0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_89tgy3_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_89tgy3_c0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_89tgy3_b0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new AliasEditorComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BaseAssignmentExpression_Editor.ReplaceWith_BaseAssignmentExpression_cellMenu_a0b0(), new BaseAssignmentExpression_Editor.BaseAssignmentExpression_generic_cellMenu_b0b0()}));
     return editorCell;
   }
 
@@ -80,25 +90,6 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
     }
     AssignmentExpression_RightArgument_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConceptProperty_89tgy3_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-    provider.setRole("alias");
-    provider.setNoTargetText("<no operation>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("conceptProperty_alias");
-    BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BaseAssignmentExpression_Editor.ReplaceWith_BaseAssignmentExpression_cellMenu_a0b0(), new BaseAssignmentExpression_Editor.BaseAssignmentExpression_generic_cellMenu_b0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

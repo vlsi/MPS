@@ -5,11 +5,12 @@ package jetbrains.mps.lang.generator.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class NodeMacro_Behavior {
@@ -32,7 +33,7 @@ public class NodeMacro_Behavior {
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder builder = new StringBuilder();
     boolean newWord = false;
-    for (char ch : SConceptPropertyOperations.getString(thisNode, "alias").toCharArray()) {
+    for (char ch : SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias").toCharArray()) {
       if (ch == '$' || ch == '_') {
         newWord = true;
         continue;
@@ -76,6 +77,14 @@ public class NodeMacro_Behavior {
     }
     SNode rootAnnotation = AttributeOperations.getAttribute(SNodeOperations.getContainingRoot(thisNode), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")));
     return SLinkOperations.getTarget(SNodeOperations.cast(rootAnnotation, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), "applicableConcept", false);
+  }
+
+  public static String virtual_getRole_1262430001741497900(SConcept thisConcept) {
+    return "nodeMacro";
+  }
+
+  public static boolean virtual_multiple_1262430001741497972(SConcept thisConcept) {
+    return true;
   }
 
   @Deprecated

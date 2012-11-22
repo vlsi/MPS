@@ -4,18 +4,18 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class LookRegexp_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    return SConceptPropertyOperations.getString(thisNode, "alias") + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "regexp", true), "virtual_getString_1222432436326", new Object[]{vars}) + ")";
+    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "regexp", true), "virtual_getString_1222432436326", new Object[]{vars}) + ")";
   }
 
   @Deprecated

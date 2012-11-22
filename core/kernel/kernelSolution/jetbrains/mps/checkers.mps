@@ -848,7 +848,6 @@
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1809527500895303918">
-                            <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.1213877404258" resolveInfo="getFqName" />
                           </node>
                         </node>
@@ -5851,7 +5850,6 @@
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="6631111943583857273">
-                    <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.3393165121846091591" resolveInfo="suppress" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6631111943583857280">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6803901086853929096" resolveInfo="node" />
@@ -5919,7 +5917,6 @@
                                 </node>
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="8885350123586411653">
-                                <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.3393165121846091591" resolveInfo="suppress" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8885350123586411654">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6803901086853929096" resolveInfo="node" />

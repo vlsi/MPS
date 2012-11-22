@@ -9,7 +9,8 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AbstractAction_Constraints extends BaseConstraintsDescriptor {
   public AbstractAction_Constraints() {
@@ -34,7 +35,7 @@ public class AbstractAction_Constraints extends BaseConstraintsDescriptor {
             node.getSNodeId().toString() :
             id
           );
-          return SConceptPropertyOperations.getString(node, "alias") + "$" + (id).replace('.', '-');
+          return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias") + "$" + (id).replace('.', '-');
 
         }
       }

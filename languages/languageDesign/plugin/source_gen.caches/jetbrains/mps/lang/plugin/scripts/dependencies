@@ -2,8 +2,6 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.plugin.scripts.ConvertActionParameterCondition_MigrationScript" file="ConvertActionParameterCondition_MigrationScript.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
@@ -16,22 +14,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.plugin.scripts.MigrateToDispatchBehaviorCalls_MigrationScript" file="MigrateToDispatchBehaviorCalls_MigrationScript.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.plugin.scripts.Mps25ApiMigration_MigrationScript" file="Mps25ApiMigration_MigrationScript.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.ide.navigation.NodeNavigatable" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

@@ -9,8 +9,8 @@
   <import index="agsu" modelUID="r:57521e28-7db0-46ec-92c2-8736b3aa197c(jetbrains.mps.debug.sampleLanguage.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1816315258006256015">
-      <property name="name" nameId="tpck.1169194664001" value="WannabeClass" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="WannabeClass" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1816315258006256016">
@@ -25,8 +25,8 @@
   <root id="1816315258006256015">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1816315258006256080">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <property name="role" nameId="tpce.1071599776563" value="method" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1816315258006256016" resolveInfo="WannabeMethod" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1816315258006256079">
@@ -57,9 +57,6 @@
       <property name="role" nameId="tpce.1071599776563" value="method" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1816315258006256016" resolveInfo="WannabeMethod" />
-    </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="1816315258006280164">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpee.1241531154556" resolveInfo="legalAsStatement" />
     </node>
   </root>
 </model>

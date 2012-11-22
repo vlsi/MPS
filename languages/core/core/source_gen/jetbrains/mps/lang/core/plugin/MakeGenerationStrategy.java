@@ -22,6 +22,7 @@ public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
     this.isIncremental = isIncremental;
   }
 
+  @Override
   public GenerationDependencies getDependencies(SModelDescriptor descriptor) {
     return (isIncremental ?
       GenerationDependenciesCache.getInstance().get(descriptor) :
@@ -29,14 +30,17 @@ public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
     );
   }
 
+  @Override
   public GenerationCacheContainer getContainer() {
     return cache;
   }
 
-  public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext context) {
-    if (!(sm instanceof GeneratableSModelDescriptor)) {
+  @Override
+  public Map<String, String> getModelHashes(SModelDescriptor md, IOperationContext context) {
+    if (!(md instanceof GeneratableSModelDescriptor)) {
       return null;
     }
+    GeneratableSModelDescriptor sm = (GeneratableSModelDescriptor) md;
     if (!(sm.isGeneratable())) {
       return null;
     }
@@ -53,6 +57,7 @@ public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
     );
   }
 
+  @Override
   public boolean isIncrementalEnabled() {
     return isIncremental;
   }

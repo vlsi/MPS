@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-4a788f2wbaecxu29qnx6yu7tzfqnn3z">
-  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-cjp3x7kpslsgnhml4bi405qvj66t1vk" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-ajx3tbmj913lpllsy57180fd07jxqa3" />
   <dep model="r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)" hash="-224hjkpf9abpcwb0makbc6dzb2sojql" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-3223m9cg8337am9br9ikluvywbkblf4" />
-  <common hash="-5u2fm367ou057w2633yfze7n4jj0ewr">
-    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
+  <common hash="-5u2fm367ou057w2633yfze7n4jj0ewr" />
   <source id="5608160002100096676" name="IOutlook" hash="-bd94qq3wbxsmt344xejm8vsn65u195s">
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)" />
     <file name="IOutlook.java" />
   </source>

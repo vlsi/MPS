@@ -260,114 +260,95 @@
     <unitInfo nodeId="2838654975956757964" fileName="CustomOperatorDeclaration_Editor.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.editor.CustomOperatorDeclaration_Editor" />
   </root>
   <root nodeId="2838654975957155511" modelId="r:13d16a02-6fc1-4986-8d3c-61aadbaeccd7(jetbrains.mps.baseLanguage.overloadedOperators.editor)">
-    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2838654975957155511" fileName="BinaryOperationReference_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2838654975957155513" fileName="BinaryOperationReference_Editor.java" startLine="22" startPosition="89" endLine="23" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2838654975957155513" fileName="BinaryOperationReference_Editor.java" startLine="23" startPosition="96" endLine="24" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2838654975957155513" fileName="BinaryOperationReference_Editor.java" startLine="23" startPosition="96" endLine="24" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2838654975957155513" fileName="BinaryOperationReference_Editor.java" startLine="24" startPosition="48" endLine="25" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2838654975957155513" fileName="BinaryOperationReference_Editor.java" startLine="24" startPosition="48" endLine="25" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2838654975957155513" fileName="BinaryOperationReference_Editor.java" startLine="25" startPosition="80" endLine="26" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="29" startPosition="87" endLine="30" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="31" startPosition="40" endLine="32" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="32" startPosition="53" endLine="33" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="33" startPosition="26" endLine="34" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="34" startPosition="96" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="35" startPosition="58" endLine="36" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="36" startPosition="73" endLine="37" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="37" startPosition="57" endLine="38" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="39" startPosition="35" endLine="40" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="40" startPosition="72" endLine="41" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="41" startPosition="78" endLine="42" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="43" startPosition="10" endLine="44" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="48" startPosition="33" endLine="49" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="52" startPosition="69" endLine="53" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="56" startPosition="81" endLine="57" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2838654975957155520" fileName="BinaryOperationReference_Editor.java" startLine="60" startPosition="99" endLine="61" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2838654975957155520" fileName="BinaryOperationReference_Editor.java" startLine="61" startPosition="91" endLine="62" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2838654975957155520" fileName="BinaryOperationReference_Editor.java" startLine="62" startPosition="32" endLine="63" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2838654975957155520" fileName="BinaryOperationReference_Editor.java" startLine="63" startPosition="45" endLine="64" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2838654975957155520" fileName="BinaryOperationReference_Editor.java" startLine="64" startPosition="28" endLine="65" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2838654975957155520" fileName="BinaryOperationReference_Editor.java" startLine="65" startPosition="60" endLine="66" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2838654975957155520" fileName="BinaryOperationReference_Editor.java" startLine="65" startPosition="60" endLine="66" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2838654975957155520" fileName="BinaryOperationReference_Editor.java" startLine="66" startPosition="52" endLine="67" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2838654975957155520" fileName="BinaryOperationReference_Editor.java" startLine="67" startPosition="75" endLine="68" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2838654975957155520" fileName="BinaryOperationReference_Editor.java" startLine="68" startPosition="59" endLine="69" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2838654975957155520" fileName="BinaryOperationReference_Editor.java" startLine="70" startPosition="37" endLine="71" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2838654975957155520" fileName="BinaryOperationReference_Editor.java" startLine="71" startPosition="74" endLine="72" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2838654975957155520" fileName="BinaryOperationReference_Editor.java" startLine="72" startPosition="80" endLine="73" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2838654975957155520" fileName="BinaryOperationReference_Editor.java" startLine="74" startPosition="12" endLine="75" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2838654975957155511" fileName="BinaryOperationReference_Editor.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="33" startPosition="26" endLine="36" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_mfrs1f_a0a#()V" />
-    <nodeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2838654975957155520" fileName="BinaryOperationReference_Editor.java" startLine="64" startPosition="28" endLine="67" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2838654975957155513" fileName="BinaryOperationReference_Editor.java" startLine="22" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_mfrs1f_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="38" startPosition="59" endLine="44" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2838654975957155520" fileName="BinaryOperationReference_Editor.java" startLine="69" startPosition="61" endLine="75" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="29" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_mfrs1f_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2838654975957155520" fileName="BinaryOperationReference_Editor.java" startLine="60" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConceptProperty_mfrs1f_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <scopeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" />
-    <scopeInfo nodeId="2838654975957155511" fileName="BinaryOperationReference_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" />
-    <scopeInfo nodeId="2838654975957155513" fileName="BinaryOperationReference_Editor.java" startLine="23" startPosition="96" endLine="24" endPosition="48" />
-    <scopeInfo nodeId="2838654975957155513" fileName="BinaryOperationReference_Editor.java" startLine="24" startPosition="48" endLine="25" endPosition="80" />
-    <scopeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="48" startPosition="33" endLine="49" endPosition="14" />
-    <scopeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="52" startPosition="69" endLine="53" endPosition="67" />
-    <scopeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="56" startPosition="81" endLine="57" endPosition="73" />
-    <scopeInfo nodeId="2838654975957155520" fileName="BinaryOperationReference_Editor.java" startLine="65" startPosition="60" endLine="66" endPosition="52" />
-    <scopeInfo nodeId="2838654975957155511" fileName="BinaryOperationReference_Editor.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
+    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="36" startPosition="58" endLine="36" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2886182022232400277" fileName="BinaryOperationReference_Editor.java" startLine="63" startPosition="71" endLine="63" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2838654975957155511" fileName="BinaryOperationReference_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2838654975957155513" fileName="BinaryOperationReference_Editor.java" startLine="23" startPosition="89" endLine="24" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2838654975957155513" fileName="BinaryOperationReference_Editor.java" startLine="24" startPosition="96" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2838654975957155513" fileName="BinaryOperationReference_Editor.java" startLine="24" startPosition="96" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2838654975957155513" fileName="BinaryOperationReference_Editor.java" startLine="25" startPosition="48" endLine="26" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2838654975957155513" fileName="BinaryOperationReference_Editor.java" startLine="25" startPosition="48" endLine="26" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2838654975957155513" fileName="BinaryOperationReference_Editor.java" startLine="26" startPosition="80" endLine="27" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="30" startPosition="87" endLine="31" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="31" startPosition="81" endLine="32" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="32" startPosition="40" endLine="33" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="33" startPosition="53" endLine="34" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="34" startPosition="26" endLine="35" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="35" startPosition="96" endLine="36" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="36" startPosition="58" endLine="37" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="37" startPosition="73" endLine="38" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="38" startPosition="57" endLine="39" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="40" startPosition="35" endLine="41" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="41" startPosition="72" endLine="42" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="42" startPosition="78" endLine="43" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="44" startPosition="10" endLine="45" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="49" startPosition="33" endLine="50" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="53" startPosition="69" endLine="54" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="57" startPosition="81" endLine="58" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2886182022232400277" fileName="BinaryOperationReference_Editor.java" startLine="61" startPosition="93" endLine="62" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400277" fileName="BinaryOperationReference_Editor.java" startLine="62" startPosition="69" endLine="63" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400277" fileName="BinaryOperationReference_Editor.java" startLine="63" startPosition="71" endLine="64" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2838654975957155511" fileName="BinaryOperationReference_Editor.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="34" startPosition="26" endLine="37" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_mfrs1f_a0a#()V" />
+    <nodeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2886182022232400277" fileName="BinaryOperationReference_Editor.java" startLine="61" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_mfrs1f_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2838654975957155513" fileName="BinaryOperationReference_Editor.java" startLine="23" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_mfrs1f_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="39" startPosition="59" endLine="45" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="30" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_mfrs1f_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="36" startPosition="58" endLine="36" endPosition="58" />
+    <scopeInfo nodeId="2886182022232400277" fileName="BinaryOperationReference_Editor.java" startLine="63" startPosition="71" endLine="63" endPosition="71" />
+    <scopeInfo nodeId="2838654975957155511" fileName="BinaryOperationReference_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" />
+    <scopeInfo nodeId="2838654975957155513" fileName="BinaryOperationReference_Editor.java" startLine="24" startPosition="96" endLine="25" endPosition="48" />
+    <scopeInfo nodeId="2838654975957155513" fileName="BinaryOperationReference_Editor.java" startLine="25" startPosition="48" endLine="26" endPosition="80" />
+    <scopeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="49" startPosition="33" endLine="50" endPosition="14" />
+    <scopeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="53" startPosition="69" endLine="54" endPosition="67" />
+    <scopeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="57" startPosition="81" endLine="58" endPosition="67" />
+    <scopeInfo nodeId="2838654975957155511" fileName="BinaryOperationReference_Editor.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="2838654975957155511" varName="editorContext" />
       <varInfo nodeId="2838654975957155511" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="33" startPosition="26" endLine="36" endPosition="73" />
-    <scopeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="39" startPosition="35" endLine="42" endPosition="105">
+    <scopeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="34" startPosition="26" endLine="37" endPosition="73" />
+    <scopeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="40" startPosition="35" endLine="43" endPosition="105">
       <varInfo nodeId="2838654975957155516" varName="manager" />
       <varInfo nodeId="2838654975957155516" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="52" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="49" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="53" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="2838654975957155517" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="56" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="57" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="2838654975957155517" varName="editorContext" />
       <varInfo nodeId="2838654975957155517" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2838654975957155520" fileName="BinaryOperationReference_Editor.java" startLine="64" startPosition="28" endLine="67" endPosition="75" />
-    <scopeInfo nodeId="2838654975957155520" fileName="BinaryOperationReference_Editor.java" startLine="70" startPosition="37" endLine="73" endPosition="107">
-      <varInfo nodeId="2838654975957155520" varName="manager" />
-      <varInfo nodeId="2838654975957155520" varName="opContext" />
+    <scopeInfo nodeId="2886182022232400277" fileName="BinaryOperationReference_Editor.java" startLine="61" startPosition="93" endLine="64" endPosition="24">
+      <varInfo nodeId="2886182022232400277" varName="editorCell" />
+      <varInfo nodeId="2886182022232400277" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="2838654975957155513" fileName="BinaryOperationReference_Editor.java" startLine="22" startPosition="89" endLine="26" endPosition="22">
+    <scopeInfo nodeId="2838654975957155513" fileName="BinaryOperationReference_Editor.java" startLine="23" startPosition="89" endLine="27" endPosition="22">
       <varInfo nodeId="2838654975957155513" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="2838654975957155513" fileName="BinaryOperationReference_Editor.java" startLine="22" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="2886182022232400277" fileName="BinaryOperationReference_Editor.java" startLine="61" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="2886182022232400277" varName="editorContext" />
+      <varInfo nodeId="2886182022232400277" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2838654975957155513" fileName="BinaryOperationReference_Editor.java" startLine="23" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="2838654975957155513" varName="editorContext" />
       <varInfo nodeId="2838654975957155513" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="29" startPosition="87" endLine="44" endPosition="22">
+    <scopeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="30" startPosition="87" endLine="45" endPosition="22">
       <varInfo nodeId="2838654975957155516" varName="attributeConcept" />
       <varInfo nodeId="2838654975957155516" varName="attributeKind" />
       <varInfo nodeId="2838654975957155516" varName="editorCell" />
       <varInfo nodeId="2838654975957155516" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="2838654975957155520" fileName="BinaryOperationReference_Editor.java" startLine="60" startPosition="99" endLine="75" endPosition="24">
-      <varInfo nodeId="2838654975957155520" varName="attributeConcept" />
-      <varInfo nodeId="2838654975957155520" varName="attributeKind" />
-      <varInfo nodeId="2838654975957155520" varName="editorCell" />
-      <varInfo nodeId="2838654975957155520" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="29" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="2838654975957155516" fileName="BinaryOperationReference_Editor.java" startLine="30" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="2838654975957155516" varName="editorContext" />
       <varInfo nodeId="2838654975957155516" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2838654975957155520" fileName="BinaryOperationReference_Editor.java" startLine="60" startPosition="0" endLine="77" endPosition="0">
-      <varInfo nodeId="2838654975957155520" varName="editorContext" />
-      <varInfo nodeId="2838654975957155520" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="47" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.editor.BinaryOperationReference_Editor$_Inline_mfrs1f_a0a" />
-    <unitInfo nodeId="2838654975957155511" fileName="BinaryOperationReference_Editor.java" startLine="17" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.editor.BinaryOperationReference_Editor" />
+    <unitInfo nodeId="2838654975957155517" fileName="BinaryOperationReference_Editor.java" startLine="48" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.editor.BinaryOperationReference_Editor$_Inline_mfrs1f_a0a" />
+    <unitInfo nodeId="2838654975957155511" fileName="BinaryOperationReference_Editor.java" startLine="18" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.editor.BinaryOperationReference_Editor" />
   </root>
   <root nodeId="2838654975957402170" modelId="r:13d16a02-6fc1-4986-8d3c-61aadbaeccd7(jetbrains.mps.baseLanguage.overloadedOperators.editor)">
     <nodeInfo nodeId="1569627462442536641" fileName="CustomOperator_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

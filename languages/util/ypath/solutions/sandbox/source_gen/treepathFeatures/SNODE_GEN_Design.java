@@ -11,8 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ypath.design.IGenericFeatureDesign;
@@ -31,7 +29,7 @@ public class SNODE_GEN_Design {
     public SNode getTargetType(SNode param, SNode nodeType) {
       SNode ld = param;
       SNode trg = SLinkOperations.getTarget(ld, "target", false);
-      return new SNODE_GEN_Design.Design_Feature_child.QuotationClass_d0icvv_a0c0b0().createNode(trg);
+      return _quotation_createNode_iaikir_a2a0a(trg);
     }
 
     public String parameterToString(SNode param) {
@@ -57,22 +55,11 @@ public class SNODE_GEN_Design {
       return SnodeGenUtil.singleCardinality(SPropertyOperations.getString_def(param, "sourceCardinality", "0..1"));
     }
 
-    public static class QuotationClass_d0icvv_a0c0b0 {
-      public QuotationClass_d0icvv_a0c0b0() {
-      }
-
-      public SNode createNode(Object parameter_3) {
-        SNode result = null;
-        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_1 = null;
-        {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_2 = quotedNode_1;
-          quotedNode1_2.setReferenceTarget("concept", (SNode) parameter_3);
-          result = quotedNode1_2;
-        }
-        return result;
-      }
+    private static SNode _quotation_createNode_iaikir_a2a0a(Object parameter_1) {
+      SNode quotedNode_2 = null;
+      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);
+      return quotedNode_2;
     }
   }
 
@@ -88,7 +75,7 @@ public class SNODE_GEN_Design {
     public SNode getTargetType(SNode param, SNode nodeType) {
       SNode ld = param;
       SNode trg = SLinkOperations.getTarget(ld, "target", false);
-      return new SNODE_GEN_Design.Design_Feature_link.QuotationClass_d0icvv_a0c0b1().createNode(trg);
+      return _quotation_createNode_iaikir_a2a0b(trg);
     }
 
     public String parameterToString(SNode param) {
@@ -114,126 +101,60 @@ public class SNODE_GEN_Design {
       return SnodeGenUtil.singleCardinality(SPropertyOperations.getString_def(param, "sourceCardinality", "0..1"));
     }
 
-    public static class QuotationClass_d0icvv_a0c0b1 {
-      public QuotationClass_d0icvv_a0c0b1() {
-      }
-
-      public SNode createNode(Object parameter_3) {
-        SNode result = null;
-        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_1 = null;
-        {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_2 = quotedNode_1;
-          quotedNode1_2.setReferenceTarget("concept", (SNode) parameter_3);
-          result = quotedNode1_2;
-        }
-        return result;
-      }
+    private static SNode _quotation_createNode_iaikir_a2a0b(Object parameter_1) {
+      SNode quotedNode_2 = null;
+      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);
+      return quotedNode_2;
     }
   }
 
   public static class Design_Feature_allChildren extends IGenericFeatureDesign.Stub implements IGenericFeatureDesign {
     public SNode getterExpression(SNode expression, ITemplateGenerator generator) {
-      return new SNODE_GEN_Design.Design_Feature_allChildren.QuotationClass_d0icvv_a0a0a2().createNode(expression);
+      return _quotation_createNode_iaikir_a0a0c(expression);
     }
 
-    public static class QuotationClass_d0icvv_a0a0a2 {
-      public QuotationClass_d0icvv_a0a0a2() {
+    private static SNode _quotation_createNode_iaikir_a0a0c(Object parameter_1) {
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
+      quotedNode_3 = (SNode) parameter_1;
+      if (quotedNode_3 != null) {
+        quotedNode_2.addChild("operand", HUtil.copyIfNecessary(quotedNode_3));
       }
-
-      public SNode createNode(Object parameter_7) {
-        SNode result = null;
-        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_1 = null;
-        SNode quotedNode_2 = null;
-        SNode quotedNode_3 = null;
-        {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_4 = quotedNode_1;
-          {
-            quotedNode_2 = (SNode) parameter_7;
-            SNode quotedNode1_5;
-            if (_parameterValues_129834374.contains(quotedNode_2)) {
-              quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
-            } else {
-              _parameterValues_129834374.add(quotedNode_2);
-              quotedNode1_5 = quotedNode_2;
-            }
-            if (quotedNode1_5 != null) {
-              quotedNode_1.addChild("operand", HUtil.copyIfNecessary(quotedNode1_5));
-            }
-          }
-          {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation", null, null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_6 = quotedNode_3;
-            quotedNode_1.addChild("operation", quotedNode1_6);
-          }
-          result = quotedNode1_4;
-        }
-        return result;
-      }
+      quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation", null, null, GlobalScope.getInstance(), false);
+      quotedNode_2.addChild("operation", quotedNode_4);
+      return quotedNode_2;
     }
   }
 
   public static class Design_Feature_parent extends IGenericFeatureDesign.Stub implements IGenericFeatureDesign {
     public SNode getterExpression(SNode expression, ITemplateGenerator generator) {
-      return new SNODE_GEN_Design.Design_Feature_parent.QuotationClass_d0icvv_a0a0a3().createNode(expression);
+      return _quotation_createNode_iaikir_a0a0d(expression);
     }
 
-    public static class QuotationClass_d0icvv_a0a0a3 {
-      public QuotationClass_d0icvv_a0a0a3() {
+    private static SNode _quotation_createNode_iaikir_a0a0d(Object parameter_1) {
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      SNode quotedNode_5 = null;
+      SNode quotedNode_6 = null;
+      SNode quotedNode_7 = null;
+      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null, null, GlobalScope.getInstance(), false);
+      quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit", null, null, GlobalScope.getInstance(), false);
+      quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
+      quotedNode_6 = (SNode) parameter_1;
+      if (quotedNode_6 != null) {
+        quotedNode_4.addChild("operand", HUtil.copyIfNecessary(quotedNode_6));
       }
-
-      public SNode createNode(Object parameter_13) {
-        SNode result = null;
-        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_1 = null;
-        SNode quotedNode_2 = null;
-        SNode quotedNode_3 = null;
-        SNode quotedNode_4 = null;
-        SNode quotedNode_5 = null;
-        SNode quotedNode_6 = null;
-        {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_7 = quotedNode_1;
-          {
-            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit", null, null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_8 = quotedNode_2;
-            {
-              quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
-              SNode quotedNode1_9 = quotedNode_3;
-              {
-                quotedNode_5 = (SNode) parameter_13;
-                SNode quotedNode1_10;
-                if (_parameterValues_129834374.contains(quotedNode_5)) {
-                  quotedNode1_10 = HUtil.copyIfNecessary(quotedNode_5);
-                } else {
-                  _parameterValues_129834374.add(quotedNode_5);
-                  quotedNode1_10 = quotedNode_5;
-                }
-                if (quotedNode1_10 != null) {
-                  quotedNode_3.addChild("operand", HUtil.copyIfNecessary(quotedNode1_10));
-                }
-              }
-              {
-                quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetParentOperation", null, null, GlobalScope.getInstance(), false);
-                SNode quotedNode1_11 = quotedNode_6;
-                quotedNode_3.addChild("operation", quotedNode1_11);
-              }
-              quotedNode_2.addChild("initValue", quotedNode1_9);
-            }
-            {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-              SNode quotedNode1_12 = quotedNode_4;
-              quotedNode_2.addChild("elementType", quotedNode1_12);
-            }
-            quotedNode_1.addChild("creator", quotedNode1_8);
-          }
-          result = quotedNode1_7;
-        }
-        return result;
-      }
+      quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetParentOperation", null, null, GlobalScope.getInstance(), false);
+      quotedNode_4.addChild("operation", quotedNode_7);
+      quotedNode_3.addChild("initValue", quotedNode_4);
+      quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_3.addChild("elementType", quotedNode_5);
+      quotedNode_2.addChild("creator", quotedNode_3);
+      return quotedNode_2;
     }
   }
 }

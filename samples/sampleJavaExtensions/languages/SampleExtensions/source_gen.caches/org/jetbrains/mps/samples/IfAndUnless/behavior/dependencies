@@ -11,16 +11,30 @@
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.behavior.UnlessStatement_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
   </dependency>
+  <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.FalseFlow_Behavior" file="FalseFlow_Behavior.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+  </dependency>
   <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.FalseFlow_BehaviorDescriptor" file="FalseFlow_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.behavior.FalseFlow_Behavior" />
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow_Behavior" file="Flow_Behavior.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow_BehaviorDescriptor" file="Flow_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.StatementList_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow_Behavior" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.MyIfStatement_BehaviorDescriptor" file="MyIfStatement_BehaviorDescriptor.java">
@@ -29,10 +43,17 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.TrueFlow_Behavior" file="TrueFlow_Behavior.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+  </dependency>
   <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.TrueFlow_BehaviorDescriptor" file="TrueFlow_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.behavior.TrueFlow_Behavior" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.UnlessStatement_Behavior" file="UnlessStatement_Behavior.java">

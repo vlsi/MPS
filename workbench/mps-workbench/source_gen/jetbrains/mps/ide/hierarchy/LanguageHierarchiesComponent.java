@@ -56,7 +56,6 @@ import jetbrains.mps.nodeEditor.EditorSettings;
 import java.awt.event.MouseListener;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -381,7 +380,7 @@ outer:
       }
       myOperationContext = myComponent.myOperationContext;
       myRootable = SPropertyOperations.getBoolean(conceptDeclaration, "rootable");
-      myIsAbstract = SConceptPropertyOperations.getBoolean(conceptDeclaration, "abstract");
+      myIsAbstract = SPropertyOperations.getBoolean(conceptDeclaration, "abstract");
       myNamespace = SModelUtil.getDeclaringLanguage(conceptDeclaration).getModuleFqName();
       myNodePointer = new SNodePointer(conceptDeclaration);
       addMouseListener(new MouseAdapter() {

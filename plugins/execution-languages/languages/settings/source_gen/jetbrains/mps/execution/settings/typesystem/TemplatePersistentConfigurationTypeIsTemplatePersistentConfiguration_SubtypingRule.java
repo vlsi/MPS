@@ -8,8 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
 
 public class TemplatePersistentConfigurationTypeIsTemplatePersistentConfiguration_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -17,7 +15,7 @@ public class TemplatePersistentConfigurationTypeIsTemplatePersistentConfiguratio
   }
 
   public SNode getSubOrSuperType(SNode templatePersistentConfigurationType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return new TemplatePersistentConfigurationTypeIsTemplatePersistentConfiguration_SubtypingRule.QuotationClass_n8elw8_a0a0a().createNode(typeCheckingContext);
+    return _quotation_createNode_n8elw8_a0a0();
   }
 
   public String getApplicableConceptFQName() {
@@ -39,32 +37,9 @@ public class TemplatePersistentConfigurationTypeIsTemplatePersistentConfiguratio
     return true;
   }
 
-  public static class QuotationClass_n8elw8_a0a0a {
-    public QuotationClass_n8elw8_a0a0a() {
-    }
-
-    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_n8elw8_a0a0() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
   }
 }

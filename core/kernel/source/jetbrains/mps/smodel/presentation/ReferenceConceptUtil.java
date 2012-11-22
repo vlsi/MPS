@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.presentation;
 
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -50,7 +51,7 @@ public class ReferenceConceptUtil {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
       public SNode compute() {
         String expectedReferentRole = null;
-        String alias = concept.getConceptProperty("alias");
+        String alias = SPropertyOperations.getString(concept, "conceptAlias");
         if (alias != null) {
           // handle pattern 'xxx <{_referent_role_}> yyy'
           if (!alias.matches(".*<\\{.+\\}>.*")) {
@@ -84,13 +85,13 @@ public class ReferenceConceptUtil {
   }
 
   public static boolean hasSmartAlias(SNode concept) {
-    String conceptAlias = concept.getConceptProperty("alias");
+    String conceptAlias = SPropertyOperations.getString(concept, "conceptAlias");
     // matches pattern 'xxx <{_referent_role_}> yyy' ?
     return conceptAlias != null && SMART_ALIAS.matcher(conceptAlias).matches();
   }
 
   public static String getPresentationFromSmartAlias(SNode concept, String referentPresentation) {
-    String conceptAlias = concept.getConceptProperty("alias");
+    String conceptAlias = SPropertyOperations.getString(concept, "conceptAlias");
     // handle pattern 'xxx <{_referent_role_}> yyy'
     String[] matches = SMART_ALIAS_SEPARATOR.split(conceptAlias, 0);
     matches[1] = referentPresentation;

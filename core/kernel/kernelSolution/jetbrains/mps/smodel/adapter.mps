@@ -1627,7 +1627,6 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3594504603472698077" resolveInfo="datatype" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="3594504603472700725">
-                    <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcn.1220268780075" resolveInfo="isInteger" />
                   </node>
                 </node>
@@ -1637,7 +1636,6 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3594504603472698077" resolveInfo="datatype" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="3594504603472700000">
-                  <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcn.1220268791641" resolveInfo="isBoolean" />
                 </node>
               </node>

@@ -4,8 +4,6 @@ package jetbrains.mps.bootstrap.helgins.sandbox.sb1;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -16,7 +14,7 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 public class AClssssssssssssssssass {
   public static void fossso() {
     {
-      SNode matchedNode_axt657_a0a = new AClssssssssssssssssass.QuotationClass_axt657_a0a0a0a0().createNode();
+      SNode matchedNode_axt657_a0a = _quotation_createNode_axt657_a0a0a0a();
       {
         boolean matches_axt657_a0a0 = false;
         GeneratedMatchingPattern matchingPattern = new AClssssssssssssssssass.Pattern_axt657_a0a1a1a0a0();
@@ -33,22 +31,11 @@ public class AClssssssssssssssssass {
   public static void bar() {
   }
 
-  public static class QuotationClass_axt657_a0a0a0a0 {
-    public QuotationClass_axt657_a0a0a0a0() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_axt657_a0a0a0a() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+    return quotedNode_1;
   }
 
   public static class Pattern_axt657_a0a1a1a0a0 extends GeneratedMatchingPattern implements IMatchingPattern {

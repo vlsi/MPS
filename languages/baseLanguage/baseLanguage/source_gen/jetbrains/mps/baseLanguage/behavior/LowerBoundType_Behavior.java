@@ -8,8 +8,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Map;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -30,7 +28,7 @@ public class LowerBoundType_Behavior {
   }
 
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
-    return new LowerBoundType_Behavior.QuotationClass_kcjgm5_a0a0c().createNode();
+    return _quotation_createNode_kcjgm5_a0a1();
   }
 
   public static boolean virtual_isValueType_4836112446988592019(SNode thisNode) {
@@ -47,7 +45,7 @@ public class LowerBoundType_Behavior {
       if (expBound == SLinkOperations.getTarget(thisNode, "bound", true)) {
         return thisNode;
       }
-      return new LowerBoundType_Behavior.QuotationClass_kcjgm5_a0c0a0f().createNode(expBound);
+      return _quotation_createNode_kcjgm5_a2a0a4(expBound);
     }
     return BehaviorReflection.invokeSuper((Class<SNode>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType", "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, expTrace});
   }
@@ -58,52 +56,21 @@ public class LowerBoundType_Behavior {
     }
   }
 
-  public static class QuotationClass_kcjgm5_a0a0c {
-    public QuotationClass_kcjgm5_a0a0c() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_kcjgm5_a0a1() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+    return quotedNode_1;
   }
 
-  public static class QuotationClass_kcjgm5_a0c0a0f {
-    public QuotationClass_kcjgm5_a0c0a0f() {
+  private static SNode _quotation_createNode_kcjgm5_a2a0a4(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = (SNode) parameter_1;
+    if (quotedNode_3 != null) {
+      quotedNode_2.addChild("bound", HUtil.copyIfNecessary(quotedNode_3));
     }
-
-    public SNode createNode(Object parameter_5) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        {
-          quotedNode_2 = (SNode) parameter_5;
-          SNode quotedNode1_4;
-          if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
-          } else {
-            _parameterValues_129834374.add(quotedNode_2);
-            quotedNode1_4 = quotedNode_2;
-          }
-          if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("bound", HUtil.copyIfNecessary(quotedNode1_4));
-          }
-        }
-        result = quotedNode1_3;
-      }
-      return result;
-    }
+    return quotedNode_2;
   }
 }

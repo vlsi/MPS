@@ -102,7 +102,7 @@ public class ReferencesTest extends BaseMPSTest {
     final IScope scope = sm.getModule().getScope();
     List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
-        return new ModelValidator(sm.getSModel()).validate(scope);
+        return new ModelValidator(sm).validate(scope);
       }
     });
     for (String item : validationResult) {

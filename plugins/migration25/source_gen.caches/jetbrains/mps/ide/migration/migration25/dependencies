@@ -684,7 +684,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -732,12 +731,12 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.DefaultSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelReadException" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />

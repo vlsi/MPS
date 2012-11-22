@@ -131,7 +131,7 @@ public class ChangesManagerTest {
 
     setAutoaddPolicy(VcsShowConfirmationOption.Value.DO_NOTHING_SILENTLY);
 
-    myUtilVirtualFile = VirtualFileUtils.getVirtualFile(((DefaultSModelDescriptor) myUtilDiff.getModelDescriptor()).getModelFile());
+    myUtilVirtualFile = VirtualFileUtils.getVirtualFile(((DefaultSModelDescriptor) myUtilDiff.getModelDescriptor()).getSource().getFile());
 
     FSChangesWatcher.instance().addReloadListener(new ChangesManagerTest.MyReloadListener());
 
@@ -383,7 +383,7 @@ public class ChangesManagerTest {
 
   private void modifyExternally() throws ModelReadException {
     int changesBefore = ListSequence.fromList(check_4gxggu_a0a0a41(myUtilDiff.getChangeSet())).count();
-    final SModel modelContent = ModelPersistence.readModel(((DefaultSModelDescriptor) myUtilDiff.getModelDescriptor()).getModelFile(), false);
+    final SModel modelContent = ModelPersistence.readModel(((DefaultSModelDescriptor) myUtilDiff.getModelDescriptor()).getSource().getFile(), false);
     createNewRoot(modelContent);
     final EditableSModelDescriptor modelDescriptor = myUtilDiff.getModelDescriptor();
     waitForSomething(new Runnable() {
@@ -851,7 +851,7 @@ public class ChangesManagerTest {
       public void run() {
         String modelName = "newmodel";
         IModule module = myUiDiff.getModelDescriptor().getModule();
-        module.createModel(SModelFqName.fromString(MODEL_PREFIX + modelName), module.getSModelRoots().iterator().next(), null);
+        module.createModel(MODEL_PREFIX + modelName, module.getModelRoots().iterator().next(), null);
         newModelDiff.value = getCurrentDifference(modelName);
       }
     });
@@ -864,7 +864,7 @@ public class ChangesManagerTest {
     });
     ModelAccess.instance().flushEventQueue();
 
-    final VirtualFile vf = VirtualFileUtils.getVirtualFile(((DefaultSModelDescriptor) md).getModelFile());
+    final VirtualFile vf = VirtualFileUtils.getVirtualFile(((DefaultSModelDescriptor) md).getSource().getFile());
     doSomethingAndWaitForFileStatusChange(new Runnable() {
       public void run() {
       }
@@ -951,7 +951,7 @@ public class ChangesManagerTest {
     doSomethingAndWaitForFileStatusChange(new Runnable() {
       public void run() {
       }
-    }, VirtualFileUtils.getVirtualFile(((DefaultSModelDescriptor) myUiDiff.getModelDescriptor()).getModelFile()), FileStatus.MODIFIED);
+    }, VirtualFileUtils.getVirtualFile(((DefaultSModelDescriptor) myUiDiff.getModelDescriptor()).getSource().getFile()), FileStatus.MODIFIED);
     waitForChangesManager();
     Assert.assertEquals(changeSetStringBefore, getChangeSetString(myUiDiff.getChangeSet()));
 

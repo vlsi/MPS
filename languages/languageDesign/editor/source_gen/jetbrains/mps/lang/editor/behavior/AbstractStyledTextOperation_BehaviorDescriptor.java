@@ -4,11 +4,17 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IOperation_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 
-public abstract class AbstractStyledTextOperation_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IOperation_BehaviorDescriptor {
+public abstract class AbstractStyledTextOperation_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IOperation_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public AbstractStyledTextOperation_BehaviorDescriptor() {
+  }
+
+  public String virtual_getMethodToGenerate_1262430001741492328(SConcept thisConcept) {
+    return AbstractStyledTextOperation_Behavior.virtual_getMethodToGenerate_1262430001741492328(thisConcept);
   }
 
   public String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
@@ -21,6 +27,10 @@ public abstract class AbstractStyledTextOperation_BehaviorDescriptor extends Bas
 
   public boolean virtual_isLValue_1213877410080(SNode thisNode) {
     return IOperation_Behavior.virtual_isLValue_1213877410080(thisNode);
+  }
+
+  public boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
+    return IOperation_Behavior.virtual_lvalue_1262430001741498364(thisConcept);
   }
 
   public boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {

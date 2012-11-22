@@ -7,13 +7,14 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -29,9 +30,16 @@ public class LinkInlineDocTag_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bju3wr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bju3wr_a");
-    editorCell.addEditorCell(this.createConceptProperty_bju3wr_a0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_bju3wr_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_bju3wr_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_bju3wr_c0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_bju3wr_a0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new AliasEditorComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    DocumentationCommentStyleSheet_StyleSheet.getCommentTag(editorCell).apply(editorCell);
     return editorCell;
   }
 
@@ -49,25 +57,6 @@ public class LinkInlineDocTag_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no reference>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConceptProperty_bju3wr_a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-    provider.setRole("alias");
-    provider.setNoTargetText("<no alias>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("conceptProperty_alias");
-    DocumentationCommentStyleSheet_StyleSheet.getCommentTag(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

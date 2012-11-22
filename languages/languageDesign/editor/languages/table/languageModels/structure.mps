@@ -12,23 +12,28 @@
   <import index="ohyq" modelUID="r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)" version="1" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4677325677876400523">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="CellModel_Table" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="table" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpc2.1073389214265" resolveInfo="EditorCellModel" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4490468428501056077">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="QueryFunction_TableModel" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="getTableModel" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2253133157536766818">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="CellModel_HierarchycalTable" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="hierarchycal table" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpc2.1073389214265" resolveInfo="EditorCellModel" />
     </node>
   </roots>
   <root id="4677325677876400523">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4677325677876404644">
-      <property name="value" nameId="tpce.1105725733873" value="table" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4490468428501048483">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="tableModel" />
@@ -51,10 +56,6 @@
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" roleId="tpce.1105736807942" targetNodeId="tpc2.1161622981231" resolveInfo="ConceptFunctionParameter_editorContext" />
     </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4490468428501060061">
-      <property name="value" nameId="tpce.1105725733873" value="getTableModel" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
   </root>
   <root id="2253133157536766818">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6216065619544939793">
@@ -73,10 +74,6 @@
       <property name="role" nameId="tpce.1071599776563" value="cellsInRowLinkDeclaration" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489288298" resolveInfo="LinkDeclaration" />
-    </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2253133157537023755">
-      <property name="value" nameId="tpce.1105725733873" value="hierarchycal table" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="2253133157537011702">
       <property name="name" nameId="tpck.1169194664001" value="myProp" />

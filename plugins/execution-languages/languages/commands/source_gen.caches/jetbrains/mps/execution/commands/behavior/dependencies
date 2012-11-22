@@ -32,16 +32,30 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.execution.commands.behavior.BuilderBlockStatement_Behavior" file="BuilderBlockStatement_Behavior.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.execution.commands.behavior.BuilderBlockStatement_BehaviorDescriptor" file="BuilderBlockStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.behavior.BuilderBlockStatement_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.commands.behavior.BuilderParameter_Behavior" file="BuilderParameter_Behavior.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
   </dependency>
   <dependency className="jetbrains.mps.execution.commands.behavior.BuilderParameter_BehaviorDescriptor" file="BuilderParameter_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.behavior.BuilderParameter_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.commands.behavior.CommandBuilderExpression_Behavior" file="CommandBuilderExpression_Behavior.java">
@@ -70,6 +84,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
@@ -81,9 +96,7 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.CommandParameterDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ExecuteCommandPart_Behavior" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -120,8 +133,9 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.commands.behavior.CommandMethod_Behavior" file="CommandMethod_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.execution.commands.behavior.CommandMethod_BehaviorDescriptor" file="CommandMethod_BehaviorDescriptor.java">
@@ -166,6 +180,7 @@
   </dependency>
   <dependency className="jetbrains.mps.execution.commands.behavior.CommandPartLengthOperation_Behavior" file="CommandPartLengthOperation_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
   </dependency>
   <dependency className="jetbrains.mps.execution.commands.behavior.CommandPartLengthOperation_BehaviorDescriptor" file="CommandPartLengthOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -175,11 +190,13 @@
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.CommandPartLengthOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.commands.behavior.CommandPartToListOperation_Behavior" file="CommandPartToListOperation_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
   </dependency>
   <dependency className="jetbrains.mps.execution.commands.behavior.CommandPartToListOperation_BehaviorDescriptor" file="CommandPartToListOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -189,6 +206,7 @@
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.CommandPartToListOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
@@ -222,8 +240,6 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.commands.behavior.DebuggerSettingsCommandParameterDeclaration_Behavior" file="DebuggerSettingsCommandParameterDeclaration_Behavior.java">
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -241,9 +257,7 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.CommandDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ExplicitCommandParameterDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior" />
@@ -389,8 +403,6 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
@@ -416,6 +428,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>

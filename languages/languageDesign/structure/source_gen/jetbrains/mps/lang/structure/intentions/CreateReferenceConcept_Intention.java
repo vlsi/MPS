@@ -12,6 +12,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -23,13 +28,6 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.intentions.IntentionDescriptor;
-import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
 
 public class CreateReferenceConcept_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -83,6 +81,40 @@ public class CreateReferenceConcept_Intention implements IntentionFactory {
     return myCachedExecutable;
   }
 
+  private static SNode _quotation_createNode_vn7eng_a0b0a(Object parameter_1, Object parameter_2, Object parameter_3) {
+    SNode quotedNode_4 = null;
+    SNode quotedNode_5 = null;
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration", null, null, GlobalScope.getInstance(), false);
+    quotedNode_4.setProperty("name", (String) parameter_3);
+    quotedNode_4.setReference("extends", SReference.create("extends", quotedNode_4, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)"), SNodeId.fromString("1068431790191")));
+    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.LinkDeclaration", null, null, GlobalScope.getInstance(), false);
+    quotedNode_5.setProperty("metaClass", "reference");
+    quotedNode_5.setProperty("sourceCardinality", "1");
+    quotedNode_5.setProperty("role", (String) parameter_1);
+    quotedNode_5.setReferenceTarget("target", (SNode) parameter_2);
+    quotedNode_4.addChild("linkDeclaration", quotedNode_5);
+    return quotedNode_4;
+  }
+
+  private static SNode _quotation_createNode_vn7eng_a0l0a(Object parameter_1, Object parameter_2) {
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    SNode quotedNode_5 = null;
+    SNode quotedNode_6 = null;
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.setReferenceTarget("conceptDeclaration", (SNode) parameter_1);
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_RefCell", null, null, GlobalScope.getInstance(), false);
+    quotedNode_4.setReferenceTarget("relationDeclaration", (SNode) parameter_2);
+    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.InlineEditorComponent", null, null, GlobalScope.getInstance(), false);
+    quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Property", null, null, GlobalScope.getInstance(), false);
+    quotedNode_6.setProperty("readOnly", "true");
+    quotedNode_6.setReference("relationDeclaration", SReference.create("relationDeclaration", quotedNode_6, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1169194664001")));
+    quotedNode_5.addChild("cellModel", quotedNode_6);
+    quotedNode_4.addChild("editorComponent", quotedNode_5);
+    quotedNode_3.addChild("cellModel", quotedNode_4);
+    return quotedNode_3;
+  }
+
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
@@ -93,7 +125,7 @@ public class CreateReferenceConcept_Intention implements IntentionFactory {
 
     public void execute(final SNode node, final EditorContext editorContext) {
       // structure 
-      SNode concept = new CreateReferenceConcept_Intention.QuotationClass_k63gxf_a0a1a1a().createNode(NameUtil.decapitalize(SPropertyOperations.getString(node, "name")), node, SPropertyOperations.getString(node, "name") + "Reference");
+      SNode concept = _quotation_createNode_vn7eng_a0b0a(NameUtil.decapitalize(SPropertyOperations.getString(node, "name")), node, SPropertyOperations.getString(node, "name") + "Reference");
       SModelOperations.addRootNode(SNodeOperations.getModel(node), concept);
       SPropertyOperations.set(concept, "virtualPackage", SPropertyOperations.getString(node, "virtualPackage"));
       SNode link = ListSequence.fromList(SLinkOperations.getTargets(concept, "linkDeclaration", true)).first();
@@ -103,7 +135,7 @@ public class CreateReferenceConcept_Intention implements IntentionFactory {
       SModel editorModel = LanguageAspect.EDITOR.get(language).getSModel();
 
       // editor 
-      SNode editor = new CreateReferenceConcept_Intention.QuotationClass_k63gxf_a0a11a1a().createNode(concept, link);
+      SNode editor = _quotation_createNode_vn7eng_a0l0a(concept, link);
       SModelOperations.addRootNode(editorModel, editor);
       SPropertyOperations.set(editor, "virtualPackage", SPropertyOperations.getString(node, "virtualPackage"));
 
@@ -113,74 +145,6 @@ public class CreateReferenceConcept_Intention implements IntentionFactory {
 
     public IntentionDescriptor getDescriptor() {
       return CreateReferenceConcept_Intention.this;
-    }
-  }
-
-  public static class QuotationClass_k63gxf_a0a1a1a {
-    public QuotationClass_k63gxf_a0a1a1a() {
-    }
-
-    public SNode createNode(Object parameter_5, Object parameter_6, Object parameter_7) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setProperty("name", (String) parameter_7);
-        quotedNode1_3.setReference("extends", SReference.create("extends", quotedNode1_3, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)"), SNodeId.fromString("1068431790191")));
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.LinkDeclaration", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.setProperty("metaClass", "reference");
-          quotedNode1_4.setProperty("sourceCardinality", "1");
-          quotedNode1_4.setProperty("role", (String) parameter_5);
-          quotedNode1_4.setReferenceTarget("target", (SNode) parameter_6);
-          quotedNode_1.addChild("linkDeclaration", quotedNode1_4);
-        }
-        result = quotedNode1_3;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_k63gxf_a0a11a1a {
-    public QuotationClass_k63gxf_a0a11a1a() {
-    }
-
-    public SNode createNode(Object parameter_9, Object parameter_10) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
-      SNode quotedNode_4 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_5 = quotedNode_1;
-        quotedNode1_5.setReferenceTarget("conceptDeclaration", (SNode) parameter_9);
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_RefCell", null, null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_6 = quotedNode_2;
-          quotedNode1_6.setReferenceTarget("relationDeclaration", (SNode) parameter_10);
-          {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.InlineEditorComponent", null, null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_7 = quotedNode_3;
-            {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Property", null, null, GlobalScope.getInstance(), false);
-              SNode quotedNode1_8 = quotedNode_4;
-              quotedNode1_8.setProperty("readOnly", "true");
-              quotedNode1_8.setReference("relationDeclaration", SReference.create("relationDeclaration", quotedNode1_8, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1169194664001")));
-              quotedNode_3.addChild("cellModel", quotedNode1_8);
-            }
-            quotedNode_2.addChild("editorComponent", quotedNode1_7);
-          }
-          quotedNode_1.addChild("cellModel", quotedNode1_6);
-        }
-        result = quotedNode1_5;
-      }
-      return result;
     }
   }
 }

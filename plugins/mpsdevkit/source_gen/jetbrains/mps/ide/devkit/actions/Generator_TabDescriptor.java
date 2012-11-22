@@ -35,7 +35,6 @@ import jetbrains.mps.smodel.Generator;
 import java.util.ArrayList;
 import jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.ide.actions.MappingDialog;
@@ -154,7 +153,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
           }
           // this means there are generators, but no template models 
           Generator firstGen = ListSequence.fromList(genList).first();
-          EditableSModelDescriptor templateModelDescriptor = firstGen.createModel(new SModelFqName(language.value.getModuleFqName() + ".generator.template.main", SModelStereotype.GENERATOR), firstGen.getSModelRoots().iterator().next(), null);
+          EditableSModelDescriptor templateModelDescriptor = firstGen.createModel(language.value.getModuleFqName() + ".generator.template.main@" + SModelStereotype.GENERATOR, firstGen.getModelRoots().iterator().next(), null);
           templateModelDescriptor.save();
           language.value.save();
         }

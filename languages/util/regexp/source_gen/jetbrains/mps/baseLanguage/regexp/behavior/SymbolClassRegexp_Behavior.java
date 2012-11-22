@@ -5,10 +5,10 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SymbolClassRegexp_Behavior {
   public static void init(SNode thisNode) {
@@ -19,7 +19,7 @@ public class SymbolClassRegexp_Behavior {
   }
 
   public static String virtual_getRepresentation_8173814113624650482(SNode thisNode) {
-    return SConceptPropertyOperations.getString(thisNode, "alias") + SymbolClassRegexp_Behavior.call_partsToString_1222857748873(thisNode, SLinkOperations.getTargets(thisNode, "part", true)) + "]";
+    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") + SymbolClassRegexp_Behavior.call_partsToString_1222857748873(thisNode, SLinkOperations.getTargets(thisNode, "part", true)) + "]";
   }
 
   public static String call_partsToString_1222857748873(SNode thisNode, List<SNode> parts) {

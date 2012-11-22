@@ -20,8 +20,6 @@ import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.baseLanguage.scopes.FieldSignature;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -32,7 +30,7 @@ public class FieldDeclaration_Behavior {
 
   public static String call_getGetterName_1213877243782(SNode thisNode) {
     String prefix = "get";
-    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(thisNode, "type", true), new FieldDeclaration_Behavior.QuotationClass_dh5t54_a1a0b0b().createNode())) {
+    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(thisNode, "type", true), _quotation_createNode_dh5t54_b0a1a0())) {
       prefix = "is";
     }
     return prefix + NameUtil.capitalize(SPropertyOperations.getString(thisNode, "name"));
@@ -167,20 +165,9 @@ public class FieldDeclaration_Behavior {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), callerConceptFqName, "virtual_getTraceableProperty_5067982036267369901", new Class[]{SNode.class}, new Object[]{});
   }
 
-  public static class QuotationClass_dh5t54_a1a0b0b {
-    public QuotationClass_dh5t54_a1a0b0b() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_dh5t54_b0a1a0() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
   }
 }

@@ -7,16 +7,14 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Expression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -30,8 +28,14 @@ public class Expression_Editor extends DefaultNodeEditor {
     if (alternationCondition) {
       editorCell = this.createCustom_1ltshm_a0(editorContext, node);
     } else {
-      editorCell = this.createConceptProperty_1ltshm_a0(editorContext, node);
+      editorCell = this.createComponent_1ltshm_a0(editorContext, node);
     }
+    return editorCell;
+  }
+
+  private EditorCell createComponent_1ltshm_a0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new AliasEditorComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
@@ -40,7 +44,7 @@ public class Expression_Editor extends DefaultNodeEditor {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
           public EditorCell createEditorCell(EditorContext context) {
-            EditorCell_Error result = new EditorCell_Error(context, node, "<" + node.getRole() + ">");
+            EditorCell_Error result = new EditorCell_Error(context, node, "<" + node.getRoleInParent() + ">");
             result.getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
             result.getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));
             return result;
@@ -53,25 +57,7 @@ public class Expression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_1ltshm_a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-    provider.setRole("alias");
-    provider.setNoTargetText("<no alias>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("conceptProperty_alias");
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
   private static boolean renderingCondition_1ltshm_a0(SNode node, EditorContext editorContext, IScope scope) {
-    return SConceptPropertyOperations.getString(node, "alias") == null;
+    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias") == null;
   }
 }

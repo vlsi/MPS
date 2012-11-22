@@ -10,8 +10,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
 import java.util.List;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -21,7 +19,7 @@ public class namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_Sub
   }
 
   public SNode getSubOrSuperType(SNode ntt, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return new namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_SubtypingRule.QuotationClass_uyx4ls_a0a0a().createNode(ListSequence.fromList(SLinkOperations.getTargets(ntt, "parameter", true)).toListSequence(), SLinkOperations.getTarget(ntt, "classifier", false), typeCheckingContext);
+    return _quotation_createNode_uyx4ls_a0a0(ListSequence.fromList(SLinkOperations.getTargets(ntt, "parameter", true)).toListSequence(), SLinkOperations.getTarget(ntt, "classifier", false));
   }
 
   public String getApplicableConceptFQName() {
@@ -39,48 +37,17 @@ public class namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_Sub
     return false;
   }
 
-  public static class QuotationClass_uyx4ls_a0a0a {
-    public QuotationClass_uyx4ls_a0a0a() {
-    }
-
-    public SNode createNode(Object parameter_4, Object parameter_5, final TypeCheckingContext typeCheckingContext) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferenceTarget("classifier", (SNode) parameter_5);
-        {
-          List<SNode> nodes = (List<SNode>) parameter_4;
-          for (SNode child : nodes) {
-            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
-          }
-        }
-        result = quotedNode1_3;
+  private static SNode _quotation_createNode_uyx4ls_a0a0(Object parameter_1, Object parameter_2) {
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.setReferenceTarget("classifier", (SNode) parameter_2);
+    {
+      List<SNode> nodes = (List<SNode>) parameter_1;
+      for (SNode child : nodes) {
+        quotedNode_3.addChild("parameter", HUtil.copyIfNecessary(child));
       }
-      return result;
     }
-
-    public SNode createNode(Object parameter_4, Object parameter_5) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferenceTarget("classifier", (SNode) parameter_5);
-        {
-          List<SNode> nodes = (List<SNode>) parameter_4;
-          for (SNode child : nodes) {
-            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child));
-          }
-        }
-        result = quotedNode1_3;
-      }
-      return result;
-    }
+    return quotedNode_3;
   }
 }

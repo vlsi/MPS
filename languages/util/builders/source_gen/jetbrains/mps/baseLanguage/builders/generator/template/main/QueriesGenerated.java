@@ -14,8 +14,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -79,68 +77,35 @@ public class QueriesGenerated {
 
   public static SNode mapSrcMacro_mapper_5867364036373952047(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode context = Builder_Behavior.call_getContextBuilder_7057666463730306577(_context.getNode());
-    SNode ref = new QueriesGenerated.QuotationClass_x583g4_a0a1a41().createNode(_context.getOutputNodeByInputNodeAndMappingLabel(context, "builderVar"));
+    SNode ref = _quotation_createNode_x583g4_a0b0o(_context.getOutputNodeByInputNodeAndMappingLabel(context, "builderVar"));
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getCreatorExpression_7057666463730727863", new Object[]{ref});
   }
 
   public static SNode mapSrcMacro_mapper_5867364036373950596(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode childRef = new QueriesGenerated.QuotationClass_x583g4_a0a0a51().createNode(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "builder", true), "builderVar"));
+    SNode childRef = _quotation_createNode_x583g4_a0a0p(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "builder", true), "builderVar"));
     SNode parentBuilder = Builder_Behavior.call_getContextBuilder_7057666463730306577(SLinkOperations.getTarget(_context.getNode(), "builder", true));
-    SNode parentRef = new QueriesGenerated.QuotationClass_x583g4_a0a2a51().createNode(_context.getOutputNodeByInputNodeAndMappingLabel(parentBuilder, "builderVar"));
+    SNode parentRef = _quotation_createNode_x583g4_a0c0p(_context.getOutputNodeByInputNodeAndMappingLabel(parentBuilder, "builderVar"));
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), parentBuilder, "virtual_getAttachStatement_7288041816792215495", new Object[]{SLinkOperations.getTarget(_context.getNode(), "builder", true), parentRef, childRef});
   }
 
-  public static class QuotationClass_x583g4_a0a1a41 {
-    public QuotationClass_x583g4_a0a1a41() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_x583g4_a0b0o(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("variableDeclaration", (SNode) parameter_1);
+    return quotedNode_2;
   }
 
-  public static class QuotationClass_x583g4_a0a0a51 {
-    public QuotationClass_x583g4_a0a0a51() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_x583g4_a0a0p(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("variableDeclaration", (SNode) parameter_1);
+    return quotedNode_2;
   }
 
-  public static class QuotationClass_x583g4_a0a2a51 {
-    public QuotationClass_x583g4_a0a2a51() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_x583g4_a0c0p(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("variableDeclaration", (SNode) parameter_1);
+    return quotedNode_2;
   }
 }

@@ -6,10 +6,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -25,7 +24,11 @@ public class TemplateArgumentQuery_Behavior {
       SNode templateParameter = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(call, "template", false), "parameter", true)).getElement(index);
       return SNodeOperations.copyNode(SLinkOperations.getTarget(templateParameter, "type", true));
     }
-    return new TemplateArgumentQuery_Behavior.QuotationClass_8mmc34_a0e0b().createNode();
+    return _quotation_createNode_8mmc34_a4a0();
+  }
+
+  public static boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
+    return true;
   }
 
   @Deprecated
@@ -38,20 +41,9 @@ public class TemplateArgumentQuery_Behavior {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateArgumentQuery"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", new Class[]{SNode.class}, new Object[]{});
   }
 
-  public static class QuotationClass_8mmc34_a0e0b {
-    public QuotationClass_8mmc34_a0e0b() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_8mmc34_a4a0() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
   }
 }

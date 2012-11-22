@@ -60,31 +60,31 @@
   <import index="qff7" modelUID="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6062668769034852749">
-      <property name="name" nameId="tpck.1169194664001" value="ModelChooserComponent" />
+      <property name="name" nameId="tpck.1169194664001" value="ModelChooser" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="chooser" />
     </node>
     <node type="tphr.ComponentDeclaration" typeId="tphr.1202387718766" id="6062668769034852876">
       <property name="stub" nameId="tphr.1202393242164" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ModelChooserComponent" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="chooser" />
       <property name="actionComponent" nameId="tphr.1202744343014" value="true" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="chooser" />
       <link role="extendedComponent" roleId="tphr.1202393246965" targetNodeId="tpht.1202816402995" resolveInfo="Panel" />
-      <link role="mapTo" roleId="tphr.1202393168541" targetNodeId="6062668769034852749" resolveInfo="ModelChooserComponent" />
+      <link role="mapTo" roleId="tphr.1202393168541" targetNodeId="6062668769034852749" resolveInfo="ModelChooser" />
     </node>
     <node type="tphr.ComponentController" typeId="tphr.1202388384249" id="6062668769034852877">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="chooser" />
       <link role="component" roleId="tphr.1202388401455" targetNodeId="6062668769034852876" resolveInfo="ModelChooserComponent" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6062668769034852880">
-      <property name="name" nameId="tpck.1169194664001" value="ModuleChooserComponent" />
+      <property name="name" nameId="tpck.1169194664001" value="ModuleChooser" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="chooser" />
     </node>
     <node type="tphr.ComponentDeclaration" typeId="tphr.1202387718766" id="6062668769034853016">
       <property name="stub" nameId="tphr.1202393242164" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ModuleChooserComponent" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="chooser" />
       <property name="actionComponent" nameId="tphr.1202744343014" value="true" />
-      <link role="mapTo" roleId="tphr.1202393168541" targetNodeId="6062668769034852880" resolveInfo="ModuleChooserComponent" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="chooser" />
+      <link role="mapTo" roleId="tphr.1202393168541" targetNodeId="6062668769034852880" resolveInfo="ModuleChooser" />
       <link role="extendedComponent" roleId="tphr.1202393246965" targetNodeId="tpht.1202816402995" resolveInfo="Panel" />
     </node>
     <node type="tphr.ComponentController" typeId="tphr.1202388384249" id="6062668769034853017">
@@ -101,9 +101,9 @@
     </node>
     <node type="tphr.ComponentDeclaration" typeId="tphr.1202387718766" id="6062668769034854227">
       <property name="stub" nameId="tphr.1202393242164" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="ListPanel" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="ui" />
+      <property name="name" nameId="tpck.1169194664001" value="ListPanel_Component" />
       <property name="actionComponent" nameId="tphr.1202744343014" value="true" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ui" />
       <link role="extendedComponent" roleId="tphr.1202393246965" targetNodeId="tpht.1202816402995" resolveInfo="Panel" />
       <link role="mapTo" roleId="tphr.1202393168541" targetNodeId="6062668769034854228" resolveInfo="ListPanel" />
     </node>
@@ -179,7 +179,7 @@
                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6062668769034852815" resolveInfo="collectModels" />
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="6062668769034852779">
-                              <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="6062668769034852749" resolveInfo="ModelChooserComponent" />
+                              <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="6062668769034852749" resolveInfo="ModelChooser" />
                             </node>
                           </node>
                         </node>
@@ -208,14 +208,14 @@
                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zw69.~CommonChoosers%dshowDialogModelChooser(com%dintellij%dopenapi%dproject%dProject,java%dawt%dComponent,java%dutil%dList,java%dutil%dList)%cjetbrains%dmps%dsmodel%dSModelReference" resolveInfo="showDialogModelChooser" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5882519022999965938" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="6062668769034852789">
-                                <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="6062668769034852749" resolveInfo="ModelChooserComponent" />
+                                <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="6062668769034852749" resolveInfo="ModelChooser" />
                               </node>
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6062668769034852790">
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="6062668769034852791">
                                   <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="6062668769034852750" resolveInfo="myCheckedModels" />
                                 </node>
                                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="6062668769034852792">
-                                  <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="6062668769034852749" resolveInfo="ModelChooserComponent" />
+                                  <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="6062668769034852749" resolveInfo="ModelChooser" />
                                 </node>
                               </node>
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="6062668769034852793">
@@ -248,7 +248,7 @@
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6062668769034852803">
                               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6062668769034852804">
                                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="6062668769034852805">
-                                  <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="6062668769034852749" resolveInfo="ModelChooserComponent" />
+                                  <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="6062668769034852749" resolveInfo="ModelChooser" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6062668769034852806">
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xk9i.1240470842553499290" resolveInfo="setText" />
@@ -482,7 +482,7 @@
                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6062668769034852947" resolveInfo="collectModules" />
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="6062668769034852910">
-                              <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="6062668769034852880" resolveInfo="ModuleChooserComponent" />
+                              <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="6062668769034852880" resolveInfo="ModuleChooser" />
                             </node>
                           </node>
                         </node>
@@ -510,7 +510,7 @@
                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zw69.~CommonChoosers%dshowDialogModuleChooser(com%dintellij%dopenapi%dproject%dProject,java%dawt%dComponent,java%dlang%dString,java%dutil%dList,java%dutil%dList)%cjetbrains%dmps%dproject%dstructure%dmodules%dModuleReference" resolveInfo="showDialogModuleChooser" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5882519022999965948" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="6062668769034852920">
-                                <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="6062668769034852880" resolveInfo="ModuleChooserComponent" />
+                                <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="6062668769034852880" resolveInfo="ModuleChooser" />
                               </node>
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6062668769034852921">
                                 <property name="value" nameId="tpee.1070475926801" value="" />
@@ -520,7 +520,7 @@
                                   <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="6062668769034852881" resolveInfo="myCheckedModules" />
                                 </node>
                                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="6062668769034852924">
-                                  <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="6062668769034852880" resolveInfo="ModuleChooserComponent" />
+                                  <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="6062668769034852880" resolveInfo="ModuleChooser" />
                                 </node>
                               </node>
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="6062668769034852925">
@@ -553,7 +553,7 @@
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6062668769034852935">
                               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6062668769034852936">
                                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="6062668769034852937">
-                                  <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="6062668769034852880" resolveInfo="ModuleChooserComponent" />
+                                  <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="6062668769034852880" resolveInfo="ModuleChooser" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6062668769034852938">
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xk9i.1240470842553499290" resolveInfo="setText" />
@@ -1143,7 +1143,7 @@
       </node>
       <node role="content" roleId="tphr.1202817142302" type="tphr.ComponentInstance" typeId="tphr.1202387945296" id="6062668769034853167">
         <property name="name" nameId="tpck.1169194664001" value="testCases" />
-        <link role="componentDeclaration" roleId="tphr.1202388027333" targetNodeId="6062668769034854227" resolveInfo="ListPanel" />
+        <link role="componentDeclaration" roleId="tphr.1202388027333" targetNodeId="6062668769034854227" resolveInfo="ListPanel_Component" />
         <node role="content" roleId="tphr.1202817142302" type="tphr.LayoutConstraint" typeId="tphr.1202739819652" id="6062668769034853168">
           <node role="constraint" roleId="tphr.1202739826872" type="fb9u.GridBagConstraints" typeId="fb9u.2722628536111969416" id="6062668769034853169">
             <property name="constraintsKind" nameId="fb9u.2722628536111969418" value="panel" />
@@ -1171,7 +1171,7 @@
       </node>
       <node role="content" roleId="tphr.1202817142302" type="tphr.ComponentInstance" typeId="tphr.1202387945296" id="6062668769034853178">
         <property name="name" nameId="tpck.1169194664001" value="testMethods" />
-        <link role="componentDeclaration" roleId="tphr.1202388027333" targetNodeId="6062668769034854227" resolveInfo="ListPanel" />
+        <link role="componentDeclaration" roleId="tphr.1202388027333" targetNodeId="6062668769034854227" resolveInfo="ListPanel_Component" />
         <node role="content" roleId="tphr.1202817142302" type="tphr.LayoutConstraint" typeId="tphr.1202739819652" id="6062668769034853179">
           <node role="constraint" roleId="tphr.1202739826872" type="fb9u.GridBagConstraints" typeId="fb9u.2722628536111969416" id="6062668769034853180">
             <property name="constraintsKind" nameId="fb9u.2722628536111969418" value="panel" />

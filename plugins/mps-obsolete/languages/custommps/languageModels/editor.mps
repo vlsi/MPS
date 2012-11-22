@@ -10,6 +10,7 @@
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
+  <import index="tpco" modelUID="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" version="-1" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1233149986967">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="j1at.1233149592028" resolveInfo="MPSBuild" />
@@ -26,12 +27,13 @@
       <property name="vertical" nameId="tpc2.1073389446425" value="true" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1233150041948">
         <property name="vertical" nameId="tpc2.1073389446425" value="false" />
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2886182022232400260">
+          <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
+          <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="AliasEditorComponent" />
+          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tps9.1203598953979" resolveInfo="projectComponent" />
+        </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="1233150041949">
           <property name="flag" nameId="tpc2.1186414551515" value="false" />
-        </node>
-        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="1233150045459">
-          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tps9.1203598953979" resolveInfo="projectComponent" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="1233150089461">
           <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tps9.1224596805841" resolveInfo="IncludeExcludeEditorComponent" />
@@ -114,9 +116,10 @@
       <property name="vertical" nameId="tpc2.1073389446425" value="true" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1233679327790">
         <property name="vertical" nameId="tpc2.1073389446425" value="false" />
-        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="1233679327791">
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2886182022232399999">
+          <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
+          <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="AliasEditorComponent" />
           <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tps9.1203598953979" resolveInfo="projectComponent" />
-          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1156235010670" resolveInfo="alias" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1233679647139">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="j1at.1233679274643" />

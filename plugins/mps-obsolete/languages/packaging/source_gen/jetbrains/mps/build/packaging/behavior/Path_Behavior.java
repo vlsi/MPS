@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.File;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -66,6 +67,10 @@ public class Path_Behavior {
 
   public static boolean call_hasMacro_4323997179924030474(SNode thisNode) {
     return isNotEmpty_jfcfx2_a0a0h(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", true), "name"));
+  }
+
+  public static boolean virtual_canStartFromBasedir_1262430001741498253(SConcept thisConcept) {
+    return true;
   }
 
   @Deprecated

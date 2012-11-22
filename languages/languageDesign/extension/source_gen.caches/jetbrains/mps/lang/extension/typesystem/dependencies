@@ -4,9 +4,7 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
@@ -60,8 +58,6 @@
   <dependency className="jetbrains.mps.lang.extension.typesystem.typeof_ExtensionPointExpression_InferenceRule" file="typeof_ExtensionPointExpression_InferenceRule.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
@@ -75,8 +71,6 @@
   <dependency className="jetbrains.mps.lang.extension.typesystem.typeof_GetExtensionObjectsOperation_InferenceRule" file="typeof_GetExtensionObjectsOperation_InferenceRule.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />

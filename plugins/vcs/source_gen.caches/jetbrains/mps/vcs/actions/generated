@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="3pthp9s2fkk8npcxt758gj0z551f4c5">
   <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.projectPane.fileSystem(MPS.Workbench/jetbrains.mps.ide.projectPane.fileSystem@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2eqrjs8emy551teprj5no9utk82ifsq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-cjp3x7kpslsgnhml4bi405qvj66t1vk" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-3223m9cg8337am9br9ikluvywbkblf4" />
-  <common hash="-77u78k0t2cd6burwz3mptjly4vi8w2h">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="bavz98vwxhwhpog89k63m5eu2e8cbl3" />
+  <common hash="-77u78k0t2cd6burwz3mptjly4vi8w2h" />
   <source id="7705742079275757540" name="ShowInFileView" hash="-4lhkumk6ejr2a7s12v40n223q5amyxk">
     <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.projectPane.fileSystem(MPS.Workbench/jetbrains.mps.ide.projectPane.fileSystem@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="ShowInFileView.java" />
   </source>
   <source id="7705742079275757770" name="AbstractShowInFileView" hash="-buz0e31fbircnw80gya031hnan2u1j7">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="AbstractShowInFileView.java" />
   </source>
   <source id="7705742079275757969" name="ShowInLogicalView" hash="-3sj1f580fta8c7k3xw4kx8gsw05vgon">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="ShowInLogicalView.java" />
   </source>
 </dependencies>

@@ -2,8 +2,6 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.plugin.standalone.typesystem.Typeof_ApplicationPluginType_SubtypingRule" file="Typeof_ApplicationPluginType_SubtypingRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
@@ -17,8 +15,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.standalone.typesystem.Typeof_ProjectPluginType_SubtypingRule" file="Typeof_ProjectPluginType_SubtypingRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />

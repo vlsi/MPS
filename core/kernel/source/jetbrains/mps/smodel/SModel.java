@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
-import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -53,12 +52,7 @@ public class SModel {
 
   private INodeIdToNodeMap myIdToNodeMap = createNodeIdMap();
 
-  private Element myStructureModificationHistory;
-
-  private final SModelHeader myHeader = new SModelHeader();
-
   private SModelDescriptor myModelDescriptor;
-  private boolean fullLoadUpdateMode;
 
   private StackTraceElement[] myDisposedStacktrace = null;
   private ModelDependenciesManager myModelDependenciesManager;
@@ -646,7 +640,7 @@ public class SModel {
         for (SNode child : node.getChildren()) {
           SNode decl = child.getRoleLink();
           if (decl == null) {
-            LOG.error("undeclared child role: '" + child.getRole() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
+            LOG.error("undeclared child role: '" + child.getRoleInParent() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
           } else {
             result.add(decl.getModel().getSModelReference());
           }
@@ -726,13 +720,8 @@ public class SModel {
     myImplicitImports.add(element);
   }
 
-  public void setUpdateMode(boolean value) {
-    // update mode means we are attaching newly loaded children
-    this.fullLoadUpdateMode = value;
-  }
-
   public boolean isUpdateMode() {
-    return fullLoadUpdateMode;
+    return false;
   }
 
   //other
@@ -742,6 +731,7 @@ public class SModel {
     private int myReferenceID;  // persistence related index
     private int myUsedVersion;
 
+    @Deprecated
     public ImportElement(SModelReference modelReference, int referenceID) {
       this(modelReference, referenceID, -1);
     }
@@ -805,16 +795,11 @@ public class SModel {
 
   //---------persistance-related refactorings--------
 
-  public void setPersistenceVersion(int persistenceVersion) {
-    myHeader.setPersistenceVersion(persistenceVersion);
+  public int getVersion() {
+    return -1;
   }
 
-  public int getPersistenceVersion() {
-    return myHeader.getPersistenceVersion();
-  }
-
-  public SModelHeader getSModelHeader() {
-    return myHeader;
+  public void setVersion(int version) {
   }
 
   public void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion) {
@@ -937,7 +922,7 @@ public class SModel {
     boolean changed = false;
     for (int i = 0; i < refs.size(); i++) {
       ModuleReference ref = refs.get(i);
-      IModule module = MPSModuleRepository.getInstance().getModule(ref);
+      IModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
       if (module != null) {
         ModuleReference newRef = module.getModuleReference();
         refs.set(i, newRef);
@@ -954,7 +939,7 @@ public class SModel {
 
   //---------deprecated--------
 
-  @Deprecated
+  //why? @Deprecated
   //to use in old persistence
   public void addModelImport(ImportElement importElement) {
     ModelChange.assertLegalChange(this);
@@ -973,26 +958,6 @@ public class SModel {
   //to use in old persistence
   public int getMaxImportIndex() {
     return myMaxImportIndex;
-  }
-
-  /**
-   * @deprecated Use SModelDescriptor.getRefactoringsHistory()
-   */
-  @Deprecated
-  public Element getRefactoringHistoryElement() {
-    return myStructureModificationHistory;
-  }
-
-  @Deprecated
-  public void setRefactoringHistoryElement(Element history) {
-    ModelChange.assertLegalChange(this);
-
-    myStructureModificationHistory = history;
-  }
-
-  @Deprecated
-  public void refreshRefactoringHistory() {
-    // NOP
   }
 
   @Nullable

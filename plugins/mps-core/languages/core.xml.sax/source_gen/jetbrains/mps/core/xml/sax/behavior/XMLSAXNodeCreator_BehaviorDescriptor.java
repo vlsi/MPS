@@ -4,6 +4,7 @@ package jetbrains.mps.core.xml.sax.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class XMLSAXNodeCreator_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public XMLSAXNodeCreator_BehaviorDescriptor() {
@@ -11,6 +12,10 @@ public class XMLSAXNodeCreator_BehaviorDescriptor extends ConceptFunction_Behavi
 
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return XMLSAXNodeCreator_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  }
+
+  public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
+    return XMLSAXNodeCreator_Behavior.virtual_showName_1262430001741498082(thisConcept);
   }
 
   @Override

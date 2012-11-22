@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -19,10 +21,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
-import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 public class AddMethodDocComment_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -69,6 +67,20 @@ public class AddMethodDocComment_Intention implements IntentionFactory {
     return myCachedExecutable;
   }
 
+  private static SNode _quotation_createNode_i2k1f8_a0b0e0a(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("param", (SNode) parameter_1);
+    return quotedNode_2;
+  }
+
+  private static SNode _quotation_createNode_i2k1f8_a0b0h0a(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("param", (SNode) parameter_1);
+    return quotedNode_2;
+  }
+
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
@@ -90,14 +102,14 @@ public class AddMethodDocComment_Intention implements IntentionFactory {
       //  Method parameters 
       for (SNode parameterDeclaration : ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true))) {
         SNode paramTag = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
-        SLinkOperations.setTarget(paramTag, "parameter", new AddMethodDocComment_Intention.QuotationClass_en9z97_a2a1a4a1a().createNode(parameterDeclaration), true);
+        SLinkOperations.setTarget(paramTag, "parameter", _quotation_createNode_i2k1f8_a0b0e0a(parameterDeclaration), true);
         ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))), "param", true)).addElement(paramTag);
       }
 
       //  Type variables 
       for (SNode typeVariableDeclaration : ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true))) {
         SNode paramTag = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
-        SLinkOperations.setTarget(paramTag, "parameter", new AddMethodDocComment_Intention.QuotationClass_en9z97_a2a1a7a1a().createNode(typeVariableDeclaration), true);
+        SLinkOperations.setTarget(paramTag, "parameter", _quotation_createNode_i2k1f8_a0b0h0a(typeVariableDeclaration), true);
         ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))), "param", true)).addElement(paramTag);
       }
 
@@ -116,42 +128,6 @@ public class AddMethodDocComment_Intention implements IntentionFactory {
 
     public IntentionDescriptor getDescriptor() {
       return AddMethodDocComment_Intention.this;
-    }
-  }
-
-  public static class QuotationClass_en9z97_a2a1a4a1a {
-    public QuotationClass_en9z97_a2a1a4a1a() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("param", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_en9z97_a2a1a7a1a {
-    public QuotationClass_en9z97_a2a1a7a1a() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("param", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
     }
   }
 }

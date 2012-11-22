@@ -10,10 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 
 public class CellModel_Empty_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -42,7 +39,7 @@ public class CellModel_Empty_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.DRAW_BORDER, true);
     }
-    editorCell.addEditorCell(this.createConceptProperty_uq4f57_a0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_uq4f57_a0_0(editorContext, node));
     return editorCell;
   }
 
@@ -52,21 +49,9 @@ public class CellModel_Empty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_uq4f57_a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-    provider.setRole("alias");
-    provider.setNoTargetText("<no alias>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("conceptProperty_alias");
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
+  private EditorCell createComponent_uq4f57_a0_0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new AliasEditorComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 }

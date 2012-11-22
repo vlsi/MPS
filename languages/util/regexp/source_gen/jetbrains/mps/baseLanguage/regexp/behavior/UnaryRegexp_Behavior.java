@@ -6,9 +6,9 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class UnaryRegexp_Behavior {
   public static void init(SNode thisNode) {
@@ -19,7 +19,7 @@ public class UnaryRegexp_Behavior {
     return ((UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(thisNode) ?
       Regexp_Behavior.call_par_1222433790846(thisNode, s) :
       s
-    )) + SConceptPropertyOperations.getString(thisNode, "alias");
+    )) + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
   }
 
   public static boolean call_inParentheses_1353467374623956744(SNode thisNode) {

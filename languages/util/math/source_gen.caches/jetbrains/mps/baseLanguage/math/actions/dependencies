@@ -5,12 +5,9 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -28,6 +25,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SideTransformActionsBuilderContext" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SideTransformPreconditionContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.SConceptNodeAdapter" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />

@@ -3,6 +3,7 @@
   <dep model="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.user(jetbrains.mps.gwt.client/com.google.gwt.user@gwt_stub)" />
   <dep model="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.user.theme.standard(jetbrains.mps.gwt.client/com.google.gwt.user.theme.standard@gwt_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.oracle.net(JDK/com.oracle.net@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.oracle.nio(JDK/com.oracle.nio@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.accessibility.internal.resources(JDK/com.sun.accessibility.internal.resources@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.activation.registries(JDK/com.sun.activation.registries@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.awt(JDK/com.sun.awt@java_stub)" />
@@ -90,8 +91,6 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.browser.dom(JDK/com.sun.java.browser.dom@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.browser.net(JDK/com.sun.java.browser.net@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.swing(JDK/com.sun.java.swing@java_stub)" />
-  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.swing.plaf.gtk(JDK/com.sun.java.swing.plaf.gtk@java_stub)" />
-  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.swing.plaf.gtk.resources(JDK/com.sun.java.swing.plaf.gtk.resources@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.swing.plaf.motif(JDK/com.sun.java.swing.plaf.motif@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.swing.plaf.motif.resources(JDK/com.sun.java.swing.plaf.motif.resources@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.swing.plaf.nimbus(JDK/com.sun.java.swing.plaf.nimbus@java_stub)" />
@@ -622,7 +621,6 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.applet.resources(JDK/sun.applet.resources@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.audio(JDK/sun.audio@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt(JDK/sun.awt@java_stub)" />
-  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.X11(JDK/sun.awt.X11@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.color(JDK/sun.awt.color@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.datatransfer(JDK/sun.awt.datatransfer@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.dnd(JDK/sun.awt.dnd@java_stub)" />
@@ -631,7 +629,6 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.im(JDK/sun.awt.im@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.image(JDK/sun.awt.image@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.image.codec(JDK/sun.awt.image.codec@java_stub)" />
-  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.motif(JDK/sun.awt.motif@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.resources(JDK/sun.awt.resources@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.shell(JDK/sun.awt.shell@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.util(JDK/sun.awt.util@java_stub)" />
@@ -645,11 +642,12 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.instrument(JDK/sun.instrument@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.io(JDK/sun.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d(JDK/sun.java2d@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d.d3d(JDK/sun.java2d.d3d@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d.loops(JDK/sun.java2d.loops@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d.opengl(JDK/sun.java2d.opengl@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d.pipe(JDK/sun.java2d.pipe@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d.pipe.hw(JDK/sun.java2d.pipe.hw@java_stub)" />
-  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d.x11(JDK/sun.java2d.x11@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d.windows(JDK/sun.java2d.windows@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jdbc.odbc(JDK/sun.jdbc.odbc@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jdbc.odbc.ee(JDK/sun.jdbc.odbc.ee@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jkernel(JDK/sun.jkernel@java_stub)" />
@@ -736,6 +734,7 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.security.krb5.internal.crypto.dk(JDK/sun.security.krb5.internal.crypto.dk@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.security.krb5.internal.ktab(JDK/sun.security.krb5.internal.ktab@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.security.krb5.internal.rcache(JDK/sun.security.krb5.internal.rcache@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.security.krb5.internal.tools(JDK/sun.security.krb5.internal.tools@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.security.krb5.internal.util(JDK/sun.security.krb5.internal.util@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.security.pkcs(JDK/sun.security.pkcs@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.security.provider(JDK/sun.security.provider@java_stub)" />
@@ -782,31 +781,30 @@
   <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client@java_stub)" />
   <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client.ui(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client.ui@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" hash="cxs30hywoxhaecg9wtrurzo74jw35te" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="21snxjnsdyx017gstofkv07qfwhy8bp" />
-  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="11o9hwn8mmv3t0rd0t4c3u6csx20ngv" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="72jgettirgdze5zodlg3xz1jp5r3et8" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="br0zbuysk1h237dalzeuxqn1fmdj2bn" />
+  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="4u4gfazl96v41fihdmcrrf2l58oz4g0" />
   <dep model="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" hash="59n2gedme5x59v3mb58pov4k35k6zjr" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2eqrjs8emy551teprj5no9utk82ifsq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-cjp3x7kpslsgnhml4bi405qvj66t1vk" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="bavz98vwxhwhpog89k63m5eu2e8cbl3" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dweusve4s1cnqvm1h7144swvj24rs4o" />
-  <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" hash="eopx5jewgry1emnak5g3q5928nfwyhd" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="bpm5l8tzdjl5ob7wfspdm9ighcx2egt" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="4yv3i228jsj4eigv2gbdxz34tjdaulm" />
-  <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="-9sj32mv0hwby4m1dw4kwbtoapvsjysk" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-baumsvy45qwk0i0m1tzx9fili68fouh" />
+  <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" hash="b6qwmon42e2m3ilphx1s2e0pt88dxyp" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="2dy8xiidlzrzle36neizg1wmnjoxwv8" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-6j0akft5aclgp8lyr2vcwpdzkro8l8q" />
+  <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="3030le8bdppe4c0nhns7dlqbcgjuq1d" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-ajx3tbmj913lpllsy57180fd07jxqa3" />
-  <dep model="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" hash="abstjwzsff5xdtew6irj8qr36p79xyd" />
-  <dep model="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" hash="etiwap825aq5emlq6tt82yi5a7cobpk" />
-  <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="2477vbyvtzsh7vo3tr3tayoxjyljmo5" />
+  <dep model="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" hash="-97abcf6z0eb5cef0vttefsfpa4eq6sd" />
+  <dep model="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" hash="1zlhgue35ec9cbkov776izsvv1rumwc" />
+  <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="-5vfg2ib2be2yqaomu7cvgm97hdvh00d" />
   <dep model="r:00000000-0000-4000-0000-011c89590576(jetbrains.mps.gtext.generator.baseLanguage.template.main@generator)" hash="6hkhr0r9odhfjwrsix7dek59q02pg9t" />
-  <dep model="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" hash="7kqn0wmq8fcprv7qlz9ij9oko4cf9z4" />
+  <dep model="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" hash="-90h8ur0t30myxsdozihagm63dtfos75" />
   <dep model="r:00000000-0000-4000-0000-011c89590589(jetbrains.mps.xml.generator.baseLanguage.template.main@generator)" hash="-5qxvr6clp2v0fpa05z1o5g2lnv7onz8" />
   <dep model="r:00000000-0000-4000-0000-011c89590592(jetbrains.mps.xmlInternal.generator.baseLanguage.template.main@generator)" hash="-w9k5at8p4bm2xncg98gvxb3d6gqv2x" />
   <dep model="r:0096937e-0d1c-4498-b54e-f1ebceb78c48(jetbrains.mps.ui.internal.generator.template.main@generator)" hash="-av02mljodobf5xficxyohwiu51bizzs" />
   <dep model="r:10f25532-8045-4769-a24c-e48e027baa9d(jetbrains.mps.ui.sandbox.gwt)" hash="c6zvq9vmtsevhgaeermfsnsztm3gfsc" />
   <dep model="r:1662aa20-edf5-46c3-8002-c6d4c875fd31(jetbrains.mps.gwt.client.generator.template.main@generator)" hash="9hqa0nzq52buqtezp2tkc0kg0zplmn2" />
   <dep model="r:22d98723-5ac5-4775-a416-434d71d737ed(jetbrains.mps.ui.swing.widgets)" />
-  <dep model="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" hash="904bi7j7o5mz28wkftf8lygniotvtvv" />
+  <dep model="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" hash="-dro7v1e7pgk2ykhte1ox2p0ozrq3oa0" />
   <dep model="r:32537826-1146-4f8d-92f2-d34a6c6f2706(jetbrains.mps.ui.swing.generator.template.main@generator)" hash="6wzmamrkau2k2v3bskukfxgh52nugk" />
   <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" hash="-c9thvap90c0u6m1aex053edqxzdqjg5" />
   <dep model="r:365f182a-cc04-4509-a3b0-2053df8061d1(jetbrains.mps.ui.swt.runtime.widgets)" hash="-bbw1j7sbel6vml77yiwkpo5blcwchoa" />
@@ -814,8 +812,8 @@
   <dep model="r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)" hash="-93x58l6yxe8ffxoe1ce6y6aezr19bqr" />
   <dep model="r:39023b18-af4f-44db-bcb1-c118a59086cd(jetbrains.mps.ui.generator.template.meta@generator)" hash="-4e4dv6xz04iuvsdfhgw8e84rxasa8he" />
   <dep model="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)" hash="-1u2bq8uvpsv9d10mcyyhyl5go09nn56" />
-  <dep model="r:4bcef4e7-5bde-4076-8e02-73a0681ac6a3(jetbrains.mps.ui.structure)" hash="-8syy44b3wbbpkf24lbc99xsmiziwpzh" />
-  <dep model="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" hash="-cqyqskrem7nlgpo1xelcebhd8lj9wq1" />
+  <dep model="r:4bcef4e7-5bde-4076-8e02-73a0681ac6a3(jetbrains.mps.ui.structure)" hash="6ziiknjdispx9jfvn66zoqp5deajg1e" />
+  <dep model="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" hash="3nf5q8cg1z81eamj6k44m0mbjl68xdq" />
   <dep model="r:517e9ae1-a31e-409f-939e-e3818e8527df(jetbrains.mps.ui.gwt.structure)" hash="-2d2ap659jik25ccy9jwfpoaope76nl7" />
   <dep model="r:51efe78a-da84-4c87-b8b1-cd2e544fddd2(jetbrains.mps.ui.modeling.ann)" hash="-bif5boeesspp43qhjz7aimtnsc545hi" />
   <dep model="r:66bbcfbe-bddf-4df7-8bd5-fa076512c024(jetbrains.mps.ui.generator.template.variants@generator)" hash="-ara98zc0lg7riuy7td7ocist285mb66" />
@@ -826,14 +824,14 @@
   <dep model="r:840b989b-d75d-4268-abaa-4676d1720c58(jetbrains.mps.ui.events)" />
   <dep model="r:86ee6b4b-6b14-4232-a964-c35c292583ac(jetbrains.mps.ui.gwt.generator.template.helper)" hash="3ylm0yzjp8eo96is00ow213cmrrjjr3" />
   <dep model="r:8999af71-8d74-463c-91cf-52b8c2875292(jetbrains.mps.ui.swt.structure)" hash="-cz5d6o5gg869c0gtmoiv2n518b5f6s4" />
+  <dep model="r:940623f0-75cf-4f64-98fc-aef3fadfaedd(jetbrains.mps.gwt.client.structure)" hash="2jp8vj91lc59j7zj3wow9u3u5mznztx" />
   <dep model="r:9e833b11-a3b9-451a-a8dc-35cf0834f311(jetbrains.mps.ui.swt.runtime.layout)" hash="-8nkr6ggg2b16dw2frqttf31p9t8m4c6" />
   <dep model="r:a145b87e-922a-44dc-a6ab-743b516afc3a(jetbrains.mps.ui.swing.behavior)" hash="41rginxyo1fz17bcvit6vr45ht74rel" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-3223m9cg8337am9br9ikluvywbkblf4" />
   <dep model="r:b5bea281-ab90-4fa9-bfa9-a6d130009710(jetbrains.mps.ui.swt.events)" />
-  <dep model="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" hash="-dh3texho6gjccz87c6ybxkhhx7frsgi" />
+  <dep model="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" hash="-dwufk94zx8c3c6qcoefiy9f5a2u7an9" />
   <dep model="r:bc697ec3-2ba9-4c70-aa63-ea0f5f0a693b(jetbrains.mps.ui.swt.behavior)" hash="e61dydeyi2vr9s8h9qrizj7ug65ad8z" />
   <dep model="r:c1b84d62-80cc-499b-b655-943c00c7ba88(jetbrains.mps.ui.widgets)" />
-  <dep model="r:c33653ee-1be0-4ff5-9822-83365da4e9b7(jetbrains.mps.ui.modeling.behavior)" hash="-7of5xrn9gt2r5c2jp7k0v4nuzhg9qoh" />
+  <dep model="r:c33653ee-1be0-4ff5-9822-83365da4e9b7(jetbrains.mps.ui.modeling.behavior)" hash="4ay0tsa7zvwktnk3hmfse0kjdqw6t31" />
   <dep model="r:dfdf3542-dbcf-43df-870a-3c3504b3c840(jetbrains.mps.baseLanguage.collections.custom)" />
   <dep model="r:e1fb76fe-337f-4b99-9cd2-23a0f09d8877(jetbrains.mps.ui.gwt.widgets)" />
   <dep model="r:e8762dad-daad-468e-8f14-8910b1a06775(jetbrains.mps.ui.swing.events)" />
@@ -844,10 +842,6 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client.ui(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client.ui@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:6878192c-cfd9-411c-9af0-6054cf03c27f(jetbrains.mps.ui.gwt.generator.template.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="Executor.java" />
     <file name="Function.java" />
     <file name="WidgetIterator.java" />
@@ -887,7 +881,6 @@
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" />
@@ -939,8 +932,6 @@
   </source>
   <source id="7046856741208199003" name="BusinessObject" hash="97gjzc41lbwkb9c5whuzlsi4ksn84xd">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:66bbcfbe-bddf-4df7-8bd5-fa076512c024(jetbrains.mps.ui.generator.template.variants@generator)" />
     <file name="BusinessObject.java" />
   </source>
@@ -948,6 +939,7 @@
     <dep model="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.user(jetbrains.mps.gwt.client/com.google.gwt.user@gwt_stub)" />
     <dep model="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.user.theme.standard(jetbrains.mps.gwt.client/com.google.gwt.user.theme.standard@gwt_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.oracle.net(JDK/com.oracle.net@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.oracle.nio(JDK/com.oracle.nio@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.accessibility.internal.resources(JDK/com.sun.accessibility.internal.resources@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.activation.registries(JDK/com.sun.activation.registries@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.awt(JDK/com.sun.awt@java_stub)" />
@@ -1035,8 +1027,6 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.browser.dom(JDK/com.sun.java.browser.dom@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.browser.net(JDK/com.sun.java.browser.net@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.swing(JDK/com.sun.java.swing@java_stub)" />
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.swing.plaf.gtk(JDK/com.sun.java.swing.plaf.gtk@java_stub)" />
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.swing.plaf.gtk.resources(JDK/com.sun.java.swing.plaf.gtk.resources@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.swing.plaf.motif(JDK/com.sun.java.swing.plaf.motif@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.swing.plaf.motif.resources(JDK/com.sun.java.swing.plaf.motif.resources@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.java.swing.plaf.nimbus(JDK/com.sun.java.swing.plaf.nimbus@java_stub)" />
@@ -1567,7 +1557,6 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.applet.resources(JDK/sun.applet.resources@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.audio(JDK/sun.audio@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt(JDK/sun.awt@java_stub)" />
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.X11(JDK/sun.awt.X11@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.color(JDK/sun.awt.color@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.datatransfer(JDK/sun.awt.datatransfer@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.dnd(JDK/sun.awt.dnd@java_stub)" />
@@ -1576,7 +1565,6 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.im(JDK/sun.awt.im@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.image(JDK/sun.awt.image@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.image.codec(JDK/sun.awt.image.codec@java_stub)" />
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.motif(JDK/sun.awt.motif@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.resources(JDK/sun.awt.resources@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.shell(JDK/sun.awt.shell@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.awt.util(JDK/sun.awt.util@java_stub)" />
@@ -1590,11 +1578,12 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.instrument(JDK/sun.instrument@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.io(JDK/sun.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d(JDK/sun.java2d@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d.d3d(JDK/sun.java2d.d3d@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d.loops(JDK/sun.java2d.loops@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d.opengl(JDK/sun.java2d.opengl@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d.pipe(JDK/sun.java2d.pipe@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d.pipe.hw(JDK/sun.java2d.pipe.hw@java_stub)" />
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d.x11(JDK/sun.java2d.x11@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.java2d.windows(JDK/sun.java2d.windows@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jdbc.odbc(JDK/sun.jdbc.odbc@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jdbc.odbc.ee(JDK/sun.jdbc.odbc.ee@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.jkernel(JDK/sun.jkernel@java_stub)" />
@@ -1681,6 +1670,7 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.security.krb5.internal.crypto.dk(JDK/sun.security.krb5.internal.crypto.dk@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.security.krb5.internal.ktab(JDK/sun.security.krb5.internal.ktab@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.security.krb5.internal.rcache(JDK/sun.security.krb5.internal.rcache@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.security.krb5.internal.tools(JDK/sun.security.krb5.internal.tools@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.security.krb5.internal.util(JDK/sun.security.krb5.internal.util@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.security.pkcs(JDK/sun.security.pkcs@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#sun.security.provider(JDK/sun.security.provider@java_stub)" />
@@ -1719,6 +1709,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590592(jetbrains.mps.xmlInternal.generator.baseLanguage.template.main@generator)" />
     <dep model="r:10f25532-8045-4769-a24c-e48e027baa9d(jetbrains.mps.ui.sandbox.gwt)" />
     <dep model="r:1662aa20-edf5-46c3-8002-c6d4c875fd31(jetbrains.mps.gwt.client.generator.template.main@generator)" />
+    <dep model="r:940623f0-75cf-4f64-98fc-aef3fadfaedd(jetbrains.mps.gwt.client.structure)" />
     <file name="UIDemo.gwt.xml" />
   </source>
   <source id="7001216437968616991" name="PanelsDemo" hash="2u2m73vdxwg4sjoko9tyn02d83u8h24" dependsOnCreated="true">
@@ -1740,6 +1731,7 @@
     <dep model="f:java_stub#69934240-945d-492b-83e7-39bda70200e7#org.eclipse.swt(jetbrains.mps.ui.swt.runtime/org.eclipse.swt@java_stub)" />
     <dep model="f:java_stub#69934240-945d-492b-83e7-39bda70200e7#org.eclipse.swt.events(jetbrains.mps.ui.swt.runtime/org.eclipse.swt.events@java_stub)" />
     <dep model="f:java_stub#69934240-945d-492b-83e7-39bda70200e7#org.eclipse.swt.graphics(jetbrains.mps.ui.swt.runtime/org.eclipse.swt.graphics@java_stub)" />
+    <dep model="f:java_stub#69934240-945d-492b-83e7-39bda70200e7#org.eclipse.swt.internal(jetbrains.mps.ui.swt.runtime/org.eclipse.swt.internal@java_stub)" />
     <dep model="f:java_stub#69934240-945d-492b-83e7-39bda70200e7#org.eclipse.swt.layout(jetbrains.mps.ui.swt.runtime/org.eclipse.swt.layout@java_stub)" />
     <dep model="f:java_stub#69934240-945d-492b-83e7-39bda70200e7#org.eclipse.swt.widgets(jetbrains.mps.ui.swt.runtime/org.eclipse.swt.widgets@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator(MPS.Core/jetbrains.mps.generator@java_stub)" />
@@ -1756,7 +1748,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -1839,7 +1831,6 @@
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -1907,6 +1898,7 @@
     <dep model="f:java_stub#69934240-945d-492b-83e7-39bda70200e7#org.eclipse.swt(jetbrains.mps.ui.swt.runtime/org.eclipse.swt@java_stub)" />
     <dep model="f:java_stub#69934240-945d-492b-83e7-39bda70200e7#org.eclipse.swt.events(jetbrains.mps.ui.swt.runtime/org.eclipse.swt.events@java_stub)" />
     <dep model="f:java_stub#69934240-945d-492b-83e7-39bda70200e7#org.eclipse.swt.graphics(jetbrains.mps.ui.swt.runtime/org.eclipse.swt.graphics@java_stub)" />
+    <dep model="f:java_stub#69934240-945d-492b-83e7-39bda70200e7#org.eclipse.swt.internal(jetbrains.mps.ui.swt.runtime/org.eclipse.swt.internal@java_stub)" />
     <dep model="f:java_stub#69934240-945d-492b-83e7-39bda70200e7#org.eclipse.swt.layout(jetbrains.mps.ui.swt.runtime/org.eclipse.swt.layout@java_stub)" />
     <dep model="f:java_stub#69934240-945d-492b-83e7-39bda70200e7#org.eclipse.swt.widgets(jetbrains.mps.ui.swt.runtime/org.eclipse.swt.widgets@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator(MPS.Core/jetbrains.mps.generator@java_stub)" />
@@ -1923,7 +1915,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />

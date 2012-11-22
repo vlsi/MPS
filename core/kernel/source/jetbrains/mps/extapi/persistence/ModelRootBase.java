@@ -81,23 +81,28 @@ public abstract class ModelRootBase implements ModelRoot {
     return isRegistered;
   }
 
+  public void register(SModel model) {
+    SModelRepository modelRepository = SModelRepository.getInstance();
+    if (modelRepository.getModelDescriptor(model.getModelReference()) == null) {
+      modelRepository.registerModelDescriptor((SModelDescriptor) model, getModule());
+      myModels.add(model);
+    }
+  }
+
   public void update() {
     ModelAccess.assertLegalWrite();
 
     Set<org.jetbrains.mps.openapi.model.SModelReference> loaded = new HashSet<org.jetbrains.mps.openapi.model.SModelReference>();
-    SModelRepository smRepo = SModelRepository.getInstance();
+    SModelRepository modelRepository = SModelRepository.getInstance();
     for (SModel model : getModels()) {
       loaded.add(model.getModelReference());
-      if (smRepo.getModelDescriptor(model.getModelReference()) == null) {
-        smRepo.registerModelDescriptor((SModelDescriptor) model, getModule());
-        myModels.add(model);
-      }
+      register(model);
     }
     Iterator<SModel> it = myModels.iterator();
     while (it.hasNext()) {
       SModel model = it.next();
       if (loaded.contains(model.getModelReference())) continue;
-      smRepo.unRegisterModelDescriptor((SModelDescriptor) model, getModule());
+      modelRepository.unRegisterModelDescriptor((SModelDescriptor) model, getModule());
       it.remove();
     }
   }

@@ -26,11 +26,11 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.MacrosFactory;
@@ -274,7 +274,7 @@ public class TestMakeOnRealProject {
     solutionDescriptor.setId(ModuleId.regular());
     solutionDescriptor.setNamespace(name);
 
-    SModelRoot modelRoot = new SModelRoot(null);
+    DefaultModelRoot modelRoot = new DefaultModelRoot();
     modelRoot.setPath(runtimeSolutionDescriptorFile.getParent().getPath());
 
     solutionDescriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());
@@ -293,7 +293,7 @@ public class TestMakeOnRealProject {
     d.setNamespace(languageNamespace);
     d.getRuntimeModules().add(myCreatedRuntimeSolution.getModuleReference());
 
-    SModelRoot modelRoot = new SModelRoot(null);
+    DefaultModelRoot modelRoot = new DefaultModelRoot();
     IFile languageModels = descriptorFile.getParent().getDescendant(Language.LANGUAGE_MODELS);
     modelRoot.setPath(languageModels.getPath());
     d.getModelRootDescriptors().add(modelRoot.toDescriptor());
@@ -315,7 +315,7 @@ public class TestMakeOnRealProject {
     solutionDescriptor.setNamespace(name);
     solutionDescriptor.getUsedLanguages().add(myCreatedLanguage.getModuleReference());
 
-    SModelRoot modelRoot = new SModelRoot(null);
+    DefaultModelRoot modelRoot = new DefaultModelRoot();
     modelRoot.setPath(descriptorFile.getParent().getPath());
 
     solutionDescriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());

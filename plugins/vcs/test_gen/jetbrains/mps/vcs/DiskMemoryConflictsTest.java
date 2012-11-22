@@ -288,7 +288,7 @@ public class DiskMemoryConflictsTest {
       //  Restore model 
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         public void run() {
-          myModelDescriptor = ((DefaultSModelDescriptor) myModule.createModel(DiskMemoryConflictsTest.MODEL_REFERENCE.getSModelFqName(), myModule.getSModelRoots().iterator().next(), null));
+          myModelDescriptor = ((DefaultSModelDescriptor) myModule.createModel(DiskMemoryConflictsTest.MODEL_REFERENCE.getSModelFqName().toString(), myModule.getModelRoots().iterator().next(), null));
           myModelDescriptor.getSModel().addRoot(CopyUtil.copyAndPreserveId(myNodeBackup));
           myModelDescriptor.save();
         }

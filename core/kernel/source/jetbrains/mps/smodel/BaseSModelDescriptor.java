@@ -60,6 +60,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return myModelReference.getModelName();
   }
 
+  @Override
   @NotNull
   public DataSource getSource() {
     return mySource;
@@ -84,6 +85,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   public void attach() {
   }
 
+  @Override
   public void dispose() {
     ModelAccess.assertLegalWrite();
     SModel smodel = getCurrentModelInternal();
@@ -94,25 +96,12 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     clearListeners();
   }
 
-  public void refresh() {
-    ModelAccess.assertLegalWrite();
-
-    SModel smodel = getCurrentModelInternal();
-    if (smodel == null) return;
-
-    getSModel().refreshRefactoringHistory();
-  }
-
   @Override
   public boolean isGeneratable() {
     return false;
   }
 
   @Override
-  public String getModelHash() {
-    return null;
-  }
-
   public boolean isRegistered() {
     return myRegistered;
   }
@@ -122,10 +111,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   @Override
-  public boolean isLoaded() {
-    return getLoadingState() != ModelLoadingState.NOT_LOADED;
-  }
-
   @NotNull
   public SModelReference getModelReference() {
     return myModelReference;
@@ -134,15 +119,18 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   /**
    * use getModelReference()
    */
+  @Override
   @Deprecated
   public SModelReference getSModelReference() {
     return myModelReference;
   }
 
+  @Override
   public String getLongName() {
     return myModelReference.getLongName();
   }
 
+  @Override
   @NotNull
   public String getStereotype() {
     return myModelReference.getStereotype();

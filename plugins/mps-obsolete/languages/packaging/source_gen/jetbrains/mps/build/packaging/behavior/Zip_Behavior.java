@@ -12,6 +12,7 @@ import java.io.File;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class Zip_Behavior {
   public static void init(SNode thisNode) {
@@ -49,5 +50,13 @@ public class Zip_Behavior {
       (SPropertyOperations.getString(thisNode, "includes")) :
       ""
     );
+  }
+
+  public static boolean virtual_cleanAfterTheJob_1262430001741498148(SConcept thisConcept) {
+    return true;
+  }
+
+  public static boolean virtual_acceptFiles_1262430001741497846(SConcept thisConcept) {
+    return true;
   }
 }

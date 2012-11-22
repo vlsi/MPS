@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.project.structure.modules;
 
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.annotation.ImmutableObject;
@@ -63,15 +62,16 @@ public class ModuleReference implements SModuleReference {
     return myModuleFqName;
   }
 
+  @Override
   public ModuleId getModuleId() {
     return myModuleId;
   }
 
   @NotNull
   public ModuleReference update() {
-    IModule module = MPSModuleRepository.getInstance().getModule(this);
+    SModule module = ModuleRepositoryFacade.getInstance().getModule(this);
     if (module == null) return this;
-    return module.getModuleReference();
+    return (ModuleReference) module.getModuleReference();
   }
 
   public boolean differs(ModuleReference ref) {

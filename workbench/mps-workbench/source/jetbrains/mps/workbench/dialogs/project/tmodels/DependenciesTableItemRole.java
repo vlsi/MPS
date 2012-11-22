@@ -16,14 +16,16 @@
 package jetbrains.mps.workbench.dialogs.project.tmodels;
 
 
+import jetbrains.mps.workbench.dialogs.project.PropertiesBundle;
+
 public enum DependenciesTableItemRole {
-  DEPEND("depend on"),
-  EXTEND("extend"),
-  EXPORT("export"),
-  ACCESSORY("as accessory model"),
-  RUNTIME("as runtime solution"),
-  ENGAGE_ON_GEN("engage on generation"),
-  IMPORT("imported");
+  DEPEND(PropertiesBundle.message("mps.properties.configurable.tablemodel.dependency.role.depend")),
+  EXTEND(PropertiesBundle.message("mps.properties.configurable.tablemodel.dependency.role.extend")),
+  EXPORT(PropertiesBundle.message("mps.properties.configurable.tablemodel.dependency.role.export")),
+  ACCESSORY(PropertiesBundle.message("mps.properties.configurable.tablemodel.dependency.role.accessory")),
+  RUNTIME(PropertiesBundle.message("mps.properties.configurable.tablemodel.dependency.role.runtime")),
+  ENGAGE_ON_GEN(PropertiesBundle.message("mps.properties.configurable.tablemodel.dependency.role.engageongen")),
+  IMPORT(PropertiesBundle.message("mps.properties.configurable.tablemodel.dependency.role.imported"));
 
   private final String myText;
   DependenciesTableItemRole(String text) {

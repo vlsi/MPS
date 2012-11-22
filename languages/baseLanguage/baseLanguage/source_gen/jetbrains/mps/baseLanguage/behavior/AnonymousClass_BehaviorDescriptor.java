@@ -4,13 +4,14 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.scope.Scope;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
-public class AnonymousClass_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements IMethodCall_BehaviorDescriptor, IAnonymousClass_BehaviorDescriptor, IControlFlowInterrupter_BehaviorDescriptor, UnitConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
+public class AnonymousClass_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements IMethodCall_BehaviorDescriptor, IAnonymousClass_BehaviorDescriptor, IControlFlowInterrupter_BehaviorDescriptor, UnitConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public AnonymousClass_BehaviorDescriptor() {
   }
 

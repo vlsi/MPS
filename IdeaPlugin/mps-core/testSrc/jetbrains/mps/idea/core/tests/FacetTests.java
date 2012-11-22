@@ -27,24 +27,22 @@ import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.ModuleOrderEntry;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.OrderEntry;
+import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
-import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class FacetTests extends AbstractMPSFixtureTestCase {
 
@@ -59,7 +57,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
 
     // Default Solution settings
     Solution solution = myFacet.getSolution();
-    assertEmpty(solution.getSModelRoots());
+    assertFalse(solution.getModelRoots().iterator().hasNext());
     // JDK solution should be always returned as module dependencies for now
     assertEquals(1, solution.getDependencies().size());
     assertEmpty(solution.getUsedLanguagesReferences());
@@ -111,26 +109,29 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     ModuleReference solutionReference = myFacet.getSolution().getModuleReference();
 
     String modelRootPath = modelRootDir.getPath();
-    MPSConfigurationBean configurationBean = myFacet.getConfiguration().getState();
-    ArrayList<ModelRoot> roots = new ArrayList<ModelRoot>();
-    roots.add(new ModelRoot(modelRootPath));
-    configurationBean.setModelRoots(roots);
+    MPSConfigurationBean configurationBean = myFacet.getConfiguration().getBean();
+    DefaultModelRoot root = new DefaultModelRoot();
+    root.setPath(modelRootPath);
+    configurationBean.setModelRoots(Arrays.<ModelRoot>asList(root));
     myFacet.setConfiguration(configurationBean);
     flushEDT();
 
     Solution repositorySolution = ModuleRepositoryFacade.getInstance().getModule(solutionReference, Solution.class);
     assertEquals(myFacet.getSolution(), repositorySolution);
-    Collection<SModelRoot> modelRoots = repositorySolution.getSModelRoots();
-    assertEquals(1, modelRoots.size());
-    SModelRoot theModelRoot = modelRoots.iterator().next();
-    assertEquals(modelRootDir.getPath(), theModelRoot.getPath());
+    Iterable<ModelRoot> modelRoots = repositorySolution.getModelRoots();
 
-    configurationBean = myFacet.getConfiguration().getState();
+    Iterator<ModelRoot> iterator = modelRoots.iterator();
+    assertTrue(iterator.hasNext());
+    ModelRoot theModelRoot = iterator.next();
+    assertFalse(iterator.hasNext());
+    assertEquals(modelRootDir.getPath(), ((FolderModelRootBase) theModelRoot).getPath());
+
+    configurationBean = myFacet.getConfiguration().getBean();
     configurationBean.setModelRoots(new ArrayList<ModelRoot>());
     myFacet.setConfiguration(configurationBean);
     flushEDT();
 
-    assertEmpty(repositorySolution.getSModelRoots());
+    assertFalse(repositorySolution.getModelRoots().iterator().hasNext());
   }
 
   public void testAddRemoveUsedLanguage() throws InterruptedException {
@@ -142,7 +143,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     String[] usedLanguageStrings = new String[]{baseLanguage.toString(), editorLanguage.toString()};
     Language[] usedLanguages = new Language[]{baseLanguage, editorLanguage};
 
-    MPSConfigurationBean configurationBean = myFacet.getConfiguration().getState();
+    MPSConfigurationBean configurationBean = myFacet.getConfiguration().getBean();
     configurationBean.setUsedLanguages(usedLanguageStrings);
     myFacet.setConfiguration(configurationBean);
     flushEDT();
@@ -166,7 +167,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
 
   public void testSetGeneratorOutputPath() throws InterruptedException {
     @NonNls String generatorOutputPath = getModuleHome() + "/generatorOut";
-    MPSConfigurationBean configurationBean = myFacet.getConfiguration().getState();
+    MPSConfigurationBean configurationBean = myFacet.getConfiguration().getBean();
     configurationBean.setGeneratorOutputPath(generatorOutputPath);
     myFacet.setConfiguration(configurationBean);
     flushEDT();
@@ -175,7 +176,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
   }
 
   public void testDefaultOutput() {
-    MPSConfigurationBean configurationBean = myFacet.getConfiguration().getState();
+    MPSConfigurationBean configurationBean = myFacet.getConfiguration().getBean();
     assertFalse(configurationBean.isUseTransientOutputFolder());
     assertFalse(configurationBean.isUseModuleSourceFolder());
   }

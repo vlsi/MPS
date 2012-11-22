@@ -21,7 +21,6 @@ import jetbrains.mps.lang.actions.behavior.RemoveSTByConditionPart_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.datatransfer.PasteWrappersManager;
 import jetbrains.mps.lang.actions.behavior.PastePostProcessor_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.actions.behavior.CopyPreProcessor_Behavior;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
@@ -167,15 +166,15 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5457641811178037490(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPastePostProcess"), "alias");
+    return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPastePostProcess"), "conceptAlias");
   }
 
   public static Object propertyMacro_GetPropertyValue_5948027493682498288(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcess"), "alias");
+    return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcess"), "conceptAlias");
   }
 
   public static Object propertyMacro_GetPropertyValue_5948027493682498325(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcessOriginal"), "alias");
+    return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcessOriginal"), "conceptAlias");
   }
 
   public static Object propertyMacro_GetPropertyValue_5948027493682405974(final IOperationContext operationContext, final PropertyMacroContext _context) {

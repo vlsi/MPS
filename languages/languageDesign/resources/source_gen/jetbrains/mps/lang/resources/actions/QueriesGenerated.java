@@ -15,10 +15,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -39,11 +36,11 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0a().createNode((item));
+                return _quotation_createNode_u7cy7b_a0a0a0a((item));
               }
 
               public String getMatchingText(String pattern) {
-                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.resources.structure.IconResourceReference"), "alias") + "<" + SPropertyOperations.getString((item), "name") + ">";
+                return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.resources.structure.IconResourceReference"), "conceptAlias") + "<" + SPropertyOperations.getString((item), "name") + ">";
               }
 
               public String getVisibleMatchingText(String pattern) {
@@ -57,21 +54,10 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0a {
-    public QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0a() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.resources.structure.IconResourceReference", null, null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("declaration", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode _quotation_createNode_u7cy7b_a0a0a0a(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.resources.structure.IconResourceReference", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("declaration", (SNode) parameter_1);
+    return quotedNode_2;
   }
 }

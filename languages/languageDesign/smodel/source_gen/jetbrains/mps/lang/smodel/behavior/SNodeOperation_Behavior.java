@@ -8,7 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -51,8 +52,40 @@ public class SNodeOperation_Behavior {
   }
 
   public static String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
-    String variableExpectedName = NameUtil.toValidCamelIdentifier(SConceptPropertyOperations.getString(thisNode, "alias"));
+    String variableExpectedName = NameUtil.toValidCamelIdentifier(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias"));
     return variableExpectedName;
+  }
+
+  public static boolean virtual_applicableToModel_1262430001741492322(SConcept thisConcept) {
+    return false;
+  }
+
+  public static boolean virtual_applicableToConceptProperty_1262430001741497945(SConcept thisConcept) {
+    return false;
+  }
+
+  public static boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
+    return false;
+  }
+
+  public static boolean virtual_applicableToSimpleProperty_1262430001741498100(SConcept thisConcept) {
+    return false;
+  }
+
+  public static boolean virtual_applicableToEnumProperty_1262430001741498259(SConcept thisConcept) {
+    return false;
+  }
+
+  public static boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
+    return false;
+  }
+
+  public static boolean virtual_applicableToConcept_1262430001741498358(SConcept thisConcept) {
+    return false;
+  }
+
+  public static boolean virtual_applicableToLinkList_1262430001741498382(SConcept thisConcept) {
+    return false;
   }
 
   public static SNode getLeftNodeConcept_1213877508847(SNode parent) {

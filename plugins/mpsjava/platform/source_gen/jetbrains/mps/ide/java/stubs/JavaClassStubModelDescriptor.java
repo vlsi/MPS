@@ -46,11 +46,9 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptor {
     return myModel;
   }
 
-  public ModelLoadingState getLoadingState() {
-    return (myModel == null ?
-      ModelLoadingState.NOT_LOADED :
-      ModelLoadingState.FULLY_LOADED
-    );
+  @Override
+  public boolean isLoaded() {
+    return myModel != null;
   }
 
   public SModel createModel() {

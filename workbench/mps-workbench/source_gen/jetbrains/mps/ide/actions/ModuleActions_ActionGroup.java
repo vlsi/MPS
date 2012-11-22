@@ -24,6 +24,7 @@ public class ModuleActions_ActionGroup extends GeneratedActionGroup {
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         ModuleActions_ActionGroup.this.addAction(action);
       }
+      ModuleActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ModuleProperties_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

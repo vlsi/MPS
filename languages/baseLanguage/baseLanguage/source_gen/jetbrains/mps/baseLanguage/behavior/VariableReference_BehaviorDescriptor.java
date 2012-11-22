@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class VariableReference_BehaviorDescriptor extends Expression_BehaviorDescriptor implements TypeAnnotable_BehaviorDescriptor, IVariableReference_BehaviorDescriptor, ILocalReference_BehaviorDescriptor {
   public VariableReference_BehaviorDescriptor() {
@@ -31,6 +32,10 @@ public class VariableReference_BehaviorDescriptor extends Expression_BehaviorDes
 
   public boolean virtual_isCompileTimeConstant_1238860258777(SNode thisNode) {
     return VariableReference_Behavior.virtual_isCompileTimeConstant_1238860258777(thisNode);
+  }
+
+  public boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
+    return VariableReference_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
   }
 
   @Override

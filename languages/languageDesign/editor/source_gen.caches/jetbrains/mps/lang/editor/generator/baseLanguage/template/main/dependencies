@@ -8,8 +8,6 @@
     <classNode dependClassName="java.lang.NumberFormatException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />
@@ -30,7 +28,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
@@ -46,6 +43,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.SConceptNodeAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
   </dependency>

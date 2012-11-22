@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import java.io.File;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class NonExistingPath_Behavior {
   public static void init(SNode thisNode) {
@@ -13,5 +14,9 @@ public class NonExistingPath_Behavior {
 
   public static File virtual_getFile_1233322718999(SNode thisNode) {
     return new File(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", true), "path") + File.separator + SPropertyOperations.getString(thisNode, "pathToCheck").replace("/", File.separator).replace("\\", File.separator));
+  }
+
+  public static boolean virtual_canStartFromBasedir_1262430001741498253(SConcept thisConcept) {
+    return true;
   }
 }

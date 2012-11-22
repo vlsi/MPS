@@ -16,15 +16,15 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_node", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_node", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
