@@ -1968,6 +1968,18 @@
     <nodeInfo nodeId="7303989191347958690" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="71" startPosition="9" endLine="72" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7303989191349090921" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="75" startPosition="52" endLine="76" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7303989191347619247" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="79" startPosition="42" endLine="80" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5207457905969341016" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="82" startPosition="7" endLine="83" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7303989191360516981" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="82" startPosition="7" endLine="83" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="85" startPosition="31" endLine="86" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="89" startPosition="41" endLine="90" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="93" startPosition="59" endLine="94" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7303989191360529117" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="98" startPosition="178" endLine="99" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7303989191360590611" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="100" startPosition="9" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7303989191360596302" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="101" startPosition="0" endLine="102" endPosition="369" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7303989191360827735" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="105" startPosition="52" endLine="106" endPosition="372" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7303989191360887555" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="107" startPosition="79" endLine="108" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7303989191360843662" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="109" startPosition="9" endLine="110" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="113" startPosition="42" endLine="114" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5207457905969539560" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
     <nodeInfo nodeId="5207457905969539560" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
     <nodeInfo nodeId="5207457905969539560" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
@@ -1980,14 +1992,24 @@
     <nodeInfo nodeId="7303989191347638418" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="68" startPosition="59" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7303989191347619247" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="75" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="7303989191347619247" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="89" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7303989191360529106" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="97" startPosition="59" endLine="100" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7303989191360872186" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="106" startPosition="372" endLine="109" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="113" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
     <nodeInfo nodeId="5207457905969539560" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="43" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="7303989191347619247" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="68" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="97" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="105" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="5207457905969539560" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="32" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="5207457905969341016" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="54" startPosition="18" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7303989191347619247" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="54" startPosition="18" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5207457905969341016" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="83" startPosition="18" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="83" startPosition="18" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5207457905969341016" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="18" startPosition="52" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5207457905969539560" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="18" startPosition="52" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5207457905969341016" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="17" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MigrateClassifierMembers_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <nodeInfo nodeId="5207457905969341016" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="17" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MigrateClassifierMembers_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
     <scopeInfo nodeId="5207457905969539560" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="93" />
     <scopeInfo nodeId="5207457905969539560" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="24" startPosition="41" endLine="25" endPosition="93" />
     <scopeInfo nodeId="5207457905969539560" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="69" />
@@ -2001,6 +2023,13 @@
     <scopeInfo nodeId="7303989191347638428" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="69" startPosition="178" endLine="70" endPosition="23" />
     <scopeInfo nodeId="7303989191347619251" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="75" startPosition="52" endLine="76" endPosition="153" />
     <scopeInfo nodeId="7303989191347619247" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="79" startPosition="42" endLine="80" endPosition="21" />
+    <scopeInfo nodeId="7303989191360516981" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="82" startPosition="7" endLine="83" endPosition="18" />
+    <scopeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="85" startPosition="31" endLine="86" endPosition="55" />
+    <scopeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="89" startPosition="41" endLine="90" endPosition="55" />
+    <scopeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="93" startPosition="59" endLine="94" endPosition="69" />
+    <scopeInfo nodeId="7303989191360529116" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="98" startPosition="178" endLine="99" endPosition="23" />
+    <scopeInfo nodeId="7303989191360872188" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="107" startPosition="79" endLine="108" endPosition="157" />
+    <scopeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="113" startPosition="42" endLine="114" endPosition="21" />
     <scopeInfo nodeId="5207457905969539560" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="5207457905969539560" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="5207457905969539560" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
@@ -2012,29 +2041,45 @@
       <varInfo nodeId="7303989191347619247" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="7303989191347619247" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="79" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="85" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="89" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="93" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="113" startPosition="0" endLine="116" endPosition="0" />
     <scopeInfo nodeId="5207457905969539564" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="43" startPosition="52" endLine="47" endPosition="61">
       <varInfo nodeId="1080078754931326397" varName="methodCall" />
     </scopeInfo>
     <scopeInfo nodeId="7303989191347634227" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="68" startPosition="59" endLine="72" endPosition="75" />
+    <scopeInfo nodeId="7303989191360521090" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="97" startPosition="59" endLine="102" endPosition="369" />
+    <scopeInfo nodeId="7303989191360520951" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="105" startPosition="52" endLine="110" endPosition="153">
+      <varInfo nodeId="7303989191360827738" varName="operation" />
+    </scopeInfo>
     <scopeInfo nodeId="5207457905969539560" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="43" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="5207457905969539560" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="7303989191347619247" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="68" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="7303989191347619247" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="97" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="7303989191360520947" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="105" startPosition="0" endLine="112" endPosition="0">
+      <varInfo nodeId="7303989191360520947" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5207457905969551528" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="32" startPosition="59" endLine="40" endPosition="91" />
     <scopeInfo nodeId="5207457905969539560" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="32" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="5207457905969539560" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="7303989191347619247" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="54" startPosition="18" endLine="82" endPosition="7" />
+    <scopeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="83" startPosition="18" endLine="116" endPosition="7" />
     <scopeInfo nodeId="5207457905969539560" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="18" startPosition="52" endLine="53" endPosition="7" />
-    <scopeInfo nodeId="5207457905969341016" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="17" startPosition="87" endLine="82" endPosition="7" />
-    <scopeInfo nodeId="5207457905969341016" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="17" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="5207457905969341016" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="17" startPosition="87" endLine="116" endPosition="7" />
+    <scopeInfo nodeId="5207457905969341016" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="17" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="5207457905969341016" varName="operationContext" />
     </scopeInfo>
     <unitInfo nodeId="7303989191347619247" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="55" startPosition="28" endLine="82" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.MigrateClassifierMembers_MigrationScript$2" />
+    <unitInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="84" startPosition="28" endLine="116" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.MigrateClassifierMembers_MigrationScript$3" />
     <unitInfo nodeId="5207457905969539560" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="19" startPosition="28" endLine="53" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.MigrateClassifierMembers_MigrationScript$1" />
-    <unitInfo nodeId="5207457905969341016" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="16" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.MigrateClassifierMembers_MigrationScript" />
+    <unitInfo nodeId="5207457905969341016" fileName="MigrateClassifierMembers_MigrationScript.java" startLine="16" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.MigrateClassifierMembers_MigrationScript" />
   </root>
   <root nodeId="5207457905969555060" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
     <nodeInfo nodeId="5207457905969568125" fileName="MembersMigrationUtil.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="OLD_LINK_TO_NEW_BEHAVIOR_METHOD" />

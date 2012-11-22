@@ -80,5 +80,39 @@ public class MigrateClassifierMembers_MigrationScript extends BaseMigrationScrip
         return false;
       }
     });
+    // whitespace 
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "Migrate LinkList_AddNewChildOperation";
+      }
+
+      public String getAdditionalInfo() {
+        return "Migrate LinkList_AddNewChildOperation";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.smodel.structure.SLinkListAccess";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        if (!(SetSequence.fromSet(MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).keySet()).contains(SLinkOperations.getTarget(node, "link", false)))) {
+          return false;
+        }
+
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent((SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"))), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation");
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode operation = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent((SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"))), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation");
+        if ((SLinkOperations.getTarget(operation, "concept", false) == null)) {
+          SLinkOperations.setTarget(operation, "concept", SLinkOperations.getTarget(SLinkOperations.getTarget(node, "link", false), "target", false), false);
+        }
+        SLinkOperations.setTarget(node, "link", SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "member"), false);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
   }
 }
