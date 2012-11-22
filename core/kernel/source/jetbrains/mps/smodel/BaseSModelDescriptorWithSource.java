@@ -71,7 +71,7 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
   }
 
   public boolean needsReloading() {
-    return getSource().getTimestamp() != mySourceTimestamp;
+    return isLoaded() && getSource().getTimestamp() != mySourceTimestamp;
   }
 
   protected synchronized void replaceModel(Runnable replacer) {
