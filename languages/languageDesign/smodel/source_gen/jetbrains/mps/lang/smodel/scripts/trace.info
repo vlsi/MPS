@@ -423,6 +423,47 @@
     <unitInfo nodeId="1737294499102098751" fileName="ShowAdapterUsages_MigrationScript.java" startLine="16" startPosition="28" endLine="45" endPosition="5" unitName="jetbrains.mps.lang.smodel.scripts.ShowAdapterUsages_MigrationScript$1" />
     <unitInfo nodeId="1240143495251" fileName="ShowAdapterUsages_MigrationScript.java" startLine="13" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.smodel.scripts.ShowAdapterUsages_MigrationScript" />
   </root>
+  <root nodeId="2097240597984820261" modelId="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)">
+    <nodeInfo nodeId="2097240597984820261" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="12" startPosition="87" endLine="13" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="15" startPosition="31" endLine="16" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="19" startPosition="41" endLine="20" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="23" startPosition="59" endLine="24" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2097240597984820965" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="35" startPosition="42" endLine="36" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="2097240597984820261" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="13" startPosition="49" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="13" startPosition="49" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2097240597984820261" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="12" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveDirectCallProperty_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <scopeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="15" startPosition="31" endLine="16" endPosition="53" />
+    <scopeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="19" startPosition="41" endLine="20" endPosition="53" />
+    <scopeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="23" startPosition="59" endLine="24" endPosition="76" />
+    <scopeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="20" />
+    <scopeInfo nodeId="2097240597984820959" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="58" />
+    <scopeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="35" startPosition="42" endLine="36" endPosition="21" />
+    <scopeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="2097240597984820955" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="2097240597984820955" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="13" startPosition="49" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="2097240597984820261" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="12" startPosition="87" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="2097240597984820261" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="12" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="2097240597984820261" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="2097240597984820955" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="14" startPosition="28" endLine="38" endPosition="5" unitName="jetbrains.mps.lang.smodel.scripts.RemoveDirectCallProperty_MigrationScript$1" />
+    <unitInfo nodeId="2097240597984820261" fileName="RemoveDirectCallProperty_MigrationScript.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.smodel.scripts.RemoveDirectCallProperty_MigrationScript" />
+  </root>
   <root nodeId="5426775851424578122" modelId="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)">
     <nodeInfo nodeId="5426775851424578122" fileName="EscapeSpecialCharactersInProperties_MigrationScript.java" startLine="15" startPosition="98" endLine="16" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5426775851424580246" fileName="EscapeSpecialCharactersInProperties_MigrationScript.java" startLine="18" startPosition="31" endLine="19" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
