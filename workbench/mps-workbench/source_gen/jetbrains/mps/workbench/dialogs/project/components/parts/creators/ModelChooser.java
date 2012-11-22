@@ -5,7 +5,6 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.creators;
 import jetbrains.mps.util.Computable;
 import java.util.List;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.FilteredGlobalScope;
@@ -14,10 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 
 public class ModelChooser implements Computable<List<SModelReference>> {
-  private final IBindedDialog myOwner;
-
-  public ModelChooser(IBindedDialog owner) {
-    myOwner = owner;
+  public ModelChooser() {
   }
 
   public List<SModelReference> compute() {
@@ -31,6 +27,6 @@ public class ModelChooser implements Computable<List<SModelReference>> {
         }).toListSequence();
       }
     });
-    return CommonChoosers.showDialogModelCollectionChooser(null, myOwner.getMainComponent(), models, null);
+    return CommonChoosers.showDialogModelCollectionChooser(null, models, null);
   }
 }

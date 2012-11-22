@@ -25,10 +25,10 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import com.intellij.openapi.project.Project;
-import java.awt.Frame;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.IScope;
 import javax.swing.JOptionPane;
+import java.awt.Frame;
 
 public class AddAccessoryModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -93,7 +93,7 @@ public class AddAccessoryModel_Action extends BaseAction {
           }));
         }
       });
-      final SModelReference result = CommonChoosers.showDialogModelChooser(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")), models, null);
+      final SModelReference result = CommonChoosers.showDialogModelChooser(((Project) MapSequence.fromMap(_params).get("project")), models, null);
       if (result == null) {
         return;
       }

@@ -145,31 +145,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable<SMode
         @Override
         public void actionPerformed(AnActionEvent e) {
           List<ModuleReference> list =
-            (new LanguageChooser(new IBindedDialog() {
-              @Override
-              public JComponent getMainComponent() {
-                return getTabComponent();
-              }
-
-              @Override
-              public IOperationContext getOperationContext() {
-                return null;
-              }
-
-              @Override
-              public IScope getModuleScope() {
-                return null;
-              }
-
-              @Override
-              public IScope getProjectScope() {
-                return null;
-              }
-
-              @Override
-              public void addBinding(AutoBinding binding) {
-              }
-            })).compute();
+            (new LanguageChooser()).compute();
           for (ModuleReference reference : list)
             myDependTableModel.addItem(new ModuleDepTableItem(reference, DependenciesTableItemRole.ENGAGE_ON_GEN));
         }
@@ -178,31 +154,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable<SMode
         @Override
         public void actionPerformed(AnActionEvent e) {
           List<jetbrains.mps.smodel.SModelReference> list =
-            (new ModelChooser(new IBindedDialog() {
-              @Override
-              public JComponent getMainComponent() {
-                return getTabComponent();
-              }
-
-              @Override
-              public IOperationContext getOperationContext() {
-                return null;
-              }
-
-              @Override
-              public IScope getModuleScope() {
-                return null;
-              }
-
-              @Override
-              public IScope getProjectScope() {
-                return null;
-              }
-
-              @Override
-              public void addBinding(AutoBinding binding) {
-              }
-            })).compute();
+            (new ModelChooser()).compute();
           for (jetbrains.mps.smodel.SModelReference reference : list)
             myDependTableModel.addItem(new ModelDepTableItem(reference, DependenciesTableItemRole.IMPORT));
         }

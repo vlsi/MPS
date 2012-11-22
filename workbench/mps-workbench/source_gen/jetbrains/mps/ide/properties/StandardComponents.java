@@ -108,7 +108,7 @@ public class StandardComponents {
         result_wf5hwp_a0a0a0.setCanRemoveCondition(result_wf5hwp_a0a0a0a0);
         final boolean result_wf5hwp_a1a0a0a0 = removeAnyway;
         result_wf5hwp_a0a0a0.setAllowRemoveAnyway(result_wf5hwp_a1a0a0a0);
-        final Computable result_wf5hwp_a2a0a0a0 = new ModelChooser(owner);
+        final Computable result_wf5hwp_a2a0a0a0 = new ModelChooser();
         result_wf5hwp_a0a0a0.setMultipleChooser(result_wf5hwp_a2a0a0a0);
         final DefaultListCellRenderer result_wf5hwp_a3a0a0a0 = new ModelRenderer(owner.getModuleScope(), owner.getProjectScope());
         result_wf5hwp_a0a0a0.setCellRenderer(result_wf5hwp_a3a0a0a0);
@@ -126,7 +126,7 @@ public class StandardComponents {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
         final BoundListPanel result_wf5hwp_a0a0a1 = new BoundListPanel(owner, caption, list);
-        final Computable result_wf5hwp_a0a0a0a1 = new LanguageChooser(owner);
+        final Computable result_wf5hwp_a0a0a0a1 = new LanguageChooser();
         result_wf5hwp_a0a0a1.setMultipleChooser(result_wf5hwp_a0a0a0a1);
         final DefaultListCellRenderer result_wf5hwp_a1a0a0a1 = new ModuleRenderer(owner.getModuleScope(), owner.getProjectScope());
         result_wf5hwp_a0a0a1.setCellRenderer(result_wf5hwp_a1a0a0a1);
@@ -148,7 +148,7 @@ public class StandardComponents {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
         final BoundListPanel result_wf5hwp_a0a0a3 = new BoundListPanel(owner, caption, list);
-        final Computable result_wf5hwp_a0a0a0a3 = new SolutionChooser(owner);
+        final Computable result_wf5hwp_a0a0a0a3 = new SolutionChooser();
         result_wf5hwp_a0a0a3.setMultipleChooser(result_wf5hwp_a0a0a0a3);
         final DefaultListCellRenderer result_wf5hwp_a1a0a0a3 = new ModuleRenderer(owner.getModuleScope(), owner.getProjectScope());
         result_wf5hwp_a0a0a3.setCellRenderer(result_wf5hwp_a1a0a0a3);
@@ -164,7 +164,7 @@ public class StandardComponents {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
         final BoundListPanel result_wf5hwp_a0a0a4 = new BoundListPanel(owner, caption, list);
-        final Computable result_wf5hwp_a0a0a0a4 = new DevKitChooser(owner);
+        final Computable result_wf5hwp_a0a0a0a4 = new DevKitChooser();
         result_wf5hwp_a0a0a4.setMultipleChooser(result_wf5hwp_a0a0a0a4);
         final DefaultListCellRenderer result_wf5hwp_a1a0a0a4 = new ModuleRenderer(owner.getModuleScope(), owner.getProjectScope());
         result_wf5hwp_a0a0a4.setCellRenderer(result_wf5hwp_a1a0a0a4);
@@ -180,7 +180,7 @@ public class StandardComponents {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
         final BoundListPanel result_wf5hwp_a0a0a5 = new BoundListPanel(owner, caption, list);
-        final Computable result_wf5hwp_a0a0a0a5 = new GeneratorChooser(owner);
+        final Computable result_wf5hwp_a0a0a0a5 = new GeneratorChooser();
         result_wf5hwp_a0a0a5.setMultipleChooser(result_wf5hwp_a0a0a0a5);
         final DefaultListCellRenderer result_wf5hwp_a1a0a0a5 = new GeneratorRenderer(owner.getModuleScope(), owner.getProjectScope());
         result_wf5hwp_a0a0a5.setCellRenderer(result_wf5hwp_a1a0a0a5);
@@ -210,7 +210,7 @@ public class StandardComponents {
     return new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
       public BoundTablePanel invoke() {
         final BoundTablePanel result_wf5hwp_a0a0a7 = new BoundTablePanel(owner, caption, list);
-        final Computable result_wf5hwp_a0a0a0a7 = new DependencyChooser(owner);
+        final Computable result_wf5hwp_a0a0a0a7 = new DependencyChooser();
         result_wf5hwp_a0a0a7.setMultipleChooser(result_wf5hwp_a0a0a0a7);
 
         final ColumnDescriptor result_wf5hwp_a2a0a0a7 = new DepDescriptor(owner, Dependency.MODULEREF, "Module", -1);

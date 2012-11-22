@@ -259,7 +259,7 @@ public class TestConfigurationDialog extends DialogWrapper {
             }
           }).toListSequence();
 
-          ModuleReference module = CommonChoosers.showDialogModuleChooser(ProjectHelper.toIdeaProject(myProject), ModulePanel.this, TestConfigurationDialog.MODULE, projectModuleRefs, moduleRefs);
+          ModuleReference module = CommonChoosers.showDialogModuleChooser(ProjectHelper.toIdeaProject(myProject), TestConfigurationDialog.MODULE, projectModuleRefs, moduleRefs);
           if (module == null) {
             return;
           }
@@ -337,7 +337,7 @@ public class TestConfigurationDialog extends DialogWrapper {
         protected int doAdd(AnActionEvent e) {
           Iterable<SModel> models = myProject.getComponent(MPSProject.class).getProjectModels();
           List<SModelDescriptor> descrs = SModelRepository.getInstance().getModelDescriptors();
-          SModelReference modelRef = CommonChoosers.showDialogModelChooser(ProjectHelper.toIdeaProject(myProject), ModelsPanel.this, Sequence.fromIterable(models).select(new ISelector<SModel, SModelReference>() {
+          SModelReference modelRef = CommonChoosers.showDialogModelChooser(ProjectHelper.toIdeaProject(myProject), Sequence.fromIterable(models).select(new ISelector<SModel, SModelReference>() {
             public SModelReference select(SModel it) {
               return (SModelReference) it.getModelReference();
             }

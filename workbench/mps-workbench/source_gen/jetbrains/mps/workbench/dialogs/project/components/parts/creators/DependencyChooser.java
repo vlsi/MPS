@@ -5,7 +5,6 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.creators;
 import jetbrains.mps.util.Computable;
 import java.util.List;
 import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
@@ -17,10 +16,7 @@ import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import java.util.ArrayList;
 
 public class DependencyChooser implements Computable<List<Dependency>> {
-  private final IBindedDialog myOwner;
-
-  public DependencyChooser(IBindedDialog owner) {
-    myOwner = owner;
+  public DependencyChooser() {
   }
 
   public List<Dependency> compute() {
@@ -35,7 +31,7 @@ public class DependencyChooser implements Computable<List<Dependency>> {
         });
       }
     });
-    List<ModuleReference> moduleRefs = CommonChoosers.showDialogModuleCollectionChooser(null, myOwner.getMainComponent(), "module", Sequence.fromIterable(allModuleRefs.value).toListSequence(), null);
+    List<ModuleReference> moduleRefs = CommonChoosers.showDialogModuleCollectionChooser(null, "module", Sequence.fromIterable(allModuleRefs.value).toListSequence(), null);
     if (moduleRefs == null) {
       return null;
     }

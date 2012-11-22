@@ -5,7 +5,6 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.creators;
 import jetbrains.mps.util.Computable;
 import java.util.List;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Generator;
@@ -15,10 +14,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 
 public class GeneratorChooser implements Computable<List<ModuleReference>> {
-  private final IBindedDialog myOwner;
-
-  public GeneratorChooser(IBindedDialog owner) {
-    myOwner = owner;
+  public GeneratorChooser() {
   }
 
   public List<ModuleReference> compute() {
@@ -33,6 +29,6 @@ public class GeneratorChooser implements Computable<List<ModuleReference>> {
         }).toListSequence();
       }
     });
-    return CommonChoosers.showDialogModuleCollectionChooser(null, myOwner.getMainComponent(), "generator", genRefs.value, null);
+    return CommonChoosers.showDialogModuleCollectionChooser(null, "generator", genRefs.value, null);
   }
 }

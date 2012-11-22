@@ -306,18 +306,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
         @Override
         public void actionPerformed(AnActionEvent e) {
           List<Dependency> list =
-            (new DependencyChooser(new IBindedDialog() {
-              @Override
-              public JComponent getMainComponent() {return getTabComponent();}
-              @Override
-              public IOperationContext getOperationContext() {return null;}
-              @Override
-              public IScope getModuleScope() {return null;}
-              @Override
-              public IScope getProjectScope() {return null;}
-              @Override
-              public void addBinding(AutoBinding binding) {}
-            })).compute();
+            (new DependencyChooser()).compute();
           for(Dependency dependency : list)
             myDependTableModel.addItem(new ModuleDepTableItem(dependency.getModuleRef(), DependenciesTableItemRole.DEPEND, dependency.isReexport()));
         }
@@ -327,18 +316,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
           @Override
           public void actionPerformed(AnActionEvent e) {
             List<ModuleReference> list =
-              (new LanguageChooser(new IBindedDialog() {
-                @Override
-                public JComponent getMainComponent() {return getTabComponent();}
-                @Override
-                public IOperationContext getOperationContext() {return null;}
-                @Override
-                public IScope getModuleScope() {return null;}
-                @Override
-                public IScope getProjectScope() {return null;}
-                @Override
-                public void addBinding(AutoBinding binding) {}
-              })).compute();
+              (new LanguageChooser()).compute();
             for(ModuleReference reference : list)
               myDependTableModel.addItem(new ModuleDepTableItem(reference, DependenciesTableItemRole.EXTEND));
           }
@@ -350,18 +328,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
           @Override
           public void actionPerformed(AnActionEvent e) {
             List<ModuleReference> list =
-              (new GeneratorChooser(new IBindedDialog() {
-                @Override
-                public JComponent getMainComponent() {return getTabComponent();}
-                @Override
-                public IOperationContext getOperationContext() {return null;}
-                @Override
-                public IScope getModuleScope() {return null;}
-                @Override
-                public IScope getProjectScope() {return null;}
-                @Override
-                public void addBinding(AutoBinding binding) {}
-              })).compute();
+              (new GeneratorChooser()).compute();
             for(ModuleReference reference : list)
               myDependTableModel.addItem(new ModuleDepTableItem(reference, DependenciesTableItemRole.EXTEND));
           }
@@ -373,18 +340,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
           @Override
           public void actionPerformed(AnActionEvent e) {
             List<ModuleReference> list =
-              (new DevKitChooser(new IBindedDialog() {
-                @Override
-                public JComponent getMainComponent() {return getTabComponent();}
-                @Override
-                public IOperationContext getOperationContext() {return null;}
-                @Override
-                public IScope getModuleScope() {return null;}
-                @Override
-                public IScope getProjectScope() {return null;}
-                @Override
-                public void addBinding(AutoBinding binding) {}
-              })).compute();
+              (new DevKitChooser()).compute();
             for(ModuleReference reference : list)
               myDependTableModel.addItem(new ModuleDepTableItem(reference, DependenciesTableItemRole.EXTEND));
           }
@@ -393,18 +349,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
           @Override
           public void actionPerformed(AnActionEvent e) {
             List<ModuleReference> list =
-              (new LanguageChooser(new IBindedDialog() {
-                @Override
-                public JComponent getMainComponent() {return getTabComponent();}
-                @Override
-                public IOperationContext getOperationContext() {return null;}
-                @Override
-                public IScope getModuleScope() {return null;}
-                @Override
-                public IScope getProjectScope() {return null;}
-                @Override
-                public void addBinding(AutoBinding binding) {}
-              })).compute();
+              (new LanguageChooser()).compute();
             for(ModuleReference reference : list)
               myDependTableModel.addItem(new ModuleDepTableItem(reference, DependenciesTableItemRole.EXPORT));
           }
@@ -413,18 +358,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
           @Override
           public void actionPerformed(AnActionEvent e) {
             List<ModuleReference> list =
-              (new SolutionChooser(new IBindedDialog() {
-                @Override
-                public JComponent getMainComponent() {return getTabComponent();}
-                @Override
-                public IOperationContext getOperationContext() {return null;}
-                @Override
-                public IScope getModuleScope() {return null;}
-                @Override
-                public IScope getProjectScope() {return null;}
-                @Override
-                public void addBinding(AutoBinding binding) {}
-              })).compute();
+              (new SolutionChooser()).compute();
             for(ModuleReference reference : list)
               myDependTableModel.addItem(new ModuleDepTableItem(reference, DependenciesTableItemRole.EXPORT));
           }
@@ -535,18 +469,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
         @Override
         public void actionPerformed(AnActionEvent e) {
           List<ModuleReference> list =
-            (new SolutionChooser(new IBindedDialog() {
-              @Override
-              public JComponent getMainComponent() {return getTabComponent();}
-              @Override
-              public IOperationContext getOperationContext() {return null;}
-              @Override
-              public IScope getModuleScope() {return null;}
-              @Override
-              public IScope getProjectScope() {return null;}
-              @Override
-              public void addBinding(AutoBinding binding) {}
-            })).compute();
+            (new SolutionChooser()).compute();
           for(ModuleReference reference : list)
             myRuntimeTableModel.addItem(new ModuleDepTableItem(reference, DependenciesTableItemRole.RUNTIME));
         }
@@ -556,18 +479,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
         public void actionPerformed(AnActionEvent e) {
           IScope scope = MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId()).getScope();
           List<jetbrains.mps.smodel.SModelReference> list =
-            (new ModelChooser(new IBindedDialog() {
-              @Override
-              public JComponent getMainComponent() {return getTabComponent();}
-              @Override
-              public IOperationContext getOperationContext() {return null;}
-              @Override
-              public IScope getModuleScope() {return null;}
-              @Override
-              public IScope getProjectScope() {return null;}
-              @Override
-              public void addBinding(AutoBinding binding) {}
-            })).compute();
+            (new ModelChooser()).compute();
           for(jetbrains.mps.smodel.SModelReference reference : list)
             myRuntimeTableModel.addItem(new ModelDepTableItem(reference, DependenciesTableItemRole.ACCESSORY, scope));
         }

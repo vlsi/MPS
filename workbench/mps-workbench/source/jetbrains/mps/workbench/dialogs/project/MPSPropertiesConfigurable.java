@@ -490,18 +490,7 @@ public abstract class MPSPropertiesConfigurable<T> implements Configurable, Disp
         @Override
         public void actionPerformed(AnActionEvent e) {
           List<ModuleReference> list =
-            (new LanguageChooser(new IBindedDialog() {
-              @Override
-              public JComponent getMainComponent() {return getTabComponent();}
-              @Override
-              public IOperationContext getOperationContext() {return null;}
-              @Override
-              public IScope getModuleScope() {return null;}
-              @Override
-              public IScope getProjectScope() {return null;}
-              @Override
-              public void addBinding(AutoBinding binding) {}
-            })).compute();
+            (new LanguageChooser()).compute();
           for(ModuleReference reference : list)
             myUsedLangsTableModel.addItem(new UsedLangTableItem(reference));
         }
@@ -510,18 +499,7 @@ public abstract class MPSPropertiesConfigurable<T> implements Configurable, Disp
         @Override
         public void actionPerformed(AnActionEvent e) {
           List<ModuleReference> list =
-            (new DevKitChooser(new IBindedDialog() {
-              @Override
-              public JComponent getMainComponent() {return getTabComponent();}
-              @Override
-              public IOperationContext getOperationContext() {return null;}
-              @Override
-              public IScope getModuleScope() {return null;}
-              @Override
-              public IScope getProjectScope() {return null;}
-              @Override
-              public void addBinding(AutoBinding binding) {}
-            })).compute();
+            (new DevKitChooser()).compute();
           for(ModuleReference reference : list)
             myUsedLangsTableModel.addItem(new UsedLangTableItem(reference));
         }
