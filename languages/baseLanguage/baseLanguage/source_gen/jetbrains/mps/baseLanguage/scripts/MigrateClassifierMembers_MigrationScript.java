@@ -51,5 +51,34 @@ public class MigrateClassifierMembers_MigrationScript extends BaseMigrationScrip
         return false;
       }
     });
+    // whitespace 
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "Migrate .field.add usages (use member role instead of field role)";
+      }
+
+      public String getAdditionalInfo() {
+        return "Migrate .field.add usages (use member role instead of field role)";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.smodel.structure.SLinkListAccess";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        if (!(SetSequence.fromSet(MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).keySet()).contains(SLinkOperations.getTarget(node, "link", false)))) {
+          return false;
+        }
+        return NonMigratableUsagesFinder.isThisForSimpleAddOperation(node);
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SLinkOperations.setTarget(node, "link", SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "member"), false);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
   }
 }

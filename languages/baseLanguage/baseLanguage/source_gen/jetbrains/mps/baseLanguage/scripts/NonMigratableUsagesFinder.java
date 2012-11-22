@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
@@ -122,17 +123,16 @@ public class NonMigratableUsagesFinder {
     return false;
   }
 
-  public static boolean isListNeeded(SNode nodeUsage) {
+  public static boolean isThisForSimpleAddOperation(SNode nodeUsage) {
     SNode dotExpression = SNodeOperations.cast(SNodeOperations.getParent(nodeUsage), "jetbrains.mps.baseLanguage.structure.DotExpression");
-
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
       SNode operation = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
 
-      // java list operations 
+      // java list add operation 
       if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
         SNode method = SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
 
-        if (method == ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~List"), "method", true)).findFirst(new IWhereFilter<SNode>() {
+        if (method == Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~List"))).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SPropertyOperations.getString(it, "name").equals("add") && (int) ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == 1;
           }
@@ -142,7 +142,24 @@ public class NonMigratableUsagesFinder {
       }
 
       // list operations 
-      if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation") || SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.collections.structure.AddElementOperation") || SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.actions.structure.NF_LinkList_AddNewChildOperation") || SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation")) {
+      if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.collections.structure.AddElementOperation") || SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation")) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  public static boolean isListNeeded(SNode nodeUsage) {
+    if (isThisForSimpleAddOperation(nodeUsage)) {
+      return true;
+    }
+
+    SNode dotExpression = SNodeOperations.cast(SNodeOperations.getParent(nodeUsage), "jetbrains.mps.baseLanguage.structure.DotExpression");
+
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
+      SNode operation = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
+      if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.actions.structure.NF_LinkList_AddNewChildOperation") || SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation")) {
         return true;
       }
     }
