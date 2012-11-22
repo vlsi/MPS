@@ -556,7 +556,7 @@
                         <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="1240470842553275138" resolveInfo="virtualMachineParameter" />
                       </node>
                       <node role="commandPart" roleId="rzqf.2343546112398330901" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="1240470842553275217">
-                        <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="1240470842553275422" />
+                        <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="1240470842553275422" resolveInfo="debuggerSettings" />
                       </node>
                       <node role="commandPart" roleId="rzqf.2343546112398330901" type="rzqf.KeyValueCommandPart" typeId="rzqf.889694274152177535" id="1240470842553275218">
                         <property name="dash" nameId="rzqf.1616228152991918665" value="true" />
@@ -658,7 +658,7 @@
                       <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="1240470842553275138" resolveInfo="virtualMachineParameter" />
                     </node>
                     <node role="commandPart" roleId="rzqf.2343546112398330901" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="1240470842553275255">
-                      <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="1240470842553275422" />
+                      <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="1240470842553275422" resolveInfo="debuggerSettings" />
                     </node>
                     <node role="commandPart" roleId="rzqf.2343546112398330901" type="rzqf.KeyValueCommandPart" typeId="rzqf.889694274152177535" id="1240470842553275256">
                       <property name="dash" nameId="rzqf.1616228152991918665" value="true" />
@@ -1224,7 +1224,6 @@
                                                 </node>
                                               </node>
                                               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5111910545577616996">
-                                                <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="if8w.5067982036267369901" resolveInfo="getTraceableProperty" />
                                               </node>
                                             </node>

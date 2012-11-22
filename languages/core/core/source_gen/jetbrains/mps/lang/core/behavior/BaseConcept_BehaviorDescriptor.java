@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public abstract class BaseConcept_BehaviorDescriptor extends CompiledBehaviorDescriptor {
   public BaseConcept_BehaviorDescriptor() {
@@ -33,6 +34,10 @@ public abstract class BaseConcept_BehaviorDescriptor extends CompiledBehaviorDes
 
   public boolean virtual_isRunnable_7941158526576616752(SNode thisNode) {
     return BaseConcept_Behavior.virtual_isRunnable_7941158526576616752(thisNode);
+  }
+
+  public boolean virtual_substituteInAmbigousPosition_1262430001741498020(SConcept thisConcept) {
+    return BaseConcept_Behavior.virtual_substituteInAmbigousPosition_1262430001741498020(thisConcept);
   }
 
   @Override

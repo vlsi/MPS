@@ -11,13 +11,27 @@
   <unitInfo fileName="NonEmptyProperty_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.NonEmptyProperty_BehaviorDescriptor" />
   <unitInfo fileName="NotEditableVaraileReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.NotEditableVaraileReference_BehaviorDescriptor" />
   <unitInfo fileName="PlusExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.PlusExpression_BehaviorDescriptor" />
-  <unitInfo fileName="ReferenceAnnotataion_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.ReferenceAnnotataion_BehaviorDescriptor" />
+  <unitInfo fileName="ReferenceAnnotataion_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.ReferenceAnnotataion_BehaviorDescriptor" />
   <unitInfo fileName="SideTranformWrapper_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.SideTranformWrapper_BehaviorDescriptor" />
   <unitInfo fileName="StubBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.StubBlock_BehaviorDescriptor" />
   <unitInfo fileName="TestBlockList_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.TestBlockList_BehaviorDescriptor" />
   <unitInfo fileName="VariableDeclarationBlock_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.VariableDeclarationBlock_BehaviorDescriptor" />
   <unitInfo fileName="VariableDeclarationReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.VariableDeclarationReference_BehaviorDescriptor" />
   <unitInfo fileName="VerticalLayoutBlockList_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.VerticalLayoutBlockList_BehaviorDescriptor" />
+  <root nodeId="1262430001741704766" modelId="r:a3bb1fed-5e98-4e77-bc2b-c6a4a4239f53(jetbrains.mps.lang.editor.editorTest.behavior)">
+    <nodeInfo nodeId="1262430001741704765" fileName="ReferenceAnnotataion_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741704766" fileName="ReferenceAnnotataion_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741704766" fileName="ReferenceAnnotataion_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1262430001741704768" fileName="ReferenceAnnotataion_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741704763" fileName="ReferenceAnnotataion_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="33" />
+    <scopeInfo nodeId="1262430001741704766" fileName="ReferenceAnnotataion_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741704766" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741704766" fileName="ReferenceAnnotataion_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741704766" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741704766" fileName="ReferenceAnnotataion_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.ReferenceAnnotataion_Behavior" />
+  </root>
   <root nodeId="6956295981009368164" modelId="r:a3bb1fed-5e98-4e77-bc2b-c6a4a4239f53(jetbrains.mps.lang.editor.editorTest.behavior)">
     <nodeInfo nodeId="6956295981009368164" fileName="AttractsFocusBlock_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="6956295981009368166" fileName="AttractsFocusBlock_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />

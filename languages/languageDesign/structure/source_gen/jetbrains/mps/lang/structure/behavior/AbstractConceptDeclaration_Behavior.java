@@ -20,12 +20,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.util.Pair;
 import java.util.Set;
@@ -122,6 +121,13 @@ public class AbstractConceptDeclaration_Behavior {
     }
 
     return result;
+  }
+
+  public static String call_getPresentation_2450081617266859256(SNode thisNode) {
+    return (SPropertyOperations.getString(thisNode, "conceptAlias") != null ?
+      SPropertyOperations.getString(thisNode, "conceptAlias") :
+      SPropertyOperations.getString(thisNode, "name")
+    );
   }
 
   public static List<SNode> call_getAvailableConceptMethods_1213877394200(SNode thisNode, SNode context) {
@@ -260,7 +266,7 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static boolean call_isDefaultSubstitutable_7429110134803670673(SNode thisNode) {
-    return !(SConceptPropertyOperations.getBoolean(thisNode, "abstract")) && !(SConceptPropertyOperations.getBoolean(thisNode, "dontSubstituteByDefault"));
+    return !(SPropertyOperations.getBoolean(thisNode, "abstract")) && !(SConceptOperations.isSubConceptOf(((SNode) thisNode), "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"));
   }
 
   public static boolean call_isDefaultSubstitutableConcept_1213877394594(SNode thisNode, SNode expectedConcept, IScope scope) {

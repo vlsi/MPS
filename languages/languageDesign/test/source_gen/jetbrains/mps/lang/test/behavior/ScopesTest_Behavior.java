@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -25,6 +26,10 @@ public class ScopesTest_Behavior {
       }
     }
     return null;
+  }
+
+  public static String virtual_getRole_1262430001741497900(SConcept thisConcept) {
+    return "scopeTest";
   }
 
   public static boolean isApplicable_5449224527592368025(SNode node) {

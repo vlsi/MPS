@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class InstanceMethodCallOperation_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IOperation_BehaviorDescriptor, IMethodCall_BehaviorDescriptor {
   public InstanceMethodCallOperation_BehaviorDescriptor() {
@@ -50,8 +51,16 @@ public class InstanceMethodCallOperation_BehaviorDescriptor extends BaseConcept_
     return IOperation_Behavior.virtual_isLValue_1213877410080(thisNode);
   }
 
+  public boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
+    return IOperation_Behavior.virtual_lvalue_1262430001741498364(thisConcept);
+  }
+
   public boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {
     return IOperation_Behavior.virtual_operandCanBeNull_323410281720656291(thisNode);
+  }
+
+  public boolean virtual_substituteInAmbigousPosition_1262430001741498020(SConcept thisConcept) {
+    return InstanceMethodCallOperation_Behavior.virtual_substituteInAmbigousPosition_1262430001741498020(thisConcept);
   }
 
   public boolean virtual_useScopesForMethodDeclarationFixer_66132694723287898(SNode thisNode) {

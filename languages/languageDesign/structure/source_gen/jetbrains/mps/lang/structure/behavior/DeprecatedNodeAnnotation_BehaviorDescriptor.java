@@ -6,6 +6,7 @@ import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class DeprecatedNodeAnnotation_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
   public DeprecatedNodeAnnotation_BehaviorDescriptor() {
@@ -13,6 +14,10 @@ public class DeprecatedNodeAnnotation_BehaviorDescriptor extends NodeAttribute_B
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  }
+
+  public String virtual_getRole_1262430001741497900(SConcept thisConcept) {
+    return DeprecatedNodeAnnotation_Behavior.virtual_getRole_1262430001741497900(thisConcept);
   }
 
   @Override

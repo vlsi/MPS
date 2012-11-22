@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class PrivateFieldReferenceOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -16,5 +17,9 @@ public class PrivateFieldReferenceOperation_Behavior {
       return BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "virtual_getPresentation_1213877396640", new Object[]{});
     }
     return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "fieldDeclaration", false), "name");
+  }
+
+  public static boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
+    return false;
   }
 }

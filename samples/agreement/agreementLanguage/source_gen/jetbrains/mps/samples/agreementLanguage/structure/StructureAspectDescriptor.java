@@ -40,7 +40,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 11:
         return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty", false, new String[]{"jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty"}, new String[]{}, new String[]{});
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Quantity", "jetbrains.mps.samples.formulaLanguage.structure.Constant", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Constant"}, new String[]{"unit"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Quantity", "jetbrains.mps.samples.formulaLanguage.structure.Constant", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Constant", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"unit"}, new String[]{});
       case 13:
         return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty", false, new String[]{"jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty"}, new String[]{}, new String[]{});
       case 14:

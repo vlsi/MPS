@@ -27,7 +27,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
@@ -199,7 +198,7 @@ public class QueriesGenerated {
               }
 
               public String getMatchingText(String pattern) {
-                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.structure.CreateUIObjectStatement"), "alias") + " " + SPropertyOperations.getString((item), "name");
+                return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.structure.CreateUIObjectStatement"), "conceptAlias") + " " + SPropertyOperations.getString((item), "name");
               }
 
               public String getVisibleMatchingText(String pattern) {
@@ -230,7 +229,7 @@ public class QueriesGenerated {
               }
 
               public String getMatchingText(String pattern) {
-                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.structure.AppendUIObjectStatement"), "alias") + " " + SPropertyOperations.getString((item), "name");
+                return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.structure.AppendUIObjectStatement"), "conceptAlias") + " " + SPropertyOperations.getString((item), "name");
               }
 
               public String getVisibleMatchingText(String pattern) {
@@ -261,7 +260,7 @@ public class QueriesGenerated {
               }
 
               public String getMatchingText(String pattern) {
-                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.structure.InsertUIObjectStatement"), "alias") + "... " + SPropertyOperations.getString((item), "name");
+                return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.structure.InsertUIObjectStatement"), "conceptAlias") + "... " + SPropertyOperations.getString((item), "name");
               }
 
               public String getVisibleMatchingText(String pattern) {

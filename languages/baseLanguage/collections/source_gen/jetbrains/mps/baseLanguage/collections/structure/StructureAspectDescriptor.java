@@ -94,7 +94,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 38:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.DistinctOperation", "jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation", false, new String[]{"jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation"}, new String[]{}, new String[]{});
       case 39:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.DowncastExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.DowncastExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 40:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.EnumeratorType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{});
       case 41:
@@ -194,7 +194,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 88:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.MapClearOperation", "jetbrains.mps.baseLanguage.collections.structure.MapOperation", false, new String[]{"jetbrains.mps.baseLanguage.collections.structure.MapOperation"}, new String[]{}, new String[]{});
       case 89:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.MapElement", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.MapElement", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 90:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.MapEntry", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 91:
@@ -202,7 +202,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 92:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.MapOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{});
       case 93:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.MapOperationExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.MapOperationExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 94:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation", "jetbrains.mps.baseLanguage.collections.structure.MapOperation", false, new String[]{"jetbrains.mps.baseLanguage.collections.structure.MapOperation"}, new String[]{}, new String[]{});
       case 95:
@@ -286,7 +286,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 134:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration", "jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration"}, new String[]{}, new String[]{});
       case 135:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.SortDirection", "jetbrains.mps.baseLanguage.structure.BooleanConstant", false, new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.SortDirection", "jetbrains.mps.baseLanguage.structure.BooleanConstant", false, new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 136:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.SortOperation", "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation", false, new String[]{"jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"}, new String[]{}, new String[]{});
       case 137:
@@ -324,7 +324,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 153:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.ToArrayOperation", "jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation", false, new String[]{"jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation"}, new String[]{}, new String[]{});
       case 154:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.ToIteratorOperation", "jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation", false, new String[]{"jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.ToIteratorOperation", "jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation", false, new String[]{"jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 155:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.collections.structure.ToListOperation", "jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation", false, new String[]{"jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation"}, new String[]{}, new String[]{});
       case 156:

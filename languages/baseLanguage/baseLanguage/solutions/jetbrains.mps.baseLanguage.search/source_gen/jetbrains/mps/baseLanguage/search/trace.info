@@ -3158,7 +3158,7 @@
     <nodeInfo nodeId="8857362468665995325" fileName="IClassifiersSearchScopeAdapter.java" startLine="36" startPosition="177" endLine="37" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8857362468665995341" fileName="IClassifiersSearchScopeAdapter.java" startLine="39" startPosition="175" endLine="40" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8857362468665995357" fileName="IClassifiersSearchScopeAdapter.java" startLine="42" startPosition="177" endLine="43" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8857362468665995386" fileName="IClassifiersSearchScopeAdapter.java" startLine="45" startPosition="298" endLine="46" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8857362468665995386" fileName="IClassifiersSearchScopeAdapter.java" startLine="45" startPosition="330" endLine="46" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8857362468665995383" fileName="IClassifiersSearchScopeAdapter.java" startLine="47" startPosition="9" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8857362468665995373" fileName="IClassifiersSearchScopeAdapter.java" startLine="48" startPosition="0" endLine="49" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8857362468665994751" fileName="IClassifiersSearchScopeAdapter.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IClassifiersSearchScopeAdapter#()V" />
@@ -3185,7 +3185,7 @@
     <scopeInfo nodeId="8857362468665995324" fileName="IClassifiersSearchScopeAdapter.java" startLine="36" startPosition="177" endLine="37" endPosition="23" />
     <scopeInfo nodeId="8857362468665995340" fileName="IClassifiersSearchScopeAdapter.java" startLine="39" startPosition="175" endLine="40" endPosition="23" />
     <scopeInfo nodeId="8857362468665995356" fileName="IClassifiersSearchScopeAdapter.java" startLine="42" startPosition="177" endLine="43" endPosition="23" />
-    <scopeInfo nodeId="8857362468665995385" fileName="IClassifiersSearchScopeAdapter.java" startLine="45" startPosition="298" endLine="46" endPosition="23" />
+    <scopeInfo nodeId="8857362468665995385" fileName="IClassifiersSearchScopeAdapter.java" startLine="45" startPosition="330" endLine="46" endPosition="23" />
     <scopeInfo nodeId="8857362468665994751" fileName="IClassifiersSearchScopeAdapter.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
     <scopeInfo nodeId="8857362468665994798" fileName="IClassifiersSearchScopeAdapter.java" startLine="17" startPosition="39" endLine="49" endPosition="20" />
     <scopeInfo nodeId="8857362468665994797" fileName="IClassifiersSearchScopeAdapter.java" startLine="17" startPosition="0" endLine="51" endPosition="0">

@@ -36,7 +36,7 @@
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
   <import index="8dm4" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.internal.collections.runtime(MPS.Core/jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
   <import index="go48" modelUID="r:fc6b4266-fe93-4e02-bc36-aebff4c903c3(jetbrains.mps.baseLanguage.execution.api)" version="5" />
-  <import index="mcvh" modelUID="r:4032b78d-911f-4395-b88c-ccb50cb24300(jetbrains.mps.debug.runtime.settings)" version="-1" />
+  <import index="mcvh" modelUID="r:4032b78d-911f-4395-b88c-ccb50cb24300(jetbrains.mps.debugger.java.api.settings)" version="-1" />
   <import index="qjxg" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" version="-1" />
   <import index="eupq" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/junit.framework@java_stub)" version="-1" />
   <import index="eunx" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util.annotation(MPS.Core/jetbrains.mps.util.annotation@java_stub)" version="-1" />
@@ -69,8 +69,8 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5881102044690179017">
       <property name="name" nameId="tpck.1169194664001" value="AbstractTestWrapper" />
-      <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="wrappers" />
+      <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
     </node>
     <node type="tpee.Interface" typeId="tpee.1107796713796" id="5881102044690179271">
       <property name="name" nameId="tpck.1169194664001" value="ITestNodeWrapper" />
@@ -81,8 +81,8 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="listener" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5881102044690183390">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="listener" />
       <property name="name" nameId="tpck.1169194664001" value="UnitTestProcessListener" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="listener" />
     </node>
     <node type="tpee.Interface" typeId="tpee.1107796713796" id="5881102044690375193">
       <property name="name" nameId="tpck.1169194664001" value="TestView" />
@@ -105,12 +105,12 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="wrappers" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2024340988248532071">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="wrappers" />
       <property name="name" nameId="tpck.1169194664001" value="JUnit4MethodWrapper" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="wrappers" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2024340988248532176">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="wrappers" />
       <property name="name" nameId="tpck.1169194664001" value="JUnit4TestWrapper" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="wrappers" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2024340988248532283">
       <property name="name" nameId="tpck.1169194664001" value="LanguageTestWrapper" />
@@ -1328,8 +1328,8 @@
   </root>
   <root id="5881102044690182514">
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="5881102044690182515">
-      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="lock" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5881102044690182516" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5881102044690182517">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
@@ -4294,7 +4294,6 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2024340988248531947" resolveInfo="method" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2024340988248531935">
-                        <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1232982539764" resolveInfo="isAbstract" />
                       </node>
                     </node>
@@ -4481,7 +4480,6 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5881102044690179054" resolveInfo="getNode" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2024340988248532018">
-              <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.1213877404258" resolveInfo="getFqName" />
             </node>
           </node>
@@ -4752,7 +4750,6 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2024340988248532073" resolveInfo="method" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2024340988248532120">
-                      <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1232982539764" resolveInfo="isAbstract" />
                     </node>
                   </node>
@@ -5005,7 +5002,6 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5881102044690179054" resolveInfo="getNode" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2024340988248532230">
-              <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.1213877404258" resolveInfo="getFqName" />
             </node>
           </node>
@@ -5227,7 +5223,6 @@
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2024340988248532325">
-                    <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpe5.1216134500045" resolveInfo="getTestCase" />
                   </node>
                 </node>
@@ -5329,7 +5324,6 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2024340988248532368">
-                <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpe5.2148145109766218395" resolveInfo="getTestMethods" />
               </node>
             </node>
@@ -5506,7 +5500,6 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3310779261129403068" resolveInfo="node" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="3310779261129403149">
-              <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpe5.3310779261129403089" resolveInfo="isMpsStartRequired" />
             </node>
           </node>
@@ -6135,7 +6128,6 @@
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2024340988248532398">
-                  <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpe5.1216136193905" resolveInfo="getClassName" />
                 </node>
               </node>
@@ -6174,7 +6166,6 @@
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2024340988248532414">
-                  <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpe5.1216136419751" resolveInfo="getTestName" />
                 </node>
               </node>
@@ -6193,7 +6184,6 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2024340988248532420">
-              <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpe5.1229278847513" resolveInfo="getSimpleClassName" />
             </node>
           </node>
@@ -6500,7 +6490,6 @@
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1809527500895304193">
-                            <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.1213877404258" resolveInfo="getFqName" />
                           </node>
                         </node>
@@ -6775,7 +6764,6 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2024340988248532660" resolveInfo="ancestor" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2024340988248532671">
-                      <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.3980490811621705344" resolveInfo="checkLoops" />
                     </node>
                   </node>
@@ -6808,7 +6796,6 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2024340988248532660" resolveInfo="ancestor" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2024340988248532686">
-                          <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.1213877404258" resolveInfo="getFqName" />
                         </node>
                       </node>
@@ -7232,8 +7219,8 @@
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="2024340988248532862">
-      <property name="name" nameId="tpck.1169194664001" value="canWrap" />
       <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="canWrap" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="2024340988248532863" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2024340988248532864" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2024340988248532865">
@@ -7261,8 +7248,8 @@
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="2024340988248532875">
-      <property name="name" nameId="tpck.1169194664001" value="getWrappedConcept" />
       <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="getWrappedConcept" />
       <node role="returnType" roleId="tpee.1068580123133" type="tp25.SConceptType" typeId="tp25.1172420572800" id="2024340988248532876" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2024340988248532877" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2024340988248532878" />
@@ -7284,8 +7271,8 @@
   <root id="6062668769034832918">
     <node role="executePart" roleId="rzqf.6129022259108579262" type="rzqf.ExecuteCommandPart" typeId="rzqf.6129022259108579244" id="6062668769034832919">
       <node role="parameterDeclaration" roleId="rzqf.6129022259108579245" type="rzqf.ExplicitCommandParameterDeclaration" typeId="rzqf.856705193941281762" id="6062668769034832920">
-        <property name="name" nameId="tpck.1169194664001" value="tests" />
         <property name="isRequired" nameId="rzqf.856705193941281763" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="tests" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="6062668769034832921">
           <node role="elementType" roleId="tp2q.1151688676805" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6062668769034832922">
             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5881102044690179271" resolveInfo="ITestNodeWrapper" />
@@ -7293,8 +7280,8 @@
         </node>
       </node>
       <node role="parameterDeclaration" roleId="rzqf.6129022259108579245" type="rzqf.ExplicitCommandParameterDeclaration" typeId="rzqf.856705193941281762" id="6062668769034832923">
-        <property name="name" nameId="tpck.1169194664001" value="javaRunParameters" />
         <property name="isRequired" nameId="rzqf.856705193941281763" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="javaRunParameters" />
         <node role="type" roleId="tpee.5680397130376446158" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="6062668769034832924">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="go48.1240470842553519759" resolveInfo="JavaRunParameters" />
         </node>
@@ -7380,8 +7367,8 @@
     </node>
     <node role="executePart" roleId="rzqf.6129022259108579262" type="rzqf.ExecuteCommandPart" typeId="rzqf.6129022259108579244" id="6062668769034832957">
       <node role="parameterDeclaration" roleId="rzqf.6129022259108579245" type="rzqf.ExplicitCommandParameterDeclaration" typeId="rzqf.856705193941281762" id="6062668769034832958">
-        <property name="name" nameId="tpck.1169194664001" value="tests" />
         <property name="isRequired" nameId="rzqf.856705193941281763" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="tests" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="6062668769034832959">
           <node role="elementType" roleId="tp2q.1151688676805" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6062668769034832960">
             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5881102044690179271" resolveInfo="ITestNodeWrapper" />

@@ -8,12 +8,14 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
 @Deprecated
@@ -33,7 +35,7 @@ public class InstanceMethodDeclarationScope extends BaseMethodsScope {
     // two variants: 
     if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
       // as part of DotExpression 
-      SNode instanceType = SNodeOperations.cast(BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "jetbrains.mps.baseLanguage.structure.IOperation", "call_getDotExpression_1224687669172", new Object[]{}), "jetbrains.mps.baseLanguage.structure.DotExpression", "call_getOperandType_8871623299328377715", new Object[]{}), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+      SNode instanceType = SNodeOperations.cast(DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))), "jetbrains.mps.baseLanguage.structure.ClassifierType");
       Map<SNode, SNode> typeByTypeVar = ((SLinkOperations.getTarget(instanceType, "classifier", false) != null) ?
         MethodResolveUtil.getTypesByTypeVars(SLinkOperations.getTarget(instanceType, "classifier", false), SLinkOperations.getTargets(instanceType, "parameter", true)) :
         Collections.<SNode,SNode>emptyMap()

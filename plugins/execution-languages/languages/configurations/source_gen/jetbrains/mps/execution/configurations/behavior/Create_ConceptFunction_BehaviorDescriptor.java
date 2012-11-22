@@ -4,6 +4,7 @@ package jetbrains.mps.execution.configurations.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class Create_ConceptFunction_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public Create_ConceptFunction_BehaviorDescriptor() {
@@ -11,6 +12,10 @@ public class Create_ConceptFunction_BehaviorDescriptor extends ConceptFunction_B
 
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return Create_ConceptFunction_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  }
+
+  public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
+    return Create_ConceptFunction_Behavior.virtual_showName_1262430001741498082(thisConcept);
   }
 
   @Override

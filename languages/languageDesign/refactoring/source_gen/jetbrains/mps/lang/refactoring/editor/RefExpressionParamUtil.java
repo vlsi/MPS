@@ -4,10 +4,9 @@ package jetbrains.mps.lang.refactoring.editor;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.editor.runtime.StyledTextPrinter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
@@ -16,7 +15,7 @@ public class RefExpressionParamUtil {
   }
 
   public static void xxx(SNode node, SNode ref, StyledTextPrinter styledText, boolean showParameters) {
-    styledText.append(SConceptPropertyOperations.getString(node, "alias")).append("<").append(SPropertyOperations.getString(ref, "name")).append(">(");
+    styledText.append(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias")).append("<").append(SPropertyOperations.getString(ref, "name")).append(">(");
     String target = "no_target";
     boolean isList = SPropertyOperations.getBoolean(SLinkOperations.getTarget(ref, "target", true), "allowMultiple");
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ref, "target", true), "jetbrains.mps.lang.refactoring.structure.NodeTarget")) {

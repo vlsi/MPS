@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.UnpackHelper;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -31,8 +30,8 @@ public class BuildLayout_Node_Behavior {
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Node")) {
       sb.append("/");
     }
-    sb.append((SConceptPropertyOperations.getString(thisNode, "alias") != null ?
-      SConceptPropertyOperations.getString(thisNode, "alias") :
+    sb.append((SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") != null ?
+      SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") :
       SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "name")
     ));
   }

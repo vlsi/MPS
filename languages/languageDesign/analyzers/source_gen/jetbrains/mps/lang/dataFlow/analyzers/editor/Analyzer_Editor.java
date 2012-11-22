@@ -19,7 +19,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -350,24 +351,12 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createConceptProperty_590xoz_a0h0(editorContext, node);
+      return this.createComponent_590xoz_a0h0(editorContext, node);
     }
 
-    private EditorCell createConceptProperty_590xoz_a0h0(EditorContext editorContext, SNode node) {
-      CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-      provider.setRole("alias");
-      provider.setNoTargetText("<no alias>");
-      EditorCell editorCell;
-      editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("conceptProperty_alias");
-      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-      SNode attributeConcept = provider.getRoleAttribute();
-      Class attributeKind = provider.getRoleAttributeClass();
-      if (attributeConcept != null) {
-        IOperationContext opContext = editorContext.getOperationContext();
-        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-        return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-      } else
+    private EditorCell createComponent_590xoz_a0h0(EditorContext editorContext, SNode node) {
+      AbstractCellProvider provider = new AliasEditorComponent(node);
+      EditorCell editorCell = provider.createEditorCell(editorContext);
       return editorCell;
     }
   }
@@ -382,24 +371,12 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createConceptProperty_590xoz_a0k0(editorContext, node);
+      return this.createComponent_590xoz_a0k0(editorContext, node);
     }
 
-    private EditorCell createConceptProperty_590xoz_a0k0(EditorContext editorContext, SNode node) {
-      CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-      provider.setRole("alias");
-      provider.setNoTargetText("<no alias>");
-      EditorCell editorCell;
-      editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("conceptProperty_alias_1");
-      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-      SNode attributeConcept = provider.getRoleAttribute();
-      Class attributeKind = provider.getRoleAttributeClass();
-      if (attributeConcept != null) {
-        IOperationContext opContext = editorContext.getOperationContext();
-        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-        return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-      } else
+    private EditorCell createComponent_590xoz_a0k0(EditorContext editorContext, SNode node) {
+      AbstractCellProvider provider = new AliasEditorComponent(node);
+      EditorCell editorCell = provider.createEditorCell(editorContext);
       return editorCell;
     }
   }
@@ -414,24 +391,12 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createConceptProperty_590xoz_a0n0(editorContext, node);
+      return this.createComponent_590xoz_a0n0(editorContext, node);
     }
 
-    private EditorCell createConceptProperty_590xoz_a0n0(EditorContext editorContext, SNode node) {
-      CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-      provider.setRole("alias");
-      provider.setNoTargetText("<no alias>");
-      EditorCell editorCell;
-      editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("conceptProperty_alias_2");
-      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-      SNode attributeConcept = provider.getRoleAttribute();
-      Class attributeKind = provider.getRoleAttributeClass();
-      if (attributeConcept != null) {
-        IOperationContext opContext = editorContext.getOperationContext();
-        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-        return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-      } else
+    private EditorCell createComponent_590xoz_a0n0(EditorContext editorContext, SNode node) {
+      AbstractCellProvider provider = new AliasEditorComponent(node);
+      EditorCell editorCell = provider.createEditorCell(editorContext);
       return editorCell;
     }
   }

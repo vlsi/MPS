@@ -31,7 +31,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import java.util.regex.Matcher;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
@@ -592,7 +591,7 @@ public class QueriesGenerated {
           }
 
           public String getMatchingText(String pattern) {
-            return SConceptPropertyOperations.getString((item), "alias");
+            return SPropertyOperations.getString((item), "conceptAlias");
           }
 
           public String getVisibleMatchingText(String pattern) {

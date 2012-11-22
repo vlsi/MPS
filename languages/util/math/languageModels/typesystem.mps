@@ -28,13 +28,13 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="interval" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1235747425225">
-      <property name="name" nameId="tpck.1169194664001" value="typeof_InIntervalExpression" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="typeof_InIntervalExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="interval" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1235747425249">
-      <property name="name" nameId="tpck.1169194664001" value="typeof_IntervalContainsExpression" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="typeof_IntervalContainsExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="interval" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1235747425273">
@@ -100,13 +100,13 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="subtyping" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="1237207452282">
-      <property name="name" nameId="tpck.1169194664001" value="double_extends_bigdecimal" />
       <property name="isWeak" nameId="tpd4.1175607673137" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="double_extends_bigdecimal" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="subtyping" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="1237206461318">
-      <property name="name" nameId="tpck.1169194664001" value="long_extends_biginteger" />
       <property name="isWeak" nameId="tpd4.1175607673137" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="long_extends_biginteger" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="subtyping" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="6389121991274973534">
@@ -118,8 +118,8 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="1237207449560">
-      <property name="name" nameId="tpck.1169194664001" value="bigdecimal_extends_bigcomplex" />
       <property name="isWeak" nameId="tpd4.1175607673137" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="bigdecimal_extends_bigcomplex" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="subtyping" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="1237207311140">
@@ -150,8 +150,8 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="1238337334592">
-      <property name="name" nameId="tpck.1169194664001" value="bigdecimal_extends_BigDecimal" />
       <property name="isWeak" nameId="tpd4.1175607673137" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="bigdecimal_extends_BigDecimal" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="subtyping" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="3498370411873289205">
@@ -163,8 +163,8 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1238943151392">
-      <property name="name" nameId="tpck.1169194664001" value="typeof_BinaryOperationMathContext" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="typeof_BinaryOperationMathContext" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="mathcontext" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1236429236615">
@@ -207,8 +207,8 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="1238336037193">
-      <property name="name" nameId="tpck.1169194664001" value="biginteger_extends_BigInteger" />
       <property name="isWeak" nameId="tpd4.1175607673137" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="biginteger_extends_BigInteger" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="subtyping" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="1238427819860">
@@ -220,8 +220,8 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operations.arithmetic" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="1237205116347">
-      <property name="name" nameId="tpck.1169194664001" value="double_extends_complex" />
       <property name="isWeak" nameId="tpd4.1175607673137" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="double_extends_complex" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="subtyping" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="7676695779583721427">
@@ -2779,8 +2779,8 @@
       </node>
     </node>
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1237536712356">
-      <property name="isFinal" nameId="tpee.1181808852946" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="pickExplicitWidening" />
+      <property name="isFinal" nameId="tpee.1181808852946" value="false" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1237536762268" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1237536783775">
         <property name="name" nameId="tpck.1169194664001" value="narrower" />
@@ -5963,8 +5963,8 @@
             </node>
             <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1418611629042133308">
               <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="1418611629042133318">
-                <property name="checkOnly" nameId="tpd4.1206359757216" value="true" />
                 <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
+                <property name="checkOnly" nameId="tpd4.1206359757216" value="true" />
                 <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1418611629042133319">
                   <node role="normalType" roleId="tpd4.1185788644032" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8097507428199429910">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4991719046417483027">
@@ -6125,8 +6125,8 @@
   <root id="6219660258345567353">
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="6219660258345567354">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="6219660258345567359">
-        <property name="checkOnly" nameId="tpd4.1206359757216" value="true" />
         <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
+        <property name="checkOnly" nameId="tpd4.1206359757216" value="true" />
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="6219660258345567360">
           <node role="normalType" roleId="tpd4.1185788644032" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8097507428199429802">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4991719046417483008">
@@ -7179,8 +7179,8 @@
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="1238943151393">
       <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1238947038712">
         <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1238947038713">
-          <property name="isFinal" nameId="tpee.1176718929932" value="true" />
           <property name="name" nameId="tpck.1169194664001" value="S" />
+          <property name="isFinal" nameId="tpee.1176718929932" value="true" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1238947038714">
             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
           </node>
@@ -7523,8 +7523,8 @@
   <root id="1236429236615">
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="1236429236616">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="1236431731877">
-        <property name="checkOnly" nameId="tpd4.1206359757216" value="true" />
         <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
+        <property name="checkOnly" nameId="tpd4.1206359757216" value="true" />
         <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1236431731878">
           <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="1236431731879">
             <node role="term" roleId="tpd4.1174657509053" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1236431731880">
@@ -9028,17 +9028,20 @@
               </node>
             </node>
             <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="964810815943264786">
-              <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="964810815943264788">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="964810815943264789">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="964810815943264790">
-                    <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="964810815943258165" resolveInfo="me" />
+              <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1262430001741971367">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1262430001741971368">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1262430001741971369">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1262430001741971370">
+                      <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="964810815943258165" resolveInfo="me" />
+                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1262430001741971371">
+                      <link role="link" roleId="tp25.1138056516764" targetNodeId="39kg.6389121991274611516" />
+                    </node>
                   </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="964810815943264791">
-                    <link role="link" roleId="tp25.1138056516764" targetNodeId="39kg.6389121991274611516" />
-                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetConceptOperation" typeId="tp25.1172323065820" id="1262430001741971372" />
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.SConceptPropertyAccess" typeId="tp25.1145994841052" id="964810815943264792">
-                  <link role="conceptProperty" roleId="tp25.1145994841055" targetNodeId="tpee.1146528679895" resolveInfo="lvalue" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1262430001741971373">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1262430001741497939" resolveInfo="lvalue" />
                 </node>
               </node>
             </node>

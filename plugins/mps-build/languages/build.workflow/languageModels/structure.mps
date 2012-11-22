@@ -8,21 +8,32 @@
   <import index="8xvf" modelUID="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2769948622284546673">
-      <property name="name" nameId="tpck.1169194664001" value="BwfProject" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="BwfProject" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="build workflow project" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2769948622284546675">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BwfTask" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tasks" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="task" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2769948622284546695" resolveInfo="BwfProjectPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2769948622284546677">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BwfSubTask" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tasks" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="subtask" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2769948622284546695">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BwfProjectPart" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
@@ -38,74 +49,107 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2769948622284605979">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BwfStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tasks" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="&lt;empty&gt;" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2769948622284768359">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BwfAntStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tasks" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="ant" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2769948622284605979" resolveInfo="BwfStatement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4755209551904389307">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BwfJavaModule" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="compile java module" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2769948622284546695" resolveInfo="BwfProjectPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4755209551904389316">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
       <property name="name" nameId="tpck.1169194664001" value="BwfJavaModuleReference" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="6647099934206976110" resolveInfo="BwfJavaDependency" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3961775458390032824">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Tasks" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BwfTaskPart" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Tasks" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="task part" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2769948622284546695" resolveInfo="BwfProjectPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6896005762093571400">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BwfMacro" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="macro" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2769948622284546695" resolveInfo="BwfProjectPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7306485738221315929">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BwfJavaDescriptor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="java descriptor" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2769948622284546695" resolveInfo="BwfProjectPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7306485738221391506">
-      <property name="name" nameId="tpck.1169194664001" value="BwfTaskLibrary" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="BwfTaskLibrary" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Libraries" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="build tasks library" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7306485738221471031">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Libraries" />
       <property name="name" nameId="tpck.1169194664001" value="BwfTaskLibraryDependency" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Libraries" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6647099934206976110">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BwfJavaDependency" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6647099934206976119">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="classpath value" />
       <property name="name" nameId="tpck.1169194664001" value="BwfJavaClassPath" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="cp" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="6647099934206976110" resolveInfo="BwfJavaDependency" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6647099934207069200">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Types" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BwfPathDeclaration" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Types" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="path" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2769948622284546695" resolveInfo="BwfProjectPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6647099934207069215">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Types" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BwfPathReference" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Types" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="&lt;pathref &lt;{target}&gt;&gt;" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="iuxj.6666499814681299053" resolveInfo="XmlBaseElement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7926701909975416091">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
       <property name="name" nameId="tpck.1169194664001" value="BwfFileSet" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8292198017262926588">
@@ -113,28 +157,43 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6520682027040940623">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BwfMacroListImport" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="import macros" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2769948622284546695" resolveInfo="BwfProjectPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2059109515400477499">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Types" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BwfAntTaskDeclaration" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Types" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="ant taskdef" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2769948622284546695" resolveInfo="BwfProjectPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="144710003695346438">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BwfJavaLibrary" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="java library" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2769948622284546695" resolveInfo="BwfProjectPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="144710003695507915">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BwfJavaLibraryReference" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="library" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="6647099934206976110" resolveInfo="BwfJavaDependency" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="244868996532667532">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BwfCustomMacro" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="custom macro" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2769948622284546695" resolveInfo="BwfProjectPart" />
     </node>
   </roots>
@@ -165,10 +224,6 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7306485738221487430">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.3734116213129792499" resolveInfo="ScopeProvider" />
     </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2769948622284574303">
-      <property name="value" nameId="tpce.1105725733873" value="build workflow project" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
   </root>
   <root id="2769948622284546675">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2769948622284574302">
@@ -188,10 +243,6 @@
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2769948622284605895">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.3734116213129792499" resolveInfo="ScopeProvider" />
-    </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2769948622284605877">
-      <property name="value" nameId="tpce.1105725733873" value="task" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
   <root id="2769948622284546677">
@@ -213,10 +264,6 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="2769948622284605979" resolveInfo="BwfStatement" />
     </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2769948622284605879">
-      <property name="value" nameId="tpce.1105725733873" value="subtask" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2769948622284546678">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
@@ -227,11 +274,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.3734116213129792499" resolveInfo="ScopeProvider" />
     </node>
   </root>
-  <root id="2769948622284546695">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="2769948622284546696">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
-    </node>
-  </root>
+  <root id="2769948622284546695" />
   <root id="2769948622284574294">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2769948622284574295">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
@@ -248,17 +291,8 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="2769948622284546677" resolveInfo="BwfSubTask" />
     </node>
   </root>
-  <root id="2769948622284605979">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2769948622284780812">
-      <property name="value" nameId="tpce.1105725733873" value="&lt;empty&gt;" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-  </root>
+  <root id="2769948622284605979" />
   <root id="2769948622284768359">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2769948622284774580">
-      <property name="value" nameId="tpce.1105725733873" value="ant" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2769948622284768360">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="element" />
@@ -314,10 +348,6 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4755209551904389367">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4755209551904389370">
-      <property name="value" nameId="tpce.1105725733873" value="compile java module" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
   </root>
   <root id="4755209551904389316">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4755209551904389317">
@@ -346,10 +376,6 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="2769948622284546675" resolveInfo="BwfTask" />
     </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="3961775458390352364">
-      <property name="value" nameId="tpce.1105725733873" value="task part" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3961775458390352365">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.3734116213129792499" resolveInfo="ScopeProvider" />
     </node>
@@ -371,25 +397,12 @@
       <property name="name" nameId="tpck.1169194664001" value="uninitialized" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
     </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="6896005762093571401">
-      <property name="value" nameId="tpce.1105725733873" value="macro" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6896005762093571403">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </root>
-  <root id="7306485738221315929">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="7306485738221326887">
-      <property name="value" nameId="tpce.1105725733873" value="java descriptor" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-  </root>
+  <root id="7306485738221315929" />
   <root id="7306485738221391506">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="7306485738221391509">
-      <property name="value" nameId="tpce.1105725733873" value="build tasks library" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7306485738221391508">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="parts" />
@@ -414,24 +427,12 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="7306485738221391506" resolveInfo="BwfTaskLibrary" />
     </node>
   </root>
-  <root id="6647099934206976110">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="6647099934206976115">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
-    </node>
-  </root>
+  <root id="6647099934206976110" />
   <root id="6647099934206976119">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="6647099934206976130">
-      <property name="value" nameId="tpce.1105725733873" value="cp" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="6647099934206976132">
-      <property name="value" nameId="tpce.1105725733873" value="classpath value" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
-    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7926701909975791137">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <property name="role" nameId="tpce.1071599776563" value="classpath" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="iuxj.6666499814681299053" resolveInfo="XmlBaseElement" />
     </node>
   </root>
@@ -445,10 +446,6 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6647099934207069202">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="6647099934207092067">
-      <property name="value" nameId="tpce.1105725733873" value="path" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
   </root>
   <root id="6647099934207069215">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6647099934207069216">
@@ -456,10 +453,6 @@
       <property name="role" nameId="tpce.1071599776563" value="target" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="6647099934207069200" resolveInfo="BwfPathDeclaration" />
-    </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="6647099934207147217">
-      <property name="value" nameId="tpce.1105725733873" value="&lt;pathref &lt;{target}&gt;&gt;" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
   <root id="7926701909975416091">
@@ -485,10 +478,6 @@
       <property name="name" nameId="tpck.1169194664001" value="propertiesFile" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="6520682027040993933">
-      <property name="value" nameId="tpce.1105725733873" value="import macros" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
   </root>
   <root id="2059109515400477499">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2059109515400477503">
@@ -504,10 +493,6 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2059109515400477500">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2059109515400477501">
-      <property name="value" nameId="tpce.1105725733873" value="ant taskdef" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
   </root>
   <root id="144710003695346438">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="144710003695346441">
@@ -519,10 +504,6 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="144710003695346439">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="144710003695346440">
-      <property name="value" nameId="tpce.1105725733873" value="java library" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
   </root>
   <root id="144710003695507915">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="144710003695507916">
@@ -531,10 +512,6 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="144710003695346438" resolveInfo="BwfJavaLibrary" />
     </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="144710003695507917">
-      <property name="value" nameId="tpce.1105725733873" value="library" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
   </root>
   <root id="244868996532667532">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="244868996532667535">
@@ -542,10 +519,6 @@
       <property name="role" nameId="tpce.1071599776563" value="elements" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="iuxj.6666499814681299053" resolveInfo="XmlBaseElement" />
-    </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="244868996532667534">
-      <property name="value" nameId="tpce.1105725733873" value="custom macro" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
 </model>

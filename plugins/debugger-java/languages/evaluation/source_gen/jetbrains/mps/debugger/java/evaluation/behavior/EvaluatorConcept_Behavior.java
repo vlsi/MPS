@@ -11,7 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -70,7 +71,7 @@ public class EvaluatorConcept_Behavior {
     }
 
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
-      return EvaluatorConcept_Behavior.call_getPresentation_9172312269976661829(thisNode, SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true)) + SConceptPropertyOperations.getString(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "alias") + EvaluatorConcept_Behavior.call_getPresentation_9172312269976661829(thisNode, SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true));
+      return EvaluatorConcept_Behavior.call_getPresentation_9172312269976661829(thisNode, SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true)) + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation")), "conceptAlias") + EvaluatorConcept_Behavior.call_getPresentation_9172312269976661829(thisNode, SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true));
     }
 
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.StringLiteral")) {
@@ -81,7 +82,7 @@ public class EvaluatorConcept_Behavior {
       return "new " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), "creator", true), "virtual_getPresentation_1213877396640", new Object[]{});
     }
 
-    if (SConceptPropertyOperations.getBoolean(expression, "constant")) {
+    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(expression))), "virtual_constant_1262430001741498050", new Object[]{})) {
       return BehaviorReflection.invokeVirtual(Object.class, expression, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(thisNode).getModelDescriptor().getModule()}) + "";
     }
 
@@ -92,8 +93,8 @@ public class EvaluatorConcept_Behavior {
     if (operation == null) {
       return "????";
     }
-    if (isNotEmpty_29c8r0_a0b0g(SConceptPropertyOperations.getString(operation, "alias"))) {
-      return SConceptPropertyOperations.getString(operation, "alias");
+    if (isNotEmpty_29c8r0_a0b0g(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(operation), "conceptAlias"))) {
+      return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(operation), "conceptAlias");
     }
     if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "name") + "(" + ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)).foldLeft("", new ILeftCombinator<SNode, String>() {

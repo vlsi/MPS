@@ -4,6 +4,7 @@ package jetbrains.mps.lang.actions.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class QueryFunction_ParameterizedSideTransform_Query_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public QueryFunction_ParameterizedSideTransform_Query_BehaviorDescriptor() {
@@ -11,6 +12,10 @@ public class QueryFunction_ParameterizedSideTransform_Query_BehaviorDescriptor e
 
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return QueryFunction_ParameterizedSideTransform_Query_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  }
+
+  public boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
+    return QueryFunction_ParameterizedSideTransform_Query_Behavior.virtual_usesParameterObject_1262430001741497984(thisConcept);
   }
 
   @Override

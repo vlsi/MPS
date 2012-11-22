@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class FieldReferenceOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -76,5 +77,9 @@ public class FieldReferenceOperation_Behavior {
   public static void call_convertToLocal_5311267937735269195(SNode thisNode) {
     SNode fieldReference = SNodeOperations.replaceWithNewChild(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.VariableReference");
     SLinkOperations.setTarget(fieldReference, "variableDeclaration", SLinkOperations.getTarget(thisNode, "fieldDeclaration", false), false);
+  }
+
+  public static boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
+    return true;
   }
 }

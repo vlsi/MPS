@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.typesystem.generator.baseLanguage.template.genUtil.TypesystemGenUtil;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -263,7 +262,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1215528815701(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    String alias = SConceptPropertyOperations.getString(_context.getNode(), "alias");
+    String alias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), "conceptAlias");
     if (":>=:".equals(alias) || ":<=:".equals(alias) || ":<<=:".equals(alias)) {
       return TypesystemGenUtil.isInCheckEquation(_context.getNode());
     }
@@ -271,7 +270,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1215531456103(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    String alias = SConceptPropertyOperations.getString(_context.getNode(), "alias");
+    String alias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), "conceptAlias");
     if (":==:".equals(alias)) {
       return TypesystemGenUtil.isInCheckEquation(_context.getNode());
     }
@@ -816,12 +815,12 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1707333141173512013(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String alias = SConceptPropertyOperations.getString(_context.getNode(), "alias");
+    String alias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), "conceptAlias");
     return ":<=:".equals(alias) || ":>=:".equals(alias);
   }
 
   public static Object propertyMacro_GetPropertyValue_1707333141173512083(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String alias = SConceptPropertyOperations.getString(_context.getNode(), "alias");
+    String alias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), "conceptAlias");
     if (":==:".equals(alias)) {
       return "createEquation";
     }
@@ -841,7 +840,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1215531866925(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return !(":<<=:".equals(SConceptPropertyOperations.getString(_context.getNode(), "alias")));
+    return !(":<<=:".equals(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), "conceptAlias")));
   }
 
   public static Object propertyMacro_GetPropertyValue_1216644811639(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1683,12 +1682,12 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1707333141173511945(final IOperationContext operationContext, final IfMacroContext _context) {
-    String alias = SConceptPropertyOperations.getString(_context.getNode(), "alias");
+    String alias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), "conceptAlias");
     return (":==:".equals(alias) && SPropertyOperations.getBoolean(_context.getNode(), "checkOnly")) || ":<=:".equals(alias) || ":>=:".equals(alias) || ":<<=:".equals(alias) || ":>>=:".equals(alias);
   }
 
   public static boolean ifMacro_Condition_1707333141173511993(final IOperationContext operationContext, final IfMacroContext _context) {
-    String alias = SConceptPropertyOperations.getString(_context.getNode(), "alias");
+    String alias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), "conceptAlias");
     return ":~:".equals(alias) || ":~~:".equals(alias);
   }
 

@@ -4,6 +4,7 @@ package jetbrains.mps.lang.generator.behavior;
 
 import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public abstract class NodeMacro_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor implements AbstractMacro_BehaviorDescriptor {
   public NodeMacro_BehaviorDescriptor() {
@@ -15,6 +16,14 @@ public abstract class NodeMacro_BehaviorDescriptor extends NodeAttribute_Behavio
 
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return NodeMacro_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  }
+
+  public String virtual_getRole_1262430001741497900(SConcept thisConcept) {
+    return NodeMacro_Behavior.virtual_getRole_1262430001741497900(thisConcept);
+  }
+
+  public boolean virtual_multiple_1262430001741497972(SConcept thisConcept) {
+    return NodeMacro_Behavior.virtual_multiple_1262430001741497972(thisConcept);
   }
 
   @Override

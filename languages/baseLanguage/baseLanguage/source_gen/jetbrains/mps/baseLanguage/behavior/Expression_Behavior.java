@@ -5,8 +5,10 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Expression_Behavior {
@@ -22,11 +24,11 @@ public class Expression_Behavior {
   }
 
   public static boolean virtual_isLValue_1213877519786(SNode thisNode) {
-    return SConceptPropertyOperations.getBoolean(thisNode, "lvalue");
+    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(thisNode))), "virtual_lvalue_1262430001741497939", new Object[]{});
   }
 
   public static boolean virtual_isCompileTimeConstant_1238860258777(SNode thisNode) {
-    return SConceptPropertyOperations.getBoolean(thisNode, "constant");
+    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(thisNode))), "virtual_constant_1262430001741498050", new Object[]{});
   }
 
   public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, IModule module) {
@@ -37,7 +39,19 @@ public class Expression_Behavior {
     if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.CommentPart")) {
       return true;
     }
-    return SConceptPropertyOperations.getBoolean(thisNode, "legalAsStatement");
+    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(thisNode))), "virtual_legalAsStatement_1262430001741498032", new Object[]{});
+  }
+
+  public static boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
+    return false;
+  }
+
+  public static boolean virtual_legalAsStatement_1262430001741498032(SConcept thisConcept) {
+    return false;
+  }
+
+  public static boolean virtual_constant_1262430001741498050(SConcept thisConcept) {
+    return false;
   }
 
   @Deprecated

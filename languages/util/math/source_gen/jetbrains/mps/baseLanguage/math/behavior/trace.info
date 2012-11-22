@@ -3,30 +3,30 @@
   <unitInfo fileName="AbsExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.AbsExpression_BehaviorDescriptor" />
   <unitInfo fileName="AbstractIndex_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.AbstractIndex_BehaviorDescriptor" />
   <unitInfo fileName="ArithmSymbol_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.ArithmSymbol_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BigComplexType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BigComplexType_BehaviorDescriptor" />
   <unitInfo fileName="BigDecimalType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BigDecimalType_BehaviorDescriptor" />
   <unitInfo fileName="BigIntegerType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BigIntegerType_BehaviorDescriptor" />
-  <unitInfo fileName="BigMaxExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BigMaxExpression_BehaviorDescriptor" />
-  <unitInfo fileName="BigMinExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BigMinExpression_BehaviorDescriptor" />
-  <unitInfo fileName="BigProdExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BigProdExpression_BehaviorDescriptor" />
-  <unitInfo fileName="BigSumExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BigSumExpression_BehaviorDescriptor" />
-  <unitInfo fileName="ComplexLiteral_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.ComplexLiteral_BehaviorDescriptor" />
+  <unitInfo fileName="BigMaxExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BigMaxExpression_BehaviorDescriptor" />
+  <unitInfo fileName="BigMinExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BigMinExpression_BehaviorDescriptor" />
+  <unitInfo fileName="BigProdExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BigProdExpression_BehaviorDescriptor" />
+  <unitInfo fileName="BigSumExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BigSumExpression_BehaviorDescriptor" />
+  <unitInfo fileName="ComplexLiteral_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.ComplexLiteral_BehaviorDescriptor" />
   <unitInfo fileName="ComplexType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.ComplexType_BehaviorDescriptor" />
-  <unitInfo fileName="ConjugateOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.ConjugateOperation_BehaviorDescriptor" />
+  <unitInfo fileName="ConjugateOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.ConjugateOperation_BehaviorDescriptor" />
   <unitInfo fileName="CosineExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.CosineExpression_BehaviorDescriptor" />
   <unitInfo fileName="DecimalBinaryOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.DecimalBinaryOperation_BehaviorDescriptor" />
-  <unitInfo fileName="DecimalDivExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.DecimalDivExpression_BehaviorDescriptor" />
-  <unitInfo fileName="DecimalMinusExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.DecimalMinusExpression_BehaviorDescriptor" />
-  <unitInfo fileName="DecimalMulExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.DecimalMulExpression_BehaviorDescriptor" />
-  <unitInfo fileName="DecimalPlusExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.DecimalPlusExpression_BehaviorDescriptor" />
+  <unitInfo fileName="DecimalDivExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.DecimalDivExpression_BehaviorDescriptor" />
+  <unitInfo fileName="DecimalMinusExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.DecimalMinusExpression_BehaviorDescriptor" />
+  <unitInfo fileName="DecimalMulExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.DecimalMulExpression_BehaviorDescriptor" />
+  <unitInfo fileName="DecimalPlusExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.DecimalPlusExpression_BehaviorDescriptor" />
   <unitInfo fileName="Determinant_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.Determinant_BehaviorDescriptor" />
   <unitInfo fileName="DivExpressionFraction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.DivExpressionFraction_BehaviorDescriptor" />
   <unitInfo fileName="ExponentExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.ExponentExpression_BehaviorDescriptor" />
-  <unitInfo fileName="ExponentialOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.ExponentialOperation_BehaviorDescriptor" />
+  <unitInfo fileName="ExponentialOperation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.ExponentialOperation_BehaviorDescriptor" />
   <unitInfo fileName="ExtrSymbol_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.ExtrSymbol_BehaviorDescriptor" />
-  <unitInfo fileName="InIntervalExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.InIntervalExpression_BehaviorDescriptor" />
-  <unitInfo fileName="IntervalContainsExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.IntervalContainsExpression_BehaviorDescriptor" />
+  <unitInfo fileName="InIntervalExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.InIntervalExpression_BehaviorDescriptor" />
+  <unitInfo fileName="IntervalContainsExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.IntervalContainsExpression_BehaviorDescriptor" />
   <unitInfo fileName="IntervalLiteral_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.IntervalLiteral_BehaviorDescriptor" />
   <unitInfo fileName="IntervalType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.IntervalType_BehaviorDescriptor" />
   <unitInfo fileName="LinearSolveOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.LinearSolveOperation_BehaviorDescriptor" />
@@ -38,16 +38,16 @@
   <unitInfo fileName="MathSymbolFromToIndex_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MathSymbolFromToIndex_BehaviorDescriptor" />
   <unitInfo fileName="MathSymbolIndexReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MathSymbolIndexReference_BehaviorDescriptor" />
   <unitInfo fileName="MathSymbolIndex_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MathSymbolIndex_BehaviorDescriptor" />
-  <unitInfo fileName="MathSymbol_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MathSymbol_BehaviorDescriptor" />
-  <unitInfo fileName="MathTypeCast_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MathTypeCast_BehaviorDescriptor" />
+  <unitInfo fileName="MathSymbol_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MathSymbol_BehaviorDescriptor" />
+  <unitInfo fileName="MathTypeCast_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MathTypeCast_BehaviorDescriptor" />
   <unitInfo fileName="MatrixConstructor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixConstructor_BehaviorDescriptor" />
-  <unitInfo fileName="MatrixElementAccessExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixElementAccessExpression_BehaviorDescriptor" />
+  <unitInfo fileName="MatrixElementAccessExpression_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixElementAccessExpression_BehaviorDescriptor" />
   <unitInfo fileName="MatrixExponentialOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixExponentialOperation_BehaviorDescriptor" />
   <unitInfo fileName="MatrixIndexWildcard_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixIndexWildcard_BehaviorDescriptor" />
   <unitInfo fileName="MatrixInitializerIndexReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixInitializerIndexReference_BehaviorDescriptor" />
   <unitInfo fileName="MatrixInitializerIndex_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixInitializerIndex_BehaviorDescriptor" />
   <unitInfo fileName="MatrixInitializer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixInitializer_BehaviorDescriptor" />
-  <unitInfo fileName="MatrixInverseOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixInverseOperation_BehaviorDescriptor" />
+  <unitInfo fileName="MatrixInverseOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixInverseOperation_BehaviorDescriptor" />
   <unitInfo fileName="MatrixNorm_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixNorm_BehaviorDescriptor" />
   <unitInfo fileName="MatrixOrVectorInitializer_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixOrVectorInitializer_BehaviorDescriptor" />
   <unitInfo fileName="MatrixOrVectorType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixOrVectorType_BehaviorDescriptor" />
@@ -57,40 +57,46 @@
   <unitInfo fileName="PowExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.PowExpression_BehaviorDescriptor" />
   <unitInfo fileName="SineExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.SineExpression_BehaviorDescriptor" />
   <unitInfo fileName="TangentExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.TangentExpression_BehaviorDescriptor" />
-  <unitInfo fileName="TransposeOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.TransposeOperation_BehaviorDescriptor" />
+  <unitInfo fileName="TransposeOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.TransposeOperation_BehaviorDescriptor" />
   <unitInfo fileName="VectorInitializer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.VectorInitializer_BehaviorDescriptor" />
   <unitInfo fileName="VectorType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.VectorType_BehaviorDescriptor" />
   <root nodeId="1236440389435" modelId="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)">
-    <nodeInfo nodeId="1236440451754" fileName="MathSymbol_Behavior.java" startLine="16" startPosition="110" endLine="17" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1236440632562" fileName="MathSymbol_Behavior.java" startLine="18" startPosition="208" endLine="19" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236440647503" fileName="MathSymbol_Behavior.java" startLine="20" startPosition="5" endLine="21" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1236440685960" fileName="MathSymbol_Behavior.java" startLine="22" startPosition="21" endLine="23" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237828408196" fileName="MathSymbol_Behavior.java" startLine="27" startPosition="82" endLine="28" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1236440595176" fileName="MathSymbol_Behavior.java" startLine="17" startPosition="123" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1236440677385" fileName="MathSymbol_Behavior.java" startLine="21" startPosition="123" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getEmptyIndexList_1237828382992#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="16" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getVisibleIndices_1236440390782#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
-    <scopeInfo nodeId="1236440389437" fileName="MathSymbol_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1236440595177" fileName="MathSymbol_Behavior.java" startLine="18" startPosition="208" endLine="19" endPosition="181" />
-    <scopeInfo nodeId="1236440677386" fileName="MathSymbol_Behavior.java" startLine="22" startPosition="21" endLine="23" endPosition="86" />
-    <scopeInfo nodeId="1237828382994" fileName="MathSymbol_Behavior.java" startLine="27" startPosition="82" endLine="28" endPosition="34" />
-    <scopeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="1236440451754" fileName="MathSymbol_Behavior.java" startLine="17" startPosition="110" endLine="18" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1236440632562" fileName="MathSymbol_Behavior.java" startLine="19" startPosition="208" endLine="20" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236440647503" fileName="MathSymbol_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1236440685960" fileName="MathSymbol_Behavior.java" startLine="23" startPosition="21" endLine="24" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237828408196" fileName="MathSymbol_Behavior.java" startLine="28" startPosition="82" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741497893" fileName="MathSymbol_Behavior.java" startLine="32" startPosition="84" endLine="33" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1236440595176" fileName="MathSymbol_Behavior.java" startLine="18" startPosition="123" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1236440677385" fileName="MathSymbol_Behavior.java" startLine="22" startPosition="123" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getEmptyIndexList_1237828382992#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpName_1262430001741497894#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="17" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getVisibleIndices_1236440390782#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
+    <scopeInfo nodeId="1236440389437" fileName="MathSymbol_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="1236440595177" fileName="MathSymbol_Behavior.java" startLine="19" startPosition="208" endLine="20" endPosition="181" />
+    <scopeInfo nodeId="1236440677386" fileName="MathSymbol_Behavior.java" startLine="23" startPosition="21" endLine="24" endPosition="86" />
+    <scopeInfo nodeId="1237828382994" fileName="MathSymbol_Behavior.java" startLine="28" startPosition="82" endLine="29" endPosition="34" />
+    <scopeInfo nodeId="1262430001741497896" fileName="MathSymbol_Behavior.java" startLine="32" startPosition="84" endLine="33" endPosition="16" />
+    <scopeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="1236440389435" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="1236440389435" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1236440390784" fileName="MathSymbol_Behavior.java" startLine="16" startPosition="110" endLine="24" endPosition="5">
+    <scopeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1236440389435" varName="thisConcept" />
+    </scopeInfo>
+    <scopeInfo nodeId="1236440390784" fileName="MathSymbol_Behavior.java" startLine="17" startPosition="110" endLine="25" endPosition="5">
       <varInfo nodeId="1236440647504" varName="ms" />
       <varInfo nodeId="1236440451755" varName="sI" />
     </scopeInfo>
-    <scopeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="16" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="17" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="1236440623606" varName="indices" />
       <varInfo nodeId="1236440416647" varName="sender" />
       <varInfo nodeId="1236440389435" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MathSymbol_Behavior" />
+    <unitInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MathSymbol_Behavior" />
   </root>
   <root nodeId="1238405584079" modelId="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)">
     <nodeInfo nodeId="1238405584079" fileName="DecimalBinaryOperation_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -1217,6 +1223,216 @@
       <varInfo nodeId="1300076822026746819" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="20" startPosition="0" endLine="693" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MathUtil" />
+  </root>
+  <root nodeId="1262430001741497834" modelId="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)">
+    <nodeInfo nodeId="1262430001741497830" fileName="ExponentialOperation_Behavior.java" startLine="12" startPosition="93" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741497834" fileName="ExponentialOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741497834" fileName="ExponentialOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperationSymbol_1262430001741497831#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1262430001741497836" fileName="ExponentialOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741497833" fileName="ExponentialOperation_Behavior.java" startLine="12" startPosition="93" endLine="13" endPosition="15" />
+    <scopeInfo nodeId="1262430001741497834" fileName="ExponentialOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741497834" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741497834" fileName="ExponentialOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741497834" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741497834" fileName="ExponentialOperation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.ExponentialOperation_Behavior" />
+  </root>
+  <root nodeId="1262430001741519697" modelId="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)">
+    <nodeInfo nodeId="1262430001741519696" fileName="DecimalPlusExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741519697" fileName="DecimalPlusExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741519697" fileName="DecimalPlusExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
+    <scopeInfo nodeId="1262430001741519699" fileName="DecimalPlusExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741519694" fileName="DecimalPlusExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" />
+    <scopeInfo nodeId="1262430001741519697" fileName="DecimalPlusExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741519697" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741519697" fileName="DecimalPlusExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741519697" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741519697" fileName="DecimalPlusExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.DecimalPlusExpression_Behavior" />
+  </root>
+  <root nodeId="1262430001741642110" modelId="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)">
+    <nodeInfo nodeId="1262430001741642109" fileName="DecimalDivExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741642110" fileName="DecimalDivExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741642110" fileName="DecimalDivExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
+    <scopeInfo nodeId="1262430001741642112" fileName="DecimalDivExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741642107" fileName="DecimalDivExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" />
+    <scopeInfo nodeId="1262430001741642110" fileName="DecimalDivExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741642110" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741642110" fileName="DecimalDivExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741642110" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741642110" fileName="DecimalDivExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.DecimalDivExpression_Behavior" />
+  </root>
+  <root nodeId="1262430001741642767" modelId="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)">
+    <nodeInfo nodeId="1262430001741642766" fileName="BigProdExpression_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741642767" fileName="BigProdExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741642767" fileName="BigProdExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpName_1262430001741497894#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1262430001741642769" fileName="BigProdExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741642764" fileName="BigProdExpression_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="20" />
+    <scopeInfo nodeId="1262430001741642767" fileName="BigProdExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741642767" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741642767" fileName="BigProdExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741642767" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741642767" fileName="BigProdExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BigProdExpression_Behavior" />
+  </root>
+  <root nodeId="1262430001741643113" modelId="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)">
+    <nodeInfo nodeId="1262430001741643112" fileName="MatrixInverseOperation_Behavior.java" startLine="12" startPosition="93" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741643113" fileName="MatrixInverseOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741643113" fileName="MatrixInverseOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperationSymbol_1262430001741497831#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1262430001741643115" fileName="MatrixInverseOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741643110" fileName="MatrixInverseOperation_Behavior.java" startLine="12" startPosition="93" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1262430001741643113" fileName="MatrixInverseOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741643113" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741643113" fileName="MatrixInverseOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741643113" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741643113" fileName="MatrixInverseOperation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixInverseOperation_Behavior" />
+  </root>
+  <root nodeId="1262430001741647625" modelId="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)">
+    <nodeInfo nodeId="1262430001741647624" fileName="BigSumExpression_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741647625" fileName="BigSumExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741647625" fileName="BigSumExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpName_1262430001741497894#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1262430001741647627" fileName="BigSumExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741647622" fileName="BigSumExpression_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="20" />
+    <scopeInfo nodeId="1262430001741647625" fileName="BigSumExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741647625" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741647625" fileName="BigSumExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741647625" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741647625" fileName="BigSumExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BigSumExpression_Behavior" />
+  </root>
+  <root nodeId="1262430001741702977" modelId="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)">
+    <nodeInfo nodeId="1262430001741702975" fileName="MatrixElementAccessExpression_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741702977" fileName="MatrixElementAccessExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741702977" fileName="MatrixElementAccessExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_lvalue_1262430001741497939#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <scopeInfo nodeId="1262430001741702979" fileName="MatrixElementAccessExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741702974" fileName="MatrixElementAccessExpression_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1262430001741702977" fileName="MatrixElementAccessExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741702977" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741702977" fileName="MatrixElementAccessExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741702977" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741702977" fileName="MatrixElementAccessExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixElementAccessExpression_Behavior" />
+  </root>
+  <root nodeId="1262430001741703003" modelId="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)">
+    <nodeInfo nodeId="1262430001741703002" fileName="InIntervalExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703003" fileName="InIntervalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741703003" fileName="InIntervalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
+    <scopeInfo nodeId="1262430001741703005" fileName="InIntervalExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741703000" fileName="InIntervalExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" />
+    <scopeInfo nodeId="1262430001741703003" fileName="InIntervalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741703003" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741703003" fileName="InIntervalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741703003" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741703003" fileName="InIntervalExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.InIntervalExpression_Behavior" />
+  </root>
+  <root nodeId="1262430001741703812" modelId="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)">
+    <nodeInfo nodeId="1262430001741703811" fileName="IntervalContainsExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703812" fileName="IntervalContainsExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741703812" fileName="IntervalContainsExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
+    <scopeInfo nodeId="1262430001741703814" fileName="IntervalContainsExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741703809" fileName="IntervalContainsExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" />
+    <scopeInfo nodeId="1262430001741703812" fileName="IntervalContainsExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741703812" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741703812" fileName="IntervalContainsExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741703812" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741703812" fileName="IntervalContainsExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.IntervalContainsExpression_Behavior" />
+  </root>
+  <root nodeId="1262430001741703917" modelId="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)">
+    <nodeInfo nodeId="1262430001741703916" fileName="TransposeOperation_Behavior.java" startLine="12" startPosition="93" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703917" fileName="TransposeOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741703917" fileName="TransposeOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperationSymbol_1262430001741497831#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1262430001741703919" fileName="TransposeOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741703914" fileName="TransposeOperation_Behavior.java" startLine="12" startPosition="93" endLine="13" endPosition="15" />
+    <scopeInfo nodeId="1262430001741703917" fileName="TransposeOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741703917" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741703917" fileName="TransposeOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741703917" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741703917" fileName="TransposeOperation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.TransposeOperation_Behavior" />
+  </root>
+  <root nodeId="1262430001741704748" modelId="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)">
+    <nodeInfo nodeId="1262430001741704747" fileName="ConjugateOperation_Behavior.java" startLine="12" startPosition="93" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741704748" fileName="ConjugateOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741704748" fileName="ConjugateOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperationSymbol_1262430001741497831#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1262430001741704750" fileName="ConjugateOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741704745" fileName="ConjugateOperation_Behavior.java" startLine="12" startPosition="93" endLine="13" endPosition="15" />
+    <scopeInfo nodeId="1262430001741704748" fileName="ConjugateOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741704748" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741704748" fileName="ConjugateOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741704748" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741704748" fileName="ConjugateOperation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.ConjugateOperation_Behavior" />
+  </root>
+  <root nodeId="1262430001741704846" modelId="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)">
+    <nodeInfo nodeId="1262430001741704845" fileName="BigMaxExpression_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741704846" fileName="BigMaxExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741704846" fileName="BigMaxExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpName_1262430001741497894#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1262430001741704848" fileName="BigMaxExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741704843" fileName="BigMaxExpression_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="17" />
+    <scopeInfo nodeId="1262430001741704846" fileName="BigMaxExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741704846" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741704846" fileName="BigMaxExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741704846" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741704846" fileName="BigMaxExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BigMaxExpression_Behavior" />
+  </root>
+  <root nodeId="1262430001741718335" modelId="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)">
+    <nodeInfo nodeId="1262430001741718334" fileName="DecimalMinusExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718335" fileName="DecimalMinusExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741718335" fileName="DecimalMinusExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
+    <scopeInfo nodeId="1262430001741718337" fileName="DecimalMinusExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741718332" fileName="DecimalMinusExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" />
+    <scopeInfo nodeId="1262430001741718335" fileName="DecimalMinusExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741718335" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741718335" fileName="DecimalMinusExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741718335" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741718335" fileName="DecimalMinusExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.DecimalMinusExpression_Behavior" />
+  </root>
+  <root nodeId="1262430001741718383" modelId="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)">
+    <nodeInfo nodeId="1262430001741718382" fileName="BigMinExpression_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718383" fileName="BigMinExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741718383" fileName="BigMinExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpName_1262430001741497894#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1262430001741718385" fileName="BigMinExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741718380" fileName="BigMinExpression_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="17" />
+    <scopeInfo nodeId="1262430001741718383" fileName="BigMinExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741718383" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741718383" fileName="BigMinExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741718383" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741718383" fileName="BigMinExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BigMinExpression_Behavior" />
+  </root>
+  <root nodeId="1262430001741718542" modelId="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)">
+    <nodeInfo nodeId="1262430001741718541" fileName="DecimalMulExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718542" fileName="DecimalMulExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741718542" fileName="DecimalMulExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
+    <scopeInfo nodeId="1262430001741718544" fileName="DecimalMulExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741718539" fileName="DecimalMulExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" />
+    <scopeInfo nodeId="1262430001741718542" fileName="DecimalMulExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741718542" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741718542" fileName="DecimalMulExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741718542" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741718542" fileName="DecimalMulExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.DecimalMulExpression_Behavior" />
   </root>
   <root nodeId="1904947163751563871" modelId="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)">
     <nodeInfo nodeId="1904947163751563874" fileName="MathContext_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

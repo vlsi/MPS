@@ -5,17 +5,16 @@ package jetbrains.mps.make.script.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class QueryDefinition_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static String virtual_classifierName_4609636120081351397(SNode thisNode) {
-    return NameUtil.toValidCamelIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_" + SConceptPropertyOperations.getString(thisNode, "alias");
+    return NameUtil.toValidCamelIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_" + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
   }
 
   @Deprecated

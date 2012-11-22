@@ -9,6 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import java.awt.Color;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public abstract class BuildLayout_NamedContainer_BehaviorDescriptor extends BuildLayout_AbstractContainer_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, BuildSource_SingleFolder_BehaviorDescriptor, BuildStringContainer_BehaviorDescriptor {
   public BuildLayout_NamedContainer_BehaviorDescriptor() {
@@ -33,6 +34,10 @@ public abstract class BuildLayout_NamedContainer_BehaviorDescriptor extends Buil
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  }
+
+  public boolean virtual_hasInputDir_1262430001741498038(SConcept thisConcept) {
+    return BuildLayout_NamedContainer_Behavior.virtual_hasInputDir_1262430001741498038(thisConcept);
   }
 
   public boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {

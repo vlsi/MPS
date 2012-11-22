@@ -12,21 +12,21 @@
   <unitInfo fileName="ApplicableNodeReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ApplicableNodeReference_BehaviorDescriptor" />
   <unitInfo fileName="AssertStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.AssertStatement_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="248" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="CaretPositionOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.CaretPositionOperation_BehaviorDescriptor" />
+  <unitInfo fileName="CaretPositionOperation_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.CaretPositionOperation_BehaviorDescriptor" />
   <unitInfo fileName="CoerceExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.CoerceExpression_BehaviorDescriptor" />
   <unitInfo fileName="CoerceStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.CoerceStatement_BehaviorDescriptor" />
   <unitInfo fileName="CoerceStrongExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.CoerceStrongExpression_BehaviorDescriptor" />
   <unitInfo fileName="ComparisonRule_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ComparisonRule_BehaviorDescriptor" />
   <unitInfo fileName="ConceptClauseLinkInfo_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ConceptClauseLinkInfo_BehaviorDescriptor" />
-  <unitInfo fileName="ConceptFunctionParameter_BlockingComputationNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_BlockingComputationNode_BehaviorDescriptor" />
-  <unitInfo fileName="ConceptFunctionParameter_ContextNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_ContextNode_BehaviorDescriptor" />
-  <unitInfo fileName="ConceptFunctionParameter_DependentComputationNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_DependentComputationNode_BehaviorDescriptor" />
+  <unitInfo fileName="ConceptFunctionParameter_BlockingComputationNode_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_BlockingComputationNode_BehaviorDescriptor" />
+  <unitInfo fileName="ConceptFunctionParameter_ContextNode_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_ContextNode_BehaviorDescriptor" />
+  <unitInfo fileName="ConceptFunctionParameter_DependentComputationNode_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_DependentComputationNode_BehaviorDescriptor" />
   <unitInfo fileName="ConceptFunctionParameter_EditorContext_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_EditorContext_BehaviorDescriptor" />
-  <unitInfo fileName="ConceptFunctionParameter_Role_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_Role_BehaviorDescriptor" />
+  <unitInfo fileName="ConceptFunctionParameter_Role_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_Role_BehaviorDescriptor" />
   <unitInfo fileName="ConceptFunctionParameter_Selection_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_Selection_BehaviorDescriptor" />
-  <unitInfo fileName="ConceptFunctionParameter_isAggregation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_isAggregation_BehaviorDescriptor" />
-  <unitInfo fileName="ConceptFunctionParameter_node_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_node_BehaviorDescriptor" />
-  <unitInfo fileName="ConceptFunctionParameter_var_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_var_BehaviorDescriptor" />
+  <unitInfo fileName="ConceptFunctionParameter_isAggregation_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_isAggregation_BehaviorDescriptor" />
+  <unitInfo fileName="ConceptFunctionParameter_node_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_node_BehaviorDescriptor" />
+  <unitInfo fileName="ConceptFunctionParameter_var_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_var_BehaviorDescriptor" />
   <unitInfo fileName="ConceptReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ConceptReference_BehaviorDescriptor" />
   <unitInfo fileName="ConceptTypeClause_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ConceptTypeClause_BehaviorDescriptor" />
   <unitInfo fileName="CreateComparableEquationStatementStrong_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.CreateComparableEquationStatementStrong_BehaviorDescriptor" />
@@ -43,7 +43,7 @@
   <unitInfo fileName="DependentComputationItem_BlockingBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.DependentComputationItem_BlockingBlock_BehaviorDescriptor" />
   <unitInfo fileName="DependentComputationItem_FindMasterBlock_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.DependentComputationItem_FindMasterBlock_BehaviorDescriptor" />
   <unitInfo fileName="ErrorInfoExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ErrorInfoExpression_BehaviorDescriptor" />
-  <unitInfo fileName="FindSourceBlockParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.FindSourceBlockParameter_BehaviorDescriptor" />
+  <unitInfo fileName="FindSourceBlockParameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.FindSourceBlockParameter_BehaviorDescriptor" />
   <unitInfo fileName="FindSourceBlock_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.FindSourceBlock_BehaviorDescriptor" />
   <unitInfo fileName="GetOperationType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.GetOperationType_BehaviorDescriptor" />
   <unitInfo fileName="IRuleWithOneNode_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.IRuleWithOneNode_BehaviorDescriptor" />
@@ -56,28 +56,28 @@
   <unitInfo fileName="IsReplacementRuleApplicable_ConceptFunction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.IsReplacementRuleApplicable_ConceptFunction_BehaviorDescriptor" />
   <unitInfo fileName="IsStrongSubtypeExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.IsStrongSubtypeExpression_BehaviorDescriptor" />
   <unitInfo fileName="IsSubtypeExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.IsSubtypeExpression_BehaviorDescriptor" />
-  <unitInfo fileName="JoinContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.JoinContainer_BehaviorDescriptor" />
+  <unitInfo fileName="JoinContainer_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.JoinContainer_BehaviorDescriptor" />
   <unitInfo fileName="JoinType_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.JoinType_BehaviorDescriptor" />
-  <unitInfo fileName="LeftOperandType_parameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.LeftOperandType_parameter_BehaviorDescriptor" />
+  <unitInfo fileName="LeftOperandType_parameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.LeftOperandType_parameter_BehaviorDescriptor" />
   <unitInfo fileName="LinkPatternVariableReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.LinkPatternVariableReference_BehaviorDescriptor" />
   <unitInfo fileName="ListVarDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ListVarDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="MatchStatementItem_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MatchStatementItem_BehaviorDescriptor" />
   <unitInfo fileName="MatchStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MatchStatement_BehaviorDescriptor" />
-  <unitInfo fileName="MeetContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MeetContainer_BehaviorDescriptor" />
+  <unitInfo fileName="MeetContainer_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MeetContainer_BehaviorDescriptor" />
   <unitInfo fileName="MeetType_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MeetType_BehaviorDescriptor" />
   <unitInfo fileName="MessageStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MessageStatement_BehaviorDescriptor" />
   <unitInfo fileName="MessageTarget_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MessageTarget_BehaviorDescriptor" />
   <unitInfo fileName="MultipleForeachLoopVariable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoopVariable_BehaviorDescriptor" />
   <unitInfo fileName="MultipleForeachLoop_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoop_BehaviorDescriptor" />
   <unitInfo fileName="NodeInfo_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.NodeInfo_BehaviorDescriptor" />
-  <unitInfo fileName="Node_InferTypeOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.Node_InferTypeOperation_BehaviorDescriptor" />
-  <unitInfo fileName="Node_TypeOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.Node_TypeOperation_BehaviorDescriptor" />
+  <unitInfo fileName="Node_InferTypeOperation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.Node_InferTypeOperation_BehaviorDescriptor" />
+  <unitInfo fileName="Node_TypeOperation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.Node_TypeOperation_BehaviorDescriptor" />
   <unitInfo fileName="NonTypesystemRule_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.NonTypesystemRule_BehaviorDescriptor" />
   <unitInfo fileName="NormalTypeClause_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.NormalTypeClause_BehaviorDescriptor" />
   <unitInfo fileName="OperationContextExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.OperationContextExpression_BehaviorDescriptor" />
-  <unitInfo fileName="Operation_parameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.Operation_parameter_BehaviorDescriptor" />
+  <unitInfo fileName="Operation_parameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.Operation_parameter_BehaviorDescriptor" />
   <unitInfo fileName="OrStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.OrStatement_BehaviorDescriptor" />
-  <unitInfo fileName="OriginalNodeId_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.OriginalNodeId_BehaviorDescriptor" />
+  <unitInfo fileName="OriginalNodeId_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.OriginalNodeId_BehaviorDescriptor" />
   <unitInfo fileName="OverloadedOpIsApplicableFunction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.OverloadedOpIsApplicableFunction_BehaviorDescriptor" />
   <unitInfo fileName="OverloadedOpRulesContainer_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.OverloadedOpRulesContainer_BehaviorDescriptor" />
   <unitInfo fileName="OverloadedOpTypeRule_OneTypeSpecified_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.OverloadedOpTypeRule_OneTypeSpecified_BehaviorDescriptor" />
@@ -86,22 +86,22 @@
   <unitInfo fileName="PatternCondition_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.PatternCondition_BehaviorDescriptor" />
   <unitInfo fileName="PatternVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.PatternVariableReference_BehaviorDescriptor" />
   <unitInfo fileName="PrintToTrace_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.PrintToTrace_BehaviorDescriptor" />
-  <unitInfo fileName="Processed_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.Processed_BehaviorDescriptor" />
+  <unitInfo fileName="Processed_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.Processed_BehaviorDescriptor" />
   <unitInfo fileName="PropertyMessageTarget_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.PropertyMessageTarget_BehaviorDescriptor" />
   <unitInfo fileName="PropertyNameTarget_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.PropertyNameTarget_BehaviorDescriptor" />
   <unitInfo fileName="PropertyPatternVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.PropertyPatternVariableReference_BehaviorDescriptor" />
   <unitInfo fileName="QuickFixArgumentReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.QuickFixArgumentReference_BehaviorDescriptor" />
   <unitInfo fileName="QuickFixArgument_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.QuickFixArgument_BehaviorDescriptor" />
-  <unitInfo fileName="QuickFixDescriptionBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.QuickFixDescriptionBlock_BehaviorDescriptor" />
-  <unitInfo fileName="QuickFixExecuteBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.QuickFixExecuteBlock_BehaviorDescriptor" />
-  <unitInfo fileName="QuickFixFieldReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.QuickFixFieldReference_BehaviorDescriptor" />
+  <unitInfo fileName="QuickFixDescriptionBlock_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.QuickFixDescriptionBlock_BehaviorDescriptor" />
+  <unitInfo fileName="QuickFixExecuteBlock_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.QuickFixExecuteBlock_BehaviorDescriptor" />
+  <unitInfo fileName="QuickFixFieldReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.QuickFixFieldReference_BehaviorDescriptor" />
   <unitInfo fileName="QuickFixField_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.QuickFixField_BehaviorDescriptor" />
-  <unitInfo fileName="QuickFixSetSelectionBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.QuickFixSetSelectionBlock_BehaviorDescriptor" />
+  <unitInfo fileName="QuickFixSetSelectionBlock_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.QuickFixSetSelectionBlock_BehaviorDescriptor" />
   <unitInfo fileName="ReferenceMessageTarget_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ReferenceMessageTarget_BehaviorDescriptor" />
   <unitInfo fileName="ReferenceRoleTarget_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ReferenceRoleTarget_BehaviorDescriptor" />
   <unitInfo fileName="ReplacementRuleReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ReplacementRuleReference_BehaviorDescriptor" />
   <unitInfo fileName="ReportErrorStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ReportErrorStatement_BehaviorDescriptor" />
-  <unitInfo fileName="RightOperandType_parameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.RightOperandType_parameter_BehaviorDescriptor" />
+  <unitInfo fileName="RightOperandType_parameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.RightOperandType_parameter_BehaviorDescriptor" />
   <unitInfo fileName="RuntimeErrorType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.RuntimeErrorType_BehaviorDescriptor" />
   <unitInfo fileName="RuntimeHoleType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.RuntimeHoleType_BehaviorDescriptor" />
   <unitInfo fileName="RuntimeListVariable_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.RuntimeListVariable_BehaviorDescriptor" />
@@ -121,7 +121,7 @@
   <unitInfo fileName="VariableConverterItem_ConvertBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.VariableConverterItem_ConvertBlock_BehaviorDescriptor" />
   <unitInfo fileName="VariableConvertersContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.VariableConvertersContainer_BehaviorDescriptor" />
   <unitInfo fileName="WarningStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.WarningStatement_BehaviorDescriptor" />
-  <unitInfo fileName="WasSelectedNodeOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.WasSelectedNodeOperation_BehaviorDescriptor" />
+  <unitInfo fileName="WasSelectedNodeOperation_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.WasSelectedNodeOperation_BehaviorDescriptor" />
   <unitInfo fileName="WhenConcreteStatement_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.WhenConcreteStatement_BehaviorDescriptor" />
   <unitInfo fileName="WhenConcreteVariableDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.WhenConcreteVariableDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="WhenConcreteVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.WhenConcreteVariableReference_BehaviorDescriptor" />
@@ -428,6 +428,158 @@
       <varInfo nodeId="1235492943486" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="1235492943486" fileName="RuntimeErrorType_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.RuntimeErrorType_Behavior" />
+  </root>
+  <root nodeId="1262430001741522674" modelId="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)">
+    <nodeInfo nodeId="1262430001741522672" fileName="QuickFixDescriptionBlock_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741522674" fileName="QuickFixDescriptionBlock_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741522674" fileName="QuickFixDescriptionBlock_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <scopeInfo nodeId="1262430001741522676" fileName="QuickFixDescriptionBlock_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741522671" fileName="QuickFixDescriptionBlock_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1262430001741522674" fileName="QuickFixDescriptionBlock_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741522674" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741522674" fileName="QuickFixDescriptionBlock_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741522674" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741522674" fileName="QuickFixDescriptionBlock_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.QuickFixDescriptionBlock_Behavior" />
+  </root>
+  <root nodeId="1262430001741642240" modelId="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)">
+    <nodeInfo nodeId="1262430001741642239" fileName="Processed_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741642240" fileName="Processed_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741642240" fileName="Processed_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1262430001741642242" fileName="Processed_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741642237" fileName="Processed_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="23" />
+    <scopeInfo nodeId="1262430001741642240" fileName="Processed_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741642240" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741642240" fileName="Processed_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741642240" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741642240" fileName="Processed_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.Processed_Behavior" />
+  </root>
+  <root nodeId="1262430001741642267" modelId="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)">
+    <nodeInfo nodeId="1262430001741642265" fileName="QuickFixExecuteBlock_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741642267" fileName="QuickFixExecuteBlock_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741642267" fileName="QuickFixExecuteBlock_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <scopeInfo nodeId="1262430001741642269" fileName="QuickFixExecuteBlock_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741642264" fileName="QuickFixExecuteBlock_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1262430001741642267" fileName="QuickFixExecuteBlock_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741642267" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741642267" fileName="QuickFixExecuteBlock_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741642267" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741642267" fileName="QuickFixExecuteBlock_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.QuickFixExecuteBlock_Behavior" />
+  </root>
+  <root nodeId="1262430001741643104" modelId="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)">
+    <nodeInfo nodeId="1262430001741643102" fileName="Node_TypeOperation_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741719832" fileName="Node_TypeOperation_Behavior.java" startLine="16" startPosition="92" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741643104" fileName="Node_TypeOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741643104" fileName="Node_TypeOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_applicableToLink_1262430001741498352#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <nodeInfo nodeId="1262430001741643104" fileName="Node_TypeOperation_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_applicableToNode_1262430001741498076#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <scopeInfo nodeId="1262430001741643106" fileName="Node_TypeOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741643101" fileName="Node_TypeOperation_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1262430001741719831" fileName="Node_TypeOperation_Behavior.java" startLine="16" startPosition="92" endLine="17" endPosition="16" />
+    <scopeInfo nodeId="1262430001741643104" fileName="Node_TypeOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741643104" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741643104" fileName="Node_TypeOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741643104" varName="thisConcept" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741643104" fileName="Node_TypeOperation_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="1262430001741643104" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741643104" fileName="Node_TypeOperation_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.Node_TypeOperation_Behavior" />
+  </root>
+  <root nodeId="1262430001741647417" modelId="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)">
+    <nodeInfo nodeId="1262430001741647415" fileName="Node_InferTypeOperation_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703611" fileName="Node_InferTypeOperation_Behavior.java" startLine="16" startPosition="92" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741647417" fileName="Node_InferTypeOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741647417" fileName="Node_InferTypeOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_applicableToLink_1262430001741498352#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <nodeInfo nodeId="1262430001741647417" fileName="Node_InferTypeOperation_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_applicableToNode_1262430001741498076#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <scopeInfo nodeId="1262430001741647419" fileName="Node_InferTypeOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741647414" fileName="Node_InferTypeOperation_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1262430001741703610" fileName="Node_InferTypeOperation_Behavior.java" startLine="16" startPosition="92" endLine="17" endPosition="16" />
+    <scopeInfo nodeId="1262430001741647417" fileName="Node_InferTypeOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741647417" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741647417" fileName="Node_InferTypeOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741647417" varName="thisConcept" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741647417" fileName="Node_InferTypeOperation_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="1262430001741647417" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741647417" fileName="Node_InferTypeOperation_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.Node_InferTypeOperation_Behavior" />
+  </root>
+  <root nodeId="1262430001741703273" modelId="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)">
+    <nodeInfo nodeId="1262430001741703271" fileName="QuickFixFieldReference_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703273" fileName="QuickFixFieldReference_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741703273" fileName="QuickFixFieldReference_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_lvalue_1262430001741497939#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <scopeInfo nodeId="1262430001741703275" fileName="QuickFixFieldReference_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741703270" fileName="QuickFixFieldReference_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1262430001741703273" fileName="QuickFixFieldReference_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741703273" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741703273" fileName="QuickFixFieldReference_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741703273" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741703273" fileName="QuickFixFieldReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.QuickFixFieldReference_Behavior" />
+  </root>
+  <root nodeId="1262430001741703518" modelId="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)">
+    <nodeInfo nodeId="1262430001741703517" fileName="JoinContainer_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703518" fileName="JoinContainer_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741703518" fileName="JoinContainer_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1262430001741703520" fileName="JoinContainer_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741703515" fileName="JoinContainer_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="28" />
+    <scopeInfo nodeId="1262430001741703518" fileName="JoinContainer_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741703518" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741703518" fileName="JoinContainer_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741703518" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741703518" fileName="JoinContainer_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.JoinContainer_Behavior" />
+  </root>
+  <root nodeId="1262430001741704866" modelId="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)">
+    <nodeInfo nodeId="1262430001741704865" fileName="MeetContainer_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741704866" fileName="MeetContainer_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741704866" fileName="MeetContainer_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1262430001741704868" fileName="MeetContainer_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741704863" fileName="MeetContainer_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="28" />
+    <scopeInfo nodeId="1262430001741704866" fileName="MeetContainer_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741704866" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741704866" fileName="MeetContainer_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741704866" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741704866" fileName="MeetContainer_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MeetContainer_Behavior" />
+  </root>
+  <root nodeId="1262430001741718307" modelId="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)">
+    <nodeInfo nodeId="1262430001741718305" fileName="QuickFixSetSelectionBlock_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718307" fileName="QuickFixSetSelectionBlock_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741718307" fileName="QuickFixSetSelectionBlock_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <scopeInfo nodeId="1262430001741718309" fileName="QuickFixSetSelectionBlock_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741718304" fileName="QuickFixSetSelectionBlock_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1262430001741718307" fileName="QuickFixSetSelectionBlock_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741718307" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741718307" fileName="QuickFixSetSelectionBlock_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741718307" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741718307" fileName="QuickFixSetSelectionBlock_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.QuickFixSetSelectionBlock_Behavior" />
+  </root>
+  <root nodeId="1262430001741720089" modelId="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)">
+    <nodeInfo nodeId="1262430001741720088" fileName="OriginalNodeId_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741720089" fileName="OriginalNodeId_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741720089" fileName="OriginalNodeId_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1262430001741720091" fileName="OriginalNodeId_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741720086" fileName="OriginalNodeId_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="38" />
+    <scopeInfo nodeId="1262430001741720089" fileName="OriginalNodeId_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741720089" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741720089" fileName="OriginalNodeId_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741720089" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741720089" fileName="OriginalNodeId_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.OriginalNodeId_Behavior" />
   </root>
   <root nodeId="1268659616153695021" modelId="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)">
     <nodeInfo nodeId="1268659616153700311" fileName="AbstractSubtypingRule_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class PlusExpression_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor {
   public PlusExpression_BehaviorDescriptor() {
@@ -11,6 +12,10 @@ public class PlusExpression_BehaviorDescriptor extends BinaryOperation_BehaviorD
 
   public Object virtual_eval_1213877519769(SNode thisNode, IModule module) {
     return PlusExpression_Behavior.virtual_eval_1213877519769(thisNode, module);
+  }
+
+  public int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
+    return PlusExpression_Behavior.virtual_getPriority_1262430001741497858(thisConcept);
   }
 
   @Override

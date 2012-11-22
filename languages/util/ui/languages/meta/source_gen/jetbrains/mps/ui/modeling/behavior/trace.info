@@ -4,7 +4,7 @@
   <unitInfo fileName="ApplyConstraintStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.ApplyConstraintStatement_BehaviorDescriptor" />
   <unitInfo fileName="AspectParameterDecl_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.AspectParameterDecl_BehaviorDescriptor" />
   <unitInfo fileName="AspectParameterRef_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.AspectParameterRef_BehaviorDescriptor" />
-  <unitInfo fileName="AuxObjectAccessOp_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.AuxObjectAccessOp_BehaviorDescriptor" />
+  <unitInfo fileName="AuxObjectAccessOp_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.AuxObjectAccessOp_BehaviorDescriptor" />
   <unitInfo fileName="AuxObjectFactory_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.AuxObjectFactory_BehaviorDescriptor" />
   <unitInfo fileName="AuxObjectTemplate_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.AuxObjectTemplate_BehaviorDescriptor" />
   <unitInfo fileName="Auxillary_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.Auxillary_BehaviorDescriptor" />
@@ -21,14 +21,14 @@
   <unitInfo fileName="ContainerItemRemover_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.ContainerItemRemover_BehaviorDescriptor" />
   <unitInfo fileName="ContainerTemplate_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.ContainerTemplate_BehaviorDescriptor" />
   <unitInfo fileName="Container_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.Container_BehaviorDescriptor" />
-  <unitInfo fileName="ContextUIObjectParam_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.ContextUIObjectParam_BehaviorDescriptor" />
+  <unitInfo fileName="ContextUIObjectParam_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.ContextUIObjectParam_BehaviorDescriptor" />
   <unitInfo fileName="Context_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.Context_BehaviorDescriptor" />
   <unitInfo fileName="EditableUIPropertyAccessCode_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.EditableUIPropertyAccessCode_BehaviorDescriptor" />
   <unitInfo fileName="EditableUIProperty_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.EditableUIProperty_BehaviorDescriptor" />
-  <unitInfo fileName="EventHandlerParam_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.EventHandlerParam_BehaviorDescriptor" />
+  <unitInfo fileName="EventHandlerParam_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.EventHandlerParam_BehaviorDescriptor" />
   <unitInfo fileName="EventHandlerSetup_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.EventHandlerSetup_BehaviorDescriptor" />
   <unitInfo fileName="EventHandlerTemplate_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.EventHandlerTemplate_BehaviorDescriptor" />
-  <unitInfo fileName="EventProducerParam_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.EventProducerParam_BehaviorDescriptor" />
+  <unitInfo fileName="EventProducerParam_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.EventProducerParam_BehaviorDescriptor" />
   <unitInfo fileName="EventProducer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.EventProducer_BehaviorDescriptor" />
   <unitInfo fileName="EventPropertyGetter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.EventPropertyGetter_BehaviorDescriptor" />
   <unitInfo fileName="EventProperty_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.EventProperty_BehaviorDescriptor" />
@@ -41,17 +41,17 @@
   <unitInfo fileName="HorizontalConstraint_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.HorizontalConstraint_BehaviorDescriptor" />
   <unitInfo fileName="IAspectParameterHolder_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.IAspectParameterHolder_BehaviorDescriptor" />
   <unitInfo fileName="IPartiallyDefinedStub_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.IPartiallyDefinedStub_BehaviorDescriptor" />
-  <unitInfo fileName="ItemUIObjectParam_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.ItemUIObjectParam_BehaviorDescriptor" />
-  <unitInfo fileName="LayoutConstraintExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.LayoutConstraintExpression_BehaviorDescriptor" />
+  <unitInfo fileName="ItemUIObjectParam_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.ItemUIObjectParam_BehaviorDescriptor" />
+  <unitInfo fileName="LayoutConstraintExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.LayoutConstraintExpression_BehaviorDescriptor" />
   <unitInfo fileName="LayoutConstraintType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.LayoutConstraintType_BehaviorDescriptor" />
   <unitInfo fileName="LayoutConstraint_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.LayoutConstraint_BehaviorDescriptor" />
-  <unitInfo fileName="OverrideAnnotation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.OverrideAnnotation_BehaviorDescriptor" />
-  <unitInfo fileName="PropertyChangeHandlerParam_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.PropertyChangeHandlerParam_BehaviorDescriptor" />
+  <unitInfo fileName="OverrideAnnotation_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.OverrideAnnotation_BehaviorDescriptor" />
+  <unitInfo fileName="PropertyChangeHandlerParam_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.PropertyChangeHandlerParam_BehaviorDescriptor" />
   <unitInfo fileName="PropertyChangeHandlerSetup_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.PropertyChangeHandlerSetup_BehaviorDescriptor" />
-  <unitInfo fileName="PropertyValueParam_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.PropertyValueParam_BehaviorDescriptor" />
+  <unitInfo fileName="PropertyValueParam_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.PropertyValueParam_BehaviorDescriptor" />
   <unitInfo fileName="RowLayoutConstraint_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.RowLayoutConstraint_BehaviorDescriptor" />
-  <unitInfo fileName="ThisEventParam_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.ThisEventParam_BehaviorDescriptor" />
-  <unitInfo fileName="ThisUIObjectParam_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.ThisUIObjectParam_BehaviorDescriptor" />
+  <unitInfo fileName="ThisEventParam_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.ThisEventParam_BehaviorDescriptor" />
+  <unitInfo fileName="ThisUIObjectParam_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.ThisUIObjectParam_BehaviorDescriptor" />
   <unitInfo fileName="UIActionCode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.UIActionCode_BehaviorDescriptor" />
   <unitInfo fileName="UIAction_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.UIAction_BehaviorDescriptor" />
   <unitInfo fileName="UIObjectFactory_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.UIObjectFactory_BehaviorDescriptor" />
@@ -64,6 +64,20 @@
   <unitInfo fileName="UnitType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.UnitType_BehaviorDescriptor" />
   <unitInfo fileName="VerticalAlignment_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.VerticalAlignment_BehaviorDescriptor" />
   <unitInfo fileName="VerticalConstraint_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.VerticalConstraint_BehaviorDescriptor" />
+  <root nodeId="1262430001741717537" modelId="r:c33653ee-1be0-4ff5-9822-83365da4e9b7(jetbrains.mps.ui.modeling.behavior)">
+    <nodeInfo nodeId="1262430001741717536" fileName="OverrideAnnotation_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741717537" fileName="OverrideAnnotation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741717537" fileName="OverrideAnnotation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1262430001741717539" fileName="OverrideAnnotation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741717534" fileName="OverrideAnnotation_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="36" />
+    <scopeInfo nodeId="1262430001741717537" fileName="OverrideAnnotation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741717537" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741717537" fileName="OverrideAnnotation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741717537" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741717537" fileName="OverrideAnnotation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.OverrideAnnotation_Behavior" />
+  </root>
   <root nodeId="2482864227446704885" modelId="r:c33653ee-1be0-4ff5-9822-83365da4e9b7(jetbrains.mps.ui.modeling.behavior)">
     <nodeInfo nodeId="1055897155339717891" fileName="ContainerItemAdder_Behavior.java" startLine="13" startPosition="85" endLine="14" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2482864227446704885" fileName="ContainerItemAdder_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />

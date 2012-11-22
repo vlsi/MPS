@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -69,7 +68,7 @@ public class TestCollector {
   private boolean hasJUnit38TestMethods(final SNode maybetest) {
     return ListSequence.fromList(SLinkOperations.getTargets(maybetest, "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode meth) {
-        return "public".equals(SConceptPropertyOperations.getString(SLinkOperations.getTarget(meth, "visibility", true), "alias")) && SPropertyOperations.getString(meth, "name").startsWith("test");
+        return "public".equals(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(meth, "visibility", true)), "conceptAlias")) && SPropertyOperations.getString(meth, "name").startsWith("test");
       }
     }).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode meth) {
@@ -85,7 +84,7 @@ public class TestCollector {
   private boolean hasJUnit4TestMethods(final SNode maybetest) {
     return ListSequence.fromList(SLinkOperations.getTargets(maybetest, "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode meth) {
-        return "public".equals(SConceptPropertyOperations.getString(SLinkOperations.getTarget(meth, "visibility", true), "alias")) && hasAnnotation(meth, getTestAnnotation(SNodeOperations.getModel(maybetest)));
+        return "public".equals(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(meth, "visibility", true)), "conceptAlias")) && hasAnnotation(meth, getTestAnnotation(SNodeOperations.getModel(maybetest)));
       }
     }).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode meth) {

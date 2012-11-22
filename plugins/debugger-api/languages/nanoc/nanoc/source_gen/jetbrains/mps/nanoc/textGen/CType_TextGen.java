@@ -4,10 +4,11 @@ package jetbrains.mps.nanoc.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CType_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append(SConceptPropertyOperations.getString(node, "alias"));
+    this.append(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias"));
   }
 }

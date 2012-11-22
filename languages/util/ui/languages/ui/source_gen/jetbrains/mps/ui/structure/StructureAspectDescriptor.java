@@ -30,7 +30,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 6:
         return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.CompartmentProviderStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.ui.structure.IUIObjectContextProvider"}, new String[]{}, new String[]{});
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.CompartmentReferenceExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"container"});
+        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.CompartmentReferenceExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{"container"});
       case 8:
         return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.ContainerCompartment", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.ui.structure.IUIObjectContextProvider"}, new String[]{}, new String[]{"container"});
       case 9:
@@ -76,7 +76,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 29:
         return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.UIObjectReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.ILocalReference"}, new String[]{}, new String[]{"declaration"});
       case 30:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.UIObjectStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"uiObject"});
+        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.UIObjectStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{"uiObject"});
       case 31:
         return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.UIObjectType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{"uiObject"});
       case 32:

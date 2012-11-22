@@ -14,9 +14,12 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -75,7 +78,7 @@ public class InitialPropertyValueClause_Editor extends DefaultNodeEditor {
         // by default 'alias' is not shown. 
         // if you need presentation like alias(...)->.. 
         // then use the ConceptFunctionAliased_Component 
-        if (SConceptPropertyOperations.getBoolean(node, "showName")) {
+        if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_showName_1262430001741498082", new Object[]{})) {
           result.append(BehaviorReflection.invokeVirtual(String.class, node, "virtual_getName_1216468837268", new Object[]{}));
         }
         result.append("(");
@@ -86,7 +89,7 @@ public class InitialPropertyValueClause_Editor extends DefaultNodeEditor {
             result.append(", ");
           }
           isFirst = false;
-          result.append(SConceptPropertyOperations.getString(cfp, "alias"));
+          result.append(SPropertyOperations.getString(cfp, "conceptAlias"));
         }
         result.append(")->");
         SNode expectedReturnType = TypeChecker.getInstance().getTypeOf(node);

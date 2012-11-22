@@ -15,7 +15,6 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -41,7 +40,7 @@ public class QueriesGenerated {
               }
 
               public String getMatchingText(String pattern) {
-                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.resources.structure.IconResourceReference"), "alias") + "<" + SPropertyOperations.getString((item), "name") + ">";
+                return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.resources.structure.IconResourceReference"), "conceptAlias") + "<" + SPropertyOperations.getString((item), "name") + ">";
               }
 
               public String getVisibleMatchingText(String pattern) {

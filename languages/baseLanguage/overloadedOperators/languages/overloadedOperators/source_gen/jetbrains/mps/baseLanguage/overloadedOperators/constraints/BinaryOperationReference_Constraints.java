@@ -24,7 +24,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BinaryOperationReference_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer breakingNode_4xi24e_a0a1a0a0a1a0b0a1a0 = new SNodePointer("r:9b7a7baa-7b52-4b41-8293-5aa14d41220f(jetbrains.mps.baseLanguage.overloadedOperators.constraints)", "2838654975957288976");
@@ -55,7 +55,7 @@ public class BinaryOperationReference_Constraints extends BaseConstraintsDescrip
               SModel strucModel = strucModelDescriptor.getSModel();
               ListSequence.fromList(result).addSequence(ListSequence.fromList(SModelOperations.getRoots(strucModel, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return SConceptOperations.isSubConceptOf(((SNode) it), "jetbrains.mps.baseLanguage.structure.BinaryOperation") && !(SConceptPropertyOperations.getBoolean(it, "abstract"));
+                  return SConceptOperations.isSubConceptOf(((SNode) it), "jetbrains.mps.baseLanguage.structure.BinaryOperation") && !(SPropertyOperations.getBoolean(it, "abstract"));
                 }
               }));
             }

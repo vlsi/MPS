@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class BuildLayout_NamedContainer_Behavior {
   public static void init(SNode thisNode) {
@@ -42,5 +43,9 @@ public class BuildLayout_NamedContainer_Behavior {
 
   public static boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
     return !(propertyValue.contains("$") || propertyValue.contains("/") || propertyValue.contains("\\"));
+  }
+
+  public static boolean virtual_hasInputDir_1262430001741498038(SConcept thisConcept) {
+    return false;
   }
 }

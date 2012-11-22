@@ -4,8 +4,10 @@ package jetbrains.mps.baseLanguage.builders.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -20,7 +22,7 @@ public class Builder_Behavior {
   }
 
   public static boolean virtual_isLeaf_7057666463730595159(SNode thisNode) {
-    return SConceptPropertyOperations.getBoolean(thisNode, "leaf");
+    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_leaf_1262430001741498370", new Object[]{});
   }
 
   public static SNode virtual_getResultType_7057666463730718251(SNode thisNode) {
@@ -33,6 +35,10 @@ public class Builder_Behavior {
 
   public static SNode virtual_getAttachStatementChild_4797501453850305563(SNode thisNode, SNode parentBuilder, SNode parentRef, SNode childRef) {
     throw new UnsupportedOperationException();
+  }
+
+  public static boolean virtual_leaf_1262430001741498370(SConcept thisConcept) {
+    return false;
   }
 
   public static SNode getContextBuilder_7057666463730366732(SNode context) {

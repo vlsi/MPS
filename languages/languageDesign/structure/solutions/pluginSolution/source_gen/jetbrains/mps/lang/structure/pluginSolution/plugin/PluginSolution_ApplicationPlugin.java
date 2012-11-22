@@ -4,6 +4,7 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.ide.actions.Tools_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 import java.util.List;
@@ -26,6 +27,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new MoveConcepts_Action());
     addAction(new MoveLinkUp_Action());
     addAction(new MoveProperyUp_Action());
+    addAction(new RemoveConceptProperties_Action());
     addAction(new RenameConcept_Action());
     addAction(new RenameLink_Action());
     addAction(new RenameProperty_Action());
@@ -34,12 +36,14 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowHelpForNode_Action());
     addAction(new ShowHelpForRoot_Action());
     // groups 
+    addGroup(new MigrateConceptProperties_ActionGroup());
     addGroup(new RefactoringAdditions_ActionGroup());
     addGroup(new ShowHelp_ActionGroup());
     addGroup(new Structure_ActionGroup());
   }
 
   public void adjustRegularGroups() {
+    insertGroupIntoAnother(MigrateConceptProperties_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_migration);
     insertGroupIntoAnother(Structure_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_structure);
     insertGroupIntoAnother(Structure_ActionGroup.ID, "EditorPopup_ActionGroupstructure", null);
     insertGroupIntoAnother(ShowHelp_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_showHelp);

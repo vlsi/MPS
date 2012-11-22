@@ -9,7 +9,10 @@ import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -54,7 +57,7 @@ public class CreateInitializer_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "initializer", true) == null) && ((SLinkOperations.getTarget(node, "initSize", true) == null) || !(SConceptPropertyOperations.getBoolean(node, "hasInitSize")));
+    return (SLinkOperations.getTarget(node, "initializer", true) == null) && ((SLinkOperations.getTarget(node, "initSize", true) == null) || !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_hasInitSize_1262430001741497996", new Object[]{})));
   }
 
   public SNodeReference getIntentionNodeReference() {

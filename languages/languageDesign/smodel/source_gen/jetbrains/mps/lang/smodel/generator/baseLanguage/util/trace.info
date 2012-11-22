@@ -258,5 +258,28 @@
     </scopeInfo>
     <unitInfo nodeId="1239466128594" fileName="DataTypeUtil.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.baseLanguage.util.DataTypeUtil" />
   </root>
+  <root nodeId="2097240597884176496" modelId="r:00000000-0000-4000-0000-011c89590302(jetbrains.mps.lang.smodel.generator.baseLanguage.util)">
+    <nodeInfo nodeId="2097240597884184552" fileName="ConceptMethodCallUtils.java" startLine="13" startPosition="72" endLine="14" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2097240597884185127" fileName="ConceptMethodCallUtils.java" startLine="14" startPosition="60" endLine="15" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2097240597885030734" fileName="ConceptMethodCallUtils.java" startLine="15" startPosition="67" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2097240597885032294" fileName="ConceptMethodCallUtils.java" startLine="17" startPosition="25" endLine="18" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2097240597885037119" fileName="ConceptMethodCallUtils.java" startLine="20" startPosition="40" endLine="21" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2097240597885039110" fileName="ConceptMethodCallUtils.java" startLine="22" startPosition="5" endLine="23" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2097240597884176498" fileName="ConceptMethodCallUtils.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConceptMethodCallUtils#()V" />
+    <nodeInfo nodeId="2097240597885031564" fileName="ConceptMethodCallUtils.java" startLine="16" startPosition="68" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2097240597885033939" fileName="ConceptMethodCallUtils.java" startLine="19" startPosition="5" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2097240597884180631" fileName="ConceptMethodCallUtils.java" startLine="13" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callShouldBeByReflection#(Ljetbrains/mps/smodel/SModel;)Z" />
+    <scopeInfo nodeId="2097240597884176501" fileName="ConceptMethodCallUtils.java" startLine="10" startPosition="36" endLine="10" endPosition="36" />
+    <scopeInfo nodeId="2097240597885031566" fileName="ConceptMethodCallUtils.java" startLine="17" startPosition="25" endLine="18" endPosition="19" />
+    <scopeInfo nodeId="2097240597885033941" fileName="ConceptMethodCallUtils.java" startLine="20" startPosition="40" endLine="21" endPosition="19" />
+    <scopeInfo nodeId="2097240597884176498" fileName="ConceptMethodCallUtils.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
+    <scopeInfo nodeId="2097240597884180634" fileName="ConceptMethodCallUtils.java" startLine="13" startPosition="72" endLine="23" endPosition="38">
+      <varInfo nodeId="2097240597885030735" varName="module" />
+    </scopeInfo>
+    <scopeInfo nodeId="2097240597884180631" fileName="ConceptMethodCallUtils.java" startLine="13" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="2097240597884183408" varName="originalModel" />
+    </scopeInfo>
+    <unitInfo nodeId="2097240597884176496" fileName="ConceptMethodCallUtils.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.baseLanguage.util.ConceptMethodCallUtils" />
+  </root>
 </debugInfo>
 

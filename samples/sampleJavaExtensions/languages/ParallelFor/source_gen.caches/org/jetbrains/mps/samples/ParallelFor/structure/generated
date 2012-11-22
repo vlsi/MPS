@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-acmg78lf1im0ztyw1ylltiv7nep7q7e">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
+<dependencies version="2" modelHash="2p0g7mj4zh0qfaj5dkktkevg5ungv9t">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="72jgettirgdze5zodlg3xz1jp5r3et8" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="drfxt8i63upja5k7zfj1z568c5k4586" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2eqrjs8emy551teprj5no9utk82ifsq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dweusve4s1cnqvm1h7144swvj24rs4o" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="bavz98vwxhwhpog89k63m5eu2e8cbl3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-baumsvy45qwk0i0m1tzx9fili68fouh" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6r1gsoq3dd0l5ofyes4ojz73yszw60" />
   <common hash="-4pgbino09msow7rpl11x3704atwkb1k">
     <dep root="2975785153735111398" />
@@ -19,19 +19,19 @@
     <file name="ParallelFor_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="8923957828369477802" name="ParallelFor" hash="-4ag4axiuwwd6817lzvnxu971zz4ofrc">
+  <source id="8923957828369477802" name="ParallelFor" hash="cwpa9cjrxyjh2no7ugiv32zc28ph8tb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="8923957828369477803" name="ParallelLoopVariable" hash="194bqnuil6v9a2jcuha7snl6h0ogrwo">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="633195941006921788" name="ThreadPool" hash="7z8x1z43g0zx52jduh0div9m311re">
+  <source id="633195941006921788" name="ThreadPool" hash="-1dehl5byvx1zv5s0uy4odv7g9nlq6yx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2975785153735111398" name="ThreadSafe" hash="-4w5wt01uewffc1vxq3pw9nhuwsr9ua8">
+  <source id="2975785153735111398" name="ThreadSafe" hash="77vkf0ina0g778ah5oftoq8kupz5w13">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2975785153735230336" name="NonThreadSafeClass" hash="2477onme5et0x92kyr97tsu29jmre8o">
+  <source id="2975785153735230336" name="NonThreadSafeClass" hash="9z4315b41izcsha20pl14j717ynhrw2">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

@@ -24,7 +24,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.platform.conf.behavior.BeanUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.platform.conf.behavior.BeanExtensionPoint_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -134,7 +133,7 @@ public class QueriesGenerated {
               }
 
               public String getMatchingText(String pattern) {
-                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.platform.conf.structure.BeanExtensionPoint"), "alias") + " " + "beanClass" + "=" + BehaviorReflection.invokeVirtual(String.class, (item), "virtual_getFqName_1213877404258", new Object[]{});
+                return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.platform.conf.structure.BeanExtensionPoint"), "conceptAlias") + " " + "beanClass" + "=" + BehaviorReflection.invokeVirtual(String.class, (item), "virtual_getFqName_1213877404258", new Object[]{});
               }
 
               public String getVisibleMatchingText(String pattern) {
@@ -178,7 +177,7 @@ public class QueriesGenerated {
               }
 
               public String getMatchingText(String pattern) {
-                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint"), "alias") + " interface" + "=" + BehaviorReflection.invokeVirtual(String.class, (item), "virtual_getFqName_1213877404258", new Object[]{});
+                return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint"), "conceptAlias") + " interface" + "=" + BehaviorReflection.invokeVirtual(String.class, (item), "virtual_getFqName_1213877404258", new Object[]{});
               }
 
               public String getVisibleMatchingText(String pattern) {
@@ -352,7 +351,7 @@ public class QueriesGenerated {
               }
 
               public String getMatchingText(String pattern) {
-                return SConceptPropertyOperations.getString((item), "alias") + " " + SPropertyOperations.getString((item), "id");
+                return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration((item)), "conceptAlias") + " " + SPropertyOperations.getString((item), "id");
               }
 
               public String getVisibleMatchingText(String pattern) {
@@ -392,7 +391,7 @@ public class QueriesGenerated {
               }
 
               public String getMatchingText(String pattern) {
-                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.platform.conf.structure.GroupReference"), "alias") + " " + SPropertyOperations.getString((item), "id");
+                return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.platform.conf.structure.GroupReference"), "conceptAlias") + " " + SPropertyOperations.getString((item), "id");
               }
 
               public String getVisibleMatchingText(String pattern) {

@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class MethodDocComment_Behavior {
   public static void init(SNode thisNode) {
@@ -13,5 +14,9 @@ public class MethodDocComment_Behavior {
 
   public static boolean virtual_isTagSectionEmpty_8465538089690623795(SNode thisNode) {
     return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{}) && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "param", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "throwsTag", true)).isEmpty() && (SLinkOperations.getTarget(thisNode, "return", true) == null);
+  }
+
+  public static String virtual_getRole_1262430001741497900(SConcept thisConcept) {
+    return "methodDocComment";
   }
 }

@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class PlusExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -21,5 +22,9 @@ public class PlusExpression_Behavior {
       throw new UnsupportedOperationException();
     }
     return result;
+  }
+
+  public static int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
+    return 2;
   }
 }

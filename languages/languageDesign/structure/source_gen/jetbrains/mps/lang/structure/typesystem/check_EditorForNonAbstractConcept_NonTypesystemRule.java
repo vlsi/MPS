@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -30,7 +30,7 @@ public class check_EditorForNonAbstractConcept_NonTypesystemRule extends Abstrac
   }
 
   public void applyRule(final SNode conceptDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SConceptPropertyOperations.getBoolean(conceptDeclaration, "abstract")) {
+    if (SPropertyOperations.getBoolean(conceptDeclaration, "abstract")) {
       return;
     }
     Queue<SNode> toCheck = QueueSequence.fromQueue(new LinkedList<SNode>());

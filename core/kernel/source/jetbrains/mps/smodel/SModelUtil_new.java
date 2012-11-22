@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -181,7 +182,7 @@ public class SModelUtil_new implements CoreComponent {
   }
 
   public static String getAlias(SNode conceptDeclaration) {
-    return getStringConceptProperty(conceptDeclaration, SNodeUtil.CPR_BaseConcept_alias);
+    return SPropertyOperations.getString(conceptDeclaration, "conceptAlias");
   }
 
   public static String getStringConceptProperty(SNode conceptDeclaration, String propertyName) {

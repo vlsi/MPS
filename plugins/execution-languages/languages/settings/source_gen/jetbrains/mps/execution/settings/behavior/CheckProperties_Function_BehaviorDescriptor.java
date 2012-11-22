@@ -7,6 +7,7 @@ import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_BehaviorDescripto
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class CheckProperties_Function_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor implements IMember_BehaviorDescriptor {
   public CheckProperties_Function_BehaviorDescriptor() {
@@ -34,6 +35,10 @@ public class CheckProperties_Function_BehaviorDescriptor extends ConceptFunction
 
   public SNode virtual_getVisiblity_1213877352965(SNode thisNode) {
     return IMember_Behavior.virtual_getVisiblity_1213877352965(thisNode);
+  }
+
+  public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
+    return CheckProperties_Function_Behavior.virtual_showName_1262430001741498082(thisConcept);
   }
 
   @Override

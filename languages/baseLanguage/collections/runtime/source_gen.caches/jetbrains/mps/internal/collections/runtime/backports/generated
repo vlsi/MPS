@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="9kxmdm0cuesv9nr8kjzxg0n4fy5sax">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2eqrjs8emy551teprj5no9utk82ifsq" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="bavz98vwxhwhpog89k63m5eu2e8cbl3" />
   <common hash="40iqbzlpzsin1bap9mx6contmirat7" />
   <source id="6543581031674027297" name="Deque" hash="-ctlg8of68fimgc9q7qma49hquqv97cm">
     <file name="Deque.java" />
