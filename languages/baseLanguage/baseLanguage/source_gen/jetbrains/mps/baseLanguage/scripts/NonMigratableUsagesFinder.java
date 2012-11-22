@@ -145,9 +145,6 @@ public class NonMigratableUsagesFinder {
       if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation") || SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.collections.structure.AddElementOperation") || SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.actions.structure.NF_LinkList_AddNewChildOperation") || SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation")) {
         return true;
       }
-      if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation")) {
-        return true;
-      }
     }
 
     return false;
