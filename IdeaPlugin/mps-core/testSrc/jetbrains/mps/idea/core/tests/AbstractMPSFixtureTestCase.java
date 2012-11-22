@@ -172,7 +172,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
             final Project project = fixture.getProject();
             assert project != null;
             final String moduleFilePath = new File(project.getProjectFilePath()).getParent() + File.separator + getModuleFileName();
-            return ModuleManager.getInstance(project).newModule(moduleFilePath, StdModuleTypes.JAVA);
+            return ModuleManager.getInstance(project).newModule(moduleFilePath, StdModuleTypes.JAVA.getId());
         }
 
         private static int getNextIndex() {
