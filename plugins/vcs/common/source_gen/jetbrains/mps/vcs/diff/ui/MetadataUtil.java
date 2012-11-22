@@ -42,8 +42,7 @@ public class MetadataUtil {
     SNode root = SConceptOperations.createNewNode("jetbrains.mps.ide.vcs.modelmetadata.structure.Model", null);
     SPropertyOperations.set(root, "longname", model.getLongName());
     SPropertyOperations.set(root, "uuid", model.getSModelId() + "");
-    SPropertyOperations.set(root, "version", "" + (model.getSModelHeader().getVersion()));
-    SPropertyOperations.set(root, "persistence", "" + (model.getPersistenceVersion()));
+    SPropertyOperations.set(root, "version", "" + (model.getVersion()));
     for (ModuleReference language : ListSequence.fromList(model.importedLanguages())) {
       ListSequence.fromList(SLinkOperations.getTargets(root, "language", true)).addElement(createModuleRefNode(language));
     }

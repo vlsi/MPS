@@ -13,69 +13,68 @@
     <nodeInfo nodeId="1908089502046374956" fileName="MetadataUtil.java" startLine="41" startPosition="53" endLine="42" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1908089502046420410" fileName="MetadataUtil.java" startLine="42" startPosition="111" endLine="43" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1908089502046431437" fileName="MetadataUtil.java" startLine="43" startPosition="67" endLine="44" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046389868" fileName="MetadataUtil.java" startLine="44" startPosition="68" endLine="45" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046445943" fileName="MetadataUtil.java" startLine="45" startPosition="90" endLine="46" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046534437" fileName="MetadataUtil.java" startLine="47" startPosition="87" endLine="48" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046582501" fileName="MetadataUtil.java" startLine="50" startPosition="101" endLine="51" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046586831" fileName="MetadataUtil.java" startLine="53" startPosition="83" endLine="54" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046603684" fileName="MetadataUtil.java" startLine="56" startPosition="89" endLine="57" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8986818388459173311" fileName="MetadataUtil.java" startLine="58" startPosition="5" endLine="59" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8986818388459046825" fileName="MetadataUtil.java" startLine="59" startPosition="14" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1908089502046382954" fileName="MetadataUtil.java" startLine="60" startPosition="0" endLine="61" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046376090" fileName="MetadataUtil.java" startLine="61" startPosition="54" endLine="62" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4685150495576943452" fileName="MetadataUtil.java" startLine="62" startPosition="44" endLine="63" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1908089502046564336" fileName="MetadataUtil.java" startLine="66" startPosition="67" endLine="67" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1908089502046677633" fileName="MetadataUtil.java" startLine="67" startPosition="112" endLine="68" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046670624" fileName="MetadataUtil.java" startLine="68" startPosition="77" endLine="69" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046570137" fileName="MetadataUtil.java" startLine="69" startPosition="75" endLine="70" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046568691" fileName="MetadataUtil.java" startLine="70" startPosition="86" endLine="71" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1908089502046616620" fileName="MetadataUtil.java" startLine="74" startPosition="73" endLine="75" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1908089502046726384" fileName="MetadataUtil.java" startLine="75" startPosition="111" endLine="76" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046760780" fileName="MetadataUtil.java" startLine="76" startPosition="95" endLine="77" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046805786" fileName="MetadataUtil.java" startLine="77" startPosition="96" endLine="78" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046616794" fileName="MetadataUtil.java" startLine="78" startPosition="94" endLine="79" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046619055" fileName="MetadataUtil.java" startLine="79" startPosition="86" endLine="80" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1908089502046389868" fileName="MetadataUtil.java" startLine="44" startPosition="68" endLine="45" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046534437" fileName="MetadataUtil.java" startLine="46" startPosition="87" endLine="47" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046582501" fileName="MetadataUtil.java" startLine="49" startPosition="101" endLine="50" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046586831" fileName="MetadataUtil.java" startLine="52" startPosition="83" endLine="53" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046603684" fileName="MetadataUtil.java" startLine="55" startPosition="89" endLine="56" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8986818388459173311" fileName="MetadataUtil.java" startLine="57" startPosition="5" endLine="58" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8986818388459046825" fileName="MetadataUtil.java" startLine="58" startPosition="14" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1908089502046382954" fileName="MetadataUtil.java" startLine="59" startPosition="0" endLine="60" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046376090" fileName="MetadataUtil.java" startLine="60" startPosition="54" endLine="61" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4685150495576943452" fileName="MetadataUtil.java" startLine="61" startPosition="44" endLine="62" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1908089502046564336" fileName="MetadataUtil.java" startLine="65" startPosition="67" endLine="66" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1908089502046677633" fileName="MetadataUtil.java" startLine="66" startPosition="112" endLine="67" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046670624" fileName="MetadataUtil.java" startLine="67" startPosition="77" endLine="68" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046570137" fileName="MetadataUtil.java" startLine="68" startPosition="75" endLine="69" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046568691" fileName="MetadataUtil.java" startLine="69" startPosition="86" endLine="70" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1908089502046616620" fileName="MetadataUtil.java" startLine="73" startPosition="73" endLine="74" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1908089502046726384" fileName="MetadataUtil.java" startLine="74" startPosition="111" endLine="75" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046760780" fileName="MetadataUtil.java" startLine="75" startPosition="95" endLine="76" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046805786" fileName="MetadataUtil.java" startLine="76" startPosition="96" endLine="77" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046616794" fileName="MetadataUtil.java" startLine="77" startPosition="94" endLine="78" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046619055" fileName="MetadataUtil.java" startLine="78" startPosition="86" endLine="79" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4685150495576934668" fileName="MetadataUtil.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MetadataUtil#()V" />
-    <nodeInfo nodeId="1908089502046528858" fileName="MetadataUtil.java" startLine="46" startPosition="87" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1908089502046582498" fileName="MetadataUtil.java" startLine="49" startPosition="5" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1908089502046586828" fileName="MetadataUtil.java" startLine="52" startPosition="5" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1908089502046603681" fileName="MetadataUtil.java" startLine="55" startPosition="5" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1908089502046528858" fileName="MetadataUtil.java" startLine="45" startPosition="72" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1908089502046582498" fileName="MetadataUtil.java" startLine="48" startPosition="5" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1908089502046586828" fileName="MetadataUtil.java" startLine="51" startPosition="5" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1908089502046603681" fileName="MetadataUtil.java" startLine="54" startPosition="5" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8374934269826860725" fileName="MetadataUtil.java" startLine="31" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="8374934269826860724" fileName="MetadataUtil.java" startLine="29" startPosition="100" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502045862720" fileName="MetadataUtil.java" startLine="66" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModuleRefNode#(Ljetbrains/mps/project/structure/modules/ModuleReference;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1908089502046613981" fileName="MetadataUtil.java" startLine="74" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModelRefNode#(Ljetbrains/mps/smodel/SModel/ImportElement;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1908089502045862720" fileName="MetadataUtil.java" startLine="65" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModuleRefNode#(Ljetbrains/mps/project/structure/modules/ModuleReference;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1908089502046613981" fileName="MetadataUtil.java" startLine="73" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModelRefNode#(Ljetbrains/mps/smodel/SModel/ImportElement;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="4685150495576944656" fileName="MetadataUtil.java" startLine="25" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showMetadataDifference#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)V" />
-    <nodeInfo nodeId="4685150495576940787" fileName="MetadataUtil.java" startLine="41" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModelRoot#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="4685150495576940787" fileName="MetadataUtil.java" startLine="41" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModelRoot#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="4685150495576934671" fileName="MetadataUtil.java" startLine="22" startPosition="25" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="1908089502046528864" fileName="MetadataUtil.java" startLine="47" startPosition="87" endLine="48" endPosition="122" />
-    <scopeInfo nodeId="1908089502046582500" fileName="MetadataUtil.java" startLine="50" startPosition="101" endLine="51" endPosition="144" />
-    <scopeInfo nodeId="1908089502046586830" fileName="MetadataUtil.java" startLine="53" startPosition="83" endLine="54" endPosition="118" />
-    <scopeInfo nodeId="1908089502046603683" fileName="MetadataUtil.java" startLine="56" startPosition="89" endLine="57" endPosition="119" />
+    <scopeInfo nodeId="1908089502046528864" fileName="MetadataUtil.java" startLine="46" startPosition="87" endLine="47" endPosition="122" />
+    <scopeInfo nodeId="1908089502046582500" fileName="MetadataUtil.java" startLine="49" startPosition="101" endLine="50" endPosition="144" />
+    <scopeInfo nodeId="1908089502046586830" fileName="MetadataUtil.java" startLine="52" startPosition="83" endLine="53" endPosition="118" />
+    <scopeInfo nodeId="1908089502046603683" fileName="MetadataUtil.java" startLine="55" startPosition="89" endLine="56" endPosition="119" />
     <scopeInfo nodeId="4685150495576934668" fileName="MetadataUtil.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="8374934269826860726" fileName="MetadataUtil.java" startLine="31" startPosition="25" endLine="34" endPosition="111" />
-    <scopeInfo nodeId="1908089502046528858" fileName="MetadataUtil.java" startLine="46" startPosition="87" endLine="49" endPosition="5">
+    <scopeInfo nodeId="1908089502046528858" fileName="MetadataUtil.java" startLine="45" startPosition="72" endLine="48" endPosition="5">
       <varInfo nodeId="1908089502046528860" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="1908089502046582498" fileName="MetadataUtil.java" startLine="49" startPosition="5" endLine="52" endPosition="5">
+    <scopeInfo nodeId="1908089502046582498" fileName="MetadataUtil.java" startLine="48" startPosition="5" endLine="51" endPosition="5">
       <varInfo nodeId="1908089502046582499" varName="genlanguage" />
     </scopeInfo>
-    <scopeInfo nodeId="1908089502046586828" fileName="MetadataUtil.java" startLine="52" startPosition="5" endLine="55" endPosition="5">
+    <scopeInfo nodeId="1908089502046586828" fileName="MetadataUtil.java" startLine="51" startPosition="5" endLine="54" endPosition="5">
       <varInfo nodeId="1908089502046586829" varName="devkit" />
     </scopeInfo>
-    <scopeInfo nodeId="1908089502046603681" fileName="MetadataUtil.java" startLine="55" startPosition="5" endLine="58" endPosition="5">
+    <scopeInfo nodeId="1908089502046603681" fileName="MetadataUtil.java" startLine="54" startPosition="5" endLine="57" endPosition="5">
       <varInfo nodeId="1908089502046603682" varName="impmodel" />
     </scopeInfo>
     <scopeInfo nodeId="8374934269826860725" fileName="MetadataUtil.java" startLine="31" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1908089502045987285" fileName="MetadataUtil.java" startLine="66" startPosition="67" endLine="71" endPosition="16">
+    <scopeInfo nodeId="1908089502045987285" fileName="MetadataUtil.java" startLine="65" startPosition="67" endLine="70" endPosition="16">
       <varInfo nodeId="1908089502046564339" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1908089502046613984" fileName="MetadataUtil.java" startLine="74" startPosition="73" endLine="80" endPosition="16">
+    <scopeInfo nodeId="1908089502046613984" fileName="MetadataUtil.java" startLine="73" startPosition="73" endLine="79" endPosition="16">
       <varInfo nodeId="1908089502046616623" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1908089502045862720" fileName="MetadataUtil.java" startLine="66" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="1908089502045862720" fileName="MetadataUtil.java" startLine="65" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="1908089502046559851" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="1908089502046613981" fileName="MetadataUtil.java" startLine="74" startPosition="0" endLine="82" endPosition="0">
+    <scopeInfo nodeId="1908089502046613981" fileName="MetadataUtil.java" startLine="73" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="1908089502046616552" varName="impModel" />
     </scopeInfo>
     <scopeInfo nodeId="4685150495576944659" fileName="MetadataUtil.java" startLine="25" startPosition="187" endLine="38" endPosition="0">
@@ -92,14 +91,14 @@
       <varInfo nodeId="4685150495576951436" varName="project" />
       <varInfo nodeId="1908089502047251855" varName="scrollTo" />
     </scopeInfo>
-    <scopeInfo nodeId="4685150495576940790" fileName="MetadataUtil.java" startLine="41" startPosition="53" endLine="63" endPosition="16">
+    <scopeInfo nodeId="4685150495576940790" fileName="MetadataUtil.java" startLine="41" startPosition="53" endLine="62" endPosition="16">
       <varInfo nodeId="1908089502046374959" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="4685150495576940787" fileName="MetadataUtil.java" startLine="41" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="4685150495576940787" fileName="MetadataUtil.java" startLine="41" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="4685150495576943430" varName="model" />
     </scopeInfo>
     <unitInfo nodeId="8374934269826860725" fileName="MetadataUtil.java" startLine="30" startPosition="45" endLine="36" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.MetadataUtil$1" />
-    <unitInfo nodeId="4685150495576934666" fileName="MetadataUtil.java" startLine="21" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.MetadataUtil" />
+    <unitInfo nodeId="4685150495576934666" fileName="MetadataUtil.java" startLine="21" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.MetadataUtil" />
   </root>
   <root nodeId="8733553229778887411" modelId="r:df1b052a-af27-4b87-80fc-1492fa2192be(jetbrains.mps.vcs.diff.ui)">
     <nodeInfo nodeId="8733553229778905093" fileName="ModelDifferenceDialog.java" startLine="61" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />

@@ -58,22 +58,19 @@ public class Model_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_pyq9q9_i3a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pyq9q9_j3a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pyq9q9_k3a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_pyq9q9_l3a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_pyq9q9_l3a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pyq9q9_m3a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pyq9q9_n3a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_pyq9q9_o3a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_pyq9q9_p3a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pyq9q9_o3a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_pyq9q9_p3a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pyq9q9_q3a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pyq9q9_r3a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_pyq9q9_s3a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_pyq9q9_t3a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pyq9q9_s3a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_pyq9q9_t3a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pyq9q9_u3a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pyq9q9_v3a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_pyq9q9_w3a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_pyq9q9_x3a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_pyq9q9_y3a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_pyq9q9_z3a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_pyq9q9_ab3a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pyq9q9_w3a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_pyq9q9_x3a(editorContext, node));
     return editorCell;
   }
 
@@ -117,7 +114,7 @@ public class Model_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pyq9q9_d3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "persistence");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "version");
     editorCell.setCellId("Constant_pyq9q9_d3a");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -136,7 +133,7 @@ public class Model_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pyq9q9_g3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "version");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "doNotGenerate");
     editorCell.setCellId("Constant_pyq9q9_g3a");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -155,7 +152,7 @@ public class Model_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pyq9q9_j3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "doNotGenerate");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "imorted languages");
     editorCell.setCellId("Constant_pyq9q9_j3a");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -168,36 +165,37 @@ public class Model_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_pyq9q9_m3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "imorted languages");
-    editorCell.setCellId("Constant_pyq9q9_m3a");
-    ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_pyq9q9_n3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_pyq9q9_n3a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_pyq9q9_p3a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pyq9q9_m3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_pyq9q9_p3a");
+    editorCell.setCellId("Constant_pyq9q9_m3a");
     {
       Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_pyq9q9_n3a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "languages engaged on generation");
+    editorCell.setCellId("Constant_pyq9q9_n3a");
+    ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_pyq9q9_o3a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    editorCell.setCellId("Constant_pyq9q9_o3a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.setDefaultText("");
@@ -205,30 +203,30 @@ public class Model_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pyq9q9_q3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "languages engaged on generation");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_pyq9q9_q3a");
-    ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_pyq9q9_r3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_pyq9q9_r3a");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_pyq9q9_t3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_pyq9q9_t3a");
+  private EditorCell createConstant_pyq9q9_r3a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "devkits");
+    editorCell.setCellId("Constant_pyq9q9_r3a");
+    ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_pyq9q9_s3a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    editorCell.setCellId("Constant_pyq9q9_s3a");
     {
       Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.setDefaultText("");
@@ -236,47 +234,27 @@ public class Model_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pyq9q9_u3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "devkits");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_pyq9q9_u3a");
-    ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_pyq9q9_v3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_pyq9q9_v3a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_pyq9q9_x3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_pyq9q9_x3a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_pyq9q9_y3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "imports");
-    editorCell.setCellId("Constant_pyq9q9_y3a");
+    editorCell.setCellId("Constant_pyq9q9_v3a");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_pyq9q9_z3a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pyq9q9_w3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_pyq9q9_z3a");
+    editorCell.setCellId("Constant_pyq9q9_w3a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -297,8 +275,8 @@ public class Model_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_pyq9q9_o3a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Model_Editor.languageListHandler_pyq9q9_o3a(node, "language", editorContext);
+  private EditorCell createRefNodeList_pyq9q9_l3a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Model_Editor.languageListHandler_pyq9q9_l3a(node, "language", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_language");
     {
@@ -311,8 +289,8 @@ public class Model_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_pyq9q9_s3a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Model_Editor.languageEngagedOnGenerationListHandler_pyq9q9_s3a(node, "languageEngagedOnGeneration", editorContext);
+  private EditorCell createRefNodeList_pyq9q9_p3a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Model_Editor.languageEngagedOnGenerationListHandler_pyq9q9_p3a(node, "languageEngagedOnGeneration", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_languageEngagedOnGeneration");
     {
@@ -325,8 +303,8 @@ public class Model_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_pyq9q9_w3a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Model_Editor.devkitListHandler_pyq9q9_w3a(node, "devkit", editorContext);
+  private EditorCell createRefNodeList_pyq9q9_t3a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Model_Editor.devkitListHandler_pyq9q9_t3a(node, "devkit", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_devkit");
     {
@@ -339,8 +317,8 @@ public class Model_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_pyq9q9_ab3a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Model_Editor.importListHandler_pyq9q9_ab3a(node, "import", editorContext);
+  private EditorCell createRefNodeList_pyq9q9_x3a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Model_Editor.importListHandler_pyq9q9_x3a(node, "import", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_import");
     {
@@ -395,28 +373,6 @@ public class Model_Editor extends DefaultNodeEditor {
 
   private EditorCell createProperty_pyq9q9_f3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("persistence");
-    provider.setNoTargetText("<no persistence>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_persistence");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createProperty_pyq9q9_i3a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("version");
     provider.setNoTargetText("<no version>");
     provider.setAllowsEmptyTarget(true);
@@ -438,7 +394,7 @@ public class Model_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_pyq9q9_l3a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_pyq9q9_i3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("donotgenerate");
     provider.setNoTargetText("<no donotgenerate>");
@@ -461,8 +417,8 @@ public class Model_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class languageListHandler_pyq9q9_o3a extends RefNodeListHandler {
-    public languageListHandler_pyq9q9_o3a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class languageListHandler_pyq9q9_l3a extends RefNodeListHandler {
+    public languageListHandler_pyq9q9_l3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -497,8 +453,8 @@ public class Model_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class languageEngagedOnGenerationListHandler_pyq9q9_s3a extends RefNodeListHandler {
-    public languageEngagedOnGenerationListHandler_pyq9q9_s3a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class languageEngagedOnGenerationListHandler_pyq9q9_p3a extends RefNodeListHandler {
+    public languageEngagedOnGenerationListHandler_pyq9q9_p3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -533,8 +489,8 @@ public class Model_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class devkitListHandler_pyq9q9_w3a extends RefNodeListHandler {
-    public devkitListHandler_pyq9q9_w3a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class devkitListHandler_pyq9q9_t3a extends RefNodeListHandler {
+    public devkitListHandler_pyq9q9_t3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -569,8 +525,8 @@ public class Model_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class importListHandler_pyq9q9_ab3a extends RefNodeListHandler {
-    public importListHandler_pyq9q9_ab3a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class importListHandler_pyq9q9_x3a extends RefNodeListHandler {
+    public importListHandler_pyq9q9_x3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
