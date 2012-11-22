@@ -20,12 +20,12 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.smodel.LanguageAspect;
 
 public class MembersMigrationUtil {
-  private static Map<SNode, SNode> OLD_LINK_TO_NEW_BEHAVIOR_METHOD = MapSequence.fromMap(new HashMap<SNode, SNode>());
+  /*package*/ static final Map<SNode, SNode> OLD_LINK_TO_NEW_BEHAVIOR_METHOD = MapSequence.fromMap(new HashMap<SNode, SNode>());
 
-  public MembersMigrationUtil() {
+  private MembersMigrationUtil() {
   }
 
-  public static void putMapping(String oldLinkName, String newMethodName) {
+  private static void putMapping(String oldLinkName, String newMethodName) {
     SNode oldLink = findOldLinkDeclaration(oldLinkName);
     SNode newMethod = findNewBehaviorMethod(newMethodName);
     if ((oldLink == null) || (newMethod == null)) {
@@ -34,7 +34,7 @@ public class MembersMigrationUtil {
     MapSequence.fromMap(OLD_LINK_TO_NEW_BEHAVIOR_METHOD).put(oldLink, newMethod);
   }
 
-  public static SNode findOldLinkDeclaration(final String linkName) {
+  private static SNode findOldLinkDeclaration(final String linkName) {
     List<SNode> links = ListSequence.fromListWithValues(new ArrayList<SNode>(), Sequence.fromIterable(classifierConcepts()).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getTargets(it, "linkDeclaration", true);
@@ -50,7 +50,7 @@ public class MembersMigrationUtil {
     );
   }
 
-  public static SNode findNewBehaviorMethod(final String methodName) {
+  private static SNode findNewBehaviorMethod(final String methodName) {
     List<SNode> methods = ListSequence.fromListWithValues(new ArrayList<SNode>(), Sequence.fromIterable(classifierConcepts()).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(it, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
@@ -70,7 +70,7 @@ public class MembersMigrationUtil {
     );
   }
 
-  public static Iterable<SNode> classifierConcepts() {
+  private static Iterable<SNode> classifierConcepts() {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1107461130800"), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068390468198"));
   }
 

@@ -508,7 +508,7 @@ public class Classifier_Behavior {
     });
   }
 
-  public static Iterable<SNode> call_instanceMethods_5292274854859311639(SNode thisNode) {
+  public static Iterable<SNode> call_methods_5292274854859311639(SNode thisNode) {
     return Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");

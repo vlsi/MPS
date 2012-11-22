@@ -6,17 +6,23 @@ import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class MigrateClassifierMembers_MigrationScript extends BaseMigrationScript {
   public MigrateClassifierMembers_MigrationScript(IOperationContext operationContext) {
     super("Use member role for classifier members");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
-        return "Use .fields() etc operation where it possible";
+        return "Use .fields() etc operation where it possible (replace for sequence access)";
       }
 
       public String getAdditionalInfo() {
-        return "Use .fields() etc operation where it possible";
+        return "Use .fields() etc operation where it possible (replace for sequence access)";
       }
 
       public String getFqNameOfConceptToSearchInstances() {
@@ -24,10 +30,21 @@ public class MigrateClassifierMembers_MigrationScript extends BaseMigrationScrip
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return true;
+        if (!(SetSequence.fromSet(MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).keySet()).contains(SLinkOperations.getTarget(node, "link", false)))) {
+          return false;
+        }
+        if (!(NonMigratableUsagesFinder.isSequenceNeeded(node))) {
+          return false;
+        }
+        // not migrate usages with generator macroses etc! 
+        return (int) ListSequence.fromList(SNodeOperations.getChildren(node)).count() == 0;
       }
 
       public void doUpdateInstanceNode(SNode node) {
+        SNode methodCall = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
+        SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).get(SLinkOperations.getTarget(node, "link", false)), false);
+        methodCall.setId(node.getSNodeId());
+        SNodeOperations.replaceWithAnother(node, methodCall);
       }
 
       public boolean isShowAsIntention() {
