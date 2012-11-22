@@ -30,7 +30,7 @@ public abstract class ModuleId implements SModuleId {
   }
 
   public static ModuleId regular(UUID uuid) {
-    return new Regular(UUID.randomUUID());
+    return new Regular(uuid);
   }
 
   public static ModuleId foreign(String name) {
