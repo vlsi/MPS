@@ -43,10 +43,6 @@ public class AuditHelper {
     // TODO: some of error nodes is ClassifiersScope (MPS-16863)
     // TODO: and some of them is illegal concept for variable reference, check it with mikev
     DISABLED_MODULES.add("jetbrains.mps.baseLanguage.test");
-
-    // solution doesn't belong to MPS project, but rather IdeaPlugin project
-    // TODO properly handle exclusion at directory level, (see CheckProjectStructure)
-//    DISABLED_MODULES.add("jetbrains.mps.ide.java.psiStubs");
   }
 
   public static void init() {
