@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-b1shm75wj430o6c91uuk9d691eicpeg">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-uvseejb8lftjizgrik03igcx568a80" />
+  <common hash="-evq7mzoacyswug1f8nf80v4y686nbdz" />
+  <source id="7314351270975463225" name="DiskMemoryConflictsTest" hash="7udflpae2cj1rh219xupw4nw2bwgg1t">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="DiskMemoryConflictsTest.java" />
+  </source>
+</dependencies>
+
