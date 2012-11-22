@@ -1,88 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="4685150495576934666" modelId="r:df1b052a-af27-4b87-80fc-1492fa2192be(jetbrains.mps.vcs.diff.ui)">
-    <nodeInfo nodeId="8374934269826972198" fileName="MetadataUtil.java" startLine="25" startPosition="187" endLine="26" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8374934269827086578" fileName="MetadataUtil.java" startLine="26" startPosition="117" endLine="27" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8374934269826860718" fileName="MetadataUtil.java" startLine="27" startPosition="117" endLine="28" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4685150495576981356" fileName="MetadataUtil.java" startLine="30" startPosition="25" endLine="31" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046856522" fileName="MetadataUtil.java" startLine="31" startPosition="78" endLine="32" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8374934269826860727" fileName="MetadataUtil.java" startLine="32" startPosition="78" endLine="33" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8374934269826860749" fileName="MetadataUtil.java" startLine="35" startPosition="7" endLine="36" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4685150495576955572" fileName="MetadataUtil.java" startLine="36" startPosition="144" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1908089502046374956" fileName="MetadataUtil.java" startLine="40" startPosition="53" endLine="41" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1908089502046420410" fileName="MetadataUtil.java" startLine="41" startPosition="111" endLine="42" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046431437" fileName="MetadataUtil.java" startLine="42" startPosition="67" endLine="43" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046389868" fileName="MetadataUtil.java" startLine="43" startPosition="68" endLine="44" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046445943" fileName="MetadataUtil.java" startLine="44" startPosition="90" endLine="45" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046534437" fileName="MetadataUtil.java" startLine="46" startPosition="87" endLine="47" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046582501" fileName="MetadataUtil.java" startLine="49" startPosition="101" endLine="50" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046586831" fileName="MetadataUtil.java" startLine="52" startPosition="83" endLine="53" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046603684" fileName="MetadataUtil.java" startLine="55" startPosition="89" endLine="56" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8986818388459173311" fileName="MetadataUtil.java" startLine="57" startPosition="5" endLine="58" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8986818388459046825" fileName="MetadataUtil.java" startLine="58" startPosition="14" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1908089502046382954" fileName="MetadataUtil.java" startLine="59" startPosition="0" endLine="60" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046376090" fileName="MetadataUtil.java" startLine="60" startPosition="54" endLine="61" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4685150495576943452" fileName="MetadataUtil.java" startLine="61" startPosition="44" endLine="62" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1908089502046564336" fileName="MetadataUtil.java" startLine="65" startPosition="67" endLine="66" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1908089502046677633" fileName="MetadataUtil.java" startLine="66" startPosition="112" endLine="67" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046670624" fileName="MetadataUtil.java" startLine="67" startPosition="77" endLine="68" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046570137" fileName="MetadataUtil.java" startLine="68" startPosition="75" endLine="69" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046568691" fileName="MetadataUtil.java" startLine="69" startPosition="86" endLine="70" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1908089502046616620" fileName="MetadataUtil.java" startLine="73" startPosition="73" endLine="74" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1908089502046726384" fileName="MetadataUtil.java" startLine="74" startPosition="111" endLine="75" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046760780" fileName="MetadataUtil.java" startLine="75" startPosition="95" endLine="76" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046805786" fileName="MetadataUtil.java" startLine="76" startPosition="96" endLine="77" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046616794" fileName="MetadataUtil.java" startLine="77" startPosition="94" endLine="78" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502046619055" fileName="MetadataUtil.java" startLine="78" startPosition="86" endLine="79" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8986818388459538893" fileName="MetadataUtil.java" startLine="25" startPosition="187" endLine="26" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8374934269826972198" fileName="MetadataUtil.java" startLine="26" startPosition="104" endLine="27" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8374934269827086578" fileName="MetadataUtil.java" startLine="27" startPosition="53" endLine="28" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8374934269826860718" fileName="MetadataUtil.java" startLine="28" startPosition="53" endLine="29" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4685150495576981356" fileName="MetadataUtil.java" startLine="31" startPosition="25" endLine="32" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046856522" fileName="MetadataUtil.java" startLine="32" startPosition="78" endLine="33" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8374934269826860727" fileName="MetadataUtil.java" startLine="33" startPosition="78" endLine="34" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8374934269826860749" fileName="MetadataUtil.java" startLine="36" startPosition="7" endLine="37" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4685150495576955572" fileName="MetadataUtil.java" startLine="37" startPosition="144" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1908089502046374956" fileName="MetadataUtil.java" startLine="41" startPosition="53" endLine="42" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1908089502046420410" fileName="MetadataUtil.java" startLine="42" startPosition="111" endLine="43" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046431437" fileName="MetadataUtil.java" startLine="43" startPosition="67" endLine="44" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046389868" fileName="MetadataUtil.java" startLine="44" startPosition="68" endLine="45" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046445943" fileName="MetadataUtil.java" startLine="45" startPosition="90" endLine="46" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046534437" fileName="MetadataUtil.java" startLine="47" startPosition="87" endLine="48" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046582501" fileName="MetadataUtil.java" startLine="50" startPosition="101" endLine="51" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046586831" fileName="MetadataUtil.java" startLine="53" startPosition="83" endLine="54" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046603684" fileName="MetadataUtil.java" startLine="56" startPosition="89" endLine="57" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8986818388459173311" fileName="MetadataUtil.java" startLine="58" startPosition="5" endLine="59" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8986818388459046825" fileName="MetadataUtil.java" startLine="59" startPosition="14" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1908089502046382954" fileName="MetadataUtil.java" startLine="60" startPosition="0" endLine="61" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046376090" fileName="MetadataUtil.java" startLine="61" startPosition="54" endLine="62" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4685150495576943452" fileName="MetadataUtil.java" startLine="62" startPosition="44" endLine="63" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1908089502046564336" fileName="MetadataUtil.java" startLine="66" startPosition="67" endLine="67" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1908089502046677633" fileName="MetadataUtil.java" startLine="67" startPosition="112" endLine="68" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046670624" fileName="MetadataUtil.java" startLine="68" startPosition="77" endLine="69" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046570137" fileName="MetadataUtil.java" startLine="69" startPosition="75" endLine="70" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046568691" fileName="MetadataUtil.java" startLine="70" startPosition="86" endLine="71" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1908089502046616620" fileName="MetadataUtil.java" startLine="74" startPosition="73" endLine="75" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1908089502046726384" fileName="MetadataUtil.java" startLine="75" startPosition="111" endLine="76" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046760780" fileName="MetadataUtil.java" startLine="76" startPosition="95" endLine="77" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046805786" fileName="MetadataUtil.java" startLine="77" startPosition="96" endLine="78" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046616794" fileName="MetadataUtil.java" startLine="78" startPosition="94" endLine="79" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502046619055" fileName="MetadataUtil.java" startLine="79" startPosition="86" endLine="80" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4685150495576934668" fileName="MetadataUtil.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MetadataUtil#()V" />
-    <nodeInfo nodeId="1908089502046528858" fileName="MetadataUtil.java" startLine="45" startPosition="87" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1908089502046582498" fileName="MetadataUtil.java" startLine="48" startPosition="5" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1908089502046586828" fileName="MetadataUtil.java" startLine="51" startPosition="5" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1908089502046603681" fileName="MetadataUtil.java" startLine="54" startPosition="5" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8374934269826860725" fileName="MetadataUtil.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8374934269826860724" fileName="MetadataUtil.java" startLine="28" startPosition="100" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1908089502045862720" fileName="MetadataUtil.java" startLine="65" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModuleRefNode#(Ljetbrains/mps/project/structure/modules/ModuleReference;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1908089502046613981" fileName="MetadataUtil.java" startLine="73" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModelRefNode#(Ljetbrains/mps/smodel/SModel/ImportElement;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="4685150495576944656" fileName="MetadataUtil.java" startLine="25" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showMetadataDifference#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)V" />
-    <nodeInfo nodeId="4685150495576940787" fileName="MetadataUtil.java" startLine="40" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModelRoot#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1908089502046528858" fileName="MetadataUtil.java" startLine="46" startPosition="87" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1908089502046582498" fileName="MetadataUtil.java" startLine="49" startPosition="5" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1908089502046586828" fileName="MetadataUtil.java" startLine="52" startPosition="5" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1908089502046603681" fileName="MetadataUtil.java" startLine="55" startPosition="5" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8374934269826860725" fileName="MetadataUtil.java" startLine="31" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8374934269826860724" fileName="MetadataUtil.java" startLine="29" startPosition="100" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1908089502045862720" fileName="MetadataUtil.java" startLine="66" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModuleRefNode#(Ljetbrains/mps/project/structure/modules/ModuleReference;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1908089502046613981" fileName="MetadataUtil.java" startLine="74" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModelRefNode#(Ljetbrains/mps/smodel/SModel/ImportElement;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="4685150495576944656" fileName="MetadataUtil.java" startLine="25" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showMetadataDifference#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)V" />
+    <nodeInfo nodeId="4685150495576940787" fileName="MetadataUtil.java" startLine="41" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModelRoot#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="4685150495576934671" fileName="MetadataUtil.java" startLine="22" startPosition="25" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="1908089502046528864" fileName="MetadataUtil.java" startLine="46" startPosition="87" endLine="47" endPosition="122" />
-    <scopeInfo nodeId="1908089502046582500" fileName="MetadataUtil.java" startLine="49" startPosition="101" endLine="50" endPosition="144" />
-    <scopeInfo nodeId="1908089502046586830" fileName="MetadataUtil.java" startLine="52" startPosition="83" endLine="53" endPosition="118" />
-    <scopeInfo nodeId="1908089502046603683" fileName="MetadataUtil.java" startLine="55" startPosition="89" endLine="56" endPosition="119" />
+    <scopeInfo nodeId="1908089502046528864" fileName="MetadataUtil.java" startLine="47" startPosition="87" endLine="48" endPosition="122" />
+    <scopeInfo nodeId="1908089502046582500" fileName="MetadataUtil.java" startLine="50" startPosition="101" endLine="51" endPosition="144" />
+    <scopeInfo nodeId="1908089502046586830" fileName="MetadataUtil.java" startLine="53" startPosition="83" endLine="54" endPosition="118" />
+    <scopeInfo nodeId="1908089502046603683" fileName="MetadataUtil.java" startLine="56" startPosition="89" endLine="57" endPosition="119" />
     <scopeInfo nodeId="4685150495576934668" fileName="MetadataUtil.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="8374934269826860726" fileName="MetadataUtil.java" startLine="30" startPosition="25" endLine="33" endPosition="111" />
-    <scopeInfo nodeId="1908089502046528858" fileName="MetadataUtil.java" startLine="45" startPosition="87" endLine="48" endPosition="5">
+    <scopeInfo nodeId="8374934269826860726" fileName="MetadataUtil.java" startLine="31" startPosition="25" endLine="34" endPosition="111" />
+    <scopeInfo nodeId="1908089502046528858" fileName="MetadataUtil.java" startLine="46" startPosition="87" endLine="49" endPosition="5">
       <varInfo nodeId="1908089502046528860" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="1908089502046582498" fileName="MetadataUtil.java" startLine="48" startPosition="5" endLine="51" endPosition="5">
+    <scopeInfo nodeId="1908089502046582498" fileName="MetadataUtil.java" startLine="49" startPosition="5" endLine="52" endPosition="5">
       <varInfo nodeId="1908089502046582499" varName="genlanguage" />
     </scopeInfo>
-    <scopeInfo nodeId="1908089502046586828" fileName="MetadataUtil.java" startLine="51" startPosition="5" endLine="54" endPosition="5">
+    <scopeInfo nodeId="1908089502046586828" fileName="MetadataUtil.java" startLine="52" startPosition="5" endLine="55" endPosition="5">
       <varInfo nodeId="1908089502046586829" varName="devkit" />
     </scopeInfo>
-    <scopeInfo nodeId="1908089502046603681" fileName="MetadataUtil.java" startLine="54" startPosition="5" endLine="57" endPosition="5">
+    <scopeInfo nodeId="1908089502046603681" fileName="MetadataUtil.java" startLine="55" startPosition="5" endLine="58" endPosition="5">
       <varInfo nodeId="1908089502046603682" varName="impmodel" />
     </scopeInfo>
-    <scopeInfo nodeId="8374934269826860725" fileName="MetadataUtil.java" startLine="30" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1908089502045987285" fileName="MetadataUtil.java" startLine="65" startPosition="67" endLine="70" endPosition="16">
+    <scopeInfo nodeId="8374934269826860725" fileName="MetadataUtil.java" startLine="31" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1908089502045987285" fileName="MetadataUtil.java" startLine="66" startPosition="67" endLine="71" endPosition="16">
       <varInfo nodeId="1908089502046564339" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1908089502046613984" fileName="MetadataUtil.java" startLine="73" startPosition="73" endLine="79" endPosition="16">
+    <scopeInfo nodeId="1908089502046613984" fileName="MetadataUtil.java" startLine="74" startPosition="73" endLine="80" endPosition="16">
       <varInfo nodeId="1908089502046616623" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1908089502045862720" fileName="MetadataUtil.java" startLine="65" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="1908089502045862720" fileName="MetadataUtil.java" startLine="66" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="1908089502046559851" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="1908089502046613981" fileName="MetadataUtil.java" startLine="73" startPosition="0" endLine="81" endPosition="0">
+    <scopeInfo nodeId="1908089502046613981" fileName="MetadataUtil.java" startLine="74" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="1908089502046616552" varName="impModel" />
     </scopeInfo>
-    <scopeInfo nodeId="4685150495576944659" fileName="MetadataUtil.java" startLine="25" startPosition="187" endLine="37" endPosition="0">
+    <scopeInfo nodeId="4685150495576944659" fileName="MetadataUtil.java" startLine="25" startPosition="187" endLine="38" endPosition="0">
       <varInfo nodeId="8374934269826860719" varName="modelDialog" />
+      <varInfo nodeId="8986818388459538894" varName="modelRef" />
       <varInfo nodeId="8374934269827086579" varName="newMetaModel" />
       <varInfo nodeId="8374934269826972199" varName="oldMetaModel" />
     </scopeInfo>
-    <scopeInfo nodeId="4685150495576944656" fileName="MetadataUtil.java" startLine="25" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="4685150495576944656" fileName="MetadataUtil.java" startLine="25" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="4685150495576945951" varName="newModel" />
       <varInfo nodeId="1908089502046974904" varName="newTitle" />
       <varInfo nodeId="4685150495576945941" varName="oldModel" />
@@ -90,14 +92,14 @@
       <varInfo nodeId="4685150495576951436" varName="project" />
       <varInfo nodeId="1908089502047251855" varName="scrollTo" />
     </scopeInfo>
-    <scopeInfo nodeId="4685150495576940790" fileName="MetadataUtil.java" startLine="40" startPosition="53" endLine="62" endPosition="16">
+    <scopeInfo nodeId="4685150495576940790" fileName="MetadataUtil.java" startLine="41" startPosition="53" endLine="63" endPosition="16">
       <varInfo nodeId="1908089502046374959" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="4685150495576940787" fileName="MetadataUtil.java" startLine="40" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="4685150495576940787" fileName="MetadataUtil.java" startLine="41" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="4685150495576943430" varName="model" />
     </scopeInfo>
-    <unitInfo nodeId="8374934269826860725" fileName="MetadataUtil.java" startLine="29" startPosition="45" endLine="35" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.MetadataUtil$1" />
-    <unitInfo nodeId="4685150495576934666" fileName="MetadataUtil.java" startLine="21" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.MetadataUtil" />
+    <unitInfo nodeId="8374934269826860725" fileName="MetadataUtil.java" startLine="30" startPosition="45" endLine="36" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.MetadataUtil$1" />
+    <unitInfo nodeId="4685150495576934666" fileName="MetadataUtil.java" startLine="21" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.MetadataUtil" />
   </root>
   <root nodeId="8733553229778887411" modelId="r:df1b052a-af27-4b87-80fc-1492fa2192be(jetbrains.mps.vcs.diff.ui)">
     <nodeInfo nodeId="8733553229778905093" fileName="ModelDifferenceDialog.java" startLine="61" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
@@ -391,73 +393,82 @@
     <unitInfo nodeId="8733553229778887411" fileName="ModelDifferenceDialog.java" startLine="60" startPosition="0" endLine="293" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
   </root>
   <root nodeId="8733553229778918876" modelId="r:df1b052a-af27-4b87-80fc-1492fa2192be(jetbrains.mps.vcs.diff.ui)">
-    <nodeInfo nodeId="8733553229778918882" fileName="RevertRootsAction.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelDifferenceDialog" />
-    <nodeInfo nodeId="8733553229778918889" fileName="RevertRootsAction.java" startLine="23" startPosition="73" endLine="24" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8733553229778918895" fileName="RevertRootsAction.java" startLine="24" startPosition="76" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778918943" fileName="RevertRootsAction.java" startLine="38" startPosition="28" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778918956" fileName="RevertRootsAction.java" startLine="45" startPosition="73" endLine="46" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778918960" fileName="RevertRootsAction.java" startLine="46" startPosition="31" endLine="47" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8733553229778918969" fileName="RevertRootsAction.java" startLine="47" startPosition="75" endLine="48" endPosition="222" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8733553229778918983" fileName="RevertRootsAction.java" startLine="48" startPosition="222" endLine="49" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778918990" fileName="RevertRootsAction.java" startLine="49" startPosition="48" endLine="50" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778918997" fileName="RevertRootsAction.java" startLine="50" startPosition="48" endLine="51" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8733553229778919029" fileName="RevertRootsAction.java" startLine="59" startPosition="42" endLine="60" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8733553229778919036" fileName="RevertRootsAction.java" startLine="62" startPosition="11" endLine="63" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778919040" fileName="RevertRootsAction.java" startLine="65" startPosition="5" endLine="66" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778919049" fileName="RevertRootsAction.java" startLine="69" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()V" />
-    <nodeInfo nodeId="8733553229778919053" fileName="RevertRootsAction.java" startLine="71" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRoots#()[Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="8733553229778918941" fileName="RevertRootsAction.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
-    <nodeInfo nodeId="8733553229778919027" fileName="RevertRootsAction.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNodeId;)Z" />
-    <nodeInfo nodeId="8733553229778918885" fileName="RevertRootsAction.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RevertRootsAction#(Ljetbrains/mps/vcs/diff/ui/ModelDifferenceDialog;)V" />
-    <nodeInfo nodeId="8733553229778918922" fileName="RevertRootsAction.java" startLine="30" startPosition="57" endLine="34" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8733553229778919003" fileName="RevertRootsAction.java" startLine="52" startPosition="33" endLine="56" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778918936" fileName="RevertRootsAction.java" startLine="36" startPosition="7" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778918920" fileName="RevertRootsAction.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNodeId;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8733553229778919021" fileName="RevertRootsAction.java" startLine="57" startPosition="12" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8733553229778918911" fileName="RevertRootsAction.java" startLine="28" startPosition="74" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8733553229778919019" fileName="RevertRootsAction.java" startLine="57" startPosition="10" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8733553229778919001" fileName="RevertRootsAction.java" startLine="51" startPosition="26" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8733553229778918901" fileName="RevertRootsAction.java" startLine="28" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="8733553229778918945" fileName="RevertRootsAction.java" startLine="44" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <scopeInfo nodeId="8733553229778918942" fileName="RevertRootsAction.java" startLine="38" startPosition="28" endLine="39" endPosition="16" />
-    <scopeInfo nodeId="8733553229778919028" fileName="RevertRootsAction.java" startLine="59" startPosition="42" endLine="60" endPosition="27" />
-    <scopeInfo nodeId="8733553229778919035" fileName="RevertRootsAction.java" startLine="62" startPosition="11" endLine="63" endPosition="38" />
-    <scopeInfo nodeId="8733553229778919049" fileName="RevertRootsAction.java" startLine="69" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="8733553229778919053" fileName="RevertRootsAction.java" startLine="71" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="8733553229778918888" fileName="RevertRootsAction.java" startLine="23" startPosition="73" endLine="25" endPosition="52" />
-    <scopeInfo nodeId="8733553229778918941" fileName="RevertRootsAction.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="8733553229778919027" fileName="RevertRootsAction.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
+    <nodeInfo nodeId="8733553229778918882" fileName="RevertRootsAction.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelDifferenceDialog" />
+    <nodeInfo nodeId="8733553229778918889" fileName="RevertRootsAction.java" startLine="24" startPosition="73" endLine="25" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8733553229778918895" fileName="RevertRootsAction.java" startLine="25" startPosition="76" endLine="26" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778918943" fileName="RevertRootsAction.java" startLine="39" startPosition="28" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778918956" fileName="RevertRootsAction.java" startLine="46" startPosition="73" endLine="47" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778918960" fileName="RevertRootsAction.java" startLine="47" startPosition="31" endLine="48" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8733553229778918969" fileName="RevertRootsAction.java" startLine="48" startPosition="75" endLine="49" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8733553229778918983" fileName="RevertRootsAction.java" startLine="49" startPosition="232" endLine="50" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778918990" fileName="RevertRootsAction.java" startLine="50" startPosition="48" endLine="51" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778918997" fileName="RevertRootsAction.java" startLine="51" startPosition="48" endLine="52" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8733553229778919029" fileName="RevertRootsAction.java" startLine="60" startPosition="42" endLine="61" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8733553229778919036" fileName="RevertRootsAction.java" startLine="63" startPosition="11" endLine="64" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778919040" fileName="RevertRootsAction.java" startLine="66" startPosition="5" endLine="67" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778919049" fileName="RevertRootsAction.java" startLine="70" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()V" />
+    <nodeInfo nodeId="8733553229778919053" fileName="RevertRootsAction.java" startLine="72" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRoots#()[Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="7957854139285169965" fileName="RevertRootsAction.java" startLine="75" startPosition="36" endLine="76" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7957854139285169965" fileName="RevertRootsAction.java" startLine="77" startPosition="5" endLine="78" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8733553229778918941" fileName="RevertRootsAction.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="8733553229778919027" fileName="RevertRootsAction.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNodeId;)Z" />
+    <nodeInfo nodeId="7957854139285169965" fileName="RevertRootsAction.java" startLine="74" startPosition="82" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8733553229778918885" fileName="RevertRootsAction.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RevertRootsAction#(Ljetbrains/mps/vcs/diff/ui/ModelDifferenceDialog;)V" />
+    <nodeInfo nodeId="8733553229778918922" fileName="RevertRootsAction.java" startLine="31" startPosition="57" endLine="35" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8733553229778919003" fileName="RevertRootsAction.java" startLine="53" startPosition="33" endLine="57" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778918936" fileName="RevertRootsAction.java" startLine="37" startPosition="7" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778918920" fileName="RevertRootsAction.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNodeId;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7957854139285169965" fileName="RevertRootsAction.java" startLine="74" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_8wvtcx_a0a0c0b#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/smodel/SModel;" />
+    <nodeInfo nodeId="8733553229778919021" fileName="RevertRootsAction.java" startLine="58" startPosition="12" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8733553229778918911" fileName="RevertRootsAction.java" startLine="29" startPosition="74" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8733553229778919019" fileName="RevertRootsAction.java" startLine="58" startPosition="10" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8733553229778919001" fileName="RevertRootsAction.java" startLine="52" startPosition="26" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8733553229778918901" fileName="RevertRootsAction.java" startLine="29" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="8733553229778918945" fileName="RevertRootsAction.java" startLine="45" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <scopeInfo nodeId="8733553229778918942" fileName="RevertRootsAction.java" startLine="39" startPosition="28" endLine="40" endPosition="16" />
+    <scopeInfo nodeId="8733553229778919028" fileName="RevertRootsAction.java" startLine="60" startPosition="42" endLine="61" endPosition="27" />
+    <scopeInfo nodeId="8733553229778919035" fileName="RevertRootsAction.java" startLine="63" startPosition="11" endLine="64" endPosition="38" />
+    <scopeInfo nodeId="8733553229778919049" fileName="RevertRootsAction.java" startLine="70" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="8733553229778919053" fileName="RevertRootsAction.java" startLine="72" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="7957854139285169965" fileName="RevertRootsAction.java" startLine="75" startPosition="36" endLine="76" endPosition="43" />
+    <scopeInfo nodeId="8733553229778918888" fileName="RevertRootsAction.java" startLine="24" startPosition="73" endLine="26" endPosition="52" />
+    <scopeInfo nodeId="8733553229778918941" fileName="RevertRootsAction.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="8733553229778919027" fileName="RevertRootsAction.java" startLine="60" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="8733553229778919027" varName="r" />
     </scopeInfo>
-    <scopeInfo nodeId="8733553229778918885" fileName="RevertRootsAction.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="8733553229778918885" fileName="RevertRootsAction.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="8733553229778918899" varName="modelDifferenceDialog" />
     </scopeInfo>
-    <scopeInfo nodeId="8733553229778918921" fileName="RevertRootsAction.java" startLine="30" startPosition="57" endLine="34" endPosition="10" />
-    <scopeInfo nodeId="8733553229778919002" fileName="RevertRootsAction.java" startLine="52" startPosition="33" endLine="56" endPosition="8" />
-    <scopeInfo nodeId="8733553229778918920" fileName="RevertRootsAction.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="8733553229778918921" fileName="RevertRootsAction.java" startLine="31" startPosition="57" endLine="35" endPosition="10" />
+    <scopeInfo nodeId="8733553229778919002" fileName="RevertRootsAction.java" startLine="53" startPosition="33" endLine="57" endPosition="8" />
+    <scopeInfo nodeId="7957854139285169965" fileName="RevertRootsAction.java" startLine="74" startPosition="82" endLine="78" endPosition="16" />
+    <scopeInfo nodeId="8733553229778918920" fileName="RevertRootsAction.java" startLine="31" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="8733553229778918920" varName="r" />
     </scopeInfo>
-    <scopeInfo nodeId="8733553229778919020" fileName="RevertRootsAction.java" startLine="57" startPosition="12" endLine="64" endPosition="7" />
-    <scopeInfo nodeId="8733553229778918910" fileName="RevertRootsAction.java" startLine="28" startPosition="74" endLine="41" endPosition="7">
+    <scopeInfo nodeId="7957854139285169965" fileName="RevertRootsAction.java" startLine="74" startPosition="0" endLine="80" endPosition="0">
+      <varInfo nodeId="7957854139285169965" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="8733553229778919020" fileName="RevertRootsAction.java" startLine="58" startPosition="12" endLine="65" endPosition="7" />
+    <scopeInfo nodeId="8733553229778918910" fileName="RevertRootsAction.java" startLine="29" startPosition="74" endLine="42" endPosition="7">
       <varInfo nodeId="8733553229778918912" varName="changes" />
     </scopeInfo>
-    <scopeInfo nodeId="8733553229778918901" fileName="RevertRootsAction.java" startLine="28" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="8733553229778918901" fileName="RevertRootsAction.java" startLine="29" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="8733553229778918904" varName="event" />
       <varInfo nodeId="8733553229778918906" varName="map" />
     </scopeInfo>
-    <scopeInfo nodeId="8733553229778918955" fileName="RevertRootsAction.java" startLine="45" startPosition="73" endLine="66" endPosition="54">
+    <scopeInfo nodeId="8733553229778918955" fileName="RevertRootsAction.java" startLine="46" startPosition="73" endLine="67" endPosition="54">
       <varInfo nodeId="8733553229778918970" varName="enabled" />
       <varInfo nodeId="8733553229778918961" varName="newModel" />
       <varInfo nodeId="8733553229778918998" varName="what" />
     </scopeInfo>
-    <scopeInfo nodeId="8733553229778918945" fileName="RevertRootsAction.java" startLine="44" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="8733553229778918945" fileName="RevertRootsAction.java" startLine="45" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="8733553229778918948" varName="event" />
       <varInfo nodeId="8733553229778918950" varName="map" />
     </scopeInfo>
-    <unitInfo nodeId="8733553229778918941" fileName="RevertRootsAction.java" startLine="37" startPosition="57" endLine="41" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.RevertRootsAction$2" />
-    <unitInfo nodeId="8733553229778919027" fileName="RevertRootsAction.java" startLine="58" startPosition="72" endLine="62" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.RevertRootsAction$3" />
-    <unitInfo nodeId="8733553229778918920" fileName="RevertRootsAction.java" startLine="29" startPosition="104" endLine="36" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.RevertRootsAction$1" />
-    <unitInfo nodeId="8733553229778918876" fileName="RevertRootsAction.java" startLine="20" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.RevertRootsAction" />
+    <unitInfo nodeId="8733553229778918941" fileName="RevertRootsAction.java" startLine="38" startPosition="57" endLine="42" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.RevertRootsAction$2" />
+    <unitInfo nodeId="8733553229778919027" fileName="RevertRootsAction.java" startLine="59" startPosition="72" endLine="63" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.RevertRootsAction$3" />
+    <unitInfo nodeId="8733553229778918920" fileName="RevertRootsAction.java" startLine="30" startPosition="104" endLine="37" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.RevertRootsAction$1" />
+    <unitInfo nodeId="8733553229778918876" fileName="RevertRootsAction.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.RevertRootsAction" />
   </root>
   <root nodeId="8733553229778919208" modelId="r:df1b052a-af27-4b87-80fc-1492fa2192be(jetbrains.mps.vcs.diff.ui)">
     <nodeInfo nodeId="8733553229778919295" fileName="RootDifferenceDialog.java" startLine="57" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelDialog" />

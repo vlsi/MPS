@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public abstract class RevertRootsAction extends BaseAction implements DumbAware {
   private ModelDifferenceDialog myModelDifferenceDialog;
@@ -45,7 +46,7 @@ public abstract class RevertRootsAction extends BaseAction implements DumbAware 
   protected void doUpdate(AnActionEvent event, Map<String, Object> map) {
     super.doUpdate(event, map);
     SModel newModel = myModelDifferenceDialog.getChangeSet().getNewModel();
-    boolean enabled = getRoots().length != 0 && newModel.getModelDescriptor() instanceof EditableSModelDescriptor && SModelRepository.getInstance().getModelDescriptor(newModel.getSModelReference()).getSModel() == newModel;
+    boolean enabled = getRoots().length != 0 && newModel.getModelDescriptor() instanceof EditableSModelDescriptor && check_8wvtcx_a0a0c0b(SModelRepository.getInstance().getModelDescriptor(newModel.getSModelReference())) == newModel;
     event.getPresentation().setEnabled(enabled);
     event.getPresentation().setVisible(enabled);
     String what = "Roots";
@@ -69,4 +70,11 @@ public abstract class RevertRootsAction extends BaseAction implements DumbAware 
   protected abstract void after();
 
   protected abstract SNodeId[] getRoots();
+
+  private static SModel check_8wvtcx_a0a0c0b(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSModel();
+    }
+    return null;
+  }
 }

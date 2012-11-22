@@ -23,8 +23,9 @@ public class MetadataUtil {
   }
 
   public static void showMetadataDifference(final SModel oldModel, final SModel newModel, final Project project, final String oldTitle, final String newTitle, @Nullable Bounds scrollTo) {
-    final SModel oldMetaModel = new SModel(new SModelReference(SModelOperations.getModelName(oldModel), "metadata"));
-    final SModel newMetaModel = new SModel(new SModelReference(SModelOperations.getModelName(oldModel), "metadata"));
+    SModelReference modelRef = new SModelReference(SModelOperations.getModelName(oldModel), "metadata");
+    final SModel oldMetaModel = new SModel(modelRef);
+    final SModel newMetaModel = new SModel(modelRef);
     final Wrappers._T<ModelDifferenceDialog> modelDialog = new Wrappers._T<ModelDifferenceDialog>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
