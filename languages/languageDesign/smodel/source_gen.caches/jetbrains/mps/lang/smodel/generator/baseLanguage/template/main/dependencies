@@ -24,6 +24,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.Node_GetChildrenOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.SNodeTypeCastExpression_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.util.ConceptMethodCallUtils" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.util.QueriesUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

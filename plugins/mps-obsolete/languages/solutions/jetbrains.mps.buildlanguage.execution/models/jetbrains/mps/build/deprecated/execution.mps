@@ -86,8 +86,8 @@
       <property name="description" nameId="tp4k.1213273179528" value="Generate Build Files And Place Them Into Base Directory" />
       <property name="name" nameId="tpck.1169194664001" value="GenerateBuildAction" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="packaging" />
       <property name="caption" nameId="tp4k.1205250923097" value="Generate Build Files" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="packaging" />
     </node>
     <node type="uhxm.BeforeTask" typeId="uhxm.7037083547576022975" id="4197214709893770399">
       <property name="name" nameId="tpck.1169194664001" value="Generate Build" />
@@ -142,11 +142,11 @@
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="6893245555985399815">
       <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.build.deprecated" />
       <property name="handleErrors" nameId="tp4k.1573568368168371217" value="true" />
-      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
       <property name="descripttion" nameId="tp4k.5023285075122009368" value="Legacy (deprecated) build languages for MPS" />
+      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
       <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
-      <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="/MPS_16.png" />
       <property name="name" nameId="tpck.1169194664001" value="MPS Deprecated Build Languages" />
+      <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="/MPS_16.png" />
       <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="117.105" />
       <property name="loadModules" nameId="tp4k.8842945788826116904" value="true" />
       <property name="version" nameId="tp4k.5023285075122009369" value="2.5.1" />
@@ -1133,7 +1133,6 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4197214709893770447" resolveInfo="mpsbuild" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="4197214709893770461">
-                      <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1213877333807" resolveInfo="included" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4197214709893770462">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4197214709893770417" resolveInfo="configuration" />
@@ -3297,7 +3296,6 @@
                               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4197214709893771397">
                                 <node role="operand" roleId="tpee.1197027771414" type="uhxm.Source_ConceptFunctionParameter" typeId="uhxm.3642991921657904775" id="4197214709893771398" />
                                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="4197214709893771399">
-                                  <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1213877333807" resolveInfo="included" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4197214709893771400">
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4197214709893771401" resolveInfo="it" />
@@ -3512,7 +3510,6 @@
                   </node>
                   <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4197214709893771485">
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="4197214709893771486">
-                      <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1229522949966" resolveInfo="getFolderToGenerate" />
                     </node>
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4197214709893771487">
@@ -3520,7 +3517,6 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4197214709893771492" resolveInfo="configuration" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="4197214709893771489">
-                        <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1213877261819" resolveInfo="getLayout" />
                       </node>
                     </node>
@@ -3571,7 +3567,6 @@
                         </node>
                         <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4197214709893771511">
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="4197214709893771512">
-                            <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1229522949966" resolveInfo="getFolderToGenerate" />
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4197214709893771513">
@@ -3579,7 +3574,6 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4197214709893771522" resolveInfo="configuration" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="4197214709893771515">
-                              <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1213877261819" resolveInfo="getLayout" />
                             </node>
                           </node>
@@ -3590,7 +3584,6 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4197214709893771522" resolveInfo="configuration" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="4197214709893771518">
-                          <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1230217425313" resolveInfo="getBuildFileName" />
                         </node>
                       </node>
@@ -3715,7 +3708,6 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4197214709893771677" resolveInfo="layout" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="4197214709893771570">
-                      <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1229522949966" resolveInfo="getFolderToGenerate" />
                     </node>
                   </node>

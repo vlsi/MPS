@@ -286,7 +286,6 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1400711440828889730" resolveInfo="lastStatement" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1400711440828889723">
-                <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.1213877396640" resolveInfo="getPresentation" />
               </node>
             </node>
@@ -514,7 +513,6 @@
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="6647443673251191224">
-                    <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.1213877396640" resolveInfo="getPresentation" />
                   </node>
                 </node>
@@ -559,7 +557,6 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9172312269976661834" resolveInfo="expression" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="3451429699316823898">
-                    <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1238860310638" resolveInfo="getCompileTimeConstantValue" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4544608336420724748">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4544608336420723343">
@@ -776,7 +773,6 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5439191097839083283" resolveInfo="operation" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5439191097839093370">
-              <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.1213877396640" resolveInfo="getPresentation" />
             </node>
           </node>

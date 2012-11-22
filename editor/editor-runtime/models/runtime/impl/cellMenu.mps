@@ -163,8 +163,8 @@
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7hml.~AbstractNodeSubstituteAction%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode,java%dlang%dObject,jetbrains%dmps%dsmodel%dSNode)" resolveInfo="AbstractNodeSubstituteAction" />
                         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4391314372875510221" />
                         <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="4391314372875510233">
-                          <property name="name" nameId="tpck.1169194664001" value="getMatchingText" />
                           <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
+                          <property name="name" nameId="tpck.1169194664001" value="getMatchingText" />
                           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4391314372875510234" />
                           <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="4391314372875510384" />
                           <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="4391314372875510236">
@@ -287,8 +287,8 @@
   <root id="3368017140643570595">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3368017140643570596" />
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="3368017140643570598">
-      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="LOG" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3368017140643605215">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="to5d.~Logger" resolveInfo="Logger" />
       </node>
@@ -378,7 +378,6 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3368017140643570608" resolveInfo="myLinkDeclaration" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2479108860611089582">
-                <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcn.1213877254523" resolveInfo="getGenuineLink" />
               </node>
             </node>
@@ -457,7 +456,6 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3368017140643690489" resolveInfo="genuineLinkDeclaration" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1912174045154937000">
-                <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcn.1213877254557" resolveInfo="isSingular" />
               </node>
             </node>
@@ -566,7 +564,6 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3368017140643570608" resolveInfo="myLinkDeclaration" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2479108860611089261">
-                    <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcn.1213877254542" resolveInfo="getGenuineRole" />
                   </node>
                 </node>

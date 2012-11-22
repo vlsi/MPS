@@ -11768,11 +11768,13 @@
                       </node>
                     </node>
                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NotExpression" typeId="tpee.1081516740877" id="1161946102686532744">
-                      <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1161946102686534380">
-                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1161946102686535839">
-                          <link role="property" roleId="tp25.1138056395725" targetNodeId="tp25.2853323645193760541" resolveInfo="directCall" />
+                      <node role="expression" roleId="tpee.1081516765348" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2097240597884622172">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp26.2097240597884180631" resolveInfo="callShouldBeByReflection" />
+                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.2097240597884176496" resolveInfo="ConceptMethodCallUtils" />
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2097240597902303288">
+                          <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOriginalInputModel" typeId="tpf3.1217026863835" id="2097240597902304219" />
+                          <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="2097240597902297541" />
                         </node>
-                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1161946102686533750" />
                       </node>
                     </node>
                   </node>
