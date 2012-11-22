@@ -59,15 +59,15 @@ public class CheckProjectStructure {
     HELPER = new CheckProjectStructureHelper();
     HELPER.init(new String[][]{{"samples_home", System.getProperty("user.dir") + "/samples"}});
 
-    String[] excludes = new String[] { "IdeaPlugin" };
+//    String[] excludes = new String[] { "IdeaPlugin" };
+//
+//    String mpsDir = System.getProperty("user.dir");
+//    Set<IFile> excludeSet = new HashSet<IFile>();
+//    for (String e: excludes) {
+//      excludeSet.add( FileSystem.getInstance().getFileByPath(mpsDir + File.separator + e) );
+//    }
 
-    String mpsDir = System.getProperty("user.dir");
-    Set<IFile> excludeSet = new HashSet<IFile>();
-    for (String e: excludes) {
-      excludeSet.add( FileSystem.getInstance().getFileByPath(mpsDir + File.separator + e) );
-    }
-
-    List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), excludeSet, false);
+    List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), ProjectDirExclude.excludeSet, false);
 
     ArrayList<Object[]> res = new ArrayList<Object[]>();
     for (ModuleHandle moduleHandle : moduleHandles) {
@@ -90,7 +90,7 @@ public class CheckProjectStructure {
 
   @BeforeClass
   public static void init() {
-    CheckProjectStructureHelper.loadModules(ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), false));
+    CheckProjectStructureHelper.loadModules(ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), ProjectDirExclude.excludeSet, false));
   }
 
   @AfterClass
