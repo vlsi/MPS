@@ -47,7 +47,6 @@ import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.awt.GraphicsDevice;
 import java.awt.HeadlessException;
 import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
@@ -238,11 +237,8 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   }
 
   /*package*/ void rollbackChanges(Iterable<ModelChange> changes) {
-    myModelDialog.rollbackChanges(changes, new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
-        rehighlight();
-      }
-    });
+    ModelChange.rollbackChanges(changes);
+    rehighlight();
   }
 
   protected JComponent getMainComponent() {

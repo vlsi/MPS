@@ -1025,49 +1025,86 @@
     <unitInfo nodeId="8401260027345476466" fileName="ChangeType.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ChangeType" />
   </root>
   <root nodeId="8813828754313712692" modelId="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)">
-    <nodeInfo nodeId="6359197607515881709" fileName="ModelChange.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeSet" />
-    <nodeInfo nodeId="3395217057974209352" fileName="ModelChange.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOpposite" />
-    <nodeInfo nodeId="6359197607515881720" fileName="ModelChange.java" startLine="15" startPosition="55" endLine="16" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6359197607515881762" fileName="ModelChange.java" startLine="20" startPosition="41" endLine="21" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4453118635377434923" fileName="ModelChange.java" startLine="25" startPosition="30" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3396946986144259446" fileName="ModelChange.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/vcs/diff/changes/NodeCopier;)V" />
-    <nodeInfo nodeId="3395217057974209373" fileName="ModelChange.java" startLine="32" startPosition="29" endLine="33" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3395217057974209380" fileName="ModelChange.java" startLine="33" startPosition="42" endLine="34" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3395217057974209394" fileName="ModelChange.java" startLine="35" startPosition="5" endLine="36" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3835411362155604819" fileName="ModelChange.java" startLine="45" startPosition="37" endLine="46" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3835411362155603817" fileName="ModelChange.java" startLine="46" startPosition="133" endLine="47" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5786223774279694540" fileName="ModelChange.java" startLine="53" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3395217057974209358" fileName="ModelChange.java" startLine="39" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createOppositeChange#()Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
-    <nodeInfo nodeId="8401260027345476531" fileName="ModelChange.java" startLine="42" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/vcs/diff/changes/ChangeType;" />
-    <nodeInfo nodeId="6562343564267124266" fileName="ModelChange.java" startLine="50" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6359197607515881713" fileName="ModelChange.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelChange#(Ljetbrains/mps/vcs/diff/ChangeSet;)V" />
-    <nodeInfo nodeId="6359197607515881758" fileName="ModelChange.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChangeSet#()Ljetbrains/mps/vcs/diff/ChangeSet;" />
-    <nodeInfo nodeId="4453118635377434917" fileName="ModelChange.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootId#()Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="3395217057974209364" fileName="ModelChange.java" startLine="31" startPosition="42" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3835411362155597580" fileName="ModelChange.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isNonConflicting#()Z" />
-    <nodeInfo nodeId="3395217057974207715" fileName="ModelChange.java" startLine="31" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOppositeChange#()Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
-    <scopeInfo nodeId="6359197607515881717" fileName="ModelChange.java" startLine="15" startPosition="55" endLine="16" endPosition="28" />
-    <scopeInfo nodeId="6359197607515881761" fileName="ModelChange.java" startLine="20" startPosition="41" endLine="21" endPosition="23" />
-    <scopeInfo nodeId="4453118635377434920" fileName="ModelChange.java" startLine="25" startPosition="30" endLine="26" endPosition="16" />
-    <scopeInfo nodeId="3396946986144259446" fileName="ModelChange.java" startLine="29" startPosition="0" endLine="30" endPosition="0">
+    <nodeInfo nodeId="6359197607515881709" fileName="ModelChange.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeSet" />
+    <nodeInfo nodeId="3395217057974209352" fileName="ModelChange.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOpposite" />
+    <nodeInfo nodeId="6359197607515881720" fileName="ModelChange.java" startLine="18" startPosition="55" endLine="19" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6359197607515881762" fileName="ModelChange.java" startLine="23" startPosition="41" endLine="24" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4453118635377434923" fileName="ModelChange.java" startLine="28" startPosition="30" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3396946986144259446" fileName="ModelChange.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/vcs/diff/changes/NodeCopier;)V" />
+    <nodeInfo nodeId="3395217057974209373" fileName="ModelChange.java" startLine="35" startPosition="29" endLine="36" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3395217057974209380" fileName="ModelChange.java" startLine="36" startPosition="42" endLine="37" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3395217057974209394" fileName="ModelChange.java" startLine="38" startPosition="5" endLine="39" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3835411362155604819" fileName="ModelChange.java" startLine="48" startPosition="37" endLine="49" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3835411362155603817" fileName="ModelChange.java" startLine="49" startPosition="133" endLine="50" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5786223774279694540" fileName="ModelChange.java" startLine="56" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="317498100166503617" fileName="ModelChange.java" startLine="58" startPosition="69" endLine="59" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="317498100166503621" fileName="ModelChange.java" startLine="59" startPosition="55" endLine="60" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="317498100166503631" fileName="ModelChange.java" startLine="60" startPosition="93" endLine="61" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="317498100166503646" fileName="ModelChange.java" startLine="63" startPosition="49" endLine="64" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="317498100166503661" fileName="ModelChange.java" startLine="68" startPosition="42" endLine="69" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="317498100166503674" fileName="ModelChange.java" startLine="73" startPosition="41" endLine="74" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="317498100166503682" fileName="ModelChange.java" startLine="76" startPosition="7" endLine="77" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3395217057974209358" fileName="ModelChange.java" startLine="42" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createOppositeChange#()Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
+    <nodeInfo nodeId="8401260027345476531" fileName="ModelChange.java" startLine="45" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/vcs/diff/changes/ChangeType;" />
+    <nodeInfo nodeId="6562343564267124266" fileName="ModelChange.java" startLine="53" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6359197607515881713" fileName="ModelChange.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelChange#(Ljetbrains/mps/vcs/diff/ChangeSet;)V" />
+    <nodeInfo nodeId="317498100166503644" fileName="ModelChange.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
+    <nodeInfo nodeId="317498100166503656" fileName="ModelChange.java" startLine="67" startPosition="67" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="317498100166503672" fileName="ModelChange.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
+    <nodeInfo nodeId="6359197607515881758" fileName="ModelChange.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChangeSet#()Ljetbrains/mps/vcs/diff/ChangeSet;" />
+    <nodeInfo nodeId="4453118635377434917" fileName="ModelChange.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootId#()Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="3395217057974209364" fileName="ModelChange.java" startLine="34" startPosition="42" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3835411362155597580" fileName="ModelChange.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isNonConflicting#()Z" />
+    <nodeInfo nodeId="317498100166503637" fileName="ModelChange.java" startLine="61" startPosition="48" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="317498100166503652" fileName="ModelChange.java" startLine="66" startPosition="7" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="317498100166503668" fileName="ModelChange.java" startLine="71" startPosition="5" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3395217057974207715" fileName="ModelChange.java" startLine="34" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOppositeChange#()Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
+    <nodeInfo nodeId="317498100166503604" fileName="ModelChange.java" startLine="58" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="rollbackChanges#(Ljava/lang/Iterable;)V" />
+    <scopeInfo nodeId="6359197607515881717" fileName="ModelChange.java" startLine="18" startPosition="55" endLine="19" endPosition="28" />
+    <scopeInfo nodeId="6359197607515881761" fileName="ModelChange.java" startLine="23" startPosition="41" endLine="24" endPosition="23" />
+    <scopeInfo nodeId="4453118635377434920" fileName="ModelChange.java" startLine="28" startPosition="30" endLine="29" endPosition="16" />
+    <scopeInfo nodeId="3396946986144259446" fileName="ModelChange.java" startLine="32" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="3396946986144261369" varName="model" />
       <varInfo nodeId="5746253950163662042" varName="nodeCopier" />
     </scopeInfo>
-    <scopeInfo nodeId="5786223774279694540" fileName="ModelChange.java" startLine="53" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="3395217057974209365" fileName="ModelChange.java" startLine="32" startPosition="29" endLine="34" endPosition="35" />
-    <scopeInfo nodeId="3395217057974209358" fileName="ModelChange.java" startLine="39" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="8401260027345476531" fileName="ModelChange.java" startLine="42" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="3835411362155597583" fileName="ModelChange.java" startLine="45" startPosition="37" endLine="47" endPosition="17" />
-    <scopeInfo nodeId="6562343564267124266" fileName="ModelChange.java" startLine="50" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="6359197607515881713" fileName="ModelChange.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+    <scopeInfo nodeId="5786223774279694540" fileName="ModelChange.java" startLine="56" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="317498100166503645" fileName="ModelChange.java" startLine="63" startPosition="49" endLine="64" endPosition="38" />
+    <scopeInfo nodeId="317498100166503660" fileName="ModelChange.java" startLine="68" startPosition="42" endLine="69" endPosition="41" />
+    <scopeInfo nodeId="317498100166503673" fileName="ModelChange.java" startLine="73" startPosition="41" endLine="74" endPosition="28" />
+    <scopeInfo nodeId="3395217057974209365" fileName="ModelChange.java" startLine="35" startPosition="29" endLine="37" endPosition="35" />
+    <scopeInfo nodeId="3395217057974209358" fileName="ModelChange.java" startLine="42" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="8401260027345476531" fileName="ModelChange.java" startLine="45" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="3835411362155597583" fileName="ModelChange.java" startLine="48" startPosition="37" endLine="50" endPosition="17" />
+    <scopeInfo nodeId="6562343564267124266" fileName="ModelChange.java" startLine="53" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="6359197607515881713" fileName="ModelChange.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="6359197607515881718" varName="changeSet" />
     </scopeInfo>
-    <scopeInfo nodeId="6359197607515881758" fileName="ModelChange.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="4453118635377434917" fileName="ModelChange.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="3835411362155597580" fileName="ModelChange.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="3395217057974207718" fileName="ModelChange.java" startLine="31" startPosition="42" endLine="36" endPosition="22" />
-    <scopeInfo nodeId="3395217057974207715" fileName="ModelChange.java" startLine="31" startPosition="0" endLine="38" endPosition="0" />
-    <unitInfo nodeId="8813828754313712692" fileName="ModelChange.java" startLine="11" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ModelChange" />
+    <scopeInfo nodeId="317498100166503644" fileName="ModelChange.java" startLine="63" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="317498100166503644" varName="ch" />
+    </scopeInfo>
+    <scopeInfo nodeId="317498100166503655" fileName="ModelChange.java" startLine="67" startPosition="67" endLine="70" endPosition="7" />
+    <scopeInfo nodeId="317498100166503672" fileName="ModelChange.java" startLine="73" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="317498100166503672" varName="ch" />
+    </scopeInfo>
+    <scopeInfo nodeId="6359197607515881758" fileName="ModelChange.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="4453118635377434917" fileName="ModelChange.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="3835411362155597580" fileName="ModelChange.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="3395217057974207718" fileName="ModelChange.java" startLine="34" startPosition="42" endLine="39" endPosition="22" />
+    <scopeInfo nodeId="317498100166503652" fileName="ModelChange.java" startLine="66" startPosition="7" endLine="71" endPosition="5">
+      <varInfo nodeId="317498100166503653" varName="ch" />
+    </scopeInfo>
+    <scopeInfo nodeId="3395217057974207715" fileName="ModelChange.java" startLine="34" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="317498100166503613" fileName="ModelChange.java" startLine="58" startPosition="69" endLine="77" endPosition="24">
+      <varInfo nodeId="317498100166503622" varName="model" />
+      <varInfo nodeId="317498100166503632" varName="nc" />
+      <varInfo nodeId="317498100166503638" varName="oppositeChanges" />
+    </scopeInfo>
+    <scopeInfo nodeId="317498100166503604" fileName="ModelChange.java" startLine="58" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="317498100166503606" varName="changes" />
+    </scopeInfo>
+    <unitInfo nodeId="317498100166503644" fileName="ModelChange.java" startLine="62" startPosition="86" endLine="66" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ModelChange$1" />
+    <unitInfo nodeId="317498100166503672" fileName="ModelChange.java" startLine="72" startPosition="56" endLine="76" endPosition="5" unitName="jetbrains.mps.vcs.diff.changes.ModelChange$2" />
+    <unitInfo nodeId="8813828754313712692" fileName="ModelChange.java" startLine="14" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ModelChange" />
   </root>
 </debugInfo>
 

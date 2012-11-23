@@ -11,7 +11,6 @@ import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
@@ -35,11 +34,8 @@ public abstract class RevertRootsAction extends BaseAction implements DumbAware 
         );
       }
     });
-    myModelDifferenceDialog.rollbackChanges(changes, new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
-        after();
-      }
-    });
+    ModelChange.rollbackChanges(changes);
+    after();
   }
 
   @Override

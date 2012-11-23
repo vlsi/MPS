@@ -37,12 +37,6 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import javax.swing.Action;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.vcs.diff.changes.NodeCopier;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -51,6 +45,8 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.workbench.action.BaseAction;
 import java.util.Arrays;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
@@ -159,35 +155,6 @@ public class ModelDifferenceDialog extends DialogWrapper {
 
   /*package*/ void startGoingToNeighbour() {
     myGoingToNeighbour = true;
-  }
-
-  /*package*/ void rollbackChanges(final Iterable<ModelChange> changes, @Nullable final _FunctionTypes._void_P0_E0 after) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        assert Sequence.fromIterable(changes).isNotEmpty();
-        final SModel model = Sequence.fromIterable(changes).first().getChangeSet().getNewModel();
-        final NodeCopier nc = new NodeCopier(model);
-        Iterable<ModelChange> oppositeChanges = Sequence.fromIterable(changes).select(new ISelector<ModelChange, ModelChange>() {
-          public ModelChange select(ModelChange ch) {
-            return ch.getOppositeChange();
-          }
-        });
-        for (ModelChange ch : Sequence.fromIterable(oppositeChanges)) {
-          if (ch instanceof NodeGroupChange) {
-            ((NodeGroupChange) ch).prepare();
-          }
-        }
-        Sequence.fromIterable(oppositeChanges).visitAll(new IVisitor<ModelChange>() {
-          public void visit(ModelChange ch) {
-            ch.apply(model, nc);
-          }
-        });
-        nc.restoreIds(true);
-        if (after != null) {
-          after.invoke();
-        }
-      }
-    });
   }
 
   public void invokeRootDifference(SNodeId rootId) {
