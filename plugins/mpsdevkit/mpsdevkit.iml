@@ -35,6 +35,7 @@
     <orderEntry type="module" module-name="baseLanguage-util" />
     <orderEntry type="library" name="Idea-plaform" level="project" />
     <orderEntry type="library" name="Annotations" level="project" />
+    <orderEntry type="module" module-name="mps-ui" />
   </component>
 </module>
 

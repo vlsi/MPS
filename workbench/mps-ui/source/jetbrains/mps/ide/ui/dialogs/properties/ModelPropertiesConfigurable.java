@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.ui.dialogs.properties;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.ui.components.JBCheckBox;
 import com.intellij.ui.components.JBLabel;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
@@ -168,6 +169,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable<SMode
   }
 
   public class InfoTab extends Tab {
+    private JBCheckBox myCheckBox;
 
     public InfoTab() {
       super(PropertiesBundle.message("mps.properties.configurable.model.infotab.title"), IdeIcons.DEFAULT_ICON, PropertiesBundle.message("mps.properties.configurable.model.infotab.tip"));
@@ -176,17 +178,21 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable<SMode
 
     @Override
     public void apply() {
+      myModelProperties.setDoNotGenerate(myCheckBox.isSelected());
     }
 
     @Override
     protected void initUI() {
       final JPanel panel = new JPanel();
-      panel.setLayout(new GridLayoutManager(2, 1, INSETS, -1, -1));
+      panel.setLayout(new GridLayoutManager(3, 1, INSETS, -1, -1));
+
+      myCheckBox = new JBCheckBox(PropertiesBundle.message("mps.properties.configurable.model.infotab.checkbox"), myModelProperties.isDoNotGenerate());
+      panel.add(myCheckBox, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
       final JBLabel label = new JBLabel();
       label.setText(getInfoText());
-      panel.add(label, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-      panel.add(new Spacer(), new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+      panel.add(label, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+      panel.add(new Spacer(), new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
       setTabComponent(panel);
     }
@@ -214,7 +220,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable<SMode
 
     @Override
     public boolean isModified() {
-      return false;
+      return myCheckBox.isSelected() != myModelProperties.isDoNotGenerate();
     }
   }
 }

@@ -33,26 +33,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+@Deprecated
 public class CommonChoosers {
-  private static List<SModelReference> showDialogModelChooser_internal(Project project, final List<SModelReference> models,
-                                                                       @Nullable List<SModelReference> nonProjectModels,
-                                                                       boolean multiSelection) {
-    ModelChooserDialog dialog = new ModelChooserDialog(project, models, nonProjectModels, multiSelection);
-    dialog.show();
-    return dialog.getResult();
-  }
-
-  private static List<ModuleReference> showDialogModuleChooser_internal(Project project, String entityString, final Collection<? extends SModuleReference> modules,
-                                                                        @Nullable Collection<? extends SModuleReference> nonProjectModules,
-                                                                        boolean multiSelection) {
-    ModuleChooserDialog dialog = new ModuleChooserDialog(project, modules, nonProjectModules, entityString, multiSelection);
-    dialog.show();
-    List<ModuleReference> result = new ArrayList<ModuleReference>();
-    for (SModuleReference reference : dialog.getResult()) {
-      result.add((ModuleReference)reference);
-    }
-    return result;
-  }
 
   @Deprecated
   public static SNode showDialogNodeChooser(final Component parent, final List<SNode> values) {
@@ -71,23 +53,21 @@ public class CommonChoosers {
   }
 
   public static List<SModelReference> showDialogModelCollectionChooser(Project project, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels) {
-    return showDialogModelChooser_internal(project, models, nonProjectModels, true);
+    return jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers.showDialogModelCollectionChooser(project, models, nonProjectModels);
   }
 
+  @Deprecated
   public static SModelReference showDialogModelChooser(Project project, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels) {
-    List<SModelReference> result = showDialogModelChooser_internal(project, models, nonProjectModels, false);
-    if (result == null || result.isEmpty()) return null;
-    return result.get(0);
+    return jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers.showDialogModelChooser(project, models, nonProjectModels);
   }
 
+  @Deprecated
   public static ModuleReference showDialogModuleChooser(Project project, String entityString, List<? extends SModuleReference> modules, @Nullable List<? extends SModuleReference> nonProjectModules) {
-    List<ModuleReference> result = showDialogModuleChooser_internal(project,entityString, modules, nonProjectModules, false);
-    if (result == null || result.isEmpty()) return null;
-    return result.get(0);
+    return jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers.showDialogModuleChooser(project,entityString, modules, nonProjectModules);
   }
 
   public static List<ModuleReference> showDialogModuleCollectionChooser(Project project, String entityString, List<ModuleReference> modules, @Nullable List<ModuleReference> nonProjectModules) {
-    return showDialogModuleChooser_internal(project, entityString, modules, nonProjectModules, true);
+    return jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers.showDialogModuleCollectionChooser(project,entityString, modules, nonProjectModules);
   }
 
   @Deprecated

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleOperandRenderer" file="RuleOperandRenderer.java">
+    <classNode dependClassName="java.awt.Component" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.WeakHashMap" />
+    <classNode dependClassName="javax.swing.JLabel" />
+    <classNode dependClassName="javax.swing.JTable" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode extendsClassName="javax.swing.table.TableCellRenderer" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer" file="RuleTypeRenderer.java">
+    <classNode dependClassName="java.awt.Component" />
+    <classNode dependClassName="java.awt.GridBagConstraints" />
+    <classNode dependClassName="java.awt.GridBagLayout" />
+    <classNode dependClassName="java.awt.Insets" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="javax.swing.JTable" />
+    <classNode dependClassName="javax.swing.border.EmptyBorder" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.RuleType" />
+    <classNode extendsClassName="javax.swing.table.DefaultTableCellRenderer" />
+  </dependency>
+</dependenciesRoot>
+
