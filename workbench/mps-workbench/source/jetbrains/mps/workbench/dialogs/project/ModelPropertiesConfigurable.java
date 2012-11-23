@@ -27,7 +27,6 @@ import jetbrains.mps.ide.properties.ModelProperties;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
@@ -43,7 +42,6 @@ import jetbrains.mps.workbench.dialogs.project.tmodels.ModelDependTableModel;
 import jetbrains.mps.workbench.dialogs.project.tmodels.ModelUsedLangTableModel;
 import jetbrains.mps.workbench.dialogs.project.tmodels.ModuleDepTableItem;
 import jetbrains.mps.workbench.dialogs.project.tmodels.UsedLangsTableModel;
-import org.jdesktop.beansbinding.AutoBinding;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 

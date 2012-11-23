@@ -14,7 +14,7 @@
     <classNode dependClassName="jetbrains.mps.project.structure.project.Path" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.ProjectDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration" />
-    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory" />
+    <classNode dependClassName="ListsFactory" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesComponent" file="ProjectPropertiesComponent.java">
     <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />

@@ -110,9 +110,7 @@ import javax.swing.table.TableColumn;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 import java.util.Set;
 
 public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IModule> {
@@ -286,7 +284,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
       if(myConfigurableItem instanceof DevKit)
         myModuleDependenciesTab.apply();
       else {
-        myRootsTableModel.apply();
         myEntriesEditor.apply();
       }
     }

@@ -56,7 +56,7 @@
       <varInfo nodeId="1560298786499489487" varName="table" />
       <varInfo nodeId="1560298786499489489" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1560298786499489478" fileName="RuleTypeRenderer.java" startLine="16" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleTypeRenderer" />
+    <unitInfo nodeId="1560298786499489478" fileName="RuleTypeRenderer.java" startLine="16" startPosition="0" endLine="39" endPosition="0" unitName="RuleTypeRenderer" />
   </root>
   <root nodeId="1560298786499490098" modelId="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)">
     <nodeInfo nodeId="1560298786499490101" fileName="ProjectPathRenderer.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
@@ -503,11 +503,11 @@
       <varInfo nodeId="1560298786499494909" varName="ref" />
       <varInfo nodeId="1560298786499494907" varName="root" />
     </scopeInfo>
-    <unitInfo nodeId="7427129459900018112" fileName="RuleOperandRenderer.java" startLine="64" startPosition="31" endLine="69" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer$3" />
-    <unitInfo nodeId="1560298786499494834" fileName="RuleOperandRenderer.java" startLine="76" startPosition="31" endLine="81" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer$2" />
-    <unitInfo nodeId="1560298786499494785" fileName="RuleOperandRenderer.java" startLine="49" startPosition="23" endLine="56" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer$1" />
-    <unitInfo nodeId="1560298786499495100" fileName="RuleOperandRenderer.java" startLine="112" startPosition="60" endLine="122" endPosition="9" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer$4" />
-    <unitInfo nodeId="1560298786499494750" fileName="RuleOperandRenderer.java" startLine="38" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer" />
+    <unitInfo nodeId="7427129459900018112" fileName="RuleOperandRenderer.java" startLine="64" startPosition="31" endLine="69" endPosition="7" unitName="RuleOperandRenderer$3" />
+    <unitInfo nodeId="1560298786499494834" fileName="RuleOperandRenderer.java" startLine="76" startPosition="31" endLine="81" endPosition="7" unitName="RuleOperandRenderer$2" />
+    <unitInfo nodeId="1560298786499494785" fileName="RuleOperandRenderer.java" startLine="49" startPosition="23" endLine="56" endPosition="5" unitName="RuleOperandRenderer$1" />
+    <unitInfo nodeId="1560298786499495100" fileName="RuleOperandRenderer.java" startLine="112" startPosition="60" endLine="122" endPosition="9" unitName="RuleOperandRenderer$4" />
+    <unitInfo nodeId="1560298786499494750" fileName="RuleOperandRenderer.java" startLine="38" startPosition="0" endLine="162" endPosition="0" unitName="RuleOperandRenderer" />
   </root>
   <root nodeId="1560298786499495877" modelId="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)">
     <nodeInfo nodeId="1560298786499495897" fileName="TestConfigListCellRenderer.java" startLine="14" startPosition="128" endLine="15" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

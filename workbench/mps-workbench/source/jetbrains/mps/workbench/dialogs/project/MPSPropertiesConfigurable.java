@@ -43,8 +43,6 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.DevKitChooser;
@@ -55,7 +53,6 @@ import jetbrains.mps.workbench.dialogs.project.tmodels.DependenciesTableItemRole
 import jetbrains.mps.workbench.dialogs.project.tmodels.MPSPropertiesAnActionButton;
 import jetbrains.mps.workbench.dialogs.project.tmodels.UsedLangTableItem;
 import jetbrains.mps.workbench.dialogs.project.tmodels.UsedLangsTableModel;
-import org.jdesktop.beansbinding.AutoBinding;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
@@ -63,8 +60,6 @@ import javax.swing.JPanel;
 import javax.swing.Icon;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import javax.swing.table.TableColumn;
 import javax.swing.DefaultCellEditor;
 import javax.swing.ListSelectionModel;

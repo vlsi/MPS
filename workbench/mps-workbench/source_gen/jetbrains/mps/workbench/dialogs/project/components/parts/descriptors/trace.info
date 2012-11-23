@@ -45,7 +45,7 @@
       <varInfo nodeId="1560298786499489918" varName="name" />
       <varInfo nodeId="1560298786499489922" varName="width" />
     </scopeInfo>
-    <unitInfo nodeId="1560298786499489905" fileName="ColumnDescriptor.java" startLine="8" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ColumnDescriptor" />
+    <unitInfo nodeId="1560298786499489905" fileName="ColumnDescriptor.java" startLine="8" startPosition="0" endLine="35" endPosition="0" unitName="ColumnDescriptor" />
   </root>
   <root nodeId="1560298786499491464" modelId="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)">
     <nodeInfo nodeId="1560298786499491476" fileName="StringPathDescriptor.java" startLine="10" startPosition="70" endLine="11" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -98,7 +98,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1560298786499492177" fileName="RuleTypeDescriptor.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="1560298786499492184" fileName="RuleTypeDescriptor.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
-    <unitInfo nodeId="1560298786499492161" fileName="RuleTypeDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.RuleTypeDescriptor" />
+    <unitInfo nodeId="1560298786499492161" fileName="RuleTypeDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="RuleTypeDescriptor" />
   </root>
   <root nodeId="1560298786499492191" modelId="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)">
     <nodeInfo nodeId="1560298786499492194" fileName="PriorityRuleDescriptor.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenerator" />
@@ -126,7 +126,7 @@
       <varInfo nodeId="1560298786499492213" varName="name" />
       <varInfo nodeId="1560298786499492217" varName="width" />
     </scopeInfo>
-    <unitInfo nodeId="1560298786499492191" fileName="PriorityRuleDescriptor.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.PriorityRuleDescriptor" />
+    <unitInfo nodeId="1560298786499492191" fileName="PriorityRuleDescriptor.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="PriorityRuleDescriptor" />
   </root>
   <root nodeId="1560298786499493471" modelId="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)">
     <nodeInfo nodeId="1560298786499493483" fileName="ModuleDescriptor.java" startLine="10" startPosition="66" endLine="11" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -203,7 +203,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1560298786499495721" fileName="VoidColumnDescriptor.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="1560298786499495727" fileName="VoidColumnDescriptor.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
-    <unitInfo nodeId="1560298786499495705" fileName="VoidColumnDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.VoidColumnDescriptor" />
+    <unitInfo nodeId="1560298786499495705" fileName="VoidColumnDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="VoidColumnDescriptor" />
   </root>
   <root nodeId="1560298786499497407" modelId="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)">
     <nodeInfo nodeId="1560298786499497419" fileName="ModelDescriptor.java" startLine="10" startPosition="65" endLine="11" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

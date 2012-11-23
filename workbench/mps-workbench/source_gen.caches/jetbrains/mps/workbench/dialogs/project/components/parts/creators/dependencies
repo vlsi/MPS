@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.creators.DependencyChooser" file="DependencyChooser.java">
+  <dependency className="DependencyChooser" file="DependencyChooser.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -16,7 +16,7 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.choosers.CommonChoosers" />
     <classNode extendsClassName="jetbrains.mps.util.Computable" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.creators.DevKitChooser" file="DevKitChooser.java">
+  <dependency className="DevKitChooser" file="DevKitChooser.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.List" />
@@ -30,7 +30,7 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.choosers.CommonChoosers" />
     <classNode extendsClassName="jetbrains.mps.util.Computable" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.creators.GeneratorChooser" file="GeneratorChooser.java">
+  <dependency className="GeneratorChooser" file="GeneratorChooser.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.List" />
@@ -44,7 +44,7 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.choosers.CommonChoosers" />
     <classNode extendsClassName="jetbrains.mps.util.Computable" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.creators.LanguageChooser" file="LanguageChooser.java">
+  <dependency className="LanguageChooser" file="LanguageChooser.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.List" />
@@ -58,11 +58,11 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.choosers.CommonChoosers" />
     <classNode extendsClassName="jetbrains.mps.util.Computable" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.creators.MappingRuleCreator" file="MappingRuleCreator.java">
+  <dependency className="MappingRuleCreator" file="MappingRuleCreator.java">
     <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule" />
     <classNode extendsClassName="jetbrains.mps.util.Computable" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModelChooser" file="ModelChooser.java">
+  <dependency className="ModelChooser" file="ModelChooser.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.FilteredGlobalScope" />
@@ -103,7 +103,7 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.IBindedDialog" />
     <classNode extendsClassName="jetbrains.mps.util.Computable" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.creators.SolutionChooser" file="SolutionChooser.java">
+  <dependency className="SolutionChooser" file="SolutionChooser.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.List" />
@@ -124,7 +124,7 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.IBindedDialog" />
     <classNode extendsClassName="jetbrains.mps.util.Computable" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubRootChooser" file="StubRootChooser.java">
+  <dependency className="StubRootChooser" file="StubRootChooser.java">
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -140,7 +140,7 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.IBindedDialog" />
-    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.ManagerTableCellEditor" />
+    <classNode dependClassName="ManagerTableCellEditor" />
     <classNode extendsClassName="jetbrains.mps.util.Computable" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubSolutionChooser" file="StubSolutionChooser.java">
