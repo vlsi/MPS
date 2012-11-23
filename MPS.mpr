@@ -435,6 +435,7 @@
       <modulePath path="${project}/workbench/mps-debugger/core.msd" folder="debugger" />
       <modulePath path="${project}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" folder="workbench.editor" />
       <modulePath path="${project}/workbench/mps-platform/base.msd" folder="workbench.platform" />
+      <modulePath path="${project}/workbench/mps-ui/ui.msd" folder="workbench.ui" />
       <modulePath path="${project}/workbench/mps-workbench/jetbrains.mps.ide.msd" folder="workbench" />
     </projectModules>
     <genConfs />
