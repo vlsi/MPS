@@ -731,6 +731,7 @@ public class SModel {
     private int myReferenceID;  // persistence related index
     private int myUsedVersion;
 
+    @Deprecated
     public ImportElement(SModelReference modelReference, int referenceID) {
       this(modelReference, referenceID, -1);
     }
@@ -938,7 +939,7 @@ public class SModel {
 
   //---------deprecated--------
 
-  @Deprecated
+  //why? @Deprecated
   //to use in old persistence
   public void addModelImport(ImportElement importElement) {
     ModelChange.assertLegalChange(this);

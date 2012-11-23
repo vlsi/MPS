@@ -1496,7 +1496,6 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="3635379492312128731">
-                <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.6321644624958501287" resolveInfo="canBeCoerced" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3635379492312128732">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3635379492312128724" resolveInfo="conceptFqName" />
