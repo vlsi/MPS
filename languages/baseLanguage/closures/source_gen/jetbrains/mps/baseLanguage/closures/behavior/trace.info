@@ -1155,11 +1155,11 @@
     <nodeInfo nodeId="1231426746932" fileName="RuntimeUtils.java" startLine="48" startPosition="5" endLine="49" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1231426192441" fileName="RuntimeUtils.java" startLine="52" startPosition="62" endLine="53" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1231426192441" fileName="RuntimeUtils.java" startLine="53" startPosition="30" endLine="54" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1231426192441" fileName="RuntimeUtils.java" startLine="54" startPosition="165" endLine="55" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1231426192441" fileName="RuntimeUtils.java" startLine="55" startPosition="249" endLine="56" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1231426192441" fileName="RuntimeUtils.java" startLine="54" startPosition="165" endLine="55" endPosition="333" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1231426192441" fileName="RuntimeUtils.java" startLine="55" startPosition="333" endLine="56" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1231426116478" fileName="RuntimeUtils.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RuntimeUtils#()V" />
-    <nodeInfo nodeId="1231426192441" fileName="RuntimeUtils.java" startLine="53" startPosition="30" endLine="55" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1231426192441" fileName="RuntimeUtils.java" startLine="53" startPosition="30" endLine="55" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1231426192441" fileName="RuntimeUtils.java" startLine="53" startPosition="30" endLine="55" endPosition="333" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1231426192441" fileName="RuntimeUtils.java" startLine="53" startPosition="30" endLine="55" endPosition="333" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1231426126521" fileName="RuntimeUtils.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getRuntimeModel#()Ljetbrains/mps/smodel/SModel;" />
     <nodeInfo nodeId="1231429332115" fileName="RuntimeUtils.java" startLine="35" startPosition="79" endLine="38" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1231426699852" fileName="RuntimeUtils.java" startLine="40" startPosition="32" endLine="43" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
@@ -1174,7 +1174,7 @@
     <scopeInfo nodeId="1231429332116" fileName="RuntimeUtils.java" startLine="36" startPosition="123" endLine="37" endPosition="109" />
     <scopeInfo nodeId="1231426699854" fileName="RuntimeUtils.java" startLine="41" startPosition="47" endLine="42" endPosition="53" />
     <scopeInfo nodeId="1231426116478" fileName="RuntimeUtils.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1231426192441" fileName="RuntimeUtils.java" startLine="53" startPosition="30" endLine="55" endPosition="249" />
+    <scopeInfo nodeId="1231426192441" fileName="RuntimeUtils.java" startLine="53" startPosition="30" endLine="55" endPosition="333" />
     <scopeInfo nodeId="1231426126521" fileName="RuntimeUtils.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="1231429332115" fileName="RuntimeUtils.java" startLine="35" startPosition="79" endLine="38" endPosition="9">
       <varInfo nodeId="1231429332119" varName="cls" />
