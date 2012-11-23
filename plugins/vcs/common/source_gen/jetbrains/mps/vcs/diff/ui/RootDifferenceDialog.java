@@ -22,7 +22,6 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import java.awt.Component;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
-import javax.swing.JComponent;
 import javax.swing.JSplitPane;
 import jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -34,6 +33,7 @@ import java.awt.DisplayMode;
 import java.awt.GraphicsEnvironment;
 import java.awt.Dimension;
 import com.intellij.openapi.util.DimensionService;
+import javax.swing.JComponent;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import com.intellij.openapi.util.Ref;
@@ -68,19 +68,10 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   private boolean myClosed;
   private DefaultActionGroup myActionGroup;
 
-  public RootDifferenceDialog(ModelDifferenceDialog modelDialog, SNodeId rootId, String rootName, Component parent, @Nullable Bounds firstChange) {
+  public RootDifferenceDialog(ModelDifferenceDialog modelDialog, SNodeId rootId, String rootName, Component parent, @Nullable final Bounds firstChange) {
     super(parent, true);
     setTitle("Difference for " + rootName);
-    init(modelDialog, rootId, firstChange);
-  }
 
-  @Nullable
-  protected JComponent createCenterPanel() {
-    return myContainer;
-  }
-
-  private void init(ModelDifferenceDialog modelDialog, SNodeId rootId, @Nullable final Bounds firstChange) {
-    // Two constructors and init method is needed because different superconstructors should be invoked 
     myModelDialog = modelDialog;
     myRootId = rootId;
 
@@ -122,7 +113,8 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     } else {
       neighbourTraverser.goToFirstChangeLater();
     }
-    DisplayMode displayMode = check_vu2gar_a0ab0b(check_vu2gar_a0a62a1(GraphicsEnvironment.getLocalGraphicsEnvironment()));
+
+    DisplayMode displayMode = check_vu2gar_a0db0a(check_vu2gar_a0a92a0(GraphicsEnvironment.getLocalGraphicsEnvironment()));
     int width = (displayMode == null ?
       800 :
       displayMode.getWidth() - 100
@@ -136,7 +128,13 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     if (size == null) {
       myContainer.setPreferredSize(new Dimension(width, height));
     }
+
     init();
+  }
+
+  @Nullable
+  protected JComponent createCenterPanel() {
+    return myContainer;
   }
 
   public String getDimensionServiceKey() {
@@ -266,14 +264,14 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     super.dispose();
   }
 
-  private static DisplayMode check_vu2gar_a0ab0b(GraphicsDevice checkedDotOperand) {
+  private static DisplayMode check_vu2gar_a0db0a(GraphicsDevice checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getDisplayMode();
     }
     return null;
   }
 
-  private static GraphicsDevice check_vu2gar_a0a62a1(GraphicsEnvironment checkedDotOperand) throws HeadlessException {
+  private static GraphicsDevice check_vu2gar_a0a92a0(GraphicsEnvironment checkedDotOperand) throws HeadlessException {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getDefaultScreenDevice();
     }
