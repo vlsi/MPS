@@ -26,28 +26,26 @@ import java.util.Set;
  * danilla 11/15/12
  */
 
+// Maybe this should be an extension point
 public class ModelRootContributorManager implements ProjectComponent {
 
+  private final Object LOCK = new Object();
   private Set<ModelRootContributor> myContributors = new HashSet<ModelRootContributor>();
 
   @Override
   public void projectOpened() {
-    //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override
   public void projectClosed() {
-    //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override
   public void initComponent() {
-    //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override
   public void disposeComponent() {
-    //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @NotNull
@@ -57,11 +55,21 @@ public class ModelRootContributorManager implements ProjectComponent {
   }
 
   public void addContributor(ModelRootContributor contributor) {
-    myContributors.add(contributor);
+    synchronized (LOCK) {
+      myContributors.add(contributor);
+    }
+  }
+
+  public void removeContributor(ModelRootContributor contributor) {
+    synchronized (LOCK) {
+      myContributors.remove(contributor);
+    }
   }
 
   public Iterable<ModelRootContributor> getContributors() {
-    return myContributors;
+    synchronized (LOCK) {
+      return myContributors;
+    }
   }
 
 }
