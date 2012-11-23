@@ -122,17 +122,6 @@ public class SolutionLibrariesIndex implements ProjectComponent, Disposable {
     return moduleReferences;
   }
 
-  public List<Dependency> calculateDependencies(Collection<LibraryOrderEntry> entries) {
-    ArrayList<Dependency> dependencies = new ArrayList<Dependency>();
-    for (LibraryOrderEntry orderEntry : entries) {
-      Set<ModuleReference> modules = getModules(orderEntry.getLibrary());
-      for (ModuleReference reference : modules) {
-        dependencies.add(new Dependency(reference, orderEntry.isExported()));
-      }
-    }
-    return dependencies;
-  }
-
   private void addLibrary(final Library newLibrary) {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
