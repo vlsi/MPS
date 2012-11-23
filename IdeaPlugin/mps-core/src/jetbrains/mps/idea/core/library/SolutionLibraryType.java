@@ -36,6 +36,7 @@ import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.icons.MPSIcons;
+import jetbrains.mps.idea.core.project.ModuleRuntimeLibrariesImporter;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
@@ -112,7 +113,7 @@ public class SolutionLibraryType extends LibraryType<DummyLibraryProperties> {
     if (chosenElements.isEmpty()) {
       return null;
     }
-    String name = chosenElements.get(0).getModuleFqName();
+    String name = ModuleRuntimeLibrariesImporter.LIBRARY_PREFIX + chosenElements.get(0).getModuleFqName();
     if (chosenElements.size() > 1) {
       name += "...";
     }
