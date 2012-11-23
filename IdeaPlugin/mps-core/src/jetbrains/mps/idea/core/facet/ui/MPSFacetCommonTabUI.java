@@ -136,13 +136,13 @@ public class MPSFacetCommonTabUI implements IModuleConfigurationTab {
       protected void check(Dependency element, boolean value) {
         super.check(element, value);
         // If we reexport mps module then we should reexport its lib as well.
-        Library moduleLibrary = SolutionLibrariesIndex.getInstance(myContext.getProject()).getLibrary(element.getModuleRef());
-        if (moduleLibrary != null) {
-          LibraryOrderEntry libraryOrderEntry = myContext.getModifiableRootModel().findLibraryOrderEntry(moduleLibrary);
-          if (libraryOrderEntry != null) {
-            libraryOrderEntry.setExported(value);
-          }
-        }
+//        Library moduleLibrary = SolutionLibrariesIndex.getInstance(myContext.getProject()).getLibraries(element.getModuleRef());
+//        if (moduleLibrary != null) {
+//          LibraryOrderEntry libraryOrderEntry = myContext.getModifiableRootModel().findLibraryOrderEntry(moduleLibrary);
+//          if (libraryOrderEntry != null) {
+//            libraryOrderEntry.setExported(value);
+//          }
+//        }
       }
     };
 

@@ -16,34 +16,40 @@
 
 package jetbrains.mps.idea.core.library;
 
+import com.intellij.openapi.Disposable;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.roots.LibraryOrderEntry;
 import com.intellij.openapi.roots.OrderRootType;
+import com.intellij.openapi.roots.RootProvider;
+import com.intellij.openapi.roots.RootProvider.RootSetChangedListener;
 import com.intellij.openapi.roots.impl.libraries.ProjectLibraryTable;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryTable.Listener;
+import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.util.messages.Topic;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
+import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 import java.util.Map.Entry;
 
-public class SolutionLibrariesIndex implements ProjectComponent {
+public class SolutionLibrariesIndex implements ProjectComponent, Disposable {
   private final ProjectLibraryTable myProjectLibraryTable;
+  private final Project myProject;
   private final Map<Library, Set<ModuleReference>> mySolutionLibraries = new LinkedHashMap<Library, Set<ModuleReference>>();
   private final SolutionLibrariesIndex.MyListener myListener = new MyListener();
 
-  public SolutionLibrariesIndex(ProjectLibraryTable table) {
+  public SolutionLibrariesIndex(Project project, ProjectLibraryTable table) {
     myProjectLibraryTable = table;
+    myProject = project;
   }
 
   @Override
@@ -59,9 +65,10 @@ public class SolutionLibrariesIndex implements ProjectComponent {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        for (Library library : myProjectLibraryTable.getLibraries()) {
+        for (final Library library : myProjectLibraryTable.getLibraries()) {
           if (SolutionLibraryType.isSolutionLibrary(library)) {
             addLibraryImpl(library);
+            addRootsListener(library);
           }
         }
       }
@@ -69,8 +76,20 @@ public class SolutionLibrariesIndex implements ProjectComponent {
     myProjectLibraryTable.addListener(myListener);
   }
 
+  private void addRootsListener(final Library library) {
+    library.getRootProvider().addRootSetChangedListener(new RootSetChangedListener() {
+      @Override
+      public void rootSetChanged(RootProvider wrapper) {
+        mySolutionLibraries.remove(library);
+        addLibrary(library);
+        myProject.getMessageBus().syncPublisher(SolutionLibraryListener.LIBRARY_LISTENER_TOPIC).libraryChanged(library);
+      }
+    }, SolutionLibrariesIndex.this);
+  }
+
   @Override
   public void disposeComponent() {
+    Disposer.dispose(this);
     for (Library library : myProjectLibraryTable.getLibraries()) {
       mySolutionLibraries.remove(library);
     }
@@ -83,15 +102,15 @@ public class SolutionLibrariesIndex implements ProjectComponent {
     return "Solution Libraries Index";
   }
 
-  @Nullable
-  public Library getLibrary(ModuleReference reference) {
-    // todo what if there are several libs?
+  @NotNull
+  public Collection<Library> getLibraries(ModuleReference reference) {
+    Set<Library> libraries = new HashSet<Library>();
     for (Entry<Library, Set<ModuleReference>> entry : mySolutionLibraries.entrySet()) {
       if (entry.getValue().contains(reference)) {
-        return entry.getKey();
+        libraries.add(entry.getKey());
       }
     }
-    return null;
+    return libraries;
   }
 
   @NotNull
@@ -101,6 +120,17 @@ public class SolutionLibrariesIndex implements ProjectComponent {
       return new HashSet<ModuleReference>();
     }
     return moduleReferences;
+  }
+
+  public List<Dependency> calculateDependencies(Collection<LibraryOrderEntry> entries) {
+    ArrayList<Dependency> dependencies = new ArrayList<Dependency>();
+    for (LibraryOrderEntry orderEntry : entries) {
+      Set<ModuleReference> modules = getModules(orderEntry.getLibrary());
+      for (ModuleReference reference : modules) {
+        dependencies.add(new Dependency(reference, orderEntry.isExported()));
+      }
+    }
+    return dependencies;
   }
 
   private void addLibrary(final Library newLibrary) {
@@ -141,12 +171,17 @@ public class SolutionLibrariesIndex implements ProjectComponent {
     return project.getComponent(SolutionLibrariesIndex.class);
   }
 
+  @Override
+  public void dispose() {
+  }
+
   private class MyListener implements Listener {
 
     @Override
-    public void afterLibraryAdded(Library newLibrary) {
+    public void afterLibraryAdded(final Library newLibrary) {
       if (SolutionLibraryType.isSolutionLibrary(newLibrary)) {
         addLibrary(newLibrary);
+        addRootsListener(newLibrary);
       }
     }
 
@@ -164,4 +199,9 @@ public class SolutionLibrariesIndex implements ProjectComponent {
     }
   }
 
+  public interface SolutionLibraryListener {
+    Topic<SolutionLibraryListener> LIBRARY_LISTENER_TOPIC = new Topic<SolutionLibraryListener>("solution library was changed", SolutionLibraryListener.class);
+
+    void libraryChanged(Library library);
+  }
 }

@@ -118,16 +118,14 @@ public class ImportedSolutionsTable extends MpsElementsWithCheckboxesTable<Depen
 
   private List<Dependency> getImportedSolutions(MPSConfigurationBean data) {
     OrderEntry[] orderEntries = myContext.getModifiableRootModel().getOrderEntries();
-    ArrayList<Dependency> dependencies = new ArrayList<Dependency>();
+    List<LibraryOrderEntry> libraries = new ArrayList<LibraryOrderEntry>();
     for (OrderEntry orderEntry : orderEntries) {
       if (orderEntry instanceof LibraryOrderEntry) {
-        Set<ModuleReference> modules = SolutionLibrariesIndex.getInstance(myContext.getProject()).getModules(((LibraryOrderEntry) orderEntry).getLibrary());
-        for (ModuleReference reference : modules) {
-          dependencies.add(new Dependency(reference, ((LibraryOrderEntry) orderEntry).isExported()));
-        }
+        libraries.add((LibraryOrderEntry) orderEntry);
       }
     }
-    return dependencies;
+    // todo stub solutions
+    return SolutionLibrariesIndex.getInstance(myContext.getProject()).calculateDependencies(libraries);
   }
 
   @Override

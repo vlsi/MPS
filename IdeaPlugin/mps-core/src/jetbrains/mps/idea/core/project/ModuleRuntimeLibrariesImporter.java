@@ -23,7 +23,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.roots.libraries.Library;
-import com.intellij.openapi.roots.libraries.LibraryType;
 import com.intellij.openapi.roots.ui.configuration.libraryEditor.NewLibraryEditor;
 import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainer;
 import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainer.LibraryLevel;
@@ -77,9 +76,9 @@ public class ModuleRuntimeLibrariesImporter {
         continue;
       }
 
-      Library library = SolutionLibrariesIndex.getInstance(project).getLibrary(usedModule.getModuleReference());
-      if (library != null) {
-        projectLibs2Add.add(library);
+      Collection<Library> library = SolutionLibrariesIndex.getInstance(project).getLibraries(usedModule.getModuleReference());
+      if (!library.isEmpty()) {
+        projectLibs2Add.add(library.iterator().next());
       } else {
         Set<VirtualFile> stubFiles = SolutionLibraryType.getSolutionJars((Solution) usedModule);
         projectLibs2Create.put(usedModule.getModuleReference(), stubFiles);

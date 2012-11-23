@@ -25,11 +25,14 @@ import com.intellij.openapi.roots.*;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryTable.Listener;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.util.CommonProcessors.FindFirstProcessor;
+import com.intellij.util.CommonProcessors.FindProcessor;
 import com.intellij.util.Processor;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.library.SolutionLibrariesIndex;
+import jetbrains.mps.idea.core.library.SolutionLibrariesIndex.SolutionLibraryListener;
 import jetbrains.mps.idea.core.library.SolutionLibraryType;
 import jetbrains.mps.idea.core.project.stubs.AbstractJavaStubSolutionManager;
 import jetbrains.mps.project.ModuleId;
@@ -72,6 +75,7 @@ public class SolutionIdea extends Solution {
         if (myModule.getProject().equals(event.getSource())) {
           ModelAccess.instance().runWriteInEDT(new Runnable() {
             public void run() {
+              invalidateDependencies();
               // this is to prevent a delayed write to be executed after the module has already been disposed
               // TODO: find a better solution
               if (myModule.isDisposed()) return;
@@ -90,6 +94,21 @@ public class SolutionIdea extends Solution {
       @Override
       public void facetRemoved(@NotNull Facet facet) {
         handleFacetChanged(facet);
+      }
+    });
+    myConnection.subscribe(SolutionLibraryListener.LIBRARY_LISTENER_TOPIC, new SolutionLibraryListener() {
+      @Override
+      public void libraryChanged(final Library library) {
+        FindProcessor<OrderEntry> processor = new FindProcessor<OrderEntry>() {
+          @Override
+          protected boolean accept(OrderEntry orderEntry) {
+            return orderEntry instanceof LibraryOrderEntry && ((LibraryOrderEntry) orderEntry).getLibrary() == library;
+          }
+        };
+        ModuleRootManager.getInstance(myModule).orderEntries().forEach(processor);
+        if (processor.isFound()) {
+          invalidateDependencies();
+        }
       }
     });
   }
