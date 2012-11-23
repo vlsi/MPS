@@ -105,7 +105,7 @@ with_meet:
 
   public static SNode call_getDeclarationRuntimeType_1230319610063(SNode thisNode) {
     String rtCls = BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeClassName_1230472987259", new Object[]{}) + "." + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeSignature_1213877404927", new Object[]{});
-    SNode ice = MapSequence.fromMap(RuntimeUtils.getRuntimeClassifiersMap()).get(rtCls);
+    SNode ice = MapSequence.fromMap(RuntimeUtils.getStaticRuntimeClassifier()).get(rtCls);
     if (ice == null) {
       throw new RuntimeException("No classifier found:" + rtCls);
     }
@@ -135,7 +135,7 @@ with_meet:
 
   public static SNode call_getRuntimeType_1230319150573(SNode thisNode) {
     String rtCls = BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeClassName_1230472987259", new Object[]{}) + "." + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeSignature_1213877404927", new Object[]{});
-    SNode ice = MapSequence.fromMap(RuntimeUtils.getRuntimeClassifiersMap()).get(rtCls);
+    SNode ice = MapSequence.fromMap(RuntimeUtils.getStaticRuntimeClassifier()).get(rtCls);
     if (ice == null) {
       throw new RuntimeException("No classifier found:" + rtCls);
     }
@@ -165,7 +165,7 @@ with_meet:
 
   public static SNode call_getDeclarationRuntimeType_811905832257074290(SNode thisNode, SNode sample) {
     String rtCls = BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeClassName_1230472987259", new Object[]{}) + "." + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeSignature_1213877404927", new Object[]{});
-    SNode ice = MapSequence.fromMap(RuntimeUtils.getRuntimeClassifiersMap()).get(rtCls);
+    SNode ice = MapSequence.fromMap(RuntimeUtils.getStaticRuntimeClassifier()).get(rtCls);
     if (ice == null) {
       throw new RuntimeException("No classifier found:" + rtCls);
     }

@@ -20,7 +20,8 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
 public class RuntimeUtils {
-  private static Map<String, SNode> runtimeClassifiers = null;
+  private static Map<String, SNode> RUNTIME_CLASSIFIERS = null;
+  private static Map<String, SNode> STATIC_RUNTIME_CLASSIFIERS = null;
 
   public RuntimeUtils() {
   }
@@ -29,30 +30,61 @@ public class RuntimeUtils {
     return SNodeOperations.getModel(SLinkOperations.getTarget(_quotation_createNode_hadnfw_a0a0a0(), "classifier", false));
   }
 
+  public static SModel getStaticRuntimeModel() {
+    return SNodeOperations.getModel(SLinkOperations.getTarget(_quotation_createNode_hadnfw_a0a0a1(), "classifier", false));
+  }
+
   public static Map<String, SNode> getRuntimeClassifiersMap() {
     synchronized (RuntimeUtils.class) {
-      if (runtimeClassifiers == null) {
-        runtimeClassifiers = MapSequence.fromMap(new HashMap<String, SNode>());
+      if (RUNTIME_CLASSIFIERS == null) {
+        RUNTIME_CLASSIFIERS = MapSequence.fromMap(new HashMap<String, SNode>());
         for (SNode cls : SModelOperations.getNodes(getRuntimeModel(), "jetbrains.mps.baseLanguage.structure.Classifier")) {
-          MapSequence.fromMap(runtimeClassifiers).put(SPropertyOperations.getString(cls, "nestedName"), cls);
+          MapSequence.fromMap(RUNTIME_CLASSIFIERS).put(SPropertyOperations.getString(cls, "nestedName"), cls);
         }
         ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
           public void unload() {
             synchronized (RuntimeUtils.class) {
-              RuntimeUtils.runtimeClassifiers = null;
+              RuntimeUtils.RUNTIME_CLASSIFIERS = null;
             }
             ClassLoaderManager.getInstance().removeReloadHandler(this);
           }
         });
       }
     }
-    return runtimeClassifiers;
+    return RUNTIME_CLASSIFIERS;
+  }
+
+  public static Map<String, SNode> getStaticRuntimeClassifier() {
+    synchronized (RuntimeUtils.class) {
+      if (STATIC_RUNTIME_CLASSIFIERS == null) {
+        STATIC_RUNTIME_CLASSIFIERS = MapSequence.fromMap(new HashMap<String, SNode>());
+        for (SNode cls : SModelOperations.getNodes(getStaticRuntimeModel(), "jetbrains.mps.baseLanguage.structure.Classifier")) {
+          MapSequence.fromMap(STATIC_RUNTIME_CLASSIFIERS).put(SPropertyOperations.getString(cls, "nestedName"), cls);
+        }
+        ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
+          public void unload() {
+            synchronized (RuntimeUtils.class) {
+              STATIC_RUNTIME_CLASSIFIERS = null;
+            }
+            ClassLoaderManager.getInstance().removeReloadHandler(this);
+          }
+        });
+      }
+    }
+    return STATIC_RUNTIME_CLASSIFIERS;
   }
 
   private static SNode _quotation_createNode_hadnfw_a0a0a0() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#4c6a28d1-2c60-478d-b36e-db9b3cbb21fb#jetbrains.mps.baseLanguage.closures.runtime(closures.runtime/jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), SNodeId.fromString("~_UnrestrictedClosures")));
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_hadnfw_a0a0a1() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)"), SNodeId.fromString("5571879668402581510")));
     return quotedNode_1;
   }
 }
