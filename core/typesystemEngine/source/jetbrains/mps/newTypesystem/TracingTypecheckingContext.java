@@ -26,14 +26,10 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
  * Time: 4:17 PM
  * To change this template use File | Settings | File Templates.
  */
-public class TracingTypecheckingContext extends TypeCheckingContextNew{
+public class TracingTypecheckingContext extends SingleTypecheckingContext{
 
   public TracingTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
   }
 
-  @Override
-  public void checkRootInTraceMode(boolean refreshTypes) {
-    checkRoot(refreshTypes);
-  }
 }
