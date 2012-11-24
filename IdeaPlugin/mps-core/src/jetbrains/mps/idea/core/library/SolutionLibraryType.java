@@ -45,6 +45,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
+import java.awt.Component;
 import java.util.*;
 
 public class SolutionLibraryType extends LibraryType<DummyLibraryProperties> {
@@ -94,17 +95,7 @@ public class SolutionLibraryType extends LibraryType<DummyLibraryProperties> {
       }
     });
 
-    ChooseElementsDialog<ModuleReference> chooser = new ChooseElementsDialog<ModuleReference>(project, availableSolutions, MPSBundle.message("used.solutions.chooser.title"), null) {
-      @Override
-      protected String getItemText(ModuleReference item) {
-        return item.getModuleFqName();
-      }
-
-      @Override
-      protected Icon getItemIcon(ModuleReference item) {
-        return MPSIcons.SOLUTION_ICON;
-      }
-    };
+    ChooseElementsDialog<ModuleReference> chooser = new ModuleReferenceChooserDialog(project, availableSolutions);
     chooser.show();
     List<ModuleReference> chosenElements = chooser.getChosenElements();
     if (chosenElements.isEmpty()) {
@@ -200,17 +191,7 @@ public class SolutionLibraryType extends LibraryType<DummyLibraryProperties> {
               }
             });
 
-            ChooseElementsDialog<ModuleReference> chooser = new ChooseElementsDialog<ModuleReference>(parent, availableSolutions, MPSBundle.message("used.solutions.chooser.title")) {
-              @Override
-              protected String getItemText(ModuleReference item) {
-                return item.getModuleFqName();
-              }
-
-              @Override
-              protected Icon getItemIcon(ModuleReference item) {
-                return MPSIcons.SOLUTION_ICON;
-              }
-            };
+            ChooseElementsDialog<ModuleReference> chooser = new ModuleReferenceChooserDialog(parent, availableSolutions);
             chooser.show();
             List<ModuleReference> chosenElements = chooser.getChosenElements();
 
@@ -236,5 +217,25 @@ public class SolutionLibraryType extends LibraryType<DummyLibraryProperties> {
 
   public static SolutionLibraryType getInstance() {
     return LibraryType.EP_NAME.findExtension(SolutionLibraryType.class);
+  }
+
+  private static class ModuleReferenceChooserDialog extends ChooseElementsDialog<ModuleReference> {
+    public ModuleReferenceChooserDialog(Project project, List<ModuleReference> availableSolutions) {
+      super(project, availableSolutions, MPSBundle.message("used.solutions.chooser.title"), null);
+    }
+
+    private ModuleReferenceChooserDialog(Component parent, List<ModuleReference> availableSolutions) {
+      super(parent, availableSolutions, MPSBundle.message("used.solutions.chooser.title"));
+    }
+
+    @Override
+    protected String getItemText(ModuleReference item) {
+      return item.getModuleFqName();
+    }
+
+    @Override
+    protected Icon getItemIcon(ModuleReference item) {
+      return MPSIcons.SOLUTION_ICON;
+    }
   }
 }
