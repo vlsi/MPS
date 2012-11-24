@@ -20,7 +20,10 @@ import com.intellij.openapi.diff.DiffRequest;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.vcs.diff.ui.common.InvokeTextDiffAction;
@@ -31,7 +34,6 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.ui.ScrollPaneFactory;
 import java.awt.Dimension;
 import com.intellij.openapi.util.DimensionService;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
@@ -42,15 +44,18 @@ import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.wm.WindowManager;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.workbench.action.BaseAction;
-import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.vcs.diff.ui.common.ChangeColors;
+import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class ModelDifferenceDialog extends DialogWrapper {
@@ -63,6 +68,7 @@ public class ModelDifferenceDialog extends DialogWrapper {
   private boolean myRootsDialogInvoked = false;
   private boolean myGoingToNeighbour = false;
   private String[] myContentTitles;
+  private boolean myEditable;
 
   public ModelDifferenceDialog(final SModel oldModel, final SModel newModel, DiffRequest diffRequest) {
     super(diffRequest.getProject());
@@ -74,10 +80,13 @@ public class ModelDifferenceDialog extends DialogWrapper {
     assert myContentTitles.length == 2;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        setTitle("Difference for model: " + SModelOperations.getModelName(oldModel));
         myChangeSet = ChangeSetBuilder.buildChangeSet(oldModel, newModel, true);
         fillRootToChange();
       }
     });
+    myEditable = newModel.getModelDescriptor() instanceof EditableSModelDescriptor && check_vk52pz_a0a0i0a(SModelRepository.getInstance().getModelDescriptor(newModel.getSModelReference())) == newModel;
+
     myTree = new ModelDifferenceDialog.ModelDifferenceTree();
 
     DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new InvokeTextDiffAction("View as Text", "View model difference using as text difference of XML contents", this, diffRequest, DiffManager.getInstance().getIdeaDiffTool()));
@@ -89,11 +98,7 @@ public class ModelDifferenceDialog extends DialogWrapper {
     if (size == null) {
       myPanel.setPreferredSize(new Dimension(500, 700));
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        setTitle("Difference for model: " + SModelOperations.getModelName(oldModel));
-      }
-    });
+
     init();
   }
 
@@ -146,6 +151,10 @@ public class ModelDifferenceDialog extends DialogWrapper {
 
   /*package*/ Project getProject() {
     return myProject;
+  }
+
+  public boolean isEditable() {
+    return myEditable;
   }
 
   @Nullable
@@ -213,25 +222,64 @@ public class ModelDifferenceDialog extends DialogWrapper {
     return myMetadataChanges;
   }
 
+  private static SModel check_vk52pz_a0a0i0a(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSModel();
+    }
+    return null;
+  }
+
   private class ModelDifferenceTree extends DiffModelTree {
     private ModelDifferenceTree() {
       super(DiffTemporaryModule.getOperationContext(myProject, myChangeSet.getNewModel()));
     }
 
     protected Iterable<BaseAction> getRootActions() {
-      return Arrays.<BaseAction>asList(new InvokeRootDifferenceAction(ModelDifferenceDialog.this), new RevertRootsAction(ModelDifferenceDialog.this) {
-        protected SNodeId[] getRoots() {
-          return Sequence.fromIterable(Sequence.fromArray(getSelectedNodes(DiffModelTree.RootTreeNode.class, null))).select(new ISelector<DiffModelTree.RootTreeNode, SNodeId>() {
-            public SNodeId select(DiffModelTree.RootTreeNode rtn) {
-              return rtn.getRootId();
-            }
-          }).toGenericArray(SNodeId.class);
-        }
+      List<BaseAction> actions = ListSequence.fromList(new ArrayList<BaseAction>());
 
-        protected void after() {
-          ModelDifferenceDialog.this.rebuildChangeSet();
-        }
-      });
+      ListSequence.fromList(actions).addElement(new InvokeRootDifferenceAction(ModelDifferenceDialog.this));
+
+      if (myEditable) {
+        ListSequence.fromList(actions).addElement(new RevertRootsAction("roots") {
+          protected Iterable<ModelChange> getChanges() {
+            return Sequence.fromIterable(Sequence.fromArray(getSelectedNodes(DiffModelTree.RootTreeNode.class, null))).translate(new ITranslator2<DiffModelTree.RootTreeNode, ModelChange>() {
+              public Iterable<ModelChange> translate(DiffModelTree.RootTreeNode r) {
+                return (r.getRootId() == null ?
+                  getMetadataChanges() :
+                  getChangesForRoot(r.getRootId())
+                );
+              }
+            });
+          }
+
+          protected void after() {
+            ModelDifferenceDialog.this.rebuildChangeSet();
+          }
+
+          @Override
+          protected String getRevertTitle() {
+            Iterable<SNodeId> roots = Sequence.fromIterable(Sequence.fromArray(getSelectedNodes(DiffModelTree.RootTreeNode.class, null))).select(new ISelector<DiffModelTree.RootTreeNode, SNodeId>() {
+              public SNodeId select(DiffModelTree.RootTreeNode rtn) {
+                return rtn.getRootId();
+              }
+            });
+            if ((int) Sequence.fromIterable(roots).count() == 1) {
+              return (Sequence.fromIterable(roots).first() == null ?
+                "Properties" :
+                "Root"
+              );
+            } else if (Sequence.fromIterable(roots).any(new IWhereFilter<SNodeId>() {
+              public boolean accept(SNodeId r) {
+                return r == null;
+              }
+            })) {
+              return "Roots and Properties ";
+            }
+            return "Roots";
+          }
+        });
+      }
+      return actions;
     }
 
     protected void updateRootCustomPresentation(@NotNull DiffModelTree.RootTreeNode rootTreeNode) {

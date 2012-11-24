@@ -23,9 +23,9 @@ import java.awt.Component;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import javax.swing.JSplitPane;
-import jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser;
-import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Separator;
+import jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser;
+import jetbrains.mps.vcs.diff.changes.ModelChange;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.SwingUtilities;
@@ -43,7 +43,6 @@ import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
@@ -84,17 +83,23 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopPanel, myBottomPanel);
     splitPane.setResizeWeight(0.7);
 
+    myActionGroup = new DefaultActionGroup();
     RootDifferenceDialog.MyGoToNeighbourRootActions neighbourActions = new RootDifferenceDialog.MyGoToNeighbourRootActions();
+    myActionGroup.addAll(neighbourActions.previous(), neighbourActions.next(), Separator.getInstance());
     final NextPreviousTraverser neighbourTraverser = new NextPreviousTraverser(myChangeGroupLayouts, myNewEditor.getMainEditor());
-    myActionGroup = ActionUtils.groupFromActions(neighbourActions.previous(), neighbourActions.next(), Separator.getInstance(), neighbourTraverser.previousAction(), neighbourTraverser.nextAction(), Separator.getInstance(), new RevertRootsAction(myModelDialog) {
-      protected SNodeId[] getRoots() {
-        return new SNodeId[]{myRootId};
-      }
+    myActionGroup.addAll(neighbourTraverser.previousAction(), neighbourTraverser.nextAction(), Separator.getInstance());
+    if (myModelDialog.isEditable()) {
+      myActionGroup.add(new RevertRootsAction(rootName) {
+        protected Iterable<ModelChange> getChanges() {
+          return myModelDialog.getChangesForRoot(myRootId);
+        }
 
-      protected void after() {
-        rehighlight();
-      }
-    });
+        protected void after() {
+          rehighlight();
+        }
+      });
+    }
+
     myActionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myActionGroup, true);
     neighbourTraverser.setActionToolbar(myActionToolbar);
 
@@ -114,7 +119,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
       neighbourTraverser.goToFirstChangeLater();
     }
 
-    DisplayMode displayMode = check_vu2gar_a0db0a(check_vu2gar_a0a92a0(GraphicsEnvironment.getLocalGraphicsEnvironment()));
+    DisplayMode displayMode = check_vu2gar_a0hb0a(check_vu2gar_a0a33a0(GraphicsEnvironment.getLocalGraphicsEnvironment()));
     int width = (displayMode == null ?
       800 :
       displayMode.getWidth() - 100
@@ -264,14 +269,14 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     super.dispose();
   }
 
-  private static DisplayMode check_vu2gar_a0db0a(GraphicsDevice checkedDotOperand) {
+  private static DisplayMode check_vu2gar_a0hb0a(GraphicsDevice checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getDisplayMode();
     }
     return null;
   }
 
-  private static GraphicsDevice check_vu2gar_a0a92a0(GraphicsEnvironment checkedDotOperand) throws HeadlessException {
+  private static GraphicsDevice check_vu2gar_a0a33a0(GraphicsEnvironment checkedDotOperand) throws HeadlessException {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getDefaultScreenDevice();
     }
