@@ -38,9 +38,13 @@ import com.intellij.psi.*;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.java.psiStubs.PsiJavaStubModelRoot;
 import jetbrains.mps.ide.java.util.SolutionIds;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
+import jetbrains.mps.idea.core.project.ModelRootContributor;
+import jetbrains.mps.idea.core.project.ModelRootContributorManager;
+import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.idea.core.project.stubs.AbstractJavaStubSolutionManager;
 import jetbrains.mps.idea.core.project.stubs.JavaStubPsiListener;
 import jetbrains.mps.project.Solution;
@@ -52,6 +56,8 @@ import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.IOException;
 import java.util.*;
@@ -61,7 +67,7 @@ import java.util.*;
  * User: Daniil Elovkov
  * Date: 8/22/12
  */
-public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager implements ProjectComponent {
+public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager implements ProjectComponent, ModelRootContributor {
 
   private final Object LOCK = new Object();
 
@@ -137,6 +143,7 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
 
   private void activate() {
     synchronized (LOCK) {
+
       for (final Module mod: myModuleManager.getModules()) {
 
         // currently only modules with MPS facet, later should either take dependencies into account
@@ -257,47 +264,55 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
 
       final VirtualFile[] roots = ModuleRootManager.getInstance(module).getSourceRoots(false);
 
-      for (VirtualFile root: roots) {
-        System.out.println(" -- " + root);
-      }
+//      for (VirtualFile root: roots) {
+//        System.out.println(" -- " + root);
+//      }
+//
+//      final Solution solution = ModelAccess.instance().runWriteAction(new Computable<Solution>() {
+//        @Override
+//        public Solution compute() {
+//          Solution solution = addSolution(SOLUTION_NAME_PREFIX+module.getName(), roots);
+//          solution.updateModelsSet();
+//          myModulesToSolutions.put(module, solution);
+//          return solution;
+//        }
+//      });
+//
+//      for (SModelDescriptor desc: SModelRepository.getInstance().getModelDescriptors(solution)) {
+//        if (desc instanceof BaseStubModelDescriptor) {
+//          BaseStubModelDescriptor modelDesc = (BaseStubModelDescriptor)desc;
+//          FolderSetDataSource modelDataSource = (FolderSetDataSource) modelDesc.getSource();
+//          Collection<String> files = modelDataSource.getPaths();
+//
+//          System.out.println("Model: " + desc.getLongName());
+//          for (String f: files) {
+//            System.out.println("path: " + f);
+//            VirtualFile vfile = VirtualFileManager.getInstance().refreshAndFindFileByUrl("file://" + f);
+//            myListenedFiles.add( vfile );
+//            files2Models.put(vfile, modelDesc);
+//          }
+//        }
+//      }
 
-      final Solution solution = ModelAccess.instance().runWriteAction(new Computable<Solution>() {
-        @Override
-        public Solution compute() {
-          Solution solution = addSolution(SOLUTION_NAME_PREFIX+module.getName(), roots);
-          solution.updateModelsSet();
-          myModulesToSolutions.put(module, solution);
-          return solution;
-        }
-      });
+//      MPSFacet mpsFacet = getMpsFacet(module);
+//      mpsFacet.contributeModelRoot( new PsiJavaStubModelRoot(module) );
+//      mpsFacet.updateModels();
 
-      for (SModelDescriptor desc: SModelRepository.getInstance().getModelDescriptors(solution)) {
-        if (desc instanceof BaseStubModelDescriptor) {
-          BaseStubModelDescriptor modelDesc = (BaseStubModelDescriptor)desc;
-          FolderSetDataSource modelDataSource = (FolderSetDataSource) modelDesc.getSource();
-          Collection<String> files = modelDataSource.getPaths();
-
-          System.out.println("Model: " + desc.getLongName());
-          for (String f: files) {
-            System.out.println("path: " + f);
-            VirtualFile vfile = VirtualFileManager.getInstance().refreshAndFindFileByUrl("file://" + f);
-            myListenedFiles.add( vfile );
-            files2Models.put(vfile, modelDesc);
-          }
-        }
-      }
+      ModelRootContributorManager mgr = myProject.getComponent(ModelRootContributorManager.class);
+      mgr.addContributor(this);
 
       // we suppose that module has MPS facet for now, see activate()
-      StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
-        // we use runWhenProjectInitialized because it's how MPSFacet is initialized
-        // and we use MPSFacet.getSolution
-        @Override
-        public void run() {
-          MPSFacet mpsFacet = getMpsFacet(module);
-          Solution facetSolution = mpsFacet.getSolution();
-          facetSolution.addDependency(solution.getModuleReference(), false);
-        }
-      });
+//      StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
+//        // we use runWhenProjectInitialized because it's how MPSFacet is initialized
+//        // and we use MPSFacet.getSolution
+//        @Override
+//        public void run() {
+//          MPSFacet mpsFacet = getMpsFacet(module);
+//          Solution facetSolution = mpsFacet.getSolution();
+////          facetSolution.addDependency(solution.getModuleReference(), false);
+//          ((SolutionIdea)facetSolution).addModelRoot( new PsiJavaStubModelRoot(module) );
+//        }
+//      });
 
 //      MPSFacet mpsFacet = getMpsFacet(module);
 //      if (mpsFacet!=null) {
@@ -330,6 +345,13 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
       if (myPsiListener!=null) myPsiManager.removePsiTreeChangeListener(myPsiListener);
       myPsiManager.addPsiTreeChangeListener(myPsiListener);
     }
+  }
+
+  @Override
+  public Iterable<ModelRoot> getModelRoots(Module module) {
+    List<ModelRoot> singleton = new ArrayList<ModelRoot>(1);
+    singleton.add( new PsiJavaStubModelRoot(module) );
+    return singleton;
   }
 
   class MPSFacetWatcher extends FacetManagerAdapter {

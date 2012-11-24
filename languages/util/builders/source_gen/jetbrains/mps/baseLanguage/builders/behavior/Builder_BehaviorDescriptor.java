@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.builders.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public abstract class Builder_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public Builder_BehaviorDescriptor() {
@@ -23,6 +24,10 @@ public abstract class Builder_BehaviorDescriptor extends BaseConcept_BehaviorDes
 
   public boolean virtual_isLeaf_7057666463730595159(SNode thisNode) {
     return Builder_Behavior.virtual_isLeaf_7057666463730595159(thisNode);
+  }
+
+  public boolean virtual_leaf_1262430001741498370(SConcept thisConcept) {
+    return Builder_Behavior.virtual_leaf_1262430001741498370(thisConcept);
   }
 
   @Override

@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class StaticFieldReference_BehaviorDescriptor extends VariableReference_BehaviorDescriptor {
   public StaticFieldReference_BehaviorDescriptor() {
@@ -19,6 +20,10 @@ public class StaticFieldReference_BehaviorDescriptor extends VariableReference_B
 
   public boolean virtual_isCompileTimeConstant_1238860258777(SNode thisNode) {
     return StaticFieldReference_Behavior.virtual_isCompileTimeConstant_1238860258777(thisNode);
+  }
+
+  public boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
+    return StaticFieldReference_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
   }
 
   @Override

@@ -4,11 +4,11 @@ package smodelLanguage.samples;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class LinkRef {
   public void test1() {
     SNode link = SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", "operation");
-    boolean singular = LinkDeclaration_Behavior.call_isSingular_1213877254557(link);
+    boolean singular = BehaviorReflection.invokeNonVirtual(Boolean.TYPE, link, "jetbrains.mps.lang.structure.structure.LinkDeclaration", "call_isSingular_1213877254557", new Object[]{});
   }
 }

@@ -64,7 +64,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 23:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
       case 24:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguageInternal.structure.WeakClassReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"classifier"});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguageInternal.structure.WeakClassReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{"classifier"});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

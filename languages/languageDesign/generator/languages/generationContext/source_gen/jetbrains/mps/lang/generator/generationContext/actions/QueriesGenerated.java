@@ -17,7 +17,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 
 public class QueriesGenerated {
@@ -77,7 +77,7 @@ public class QueriesGenerated {
         public Object compute() {
           return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"), _context.getModel(), operationContext.getScope())).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return !(SConceptPropertyOperations.getBoolean(it, "abstract"));
+              return !(SPropertyOperations.getBoolean(it, "abstract"));
             }
           }).toListSequence();
         }

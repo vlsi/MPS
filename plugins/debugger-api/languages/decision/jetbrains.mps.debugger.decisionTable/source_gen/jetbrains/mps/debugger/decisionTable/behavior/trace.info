@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="CaseExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.behavior.CaseExpression_BehaviorDescriptor" />
-  <unitInfo fileName="DecideOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.behavior.DecideOperation_BehaviorDescriptor" />
+  <unitInfo fileName="DecideOperation_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.behavior.DecideOperation_BehaviorDescriptor" />
   <unitInfo fileName="DecisionTableType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.behavior.DecisionTableType_BehaviorDescriptor" />
   <unitInfo fileName="DecisionTable_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.behavior.DecisionTable_BehaviorDescriptor" />
   <unitInfo fileName="XVariableReference_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.behavior.XVariableReference_BehaviorDescriptor" />

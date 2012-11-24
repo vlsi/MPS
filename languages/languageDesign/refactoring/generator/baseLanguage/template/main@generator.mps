@@ -472,7 +472,6 @@
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1199462183252">
-                        <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcb.1213877273475" resolveInfo="getKeyStroke" />
                       </node>
                     </node>
@@ -512,8 +511,8 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1199462152347">
           <node role="expression" roleId="tpee.1068581517676" type="tp68.InternalStaticMethodCall" typeId="tp68.1173990517731" id="1199462192035">
-            <property name="methodName" nameId="tp68.1173992444083" value="getKeyStroke_static" />
             <property name="fqClassName" nameId="tp68.1173992483054" value="overridenRefactoringClassFQName" />
+            <property name="methodName" nameId="tp68.1173992444083" value="getKeyStroke_static" />
             <node role="returnType" roleId="tp68.1175794062018" type="tpee.StringType" typeId="tpee.1225271177708" id="1225192950222" />
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1199462256695">
               <property name="propertyName" nameId="tpck.1757699476691236117" value="fqClassName" />
@@ -1026,8 +1025,8 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1789893890062506470">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1789893890062506471">
           <node role="expression" roleId="tpee.1068581517676" type="tp68.InternalStaticFieldReference" typeId="tp68.1173995204289" id="1789893890062506472">
-            <property name="fieldName" nameId="tp68.1173995466678" value="class" />
             <property name="fqClassName" nameId="tp68.1173995448817" value="overridenRefactoringClassFQName" />
+            <property name="fieldName" nameId="tp68.1173995466678" value="class" />
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1789893890062506473">
               <property name="propertyName" nameId="tpck.1757699476691236117" value="fqClassName" />
               <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="1789893890062506474">
@@ -2683,7 +2682,6 @@
                           </node>
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="4192433084863764069">
-                          <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp3f.1213877240120" resolveInfo="getGeneratedClassLongName" />
                         </node>
                       </node>
@@ -3413,8 +3411,8 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="478744034994714825">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="478744034994714826">
           <node role="expression" roleId="tpee.1068581517676" type="tp68.InternalStaticFieldReference" typeId="tp68.1173995204289" id="478744034994714827">
-            <property name="fieldName" nameId="tp68.1173995466678" value="class" />
             <property name="fqClassName" nameId="tp68.1173995448817" value="overridenRefactoringClassFQName" />
+            <property name="fieldName" nameId="tp68.1173995466678" value="class" />
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="478744034994714828">
               <property name="propertyName" nameId="tpck.1757699476691236117" value="fqClassName" />
               <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="478744034994714829">
@@ -5321,8 +5319,8 @@
   </root>
   <root id="4347648036456713378">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4347648036456713383">
-      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="RefactoringClass" />
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="4347648036456713389">
         <property name="name" nameId="tpck.1169194664001" value="getModelsToGenerate" />

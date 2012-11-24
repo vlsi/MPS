@@ -3,19 +3,33 @@
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="ExtensionDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="ExtensionFieldDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionFieldDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="ExtensionFieldReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionFieldReference_BehaviorDescriptor" />
+  <unitInfo fileName="ExtensionFieldReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionFieldReference_BehaviorDescriptor" />
   <unitInfo fileName="ExtensionFunction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionFunction_BehaviorDescriptor" />
   <unitInfo fileName="ExtensionObjectGetter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionObjectGetter_BehaviorDescriptor" />
   <unitInfo fileName="ExtensionPointDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionPointDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="ExtensionPointExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionPointExpression_BehaviorDescriptor" />
   <unitInfo fileName="ExtensionPointType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionPointType_BehaviorDescriptor" />
   <unitInfo fileName="GetExtensionObjectsOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.GetExtensionObjectsOperation_BehaviorDescriptor" />
+  <root nodeId="1262430001741719871" modelId="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)">
+    <nodeInfo nodeId="1262430001741719869" fileName="ExtensionFieldReference_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741719871" fileName="ExtensionFieldReference_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741719871" fileName="ExtensionFieldReference_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_lvalue_1262430001741497939#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <scopeInfo nodeId="1262430001741719873" fileName="ExtensionFieldReference_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741719868" fileName="ExtensionFieldReference_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1262430001741719871" fileName="ExtensionFieldReference_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741719871" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741719871" fileName="ExtensionFieldReference_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741719871" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741719871" fileName="ExtensionFieldReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionFieldReference_Behavior" />
+  </root>
   <root nodeId="3175313036448544059" modelId="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)">
-    <nodeInfo nodeId="3175313036448550135" fileName="ExtensionPointType_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3175313036448550135" fileName="ExtensionPointType_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3175313036448544059" fileName="ExtensionPointType_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="3175313036448544059" fileName="ExtensionPointType_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="3175313036448544061" fileName="ExtensionPointType_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="3175313036448550127" fileName="ExtensionPointType_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="190" />
+    <scopeInfo nodeId="3175313036448550127" fileName="ExtensionPointType_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="229" />
     <scopeInfo nodeId="3175313036448544059" fileName="ExtensionPointType_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="3175313036448544059" varName="thisNode" />
     </scopeInfo>
@@ -74,11 +88,11 @@
     <unitInfo nodeId="63012922130945360" fileName="ExtensionPointDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionPointDeclaration_Behavior" />
   </root>
   <root nodeId="6626851894249712499" modelId="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)">
-    <nodeInfo nodeId="6626851894249714912" fileName="ExtensionPointExpression_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6626851894249714912" fileName="ExtensionPointExpression_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6626851894249712499" fileName="ExtensionPointExpression_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="6626851894249712499" fileName="ExtensionPointExpression_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="6626851894249712501" fileName="ExtensionPointExpression_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="6626851894249712646" fileName="ExtensionPointExpression_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="181" />
+    <scopeInfo nodeId="6626851894249712646" fileName="ExtensionPointExpression_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="220" />
     <scopeInfo nodeId="6626851894249712499" fileName="ExtensionPointExpression_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="6626851894249712499" varName="thisNode" />
     </scopeInfo>

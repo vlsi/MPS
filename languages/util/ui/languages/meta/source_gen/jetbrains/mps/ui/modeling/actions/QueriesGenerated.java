@@ -19,7 +19,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -59,7 +59,7 @@ public class QueriesGenerated {
               }
 
               public String getMatchingText(String pattern) {
-                return SConceptPropertyOperations.getString((item), "alias");
+                return SPropertyOperations.getString((item), "conceptAlias");
               }
 
               public String getVisibleMatchingText(String pattern) {

@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="b25nljxab4y677fm9nmd7ndxvh5io0u">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.dataFlow.framework(MPS.Core/jetbrains.mps.lang.dataFlow.framework@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2eqrjs8emy551teprj5no9utk82ifsq" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="bavz98vwxhwhpog89k63m5eu2e8cbl3" />
   <common hash="-6o2r31kv5h9ek8vb9mholhh9b143hot" />
   <source id="752944717341761987" name="DataFlowConstructor" hash="4pjq0p5c8sd58p5cwd7s8j16njck87a">
     <file name="DataFlowConstructor.java" />
   </source>
   <source id="178770917832659559" name="CustomAnalyzerRunner" hash="7u7a6l8nlhsil9ha0qhryy6mkbk4l5f">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.dataFlow.framework(MPS.Core/jetbrains.mps.lang.dataFlow.framework@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="CustomAnalyzerRunner.java" />
   </source>
   <source id="7801926404027364448" name="GeneratedInstruction" hash="-4mms14suyetpfsw87n31e3ke8l1lbni">

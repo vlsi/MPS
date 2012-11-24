@@ -16,7 +16,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
@@ -232,7 +232,7 @@ public class AbstractContainerCreator_Component extends AbstractCellProvider {
       public String getText() {
         return (SPropertyOperations.getString(node, "alias") != null ?
           SPropertyOperations.getString(node, "alias") :
-          SConceptPropertyOperations.getString(node, "alias")
+          SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias")
         );
       }
 

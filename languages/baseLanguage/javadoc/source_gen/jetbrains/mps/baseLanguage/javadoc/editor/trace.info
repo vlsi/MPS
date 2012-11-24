@@ -729,140 +729,121 @@
     <unitInfo nodeId="2068944020170241615" fileName="ClassifierDocComment_Editor.java" startLine="28" startPosition="0" endLine="455" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ClassifierDocComment_Editor" />
   </root>
   <root nodeId="2217234381367049475" modelId="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)">
-    <nodeInfo nodeId="2217234381367049475" fileName="CodeInlineDocTag_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="28" startPosition="89" endLine="29" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="29" startPosition="96" endLine="30" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="29" startPosition="96" endLine="30" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="30" startPosition="48" endLine="31" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="30" startPosition="48" endLine="31" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="31" startPosition="88" endLine="32" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="31" startPosition="88" endLine="32" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="32" startPosition="84" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="36" startPosition="91" endLine="37" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="37" startPosition="121" endLine="38" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="38" startPosition="106" endLine="39" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="38" startPosition="106" endLine="39" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="39" startPosition="45" endLine="40" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="40" startPosition="49" endLine="41" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="44" startPosition="95" endLine="45" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="45" startPosition="89" endLine="46" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="46" startPosition="30" endLine="47" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="47" startPosition="43" endLine="48" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="48" startPosition="26" endLine="49" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="49" startPosition="58" endLine="50" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="50" startPosition="50" endLine="51" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="51" startPosition="90" endLine="52" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="52" startPosition="73" endLine="53" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="53" startPosition="57" endLine="54" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="55" startPosition="35" endLine="56" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="56" startPosition="72" endLine="57" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="57" startPosition="78" endLine="58" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="59" startPosition="10" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="64" startPosition="96" endLine="65" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="68" startPosition="66" endLine="69" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="69" startPosition="41" endLine="70" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="73" startPosition="86" endLine="74" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="74" startPosition="80" endLine="75" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="75" startPosition="95" endLine="76" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="79" startPosition="68" endLine="80" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="80" startPosition="34" endLine="81" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="81" startPosition="55" endLine="82" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="82" startPosition="87" endLine="83" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="87" startPosition="96" endLine="88" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="89" startPosition="34" endLine="90" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="92" startPosition="131" endLine="93" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="49" startPosition="58" endLine="51" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2217234381367049475" fileName="CodeInlineDocTag_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="lineListHandler_xp1rdu_b0#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="88" startPosition="134" endLine="91" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="91" startPosition="9" endLine="94" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="48" startPosition="26" endLine="52" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="73" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="54" startPosition="59" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="79" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_xp1rdu_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="36" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_xp1rdu_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="86" startPosition="132" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="86" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="44" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConceptProperty_xp1rdu_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <scopeInfo nodeId="2217234381367049475" fileName="CodeInlineDocTag_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" />
-    <scopeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="29" startPosition="96" endLine="30" endPosition="48" />
-    <scopeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="30" startPosition="48" endLine="31" endPosition="88" />
-    <scopeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="31" startPosition="88" endLine="32" endPosition="84" />
-    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="38" startPosition="106" endLine="39" endPosition="45" />
-    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="64" startPosition="96" endLine="65" endPosition="50" />
-    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="89" startPosition="34" endLine="90" endPosition="95" />
-    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="92" startPosition="131" endLine="93" endPosition="139" />
-    <scopeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="49" startPosition="58" endLine="51" endPosition="90" />
-    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="68" startPosition="66" endLine="70" endPosition="93">
+    <nodeInfo nodeId="2217234381367049475" fileName="CodeInlineDocTag_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="26" startPosition="89" endLine="27" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="27" startPosition="96" endLine="28" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="27" startPosition="96" endLine="28" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="28" startPosition="48" endLine="29" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="28" startPosition="48" endLine="29" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="29" startPosition="82" endLine="30" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="29" startPosition="82" endLine="30" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="30" startPosition="84" endLine="31" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2886182022232400026" fileName="CodeInlineDocTag_Editor.java" startLine="34" startPosition="89" endLine="35" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400026" fileName="CodeInlineDocTag_Editor.java" startLine="35" startPosition="67" endLine="36" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400026" fileName="CodeInlineDocTag_Editor.java" startLine="36" startPosition="69" endLine="37" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2886182022232400026" fileName="CodeInlineDocTag_Editor.java" startLine="36" startPosition="69" endLine="37" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2886182022232400026" fileName="CodeInlineDocTag_Editor.java" startLine="37" startPosition="90" endLine="38" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="41" startPosition="91" endLine="42" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="42" startPosition="121" endLine="43" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="43" startPosition="106" endLine="44" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="43" startPosition="106" endLine="44" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="44" startPosition="45" endLine="45" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="45" startPosition="49" endLine="46" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="50" startPosition="96" endLine="51" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="54" startPosition="66" endLine="55" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="55" startPosition="41" endLine="56" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="59" startPosition="86" endLine="60" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="60" startPosition="80" endLine="61" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="61" startPosition="95" endLine="62" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="65" startPosition="68" endLine="66" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="66" startPosition="34" endLine="67" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="67" startPosition="55" endLine="68" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="68" startPosition="87" endLine="69" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="73" startPosition="96" endLine="74" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="75" startPosition="34" endLine="76" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="78" startPosition="131" endLine="79" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2217234381367049475" fileName="CodeInlineDocTag_Editor.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="lineListHandler_xp1rdu_b0#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="74" startPosition="134" endLine="77" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="77" startPosition="9" endLine="80" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="59" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2886182022232400026" fileName="CodeInlineDocTag_Editor.java" startLine="34" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_xp1rdu_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="65" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="26" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_xp1rdu_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="41" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_xp1rdu_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="72" startPosition="132" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="72" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="2217234381367049475" fileName="CodeInlineDocTag_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" />
+    <scopeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="27" startPosition="96" endLine="28" endPosition="48" />
+    <scopeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="28" startPosition="48" endLine="29" endPosition="82" />
+    <scopeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="29" startPosition="82" endLine="30" endPosition="84" />
+    <scopeInfo nodeId="2886182022232400026" fileName="CodeInlineDocTag_Editor.java" startLine="36" startPosition="69" endLine="37" endPosition="90" />
+    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="43" startPosition="106" endLine="44" endPosition="45" />
+    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="50" startPosition="96" endLine="51" endPosition="50" />
+    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="75" startPosition="34" endLine="76" endPosition="95" />
+    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="78" startPosition="131" endLine="79" endPosition="139" />
+    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="54" startPosition="66" endLine="56" endPosition="93">
       <varInfo nodeId="3106559687488742051" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="2217234381367049475" fileName="CodeInlineDocTag_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="2217234381367049475" fileName="CodeInlineDocTag_Editor.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="2217234381367049475" varName="editorContext" />
       <varInfo nodeId="2217234381367049475" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="55" startPosition="35" endLine="58" endPosition="105">
-      <varInfo nodeId="2217234381367103891" varName="manager" />
-      <varInfo nodeId="2217234381367103891" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="64" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="50" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="3106559687488742051" varName="childRole" />
       <varInfo nodeId="3106559687488742051" varName="context" />
       <varInfo nodeId="3106559687488742051" varName="ownerNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="73" startPosition="86" endLine="76" endPosition="25">
+    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="59" startPosition="86" endLine="62" endPosition="25">
       <varInfo nodeId="3106559687488742051" varName="elementCell" />
     </scopeInfo>
-    <scopeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="48" startPosition="26" endLine="52" endPosition="73" />
-    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="68" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="2886182022232400026" fileName="CodeInlineDocTag_Editor.java" startLine="34" startPosition="89" endLine="38" endPosition="22">
+      <varInfo nodeId="2886182022232400026" varName="editorCell" />
+      <varInfo nodeId="2886182022232400026" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="3106559687488742051" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="79" startPosition="68" endLine="83" endPosition="23">
+    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="65" startPosition="68" endLine="69" endPosition="23">
       <varInfo nodeId="3106559687488742051" varName="emptyCell" />
     </scopeInfo>
-    <scopeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="28" startPosition="89" endLine="33" endPosition="22">
+    <scopeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="26" startPosition="89" endLine="31" endPosition="22">
       <varInfo nodeId="2217234381367049477" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="36" startPosition="91" endLine="41" endPosition="22">
+    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="41" startPosition="91" endLine="46" endPosition="22">
       <varInfo nodeId="3106559687488742051" varName="editorCell" />
       <varInfo nodeId="3106559687488742051" varName="handler" />
     </scopeInfo>
-    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="73" startPosition="0" endLine="78" endPosition="0">
+    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="59" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="3106559687488742051" varName="editorContext" />
       <varInfo nodeId="3106559687488742051" varName="elementNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="79" startPosition="0" endLine="85" endPosition="0">
+    <scopeInfo nodeId="2886182022232400026" fileName="CodeInlineDocTag_Editor.java" startLine="34" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="2886182022232400026" varName="editorContext" />
+      <varInfo nodeId="2886182022232400026" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="65" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="3106559687488742051" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="28" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="2217234381367049477" fileName="CodeInlineDocTag_Editor.java" startLine="26" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="2217234381367049477" varName="editorContext" />
       <varInfo nodeId="2217234381367049477" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="41" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="3106559687488742051" varName="editorContext" />
       <varInfo nodeId="3106559687488742051" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="87" startPosition="96" endLine="94" endPosition="9" />
-    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="86" startPosition="132" endLine="95" endPosition="7" />
-    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="86" startPosition="0" endLine="97" endPosition="0">
+    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="73" startPosition="96" endLine="80" endPosition="9" />
+    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="72" startPosition="132" endLine="81" endPosition="7" />
+    <scopeInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="72" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="3106559687488742051" varName="editorContext" />
       <varInfo nodeId="3106559687488742051" varName="elementCell" />
       <varInfo nodeId="3106559687488742051" varName="elementNode" />
       <varInfo nodeId="3106559687488742051" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="44" startPosition="95" endLine="60" endPosition="22">
-      <varInfo nodeId="2217234381367103891" varName="attributeConcept" />
-      <varInfo nodeId="2217234381367103891" varName="attributeKind" />
-      <varInfo nodeId="2217234381367103891" varName="editorCell" />
-      <varInfo nodeId="2217234381367103891" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="2217234381367103891" fileName="CodeInlineDocTag_Editor.java" startLine="44" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="2217234381367103891" varName="editorContext" />
-      <varInfo nodeId="2217234381367103891" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="63" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CodeInlineDocTag_Editor$lineListHandler_xp1rdu_b0" />
-    <unitInfo nodeId="2217234381367049475" fileName="CodeInlineDocTag_Editor.java" startLine="23" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CodeInlineDocTag_Editor" />
+    <unitInfo nodeId="3106559687488742051" fileName="CodeInlineDocTag_Editor.java" startLine="49" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CodeInlineDocTag_Editor$lineListHandler_xp1rdu_b0" />
+    <unitInfo nodeId="2217234381367049475" fileName="CodeInlineDocTag_Editor.java" startLine="21" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CodeInlineDocTag_Editor" />
   </root>
   <root nodeId="2217234381367188010" modelId="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)">
     <nodeInfo nodeId="2217234381367530205" fileName="FieldDocReference_Editor.java" startLine="35" startPosition="58" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1357,175 +1338,156 @@
     <unitInfo nodeId="2546654756694876815" fileName="BaseDocReference_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.BaseDocReference_Editor" />
   </root>
   <root nodeId="2546654756694997557" modelId="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)">
-    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="51" startPosition="58" endLine="51" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2546654756694997557" fileName="LinkInlineDocTag_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="29" startPosition="89" endLine="30" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="31" startPosition="48" endLine="32" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="31" startPosition="48" endLine="32" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="32" startPosition="88" endLine="33" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="32" startPosition="88" endLine="33" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="33" startPosition="80" endLine="34" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="33" startPosition="80" endLine="34" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="34" startPosition="84" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="38" startPosition="91" endLine="39" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="39" startPosition="121" endLine="40" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="40" startPosition="106" endLine="41" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="40" startPosition="106" endLine="41" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="41" startPosition="45" endLine="42" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="42" startPosition="49" endLine="43" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="46" startPosition="87" endLine="47" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="47" startPosition="81" endLine="48" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="48" startPosition="34" endLine="49" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="49" startPosition="47" endLine="50" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="50" startPosition="26" endLine="51" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="51" startPosition="58" endLine="52" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="52" startPosition="73" endLine="53" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="53" startPosition="57" endLine="54" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="55" startPosition="35" endLine="56" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="56" startPosition="72" endLine="57" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="57" startPosition="78" endLine="58" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="59" startPosition="10" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="63" startPosition="95" endLine="64" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="64" startPosition="89" endLine="65" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="65" startPosition="30" endLine="66" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="66" startPosition="43" endLine="67" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="67" startPosition="26" endLine="68" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="68" startPosition="58" endLine="69" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="69" startPosition="50" endLine="70" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="70" startPosition="90" endLine="71" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="71" startPosition="73" endLine="72" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="72" startPosition="57" endLine="73" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="74" startPosition="35" endLine="75" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="75" startPosition="72" endLine="76" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="76" startPosition="78" endLine="77" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="78" startPosition="10" endLine="79" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="83" startPosition="96" endLine="84" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="87" startPosition="66" endLine="88" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="88" startPosition="41" endLine="89" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="92" startPosition="86" endLine="93" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="93" startPosition="80" endLine="94" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="94" startPosition="95" endLine="95" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="98" startPosition="68" endLine="99" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="99" startPosition="34" endLine="100" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="100" startPosition="55" endLine="101" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="101" startPosition="87" endLine="102" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="106" startPosition="96" endLine="107" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="108" startPosition="34" endLine="109" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="111" startPosition="131" endLine="112" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="50" startPosition="26" endLine="52" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="68" startPosition="58" endLine="70" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2546654756694997557" fileName="LinkInlineDocTag_Editor.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="83" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="lineListHandler_bju3wr_c0#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="107" startPosition="134" endLine="110" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="110" startPosition="9" endLine="113" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="67" startPosition="26" endLine="71" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="87" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="92" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="54" startPosition="59" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="73" startPosition="59" endLine="79" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="98" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_bju3wr_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="29" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_bju3wr_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="105" startPosition="132" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="105" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="46" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_bju3wr_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="63" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConceptProperty_bju3wr_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <scopeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="51" startPosition="58" endLine="51" endPosition="58" />
-    <scopeInfo nodeId="2546654756694997557" fileName="LinkInlineDocTag_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" />
-    <scopeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="48" />
-    <scopeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="31" startPosition="48" endLine="32" endPosition="88" />
-    <scopeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="32" startPosition="88" endLine="33" endPosition="80" />
-    <scopeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="33" startPosition="80" endLine="34" endPosition="84" />
-    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="40" startPosition="106" endLine="41" endPosition="45" />
-    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="83" startPosition="96" endLine="84" endPosition="50" />
-    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="108" startPosition="34" endLine="109" endPosition="95" />
-    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="111" startPosition="131" endLine="112" endPosition="139" />
-    <scopeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="50" startPosition="26" endLine="52" endPosition="73" />
-    <scopeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="68" startPosition="58" endLine="70" endPosition="90" />
-    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="87" startPosition="66" endLine="89" endPosition="93">
+    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="59" startPosition="58" endLine="59" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2546654756694997557" fileName="LinkInlineDocTag_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="30" startPosition="89" endLine="31" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="31" startPosition="96" endLine="32" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="31" startPosition="96" endLine="32" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="32" startPosition="48" endLine="33" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="32" startPosition="48" endLine="33" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="33" startPosition="82" endLine="34" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="33" startPosition="82" endLine="34" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="34" startPosition="80" endLine="35" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="34" startPosition="80" endLine="35" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="35" startPosition="84" endLine="36" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2886182022232400072" fileName="LinkInlineDocTag_Editor.java" startLine="39" startPosition="89" endLine="40" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400072" fileName="LinkInlineDocTag_Editor.java" startLine="40" startPosition="67" endLine="41" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400072" fileName="LinkInlineDocTag_Editor.java" startLine="41" startPosition="69" endLine="42" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2886182022232400072" fileName="LinkInlineDocTag_Editor.java" startLine="41" startPosition="69" endLine="42" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2886182022232400072" fileName="LinkInlineDocTag_Editor.java" startLine="42" startPosition="90" endLine="43" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="46" startPosition="91" endLine="47" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="47" startPosition="121" endLine="48" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="48" startPosition="106" endLine="49" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="48" startPosition="106" endLine="49" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="49" startPosition="45" endLine="50" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="50" startPosition="49" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="54" startPosition="87" endLine="55" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="55" startPosition="81" endLine="56" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="56" startPosition="34" endLine="57" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="57" startPosition="47" endLine="58" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="58" startPosition="26" endLine="59" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="59" startPosition="58" endLine="60" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="60" startPosition="73" endLine="61" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="61" startPosition="57" endLine="62" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="63" startPosition="35" endLine="64" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="64" startPosition="72" endLine="65" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="65" startPosition="78" endLine="66" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="67" startPosition="10" endLine="68" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="72" startPosition="96" endLine="73" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="76" startPosition="66" endLine="77" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="77" startPosition="41" endLine="78" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="81" startPosition="86" endLine="82" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="82" startPosition="80" endLine="83" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="83" startPosition="95" endLine="84" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="87" startPosition="68" endLine="88" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="88" startPosition="34" endLine="89" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="89" startPosition="55" endLine="90" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="90" startPosition="87" endLine="91" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="95" startPosition="96" endLine="96" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="97" startPosition="34" endLine="98" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="100" startPosition="131" endLine="101" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="58" startPosition="26" endLine="60" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2546654756694997557" fileName="LinkInlineDocTag_Editor.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="lineListHandler_bju3wr_c0#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="96" startPosition="134" endLine="99" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="99" startPosition="9" endLine="102" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="81" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2886182022232400072" fileName="LinkInlineDocTag_Editor.java" startLine="39" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_bju3wr_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="62" startPosition="59" endLine="68" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="87" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="46" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_bju3wr_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="30" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_bju3wr_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="94" startPosition="132" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="94" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="54" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_bju3wr_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="59" startPosition="58" endLine="59" endPosition="58" />
+    <scopeInfo nodeId="2546654756694997557" fileName="LinkInlineDocTag_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" />
+    <scopeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="31" startPosition="96" endLine="32" endPosition="48" />
+    <scopeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="32" startPosition="48" endLine="33" endPosition="82" />
+    <scopeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="33" startPosition="82" endLine="34" endPosition="80" />
+    <scopeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="34" startPosition="80" endLine="35" endPosition="84" />
+    <scopeInfo nodeId="2886182022232400072" fileName="LinkInlineDocTag_Editor.java" startLine="41" startPosition="69" endLine="42" endPosition="90" />
+    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="48" startPosition="106" endLine="49" endPosition="45" />
+    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="72" startPosition="96" endLine="73" endPosition="50" />
+    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="97" startPosition="34" endLine="98" endPosition="95" />
+    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="100" startPosition="131" endLine="101" endPosition="139" />
+    <scopeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="58" startPosition="26" endLine="60" endPosition="73" />
+    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="76" startPosition="66" endLine="78" endPosition="93">
       <varInfo nodeId="3106559687488959765" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="2546654756694997557" fileName="LinkInlineDocTag_Editor.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="2546654756694997557" fileName="LinkInlineDocTag_Editor.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="2546654756694997557" varName="editorContext" />
       <varInfo nodeId="2546654756694997557" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="55" startPosition="35" endLine="58" endPosition="105">
+    <scopeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="63" startPosition="35" endLine="66" endPosition="105">
       <varInfo nodeId="2546654756694999493" varName="manager" />
       <varInfo nodeId="2546654756694999493" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="74" startPosition="35" endLine="77" endPosition="105">
-      <varInfo nodeId="2546654756694997560" varName="manager" />
-      <varInfo nodeId="2546654756694997560" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="83" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="72" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="3106559687488959765" varName="childRole" />
       <varInfo nodeId="3106559687488959765" varName="context" />
       <varInfo nodeId="3106559687488959765" varName="ownerNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="92" startPosition="86" endLine="95" endPosition="25">
+    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="81" startPosition="86" endLine="84" endPosition="25">
       <varInfo nodeId="3106559687488959765" varName="elementCell" />
     </scopeInfo>
-    <scopeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="67" startPosition="26" endLine="71" endPosition="73" />
-    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="87" startPosition="0" endLine="91" endPosition="0">
+    <scopeInfo nodeId="2886182022232400072" fileName="LinkInlineDocTag_Editor.java" startLine="39" startPosition="89" endLine="43" endPosition="22">
+      <varInfo nodeId="2886182022232400072" varName="editorCell" />
+      <varInfo nodeId="2886182022232400072" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="3106559687488959765" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="98" startPosition="68" endLine="102" endPosition="23">
+    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="87" startPosition="68" endLine="91" endPosition="23">
       <varInfo nodeId="3106559687488959765" varName="emptyCell" />
     </scopeInfo>
-    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="38" startPosition="91" endLine="43" endPosition="22">
+    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="46" startPosition="91" endLine="51" endPosition="22">
       <varInfo nodeId="3106559687488959765" varName="editorCell" />
       <varInfo nodeId="3106559687488959765" varName="handler" />
     </scopeInfo>
-    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="92" startPosition="0" endLine="97" endPosition="0">
+    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="81" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="3106559687488959765" varName="editorContext" />
       <varInfo nodeId="3106559687488959765" varName="elementNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="29" startPosition="89" endLine="35" endPosition="22">
+    <scopeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="30" startPosition="89" endLine="36" endPosition="22">
       <varInfo nodeId="2546654756694997559" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="98" startPosition="0" endLine="104" endPosition="0">
+    <scopeInfo nodeId="2886182022232400072" fileName="LinkInlineDocTag_Editor.java" startLine="39" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="2886182022232400072" varName="editorContext" />
+      <varInfo nodeId="2886182022232400072" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="87" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="3106559687488959765" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="46" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="3106559687488959765" varName="editorContext" />
       <varInfo nodeId="3106559687488959765" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="106" startPosition="96" endLine="113" endPosition="9" />
-    <scopeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="29" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="95" startPosition="96" endLine="102" endPosition="9" />
+    <scopeInfo nodeId="2546654756694997559" fileName="LinkInlineDocTag_Editor.java" startLine="30" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="2546654756694997559" varName="editorContext" />
       <varInfo nodeId="2546654756694997559" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="105" startPosition="132" endLine="114" endPosition="7" />
-    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="105" startPosition="0" endLine="116" endPosition="0">
+    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="94" startPosition="132" endLine="103" endPosition="7" />
+    <scopeInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="94" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="3106559687488959765" varName="editorContext" />
       <varInfo nodeId="3106559687488959765" varName="elementCell" />
       <varInfo nodeId="3106559687488959765" varName="elementNode" />
       <varInfo nodeId="3106559687488959765" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="46" startPosition="87" endLine="60" endPosition="22">
+    <scopeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="54" startPosition="87" endLine="68" endPosition="22">
       <varInfo nodeId="2546654756694999493" varName="attributeConcept" />
       <varInfo nodeId="2546654756694999493" varName="attributeKind" />
       <varInfo nodeId="2546654756694999493" varName="editorCell" />
       <varInfo nodeId="2546654756694999493" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="46" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="2546654756694999493" fileName="LinkInlineDocTag_Editor.java" startLine="54" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="2546654756694999493" varName="editorContext" />
       <varInfo nodeId="2546654756694999493" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="63" startPosition="95" endLine="79" endPosition="22">
-      <varInfo nodeId="2546654756694997560" varName="attributeConcept" />
-      <varInfo nodeId="2546654756694997560" varName="attributeKind" />
-      <varInfo nodeId="2546654756694997560" varName="editorCell" />
-      <varInfo nodeId="2546654756694997560" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="2546654756694997560" fileName="LinkInlineDocTag_Editor.java" startLine="63" startPosition="0" endLine="81" endPosition="0">
-      <varInfo nodeId="2546654756694997560" varName="editorContext" />
-      <varInfo nodeId="2546654756694997560" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="82" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.LinkInlineDocTag_Editor$lineListHandler_bju3wr_c0" />
-    <unitInfo nodeId="2546654756694997557" fileName="LinkInlineDocTag_Editor.java" startLine="24" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.LinkInlineDocTag_Editor" />
+    <unitInfo nodeId="3106559687488959765" fileName="LinkInlineDocTag_Editor.java" startLine="71" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.LinkInlineDocTag_Editor$lineListHandler_bju3wr_c0" />
+    <unitInfo nodeId="2546654756694997557" fileName="LinkInlineDocTag_Editor.java" startLine="25" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.LinkInlineDocTag_Editor" />
   </root>
   <root nodeId="2565027568480537754" modelId="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)">
     <nodeInfo nodeId="2565027568480537754" fileName="ValueInlineDocTag_Actions.java" startLine="13" startPosition="95" endLine="14" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2230,48 +2192,29 @@
     <unitInfo nodeId="4021391592913766809" fileName="StaticFieldDocReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.StaticFieldDocReference_Editor" />
   </root>
   <root nodeId="4730661099054379107" modelId="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)">
-    <nodeInfo nodeId="4730661099054379107" fileName="InheritDocInlineDocTag_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="19" startPosition="94" endLine="20" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="20" startPosition="89" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="21" startPosition="30" endLine="22" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="22" startPosition="43" endLine="23" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="23" startPosition="26" endLine="24" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="24" startPosition="58" endLine="25" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="25" startPosition="50" endLine="26" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="26" startPosition="90" endLine="27" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="27" startPosition="73" endLine="28" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="28" startPosition="57" endLine="29" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="30" startPosition="35" endLine="31" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="31" startPosition="72" endLine="32" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="32" startPosition="78" endLine="33" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="34" startPosition="10" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="24" startPosition="58" endLine="26" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4730661099054379107" fileName="InheritDocInlineDocTag_Editor.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="23" startPosition="26" endLine="27" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="29" startPosition="59" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="19" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConceptProperty_ru37wa_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <scopeInfo nodeId="4730661099054379107" fileName="InheritDocInlineDocTag_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="68" />
-    <scopeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="24" startPosition="58" endLine="26" endPosition="90" />
-    <scopeInfo nodeId="4730661099054379107" fileName="InheritDocInlineDocTag_Editor.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+    <nodeInfo nodeId="4730661099054379107" fileName="InheritDocInlineDocTag_Editor.java" startLine="13" startPosition="79" endLine="14" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2886182022232400240" fileName="InheritDocInlineDocTag_Editor.java" startLine="17" startPosition="88" endLine="18" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400240" fileName="InheritDocInlineDocTag_Editor.java" startLine="18" startPosition="67" endLine="19" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400240" fileName="InheritDocInlineDocTag_Editor.java" startLine="19" startPosition="69" endLine="20" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2886182022232400240" fileName="InheritDocInlineDocTag_Editor.java" startLine="19" startPosition="69" endLine="20" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2886182022232400240" fileName="InheritDocInlineDocTag_Editor.java" startLine="20" startPosition="90" endLine="21" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4730661099054379107" fileName="InheritDocInlineDocTag_Editor.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2886182022232400240" fileName="InheritDocInlineDocTag_Editor.java" startLine="17" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_ru37wa_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="4730661099054379107" fileName="InheritDocInlineDocTag_Editor.java" startLine="13" startPosition="79" endLine="14" endPosition="62" />
+    <scopeInfo nodeId="2886182022232400240" fileName="InheritDocInlineDocTag_Editor.java" startLine="19" startPosition="69" endLine="20" endPosition="90" />
+    <scopeInfo nodeId="4730661099054379107" fileName="InheritDocInlineDocTag_Editor.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="4730661099054379107" varName="editorContext" />
       <varInfo nodeId="4730661099054379107" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="30" startPosition="35" endLine="33" endPosition="105">
-      <varInfo nodeId="4730661099054379493" varName="manager" />
-      <varInfo nodeId="4730661099054379493" varName="opContext" />
+    <scopeInfo nodeId="2886182022232400240" fileName="InheritDocInlineDocTag_Editor.java" startLine="17" startPosition="88" endLine="21" endPosition="22">
+      <varInfo nodeId="2886182022232400240" varName="editorCell" />
+      <varInfo nodeId="2886182022232400240" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="23" startPosition="26" endLine="27" endPosition="73" />
-    <scopeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="19" startPosition="94" endLine="35" endPosition="22">
-      <varInfo nodeId="4730661099054379493" varName="attributeConcept" />
-      <varInfo nodeId="4730661099054379493" varName="attributeKind" />
-      <varInfo nodeId="4730661099054379493" varName="editorCell" />
-      <varInfo nodeId="4730661099054379493" varName="provider" />
+    <scopeInfo nodeId="2886182022232400240" fileName="InheritDocInlineDocTag_Editor.java" startLine="17" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="2886182022232400240" varName="editorContext" />
+      <varInfo nodeId="2886182022232400240" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4730661099054379493" fileName="InheritDocInlineDocTag_Editor.java" startLine="19" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="4730661099054379493" varName="editorContext" />
-      <varInfo nodeId="4730661099054379493" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="4730661099054379107" fileName="InheritDocInlineDocTag_Editor.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.InheritDocInlineDocTag_Editor" />
+    <unitInfo nodeId="4730661099054379107" fileName="InheritDocInlineDocTag_Editor.java" startLine="12" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.InheritDocInlineDocTag_Editor" />
   </root>
   <root nodeId="4941637334112852301" modelId="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)">
     <nodeInfo nodeId="4941637334112852301" fileName="IntlineTagCommentLinePart_Actions.java" startLine="16" startPosition="95" endLine="17" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4937,110 +4880,91 @@
     <unitInfo nodeId="6832197706140896245" fileName="FieldDocComment_Editor.java" startLine="28" startPosition="0" endLine="398" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor" />
   </root>
   <root nodeId="6962838954693749205" modelId="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)">
-    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="38" startPosition="58" endLine="38" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6962838954693749205" fileName="ValueInlineDocTag_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="23" startPosition="89" endLine="24" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="24" startPosition="96" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="24" startPosition="96" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="25" startPosition="48" endLine="26" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="25" startPosition="48" endLine="26" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="27" startPosition="109" endLine="28" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="29" startPosition="5" endLine="30" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="33" startPosition="87" endLine="34" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="34" startPosition="81" endLine="35" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="35" startPosition="42" endLine="36" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="36" startPosition="55" endLine="37" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="37" startPosition="26" endLine="38" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="38" startPosition="58" endLine="39" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="39" startPosition="73" endLine="40" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="40" startPosition="57" endLine="41" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="42" startPosition="35" endLine="43" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="43" startPosition="72" endLine="44" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="44" startPosition="78" endLine="45" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="46" startPosition="10" endLine="47" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="50" startPosition="95" endLine="51" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="51" startPosition="89" endLine="52" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="52" startPosition="30" endLine="53" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="53" startPosition="43" endLine="54" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="54" startPosition="26" endLine="55" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="55" startPosition="58" endLine="56" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="56" startPosition="50" endLine="57" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="57" startPosition="90" endLine="58" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="58" startPosition="78" endLine="59" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="59" startPosition="73" endLine="60" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="60" startPosition="57" endLine="61" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="62" startPosition="35" endLine="63" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="63" startPosition="72" endLine="64" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="64" startPosition="78" endLine="65" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="66" startPosition="10" endLine="67" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6501140109493929215" fileName="ValueInlineDocTag_Editor.java" startLine="70" startPosition="111" endLine="71" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="37" startPosition="26" endLine="39" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6962838954693749205" fileName="ValueInlineDocTag_Editor.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="26" startPosition="88" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="26" startPosition="88" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="55" startPosition="58" endLine="58" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6501140109493928004" fileName="ValueInlineDocTag_Editor.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_jy8kcg_a1a#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="54" startPosition="26" endLine="59" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="41" startPosition="59" endLine="47" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="61" startPosition="59" endLine="67" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="23" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_jy8kcg_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="33" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_jy8kcg_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="50" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConceptProperty_jy8kcg_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <scopeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="38" startPosition="58" endLine="38" endPosition="58" />
-    <scopeInfo nodeId="6962838954693749205" fileName="ValueInlineDocTag_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" />
-    <scopeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="24" startPosition="96" endLine="25" endPosition="48" />
-    <scopeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="25" startPosition="48" endLine="26" endPosition="88" />
-    <scopeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="27" startPosition="109" endLine="28" endPosition="82" />
-    <scopeInfo nodeId="6501140109493928005" fileName="ValueInlineDocTag_Editor.java" startLine="70" startPosition="111" endLine="71" endPosition="80" />
-    <scopeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="37" startPosition="26" endLine="39" endPosition="73" />
-    <scopeInfo nodeId="6962838954693749205" fileName="ValueInlineDocTag_Editor.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
+    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="47" startPosition="58" endLine="47" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6962838954693749205" fileName="ValueInlineDocTag_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="24" startPosition="89" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="25" startPosition="96" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="25" startPosition="96" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="26" startPosition="48" endLine="27" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="26" startPosition="48" endLine="27" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="28" startPosition="109" endLine="29" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="30" startPosition="5" endLine="31" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2886182022232400552" fileName="ValueInlineDocTag_Editor.java" startLine="34" startPosition="89" endLine="35" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400552" fileName="ValueInlineDocTag_Editor.java" startLine="35" startPosition="67" endLine="36" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400552" fileName="ValueInlineDocTag_Editor.java" startLine="36" startPosition="69" endLine="37" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2886182022232400552" fileName="ValueInlineDocTag_Editor.java" startLine="37" startPosition="90" endLine="38" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2886182022232400552" fileName="ValueInlineDocTag_Editor.java" startLine="38" startPosition="78" endLine="39" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="42" startPosition="87" endLine="43" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="43" startPosition="81" endLine="44" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="44" startPosition="42" endLine="45" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="45" startPosition="55" endLine="46" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="46" startPosition="26" endLine="47" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="47" startPosition="58" endLine="48" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="48" startPosition="73" endLine="49" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="49" startPosition="57" endLine="50" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="51" startPosition="35" endLine="52" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="52" startPosition="72" endLine="53" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="53" startPosition="78" endLine="54" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="55" startPosition="10" endLine="56" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6501140109493929215" fileName="ValueInlineDocTag_Editor.java" startLine="59" startPosition="111" endLine="60" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2886182022232400552" fileName="ValueInlineDocTag_Editor.java" startLine="36" startPosition="69" endLine="38" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="46" startPosition="26" endLine="48" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6962838954693749205" fileName="ValueInlineDocTag_Editor.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="27" startPosition="82" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="27" startPosition="82" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6501140109493928004" fileName="ValueInlineDocTag_Editor.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_jy8kcg_a1a#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
+    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="50" startPosition="59" endLine="56" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2886182022232400552" fileName="ValueInlineDocTag_Editor.java" startLine="34" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_jy8kcg_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="24" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_jy8kcg_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="42" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_jy8kcg_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="47" startPosition="58" endLine="47" endPosition="58" />
+    <scopeInfo nodeId="6962838954693749205" fileName="ValueInlineDocTag_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" />
+    <scopeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="25" startPosition="96" endLine="26" endPosition="48" />
+    <scopeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="26" startPosition="48" endLine="27" endPosition="82" />
+    <scopeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="28" startPosition="109" endLine="29" endPosition="82" />
+    <scopeInfo nodeId="6501140109493928005" fileName="ValueInlineDocTag_Editor.java" startLine="59" startPosition="111" endLine="60" endPosition="80" />
+    <scopeInfo nodeId="2886182022232400552" fileName="ValueInlineDocTag_Editor.java" startLine="36" startPosition="69" endLine="38" endPosition="78" />
+    <scopeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="46" startPosition="26" endLine="48" endPosition="73" />
+    <scopeInfo nodeId="6962838954693749205" fileName="ValueInlineDocTag_Editor.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="6962838954693749205" varName="editorContext" />
       <varInfo nodeId="6962838954693749205" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="26" startPosition="88" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="42" startPosition="35" endLine="45" endPosition="105">
+    <scopeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="27" startPosition="82" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="51" startPosition="35" endLine="54" endPosition="105">
       <varInfo nodeId="6501140109493928003" varName="manager" />
       <varInfo nodeId="6501140109493928003" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="55" startPosition="58" endLine="58" endPosition="78" />
-    <scopeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="62" startPosition="35" endLine="65" endPosition="105">
-      <varInfo nodeId="2217234381367103893" varName="manager" />
-      <varInfo nodeId="2217234381367103893" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="6501140109493928004" fileName="ValueInlineDocTag_Editor.java" startLine="70" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="6501140109493928004" fileName="ValueInlineDocTag_Editor.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="6501140109493928004" varName="editorContext" />
       <varInfo nodeId="6501140109493928004" varName="node" />
       <varInfo nodeId="6501140109493928004" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="54" startPosition="26" endLine="59" endPosition="73" />
-    <scopeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="23" startPosition="89" endLine="30" endPosition="22">
+    <scopeInfo nodeId="2886182022232400552" fileName="ValueInlineDocTag_Editor.java" startLine="34" startPosition="89" endLine="39" endPosition="22">
+      <varInfo nodeId="2886182022232400552" varName="editorCell" />
+      <varInfo nodeId="2886182022232400552" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="24" startPosition="89" endLine="31" endPosition="22">
       <varInfo nodeId="6962838954693749207" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="23" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="2886182022232400552" fileName="ValueInlineDocTag_Editor.java" startLine="34" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="2886182022232400552" varName="editorContext" />
+      <varInfo nodeId="2886182022232400552" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6962838954693749207" fileName="ValueInlineDocTag_Editor.java" startLine="24" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="6962838954693749207" varName="editorContext" />
       <varInfo nodeId="6962838954693749207" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="33" startPosition="87" endLine="47" endPosition="22">
+    <scopeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="42" startPosition="87" endLine="56" endPosition="22">
       <varInfo nodeId="6501140109493928003" varName="attributeConcept" />
       <varInfo nodeId="6501140109493928003" varName="attributeKind" />
       <varInfo nodeId="6501140109493928003" varName="editorCell" />
       <varInfo nodeId="6501140109493928003" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="33" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="6501140109493928003" fileName="ValueInlineDocTag_Editor.java" startLine="42" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="6501140109493928003" varName="editorContext" />
       <varInfo nodeId="6501140109493928003" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="50" startPosition="95" endLine="67" endPosition="22">
-      <varInfo nodeId="2217234381367103893" varName="attributeConcept" />
-      <varInfo nodeId="2217234381367103893" varName="attributeKind" />
-      <varInfo nodeId="2217234381367103893" varName="editorCell" />
-      <varInfo nodeId="2217234381367103893" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="2217234381367103893" fileName="ValueInlineDocTag_Editor.java" startLine="50" startPosition="0" endLine="69" endPosition="0">
-      <varInfo nodeId="2217234381367103893" varName="editorContext" />
-      <varInfo nodeId="2217234381367103893" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="6962838954693749205" fileName="ValueInlineDocTag_Editor.java" startLine="18" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ValueInlineDocTag_Editor" />
+    <unitInfo nodeId="6962838954693749205" fileName="ValueInlineDocTag_Editor.java" startLine="19" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ValueInlineDocTag_Editor" />
   </root>
   <root nodeId="7344646339284548672" modelId="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)">
     <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="12" startPosition="57" endLine="13" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

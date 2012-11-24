@@ -9,7 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -21,7 +22,7 @@ public class typeof_AttributeAccess_InferenceRule extends AbstractInferenceRule_
 
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode attr = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(operation, "qualifier", true), "virtual_getTargetConcept_6407023681583066586", new Object[]{});
-    if (SConceptPropertyOperations.getBoolean(attr, "multiple") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(operation, "qualifier", true), "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier")) {
+    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(attr)), "virtual_multiple_1262430001741497972", new Object[]{}) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(operation, "qualifier", true), "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier")) {
       {
         SNode _nodeToCheck_1029348928467 = operation;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "2788452359612125336", 0, null);

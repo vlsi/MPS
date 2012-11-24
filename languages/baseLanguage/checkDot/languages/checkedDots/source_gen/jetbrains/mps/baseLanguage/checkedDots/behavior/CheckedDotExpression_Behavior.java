@@ -7,6 +7,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class CheckedDotExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -29,5 +30,9 @@ public class CheckedDotExpression_Behavior {
 
   public static boolean virtual_allowsNullOperand_4585239809762176541(SNode thisNode) {
     return true;
+  }
+
+  public static boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
+    return false;
   }
 }

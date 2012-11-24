@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2u38l2a85gmo4i42ux0mhytig1z6i9b">
+<dependencies version="2" modelHash="bcmtx7fmjfwd4ruza706mo4auj20w4a">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="72jgettirgdze5zodlg3xz1jp5r3et8" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="drfxt8i63upja5k7zfj1z568c5k4586" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2eqrjs8emy551teprj5no9utk82ifsq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dweusve4s1cnqvm1h7144swvj24rs4o" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="bavz98vwxhwhpog89k63m5eu2e8cbl3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-baumsvy45qwk0i0m1tzx9fili68fouh" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6r1gsoq3dd0l5ofyes4ojz73yszw60" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-alf2ogeiijb2ox8l3f57xq8a4vsqut" />
   <common hash="-cfw2wtumnu0oann038zbttnfbp5prh8">
@@ -30,13 +30,13 @@
     <file name="InputLang_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1195168316083" name="InputRoot" hash="-ah8mqspuyrceslupcugp1f5lf3uf4zf">
+  <source id="1195168316083" name="InputRoot" hash="1tdpc6nhs1ky1cts5uj4xkhb05tknl8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1195169091918" name="InputNode" hash="bgpu0ap33fg75xo4h8ssryo0rvnejrq">
+  <source id="1195169091918" name="InputNode" hash="-budd0mb5ntrmrotbtp2dlk3nr6t0t2l">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1195169251499" name="Option" hash="-2a66ah8jr0ql77g3z3mzrxsqtlgghoa">
+  <source id="1195169251499" name="Option" hash="erieeoi3mu1pes1ikc3o7vcw4u6ij7u">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -50,7 +50,7 @@
   <source id="1195171011194" name="InputNode_A" hash="8pge0y7kok8s1dh95rl7sdmph0lp6gm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1202242680337" name="UseInTest" hash="-ktdiebjde6y0jw7naikhqn4a3mtoim">
+  <source id="1202242680337" name="UseInTest" hash="-64by5ol6rwzcrd6x8lcarch5u7pmw65">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -67,13 +67,13 @@
   <source id="1206462895210" name="InputNode_C" hash="do9rd3viikm9xam3zxwmx5v6vvanv6c">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1209146548167" name="ExpressionToReduceToStatement" hash="7w7vco9ronx9oif2epgbcjm0412ez0b">
+  <source id="1209146548167" name="ExpressionToReduceToStatement" hash="4m21iu8ss6bp5d5qzsqt3ys6u9xb3ap">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1209149421970" name="InputRootWithStatementList" hash="-8qb8eamdrex9kx0hymcqshoxvs4917y">
+  <source id="1209149421970" name="InputRootWithStatementList" hash="-6bmegnoc8sbd6bcl4bdvppcknfq8i84">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3315811491560119803" name="RefTestClass" hash="-12a3jtush6dbof7dsyd7ca57raq2t26">
+  <source id="3315811491560119803" name="RefTestClass" hash="-22bfevhp8l7exypwjbckrf311ndb958">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="3315811491560119806" name="RefTestMethod" hash="-2z0mara4b5qeg4y1a1vr3kkyl1ph2mh">
@@ -82,13 +82,13 @@
   <source id="3315811491560119808" name="RefTestParam" hash="-b4ugc5h3467f69rbsggiso8wqah9gki">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3315811491560119809" name="RefTestExpression" hash="-58jfugfew626c0f7nj0uc26el8gvh9t">
+  <source id="3315811491560119809" name="RefTestExpression" hash="-4wrnqhipbcb5n4gzbdg1s9twghepk3p">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3315811491560119815" name="RefTestParamRef" hash="1r2c00y9do9qrynbzdwnelekd68t70i">
+  <source id="3315811491560119815" name="RefTestParamRef" hash="-ch1wtmm52gx5z1hknzgajetwxtjho3w">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3315811491560119817" name="RefTestMethodCall" hash="-cdr10o5uae5lyf51rt7hgbhlvea8xh1">
+  <source id="3315811491560119817" name="RefTestMethodCall" hash="-bu4xbcu5am2irolaoonjsvd1c5bqalf">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

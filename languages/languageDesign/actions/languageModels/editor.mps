@@ -11,6 +11,7 @@
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <import index="tpep" modelUID="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)" version="-1" implicit="yes" />
+  <import index="tpco" modelUID="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" version="-1" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1112058353358">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpdg.1112058030570" resolveInfo="NodeSubstituteActionsBuilder" />
@@ -174,8 +175,8 @@
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpdg.1112058088712" />
           <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="1177583946056">
             <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1177583946057">
-              <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
               <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+              <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
               <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
               <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678628">
                 <property name="color" nameId="tpc2.1186403713874" value="DARK_MAGENTA" />
@@ -368,8 +369,8 @@
         <property name="vertical" nameId="tpc2.1073389446425" value="false" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="1112119223812">
           <property name="vertical" nameId="tpc2.1140524450554" value="true" />
-          <property name="gridLayout" nameId="tpc2.1140524450555" value="true" />
           <property name="separatorText" nameId="tpc2.1140524450557" value="----------" />
+          <property name="gridLayout" nameId="tpc2.1140524450555" value="true" />
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpdg.1112058057696" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="1214310996136">
             <property name="flag" nameId="tpc2.1186414551515" value="false" />
@@ -404,8 +405,8 @@
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpdg.1138079221462" />
           <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="1177442307245">
             <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1177442307246">
-              <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
               <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+              <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
               <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
               <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678659">
                 <property name="color" nameId="tpc2.1186403713874" value="DARK_MAGENTA" />
@@ -608,8 +609,8 @@
         <property name="vertical" nameId="tpc2.1073389446425" value="false" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="1138079516426">
           <property name="vertical" nameId="tpc2.1140524450554" value="true" />
-          <property name="separatorText" nameId="tpc2.1140524450557" value="----------" />
           <property name="gridLayout" nameId="tpc2.1140524450555" value="true" />
+          <property name="separatorText" nameId="tpc2.1140524450557" value="----------" />
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpdg.1138079416599" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="1214310995002">
             <property name="flag" nameId="tpc2.1186414551515" value="false" />
@@ -690,8 +691,8 @@
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpdg.1158700943156" />
           <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="1178899593085">
             <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1178899593086">
-              <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
               <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+              <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
               <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
               <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678170">
                 <property name="color" nameId="tpc2.1186403713874" value="DARK_MAGENTA" />
@@ -821,8 +822,8 @@
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="1224843134304" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="1177324036619">
           <property name="vertical" nameId="tpc2.1140524450554" value="true" />
-          <property name="separatorText" nameId="tpc2.1140524450557" value="=============" />
           <property name="usesBraces" nameId="tpc2.1140524450556" value="false" />
+          <property name="separatorText" nameId="tpc2.1140524450557" value="=============" />
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpdg.1177333559040" />
           <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="1239880240807" />
         </node>
@@ -1122,12 +1123,13 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1177398838672">
       <property name="vertical" nameId="tpc2.1073389446425" value="true" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1177398838673">
-        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="1177584202291">
-          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="1214398032217">
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2886182022232400625">
+          <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
+          <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="AliasEditorComponent" />
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="2886182022232400626">
             <property name="flag" nameId="tpc2.1186414551515" value="false" />
           </node>
-          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678597">
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="2886182022232400627">
             <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
           </node>
         </node>
@@ -1672,10 +1674,11 @@
   </root>
   <root id="1180135218889">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1180135221562">
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="1180135221563">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2886182022232400334">
+        <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
+        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="AliasEditorComponent" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
-        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="1214398032161">
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="2886182022232400335">
           <property name="flag" nameId="tpc2.1186414551515" value="false" />
         </node>
       </node>
@@ -1699,12 +1702,13 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1182819336190">
       <property name="vertical" nameId="tpc2.1073389446425" value="true" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1182819336191">
-        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="1182819336192">
-          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="1214398032124">
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2886182022232400677">
+          <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
+          <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="AliasEditorComponent" />
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="2886182022232400678">
             <property name="flag" nameId="tpc2.1186414551515" value="false" />
           </node>
-          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678355">
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="2886182022232400679">
             <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
           </node>
         </node>

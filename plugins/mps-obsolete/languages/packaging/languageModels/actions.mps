@@ -317,6 +317,17 @@
                   <property name="name" nameId="tpck.1169194664001" value="isFile" />
                   <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1220978677266" />
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="1234806716324">
+                    <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1262430001741973664">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1262430001741973665">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1262430001741973666">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1234806669828" resolveInfo="abstractProjectComponent" />
+                        </node>
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetConceptOperation" typeId="tp25.1172323065820" id="1262430001741973667" />
+                      </node>
+                      <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1262430001741973668">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1262430001741497846" resolveInfo="acceptFiles" />
+                      </node>
+                    </node>
                     <node role="condition" roleId="tpee.1163668914799" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="1234806721444">
                       <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1234806722943" />
                       <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1234806717801">
@@ -325,14 +336,6 @@
                     </node>
                     <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1234806724955">
                       <property name="value" nameId="tpee.1068580123138" value="true" />
-                    </node>
-                    <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1234806728930">
-                      <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1234806727485">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1234806669828" resolveInfo="abstractProjectComponent" />
-                      </node>
-                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SConceptPropertyAccess" typeId="tp25.1145994841052" id="1234806731286">
-                        <link role="conceptProperty" roleId="tp25.1145994841055" targetNodeId="tps4.1233309050521" resolveInfo="acceptFiles" />
-                      </node>
                     </node>
                   </node>
                 </node>
@@ -523,13 +526,16 @@
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1226514043510">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1234975567387" resolveInfo="getAllMacroNames" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1226514043511">
-                        <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1226514043512">
-                          <link role="concept" roleId="tp25.1140138128738" targetNodeId="tps4.1233321544558" resolveInfo="IPath" />
-                          <node role="leftExpression" roleId="tp25.1140138123956" type="tpdg.ConceptFunctionParameter_parentNode" typeId="tpdg.1154465273778" id="1226514043513" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1262430001741744823">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1262430001741744824">
+                          <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1262430001741744825">
+                            <link role="concept" roleId="tp25.1140138128738" targetNodeId="tps4.1233321544558" resolveInfo="IPath" />
+                            <node role="leftExpression" roleId="tp25.1140138123956" type="tpdg.ConceptFunctionParameter_parentNode" typeId="tpdg.1154465273778" id="1262430001741744826" />
+                          </node>
+                          <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetConceptOperation" typeId="tp25.1172323065820" id="1262430001741744827" />
                         </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SConceptPropertyAccess" typeId="tp25.1145994841052" id="1226514043514">
-                          <link role="conceptProperty" roleId="tp25.1145994841055" targetNodeId="tps4.1233321577500" resolveInfo="canStartFromBasedir" />
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1262430001741744828">
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1262430001741498253" resolveInfo="canStartFromBasedir" />
                         </node>
                       </node>
                     </node>

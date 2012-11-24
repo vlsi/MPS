@@ -23,7 +23,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class GroupReference_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer breakingNode_60vk01_a0a3a0a0a1a0b0a1a0 = new SNodePointer("r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)", "2948583337000056360");
@@ -97,7 +97,7 @@ public class GroupReference_Constraints extends BaseConstraintsDescriptor {
 
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return SConceptPropertyOperations.getString(_context.getParameterNode(), "alias") + " " + SPropertyOperations.getString(_context.getParameterNode(), "id");
+            return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getParameterNode()), "conceptAlias") + " " + SPropertyOperations.getString(_context.getParameterNode(), "id");
           }
 
           @Override

@@ -5,9 +5,14 @@ package jetbrains.mps.build.packaging.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class File_Behavior {
   public static void init(SNode thisNode) {
     SLinkOperations.setTarget(thisNode, "sourcePath", SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Path", null), true);
+  }
+
+  public static boolean virtual_acceptFiles_1262430001741497846(SConcept thisConcept) {
+    return true;
   }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="GenerationContextOp_Base_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_Base_BehaviorDescriptor" />
+  <unitInfo fileName="GenerationContextOp_Base_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_Base_BehaviorDescriptor" />
   <unitInfo fileName="GenerationContextOp_CreateUniqueName_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_CreateUniqueName_BehaviorDescriptor" />
   <unitInfo fileName="GenerationContextOp_DirtyNode_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_DirtyNode_BehaviorDescriptor" />
   <unitInfo fileName="GenerationContextOp_GenParameterRef_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GenParameterRef_BehaviorDescriptor" />
@@ -23,17 +23,17 @@
   <unitInfo fileName="GenerationContextOp_ParameterRef_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ParameterRef_BehaviorDescriptor" />
   <unitInfo fileName="GenerationContextOp_PatternRef_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PatternRef_BehaviorDescriptor" />
   <unitInfo fileName="GenerationContextOp_PropertyPatternRef_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PropertyPatternRef_BehaviorDescriptor" />
-  <unitInfo fileName="GenerationContextOp_SessionObjectAccess_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_SessionObjectAccess_BehaviorDescriptor" />
+  <unitInfo fileName="GenerationContextOp_SessionObjectAccess_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_SessionObjectAccess_BehaviorDescriptor" />
   <unitInfo fileName="GenerationContextOp_ShowErrorMessage_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ShowErrorMessage_BehaviorDescriptor" />
   <unitInfo fileName="GenerationContextOp_ShowInfoMessage_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ShowInfoMessage_BehaviorDescriptor" />
   <unitInfo fileName="GenerationContextOp_ShowMessageBase_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ShowMessageBase_BehaviorDescriptor" />
   <unitInfo fileName="GenerationContextOp_ShowWarningMessage_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ShowWarningMessage_BehaviorDescriptor" />
-  <unitInfo fileName="GenerationContextOp_StepObjectAccess_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_StepObjectAccess_BehaviorDescriptor" />
-  <unitInfo fileName="GenerationContextOp_TransientObjectAccess_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_TransientObjectAccess_BehaviorDescriptor" />
+  <unitInfo fileName="GenerationContextOp_StepObjectAccess_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_StepObjectAccess_BehaviorDescriptor" />
+  <unitInfo fileName="GenerationContextOp_TransientObjectAccess_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_TransientObjectAccess_BehaviorDescriptor" />
   <unitInfo fileName="GenerationContextOp_UserObjectAccessBase_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_UserObjectAccessBase_BehaviorDescriptor" />
   <unitInfo fileName="GenerationContextOp_VarRef_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_VarRef_BehaviorDescriptor" />
   <unitInfo fileName="GenerationContextType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextType_BehaviorDescriptor" />
-  <unitInfo fileName="TemplateFunctionParameter_generationContext_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.TemplateFunctionParameter_generationContext_BehaviorDescriptor" />
+  <unitInfo fileName="TemplateFunctionParameter_generationContext_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.TemplateFunctionParameter_generationContext_BehaviorDescriptor" />
   <root nodeId="1217892542812" modelId="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)">
     <nodeInfo nodeId="1217892577742" fileName="GenerationContextOp_UserObjectAccessBase_Behavior.java" startLine="13" startPosition="81" endLine="14" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1217892577754" fileName="GenerationContextOp_UserObjectAccessBase_Behavior.java" startLine="16" startPosition="193" endLine="17" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -55,6 +55,48 @@
       <varInfo nodeId="1217892542812" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="1217892542812" fileName="GenerationContextOp_UserObjectAccessBase_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_UserObjectAccessBase_Behavior" />
+  </root>
+  <root nodeId="1262430001741641975" modelId="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)">
+    <nodeInfo nodeId="1262430001741641973" fileName="GenerationContextOp_TransientObjectAccess_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741641975" fileName="GenerationContextOp_TransientObjectAccess_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741641975" fileName="GenerationContextOp_TransientObjectAccess_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_lvalue_1262430001741498364#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <scopeInfo nodeId="1262430001741641977" fileName="GenerationContextOp_TransientObjectAccess_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741641972" fileName="GenerationContextOp_TransientObjectAccess_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1262430001741641975" fileName="GenerationContextOp_TransientObjectAccess_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741641975" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741641975" fileName="GenerationContextOp_TransientObjectAccess_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741641975" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741641975" fileName="GenerationContextOp_TransientObjectAccess_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_TransientObjectAccess_Behavior" />
+  </root>
+  <root nodeId="1262430001741647490" modelId="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)">
+    <nodeInfo nodeId="1262430001741647488" fileName="GenerationContextOp_StepObjectAccess_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741647490" fileName="GenerationContextOp_StepObjectAccess_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741647490" fileName="GenerationContextOp_StepObjectAccess_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_lvalue_1262430001741498364#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <scopeInfo nodeId="1262430001741647492" fileName="GenerationContextOp_StepObjectAccess_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741647487" fileName="GenerationContextOp_StepObjectAccess_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1262430001741647490" fileName="GenerationContextOp_StepObjectAccess_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741647490" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741647490" fileName="GenerationContextOp_StepObjectAccess_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741647490" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741647490" fileName="GenerationContextOp_StepObjectAccess_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_StepObjectAccess_Behavior" />
+  </root>
+  <root nodeId="1262430001741718763" modelId="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)">
+    <nodeInfo nodeId="1262430001741718761" fileName="GenerationContextOp_SessionObjectAccess_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718763" fileName="GenerationContextOp_SessionObjectAccess_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741718763" fileName="GenerationContextOp_SessionObjectAccess_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_lvalue_1262430001741498364#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <scopeInfo nodeId="1262430001741718765" fileName="GenerationContextOp_SessionObjectAccess_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741718760" fileName="GenerationContextOp_SessionObjectAccess_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1262430001741718763" fileName="GenerationContextOp_SessionObjectAccess_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741718763" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741718763" fileName="GenerationContextOp_SessionObjectAccess_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741718763" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741718763" fileName="GenerationContextOp_SessionObjectAccess_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_SessionObjectAccess_Behavior" />
   </root>
   <root nodeId="1758784108620114789" modelId="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)">
     <nodeInfo nodeId="1758784108620114789" fileName="GenerationContextOp_PatternRef_Behavior.java" startLine="15" startPosition="74" endLine="16" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-hywfvw7j2882famotp3sm7swmmkjoz">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="21snxjnsdyx017gstofkv07qfwhy8bp" />
+<dependencies version="2" modelHash="esintrdvcxid85twvxapvch63rr84mr">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="72jgettirgdze5zodlg3xz1jp5r3et8" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="br0zbuysk1h237dalzeuxqn1fmdj2bn" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="drfxt8i63upja5k7zfj1z568c5k4586" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2eqrjs8emy551teprj5no9utk82ifsq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dweusve4s1cnqvm1h7144swvj24rs4o" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="bavz98vwxhwhpog89k63m5eu2e8cbl3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-baumsvy45qwk0i0m1tzx9fili68fouh" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6r1gsoq3dd0l5ofyes4ojz73yszw60" />
   <common hash="-6x4cto7h3ta8pbyve222gpl4aoy6uy4">
     <dep root="1225194240794" />
@@ -25,7 +25,7 @@
     <file name="Behavior_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1225194240794" name="ConceptBehavior" hash="-9ex3dsxjlflmxax7f6tsr4mo7s19azj">
+  <source id="1225194240794" name="ConceptBehavior" hash="56cutulwkuzbehwfp8js7lfy80sxagk">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1225194413805" name="ConceptConstructorDeclaration" hash="-69wufhh9jobq6rova4yavg5r3ctdhwx">
@@ -37,19 +37,19 @@
   <source id="1225194588610" name="StaticConceptMethodDeclaration" hash="-6h07gs1c85dri6pkdttkn0u5rtc5wok">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1225194628440" name="SuperNodeExpression" hash="22essh9c2ebkgxgaa08nrl86ald7i">
+  <source id="1225194628440" name="SuperNodeExpression" hash="-e8pnr0kox5jdptdthja3269nwgpzugj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1225194691553" name="ThisNodeExpression" hash="2zhjn49ho1ie953lanio1qpogkraekw">
+  <source id="1225194691553" name="ThisNodeExpression" hash="-brt5rw8713n7vcrv8jaoe4s3mudwxu6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6496299201655527393" name="LocalBehaviorMethodCall" hash="-e9m5ejb4iqfjyik190i5vql69my2gyf">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="646895014681116169" name="InternalConceptDeclarationReference" hash="hch35f4cq9rw9r57n5jvyc8nfbvfkl">
+  <source id="646895014681116169" name="InternalConceptDeclarationReference" hash="eqhzib2v702noqu7l8h9qtn4qxd7tgg">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="646895014681116171" name="InternalConceptDeclarationsHolder" hash="4b564lxp597n460msf2nfdyupwyyrcw">
+  <source id="646895014681116171" name="InternalConceptDeclarationsHolder" hash="6p3wfg2teggesxj14iv0h7xad9wfy53">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

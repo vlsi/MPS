@@ -394,6 +394,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/scopes/runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/collections/languages/trove/runtime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/methodDispatch/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../plugins">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-java/languages/customViewers/source_gen" isTestSource="false" />

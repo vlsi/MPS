@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="ActionAsPattern_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.ActionAsPattern_BehaviorDescriptor" />
   <unitInfo fileName="ActionStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.ActionStatement_BehaviorDescriptor" />
-  <unitInfo fileName="AsPattern_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.AsPattern_BehaviorDescriptor" />
+  <unitInfo fileName="AsPattern_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.AsPattern_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="GeneratorInternal_ChildDescriptor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.GeneratorInternal_ChildDescriptor_BehaviorDescriptor" />
   <unitInfo fileName="GeneratorInternal_PropertyDescriptor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.GeneratorInternal_PropertyDescriptor_BehaviorDescriptor" />
@@ -10,7 +10,7 @@
   <unitInfo fileName="InsertAfterPosition_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.InsertAfterPosition_BehaviorDescriptor" />
   <unitInfo fileName="InsertBeforePosition_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.InsertBeforePosition_BehaviorDescriptor" />
   <unitInfo fileName="InsertPosition_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.InsertPosition_BehaviorDescriptor" />
-  <unitInfo fileName="LinkPatternVariableDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.LinkPatternVariableDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="LinkPatternVariableDeclaration_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.LinkPatternVariableDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="ListPattern_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.ListPattern_BehaviorDescriptor" />
   <unitInfo fileName="OrPatternClause_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.OrPatternClause_BehaviorDescriptor" />
   <unitInfo fileName="OrPatternVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.OrPatternVariableReference_BehaviorDescriptor" />
@@ -18,8 +18,8 @@
   <unitInfo fileName="PatternExpression_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PatternExpression_BehaviorDescriptor" />
   <unitInfo fileName="PatternVariableDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PatternVariableDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="PatternVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PatternVariableReference_BehaviorDescriptor" />
-  <unitInfo fileName="Pattern_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.Pattern_BehaviorDescriptor" />
-  <unitInfo fileName="PropertyPatternVariableDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PropertyPatternVariableDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="Pattern_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.Pattern_BehaviorDescriptor" />
+  <unitInfo fileName="PropertyPatternVariableDeclaration_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PropertyPatternVariableDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="WildcardPattern_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.WildcardPattern_BehaviorDescriptor" />
   <root nodeId="111677556049506422" modelId="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)">
     <nodeInfo nodeId="111677556049506446" fileName="ActionStatement_Behavior.java" startLine="13" startPosition="132" endLine="14" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -59,20 +59,60 @@
     <unitInfo nodeId="1213877200307" fileName="PatternVariableDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PatternVariableDeclaration_Behavior" />
   </root>
   <root nodeId="1213877241295" modelId="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)">
-    <nodeInfo nodeId="1213877241295" fileName="PropertyPatternVariableDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="1213877241297" fileName="PropertyPatternVariableDeclaration_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1213877241295" fileName="PropertyPatternVariableDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
+    <nodeInfo nodeId="1262430001741704820" fileName="PropertyPatternVariableDeclaration_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877241295" fileName="PropertyPatternVariableDeclaration_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1213877241295" fileName="PropertyPatternVariableDeclaration_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1213877241297" fileName="PropertyPatternVariableDeclaration_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741704818" fileName="PropertyPatternVariableDeclaration_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="48" />
+    <scopeInfo nodeId="1213877241295" fileName="PropertyPatternVariableDeclaration_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1213877241295" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877241295" fileName="PropertyPatternVariableDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PropertyPatternVariableDeclaration_Behavior" />
+    <scopeInfo nodeId="1213877241295" fileName="PropertyPatternVariableDeclaration_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1213877241295" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1213877241295" fileName="PropertyPatternVariableDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PropertyPatternVariableDeclaration_Behavior" />
   </root>
   <root nodeId="1213877344249" modelId="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)">
-    <nodeInfo nodeId="1213877344249" fileName="LinkPatternVariableDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="1213877344251" fileName="LinkPatternVariableDeclaration_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1213877344249" fileName="LinkPatternVariableDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
+    <nodeInfo nodeId="1262430001741642740" fileName="LinkPatternVariableDeclaration_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877344249" fileName="LinkPatternVariableDeclaration_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1213877344249" fileName="LinkPatternVariableDeclaration_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1213877344251" fileName="LinkPatternVariableDeclaration_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741642738" fileName="LinkPatternVariableDeclaration_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="44" />
+    <scopeInfo nodeId="1213877344249" fileName="LinkPatternVariableDeclaration_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1213877344249" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877344249" fileName="LinkPatternVariableDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.LinkPatternVariableDeclaration_Behavior" />
+    <scopeInfo nodeId="1213877344249" fileName="LinkPatternVariableDeclaration_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1213877344249" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1213877344249" fileName="LinkPatternVariableDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.LinkPatternVariableDeclaration_Behavior" />
+  </root>
+  <root nodeId="1262430001741639271" modelId="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)">
+    <nodeInfo nodeId="1262430001741639270" fileName="Pattern_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741639271" fileName="Pattern_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741639271" fileName="Pattern_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1262430001741639273" fileName="Pattern_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741639268" fileName="Pattern_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="21" />
+    <scopeInfo nodeId="1262430001741639271" fileName="Pattern_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741639271" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741639271" fileName="Pattern_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741639271" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741639271" fileName="Pattern_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.Pattern_Behavior" />
+  </root>
+  <root nodeId="1262430001741642795" modelId="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)">
+    <nodeInfo nodeId="1262430001741642794" fileName="AsPattern_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741642795" fileName="AsPattern_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741642795" fileName="AsPattern_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1262430001741642797" fileName="AsPattern_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741642792" fileName="AsPattern_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="23" />
+    <scopeInfo nodeId="1262430001741642795" fileName="AsPattern_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741642795" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741642795" fileName="AsPattern_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741642795" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741642795" fileName="AsPattern_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.AsPattern_Behavior" />
   </root>
   <root nodeId="534621188390792429" modelId="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)">
     <nodeInfo nodeId="201537367881178498" fileName="PatternExpression_Behavior.java" startLine="19" startPosition="83" endLine="20" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

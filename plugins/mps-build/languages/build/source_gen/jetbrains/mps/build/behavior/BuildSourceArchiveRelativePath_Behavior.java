@@ -101,8 +101,8 @@ public class BuildSourceArchiveRelativePath_Behavior {
     SNode quotedNode_6 = null;
     SNode quotedNode_7 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("tagName", "unzip");
     quotedNode_3.setProperty("shortEmptyNotation", "true");
+    quotedNode_3.setProperty("tagName", "unzip");
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
     quotedNode_4.setProperty("attrName", "src");
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);

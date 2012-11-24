@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class FieldReferenceOperation_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IOperation_BehaviorDescriptor {
   public FieldReferenceOperation_BehaviorDescriptor() {
@@ -19,6 +20,10 @@ public class FieldReferenceOperation_BehaviorDescriptor extends BaseConcept_Beha
 
   public boolean virtual_isLValue_1213877410080(SNode thisNode) {
     return IOperation_Behavior.virtual_isLValue_1213877410080(thisNode);
+  }
+
+  public boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
+    return FieldReferenceOperation_Behavior.virtual_lvalue_1262430001741498364(thisConcept);
   }
 
   public boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {

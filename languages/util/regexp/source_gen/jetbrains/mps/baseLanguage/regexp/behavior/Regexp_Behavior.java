@@ -7,7 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.ArrayList;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.regex.Pattern;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -28,7 +28,7 @@ public class Regexp_Behavior {
   }
 
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    return SConceptPropertyOperations.getString(thisNode, "alias");
+    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
   }
 
   public static String call_par_1222433790846(SNode thisNode, String s) {

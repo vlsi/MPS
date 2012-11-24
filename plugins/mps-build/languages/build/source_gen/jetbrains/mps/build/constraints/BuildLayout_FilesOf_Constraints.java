@@ -13,9 +13,8 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.smodel.SNode;
@@ -49,7 +48,7 @@ public class BuildLayout_FilesOf_Constraints extends BaseConstraintsDescriptor {
 
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return SConceptPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getParameterNode()), "alias") + " " + SPropertyOperations.getString(_context.getParameterNode(), "name");
+            return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getParameterNode()), "conceptAlias") + " " + SPropertyOperations.getString(_context.getParameterNode(), "name");
           }
 
           @Override

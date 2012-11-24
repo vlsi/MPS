@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguageInternal.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.BaseMethodCall_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class ExtractStaticMethod_CallExpression_BehaviorDescriptor extends BaseMethodCall_BehaviorDescriptor {
   public ExtractStaticMethod_CallExpression_BehaviorDescriptor() {
@@ -11,6 +12,10 @@ public class ExtractStaticMethod_CallExpression_BehaviorDescriptor extends BaseM
 
   public Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     return ExtractStaticMethod_CallExpression_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
+  }
+
+  public boolean virtual_substituteInAmbigousPosition_1262430001741498020(SConcept thisConcept) {
+    return ExtractStaticMethod_CallExpression_Behavior.virtual_substituteInAmbigousPosition_1262430001741498020(thisConcept);
   }
 
   @Override

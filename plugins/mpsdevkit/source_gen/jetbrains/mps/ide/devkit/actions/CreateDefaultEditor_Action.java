@@ -11,7 +11,6 @@ import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
@@ -44,7 +43,7 @@ public class CreateDefaultEditor_Action extends BaseAction {
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode conceptDeclaration = SNodeOperations.as(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
-    if (conceptDeclaration == null || SConceptPropertyOperations.getBoolean(conceptDeclaration, "abstract") || SPropertyOperations.getString(conceptDeclaration, "name") == null) {
+    if (conceptDeclaration == null || SPropertyOperations.getBoolean(conceptDeclaration, "abstract") || SPropertyOperations.getString(conceptDeclaration, "name") == null) {
       return false;
     }
 

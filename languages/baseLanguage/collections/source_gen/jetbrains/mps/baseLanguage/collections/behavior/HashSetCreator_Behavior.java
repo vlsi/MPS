@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -14,6 +15,10 @@ public class HashSetCreator_Behavior {
 
   public static SNode virtual_createType_1237722437229(SNode thisNode) {
     return _quotation_createNode_4sjjrg_a0a0(SLinkOperations.getTarget(thisNode, "elementType", true));
+  }
+
+  public static boolean virtual_hasInitSize_1262430001741498238(SConcept thisConcept) {
+    return true;
   }
 
   private static SNode _quotation_createNode_4sjjrg_a0a0(Object parameter_1) {

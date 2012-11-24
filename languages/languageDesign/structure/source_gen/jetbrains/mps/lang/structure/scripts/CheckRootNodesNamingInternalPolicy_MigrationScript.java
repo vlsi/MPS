@@ -6,7 +6,6 @@ import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -31,16 +30,16 @@ public class CheckRootNodesNamingInternalPolicy_MigrationScript extends BaseMigr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        if (SConceptPropertyOperations.getBoolean(node, "abstract")) {
+        if (SPropertyOperations.getBoolean(node, "abstract")) {
           return false;
         }
         if (!(SPropertyOperations.getBoolean(node, "rootable"))) {
           return false;
         }
-        if (isEmpty_rkab70_a0c0d0a0a0a0b0a(SConceptPropertyOperations.getString(node, "alias"))) {
+        if (isEmpty_rkab70_a0c0d0a0a0a0b0a(SPropertyOperations.getString(node, "conceptAlias"))) {
           return false;
         }
-        return !(SConceptPropertyOperations.getString(node, "alias").equals(NameUtil.multiWordDecapitalize(SConceptPropertyOperations.getString(node, "alias"))));
+        return !(SPropertyOperations.getString(node, "conceptAlias").equals(NameUtil.multiWordDecapitalize(SPropertyOperations.getString(node, "conceptAlias"))));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -49,7 +48,7 @@ public class CheckRootNodesNamingInternalPolicy_MigrationScript extends BaseMigr
             return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.StringConceptProperty") && SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.StringConceptProperty"), "conceptPropertyDeclaration", false), "name").equals("alias");
           }
         }).first(), "jetbrains.mps.lang.structure.structure.StringConceptProperty");
-        SPropertyOperations.set(aliasProperty, "value", NameUtil.multiWordDecapitalize(SConceptPropertyOperations.getString(node, "alias")));
+        SPropertyOperations.set(aliasProperty, "value", NameUtil.multiWordDecapitalize(SPropertyOperations.getString(node, "conceptAlias")));
       }
 
       public boolean isShowAsIntention() {
@@ -70,13 +69,13 @@ public class CheckRootNodesNamingInternalPolicy_MigrationScript extends BaseMigr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        if (SConceptPropertyOperations.getBoolean(node, "abstract")) {
+        if (SPropertyOperations.getBoolean(node, "abstract")) {
           return false;
         }
         if (!(SPropertyOperations.getBoolean(node, "rootable"))) {
           return false;
         }
-        return isEmpty_rkab70_a0c0d0a0a0a0c0a(SConceptPropertyOperations.getString(node, "alias"));
+        return isEmpty_rkab70_a0c0d0a0a0a0c0a(SPropertyOperations.getString(node, "conceptAlias"));
       }
 
       public void doUpdateInstanceNode(SNode node) {

@@ -1,12 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="AbstractAntiquotation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.quotation.behavior.AbstractAntiquotation_BehaviorDescriptor" />
-  <unitInfo fileName="Antiquotation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.quotation.behavior.Antiquotation_BehaviorDescriptor" />
+  <unitInfo fileName="Antiquotation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.quotation.behavior.Antiquotation_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.quotation.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="ListAntiquotation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.quotation.behavior.ListAntiquotation_BehaviorDescriptor" />
-  <unitInfo fileName="PropertyAntiquotation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.quotation.behavior.PropertyAntiquotation_BehaviorDescriptor" />
+  <unitInfo fileName="ListAntiquotation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.quotation.behavior.ListAntiquotation_BehaviorDescriptor" />
+  <unitInfo fileName="PropertyAntiquotation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.quotation.behavior.PropertyAntiquotation_BehaviorDescriptor" />
   <unitInfo fileName="Quotation_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.quotation.behavior.Quotation_BehaviorDescriptor" />
-  <unitInfo fileName="ReferenceAntiquotation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.quotation.behavior.ReferenceAntiquotation_BehaviorDescriptor" />
+  <unitInfo fileName="ReferenceAntiquotation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.quotation.behavior.ReferenceAntiquotation_BehaviorDescriptor" />
+  <root nodeId="1262430001741642838" modelId="r:1dca5eee-6e62-48f8-9e94-dbbe31be2456(jetbrains.mps.lang.quotation.behavior)">
+    <nodeInfo nodeId="1262430001741642837" fileName="ReferenceAntiquotation_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741642838" fileName="ReferenceAntiquotation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741642838" fileName="ReferenceAntiquotation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1262430001741642840" fileName="ReferenceAntiquotation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741642835" fileName="ReferenceAntiquotation_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="36" />
+    <scopeInfo nodeId="1262430001741642838" fileName="ReferenceAntiquotation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741642838" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741642838" fileName="ReferenceAntiquotation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741642838" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741642838" fileName="ReferenceAntiquotation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.quotation.behavior.ReferenceAntiquotation_Behavior" />
+  </root>
+  <root nodeId="1262430001741646984" modelId="r:1dca5eee-6e62-48f8-9e94-dbbe31be2456(jetbrains.mps.lang.quotation.behavior)">
+    <nodeInfo nodeId="1262430001741646983" fileName="ListAntiquotation_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741646984" fileName="ListAntiquotation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741646984" fileName="ListAntiquotation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1262430001741646986" fileName="ListAntiquotation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741646981" fileName="ListAntiquotation_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="31" />
+    <scopeInfo nodeId="1262430001741646984" fileName="ListAntiquotation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741646984" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741646984" fileName="ListAntiquotation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741646984" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741646984" fileName="ListAntiquotation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.quotation.behavior.ListAntiquotation_Behavior" />
+  </root>
+  <root nodeId="1262430001741702883" modelId="r:1dca5eee-6e62-48f8-9e94-dbbe31be2456(jetbrains.mps.lang.quotation.behavior)">
+    <nodeInfo nodeId="1262430001741702882" fileName="PropertyAntiquotation_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741702883" fileName="PropertyAntiquotation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741702883" fileName="PropertyAntiquotation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1262430001741702885" fileName="PropertyAntiquotation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741702880" fileName="PropertyAntiquotation_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="35" />
+    <scopeInfo nodeId="1262430001741702883" fileName="PropertyAntiquotation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741702883" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741702883" fileName="PropertyAntiquotation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741702883" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741702883" fileName="PropertyAntiquotation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.quotation.behavior.PropertyAntiquotation_Behavior" />
+  </root>
+  <root nodeId="1262430001741717386" modelId="r:1dca5eee-6e62-48f8-9e94-dbbe31be2456(jetbrains.mps.lang.quotation.behavior)">
+    <nodeInfo nodeId="1262430001741717385" fileName="Antiquotation_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741717386" fileName="Antiquotation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741717386" fileName="Antiquotation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1262430001741717388" fileName="Antiquotation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741717383" fileName="Antiquotation_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="27" />
+    <scopeInfo nodeId="1262430001741717386" fileName="Antiquotation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741717386" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741717386" fileName="Antiquotation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741717386" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741717386" fileName="Antiquotation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.quotation.behavior.Antiquotation_Behavior" />
+  </root>
   <root nodeId="3981318653438276256" modelId="r:1dca5eee-6e62-48f8-9e94-dbbe31be2456(jetbrains.mps.lang.quotation.behavior)">
     <nodeInfo nodeId="201537367881178519" fileName="Quotation_Behavior.java" startLine="11" startPosition="83" endLine="12" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3981318653438276256" fileName="Quotation_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />

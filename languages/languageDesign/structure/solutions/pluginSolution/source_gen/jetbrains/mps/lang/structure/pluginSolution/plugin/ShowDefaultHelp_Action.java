@@ -35,10 +35,10 @@ public class ShowDefaultHelp_Action extends BaseAction {
       {
         HelpHelper.HelpType defaultHelp = HelpHelper.getDefaultHelpFor(((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")));
         if (defaultHelp == null) {
-          ShowDefaultHelp_Action.this.setEnabledState(event.getPresentation(), false);
+          this.setEnabledState(event.getPresentation(), false);
           return;
         }
-        ShowDefaultHelp_Action.this.setEnabledState(event.getPresentation(), true);
+        this.setEnabledState(event.getPresentation(), true);
         event.getPresentation().setText("Show Help for " + NameUtil.capitalize(defaultHelp.getName()));
       }
     } catch (Throwable t) {

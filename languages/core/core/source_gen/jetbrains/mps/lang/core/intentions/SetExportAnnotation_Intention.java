@@ -19,7 +19,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -97,7 +97,7 @@ public class SetExportAnnotation_Intention implements IntentionFactory {
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return ((myParameter == null) ?
         "Remove @export() Annotation" :
-        "Set " + SConceptPropertyOperations.getString(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.castConcept(myParameter, "jetbrains.mps.lang.core.structure.ExportScope"), "alias") + " Annotation"
+        "Set " + SPropertyOperations.getString(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.castConcept(myParameter, "jetbrains.mps.lang.core.structure.ExportScope"), "conceptAlias") + " Annotation"
       );
     }
 

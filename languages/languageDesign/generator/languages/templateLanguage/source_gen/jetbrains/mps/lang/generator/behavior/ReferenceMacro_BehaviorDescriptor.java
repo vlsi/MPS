@@ -4,10 +4,15 @@ package jetbrains.mps.lang.generator.behavior;
 
 import jetbrains.mps.lang.core.behavior.LinkAttribute_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SNode;
 
 public class ReferenceMacro_BehaviorDescriptor extends LinkAttribute_BehaviorDescriptor implements AbstractMacro_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor {
   public ReferenceMacro_BehaviorDescriptor() {
+  }
+
+  public String virtual_getRole_1262430001741497900(SConcept thisConcept) {
+    return ReferenceMacro_Behavior.virtual_getRole_1262430001741497900(thisConcept);
   }
 
   public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {

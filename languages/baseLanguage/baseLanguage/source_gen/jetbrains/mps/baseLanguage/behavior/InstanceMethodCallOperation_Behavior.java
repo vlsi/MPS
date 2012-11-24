@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class InstanceMethodCallOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -95,6 +96,10 @@ public class InstanceMethodCallOperation_Behavior {
     SNode de = SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.DotExpression");
     SNode methodAnc = SNodeOperations.getAncestor(de, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
     return SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(de), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "rValue", true) == de || SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(de), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "initializer", true) == de || SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(de), "jetbrains.mps.baseLanguage.structure.ReturnStatement"), "expression", true) == de || ((methodAnc != null) && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), methodAnc, "virtual_getLastStatement_1239354409446", new Object[]{}) == SNodeOperations.as(SNodeOperations.getParent(de), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
+  }
+
+  public static boolean virtual_substituteInAmbigousPosition_1262430001741498020(SConcept thisConcept) {
+    return true;
   }
 
   private static boolean eq_xykbjj_a0a0a0a0a0a0a4(Object a, Object b) {

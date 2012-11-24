@@ -4,6 +4,7 @@ package jetbrains.mps.core.xml.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public abstract class XmlBasePrologElement_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements XmlPrologElement_BehaviorDescriptor {
   public XmlBasePrologElement_BehaviorDescriptor() {
@@ -17,12 +18,20 @@ public abstract class XmlBasePrologElement_BehaviorDescriptor extends BaseConcep
     return XmlBasePrologElement_Behavior.virtual_isFirstPositionAllowed_2133624044437631446(thisNode);
   }
 
+  public boolean virtual_isFirst_1262430001741498376(SConcept thisConcept) {
+    return XmlPrologElement_Behavior.virtual_isFirst_1262430001741498376(thisConcept);
+  }
+
   public boolean virtual_isLastPositionAllowed_2133624044437631519(SNode thisNode) {
     return XmlBasePrologElement_Behavior.virtual_isLastPositionAllowed_2133624044437631519(thisNode);
   }
 
   public boolean virtual_isOneLineBlock_2133624044437631438(SNode thisNode) {
     return XmlBasePrologElement_Behavior.virtual_isOneLineBlock_2133624044437631438(thisNode);
+  }
+
+  public boolean virtual_isSingle_1262430001741497810(SConcept thisConcept) {
+    return XmlPrologElement_Behavior.virtual_isSingle_1262430001741497810(thisConcept);
   }
 
   public boolean virtual_isTextLike_2133624044437631604(SNode thisNode) {

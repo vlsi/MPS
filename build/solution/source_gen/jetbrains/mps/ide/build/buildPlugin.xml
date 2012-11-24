@@ -309,6 +309,7 @@
         <path location="${mps_home}/IdeaPlugin/mps-java/debugger/src" />
         <path location="${mps_home}/IdeaPlugin/mps-java/scopes/src" />
         <path location="${mps_home}/IdeaPlugin/mps-java/sourceStubs/src" />
+        <path location="${mps_home}/IdeaPlugin/solutions/jetbrains.mps.ide.java.psiStubs/source_gen" />
         <path location="${mps_home}/plugins/mpsjava/platform/source_gen" />
         <path location="${mps_home}/plugins/mpsjava/platform/source" />
       </src>
@@ -341,6 +342,7 @@
       <fileset dir="${mps_home}/IdeaPlugin/mps-java/debugger/src" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/IdeaPlugin/mps-java/scopes/src" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/IdeaPlugin/mps-java/sourceStubs/src" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/IdeaPlugin/solutions/jetbrains.mps.ide.java.psiStubs/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/mpsjava/platform/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/mpsjava/platform/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>

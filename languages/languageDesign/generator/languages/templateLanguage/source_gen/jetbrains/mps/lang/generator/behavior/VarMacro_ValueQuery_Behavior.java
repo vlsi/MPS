@@ -5,6 +5,7 @@ package jetbrains.mps.lang.generator.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -23,6 +24,10 @@ public class VarMacro_ValueQuery_Behavior {
       }
     }
     return _quotation_createNode_i81kn4_a1a0();
+  }
+
+  public static boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
+    return true;
   }
 
   private static SNode _quotation_createNode_i81kn4_a1a0() {

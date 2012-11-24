@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class IndexedTupleType_BehaviorDescriptor extends Type_BehaviorDescriptor implements IGenericType_BehaviorDescriptor {
   public IndexedTupleType_BehaviorDescriptor() {
@@ -29,8 +30,16 @@ public class IndexedTupleType_BehaviorDescriptor extends Type_BehaviorDescriptor
     return IGenericType_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
   }
 
+  public String virtual_getLeftBracket_1262430001741497978(SConcept thisConcept) {
+    return IndexedTupleType_Behavior.virtual_getLeftBracket_1262430001741497978(thisConcept);
+  }
+
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return IndexedTupleType_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  }
+
+  public String virtual_getRightBracket_1262430001741498044(SConcept thisConcept) {
+    return IndexedTupleType_Behavior.virtual_getRightBracket_1262430001741498044(thisConcept);
   }
 
   public List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {

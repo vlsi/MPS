@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class NullLiteral_Behavior {
   public static void init(SNode thisNode) {
@@ -15,5 +16,9 @@ public class NullLiteral_Behavior {
 
   public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, IModule module) {
     return null;
+  }
+
+  public static boolean virtual_constant_1262430001741498050(SConcept thisConcept) {
+    return true;
   }
 }

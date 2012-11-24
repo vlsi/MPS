@@ -52,7 +52,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 17:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ActionType", "jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType", false, new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType"}, new String[]{}, new String[]{"action"});
       case 18:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.AddElementStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.AddElementStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 19:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.AddKeystrokeStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{});
       case 20:
@@ -74,25 +74,25 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 28:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ConceptCondition", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.plugin.structure.ActionParameterCondition"}, new String[]{}, new String[]{"concept"});
       case 29:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 30:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Concept", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
       case 31:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
       case 32:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_IModule", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType", false, new String[]{"jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_IModule", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType", false, new String[]{"jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 33:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_MPSProject", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_MPSProject", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 34:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Model", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType", false, new String[]{"jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Model", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType", false, new String[]{"jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 35:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 36:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 37:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Project", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Project", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 38:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType", false, new String[]{"jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType", false, new String[]{"jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 39:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.CreateNodeAspectBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
       case 40:
@@ -148,9 +148,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 65:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.InitBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
       case 66:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint", "jetbrains.mps.lang.plugin.structure.GroupAnchor", false, new String[]{"jetbrains.mps.lang.plugin.structure.GroupAnchor"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint", "jetbrains.mps.lang.plugin.structure.GroupAnchor", false, new String[]{"jetbrains.mps.lang.plugin.structure.GroupAnchor", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 67:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.InterfaceGroup", "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", false, new String[]{"jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.InterfaceGroup", "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", false, new String[]{"jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 68:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.IsApplicableBlock", "jetbrains.mps.lang.plugin.structure.UpdateBlock", false, new String[]{"jetbrains.mps.lang.plugin.structure.UpdateBlock"}, new String[]{}, new String[]{});
       case 69:
@@ -216,7 +216,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 99:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ShortcutChange", null, true, new String[]{}, new String[]{}, new String[]{"action"});
       case 100:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.SimpleActionPlace", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.plugin.structure.ActionPlaceSpecification"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.SimpleActionPlace", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.plugin.structure.ActionPlaceSpecification", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 101:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.SimpleShortcutChange", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.plugin.structure.ShortcutChange"}, new String[]{}, new String[]{});
       case 102:
@@ -228,9 +228,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 105:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ToStringConceptFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
       case 106:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ToStringParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ToStringParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 107:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ToolActionPlace", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.plugin.structure.ActionPlaceSpecification"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ToolActionPlace", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.plugin.structure.ActionPlaceSpecification", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 108:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ToolDeclaration", "jetbrains.mps.lang.plugin.structure.BaseToolDeclaration", false, new String[]{"jetbrains.mps.lang.plugin.structure.BaseToolDeclaration"}, new String[]{}, new String[]{});
       case 109:

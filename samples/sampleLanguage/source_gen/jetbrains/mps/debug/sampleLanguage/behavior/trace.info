@@ -2,8 +2,22 @@
 <debugInfo>
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="WannabeClass_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.behavior.WannabeClass_BehaviorDescriptor" />
-  <unitInfo fileName="WannabeMethodCall_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.behavior.WannabeMethodCall_BehaviorDescriptor" />
+  <unitInfo fileName="WannabeMethodCall_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.behavior.WannabeMethodCall_BehaviorDescriptor" />
   <unitInfo fileName="WannabeMethod_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.behavior.WannabeMethod_BehaviorDescriptor" />
+  <root nodeId="1262430001741498797" modelId="r:444f499a-ac56-4a65-bc1d-a7b02f186006(jetbrains.mps.debug.sampleLanguage.behavior)">
+    <nodeInfo nodeId="1262430001741498795" fileName="WannabeMethodCall_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741498797" fileName="WannabeMethodCall_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741498797" fileName="WannabeMethodCall_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_legalAsStatement_1262430001741498032#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <scopeInfo nodeId="1262430001741498799" fileName="WannabeMethodCall_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741498794" fileName="WannabeMethodCall_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1262430001741498797" fileName="WannabeMethodCall_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741498797" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741498797" fileName="WannabeMethodCall_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741498797" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741498797" fileName="WannabeMethodCall_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.behavior.WannabeMethodCall_Behavior" />
+  </root>
   <root nodeId="7798828310133165649" modelId="r:444f499a-ac56-4a65-bc1d-a7b02f186006(jetbrains.mps.debug.sampleLanguage.behavior)">
     <nodeInfo nodeId="7798828310133165809" fileName="WannabeClass_Behavior.java" startLine="17" startPosition="39" endLine="18" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7798828310133165649" fileName="WannabeClass_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />

@@ -15,11 +15,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.FocusPolicy;
@@ -98,13 +97,13 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
           public EditorCell createEditorCell(EditorContext editorContext) {
             EditorCell_Collection collection = EditorCell_Collection.createVertical(editorContext, node);
             collection.addEditorCell(new EditorCell_Constant(editorContext, node, "Concept function help:"));
-            if (SConceptPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription") != null) {
-              collection.addEditorCell(new EditorCell_Constant(editorContext, node, SConceptPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription")));
+            if (SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription") != null) {
+              collection.addEditorCell(new EditorCell_Constant(editorContext, node, SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription")));
             }
             collection.addEditorCell(new EditorCell_Constant(editorContext, node, ""));
             collection.addEditorCell(new EditorCell_Constant(editorContext, node, "Parameter help:"));
             for (SNode cfp : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getParameters_1213877374450", new Object[]{})) {
-              String alias = SPropertyOperations.getString(cfp, "alias");
+              String alias = SPropertyOperations.getString(cfp, "conceptAlias");
               String description = SPropertyOperations.getString(cfp, "shortDescription");
               if (description == null) {
                 description = "<no help. use short_description concept function property to create one>";

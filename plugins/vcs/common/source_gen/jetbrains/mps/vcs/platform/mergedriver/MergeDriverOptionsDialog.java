@@ -19,6 +19,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import javax.swing.JCheckBox;
+import jetbrains.mps.InternalFlag;
 
 public class MergeDriverOptionsDialog extends DialogWrapper {
   private JPanel myPanel = new JPanel(new GridLayout(0, 1));
@@ -111,14 +112,14 @@ public class MergeDriverOptionsDialog extends DialogWrapper {
 
     private void adIfNeeded() {
       AbstractInstaller.State currentState = myInstaller.getCurrentState();
-      if (currentState != AbstractInstaller.State.INSTALLED) {
+      if (InternalFlag.isInternalMode() || currentState != AbstractInstaller.State.INSTALLED) {
         myPanel.add(this);
         setText(myInstaller.getActionTitle() + ((currentState == AbstractInstaller.State.OUTDATED ?
           " (update)" :
           ""
         )));
         setToolTipText(myInstaller.getActionTooltip());
-        setSelected(true);
+        setSelected(currentState != AbstractInstaller.State.INSTALLED);
       }
     }
 

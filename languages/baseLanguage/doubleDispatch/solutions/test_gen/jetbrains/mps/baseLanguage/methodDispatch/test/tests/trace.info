@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="3813896760029572858" modelId="r:9a3aa4da-d1a8-44bf-80e0-56cbddbc7ec9(jetbrains.mps.baseLanguage.methodDispatch.test.tests@tests)">
+    <nodeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="16" startPosition="69" endLine="17" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="17" startPosition="143" endLine="18" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="22" startPosition="69" endLine="23" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="23" startPosition="143" endLine="24" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="28" startPosition="69" endLine="29" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="29" startPosition="143" endLine="30" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="35" startPosition="71" endLine="36" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="36" startPosition="141" endLine="37" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="40" startPosition="71" endLine="41" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="41" startPosition="141" endLine="42" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="45" startPosition="71" endLine="46" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="46" startPosition="141" endLine="47" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck3813896760029621933#()V" />
+    <nodeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck3813896760029627239#()V" />
+    <nodeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck3813896760029629781#()V" />
+    <nodeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck3813896760029621933#()V" />
+    <nodeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck3813896760029627239#()V" />
+    <nodeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck3813896760029629781#()V" />
+    <scopeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="16" startPosition="69" endLine="18" endPosition="149" />
+    <scopeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="22" startPosition="69" endLine="24" endPosition="149" />
+    <scopeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="28" startPosition="69" endLine="30" endPosition="149" />
+    <scopeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="35" startPosition="71" endLine="37" endPosition="154">
+      <varInfo nodeId="3813896760029572858" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="40" startPosition="71" endLine="42" endPosition="154">
+      <varInfo nodeId="3813896760029572858" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="45" startPosition="71" endLine="47" endPosition="154">
+      <varInfo nodeId="3813896760029572858" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
+    <unitInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="33" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.methodDispatch.test.tests.TypeCheckingErros_Test$TestBody" />
+    <unitInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.methodDispatch.test.tests.TypeCheckingErros_Test" />
+  </root>
+</debugInfo>
+

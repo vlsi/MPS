@@ -4,15 +4,15 @@
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="ChildFilterBlock_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.ChildFilterBlock_BehaviorDescriptor" />
   <unitInfo fileName="ChildFilterFunction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.ChildFilterFunction_BehaviorDescriptor" />
-  <unitInfo fileName="ConceptFunctionParameter_childNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.ConceptFunctionParameter_childNode_BehaviorDescriptor" />
-  <unitInfo fileName="ConceptFunctionParameter_node_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.ConceptFunctionParameter_node_BehaviorDescriptor" />
-  <unitInfo fileName="DescriptionBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.DescriptionBlock_BehaviorDescriptor" />
-  <unitInfo fileName="ExecuteBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.ExecuteBlock_BehaviorDescriptor" />
+  <unitInfo fileName="ConceptFunctionParameter_childNode_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.ConceptFunctionParameter_childNode_BehaviorDescriptor" />
+  <unitInfo fileName="ConceptFunctionParameter_node_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.ConceptFunctionParameter_node_BehaviorDescriptor" />
+  <unitInfo fileName="DescriptionBlock_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.DescriptionBlock_BehaviorDescriptor" />
+  <unitInfo fileName="ExecuteBlock_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.ExecuteBlock_BehaviorDescriptor" />
   <unitInfo fileName="IntentionDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="IntentionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.IntentionParameter_BehaviorDescriptor" />
-  <unitInfo fileName="IsApplicableBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.IsApplicableBlock_BehaviorDescriptor" />
+  <unitInfo fileName="IntentionParameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.IntentionParameter_BehaviorDescriptor" />
+  <unitInfo fileName="IsApplicableBlock_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.IsApplicableBlock_BehaviorDescriptor" />
   <unitInfo fileName="ParameterizedIntentionDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.ParameterizedIntentionDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="QueryBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.QueryBlock_BehaviorDescriptor" />
+  <unitInfo fileName="QueryBlock_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.QueryBlock_BehaviorDescriptor" />
   <unitInfo fileName="SurroundWithIntentionDeclaration_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.SurroundWithIntentionDeclaration_BehaviorDescriptor" />
   <root nodeId="1213877237627" modelId="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)">
     <nodeInfo nodeId="1213877237641" fileName="IntentionDeclaration_Behavior.java" startLine="17" startPosition="74" endLine="18" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -87,6 +87,62 @@
       <varInfo nodeId="1240396432370" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="1240396432370" fileName="ParameterizedIntentionDeclaration_Behavior.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.ParameterizedIntentionDeclaration_Behavior" />
+  </root>
+  <root nodeId="1262430001741519711" modelId="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)">
+    <nodeInfo nodeId="1262430001741519709" fileName="IsApplicableBlock_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741519711" fileName="IsApplicableBlock_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741519711" fileName="IsApplicableBlock_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <scopeInfo nodeId="1262430001741519713" fileName="IsApplicableBlock_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741519708" fileName="IsApplicableBlock_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1262430001741519711" fileName="IsApplicableBlock_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741519711" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741519711" fileName="IsApplicableBlock_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741519711" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741519711" fileName="IsApplicableBlock_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.IsApplicableBlock_Behavior" />
+  </root>
+  <root nodeId="1262430001741703089" modelId="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)">
+    <nodeInfo nodeId="1262430001741703087" fileName="QueryBlock_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703089" fileName="QueryBlock_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741703089" fileName="QueryBlock_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <scopeInfo nodeId="1262430001741703091" fileName="QueryBlock_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741703086" fileName="QueryBlock_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1262430001741703089" fileName="QueryBlock_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741703089" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741703089" fileName="QueryBlock_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741703089" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741703089" fileName="QueryBlock_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.QueryBlock_Behavior" />
+  </root>
+  <root nodeId="1262430001741719753" modelId="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)">
+    <nodeInfo nodeId="1262430001741719751" fileName="DescriptionBlock_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741719753" fileName="DescriptionBlock_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741719753" fileName="DescriptionBlock_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <scopeInfo nodeId="1262430001741719755" fileName="DescriptionBlock_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741719750" fileName="DescriptionBlock_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1262430001741719753" fileName="DescriptionBlock_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741719753" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741719753" fileName="DescriptionBlock_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741719753" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741719753" fileName="DescriptionBlock_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.DescriptionBlock_Behavior" />
+  </root>
+  <root nodeId="1262430001741720159" modelId="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)">
+    <nodeInfo nodeId="1262430001741720157" fileName="ExecuteBlock_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741720159" fileName="ExecuteBlock_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741720159" fileName="ExecuteBlock_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <scopeInfo nodeId="1262430001741720161" fileName="ExecuteBlock_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741720156" fileName="ExecuteBlock_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1262430001741720159" fileName="ExecuteBlock_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="1262430001741720159" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741720159" fileName="ExecuteBlock_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1262430001741720159" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741720159" fileName="ExecuteBlock_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.intentions.behavior.ExecuteBlock_Behavior" />
   </root>
   <root nodeId="6263518417926802282" modelId="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)">
     <nodeInfo nodeId="6263518417926802292" fileName="BaseIntentionDeclaration_Behavior.java" startLine="21" startPosition="85" endLine="22" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

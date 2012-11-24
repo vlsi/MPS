@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BaseConcept_Behavior {
@@ -48,7 +48,7 @@ public class BaseConcept_Behavior {
       return smartRefPresentation;
     }
     // -- 
-    String conceptAlias = SConceptPropertyOperations.getString(thisNode, "alias");
+    String conceptAlias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
     if (conceptAlias != null) {
       return conceptAlias;
     }
@@ -69,6 +69,10 @@ public class BaseConcept_Behavior {
       metalevel += BehaviorReflection.invokeVirtual(Integer.TYPE, metaLevelChanger, "virtual_getMetaLevelChange_201537367881074474", new Object[]{});
     }
     return metalevel;
+  }
+
+  public static boolean virtual_substituteInAmbigousPosition_1262430001741498020(SConcept thisConcept) {
+    return false;
   }
 
   @Deprecated

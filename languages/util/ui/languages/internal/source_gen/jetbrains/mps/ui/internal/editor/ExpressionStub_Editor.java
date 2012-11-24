@@ -8,12 +8,9 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.ui.modeling.editor.IPartiallyDefinedStub_Component;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ExpressionStub_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -23,10 +20,16 @@ public class ExpressionStub_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yrkldf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_yrkldf_a");
-    editorCell.addEditorCell(this.createConceptProperty_yrkldf_a0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_yrkldf_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_yrkldf_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_yrkldf_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_yrkldf_d0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_yrkldf_a0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new AliasEditorComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
@@ -47,24 +50,6 @@ public class ExpressionStub_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_yrkldf_d0");
     editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConceptProperty_yrkldf_a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-    provider.setRole("alias");
-    provider.setNoTargetText("<no alias>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("conceptProperty_alias");
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
     return editorCell;
   }
 }

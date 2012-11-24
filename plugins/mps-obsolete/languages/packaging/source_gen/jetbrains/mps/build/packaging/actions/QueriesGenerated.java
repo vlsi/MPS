@@ -23,12 +23,12 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.File;
 import jetbrains.mps.build.packaging.behavior.Path_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Collections;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 
 public class QueriesGenerated {
@@ -91,7 +91,7 @@ public class QueriesGenerated {
             SNode abstractProjectComponent = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.AbstractProjectComponent", true, false);
             final boolean isFile = (abstractProjectComponent == null ?
               true :
-              SConceptPropertyOperations.getBoolean(abstractProjectComponent, "acceptFiles")
+              BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(abstractProjectComponent))), "virtual_acceptFiles_1262430001741497846", new Object[]{})
             );
 
             return Sequence.fromIterable(Sequence.fromArray(suggestFiles)).where(new IWhereFilter<File>() {
@@ -142,7 +142,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Computable computable = new Computable() {
           public Object compute() {
-            List<String> allMacroNames = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.IMacroHolder", true, false), "virtual_getAllMacroNames_1234975567387", new Object[]{SConceptPropertyOperations.getBoolean(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.IPath"), "canStartFromBasedir")});
+            List<String> allMacroNames = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.IMacroHolder", true, false), "virtual_getAllMacroNames_1234975567387", new Object[]{BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.IPath")))), "virtual_canStartFromBasedir_1262430001741498253", new Object[]{})});
             ListSequence.fromList(allMacroNames).addElement(no_macro);
             return allMacroNames;
           }

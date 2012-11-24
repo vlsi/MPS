@@ -4,11 +4,44 @@ package jetbrains.mps.lang.smodel.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IOperation_BehaviorDescriptor;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 
 public abstract class SNodeOperation_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IOperation_BehaviorDescriptor {
   public SNodeOperation_BehaviorDescriptor() {
+  }
+
+  public boolean virtual_applicableToConceptProperty_1262430001741497945(SConcept thisConcept) {
+    return SNodeOperation_Behavior.virtual_applicableToConceptProperty_1262430001741497945(thisConcept);
+  }
+
+  public boolean virtual_applicableToConcept_1262430001741498358(SConcept thisConcept) {
+    return SNodeOperation_Behavior.virtual_applicableToConcept_1262430001741498358(thisConcept);
+  }
+
+  public boolean virtual_applicableToEnumProperty_1262430001741498259(SConcept thisConcept) {
+    return SNodeOperation_Behavior.virtual_applicableToEnumProperty_1262430001741498259(thisConcept);
+  }
+
+  public boolean virtual_applicableToLinkList_1262430001741498382(SConcept thisConcept) {
+    return SNodeOperation_Behavior.virtual_applicableToLinkList_1262430001741498382(thisConcept);
+  }
+
+  public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
+    return SNodeOperation_Behavior.virtual_applicableToLink_1262430001741498352(thisConcept);
+  }
+
+  public boolean virtual_applicableToModel_1262430001741492322(SConcept thisConcept) {
+    return SNodeOperation_Behavior.virtual_applicableToModel_1262430001741492322(thisConcept);
+  }
+
+  public boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
+    return SNodeOperation_Behavior.virtual_applicableToNode_1262430001741498076(thisConcept);
+  }
+
+  public boolean virtual_applicableToSimpleProperty_1262430001741498100(SConcept thisConcept) {
+    return SNodeOperation_Behavior.virtual_applicableToSimpleProperty_1262430001741498100(thisConcept);
   }
 
   public String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
@@ -21,6 +54,10 @@ public abstract class SNodeOperation_BehaviorDescriptor extends BaseConcept_Beha
 
   public boolean virtual_isLValue_1213877410080(SNode thisNode) {
     return IOperation_Behavior.virtual_isLValue_1213877410080(thisNode);
+  }
+
+  public boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
+    return IOperation_Behavior.virtual_lvalue_1262430001741498364(thisConcept);
   }
 
   public boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {

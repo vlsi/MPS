@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class IClassifiersSearchScopeAdapter {
   public IClassifiersSearchScopeAdapter() {
@@ -42,7 +42,7 @@ public class IClassifiersSearchScopeAdapter {
         if (((constraint & IClassifiersSearchScope.ENUM_CONSTANT) != 0) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"))) {
           return false;
         }
-        if (((constraint & IClassifiersSearchScope.NON_FINAL) != 0) && (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassifierMember") && SConceptPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "final"))) {
+        if (((constraint & IClassifiersSearchScope.NON_FINAL) != 0) && (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassifierMember") && SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierMember")), "final"))) {
           return false;
         }
 

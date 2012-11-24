@@ -7,16 +7,25 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.ScriptKind;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.ScriptKind;
-import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.editor.runtime.EditorCell_Empty;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
@@ -25,11 +34,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.util.NameUtil;
 
 public class ExponentOperation_Component extends AbstractCellProvider {
   public ExponentOperation_Component(SNode node) {
@@ -54,8 +61,32 @@ public class ExponentOperation_Component extends AbstractCellProvider {
     EditorCell_Collection editorCell = EditorCell_Collection.createSuperscript(editorContext, node);
     editorCell.setCellId("Collection_spngij_a");
     editorCell.addEditorCell(this.createRefNode_spngij_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConceptProperty_spngij_b0(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_spngij_b0(editorContext, node));
     editorCell.addEditorCell(this.createEmpty_spngij_c0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createReadOnlyModelAccessor_spngij_b0(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        return BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getOperationSymbol_1262430001741497831", new Object[]{});
+      }
+
+      public void setText(String s) {
+      }
+
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ExponentOperation_Component.ExponentialOperation_generic_cellMenu_a0b0()}));
+    editorCell.setCellId("ReadOnlyModelAccessor_spngij_b0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUPERSCRIPT);
+    }
+    deleteUpperIndex.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
 
@@ -66,29 +97,6 @@ public class ExponentOperation_Component extends AbstractCellProvider {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConceptProperty_spngij_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-    provider.setRole("operationSymbol");
-    provider.setNoTargetText("<no operationSymbol>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("conceptProperty_operationSymbol");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUPERSCRIPT);
-    }
-    deleteUpperIndex.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ExponentOperation_Component.ExponentialOperation_generic_cellMenu_a0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -116,7 +124,7 @@ public class ExponentOperation_Component extends AbstractCellProvider {
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
       for (SNode a : ListSequence.fromList(SConceptOperations.getAllSubConcepts(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(node, "allowedSubstituends")).first(), SNodeOperations.getModel(node), scope))) {
-        if (!(SConceptPropertyOperations.getBoolean(a, "abstract")) && SConceptOperations.isSubConceptOf(a, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation")) {
+        if (!(SPropertyOperations.getBoolean(a, "abstract")) && SConceptOperations.isSubConceptOf(a, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation")) {
           ListSequence.fromList(result).addElement(SNodeOperations.castConcept(a, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"));
         }
       }
@@ -140,7 +148,7 @@ public class ExponentOperation_Component extends AbstractCellProvider {
     }
 
     public String getMatchingText_internal(SNode parameterObject) {
-      return SConceptPropertyOperations.getString(parameterObject, "operationSymbol");
+      return BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(parameterObject)), "virtual_getOperationSymbol_1262430001741497831", new Object[]{});
     }
 
     public String getDescriptionText(Object parameterObject) {
@@ -148,7 +156,7 @@ public class ExponentOperation_Component extends AbstractCellProvider {
     }
 
     public String getDescriptionText_internal(SNode parameterObject) {
-      return SConceptPropertyOperations.getString(parameterObject, "shortDescription");
+      return SPropertyOperations.getString(parameterObject, "shortDescription");
     }
   }
 }

@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class SelectOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -43,5 +44,13 @@ public class SelectOperation_Behavior {
       return SPropertyOperations.hasValue(param, "position", "after", "before");
     }
     return false;
+  }
+
+  public static boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
+    return true;
+  }
+
+  public static boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
+    return true;
   }
 }

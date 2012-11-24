@@ -5,6 +5,7 @@ package jetbrains.mps.lang.smodel.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class SPropertyAccess_Behavior {
   public static void init(SNode thisNode) {
@@ -12,5 +13,21 @@ public class SPropertyAccess_Behavior {
 
   public static String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "property", false), "name");
+  }
+
+  public static boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
+    return true;
+  }
+
+  public static boolean virtual_applicableToConcept_1262430001741498358(SConcept thisConcept) {
+    return true;
+  }
+
+  public static boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
+    return true;
+  }
+
+  public static boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
+    return true;
   }
 }

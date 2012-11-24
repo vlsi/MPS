@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -26,6 +27,10 @@ public class BeanPropertyBuilder_Behavior {
 
   public static SNode virtual_getAttachStatementChild_4797501453850305563(SNode thisNode, SNode parentBuilder, SNode parentRef, SNode childRef) {
     return _quotation_createNode_ec1xrx_a0a2(parentRef, childRef, SLinkOperations.getTarget(thisNode, "setter", false));
+  }
+
+  public static boolean virtual_leaf_1262430001741498370(SConcept thisConcept) {
+    return true;
   }
 
   public static String getPropertyName_2679357232284040711(String methodName) {

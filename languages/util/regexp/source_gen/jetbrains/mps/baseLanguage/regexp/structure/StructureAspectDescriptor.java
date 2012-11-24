@@ -24,7 +24,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 3:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.DotRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp", false, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{}, new String[]{});
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 5:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{}, new String[]{});
       case 6:
@@ -48,13 +48,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 15:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp", false, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{}, new String[]{});
       case 16:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement", "jetbrains.mps.baseLanguage.regexp.structure.Replacement", false, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Replacement"}, new String[]{"text"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement", "jetbrains.mps.baseLanguage.regexp.structure.Replacement", false, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Replacement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"text"}, new String[]{});
       case 17:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp", false, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp"}, new String[]{}, new String[]{});
       case 18:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp", false, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IVariableAssignment"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp", false, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IVariableAssignment", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 19:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 20:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", "jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 21:
@@ -112,7 +112,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 47:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"dotAll", "multiLine", "caseInsensitive", "globalReplace"}, new String[]{});
       case 48:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 49:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", "jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 50:
@@ -120,9 +120,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 51:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", "jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp", false, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp"}, new String[]{}, new String[]{});
       case 52:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SplitExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SplitExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 53:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SplitOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", "jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.SplitOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault", "jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 54:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.regexp.structure.StarRegexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp", false, new String[]{"jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"}, new String[]{}, new String[]{});
       case 55:

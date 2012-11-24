@@ -5,6 +5,7 @@ package jetbrains.mps.execution.configurations.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class Create_ConceptFunction_Behavior {
   public static void init(SNode thisNode) {
@@ -12,5 +13,9 @@ public class Create_ConceptFunction_Behavior {
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", false, false), "configuration", true);
+  }
+
+  public static boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
+    return true;
   }
 }

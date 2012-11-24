@@ -4,6 +4,7 @@ package jetbrains.mps.core.xml.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public abstract class XmlContent_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements XmlPart_BehaviorDescriptor {
   public XmlContent_BehaviorDescriptor() {
@@ -31,6 +32,14 @@ public abstract class XmlContent_BehaviorDescriptor extends BaseConcept_Behavior
 
   public boolean virtual_onNewLine_2133624044437631588(SNode thisNode) {
     return XmlContent_Behavior.virtual_onNewLine_2133624044437631588(thisNode);
+  }
+
+  public boolean virtual_oneLineBlock_1262430001741497816(SConcept thisConcept) {
+    return XmlContent_Behavior.virtual_oneLineBlock_1262430001741497816(thisConcept);
+  }
+
+  public boolean virtual_textLike_1262430001741498277(SConcept thisConcept) {
+    return XmlContent_Behavior.virtual_textLike_1262430001741498277(thisConcept);
   }
 
   @Override

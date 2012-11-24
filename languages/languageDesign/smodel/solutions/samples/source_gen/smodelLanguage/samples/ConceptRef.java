@@ -6,7 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
@@ -32,7 +33,7 @@ public class ConceptRef {
   }
 
   public void concept_conceptProperties(SNode exprConcept) {
-    boolean b = SConceptPropertyOperations.getBoolean(exprConcept, "lvalue");
+    boolean b = BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(exprConcept)), "virtual_lvalue_1262430001741497939", new Object[]{});
   }
 
   public void concept_conceptLinkTargets(SNode conceptFunctionConcept) {

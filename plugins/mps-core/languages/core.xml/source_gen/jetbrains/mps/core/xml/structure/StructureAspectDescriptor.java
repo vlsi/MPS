@@ -16,7 +16,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlAttribute", "jetbrains.mps.core.xml.structure.XmlBaseAttribute", false, new String[]{"jetbrains.mps.core.xml.structure.XmlBaseAttribute"}, new String[]{"attrName"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlAttribute", "jetbrains.mps.core.xml.structure.XmlBaseAttribute", false, new String[]{"jetbrains.mps.core.xml.structure.XmlBaseAttribute", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"attrName"}, new String[]{});
       case 1:
         return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlBaseAttribute", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 2:
@@ -28,7 +28,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 5:
         return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlCharRef", "jetbrains.mps.core.xml.structure.XmlContent", false, new String[]{"jetbrains.mps.core.xml.structure.XmlContent"}, new String[]{"charCode"}, new String[]{});
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlCharRefValue", "jetbrains.mps.core.xml.structure.XmlValuePart", false, new String[]{"jetbrains.mps.core.xml.structure.XmlValuePart"}, new String[]{"charCode"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlCharRefValue", "jetbrains.mps.core.xml.structure.XmlValuePart", false, new String[]{"jetbrains.mps.core.xml.structure.XmlValuePart", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"charCode"}, new String[]{});
       case 7:
         return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlComment", "jetbrains.mps.core.xml.structure.XmlContent", false, new String[]{"jetbrains.mps.core.xml.structure.XmlContent", "jetbrains.mps.core.xml.structure.XmlPrologElement"}, new String[]{}, new String[]{});
       case 8:
@@ -42,11 +42,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 12:
         return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlDocument", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlElement", "jetbrains.mps.core.xml.structure.XmlBaseElement", false, new String[]{"jetbrains.mps.core.xml.structure.XmlBaseElement"}, new String[]{"tagName", "shortEmptyNotation"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlElement", "jetbrains.mps.core.xml.structure.XmlBaseElement", false, new String[]{"jetbrains.mps.core.xml.structure.XmlBaseElement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"tagName", "shortEmptyNotation"}, new String[]{});
       case 14:
         return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlEntityRef", "jetbrains.mps.core.xml.structure.XmlContent", false, new String[]{"jetbrains.mps.core.xml.structure.XmlContent"}, new String[]{"entityName"}, new String[]{});
       case 15:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlEntityRefValue", "jetbrains.mps.core.xml.structure.XmlValuePart", false, new String[]{"jetbrains.mps.core.xml.structure.XmlValuePart"}, new String[]{"entityName"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlEntityRefValue", "jetbrains.mps.core.xml.structure.XmlValuePart", false, new String[]{"jetbrains.mps.core.xml.structure.XmlValuePart", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"entityName"}, new String[]{});
       case 16:
         return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlExternalId", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"publicId", "systemId", "isPublic"}, new String[]{});
       case 17:
@@ -62,13 +62,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 22:
         return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlPrologElement", null, true, new String[]{"jetbrains.mps.core.xml.structure.XmlPart"}, new String[]{}, new String[]{});
       case 23:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlText", "jetbrains.mps.core.xml.structure.XmlContent", false, new String[]{"jetbrains.mps.core.xml.structure.XmlContent"}, new String[]{"value"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlText", "jetbrains.mps.core.xml.structure.XmlContent", false, new String[]{"jetbrains.mps.core.xml.structure.XmlContent", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"value"}, new String[]{});
       case 24:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlTextValue", "jetbrains.mps.core.xml.structure.XmlValuePart", false, new String[]{"jetbrains.mps.core.xml.structure.XmlValuePart"}, new String[]{"text"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlTextValue", "jetbrains.mps.core.xml.structure.XmlValuePart", false, new String[]{"jetbrains.mps.core.xml.structure.XmlValuePart", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"text"}, new String[]{});
       case 25:
         return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlValuePart", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 26:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlWhitespace", "jetbrains.mps.core.xml.structure.XmlBasePrologElement", false, new String[]{"jetbrains.mps.core.xml.structure.XmlBasePrologElement", "jetbrains.mps.core.xml.structure.XmlPrologElement"}, new String[]{"value"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlWhitespace", "jetbrains.mps.core.xml.structure.XmlBasePrologElement", false, new String[]{"jetbrains.mps.core.xml.structure.XmlBasePrologElement", "jetbrains.mps.core.xml.structure.XmlPrologElement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"value"}, new String[]{});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
