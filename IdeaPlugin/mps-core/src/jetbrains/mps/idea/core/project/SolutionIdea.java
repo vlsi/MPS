@@ -49,6 +49,7 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 public class SolutionIdea extends Solution {
   @NotNull
@@ -179,6 +180,7 @@ public class SolutionIdea extends Solution {
 
   private void addUsedLibraries(final List<Dependency> dependencies) {
     ModuleRootManager moduleRootManager = ModuleRootManager.getInstance(myModule);
+    final Map<ModuleReference, Boolean> modules = new HashMap<ModuleReference, Boolean>();
     moduleRootManager.orderEntries().forEach(new Processor<OrderEntry>() {
       public boolean process(OrderEntry oe) {
         if (!(oe instanceof LibraryOrderEntry)) {
@@ -193,18 +195,27 @@ public class SolutionIdea extends Solution {
         if (SolutionLibraryType.isSolutionLibrary(library)) {
           Set<ModuleReference> moduleReferences = SolutionLibrariesIndex.getInstance(myModule.getProject()).getModules(library);
           for (ModuleReference moduleReference : moduleReferences) {
-            dependencies.add(new Dependency(moduleReference, loe.isExported()));
+            if (modules.containsKey(moduleReference)) {
+              if (loe.isExported()) {
+                modules.put(moduleReference, true);
+              }
+            } else {
+              modules.put(moduleReference, loe.isExported());
+            }
           }
         } else {
           // try to find stub solution
           Solution s = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.foreign(library.getName()));
           if (s != null) {
-            dependencies.add(new Dependency(s.getModuleReference(), loe.isExported()));
+            modules.put(s.getModuleReference(), loe.isExported());
           }
         }
         return true;
       }
     });
+    for (Entry<ModuleReference, Boolean> entry : modules.entrySet()) {
+      dependencies.add(new Dependency(entry.getKey(), entry.getValue()));
+    }
   }
 
   @Override
