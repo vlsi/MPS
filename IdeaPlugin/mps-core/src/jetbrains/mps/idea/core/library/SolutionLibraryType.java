@@ -23,10 +23,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.roots.impl.libraries.LibraryEx;
 import com.intellij.openapi.roots.libraries.*;
-import com.intellij.openapi.roots.libraries.ui.LibraryEditorComponent;
-import com.intellij.openapi.roots.libraries.ui.LibraryPropertiesEditor;
-import com.intellij.openapi.roots.libraries.ui.LibraryRootsComponentDescriptor;
-import com.intellij.openapi.roots.libraries.ui.OrderRoot;
+import com.intellij.openapi.roots.libraries.ui.*;
 import com.intellij.openapi.roots.ui.configuration.FacetsProvider;
 import com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditor;
 import com.intellij.openapi.vfs.JarFileSystem;
@@ -79,7 +76,7 @@ public class SolutionLibraryType extends LibraryType<DummyLibraryProperties> {
 
   @Override
   public String getCreateActionName() {
-    return MPSBundle.message("mps.solutions.library");
+    return MPSBundle.message("library.mps.solutions");
   }
 
   @Override
@@ -113,17 +110,13 @@ public class SolutionLibraryType extends LibraryType<DummyLibraryProperties> {
     if (chosenElements.isEmpty()) {
       return null;
     }
+
     String name = ModuleRuntimeLibrariesImporter.LIBRARY_PREFIX + chosenElements.get(0).getModuleFqName();
     if (chosenElements.size() > 1) {
       name += "...";
     }
 
-    final Set<OrderRoot> roots = new LinkedHashSet<OrderRoot>();
-    for (ModuleReference module : chosenElements) {
-      for (VirtualFile virtualFile : getSolutionJars((Solution) ModuleRepositoryFacade.getInstance().getModule(module))) {
-        roots.add(new OrderRoot(virtualFile, OrderRootType.CLASSES, false));
-      }
-    }
+    final Set<OrderRoot> roots = createRootsFor(chosenElements);
 
     return new NewLibraryConfiguration(name, this, createDefaultProperties()) {
       @Override
@@ -131,6 +124,16 @@ public class SolutionLibraryType extends LibraryType<DummyLibraryProperties> {
         editor.addRoots(roots);
       }
     };
+  }
+
+  private Set<OrderRoot> createRootsFor(List<ModuleReference> chosenElements) {
+    final Set<OrderRoot> roots = new LinkedHashSet<OrderRoot>();
+    for (ModuleReference module : chosenElements) {
+      for (VirtualFile virtualFile : getSolutionJars((Solution) ModuleRepositoryFacade.getInstance().getModule(module))) {
+        roots.add(new OrderRoot(virtualFile, OrderRootType.CLASSES, false));
+      }
+    }
+    return roots;
   }
 
   @NotNull
@@ -157,6 +160,71 @@ public class SolutionLibraryType extends LibraryType<DummyLibraryProperties> {
   @Override
   public boolean isSuitableModule(@NotNull Module module, @NotNull FacetsProvider facetsProvider) {
     return !facetsProvider.getFacetsByType(module, MPSFacetType.ID).isEmpty();
+  }
+
+  @Override
+  public LibraryRootsComponentDescriptor createLibraryRootsComponentDescriptor() {
+    return new LibraryRootsComponentDescriptor() {
+      @Override
+      public OrderRootTypePresentation getRootTypePresentation(@NotNull OrderRootType type) {
+        return null;
+      }
+
+      @NotNull
+      @Override
+      public List<? extends RootDetector> getRootDetectors() {
+        return Collections.emptyList();
+      }
+
+      @NotNull
+      @Override
+      public List<? extends AttachRootButtonDescriptor> createAttachButtons() {
+        return Arrays.asList(new AttachRootButtonDescriptor(OrderRootType.CLASSES, MPSBundle.message("library.attach.mps.solution")) {
+          @Override
+          public VirtualFile[] selectFiles(@NotNull JComponent parent, @Nullable VirtualFile initialSelection, @Nullable final Module contextModule, @NotNull final LibraryEditor libraryEditor) {
+            final List<ModuleReference> availableSolutions = new ArrayList<ModuleReference>();
+            final Set<VirtualFile> libraryFiles = new HashSet<VirtualFile>(Arrays.asList(libraryEditor.getFiles(OrderRootType.CLASSES)));
+            ModelAccess.instance().runReadAction(new Runnable() {
+              @Override
+              public void run() {
+                for (Solution solution : ModuleRepositoryFacade.getInstance().getAllModules(Solution.class)) {
+                  if (solution instanceof SolutionIdea || solution instanceof StubSolution) {
+                    continue;
+                  }
+                  if (libraryFiles.contains(getJarFile(solution.getBundleHome().getPath()))) {
+                    // skip solutions that are already in a lib
+                    continue;
+                  }
+                  availableSolutions.add(solution.getModuleReference());
+                }
+              }
+            });
+
+            ChooseElementsDialog<ModuleReference> chooser = new ChooseElementsDialog<ModuleReference>(parent, availableSolutions, MPSBundle.message("used.solutions.chooser.title")) {
+              @Override
+              protected String getItemText(ModuleReference item) {
+                return item.getModuleFqName();
+              }
+
+              @Override
+              protected Icon getItemIcon(ModuleReference item) {
+                return MPSIcons.SOLUTION_ICON;
+              }
+            };
+            chooser.show();
+            List<ModuleReference> chosenElements = chooser.getChosenElements();
+
+            final Set<VirtualFile> roots = new LinkedHashSet<VirtualFile>();
+            for (ModuleReference module : chosenElements) {
+              for (VirtualFile virtualFile : getSolutionJars((Solution) ModuleRepositoryFacade.getInstance().getModule(module))) {
+                roots.add(virtualFile);
+              }
+            }
+            return roots.toArray(new VirtualFile[roots.size()]);
+          }
+        });
+      }
+    };
   }
 
   public static boolean isSolutionLibrary(Library l) {
