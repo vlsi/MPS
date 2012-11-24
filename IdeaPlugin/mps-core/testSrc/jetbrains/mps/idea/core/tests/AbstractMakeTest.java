@@ -39,21 +39,18 @@ import jetbrains.mps.vfs.IFile;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.BrokenBarrierException;
-import java.util.concurrent.CyclicBarrier;
-import java.util.concurrent.Semaphore;
 
 public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
 
   private List<Asserter> asserters = new ArrayList<Asserter>();
-  
+
   protected void prepareTestData(MPSFacetConfiguration configuration, final IFile source) throws Exception {
     final ModuleRootManager mrm = ModuleRootManager.getInstance(configuration.getFacet().getModule());
     ApplicationManager.getApplication().runWriteAction(new Runnable() {
       @Override
       public void run() {
         ModifiableRootModel mm = mrm.getModifiableModel();
-        mm.setSdk(JavaSdkImpl.getMockJdk17());
+//        mm.setSdk(JavaSdkImpl.getMockJdk17());
 
         VirtualFileSystem vfs = VirtualFileManager.getInstance().getFileSystem("file");
         VirtualFile project = vfs.findFileByPath(source.getParent().getPath());
@@ -108,14 +105,14 @@ public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
     assertAsserters();
   }
 
-  private void assertAsserters () throws Exception {
-    for (Asserter ass: asserters) {
+  private void assertAsserters() throws Exception {
+    for (Asserter ass : asserters) {
       ass.doAssert();
     }
     asserters.clear();
   }
-  
-  protected void assertOnTeardown (Asserter ass) {
+
+  protected void assertOnTeardown(Asserter ass) {
     asserters.add(ass);
   }
 
@@ -167,9 +164,8 @@ public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
   }
 
   private interface Asserter {
-    void doAssert () throws Exception;
+    void doAssert() throws Exception;
   }
-  
 
 
 }

@@ -114,7 +114,14 @@
     <copy todir="${plugins.sandbox.dir}/plugins/tests/projectView">
       <fileset dir="${base_dir}/IdeaPlugin/tests/projectView"/>
     </copy>
-    <mkdir dir="${plugins.sandbox.dir}/test/community/java/mockJDK-1.7"/>
+    <mkdir dir="${home.idea_ce}/java/mockJDK-1.7/jre/lib"/>
+<!--
+    <copy todir="${home.idea_ce}/java/mockJDK-1.7/jre/lib">
+      <fileset dir="/Users/shatalin/Desktop/sources/mps_idea/java/mockJDK-1.7/jre/lib/">
+        <include name="*.jar"/>
+      </fileset>
+    </copy>
+-->
 
     <junit fork="true"
            dir="."
@@ -125,6 +132,7 @@
       <jvmarg value="-Xss1024k"/>
       <jvmarg value="-Xmx1024m"/>
       <jvmarg value="-Xbootclasspath/a:${ideaPath}/lib/boot.jar"/>
+<!--      <jvmarg value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005"/> -->
       <formatter type="xml"/>
       <sysproperty key="idea.platform.prefix" value="Idea"/>
       <sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>
@@ -149,6 +157,7 @@
       </classpath>
       <test name="jetbrains.mps.idea.core.tests.AllTests"/>
     </junit>
+    <delete dir="${home.idea_ce}/java"/>
   </target>
 
   <target name="zip" depends="build">

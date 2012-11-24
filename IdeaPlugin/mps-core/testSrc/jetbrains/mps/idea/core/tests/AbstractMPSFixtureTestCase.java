@@ -83,7 +83,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
 
         // was copied from JavaCodeInsightFixtureTestCase
         // we can remove these lines and extend from JavaCodeInsightFixtureTestCase in IDEA 11.
-        myProjectBuilder = IdeaTestFixtureFactory.getFixtureFactory().createFixtureBuilder();
+        myProjectBuilder = IdeaTestFixtureFactory.getFixtureFactory().createFixtureBuilder(getName());
         myFixture = JavaTestFixtureFactory.getFixtureFactory().createCodeInsightFixture(myProjectBuilder.getFixture());
         final JavaModuleFixtureBuilder moduleFixtureBuilder = myProjectBuilder.addModule(CustomJavaModuleFixtureBuilder.class);
         moduleFixtureBuilder.addSourceContentRoot(myFixture.getTempDirPath());
