@@ -25,13 +25,14 @@ import com.intellij.psi.PsiFile;
 import com.intellij.usages.UsageTarget;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.workbench.choose.nodes.NodePresentation;
+import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
 import org.jetbrains.annotations.NotNull;
 
 public class NodeUsageTarget extends NodeNavigatable implements UsageTarget {
 
-  public NodeUsageTarget(@NotNull SNode node, @NotNull Project project) {
+  public NodeUsageTarget(@NotNull SNodePointer node, @NotNull Project project) {
     super(node, project);
   }
 
@@ -60,7 +61,8 @@ public class NodeUsageTarget extends NodeNavigatable implements UsageTarget {
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
-        return !myNode.isDetached();
+        SNode node = myNode.getNode();
+        return node != null && !node.isDetached();
       }
     });
   }
@@ -75,7 +77,7 @@ public class NodeUsageTarget extends NodeNavigatable implements UsageTarget {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        myItemPresentation = new NodePresentation(myNode);
+        myItemPresentation = new NodePointerPresentation(myNode);
         myTextPresentation = myItemPresentation.getPresentableText();
       }
     });
