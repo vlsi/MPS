@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1156564534683188476" modelId="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)">
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="3903119074522538562" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rebuild" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="33" startPosition="72" endLine="34" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="34" startPosition="35" endLine="35" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="35" startPosition="31" endLine="36" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="36" startPosition="35" endLine="37" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="41" startPosition="32" endLine="42" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5551197716189739271" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="45" startPosition="87" endLine="46" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9010458443787639167" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="47" startPosition="144" endLine="48" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8610665572788514648" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="49" startPosition="5" endLine="50" endPosition="235" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8610665572788514669" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="51" startPosition="23" endLine="52" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8610665572788514676" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="52" startPosition="44" endLine="53" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8610665572788514681" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="54" startPosition="5" endLine="55" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="60" startPosition="7" endLine="61" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="61" startPosition="60" endLine="62" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="65" startPosition="33" endLine="66" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="67" startPosition="7" endLine="68" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="73" startPosition="53" endLine="74" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="75" startPosition="5" endLine="76" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="77" startPosition="62" endLine="78" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="79" startPosition="5" endLine="80" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="81" startPosition="67" endLine="82" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="83" startPosition="5" endLine="84" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1156564534683228135" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="88" startPosition="9" endLine="89" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8610665572788514624" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="89" startPosition="208" endLine="90" endPosition="315" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="92" startPosition="33" endLine="93" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="99" startPosition="31" endLine="100" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="100" startPosition="44" endLine="101" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="101" startPosition="36" endLine="102" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="102" startPosition="20" endLine="103" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="103" startPosition="51" endLine="104" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="104" startPosition="20" endLine="105" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="102" startPosition="20" endLine="104" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9010458443787639165" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="46" startPosition="206" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="64" startPosition="27" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="64" startPosition="27" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="72" startPosition="95" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="76" startPosition="100" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="80" startPosition="105" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="91" startPosition="27" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="91" startPosition="27" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
+    <nodeInfo nodeId="8610665572788514667" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="50" startPosition="235" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="59" startPosition="9" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="75" startPosition="5" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="79" startPosition="5" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeOrRebuildModelsFromChangeList_Action#(Z)V" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="87" startPosition="96" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="98" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getActionId#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="87" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="58" startPosition="89" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="45" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="58" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="72" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="41" startPosition="32" endLine="42" endPosition="16" />
+    <scopeInfo nodeId="9010458443787639166" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="47" startPosition="144" endLine="48" endPosition="19" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="65" startPosition="33" endLine="66" endPosition="108" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="73" startPosition="53" endLine="74" endPosition="19" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="77" startPosition="62" endLine="78" endPosition="19" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="81" startPosition="67" endLine="82" endPosition="19" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="92" startPosition="33" endLine="93" endPosition="107" />
+    <scopeInfo nodeId="8610665572788514668" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="51" startPosition="23" endLine="53" endPosition="18" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="60" startPosition="7" endLine="62" endPosition="63">
+      <varInfo nodeId="1156564534683188476" varName="enabled" />
+    </scopeInfo>
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="88" startPosition="9" endLine="90" endPosition="315">
+      <varInfo nodeId="1156564534683228136" varName="models" />
+    </scopeInfo>
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="102" startPosition="20" endLine="104" endPosition="20" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="64" startPosition="27" endLine="67" endPosition="7" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="91" startPosition="0" endLine="94" endPosition="7">
+      <varInfo nodeId="1156564534683188476" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="91" startPosition="27" endLine="94" endPosition="7" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="33" startPosition="72" endLine="37" endPosition="40" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="59" startPosition="9" endLine="63" endPosition="7" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="64" startPosition="0" endLine="68" endPosition="44">
+      <varInfo nodeId="1156564534683188476" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="64" startPosition="27" endLine="68" endPosition="44" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="75" startPosition="5" endLine="79" endPosition="5" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="79" startPosition="5" endLine="83" endPosition="5" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="33" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="1156564534683188476" varName="rebuild_par" />
+    </scopeInfo>
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="99" startPosition="31" endLine="105" endPosition="26">
+      <varInfo nodeId="1156564534683188476" varName="res" />
+    </scopeInfo>
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="87" startPosition="96" endLine="95" endPosition="5" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="98" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="1156564534683188480" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="45" startPosition="87" endLine="55" endPosition="17">
+      <varInfo nodeId="5551197716189739272" varName="models" />
+      <varInfo nodeId="8610665572788514649" varName="text" />
+    </scopeInfo>
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="87" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="1156564534683188476" varName="_params" />
+      <varInfo nodeId="1156564534683188476" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="58" startPosition="89" endLine="69" endPosition="5" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="45" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="1156564534683188476" varName="_params" />
+      <varInfo nodeId="1156564534683188476" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="72" startPosition="95" endLine="84" endPosition="16" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="58" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="1156564534683188476" varName="_params" />
+      <varInfo nodeId="1156564534683188476" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="72" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="1156564534683188476" varName="_params" />
+      <varInfo nodeId="1156564534683188476" varName="event" />
+    </scopeInfo>
+    <unitInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="27" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.vcs.plugin.MakeOrRebuildModelsFromChangeList_Action" />
+  </root>
+  <root nodeId="1156564534683228178" modelId="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)">
+    <nodeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
+    <nodeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="13" startPosition="44" endLine="14" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="14" startPosition="37" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="15" startPosition="30" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5964066876626835162" fileName="MakeFromChangesView_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683228183" fileName="MakeFromChangesView_ActionGroup.java" startLine="18" startPosition="58" endLine="19" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3903119074522679156" fileName="MakeFromChangesView_ActionGroup.java" startLine="19" startPosition="167" endLine="20" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="21" startPosition="27" endLine="22" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="16" startPosition="25" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="13" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeFromChangesView_ActionGroup#()V" />
+    <scopeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="21" startPosition="0" endLine="22" endPosition="39">
+      <varInfo nodeId="1156564534683228178" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="21" startPosition="27" endLine="22" endPosition="39" />
+    <scopeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="17" startPosition="9" endLine="20" endPosition="165" />
+    <scopeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="13" startPosition="44" endLine="23" endPosition="5" />
+    <scopeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="13" startPosition="0" endLine="25" endPosition="0" />
+    <unitInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.vcs.plugin.MakeFromChangesView_ActionGroup" />
+  </root>
+  <root nodeId="3531023421907347091" modelId="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)">
+    <nodeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="17" startPosition="51" endLine="18" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="19" startPosition="9" endLine="20" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="27" startPosition="36" endLine="28" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="28" startPosition="83" endLine="29" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="32" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="35" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="16" startPosition="43" endLine="19" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="25" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="15" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="create#(Ljava/lang/Class;)null" />
+    <nodeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="13" startPosition="34" endLine="22" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="13" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Vcs_PluginInitializer#()V" />
+    <scopeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="32" startPosition="31" endLine="32" endPosition="31" />
+    <scopeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="35" startPosition="34" endLine="35" endPosition="34" />
+    <scopeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="17" startPosition="51" endLine="18" endPosition="49" />
+    <scopeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="27" startPosition="36" endLine="29" endPosition="37" />
+    <scopeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="32" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="35" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="16" startPosition="43" endLine="20" endPosition="20" />
+    <scopeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="25" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="15" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="3531023421907347091" varName="klass" />
+    </scopeInfo>
+    <scopeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="13" startPosition="34" endLine="22" endPosition="7" />
+    <scopeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="13" startPosition="0" endLine="24" endPosition="0" />
+    <unitInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="14" startPosition="54" endLine="22" endPosition="5" unitName="jetbrains.mps.vcs.plugin.Vcs_PluginInitializer$1" />
+    <unitInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.vcs.plugin.Vcs_PluginInitializer" />
+    <unitInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="1" startPosition="0" endLine="19" endPosition="14" unitName="jetbrains.mps.vcs.plugin.plugin" />
+  </root>
+  <root nodeId="3877003870834324810" modelId="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)">
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="30" startPosition="42" endLine="31" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="31" startPosition="38" endLine="32" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="32" startPosition="35" endLine="33" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="37" startPosition="32" endLine="38" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3877003870834482566" fileName="CompareTransientModels_Action.java" startLine="41" startPosition="87" endLine="42" endPosition="575" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="47" startPosition="7" endLine="48" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="48" startPosition="60" endLine="49" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="52" startPosition="33" endLine="53" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="54" startPosition="7" endLine="55" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="60" startPosition="53" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="62" startPosition="5" endLine="63" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="64" startPosition="61" endLine="65" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="66" startPosition="5" endLine="67" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="68" startPosition="62" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="70" startPosition="5" endLine="71" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="678539470878243455" fileName="CompareTransientModels_Action.java" startLine="75" startPosition="9" endLine="76" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3877003870834486994" fileName="CompareTransientModels_Action.java" startLine="78" startPosition="27" endLine="79" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3877003870834487006" fileName="CompareTransientModels_Action.java" startLine="79" startPosition="63" endLine="80" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3877003870834485676" fileName="CompareTransientModels_Action.java" startLine="82" startPosition="31" endLine="83" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="89" startPosition="33" endLine="90" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="51" startPosition="27" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="51" startPosition="27" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="59" startPosition="95" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="63" startPosition="88" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="67" startPosition="89" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3877003870834485672" fileName="CompareTransientModels_Action.java" startLine="82" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="88" startPosition="27" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="88" startPosition="27" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="46" startPosition="9" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="66" startPosition="5" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1573732301438442697" fileName="CompareTransientModels_Action.java" startLine="95" startPosition="63" endLine="99" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CompareTransientModels_Action#()V" />
+    <nodeInfo nodeId="3877003870834485668" fileName="CompareTransientModels_Action.java" startLine="80" startPosition="64" endLine="85" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1573732301438442697" fileName="CompareTransientModels_Action.java" startLine="95" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_5whyyr_a0a0a1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="3877003870834486976" fileName="CompareTransientModels_Action.java" startLine="78" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="45" startPosition="89" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3877003870834485722" fileName="CompareTransientModels_Action.java" startLine="76" startPosition="141" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="45" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="59" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="74" startPosition="96" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="74" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="37" startPosition="32" endLine="38" endPosition="16" />
+    <scopeInfo nodeId="3877003870834458321" fileName="CompareTransientModels_Action.java" startLine="41" startPosition="87" endLine="42" endPosition="575" />
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="52" startPosition="33" endLine="53" endPosition="97" />
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="60" startPosition="53" endLine="61" endPosition="19" />
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="64" startPosition="61" endLine="65" endPosition="19" />
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="68" startPosition="62" endLine="69" endPosition="19" />
+    <scopeInfo nodeId="3877003870834485673" fileName="CompareTransientModels_Action.java" startLine="82" startPosition="31" endLine="83" endPosition="234" />
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="89" startPosition="33" endLine="90" endPosition="96" />
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="47" startPosition="7" endLine="49" endPosition="63">
+      <varInfo nodeId="3877003870834324810" varName="enabled" />
+    </scopeInfo>
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="30" startPosition="42" endLine="33" endPosition="40" />
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="3877003870834324810" varName="_params" />
+      <varInfo nodeId="3877003870834324810" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="51" startPosition="27" endLine="54" endPosition="7" />
+    <scopeInfo nodeId="3877003870834485672" fileName="CompareTransientModels_Action.java" startLine="82" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="88" startPosition="0" endLine="91" endPosition="7">
+      <varInfo nodeId="3877003870834324810" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="88" startPosition="27" endLine="91" endPosition="7" />
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="46" startPosition="9" endLine="50" endPosition="7" />
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="51" startPosition="0" endLine="55" endPosition="44">
+      <varInfo nodeId="3877003870834324810" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="51" startPosition="27" endLine="55" endPosition="44" />
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" />
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="66" startPosition="5" endLine="70" endPosition="5" />
+    <scopeInfo nodeId="1573732301438442697" fileName="CompareTransientModels_Action.java" startLine="95" startPosition="63" endLine="99" endPosition="6" />
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="30" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1573732301438442697" fileName="CompareTransientModels_Action.java" startLine="95" startPosition="0" endLine="101" endPosition="0">
+      <varInfo nodeId="1573732301438442697" varName="a" />
+      <varInfo nodeId="1573732301438442697" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="3877003870834486977" fileName="CompareTransientModels_Action.java" startLine="78" startPosition="27" endLine="85" endPosition="13">
+      <varInfo nodeId="3877003870834486995" varName="first" />
+      <varInfo nodeId="3877003870834487007" varName="second" />
+    </scopeInfo>
+    <scopeInfo nodeId="3877003870834486976" fileName="CompareTransientModels_Action.java" startLine="78" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="45" startPosition="89" endLine="56" endPosition="5" />
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="59" startPosition="95" endLine="71" endPosition="16" />
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="75" startPosition="9" endLine="87" endPosition="9">
+      <varInfo nodeId="678539470878243456" varName="sortedModels" />
+    </scopeInfo>
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="45" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="3877003870834324810" varName="_params" />
+      <varInfo nodeId="3877003870834324810" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="59" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="3877003870834324810" varName="_params" />
+      <varInfo nodeId="3877003870834324810" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="74" startPosition="96" endLine="92" endPosition="5" />
+    <scopeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="74" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="3877003870834324810" varName="_params" />
+      <varInfo nodeId="3877003870834324810" varName="event" />
+    </scopeInfo>
+    <unitInfo nodeId="3877003870834485672" fileName="CompareTransientModels_Action.java" startLine="81" startPosition="62" endLine="85" endPosition="11" unitName="jetbrains.mps.vcs.plugin.CompareTransientModels_Action$2" />
+    <unitInfo nodeId="3877003870834486976" fileName="CompareTransientModels_Action.java" startLine="77" startPosition="46" endLine="87" endPosition="7" unitName="jetbrains.mps.vcs.plugin.CompareTransientModels_Action$1" />
+    <unitInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="26" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.vcs.plugin.CompareTransientModels_Action" />
+  </root>
+  <root nodeId="5047908084943665620" modelId="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)">
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="34" startPosition="35" endLine="35" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="35" startPosition="48" endLine="36" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="36" startPosition="35" endLine="37" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="41" startPosition="32" endLine="42" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="46" startPosition="9" endLine="47" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="46" startPosition="9" endLine="47" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="49" startPosition="33" endLine="50" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="51" startPosition="7" endLine="52" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="57" startPosition="53" endLine="58" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="59" startPosition="5" endLine="60" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="61" startPosition="62" endLine="62" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="63" startPosition="5" endLine="64" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5047908084943704357" fileName="TestMergeAction_Action.java" startLine="71" startPosition="59" endLine="72" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5047908084943704373" fileName="TestMergeAction_Action.java" startLine="74" startPosition="8" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5047908084943704374" fileName="TestMergeAction_Action.java" startLine="75" startPosition="0" endLine="76" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5047908084943704379" fileName="TestMergeAction_Action.java" startLine="76" startPosition="61" endLine="77" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5047908084943708031" fileName="TestMergeAction_Action.java" startLine="79" startPosition="27" endLine="80" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5047908084943715237" fileName="TestMergeAction_Action.java" startLine="80" startPosition="122" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5047908084943919058" fileName="TestMergeAction_Action.java" startLine="81" startPosition="0" endLine="82" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5047908084943919053" fileName="TestMergeAction_Action.java" startLine="82" startPosition="27" endLine="83" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5047908084943919093" fileName="TestMergeAction_Action.java" startLine="84" startPosition="15" endLine="85" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5047908084943919069" fileName="TestMergeAction_Action.java" startLine="85" startPosition="173" endLine="86" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5047908084943919155" fileName="TestMergeAction_Action.java" startLine="87" startPosition="33" endLine="88" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5047908084943923467" fileName="TestMergeAction_Action.java" startLine="88" startPosition="32" endLine="89" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5047908084943918995" fileName="TestMergeAction_Action.java" startLine="90" startPosition="11" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5047908084943715239" fileName="TestMergeAction_Action.java" startLine="91" startPosition="0" endLine="92" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975557960" fileName="TestMergeAction_Action.java" startLine="92" startPosition="43" endLine="93" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5047908084943750788" fileName="TestMergeAction_Action.java" startLine="93" startPosition="41" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7314351270975558035" fileName="TestMergeAction_Action.java" startLine="94" startPosition="0" endLine="95" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975558109" fileName="TestMergeAction_Action.java" startLine="95" startPosition="245" endLine="96" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975558113" fileName="TestMergeAction_Action.java" startLine="96" startPosition="24" endLine="97" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975558142" fileName="TestMergeAction_Action.java" startLine="100" startPosition="33" endLine="101" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975558155" fileName="TestMergeAction_Action.java" startLine="102" startPosition="40" endLine="103" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975558159" fileName="TestMergeAction_Action.java" startLine="104" startPosition="17" endLine="105" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7766806608423573419" fileName="TestMergeAction_Action.java" startLine="108" startPosition="11" endLine="109" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="113" startPosition="33" endLine="114" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="48" startPosition="27" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="48" startPosition="27" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="56" startPosition="95" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="60" startPosition="89" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7314351270975558149" fileName="TestMergeAction_Action.java" startLine="101" startPosition="78" endLine="104" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="112" startPosition="27" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="112" startPosition="27" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="59" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5047908084943704351" fileName="TestMergeAction_Action.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isFileSelectable#(Lcom/intellij/openapi/vfs/VirtualFile;)Z" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="34" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestMergeAction_Action#()V" />
+    <nodeInfo nodeId="5047908084943703423" fileName="TestMergeAction_Action.java" startLine="68" startPosition="9" endLine="74" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5047908084943919062" fileName="TestMergeAction_Action.java" startLine="83" startPosition="26" endLine="90" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7314351270975558138" fileName="TestMergeAction_Action.java" startLine="100" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="45" startPosition="89" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7314351270975558131" fileName="TestMergeAction_Action.java" startLine="98" startPosition="31" endLine="107" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="45" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="56" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="7314351270975558119" fileName="TestMergeAction_Action.java" startLine="97" startPosition="67" endLine="108" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5047908084943708029" fileName="TestMergeAction_Action.java" startLine="79" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5047908084943704384" fileName="TestMergeAction_Action.java" startLine="77" startPosition="54" endLine="111" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="67" startPosition="96" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="67" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <scopeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="41" startPosition="32" endLine="42" endPosition="16" />
+    <scopeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="46" startPosition="9" endLine="47" endPosition="43" />
+    <scopeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="49" startPosition="33" endLine="50" endPosition="90" />
+    <scopeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="57" startPosition="53" endLine="58" endPosition="19" />
+    <scopeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="61" startPosition="62" endLine="62" endPosition="19" />
+    <scopeInfo nodeId="5047908084943704356" fileName="TestMergeAction_Action.java" startLine="71" startPosition="59" endLine="72" endPosition="90" />
+    <scopeInfo nodeId="7314351270975558154" fileName="TestMergeAction_Action.java" startLine="102" startPosition="40" endLine="103" endPosition="40" />
+    <scopeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="113" startPosition="33" endLine="114" endPosition="89" />
+    <scopeInfo nodeId="5047908084943919063" fileName="TestMergeAction_Action.java" startLine="84" startPosition="15" endLine="86" endPosition="83" />
+    <scopeInfo nodeId="5047908084943919065" fileName="TestMergeAction_Action.java" startLine="87" startPosition="0" endLine="89" endPosition="19">
+      <varInfo nodeId="5047908084943919066" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="5047908084943919068" fileName="TestMergeAction_Action.java" startLine="87" startPosition="33" endLine="89" endPosition="19" />
+    <scopeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="34" startPosition="35" endLine="37" endPosition="40" />
+    <scopeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="48" startPosition="27" endLine="51" endPosition="7" />
+    <scopeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="112" startPosition="0" endLine="115" endPosition="7">
+      <varInfo nodeId="5047908084943665620" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="112" startPosition="27" endLine="115" endPosition="7" />
+    <scopeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="48" startPosition="0" endLine="52" endPosition="44">
+      <varInfo nodeId="5047908084943665620" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="48" startPosition="27" endLine="52" endPosition="44" />
+    <scopeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="59" startPosition="5" endLine="63" endPosition="5" />
+    <scopeInfo nodeId="5047908084943704351" fileName="TestMergeAction_Action.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="5047908084943704354" varName="file" />
+    </scopeInfo>
+    <scopeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="34" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="7314351270975558141" fileName="TestMergeAction_Action.java" startLine="100" startPosition="33" endLine="105" endPosition="58">
+      <varInfo nodeId="7314351270975558143" varName="iFile" />
+    </scopeInfo>
+    <scopeInfo nodeId="7314351270975558138" fileName="TestMergeAction_Action.java" startLine="100" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="45" startPosition="89" endLine="53" endPosition="5" />
+    <scopeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="56" startPosition="95" endLine="64" endPosition="16" />
+    <scopeInfo nodeId="7314351270975558123" fileName="TestMergeAction_Action.java" startLine="98" startPosition="31" endLine="107" endPosition="15" />
+    <scopeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="45" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="5047908084943665620" varName="_params" />
+      <varInfo nodeId="5047908084943665620" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="56" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="5047908084943665620" varName="_params" />
+      <varInfo nodeId="5047908084943665620" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="5047908084943708030" fileName="TestMergeAction_Action.java" startLine="79" startPosition="27" endLine="109" endPosition="41">
+      <varInfo nodeId="7314351270975558036" varName="dialog" />
+      <varInfo nodeId="7314351270975557961" varName="models" />
+      <varInfo nodeId="5047908084943715240" varName="resFile" />
+      <varInfo nodeId="5047908084943919059" varName="resString" />
+      <varInfo nodeId="7314351270975558114" varName="result" />
+      <varInfo nodeId="5047908084943708032" varName="vFile" />
+      <varInfo nodeId="5047908084943919054" varName="zipped" />
+    </scopeInfo>
+    <scopeInfo nodeId="5047908084943708029" fileName="TestMergeAction_Action.java" startLine="79" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="68" startPosition="9" endLine="111" endPosition="9">
+      <varInfo nodeId="5047908084943703424" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="67" startPosition="96" endLine="116" endPosition="5" />
+    <scopeInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="67" startPosition="0" endLine="118" endPosition="0">
+      <varInfo nodeId="5047908084943665620" varName="_params" />
+      <varInfo nodeId="5047908084943665620" varName="event" />
+    </scopeInfo>
+    <unitInfo nodeId="5047908084943704349" fileName="TestMergeAction_Action.java" startLine="69" startPosition="51" endLine="74" endPosition="7" unitName="jetbrains.mps.vcs.plugin.TestMergeAction_Action$1" />
+    <unitInfo nodeId="7314351270975558137" fileName="TestMergeAction_Action.java" startLine="99" startPosition="54" endLine="107" endPosition="13" unitName="jetbrains.mps.vcs.plugin.TestMergeAction_Action$3" />
+    <unitInfo nodeId="5047908084943708029" fileName="TestMergeAction_Action.java" startLine="78" startPosition="37" endLine="111" endPosition="7" unitName="jetbrains.mps.vcs.plugin.TestMergeAction_Action$2" />
+    <unitInfo nodeId="5047908084943665620" fileName="TestMergeAction_Action.java" startLine="30" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.vcs.plugin.TestMergeAction_Action" />
+  </root>
+  <root nodeId="7162597690968188471" modelId="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)">
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="17" startPosition="27" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="21" startPosition="30" endLine="22" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="22" startPosition="30" endLine="23" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="23" startPosition="43" endLine="24" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="24" startPosition="51" endLine="25" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="25" startPosition="46" endLine="26" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="26" startPosition="49" endLine="27" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="27" startPosition="59" endLine="28" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="28" startPosition="64" endLine="29" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="29" startPosition="44" endLine="30" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="30" startPosition="14" endLine="31" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="31" startPosition="52" endLine="32" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="32" startPosition="49" endLine="33" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="33" startPosition="52" endLine="34" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="40" startPosition="37" endLine="41" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="41" startPosition="93" endLine="42" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="42" startPosition="130" endLine="43" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="43" startPosition="130" endLine="44" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Vcs_ApplicationPlugin#()V" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="37" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustInterfaceGroups#()V" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="40" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustRegularGroups#()V" />
+    <nodeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="21" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createGroups#()V" />
+    <scopeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="14" startPosition="34" endLine="14" endPosition="34" />
+    <scopeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="37" startPosition="39" endLine="37" endPosition="39" />
+    <scopeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="17" startPosition="27" endLine="18" endPosition="16" />
+    <scopeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="37" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="40" startPosition="37" endLine="44" endPosition="146" />
+    <scopeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="40" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="21" startPosition="30" endLine="34" endPosition="48" />
+    <scopeInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="21" startPosition="0" endLine="36" endPosition="0" />
+    <unitInfo nodeId="7162597690968188471" fileName="Vcs_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.vcs.plugin.Vcs_ApplicationPlugin" />
+  </root>
+  <root nodeId="7545884443035896082" modelId="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)">
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="42" startPosition="40" endLine="43" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="43" startPosition="47" endLine="44" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="44" startPosition="35" endLine="45" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="49" startPosition="32" endLine="50" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035896085" fileName="ReRunMergeFromBackup_Action.java" startLine="53" startPosition="87" endLine="54" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7545884443035896094" fileName="ReRunMergeFromBackup_Action.java" startLine="55" startPosition="53" endLine="56" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035896105" fileName="ReRunMergeFromBackup_Action.java" startLine="58" startPosition="112" endLine="59" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035896113" fileName="ReRunMergeFromBackup_Action.java" startLine="60" startPosition="5" endLine="61" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7545884443035896122" fileName="ReRunMergeFromBackup_Action.java" startLine="62" startPosition="23" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035896127" fileName="ReRunMergeFromBackup_Action.java" startLine="64" startPosition="5" endLine="65" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="70" startPosition="7" endLine="71" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="71" startPosition="60" endLine="72" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="75" startPosition="33" endLine="76" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="77" startPosition="7" endLine="78" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="83" startPosition="53" endLine="84" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="85" startPosition="5" endLine="86" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="87" startPosition="60" endLine="88" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="89" startPosition="5" endLine="90" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="91" startPosition="62" endLine="92" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="93" startPosition="5" endLine="94" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035896310" fileName="ReRunMergeFromBackup_Action.java" startLine="100" startPosition="13" endLine="101" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1619763311840987618" fileName="ReRunMergeFromBackup_Action.java" startLine="101" startPosition="108" endLine="102" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1619763311840987627" fileName="ReRunMergeFromBackup_Action.java" startLine="102" startPosition="66" endLine="103" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1619763311840987636" fileName="ReRunMergeFromBackup_Action.java" startLine="103" startPosition="66" endLine="104" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2094872143166956062" fileName="ReRunMergeFromBackup_Action.java" startLine="104" startPosition="78" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2094872143166832377" fileName="ReRunMergeFromBackup_Action.java" startLine="105" startPosition="0" endLine="106" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2094872143166955933" fileName="ReRunMergeFromBackup_Action.java" startLine="107" startPosition="158" endLine="108" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="2094872143166970792" fileName="ReRunMergeFromBackup_Action.java" startLine="109" startPosition="11" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1619763311840986366" fileName="ReRunMergeFromBackup_Action.java" startLine="110" startPosition="0" endLine="111" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1619763311840986415" fileName="ReRunMergeFromBackup_Action.java" startLine="112" startPosition="29" endLine="113" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1619763311840988027" fileName="ReRunMergeFromBackup_Action.java" startLine="114" startPosition="11" endLine="115" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7678461102453305567" fileName="ReRunMergeFromBackup_Action.java" startLine="115" startPosition="272" endLine="116" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1619763311840988046" fileName="ReRunMergeFromBackup_Action.java" startLine="116" startPosition="92" endLine="117" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896336" fileName="ReRunMergeFromBackup_Action.java" startLine="117" startPosition="69" endLine="118" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035896341" fileName="ReRunMergeFromBackup_Action.java" startLine="120" startPosition="36" endLine="121" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896344" fileName="ReRunMergeFromBackup_Action.java" startLine="122" startPosition="11" endLine="123" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7545884443035896346" fileName="ReRunMergeFromBackup_Action.java" startLine="123" startPosition="30" endLine="124" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7545884443035896357" fileName="ReRunMergeFromBackup_Action.java" startLine="126" startPosition="7" endLine="127" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="129" startPosition="33" endLine="130" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8670515752676815436" fileName="ReRunMergeFromBackup_Action.java" startLine="135" startPosition="76" endLine="136" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035896202" fileName="ReRunMergeFromBackup_Action.java" startLine="139" startPosition="65" endLine="140" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1619763311840986360" fileName="ReRunMergeFromBackup_Action.java" startLine="144" startPosition="87" endLine="145" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1619763311840986311" fileName="ReRunMergeFromBackup_Action.java" startLine="146" startPosition="12" endLine="147" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1619763311840986315" fileName="ReRunMergeFromBackup_Action.java" startLine="147" startPosition="48" endLine="148" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1619763311840986319" fileName="ReRunMergeFromBackup_Action.java" startLine="148" startPosition="40" endLine="149" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1619763311840986326" fileName="ReRunMergeFromBackup_Action.java" startLine="149" startPosition="43" endLine="150" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1619763311840986337" fileName="ReRunMergeFromBackup_Action.java" startLine="151" startPosition="25" endLine="152" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1619763311840986344" fileName="ReRunMergeFromBackup_Action.java" startLine="153" startPosition="51" endLine="154" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1619763311840986354" fileName="ReRunMergeFromBackup_Action.java" startLine="155" startPosition="14" endLine="156" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1619763311840986352" fileName="ReRunMergeFromBackup_Action.java" startLine="155" startPosition="12" endLine="157" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035896092" fileName="ReRunMergeFromBackup_Action.java" startLine="54" startPosition="129" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035896103" fileName="ReRunMergeFromBackup_Action.java" startLine="57" startPosition="5" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035896120" fileName="ReRunMergeFromBackup_Action.java" startLine="61" startPosition="111" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="74" startPosition="27" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="74" startPosition="27" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="82" startPosition="95" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="86" startPosition="86" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="90" startPosition="89" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2094872143166955903" fileName="ReRunMergeFromBackup_Action.java" startLine="106" startPosition="105" endLine="109" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1619763311840986402" fileName="ReRunMergeFromBackup_Action.java" startLine="111" startPosition="189" endLine="114" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035896341" fileName="ReRunMergeFromBackup_Action.java" startLine="119" startPosition="33" endLine="122" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035896341" fileName="ReRunMergeFromBackup_Action.java" startLine="119" startPosition="33" endLine="122" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="128" startPosition="27" endLine="131" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="128" startPosition="27" endLine="131" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8670515752676810863" fileName="ReRunMergeFromBackup_Action.java" startLine="135" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBackupFiles#(Ljava/util/Map;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7545884443035896200" fileName="ReRunMergeFromBackup_Action.java" startLine="139" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelFile#(Ljava/util/Map;)Ljetbrains/mps/vfs/IFile;" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="69" startPosition="9" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="85" startPosition="5" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="89" startPosition="5" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="42" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReRunMergeFromBackup_Action#()V" />
+    <nodeInfo nodeId="1619763311840986335" fileName="ReRunMergeFromBackup_Action.java" startLine="150" startPosition="217" endLine="157" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="68" startPosition="89" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1619763311840986309" fileName="ReRunMergeFromBackup_Action.java" startLine="146" startPosition="10" endLine="158" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="68" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="53" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="82" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="1619763311840986297" fileName="ReRunMergeFromBackup_Action.java" startLine="143" startPosition="110" endLine="158" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035896213" fileName="ReRunMergeFromBackup_Action.java" startLine="143" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="selectMineModel#(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7545884443035896308" fileName="ReRunMergeFromBackup_Action.java" startLine="99" startPosition="111" endLine="125" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7545884443035896304" fileName="ReRunMergeFromBackup_Action.java" startLine="98" startPosition="9" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="97" startPosition="96" endLine="132" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="97" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="49" startPosition="32" endLine="50" endPosition="16" />
+    <scopeInfo nodeId="7545884443035896093" fileName="ReRunMergeFromBackup_Action.java" startLine="55" startPosition="53" endLine="56" endPosition="19" />
+    <scopeInfo nodeId="7545884443035896104" fileName="ReRunMergeFromBackup_Action.java" startLine="58" startPosition="112" endLine="59" endPosition="19" />
+    <scopeInfo nodeId="7545884443035896121" fileName="ReRunMergeFromBackup_Action.java" startLine="62" startPosition="23" endLine="63" endPosition="19" />
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="75" startPosition="33" endLine="76" endPosition="95" />
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="83" startPosition="53" endLine="84" endPosition="19" />
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="87" startPosition="60" endLine="88" endPosition="19" />
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="91" startPosition="62" endLine="92" endPosition="19" />
+    <scopeInfo nodeId="2094872143166955904" fileName="ReRunMergeFromBackup_Action.java" startLine="107" startPosition="158" endLine="108" endPosition="21" />
+    <scopeInfo nodeId="1619763311840986403" fileName="ReRunMergeFromBackup_Action.java" startLine="112" startPosition="29" endLine="113" endPosition="19" />
+    <scopeInfo nodeId="7545884443035896341" fileName="ReRunMergeFromBackup_Action.java" startLine="120" startPosition="36" endLine="121" endPosition="28" />
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="129" startPosition="33" endLine="130" endPosition="94" />
+    <scopeInfo nodeId="8670515752676810865" fileName="ReRunMergeFromBackup_Action.java" startLine="135" startPosition="76" endLine="136" endPosition="118" />
+    <scopeInfo nodeId="7545884443035896201" fileName="ReRunMergeFromBackup_Action.java" startLine="139" startPosition="65" endLine="140" endPosition="124" />
+    <scopeInfo nodeId="1619763311840986298" fileName="ReRunMergeFromBackup_Action.java" startLine="144" startPosition="87" endLine="145" endPosition="25" />
+    <scopeInfo nodeId="1619763311840986336" fileName="ReRunMergeFromBackup_Action.java" startLine="151" startPosition="25" endLine="152" endPosition="20" />
+    <scopeInfo nodeId="1619763311840986343" fileName="ReRunMergeFromBackup_Action.java" startLine="153" startPosition="51" endLine="154" endPosition="28" />
+    <scopeInfo nodeId="1619763311840986353" fileName="ReRunMergeFromBackup_Action.java" startLine="155" startPosition="14" endLine="156" endPosition="27" />
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="70" startPosition="7" endLine="72" endPosition="63">
+      <varInfo nodeId="7545884443035896082" varName="enabled" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="42" startPosition="40" endLine="45" endPosition="40" />
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="74" startPosition="27" endLine="77" endPosition="7" />
+    <scopeInfo nodeId="7545884443035896341" fileName="ReRunMergeFromBackup_Action.java" startLine="119" startPosition="33" endLine="122" endPosition="11" />
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="128" startPosition="0" endLine="131" endPosition="7">
+      <varInfo nodeId="7545884443035896082" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="128" startPosition="27" endLine="131" endPosition="7" />
+    <scopeInfo nodeId="8670515752676810863" fileName="ReRunMergeFromBackup_Action.java" startLine="135" startPosition="0" endLine="138" endPosition="0">
+      <varInfo nodeId="8670515752676810863" varName="_params" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035896200" fileName="ReRunMergeFromBackup_Action.java" startLine="139" startPosition="0" endLine="142" endPosition="0">
+      <varInfo nodeId="7545884443035896200" varName="_params" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="69" startPosition="9" endLine="73" endPosition="7" />
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="74" startPosition="0" endLine="78" endPosition="44">
+      <varInfo nodeId="7545884443035896082" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="74" startPosition="27" endLine="78" endPosition="44" />
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="85" startPosition="5" endLine="89" endPosition="5" />
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="89" startPosition="5" endLine="93" endPosition="5" />
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="42" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="7545884443035896337" fileName="ReRunMergeFromBackup_Action.java" startLine="119" startPosition="0" endLine="124" endPosition="19">
+      <varInfo nodeId="7545884443035896338" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035896340" fileName="ReRunMergeFromBackup_Action.java" startLine="119" startPosition="33" endLine="124" endPosition="19" />
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="68" startPosition="89" endLine="79" endPosition="5" />
+    <scopeInfo nodeId="1619763311840986310" fileName="ReRunMergeFromBackup_Action.java" startLine="146" startPosition="12" endLine="157" endPosition="7">
+      <varInfo nodeId="1619763311840986316" varName="backup" />
+      <varInfo nodeId="1619763311840986312" varName="current" />
+      <varInfo nodeId="1619763311840986320" varName="options" />
+      <varInfo nodeId="1619763311840986327" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035896084" fileName="ReRunMergeFromBackup_Action.java" startLine="53" startPosition="87" endLine="65" endPosition="139">
+      <varInfo nodeId="7545884443035896114" varName="file" />
+      <varInfo nodeId="7545884443035896086" varName="manager" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="82" startPosition="95" endLine="94" endPosition="16" />
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="68" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="7545884443035896082" varName="_params" />
+      <varInfo nodeId="7545884443035896082" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="53" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="7545884443035896082" varName="_params" />
+      <varInfo nodeId="7545884443035896082" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="82" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="7545884443035896082" varName="_params" />
+      <varInfo nodeId="7545884443035896082" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035896219" fileName="ReRunMergeFromBackup_Action.java" startLine="143" startPosition="110" endLine="158" endPosition="5" />
+    <scopeInfo nodeId="7545884443035896213" fileName="ReRunMergeFromBackup_Action.java" startLine="143" startPosition="0" endLine="160" endPosition="0">
+      <varInfo nodeId="7545884443035896213" varName="_params" />
+      <varInfo nodeId="7545884443035896217" varName="backUpModel" />
+      <varInfo nodeId="7545884443035896215" varName="currentModel" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035896309" fileName="ReRunMergeFromBackup_Action.java" startLine="100" startPosition="13" endLine="118" endPosition="17">
+      <varInfo nodeId="1619763311840987628" varName="base" />
+      <varInfo nodeId="1619763311840988028" varName="mergeRequest" />
+      <varInfo nodeId="1619763311840987619" varName="mine" />
+      <varInfo nodeId="7545884443035896311" varName="modelsAsText" />
+      <varInfo nodeId="1619763311840987637" varName="repository" />
+      <varInfo nodeId="2094872143166832378" varName="uid" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035896307" fileName="ReRunMergeFromBackup_Action.java" startLine="99" startPosition="111" endLine="125" endPosition="9" />
+    <scopeInfo nodeId="7545884443035896304" fileName="ReRunMergeFromBackup_Action.java" startLine="98" startPosition="9" endLine="126" endPosition="7">
+      <varInfo nodeId="7545884443035896305" varName="backupFile" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="98" startPosition="9" endLine="127" endPosition="212" />
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="97" startPosition="96" endLine="132" endPosition="5" />
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="97" startPosition="0" endLine="134" endPosition="0">
+      <varInfo nodeId="7545884443035896082" varName="_params" />
+      <varInfo nodeId="7545884443035896082" varName="event" />
+    </scopeInfo>
+    <unitInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="38" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ReRunMergeFromBackup_Action" />
+  </root>
+  <root nodeId="7545884443035896373" modelId="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)">
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="28" startPosition="50" endLine="29" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="29" startPosition="59" endLine="30" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="30" startPosition="34" endLine="31" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="35" startPosition="32" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035896439" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="39" startPosition="87" endLine="40" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="45" startPosition="7" endLine="46" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="46" startPosition="60" endLine="47" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="50" startPosition="33" endLine="51" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="52" startPosition="7" endLine="53" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="58" startPosition="53" endLine="59" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="60" startPosition="5" endLine="61" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="62" startPosition="70" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="65" startPosition="198" endLine="66" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="67" startPosition="5" endLine="68" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="69" startPosition="62" endLine="70" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="71" startPosition="5" endLine="72" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035896376" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="76" startPosition="9" endLine="77" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7545884443035896384" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="77" startPosition="113" endLine="78" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2090008153514921062" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="80" startPosition="27" endLine="81" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="85" startPosition="33" endLine="86" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="49" startPosition="27" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="49" startPosition="27" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="57" startPosition="95" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="61" startPosition="96" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="64" startPosition="5" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="68" startPosition="89" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2090008153514912148" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="84" startPosition="27" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="84" startPosition="27" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="44" startPosition="9" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="67" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ShowDifferencesWithModelOnDisk_Action#()V" />
+    <nodeInfo nodeId="2090008153514912140" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="78" startPosition="184" endLine="83" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="60" startPosition="5" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="43" startPosition="89" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="43" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="75" startPosition="96" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="75" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="57" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="35" startPosition="32" endLine="36" endPosition="16" />
+    <scopeInfo nodeId="7545884443035896438" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="39" startPosition="87" endLine="40" endPosition="120" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="50" startPosition="33" endLine="51" endPosition="105" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="58" startPosition="53" endLine="59" endPosition="19" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="62" startPosition="70" endLine="63" endPosition="19" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="65" startPosition="198" endLine="66" endPosition="19" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="69" startPosition="62" endLine="70" endPosition="19" />
+    <scopeInfo nodeId="2090008153514912149" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="80" startPosition="27" endLine="81" endPosition="132" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="85" startPosition="33" endLine="86" endPosition="104" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="45" startPosition="7" endLine="47" endPosition="63">
+      <varInfo nodeId="7545884443035896373" varName="enabled" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="28" startPosition="50" endLine="31" endPosition="41" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="7545884443035896373" varName="_params" />
+      <varInfo nodeId="7545884443035896373" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="49" startPosition="27" endLine="52" endPosition="7" />
+    <scopeInfo nodeId="2090008153514912148" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="80" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="84" startPosition="0" endLine="87" endPosition="7">
+      <varInfo nodeId="7545884443035896373" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="84" startPosition="27" endLine="87" endPosition="7" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="44" startPosition="9" endLine="48" endPosition="7" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="49" startPosition="0" endLine="53" endPosition="44">
+      <varInfo nodeId="7545884443035896373" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="49" startPosition="27" endLine="53" endPosition="44" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="67" startPosition="5" endLine="71" endPosition="5" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="28" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="60" startPosition="5" endLine="67" endPosition="5" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="76" startPosition="9" endLine="83" endPosition="9">
+      <varInfo nodeId="7545884443035896385" varName="disk" />
+      <varInfo nodeId="7545884443035896377" varName="memory" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="43" startPosition="89" endLine="54" endPosition="5" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="43" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="7545884443035896373" varName="_params" />
+      <varInfo nodeId="7545884443035896373" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="75" startPosition="96" endLine="88" endPosition="5" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="57" startPosition="95" endLine="72" endPosition="16" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="75" startPosition="0" endLine="90" endPosition="0">
+      <varInfo nodeId="7545884443035896373" varName="_params" />
+      <varInfo nodeId="7545884443035896373" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="57" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="7545884443035896373" varName="_params" />
+      <varInfo nodeId="7545884443035896373" varName="event" />
+    </scopeInfo>
+    <unitInfo nodeId="2090008153514912148" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="79" startPosition="58" endLine="83" endPosition="7" unitName="jetbrains.mps.vcs.plugin.ShowDifferencesWithModelOnDisk_Action$1" />
+    <unitInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="24" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ShowDifferencesWithModelOnDisk_Action" />
+  </root>
+  <root nodeId="7545884443035896622" modelId="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)">
+    <nodeInfo nodeId="7545884443035896622" fileName="VCSModelActions_ActionGroup.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="7545884443035896622" fileName="VCSModelActions_ActionGroup.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
+    <nodeInfo nodeId="7545884443035896622" fileName="VCSModelActions_ActionGroup.java" startLine="12" startPosition="40" endLine="13" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7545884443035896622" fileName="VCSModelActions_ActionGroup.java" startLine="13" startPosition="33" endLine="14" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896622" fileName="VCSModelActions_ActionGroup.java" startLine="14" startPosition="30" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896626" fileName="VCSModelActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896627" fileName="VCSModelActions_ActionGroup.java" startLine="17" startPosition="115" endLine="18" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3877003870834595675" fileName="VCSModelActions_ActionGroup.java" startLine="18" startPosition="105" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896622" fileName="VCSModelActions_ActionGroup.java" startLine="20" startPosition="27" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896622" fileName="VCSModelActions_ActionGroup.java" startLine="15" startPosition="25" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7545884443035896622" fileName="VCSModelActions_ActionGroup.java" startLine="12" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VCSModelActions_ActionGroup#()V" />
+    <scopeInfo nodeId="7545884443035896622" fileName="VCSModelActions_ActionGroup.java" startLine="20" startPosition="0" endLine="21" endPosition="39">
+      <varInfo nodeId="7545884443035896622" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035896622" fileName="VCSModelActions_ActionGroup.java" startLine="20" startPosition="27" endLine="21" endPosition="39" />
+    <scopeInfo nodeId="7545884443035896622" fileName="VCSModelActions_ActionGroup.java" startLine="16" startPosition="9" endLine="19" endPosition="107" />
+    <scopeInfo nodeId="7545884443035896622" fileName="VCSModelActions_ActionGroup.java" startLine="12" startPosition="40" endLine="22" endPosition="5" />
+    <scopeInfo nodeId="7545884443035896622" fileName="VCSModelActions_ActionGroup.java" startLine="12" startPosition="0" endLine="24" endPosition="0" />
+    <unitInfo nodeId="7545884443035896622" fileName="VCSModelActions_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.vcs.plugin.VCSModelActions_ActionGroup" />
+  </root>
+  <root nodeId="7545884443035919781" modelId="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)">
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="33" startPosition="55" endLine="34" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="34" startPosition="64" endLine="35" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="35" startPosition="35" endLine="36" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="40" startPosition="32" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035919812" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="45" startPosition="111" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035919820" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="47" startPosition="5" endLine="48" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7545884443035919835" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="49" startPosition="211" endLine="50" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7545884443035919847" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="50" startPosition="155" endLine="51" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035919870" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="52" startPosition="5" endLine="53" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="58" startPosition="7" endLine="59" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="59" startPosition="60" endLine="60" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="63" startPosition="33" endLine="64" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="65" startPosition="7" endLine="66" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="71" startPosition="53" endLine="72" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="73" startPosition="5" endLine="74" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="75" startPosition="59" endLine="76" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="77" startPosition="5" endLine="78" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="79" startPosition="62" endLine="80" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="81" startPosition="5" endLine="82" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="83" startPosition="60" endLine="84" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="85" startPosition="5" endLine="86" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035919789" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="90" startPosition="9" endLine="91" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="93" startPosition="33" endLine="94" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035919810" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="44" startPosition="87" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="62" startPosition="27" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="62" startPosition="27" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="70" startPosition="95" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="74" startPosition="84" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="78" startPosition="89" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="82" startPosition="94" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="92" startPosition="27" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="92" startPosition="27" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
+    <nodeInfo nodeId="7545884443035919833" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="48" startPosition="176" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="57" startPosition="9" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="73" startPosition="5" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="77" startPosition="5" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="81" startPosition="5" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ShowDiffererenceWithCurrentRevision_Action#()V" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="89" startPosition="96" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="89" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="44" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="56" startPosition="89" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="56" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="70" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="40" startPosition="32" endLine="41" endPosition="16" />
+    <scopeInfo nodeId="7545884443035919811" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="45" startPosition="111" endLine="46" endPosition="19" />
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="63" startPosition="33" endLine="64" endPosition="110" />
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="71" startPosition="53" endLine="72" endPosition="19" />
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="75" startPosition="59" endLine="76" endPosition="19" />
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="79" startPosition="62" endLine="80" endPosition="19" />
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="83" startPosition="60" endLine="84" endPosition="19" />
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="90" startPosition="9" endLine="91" endPosition="246" />
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="93" startPosition="33" endLine="94" endPosition="109" />
+    <scopeInfo nodeId="7545884443035919834" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="49" startPosition="211" endLine="51" endPosition="80">
+      <varInfo nodeId="7545884443035919836" varName="fileStatus" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="58" startPosition="7" endLine="60" endPosition="63">
+      <varInfo nodeId="7545884443035919781" varName="enabled" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="33" startPosition="55" endLine="36" endPosition="40" />
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="62" startPosition="27" endLine="65" endPosition="7" />
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="92" startPosition="0" endLine="95" endPosition="7">
+      <varInfo nodeId="7545884443035919781" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="92" startPosition="27" endLine="95" endPosition="7" />
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="57" startPosition="9" endLine="61" endPosition="7" />
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="62" startPosition="0" endLine="66" endPosition="44">
+      <varInfo nodeId="7545884443035919781" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="62" startPosition="27" endLine="66" endPosition="44" />
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="73" startPosition="5" endLine="77" endPosition="5" />
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="77" startPosition="5" endLine="81" endPosition="5" />
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="81" startPosition="5" endLine="85" endPosition="5" />
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="89" startPosition="96" endLine="96" endPosition="5" />
+    <scopeInfo nodeId="7545884443035919809" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="44" startPosition="87" endLine="53" endPosition="17">
+      <varInfo nodeId="7545884443035919821" varName="virtualFile" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="89" startPosition="0" endLine="98" endPosition="0">
+      <varInfo nodeId="7545884443035919781" varName="_params" />
+      <varInfo nodeId="7545884443035919781" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="44" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="7545884443035919781" varName="_params" />
+      <varInfo nodeId="7545884443035919781" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="56" startPosition="89" endLine="67" endPosition="5" />
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="56" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="7545884443035919781" varName="_params" />
+      <varInfo nodeId="7545884443035919781" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="70" startPosition="95" endLine="86" endPosition="16" />
+    <scopeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="70" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="7545884443035919781" varName="_params" />
+      <varInfo nodeId="7545884443035919781" varName="event" />
+    </scopeInfo>
+    <unitInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="29" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ShowDiffererenceWithCurrentRevision_Action" />
+  </root>
+  <root nodeId="7545884443035919872" modelId="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)">
+    <nodeInfo nodeId="7545884443035919872" fileName="ShowDiffWithCurrRev_ActionGroup.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="7545884443035919872" fileName="ShowDiffWithCurrRev_ActionGroup.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
+    <nodeInfo nodeId="7545884443035919872" fileName="ShowDiffWithCurrRev_ActionGroup.java" startLine="12" startPosition="44" endLine="13" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7545884443035919872" fileName="ShowDiffWithCurrRev_ActionGroup.java" startLine="13" startPosition="37" endLine="14" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035919872" fileName="ShowDiffWithCurrRev_ActionGroup.java" startLine="14" startPosition="30" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035919875" fileName="ShowDiffWithCurrRev_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035919872" fileName="ShowDiffWithCurrRev_ActionGroup.java" startLine="18" startPosition="27" endLine="19" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035919872" fileName="ShowDiffWithCurrRev_ActionGroup.java" startLine="15" startPosition="25" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7545884443035919872" fileName="ShowDiffWithCurrRev_ActionGroup.java" startLine="12" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ShowDiffWithCurrRev_ActionGroup#()V" />
+    <scopeInfo nodeId="7545884443035919872" fileName="ShowDiffWithCurrRev_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="124" />
+    <scopeInfo nodeId="7545884443035919872" fileName="ShowDiffWithCurrRev_ActionGroup.java" startLine="18" startPosition="0" endLine="19" endPosition="39">
+      <varInfo nodeId="7545884443035919872" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035919872" fileName="ShowDiffWithCurrRev_ActionGroup.java" startLine="18" startPosition="27" endLine="19" endPosition="39" />
+    <scopeInfo nodeId="7545884443035919872" fileName="ShowDiffWithCurrRev_ActionGroup.java" startLine="12" startPosition="44" endLine="20" endPosition="5" />
+    <scopeInfo nodeId="7545884443035919872" fileName="ShowDiffWithCurrRev_ActionGroup.java" startLine="12" startPosition="0" endLine="22" endPosition="0" />
+    <unitInfo nodeId="7545884443035919872" fileName="ShowDiffWithCurrRev_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ShowDiffWithCurrRev_ActionGroup" />
+  </root>
+  <root nodeId="7545884443035924707" modelId="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)">
+    <nodeInfo nodeId="7545884443035924707" fileName="ModuleVcsActions_ActionGroup.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="7545884443035924707" fileName="ModuleVcsActions_ActionGroup.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
+    <nodeInfo nodeId="7545884443035924707" fileName="ModuleVcsActions_ActionGroup.java" startLine="12" startPosition="41" endLine="13" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7545884443035924707" fileName="ModuleVcsActions_ActionGroup.java" startLine="13" startPosition="34" endLine="14" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924707" fileName="ModuleVcsActions_ActionGroup.java" startLine="14" startPosition="30" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924709" fileName="ModuleVcsActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924710" fileName="ModuleVcsActions_ActionGroup.java" startLine="17" startPosition="100" endLine="18" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924707" fileName="ModuleVcsActions_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924707" fileName="ModuleVcsActions_ActionGroup.java" startLine="15" startPosition="25" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7545884443035924707" fileName="ModuleVcsActions_ActionGroup.java" startLine="12" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleVcsActions_ActionGroup#()V" />
+    <scopeInfo nodeId="7545884443035924707" fileName="ModuleVcsActions_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39">
+      <varInfo nodeId="7545884443035924707" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035924707" fileName="ModuleVcsActions_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" />
+    <scopeInfo nodeId="7545884443035924707" fileName="ModuleVcsActions_ActionGroup.java" startLine="16" startPosition="9" endLine="18" endPosition="103" />
+    <scopeInfo nodeId="7545884443035924707" fileName="ModuleVcsActions_ActionGroup.java" startLine="12" startPosition="41" endLine="21" endPosition="5" />
+    <scopeInfo nodeId="7545884443035924707" fileName="ModuleVcsActions_ActionGroup.java" startLine="12" startPosition="0" endLine="23" endPosition="0" />
+    <unitInfo nodeId="7545884443035924707" fileName="ModuleVcsActions_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ModuleVcsActions_ActionGroup" />
+  </root>
+  <root nodeId="7545884443035924713" modelId="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)">
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="28" startPosition="37" endLine="29" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="29" startPosition="40" endLine="30" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="30" startPosition="35" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="35" startPosition="32" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1980552323536815477" fileName="IgnoreModuleInVcs_Action.java" startLine="41" startPosition="7" endLine="42" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1980552323536815457" fileName="IgnoreModuleInVcs_Action.java" startLine="46" startPosition="12" endLine="47" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4113928910955574054" fileName="IgnoreModuleInVcs_Action.java" startLine="47" startPosition="227" endLine="48" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1980552323536815470" fileName="IgnoreModuleInVcs_Action.java" startLine="48" startPosition="41" endLine="49" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="52" startPosition="33" endLine="53" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="54" startPosition="7" endLine="55" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="60" startPosition="53" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="62" startPosition="5" endLine="63" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="64" startPosition="62" endLine="65" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="66" startPosition="5" endLine="67" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="68" startPosition="62" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="70" startPosition="5" endLine="71" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035924716" fileName="IgnoreModuleInVcs_Action.java" startLine="75" startPosition="9" endLine="76" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7545884443035924740" fileName="IgnoreModuleInVcs_Action.java" startLine="76" startPosition="208" endLine="77" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="79" startPosition="33" endLine="80" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="51" startPosition="27" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="51" startPosition="27" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="59" startPosition="95" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="63" startPosition="84" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="67" startPosition="89" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="78" startPosition="27" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="78" startPosition="27" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
+    <nodeInfo nodeId="4113928910955574044" fileName="IgnoreModuleInVcs_Action.java" startLine="42" startPosition="60" endLine="46" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="66" startPosition="5" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IgnoreModuleInVcs_Action#()V" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="74" startPosition="96" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="40" startPosition="9" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="74" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="59" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="39" startPosition="89" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="39" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="35" startPosition="32" endLine="36" endPosition="16" />
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="52" startPosition="33" endLine="53" endPosition="92" />
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="60" startPosition="53" endLine="61" endPosition="19" />
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="64" startPosition="62" endLine="65" endPosition="19" />
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="68" startPosition="62" endLine="69" endPosition="19" />
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="79" startPosition="33" endLine="80" endPosition="91" />
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="75" startPosition="9" endLine="77" endPosition="125">
+      <varInfo nodeId="7545884443035924717" varName="unversionedFiles" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="28" startPosition="37" endLine="31" endPosition="40" />
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="51" startPosition="27" endLine="54" endPosition="7" />
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="78" startPosition="0" endLine="81" endPosition="7">
+      <varInfo nodeId="7545884443035924713" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="78" startPosition="27" endLine="81" endPosition="7" />
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="51" startPosition="0" endLine="55" endPosition="44">
+      <varInfo nodeId="7545884443035924713" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="51" startPosition="27" endLine="55" endPosition="44" />
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" />
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="66" startPosition="5" endLine="70" endPosition="5" />
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="28" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="4113928910955574043" fileName="IgnoreModuleInVcs_Action.java" startLine="41" startPosition="7" endLine="49" endPosition="41">
+      <varInfo nodeId="1980552323536815458" varName="enabled" />
+      <varInfo nodeId="1980552323536815478" varName="presentation" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="74" startPosition="96" endLine="82" endPosition="5" />
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="40" startPosition="9" endLine="50" endPosition="7" />
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="74" startPosition="0" endLine="84" endPosition="0">
+      <varInfo nodeId="7545884443035924713" varName="_params" />
+      <varInfo nodeId="7545884443035924713" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="59" startPosition="95" endLine="71" endPosition="16" />
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="59" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="7545884443035924713" varName="_params" />
+      <varInfo nodeId="7545884443035924713" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="39" startPosition="89" endLine="56" endPosition="5" />
+    <scopeInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="39" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="7545884443035924713" varName="_params" />
+      <varInfo nodeId="7545884443035924713" varName="event" />
+    </scopeInfo>
+    <unitInfo nodeId="7545884443035924713" fileName="IgnoreModuleInVcs_Action.java" startLine="24" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.vcs.plugin.IgnoreModuleInVcs_Action" />
+  </root>
+  <root nodeId="7545884443035924748" modelId="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)">
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="29" startPosition="34" endLine="30" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="30" startPosition="41" endLine="31" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="31" startPosition="35" endLine="32" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="36" startPosition="32" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1980552323536815486" fileName="AddModuleToVcs_Action.java" startLine="42" startPosition="7" endLine="43" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1980552323536815494" fileName="AddModuleToVcs_Action.java" startLine="47" startPosition="12" endLine="48" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4113928910955574015" fileName="AddModuleToVcs_Action.java" startLine="48" startPosition="227" endLine="49" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1980552323536815507" fileName="AddModuleToVcs_Action.java" startLine="49" startPosition="41" endLine="50" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="53" startPosition="33" endLine="54" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="55" startPosition="7" endLine="56" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="61" startPosition="53" endLine="62" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="63" startPosition="5" endLine="64" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="65" startPosition="62" endLine="66" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="67" startPosition="5" endLine="68" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="69" startPosition="62" endLine="70" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="71" startPosition="5" endLine="72" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035924753" fileName="AddModuleToVcs_Action.java" startLine="76" startPosition="9" endLine="77" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7545884443035924777" fileName="AddModuleToVcs_Action.java" startLine="77" startPosition="208" endLine="78" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7545884443035924784" fileName="AddModuleToVcs_Action.java" startLine="78" startPosition="143" endLine="79" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="81" startPosition="33" endLine="82" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="52" startPosition="27" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="52" startPosition="27" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="60" startPosition="95" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="64" startPosition="89" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="68" startPosition="84" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="80" startPosition="27" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="80" startPosition="27" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
+    <nodeInfo nodeId="4113928910955523826" fileName="AddModuleToVcs_Action.java" startLine="43" startPosition="60" endLine="47" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="63" startPosition="5" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="67" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddModuleToVcs_Action#()V" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="75" startPosition="96" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="41" startPosition="9" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="75" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="60" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="40" startPosition="89" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="40" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="36" startPosition="32" endLine="37" endPosition="16" />
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="53" startPosition="33" endLine="54" endPosition="89" />
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="61" startPosition="53" endLine="62" endPosition="19" />
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="65" startPosition="62" endLine="66" endPosition="19" />
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="69" startPosition="62" endLine="70" endPosition="19" />
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="81" startPosition="33" endLine="82" endPosition="88" />
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="29" startPosition="34" endLine="32" endPosition="40" />
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="52" startPosition="27" endLine="55" endPosition="7" />
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="76" startPosition="9" endLine="79" endPosition="104">
+      <varInfo nodeId="7545884443035924778" varName="changeListManager" />
+      <varInfo nodeId="7545884443035924754" varName="unversionedFiles" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="80" startPosition="0" endLine="83" endPosition="7">
+      <varInfo nodeId="7545884443035924748" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="80" startPosition="27" endLine="83" endPosition="7" />
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="52" startPosition="0" endLine="56" endPosition="44">
+      <varInfo nodeId="7545884443035924748" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="52" startPosition="27" endLine="56" endPosition="44" />
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="63" startPosition="5" endLine="67" endPosition="5" />
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="67" startPosition="5" endLine="71" endPosition="5" />
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="29" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="4113928910955523825" fileName="AddModuleToVcs_Action.java" startLine="42" startPosition="7" endLine="50" endPosition="41">
+      <varInfo nodeId="1980552323536815495" varName="enabled" />
+      <varInfo nodeId="1980552323536815487" varName="presentation" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="75" startPosition="96" endLine="84" endPosition="5" />
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="41" startPosition="9" endLine="51" endPosition="7" />
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="75" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="7545884443035924748" varName="_params" />
+      <varInfo nodeId="7545884443035924748" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="60" startPosition="95" endLine="72" endPosition="16" />
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="60" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="7545884443035924748" varName="_params" />
+      <varInfo nodeId="7545884443035924748" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="40" startPosition="89" endLine="57" endPosition="5" />
+    <scopeInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="40" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="7545884443035924748" varName="_params" />
+      <varInfo nodeId="7545884443035924748" varName="event" />
+    </scopeInfo>
+    <unitInfo nodeId="7545884443035924748" fileName="AddModuleToVcs_Action.java" startLine="25" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.vcs.plugin.AddModuleToVcs_Action" />
+  </root>
+</debugInfo>
+
