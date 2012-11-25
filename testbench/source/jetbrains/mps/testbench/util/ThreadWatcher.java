@@ -59,7 +59,8 @@ public class ThreadWatcher implements Output {
         "(Poller SunPKCS11-Darwin)|" +
         "(MPS interrupt.*)|" +
         "(process reaper)|" +
-        "(RefCountingStorage.*)");
+        "(RefCountingStorage.*)|" +
+        "(Encoding detection thread)");
 
     private TLongObjectHashMap<ThreadInfo> allThreads = new TLongObjectHashMap<ThreadInfo> ();
     private TLongObjectHashMap<ThreadInfo> runningThreads = new TLongObjectHashMap<ThreadInfo> ();
