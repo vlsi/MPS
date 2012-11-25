@@ -36,6 +36,7 @@ import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.make.MPSCompilerComponent;
 import jetbrains.mps.vfs.IFile;
 
+import javax.swing.SwingUtilities;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +51,7 @@ public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
       @Override
       public void run() {
         ModifiableRootModel mm = mrm.getModifiableModel();
-//        mm.setSdk(JavaSdkImpl.getMockJdk17());
+        mm.setSdk(JavaSdkImpl.getMockJdk17());
 
         VirtualFileSystem vfs = VirtualFileManager.getInstance().getFileSystem("file");
         VirtualFile project = vfs.findFileByPath(source.getParent().getPath());
@@ -134,21 +135,35 @@ public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
     assertCompiles(cm, 0, 0);
   }
 
-  protected void assertCompiles(CompilerManager cm, final int errors, final int warns) {
+  protected void assertCompiles(final CompilerManager cm, final int errors, final int warns) throws Exception {
     class Result {
       boolean aborted = true;
       int errors = -1;
       int warnings = -1;
     }
     final Result res = new Result();
-    cm.compile(myFacet.getModule(), new CompileStatusNotification() {
+    final boolean[] compilationFinished = new boolean[]{false};
+    SwingUtilities.invokeLater(new Runnable() {
       @Override
-      public void finished(boolean aborted, int errors, int warnings, CompileContext compileContext) {
-        res.aborted = aborted;
-        res.errors = errors;
-        res.warnings = warnings;
+      public void run() {
+        cm.compile(myFacet.getModule(), new CompileStatusNotification() {
+          @Override
+          public void finished(boolean aborted, int errors, int warnings, CompileContext compileContext) {
+            res.aborted = aborted;
+            res.errors = errors;
+            res.warnings = warnings;
+            compilationFinished[0] = true;
+          }
+        });
       }
     });
+    while (!compilationFinished[0]) {
+      try {
+        Thread.sleep(100);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
     assertOnTeardown(new Asserter() {
       @Override
       public void doAssert() throws Exception {

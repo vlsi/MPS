@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.core.tests;
 
+import com.intellij.compiler.CompilerWorkspaceConfiguration;
 import com.intellij.facet.FacetManager;
 import com.intellij.facet.FacetType;
 import com.intellij.facet.FacetTypeRegistry;
@@ -42,7 +43,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import junit.framework.Assert;
 import org.apache.log4j.BasicConfigurator;
 
-import javax.swing.*;
+import javax.swing.SwingUtilities;
 import java.io.File;
 
 public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
@@ -92,6 +93,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
         myFixture.setUp();
         myFixture.setTestDataPath(getTestDataPath());
         myModule = moduleFixtureBuilder.getFixture().getModule();
+        CompilerWorkspaceConfiguration.getInstance(myModule.getProject()).USE_COMPILE_SERVER = false;
         myFacet = addMPSFacet(myModule);
 
         if (TRACE_ON_HACK) Logger.setFactory(LoggerFactory.getInstance());

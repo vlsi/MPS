@@ -18,6 +18,7 @@ package jetbrains.mps.idea.core.tests;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.testFramework.PlatformTestUtil;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -48,7 +49,35 @@ public abstract class DataMPSFixtureTestCase extends AbstractMPSFixtureTestCase 
         if (thrown[0] != null) throw new RuntimeException(thrown[0]);
     }
 
-    protected abstract void prepareTestData (MPSFacetConfiguration configuration) throws Exception;
+    @Override
+    protected boolean runInDispatchThread() {
+      return false;
+    }
+
+    @Override
+    protected void invokeTestRunnable(Runnable runnable) throws Exception {
+      // superclass's method always starts this in the EDT
+      runnable.run();
+    }
+
+  @Override
+  protected void setUp() throws Exception {
+    final Exception[] thrown = new Exception[1];
+    // Calling super.setup() in EDT
+    UIUtil.invokeAndWaitIfNeeded(new Runnable() {
+      @Override
+      public void run() {
+        try {
+          DataMPSFixtureTestCase.super.setUp();
+        } catch (Exception e) {
+          thrown[0] = e;
+        }
+      }
+    });
+    if (thrown[0] != null) throw thrown[0];
+  }
+
+  protected abstract void prepareTestData (MPSFacetConfiguration configuration) throws Exception;
     
     protected IFile copyResource(String toPath, String resName, String fromPath) throws IOException{
         IFile targetFile = FileSystem.getInstance().getFileByPath(toPath);
