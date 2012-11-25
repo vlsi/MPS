@@ -25,11 +25,9 @@ import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.make.MPSCompiler2;
 import jetbrains.mps.idea.core.make.MPSCompilerPaths;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ComplicatedMakeTests extends AbstractMakeTest {

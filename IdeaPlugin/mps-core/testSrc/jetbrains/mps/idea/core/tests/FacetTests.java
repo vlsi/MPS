@@ -42,7 +42,12 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 
 public class FacetTests extends AbstractMPSFixtureTestCase {
 
