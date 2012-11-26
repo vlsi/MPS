@@ -240,15 +240,15 @@ public class QueriesGenerated {
     return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getGeneratedClassName_946964771156905488", new Object[]{}) + "_RunTask";
   }
 
-  public static Object propertyMacro_GetPropertyValue_5039342337170185049(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_8922140744667691341(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_5039342337170185059(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_8922140744667695508(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "alias");
   }
 
-  public static Object propertyMacro_GetPropertyValue_4929913054057211122(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_8922140744667675737(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
@@ -447,7 +447,7 @@ public class QueriesGenerated {
     return isNotEmpty_x583g4_a0a0rd(SPropertyOperations.getString(_context.getNode(), "path"));
   }
 
-  public static boolean ifMacro_Condition_6396510228602727619(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_8922140744667671471(final IOperationContext operationContext, final IfMacroContext _context) {
     return isEmpty_x583g4_a0a0sd(SPropertyOperations.getString(_context.getNode(), "alias"));
   }
 

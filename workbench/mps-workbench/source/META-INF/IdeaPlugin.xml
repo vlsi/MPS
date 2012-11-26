@@ -122,13 +122,6 @@
     <editorTabTitleProvider implementation="jetbrains.mps.ide.editor.tabs.EditorTabTitleProviderImpl"/>
 
     <fileIconProvider implementation="jetbrains.mps.workbench.editors.MPSIconProvider"/>
-
-    <!--run configurations-->
-    <programRunner id="defaultRunRunner" implementation="jetbrains.mps.execution.impl.configurations.runners.MPSProgramRunner"/>
-    <executor implementation="com.intellij.execution.executors.DefaultRunExecutor" order="first" id="run"/>
-    <stepsBeforeRunProvider implementation="jetbrains.mps.execution.impl.configurations.runners.LegacyBeforeTaskProvider"/>
-    <projectService serviceInterface="com.intellij.execution.ui.RunnerLayoutUi$Factory"
-                    serviceImplementation="com.intellij.execution.ui.layout.impl.RunnerLayoutUiFactoryImpl"/>
   </extensions>
 
 </idea-plugin>

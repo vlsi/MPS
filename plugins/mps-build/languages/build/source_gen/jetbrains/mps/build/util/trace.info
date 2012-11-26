@@ -1350,7 +1350,7 @@
     <nodeInfo nodeId="7984891866938355446" fileName="VisibleArtifacts.java" startLine="174" startPosition="21" endLine="175" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7984891866938355646" fileName="VisibleArtifacts.java" startLine="177" startPosition="30" endLine="178" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7984891866938355550" fileName="VisibleArtifacts.java" startLine="179" startPosition="135" endLine="180" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8252715012761470726" fileName="VisibleArtifacts.java" startLine="182" startPosition="57" endLine="183" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="8252715012761470726" fileName="VisibleArtifacts.java" startLine="182" startPosition="57" endLine="183" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="7880069565647244812" fileName="VisibleArtifacts.java" startLine="186" startPosition="37" endLine="187" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="7880069565647244750" fileName="VisibleArtifacts.java" startLine="188" startPosition="5" endLine="189" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7880069565647244784" fileName="VisibleArtifacts.java" startLine="190" startPosition="25" endLine="191" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1467,7 +1467,7 @@
     <scopeInfo nodeId="1368030936106597833" fileName="VisibleArtifacts.java" startLine="167" startPosition="37" endLine="168" endPosition="98" />
     <scopeInfo nodeId="7984891866938355418" fileName="VisibleArtifacts.java" startLine="174" startPosition="21" endLine="175" endPosition="18" />
     <scopeInfo nodeId="7984891866938355451" fileName="VisibleArtifacts.java" startLine="179" startPosition="135" endLine="180" endPosition="99" />
-    <scopeInfo nodeId="8252715012761470646" fileName="VisibleArtifacts.java" startLine="182" startPosition="57" endLine="183" endPosition="98" />
+    <scopeInfo nodeId="8252715012761470646" fileName="VisibleArtifacts.java" startLine="182" startPosition="57" endLine="183" endPosition="107" />
     <scopeInfo nodeId="7880069565647244811" fileName="VisibleArtifacts.java" startLine="186" startPosition="37" endLine="187" endPosition="100" />
     <scopeInfo nodeId="7880069565647244691" fileName="VisibleArtifacts.java" startLine="190" startPosition="25" endLine="191" endPosition="20" />
     <scopeInfo nodeId="8706695667515532123" fileName="VisibleArtifacts.java" startLine="206" startPosition="25" endLine="207" endPosition="55" />

@@ -1,22 +1,38 @@
 <!DOCTYPE idea-plugin PUBLIC 'Plugin/DTD' 'http://plugins.intellij.net/plugin.dtd'>
-<idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
+<idea-plugin>
   <id>jetbrains.mps.execution.languages</id>
   <name>Execution Languages</name>
   <description>Languages and libraries for implementing execution configurations for MPS</description>
   <version>2.5.1</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="117.105" />
-  
+  <idea-version since-build="117.105"/>
+
   <depends>jetbrains.mps.debugger-java</depends>
   <depends>jetbrains.mps.debugger-api</depends>
+  <depends>jetbrains.mps.execution-api</depends>
+
+  <project-components>
+    <component>
+      <implementation-class>jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager
+      </implementation-class>
+    </component>
+  </project-components>
+
   <application-components>
     <component>
       <implementation-class>jetbrains.mps.execution.languages.plugin.Languages_PluginInitializer</implementation-class>
     </component>
   </application-components>
-  
+
   <extensions defaultExtensionNs="com.intellij">
-    <mps.LanguageLibrary dir="/" />
-    <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter" />
+    <mps.LanguageLibrary dir="/"/>
+    <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
+    <programRunner id="defaultRunRunner"
+                   implementation="jetbrains.mps.execution.impl.configurations.runners.MPSProgramRunner"/>
+    <executor implementation="com.intellij.execution.executors.DefaultRunExecutor" order="first" id="run"/>
+    <stepsBeforeRunProvider
+            implementation="jetbrains.mps.execution.impl.configurations.runners.LegacyBeforeTaskProvider"/>
+    <projectService serviceInterface="com.intellij.execution.ui.RunnerLayoutUi$Factory"
+                    serviceImplementation="com.intellij.execution.ui.layout.impl.RunnerLayoutUiFactoryImpl"/>
   </extensions>
 </idea-plugin>

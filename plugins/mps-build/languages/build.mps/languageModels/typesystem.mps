@@ -38,8 +38,8 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1392391688313307204">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
       <property name="name" nameId="tpck.1169194664001" value="IdeaPluginDependenciesHelper" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
     </node>
   </roots>
   <root id="4278635856200804509">
@@ -362,8 +362,8 @@
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="4278635856200790765" />
                     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="2531699772406302895">
-                      <property name="name" nameId="tpck.1169194664001" value="report" />
                       <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
+                      <property name="name" nameId="tpck.1169194664001" value="report" />
                       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2531699772406302896" />
                       <node role="visibility" roleId="tpee.1178549979242" type="tpee.ProtectedVisibility" typeId="tpee.1146644641414" id="2531699772406302897" />
                       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2531699772406302898">
