@@ -167,7 +167,7 @@ public class ModelDifferenceDialog extends DialogWrapper {
     myGoingToNeighbour = false;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myRootDifferenceDialog = new RootDifferenceDialog(ModelDifferenceDialog.this, rootId, myTree.getNameForRoot(rootId), (isVisible() ?
+        myRootDifferenceDialog = new RootDifferenceDialog(ModelDifferenceDialog.this, myChangeSet, rootId, myTree.getNameForRoot(rootId), (isVisible() ?
           getWindow() :
           WindowManager.getInstance().getFrame(myProject)
         ), new ModelDifferenceDialog.MyGoToNeighbourRootActions().getActions(), scrollTo);

@@ -4,6 +4,7 @@ package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.actionSystem.DataProvider;
+import jetbrains.mps.vcs.diff.ModelChangeSet;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.vcs.diff.ui.common.DiffEditor;
 import java.util.List;
@@ -52,6 +53,7 @@ import java.awt.HeadlessException;
 
 public class RootDifferenceDialog extends DialogWrapper implements DataProvider {
   private ModelDifferenceDialog myModelDialog;
+  private ModelChangeSet myChangeSet;
   private SNodeId myRootId;
   private DiffEditor myOldEditor;
   private DiffEditor myNewEditor;
@@ -66,15 +68,16 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   private boolean myClosed;
   private DefaultActionGroup myActionGroup;
 
-  public RootDifferenceDialog(ModelDifferenceDialog modelDialog, SNodeId rootId, String rootName, Component parent, @Nullable BaseAction[] actions, @Nullable final Bounds firstChange) {
+  public RootDifferenceDialog(ModelDifferenceDialog modelDialog, ModelChangeSet changeSet, SNodeId rootId, String rootName, Component parent, @Nullable BaseAction[] actions, @Nullable final Bounds firstChange) {
     super(parent, true);
     setTitle("Difference for " + rootName);
 
     myModelDialog = modelDialog;
+    myChangeSet = changeSet;
     myRootId = rootId;
 
-    myOldEditor = addEditor(0, myModelDialog.getChangeSet().getOldModel());
-    myNewEditor = addEditor(1, myModelDialog.getChangeSet().getNewModel());
+    myOldEditor = addEditor(0, myChangeSet.getOldModel());
+    myNewEditor = addEditor(1, myChangeSet.getNewModel());
 
     linkEditors(true);
     linkEditors(false);
@@ -93,7 +96,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     if (myModelDialog.isEditable()) {
       myActionGroup.add(new RevertRootsAction(rootName) {
         protected Iterable<ModelChange> getChanges() {
-          return myModelDialog.getChangesForRoot(myRootId);
+          return myChangeSet.getChangesForRoot(myRootId);
         }
 
         protected void after() {
@@ -121,7 +124,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
       neighbourTraverser.goToFirstChangeLater();
     }
 
-    DisplayMode displayMode = check_vu2gar_a0hb0a(check_vu2gar_a0a33a0(GraphicsEnvironment.getLocalGraphicsEnvironment()));
+    DisplayMode displayMode = check_vu2gar_a0ib0a(check_vu2gar_a0a43a0(GraphicsEnvironment.getLocalGraphicsEnvironment()));
     int width = (displayMode == null ?
       800 :
       displayMode.getWidth() - 100
@@ -187,9 +190,9 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
         b.invalidate();
       }
     });
-    for (ModelChange change : Sequence.fromIterable(myModelDialog.getChangesForRoot(myRootId))) {
-      higlightChange(myOldEditor, myModelDialog.getChangeSet().getOldModel(), change);
-      higlightChange(myNewEditor, myModelDialog.getChangeSet().getNewModel(), change);
+    for (ModelChange change : Sequence.fromIterable(myChangeSet.getChangesForRoot(myRootId))) {
+      higlightChange(myOldEditor, myChangeSet.getOldModel(), change);
+      higlightChange(myNewEditor, myChangeSet.getNewModel(), change);
     }
     ListSequence.fromList(myChangeGroupLayouts).visitAll(new IVisitor<ChangeGroupLayout>() {
       public void visit(ChangeGroupLayout b) {
@@ -200,7 +203,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     myOldEditor.repaintAndRebuildEditorMessages();
     myNewEditor.repaintAndRebuildEditorMessages();
 
-    int count = Sequence.fromIterable(myModelDialog.getChangesForRoot(myRootId)).count();
+    int count = Sequence.fromIterable(myChangeSet.getChangesForRoot(myRootId)).count();
     myStatusBar.setText((count == 0 ?
       "no differences" :
       NameUtil.formatNumericalString(count, "difference")
@@ -210,7 +213,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   private void linkEditors(boolean inspector) {
     // create change group builder, trapecium strip and merge buttons painter 
     // 'mine' parameter means mine changeset, 'inspector' - highlight inspector editor component 
-    ChangeGroupLayout layout = new DiffChangeGroupLayout(null, myModelDialog.getChangeSet(), myOldEditor, myNewEditor, inspector);
+    ChangeGroupLayout layout = new DiffChangeGroupLayout(null, myChangeSet, myOldEditor, myNewEditor, inspector);
     ChangeGroupMessages.startMaintaining(layout);
     ListSequence.fromList(myChangeGroupLayouts).addElement(layout);
     DiffEditorSeparator separator = new DiffEditorSeparator(layout);
@@ -220,7 +223,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
       myTopPanel
     )).add(separator, gbc);
     ListSequence.fromList(myEditorSeparators).addElement(separator);
-    if (!(myModelDialog.getChangeSet().getNewModel().isNotEditable())) {
+    if (!(myChangeSet.getNewModel().isNotEditable())) {
       DiffButtonsPainter.addTo(this, myOldEditor, layout, inspector);
       DiffButtonsPainter.addTo(this, myNewEditor, layout, inspector);
     }
@@ -236,7 +239,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     myOldEditor.unhighlightAllChanges();
 
     if (myNewEditor.getEditedNode() == null) {
-      myNewEditor.editRoot(myModelDialog.getProject(), myRootId, myModelDialog.getChangeSet().getNewModel());
+      myNewEditor.editRoot(myModelDialog.getProject(), myRootId, myChangeSet.getNewModel());
     }
 
     myNewEditor.getMainEditor().rebuildEditorContent();
@@ -275,14 +278,14 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     super.dispose();
   }
 
-  private static DisplayMode check_vu2gar_a0hb0a(GraphicsDevice checkedDotOperand) {
+  private static DisplayMode check_vu2gar_a0ib0a(GraphicsDevice checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getDisplayMode();
     }
     return null;
   }
 
-  private static GraphicsDevice check_vu2gar_a0a33a0(GraphicsEnvironment checkedDotOperand) throws HeadlessException {
+  private static GraphicsDevice check_vu2gar_a0a43a0(GraphicsEnvironment checkedDotOperand) throws HeadlessException {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getDefaultScreenDevice();
     }
