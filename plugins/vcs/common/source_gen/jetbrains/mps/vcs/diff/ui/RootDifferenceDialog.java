@@ -6,6 +6,7 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.actionSystem.DataProvider;
 import jetbrains.mps.vcs.diff.ModelChangeSet;
 import jetbrains.mps.smodel.SNodeId;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.diff.ui.common.DiffEditor;
 import java.util.List;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout;
@@ -48,13 +49,15 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
+import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import java.awt.GraphicsDevice;
 import java.awt.HeadlessException;
 
 public class RootDifferenceDialog extends DialogWrapper implements DataProvider {
-  private ModelDifferenceDialog myModelDialog;
   private ModelChangeSet myChangeSet;
   private SNodeId myRootId;
+  private Project myProject;
+  private String[] myTitles;
   private DiffEditor myOldEditor;
   private DiffEditor myNewEditor;
   private List<ChangeGroupLayout> myChangeGroupLayouts = ListSequence.fromList(new ArrayList<ChangeGroupLayout>());
@@ -68,13 +71,14 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   private boolean myClosed;
   private DefaultActionGroup myActionGroup;
 
-  public RootDifferenceDialog(ModelDifferenceDialog modelDialog, ModelChangeSet changeSet, SNodeId rootId, String rootName, Component parent, @Nullable BaseAction[] actions, @Nullable final Bounds firstChange) {
+  public RootDifferenceDialog(Project project, ModelChangeSet changeSet, SNodeId rootId, String rootName, String[] titles, Component parent, boolean isEditable, @Nullable BaseAction[] actions, @Nullable final Bounds firstChange) {
     super(parent, true);
     setTitle("Difference for " + rootName);
 
-    myModelDialog = modelDialog;
     myChangeSet = changeSet;
     myRootId = rootId;
+    myProject = project;
+    myTitles = titles;
 
     myOldEditor = addEditor(0, myChangeSet.getOldModel());
     myNewEditor = addEditor(1, myChangeSet.getNewModel());
@@ -93,7 +97,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     final NextPreviousTraverser neighbourTraverser = new NextPreviousTraverser(myChangeGroupLayouts, myNewEditor.getMainEditor());
     myActionGroup.addAll(neighbourTraverser.previousAction(), neighbourTraverser.nextAction());
     myActionGroup.addSeparator();
-    if (myModelDialog.isEditable()) {
+    if (isEditable) {
       myActionGroup.add(new RevertRootsAction(rootName) {
         protected Iterable<ModelChange> getChanges() {
           return myChangeSet.getChangesForRoot(myRootId);
@@ -124,7 +128,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
       neighbourTraverser.goToFirstChangeLater();
     }
 
-    DisplayMode displayMode = check_vu2gar_a0ib0a(check_vu2gar_a0a43a0(GraphicsEnvironment.getLocalGraphicsEnvironment()));
+    DisplayMode displayMode = check_vu2gar_a0jb0a(check_vu2gar_a0a53a0(GraphicsEnvironment.getLocalGraphicsEnvironment()));
     int width = (displayMode == null ?
       800 :
       displayMode.getWidth() - 100
@@ -168,7 +172,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   }
 
   private DiffEditor addEditor(int index, SModel model) {
-    final DiffEditor result = new DiffEditor(DiffTemporaryModule.getOperationContext(myModelDialog.getProject(), model), model.getNodeById(myRootId), myModelDialog.getContentTitles()[index], index == 0);
+    final DiffEditor result = new DiffEditor(DiffTemporaryModule.getOperationContext(myProject, model), model.getNodeById(myRootId), myTitles[index], index == 0);
 
     GridBagConstraints gbc = new GridBagConstraints(index * 2, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, (index == 0 ?
       5 :
@@ -234,12 +238,12 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   }
 
   public void rehighlight() {
-    myModelDialog.rebuildChangeSet();
+    ChangeSetBuilder.rebuildChangeSet(myChangeSet);
     myNewEditor.unhighlightAllChanges();
     myOldEditor.unhighlightAllChanges();
 
     if (myNewEditor.getEditedNode() == null) {
-      myNewEditor.editRoot(myModelDialog.getProject(), myRootId, myChangeSet.getNewModel());
+      myNewEditor.editRoot(myProject, myRootId, myChangeSet.getNewModel());
     }
 
     myNewEditor.getMainEditor().rebuildEditorContent();
@@ -262,7 +266,6 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     if (!(myClosed)) {
       myClosed = true;
       myActionGroup.removeAll();
-      myModelDialog.rootDialogClosed();
       myOldEditor.dispose();
       myOldEditor = null;
       myNewEditor.dispose();
@@ -278,14 +281,14 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     super.dispose();
   }
 
-  private static DisplayMode check_vu2gar_a0ib0a(GraphicsDevice checkedDotOperand) {
+  private static DisplayMode check_vu2gar_a0jb0a(GraphicsDevice checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getDisplayMode();
     }
     return null;
   }
 
-  private static GraphicsDevice check_vu2gar_a0a43a0(GraphicsEnvironment checkedDotOperand) throws HeadlessException {
+  private static GraphicsDevice check_vu2gar_a0a53a0(GraphicsEnvironment checkedDotOperand) throws HeadlessException {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getDefaultScreenDevice();
     }

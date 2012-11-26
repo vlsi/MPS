@@ -167,20 +167,32 @@ public class ModelDifferenceDialog extends DialogWrapper {
     myGoingToNeighbour = false;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myRootDifferenceDialog = new RootDifferenceDialog(ModelDifferenceDialog.this, myChangeSet, rootId, myTree.getNameForRoot(rootId), (isVisible() ?
+        myRootDifferenceDialog = new RootDifferenceDialog(myProject, myChangeSet, rootId, myTree.getNameForRoot(rootId), myContentTitles, (isVisible() ?
           getWindow() :
           WindowManager.getInstance().getFrame(myProject)
-        ), new ModelDifferenceDialog.MyGoToNeighbourRootActions().getActions(), scrollTo);
+        ), myEditable, new ModelDifferenceDialog.MyGoToNeighbourRootActions().getActions(), scrollTo);
       }
     });
     // <node> 
     myRootDifferenceDialog.show();
+    myRootDifferenceDialog = null;
+    if (!(myGoingToNeighbour) && !(isVisible())) {
+      close(NEXT_USER_EXIT_CODE);
+      return;
+    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        rebuildChangeSet();
+      }
+    });
   }
 
   /*package*/ void rootDialogClosed() {
     myRootDifferenceDialog = null;
     if (!(myGoingToNeighbour) && !(isVisible())) {
       close(DialogWrapper.NEXT_USER_EXIT_CODE);
+    } else {
+      rebuildChangeSet();
     }
   }
 
