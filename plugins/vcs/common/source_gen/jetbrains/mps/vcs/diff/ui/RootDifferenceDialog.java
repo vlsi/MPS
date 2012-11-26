@@ -43,6 +43,7 @@ import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
@@ -186,7 +187,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
         b.invalidate();
       }
     });
-    for (ModelChange change : ListSequence.fromList(myModelDialog.getChangesForRoot(myRootId))) {
+    for (ModelChange change : Sequence.fromIterable(myModelDialog.getChangesForRoot(myRootId))) {
       higlightChange(myOldEditor, myModelDialog.getChangeSet().getOldModel(), change);
       higlightChange(myNewEditor, myModelDialog.getChangeSet().getNewModel(), change);
     }
@@ -199,7 +200,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     myOldEditor.repaintAndRebuildEditorMessages();
     myNewEditor.repaintAndRebuildEditorMessages();
 
-    int count = ListSequence.fromList(myModelDialog.getChangesForRoot(myRootId)).count();
+    int count = Sequence.fromIterable(myModelDialog.getChangesForRoot(myRootId)).count();
     myStatusBar.setText((count == 0 ?
       "no differences" :
       NameUtil.formatNumericalString(count, "difference")

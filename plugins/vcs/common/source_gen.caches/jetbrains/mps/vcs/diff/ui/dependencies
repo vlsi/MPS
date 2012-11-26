@@ -81,9 +81,7 @@
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Action" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
@@ -92,9 +90,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
@@ -105,6 +101,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSetBuilder" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ModelChangeSet" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.AddRootChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeType" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.DeleteRootChange" />
@@ -172,6 +169,7 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
