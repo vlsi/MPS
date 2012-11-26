@@ -71,6 +71,14 @@ public class StaticMethodDeclaration_Behavior {
     context.hideMembers(signature);
   }
 
+  public static boolean virtual_needsEmptyLineAfter_641490355014298838(SNode thisNode) {
+    return true;
+  }
+
+  public static boolean virtual_needsEmptyLineBefore_641490355014296733(SNode thisNode) {
+    return true;
+  }
+
   @Deprecated
   public static List<Icon> call_getMarkIcons_5039675756633082235(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<List<Icon>>) ((Class) Object.class), thisNode, "virtual_getMarkIcons_3923831204883340393", new Object[]{});

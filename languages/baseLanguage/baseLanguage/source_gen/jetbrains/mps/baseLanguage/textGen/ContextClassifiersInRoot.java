@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ContextClassifiersInRoot {
   private static Logger LOG = Logger.getLogger(ContextClassifiersInRoot.class);
-
   private SimpleCache<Tuples._2<SNode, String>, Map<String, String>> contextClassifiersCache;
   private SimpleCache<SNode, Map<String, String>> nestedClassifiersCache;
 
