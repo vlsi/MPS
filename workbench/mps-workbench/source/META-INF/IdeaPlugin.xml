@@ -4,20 +4,14 @@
 
   <module value="com.intellij.modules.mps"/>
   <module value="com.intellij.modules.all"/>
-  <module value="com.intellij.modules.lang"/>
-  <module value="com.intellij.modules.vcs"/>
-  <module value="com.intellij.modules.platform"/>
 
+  <xi:include href="/idea/MPSRichPlatformPlugin.xml" xpointer="xpointer(/idea-plugin/*)"/>
   <xi:include href="/META-INF/MPSComponents.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/idea/MPSActionManager.xml" xpointer="xpointer(/component/*)"/>
   <xi:include href="/jetbrains/mps/ide/platform/actions/PlatformActions.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/jetbrains/mps/ide/editor/actions/MPSEditorActions.xml" xpointer="xpointer(/components/*)"/>
 
   <extensionPoints>
-    <xi:include href="/META-INF/PlatformExtensionPoints.xml" xpointer="xpointer(/extensionPoints/*)"/>
-    <xi:include href="/META-INF/VcsExtensionPoints.xml" xpointer="xpointer(/extensionPoints/*)"/>
-    <xi:include href="/META-INF/LangExtensionPoints.xml" xpointer="xpointer(/extensionPoints/*)"/>
-
     <extensionPoint name="mps.NavigationProvider" interface="jetbrains.mps.ide.navigation.NavigationProvider"/>
     <extensionPoint name="mps.ModelValidator" interface="jetbrains.mps.ide.generator.ModelValidator"/>
     <extensionPoint name="mps.TabColorProvider" area="IDEA_PROJECT" interface="jetbrains.mps.ide.editorTabs.TabColorProvider"/>
@@ -26,50 +20,21 @@
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
-    <xi:include href="/META-INF/MPSPlatformExtensions.xml" xpointer="xpointer(/extensions/*)"/>
-    <xi:include href="/META-INF/VcsExtensions.xml" xpointer="xpointer(/extensions/*)"/>
-
-
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
 
     <directoryIndexExcludePolicy implementation="jetbrains.mps.ide.vfs.ClassesGenPolicy"/>
 
     <fileTypeFactory implementation="com.intellij.openapi.fileTypes.impl.InternalFileTypeFactory"/>
 
-    <applicationService serviceInterface="com.intellij.codeStyle.CodeStyleFacade"
-                        serviceImplementation="com.intellij.codeStyle.DefaultCodeStyleFacade"/>
-
-    <applicationService serviceInterface="com.intellij.openapi.project.ProjectLocator"
-                        serviceImplementation="com.intellij.openapi.project.impl.DefaultProjectLocator"/>
-
-    <applicationService serviceInterface="com.intellij.execution.ui.layout.impl.RunnerLayoutSettings"
-                        serviceImplementation="com.intellij.execution.ui.layout.impl.RunnerLayoutSettings"/>
-
-    <applicationService serviceInterface="com.intellij.ui.mac.MacMessages"
-                        serviceImplementation="com.intellij.ui.mac.MacMessagesImpl"/>
-
-    <projectService serviceInterface="com.intellij.openapi.roots.ProjectFileIndex"
-                    serviceImplementation="com.intellij.openapi.roots.impl.ProjectFileIndexImpl"/>
     <projectService serviceInterface="com.intellij.ide.projectView.impl.nodes.ProjectViewDirectoryHelper"
                     serviceImplementation="com.intellij.ide.projectView.impl.nodes.ProjectViewDirectoryHelper"/>
     <projectService serviceInterface="com.intellij.openapi.vcs.changes.patch.PatchBaseDirectoryDetector"
                     serviceImplementation="jetbrains.mps.MPSPatchBaseDirectoryDetector"/>
-    <projectService serviceInterface="com.intellij.find.FindManager"
-                    serviceImplementation="com.intellij.find.impl.FindManagerImpl"/>
-    <projectService serviceInterface="com.intellij.usages.UsageViewManager"
-                    serviceImplementation="com.intellij.usages.impl.UsageViewManagerImpl"/>
-    <projectService serviceInterface="com.intellij.codeStyle.CodeStyleFacade"
-                    serviceImplementation="jetbrains.mps.codeStyle.MPSCodeStyleFacade"/>
-
-    <projectService serviceInterface="com.intellij.ui.EditorTextFieldProvider"
-                    serviceImplementation="jetbrains.mps.EditorTextFieldProviderImpl"/>
 
     <projectService serviceInterface="com.intellij.openapi.vcs.impl.ExcludedFileIndex"
                     serviceImplementation="com.intellij.openapi.vcs.impl.ProjectExcludedFileIndex"/>
     <projectService serviceInterface="com.intellij.openapi.vcs.impl.DefaultVcsRootPolicy"
                     serviceImplementation="jetbrains.mps.ide.vcs.ExtendedDefaultVcsRootPolicy"/>
-    <projectService serviceInterface="com.intellij.psi.search.ProjectScopeBuilder"
-                    serviceImplementation="com.intellij.psi.search.ProjectScopeBuilderImpl"/>
     <projectService serviceInterface="com.intellij.openapi.roots.FileIndexFacade"
                     serviceImplementation="com.intellij.openapi.vcs.impl.DefaultFileIndexFacade"/>
 
@@ -83,41 +48,10 @@
     <projectOpenProcessor implementation="com.intellij.platform.PlatformProjectOpenProcessor"/>
 
     <applicationConfigurable implementation="com.intellij.application.options.pathMacros.PathMacroConfigurable"/>
-    <applicationConfigurable implementation="com.intellij.openapi.fileTypes.impl.FileTypeConfigurable"/>
-
-    <applicationService serviceInterface="com.intellij.ui.IconDeferrer"
-                        serviceImplementation="com.intellij.ui.DefaultIconDeferrer"/>
-
-
-    <applicationService beanClass="com.intellij.lang.cacheBuilder.CacheBuilderEP"
-                        serviceInterface="com.intellij.lang.cacheBuilder.CacheBuilderRegistry"
-                        serviceImplementation="com.intellij.lang.cacheBuilder.CacheBuilderRegistryImpl"/>
-
-    <projectService serviceInterface="com.intellij.ide.structureView.StructureViewFactory"
-                    serviceImplementation="com.intellij.ide.structureView.impl.StructureViewFactoryImpl"/>
-    <toolWindow id="Structure" anchor="left" icon="/general/toolWindowStructure.png" secondary="true"
-                factoryClass="com.intellij.ide.structureView.impl.StructureViewToolWindowFactory"/>
-
 
     <!--For run config creation with action-->
     <getDataRule key="Location"
                  implementationClass="jetbrains.mps.workbench.dataExtraction.runConfig.LocationRule"/>
-
-
-    <fileBasedIndex implementation="com.intellij.psi.impl.cache.impl.id.IdIndex"/>
-    <!--        <fileBasedIndex implementation="NamedNodeIndex"/> -->
-    <fileBasedIndex implementation="jetbrains.mps.ide.generator.index.LanguageModelDigestIndex"/>
-    <fileBasedIndex implementation="jetbrains.mps.ide.generator.index.ModelDigestIndex"/>
-    <fileBasedIndex implementation="com.intellij.psi.search.FilenameIndex"/>
-    <indexedRootsProvider implementation="jetbrains.mps.ide.findusages.caches.MPSIndexedRootsProvider"/>
-
-    <syntaxHighlighter key="JAVA" implementationClass="jetbrains.mps.ide.java.JavaFileHighlighter"/>
-    <syntaxHighlighter key="XML" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
-    <syntaxHighlighter key="Model" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
-    <syntaxHighlighter key="Solution" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
-    <syntaxHighlighter key="Language" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
-    <syntaxHighlighter key="Devkit" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
-    <syntaxHighlighter key="MPS Project" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
 
     <editorTabTitleProvider implementation="jetbrains.mps.ide.editor.tabs.EditorTabTitleProviderImpl"/>
 

@@ -201,7 +201,7 @@
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestToolbarPanel" file="TestToolbarPanel.java">
-    <classNode dependClassName="com.intellij.execution.testframework.TestsUIUtil" />
+    <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
@@ -253,7 +253,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTree" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestTreeIconAnimator" file="TestTreeIconAnimator.java">
-    <classNode dependClassName="com.intellij.execution.testframework.TestsUIUtil" />
+    <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="com.intellij.util.Alarm" />
     <classNode dependClassName="java.lang.String" />

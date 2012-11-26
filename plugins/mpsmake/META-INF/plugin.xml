@@ -18,9 +18,9 @@
   <id>jetbrains.mps.ide.make</id>
   <name>Make</name>
   <description>Allows to transform models</description>
-  <version>2.5.1</version>
+  <version>3.0</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="117.105"></idea-version>
+  <idea-version since-build="122.746" />
 
 
   <application-components>

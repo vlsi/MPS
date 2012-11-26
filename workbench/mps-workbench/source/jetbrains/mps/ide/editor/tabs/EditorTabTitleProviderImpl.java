@@ -29,6 +29,9 @@ public class EditorTabTitleProviderImpl implements EditorTabTitleProvider {
     if (!(file instanceof MPSNodeVirtualFile)) return null;
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
+        if (!ModelAccess.instance().isInEDT()) {
+          return "";
+        }
         SNode node = MPSEditorUtil.getCurrentEditedNode(project, (MPSNodeVirtualFile) file);
         if (node == null) return null;
         return node.getPresentation();

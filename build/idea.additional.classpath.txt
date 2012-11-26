@@ -25,6 +25,8 @@ workbench/mps-editor/classes
 :platform
 workbench/mps-platform/classes
 workbench/mps-debugger/classes
+:ui
+workbench/mps-ui/classes
 :workbench
 workbench/resources/classes
 workbench/resources_en/classes

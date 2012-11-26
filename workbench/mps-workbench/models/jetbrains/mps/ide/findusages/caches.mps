@@ -833,7 +833,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4614401897484748092">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4614401897484748093">
                     <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="f6g1.~VfsUtilCore" resolveInfo="VfsUtilCore" />
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f6g1.~VfsUtilCore%dvisitChildrenRecursively(com%dintellij%dopenapi%dvfs%dVirtualFile,com%dintellij%dopenapi%dvfs%dVirtualFileVisitor)%cvoid" resolveInfo="visitChildrenRecursively" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f6g1.~VfsUtilCore%dvisitChildrenRecursively(com%dintellij%dopenapi%dvfs%dVirtualFile,com%dintellij%dopenapi%dvfs%dVirtualFileVisitor)%ccom%dintellij%dopenapi%dvfs%dVirtualFileVisitor$Result" resolveInfo="visitChildrenRecursively" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4614401897484748094">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4614401897484748060" resolveInfo="vf" />
                     </node>
@@ -842,8 +842,8 @@
                         <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="4614401897484748097">
                           <property name="name" nameId="tpck.1169194664001" value="" />
                           <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f6g1.~VirtualFileVisitor%d&lt;init&gt;()" resolveInfo="VirtualFileVisitor" />
                           <link role="classifier" roleId="tpee.1170346070688" targetNodeId="f6g1.~VirtualFileVisitor" resolveInfo="VirtualFileVisitor" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f6g1.~VirtualFileVisitor%d&lt;init&gt;(com%dintellij%dopenapi%dvfs%dVirtualFileVisitor$Option%d%d%d)" resolveInfo="VirtualFileVisitor" />
                           <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="4614401897484748098">
                             <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
                             <property name="name" nameId="tpck.1169194664001" value="visitFile" />

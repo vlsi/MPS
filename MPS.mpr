@@ -123,6 +123,7 @@
       <modulePath path="${project}/languages/core/stub/MPS.Editor/Editor.msd" folder="core.stub" />
       <modulePath path="${project}/languages/core/stub/MPS.OpenAPI/OpenAPI.msd" folder="core.stub" />
       <modulePath path="${project}/languages/core/stub/MPS.Platform/Platform.msd" folder="core.stub" />
+      <modulePath path="${project}/languages/core/stub/MPS.UI/UI.msd" folder="core.stub" />
       <modulePath path="${project}/languages/core/stub/MPS.Workbench/Workbench.msd" folder="core.stub" />
       <modulePath path="${project}/languages/core/stub/Testbench/Testbench.msd" folder="core.stub" />
       <modulePath path="${project}/languages/languageDesign/access/access.mpl" folder="core.language-design" />
@@ -434,6 +435,7 @@
       <modulePath path="${project}/workbench/mps-debugger/core.msd" folder="debugger" />
       <modulePath path="${project}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" folder="workbench.editor" />
       <modulePath path="${project}/workbench/mps-platform/base.msd" folder="workbench.platform" />
+      <modulePath path="${project}/workbench/mps-ui/ui.msd" folder="workbench.ui" />
       <modulePath path="${project}/workbench/mps-workbench/jetbrains.mps.ide.msd" folder="workbench" />
     </projectModules>
     <genConfs />

@@ -23,7 +23,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class BasePrefsPage extends ConfigurableEP implements Configurable, NonDefaultProjectConfigurable {
+public abstract class BasePrefsPage extends ConfigurableEP<Configurable> implements Configurable, NonDefaultProjectConfigurable {
   private Project myProject;
   private BaseProjectPrefsComponent myPrefsComponent;
 
@@ -52,10 +52,10 @@ public abstract class BasePrefsPage extends ConfigurableEP implements Configurab
   }
 
   public void register() {
-    Extensions.getArea(myProject).getExtensionPoint(Configurable.PROJECT_CONFIGURABLES).registerExtension(this);
+    Extensions.getArea(myProject).getExtensionPoint(Configurable.PROJECT_CONFIGURABLE).registerExtension(this);
   }
 
   public void unregister() {
-    Extensions.getArea(myProject).getExtensionPoint(Configurable.PROJECT_CONFIGURABLES).unregisterExtension(this);
+    Extensions.getArea(myProject).getExtensionPoint(Configurable.PROJECT_CONFIGURABLE).unregisterExtension(this);
   }
 }

@@ -53,14 +53,14 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tasks" />
     </node>
     <node type="tpf8.MappingScript" typeId="tpf8.1195499912406" id="1117643560963147795">
+      <property name="name" nameId="tpck.1169194664001" value="import_libraries" />
       <property name="scriptKind" nameId="tpf8.1195595592106" value="pre_processing" />
       <property name="modifiesModel" nameId="tpf8.1195595611951" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="import_libraries" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tasks" />
     </node>
     <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="6647099934207031466">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
       <property name="name" nameId="tpck.1169194664001" value="reduce_JavaDep2TaskDep" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
     </node>
   </roots>
   <root id="2769948622284786809">
@@ -328,8 +328,8 @@
               </node>
             </node>
             <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7385586609667799708">
-              <property name="tagName" nameId="iuxj.6666499814681415862" value="tstamp" />
               <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="tstamp" />
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="7385586609667799716">
                 <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="7385586609667799717">
                   <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7385586609667799718">
@@ -546,8 +546,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="8xvf.2769948622284546677" resolveInfo="BwfSubTask" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2769948622284791212">
         <node role="templateNode" roleId="tpf8.1177093586806" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="2769948622284791214">
-          <property name="tagName" nameId="iuxj.6666499814681415862" value="tstamp" />
           <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="tstamp" />
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="2769948622284791215">
             <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="2769948622284791216">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2769948622284791217">
@@ -570,8 +570,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="8xvf.2769948622284768359" resolveInfo="BwfAntStatement" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="5369202620937104482">
         <node role="templateNode" roleId="tpf8.1177093586806" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="5369202620937104484">
-          <property name="tagName" nameId="iuxj.6666499814681415862" value="tstamp" />
           <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="tstamp" />
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="5369202620937104486">
             <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="5369202620937104487">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5369202620937104488">
@@ -601,8 +601,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="8xvf.6520682027040940623" resolveInfo="BwfMacroListImport" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6520682027040993855">
         <node role="templateNode" roleId="tpf8.1177093586806" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6520682027040993856">
-          <property name="tagName" nameId="iuxj.6666499814681415862" value="property" />
           <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="property" />
           <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="6520682027040993857">
             <property name="attrName" nameId="iuxj.6666499814681447926" value="file" />
             <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="6520682027040993858">
@@ -666,8 +666,8 @@
           </node>
           <node role="caseConsequence" roleId="tpf8.1195158637244" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6896005762093594411">
             <node role="templateNode" roleId="tpf8.1177093586806" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6896005762093594413">
-              <property name="tagName" nameId="iuxj.6666499814681415862" value="property" />
               <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="property" />
               <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="6896005762093594414">
                 <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
                 <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="6896005762093594415">
@@ -760,8 +760,8 @@
           </node>
           <node role="caseConsequence" roleId="tpf8.1195158637244" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6896005762093594566">
             <node role="templateNode" roleId="tpf8.1177093586806" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6896005762093594567">
-              <property name="tagName" nameId="iuxj.6666499814681415862" value="property" />
               <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="property" />
               <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="6896005762093594568">
                 <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
                 <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="6896005762093594569">
@@ -814,8 +814,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="8xvf.244868996532667532" resolveInfo="BwfCustomMacro" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="244868996532671659">
         <node role="templateNode" roleId="tpf8.1177093586806" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="244868996532671661">
-          <property name="tagName" nameId="iuxj.6666499814681415862" value="property" />
           <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="property" />
           <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="244868996532671663">
             <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
             <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="244868996532671664">
@@ -871,8 +871,8 @@
               </node>
             </node>
             <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6647099934207210802">
-              <property name="tagName" nameId="iuxj.6666499814681415862" value="fileset" />
               <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="fileset" />
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="6647099934207210804">
                 <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="6647099934207210805">
                   <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6647099934207210806">
@@ -903,8 +903,8 @@
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2059109515400531558" />
           </node>
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="2059109515400531355">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="taskdef" />
             <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="taskdef" />
             <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="2059109515400531358">
               <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
               <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="2059109515400531394">
@@ -1000,8 +1000,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="8xvf.6647099934207069215" resolveInfo="BwfPathReference" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6647099934207210820">
         <node role="templateNode" roleId="tpf8.1177093586806" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6647099934207210822">
-          <property name="tagName" nameId="iuxj.6666499814681415862" value="path" />
           <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="path" />
           <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="6647099934207210823">
             <property name="attrName" nameId="iuxj.6666499814681447926" value="refid" />
             <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="6647099934207210824">
@@ -1035,8 +1035,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="iuxj.6666499814681415858" resolveInfo="XmlElement" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="8654221991637436541">
         <node role="templateNode" roleId="tpf8.1177093586806" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8654221991637436543">
-          <property name="tagName" nameId="iuxj.6666499814681415862" value="element" />
           <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="element" />
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="8654221991637436545">
             <node role="postMapperFunction" roleId="tpf8.1225229330048" type="tpf8.MapSrcMacro_PostMapperFunction" typeId="tpf8.1225228973247" id="8654221991637436574">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8654221991637436575">
@@ -1165,8 +1165,8 @@
         <node role="patternNode" roleId="tp3t.1136720037778" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6647099934207260024">
           <property name="tagName" nameId="iuxj.6666499814681415862" value="src" />
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6647099934207260025">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
             <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
             <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="6647099934207260026">
               <property name="attrName" nameId="iuxj.6666499814681447926" value="path" />
               <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="6647099934207260027">
@@ -1181,8 +1181,8 @@
       </node>
       <node role="ruleConsequence" roleId="tpf8.1805153994416516024" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6647099934207260029">
         <node role="templateNode" roleId="tpf8.1177093586806" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6647099934207260043">
-          <property name="tagName" nameId="iuxj.6666499814681415862" value="src" />
           <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="src" />
           <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="6647099934207260044">
             <property name="attrName" nameId="iuxj.6666499814681447926" value="path" />
             <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="6647099934207260078">
@@ -1211,8 +1211,8 @@
         <node role="patternNode" roleId="tp3t.1136720037778" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8654221991637509677">
           <property name="tagName" nameId="iuxj.6666499814681415862" value="path" />
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8654221991637509678">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
             <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
             <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="8654221991637509679">
               <property name="attrName" nameId="iuxj.6666499814681447926" value="location" />
               <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="8654221991637509680">
@@ -1227,8 +1227,8 @@
       </node>
       <node role="ruleConsequence" roleId="tpf8.1805153994416516024" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="8654221991637509682">
         <node role="templateNode" roleId="tpf8.1177093586806" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8654221991637509683">
-          <property name="tagName" nameId="iuxj.6666499814681415862" value="path" />
           <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="path" />
           <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="8654221991637509684">
             <property name="attrName" nameId="iuxj.6666499814681447926" value="location" />
             <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="8654221991637509685">
@@ -1257,8 +1257,8 @@
         <node role="patternNode" roleId="tp3t.1136720037778" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7926701909975860434">
           <property name="tagName" nameId="iuxj.6666499814681415862" value="classpath" />
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7926701909975860435">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
             <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
             <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="7926701909975860436">
               <property name="attrName" nameId="iuxj.6666499814681447926" value="path" />
               <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="7926701909975860437">
@@ -1273,8 +1273,8 @@
       </node>
       <node role="ruleConsequence" roleId="tpf8.1805153994416516024" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="7926701909975860439">
         <node role="templateNode" roleId="tpf8.1177093586806" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7926701909975860440">
-          <property name="tagName" nameId="iuxj.6666499814681415862" value="classpath" />
           <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="classpath" />
           <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="7926701909975860441">
             <property name="attrName" nameId="iuxj.6666499814681447926" value="path" />
             <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="7926701909975860442">
@@ -1303,8 +1303,8 @@
         <node role="patternNode" roleId="tp3t.1136720037778" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7926701909975928830">
           <property name="tagName" nameId="iuxj.6666499814681415862" value="classpath" />
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7926701909975928831">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="path" />
             <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="path" />
             <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="7926701909975928832">
               <property name="attrName" nameId="iuxj.6666499814681447926" value="refid" />
               <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="7926701909975928833">
@@ -1319,8 +1319,8 @@
       </node>
       <node role="ruleConsequence" roleId="tpf8.1805153994416516024" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="7926701909975928835">
         <node role="templateNode" roleId="tpf8.1177093586806" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7926701909975928836">
-          <property name="tagName" nameId="iuxj.6666499814681415862" value="classpath" />
           <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="classpath" />
           <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="7926701909975928837">
             <property name="attrName" nameId="iuxj.6666499814681447926" value="refid" />
             <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="7926701909975928838">
@@ -1356,8 +1356,8 @@
         </node>
         <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="1392391688312828901" />
         <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6896005762093597640">
-          <property name="tagName" nameId="iuxj.6666499814681415862" value="property" />
           <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="property" />
           <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="6896005762093597641">
             <property name="attrName" nameId="iuxj.6666499814681447926" value="file" />
             <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="6896005762093597644">
@@ -1526,8 +1526,8 @@
           </node>
         </node>
         <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="1959471031855450825">
-          <property name="tagName" nameId="iuxj.6666499814681415862" value="target" />
           <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="target" />
           <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="1959471031855450826">
             <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
             <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="1959471031855450827">
@@ -1654,8 +1654,8 @@
             <property name="name" nameId="tpck.1169194664001" value="compile" />
             <node role="statements" roleId="8xvf.2769948622284606050" type="8xvf.BwfAntStatement" typeId="8xvf.2769948622284768359" id="7926701909975931923">
               <node role="element" roleId="8xvf.2769948622284768360" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7926701909975931925">
-                <property name="tagName" nameId="iuxj.6666499814681415862" value="mkdir" />
                 <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="mkdir" />
                 <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="7926701909975931926">
                   <property name="attrName" nameId="iuxj.6666499814681447926" value="dir" />
                   <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="7926701909975931927">
@@ -1725,8 +1725,8 @@
                   </node>
                 </node>
                 <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7926701909975931937">
-                  <property name="tagName" nameId="iuxj.6666499814681415862" value="compilerarg" />
                   <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+                  <property name="tagName" nameId="iuxj.6666499814681415862" value="compilerarg" />
                   <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="7926701909975931938">
                     <property name="attrName" nameId="iuxj.6666499814681447926" value="value" />
                     <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="7926701909975931939">
@@ -1737,8 +1737,8 @@
                 <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6647099934207257995">
                   <property name="tagName" nameId="iuxj.6666499814681415862" value="src" />
                   <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6647099934207257997">
-                    <property name="tagName" nameId="iuxj.6666499814681415862" value="fileset" />
                     <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+                    <property name="tagName" nameId="iuxj.6666499814681415862" value="fileset" />
                     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="7926701909975490208">
                       <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="7926701909975490209">
                         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7926701909975490210">
@@ -1763,8 +1763,8 @@
                 <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7926701909975675859">
                   <property name="tagName" nameId="iuxj.6666499814681415862" value="classpath" />
                   <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7926701909975675860">
-                    <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
                     <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+                    <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
                     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="7926701909975675862">
                       <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="7926701909975675863">
                         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7926701909975675864">
@@ -1777,6 +1777,49 @@
                             </node>
                           </node>
                         </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="5091697509629083138">
+                    <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+                    <property name="tagName" nameId="iuxj.6666499814681415862" value="path" />
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="5091697509629088379">
+                      <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="5091697509629088381">
+                        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5091697509629088383">
+                          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5091697509629090252">
+                            <node role="expression" roleId="tpee.1068580123156" type="tpee.AndExpression" typeId="tpee.1080120340718" id="5091697509629090254">
+                              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5091697509629090255">
+                                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5091697509629090256">
+                                  <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="5091697509629090257" />
+                                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="5091697509629090258">
+                                    <link role="property" roleId="tp25.1138056395725" targetNodeId="8xvf.2059109515400306584" resolveInfo="compiler" />
+                                  </node>
+                                </node>
+                                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5091697509629090259">
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5091697509629090260">
+                                    <property name="value" nameId="tpee.1070475926801" value="IntelliJ" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5091697509629090261">
+                                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5091697509629090262">
+                                  <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="5091697509629090263" />
+                                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="5091697509629090264">
+                                    <link role="property" roleId="tp25.1138056395725" targetNodeId="8xvf.2059109515400306584" resolveInfo="compiler" />
+                                  </node>
+                                </node>
+                                <node role="operation" roleId="tpee.1197027833540" type="tpee.IsNotEmptyOperation" typeId="tpee.1225271408483" id="5091697509629090265" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="5091697509629084824">
+                      <property name="attrName" nameId="iuxj.6666499814681447926" value="refid" />
+                      <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="5091697509629086074">
+                        <property name="text" nameId="iuxj.6666499814681541920" value="path.jdk.classpath" />
                       </node>
                     </node>
                   </node>
@@ -1967,8 +2010,8 @@
                   </node>
                 </node>
                 <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="1659807394254493254">
-                  <property name="tagName" nameId="iuxj.6666499814681415862" value="fileset" />
                   <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+                  <property name="tagName" nameId="iuxj.6666499814681415862" value="fileset" />
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="1659807394254493256">
                     <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="1659807394254493257">
                       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1659807394254493258">
@@ -2358,8 +2401,8 @@
                 </node>
               </node>
               <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="2059109515400477140">
-                <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
                 <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
                 <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="2059109515400477141">
                   <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
                   <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="2059109515400477142">
@@ -2368,8 +2411,8 @@
                 </node>
               </node>
               <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="2059109515400477143">
-                <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
                 <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
                 <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="2059109515400477144">
                   <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
                   <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="2059109515400477158">
@@ -2378,8 +2421,8 @@
                 </node>
               </node>
               <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="2059109515400477146">
-                <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
                 <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
                 <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="2059109515400477147">
                   <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
                   <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="2059109515400477159">
@@ -2387,9 +2430,19 @@
                   </node>
                 </node>
               </node>
-              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="2059109515400477149">
-                <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="5091697509628019643">
                 <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
+                <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="5091697509628019644">
+                  <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+                  <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="5091697509628019645">
+                    <property name="text" nameId="iuxj.6666499814681541920" value="asm4-all.jar" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="2059109515400477149">
+                <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
                 <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="2059109515400477150">
                   <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
                   <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="2059109515400477160">
@@ -2398,12 +2451,102 @@
                 </node>
               </node>
               <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="2059109515400477152">
-                <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
                 <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
                 <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="2059109515400477153">
                   <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
                   <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="2059109515400477161">
                     <property name="text" nameId="iuxj.6666499814681541920" value="jgoodies-forms.jar" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfPathDeclaration" typeId="8xvf.6647099934207069200" id="5091697509629064084">
+            <property name="name" nameId="tpck.1169194664001" value="jdk.classpath" />
+            <node role="content" roleId="8xvf.6647099934207071047" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7681039344762774176">
+              <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
+              <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="7681039344762774777">
+                <property name="attrName" nameId="iuxj.6666499814681447926" value="path" />
+                <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="7681039344762774779">
+                  <property name="text" nameId="iuxj.6666499814681541920" value="${java.home}/../Classes/classes.jar" />
+                </node>
+              </node>
+            </node>
+            <node role="content" roleId="8xvf.6647099934207071047" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="5091697509629071496">
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="fileset" />
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="5091697509629072714">
+                <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
+                <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="5091697509629077619">
+                  <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+                  <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="5091697509629078839">
+                    <property name="text" nameId="iuxj.6666499814681541920" value="lib/*.jar" />
+                  </node>
+                </node>
+              </node>
+              <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="5091697509629072712">
+                <property name="attrName" nameId="iuxj.6666499814681447926" value="dir" />
+                <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="5091697509629077617">
+                  <property name="text" nameId="iuxj.6666499814681541920" value="${java.home}" />
+                </node>
+              </node>
+            </node>
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="5091697509629080060" />
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="5091697509629080065">
+              <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="5091697509629080067">
+                <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5091697509629080069">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5091697509629080572">
+                    <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5091697509629080573">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5091697509629080574">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="5091697509629080575" />
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAllSiblingsOperation" typeId="tp25.1145573345940" id="5091697509629080576" />
+                      </node>
+                      <node role="operation" roleId="tpee.1197027833540" type="tp2q.AnyOperation" typeId="tp2q.1235566554328" id="5091697509629080577">
+                        <node role="closure" roleId="tp2q.1204796294226" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="5091697509629080578">
+                          <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="5091697509629080579">
+                            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5091697509629080580">
+                              <node role="expression" roleId="tpee.1068580123156" type="tpee.AndExpression" typeId="tpee.1080120340718" id="5091697509629080581">
+                                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5091697509629080582">
+                                  <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5091697509629080583">
+                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5091697509629080593" resolveInfo="it" />
+                                  </node>
+                                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="5091697509629080584">
+                                    <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="5091697509629080585">
+                                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="8xvf.4755209551904389307" resolveInfo="BwfJavaModule" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5091697509629080586">
+                                  <node role="operand" roleId="tpee.1197027771414" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5091697509629080587">
+                                    <property name="value" nameId="tpee.1070475926801" value="IntelliJ" />
+                                  </node>
+                                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5091697509629080588">
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5091697509629080589">
+                                      <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="5091697509629080590">
+                                        <link role="concept" roleId="tp25.1140138128738" targetNodeId="8xvf.4755209551904389307" resolveInfo="BwfJavaModule" />
+                                        <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5091697509629080591">
+                                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5091697509629080593" resolveInfo="it" />
+                                        </node>
+                                      </node>
+                                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="5091697509629080592">
+                                        <link role="property" roleId="tp25.1138056395725" targetNodeId="8xvf.2059109515400306584" resolveInfo="compiler" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node role="parameter" roleId="tp2c.1199569906740" type="tp2q.SmartClosureParameterDeclaration" typeId="tp2q.1203518072036" id="5091697509629080593">
+                            <property name="name" nameId="tpck.1169194664001" value="it" />
+                            <node role="type" roleId="tpee.5680397130376446158" type="tpee.UndefinedType" typeId="tpee.4836112446988635817" id="5091697509629080594" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -2558,8 +2701,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="8xvf.6647099934206976119" resolveInfo="BwfJavaClassPath" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6647099934206976150">
         <node role="templateNode" roleId="tpf8.1177093586806" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6647099934206976152">
-          <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
           <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
           <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="6647099934206976153">
             <property name="attrName" nameId="iuxj.6666499814681447926" value="path" />
             <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="7926701909975675876">
@@ -2587,8 +2730,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="8xvf.4755209551904389316" resolveInfo="BwfJavaModuleReference" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6647099934206976171">
         <node role="templateNode" roleId="tpf8.1177093586806" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6647099934206976172">
-          <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
           <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
           <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="6647099934206976173">
             <property name="attrName" nameId="iuxj.6666499814681447926" value="path" />
             <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="6647099934206976174">
