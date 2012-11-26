@@ -54,8 +54,6 @@
                  implementationClass="jetbrains.mps.workbench.dataExtraction.runConfig.LocationRule"/>
 
     <editorTabTitleProvider implementation="jetbrains.mps.ide.editor.tabs.EditorTabTitleProviderImpl"/>
-
-    <fileIconProvider implementation="jetbrains.mps.workbench.editors.MPSIconProvider"/>
   </extensions>
 
 </idea-plugin>
