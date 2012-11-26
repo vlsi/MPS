@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
+import jetbrains.mps.typesystem.inference.ITypeContextOwner.DEFAULT;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.CollectionUtil;
@@ -73,6 +74,6 @@ public class AffectingRulesFinder implements IFinder {
   }
 
 
-  private static class MyTypeContextOwner implements ITypeContextOwner {
+  private static class MyTypeContextOwner extends DEFAULT {
   }
 }

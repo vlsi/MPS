@@ -857,6 +857,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
   }
 
+  @Override
+  public TypeCheckingContext createTypecheckingContext(SNode sNode, TypeContextManager typeContextManager) {
+    return (new DEFAULT()).createTypecheckingContext(sNode, typeContextManager);
+  }
+
   private String getMessagesTextFor(EditorCell cell) {
     List<HighlighterMessage> messages = getHighlighterMessagesFor(cell);
     if (messages.isEmpty()) {

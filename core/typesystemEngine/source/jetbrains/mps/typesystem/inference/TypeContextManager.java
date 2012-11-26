@@ -38,12 +38,14 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import jetbrains.mps.smodel.event.SModelRootEvent;
+import jetbrains.mps.typesystem.inference.ITypeContextOwner.DEFAULT;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -295,8 +297,7 @@ public class TypeContextManager implements CoreComponent {
   SNode getTypeOf(final SNode node) {
     ModelAccess.assertLegalRead();
     if (node == null) return null;
-    ITypeContextOwner owner = new ITypeContextOwner() {
-    };
+    ITypeContextOwner owner = new DEFAULT();
     SNode root = node.getTopmostAncestor();
     boolean isResolveMode = myResolveMode.get();
     Set<SNode> resolveNodes = getMyResolveNodes();

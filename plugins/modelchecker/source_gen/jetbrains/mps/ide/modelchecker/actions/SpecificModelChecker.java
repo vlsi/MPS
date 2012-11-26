@@ -19,6 +19,7 @@ import java.util.Set;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.errors.QuickFix_Runtime;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.errors.QuickFixProvider;
 
 public class SpecificModelChecker extends SpecificChecker implements ITypeContextOwner {
@@ -63,6 +64,10 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
     }
     monitor.done();
     return results;
+  }
+
+  public TypeCheckingContext createTypecheckingContext(SNode node, TypeContextManager manager) {
+    return (new ITypeContextOwner.DEFAULT()).createTypecheckingContext(node, manager);
   }
 
   private static QuickFix_Runtime check_7763bz_a0b0c0d0d0a(QuickFixProvider checkedDotOperand) {

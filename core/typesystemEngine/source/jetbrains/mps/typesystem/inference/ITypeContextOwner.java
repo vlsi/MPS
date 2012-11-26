@@ -15,5 +15,15 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import jetbrains.mps.smodel.SNode;
+
 public interface ITypeContextOwner {
+  TypeCheckingContext createTypecheckingContext (SNode sNode, TypeContextManager typeContextManager);
+
+  class DEFAULT implements ITypeContextOwner {
+    @Override
+    public TypeCheckingContext createTypecheckingContext(SNode sNode, TypeContextManager typeContextManager) {
+      return typeContextManager.createTypeCheckingContext(sNode);
+    }
+  }
 }
