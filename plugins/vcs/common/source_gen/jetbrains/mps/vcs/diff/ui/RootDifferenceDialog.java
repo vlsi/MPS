@@ -21,9 +21,9 @@ import com.intellij.openapi.diff.impl.util.TextDiffType;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import java.awt.Component;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import javax.swing.JSplitPane;
-import com.intellij.openapi.actionSystem.Separator;
 import jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -48,8 +48,6 @@ import jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
 import java.awt.GraphicsDevice;
 import java.awt.HeadlessException;
-import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
-import org.jetbrains.annotations.NotNull;
 
 public class RootDifferenceDialog extends DialogWrapper implements DataProvider {
   private ModelDifferenceDialog myModelDialog;
@@ -67,7 +65,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   private boolean myClosed;
   private DefaultActionGroup myActionGroup;
 
-  public RootDifferenceDialog(ModelDifferenceDialog modelDialog, SNodeId rootId, String rootName, Component parent, @Nullable final Bounds firstChange) {
+  public RootDifferenceDialog(ModelDifferenceDialog modelDialog, SNodeId rootId, String rootName, Component parent, @Nullable BaseAction[] actions, @Nullable final Bounds firstChange) {
     super(parent, true);
     setTitle("Difference for " + rootName);
 
@@ -84,10 +82,13 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     splitPane.setResizeWeight(0.7);
 
     myActionGroup = new DefaultActionGroup();
-    RootDifferenceDialog.MyGoToNeighbourRootActions neighbourActions = new RootDifferenceDialog.MyGoToNeighbourRootActions();
-    myActionGroup.addAll(neighbourActions.previous(), neighbourActions.next(), Separator.getInstance());
+    if (actions != null) {
+      myActionGroup.addAll(actions);
+      myActionGroup.addSeparator();
+    }
     final NextPreviousTraverser neighbourTraverser = new NextPreviousTraverser(myChangeGroupLayouts, myNewEditor.getMainEditor());
-    myActionGroup.addAll(neighbourTraverser.previousAction(), neighbourTraverser.nextAction(), Separator.getInstance());
+    myActionGroup.addAll(neighbourTraverser.previousAction(), neighbourTraverser.nextAction());
+    myActionGroup.addSeparator();
     if (myModelDialog.isEditable()) {
       myActionGroup.add(new RevertRootsAction(rootName) {
         protected Iterable<ModelChange> getChanges() {
@@ -135,6 +136,10 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     }
 
     init();
+  }
+
+  public SNodeId getRootId() {
+    return myRootId;
   }
 
   @Nullable
@@ -281,21 +286,5 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
       return checkedDotOperand.getDefaultScreenDevice();
     }
     return null;
-  }
-
-  public class MyGoToNeighbourRootActions extends GoToNeighbourRootActions {
-    public MyGoToNeighbourRootActions() {
-    }
-
-    protected void goTo(@NotNull SNodeId rootId) {
-      myModelDialog.startGoingToNeighbour();
-      close(DialogWrapper.NEXT_USER_EXIT_CODE);
-      myModelDialog.invokeRootDifference(rootId);
-    }
-
-    @Nullable
-    protected SNodeId getNeighbourId(boolean next) {
-      return myModelDialog.getNeighbourRoot(myRootId, next);
-    }
   }
 }

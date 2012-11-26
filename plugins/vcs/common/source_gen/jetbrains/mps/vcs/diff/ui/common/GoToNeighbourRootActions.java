@@ -32,6 +32,10 @@ public abstract class GoToNeighbourRootActions {
     return new GoToNeighbourRootActions.TheAction(true);
   }
 
+  public BaseAction[] getActions() {
+    return new BaseAction[]{previous(), next()};
+  }
+
   private class TheAction extends BaseAction implements DumbAware {
     private boolean myNext;
 

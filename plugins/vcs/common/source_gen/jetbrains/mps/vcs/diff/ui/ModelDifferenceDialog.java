@@ -41,10 +41,9 @@ import javax.swing.Action;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.wm.WindowManager;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -65,7 +64,7 @@ public class ModelDifferenceDialog extends DialogWrapper {
   private List<ModelChange> myMetadataChanges = ListSequence.fromList(new ArrayList<ModelChange>());
   private ModelDifferenceDialog.ModelDifferenceTree myTree;
   private JPanel myPanel = new JPanel(new BorderLayout());
-  private boolean myRootsDialogInvoked = false;
+  private RootDifferenceDialog myRootDifferenceDialog = null;
   private boolean myGoingToNeighbour = false;
   private String[] myContentTitles;
   private boolean myEditable;
@@ -185,30 +184,24 @@ public class ModelDifferenceDialog extends DialogWrapper {
       */
       return;
     }
-    if (myRootsDialogInvoked) {
+    if (myRootDifferenceDialog != null) {
       return;
     }
     myGoingToNeighbour = false;
-    myRootsDialogInvoked = true;
-    final Wrappers._T<RootDifferenceDialog> rootDialog = new Wrappers._T<RootDifferenceDialog>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        rootDialog.value = new RootDifferenceDialog(ModelDifferenceDialog.this, rootId, myTree.getNameForRoot(rootId), (isVisible() ?
+        myRootDifferenceDialog = new RootDifferenceDialog(ModelDifferenceDialog.this, rootId, myTree.getNameForRoot(rootId), (isVisible() ?
           getWindow() :
           WindowManager.getInstance().getFrame(myProject)
-        ), scrollTo);
+        ), new ModelDifferenceDialog.MyGoToNeighbourRootActions().getActions(), scrollTo);
       }
     });
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        rootDialog.value.toFront();
-      }
-    });
-    rootDialog.value.show();
+    // <node> 
+    myRootDifferenceDialog.show();
   }
 
   /*package*/ void rootDialogClosed() {
-    myRootsDialogInvoked = false;
+    myRootDifferenceDialog = null;
     if (!(myGoingToNeighbour) && !(isVisible())) {
       close(DialogWrapper.NEXT_USER_EXIT_CODE);
     }
@@ -227,6 +220,25 @@ public class ModelDifferenceDialog extends DialogWrapper {
       return checkedDotOperand.getSModel();
     }
     return null;
+  }
+
+  public class MyGoToNeighbourRootActions extends GoToNeighbourRootActions {
+    public MyGoToNeighbourRootActions() {
+    }
+
+    protected void goTo(@NotNull SNodeId rootId) {
+      startGoingToNeighbour();
+      myRootDifferenceDialog.close(NEXT_USER_EXIT_CODE);
+      invokeRootDifference(rootId);
+    }
+
+    @Nullable
+    protected SNodeId getNeighbourId(boolean next) {
+      return (myRootDifferenceDialog == null ?
+        null :
+        getNeighbourRoot(myRootDifferenceDialog.getRootId(), next)
+      );
+    }
   }
 
   private class ModelDifferenceTree extends DiffModelTree {
