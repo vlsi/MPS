@@ -3,6 +3,7 @@
   <property name="build.tmp" location="${build.dir}/tmp/buildExe"/>
   <property name="build.layout" location="${build.dir}/artifacts/buildExe"/>
   <property name="artifacts.buildMPS" location="${build.dir}/artifacts/buildMPS"/>
+  <property name="mps.sign" location="${basedir}/build/sign"/>
 
   <property file="${artifacts.buildMPS}/build.properties" prefix="import.buildMPS" />
   <property name="buildMPS.build.number" value="${import.buildMPS.buildMPS.build.number}"/>
@@ -89,8 +90,8 @@
   </target>
 
   <target name="sign" if="windows">
-    <exec executable="${basedir}/build/sign/signtool.exe" osfamily="windows" failonerror="false" dir="${output.dir}">
-      <arg line="sign /f ${basedir}/build/sign/cs_cert2011.pfx /p 123 ${output.dir}/${buildMPS.build.number}-windows.exe"/>
+    <exec executable="${mps.sign}/signtool.exe" osfamily="windows" failonerror="false" dir="${output.dir}">
+      <arg line="sign /f ${mps.sign}/cs_cert2011.pfx /p 123 ${output.dir}/${buildMPS.build.number}-windows.exe"/>
     </exec>
   </target>
 

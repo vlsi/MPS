@@ -5,7 +5,7 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.renderers;
 import javax.swing.DefaultListCellRenderer;
 import java.awt.Component;
 import javax.swing.JList;
-import jetbrains.mps.workbench.dialogs.project.components.parts.StateUtil;
+import jetbrains.mps.ide.ui.dialogs.properties.StateUtil;
 import java.awt.Color;
 
 public class StringPathRenderer extends DefaultListCellRenderer {

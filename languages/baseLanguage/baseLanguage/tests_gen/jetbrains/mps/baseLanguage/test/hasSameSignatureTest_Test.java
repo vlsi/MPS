@@ -7,7 +7,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.Assert;
-import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 @MPSLaunch
@@ -22,7 +22,7 @@ public class hasSameSignatureTest_Test extends BaseTransformationTest4 {
   public static class TestBody extends BaseTestBody {
     public void test_list() throws Exception {
       this.addNodeById("5157939743593407746");
-      Assert.assertTrue(BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(SNodeOperations.cast(this.getNodeById("5157939743593407754"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), SNodeOperations.cast(this.getNodeById("5157939743593407754"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")));
+      Assert.assertTrue(BehaviorReflection.invokeNonVirtual(Boolean.TYPE, SNodeOperations.cast(this.getNodeById("5157939743593407754"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "call_hasSameSignature_1213877350435", new Object[]{SNodeOperations.cast(this.getNodeById("5157939743593407754"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")}));
     }
   }
 }

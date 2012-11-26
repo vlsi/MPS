@@ -6,6 +6,7 @@
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
   <property name="artifacts.buildCoreEx" location="${build.dir}/artifacts/buildCoreEx" />
+  <property name="artifacts.buildUI" location="${build.dir}/artifacts/buildUI" />
   <property name="artifacts.buildWorkbench" location="${build.dir}/artifacts/buildWorkbench" />
   <property name="artifacts.IDEA" location="${mps_home}" />
   <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
@@ -43,6 +44,9 @@
       <fileset dir="${artifacts.buildCore}/mps-core/lib" />
     </copy>
     <copy todir="${build.layout}/lib">
+      <fileset dir="${artifacts.buildUI}/lib" />
+    </copy>
+    <copy todir="${build.layout}/lib">
       <fileset dir="${artifacts.buildWorkbench}/lib" />
     </copy>
     <mkdir dir="${build.layout}/license" />
@@ -75,6 +79,7 @@
   <target name="buildDependents">
     <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildCoreEx.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildUI.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   

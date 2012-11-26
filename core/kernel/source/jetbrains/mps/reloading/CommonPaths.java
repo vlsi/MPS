@@ -70,6 +70,8 @@ public class CommonPaths {
         addEditorJars(result);
       } else if (type == ClassType.PLATFORM) {
         addIdeaJars(result);
+      } else if (type == ClassType.UI) {
+        addUIJars(result);
       } else if (type == ClassType.WORKBENCH) {
         addWorkbenchJars(result);
       } else if (type == ClassType.TEST) {
@@ -163,6 +165,7 @@ public class CommonPaths {
     addCoreJars(result);
     addEditorJars(result);
     addIdeaJars(result);
+    addUIJars(result);
     addWorkbenchJars(result);
     addToolsJar(result);
     addClasses(result, PathManager.getHomePath());
@@ -205,6 +208,10 @@ public class CommonPaths {
     addIfExists(result, "/lib/util.jar");
     addIfExists(result, "/lib/extensions.jar");
     addIfExists(result, "/lib/picocontainer.jar");
+  }
+
+  private static void addUIJars(CompositeClassPathItem result) {
+    addIfExists(result, "/lib/mps-ui.jar");
   }
 
   private static void addWorkbenchJars(CompositeClassPathItem result) {

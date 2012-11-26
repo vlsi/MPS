@@ -9,7 +9,7 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.workbench.dialogs.project.components.parts.StateUtil;
+import jetbrains.mps.ide.ui.dialogs.properties.StateUtil;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.StubSolution;

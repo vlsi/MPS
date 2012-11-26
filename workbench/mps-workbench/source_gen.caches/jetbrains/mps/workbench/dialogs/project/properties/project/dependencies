@@ -114,6 +114,7 @@
     <classNode dependClassName="javax.swing.border.CompoundBorder" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -133,7 +134,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
-    <classNode dependClassName="jetbrains.mps.workbench.dialogs.choosers.CommonChoosers" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction" />
     <classNode dependClassName="org.jdesktop.beansbinding.AutoBinding" />
