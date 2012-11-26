@@ -240,6 +240,7 @@ public class TextGen_Facet extends IFacet.Stub {
                         monitor.reportFeedback(new IFeedback.MESSAGE(error_var));
                       }
                     }
+                    monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text")));
                     return new IResult.FAILURE(_output_21gswx_a0a);
                   }
 
