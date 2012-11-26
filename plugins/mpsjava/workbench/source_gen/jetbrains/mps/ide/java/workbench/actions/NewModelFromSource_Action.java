@@ -15,8 +15,12 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.project.IModule;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
-import jetbrains.mps.ide.actions.NewModelUtil;
+import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
+import jetbrains.mps.ide.ui.dialogs.properties.ModulePropertiesConfigurable;
 import jetbrains.mps.smodel.IOperationContext;
+import com.intellij.openapi.options.ex.SingleConfigurableEditor;
+import jetbrains.mps.ide.project.ProjectHelper;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.smodel.ModelAccess;
@@ -108,7 +112,14 @@ public class NewModelFromSource_Action extends BaseAction {
         if (code != JOptionPane.YES_OPTION) {
           return;
         } else {
-          NewModelUtil.ShowModulePropertiesDialog(((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+          MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject());
+          final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject()), configurable, "#MPSPropertiesConfigurable");
+          SwingUtilities.invokeAndWait(new Runnable() {
+            public void run() {
+              configurableEditor.show();
+            }
+          });
+
         }
       }
       if (!(((IModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {

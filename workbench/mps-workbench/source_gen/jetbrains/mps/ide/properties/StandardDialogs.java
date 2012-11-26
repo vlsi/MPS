@@ -16,7 +16,9 @@ import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 
+@Deprecated
 public class StandardDialogs {
+  @Deprecated
   public StandardDialogs() {
   }
 

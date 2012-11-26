@@ -14,7 +14,11 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.project.IModule;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
+import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
+import jetbrains.mps.ide.ui.dialogs.properties.ModulePropertiesConfigurable;
 import jetbrains.mps.smodel.IOperationContext;
+import com.intellij.openapi.options.ex.SingleConfigurableEditor;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.smodel.ModelAccess;
@@ -97,11 +101,12 @@ public class NewModel_Action extends BaseAction {
     try {
       if (!(((IModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
         int code = JOptionPane.showConfirmDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "There are no model roots. Do you want to create one?", "", JOptionPane.YES_NO_OPTION);
-        if (code != JOptionPane.YES_OPTION) {
-          return;
-        } else {
-          NewModelUtil.ShowModulePropertiesDialog(((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+        if (code == JOptionPane.YES_OPTION) {
+          MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject());
+          final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject()), configurable, "#MPSPropertiesConfigurable");
+          configurableEditor.show();
         }
+        return;
       }
       if (!(((IModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't create a model in solution with no model roots", "Can't create model", JOptionPane.ERROR_MESSAGE);

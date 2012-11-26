@@ -147,7 +147,10 @@
     <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690968192622" />
   </roots>
   <root id="4060390951635972879">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4060390951635972880" />
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7808126411307737239" />
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="7808126411307766422">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
+    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="4060390951635972976">
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4060390951635972977" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4060390951635972978" />
@@ -5352,7 +5355,9 @@
     </node>
   </root>
   <root id="3201642974933960738">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3201642974933960739" />
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="7808126411307551285">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
+    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="5249055041137646133">
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5249055041137646134" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5249055041137646135" />
@@ -7987,6 +7992,7 @@
         </node>
       </node>
     </node>
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3201642974933960739" />
   </root>
   <root id="901357770590699924">
     <node role="builder" roleId="pmg0.7288041816792374845" type="pmg0.SimpleBuilderDeclaration" typeId="pmg0.7288041816792374840" id="901357770590699925">
@@ -8146,10 +8152,6 @@
     </node>
   </root>
   <root id="5923576889075039038">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5923576889075039039" />
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075039040">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2968.~BasePropertiesDialog" resolveInfo="BasePropertiesDialog" />
-    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="5923576889075039041">
       <property name="name" nameId="tpck.1169194664001" value="myDevKit" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075039042">
@@ -8349,12 +8351,12 @@
         </node>
       </node>
     </node>
-  </root>
-  <root id="5923576889075041653">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5923576889075041654" />
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075041655">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5923576889075039039" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075039040">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2968.~BasePropertiesDialog" resolveInfo="BasePropertiesDialog" />
     </node>
+  </root>
+  <root id="5923576889075041653">
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="5923576889075041656">
       <property name="name" nameId="tpck.1169194664001" value="myGenerator" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075041657">
@@ -8753,12 +8755,12 @@
         </node>
       </node>
     </node>
-  </root>
-  <root id="5923576889075041819">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5923576889075041820" />
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075041821">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5923576889075041654" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075041655">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2968.~BasePropertiesDialog" resolveInfo="BasePropertiesDialog" />
     </node>
+  </root>
+  <root id="5923576889075041819">
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="5923576889075041822">
       <property name="name" nameId="tpck.1169194664001" value="myLanguage" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075041823">
@@ -9089,12 +9091,12 @@
         </node>
       </node>
     </node>
-  </root>
-  <root id="5923576889075042074">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5923576889075042075" />
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075042076">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5923576889075041820" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075041821">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2968.~BasePropertiesDialog" resolveInfo="BasePropertiesDialog" />
     </node>
+  </root>
+  <root id="5923576889075042074">
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="5923576889075042130">
       <property name="name" nameId="tpck.1169194664001" value="myPresenter" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075042131">
@@ -10556,12 +10558,12 @@
         </node>
       </node>
     </node>
-  </root>
-  <root id="5923576889075042681">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5923576889075042682" />
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075042683">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5923576889075042075" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075042076">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2968.~BasePropertiesDialog" resolveInfo="BasePropertiesDialog" />
     </node>
+  </root>
+  <root id="5923576889075042681">
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="5923576889075042684">
       <property name="name" nameId="tpck.1169194664001" value="mySolution" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075042685">
@@ -10943,9 +10945,12 @@
         </node>
       </node>
     </node>
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5923576889075042682" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075042683">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2968.~BasePropertiesDialog" resolveInfo="BasePropertiesDialog" />
+    </node>
   </root>
   <root id="5923576889075043551">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5923576889075043552" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="4695659465122402345">
       <property name="name" nameId="tpck.1169194664001" value="NAMESPACE" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
@@ -11428,12 +11433,9 @@
         </node>
       </node>
     </node>
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5923576889075043552" />
   </root>
   <root id="5923576889075043786">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5923576889075043787" />
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075043788">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5923576889075044542" resolveInfo="ModuleProperties" />
-    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="106298403293410440">
       <property name="name" nameId="tpck.1169194664001" value="GENERATE_TEMPLATES" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
@@ -11847,12 +11849,12 @@
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
       </node>
     </node>
-  </root>
-  <root id="5923576889075043939">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5923576889075043940" />
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075043941">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5923576889075043787" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075043788">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5923576889075044542" resolveInfo="ModuleProperties" />
     </node>
+  </root>
+  <root id="5923576889075043939">
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="5923576889075043942">
       <property name="name" nameId="tpck.1169194664001" value="OUTPUT_PATH" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
@@ -12451,12 +12453,12 @@
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
       </node>
     </node>
-  </root>
-  <root id="5923576889075044370">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5923576889075044371" />
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075044372">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5923576889075043940" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075043941">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5923576889075044542" resolveInfo="ModuleProperties" />
     </node>
+  </root>
+  <root id="5923576889075044370">
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="5923576889075044377">
       <property name="name" nameId="tpck.1169194664001" value="OUTPUT_PATH" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
@@ -12808,9 +12810,12 @@
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
       </node>
     </node>
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5923576889075044371" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5923576889075044372">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5923576889075044542" resolveInfo="ModuleProperties" />
+    </node>
   </root>
   <root id="5923576889075044542">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5923576889075044543" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="5923576889075044544">
       <property name="name" nameId="tpck.1169194664001" value="NAMESPACE" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
@@ -13752,12 +13757,9 @@
         </node>
       </node>
     </node>
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5923576889075044543" />
   </root>
   <root id="6206760327435594108">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6206760327435594109" />
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6206760327435594110">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5923576889075044542" resolveInfo="ModuleProperties" />
-    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="6206760327435594128">
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6206760327435594129" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6206760327435594130" />
@@ -13829,6 +13831,10 @@
       <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6206760327435594240">
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
       </node>
+    </node>
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6206760327435594109" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6206760327435594110">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5923576889075044542" resolveInfo="ModuleProperties" />
     </node>
   </root>
   <root id="7162597690968192622" />
