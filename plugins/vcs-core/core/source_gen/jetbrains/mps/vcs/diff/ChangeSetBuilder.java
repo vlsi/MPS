@@ -280,6 +280,7 @@ public class ChangeSetBuilder {
       }
     });
     ListSequence.fromList(myNewChanges).clear();
+    myChangeSet.fillRootToChange();
   }
 
   public List<ModelChange> getNewChanges() {
@@ -296,11 +297,11 @@ public class ChangeSetBuilder {
     return getAddedAndDeleted(itemsExtractor.invoke(myOldModel), itemsExtractor.invoke(myNewModel));
   }
 
-  public static ChangeSet buildChangeSet(SModel oldModel, SModel newModel) {
+  public static ModelChangeSet buildChangeSet(SModel oldModel, SModel newModel) {
     return buildChangeSet(oldModel, newModel, false);
   }
 
-  public static ChangeSet buildChangeSet(SModel oldModel, SModel newModel, boolean withOpposite) {
+  public static ModelChangeSet buildChangeSet(SModel oldModel, SModel newModel, boolean withOpposite) {
     ChangeSetBuilder builder = new ChangeSetBuilder(oldModel, newModel);
     builder.build(withOpposite);
     builder.commit();

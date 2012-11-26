@@ -6,18 +6,27 @@ import jetbrains.mps.smodel.SModel;
 import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.Map;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import java.util.Collections;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 
-public class ChangeSetImpl implements ChangeSet {
+public class ChangeSetImpl implements ModelChangeSet {
   private final SModel myOldModel;
   private final SModel myNewModel;
   private final List<ModelChange> myModelChanges = new CopyOnWriteArrayList<ModelChange>();
+  private Map<SNodeId, List<ModelChange>> myRootToChanges = MapSequence.fromMap(new HashMap<SNodeId, List<ModelChange>>());
+  private List<ModelChange> myMetadataChanges = ListSequence.fromList(new ArrayList<ModelChange>());
   private ChangeSetImpl myOppositeChangeSet = null;
 
   public ChangeSetImpl(@NotNull SModel oldModel, @NotNull SModel newModel) {
@@ -82,6 +91,7 @@ public class ChangeSetImpl implements ChangeSet {
           return c.getOppositeChange();
         }
       }));
+      myOppositeChangeSet.fillRootToChange();
     }
   }
 
@@ -108,5 +118,35 @@ public class ChangeSetImpl implements ChangeSet {
         }
       }));
     }
+  }
+
+  /*package*/ void fillRootToChange() {
+    MapSequence.fromMap(myRootToChanges).clear();
+    ListSequence.fromList(myMetadataChanges).clear();
+    for (ModelChange c : ListSequence.fromList(myModelChanges)) {
+      SNodeId id = c.getRootId();
+      if (id == null) {
+        ListSequence.fromList(myMetadataChanges).addElement(c);
+      } else {
+        if (!(MapSequence.fromMap(myRootToChanges).containsKey(id))) {
+          MapSequence.fromMap(myRootToChanges).put(id, ListSequence.fromList(new ArrayList<ModelChange>()));
+        }
+        ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(id)).addElement(c);
+      }
+    }
+  }
+
+  public Iterable<ModelChange> getChangesForRoot(@Nullable SNodeId rootId) {
+    return (rootId == null ?
+      myMetadataChanges :
+      MapSequence.fromMap(myRootToChanges).get(rootId)
+    );
+  }
+
+  public Iterable<SNodeId> getAffectedRoots() {
+    return (ListSequence.fromList(myMetadataChanges).isEmpty() ?
+      MapSequence.fromMap(myRootToChanges).keySet() :
+      SetSequence.fromSet(MapSequence.fromMap(myRootToChanges).keySet()).concat(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNodeId>(), null)))
+    );
   }
 }
