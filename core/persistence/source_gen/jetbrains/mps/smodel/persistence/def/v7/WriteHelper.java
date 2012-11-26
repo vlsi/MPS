@@ -89,14 +89,20 @@ public class WriteHelper {
     return genReferenceString(ref, nodeId.toString());
   }
 
-  @NotNull
-  public String genReferenceId(@NotNull SNodePointer pointer) {
-    return genReferenceId(pointer.getModelReference(), pointer.getNodeId());
+  @Nullable
+  private String genReferenceId(@Nullable SNodePointer pointer) {
+    return (pointer == null ?
+      null :
+      genReferenceId(pointer.getModelReference(), pointer.getNodeId())
+    );
   }
 
-  @NotNull
-  public String genReferenceId(@NotNull SNode node) {
-    return genReferenceId(SNodeOperations.getModel(node).getSModelReference(), node.getSNodeId());
+  @Nullable
+  private String genReferenceId(@Nullable SNode node) {
+    return ((node == null) ?
+      null :
+      genReferenceId(SNodeOperations.getModel(node).getSModelReference(), node.getSNodeId())
+    );
   }
 
   public String genType(@NotNull SNode node) {
@@ -112,15 +118,12 @@ public class WriteHelper {
     return genConceptReferenceString(SNodeOperations.getConceptDeclaration(node), node.getConcept().getId());
   }
 
+  @Nullable
   public String genTypeId(@NotNull SNode node) {
     if (RoleIdsComponent.isEnabled()) {
       return genReferenceId(RoleIdsComponent.getConceptPointer(node));
     }
-    SNode concept = SNodeOperations.getConceptDeclaration(node);
-    return ((concept == null) ?
-      null :
-      genReferenceId(concept)
-    );
+    return genReferenceId(SNodeOperations.getConceptDeclaration(node));
   }
 
   public String genRole(@NotNull SNode node) {
@@ -131,6 +134,7 @@ public class WriteHelper {
     return SLinkOperations.getRole(ref);
   }
 
+  @Nullable
   public String genRoleId(@NotNull SNode node) {
     if (SNodeOperations.getParent(node) == null) {
       return null;
@@ -138,37 +142,27 @@ public class WriteHelper {
     if (RoleIdsComponent.isEnabled()) {
       return genReferenceId(RoleIdsComponent.getNodeRolePointer(node));
     }
-    SNode linkDecl = SNodeOperations.getContainingLinkDeclaration(node);
-    return ((linkDecl == null) ?
-      null :
-      genReferenceId(linkDecl)
-    );
+    return genReferenceId(SNodeOperations.getContainingLinkDeclaration(node));
   }
 
+  @Nullable
   public String genRoleId(@NotNull SReference ref) {
     if (RoleIdsComponent.isEnabled()) {
       return genReferenceId(RoleIdsComponent.getReferenceRolePointer(ref));
     }
-    SNode linkDecl = SLinkOperations.findLinkDeclaration(ref);
-    return ((linkDecl == null) ?
-      null :
-      genReferenceId(linkDecl)
-    );
+    return genReferenceId(SLinkOperations.findLinkDeclaration(ref));
   }
 
   public String genName(@NotNull SNode node, @NotNull String prop) {
     return prop;
   }
 
+  @Nullable
   public String genNameId(@NotNull SNode node, @NotNull String prop) {
     if (RoleIdsComponent.isEnabled()) {
       return genReferenceId(RoleIdsComponent.getPropertyNamePointer(node, prop));
     }
-    SNode propDecl = node.getPropertyDeclaration(prop);
-    return ((propDecl == null) ?
-      null :
-      genReferenceId(propDecl)
-    );
+    return genReferenceId(node.getPropertyDeclaration(prop));
   }
 
   public String genTarget(@NotNull SReference ref) {
