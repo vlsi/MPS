@@ -24,6 +24,8 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelHeader;
 
 public class MetadataUtil {
@@ -153,7 +155,7 @@ public class MetadataUtil {
     }));
     Set<SModelReference> imports = SetSequence.fromSetWithValues(new LinkedHashSet<SModelReference>(), ListSequence.fromList(SLinkOperations.getTargets(root, "import", true)).select(new ISelector<SNode, SModelReference>() {
       public SModelReference select(SNode it) {
-        return new SModelReference(SPropertyOperations.getString(it, "qualifiedName"), SPropertyOperations.getString(it, "uuid"));
+        return new SModelReference(new SModelFqName(SPropertyOperations.getString(it, "qualifiedName"), SPropertyOperations.getString(it, "stereotype")), SModelId.fromString(SPropertyOperations.getString(it, "uuid")));
       }
     }));
     SetSequence.fromSet(modelImports).subtract(SetSequence.fromSet(imports)).visitAll(new IVisitor<SModelReference>() {
