@@ -53,6 +53,7 @@ public class ModelPresentation extends BasePresentation {
   }
 
   private SModelDescriptor getModelDescriptor() {
+    if (SModelRepository.getInstance() == null) return null;
     return SModelRepository.getInstance().getModelDescriptor(myModelReference);
   }
 }

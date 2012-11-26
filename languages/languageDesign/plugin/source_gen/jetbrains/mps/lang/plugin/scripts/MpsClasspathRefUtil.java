@@ -26,7 +26,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
   }
 
   /*package*/ static void updateReferencesToMpsClasspath(SNode node) {
-    IModule[] modules = {MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("8865b7a8-5271-43d3-884c-6fd1d9cfdd34")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("86441d7a-e194-42da-81a5-2161ec62a379"))};
+    IModule[] modules = {MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("8865b7a8-5271-43d3-884c-6fd1d9cfdd34")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("267ff2fa-bd8d-467e-8bfe-73a9c242da8b")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("86441d7a-e194-42da-81a5-2161ec62a379"))};
 
     SModel model = SNodeOperations.getModel(node);
     IModule module = check_xpwqv8_a0d0a(model.getModelDescriptor());

@@ -35,11 +35,11 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JList" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.StateUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
-    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.StateUtil" />
     <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ProjectLevelRenderer" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModelRootRenderer" file="ModelRootRenderer.java">
@@ -106,6 +106,7 @@
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.Insets" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -138,28 +139,13 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode extendsClassName="javax.swing.table.TableCellRenderer" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleTypeRenderer" file="RuleTypeRenderer.java">
-    <classNode dependClassName="java.awt.Component" />
-    <classNode dependClassName="java.awt.GridBagConstraints" />
-    <classNode dependClassName="java.awt.GridBagLayout" />
-    <classNode dependClassName="java.awt.Insets" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="javax.swing.JTable" />
-    <classNode dependClassName="javax.swing.border.EmptyBorder" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.RuleType" />
-    <classNode extendsClassName="javax.swing.table.DefaultTableCellRenderer" />
-  </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.StringPathRenderer" file="StringPathRenderer.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JList" />
-    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.StateUtil" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.StateUtil" />
     <classNode extendsClassName="javax.swing.DefaultListCellRenderer" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.TestConfigListCellRenderer" file="TestConfigListCellRenderer.java">
