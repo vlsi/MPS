@@ -294,9 +294,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="primitive" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1070533982221" resolveInfo="ShortType" />
     </node>
-    <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235131169199">
-      <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
-    </node>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1235131198738">
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="tpee.1068580123136" resolveInfo="StatementList" />
     </node>
@@ -5548,18 +5545,6 @@
         <node role="statement" roleId="tpee.1068581517665" type="2omo.AppendOperation" typeId="2omo.1237306079178" id="1237463991689">
           <node role="part" roleId="2omo.1237306115446" type="2omo.ConstantStringAppendPart" typeId="2omo.1237305557638" id="1237463991691">
             <property name="value" nameId="2omo.1237305576108" value="short" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </root>
-  <root id="1235131169199">
-    <node role="textGenBlock" roleId="2omo.1233749296504" type="2omo.GenerateTextDeclaration" typeId="2omo.1233749247888" id="1235131169200">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1235131169201">
-        <node role="statement" roleId="tpee.1068581517665" type="2omo.AppendOperation" typeId="2omo.1237306079178" id="1237463992893">
-          <node role="part" roleId="2omo.1237306115446" type="2omo.NewLineAppendPart" typeId="2omo.1237305208784" id="1237463992895" />
-          <node role="part" roleId="2omo.1237306115446" type="2omo.ConstantStringAppendPart" typeId="2omo.1237305557638" id="1237463992896">
-            <property name="value" nameId="2omo.1237305576108" value="???" />
           </node>
         </node>
       </node>
