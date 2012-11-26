@@ -231,10 +231,15 @@ public class ModelDifferenceDialog extends DialogWrapper {
     public MyGoToNeighbourRootActions() {
     }
 
-    protected void goTo(@NotNull SNodeId rootId) {
-      startGoingToNeighbour();
-      myRootDifferenceDialog.close(NEXT_USER_EXIT_CODE);
-      invokeRootDifference(rootId);
+    protected void goTo(@NotNull final SNodeId rootId) {
+      // <node> 
+      // <node> 
+      // <node> 
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          myRootDifferenceDialog.setRootId(rootId);
+        }
+      });
     }
 
     @Nullable

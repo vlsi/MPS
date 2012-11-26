@@ -1460,7 +1460,7 @@
     <nodeInfo nodeId="4652592318748338509" fileName="DiffEditor.java" startLine="67" startPosition="90" endLine="68" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5277200897193755573" fileName="DiffEditor.java" startLine="71" startPosition="32" endLine="72" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4124845871897267935" fileName="DiffEditor.java" startLine="75" startPosition="98" endLine="76" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897267947" fileName="DiffEditor.java" startLine="77" startPosition="66" endLine="78" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897267947" fileName="DiffEditor.java" startLine="77" startPosition="50" endLine="78" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4652592318748338521" fileName="DiffEditor.java" startLine="82" startPosition="35" endLine="83" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4652592318748338529" fileName="DiffEditor.java" startLine="83" startPosition="79" endLine="84" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4652592318748338545" fileName="DiffEditor.java" startLine="89" startPosition="45" endLine="90" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1522,7 +1522,7 @@
     <nodeInfo nodeId="4652592318748338377" fileName="DiffEditor.java" startLine="39" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffEditor#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Z)V" />
     <scopeInfo nodeId="4652592318748338407" fileName="DiffEditor.java" startLine="43" startPosition="45" endLine="44" endPosition="34" />
     <scopeInfo nodeId="5277200897193755572" fileName="DiffEditor.java" startLine="71" startPosition="32" endLine="72" endPosition="43" />
-    <scopeInfo nodeId="4124845871897267946" fileName="DiffEditor.java" startLine="77" startPosition="66" endLine="78" endPosition="94" />
+    <scopeInfo nodeId="4124845871897267946" fileName="DiffEditor.java" startLine="77" startPosition="50" endLine="78" endPosition="94" />
     <scopeInfo nodeId="4652592318748338544" fileName="DiffEditor.java" startLine="89" startPosition="45" endLine="90" endPosition="33" />
     <scopeInfo nodeId="4652592318748338557" fileName="DiffEditor.java" startLine="95" startPosition="39" endLine="96" endPosition="26" />
     <scopeInfo nodeId="4652592318748338563" fileName="DiffEditor.java" startLine="99" startPosition="57" endLine="100" endPosition="33" />
@@ -2668,28 +2668,28 @@
     <nodeInfo nodeId="4652592318748340980" fileName="NextPreviousTraverser.java" startLine="193" startPosition="12" endLine="194" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4652592318748340985" fileName="NextPreviousTraverser.java" startLine="198" startPosition="38" endLine="199" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4652592318748340991" fileName="NextPreviousTraverser.java" startLine="202" startPosition="34" endLine="203" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748340998" fileName="NextPreviousTraverser.java" startLine="206" startPosition="38" endLine="207" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4652592318748341003" fileName="NextPreviousTraverser.java" startLine="207" startPosition="61" endLine="208" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4652592318748341009" fileName="NextPreviousTraverser.java" startLine="208" startPosition="47" endLine="209" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4652592318748341025" fileName="NextPreviousTraverser.java" startLine="211" startPosition="25" endLine="212" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748341038" fileName="NextPreviousTraverser.java" startLine="217" startPosition="41" endLine="218" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748341043" fileName="NextPreviousTraverser.java" startLine="218" startPosition="30" endLine="219" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748341054" fileName="NextPreviousTraverser.java" startLine="222" startPosition="42" endLine="223" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4652592318748341066" fileName="NextPreviousTraverser.java" startLine="224" startPosition="29" endLine="225" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748341085" fileName="NextPreviousTraverser.java" startLine="229" startPosition="35" endLine="230" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748340849" fileName="NextPreviousTraverser.java" startLine="238" startPosition="36" endLine="239" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748340849" fileName="NextPreviousTraverser.java" startLine="240" startPosition="5" endLine="241" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5577480965331702735" fileName="NextPreviousTraverser.java" startLine="245" startPosition="36" endLine="246" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5577480965331702735" fileName="NextPreviousTraverser.java" startLine="247" startPosition="5" endLine="248" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341086" fileName="NextPreviousTraverser.java" startLine="252" startPosition="36" endLine="253" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341086" fileName="NextPreviousTraverser.java" startLine="254" startPosition="5" endLine="255" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341095" fileName="NextPreviousTraverser.java" startLine="259" startPosition="0" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPrevious" />
-    <nodeInfo nodeId="4652592318748341159" fileName="NextPreviousTraverser.java" startLine="268" startPosition="9" endLine="269" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748341162" fileName="NextPreviousTraverser.java" startLine="269" startPosition="35" endLine="270" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748341165" fileName="NextPreviousTraverser.java" startLine="270" startPosition="37" endLine="271" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748341108" fileName="NextPreviousTraverser.java" startLine="274" startPosition="76" endLine="275" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4652592318748341113" fileName="NextPreviousTraverser.java" startLine="275" startPosition="57" endLine="276" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748341127" fileName="NextPreviousTraverser.java" startLine="280" startPosition="75" endLine="281" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748340998" fileName="NextPreviousTraverser.java" startLine="206" startPosition="38" endLine="207" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4652592318748341003" fileName="NextPreviousTraverser.java" startLine="207" startPosition="55" endLine="208" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4652592318748341009" fileName="NextPreviousTraverser.java" startLine="212" startPosition="6" endLine="213" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4652592318748341025" fileName="NextPreviousTraverser.java" startLine="215" startPosition="25" endLine="216" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748341038" fileName="NextPreviousTraverser.java" startLine="221" startPosition="41" endLine="222" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748341043" fileName="NextPreviousTraverser.java" startLine="222" startPosition="30" endLine="223" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748341054" fileName="NextPreviousTraverser.java" startLine="226" startPosition="42" endLine="227" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4652592318748341066" fileName="NextPreviousTraverser.java" startLine="228" startPosition="29" endLine="229" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748341085" fileName="NextPreviousTraverser.java" startLine="233" startPosition="35" endLine="234" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748340849" fileName="NextPreviousTraverser.java" startLine="242" startPosition="36" endLine="243" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748340849" fileName="NextPreviousTraverser.java" startLine="244" startPosition="5" endLine="245" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5577480965331702735" fileName="NextPreviousTraverser.java" startLine="249" startPosition="36" endLine="250" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5577480965331702735" fileName="NextPreviousTraverser.java" startLine="251" startPosition="5" endLine="252" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341086" fileName="NextPreviousTraverser.java" startLine="256" startPosition="36" endLine="257" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341086" fileName="NextPreviousTraverser.java" startLine="258" startPosition="5" endLine="259" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748341095" fileName="NextPreviousTraverser.java" startLine="263" startPosition="0" endLine="264" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPrevious" />
+    <nodeInfo nodeId="4652592318748341159" fileName="NextPreviousTraverser.java" startLine="272" startPosition="9" endLine="273" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748341162" fileName="NextPreviousTraverser.java" startLine="273" startPosition="35" endLine="274" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748341165" fileName="NextPreviousTraverser.java" startLine="274" startPosition="37" endLine="275" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748341108" fileName="NextPreviousTraverser.java" startLine="278" startPosition="76" endLine="279" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="4652592318748341113" fileName="NextPreviousTraverser.java" startLine="279" startPosition="57" endLine="280" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748341127" fileName="NextPreviousTraverser.java" startLine="284" startPosition="75" endLine="285" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4652592318748340978" fileName="NextPreviousTraverser.java" startLine="193" startPosition="10" endLine="195" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4652592318748340621" fileName="NextPreviousTraverser.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeGroupsInvalidated#()V" />
     <nodeInfo nodeId="4652592318748340635" fileName="NextPreviousTraverser.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupLayout;)Ljava/lang/Iterable;" />
@@ -2707,17 +2707,18 @@
     <nodeInfo nodeId="4652592318748340878" fileName="NextPreviousTraverser.java" startLine="153" startPosition="61" endLine="156" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4652592318748340982" fileName="NextPreviousTraverser.java" startLine="198" startPosition="0" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="previousAction#()Ljetbrains/mps/workbench/action/BaseAction;" />
     <nodeInfo nodeId="4652592318748340988" fileName="NextPreviousTraverser.java" startLine="202" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nextAction#()Ljetbrains/mps/workbench/action/BaseAction;" />
-    <nodeInfo nodeId="4652592318748341023" fileName="NextPreviousTraverser.java" startLine="211" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4652592318748341083" fileName="NextPreviousTraverser.java" startLine="229" startPosition="0" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4652592318748340849" fileName="NextPreviousTraverser.java" startLine="237" startPosition="88" endLine="240" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5577480965331702735" fileName="NextPreviousTraverser.java" startLine="244" startPosition="80" endLine="247" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4652592318748341086" fileName="NextPreviousTraverser.java" startLine="251" startPosition="81" endLine="254" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4652592318748341023" fileName="NextPreviousTraverser.java" startLine="215" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4652592318748341083" fileName="NextPreviousTraverser.java" startLine="233" startPosition="0" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4652592318748340849" fileName="NextPreviousTraverser.java" startLine="241" startPosition="88" endLine="244" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5577480965331702735" fileName="NextPreviousTraverser.java" startLine="248" startPosition="80" endLine="251" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4652592318748341086" fileName="NextPreviousTraverser.java" startLine="255" startPosition="81" endLine="258" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4652592318748340598" fileName="NextPreviousTraverser.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="selectionChanged#(Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/nodeEditor/selection/Selection;Ljetbrains/mps/nodeEditor/selection/Selection;)V" />
     <nodeInfo nodeId="4652592318748340781" fileName="NextPreviousTraverser.java" startLine="123" startPosition="108" endLine="127" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4652592318748340966" fileName="NextPreviousTraverser.java" startLine="188" startPosition="44" endLine="192" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748341034" fileName="NextPreviousTraverser.java" startLine="217" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goToBounds#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)V" />
-    <nodeInfo nodeId="4652592318748341098" fileName="NextPreviousTraverser.java" startLine="274" startPosition="0" endLine="278" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="4652592318748341117" fileName="NextPreviousTraverser.java" startLine="279" startPosition="0" endLine="283" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="8644067079009616773" fileName="NextPreviousTraverser.java" startLine="208" startPosition="47" endLine="212" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4652592318748341034" fileName="NextPreviousTraverser.java" startLine="221" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goToBounds#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)V" />
+    <nodeInfo nodeId="4652592318748341098" fileName="NextPreviousTraverser.java" startLine="278" startPosition="0" endLine="282" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="4652592318748341117" fileName="NextPreviousTraverser.java" startLine="283" startPosition="0" endLine="287" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="4652592318748340617" fileName="NextPreviousTraverser.java" startLine="59" startPosition="48" endLine="64" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4652592318748340682" fileName="NextPreviousTraverser.java" startLine="83" startPosition="34" endLine="88" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4652592318748340699" fileName="NextPreviousTraverser.java" startLine="93" startPosition="47" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2728,35 +2729,35 @@
     <nodeInfo nodeId="4652592318748340927" fileName="NextPreviousTraverser.java" startLine="167" startPosition="33" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4652592318748340946" fileName="NextPreviousTraverser.java" startLine="174" startPosition="57" endLine="179" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4652592318748340956" fileName="NextPreviousTraverser.java" startLine="180" startPosition="14" endLine="185" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4652592318748341021" fileName="NextPreviousTraverser.java" startLine="209" startPosition="52" endLine="214" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748341076" fileName="NextPreviousTraverser.java" startLine="227" startPosition="32" endLine="232" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748341021" fileName="NextPreviousTraverser.java" startLine="213" startPosition="52" endLine="218" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748341076" fileName="NextPreviousTraverser.java" startLine="231" startPosition="32" endLine="236" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4652592318748340595" fileName="NextPreviousTraverser.java" startLine="51" startPosition="0" endLine="57" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4652592318748340827" fileName="NextPreviousTraverser.java" startLine="139" startPosition="10" endLine="145" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4652592318748340954" fileName="NextPreviousTraverser.java" startLine="180" startPosition="12" endLine="186" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4652592318748340849" fileName="NextPreviousTraverser.java" startLine="237" startPosition="0" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_mf966z_a5a5#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;Z)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
-    <nodeInfo nodeId="5577480965331702735" fileName="NextPreviousTraverser.java" startLine="244" startPosition="0" endLine="250" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_mf966z_a0a0a2a0a0b0l#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4652592318748341086" fileName="NextPreviousTraverser.java" startLine="251" startPosition="0" endLine="257" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_mf966z_a0a0a0c0a0a1a11#(Ljetbrains/mps/smodel/SNode;)Lorg/jetbrains/mps/openapi/language/SConcept;" />
+    <nodeInfo nodeId="4652592318748340849" fileName="NextPreviousTraverser.java" startLine="241" startPosition="0" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_mf966z_a5a5#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;Z)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
+    <nodeInfo nodeId="5577480965331702735" fileName="NextPreviousTraverser.java" startLine="248" startPosition="0" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_mf966z_a0a0a2a0a0b0l#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4652592318748341086" fileName="NextPreviousTraverser.java" startLine="255" startPosition="0" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_mf966z_a0a0a0c0a0a1a11#(Ljetbrains/mps/smodel/SNode;)Lorg/jetbrains/mps/openapi/language/SConcept;" />
     <nodeInfo nodeId="4652592318748340615" fileName="NextPreviousTraverser.java" startLine="59" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupLayout;)V" />
     <nodeInfo nodeId="4652592318748340680" fileName="NextPreviousTraverser.java" startLine="82" startPosition="32" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4652592318748341076" fileName="NextPreviousTraverser.java" startLine="226" startPosition="12" endLine="233" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4652592318748341076" fileName="NextPreviousTraverser.java" startLine="226" startPosition="12" endLine="233" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4652592318748341144" fileName="NextPreviousTraverser.java" startLine="261" startPosition="41" endLine="268" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4652592318748341076" fileName="NextPreviousTraverser.java" startLine="230" startPosition="12" endLine="237" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4652592318748341076" fileName="NextPreviousTraverser.java" startLine="230" startPosition="12" endLine="237" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4652592318748341144" fileName="NextPreviousTraverser.java" startLine="265" startPosition="41" endLine="272" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4652592318748340695" fileName="NextPreviousTraverser.java" startLine="92" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLayoutAsLeft#()Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupLayout;" />
     <nodeInfo nodeId="4652592318748340714" fileName="NextPreviousTraverser.java" startLine="101" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLayoutAsRight#()Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupLayout;" />
     <nodeInfo nodeId="4652592318748340964" fileName="NextPreviousTraverser.java" startLine="187" startPosition="5" endLine="195" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4652592318748341074" fileName="NextPreviousTraverser.java" startLine="226" startPosition="10" endLine="234" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4652592318748341074" fileName="NextPreviousTraverser.java" startLine="230" startPosition="10" endLine="238" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4652592318748340611" fileName="NextPreviousTraverser.java" startLine="57" startPosition="6" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4652592318748340627" fileName="NextPreviousTraverser.java" startLine="66" startPosition="7" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4652592318748340676" fileName="NextPreviousTraverser.java" startLine="82" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateToolbar#()V" />
     <nodeInfo nodeId="4652592318748340743" fileName="NextPreviousTraverser.java" startLine="111" startPosition="26" endLine="120" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4652592318748340994" fileName="NextPreviousTraverser.java" startLine="206" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goToFirstChangeLater#()V" />
-    <nodeInfo nodeId="4652592318748341064" fileName="NextPreviousTraverser.java" startLine="223" startPosition="95" endLine="234" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4652592318748341064" fileName="NextPreviousTraverser.java" startLine="227" startPosition="95" endLine="238" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4652592318748340733" fileName="NextPreviousTraverser.java" startLine="110" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setLastEditor#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-    <nodeInfo nodeId="4652592318748341140" fileName="NextPreviousTraverser.java" startLine="261" startPosition="0" endLine="273" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TheAction#(Z)V" />
+    <nodeInfo nodeId="4652592318748341140" fileName="NextPreviousTraverser.java" startLine="265" startPosition="0" endLine="277" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TheAction#(Z)V" />
     <nodeInfo nodeId="4652592318748340805" fileName="NextPreviousTraverser.java" startLine="132" startPosition="28" endLine="145" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4652592318748340937" fileName="NextPreviousTraverser.java" startLine="173" startPosition="12" endLine="186" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4652592318748340935" fileName="NextPreviousTraverser.java" startLine="173" startPosition="10" endLine="187" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4652592318748341050" fileName="NextPreviousTraverser.java" startLine="222" startPosition="0" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goToY#(I)V" />
+    <nodeInfo nodeId="4652592318748340994" fileName="NextPreviousTraverser.java" startLine="206" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goToFirstChangeLater#()V" />
+    <nodeInfo nodeId="4652592318748341050" fileName="NextPreviousTraverser.java" startLine="226" startPosition="0" endLine="240" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goToY#(I)V" />
     <nodeInfo nodeId="4652592318748340771" fileName="NextPreviousTraverser.java" startLine="123" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findNeighbourGroupAsLeftOrRight#(IZZ)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
     <nodeInfo nodeId="4652592318748340909" fileName="NextPreviousTraverser.java" startLine="160" startPosition="15" endLine="187" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4652592318748340582" fileName="NextPreviousTraverser.java" startLine="48" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NextPreviousTraverser#(Ljava/util/List;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
@@ -2777,16 +2778,16 @@
     <scopeInfo nodeId="4652592318748340979" fileName="NextPreviousTraverser.java" startLine="193" startPosition="12" endLine="194" endPosition="17" />
     <scopeInfo nodeId="4652592318748340984" fileName="NextPreviousTraverser.java" startLine="198" startPosition="38" endLine="199" endPosition="28" />
     <scopeInfo nodeId="4652592318748340990" fileName="NextPreviousTraverser.java" startLine="202" startPosition="34" endLine="203" endPosition="24" />
-    <scopeInfo nodeId="4652592318748341024" fileName="NextPreviousTraverser.java" startLine="211" startPosition="25" endLine="212" endPosition="63" />
-    <scopeInfo nodeId="4652592318748341065" fileName="NextPreviousTraverser.java" startLine="224" startPosition="29" endLine="225" endPosition="47" />
-    <scopeInfo nodeId="4652592318748341084" fileName="NextPreviousTraverser.java" startLine="229" startPosition="35" endLine="230" endPosition="106" />
-    <scopeInfo nodeId="4652592318748340849" fileName="NextPreviousTraverser.java" startLine="238" startPosition="36" endLine="239" endPosition="47" />
-    <scopeInfo nodeId="5577480965331702735" fileName="NextPreviousTraverser.java" startLine="245" startPosition="36" endLine="246" endPosition="39" />
-    <scopeInfo nodeId="4652592318748341086" fileName="NextPreviousTraverser.java" startLine="252" startPosition="36" endLine="253" endPosition="44" />
-    <scopeInfo nodeId="4652592318748341126" fileName="NextPreviousTraverser.java" startLine="280" startPosition="75" endLine="281" endPosition="86" />
+    <scopeInfo nodeId="4652592318748341024" fileName="NextPreviousTraverser.java" startLine="215" startPosition="25" endLine="216" endPosition="43" />
+    <scopeInfo nodeId="4652592318748341065" fileName="NextPreviousTraverser.java" startLine="228" startPosition="29" endLine="229" endPosition="47" />
+    <scopeInfo nodeId="4652592318748341084" fileName="NextPreviousTraverser.java" startLine="233" startPosition="35" endLine="234" endPosition="106" />
+    <scopeInfo nodeId="4652592318748340849" fileName="NextPreviousTraverser.java" startLine="242" startPosition="36" endLine="243" endPosition="47" />
+    <scopeInfo nodeId="5577480965331702735" fileName="NextPreviousTraverser.java" startLine="249" startPosition="36" endLine="250" endPosition="39" />
+    <scopeInfo nodeId="4652592318748341086" fileName="NextPreviousTraverser.java" startLine="256" startPosition="36" endLine="257" endPosition="44" />
+    <scopeInfo nodeId="4652592318748341126" fileName="NextPreviousTraverser.java" startLine="284" startPosition="75" endLine="285" endPosition="86" />
     <scopeInfo nodeId="4652592318748340605" fileName="NextPreviousTraverser.java" startLine="53" startPosition="117" endLine="55" endPosition="24" />
-    <scopeInfo nodeId="4652592318748341037" fileName="NextPreviousTraverser.java" startLine="217" startPosition="41" endLine="219" endPosition="32" />
-    <scopeInfo nodeId="4652592318748341107" fileName="NextPreviousTraverser.java" startLine="274" startPosition="76" endLine="276" endPosition="54" />
+    <scopeInfo nodeId="4652592318748341037" fileName="NextPreviousTraverser.java" startLine="221" startPosition="41" endLine="223" endPosition="32" />
+    <scopeInfo nodeId="4652592318748341107" fileName="NextPreviousTraverser.java" startLine="278" startPosition="76" endLine="280" endPosition="54" />
     <scopeInfo nodeId="4652592318748340621" fileName="NextPreviousTraverser.java" startLine="61" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="4652592318748340635" fileName="NextPreviousTraverser.java" startLine="68" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="4652592318748340635" varName="b" />
@@ -2829,25 +2830,25 @@
     </scopeInfo>
     <scopeInfo nodeId="4652592318748340982" fileName="NextPreviousTraverser.java" startLine="198" startPosition="0" endLine="201" endPosition="0" />
     <scopeInfo nodeId="4652592318748340988" fileName="NextPreviousTraverser.java" startLine="202" startPosition="0" endLine="205" endPosition="0" />
-    <scopeInfo nodeId="4652592318748341023" fileName="NextPreviousTraverser.java" startLine="211" startPosition="0" endLine="214" endPosition="0" />
-    <scopeInfo nodeId="4652592318748341083" fileName="NextPreviousTraverser.java" startLine="229" startPosition="0" endLine="232" endPosition="0" />
+    <scopeInfo nodeId="4652592318748341023" fileName="NextPreviousTraverser.java" startLine="215" startPosition="0" endLine="218" endPosition="0" />
+    <scopeInfo nodeId="4652592318748341083" fileName="NextPreviousTraverser.java" startLine="233" startPosition="0" endLine="236" endPosition="0" />
     <scopeInfo nodeId="4652592318748340598" fileName="NextPreviousTraverser.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="4652592318748340598" varName="editorComponent" />
       <varInfo nodeId="4652592318748340598" varName="newSelection" />
       <varInfo nodeId="4652592318748340598" varName="oldSelection" />
     </scopeInfo>
     <scopeInfo nodeId="4652592318748340965" fileName="NextPreviousTraverser.java" startLine="188" startPosition="44" endLine="192" endPosition="8" />
-    <scopeInfo nodeId="4652592318748341034" fileName="NextPreviousTraverser.java" startLine="217" startPosition="0" endLine="221" endPosition="0">
+    <scopeInfo nodeId="4652592318748341034" fileName="NextPreviousTraverser.java" startLine="221" startPosition="0" endLine="225" endPosition="0">
       <varInfo nodeId="4652592318748341048" varName="bounds" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748340849" fileName="NextPreviousTraverser.java" startLine="237" startPosition="88" endLine="241" endPosition="16" />
-    <scopeInfo nodeId="5577480965331702735" fileName="NextPreviousTraverser.java" startLine="244" startPosition="80" endLine="248" endPosition="16" />
-    <scopeInfo nodeId="4652592318748341086" fileName="NextPreviousTraverser.java" startLine="251" startPosition="81" endLine="255" endPosition="16" />
-    <scopeInfo nodeId="4652592318748341098" fileName="NextPreviousTraverser.java" startLine="274" startPosition="0" endLine="278" endPosition="0">
+    <scopeInfo nodeId="4652592318748340849" fileName="NextPreviousTraverser.java" startLine="241" startPosition="88" endLine="245" endPosition="16" />
+    <scopeInfo nodeId="5577480965331702735" fileName="NextPreviousTraverser.java" startLine="248" startPosition="80" endLine="252" endPosition="16" />
+    <scopeInfo nodeId="4652592318748341086" fileName="NextPreviousTraverser.java" startLine="255" startPosition="81" endLine="259" endPosition="16" />
+    <scopeInfo nodeId="4652592318748341098" fileName="NextPreviousTraverser.java" startLine="278" startPosition="0" endLine="282" endPosition="0">
       <varInfo nodeId="4652592318748341101" varName="event" />
       <varInfo nodeId="4652592318748341103" varName="map" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341117" fileName="NextPreviousTraverser.java" startLine="279" startPosition="0" endLine="283" endPosition="0">
+    <scopeInfo nodeId="4652592318748341117" fileName="NextPreviousTraverser.java" startLine="283" startPosition="0" endLine="287" endPosition="0">
       <varInfo nodeId="4652592318748341120" varName="event" />
       <varInfo nodeId="4652592318748341122" varName="map" />
     </scopeInfo>
@@ -2861,45 +2862,46 @@
     <scopeInfo nodeId="4652592318748340926" fileName="NextPreviousTraverser.java" startLine="167" startPosition="33" endLine="172" endPosition="7" />
     <scopeInfo nodeId="4652592318748340945" fileName="NextPreviousTraverser.java" startLine="174" startPosition="57" endLine="179" endPosition="9" />
     <scopeInfo nodeId="4652592318748340955" fileName="NextPreviousTraverser.java" startLine="180" startPosition="14" endLine="185" endPosition="9" />
-    <scopeInfo nodeId="4652592318748341076" fileName="NextPreviousTraverser.java" startLine="227" startPosition="32" endLine="232" endPosition="13" />
-    <scopeInfo nodeId="4652592318748340849" fileName="NextPreviousTraverser.java" startLine="237" startPosition="0" endLine="243" endPosition="0">
+    <scopeInfo nodeId="4652592318748341076" fileName="NextPreviousTraverser.java" startLine="231" startPosition="32" endLine="236" endPosition="13" />
+    <scopeInfo nodeId="4652592318748340849" fileName="NextPreviousTraverser.java" startLine="241" startPosition="0" endLine="247" endPosition="0">
       <varInfo nodeId="4652592318748340849" varName="checkedDotOperand" />
       <varInfo nodeId="4652592318748340849" varName="left" />
     </scopeInfo>
-    <scopeInfo nodeId="5577480965331702735" fileName="NextPreviousTraverser.java" startLine="244" startPosition="0" endLine="250" endPosition="0">
+    <scopeInfo nodeId="5577480965331702735" fileName="NextPreviousTraverser.java" startLine="248" startPosition="0" endLine="254" endPosition="0">
       <varInfo nodeId="5577480965331702735" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341086" fileName="NextPreviousTraverser.java" startLine="251" startPosition="0" endLine="257" endPosition="0">
+    <scopeInfo nodeId="4652592318748341086" fileName="NextPreviousTraverser.java" startLine="255" startPosition="0" endLine="261" endPosition="0">
       <varInfo nodeId="4652592318748341086" varName="checkedDotOperand" />
     </scopeInfo>
     <scopeInfo nodeId="4652592318748340615" fileName="NextPreviousTraverser.java" startLine="59" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="4652592318748340615" varName="cgb" />
     </scopeInfo>
     <scopeInfo nodeId="4652592318748340679" fileName="NextPreviousTraverser.java" startLine="82" startPosition="32" endLine="89" endPosition="5" />
-    <scopeInfo nodeId="4652592318748341075" fileName="NextPreviousTraverser.java" startLine="226" startPosition="12" endLine="233" endPosition="7" />
-    <scopeInfo nodeId="4652592318748341076" fileName="NextPreviousTraverser.java" startLine="226" startPosition="12" endLine="233" endPosition="7" />
+    <scopeInfo nodeId="4652592318748341075" fileName="NextPreviousTraverser.java" startLine="230" startPosition="12" endLine="237" endPosition="7" />
+    <scopeInfo nodeId="4652592318748341076" fileName="NextPreviousTraverser.java" startLine="230" startPosition="12" endLine="237" endPosition="7" />
     <scopeInfo nodeId="4652592318748340695" fileName="NextPreviousTraverser.java" startLine="92" startPosition="0" endLine="100" endPosition="0" />
     <scopeInfo nodeId="4652592318748340714" fileName="NextPreviousTraverser.java" startLine="101" startPosition="0" endLine="109" endPosition="0" />
-    <scopeInfo nodeId="4652592318748340997" fileName="NextPreviousTraverser.java" startLine="206" startPosition="38" endLine="214" endPosition="7">
-      <varInfo nodeId="4652592318748340999" varName="firstGroup" />
-      <varInfo nodeId="4652592318748341010" varName="maxY" />
-      <varInfo nodeId="4652592318748341004" varName="rc" />
-    </scopeInfo>
     <scopeInfo nodeId="4652592318748340676" fileName="NextPreviousTraverser.java" startLine="82" startPosition="0" endLine="91" endPosition="0" />
     <scopeInfo nodeId="4652592318748340738" fileName="NextPreviousTraverser.java" startLine="110" startPosition="67" endLine="120" endPosition="5" />
-    <scopeInfo nodeId="4652592318748340994" fileName="NextPreviousTraverser.java" startLine="206" startPosition="0" endLine="216" endPosition="0" />
-    <scopeInfo nodeId="4652592318748341143" fileName="NextPreviousTraverser.java" startLine="261" startPosition="41" endLine="271" endPosition="28" />
+    <scopeInfo nodeId="4652592318748341143" fileName="NextPreviousTraverser.java" startLine="265" startPosition="41" endLine="275" endPosition="28" />
     <scopeInfo nodeId="4652592318748340733" fileName="NextPreviousTraverser.java" startLine="110" startPosition="0" endLine="122" endPosition="0">
       <varInfo nodeId="4652592318748340734" varName="editor" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341053" fileName="NextPreviousTraverser.java" startLine="222" startPosition="42" endLine="234" endPosition="5">
+    <scopeInfo nodeId="4652592318748340997" fileName="NextPreviousTraverser.java" startLine="206" startPosition="38" endLine="218" endPosition="7">
+      <varInfo nodeId="4652592318748340999" varName="firstGroup" />
+      <varInfo nodeId="4652592318748341010" varName="maxY" />
+      <varInfo nodeId="8644067079009616776" varName="minY" />
+      <varInfo nodeId="4652592318748341004" varName="rc" />
+    </scopeInfo>
+    <scopeInfo nodeId="4652592318748341053" fileName="NextPreviousTraverser.java" startLine="226" startPosition="42" endLine="238" endPosition="5">
       <varInfo nodeId="4652592318748341055" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748341140" fileName="NextPreviousTraverser.java" startLine="261" startPosition="0" endLine="273" endPosition="0">
+    <scopeInfo nodeId="4652592318748341140" fileName="NextPreviousTraverser.java" startLine="265" startPosition="0" endLine="277" endPosition="0">
       <varInfo nodeId="4652592318748341169" varName="previous" />
     </scopeInfo>
     <scopeInfo nodeId="4652592318748340936" fileName="NextPreviousTraverser.java" startLine="173" startPosition="12" endLine="186" endPosition="7" />
-    <scopeInfo nodeId="4652592318748341050" fileName="NextPreviousTraverser.java" startLine="222" startPosition="0" endLine="236" endPosition="0">
+    <scopeInfo nodeId="4652592318748340994" fileName="NextPreviousTraverser.java" startLine="206" startPosition="0" endLine="220" endPosition="0" />
+    <scopeInfo nodeId="4652592318748341050" fileName="NextPreviousTraverser.java" startLine="226" startPosition="0" endLine="240" endPosition="0">
       <varInfo nodeId="4652592318748341092" varName="y" />
     </scopeInfo>
     <scopeInfo nodeId="4652592318748340780" fileName="NextPreviousTraverser.java" startLine="123" startPosition="108" endLine="146" endPosition="48">
@@ -2939,12 +2941,12 @@
     <unitInfo nodeId="4652592318748340755" fileName="NextPreviousTraverser.java" startLine="112" startPosition="62" endLine="116" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser$8" />
     <unitInfo nodeId="4652592318748340812" fileName="NextPreviousTraverser.java" startLine="134" startPosition="69" endLine="138" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser$9" />
     <unitInfo nodeId="4652592318748340835" fileName="NextPreviousTraverser.java" startLine="140" startPosition="70" endLine="144" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser$10" />
-    <unitInfo nodeId="4652592318748341023" fileName="NextPreviousTraverser.java" startLine="210" startPosition="35" endLine="214" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser$11" />
-    <unitInfo nodeId="4652592318748341083" fileName="NextPreviousTraverser.java" startLine="228" startPosition="153" endLine="232" endPosition="9" unitName="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser$12" />
+    <unitInfo nodeId="4652592318748341023" fileName="NextPreviousTraverser.java" startLine="214" startPosition="35" endLine="218" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser$11" />
+    <unitInfo nodeId="4652592318748341083" fileName="NextPreviousTraverser.java" startLine="232" startPosition="153" endLine="236" endPosition="9" unitName="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser$12" />
     <unitInfo nodeId="4652592318748340598" fileName="NextPreviousTraverser.java" startLine="52" startPosition="52" endLine="57" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser$1" />
     <unitInfo nodeId="4652592318748340615" fileName="NextPreviousTraverser.java" startLine="58" startPosition="61" endLine="66" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser$2" />
-    <unitInfo nodeId="4652592318748341094" fileName="NextPreviousTraverser.java" startLine="258" startPosition="0" endLine="284" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser$TheAction" />
-    <unitInfo nodeId="4652592318748340561" fileName="NextPreviousTraverser.java" startLine="37" startPosition="0" endLine="285" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser" />
+    <unitInfo nodeId="4652592318748341094" fileName="NextPreviousTraverser.java" startLine="262" startPosition="0" endLine="288" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser$TheAction" />
+    <unitInfo nodeId="4652592318748340561" fileName="NextPreviousTraverser.java" startLine="37" startPosition="0" endLine="289" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser" />
   </root>
   <root nodeId="4652592318748341187" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="4652592318748341188" fileName="SimpleDiffRequest.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContentTitles" />
@@ -2998,9 +3000,11 @@
     <nodeInfo nodeId="6402272430682108631" fileName="DiffChangeGroupLayout.java" startLine="43" startPosition="75" endLine="44" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6402272430682108644" fileName="DiffChangeGroupLayout.java" startLine="47" startPosition="76" endLine="48" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8859108093044337389" fileName="DiffChangeGroupLayout.java" startLine="52" startPosition="38" endLine="53" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5428271199454015250" fileName="DiffChangeGroupLayout.java" startLine="56" startPosition="49" endLine="57" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6402272430682109030" fileName="DiffChangeGroupLayout.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="editorRebuilt#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
     <nodeInfo nodeId="6402272430682108626" fileName="DiffChangeGroupLayout.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLeftMessages#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/util/List;" />
     <nodeInfo nodeId="6402272430682108639" fileName="DiffChangeGroupLayout.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRightMessages#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/util/List;" />
+    <nodeInfo nodeId="5428271199454009788" fileName="DiffChangeGroupLayout.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setChangeSet#(Ljetbrains/mps/vcs/diff/ChangeSet;)V" />
     <nodeInfo nodeId="6402272430682108606" fileName="DiffChangeGroupLayout.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLeftComponent#()Ljetbrains/mps/nodeEditor/EditorComponent;" />
     <nodeInfo nodeId="6402272430682108616" fileName="DiffChangeGroupLayout.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRightComponent#()Ljetbrains/mps/nodeEditor/EditorComponent;" />
     <nodeInfo nodeId="8859108093044337381" fileName="DiffChangeGroupLayout.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChangeSet#()Ljetbrains/mps/vcs/diff/ChangeSet;" />
@@ -3013,6 +3017,7 @@
     <scopeInfo nodeId="6402272430682108630" fileName="DiffChangeGroupLayout.java" startLine="43" startPosition="75" endLine="44" endPosition="53" />
     <scopeInfo nodeId="6402272430682108643" fileName="DiffChangeGroupLayout.java" startLine="47" startPosition="76" endLine="48" endPosition="54" />
     <scopeInfo nodeId="8859108093044337385" fileName="DiffChangeGroupLayout.java" startLine="52" startPosition="38" endLine="53" endPosition="23" />
+    <scopeInfo nodeId="5428271199454009791" fileName="DiffChangeGroupLayout.java" startLine="56" startPosition="49" endLine="57" endPosition="28" />
     <scopeInfo nodeId="6402272430682109030" fileName="DiffChangeGroupLayout.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="6402272430682109030" varName="editor" />
     </scopeInfo>
@@ -3021,6 +3026,9 @@
     </scopeInfo>
     <scopeInfo nodeId="6402272430682108639" fileName="DiffChangeGroupLayout.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="6402272430682108649" varName="change" />
+    </scopeInfo>
+    <scopeInfo nodeId="5428271199454009788" fileName="DiffChangeGroupLayout.java" startLine="56" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="5428271199454014445" varName="changeSet" />
     </scopeInfo>
     <scopeInfo nodeId="6402272430682108606" fileName="DiffChangeGroupLayout.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="6402272430682108616" fileName="DiffChangeGroupLayout.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
@@ -3037,7 +3045,7 @@
       <varInfo nodeId="6402272430682109060" varName="rightEditor" />
     </scopeInfo>
     <unitInfo nodeId="6402272430682109030" fileName="DiffChangeGroupLayout.java" startLine="23" startPosition="60" endLine="27" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout$1" />
-    <unitInfo nodeId="6402272430682108518" fileName="DiffChangeGroupLayout.java" startLine="12" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout" />
+    <unitInfo nodeId="6402272430682108518" fileName="DiffChangeGroupLayout.java" startLine="12" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout" />
   </root>
   <root nodeId="739457190729175664" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="3477558405266089730" fileName="ChangeGroupMessages.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourOwner" />

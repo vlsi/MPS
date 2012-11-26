@@ -21,12 +21,12 @@ import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.diff.ex.DiffStatusBar;
 import com.intellij.openapi.diff.impl.util.TextDiffType;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser;
 import java.awt.Component;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import javax.swing.JSplitPane;
-import jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -35,6 +35,8 @@ import java.awt.DisplayMode;
 import java.awt.GraphicsEnvironment;
 import java.awt.Dimension;
 import com.intellij.openapi.util.DimensionService;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout;
 import javax.swing.JComponent;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
@@ -44,10 +46,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import java.awt.GraphicsDevice;
@@ -70,6 +70,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   private DiffStatusBar myStatusBar = new DiffStatusBar(TextDiffType.DIFF_TYPES);
   private boolean myClosed;
   private DefaultActionGroup myActionGroup;
+  private NextPreviousTraverser myTraverser;
 
   public RootDifferenceDialog(Project project, ModelChangeSet changeSet, SNodeId rootId, String rootName, String[] titles, Component parent, boolean isEditable, @Nullable BaseAction[] actions, @Nullable final Bounds firstChange) {
     super(parent, true);
@@ -94,8 +95,8 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
       myActionGroup.addAll(actions);
       myActionGroup.addSeparator();
     }
-    final NextPreviousTraverser neighbourTraverser = new NextPreviousTraverser(myChangeGroupLayouts, myNewEditor.getMainEditor());
-    myActionGroup.addAll(neighbourTraverser.previousAction(), neighbourTraverser.nextAction());
+    myTraverser = new NextPreviousTraverser(myChangeGroupLayouts, myNewEditor.getMainEditor());
+    myActionGroup.addAll(myTraverser.previousAction(), myTraverser.nextAction());
     myActionGroup.addSeparator();
     if (isEditable) {
       myActionGroup.add(new RevertRootsAction(rootName) {
@@ -110,7 +111,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     }
 
     myActionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myActionGroup, true);
-    neighbourTraverser.setActionToolbar(myActionToolbar);
+    myTraverser.setActionToolbar(myActionToolbar);
 
     myContainer.add(myActionToolbar.getComponent(), BorderLayout.NORTH);
     myContainer.add(splitPane, BorderLayout.CENTER);
@@ -121,11 +122,11 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     if (firstChange != null) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          neighbourTraverser.goToBounds(firstChange);
+          myTraverser.goToBounds(firstChange);
         }
       });
     } else {
-      neighbourTraverser.goToFirstChangeLater();
+      myTraverser.goToFirstChangeLater();
     }
 
     DisplayMode displayMode = check_vu2gar_a0jb0a(check_vu2gar_a0a53a0(GraphicsEnvironment.getLocalGraphicsEnvironment()));
@@ -148,6 +149,28 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
 
   public SNodeId getRootId() {
     return myRootId;
+  }
+
+  public void setRootId(SNodeId rootId) {
+    myRootId = rootId;
+    myOldEditor.editRoot(myProject, myRootId, myChangeSet.getOldModel());
+    myNewEditor.editRoot(myProject, myRootId, myChangeSet.getNewModel());
+    // <node> 
+    // <node> 
+    myOldEditor.getMainEditor().clearSelectionStack();
+    myNewEditor.getMainEditor().clearSelectionStack();
+    rehighlight();
+    myTraverser.goToFirstChangeLater();
+  }
+
+  public void setRootId(SNodeId rootId, ModelChangeSet changeSet) {
+    myChangeSet = changeSet;
+    ListSequence.fromList(myChangeGroupLayouts).visitAll(new IVisitor<ChangeGroupLayout>() {
+      public void visit(ChangeGroupLayout it) {
+        ((DiffChangeGroupLayout) it).setChangeSet(myChangeSet);
+      }
+    });
+    setRootId(rootId);
   }
 
   @Nullable

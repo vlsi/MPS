@@ -204,12 +204,16 @@ public class NextPreviousTraverser {
   }
 
   public void goToFirstChangeLater() {
-    final Bounds firstGroup = getNeighbourGroupBounds(false);
+    Bounds firstGroup = getNeighbourGroupBounds(false);
     EditorCell rc = myLastEditor.getRootCell();
+    final int minY = (firstGroup == null ?
+      rc.getY() + 1 :
+      (int) firstGroup.start()
+    );
     final int maxY = rc.getY() + rc.getHeight() - 2;
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        goToBounds(new Bounds((int) firstGroup.start(), maxY));
+        goToBounds(new Bounds(minY, maxY));
       }
     });
   }
