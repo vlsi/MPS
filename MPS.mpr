@@ -212,6 +212,7 @@
       <modulePath path="${project}/languages/util/dates/internal/internal.mpl" folder="baseLanguage.dates" />
       <modulePath path="${project}/languages/util/dates/runtime/jetbrains.mps.baseLanguage.dates.runtime.msd" folder="baseLanguage.dates" />
       <modulePath path="${project}/languages/util/dates/unittest/dates.msd" folder="baseLanguage.dates" />
+      <modulePath path="${project}/languages/util/execution/util/util.mpl" folder="languages.execution.common" />
       <modulePath path="${project}/languages/util/extensionMethod/methodExtension.mpl" folder="baseLanguage.extensionMethods" />
       <modulePath path="${project}/languages/util/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/jetbrains.mps.baseLanguage.extensionMethods.sandbox.msd" folder="baseLanguage.extensionMethods" />
       <modulePath path="${project}/languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.geom/jetbrains.mps.graphLayout.geom.msd" folder="graphLayout" />
@@ -301,7 +302,6 @@
       <modulePath path="${project}/plugins/execution-api/jetbrains.mps.execution.api.msd" folder="languages.execution.api" />
       <modulePath path="${project}/plugins/execution-api/languages/common/common.mpl" folder="languages.execution.common" />
       <modulePath path="${project}/plugins/execution-api/languages/settings/settings.mpl" folder="languages.execution.common" />
-      <modulePath path="${project}/plugins/execution-api/languages/util/util.mpl" folder="languages.execution.common" />
       <modulePath path="${project}/plugins/execution-configurations/languages/ant/execution.msd" folder="languages.execution.usages" />
       <modulePath path="${project}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api/api.msd" folder="languages.execution.usages.baseLanguage" />
       <modulePath path="${project}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/startup.msd" folder="languages.execution.usages.baseLanguage" />
