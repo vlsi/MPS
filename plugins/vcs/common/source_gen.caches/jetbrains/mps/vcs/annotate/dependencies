@@ -41,7 +41,6 @@
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangesUtil" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ContentRevision" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ui.ChangesViewContentManager" />
-    <classNode dependClassName="com.intellij.openapi.vcs.history.TextTransferrable" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.VcsFileRevision" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.VcsRevisionNumber" />
     <classNode dependClassName="com.intellij.openapi.vcs.ui.VcsBalloonProblemNotifier" />
@@ -49,6 +48,7 @@
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowManager" />
     <classNode dependClassName="com.intellij.util.messages.MessageBusConnection" />
+    <classNode dependClassName="com.intellij.util.ui.TextTransferrable" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Cursor" />
     <classNode dependClassName="java.awt.Font" />

@@ -7,7 +7,6 @@ import java.util.Arrays;
 
 public class DateRange implements Comparable {
   public static DateRange EMPTY = new DateRange(new MfDate(2000, 4, 1), new MfDate(2000, 1, 1));
-
   private MfDate myStart;
   private MfDate myEnd;
 

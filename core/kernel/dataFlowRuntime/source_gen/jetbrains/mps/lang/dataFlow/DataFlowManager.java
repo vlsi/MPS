@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.LanguageAspect;
 public class DataFlowManager implements CoreComponent {
   private static Logger LOG = Logger.getLogger(DataFlowManager.class);
   private static DataFlowManager INSTANCE;
-
   private ClassLoaderManager myClassLoaderManager;
   private Map<String, DataFlowBuilder> myBuilders = new HashMap<String, DataFlowBuilder>();
   private boolean myLoaded = false;

@@ -18,7 +18,7 @@ package jetbrains.mps.workbench.actions.goTo.matcher;
 
 import com.intellij.ide.util.gotoByName.ChooseByNameBase;
 import com.intellij.ide.util.gotoByName.DefaultChooseByNameItemProvider;
-import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.psi.PsiElement;
 import com.intellij.util.Processor;
 
@@ -29,8 +29,8 @@ public class MPSPackageItemProvider extends DefaultChooseByNameItemProvider {
     super(context);
   }
 
-  public void filterElements(ChooseByNameBase base, String pattern, boolean everywhere, Computable<Boolean> cancelled, Processor<Object> consumer) {
-    super.filterElements(base, transformPattern(pattern), everywhere, cancelled, consumer);
+  public boolean filterElements(ChooseByNameBase base, String pattern, boolean everywhere, ProgressIndicator cancelled, Processor<Object> consumer) {
+    return super.filterElements(base, transformPattern(pattern), everywhere, cancelled, consumer);
   }
 
   public List<String> filterNames(ChooseByNameBase base, String[] names, String pattern) {

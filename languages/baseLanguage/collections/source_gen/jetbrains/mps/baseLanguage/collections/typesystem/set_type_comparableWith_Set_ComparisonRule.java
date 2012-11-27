@@ -14,7 +14,6 @@ import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_Runtime {
   private static SNodePointer SNODE_POINTER_3k2v7g_a0a0a0a0b0c0a0a0a0a0a0d = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Set");
-
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
 
   public set_type_comparableWith_Set_ComparisonRule() {

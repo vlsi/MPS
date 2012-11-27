@@ -15,7 +15,6 @@ import javax.swing.JComponent;
 
 public class ModuleDependenies_Tool extends GeneratedTool {
   private static final Icon ICON = IconUtil.getIcon("dependencies.png");
-
   private ModuleDependenciesView myComponent;
 
   public ModuleDependenies_Tool(Project project) {

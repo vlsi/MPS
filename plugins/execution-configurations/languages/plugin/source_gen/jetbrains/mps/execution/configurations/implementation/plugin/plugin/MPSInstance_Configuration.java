@@ -36,7 +36,6 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 
 public class MPSInstance_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   protected static Log log = LogFactory.getLog(MPSInstance_Configuration.class);
-
   @NotNull
   private MPSInstance_Configuration.MyState myState = new MPSInstance_Configuration.MyState();
 

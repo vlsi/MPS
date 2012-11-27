@@ -18,8 +18,8 @@ package jetbrains.mps.idea.core.usages.rules;
 
 
 import com.intellij.usages.Usage;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 public interface UsageInRoot extends Usage {
-  SNode getRoot();
+  SNodePointer getRoot();
 }

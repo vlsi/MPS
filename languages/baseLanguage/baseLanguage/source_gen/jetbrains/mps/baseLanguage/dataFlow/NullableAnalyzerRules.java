@@ -15,7 +15,6 @@ import java.util.HashSet;
 
 public class NullableAnalyzerRules {
   private static NullableAnalyzerRules instance;
-
   private Map<String, List<DataFlowConstructor>> myApplicableMap = new HashMap<String, List<DataFlowConstructor>>();
   private List<DataFlowConstructor> myConceptRules = new LinkedList();
   private Map<SNode, Set<DataFlowConstructor>> myConceptRulesCache = new HashMap();

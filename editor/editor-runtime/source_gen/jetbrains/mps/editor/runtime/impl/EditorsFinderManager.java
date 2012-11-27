@@ -46,7 +46,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class EditorsFinderManager implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(EditorsFinderManager.class);
-
   private ReloadListener myReloadListener = new ReloadAdapter() {
     @Override
     public void unload() {

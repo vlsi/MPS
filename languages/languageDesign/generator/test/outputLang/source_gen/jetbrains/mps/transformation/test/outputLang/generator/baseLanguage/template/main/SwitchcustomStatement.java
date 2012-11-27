@@ -23,7 +23,6 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
   private static SNodePointer reductionRule_68cped_a0a2b = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090603");
   private static SNodePointer conseq_68cped_a0a0a4b = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090622");
   private static SNodePointer templateNode_68cped_a0a0a2a4b = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090625");
-
   private final Iterable<TemplateReductionRule> rules;
 
   public SwitchcustomStatement() {

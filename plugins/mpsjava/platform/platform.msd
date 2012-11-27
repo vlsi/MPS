@@ -2,6 +2,9 @@
 <solution name="jetbrains.mps.ide.java.platform" uuid="f33a6c9c-f660-4bdb-aecd-2d144c61f7d2" pluginKind="PLUGIN_OTHER" compileInMPS="false" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot path="${module}/models" />
+    <modelRoot path="${module}/classes">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </modelRoot>
   </models>
   <sourcePath />
   <dependencies>

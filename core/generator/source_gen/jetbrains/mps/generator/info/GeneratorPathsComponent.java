@@ -19,7 +19,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 public class GeneratorPathsComponent implements CoreComponent {
   private static GeneratorPathsComponent INSTANCE;
   private static final List<IFile> EMPTY_LIST = Collections.emptyList();
-
   private List<ForeignPathsProvider> myForeignPathsProviders = ListSequence.fromList((ListSequence.fromList(new ArrayList<ForeignPathsProvider>()))).asSynchronized();
 
   public GeneratorPathsComponent() {

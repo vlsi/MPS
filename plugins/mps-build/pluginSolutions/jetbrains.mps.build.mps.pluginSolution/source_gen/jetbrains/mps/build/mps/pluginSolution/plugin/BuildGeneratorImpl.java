@@ -67,7 +67,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class BuildGeneratorImpl extends AbstractBuildGenerator {
   private static final String ICONS = "icons";
   private static Logger LOG = Logger.getLogger(BuildGeneratorImpl.class);
-
   private final Project myProject;
   private final IOperationContext myOperationContext;
 

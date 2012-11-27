@@ -10,7 +10,6 @@ import jetbrains.mps.debug.api.EmptyDebuggerSettings;
 
 public abstract class DebuggerRunProfileState implements RunProfileState {
   private static final Logger LOG = Logger.getLogger(DebuggerRunProfileState.class);
-
   @NotNull
   protected IDebuggerSettings myDebuggerSettings = EmptyDebuggerSettings.getInstance();
   private boolean myUpdated = false;

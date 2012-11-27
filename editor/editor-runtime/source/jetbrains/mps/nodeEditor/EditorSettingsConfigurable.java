@@ -46,12 +46,6 @@ public class EditorSettingsConfigurable implements SearchableConfigurable {
   }
 
   @Nullable
-  @Override
-  public Icon getIcon() {
-    return null;
-  }
-
-  @Nullable
   @NonNls
   @Override
   public String getHelpTopic() {

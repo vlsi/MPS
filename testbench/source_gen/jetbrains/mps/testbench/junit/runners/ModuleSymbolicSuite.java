@@ -20,7 +20,6 @@ import java.lang.annotation.ElementType;
 
 public class ModuleSymbolicSuite extends ParentRunner<Runner> {
   private static final String NO_TESTS = "EMPTY TEST CASE";
-
   private List<Runner> myRunners = new ArrayList<Runner>();
   private String myModuleRef;
   private RunnerBuilder myBuilder;

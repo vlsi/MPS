@@ -16,7 +16,6 @@ import com.intellij.openapi.extensions.Extensions;
 
 public class Remote_Kind implements ConfigurationType {
   private static final Icon ICON = IconUtil.getIcon("remote_run_configuration.png");
-
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
 
   public Remote_Kind() {

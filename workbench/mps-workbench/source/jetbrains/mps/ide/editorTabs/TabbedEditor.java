@@ -197,7 +197,16 @@ public class TabbedEditor extends BaseNodeEditor{
 
       model.addModelListener(myModelListener);
 
-      updateProperties();
+      if (ModelAccess.instance().isInEDT()){
+        updateProperties();
+      } else {
+        ModelAccess.instance().runReadInEDT(new Runnable() {
+          @Override
+          public void run() {
+            updateProperties();
+          }
+        });
+      }
     }
 
     if (select) {

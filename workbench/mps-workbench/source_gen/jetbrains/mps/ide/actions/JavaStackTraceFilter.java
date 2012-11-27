@@ -18,7 +18,6 @@ import jetbrains.mps.ide.common.FileOpenUtil;
 
 public class JavaStackTraceFilter implements Filter {
   private static String STRING_START = "at ";
-
   private final Project myProject;
 
   public JavaStackTraceFilter(Project project) {

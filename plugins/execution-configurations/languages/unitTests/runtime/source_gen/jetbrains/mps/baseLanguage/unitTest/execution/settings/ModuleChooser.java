@@ -9,7 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
+import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 import java.util.Collections;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -30,7 +30,7 @@ public class ModuleChooser extends BaseChooserComponent {
       public void actionPerformed(ActionEvent p0) {
         ModuleChooser.this.collectModules();
         StringBuilder result = new StringBuilder();
-        ModuleReference ref = CommonChoosers.showDialogModuleChooser(null, ModuleChooser.this, "", ModuleChooser.this.myCheckedModules, Collections.EMPTY_LIST);
+        ModuleReference ref = CommonChoosers.showDialogModuleChooser(null, "", ModuleChooser.this.myCheckedModules, Collections.EMPTY_LIST);
         if (ref != null) {
           result.append(ref.getModuleFqName());
           ModuleChooser.this.setText(result.toString());

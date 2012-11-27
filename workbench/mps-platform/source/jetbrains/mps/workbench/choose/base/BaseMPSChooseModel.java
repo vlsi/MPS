@@ -203,4 +203,9 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   public String getHelpId() {
     return null;
   }
+
+  @Override
+  public boolean useMiddleMatching() {
+    return true;
+  }
 }

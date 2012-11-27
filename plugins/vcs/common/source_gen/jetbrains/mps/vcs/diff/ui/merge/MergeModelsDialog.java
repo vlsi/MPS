@@ -65,7 +65,6 @@ import jetbrains.mps.vcs.diff.ui.common.ChangeColors;
 public class MergeModelsDialog extends DialogWrapper {
   public static final Icon APPLY_NON_CONFLICTS = IconLoader.getIcon("/diff/applyNotConflicts.png");
   public static final Icon RESET = IconLoader.getIcon("/actions/reset.png");
-
   private Project myProject;
   private MergeSession myMergeSession;
   private MergeSessionState myInitialState;

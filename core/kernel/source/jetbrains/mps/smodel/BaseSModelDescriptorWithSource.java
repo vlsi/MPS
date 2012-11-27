@@ -49,6 +49,9 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
 
   private long mySourceTimestamp = -1;
 
+  /*
+   *  Should resolve disk/memory conflicts if any.
+   */
   protected abstract void reloadFromDiskSafe();
 
   public long getSourceTimestamp() {
@@ -68,7 +71,7 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
   }
 
   public boolean needsReloading() {
-    return getSource().getTimestamp() != mySourceTimestamp;
+    return isLoaded() && getSource().getTimestamp() != mySourceTimestamp;
   }
 
   protected synchronized void replaceModel(Runnable replacer) {

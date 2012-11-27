@@ -905,7 +905,6 @@
                             <link role="variable" roleId="tp2q.1153944258490" targetNodeId="8432634623182692039" resolveInfo="classifierMethod" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="8432634623182692089">
-                            <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877350435" resolveInfo="hasSameSignature" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8432634623182692090">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8432634623182692091" resolveInfo="it" />

@@ -19,7 +19,6 @@ import jetbrains.mps.debugger.java.api.ui.Icons;
 
 public class JavaThread extends ProxyForJava implements IThread {
   private static Logger LOG = Logger.getLogger(JavaThread.class);
-
   @NotNull
   private final ThreadReference myThreadReference;
   @Nullable

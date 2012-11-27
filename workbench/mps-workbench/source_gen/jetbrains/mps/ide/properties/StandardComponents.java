@@ -10,7 +10,7 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModelChooser;
+import jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser;
 import javax.swing.DefaultListCellRenderer;
 import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModelRenderer;
 import javax.swing.TransferHandler;
@@ -18,19 +18,19 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport;
 import jetbrains.mps.workbench.dialogs.project.components.parts.validators.Validator;
 import jetbrains.mps.workbench.dialogs.project.components.parts.validators.ModelValidator;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.workbench.dialogs.project.components.parts.creators.LanguageChooser;
+import jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageChooser;
 import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModuleRenderer;
 import jetbrains.mps.workbench.dialogs.project.components.parts.validators.ModuleValidator;
-import jetbrains.mps.workbench.dialogs.project.components.parts.creators.SolutionChooser;
-import jetbrains.mps.workbench.dialogs.project.components.parts.creators.DevKitChooser;
-import jetbrains.mps.workbench.dialogs.project.components.parts.creators.GeneratorChooser;
+import jetbrains.mps.ide.ui.dialogs.properties.creators.SolutionChooser;
+import jetbrains.mps.ide.ui.dialogs.properties.creators.DevKitChooser;
+import jetbrains.mps.ide.ui.dialogs.properties.creators.GeneratorChooser;
 import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.GeneratorRenderer;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.SourcePathChooser;
 import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.StringPathRenderer;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundTablePanel;
-import jetbrains.mps.workbench.dialogs.project.components.parts.creators.DependencyChooser;
-import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ColumnDescriptor;
+import jetbrains.mps.ide.ui.dialogs.properties.creators.DependencyChooser;
+import jetbrains.mps.ide.ui.dialogs.properties.descriptors.ColumnDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.DepDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.BooleanDescriptor;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
@@ -44,7 +44,7 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.workbench.dialogs.project.components.parts.editors.ManagerTableCellEditor;
+import jetbrains.mps.ide.ui.dialogs.properties.editors.ManagerTableCellEditor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -54,14 +54,14 @@ import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubSolutionChooser;
 import javax.swing.JOptionPane;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.EditableStringDescriptor;
-import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.VoidColumnDescriptor;
-import jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubRootChooser;
+import jetbrains.mps.ide.ui.dialogs.properties.descriptors.VoidColumnDescriptor;
+import jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.Generator;
 import java.awt.Component;
-import jetbrains.mps.workbench.dialogs.project.components.parts.creators.MappingRuleCreator;
-import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.PriorityRuleDescriptor;
-import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.RuleTypeDescriptor;
+import jetbrains.mps.ide.ui.dialogs.properties.creators.MappingRuleCreator;
+import jetbrains.mps.ide.ui.dialogs.properties.descriptors.PriorityRuleDescriptor;
+import jetbrains.mps.ide.ui.dialogs.properties.descriptors.RuleTypeDescriptor;
 import java.awt.BorderLayout;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
@@ -108,7 +108,7 @@ public class StandardComponents {
         result_wf5hwp_a0a0a0.setCanRemoveCondition(result_wf5hwp_a0a0a0a0);
         final boolean result_wf5hwp_a1a0a0a0 = removeAnyway;
         result_wf5hwp_a0a0a0.setAllowRemoveAnyway(result_wf5hwp_a1a0a0a0);
-        final Computable result_wf5hwp_a2a0a0a0 = new ModelChooser(owner);
+        final Computable result_wf5hwp_a2a0a0a0 = new ModelChooser();
         result_wf5hwp_a0a0a0.setMultipleChooser(result_wf5hwp_a2a0a0a0);
         final DefaultListCellRenderer result_wf5hwp_a3a0a0a0 = new ModelRenderer(owner.getModuleScope(), owner.getProjectScope());
         result_wf5hwp_a0a0a0.setCellRenderer(result_wf5hwp_a3a0a0a0);
@@ -126,7 +126,7 @@ public class StandardComponents {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
         final BoundListPanel result_wf5hwp_a0a0a1 = new BoundListPanel(owner, caption, list);
-        final Computable result_wf5hwp_a0a0a0a1 = new LanguageChooser(owner);
+        final Computable result_wf5hwp_a0a0a0a1 = new LanguageChooser();
         result_wf5hwp_a0a0a1.setMultipleChooser(result_wf5hwp_a0a0a0a1);
         final DefaultListCellRenderer result_wf5hwp_a1a0a0a1 = new ModuleRenderer(owner.getModuleScope(), owner.getProjectScope());
         result_wf5hwp_a0a0a1.setCellRenderer(result_wf5hwp_a1a0a0a1);
@@ -148,7 +148,7 @@ public class StandardComponents {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
         final BoundListPanel result_wf5hwp_a0a0a3 = new BoundListPanel(owner, caption, list);
-        final Computable result_wf5hwp_a0a0a0a3 = new SolutionChooser(owner);
+        final Computable result_wf5hwp_a0a0a0a3 = new SolutionChooser();
         result_wf5hwp_a0a0a3.setMultipleChooser(result_wf5hwp_a0a0a0a3);
         final DefaultListCellRenderer result_wf5hwp_a1a0a0a3 = new ModuleRenderer(owner.getModuleScope(), owner.getProjectScope());
         result_wf5hwp_a0a0a3.setCellRenderer(result_wf5hwp_a1a0a0a3);
@@ -164,7 +164,7 @@ public class StandardComponents {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
         final BoundListPanel result_wf5hwp_a0a0a4 = new BoundListPanel(owner, caption, list);
-        final Computable result_wf5hwp_a0a0a0a4 = new DevKitChooser(owner);
+        final Computable result_wf5hwp_a0a0a0a4 = new DevKitChooser();
         result_wf5hwp_a0a0a4.setMultipleChooser(result_wf5hwp_a0a0a0a4);
         final DefaultListCellRenderer result_wf5hwp_a1a0a0a4 = new ModuleRenderer(owner.getModuleScope(), owner.getProjectScope());
         result_wf5hwp_a0a0a4.setCellRenderer(result_wf5hwp_a1a0a0a4);
@@ -180,7 +180,7 @@ public class StandardComponents {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
         final BoundListPanel result_wf5hwp_a0a0a5 = new BoundListPanel(owner, caption, list);
-        final Computable result_wf5hwp_a0a0a0a5 = new GeneratorChooser(owner);
+        final Computable result_wf5hwp_a0a0a0a5 = new GeneratorChooser();
         result_wf5hwp_a0a0a5.setMultipleChooser(result_wf5hwp_a0a0a0a5);
         final DefaultListCellRenderer result_wf5hwp_a1a0a0a5 = new GeneratorRenderer(owner.getModuleScope(), owner.getProjectScope());
         result_wf5hwp_a0a0a5.setCellRenderer(result_wf5hwp_a1a0a0a5);
@@ -210,7 +210,7 @@ public class StandardComponents {
     return new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
       public BoundTablePanel invoke() {
         final BoundTablePanel result_wf5hwp_a0a0a7 = new BoundTablePanel(owner, caption, list);
-        final Computable result_wf5hwp_a0a0a0a7 = new DependencyChooser(owner);
+        final Computable result_wf5hwp_a0a0a0a7 = new DependencyChooser();
         result_wf5hwp_a0a0a7.setMultipleChooser(result_wf5hwp_a0a0a0a7);
 
         final ColumnDescriptor result_wf5hwp_a2a0a0a7 = new DepDescriptor(owner, Dependency.MODULEREF, "Module", -1);
@@ -245,7 +245,7 @@ public class StandardComponents {
                 NameUtil.shortNameFromLongName(root.getManager().getClassName()) :
                 "Default"
               );
-              List<ModelRootManager> managers = ListSequence.fromList(ManagerTableCellEditor.getManagers(owner.getOperationContext())).where(new IWhereFilter<ModelRootManager>() {
+              List<ModelRootManager> managers = ListSequence.fromList(ManagerTableCellEditor.getManagers()).where(new IWhereFilter<ModelRootManager>() {
                 public boolean accept(ModelRootManager it) {
                   return it != null;
                 }
@@ -319,7 +319,7 @@ public class StandardComponents {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
         final BoundListPanel result_wf5hwp_a0a0a01 = new BoundListPanel(owner, caption, libs);
-        final Computable result_wf5hwp_a0a0a0a01 = new StubRootChooser(owner, modelRoots, javaLib);
+        final Computable result_wf5hwp_a0a0a0a01 = new StubRootChooser(modelRoots, javaLib);
         result_wf5hwp_a0a0a01.setMultipleChooser(result_wf5hwp_a0a0a0a01);
         final DefaultListCellRenderer result_wf5hwp_a1a0a0a01 = new StringPathRenderer();
         result_wf5hwp_a0a0a01.setCellRenderer(result_wf5hwp_a1a0a0a01);

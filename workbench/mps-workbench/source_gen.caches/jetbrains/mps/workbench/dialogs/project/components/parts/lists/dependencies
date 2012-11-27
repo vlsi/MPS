@@ -6,6 +6,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.StateUtil" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.Dependency" />
@@ -19,7 +20,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.util.EqualUtil" />
-    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.StateUtil" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedList" />
     <classNode dependClassName="org.jdesktop.observablecollections.ObservableCollections" />
     <classNode extendsClassName="java.util.Comparator" />

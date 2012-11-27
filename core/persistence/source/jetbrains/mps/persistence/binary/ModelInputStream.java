@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.persistence.binary;
 
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.SNodeId.Regular;
@@ -34,6 +36,7 @@ public class ModelInputStream extends DataInputStream {
 
   private List<String> myStrings = new ArrayList<String>(2048);
   private List<SModelReference> myModelRefs = new ArrayList<SModelReference>(1024);
+  private List<ModuleReference> myModuleRefs = new ArrayList<ModuleReference>(128);
 
   public ModelInputStream(InputStream in) {
     super(new BufferedInputStream(in, 65536));
@@ -65,6 +68,38 @@ public class ModelInputStream extends DataInputStream {
     }
     myStrings.add(res);
     return res;
+  }
+
+  public ModuleReference readModuleReference() throws IOException {
+    int c = readByte();
+    if (c == 0x70) {
+      return null;
+    } else if (c == 0x19) {
+      int index = readInt();
+      return myModuleRefs.get(index);
+    }
+
+    ModuleId id = null;
+    if (c == 0x17) {
+      id = readModuleID();
+    }
+    ModuleReference ref = new ModuleReference(readString(), id);
+    myModuleRefs.add(ref);
+    return ref;
+  }
+
+  public ModuleId readModuleID() throws IOException {
+    int c = readByte();
+    if (c == 0x70) {
+      return null;
+    } else if (c == 0x48) {
+      UUID uuid = new UUID(readLong(), readLong());
+      return ModuleId.regular(uuid);
+    } else if (c == 0x47) {
+      return ModuleId.foreign(readString());
+    } else {
+      throw new IOException("unknown id");
+    }
   }
 
   public SModelReference readModelReference() throws IOException {

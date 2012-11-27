@@ -48,7 +48,6 @@ public class VmCreator extends AbstractDebugSessionCreator {
   /*package*/ static final String SHMEM_ATTACHING_CONNECTOR_NAME = "com.sun.jdi.SharedMemoryAttach";
   /*package*/ static final String SOCKET_LISTENING_CONNECTOR_NAME = "com.sun.jdi.SocketListen";
   /*package*/ static final String SHMEM_LISTENING_CONNECTOR_NAME = "com.sun.jdi.SharedMemoryListen";
-
   private Map<String, Connector.Argument> myArguments;
   private DebugConnectionSettings myConnectionSettings;
   private final EventsProcessor myEventsProcessor;

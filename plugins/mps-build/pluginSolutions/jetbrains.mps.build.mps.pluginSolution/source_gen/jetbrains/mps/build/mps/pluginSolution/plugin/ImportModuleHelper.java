@@ -20,7 +20,6 @@ import jetbrains.mps.build.mps.util.ModuleLoader;
 
 public class ImportModuleHelper {
   private static Logger LOG = Logger.getLogger(ImportModuleHelper.class);
-
   private SNode project;
   private IFile moduleFile;
   private ModuleDescriptor moduleDescriptor;

@@ -25,7 +25,6 @@ import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
 public class GDBBreakpoint extends AbstractBreakpoint implements IBreakpoint, ILocationBreakpoint {
   private static final String BKPT = "bkpt";
   private static final String NUMBER = "number";
-
   private BreakpointRequestor myBreakpointRequestor;
   private boolean myAdded = false;
   private int myInternalGDBNumber = -1;

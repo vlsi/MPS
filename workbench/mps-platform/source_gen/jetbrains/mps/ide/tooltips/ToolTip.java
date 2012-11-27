@@ -26,7 +26,6 @@ public class ToolTip {
   public static final Color BACKGROUND_COLOR = new Color(253, 254, 226);
   private static final int X_OFFSET = 13;
   private static final int Y_OFFSET = 3;
-
   private ToolTip.MyDialog myDialog;
   private ToolTipData myHintInformation;
   private boolean myRigthAligned;

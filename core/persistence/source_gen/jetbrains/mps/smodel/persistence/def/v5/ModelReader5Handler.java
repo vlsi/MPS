@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4;
 
 public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
   private static String[] EMPTY_ARRAY = new String[0];
-
   private ModelReader5Handler.ModelElementHandler modelhandler = new ModelReader5Handler.ModelElementHandler();
   private ModelReader5Handler.PersistenceElementHandler persistencehandler = new ModelReader5Handler.PersistenceElementHandler();
   private ModelReader5Handler.MaxImportIndexElementHandler maxImportIndexhandler = new ModelReader5Handler.MaxImportIndexElementHandler();

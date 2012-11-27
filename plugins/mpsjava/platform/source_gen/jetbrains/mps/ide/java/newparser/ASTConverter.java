@@ -121,7 +121,6 @@ import jetbrains.mps.scope.Scope;
  */
 public class ASTConverter {
   private static final Logger LOG = Logger.getLogger(ASTConverter.class);
-
   @NotNull
   private TypeNameResolver myTypeResolver;
   private CompilationUnitDeclaration myCud;

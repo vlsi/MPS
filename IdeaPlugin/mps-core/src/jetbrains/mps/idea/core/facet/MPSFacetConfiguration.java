@@ -113,11 +113,6 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
       myContext = context;
     }
 
-    @Override
-    public Icon getIcon() {
-      return MPSIcons.MPS_ICON;
-    }
-
     @Nls
     public String getDisplayName() {
       return "Common";

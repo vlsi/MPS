@@ -31,7 +31,6 @@ public class MPSProjectITestsSuite extends Suite {
   private static String PROPERTY_MODULE_UUID = "mps.junit.projectSuite.moduleUUID";
   private static String PROPERTY_MODEL_NAME = "mps.junit.projectSuite.modelLongName";
   private static String PROPERTY_TESTCLASS_NAME = "mps.junit.projectSuite.testClassName";
-
   private List<Runner> myRunners = ListSequence.fromList(new ArrayList<Runner>());
 
   public MPSProjectITestsSuite(Class<?> klass, RunnerBuilder builder) throws Throwable {

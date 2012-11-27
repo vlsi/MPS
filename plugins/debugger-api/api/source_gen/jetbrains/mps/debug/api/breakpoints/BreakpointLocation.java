@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SModelReference;
 
 public class BreakpointLocation {
   private static final Logger LOG = Logger.getLogger(BreakpointLocation.class);
-
   private final SNodePointer myNodePointer;
 
   public BreakpointLocation(@NotNull SNodePointer nodePointer) {

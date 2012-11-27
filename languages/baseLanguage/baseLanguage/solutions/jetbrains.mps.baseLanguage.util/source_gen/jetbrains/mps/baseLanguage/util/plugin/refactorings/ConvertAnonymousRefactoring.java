@@ -31,7 +31,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ConvertAnonymousRefactoring {
   private static final Set<String> ROLES_NOT_TO_COPY = SetSequence.fromSetAndArray(new HashSet<String>(), "visibility");
-
   private SNode myClassToRefactor;
   private String myNameForInnerClass;
   private Map<SNode, SNode> myInnerFields;

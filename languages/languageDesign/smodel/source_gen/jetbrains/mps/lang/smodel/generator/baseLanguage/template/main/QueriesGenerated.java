@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.behavior.Node_ConceptMethodCall_Behavior;
+import jetbrains.mps.lang.smodel.generator.baseLanguage.util.ConceptMethodCallUtils;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -323,7 +324,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_5850694276437213950(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(Node_ConceptMethodCall_Behavior.call_isVirtualMethodCall_1213877437823(_context.getNode())) && !(SPropertyOperations.getBoolean(_context.getNode(), "directCall")) && !(Node_ConceptMethodCall_Behavior.call_isSuperMethodCall_1521124695248146659(_context.getNode()));
+    return !(Node_ConceptMethodCall_Behavior.call_isVirtualMethodCall_1213877437823(_context.getNode())) && !(ConceptMethodCallUtils.callShouldBeByReflection(_context.getOriginalInputModel())) && !(Node_ConceptMethodCall_Behavior.call_isSuperMethodCall_1521124695248146659(_context.getNode()));
   }
 
   public static boolean baseMappingRule_Condition_5850694276437457225(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

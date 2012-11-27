@@ -31,6 +31,7 @@ import jetbrains.mps.idea.core.usages.NodeUsageTarget;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -68,7 +69,7 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
 
     for (Object searchedNode : searchResults.getAliveNodes()) {
       if (searchedNode instanceof SNode) {
-        usageTargets.add(new NodeUsageTarget((SNode) searchedNode, myProject));
+        usageTargets.add(new NodeUsageTarget(new SNodePointer((SNode) searchedNode), myProject));
       }
     }
 
@@ -78,7 +79,7 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
       Object usage = searchResult.getObject();
       if (usage instanceof SNode && !(nodes.contains((SNode)usage))) {
         nodes.add((SNode) usage);
-        usages.add(new NodeUsage((SNode) usage, myProject, searchResult.getCategory()));
+        usages.add(new NodeUsage(new SNodePointer((SNode) usage), myProject, searchResult.getCategory()));
       }
     }
 

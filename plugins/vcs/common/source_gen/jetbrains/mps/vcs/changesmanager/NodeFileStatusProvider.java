@@ -8,11 +8,12 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.editor.MPSEditorUtil;
-import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.editor.Document;
+import com.intellij.util.ThreeState;
 
 public class NodeFileStatusProvider implements FileStatusProvider {
   private Project myProject;
@@ -25,6 +26,9 @@ public class NodeFileStatusProvider implements FileStatusProvider {
 
   public FileStatus getFileStatus(VirtualFile file) {
     if (file instanceof MPSNodeVirtualFile) {
+      if (!(ModelAccess.instance().isInEDT())) {
+        return FileStatus.NOT_CHANGED;
+      }
       final MPSNodeVirtualFile nodeFile = (MPSNodeVirtualFile) file;
       final Wrappers._T<SNode> root = new Wrappers._T<SNode>(MPSEditorUtil.getCurrentEditedNode(myProject, nodeFile));
       if (root.value == null) {
@@ -42,5 +46,9 @@ public class NodeFileStatusProvider implements FileStatusProvider {
   }
 
   public void refreshFileStatusFromDocument(VirtualFile file, Document document) {
+  }
+
+  public ThreeState getNotChangedDirectoryParentingStatus(VirtualFile file) {
+    return ThreeState.NO;
   }
 }

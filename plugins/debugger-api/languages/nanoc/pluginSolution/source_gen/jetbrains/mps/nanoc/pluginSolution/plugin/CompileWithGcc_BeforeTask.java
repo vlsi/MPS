@@ -32,10 +32,11 @@ public class CompileWithGcc_BeforeTask extends BaseMpsBeforeTaskProvider<Compile
     return KEY;
   }
 
-  public static class CompileWithGcc_BeforeTask_RunTask extends BaseMpsBeforeTaskProvider.BaseMpsBeforeRunTask {
+  public static class CompileWithGcc_BeforeTask_RunTask extends BaseMpsBeforeTaskProvider.BaseMpsBeforeRunTask<CompileWithGcc_BeforeTask.CompileWithGcc_BeforeTask_RunTask> {
     private SNode myFile;
 
     public CompileWithGcc_BeforeTask_RunTask() {
+      super(KEY);
     }
 
     public boolean configure(SNode file) {

@@ -18,7 +18,6 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 
 public class ModuleRepository_Tool extends GeneratedTool {
   private static final Icon ICON = IconUtil.getIcon("project.png");
-
   private ModuleRepositoryComponent myComponent;
   private JPanel myPanel;
 

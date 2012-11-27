@@ -310,14 +310,30 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   public boolean setMemento(Object o) {
     if (o instanceof Memento) {
       final Memento memento = (Memento) o;
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          myNodeEditorComponent.relayout();
-          memento.restore(myNodeEditorComponent);
-        }
-      });
+      if (ModelAccess.instance().isInEDT()) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            myNodeEditorComponent.relayout();
+            memento.restore(myNodeEditorComponent);
+          }
+        });
 
-      myNodeEditorComponent.flushEvents();
+        myNodeEditorComponent.flushEvents();
+      } else {
+        ModelAccess.instance().runReadInEDT(new Runnable() {
+          @Override
+          public void run() {
+            myNodeEditorComponent.relayout();
+            memento.restore(myNodeEditorComponent);
+            ModelAccess.instance().runWriteInEDT(new Runnable() {
+              @Override
+              public void run() {
+                myNodeEditorComponent.flushEvents();
+              }
+            });
+          }
+        });
+      }
 
       return true;
     }

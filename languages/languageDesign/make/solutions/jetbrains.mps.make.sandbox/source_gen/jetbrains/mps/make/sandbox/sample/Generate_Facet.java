@@ -57,7 +57,6 @@ public class Generate_Facet extends IFacet.Stub {
   public static class Target_GenerateTarget implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ICResouce.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("Generate.GenerateTarget");
 
     public Target_GenerateTarget() {

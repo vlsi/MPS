@@ -64,7 +64,6 @@ import jetbrains.mps.messages.IMessage;
 public class WorkbenchMakeService extends AbstractMakeService implements IMakeService, ApplicationComponent {
   private static Logger LOG = Logger.getLogger(WorkbenchMakeService.class);
   private static WorkbenchMakeService INSTANCE = null;
-
   private AtomicMarkableReference<MakeSession> currentSessionStickyMark = new AtomicMarkableReference<MakeSession>(null, false);
   private volatile AtomicReference<Future<IResult>> currentProcess = new AtomicReference<Future<IResult>>();
   private List<IMakeNotificationListener> listeners = Collections.synchronizedList(ListSequence.fromList(new ArrayList<IMakeNotificationListener>()));

@@ -65,7 +65,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   protected static Log log = LogFactory.getLog(LowLevelEvaluationModel.class);
-
   private AbstractClassifiersScope myScope;
   private boolean myVariablesInitialized = false;
   protected SNodePointer myEvaluatorPointer;

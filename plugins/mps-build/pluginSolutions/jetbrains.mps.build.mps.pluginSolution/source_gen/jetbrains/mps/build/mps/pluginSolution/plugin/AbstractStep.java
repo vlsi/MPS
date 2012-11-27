@@ -31,7 +31,6 @@ import java.awt.RenderingHints;
 
 public abstract class AbstractStep extends StepAdapter {
   private static Logger LOG = Logger.getLogger(AbstractStep.class);
-
   protected JPanel myMainPanel;
 
   public AbstractStep() {

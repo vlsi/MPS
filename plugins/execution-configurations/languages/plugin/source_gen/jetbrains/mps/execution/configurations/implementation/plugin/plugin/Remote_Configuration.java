@@ -27,7 +27,6 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 
 public class Remote_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   protected static Log log = LogFactory.getLog(Remote_Configuration.class);
-
   @NotNull
   private Remote_Configuration.MyState myState = new Remote_Configuration.MyState();
 

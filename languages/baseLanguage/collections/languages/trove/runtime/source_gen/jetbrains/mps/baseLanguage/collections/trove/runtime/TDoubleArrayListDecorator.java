@@ -13,7 +13,6 @@ import java.util.NoSuchElementException;
 
 public class TDoubleArrayListDecorator extends AbstractList<Double> implements List<Double>, Serializable {
   private static final long serialVersionUID = -4675825719645399432L;
-
   private TDoubleArrayList primList;
 
   public TDoubleArrayListDecorator() {

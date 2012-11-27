@@ -20,7 +20,6 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 public class ScopePositionInfo extends PositionInfo {
   private static String VAR_INFO = "varInfo";
   private static Logger LOG = Logger.getLogger(ScopePositionInfo.class);
-
   private SortedMap<String, VarInfo> myNamesToVars = SortedMapSequence.fromMap(new TreeMap<String, VarInfo>());
   private Map<SNode, VarInfo> myTempNodeToVarMap = MapSequence.fromMap(new HashMap<SNode, VarInfo>());
 

@@ -25,7 +25,6 @@ public class MPSTaskData {
   public static final String PATH = "path";
   public static final String ELEM_LIBRARIES = "libraries";
   public static final String ELEM_LIBRARY = "library";
-
   private Element myXML;
   private String myWorker;
   private boolean myFailOnError = true;

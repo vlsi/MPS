@@ -27,7 +27,6 @@ public class MergeCoreTest {
   private static String ourPlayRefactoringWas;
   private static boolean ourMergeDriverModeWas;
   private static final String PLAY_REFACTORINGS_PROPERTY = "mps.playRefactorings";
-
   private String myZipName;
 
   public MergeCoreTest(String testName, String zipName) {

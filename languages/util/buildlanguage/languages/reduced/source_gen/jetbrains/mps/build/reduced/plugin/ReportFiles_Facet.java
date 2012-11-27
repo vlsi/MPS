@@ -68,7 +68,6 @@ public class ReportFiles_Facet extends IFacet.Stub {
   public static class Target_report implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IDeltaResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.build.reduced.ReportFiles.report");
 
     public Target_report() {

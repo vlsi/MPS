@@ -12,7 +12,6 @@ import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
 
 public class CustomViewersInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private static Logger LOG = Logger.getLogger(CustomViewersInitializer_CustomApplicationPlugin.class);
-
   private List<ValueWrapperFactory> myFactories = ListSequence.fromList(new ArrayList<ValueWrapperFactory>());
 
   public CustomViewersInitializer_CustomApplicationPlugin() {

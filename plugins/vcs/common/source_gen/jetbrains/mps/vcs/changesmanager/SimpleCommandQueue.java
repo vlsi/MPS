@@ -10,7 +10,6 @@ import org.jetbrains.annotations.NotNull;
 
 public class SimpleCommandQueue {
   protected static Log log = LogFactory.getLog(SimpleCommandQueue.class);
-
   private Thread myThread;
   private boolean myDisposed = false;
   private boolean myHadExceptions = false;

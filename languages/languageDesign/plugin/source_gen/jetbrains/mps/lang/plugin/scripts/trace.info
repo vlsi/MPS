@@ -1,55 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1562009418797019073" modelId="r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)">
-    <nodeInfo nodeId="1562009418797019073" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="15" startPosition="93" endLine="16" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="18" startPosition="31" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="22" startPosition="41" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="26" startPosition="59" endLine="27" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1562009418797019460" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="31" startPosition="65" endLine="32" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1562009418797019079" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="33" startPosition="9" endLine="34" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1562009418797019094" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="35" startPosition="55" endLine="36" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1562009418797019106" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="37" startPosition="9" endLine="38" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1562009418797019435" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="41" startPosition="52" endLine="42" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="45" startPosition="42" endLine="46" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1562009418797019450" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="30" startPosition="59" endLine="33" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1562009418797019092" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="34" startPosition="124" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="30" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1562009418797019073" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="16" startPosition="48" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="16" startPosition="48" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1562009418797019073" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="15" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MigrateToDispatchBehaviorCalls_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <scopeInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="18" startPosition="31" endLine="19" endPosition="63" />
-    <scopeInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="22" startPosition="41" endLine="23" endPosition="63" />
-    <scopeInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="26" startPosition="59" endLine="27" endPosition="76" />
-    <scopeInfo nodeId="1562009418797019451" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="31" startPosition="65" endLine="32" endPosition="23" />
-    <scopeInfo nodeId="1562009418797019093" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="35" startPosition="55" endLine="36" endPosition="69" />
-    <scopeInfo nodeId="1562009418797019076" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="41" startPosition="52" endLine="42" endPosition="65" />
-    <scopeInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="45" startPosition="42" endLine="46" endPosition="20" />
-    <scopeInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
-      <varInfo nodeId="1562009418797019074" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1562009418797019078" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="30" startPosition="59" endLine="38" endPosition="21">
-      <varInfo nodeId="1562009418797019080" varName="descriptor" />
-    </scopeInfo>
-    <scopeInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="30" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="1562009418797019074" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="16" startPosition="48" endLine="48" endPosition="7" />
-    <scopeInfo nodeId="1562009418797019073" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="15" startPosition="93" endLine="48" endPosition="7" />
-    <scopeInfo nodeId="1562009418797019073" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="15" startPosition="0" endLine="50" endPosition="0">
-      <varInfo nodeId="1562009418797019073" varName="operationContext" />
-    </scopeInfo>
-    <unitInfo nodeId="1562009418797019074" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="17" startPosition="28" endLine="48" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.MigrateToDispatchBehaviorCalls_MigrationScript$1" />
-    <unitInfo nodeId="1562009418797019073" fileName="MigrateToDispatchBehaviorCalls_MigrationScript.java" startLine="14" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.MigrateToDispatchBehaviorCalls_MigrationScript" />
-  </root>
+  <root nodeId="1562009418797019073" modelId="r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)" />
   <root nodeId="1640281869714700106" modelId="r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)">
     <nodeInfo nodeId="1640281869714700106" fileName="UpdateTabCreation_MigrationScript.java" startLine="13" startPosition="80" endLine="14" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1640281869714700107" fileName="UpdateTabCreation_MigrationScript.java" startLine="16" startPosition="31" endLine="17" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -97,8 +48,8 @@
     <unitInfo nodeId="1640281869714700106" fileName="UpdateTabCreation_MigrationScript.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.UpdateTabCreation_MigrationScript" />
   </root>
   <root nodeId="1760076887286546794" modelId="r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)">
-    <nodeInfo nodeId="1760076887286546819" fileName="MpsClasspathRefUtil.java" startLine="28" startPosition="70" endLine="29" endPosition="575" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1760076887286546826" fileName="MpsClasspathRefUtil.java" startLine="29" startPosition="575" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1760076887286546819" fileName="MpsClasspathRefUtil.java" startLine="28" startPosition="70" endLine="29" endPosition="685" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1760076887286546826" fileName="MpsClasspathRefUtil.java" startLine="29" startPosition="685" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1760076887286546827" fileName="MpsClasspathRefUtil.java" startLine="30" startPosition="0" endLine="31" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1760076887286546832" fileName="MpsClasspathRefUtil.java" startLine="31" startPosition="50" endLine="32" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1760076887286546840" fileName="MpsClasspathRefUtil.java" startLine="32" startPosition="68" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />

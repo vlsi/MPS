@@ -27,7 +27,6 @@ import jetbrains.mps.ide.make.actions.MakeActionImpl;
 public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(MakeOrRebuildModelsFromChangeList_Action.class);
-
   private boolean rebuild;
 
   public MakeOrRebuildModelsFromChangeList_Action(boolean rebuild_par) {

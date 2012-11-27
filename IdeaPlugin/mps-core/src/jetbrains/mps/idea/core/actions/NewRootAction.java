@@ -27,6 +27,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
@@ -37,17 +38,15 @@ import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -122,10 +121,10 @@ public class NewRootAction extends AnAction {
     Module module = e.getData(LangDataKeys.MODULE);
     VirtualFile[] vFiles = e.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY);
     if (module == null ||
-        vFiles == null ||
-        vFiles.length != 1 ||
-        vFiles[0].isDirectory() ||
-        FileTypeRegistry.getInstance().getFileTypeByFile(vFiles[0]) != MPSFileTypeFactory.MODEL_FILE_TYPE) {
+      vFiles == null ||
+      vFiles.length != 1 ||
+      vFiles[0].isDirectory() ||
+      FileTypeRegistry.getInstance().getFileTypeByFile(vFiles[0]) != MPSFileTypeFactory.MODEL_FILE_TYPE) {
       return;
     }
 
@@ -139,9 +138,10 @@ public class NewRootAction extends AnAction {
       return;
     }
     String path = VirtualFileManager.extractPath(url);
-    for (ModelRootDescriptor descr : mpsFacet.getSolution().getModuleDescriptor().getModelRootDescriptors()) {
-      ModelRoot modelRoot = descr.getRoot();
-      if (modelRoot != null && path.startsWith(modelRoot.getPath())) {
+    for (ModelRoot root : mpsFacet.getSolution().getModelRoots()) {
+      if (!(root instanceof FolderModelRootBase)) continue;
+      FolderModelRootBase modelRoot = (FolderModelRootBase) root;
+      if (path.startsWith(modelRoot.getPath())) {
         Solution solution = mpsFacet.getSolution();
         myOperationContext = new ModuleContext(solution, mpsProject);
         myModelDescriptor = (EditableSModelDescriptor) SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(vFiles[0].getPath()));
@@ -154,7 +154,7 @@ public class NewRootAction extends AnAction {
               for (Language language : modelLanguages) {
                 for (SNode concept : language.getConceptDeclarations()) {
                   String conceptFqName = NameUtil.nodeFQName(concept);
-                  if (ModelConstraintsManager.canBeRoot(myOperationContext, conceptFqName, model)) {
+                  if (ModelConstraints.canBeRoot(conceptFqName, model, null)) {
                     myConceptFqNameToNodePointerMap.put(conceptFqName, new SNodePointer(concept));
                   }
                 }

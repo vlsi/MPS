@@ -11,8 +11,16 @@
       <include name="javac2.jar" />
       <include name="jdom.jar" />
       <include name="asm.jar" />
+      <include name="asm4-all.jar" />
       <include name="asm-commons.jar" />
       <include name="jgoodies-forms.jar" />
+    </fileset>
+  </path>
+  
+  <path id="path.jdk.classpath">
+    <pathelement path="${java.home}/../Classes/classes.jar" />
+    <fileset dir="${java.home}">
+      <include name="lib/*.jar" />
     </fileset>
   </path>
   
@@ -57,7 +65,10 @@
         <path location="${mps_home}/MPSPlugin/source" />
         <path location="${mps_home}/MPSPlugin/source-api" />
       </src>
-      <classpath refid="path.java.library.idea-jars" />
+      <classpath>
+        <path refid="path.java.library.idea-jars" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/MPS-plugin">
       <fileset dir="${mps_home}/MPSPlugin">

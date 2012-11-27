@@ -92,7 +92,7 @@ public class TestMergeAction_Action extends BaseAction {
           final String resFile = resString;
           final SModel[] models = zipped;
 
-          MergeModelsDialog dialog = new MergeModelsDialog(models[0], models[1], models[2], new SimpleDiffRequest(((Project) MapSequence.fromMap(_params).get("project")), null, new String[]{"Local Version", "Merge Result", "Remote Version"}));
+          MergeModelsDialog dialog = new MergeModelsDialog(models[0], models[1], models[2], new SimpleDiffRequest(((Project) MapSequence.fromMap(_params).get("project")), models, new String[]{"Local Version", "Merge Result", "Remote Version"}));
           dialog.show();
           final SModel result = dialog.getResultModelWithFixedId();
           if (result != null) {

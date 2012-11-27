@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.SNode;
 
 public class ASMModelLoader {
   private static final Logger LOG = Logger.getLogger(ASMModelLoader.class);
-
   private final IClassPathItem myCpItem;
   private final SModel myModel;
   private final IModule myModule;

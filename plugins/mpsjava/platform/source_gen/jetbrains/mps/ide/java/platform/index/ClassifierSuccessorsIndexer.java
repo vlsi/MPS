@@ -27,7 +27,6 @@ import java.util.ArrayList;
 
 public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalSNodeId, List<GlobalSNodeId>> {
   public static final ID<GlobalSNodeId, List<GlobalSNodeId>> NAME = ID.create("jetbrains.mps.ClassifierSuccessorsIndexer");
-
   private FileBasedIndex.InputFilter myInputFilter = new ClassifierSuccessorsIndexer.InputFilter();
   private KeyDescriptor<GlobalSNodeId> myKeyDescriptor = new GlobalSNodeIdDescriptor();
   private DataExternalizer<List<GlobalSNodeId>> myDataExternalizer = new ListExternalizer(myKeyDescriptor);

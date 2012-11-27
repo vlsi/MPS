@@ -851,29 +851,29 @@
   </root>
   <root nodeId="4507335185602804386" modelId="r:04a4e07b-6b42-4834-848a-987fb6edcd08(jetbrains.mps.ide.java.platform.refactorings)">
     <nodeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
-    <nodeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="14" startPosition="5" endLine="15" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="15" startPosition="42" endLine="16" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="23" startPosition="37" endLine="24" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="27" startPosition="39" endLine="28" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="31" startPosition="69" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IconResourceBundle_ExtractMethodIcons#()V" />
-    <nodeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeys#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResource#(Ljava/lang/String;)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ide/java/platform/refactorings/IconResourceBundle_ExtractMethodIcons;" />
-    <nodeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="13" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="icons" />
-    <scopeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="20" startPosition="50" endLine="20" endPosition="50" />
-    <scopeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="23" startPosition="37" endLine="24" endPosition="26" />
-    <scopeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="27" startPosition="39" endLine="28" endPosition="26" />
-    <scopeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="31" startPosition="69" endLine="32" endPosition="58" />
-    <scopeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="14" startPosition="5" endLine="16" endPosition="46" />
-    <scopeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
+    <nodeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="13" startPosition="5" endLine="14" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="14" startPosition="42" endLine="15" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="22" startPosition="37" endLine="23" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="26" startPosition="39" endLine="27" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="30" startPosition="69" endLine="31" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IconResourceBundle_ExtractMethodIcons#()V" />
+    <nodeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeys#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResource#(Ljava/lang/String;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ide/java/platform/refactorings/IconResourceBundle_ExtractMethodIcons;" />
+    <nodeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="12" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="icons" />
+    <scopeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="19" startPosition="50" endLine="19" endPosition="50" />
+    <scopeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="22" startPosition="37" endLine="23" endPosition="26" />
+    <scopeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="26" startPosition="39" endLine="27" endPosition="26" />
+    <scopeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="30" startPosition="69" endLine="31" endPosition="58" />
+    <scopeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="13" startPosition="5" endLine="15" endPosition="46" />
+    <scopeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="4507335185602804386" varName="key" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="13" startPosition="40" endLine="18" endPosition="3" unitName="jetbrains.mps.ide.java.platform.refactorings.IconResourceBundle_ExtractMethodIcons$1" />
-    <unitInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ide.java.platform.refactorings.IconResourceBundle_ExtractMethodIcons" />
+    <scopeInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
+    <unitInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="12" startPosition="40" endLine="17" endPosition="3" unitName="jetbrains.mps.ide.java.platform.refactorings.IconResourceBundle_ExtractMethodIcons$1" />
+    <unitInfo nodeId="4507335185602804386" fileName="IconResourceBundle_ExtractMethodIcons.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ide.java.platform.refactorings.IconResourceBundle_ExtractMethodIcons" />
   </root>
   <root nodeId="4507335185602804393" modelId="r:04a4e07b-6b42-4834-848a-987fb6edcd08(jetbrains.mps.ide.java.platform.refactorings)">
     <nodeInfo nodeId="4507335185602804394" fileName="ParameterTypeCellEditor.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelected" />
@@ -916,139 +916,139 @@
   </root>
   <root nodeId="4507335185602804486" modelId="r:04a4e07b-6b42-4834-848a-987fb6edcd08(jetbrains.mps.ide.java.platform.refactorings)">
     <nodeInfo nodeId="4507335185602804487" fileName="ParametersPanel.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MINIMUM_TABLE_COLUMN_WIDTH" />
-    <nodeInfo nodeId="4507335185602804491" fileName="ParametersPanel.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
-    <nodeInfo nodeId="4507335185602804494" fileName="ParametersPanel.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTableModel" />
-    <nodeInfo nodeId="4507335185602804992" fileName="ParametersPanel.java" startLine="37" startPosition="74" endLine="38" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4507335185602804993" fileName="ParametersPanel.java" startLine="38" startPosition="12" endLine="39" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804999" fileName="ParametersPanel.java" startLine="39" startPosition="26" endLine="40" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602805011" fileName="ParametersPanel.java" startLine="40" startPosition="79" endLine="41" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804501" fileName="ParametersPanel.java" startLine="44" startPosition="28" endLine="45" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804507" fileName="ParametersPanel.java" startLine="45" startPosition="40" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4507335185602804508" fileName="ParametersPanel.java" startLine="46" startPosition="0" endLine="47" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602804516" fileName="ParametersPanel.java" startLine="47" startPosition="66" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4507335185602804517" fileName="ParametersPanel.java" startLine="48" startPosition="0" endLine="49" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602804524" fileName="ParametersPanel.java" startLine="49" startPosition="58" endLine="50" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602804535" fileName="ParametersPanel.java" startLine="50" startPosition="113" endLine="51" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602804546" fileName="ParametersPanel.java" startLine="51" startPosition="116" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4507335185602804547" fileName="ParametersPanel.java" startLine="52" startPosition="0" endLine="53" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804552" fileName="ParametersPanel.java" startLine="53" startPosition="39" endLine="54" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804557" fileName="ParametersPanel.java" startLine="54" startPosition="51" endLine="55" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804562" fileName="ParametersPanel.java" startLine="55" startPosition="49" endLine="56" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804567" fileName="ParametersPanel.java" startLine="56" startPosition="74" endLine="57" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804575" fileName="ParametersPanel.java" startLine="57" startPosition="61" endLine="58" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804590" fileName="ParametersPanel.java" startLine="60" startPosition="55" endLine="61" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602804596" fileName="ParametersPanel.java" startLine="61" startPosition="49" endLine="62" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804603" fileName="ParametersPanel.java" startLine="62" startPosition="35" endLine="63" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804628" fileName="ParametersPanel.java" startLine="65" startPosition="7" endLine="66" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804633" fileName="ParametersPanel.java" startLine="66" startPosition="42" endLine="67" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804645" fileName="ParametersPanel.java" startLine="67" startPosition="89" endLine="68" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804671" fileName="ParametersPanel.java" startLine="70" startPosition="52" endLine="71" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804681" fileName="ParametersPanel.java" startLine="73" startPosition="7" endLine="74" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804697" fileName="ParametersPanel.java" startLine="74" startPosition="166" endLine="75" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602804705" fileName="ParametersPanel.java" startLine="75" startPosition="160" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4507335185602804706" fileName="ParametersPanel.java" startLine="76" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4507335185602804707" fileName="ParametersPanel.java" startLine="77" startPosition="0" endLine="78" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602804728" fileName="ParametersPanel.java" startLine="78" startPosition="153" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4507335185602804729" fileName="ParametersPanel.java" startLine="79" startPosition="0" endLine="80" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804735" fileName="ParametersPanel.java" startLine="80" startPosition="28" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4507335185602804736" fileName="ParametersPanel.java" startLine="81" startPosition="0" endLine="82" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804742" fileName="ParametersPanel.java" startLine="82" startPosition="16" endLine="83" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804748" fileName="ParametersPanel.java" startLine="83" startPosition="18" endLine="84" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804754" fileName="ParametersPanel.java" startLine="84" startPosition="37" endLine="85" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804762" fileName="ParametersPanel.java" startLine="88" startPosition="52" endLine="89" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602804773" fileName="ParametersPanel.java" startLine="93" startPosition="71" endLine="94" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602804782" fileName="ParametersPanel.java" startLine="94" startPosition="63" endLine="95" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602804788" fileName="ParametersPanel.java" startLine="96" startPosition="53" endLine="97" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602804796" fileName="ParametersPanel.java" startLine="97" startPosition="58" endLine="98" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602804812" fileName="ParametersPanel.java" startLine="98" startPosition="105" endLine="99" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602804822" fileName="ParametersPanel.java" startLine="100" startPosition="26" endLine="101" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804839" fileName="ParametersPanel.java" startLine="103" startPosition="7" endLine="104" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804859" fileName="ParametersPanel.java" startLine="108" startPosition="50" endLine="109" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602804878" fileName="ParametersPanel.java" startLine="112" startPosition="135" endLine="113" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602804883" fileName="ParametersPanel.java" startLine="113" startPosition="52" endLine="114" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804894" fileName="ParametersPanel.java" startLine="114" startPosition="40" endLine="115" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804900" fileName="ParametersPanel.java" startLine="115" startPosition="43" endLine="116" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804906" fileName="ParametersPanel.java" startLine="116" startPosition="16" endLine="117" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804912" fileName="ParametersPanel.java" startLine="117" startPosition="16" endLine="118" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804918" fileName="ParametersPanel.java" startLine="118" startPosition="18" endLine="119" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804924" fileName="ParametersPanel.java" startLine="119" startPosition="18" endLine="120" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804942" fileName="ParametersPanel.java" startLine="122" startPosition="50" endLine="123" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602804948" fileName="ParametersPanel.java" startLine="123" startPosition="51" endLine="124" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804958" fileName="ParametersPanel.java" startLine="124" startPosition="66" endLine="125" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804974" fileName="ParametersPanel.java" startLine="127" startPosition="7" endLine="128" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804979" fileName="ParametersPanel.java" startLine="128" startPosition="29" endLine="129" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804985" fileName="ParametersPanel.java" startLine="129" startPosition="29" endLine="130" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602804666" fileName="ParametersPanel.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tableChanged#(Ljavax/swing/event/TableModelEvent;)V" />
-    <nodeInfo nodeId="4507335185602804760" fileName="ParametersPanel.java" startLine="88" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTableModel#()Ljetbrains/mps/ide/java/platform/refactorings/ParametersTableModel;" />
-    <nodeInfo nodeId="4507335185602804820" fileName="ParametersPanel.java" startLine="99" startPosition="47" endLine="102" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4507335185602804857" fileName="ParametersPanel.java" startLine="108" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCellEditor#()Ljavax/swing/table/TableCellEditor;" />
-    <nodeInfo nodeId="4507335185602804586" fileName="ParametersPanel.java" startLine="60" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="valueChanged#(Ljavax/swing/event/ListSelectionEvent;)V" />
-    <nodeInfo nodeId="4507335185602804660" fileName="ParametersPanel.java" startLine="68" startPosition="104" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804938" fileName="ParametersPanel.java" startLine="122" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="4507335185602804989" fileName="ParametersPanel.java" startLine="37" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ParametersPanel#(Ljetbrains/mps/baseLanguage/util/plugin/refactorings/ExtractMethodRefactoringParameters;)V" />
-    <nodeInfo nodeId="4507335185602804580" fileName="ParametersPanel.java" startLine="58" startPosition="41" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602804930" fileName="ParametersPanel.java" startLine="120" startPosition="43" endLine="127" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602804786" fileName="ParametersPanel.java" startLine="95" startPosition="43" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="4507335185602804771" fileName="ParametersPanel.java" startLine="92" startPosition="50" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="4507335185602804767" fileName="ParametersPanel.java" startLine="92" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fitTableColumns#(Ljavax/swing/JTable;)V" />
-    <nodeInfo nodeId="4507335185602804866" fileName="ParametersPanel.java" startLine="112" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParametersRowMoveButton#(Ljavax/swing/JTable;Ljava/lang/String;IILjavax/swing/JComponent;)Ljavax/swing/JButton;" />
-    <nodeInfo nodeId="4507335185602804497" fileName="ParametersPanel.java" startLine="44" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initPanel#()V" />
-    <scopeInfo nodeId="4507335185602804670" fileName="ParametersPanel.java" startLine="70" startPosition="52" endLine="71" endPosition="62" />
-    <scopeInfo nodeId="4507335185602804761" fileName="ParametersPanel.java" startLine="88" startPosition="52" endLine="89" endPosition="29" />
-    <scopeInfo nodeId="4507335185602804821" fileName="ParametersPanel.java" startLine="100" startPosition="26" endLine="101" endPosition="22" />
-    <scopeInfo nodeId="4507335185602804858" fileName="ParametersPanel.java" startLine="108" startPosition="50" endLine="109" endPosition="53" />
-    <scopeInfo nodeId="4507335185602804589" fileName="ParametersPanel.java" startLine="60" startPosition="55" endLine="63" endPosition="125">
+    <nodeInfo nodeId="4507335185602804491" fileName="ParametersPanel.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
+    <nodeInfo nodeId="4507335185602804494" fileName="ParametersPanel.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTableModel" />
+    <nodeInfo nodeId="4507335185602804992" fileName="ParametersPanel.java" startLine="36" startPosition="74" endLine="37" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4507335185602804993" fileName="ParametersPanel.java" startLine="37" startPosition="12" endLine="38" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804999" fileName="ParametersPanel.java" startLine="38" startPosition="26" endLine="39" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602805011" fileName="ParametersPanel.java" startLine="39" startPosition="79" endLine="40" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804501" fileName="ParametersPanel.java" startLine="43" startPosition="28" endLine="44" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804507" fileName="ParametersPanel.java" startLine="44" startPosition="40" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4507335185602804508" fileName="ParametersPanel.java" startLine="45" startPosition="0" endLine="46" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602804516" fileName="ParametersPanel.java" startLine="46" startPosition="66" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4507335185602804517" fileName="ParametersPanel.java" startLine="47" startPosition="0" endLine="48" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602804524" fileName="ParametersPanel.java" startLine="48" startPosition="58" endLine="49" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602804535" fileName="ParametersPanel.java" startLine="49" startPosition="113" endLine="50" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602804546" fileName="ParametersPanel.java" startLine="50" startPosition="116" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4507335185602804547" fileName="ParametersPanel.java" startLine="51" startPosition="0" endLine="52" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804552" fileName="ParametersPanel.java" startLine="52" startPosition="39" endLine="53" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804557" fileName="ParametersPanel.java" startLine="53" startPosition="51" endLine="54" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804562" fileName="ParametersPanel.java" startLine="54" startPosition="49" endLine="55" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804567" fileName="ParametersPanel.java" startLine="55" startPosition="74" endLine="56" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804575" fileName="ParametersPanel.java" startLine="56" startPosition="61" endLine="57" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804590" fileName="ParametersPanel.java" startLine="59" startPosition="55" endLine="60" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602804596" fileName="ParametersPanel.java" startLine="60" startPosition="49" endLine="61" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804603" fileName="ParametersPanel.java" startLine="61" startPosition="35" endLine="62" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804628" fileName="ParametersPanel.java" startLine="64" startPosition="7" endLine="65" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804633" fileName="ParametersPanel.java" startLine="65" startPosition="42" endLine="66" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804645" fileName="ParametersPanel.java" startLine="66" startPosition="89" endLine="67" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804671" fileName="ParametersPanel.java" startLine="69" startPosition="52" endLine="70" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804681" fileName="ParametersPanel.java" startLine="72" startPosition="7" endLine="73" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804697" fileName="ParametersPanel.java" startLine="73" startPosition="166" endLine="74" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602804705" fileName="ParametersPanel.java" startLine="74" startPosition="160" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4507335185602804706" fileName="ParametersPanel.java" startLine="75" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4507335185602804707" fileName="ParametersPanel.java" startLine="76" startPosition="0" endLine="77" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602804728" fileName="ParametersPanel.java" startLine="77" startPosition="153" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4507335185602804729" fileName="ParametersPanel.java" startLine="78" startPosition="0" endLine="79" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804735" fileName="ParametersPanel.java" startLine="79" startPosition="28" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4507335185602804736" fileName="ParametersPanel.java" startLine="80" startPosition="0" endLine="81" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804742" fileName="ParametersPanel.java" startLine="81" startPosition="16" endLine="82" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804748" fileName="ParametersPanel.java" startLine="82" startPosition="18" endLine="83" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804754" fileName="ParametersPanel.java" startLine="83" startPosition="37" endLine="84" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804762" fileName="ParametersPanel.java" startLine="87" startPosition="52" endLine="88" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602804773" fileName="ParametersPanel.java" startLine="92" startPosition="71" endLine="93" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602804782" fileName="ParametersPanel.java" startLine="93" startPosition="63" endLine="94" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602804788" fileName="ParametersPanel.java" startLine="95" startPosition="53" endLine="96" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602804796" fileName="ParametersPanel.java" startLine="96" startPosition="58" endLine="97" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602804812" fileName="ParametersPanel.java" startLine="97" startPosition="105" endLine="98" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602804822" fileName="ParametersPanel.java" startLine="99" startPosition="26" endLine="100" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804839" fileName="ParametersPanel.java" startLine="102" startPosition="7" endLine="103" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804859" fileName="ParametersPanel.java" startLine="107" startPosition="50" endLine="108" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602804878" fileName="ParametersPanel.java" startLine="111" startPosition="135" endLine="112" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602804883" fileName="ParametersPanel.java" startLine="112" startPosition="52" endLine="113" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804894" fileName="ParametersPanel.java" startLine="113" startPosition="40" endLine="114" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804900" fileName="ParametersPanel.java" startLine="114" startPosition="43" endLine="115" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804906" fileName="ParametersPanel.java" startLine="115" startPosition="16" endLine="116" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804912" fileName="ParametersPanel.java" startLine="116" startPosition="16" endLine="117" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804918" fileName="ParametersPanel.java" startLine="117" startPosition="18" endLine="118" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804924" fileName="ParametersPanel.java" startLine="118" startPosition="18" endLine="119" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804942" fileName="ParametersPanel.java" startLine="121" startPosition="50" endLine="122" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602804948" fileName="ParametersPanel.java" startLine="122" startPosition="51" endLine="123" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804958" fileName="ParametersPanel.java" startLine="123" startPosition="66" endLine="124" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804974" fileName="ParametersPanel.java" startLine="126" startPosition="7" endLine="127" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804979" fileName="ParametersPanel.java" startLine="127" startPosition="29" endLine="128" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804985" fileName="ParametersPanel.java" startLine="128" startPosition="29" endLine="129" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602804666" fileName="ParametersPanel.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tableChanged#(Ljavax/swing/event/TableModelEvent;)V" />
+    <nodeInfo nodeId="4507335185602804760" fileName="ParametersPanel.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTableModel#()Ljetbrains/mps/ide/java/platform/refactorings/ParametersTableModel;" />
+    <nodeInfo nodeId="4507335185602804820" fileName="ParametersPanel.java" startLine="98" startPosition="47" endLine="101" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4507335185602804857" fileName="ParametersPanel.java" startLine="107" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCellEditor#()Ljavax/swing/table/TableCellEditor;" />
+    <nodeInfo nodeId="4507335185602804586" fileName="ParametersPanel.java" startLine="59" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="valueChanged#(Ljavax/swing/event/ListSelectionEvent;)V" />
+    <nodeInfo nodeId="4507335185602804660" fileName="ParametersPanel.java" startLine="67" startPosition="104" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804938" fileName="ParametersPanel.java" startLine="121" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="4507335185602804989" fileName="ParametersPanel.java" startLine="36" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ParametersPanel#(Ljetbrains/mps/baseLanguage/util/plugin/refactorings/ExtractMethodRefactoringParameters;)V" />
+    <nodeInfo nodeId="4507335185602804580" fileName="ParametersPanel.java" startLine="57" startPosition="41" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804930" fileName="ParametersPanel.java" startLine="119" startPosition="43" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602804786" fileName="ParametersPanel.java" startLine="94" startPosition="43" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="4507335185602804771" fileName="ParametersPanel.java" startLine="91" startPosition="50" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="4507335185602804767" fileName="ParametersPanel.java" startLine="91" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fitTableColumns#(Ljavax/swing/JTable;)V" />
+    <nodeInfo nodeId="4507335185602804866" fileName="ParametersPanel.java" startLine="111" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParametersRowMoveButton#(Ljavax/swing/JTable;Ljava/lang/String;IILjavax/swing/JComponent;)Ljavax/swing/JButton;" />
+    <nodeInfo nodeId="4507335185602804497" fileName="ParametersPanel.java" startLine="43" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initPanel#()V" />
+    <scopeInfo nodeId="4507335185602804670" fileName="ParametersPanel.java" startLine="69" startPosition="52" endLine="70" endPosition="62" />
+    <scopeInfo nodeId="4507335185602804761" fileName="ParametersPanel.java" startLine="87" startPosition="52" endLine="88" endPosition="29" />
+    <scopeInfo nodeId="4507335185602804821" fileName="ParametersPanel.java" startLine="99" startPosition="26" endLine="100" endPosition="22" />
+    <scopeInfo nodeId="4507335185602804858" fileName="ParametersPanel.java" startLine="107" startPosition="50" endLine="108" endPosition="53" />
+    <scopeInfo nodeId="4507335185602804589" fileName="ParametersPanel.java" startLine="59" startPosition="55" endLine="62" endPosition="125">
       <varInfo nodeId="4507335185602804591" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602804666" fileName="ParametersPanel.java" startLine="70" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="4507335185602804666" fileName="ParametersPanel.java" startLine="69" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="4507335185602804667" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602804760" fileName="ParametersPanel.java" startLine="88" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="4507335185602804857" fileName="ParametersPanel.java" startLine="108" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="4507335185602804941" fileName="ParametersPanel.java" startLine="122" startPosition="50" endLine="125" endPosition="85">
+    <scopeInfo nodeId="4507335185602804760" fileName="ParametersPanel.java" startLine="87" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="4507335185602804857" fileName="ParametersPanel.java" startLine="107" startPosition="0" endLine="110" endPosition="0" />
+    <scopeInfo nodeId="4507335185602804941" fileName="ParametersPanel.java" startLine="121" startPosition="50" endLine="124" endPosition="85">
       <varInfo nodeId="4507335185602804943" varName="row" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602804991" fileName="ParametersPanel.java" startLine="37" startPosition="74" endLine="41" endPosition="21" />
-    <scopeInfo nodeId="4507335185602804586" fileName="ParametersPanel.java" startLine="60" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="4507335185602804991" fileName="ParametersPanel.java" startLine="36" startPosition="74" endLine="40" endPosition="21" />
+    <scopeInfo nodeId="4507335185602804586" fileName="ParametersPanel.java" startLine="59" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="4507335185602804587" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602804938" fileName="ParametersPanel.java" startLine="122" startPosition="0" endLine="127" endPosition="0">
+    <scopeInfo nodeId="4507335185602804938" fileName="ParametersPanel.java" startLine="121" startPosition="0" endLine="126" endPosition="0">
       <varInfo nodeId="4507335185602804939" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602804989" fileName="ParametersPanel.java" startLine="37" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="4507335185602804989" fileName="ParametersPanel.java" startLine="36" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="4507335185602805015" varName="params" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602804787" fileName="ParametersPanel.java" startLine="96" startPosition="53" endLine="102" endPosition="9">
+    <scopeInfo nodeId="4507335185602804787" fileName="ParametersPanel.java" startLine="95" startPosition="53" endLine="101" endPosition="9">
       <varInfo nodeId="4507335185602804797" varName="c" />
       <varInfo nodeId="4507335185602804789" varName="r" />
       <varInfo nodeId="4507335185602804813" varName="width" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602804786" fileName="ParametersPanel.java" startLine="95" startPosition="43" endLine="103" endPosition="7">
+    <scopeInfo nodeId="4507335185602804786" fileName="ParametersPanel.java" startLine="94" startPosition="43" endLine="102" endPosition="7">
       <varInfo nodeId="4507335185602804834" varName="j" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602804772" fileName="ParametersPanel.java" startLine="93" startPosition="71" endLine="104" endPosition="36">
+    <scopeInfo nodeId="4507335185602804772" fileName="ParametersPanel.java" startLine="92" startPosition="71" endLine="103" endPosition="36">
       <varInfo nodeId="4507335185602804774" varName="column" />
       <varInfo nodeId="4507335185602804783" varName="max" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602804770" fileName="ParametersPanel.java" startLine="92" startPosition="50" endLine="105" endPosition="5" />
-    <scopeInfo nodeId="4507335185602804771" fileName="ParametersPanel.java" startLine="92" startPosition="50" endLine="105" endPosition="5">
+    <scopeInfo nodeId="4507335185602804770" fileName="ParametersPanel.java" startLine="91" startPosition="50" endLine="104" endPosition="5" />
+    <scopeInfo nodeId="4507335185602804771" fileName="ParametersPanel.java" startLine="91" startPosition="50" endLine="104" endPosition="5">
       <varInfo nodeId="4507335185602804851" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602804767" fileName="ParametersPanel.java" startLine="92" startPosition="0" endLine="107" endPosition="0">
+    <scopeInfo nodeId="4507335185602804767" fileName="ParametersPanel.java" startLine="91" startPosition="0" endLine="106" endPosition="0">
       <varInfo nodeId="4507335185602804768" varName="table" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602804877" fileName="ParametersPanel.java" startLine="112" startPosition="135" endLine="130" endPosition="18">
+    <scopeInfo nodeId="4507335185602804877" fileName="ParametersPanel.java" startLine="111" startPosition="135" endLine="129" endPosition="18">
       <varInfo nodeId="4507335185602804931" varName="button" />
       <varInfo nodeId="4507335185602804879" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602804866" fileName="ParametersPanel.java" startLine="112" startPosition="0" endLine="132" endPosition="0">
+    <scopeInfo nodeId="4507335185602804866" fileName="ParametersPanel.java" startLine="111" startPosition="0" endLine="131" endPosition="0">
       <varInfo nodeId="4507335185602804875" varName="component" />
       <varInfo nodeId="4507335185602804871" varName="dr" />
       <varInfo nodeId="4507335185602804869" varName="name" />
       <varInfo nodeId="4507335185602804867" varName="parametersTable" />
       <varInfo nodeId="4507335185602804873" varName="y" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602804500" fileName="ParametersPanel.java" startLine="44" startPosition="28" endLine="85" endPosition="30">
+    <scopeInfo nodeId="4507335185602804500" fileName="ParametersPanel.java" startLine="43" startPosition="28" endLine="84" endPosition="30">
       <varInfo nodeId="4507335185602804518" varName="buttonsPanel" />
       <varInfo nodeId="4507335185602804708" varName="c" />
       <varInfo nodeId="4507335185602804536" varName="downButton" />
@@ -1056,11 +1056,11 @@
       <varInfo nodeId="4507335185602804698" varName="scrollPane" />
       <varInfo nodeId="4507335185602804525" varName="upButton" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602804497" fileName="ParametersPanel.java" startLine="44" startPosition="0" endLine="87" endPosition="0" />
-    <unitInfo nodeId="4507335185602804665" fileName="ParametersPanel.java" startLine="69" startPosition="48" endLine="73" endPosition="5" unitName="jetbrains.mps.ide.java.platform.refactorings.ParametersPanel$2" />
-    <unitInfo nodeId="4507335185602804585" fileName="ParametersPanel.java" startLine="59" startPosition="69" endLine="65" endPosition="5" unitName="jetbrains.mps.ide.java.platform.refactorings.ParametersPanel$1" />
-    <unitInfo nodeId="4507335185602804937" fileName="ParametersPanel.java" startLine="121" startPosition="37" endLine="127" endPosition="5" unitName="jetbrains.mps.ide.java.platform.refactorings.ParametersPanel$3" />
-    <unitInfo nodeId="4507335185602804486" fileName="ParametersPanel.java" startLine="31" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.ide.java.platform.refactorings.ParametersPanel" />
+    <scopeInfo nodeId="4507335185602804497" fileName="ParametersPanel.java" startLine="43" startPosition="0" endLine="86" endPosition="0" />
+    <unitInfo nodeId="4507335185602804665" fileName="ParametersPanel.java" startLine="68" startPosition="48" endLine="72" endPosition="5" unitName="jetbrains.mps.ide.java.platform.refactorings.ParametersPanel$2" />
+    <unitInfo nodeId="4507335185602804585" fileName="ParametersPanel.java" startLine="58" startPosition="69" endLine="64" endPosition="5" unitName="jetbrains.mps.ide.java.platform.refactorings.ParametersPanel$1" />
+    <unitInfo nodeId="4507335185602804937" fileName="ParametersPanel.java" startLine="120" startPosition="37" endLine="126" endPosition="5" unitName="jetbrains.mps.ide.java.platform.refactorings.ParametersPanel$3" />
+    <unitInfo nodeId="4507335185602804486" fileName="ParametersPanel.java" startLine="31" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.ide.java.platform.refactorings.ParametersPanel" />
   </root>
   <root nodeId="4507335185602808421" modelId="r:04a4e07b-6b42-4834-848a-987fb6edcd08(jetbrains.mps.ide.java.platform.refactorings)">
     <nodeInfo nodeId="4507335185602808628" fileName="InlineMethodRefactoringAnalyzer.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOperationContext" />
@@ -1437,89 +1437,89 @@
     <nodeInfo nodeId="4507335185602813093" fileName="ParametersTableModel.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IS_SELECTED_COLUMN_INDEX" />
     <nodeInfo nodeId="4507335185602813097" fileName="ParametersTableModel.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TYPE_COLUMN_INDEX" />
     <nodeInfo nodeId="4507335185602813101" fileName="ParametersTableModel.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME_COLUMN_INDEX" />
-    <nodeInfo nodeId="4507335185602813105" fileName="ParametersTableModel.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameters" />
-    <nodeInfo nodeId="4507335185602813114" fileName="ParametersTableModel.java" startLine="17" startPosition="70" endLine="18" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602813128" fileName="ParametersTableModel.java" startLine="23" startPosition="36" endLine="24" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602813133" fileName="ParametersTableModel.java" startLine="25" startPosition="29" endLine="26" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602813138" fileName="ParametersTableModel.java" startLine="27" startPosition="29" endLine="28" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602813142" fileName="ParametersTableModel.java" startLine="29" startPosition="14" endLine="30" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602813150" fileName="ParametersTableModel.java" startLine="34" startPosition="28" endLine="35" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602813161" fileName="ParametersTableModel.java" startLine="38" startPosition="31" endLine="39" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602813170" fileName="ParametersTableModel.java" startLine="42" startPosition="38" endLine="43" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602813178" fileName="ParametersTableModel.java" startLine="43" startPosition="83" endLine="44" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602813190" fileName="ParametersTableModel.java" startLine="44" startPosition="115" endLine="45" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602813198" fileName="ParametersTableModel.java" startLine="45" startPosition="66" endLine="46" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602813214" fileName="ParametersTableModel.java" startLine="51" startPosition="36" endLine="52" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602813225" fileName="ParametersTableModel.java" startLine="53" startPosition="29" endLine="54" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602813236" fileName="ParametersTableModel.java" startLine="55" startPosition="29" endLine="56" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602813246" fileName="ParametersTableModel.java" startLine="57" startPosition="14" endLine="58" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602813261" fileName="ParametersTableModel.java" startLine="64" startPosition="36" endLine="65" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602813272" fileName="ParametersTableModel.java" startLine="65" startPosition="94" endLine="66" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="4507335185602813276" fileName="ParametersTableModel.java" startLine="67" startPosition="29" endLine="68" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602813287" fileName="ParametersTableModel.java" startLine="68" startPosition="95" endLine="69" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="4507335185602813291" fileName="ParametersTableModel.java" startLine="70" startPosition="29" endLine="71" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602813302" fileName="ParametersTableModel.java" startLine="71" startPosition="89" endLine="72" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="4507335185602813306" fileName="ParametersTableModel.java" startLine="74" startPosition="5" endLine="75" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602813320" fileName="ParametersTableModel.java" startLine="78" startPosition="54" endLine="79" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602813109" fileName="ParametersTableModel.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ParametersTableModel#(Ljava/util/List;)V" />
-    <nodeInfo nodeId="4507335185602813148" fileName="ParametersTableModel.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRowCount#()I" />
-    <nodeInfo nodeId="4507335185602813158" fileName="ParametersTableModel.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColumnCount#()I" />
-    <nodeInfo nodeId="4507335185602813314" fileName="ParametersTableModel.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isCellEditable#(II)Z" />
-    <nodeInfo nodeId="4507335185602813164" fileName="ParametersTableModel.java" startLine="42" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="swapRows#(II)V" />
-    <nodeInfo nodeId="4507335185602813125" fileName="ParametersTableModel.java" startLine="21" startPosition="51" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="4507335185602813211" fileName="ParametersTableModel.java" startLine="49" startPosition="49" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="4507335185602813121" fileName="ParametersTableModel.java" startLine="21" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColumnClass#(I)Ljava/lang/Class;" />
-    <nodeInfo nodeId="4507335185602813204" fileName="ParametersTableModel.java" startLine="49" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAt#(II)Ljava/lang/Object;" />
-    <nodeInfo nodeId="4507335185602813258" fileName="ParametersTableModel.java" startLine="62" startPosition="61" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="4507335185602813250" fileName="ParametersTableModel.java" startLine="62" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setValueAt#(Ljava/lang/Object;II)V" />
-    <scopeInfo nodeId="4507335185602813304" fileName="ParametersTableModel.java" startLine="73" startPosition="14" endLine="73" endPosition="14" />
-    <scopeInfo nodeId="4507335185602813113" fileName="ParametersTableModel.java" startLine="17" startPosition="70" endLine="18" endPosition="35" />
-    <scopeInfo nodeId="4507335185602813127" fileName="ParametersTableModel.java" startLine="23" startPosition="36" endLine="24" endPosition="29" />
-    <scopeInfo nodeId="4507335185602813132" fileName="ParametersTableModel.java" startLine="25" startPosition="29" endLine="26" endPosition="28" />
-    <scopeInfo nodeId="4507335185602813137" fileName="ParametersTableModel.java" startLine="27" startPosition="29" endLine="28" endPosition="28" />
-    <scopeInfo nodeId="4507335185602813141" fileName="ParametersTableModel.java" startLine="29" startPosition="14" endLine="30" endPosition="20" />
-    <scopeInfo nodeId="4507335185602813149" fileName="ParametersTableModel.java" startLine="34" startPosition="28" endLine="35" endPosition="60" />
-    <scopeInfo nodeId="4507335185602813160" fileName="ParametersTableModel.java" startLine="38" startPosition="31" endLine="39" endPosition="13" />
-    <scopeInfo nodeId="4507335185602813213" fileName="ParametersTableModel.java" startLine="51" startPosition="36" endLine="52" endPosition="85" />
-    <scopeInfo nodeId="4507335185602813224" fileName="ParametersTableModel.java" startLine="53" startPosition="29" endLine="54" endPosition="86" />
-    <scopeInfo nodeId="4507335185602813235" fileName="ParametersTableModel.java" startLine="55" startPosition="29" endLine="56" endPosition="82" />
-    <scopeInfo nodeId="4507335185602813245" fileName="ParametersTableModel.java" startLine="57" startPosition="14" endLine="58" endPosition="20" />
-    <scopeInfo nodeId="4507335185602813319" fileName="ParametersTableModel.java" startLine="78" startPosition="54" endLine="79" endPosition="16" />
-    <scopeInfo nodeId="4507335185602813260" fileName="ParametersTableModel.java" startLine="64" startPosition="36" endLine="66" endPosition="14" />
-    <scopeInfo nodeId="4507335185602813275" fileName="ParametersTableModel.java" startLine="67" startPosition="29" endLine="69" endPosition="14" />
-    <scopeInfo nodeId="4507335185602813290" fileName="ParametersTableModel.java" startLine="70" startPosition="29" endLine="72" endPosition="14" />
-    <scopeInfo nodeId="4507335185602813109" fileName="ParametersTableModel.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+    <nodeInfo nodeId="4507335185602813105" fileName="ParametersTableModel.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameters" />
+    <nodeInfo nodeId="4507335185602813114" fileName="ParametersTableModel.java" startLine="16" startPosition="70" endLine="17" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602813128" fileName="ParametersTableModel.java" startLine="22" startPosition="36" endLine="23" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602813133" fileName="ParametersTableModel.java" startLine="24" startPosition="29" endLine="25" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602813138" fileName="ParametersTableModel.java" startLine="26" startPosition="29" endLine="27" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602813142" fileName="ParametersTableModel.java" startLine="28" startPosition="14" endLine="29" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602813150" fileName="ParametersTableModel.java" startLine="33" startPosition="28" endLine="34" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602813161" fileName="ParametersTableModel.java" startLine="37" startPosition="31" endLine="38" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602813170" fileName="ParametersTableModel.java" startLine="41" startPosition="38" endLine="42" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602813178" fileName="ParametersTableModel.java" startLine="42" startPosition="83" endLine="43" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602813190" fileName="ParametersTableModel.java" startLine="43" startPosition="115" endLine="44" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602813198" fileName="ParametersTableModel.java" startLine="44" startPosition="66" endLine="45" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602813214" fileName="ParametersTableModel.java" startLine="50" startPosition="36" endLine="51" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602813225" fileName="ParametersTableModel.java" startLine="52" startPosition="29" endLine="53" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602813236" fileName="ParametersTableModel.java" startLine="54" startPosition="29" endLine="55" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602813246" fileName="ParametersTableModel.java" startLine="56" startPosition="14" endLine="57" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602813261" fileName="ParametersTableModel.java" startLine="63" startPosition="36" endLine="64" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602813272" fileName="ParametersTableModel.java" startLine="64" startPosition="94" endLine="65" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="4507335185602813276" fileName="ParametersTableModel.java" startLine="66" startPosition="29" endLine="67" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602813287" fileName="ParametersTableModel.java" startLine="67" startPosition="95" endLine="68" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="4507335185602813291" fileName="ParametersTableModel.java" startLine="69" startPosition="29" endLine="70" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602813302" fileName="ParametersTableModel.java" startLine="70" startPosition="89" endLine="71" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="4507335185602813306" fileName="ParametersTableModel.java" startLine="73" startPosition="5" endLine="74" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602813320" fileName="ParametersTableModel.java" startLine="77" startPosition="54" endLine="78" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602813109" fileName="ParametersTableModel.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ParametersTableModel#(Ljava/util/List;)V" />
+    <nodeInfo nodeId="4507335185602813148" fileName="ParametersTableModel.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRowCount#()I" />
+    <nodeInfo nodeId="4507335185602813158" fileName="ParametersTableModel.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColumnCount#()I" />
+    <nodeInfo nodeId="4507335185602813314" fileName="ParametersTableModel.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isCellEditable#(II)Z" />
+    <nodeInfo nodeId="4507335185602813164" fileName="ParametersTableModel.java" startLine="41" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="swapRows#(II)V" />
+    <nodeInfo nodeId="4507335185602813125" fileName="ParametersTableModel.java" startLine="20" startPosition="51" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="4507335185602813211" fileName="ParametersTableModel.java" startLine="48" startPosition="49" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="4507335185602813121" fileName="ParametersTableModel.java" startLine="20" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColumnClass#(I)Ljava/lang/Class;" />
+    <nodeInfo nodeId="4507335185602813204" fileName="ParametersTableModel.java" startLine="48" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAt#(II)Ljava/lang/Object;" />
+    <nodeInfo nodeId="4507335185602813258" fileName="ParametersTableModel.java" startLine="61" startPosition="61" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="4507335185602813250" fileName="ParametersTableModel.java" startLine="61" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setValueAt#(Ljava/lang/Object;II)V" />
+    <scopeInfo nodeId="4507335185602813304" fileName="ParametersTableModel.java" startLine="72" startPosition="14" endLine="72" endPosition="14" />
+    <scopeInfo nodeId="4507335185602813113" fileName="ParametersTableModel.java" startLine="16" startPosition="70" endLine="17" endPosition="35" />
+    <scopeInfo nodeId="4507335185602813127" fileName="ParametersTableModel.java" startLine="22" startPosition="36" endLine="23" endPosition="29" />
+    <scopeInfo nodeId="4507335185602813132" fileName="ParametersTableModel.java" startLine="24" startPosition="29" endLine="25" endPosition="28" />
+    <scopeInfo nodeId="4507335185602813137" fileName="ParametersTableModel.java" startLine="26" startPosition="29" endLine="27" endPosition="28" />
+    <scopeInfo nodeId="4507335185602813141" fileName="ParametersTableModel.java" startLine="28" startPosition="14" endLine="29" endPosition="20" />
+    <scopeInfo nodeId="4507335185602813149" fileName="ParametersTableModel.java" startLine="33" startPosition="28" endLine="34" endPosition="60" />
+    <scopeInfo nodeId="4507335185602813160" fileName="ParametersTableModel.java" startLine="37" startPosition="31" endLine="38" endPosition="13" />
+    <scopeInfo nodeId="4507335185602813213" fileName="ParametersTableModel.java" startLine="50" startPosition="36" endLine="51" endPosition="85" />
+    <scopeInfo nodeId="4507335185602813224" fileName="ParametersTableModel.java" startLine="52" startPosition="29" endLine="53" endPosition="86" />
+    <scopeInfo nodeId="4507335185602813235" fileName="ParametersTableModel.java" startLine="54" startPosition="29" endLine="55" endPosition="82" />
+    <scopeInfo nodeId="4507335185602813245" fileName="ParametersTableModel.java" startLine="56" startPosition="14" endLine="57" endPosition="20" />
+    <scopeInfo nodeId="4507335185602813319" fileName="ParametersTableModel.java" startLine="77" startPosition="54" endLine="78" endPosition="16" />
+    <scopeInfo nodeId="4507335185602813260" fileName="ParametersTableModel.java" startLine="63" startPosition="36" endLine="65" endPosition="14" />
+    <scopeInfo nodeId="4507335185602813275" fileName="ParametersTableModel.java" startLine="66" startPosition="29" endLine="68" endPosition="14" />
+    <scopeInfo nodeId="4507335185602813290" fileName="ParametersTableModel.java" startLine="69" startPosition="29" endLine="71" endPosition="14" />
+    <scopeInfo nodeId="4507335185602813109" fileName="ParametersTableModel.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="4507335185602813110" varName="parameters" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602813148" fileName="ParametersTableModel.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="4507335185602813158" fileName="ParametersTableModel.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="4507335185602813314" fileName="ParametersTableModel.java" startLine="78" startPosition="0" endLine="81" endPosition="0">
+    <scopeInfo nodeId="4507335185602813148" fileName="ParametersTableModel.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="4507335185602813158" fileName="ParametersTableModel.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="4507335185602813314" fileName="ParametersTableModel.java" startLine="77" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="4507335185602813317" varName="column" />
       <varInfo nodeId="4507335185602813315" varName="row" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602813169" fileName="ParametersTableModel.java" startLine="42" startPosition="38" endLine="46" endPosition="31">
+    <scopeInfo nodeId="4507335185602813169" fileName="ParametersTableModel.java" startLine="41" startPosition="38" endLine="45" endPosition="31">
       <varInfo nodeId="4507335185602813171" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602813164" fileName="ParametersTableModel.java" startLine="42" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="4507335185602813164" fileName="ParametersTableModel.java" startLine="41" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="4507335185602813165" varName="a" />
       <varInfo nodeId="4507335185602813167" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602813124" fileName="ParametersTableModel.java" startLine="21" startPosition="51" endLine="31" endPosition="5" />
-    <scopeInfo nodeId="4507335185602813210" fileName="ParametersTableModel.java" startLine="49" startPosition="49" endLine="59" endPosition="5" />
-    <scopeInfo nodeId="4507335185602813121" fileName="ParametersTableModel.java" startLine="21" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="4507335185602813124" fileName="ParametersTableModel.java" startLine="20" startPosition="51" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="4507335185602813210" fileName="ParametersTableModel.java" startLine="48" startPosition="49" endLine="58" endPosition="5" />
+    <scopeInfo nodeId="4507335185602813121" fileName="ParametersTableModel.java" startLine="20" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="4507335185602813122" varName="columnIndex" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602813204" fileName="ParametersTableModel.java" startLine="49" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="4507335185602813204" fileName="ParametersTableModel.java" startLine="48" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="4507335185602813207" varName="column" />
       <varInfo nodeId="4507335185602813205" varName="row" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602813257" fileName="ParametersTableModel.java" startLine="62" startPosition="61" endLine="75" endPosition="43" />
-    <scopeInfo nodeId="4507335185602813250" fileName="ParametersTableModel.java" startLine="62" startPosition="0" endLine="77" endPosition="0">
+    <scopeInfo nodeId="4507335185602813257" fileName="ParametersTableModel.java" startLine="61" startPosition="61" endLine="74" endPosition="43" />
+    <scopeInfo nodeId="4507335185602813250" fileName="ParametersTableModel.java" startLine="61" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="4507335185602813255" varName="column" />
       <varInfo nodeId="4507335185602813253" varName="row" />
       <varInfo nodeId="4507335185602813251" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="4507335185602813092" fileName="ParametersTableModel.java" startLine="10" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ide.java.platform.refactorings.ParametersTableModel" />
+    <unitInfo nodeId="4507335185602813092" fileName="ParametersTableModel.java" startLine="10" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.ide.java.platform.refactorings.ParametersTableModel" />
   </root>
   <root nodeId="4507335185602814391" modelId="r:04a4e07b-6b42-4834-848a-987fb6edcd08(jetbrains.mps.ide.java.platform.refactorings)">
     <nodeInfo nodeId="4507335185602814533" fileName="VisibilityPanel.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />

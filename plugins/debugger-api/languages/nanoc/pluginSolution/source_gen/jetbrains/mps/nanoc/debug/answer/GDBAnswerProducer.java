@@ -6,7 +6,6 @@ import jetbrains.mps.util.Pair;
 
 public class GDBAnswerProducer {
   public static final String SAMPLE_STRING = "8209685090165226878^done,locals=[{name=\"i\",value=\"0\"}]\r\n";
-
   private String myInput;
   private GDBAnswer myGDBAnswer;
   private boolean myHasError = false;

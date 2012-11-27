@@ -258,9 +258,9 @@
   </root>
   <root nodeId="7046856741208198647" modelId="r:10f25532-8045-4769-a24c-e48e027baa9d(jetbrains.mps.ui.sandbox.gwt)">
     <nodeInfo nodeId="7046856741208198655" fileName="MyResources.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
-    <nodeInfo nodeId="7046856741208198648" fileName="MyResources.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="css#()Lcom/google/gwt/resources/client/CssResource;" />
-    <scopeInfo nodeId="7046856741208198648" fileName="MyResources.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <unitInfo nodeId="7046856741208198647" fileName="MyResources.java" startLine="9" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.ui.sandbox.gwt.MyResources" />
+    <nodeInfo nodeId="7046856741208198648" fileName="MyResources.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="css#()Lcom/google/gwt/resources/client/CssResource;" />
+    <scopeInfo nodeId="7046856741208198648" fileName="MyResources.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
+    <unitInfo nodeId="7046856741208198647" fileName="MyResources.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.ui.sandbox.gwt.MyResources" />
   </root>
 </debugInfo>
 
