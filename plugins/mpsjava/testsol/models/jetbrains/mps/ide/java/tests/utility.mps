@@ -2748,8 +2748,8 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddAllElementsOperation" typeId="tp2q.1160666733551" id="7030568040400251685">
               <node role="argument" roleId="tp2q.1160666822012" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1122517132830109946">
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="1122517132830120381">
-                  <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.1107880067339" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2752112839363175339">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.5292274854859311639" resolveInfo="methods" />
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7030568040400251687">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7030568040400251404" resolveInfo="left" />
@@ -2765,8 +2765,8 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddAllElementsOperation" typeId="tp2q.1160666733551" id="7030568040400251735">
               <node role="argument" roleId="tp2q.1160666822012" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7030568040400251754">
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="1122517132830133331">
-                  <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.1107880067339" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2752112839363172458">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.5292274854859311639" resolveInfo="methods" />
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7030568040400251737">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7030568040400251406" resolveInfo="right" />
@@ -3971,7 +3971,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7030568040400429279" resolveInfo="node" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="7030568040400429528">
-                <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.1178616825527" />
+                <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.5375687026011219971" />
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddAllElementsOperation" typeId="tp2q.1160666733551" id="7030568040400429552">

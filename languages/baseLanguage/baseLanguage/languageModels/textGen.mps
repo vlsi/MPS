@@ -12275,11 +12275,11 @@
                 </node>
               </node>
               <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7520879497544096784">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2752112839363179658">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.5292274854859193142" resolveInfo="nestedClassifiers" />
+                </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7520879497544096785">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7520879497544096787" resolveInfo="superClassifier" />
-                </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="7520879497544096786">
-                  <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.1178616825527" />
                 </node>
               </node>
             </node>
