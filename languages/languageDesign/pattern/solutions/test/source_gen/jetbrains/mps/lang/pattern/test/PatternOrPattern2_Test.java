@@ -205,6 +205,7 @@ public class PatternOrPattern2_Test extends BaseTransformationTest4 {
         public void performActions(Object o) {
         }
       }
+
       /*package*/ SNode patternVar_body;
       /*package*/ SNode patternVar_s;
       private GeneratedMatchingPattern myOrPattern_pf9dr6_a0a;

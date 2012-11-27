@@ -387,6 +387,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
         public void performActions(Object o) {
         }
       }
+
       /*package*/ SNode patternVar_s;
       private GeneratedMatchingPattern myOrPattern_qy0uft_a0a;
 

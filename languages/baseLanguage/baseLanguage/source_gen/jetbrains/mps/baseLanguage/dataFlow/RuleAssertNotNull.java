@@ -144,6 +144,7 @@ public class RuleAssertNotNull extends DataFlowConstructor {
       public void performActions(Object o) {
       }
     }
+
     /*package*/ SNode patternVar_p;
     /*package*/ SNode patternVar_action_var_5730083271929373007;
     private GeneratedMatchingPattern myOrPattern_7fbm30_a0a0;
