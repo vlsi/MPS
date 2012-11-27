@@ -36,6 +36,9 @@ public class MigrateClassifierMembersSModelUsages_MigrationScript extends BaseMi
         if (!(NonMigratableUsagesFinder.isSequenceNeeded(node))) {
           return false;
         }
+        if (NonMigratableUsagesFinder.isExcluded(node)) {
+          return false;
+        }
         // not migrate usages with generator macroses etc! 
         return (int) ListSequence.fromList(SNodeOperations.getChildren(node)).count() == 0;
       }
@@ -68,6 +71,9 @@ public class MigrateClassifierMembersSModelUsages_MigrationScript extends BaseMi
         if (!(SetSequence.fromSet(MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).keySet()).contains(SLinkOperations.getTarget(node, "link", false)))) {
           return false;
         }
+        if (NonMigratableUsagesFinder.isExcluded(node)) {
+          return false;
+        }
         return NonMigratableUsagesFinder.isThisForSimpleAddOperation(node);
       }
 
@@ -97,7 +103,9 @@ public class MigrateClassifierMembersSModelUsages_MigrationScript extends BaseMi
         if (!(SetSequence.fromSet(MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).keySet()).contains(SLinkOperations.getTarget(node, "link", false)))) {
           return false;
         }
-
+        if (NonMigratableUsagesFinder.isExcluded(node)) {
+          return false;
+        }
         return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent((SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"))), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation");
       }
 
