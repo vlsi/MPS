@@ -153,202 +153,207 @@
     <unitInfo nodeId="5487985028841942674" fileName="FindInstancesContext.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesContext" />
   </root>
   <root nodeId="5487985028841942759" modelId="r:3a778ef5-24fe-4aa0-8558-f81e64e33ac0(jetbrains.mps.quickQueryLanguage.pluginSolution.plugin)">
-    <nodeInfo nodeId="5487985028841943034" fileName="FindInstancesDialog.java" startLine="43" startPosition="53" endLine="44" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
-    <nodeInfo nodeId="5487985028841943041" fileName="FindInstancesDialog.java" startLine="44" startPosition="58" endLine="45" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
-    <nodeInfo nodeId="5487985028841943044" fileName="FindInstancesDialog.java" startLine="45" startPosition="38" endLine="46" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditor" />
-    <nodeInfo nodeId="5487985028841943047" fileName="FindInstancesDialog.java" startLine="46" startPosition="36" endLine="47" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScope" />
-    <nodeInfo nodeId="5487985028841943050" fileName="FindInstancesDialog.java" startLine="47" startPosition="30" endLine="48" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="5487985028841943053" fileName="FindInstancesDialog.java" startLine="48" startPosition="23" endLine="49" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDisposed" />
-    <nodeInfo nodeId="5487985028841943057" fileName="FindInstancesDialog.java" startLine="49" startPosition="37" endLine="50" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelOwner" />
-    <nodeInfo nodeId="5487985028841943067" fileName="FindInstancesDialog.java" startLine="52" startPosition="85" endLine="53" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5487985028841943073" fileName="FindInstancesDialog.java" startLine="53" startPosition="90" endLine="54" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943079" fileName="FindInstancesDialog.java" startLine="54" startPosition="29" endLine="55" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943087" fileName="FindInstancesDialog.java" startLine="55" startPosition="42" endLine="56" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943095" fileName="FindInstancesDialog.java" startLine="58" startPosition="25" endLine="59" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943103" fileName="FindInstancesDialog.java" startLine="59" startPosition="138" endLine="60" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841943109" fileName="FindInstancesDialog.java" startLine="60" startPosition="123" endLine="61" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841943115" fileName="FindInstancesDialog.java" startLine="61" startPosition="135" endLine="62" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841943121" fileName="FindInstancesDialog.java" startLine="62" startPosition="128" endLine="63" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943127" fileName="FindInstancesDialog.java" startLine="63" startPosition="70" endLine="64" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943133" fileName="FindInstancesDialog.java" startLine="64" startPosition="93" endLine="65" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943140" fileName="FindInstancesDialog.java" startLine="65" startPosition="124" endLine="66" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943168" fileName="FindInstancesDialog.java" startLine="69" startPosition="62" endLine="70" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943174" fileName="FindInstancesDialog.java" startLine="75" startPosition="37" endLine="76" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8352668404579784765" fileName="FindInstancesDialog.java" startLine="78" startPosition="27" endLine="79" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943192" fileName="FindInstancesDialog.java" startLine="82" startPosition="54" endLine="83" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943205" fileName="FindInstancesDialog.java" startLine="85" startPosition="5" endLine="86" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943217" fileName="FindInstancesDialog.java" startLine="86" startPosition="73" endLine="87" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943226" fileName="FindInstancesDialog.java" startLine="88" startPosition="37" endLine="89" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943241" fileName="FindInstancesDialog.java" startLine="92" startPosition="25" endLine="93" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943250" fileName="FindInstancesDialog.java" startLine="93" startPosition="79" endLine="94" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841942763" fileName="FindInstancesDialog.java" startLine="99" startPosition="43" endLine="100" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841942775" fileName="FindInstancesDialog.java" startLine="105" startPosition="25" endLine="106" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841942791" fileName="FindInstancesDialog.java" startLine="112" startPosition="28" endLine="113" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841942797" fileName="FindInstancesDialog.java" startLine="115" startPosition="25" endLine="116" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841942806" fileName="FindInstancesDialog.java" startLine="118" startPosition="7" endLine="119" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5487985028841942820" fileName="FindInstancesDialog.java" startLine="119" startPosition="14" endLine="120" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841942843" fileName="FindInstancesDialog.java" startLine="124" startPosition="21" endLine="125" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841942847" fileName="FindInstancesDialog.java" startLine="126" startPosition="5" endLine="127" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841942853" fileName="FindInstancesDialog.java" startLine="129" startPosition="25" endLine="130" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841942859" fileName="FindInstancesDialog.java" startLine="132" startPosition="7" endLine="133" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841942872" fileName="FindInstancesDialog.java" startLine="133" startPosition="110" endLine="134" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841942881" fileName="FindInstancesDialog.java" startLine="134" startPosition="81" endLine="135" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841942887" fileName="FindInstancesDialog.java" startLine="136" startPosition="9" endLine="137" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841942906" fileName="FindInstancesDialog.java" startLine="139" startPosition="45" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5487985028841942913" fileName="FindInstancesDialog.java" startLine="143" startPosition="30" endLine="144" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841942917" fileName="FindInstancesDialog.java" startLine="145" startPosition="5" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5487985028841942918" fileName="FindInstancesDialog.java" startLine="146" startPosition="0" endLine="147" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841942938" fileName="FindInstancesDialog.java" startLine="149" startPosition="25" endLine="150" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841942957" fileName="FindInstancesDialog.java" startLine="156" startPosition="30" endLine="157" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841942974" fileName="FindInstancesDialog.java" startLine="160" startPosition="96" endLine="161" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841942982" fileName="FindInstancesDialog.java" startLine="164" startPosition="88" endLine="165" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943000" fileName="FindInstancesDialog.java" startLine="166" startPosition="16" endLine="167" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943006" fileName="FindInstancesDialog.java" startLine="170" startPosition="7" endLine="171" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841943013" fileName="FindInstancesDialog.java" startLine="171" startPosition="69" endLine="172" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943271" fileName="FindInstancesDialog.java" startLine="176" startPosition="25" endLine="177" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943275" fileName="FindInstancesDialog.java" startLine="178" startPosition="21" endLine="179" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841943277" fileName="FindInstancesDialog.java" startLine="180" startPosition="5" endLine="181" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943293" fileName="FindInstancesDialog.java" startLine="183" startPosition="25" endLine="184" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943297" fileName="FindInstancesDialog.java" startLine="184" startPosition="33" endLine="185" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841942998" fileName="FindInstancesDialog.java" startLine="166" startPosition="14" endLine="168" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5487985028841943190" fileName="FindInstancesDialog.java" startLine="81" startPosition="9" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5487985028841943224" fileName="FindInstancesDialog.java" startLine="87" startPosition="86" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841942841" fileName="FindInstancesDialog.java" startLine="123" startPosition="54" endLine="126" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841942911" fileName="FindInstancesDialog.java" startLine="142" startPosition="5" endLine="145" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841943273" fileName="FindInstancesDialog.java" startLine="177" startPosition="20" endLine="180" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841943179" fileName="FindInstancesDialog.java" startLine="77" startPosition="59" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5487985028841942760" fileName="FindInstancesDialog.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="5487985028841942773" fileName="FindInstancesDialog.java" startLine="104" startPosition="67" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5487985028841942795" fileName="FindInstancesDialog.java" startLine="114" startPosition="58" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5487985028841942851" fileName="FindInstancesDialog.java" startLine="128" startPosition="57" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5487985028841942936" fileName="FindInstancesDialog.java" startLine="148" startPosition="57" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5487985028841943162" fileName="FindInstancesDialog.java" startLine="67" startPosition="97" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processClassesData#(Ljetbrains/mps/compiler/IClassesData;)V" />
-    <nodeInfo nodeId="5487985028841943178" fileName="FindInstancesDialog.java" startLine="76" startPosition="86" endLine="81" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943239" fileName="FindInstancesDialog.java" startLine="91" startPosition="57" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5487985028841942772" fileName="FindInstancesDialog.java" startLine="103" startPosition="62" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841942794" fileName="FindInstancesDialog.java" startLine="113" startPosition="71" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841942850" fileName="FindInstancesDialog.java" startLine="127" startPosition="64" endLine="132" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841942935" fileName="FindInstancesDialog.java" startLine="147" startPosition="110" endLine="152" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841942953" fileName="FindInstancesDialog.java" startLine="154" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonCancel#()V" />
-    <nodeInfo nodeId="5487985028841942980" fileName="FindInstancesDialog.java" startLine="163" startPosition="25" endLine="168" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841943289" fileName="FindInstancesDialog.java" startLine="182" startPosition="57" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5487985028841943150" fileName="FindInstancesDialog.java" startLine="66" startPosition="142" endLine="72" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943238" fileName="FindInstancesDialog.java" startLine="90" startPosition="5" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943281" fileName="FindInstancesDialog.java" startLine="181" startPosition="22" endLine="187" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841942885" fileName="FindInstancesDialog.java" startLine="135" startPosition="66" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5487985028841942768" fileName="FindInstancesDialog.java" startLine="102" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setConceptDeclaration#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="5487985028841942978" fileName="FindInstancesDialog.java" startLine="162" startPosition="57" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5487985028841942977" fileName="FindInstancesDialog.java" startLine="161" startPosition="80" endLine="170" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841943172" fileName="FindInstancesDialog.java" startLine="74" startPosition="7" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841942787" fileName="FindInstancesDialog.java" startLine="110" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonFind#()V" />
-    <nodeInfo nodeId="5487985028841942970" fileName="FindInstancesDialog.java" startLine="159" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/project/Project;Ljetbrains/mps/quickQueryLanguage/runtime/Query;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;)V" />
-    <nodeInfo nodeId="5487985028841943267" fileName="FindInstancesDialog.java" startLine="174" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="5487985028841943093" fileName="FindInstancesDialog.java" startLine="57" startPosition="67" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5487985028841943092" fileName="FindInstancesDialog.java" startLine="56" startPosition="25" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841942837" fileName="FindInstancesDialog.java" startLine="122" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doProcessClassesData#(Ljetbrains/mps/compiler/IClassesData;)V" />
-    <nodeInfo nodeId="5487985028841943063" fileName="FindInstancesDialog.java" startLine="51" startPosition="0" endLine="97" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FindInstancesDialog#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/project/IModule;)V" />
-    <scopeInfo nodeId="5487985028841942898" fileName="FindInstancesDialog.java" startLine="138" startPosition="0" endLine="138" endPosition="45">
+    <nodeInfo nodeId="7557674898265511731" fileName="FindInstancesDialog.java" startLine="44" startPosition="53" endLine="45" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="5487985028841943034" fileName="FindInstancesDialog.java" startLine="46" startPosition="0" endLine="47" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
+    <nodeInfo nodeId="5487985028841943041" fileName="FindInstancesDialog.java" startLine="47" startPosition="58" endLine="48" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
+    <nodeInfo nodeId="5487985028841943044" fileName="FindInstancesDialog.java" startLine="48" startPosition="38" endLine="49" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditor" />
+    <nodeInfo nodeId="5487985028841943047" fileName="FindInstancesDialog.java" startLine="49" startPosition="36" endLine="50" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScope" />
+    <nodeInfo nodeId="5487985028841943050" fileName="FindInstancesDialog.java" startLine="50" startPosition="30" endLine="51" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="5487985028841943053" fileName="FindInstancesDialog.java" startLine="51" startPosition="23" endLine="52" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDisposed" />
+    <nodeInfo nodeId="5487985028841943057" fileName="FindInstancesDialog.java" startLine="52" startPosition="37" endLine="53" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelOwner" />
+    <nodeInfo nodeId="5487985028841943067" fileName="FindInstancesDialog.java" startLine="55" startPosition="85" endLine="56" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5487985028841943073" fileName="FindInstancesDialog.java" startLine="56" startPosition="90" endLine="57" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943079" fileName="FindInstancesDialog.java" startLine="57" startPosition="29" endLine="58" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943087" fileName="FindInstancesDialog.java" startLine="58" startPosition="42" endLine="59" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943095" fileName="FindInstancesDialog.java" startLine="61" startPosition="25" endLine="62" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943103" fileName="FindInstancesDialog.java" startLine="62" startPosition="138" endLine="63" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841943109" fileName="FindInstancesDialog.java" startLine="63" startPosition="123" endLine="64" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841943115" fileName="FindInstancesDialog.java" startLine="64" startPosition="135" endLine="65" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841943121" fileName="FindInstancesDialog.java" startLine="65" startPosition="128" endLine="66" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943127" fileName="FindInstancesDialog.java" startLine="66" startPosition="70" endLine="67" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943133" fileName="FindInstancesDialog.java" startLine="67" startPosition="93" endLine="68" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943140" fileName="FindInstancesDialog.java" startLine="68" startPosition="124" endLine="69" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943168" fileName="FindInstancesDialog.java" startLine="72" startPosition="62" endLine="73" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943174" fileName="FindInstancesDialog.java" startLine="78" startPosition="37" endLine="79" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8352668404579784765" fileName="FindInstancesDialog.java" startLine="81" startPosition="27" endLine="82" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943192" fileName="FindInstancesDialog.java" startLine="85" startPosition="54" endLine="86" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943205" fileName="FindInstancesDialog.java" startLine="88" startPosition="5" endLine="89" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943217" fileName="FindInstancesDialog.java" startLine="89" startPosition="73" endLine="90" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943226" fileName="FindInstancesDialog.java" startLine="91" startPosition="37" endLine="92" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943241" fileName="FindInstancesDialog.java" startLine="95" startPosition="25" endLine="96" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943250" fileName="FindInstancesDialog.java" startLine="96" startPosition="79" endLine="97" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841942763" fileName="FindInstancesDialog.java" startLine="102" startPosition="43" endLine="103" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841942775" fileName="FindInstancesDialog.java" startLine="108" startPosition="25" endLine="109" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841942791" fileName="FindInstancesDialog.java" startLine="115" startPosition="28" endLine="116" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841942797" fileName="FindInstancesDialog.java" startLine="118" startPosition="25" endLine="119" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841942806" fileName="FindInstancesDialog.java" startLine="121" startPosition="7" endLine="122" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5487985028841942820" fileName="FindInstancesDialog.java" startLine="122" startPosition="14" endLine="123" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841942843" fileName="FindInstancesDialog.java" startLine="127" startPosition="21" endLine="128" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841942847" fileName="FindInstancesDialog.java" startLine="129" startPosition="5" endLine="130" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841942859" fileName="FindInstancesDialog.java" startLine="130" startPosition="64" endLine="131" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="718322957961353715" fileName="FindInstancesDialog.java" startLine="131" startPosition="65" endLine="132" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841942853" fileName="FindInstancesDialog.java" startLine="134" startPosition="25" endLine="135" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="718322957961355567" fileName="FindInstancesDialog.java" startLine="135" startPosition="55" endLine="136" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="718322957961353747" fileName="FindInstancesDialog.java" startLine="136" startPosition="113" endLine="137" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841942881" fileName="FindInstancesDialog.java" startLine="139" startPosition="7" endLine="140" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841942887" fileName="FindInstancesDialog.java" startLine="141" startPosition="9" endLine="142" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7557674898265512663" fileName="FindInstancesDialog.java" startLine="143" startPosition="45" endLine="144" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7557674898265512700" fileName="FindInstancesDialog.java" startLine="145" startPosition="45" endLine="146" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7557674898265512709" fileName="FindInstancesDialog.java" startLine="147" startPosition="45" endLine="148" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841942913" fileName="FindInstancesDialog.java" startLine="150" startPosition="30" endLine="151" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841942917" fileName="FindInstancesDialog.java" startLine="152" startPosition="5" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5487985028841942918" fileName="FindInstancesDialog.java" startLine="153" startPosition="0" endLine="154" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841942938" fileName="FindInstancesDialog.java" startLine="156" startPosition="25" endLine="157" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841942957" fileName="FindInstancesDialog.java" startLine="163" startPosition="30" endLine="164" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841942974" fileName="FindInstancesDialog.java" startLine="167" startPosition="96" endLine="168" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841942982" fileName="FindInstancesDialog.java" startLine="171" startPosition="88" endLine="172" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943000" fileName="FindInstancesDialog.java" startLine="173" startPosition="16" endLine="174" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943006" fileName="FindInstancesDialog.java" startLine="177" startPosition="7" endLine="178" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841943013" fileName="FindInstancesDialog.java" startLine="178" startPosition="69" endLine="179" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943271" fileName="FindInstancesDialog.java" startLine="183" startPosition="25" endLine="184" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943275" fileName="FindInstancesDialog.java" startLine="185" startPosition="21" endLine="186" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841943277" fileName="FindInstancesDialog.java" startLine="187" startPosition="5" endLine="188" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943293" fileName="FindInstancesDialog.java" startLine="190" startPosition="25" endLine="191" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943297" fileName="FindInstancesDialog.java" startLine="191" startPosition="33" endLine="192" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841942998" fileName="FindInstancesDialog.java" startLine="173" startPosition="14" endLine="175" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5487985028841943190" fileName="FindInstancesDialog.java" startLine="84" startPosition="9" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5487985028841943224" fileName="FindInstancesDialog.java" startLine="90" startPosition="86" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5487985028841942841" fileName="FindInstancesDialog.java" startLine="126" startPosition="60" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5487985028841942911" fileName="FindInstancesDialog.java" startLine="149" startPosition="5" endLine="152" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5487985028841943273" fileName="FindInstancesDialog.java" startLine="184" startPosition="20" endLine="187" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5487985028841943179" fileName="FindInstancesDialog.java" startLine="80" startPosition="59" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5487985028841942760" fileName="FindInstancesDialog.java" startLine="101" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="5487985028841942773" fileName="FindInstancesDialog.java" startLine="107" startPosition="67" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5487985028841942795" fileName="FindInstancesDialog.java" startLine="117" startPosition="58" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5487985028841942936" fileName="FindInstancesDialog.java" startLine="155" startPosition="57" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5487985028841943162" fileName="FindInstancesDialog.java" startLine="70" startPosition="97" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processClassesData#(Ljetbrains/mps/compiler/IClassesData;)V" />
+    <nodeInfo nodeId="5487985028841943178" fileName="FindInstancesDialog.java" startLine="79" startPosition="86" endLine="84" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943239" fileName="FindInstancesDialog.java" startLine="94" startPosition="57" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5487985028841942772" fileName="FindInstancesDialog.java" startLine="106" startPosition="62" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841942794" fileName="FindInstancesDialog.java" startLine="116" startPosition="71" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841942935" fileName="FindInstancesDialog.java" startLine="154" startPosition="110" endLine="159" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841942953" fileName="FindInstancesDialog.java" startLine="161" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonCancel#()V" />
+    <nodeInfo nodeId="5487985028841942980" fileName="FindInstancesDialog.java" startLine="170" startPosition="25" endLine="175" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5487985028841943289" fileName="FindInstancesDialog.java" startLine="189" startPosition="57" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5487985028841943150" fileName="FindInstancesDialog.java" startLine="69" startPosition="142" endLine="75" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943238" fileName="FindInstancesDialog.java" startLine="93" startPosition="5" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841942851" fileName="FindInstancesDialog.java" startLine="133" startPosition="57" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5487985028841943281" fileName="FindInstancesDialog.java" startLine="188" startPosition="22" endLine="194" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841942850" fileName="FindInstancesDialog.java" startLine="132" startPosition="75" endLine="139" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841942768" fileName="FindInstancesDialog.java" startLine="105" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setConceptDeclaration#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5487985028841942978" fileName="FindInstancesDialog.java" startLine="169" startPosition="57" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5487985028841942885" fileName="FindInstancesDialog.java" startLine="140" startPosition="66" endLine="149" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5487985028841942977" fileName="FindInstancesDialog.java" startLine="168" startPosition="80" endLine="177" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841943172" fileName="FindInstancesDialog.java" startLine="77" startPosition="7" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5487985028841942787" fileName="FindInstancesDialog.java" startLine="113" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonFind#()V" />
+    <nodeInfo nodeId="5487985028841942970" fileName="FindInstancesDialog.java" startLine="166" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/project/Project;Ljetbrains/mps/quickQueryLanguage/runtime/Query;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;)V" />
+    <nodeInfo nodeId="5487985028841943267" fileName="FindInstancesDialog.java" startLine="181" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="5487985028841943093" fileName="FindInstancesDialog.java" startLine="60" startPosition="67" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5487985028841943092" fileName="FindInstancesDialog.java" startLine="59" startPosition="25" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841942837" fileName="FindInstancesDialog.java" startLine="125" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doProcessClassesData#(Ljetbrains/mps/compiler/IClassesData;)V" />
+    <nodeInfo nodeId="5487985028841943063" fileName="FindInstancesDialog.java" startLine="54" startPosition="0" endLine="100" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FindInstancesDialog#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/project/IModule;)V" />
+    <scopeInfo nodeId="5487985028841943167" fileName="FindInstancesDialog.java" startLine="72" startPosition="62" endLine="73" endPosition="37" />
+    <scopeInfo nodeId="5487985028841943180" fileName="FindInstancesDialog.java" startLine="81" startPosition="27" endLine="82" endPosition="97" />
+    <scopeInfo nodeId="5487985028841943191" fileName="FindInstancesDialog.java" startLine="85" startPosition="54" endLine="86" endPosition="66" />
+    <scopeInfo nodeId="5487985028841943225" fileName="FindInstancesDialog.java" startLine="91" startPosition="37" endLine="92" endPosition="65" />
+    <scopeInfo nodeId="5487985028841942762" fileName="FindInstancesDialog.java" startLine="102" startPosition="43" endLine="103" endPosition="24" />
+    <scopeInfo nodeId="5487985028841942774" fileName="FindInstancesDialog.java" startLine="108" startPosition="25" endLine="109" endPosition="200" />
+    <scopeInfo nodeId="5487985028841942796" fileName="FindInstancesDialog.java" startLine="118" startPosition="25" endLine="119" endPosition="129" />
+    <scopeInfo nodeId="5487985028841942842" fileName="FindInstancesDialog.java" startLine="127" startPosition="21" endLine="128" endPosition="13" />
+    <scopeInfo nodeId="5487985028841942886" fileName="FindInstancesDialog.java" startLine="141" startPosition="9" endLine="142" endPosition="90" />
+    <scopeInfo nodeId="5487985028841942898" fileName="FindInstancesDialog.java" startLine="143" startPosition="0" endLine="144" endPosition="56">
       <varInfo nodeId="5487985028841942899" varName="ignore" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841942901" fileName="FindInstancesDialog.java" startLine="138" startPosition="45" endLine="138" endPosition="45" />
-    <scopeInfo nodeId="5487985028841942907" fileName="FindInstancesDialog.java" startLine="141" startPosition="0" endLine="141" endPosition="45">
-      <varInfo nodeId="5487985028841942908" varName="ignore" />
-    </scopeInfo>
-    <scopeInfo nodeId="5487985028841942910" fileName="FindInstancesDialog.java" startLine="141" startPosition="45" endLine="141" endPosition="45" />
-    <scopeInfo nodeId="5487985028841943167" fileName="FindInstancesDialog.java" startLine="69" startPosition="62" endLine="70" endPosition="37" />
-    <scopeInfo nodeId="5487985028841943180" fileName="FindInstancesDialog.java" startLine="78" startPosition="27" endLine="79" endPosition="97" />
-    <scopeInfo nodeId="5487985028841943191" fileName="FindInstancesDialog.java" startLine="82" startPosition="54" endLine="83" endPosition="66" />
-    <scopeInfo nodeId="5487985028841943225" fileName="FindInstancesDialog.java" startLine="88" startPosition="37" endLine="89" endPosition="65" />
-    <scopeInfo nodeId="5487985028841942762" fileName="FindInstancesDialog.java" startLine="99" startPosition="43" endLine="100" endPosition="24" />
-    <scopeInfo nodeId="5487985028841942774" fileName="FindInstancesDialog.java" startLine="105" startPosition="25" endLine="106" endPosition="200" />
-    <scopeInfo nodeId="5487985028841942796" fileName="FindInstancesDialog.java" startLine="115" startPosition="25" endLine="116" endPosition="129" />
-    <scopeInfo nodeId="5487985028841942842" fileName="FindInstancesDialog.java" startLine="124" startPosition="21" endLine="125" endPosition="13" />
-    <scopeInfo nodeId="5487985028841942852" fileName="FindInstancesDialog.java" startLine="129" startPosition="25" endLine="130" endPosition="55" />
-    <scopeInfo nodeId="5487985028841942886" fileName="FindInstancesDialog.java" startLine="136" startPosition="9" endLine="137" endPosition="78" />
-    <scopeInfo nodeId="5487985028841942902" fileName="FindInstancesDialog.java" startLine="139" startPosition="0" endLine="140" endPosition="0">
+    <scopeInfo nodeId="5487985028841942901" fileName="FindInstancesDialog.java" startLine="143" startPosition="45" endLine="144" endPosition="56" />
+    <scopeInfo nodeId="5487985028841942902" fileName="FindInstancesDialog.java" startLine="145" startPosition="0" endLine="146" endPosition="56">
       <varInfo nodeId="5487985028841942903" varName="ignore" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841942905" fileName="FindInstancesDialog.java" startLine="139" startPosition="45" endLine="140" endPosition="0" />
-    <scopeInfo nodeId="5487985028841942912" fileName="FindInstancesDialog.java" startLine="143" startPosition="30" endLine="144" endPosition="13" />
-    <scopeInfo nodeId="5487985028841942937" fileName="FindInstancesDialog.java" startLine="149" startPosition="25" endLine="150" endPosition="196" />
-    <scopeInfo nodeId="5487985028841942956" fileName="FindInstancesDialog.java" startLine="156" startPosition="30" endLine="157" endPosition="19" />
-    <scopeInfo nodeId="5487985028841942981" fileName="FindInstancesDialog.java" startLine="164" startPosition="88" endLine="165" endPosition="136" />
-    <scopeInfo nodeId="5487985028841942999" fileName="FindInstancesDialog.java" startLine="166" startPosition="16" endLine="167" endPosition="53" />
-    <scopeInfo nodeId="5487985028841943274" fileName="FindInstancesDialog.java" startLine="178" startPosition="21" endLine="179" endPosition="13" />
-    <scopeInfo nodeId="5487985028841943240" fileName="FindInstancesDialog.java" startLine="92" startPosition="25" endLine="94" endPosition="114" />
-    <scopeInfo nodeId="5487985028841943292" fileName="FindInstancesDialog.java" startLine="183" startPosition="25" endLine="185" endPosition="44" />
-    <scopeInfo nodeId="5487985028841943190" fileName="FindInstancesDialog.java" startLine="81" startPosition="9" endLine="84" endPosition="7">
+    <scopeInfo nodeId="5487985028841942905" fileName="FindInstancesDialog.java" startLine="145" startPosition="45" endLine="146" endPosition="56" />
+    <scopeInfo nodeId="5487985028841942907" fileName="FindInstancesDialog.java" startLine="147" startPosition="0" endLine="148" endPosition="56">
+      <varInfo nodeId="5487985028841942908" varName="ignore" />
+    </scopeInfo>
+    <scopeInfo nodeId="5487985028841942910" fileName="FindInstancesDialog.java" startLine="147" startPosition="45" endLine="148" endPosition="56" />
+    <scopeInfo nodeId="5487985028841942912" fileName="FindInstancesDialog.java" startLine="150" startPosition="30" endLine="151" endPosition="13" />
+    <scopeInfo nodeId="5487985028841942937" fileName="FindInstancesDialog.java" startLine="156" startPosition="25" endLine="157" endPosition="196" />
+    <scopeInfo nodeId="5487985028841942956" fileName="FindInstancesDialog.java" startLine="163" startPosition="30" endLine="164" endPosition="19" />
+    <scopeInfo nodeId="5487985028841942981" fileName="FindInstancesDialog.java" startLine="171" startPosition="88" endLine="172" endPosition="136" />
+    <scopeInfo nodeId="5487985028841942999" fileName="FindInstancesDialog.java" startLine="173" startPosition="16" endLine="174" endPosition="53" />
+    <scopeInfo nodeId="5487985028841943274" fileName="FindInstancesDialog.java" startLine="185" startPosition="21" endLine="186" endPosition="13" />
+    <scopeInfo nodeId="5487985028841943240" fileName="FindInstancesDialog.java" startLine="95" startPosition="25" endLine="97" endPosition="114" />
+    <scopeInfo nodeId="5487985028841943292" fileName="FindInstancesDialog.java" startLine="190" startPosition="25" endLine="192" endPosition="44" />
+    <scopeInfo nodeId="5487985028841943190" fileName="FindInstancesDialog.java" startLine="84" startPosition="9" endLine="87" endPosition="7">
       <varInfo nodeId="5487985028841943199" varName="extendedLanguage" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841943179" fileName="FindInstancesDialog.java" startLine="77" startPosition="59" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="5487985028841942760" fileName="FindInstancesDialog.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="5487985028841942773" fileName="FindInstancesDialog.java" startLine="104" startPosition="67" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="5487985028841942795" fileName="FindInstancesDialog.java" startLine="114" startPosition="58" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="5487985028841942851" fileName="FindInstancesDialog.java" startLine="128" startPosition="57" endLine="132" endPosition="0" />
-    <scopeInfo nodeId="5487985028841942936" fileName="FindInstancesDialog.java" startLine="148" startPosition="57" endLine="152" endPosition="0" />
-    <scopeInfo nodeId="5487985028841943162" fileName="FindInstancesDialog.java" startLine="67" startPosition="97" endLine="72" endPosition="0">
+    <scopeInfo nodeId="5487985028841942852" fileName="FindInstancesDialog.java" startLine="134" startPosition="25" endLine="137" endPosition="163" />
+    <scopeInfo nodeId="5487985028841943179" fileName="FindInstancesDialog.java" startLine="80" startPosition="59" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="5487985028841942760" fileName="FindInstancesDialog.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="5487985028841942773" fileName="FindInstancesDialog.java" startLine="107" startPosition="67" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="5487985028841942795" fileName="FindInstancesDialog.java" startLine="117" startPosition="58" endLine="121" endPosition="0" />
+    <scopeInfo nodeId="5487985028841942936" fileName="FindInstancesDialog.java" startLine="155" startPosition="57" endLine="159" endPosition="0" />
+    <scopeInfo nodeId="5487985028841943162" fileName="FindInstancesDialog.java" startLine="70" startPosition="97" endLine="75" endPosition="0">
       <varInfo nodeId="5487985028841943165" varName="cd" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841943239" fileName="FindInstancesDialog.java" startLine="91" startPosition="57" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="5487985028841942771" fileName="FindInstancesDialog.java" startLine="103" startPosition="62" endLine="108" endPosition="7" />
-    <scopeInfo nodeId="5487985028841942953" fileName="FindInstancesDialog.java" startLine="154" startPosition="0" endLine="159" endPosition="0" />
-    <scopeInfo nodeId="5487985028841942979" fileName="FindInstancesDialog.java" startLine="163" startPosition="25" endLine="168" endPosition="9" />
-    <scopeInfo nodeId="5487985028841943289" fileName="FindInstancesDialog.java" startLine="182" startPosition="57" endLine="187" endPosition="0" />
-    <scopeInfo nodeId="5487985028841942768" fileName="FindInstancesDialog.java" startLine="102" startPosition="0" endLine="110" endPosition="0">
+    <scopeInfo nodeId="5487985028841943239" fileName="FindInstancesDialog.java" startLine="94" startPosition="57" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="5487985028841942771" fileName="FindInstancesDialog.java" startLine="106" startPosition="62" endLine="111" endPosition="7" />
+    <scopeInfo nodeId="5487985028841942953" fileName="FindInstancesDialog.java" startLine="161" startPosition="0" endLine="166" endPosition="0" />
+    <scopeInfo nodeId="5487985028841942979" fileName="FindInstancesDialog.java" startLine="170" startPosition="25" endLine="175" endPosition="9" />
+    <scopeInfo nodeId="5487985028841943289" fileName="FindInstancesDialog.java" startLine="189" startPosition="57" endLine="194" endPosition="0" />
+    <scopeInfo nodeId="5487985028841942851" fileName="FindInstancesDialog.java" startLine="133" startPosition="57" endLine="139" endPosition="0" />
+    <scopeInfo nodeId="5487985028841942768" fileName="FindInstancesDialog.java" startLine="105" startPosition="0" endLine="113" endPosition="0">
       <varInfo nodeId="5487985028841942785" varName="declaration" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841942790" fileName="FindInstancesDialog.java" startLine="112" startPosition="28" endLine="120" endPosition="76">
+    <scopeInfo nodeId="5487985028841942790" fileName="FindInstancesDialog.java" startLine="115" startPosition="28" endLine="123" endPosition="76">
       <varInfo nodeId="5487985028841942792" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841942978" fileName="FindInstancesDialog.java" startLine="162" startPosition="57" endLine="170" endPosition="0" />
-    <scopeInfo nodeId="5487985028841943173" fileName="FindInstancesDialog.java" startLine="75" startPosition="37" endLine="84" endPosition="7">
+    <scopeInfo nodeId="5487985028841942978" fileName="FindInstancesDialog.java" startLine="169" startPosition="57" endLine="177" endPosition="0" />
+    <scopeInfo nodeId="5487985028841943173" fileName="FindInstancesDialog.java" startLine="78" startPosition="37" endLine="87" endPosition="7">
       <varInfo nodeId="5487985028841943175" varName="languageList" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841943270" fileName="FindInstancesDialog.java" startLine="176" startPosition="25" endLine="187" endPosition="7" />
-    <scopeInfo nodeId="5487985028841942787" fileName="FindInstancesDialog.java" startLine="110" startPosition="0" endLine="122" endPosition="0" />
-    <scopeInfo nodeId="5487985028841942973" fileName="FindInstancesDialog.java" startLine="160" startPosition="96" endLine="172" endPosition="133">
+    <scopeInfo nodeId="5487985028841943270" fileName="FindInstancesDialog.java" startLine="183" startPosition="25" endLine="194" endPosition="7" />
+    <scopeInfo nodeId="5487985028841942787" fileName="FindInstancesDialog.java" startLine="113" startPosition="0" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="5487985028841942973" fileName="FindInstancesDialog.java" startLine="167" startPosition="96" endLine="179" endPosition="133">
       <varInfo nodeId="5487985028841942975" varName="searchQuery" />
       <varInfo nodeId="5487985028841943007" varName="tool" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841943094" fileName="FindInstancesDialog.java" startLine="58" startPosition="25" endLine="72" endPosition="10">
+    <scopeInfo nodeId="5487985028841943094" fileName="FindInstancesDialog.java" startLine="61" startPosition="25" endLine="75" endPosition="10">
       <varInfo nodeId="5487985028841943116" varName="defaultCondition" />
       <varInfo nodeId="5487985028841943110" varName="expressionStatement" />
       <varInfo nodeId="5487985028841943104" varName="statementList" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841942970" fileName="FindInstancesDialog.java" startLine="159" startPosition="0" endLine="174" endPosition="0">
+    <scopeInfo nodeId="5487985028841942970" fileName="FindInstancesDialog.java" startLine="166" startPosition="0" endLine="181" endPosition="0">
       <varInfo nodeId="5487985028841943026" varName="project" />
       <varInfo nodeId="5487985028841943028" varName="query" />
       <varInfo nodeId="5487985028841943030" varName="queryNode" />
       <varInfo nodeId="5487985028841943032" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841943267" fileName="FindInstancesDialog.java" startLine="174" startPosition="0" endLine="189" endPosition="0" />
-    <scopeInfo nodeId="5487985028841943093" fileName="FindInstancesDialog.java" startLine="57" startPosition="67" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="5487985028841942840" fileName="FindInstancesDialog.java" startLine="123" startPosition="54" endLine="152" endPosition="7">
+    <scopeInfo nodeId="5487985028841943267" fileName="FindInstancesDialog.java" startLine="181" startPosition="0" endLine="196" endPosition="0" />
+    <scopeInfo nodeId="5487985028841943093" fileName="FindInstancesDialog.java" startLine="60" startPosition="67" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="5487985028841942840" fileName="FindInstancesDialog.java" startLine="126" startPosition="60" endLine="159" endPosition="7">
       <varInfo nodeId="5487985028841942860" varName="fqName" />
-      <varInfo nodeId="5487985028841942873" varName="loader" />
+      <varInfo nodeId="718322957961353716" varName="loader" />
       <varInfo nodeId="5487985028841942848" varName="model" />
       <varInfo nodeId="5487985028841942882" varName="query" />
       <varInfo nodeId="5487985028841942919" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841942837" fileName="FindInstancesDialog.java" startLine="122" startPosition="0" endLine="154" endPosition="0">
+    <scopeInfo nodeId="5487985028841942837" fileName="FindInstancesDialog.java" startLine="125" startPosition="0" endLine="161" endPosition="0">
       <varInfo nodeId="5487985028841942951" varName="cd" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841943066" fileName="FindInstancesDialog.java" startLine="52" startPosition="85" endLine="96" endPosition="7" />
-    <scopeInfo nodeId="5487985028841943063" fileName="FindInstancesDialog.java" startLine="51" startPosition="0" endLine="97" endPosition="3">
+    <scopeInfo nodeId="5487985028841943066" fileName="FindInstancesDialog.java" startLine="55" startPosition="85" endLine="99" endPosition="7" />
+    <scopeInfo nodeId="5487985028841943063" fileName="FindInstancesDialog.java" startLine="54" startPosition="0" endLine="100" endPosition="3">
       <varInfo nodeId="5487985028841943262" varName="context" />
       <varInfo nodeId="5487985028841943264" varName="module" />
     </scopeInfo>
-    <unitInfo nodeId="5487985028841943179" fileName="FindInstancesDialog.java" startLine="77" startPosition="47" endLine="81" endPosition="7" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog$7" />
-    <unitInfo nodeId="5487985028841942773" fileName="FindInstancesDialog.java" startLine="104" startPosition="55" endLine="108" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog$1" />
-    <unitInfo nodeId="5487985028841942795" fileName="FindInstancesDialog.java" startLine="114" startPosition="46" endLine="118" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog$2" />
-    <unitInfo nodeId="5487985028841942851" fileName="FindInstancesDialog.java" startLine="128" startPosition="45" endLine="132" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog$3" />
-    <unitInfo nodeId="5487985028841942936" fileName="FindInstancesDialog.java" startLine="148" startPosition="45" endLine="152" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog$4" />
-    <unitInfo nodeId="5487985028841943157" fileName="FindInstancesDialog.java" startLine="67" startPosition="48" endLine="72" endPosition="9" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog$7" />
-    <unitInfo nodeId="5487985028841943239" fileName="FindInstancesDialog.java" startLine="91" startPosition="45" endLine="96" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog$8" />
-    <unitInfo nodeId="5487985028841943287" fileName="FindInstancesDialog.java" startLine="182" startPosition="45" endLine="187" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog$9" />
-    <unitInfo nodeId="5487985028841942978" fileName="FindInstancesDialog.java" startLine="162" startPosition="45" endLine="170" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog$5" />
-    <unitInfo nodeId="5487985028841943093" fileName="FindInstancesDialog.java" startLine="57" startPosition="55" endLine="74" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog$6" />
-    <unitInfo nodeId="5487985028841942759" fileName="FindInstancesDialog.java" startLine="43" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog" />
+    <unitInfo nodeId="5487985028841943179" fileName="FindInstancesDialog.java" startLine="80" startPosition="47" endLine="84" endPosition="7" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog$7" />
+    <unitInfo nodeId="5487985028841942773" fileName="FindInstancesDialog.java" startLine="107" startPosition="55" endLine="111" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog$1" />
+    <unitInfo nodeId="5487985028841942795" fileName="FindInstancesDialog.java" startLine="117" startPosition="46" endLine="121" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog$2" />
+    <unitInfo nodeId="5487985028841942936" fileName="FindInstancesDialog.java" startLine="155" startPosition="45" endLine="159" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog$4" />
+    <unitInfo nodeId="5487985028841943157" fileName="FindInstancesDialog.java" startLine="70" startPosition="48" endLine="75" endPosition="9" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog$7" />
+    <unitInfo nodeId="5487985028841943239" fileName="FindInstancesDialog.java" startLine="94" startPosition="45" endLine="99" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog$8" />
+    <unitInfo nodeId="5487985028841943287" fileName="FindInstancesDialog.java" startLine="189" startPosition="45" endLine="194" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog$9" />
+    <unitInfo nodeId="5487985028841942851" fileName="FindInstancesDialog.java" startLine="133" startPosition="45" endLine="139" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog$3" />
+    <unitInfo nodeId="5487985028841942978" fileName="FindInstancesDialog.java" startLine="169" startPosition="45" endLine="177" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog$5" />
+    <unitInfo nodeId="5487985028841943093" fileName="FindInstancesDialog.java" startLine="60" startPosition="55" endLine="77" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog$6" />
+    <unitInfo nodeId="5487985028841942759" fileName="FindInstancesDialog.java" startLine="44" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesDialog" />
   </root>
   <root nodeId="5487985028841943302" modelId="r:3a778ef5-24fe-4aa0-8558-f81e64e33ac0(jetbrains.mps.quickQueryLanguage.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841943605" fileName="ReplaceDialog.java" startLine="39" startPosition="47" endLine="40" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditor" />
@@ -732,45 +737,47 @@
     <unitInfo nodeId="5487985028841943817" fileName="ReplacementView.java" startLine="31" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementView" />
   </root>
   <root nodeId="5487985028841944069" modelId="r:3a778ef5-24fe-4aa0-8558-f81e64e33ac0(jetbrains.mps.quickQueryLanguage.pluginSolution.plugin)">
-    <nodeInfo nodeId="5487985028841944070" fileName="QueryFinder.java" startLine="17" startPosition="45" endLine="18" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myQuery" />
-    <nodeInfo nodeId="5487985028841944078" fileName="QueryFinder.java" startLine="20" startPosition="35" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841944094" fileName="QueryFinder.java" startLine="24" startPosition="79" endLine="25" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841944102" fileName="QueryFinder.java" startLine="25" startPosition="67" endLine="26" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="5487985028841944106" fileName="QueryFinder.java" startLine="26" startPosition="40" endLine="27" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841944119" fileName="QueryFinder.java" startLine="27" startPosition="180" endLine="28" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841944127" fileName="QueryFinder.java" startLine="28" startPosition="75" endLine="29" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841944140" fileName="QueryFinder.java" startLine="30" startPosition="26" endLine="31" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841944160" fileName="QueryFinder.java" startLine="33" startPosition="63" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841944168" fileName="QueryFinder.java" startLine="38" startPosition="5" endLine="39" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841944074" fileName="QueryFinder.java" startLine="19" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QueryFinder#(Ljetbrains/mps/quickQueryLanguage/runtime/Query;)V" />
-    <nodeInfo nodeId="5487985028841944149" fileName="QueryFinder.java" startLine="32" startPosition="11" endLine="35" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841944147" fileName="QueryFinder.java" startLine="31" startPosition="46" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5487985028841944135" fileName="QueryFinder.java" startLine="29" startPosition="87" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="5487985028841944086" fileName="QueryFinder.java" startLine="23" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Ljetbrains/mps/progress/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
-    <scopeInfo nodeId="5487985028841944164" fileName="QueryFinder.java" startLine="36" startPosition="0" endLine="36" endPosition="29">
-      <varInfo nodeId="5487985028841944165" varName="t" />
+    <nodeInfo nodeId="95244134864136437" fileName="QueryFinder.java" startLine="18" startPosition="45" endLine="19" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="5487985028841944070" fileName="QueryFinder.java" startLine="20" startPosition="0" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myQuery" />
+    <nodeInfo nodeId="5487985028841944078" fileName="QueryFinder.java" startLine="23" startPosition="35" endLine="24" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841944094" fileName="QueryFinder.java" startLine="27" startPosition="79" endLine="28" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841944102" fileName="QueryFinder.java" startLine="28" startPosition="67" endLine="29" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="5487985028841944106" fileName="QueryFinder.java" startLine="29" startPosition="40" endLine="30" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841944119" fileName="QueryFinder.java" startLine="30" startPosition="180" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841944127" fileName="QueryFinder.java" startLine="31" startPosition="75" endLine="32" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841944140" fileName="QueryFinder.java" startLine="34" startPosition="28" endLine="35" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841944160" fileName="QueryFinder.java" startLine="36" startPosition="63" endLine="37" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="95244134864136461" fileName="QueryFinder.java" startLine="40" startPosition="27" endLine="41" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841944168" fileName="QueryFinder.java" startLine="42" startPosition="5" endLine="43" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841944074" fileName="QueryFinder.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QueryFinder#(Ljetbrains/mps/quickQueryLanguage/runtime/Query;)V" />
+    <nodeInfo nodeId="5487985028841944149" fileName="QueryFinder.java" startLine="35" startPosition="48" endLine="38" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5487985028841944135" fileName="QueryFinder.java" startLine="33" startPosition="9" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="95244134864132449" fileName="QueryFinder.java" startLine="32" startPosition="87" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5487985028841944086" fileName="QueryFinder.java" startLine="26" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Ljetbrains/mps/progress/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+    <scopeInfo nodeId="5487985028841944077" fileName="QueryFinder.java" startLine="23" startPosition="35" endLine="24" endPosition="25" />
+    <scopeInfo nodeId="5487985028841944159" fileName="QueryFinder.java" startLine="36" startPosition="63" endLine="37" endPosition="22" />
+    <scopeInfo nodeId="95244134864132452" fileName="QueryFinder.java" startLine="40" startPosition="0" endLine="41" endPosition="60">
+      <varInfo nodeId="95244134864132453" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841944167" fileName="QueryFinder.java" startLine="36" startPosition="29" endLine="36" endPosition="29" />
-    <scopeInfo nodeId="5487985028841944077" fileName="QueryFinder.java" startLine="20" startPosition="35" endLine="21" endPosition="25" />
-    <scopeInfo nodeId="5487985028841944159" fileName="QueryFinder.java" startLine="33" startPosition="63" endLine="34" endPosition="22" />
-    <scopeInfo nodeId="5487985028841944074" fileName="QueryFinder.java" startLine="19" startPosition="0" endLine="22" endPosition="3">
+    <scopeInfo nodeId="95244134864132455" fileName="QueryFinder.java" startLine="40" startPosition="27" endLine="41" endPosition="60" />
+    <scopeInfo nodeId="5487985028841944074" fileName="QueryFinder.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
       <varInfo nodeId="5487985028841944084" varName="query" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841944148" fileName="QueryFinder.java" startLine="32" startPosition="11" endLine="35" endPosition="9" />
-    <scopeInfo nodeId="5487985028841944139" fileName="QueryFinder.java" startLine="30" startPosition="26" endLine="37" endPosition="7">
+    <scopeInfo nodeId="5487985028841944139" fileName="QueryFinder.java" startLine="34" startPosition="28" endLine="38" endPosition="9">
       <varInfo nodeId="5487985028841944141" varName="current" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841944093" fileName="QueryFinder.java" startLine="24" startPosition="79" endLine="39" endPosition="74">
+    <scopeInfo nodeId="95244134864132450" fileName="QueryFinder.java" startLine="33" startPosition="9" endLine="39" endPosition="7" />
+    <scopeInfo nodeId="5487985028841944093" fileName="QueryFinder.java" startLine="27" startPosition="79" endLine="43" endPosition="74">
       <varInfo nodeId="5487985028841944107" varName="instances" />
       <varInfo nodeId="5487985028841944120" varName="instancesList" />
       <varInfo nodeId="5487985028841944128" varName="it" />
       <varInfo nodeId="5487985028841944095" varName="queryObject" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841944086" fileName="QueryFinder.java" startLine="23" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="5487985028841944086" fileName="QueryFinder.java" startLine="26" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="5487985028841944091" varName="monitor" />
       <varInfo nodeId="5487985028841944089" varName="searchQuery" />
     </scopeInfo>
-    <unitInfo nodeId="5487985028841944069" fileName="QueryFinder.java" startLine="17" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.QueryFinder" />
+    <unitInfo nodeId="5487985028841944069" fileName="QueryFinder.java" startLine="18" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.QueryFinder" />
   </root>
   <root nodeId="5487985028841944176" modelId="r:3a778ef5-24fe-4aa0-8558-f81e64e33ac0(jetbrains.mps.quickQueryLanguage.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="18" startPosition="62" endLine="19" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
