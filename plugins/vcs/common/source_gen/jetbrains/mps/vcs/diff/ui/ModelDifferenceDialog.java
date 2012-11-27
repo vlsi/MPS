@@ -60,7 +60,6 @@ public class ModelDifferenceDialog extends DialogWrapper {
   private ModelDifferenceDialog.ModelDifferenceTree myTree;
   private JPanel myPanel = new JPanel(new BorderLayout());
   private RootDifferenceDialog myRootDifferenceDialog = null;
-  private boolean myGoingToNeighbour = false;
   private String[] myContentTitles;
   private boolean myEditable;
 
@@ -148,10 +147,6 @@ public class ModelDifferenceDialog extends DialogWrapper {
     return myTree.getNeighbourRoot(rootId, next);
   }
 
-  /*package*/ void startGoingToNeighbour() {
-    myGoingToNeighbour = true;
-  }
-
   public void invokeRootDifference(SNodeId rootId) {
     invokeRootDifference(rootId, null);
   }
@@ -161,7 +156,6 @@ public class ModelDifferenceDialog extends DialogWrapper {
       return;
     }
 
-    myGoingToNeighbour = false;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         ModelChangeSet changeSet = (rootId == null ?
@@ -192,7 +186,7 @@ public class ModelDifferenceDialog extends DialogWrapper {
       });
     }
     myRootDifferenceDialog = null;
-    if (!(myGoingToNeighbour) && !(isVisible())) {
+    if (!(isVisible())) {
       close(NEXT_USER_EXIT_CODE);
       return;
     }
@@ -203,16 +197,8 @@ public class ModelDifferenceDialog extends DialogWrapper {
     });
   }
 
-  /*package*/ void rootDialogClosed() {
-    myRootDifferenceDialog = null;
-    if (!(myGoingToNeighbour) && !(isVisible())) {
-      close(DialogWrapper.NEXT_USER_EXIT_CODE);
-    } else {
-      rebuildChangeSets();
-    }
-  }
-
   public Iterable<ModelChange> getChangesForRoot(SNodeId rootId) {
+    // rootId == null => metadata changes 
     return myChangeSet.getChangesForRoot(rootId);
   }
 
@@ -232,9 +218,6 @@ public class ModelDifferenceDialog extends DialogWrapper {
     }
 
     protected void goTo(@NotNull final SNodeId rootId) {
-      // <node> 
-      // <node> 
-      // <node> 
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           myRootDifferenceDialog.setRootId(rootId);
@@ -266,10 +249,7 @@ public class ModelDifferenceDialog extends DialogWrapper {
           protected Iterable<ModelChange> getChanges() {
             return Sequence.fromIterable(Sequence.fromArray(getSelectedNodes(DiffModelTree.RootTreeNode.class, null))).translate(new ITranslator2<DiffModelTree.RootTreeNode, ModelChange>() {
               public Iterable<ModelChange> translate(DiffModelTree.RootTreeNode r) {
-                return (r.getRootId() == null ?
-                  getMetadataChanges() :
-                  getChangesForRoot(r.getRootId())
-                );
+                return myChangeSet.getChangesForRoot(r.getRootId());
               }
             });
           }

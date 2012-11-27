@@ -155,10 +155,6 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     myRootId = rootId;
     myOldEditor.editRoot(myProject, myRootId, myChangeSet.getOldModel());
     myNewEditor.editRoot(myProject, myRootId, myChangeSet.getNewModel());
-    // <node> 
-    // <node> 
-    myOldEditor.getMainEditor().clearSelectionStack();
-    myNewEditor.getMainEditor().clearSelectionStack();
     rehighlight();
     myTraverser.goToFirstChangeLater();
   }
