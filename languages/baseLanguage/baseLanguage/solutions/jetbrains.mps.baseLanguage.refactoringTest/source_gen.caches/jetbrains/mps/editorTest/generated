@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6q2quolr9xb5nvkvzt1gnstarttf54">
+<dependencies version="2" modelHash="bd1dplh0kynpjkot7kx5ca441k0zy3m">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
@@ -335,7 +335,7 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="CompexTransformTest_Test.java" />
   </source>
-  <source id="1236090523881" name="SideDeleteAtEndWithBackSpace" hash="4eromdm2wum6yvh8prd2h73ncpk18tu">
+  <source id="1236090523881" name="SideDeleteAtEndWithBackSpace" hash="atipe7mv4b5ekl58nyskgwgeywvp7ap">
     <dep root="418758558327350365" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -759,7 +759,7 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="DeleteOpenCurlyBrace_Test.java" />
   </source>
-  <source id="8547191361978792978" name="DeleteClosingCurlyBrace" hash="6a2jet66vl7ty5p08rsg77dbj9ecxn">
+  <source id="8547191361978792978" name="DeleteClosingCurlyBrace" hash="6ouwyuqvdzl7jvmpo8rq8ze1w7mf39x">
     <dep root="418758558327350365" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -821,7 +821,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="EditingNotEditableProperty_Test.java" />
   </source>
-  <source id="6769498721974583566" name="Pre_LocalStaicFieldToStaticFieldReference" hash="55msqfcgpeb73rjl5nkqf1069d0hh4n">
+  <source id="6769498721974583566" name="Pre_LocalStaicFieldToStaticFieldReference" hash="-8qic7n5ho0ej9uynvlouzmhv4hcpp4i">
     <dep root="418758558327350365" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -829,7 +829,7 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="Pre_LocalStaicFieldToStaticFieldReference_Test.java" />
   </source>
-  <source id="8350369201053315001" name="Post_StaticFieldToLocalStaticFieldReference" hash="-aurgikalul6anoab22mk4dxms1yp6hf">
+  <source id="8350369201053315001" name="Post_StaticFieldToLocalStaticFieldReference" hash="-7qnxhfh1djso1s9l6izun3sb5gg14xe">
     <dep root="418758558327350365" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
