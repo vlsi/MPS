@@ -125,7 +125,7 @@ public class ConvertAnonymousRefactoring {
   private void makeInnerConstructor(SNode innerClass) {
     if (Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), innerClass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).isEmpty()) {
       SNode ctor = SModelOperations.createNewNode(SNodeOperations.getModel(innerClass), null, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
-      ListSequence.fromList(SLinkOperations.getTargets(innerClass, "member", true)).addElement(ctor);
+      MemberInsertingUtils.insertClassifierMemberInBestPlace(innerClass, ctor);
       SLinkOperations.setNewChild(ctor, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
       SLinkOperations.setNewChild(ctor, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
       SLinkOperations.setNewChild(ctor, "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
@@ -177,7 +177,9 @@ public class ConvertAnonymousRefactoring {
   }
 
   private void addFieldsToInnerClass(SNode innerClass) {
-    ListSequence.fromList(SLinkOperations.getTargets(innerClass, "member", true)).addSequence(Sequence.fromIterable(MapSequence.fromMap(this.myInnerFields).values()));
+    for (SNode field : Sequence.fromIterable(MapSequence.fromMap(this.myInnerFields).values())) {
+      MemberInsertingUtils.insertClassifierMemberInBestPlace(innerClass, field);
+    }
     for (SNode varReference : Sequence.fromIterable(this.getExternalReferences(innerClass))) {
       SNodeOperations.replaceWithAnother(varReference, _quotation_createNode_qy1soj_a0a0a1a02(innerClass, MapSequence.fromMap(this.myInnerFields).get(SLinkOperations.getTarget(varReference, "variableDeclaration", false))));
     }

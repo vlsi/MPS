@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -18,8 +17,7 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
 
   public SNode doRefactoring() {
     SNode newDeclaration = _quotation_createNode_2jj2z2_a0a0b(myVisibilityLevel.getNode(), SNodeOperations.copyNode(getExpressionType()), SNodeOperations.copyNode(getExpression()), getName());
-    SNode container = SNodeOperations.cast(this.myContainer, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    ListSequence.fromList(SLinkOperations.getTargets(container, "member", true)).addElement(newDeclaration);
+    MemberInsertingUtils.insertClassifierMemberInBestPlace(SNodeOperations.cast(this.myContainer, "jetbrains.mps.baseLanguage.structure.ClassConcept"), newDeclaration);
     // <node> 
     replaceNode(getExpression(), newDeclaration);
     if (this.myIsReplacingAll) {
@@ -73,7 +71,7 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
     return quotedNode_5;
   }
 
-  private static SNode _quotation_createNode_2jj2z2_a0a0a3a1(Object parameter_1) {
+  private static SNode _quotation_createNode_2jj2z2_a0a0a2a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("variableDeclaration", (SNode) parameter_1);
