@@ -34,7 +34,6 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   private static TraceInfoCache INSTANCE;
   private static final Object INSTANCE_LOCK = new Object();
   protected static Log log = LogFactory.getLog(TraceInfoCache.class);
-
   private List<TraceInfoCache.TraceInfoResourceProvider> myProviders = new CopyOnWriteArrayList<TraceInfoCache.TraceInfoResourceProvider>();
   private final JavaTraceInfoResourceProvider myJavaTraceInfoProvider = new JavaTraceInfoResourceProvider();
 

@@ -9,7 +9,6 @@ public class Currency extends Unit {
   public static Currency USD = new Currency("USD", Locale.US, "$");
   public static Currency DEM = new Currency("DEM", Locale.GERMANY, "DM");
   public static Currency GBP = new Currency("GBP", Locale.UK, "#");
-
   private Locale myLocale;
   private String mySymbol;
 

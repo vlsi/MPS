@@ -13,7 +13,6 @@ public class ModuleProperties {
   public static final String NAMESPACE = "namespace";
   public static final String USED_LANGUAGES = "usedLanguages";
   public static final String USED_DEVKITS = "usedDevkits";
-
   private String myNamespace;
   private List<ModelRootDescriptor> myModelRoots;
   private List<Dependency> myDependencies;

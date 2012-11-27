@@ -26,7 +26,6 @@ import javax.swing.tree.DefaultMutableTreeNode;
 
 public class ClasspathSelectionTree extends Tree {
   private static Logger LOG = Logger.getLogger(ClasspathSelectionTree.class);
-
   private ClasspathObserver myClasspathObserver;
   private Map<File, IClassPathItem> myFilesToClasspaths = new HashMap<File, IClassPathItem>();
 

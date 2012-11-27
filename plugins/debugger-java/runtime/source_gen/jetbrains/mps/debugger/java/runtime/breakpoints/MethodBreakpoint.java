@@ -26,7 +26,6 @@ import com.sun.jdi.event.MethodExitEvent;
 
 public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpoint {
   private static final Logger LOG = Logger.getLogger(MethodBreakpoint.class);
-
   @NotNull
   private final BreakpointLocation myLocation;
   private String myMethodName = null;

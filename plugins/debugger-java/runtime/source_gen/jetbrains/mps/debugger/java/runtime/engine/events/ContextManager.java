@@ -21,7 +21,6 @@ import org.jetbrains.annotations.NotNull;
 
 public class ContextManager {
   protected static Log log = LogFactory.getLog(ContextManager.class);
-
   private final List<EventContext> mySuspendedContexts = ListSequence.fromList(new ArrayList<EventContext>());
   private Set<ThreadReference> myEvaluatedThreads = SetSequence.fromSet(new HashSet<ThreadReference>());
   private UserContext myUserContext;

@@ -13,7 +13,6 @@ import java.util.NoSuchElementException;
 
 public class TFloatArrayListDecorator extends AbstractList<Float> implements List<Float>, Serializable {
   private static final long serialVersionUID = -2243271180253209272L;
-
   private TFloatArrayList primList;
 
   public TFloatArrayListDecorator() {

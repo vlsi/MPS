@@ -13,7 +13,6 @@ import javax.swing.JComponent;
 
 public class TodoViewer_Tool extends GeneratedTool {
   private static final Icon ICON = IconUtil.getIcon("todo.png");
-
   private TodoViewer myComponent;
 
   public TodoViewer_Tool(Project project) {

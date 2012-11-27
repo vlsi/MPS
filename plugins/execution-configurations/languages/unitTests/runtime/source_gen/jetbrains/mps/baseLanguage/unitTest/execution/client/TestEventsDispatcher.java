@@ -10,7 +10,6 @@ import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
 public class TestEventsDispatcher {
   private static Pattern REPLREGEXP_a0a0a = Pattern.compile("\\n", 0);
   private static Pattern REGEXP_d0rws9_a0a1a0 = Pattern.compile(".*\\s0(?:\\D+.*|$)", 0);
-
   private final TestRunState myState;
 
   public TestEventsDispatcher(TestRunState testState) {

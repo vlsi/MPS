@@ -43,7 +43,6 @@ import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 public class ChangeEditorMessage extends EditorMessageWithTarget {
   private static final String NAME_PROPERTY = "name";
   protected static Log log = LogFactory.getLog(ChangeEditorMessage.class);
-
   private ModelChange myChange;
   private ChangeEditorMessage.ConflictChecker myConflictsChecker;
   private boolean myHighlighted;

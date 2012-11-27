@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 @Deprecated
 public class VisibleClassifiersScope extends ReachableClassifiersScope {
   private static Logger LOG = Logger.getLogger(VisibleClassifiersScope.class);
-
   private SNode myContextNode = null;
 
   @Deprecated

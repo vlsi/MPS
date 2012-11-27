@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SModelRepository;
 
 public abstract class BaseTransformationTest4 implements TransformationTest {
   public static final String PATH_MACRO_PREFIX = "path.macro.";
-
   private TransformationTestRunner myRunner = new TransformationTestRunner();
   private SModelDescriptor myModel;
   private SModelDescriptor myTransientModel;

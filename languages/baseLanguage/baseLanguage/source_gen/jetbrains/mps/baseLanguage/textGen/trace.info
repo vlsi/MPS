@@ -2360,38 +2360,6 @@
     </scopeInfo>
     <unitInfo nodeId="1235131150614" fileName="ShortType_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ShortType_TextGen" />
   </root>
-  <root nodeId="1235131169199" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
-    <nodeInfo nodeId="1235131169199" fileName="Statement_TextGen.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="1235131169199" fileName="Statement_TextGen.java" startLine="16" startPosition="44" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237463992893" fileName="Statement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237463992893" fileName="Statement_TextGen.java" startLine="19" startPosition="25" endLine="20" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235131169199" fileName="Statement_TextGen.java" startLine="22" startPosition="7" endLine="23" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235131169199" fileName="Statement_TextGen.java" startLine="24" startPosition="13" endLine="25" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235131169199" fileName="Statement_TextGen.java" startLine="26" startPosition="31" endLine="27" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235131169199" fileName="Statement_TextGen.java" startLine="28" startPosition="9" endLine="29" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237463992893" fileName="Statement_TextGen.java" startLine="18" startPosition="5" endLine="20" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1235131169199" fileName="Statement_TextGen.java" startLine="15" startPosition="42" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1235131169199" fileName="Statement_TextGen.java" startLine="23" startPosition="38" endLine="28" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1235131169199" fileName="Statement_TextGen.java" startLine="21" startPosition="44" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1235131169199" fileName="Statement_TextGen.java" startLine="20" startPosition="23" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1235131169199" fileName="Statement_TextGen.java" startLine="15" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="1235131169199" fileName="Statement_TextGen.java" startLine="16" startPosition="44" endLine="17" endPosition="61" />
-    <scopeInfo nodeId="1235131169199" fileName="Statement_TextGen.java" startLine="24" startPosition="13" endLine="25" endPosition="232" />
-    <scopeInfo nodeId="1235131169199" fileName="Statement_TextGen.java" startLine="26" startPosition="0" endLine="27" endPosition="86">
-      <varInfo nodeId="1235131169199" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="1235131169199" fileName="Statement_TextGen.java" startLine="26" startPosition="31" endLine="27" endPosition="86" />
-    <scopeInfo nodeId="1237463992893" fileName="Statement_TextGen.java" startLine="18" startPosition="5" endLine="20" endPosition="23" />
-    <scopeInfo nodeId="1235131169199" fileName="Statement_TextGen.java" startLine="22" startPosition="7" endLine="29" endPosition="80">
-      <varInfo nodeId="1235131169199" varName="traceableProperty" />
-    </scopeInfo>
-    <scopeInfo nodeId="1235131169199" fileName="Statement_TextGen.java" startLine="21" startPosition="44" endLine="30" endPosition="7" />
-    <scopeInfo nodeId="1235131169199" fileName="Statement_TextGen.java" startLine="15" startPosition="42" endLine="31" endPosition="5" />
-    <scopeInfo nodeId="1235131169199" fileName="Statement_TextGen.java" startLine="15" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="1235131169199" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="1235131169199" fileName="Statement_TextGen.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.Statement_TextGen" />
-  </root>
   <root nodeId="1235131198738" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
     <nodeInfo nodeId="1235131198738" fileName="StatementList_TextGen.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1235131198738" fileName="StatementList_TextGen.java" startLine="21" startPosition="44" endLine="22" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4559,116 +4527,142 @@
     <unitInfo nodeId="320030840061144158" fileName="ShiftRightUnsignedExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ShiftRightUnsignedExpression_TextGen" />
   </root>
   <root nodeId="3408882292339889057" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
-    <nodeInfo nodeId="5574237510125076808" fileName="BaseClassConceptTextGen.java" startLine="16" startPosition="136" endLine="17" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5574237510125076808" fileName="BaseClassConceptTextGen.java" startLine="17" startPosition="26" endLine="18" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5574237510125076811" fileName="BaseClassConceptTextGen.java" startLine="18" startPosition="30" endLine="19" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5574237510125076813" fileName="BaseClassConceptTextGen.java" startLine="19" startPosition="30" endLine="20" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5574237510125076813" fileName="BaseClassConceptTextGen.java" startLine="19" startPosition="30" endLine="20" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5574237510125076811" fileName="BaseClassConceptTextGen.java" startLine="20" startPosition="59" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5574237510125076816" fileName="BaseClassConceptTextGen.java" startLine="21" startPosition="30" endLine="22" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5574237510125076816" fileName="BaseClassConceptTextGen.java" startLine="21" startPosition="30" endLine="22" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5574237510138062261" fileName="BaseClassConceptTextGen.java" startLine="23" startPosition="12" endLine="24" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5574237510138062261" fileName="BaseClassConceptTextGen.java" startLine="23" startPosition="12" endLine="24" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1465982738273838462" fileName="BaseClassConceptTextGen.java" startLine="30" startPosition="91" endLine="31" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1465982738256693292" fileName="BaseClassConceptTextGen.java" startLine="34" startPosition="158" endLine="35" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1465982738256693292" fileName="BaseClassConceptTextGen.java" startLine="34" startPosition="158" endLine="35" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1465982738256693296" fileName="BaseClassConceptTextGen.java" startLine="35" startPosition="43" endLine="36" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1465982738256693298" fileName="BaseClassConceptTextGen.java" startLine="36" startPosition="30" endLine="37" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1465982738256693298" fileName="BaseClassConceptTextGen.java" startLine="36" startPosition="30" endLine="37" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1465982738256693298" fileName="BaseClassConceptTextGen.java" startLine="37" startPosition="251" endLine="38" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1465982738256693296" fileName="BaseClassConceptTextGen.java" startLine="38" startPosition="30" endLine="39" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1465982738256693306" fileName="BaseClassConceptTextGen.java" startLine="39" startPosition="30" endLine="40" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1465982738256693306" fileName="BaseClassConceptTextGen.java" startLine="40" startPosition="36" endLine="41" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8022354779063045573" fileName="BaseClassConceptTextGen.java" startLine="45" startPosition="70" endLine="46" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8022354779063045573" fileName="BaseClassConceptTextGen.java" startLine="45" startPosition="70" endLine="46" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="582575223451914846" fileName="BaseClassConceptTextGen.java" startLine="50" startPosition="98" endLine="51" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="582575223451914846" fileName="BaseClassConceptTextGen.java" startLine="50" startPosition="98" endLine="51" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="582575223451914846" fileName="BaseClassConceptTextGen.java" startLine="50" startPosition="98" endLine="51" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="582575223451914907" fileName="BaseClassConceptTextGen.java" startLine="52" startPosition="132" endLine="53" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="582575223451914907" fileName="BaseClassConceptTextGen.java" startLine="52" startPosition="132" endLine="53" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2365107255602301567" fileName="BaseClassConceptTextGen.java" startLine="60" startPosition="32" endLine="61" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2365107255602301567" fileName="BaseClassConceptTextGen.java" startLine="63" startPosition="5" endLine="64" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5574237510125076808" fileName="BaseClassConceptTextGen.java" startLine="16" startPosition="136" endLine="18" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5574237510125076818" fileName="BaseClassConceptTextGen.java" startLine="23" startPosition="10" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1465982738256693298" fileName="BaseClassConceptTextGen.java" startLine="36" startPosition="30" endLine="38" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1465982738256693306" fileName="BaseClassConceptTextGen.java" startLine="39" startPosition="30" endLine="41" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5574237510125076811" fileName="BaseClassConceptTextGen.java" startLine="18" startPosition="30" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1465982738273838462" fileName="BaseClassConceptTextGen.java" startLine="29" startPosition="111" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="body#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/textGen/SNodeTextGen;)V" />
-    <nodeInfo nodeId="582575223451914852" fileName="BaseClassConceptTextGen.java" startLine="51" startPosition="122" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2365107255602301567" fileName="BaseClassConceptTextGen.java" startLine="59" startPosition="52" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1465982738256693296" fileName="BaseClassConceptTextGen.java" startLine="35" startPosition="43" endLine="39" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1465982738273838462" fileName="BaseClassConceptTextGen.java" startLine="28" startPosition="76" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1465982738273838462" fileName="BaseClassConceptTextGen.java" startLine="28" startPosition="76" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2365107255602301567" fileName="BaseClassConceptTextGen.java" startLine="58" startPosition="84" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="582575223451914816" fileName="BaseClassConceptTextGen.java" startLine="49" startPosition="82" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2365107255602301567" fileName="BaseClassConceptTextGen.java" startLine="58" startPosition="84" endLine="64" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="49" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="innerClassifiers#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/textGen/SNodeTextGen;)V" />
-    <nodeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="58" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="collection#(Ljava/lang/Iterable;Ljetbrains/mps/textGen/SNodeTextGen;)V" />
-    <nodeInfo nodeId="1465982738256693290" fileName="BaseClassConceptTextGen.java" startLine="33" startPosition="5" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5574237510125076801" fileName="BaseClassConceptTextGen.java" startLine="15" startPosition="119" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="15" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="membersWithBrackets#(Ljetbrains/mps/smodel/SNode;ZLjetbrains/mps/textGen/SNodeTextGen;)V" />
-    <nodeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="28" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="members#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/textGen/SNodeTextGen;)V" />
-    <scopeInfo nodeId="5574237510125076813" fileName="BaseClassConceptTextGen.java" startLine="19" startPosition="30" endLine="20" endPosition="59" />
-    <scopeInfo nodeId="5574237510125076816" fileName="BaseClassConceptTextGen.java" startLine="21" startPosition="30" endLine="22" endPosition="36" />
-    <scopeInfo nodeId="5574237510125076819" fileName="BaseClassConceptTextGen.java" startLine="23" startPosition="12" endLine="24" endPosition="27" />
-    <scopeInfo nodeId="5574237510138062261" fileName="BaseClassConceptTextGen.java" startLine="23" startPosition="12" endLine="24" endPosition="27" />
-    <scopeInfo nodeId="1465982738273838462" fileName="BaseClassConceptTextGen.java" startLine="30" startPosition="91" endLine="31" endPosition="118" />
-    <scopeInfo nodeId="1465982738256693292" fileName="BaseClassConceptTextGen.java" startLine="34" startPosition="158" endLine="35" endPosition="43" />
-    <scopeInfo nodeId="1465982738256693298" fileName="BaseClassConceptTextGen.java" startLine="36" startPosition="30" endLine="37" endPosition="251" />
-    <scopeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="45" startPosition="70" endLine="46" endPosition="54" />
-    <scopeInfo nodeId="8022354779063045573" fileName="BaseClassConceptTextGen.java" startLine="45" startPosition="70" endLine="46" endPosition="54" />
-    <scopeInfo nodeId="582575223451914846" fileName="BaseClassConceptTextGen.java" startLine="50" startPosition="98" endLine="51" endPosition="122" />
-    <scopeInfo nodeId="582575223451914853" fileName="BaseClassConceptTextGen.java" startLine="52" startPosition="132" endLine="53" endPosition="32" />
-    <scopeInfo nodeId="582575223451914907" fileName="BaseClassConceptTextGen.java" startLine="52" startPosition="132" endLine="53" endPosition="32" />
-    <scopeInfo nodeId="2365107255602301567" fileName="BaseClassConceptTextGen.java" startLine="60" startPosition="32" endLine="61" endPosition="118" />
-    <scopeInfo nodeId="5574237510125076808" fileName="BaseClassConceptTextGen.java" startLine="16" startPosition="136" endLine="18" endPosition="30" />
-    <scopeInfo nodeId="1465982738256693298" fileName="BaseClassConceptTextGen.java" startLine="36" startPosition="30" endLine="38" endPosition="30" />
-    <scopeInfo nodeId="1465982738256693306" fileName="BaseClassConceptTextGen.java" startLine="39" startPosition="30" endLine="41" endPosition="30" />
-    <scopeInfo nodeId="5574237510125076811" fileName="BaseClassConceptTextGen.java" startLine="18" startPosition="30" endLine="21" endPosition="30" />
-    <scopeInfo nodeId="1465982738273838462" fileName="BaseClassConceptTextGen.java" startLine="29" startPosition="111" endLine="32" endPosition="7" />
-    <scopeInfo nodeId="1465982738273838462" fileName="BaseClassConceptTextGen.java" startLine="29" startPosition="111" endLine="32" endPosition="7">
-      <varInfo nodeId="1465982738273838462" varName="item" />
-    </scopeInfo>
-    <scopeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+    <nodeInfo nodeId="5574237510125076808" fileName="BaseClassConceptTextGen.java" startLine="17" startPosition="136" endLine="18" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5574237510125076808" fileName="BaseClassConceptTextGen.java" startLine="18" startPosition="26" endLine="19" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5574237510125076811" fileName="BaseClassConceptTextGen.java" startLine="19" startPosition="30" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5574237510125076813" fileName="BaseClassConceptTextGen.java" startLine="20" startPosition="30" endLine="21" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5574237510125076813" fileName="BaseClassConceptTextGen.java" startLine="20" startPosition="30" endLine="21" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5574237510125076811" fileName="BaseClassConceptTextGen.java" startLine="21" startPosition="59" endLine="22" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5574237510125076816" fileName="BaseClassConceptTextGen.java" startLine="22" startPosition="30" endLine="23" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5574237510125076816" fileName="BaseClassConceptTextGen.java" startLine="22" startPosition="30" endLine="23" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5574237510138062261" fileName="BaseClassConceptTextGen.java" startLine="24" startPosition="12" endLine="25" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5574237510138062261" fileName="BaseClassConceptTextGen.java" startLine="24" startPosition="12" endLine="25" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="287631085801560058" fileName="BaseClassConceptTextGen.java" startLine="29" startPosition="76" endLine="30" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="287631085801516588" fileName="BaseClassConceptTextGen.java" startLine="30" startPosition="30" endLine="31" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="641490355012088265" fileName="BaseClassConceptTextGen.java" startLine="31" startPosition="42" endLine="32" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="287631085801563753" fileName="BaseClassConceptTextGen.java" startLine="34" startPosition="106" endLine="35" endPosition="235" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="641490355014543868" fileName="BaseClassConceptTextGen.java" startLine="35" startPosition="235" endLine="36" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="287631085801611166" fileName="BaseClassConceptTextGen.java" startLine="36" startPosition="233" endLine="37" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="287631085801611166" fileName="BaseClassConceptTextGen.java" startLine="36" startPosition="233" endLine="37" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="287631085801510599" fileName="BaseClassConceptTextGen.java" startLine="37" startPosition="91" endLine="38" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="287631085801510599" fileName="BaseClassConceptTextGen.java" startLine="37" startPosition="91" endLine="38" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="287631085801510599" fileName="BaseClassConceptTextGen.java" startLine="37" startPosition="91" endLine="38" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="287631085801616658" fileName="BaseClassConceptTextGen.java" startLine="38" startPosition="120" endLine="39" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="287631085801616658" fileName="BaseClassConceptTextGen.java" startLine="38" startPosition="120" endLine="39" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="287631085801617592" fileName="BaseClassConceptTextGen.java" startLine="39" startPosition="88" endLine="40" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="287631085801504501" fileName="BaseClassConceptTextGen.java" startLine="41" startPosition="14" endLine="42" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="287631085801504501" fileName="BaseClassConceptTextGen.java" startLine="41" startPosition="14" endLine="42" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="287631085801504501" fileName="BaseClassConceptTextGen.java" startLine="41" startPosition="14" endLine="42" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="287631085801561431" fileName="BaseClassConceptTextGen.java" startLine="42" startPosition="120" endLine="43" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1465982738256693292" fileName="BaseClassConceptTextGen.java" startLine="46" startPosition="158" endLine="47" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1465982738256693292" fileName="BaseClassConceptTextGen.java" startLine="46" startPosition="158" endLine="47" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1465982738256693296" fileName="BaseClassConceptTextGen.java" startLine="47" startPosition="43" endLine="48" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1465982738256693298" fileName="BaseClassConceptTextGen.java" startLine="48" startPosition="30" endLine="49" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1465982738256693298" fileName="BaseClassConceptTextGen.java" startLine="48" startPosition="30" endLine="49" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1465982738256693298" fileName="BaseClassConceptTextGen.java" startLine="49" startPosition="251" endLine="50" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1465982738256693296" fileName="BaseClassConceptTextGen.java" startLine="50" startPosition="30" endLine="51" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1465982738256693306" fileName="BaseClassConceptTextGen.java" startLine="51" startPosition="30" endLine="52" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1465982738256693306" fileName="BaseClassConceptTextGen.java" startLine="52" startPosition="36" endLine="53" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8022354779063045573" fileName="BaseClassConceptTextGen.java" startLine="57" startPosition="70" endLine="58" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8022354779063045573" fileName="BaseClassConceptTextGen.java" startLine="57" startPosition="70" endLine="58" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="582575223451914846" fileName="BaseClassConceptTextGen.java" startLine="62" startPosition="98" endLine="63" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="582575223451914846" fileName="BaseClassConceptTextGen.java" startLine="62" startPosition="98" endLine="63" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="582575223451914846" fileName="BaseClassConceptTextGen.java" startLine="62" startPosition="98" endLine="63" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="582575223451914907" fileName="BaseClassConceptTextGen.java" startLine="64" startPosition="132" endLine="65" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="582575223451914907" fileName="BaseClassConceptTextGen.java" startLine="64" startPosition="132" endLine="65" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2365107255602301567" fileName="BaseClassConceptTextGen.java" startLine="72" startPosition="32" endLine="73" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2365107255602301567" fileName="BaseClassConceptTextGen.java" startLine="75" startPosition="5" endLine="76" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5574237510125076808" fileName="BaseClassConceptTextGen.java" startLine="17" startPosition="136" endLine="19" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5574237510125076818" fileName="BaseClassConceptTextGen.java" startLine="24" startPosition="10" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1465982738256693298" fileName="BaseClassConceptTextGen.java" startLine="48" startPosition="30" endLine="50" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1465982738256693306" fileName="BaseClassConceptTextGen.java" startLine="51" startPosition="30" endLine="53" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5574237510125076811" fileName="BaseClassConceptTextGen.java" startLine="19" startPosition="30" endLine="22" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="287631085801487412" fileName="BaseClassConceptTextGen.java" startLine="41" startPosition="12" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="body#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/textGen/SNodeTextGen;)V" />
+    <nodeInfo nodeId="582575223451914852" fileName="BaseClassConceptTextGen.java" startLine="63" startPosition="122" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2365107255602301567" fileName="BaseClassConceptTextGen.java" startLine="71" startPosition="52" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1465982738256693296" fileName="BaseClassConceptTextGen.java" startLine="47" startPosition="43" endLine="51" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2365107255602301567" fileName="BaseClassConceptTextGen.java" startLine="70" startPosition="84" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="582575223451914816" fileName="BaseClassConceptTextGen.java" startLine="61" startPosition="82" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2365107255602301567" fileName="BaseClassConceptTextGen.java" startLine="70" startPosition="84" endLine="76" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="61" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="innerClassifiers#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/textGen/SNodeTextGen;)V" />
+    <nodeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="70" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="collection#(Ljava/lang/Iterable;Ljetbrains/mps/textGen/SNodeTextGen;)V" />
+    <nodeInfo nodeId="1465982738256693290" fileName="BaseClassConceptTextGen.java" startLine="45" startPosition="5" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5574237510125076801" fileName="BaseClassConceptTextGen.java" startLine="16" startPosition="119" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="287631085801474171" fileName="BaseClassConceptTextGen.java" startLine="33" startPosition="91" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="16" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="membersWithBrackets#(Ljetbrains/mps/smodel/SNode;ZLjetbrains/mps/textGen/SNodeTextGen;)V" />
+    <nodeInfo nodeId="287631085801392980" fileName="BaseClassConceptTextGen.java" startLine="32" startPosition="118" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="29" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="members#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/textGen/SNodeTextGen;)V" />
+    <scopeInfo nodeId="5574237510125076813" fileName="BaseClassConceptTextGen.java" startLine="20" startPosition="30" endLine="21" endPosition="59" />
+    <scopeInfo nodeId="5574237510125076816" fileName="BaseClassConceptTextGen.java" startLine="22" startPosition="30" endLine="23" endPosition="36" />
+    <scopeInfo nodeId="5574237510125076819" fileName="BaseClassConceptTextGen.java" startLine="24" startPosition="12" endLine="25" endPosition="27" />
+    <scopeInfo nodeId="5574237510138062261" fileName="BaseClassConceptTextGen.java" startLine="24" startPosition="12" endLine="25" endPosition="27" />
+    <scopeInfo nodeId="287631085801611166" fileName="BaseClassConceptTextGen.java" startLine="36" startPosition="233" endLine="37" endPosition="91" />
+    <scopeInfo nodeId="287631085801510599" fileName="BaseClassConceptTextGen.java" startLine="37" startPosition="91" endLine="38" endPosition="120" />
+    <scopeInfo nodeId="287631085801616658" fileName="BaseClassConceptTextGen.java" startLine="38" startPosition="120" endLine="39" endPosition="88" />
+    <scopeInfo nodeId="287631085801504501" fileName="BaseClassConceptTextGen.java" startLine="41" startPosition="14" endLine="42" endPosition="120" />
+    <scopeInfo nodeId="1465982738256693292" fileName="BaseClassConceptTextGen.java" startLine="46" startPosition="158" endLine="47" endPosition="43" />
+    <scopeInfo nodeId="1465982738256693298" fileName="BaseClassConceptTextGen.java" startLine="48" startPosition="30" endLine="49" endPosition="251" />
+    <scopeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="57" startPosition="70" endLine="58" endPosition="54" />
+    <scopeInfo nodeId="8022354779063045573" fileName="BaseClassConceptTextGen.java" startLine="57" startPosition="70" endLine="58" endPosition="54" />
+    <scopeInfo nodeId="582575223451914846" fileName="BaseClassConceptTextGen.java" startLine="62" startPosition="98" endLine="63" endPosition="122" />
+    <scopeInfo nodeId="582575223451914853" fileName="BaseClassConceptTextGen.java" startLine="64" startPosition="132" endLine="65" endPosition="32" />
+    <scopeInfo nodeId="582575223451914907" fileName="BaseClassConceptTextGen.java" startLine="64" startPosition="132" endLine="65" endPosition="32" />
+    <scopeInfo nodeId="2365107255602301567" fileName="BaseClassConceptTextGen.java" startLine="72" startPosition="32" endLine="73" endPosition="118" />
+    <scopeInfo nodeId="5574237510125076808" fileName="BaseClassConceptTextGen.java" startLine="17" startPosition="136" endLine="19" endPosition="30" />
+    <scopeInfo nodeId="287631085801487413" fileName="BaseClassConceptTextGen.java" startLine="41" startPosition="14" endLine="43" endPosition="39" />
+    <scopeInfo nodeId="1465982738256693298" fileName="BaseClassConceptTextGen.java" startLine="48" startPosition="30" endLine="50" endPosition="30" />
+    <scopeInfo nodeId="1465982738256693306" fileName="BaseClassConceptTextGen.java" startLine="51" startPosition="30" endLine="53" endPosition="30" />
+    <scopeInfo nodeId="5574237510125076811" fileName="BaseClassConceptTextGen.java" startLine="19" startPosition="30" endLine="22" endPosition="30" />
+    <scopeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="57" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="3408882292339891840" varName="concept" />
       <varInfo nodeId="3408882292339889057" varName="textGen" />
     </scopeInfo>
-    <scopeInfo nodeId="2365107255602301567" fileName="BaseClassConceptTextGen.java" startLine="59" startPosition="52" endLine="62" endPosition="7" />
-    <scopeInfo nodeId="2365107255602301567" fileName="BaseClassConceptTextGen.java" startLine="59" startPosition="52" endLine="62" endPosition="7">
+    <scopeInfo nodeId="2365107255602301567" fileName="BaseClassConceptTextGen.java" startLine="71" startPosition="52" endLine="74" endPosition="7" />
+    <scopeInfo nodeId="2365107255602301567" fileName="BaseClassConceptTextGen.java" startLine="71" startPosition="52" endLine="74" endPosition="7">
       <varInfo nodeId="2365107255602301567" varName="item" />
     </scopeInfo>
-    <scopeInfo nodeId="1465982738256693296" fileName="BaseClassConceptTextGen.java" startLine="35" startPosition="43" endLine="39" endPosition="30" />
-    <scopeInfo nodeId="582575223451914820" fileName="BaseClassConceptTextGen.java" startLine="50" startPosition="98" endLine="54" endPosition="7" />
-    <scopeInfo nodeId="1465982738273838462" fileName="BaseClassConceptTextGen.java" startLine="28" startPosition="76" endLine="33" endPosition="5" />
-    <scopeInfo nodeId="5574237510125076807" fileName="BaseClassConceptTextGen.java" startLine="16" startPosition="136" endLine="22" endPosition="36" />
-    <scopeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="49" startPosition="82" endLine="55" endPosition="5" />
-    <scopeInfo nodeId="582575223451914816" fileName="BaseClassConceptTextGen.java" startLine="49" startPosition="82" endLine="55" endPosition="5">
+    <scopeInfo nodeId="1465982738256693296" fileName="BaseClassConceptTextGen.java" startLine="47" startPosition="43" endLine="51" endPosition="30" />
+    <scopeInfo nodeId="582575223451914820" fileName="BaseClassConceptTextGen.java" startLine="62" startPosition="98" endLine="66" endPosition="7" />
+    <scopeInfo nodeId="5574237510125076807" fileName="BaseClassConceptTextGen.java" startLine="17" startPosition="136" endLine="23" endPosition="36" />
+    <scopeInfo nodeId="287631085801474173" fileName="BaseClassConceptTextGen.java" startLine="34" startPosition="106" endLine="40" endPosition="48">
+      <varInfo nodeId="641490355014543871" varName="needsLineAfter" />
+      <varInfo nodeId="287631085801563756" varName="needsLineBefore" />
+    </scopeInfo>
+    <scopeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="61" startPosition="82" endLine="67" endPosition="5" />
+    <scopeInfo nodeId="582575223451914816" fileName="BaseClassConceptTextGen.java" startLine="61" startPosition="82" endLine="67" endPosition="5">
       <varInfo nodeId="582575223451914818" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="2365107255602301567" fileName="BaseClassConceptTextGen.java" startLine="58" startPosition="84" endLine="64" endPosition="28" />
-    <scopeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="58" startPosition="84" endLine="64" endPosition="28" />
-    <scopeInfo nodeId="1465982738256693291" fileName="BaseClassConceptTextGen.java" startLine="34" startPosition="158" endLine="41" endPosition="30" />
-    <scopeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="49" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="2365107255602301567" fileName="BaseClassConceptTextGen.java" startLine="70" startPosition="84" endLine="76" endPosition="28" />
+    <scopeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="70" startPosition="84" endLine="76" endPosition="28" />
+    <scopeInfo nodeId="1465982738256693291" fileName="BaseClassConceptTextGen.java" startLine="46" startPosition="158" endLine="53" endPosition="30" />
+    <scopeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="61" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="582575223451914814" varName="concept" />
       <varInfo nodeId="3408882292339889057" varName="textGen" />
     </scopeInfo>
-    <scopeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="58" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="70" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="2365107255602283841" varName="nodes" />
       <varInfo nodeId="3408882292339889057" varName="textGen" />
     </scopeInfo>
-    <scopeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="15" startPosition="119" endLine="25" endPosition="5" />
-    <scopeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="15" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="16" startPosition="119" endLine="26" endPosition="5" />
+    <scopeInfo nodeId="287631085801392982" fileName="BaseClassConceptTextGen.java" startLine="33" startPosition="91" endLine="44" endPosition="7" />
+    <scopeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="16" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="5574237510125059782" varName="classifier" />
       <varInfo nodeId="5574237510137940236" varName="newLineOnEmptyMembers" />
       <varInfo nodeId="3408882292339889057" varName="textGen" />
     </scopeInfo>
-    <scopeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="28" startPosition="76" endLine="42" endPosition="5" />
-    <scopeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="28" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="287631085801392980" fileName="BaseClassConceptTextGen.java" startLine="32" startPosition="118" endLine="45" endPosition="5">
+      <varInfo nodeId="287631085801392983" varName="member" />
+    </scopeInfo>
+    <scopeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="29" startPosition="76" endLine="54" endPosition="5">
+      <varInfo nodeId="287631085801516591" varName="isWrappedElementBefore" />
+      <varInfo nodeId="641490355012088268" varName="lastMember" />
+    </scopeInfo>
+    <scopeInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="29" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="1465982738256644319" varName="classifier" />
       <varInfo nodeId="3408882292339889057" varName="textGen" />
     </scopeInfo>
-    <unitInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="14" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.BaseClassConceptTextGen" />
+    <unitInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="15" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.BaseClassConceptTextGen" />
   </root>
   <root nodeId="3409542372145539379" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
     <nodeInfo nodeId="3409542372145539379" fileName="Statement_TextGen.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -4737,148 +4731,148 @@
   </root>
   <root nodeId="4571635105384638795" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
     <nodeInfo nodeId="4571635105384638795" fileName="ContextClassifiersInRoot.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="4571635105384639077" fileName="ContextClassifiersInRoot.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="contextClassifiersCache" />
-    <nodeInfo nodeId="7520879497544097064" fileName="ContextClassifiersInRoot.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="nestedClassifiersCache" />
-    <nodeInfo nodeId="7520879497544097357" fileName="ContextClassifiersInRoot.java" startLine="26" startPosition="76" endLine="27" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7520879497544097139" fileName="ContextClassifiersInRoot.java" startLine="31" startPosition="57" endLine="32" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4571635105384638992" fileName="ContextClassifiersInRoot.java" startLine="37" startPosition="71" endLine="38" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4571635105384638994" fileName="ContextClassifiersInRoot.java" startLine="38" startPosition="55" endLine="39" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4571635105384638998" fileName="ContextClassifiersInRoot.java" startLine="40" startPosition="108" endLine="41" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4571635105384639010" fileName="ContextClassifiersInRoot.java" startLine="43" startPosition="103" endLine="44" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4571635105384639014" fileName="ContextClassifiersInRoot.java" startLine="44" startPosition="88" endLine="45" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4571635105384639020" fileName="ContextClassifiersInRoot.java" startLine="46" startPosition="5" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4571635105384639021" fileName="ContextClassifiersInRoot.java" startLine="47" startPosition="0" endLine="48" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4571635105384639023" fileName="ContextClassifiersInRoot.java" startLine="48" startPosition="37" endLine="49" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4571635105384639038" fileName="ContextClassifiersInRoot.java" startLine="50" startPosition="134" endLine="51" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4571635105384639045" fileName="ContextClassifiersInRoot.java" startLine="51" startPosition="54" endLine="52" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4571635105384639051" fileName="ContextClassifiersInRoot.java" startLine="53" startPosition="5" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4571635105384639054" fileName="ContextClassifiersInRoot.java" startLine="55" startPosition="32" endLine="56" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4571635105384639056" fileName="ContextClassifiersInRoot.java" startLine="56" startPosition="27" endLine="57" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4571635105384639061" fileName="ContextClassifiersInRoot.java" startLine="58" startPosition="5" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4571635105384639062" fileName="ContextClassifiersInRoot.java" startLine="59" startPosition="0" endLine="60" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7520879497544097151" fileName="ContextClassifiersInRoot.java" startLine="63" startPosition="96" endLine="64" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7520879497544097160" fileName="ContextClassifiersInRoot.java" startLine="64" startPosition="65" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7520879497544097161" fileName="ContextClassifiersInRoot.java" startLine="65" startPosition="0" endLine="66" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7520879497544097176" fileName="ContextClassifiersInRoot.java" startLine="68" startPosition="101" endLine="69" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7520879497544097191" fileName="ContextClassifiersInRoot.java" startLine="70" startPosition="198" endLine="71" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7520879497544097201" fileName="ContextClassifiersInRoot.java" startLine="72" startPosition="109" endLine="73" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7520879497544097215" fileName="ContextClassifiersInRoot.java" startLine="74" startPosition="112" endLine="75" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7520879497544097230" fileName="ContextClassifiersInRoot.java" startLine="76" startPosition="16" endLine="77" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7520879497544097234" fileName="ContextClassifiersInRoot.java" startLine="78" startPosition="9" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7520879497544097235" fileName="ContextClassifiersInRoot.java" startLine="79" startPosition="0" endLine="80" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7520879497544097237" fileName="ContextClassifiersInRoot.java" startLine="80" startPosition="120" endLine="81" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7520879497544097248" fileName="ContextClassifiersInRoot.java" startLine="84" startPosition="67" endLine="85" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7520879497544097275" fileName="ContextClassifiersInRoot.java" startLine="89" startPosition="7" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7520879497544097276" fileName="ContextClassifiersInRoot.java" startLine="90" startPosition="0" endLine="91" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7520879497544097278" fileName="ContextClassifiersInRoot.java" startLine="91" startPosition="34" endLine="92" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7520879497544097280" fileName="ContextClassifiersInRoot.java" startLine="92" startPosition="100" endLine="93" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7520879497544097287" fileName="ContextClassifiersInRoot.java" startLine="93" startPosition="50" endLine="94" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7520879497544097293" fileName="ContextClassifiersInRoot.java" startLine="95" startPosition="5" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7520879497544097294" fileName="ContextClassifiersInRoot.java" startLine="96" startPosition="0" endLine="97" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7520879497544096768" fileName="ContextClassifiersInRoot.java" startLine="100" startPosition="77" endLine="101" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7520879497544096795" fileName="ContextClassifiersInRoot.java" startLine="101" startPosition="45" endLine="102" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7520879497544096793" fileName="ContextClassifiersInRoot.java" startLine="102" startPosition="74" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4571635105384638906" fileName="ContextClassifiersInRoot.java" startLine="103" startPosition="0" endLine="104" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7520879497544096778" fileName="ContextClassifiersInRoot.java" startLine="106" startPosition="114" endLine="107" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7520879497544096805" fileName="ContextClassifiersInRoot.java" startLine="109" startPosition="5" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7520879497544096807" fileName="ContextClassifiersInRoot.java" startLine="110" startPosition="0" endLine="111" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4571635105384638963" fileName="ContextClassifiersInRoot.java" startLine="114" startPosition="97" endLine="115" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4571635105384638969" fileName="ContextClassifiersInRoot.java" startLine="115" startPosition="74" endLine="116" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4571635105384638975" fileName="ContextClassifiersInRoot.java" startLine="116" startPosition="130" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4571635105384638978" fileName="ContextClassifiersInRoot.java" startLine="118" startPosition="46" endLine="119" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7520879497544097228" fileName="ContextClassifiersInRoot.java" startLine="76" startPosition="14" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4571635105384639094" fileName="ContextClassifiersInRoot.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="innerGet#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljava/util/Map;" />
-    <nodeInfo nodeId="7520879497544097110" fileName="ContextClassifiersInRoot.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="innerGet#(Ljetbrains/mps/smodel/SNode;)Ljava/util/Map;" />
-    <nodeInfo nodeId="4571635105384638996" fileName="ContextClassifiersInRoot.java" startLine="39" startPosition="29" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7520879497544097246" fileName="ContextClassifiersInRoot.java" startLine="83" startPosition="180" endLine="86" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7520879497544096776" fileName="ContextClassifiersInRoot.java" startLine="105" startPosition="191" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4571635105384638976" fileName="ContextClassifiersInRoot.java" startLine="117" startPosition="0" endLine="120" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4571635105384639008" fileName="ContextClassifiersInRoot.java" startLine="42" startPosition="5" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4571635105384639027" fileName="ContextClassifiersInRoot.java" startLine="49" startPosition="34" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="4571635105384639052" fileName="ContextClassifiersInRoot.java" startLine="54" startPosition="0" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4571635105384639087" fileName="ContextClassifiersInRoot.java" startLine="24" startPosition="51" endLine="29" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7520879497544097068" fileName="ContextClassifiersInRoot.java" startLine="29" startPosition="6" endLine="34" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7520879497544097244" fileName="ContextClassifiersInRoot.java" startLine="82" startPosition="39" endLine="87" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7520879497544096774" fileName="ContextClassifiersInRoot.java" startLine="104" startPosition="66" endLine="109" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7520879497544097242" fileName="ContextClassifiersInRoot.java" startLine="81" startPosition="126" endLine="88" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4571635105384638953" fileName="ContextClassifiersInRoot.java" startLine="114" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addClassifierToBindingMap#(Ljava/util/Map;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="7520879497544097180" fileName="ContextClassifiersInRoot.java" startLine="69" startPosition="49" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4571635105384638797" fileName="ContextClassifiersInRoot.java" startLine="24" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ContextClassifiersInRoot#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="7520879497544096750" fileName="ContextClassifiersInRoot.java" startLine="100" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNestedClassifiers#(Ljetbrains/mps/smodel/SNode;)Ljava/util/Map;" />
-    <nodeInfo nodeId="7520879497544097170" fileName="ContextClassifiersInRoot.java" startLine="67" startPosition="31" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4571635105384638990" fileName="ContextClassifiersInRoot.java" startLine="37" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextClassifiers#(Ljetbrains/mps/smodel/SNode;)Ljava/util/Map;" />
-    <nodeInfo nodeId="7520879497544097165" fileName="ContextClassifiersInRoot.java" startLine="66" startPosition="32" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="7520879497544097142" fileName="ContextClassifiersInRoot.java" startLine="63" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextClassifiers#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/Map;" />
-    <scopeInfo nodeId="4571635105384639103" fileName="ContextClassifiersInRoot.java" startLine="26" startPosition="76" endLine="27" endPosition="57" />
-    <scopeInfo nodeId="7520879497544097119" fileName="ContextClassifiersInRoot.java" startLine="31" startPosition="57" endLine="32" endPosition="41" />
-    <scopeInfo nodeId="4571635105384638997" fileName="ContextClassifiersInRoot.java" startLine="40" startPosition="108" endLine="41" endPosition="59" />
-    <scopeInfo nodeId="7520879497544097190" fileName="ContextClassifiersInRoot.java" startLine="70" startPosition="198" endLine="71" endPosition="42" />
-    <scopeInfo nodeId="7520879497544097200" fileName="ContextClassifiersInRoot.java" startLine="72" startPosition="109" endLine="73" endPosition="84" />
-    <scopeInfo nodeId="7520879497544097214" fileName="ContextClassifiersInRoot.java" startLine="74" startPosition="112" endLine="75" endPosition="127" />
-    <scopeInfo nodeId="7520879497544097229" fileName="ContextClassifiersInRoot.java" startLine="76" startPosition="16" endLine="77" endPosition="75" />
-    <scopeInfo nodeId="7520879497544097247" fileName="ContextClassifiersInRoot.java" startLine="84" startPosition="67" endLine="85" endPosition="79" />
-    <scopeInfo nodeId="7520879497544096777" fileName="ContextClassifiersInRoot.java" startLine="106" startPosition="114" endLine="107" endPosition="71" />
-    <scopeInfo nodeId="4571635105384638977" fileName="ContextClassifiersInRoot.java" startLine="118" startPosition="46" endLine="119" endPosition="39" />
-    <scopeInfo nodeId="4571635105384639009" fileName="ContextClassifiersInRoot.java" startLine="43" startPosition="103" endLine="45" endPosition="36" />
-    <scopeInfo nodeId="4571635105384639037" fileName="ContextClassifiersInRoot.java" startLine="50" startPosition="134" endLine="52" endPosition="59" />
-    <scopeInfo nodeId="4571635105384639053" fileName="ContextClassifiersInRoot.java" startLine="55" startPosition="32" endLine="57" endPosition="36" />
-    <scopeInfo nodeId="4571635105384639094" fileName="ContextClassifiersInRoot.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+    <nodeInfo nodeId="4571635105384639077" fileName="ContextClassifiersInRoot.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="contextClassifiersCache" />
+    <nodeInfo nodeId="7520879497544097064" fileName="ContextClassifiersInRoot.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="nestedClassifiersCache" />
+    <nodeInfo nodeId="7520879497544097357" fileName="ContextClassifiersInRoot.java" startLine="25" startPosition="76" endLine="26" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7520879497544097139" fileName="ContextClassifiersInRoot.java" startLine="30" startPosition="57" endLine="31" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4571635105384638992" fileName="ContextClassifiersInRoot.java" startLine="36" startPosition="71" endLine="37" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4571635105384638994" fileName="ContextClassifiersInRoot.java" startLine="37" startPosition="55" endLine="38" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4571635105384638998" fileName="ContextClassifiersInRoot.java" startLine="39" startPosition="108" endLine="40" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4571635105384639010" fileName="ContextClassifiersInRoot.java" startLine="42" startPosition="103" endLine="43" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4571635105384639014" fileName="ContextClassifiersInRoot.java" startLine="43" startPosition="88" endLine="44" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4571635105384639020" fileName="ContextClassifiersInRoot.java" startLine="45" startPosition="5" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4571635105384639021" fileName="ContextClassifiersInRoot.java" startLine="46" startPosition="0" endLine="47" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4571635105384639023" fileName="ContextClassifiersInRoot.java" startLine="47" startPosition="37" endLine="48" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4571635105384639038" fileName="ContextClassifiersInRoot.java" startLine="49" startPosition="134" endLine="50" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4571635105384639045" fileName="ContextClassifiersInRoot.java" startLine="50" startPosition="54" endLine="51" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4571635105384639051" fileName="ContextClassifiersInRoot.java" startLine="52" startPosition="5" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4571635105384639054" fileName="ContextClassifiersInRoot.java" startLine="54" startPosition="32" endLine="55" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4571635105384639056" fileName="ContextClassifiersInRoot.java" startLine="55" startPosition="27" endLine="56" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4571635105384639061" fileName="ContextClassifiersInRoot.java" startLine="57" startPosition="5" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4571635105384639062" fileName="ContextClassifiersInRoot.java" startLine="58" startPosition="0" endLine="59" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7520879497544097151" fileName="ContextClassifiersInRoot.java" startLine="62" startPosition="96" endLine="63" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7520879497544097160" fileName="ContextClassifiersInRoot.java" startLine="63" startPosition="65" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7520879497544097161" fileName="ContextClassifiersInRoot.java" startLine="64" startPosition="0" endLine="65" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7520879497544097176" fileName="ContextClassifiersInRoot.java" startLine="67" startPosition="101" endLine="68" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7520879497544097191" fileName="ContextClassifiersInRoot.java" startLine="69" startPosition="198" endLine="70" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544097201" fileName="ContextClassifiersInRoot.java" startLine="71" startPosition="109" endLine="72" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544097215" fileName="ContextClassifiersInRoot.java" startLine="73" startPosition="112" endLine="74" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544097230" fileName="ContextClassifiersInRoot.java" startLine="75" startPosition="16" endLine="76" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544097234" fileName="ContextClassifiersInRoot.java" startLine="77" startPosition="9" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7520879497544097235" fileName="ContextClassifiersInRoot.java" startLine="78" startPosition="0" endLine="79" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7520879497544097237" fileName="ContextClassifiersInRoot.java" startLine="79" startPosition="120" endLine="80" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544097248" fileName="ContextClassifiersInRoot.java" startLine="83" startPosition="67" endLine="84" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544097275" fileName="ContextClassifiersInRoot.java" startLine="88" startPosition="7" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7520879497544097276" fileName="ContextClassifiersInRoot.java" startLine="89" startPosition="0" endLine="90" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7520879497544097278" fileName="ContextClassifiersInRoot.java" startLine="90" startPosition="34" endLine="91" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7520879497544097280" fileName="ContextClassifiersInRoot.java" startLine="91" startPosition="100" endLine="92" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544097287" fileName="ContextClassifiersInRoot.java" startLine="92" startPosition="50" endLine="93" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544097293" fileName="ContextClassifiersInRoot.java" startLine="94" startPosition="5" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7520879497544097294" fileName="ContextClassifiersInRoot.java" startLine="95" startPosition="0" endLine="96" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7520879497544096768" fileName="ContextClassifiersInRoot.java" startLine="99" startPosition="77" endLine="100" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7520879497544096795" fileName="ContextClassifiersInRoot.java" startLine="100" startPosition="45" endLine="101" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7520879497544096793" fileName="ContextClassifiersInRoot.java" startLine="101" startPosition="74" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4571635105384638906" fileName="ContextClassifiersInRoot.java" startLine="102" startPosition="0" endLine="103" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7520879497544096778" fileName="ContextClassifiersInRoot.java" startLine="105" startPosition="114" endLine="106" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544096805" fileName="ContextClassifiersInRoot.java" startLine="108" startPosition="5" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7520879497544096807" fileName="ContextClassifiersInRoot.java" startLine="109" startPosition="0" endLine="110" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4571635105384638963" fileName="ContextClassifiersInRoot.java" startLine="113" startPosition="97" endLine="114" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4571635105384638969" fileName="ContextClassifiersInRoot.java" startLine="114" startPosition="74" endLine="115" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4571635105384638975" fileName="ContextClassifiersInRoot.java" startLine="115" startPosition="130" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4571635105384638978" fileName="ContextClassifiersInRoot.java" startLine="117" startPosition="46" endLine="118" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544097228" fileName="ContextClassifiersInRoot.java" startLine="75" startPosition="14" endLine="77" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4571635105384639094" fileName="ContextClassifiersInRoot.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="innerGet#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljava/util/Map;" />
+    <nodeInfo nodeId="7520879497544097110" fileName="ContextClassifiersInRoot.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="innerGet#(Ljetbrains/mps/smodel/SNode;)Ljava/util/Map;" />
+    <nodeInfo nodeId="4571635105384638996" fileName="ContextClassifiersInRoot.java" startLine="38" startPosition="29" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7520879497544097246" fileName="ContextClassifiersInRoot.java" startLine="82" startPosition="180" endLine="85" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7520879497544096776" fileName="ContextClassifiersInRoot.java" startLine="104" startPosition="191" endLine="107" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4571635105384638976" fileName="ContextClassifiersInRoot.java" startLine="116" startPosition="0" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4571635105384639008" fileName="ContextClassifiersInRoot.java" startLine="41" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4571635105384639027" fileName="ContextClassifiersInRoot.java" startLine="48" startPosition="34" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="4571635105384639052" fileName="ContextClassifiersInRoot.java" startLine="53" startPosition="0" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4571635105384639087" fileName="ContextClassifiersInRoot.java" startLine="23" startPosition="51" endLine="28" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544097068" fileName="ContextClassifiersInRoot.java" startLine="28" startPosition="6" endLine="33" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544097244" fileName="ContextClassifiersInRoot.java" startLine="81" startPosition="39" endLine="86" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7520879497544096774" fileName="ContextClassifiersInRoot.java" startLine="103" startPosition="66" endLine="108" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7520879497544097242" fileName="ContextClassifiersInRoot.java" startLine="80" startPosition="126" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4571635105384638953" fileName="ContextClassifiersInRoot.java" startLine="113" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addClassifierToBindingMap#(Ljava/util/Map;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7520879497544097180" fileName="ContextClassifiersInRoot.java" startLine="68" startPosition="49" endLine="77" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4571635105384638797" fileName="ContextClassifiersInRoot.java" startLine="23" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ContextClassifiersInRoot#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7520879497544096750" fileName="ContextClassifiersInRoot.java" startLine="99" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNestedClassifiers#(Ljetbrains/mps/smodel/SNode;)Ljava/util/Map;" />
+    <nodeInfo nodeId="7520879497544097170" fileName="ContextClassifiersInRoot.java" startLine="66" startPosition="31" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4571635105384638990" fileName="ContextClassifiersInRoot.java" startLine="36" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextClassifiers#(Ljetbrains/mps/smodel/SNode;)Ljava/util/Map;" />
+    <nodeInfo nodeId="7520879497544097165" fileName="ContextClassifiersInRoot.java" startLine="65" startPosition="32" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="7520879497544097142" fileName="ContextClassifiersInRoot.java" startLine="62" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextClassifiers#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/Map;" />
+    <scopeInfo nodeId="4571635105384639103" fileName="ContextClassifiersInRoot.java" startLine="25" startPosition="76" endLine="26" endPosition="57" />
+    <scopeInfo nodeId="7520879497544097119" fileName="ContextClassifiersInRoot.java" startLine="30" startPosition="57" endLine="31" endPosition="41" />
+    <scopeInfo nodeId="4571635105384638997" fileName="ContextClassifiersInRoot.java" startLine="39" startPosition="108" endLine="40" endPosition="59" />
+    <scopeInfo nodeId="7520879497544097190" fileName="ContextClassifiersInRoot.java" startLine="69" startPosition="198" endLine="70" endPosition="42" />
+    <scopeInfo nodeId="7520879497544097200" fileName="ContextClassifiersInRoot.java" startLine="71" startPosition="109" endLine="72" endPosition="84" />
+    <scopeInfo nodeId="7520879497544097214" fileName="ContextClassifiersInRoot.java" startLine="73" startPosition="112" endLine="74" endPosition="127" />
+    <scopeInfo nodeId="7520879497544097229" fileName="ContextClassifiersInRoot.java" startLine="75" startPosition="16" endLine="76" endPosition="75" />
+    <scopeInfo nodeId="7520879497544097247" fileName="ContextClassifiersInRoot.java" startLine="83" startPosition="67" endLine="84" endPosition="79" />
+    <scopeInfo nodeId="7520879497544096777" fileName="ContextClassifiersInRoot.java" startLine="105" startPosition="114" endLine="106" endPosition="71" />
+    <scopeInfo nodeId="4571635105384638977" fileName="ContextClassifiersInRoot.java" startLine="117" startPosition="46" endLine="118" endPosition="39" />
+    <scopeInfo nodeId="4571635105384639009" fileName="ContextClassifiersInRoot.java" startLine="42" startPosition="103" endLine="44" endPosition="36" />
+    <scopeInfo nodeId="4571635105384639037" fileName="ContextClassifiersInRoot.java" startLine="49" startPosition="134" endLine="51" endPosition="59" />
+    <scopeInfo nodeId="4571635105384639053" fileName="ContextClassifiersInRoot.java" startLine="54" startPosition="32" endLine="56" endPosition="36" />
+    <scopeInfo nodeId="4571635105384639094" fileName="ContextClassifiersInRoot.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="4571635105384639099" varName="key" />
     </scopeInfo>
-    <scopeInfo nodeId="7520879497544097110" fileName="ContextClassifiersInRoot.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="7520879497544097110" fileName="ContextClassifiersInRoot.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="7520879497544097115" varName="key" />
     </scopeInfo>
-    <scopeInfo nodeId="7520879497544097245" fileName="ContextClassifiersInRoot.java" startLine="83" startPosition="180" endLine="86" endPosition="13" />
-    <scopeInfo nodeId="7520879497544096775" fileName="ContextClassifiersInRoot.java" startLine="105" startPosition="191" endLine="108" endPosition="7" />
-    <scopeInfo nodeId="7520879497544096776" fileName="ContextClassifiersInRoot.java" startLine="105" startPosition="191" endLine="108" endPosition="7">
+    <scopeInfo nodeId="7520879497544097245" fileName="ContextClassifiersInRoot.java" startLine="82" startPosition="180" endLine="85" endPosition="13" />
+    <scopeInfo nodeId="7520879497544096775" fileName="ContextClassifiersInRoot.java" startLine="104" startPosition="191" endLine="107" endPosition="7" />
+    <scopeInfo nodeId="7520879497544096776" fileName="ContextClassifiersInRoot.java" startLine="104" startPosition="191" endLine="107" endPosition="7">
       <varInfo nodeId="7520879497544096782" varName="nestedClassifier" />
     </scopeInfo>
-    <scopeInfo nodeId="7520879497544097243" fileName="ContextClassifiersInRoot.java" startLine="82" startPosition="39" endLine="87" endPosition="11" />
-    <scopeInfo nodeId="7520879497544097244" fileName="ContextClassifiersInRoot.java" startLine="82" startPosition="39" endLine="87" endPosition="11">
+    <scopeInfo nodeId="7520879497544097243" fileName="ContextClassifiersInRoot.java" startLine="81" startPosition="39" endLine="86" endPosition="11" />
+    <scopeInfo nodeId="7520879497544097244" fileName="ContextClassifiersInRoot.java" startLine="81" startPosition="39" endLine="86" endPosition="11">
       <varInfo nodeId="7520879497544097265" varName="simpleToFqName" />
     </scopeInfo>
-    <scopeInfo nodeId="7520879497544096774" fileName="ContextClassifiersInRoot.java" startLine="104" startPosition="66" endLine="109" endPosition="5">
+    <scopeInfo nodeId="7520879497544096774" fileName="ContextClassifiersInRoot.java" startLine="103" startPosition="66" endLine="108" endPosition="5">
       <varInfo nodeId="7520879497544096787" varName="superClassifier" />
     </scopeInfo>
-    <scopeInfo nodeId="4571635105384638962" fileName="ContextClassifiersInRoot.java" startLine="114" startPosition="97" endLine="120" endPosition="5">
+    <scopeInfo nodeId="4571635105384638962" fileName="ContextClassifiersInRoot.java" startLine="113" startPosition="97" endLine="119" endPosition="5">
       <varInfo nodeId="4571635105384638970" varName="fqName" />
       <varInfo nodeId="4571635105384638964" varName="simpleName" />
     </scopeInfo>
-    <scopeInfo nodeId="4571635105384638953" fileName="ContextClassifiersInRoot.java" startLine="114" startPosition="0" endLine="122" endPosition="0">
+    <scopeInfo nodeId="4571635105384638953" fileName="ContextClassifiersInRoot.java" startLine="113" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="4571635105384638954" varName="bindings" />
       <varInfo nodeId="4571635105384638958" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="4571635105384638800" fileName="ContextClassifiersInRoot.java" startLine="24" startPosition="51" endLine="34" endPosition="6" />
-    <scopeInfo nodeId="7520879497544096753" fileName="ContextClassifiersInRoot.java" startLine="100" startPosition="77" endLine="111" endPosition="29">
+    <scopeInfo nodeId="4571635105384638800" fileName="ContextClassifiersInRoot.java" startLine="23" startPosition="51" endLine="33" endPosition="6" />
+    <scopeInfo nodeId="7520879497544096753" fileName="ContextClassifiersInRoot.java" startLine="99" startPosition="77" endLine="110" endPosition="29">
       <varInfo nodeId="7520879497544096796" varName="nestedClassifiers" />
     </scopeInfo>
-    <scopeInfo nodeId="4571635105384638797" fileName="ContextClassifiersInRoot.java" startLine="24" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="4571635105384638797" fileName="ContextClassifiersInRoot.java" startLine="23" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="4571635105384638802" varName="rootNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7520879497544096750" fileName="ContextClassifiersInRoot.java" startLine="100" startPosition="0" endLine="113" endPosition="0">
+    <scopeInfo nodeId="7520879497544096750" fileName="ContextClassifiersInRoot.java" startLine="99" startPosition="0" endLine="112" endPosition="0">
       <varInfo nodeId="7520879497544096771" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="7520879497544097175" fileName="ContextClassifiersInRoot.java" startLine="68" startPosition="101" endLine="88" endPosition="9">
+    <scopeInfo nodeId="7520879497544097175" fileName="ContextClassifiersInRoot.java" startLine="67" startPosition="101" endLine="87" endPosition="9">
       <varInfo nodeId="7520879497544097177" varName="processNestedClassifiers" />
     </scopeInfo>
-    <scopeInfo nodeId="4571635105384638991" fileName="ContextClassifiersInRoot.java" startLine="37" startPosition="71" endLine="60" endPosition="173">
+    <scopeInfo nodeId="4571635105384638991" fileName="ContextClassifiersInRoot.java" startLine="36" startPosition="71" endLine="59" endPosition="173">
       <varInfo nodeId="4571635105384639024" varName="sourceChildRole" />
     </scopeInfo>
-    <scopeInfo nodeId="4571635105384638990" fileName="ContextClassifiersInRoot.java" startLine="37" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="4571635105384638990" fileName="ContextClassifiersInRoot.java" startLine="36" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="4571635105384639071" varName="contextNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7520879497544097169" fileName="ContextClassifiersInRoot.java" startLine="67" startPosition="31" endLine="94" endPosition="51" />
-    <scopeInfo nodeId="7520879497544097145" fileName="ContextClassifiersInRoot.java" startLine="63" startPosition="96" endLine="97" endPosition="20">
+    <scopeInfo nodeId="7520879497544097169" fileName="ContextClassifiersInRoot.java" startLine="66" startPosition="31" endLine="93" endPosition="51" />
+    <scopeInfo nodeId="7520879497544097145" fileName="ContextClassifiersInRoot.java" startLine="62" startPosition="96" endLine="96" endPosition="20">
       <varInfo nodeId="7520879497544097152" varName="bindings" />
       <varInfo nodeId="7520879497544097162" varName="current" />
     </scopeInfo>
-    <scopeInfo nodeId="7520879497544097142" fileName="ContextClassifiersInRoot.java" startLine="63" startPosition="0" endLine="99" endPosition="0">
+    <scopeInfo nodeId="7520879497544097142" fileName="ContextClassifiersInRoot.java" startLine="62" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="7520879497544097146" varName="contextNode" />
       <varInfo nodeId="7520879497544097148" varName="sourceChildRole" />
     </scopeInfo>
-    <unitInfo nodeId="4571635105384639092" fileName="ContextClassifiersInRoot.java" startLine="25" startPosition="34" endLine="29" endPosition="5" unitName="jetbrains.mps.baseLanguage.textGen.ContextClassifiersInRoot$1" />
-    <unitInfo nodeId="7520879497544097108" fileName="ContextClassifiersInRoot.java" startLine="30" startPosition="33" endLine="34" endPosition="5" unitName="jetbrains.mps.baseLanguage.textGen.ContextClassifiersInRoot$2" />
-    <unitInfo nodeId="4571635105384638795" fileName="ContextClassifiersInRoot.java" startLine="18" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ContextClassifiersInRoot" />
+    <unitInfo nodeId="4571635105384639092" fileName="ContextClassifiersInRoot.java" startLine="24" startPosition="34" endLine="28" endPosition="5" unitName="jetbrains.mps.baseLanguage.textGen.ContextClassifiersInRoot$1" />
+    <unitInfo nodeId="7520879497544097108" fileName="ContextClassifiersInRoot.java" startLine="29" startPosition="33" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.textGen.ContextClassifiersInRoot$2" />
+    <unitInfo nodeId="4571635105384638795" fileName="ContextClassifiersInRoot.java" startLine="18" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ContextClassifiersInRoot" />
   </root>
   <root nodeId="5205855332950472840" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
     <nodeInfo nodeId="5205855332950472843" fileName="ArrayCloneOperation_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -4954,143 +4948,143 @@
   </root>
   <root nodeId="6136230684045923685" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
     <nodeInfo nodeId="6136230684046056257" fileName="ImportsContext.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="USER_OBJECT_KEY" />
-    <nodeInfo nodeId="8461140963537453279" fileName="ImportsContext.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="buffer" />
-    <nodeInfo nodeId="6136230684045986177" fileName="ImportsContext.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="packageName" />
-    <nodeInfo nodeId="6136230684045923907" fileName="ImportsContext.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="packageSimpleNames" />
-    <nodeInfo nodeId="6136230684045923697" fileName="ImportsContext.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="bindings" />
-    <nodeInfo nodeId="7671513720556340991" fileName="ImportsContext.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="contextClassifiers" />
-    <nodeInfo nodeId="8461140963537453315" fileName="ImportsContext.java" startLine="26" startPosition="64" endLine="27" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6136230684045986182" fileName="ImportsContext.java" startLine="27" startPosition="25" endLine="28" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6457626075076651355" fileName="ImportsContext.java" startLine="28" startPosition="93" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4571635105384639123" fileName="ImportsContext.java" startLine="29" startPosition="0" endLine="30" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6457626075076651354" fileName="ImportsContext.java" startLine="30" startPosition="64" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6136230684045924117" fileName="ImportsContext.java" startLine="31" startPosition="0" endLine="32" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6136230684045956886" fileName="ImportsContext.java" startLine="32" startPosition="34" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6136230684045956813" fileName="ImportsContext.java" startLine="33" startPosition="45" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6136230684045924120" fileName="ImportsContext.java" startLine="34" startPosition="0" endLine="35" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6136230684045956915" fileName="ImportsContext.java" startLine="35" startPosition="33" endLine="36" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6136230684045956757" fileName="ImportsContext.java" startLine="37" startPosition="143" endLine="38" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7671513720556427278" fileName="ImportsContext.java" startLine="42" startPosition="92" endLine="43" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7671513720556427290" fileName="ImportsContext.java" startLine="43" startPosition="77" endLine="44" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7671513720556427482" fileName="ImportsContext.java" startLine="44" startPosition="74" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7671513720556427484" fileName="ImportsContext.java" startLine="45" startPosition="0" endLine="46" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7671513720556427705" fileName="ImportsContext.java" startLine="50" startPosition="6" endLine="51" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7671513720556427642" fileName="ImportsContext.java" startLine="51" startPosition="74" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7671513720556427873" fileName="ImportsContext.java" startLine="52" startPosition="0" endLine="53" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7671513720556427323" fileName="ImportsContext.java" startLine="56" startPosition="100" endLine="57" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="7671513720556427645" fileName="ImportsContext.java" startLine="57" startPosition="38" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7671513720556427647" fileName="ImportsContext.java" startLine="58" startPosition="0" endLine="59" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9056120994487512606" fileName="ImportsContext.java" startLine="59" startPosition="50" endLine="60" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7671513720556427646" fileName="ImportsContext.java" startLine="60" startPosition="105" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="9056120994487512563" fileName="ImportsContext.java" startLine="61" startPosition="0" endLine="62" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="9056120994487512752" fileName="ImportsContext.java" startLine="64" startPosition="67" endLine="65" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9056120994487512763" fileName="ImportsContext.java" startLine="66" startPosition="14" endLine="67" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9056120994487512617" fileName="ImportsContext.java" startLine="69" startPosition="5" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="9056120994487512772" fileName="ImportsContext.java" startLine="70" startPosition="0" endLine="71" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8461140963537451863" fileName="ImportsContext.java" startLine="73" startPosition="51" endLine="74" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3669895684330069933" fileName="ImportsContext.java" startLine="75" startPosition="14" endLine="76" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9056120994487512777" fileName="ImportsContext.java" startLine="78" startPosition="5" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="9056120994487512779" fileName="ImportsContext.java" startLine="79" startPosition="0" endLine="80" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5855252392149591954" fileName="ImportsContext.java" startLine="80" startPosition="64" endLine="81" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3669895684330069946" fileName="ImportsContext.java" startLine="81" startPosition="36" endLine="82" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3669895684330069945" fileName="ImportsContext.java" startLine="82" startPosition="29" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7671513720556427381" fileName="ImportsContext.java" startLine="84" startPosition="47" endLine="85" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7671513720556427394" fileName="ImportsContext.java" startLine="86" startPosition="49" endLine="87" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7671513720556427396" fileName="ImportsContext.java" startLine="87" startPosition="112" endLine="88" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7671513720556427409" fileName="ImportsContext.java" startLine="89" startPosition="12" endLine="90" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7671513720556427411" fileName="ImportsContext.java" startLine="90" startPosition="50" endLine="91" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7671513720556427417" fileName="ImportsContext.java" startLine="93" startPosition="27" endLine="94" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7671513720556427938" fileName="ImportsContext.java" startLine="95" startPosition="5" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7671513720556427935" fileName="ImportsContext.java" startLine="96" startPosition="0" endLine="97" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3669895684330069428" fileName="ImportsContext.java" startLine="100" startPosition="41" endLine="101" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3669895684330069860" fileName="ImportsContext.java" startLine="101" startPosition="58" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3669895684330069451" fileName="ImportsContext.java" startLine="102" startPosition="0" endLine="103" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3669895684330069707" fileName="ImportsContext.java" startLine="103" startPosition="45" endLine="104" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3669895684330069801" fileName="ImportsContext.java" startLine="104" startPosition="29" endLine="105" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3669895684330069831" fileName="ImportsContext.java" startLine="105" startPosition="26" endLine="106" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3669895684330069861" fileName="ImportsContext.java" startLine="106" startPosition="23" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3669895684330069443" fileName="ImportsContext.java" startLine="107" startPosition="0" endLine="108" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6136230684046056340" fileName="ImportsContext.java" startLine="111" startPosition="66" endLine="112" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6136230684046080924" fileName="ImportsContext.java" startLine="113" startPosition="27" endLine="114" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6136230684046081001" fileName="ImportsContext.java" startLine="115" startPosition="127" endLine="116" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6136230684046056464" fileName="ImportsContext.java" startLine="117" startPosition="7" endLine="118" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6136230684046056496" fileName="ImportsContext.java" startLine="118" startPosition="127" endLine="119" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6136230684046056575" fileName="ImportsContext.java" startLine="120" startPosition="5" endLine="121" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9056120994487512761" fileName="ImportsContext.java" startLine="66" startPosition="12" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8461140963537451872" fileName="ImportsContext.java" startLine="75" startPosition="12" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6136230684045956696" fileName="ImportsContext.java" startLine="36" startPosition="47" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7671513720556427407" fileName="ImportsContext.java" startLine="89" startPosition="10" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7671513720556427415" fileName="ImportsContext.java" startLine="92" startPosition="5" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6136230684046080946" fileName="ImportsContext.java" startLine="114" startPosition="78" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7671513720556427426" fileName="ImportsContext.java" startLine="46" startPosition="43" endLine="50" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9056120994487512654" fileName="ImportsContext.java" startLine="63" startPosition="58" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8461140963537451861" fileName="ImportsContext.java" startLine="72" startPosition="42" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9056120994487512618" fileName="ImportsContext.java" startLine="62" startPosition="39" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8461140963537451859" fileName="ImportsContext.java" startLine="71" startPosition="32" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6136230684046056348" fileName="ImportsContext.java" startLine="112" startPosition="85" endLine="120" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7671513720556427360" fileName="ImportsContext.java" startLine="83" startPosition="0" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3669895684330069416" fileName="ImportsContext.java" startLine="100" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addImport#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="6136230684046056273" fileName="ImportsContext.java" startLine="111" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#(Ljetbrains/mps/textGen/TextGenBuffer;)Ljetbrains/mps/baseLanguage/textGen/ImportsContext;" />
-    <nodeInfo nodeId="8461140963537451834" fileName="ImportsContext.java" startLine="42" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassifierRefText#(Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6136230684045923687" fileName="ImportsContext.java" startLine="26" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ImportsContext#(Ljetbrains/mps/textGen/TextGenBuffer;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="7671513720556427314" fileName="ImportsContext.java" startLine="56" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootClassifierRefText#(Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="6136230684045956697" fileName="ImportsContext.java" startLine="37" startPosition="143" endLine="38" endPosition="80" />
-    <scopeInfo nodeId="9056120994487512655" fileName="ImportsContext.java" startLine="64" startPosition="67" endLine="65" endPosition="25" />
-    <scopeInfo nodeId="9056120994487512762" fileName="ImportsContext.java" startLine="66" startPosition="14" endLine="67" endPosition="22" />
-    <scopeInfo nodeId="8461140963537451862" fileName="ImportsContext.java" startLine="73" startPosition="51" endLine="74" endPosition="25" />
-    <scopeInfo nodeId="8461140963537451873" fileName="ImportsContext.java" startLine="75" startPosition="14" endLine="76" endPosition="22" />
-    <scopeInfo nodeId="7671513720556427361" fileName="ImportsContext.java" startLine="84" startPosition="47" endLine="85" endPosition="31" />
-    <scopeInfo nodeId="7671513720556427416" fileName="ImportsContext.java" startLine="93" startPosition="27" endLine="94" endPosition="24" />
-    <scopeInfo nodeId="6136230684046080947" fileName="ImportsContext.java" startLine="115" startPosition="127" endLine="116" endPosition="42" />
-    <scopeInfo nodeId="7671513720556427393" fileName="ImportsContext.java" startLine="86" startPosition="49" endLine="88" endPosition="64" />
-    <scopeInfo nodeId="7671513720556427408" fileName="ImportsContext.java" startLine="89" startPosition="12" endLine="91" endPosition="30" />
-    <scopeInfo nodeId="6136230684045956696" fileName="ImportsContext.java" startLine="36" startPosition="47" endLine="39" endPosition="5">
+    <nodeInfo nodeId="8461140963537453279" fileName="ImportsContext.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="buffer" />
+    <nodeInfo nodeId="6136230684045986177" fileName="ImportsContext.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="packageName" />
+    <nodeInfo nodeId="6136230684045923907" fileName="ImportsContext.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="packageSimpleNames" />
+    <nodeInfo nodeId="6136230684045923697" fileName="ImportsContext.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="bindings" />
+    <nodeInfo nodeId="7671513720556340991" fileName="ImportsContext.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="contextClassifiers" />
+    <nodeInfo nodeId="8461140963537453315" fileName="ImportsContext.java" startLine="25" startPosition="64" endLine="26" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6136230684045986182" fileName="ImportsContext.java" startLine="26" startPosition="25" endLine="27" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6457626075076651355" fileName="ImportsContext.java" startLine="27" startPosition="93" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4571635105384639123" fileName="ImportsContext.java" startLine="28" startPosition="0" endLine="29" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6457626075076651354" fileName="ImportsContext.java" startLine="29" startPosition="64" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6136230684045924117" fileName="ImportsContext.java" startLine="30" startPosition="0" endLine="31" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6136230684045956886" fileName="ImportsContext.java" startLine="31" startPosition="34" endLine="32" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6136230684045956813" fileName="ImportsContext.java" startLine="32" startPosition="45" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6136230684045924120" fileName="ImportsContext.java" startLine="33" startPosition="0" endLine="34" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6136230684045956915" fileName="ImportsContext.java" startLine="34" startPosition="33" endLine="35" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6136230684045956757" fileName="ImportsContext.java" startLine="36" startPosition="143" endLine="37" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7671513720556427278" fileName="ImportsContext.java" startLine="41" startPosition="92" endLine="42" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7671513720556427290" fileName="ImportsContext.java" startLine="42" startPosition="77" endLine="43" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7671513720556427482" fileName="ImportsContext.java" startLine="43" startPosition="74" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7671513720556427484" fileName="ImportsContext.java" startLine="44" startPosition="0" endLine="45" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7671513720556427705" fileName="ImportsContext.java" startLine="49" startPosition="6" endLine="50" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7671513720556427642" fileName="ImportsContext.java" startLine="50" startPosition="74" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7671513720556427873" fileName="ImportsContext.java" startLine="51" startPosition="0" endLine="52" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7671513720556427323" fileName="ImportsContext.java" startLine="55" startPosition="100" endLine="56" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="7671513720556427645" fileName="ImportsContext.java" startLine="56" startPosition="38" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7671513720556427647" fileName="ImportsContext.java" startLine="57" startPosition="0" endLine="58" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9056120994487512606" fileName="ImportsContext.java" startLine="58" startPosition="50" endLine="59" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7671513720556427646" fileName="ImportsContext.java" startLine="59" startPosition="105" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9056120994487512563" fileName="ImportsContext.java" startLine="60" startPosition="0" endLine="61" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="9056120994487512752" fileName="ImportsContext.java" startLine="63" startPosition="67" endLine="64" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9056120994487512763" fileName="ImportsContext.java" startLine="65" startPosition="14" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9056120994487512617" fileName="ImportsContext.java" startLine="68" startPosition="5" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9056120994487512772" fileName="ImportsContext.java" startLine="69" startPosition="0" endLine="70" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8461140963537451863" fileName="ImportsContext.java" startLine="72" startPosition="51" endLine="73" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3669895684330069933" fileName="ImportsContext.java" startLine="74" startPosition="14" endLine="75" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9056120994487512777" fileName="ImportsContext.java" startLine="77" startPosition="5" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9056120994487512779" fileName="ImportsContext.java" startLine="78" startPosition="0" endLine="79" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5855252392149591954" fileName="ImportsContext.java" startLine="79" startPosition="64" endLine="80" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3669895684330069946" fileName="ImportsContext.java" startLine="80" startPosition="36" endLine="81" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3669895684330069945" fileName="ImportsContext.java" startLine="81" startPosition="29" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7671513720556427381" fileName="ImportsContext.java" startLine="83" startPosition="47" endLine="84" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7671513720556427394" fileName="ImportsContext.java" startLine="85" startPosition="49" endLine="86" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7671513720556427396" fileName="ImportsContext.java" startLine="86" startPosition="112" endLine="87" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7671513720556427409" fileName="ImportsContext.java" startLine="88" startPosition="12" endLine="89" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7671513720556427411" fileName="ImportsContext.java" startLine="89" startPosition="50" endLine="90" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7671513720556427417" fileName="ImportsContext.java" startLine="92" startPosition="27" endLine="93" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7671513720556427938" fileName="ImportsContext.java" startLine="94" startPosition="5" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7671513720556427935" fileName="ImportsContext.java" startLine="95" startPosition="0" endLine="96" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3669895684330069428" fileName="ImportsContext.java" startLine="99" startPosition="41" endLine="100" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3669895684330069860" fileName="ImportsContext.java" startLine="100" startPosition="58" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3669895684330069451" fileName="ImportsContext.java" startLine="101" startPosition="0" endLine="102" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3669895684330069707" fileName="ImportsContext.java" startLine="102" startPosition="45" endLine="103" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3669895684330069801" fileName="ImportsContext.java" startLine="103" startPosition="29" endLine="104" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3669895684330069831" fileName="ImportsContext.java" startLine="104" startPosition="26" endLine="105" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3669895684330069861" fileName="ImportsContext.java" startLine="105" startPosition="23" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3669895684330069443" fileName="ImportsContext.java" startLine="106" startPosition="0" endLine="107" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6136230684046056340" fileName="ImportsContext.java" startLine="110" startPosition="66" endLine="111" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6136230684046080924" fileName="ImportsContext.java" startLine="112" startPosition="27" endLine="113" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6136230684046081001" fileName="ImportsContext.java" startLine="114" startPosition="127" endLine="115" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6136230684046056464" fileName="ImportsContext.java" startLine="116" startPosition="7" endLine="117" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6136230684046056496" fileName="ImportsContext.java" startLine="117" startPosition="127" endLine="118" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6136230684046056575" fileName="ImportsContext.java" startLine="119" startPosition="5" endLine="120" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9056120994487512761" fileName="ImportsContext.java" startLine="65" startPosition="12" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8461140963537451872" fileName="ImportsContext.java" startLine="74" startPosition="12" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6136230684045956696" fileName="ImportsContext.java" startLine="35" startPosition="47" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7671513720556427407" fileName="ImportsContext.java" startLine="88" startPosition="10" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7671513720556427415" fileName="ImportsContext.java" startLine="91" startPosition="5" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6136230684046080946" fileName="ImportsContext.java" startLine="113" startPosition="78" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7671513720556427426" fileName="ImportsContext.java" startLine="45" startPosition="43" endLine="49" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9056120994487512654" fileName="ImportsContext.java" startLine="62" startPosition="58" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8461140963537451861" fileName="ImportsContext.java" startLine="71" startPosition="42" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9056120994487512618" fileName="ImportsContext.java" startLine="61" startPosition="39" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8461140963537451859" fileName="ImportsContext.java" startLine="70" startPosition="32" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6136230684046056348" fileName="ImportsContext.java" startLine="111" startPosition="85" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7671513720556427360" fileName="ImportsContext.java" startLine="82" startPosition="0" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3669895684330069416" fileName="ImportsContext.java" startLine="99" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addImport#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6136230684046056273" fileName="ImportsContext.java" startLine="110" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#(Ljetbrains/mps/textGen/TextGenBuffer;)Ljetbrains/mps/baseLanguage/textGen/ImportsContext;" />
+    <nodeInfo nodeId="8461140963537451834" fileName="ImportsContext.java" startLine="41" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassifierRefText#(Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6136230684045923687" fileName="ImportsContext.java" startLine="25" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ImportsContext#(Ljetbrains/mps/textGen/TextGenBuffer;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7671513720556427314" fileName="ImportsContext.java" startLine="55" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootClassifierRefText#(Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="6136230684045956697" fileName="ImportsContext.java" startLine="36" startPosition="143" endLine="37" endPosition="80" />
+    <scopeInfo nodeId="9056120994487512655" fileName="ImportsContext.java" startLine="63" startPosition="67" endLine="64" endPosition="25" />
+    <scopeInfo nodeId="9056120994487512762" fileName="ImportsContext.java" startLine="65" startPosition="14" endLine="66" endPosition="22" />
+    <scopeInfo nodeId="8461140963537451862" fileName="ImportsContext.java" startLine="72" startPosition="51" endLine="73" endPosition="25" />
+    <scopeInfo nodeId="8461140963537451873" fileName="ImportsContext.java" startLine="74" startPosition="14" endLine="75" endPosition="22" />
+    <scopeInfo nodeId="7671513720556427361" fileName="ImportsContext.java" startLine="83" startPosition="47" endLine="84" endPosition="31" />
+    <scopeInfo nodeId="7671513720556427416" fileName="ImportsContext.java" startLine="92" startPosition="27" endLine="93" endPosition="24" />
+    <scopeInfo nodeId="6136230684046080947" fileName="ImportsContext.java" startLine="114" startPosition="127" endLine="115" endPosition="42" />
+    <scopeInfo nodeId="7671513720556427393" fileName="ImportsContext.java" startLine="85" startPosition="49" endLine="87" endPosition="64" />
+    <scopeInfo nodeId="7671513720556427408" fileName="ImportsContext.java" startLine="88" startPosition="12" endLine="90" endPosition="30" />
+    <scopeInfo nodeId="6136230684045956696" fileName="ImportsContext.java" startLine="35" startPosition="47" endLine="38" endPosition="5">
       <varInfo nodeId="6136230684045956699" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="9056120994487512619" fileName="ImportsContext.java" startLine="63" startPosition="58" endLine="68" endPosition="7" />
-    <scopeInfo nodeId="8461140963537451860" fileName="ImportsContext.java" startLine="72" startPosition="42" endLine="77" endPosition="7" />
-    <scopeInfo nodeId="6136230684046056349" fileName="ImportsContext.java" startLine="113" startPosition="27" endLine="119" endPosition="54">
+    <scopeInfo nodeId="9056120994487512619" fileName="ImportsContext.java" startLine="62" startPosition="58" endLine="67" endPosition="7" />
+    <scopeInfo nodeId="8461140963537451860" fileName="ImportsContext.java" startLine="71" startPosition="42" endLine="76" endPosition="7" />
+    <scopeInfo nodeId="6136230684046056349" fileName="ImportsContext.java" startLine="112" startPosition="27" endLine="118" endPosition="54">
       <varInfo nodeId="6136230684046080925" varName="rootNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3669895684330069419" fileName="ImportsContext.java" startLine="100" startPosition="41" endLine="108" endPosition="34">
+    <scopeInfo nodeId="3669895684330069419" fileName="ImportsContext.java" startLine="99" startPosition="41" endLine="107" endPosition="34">
       <varInfo nodeId="3669895684330069429" varName="currPartId" />
     </scopeInfo>
-    <scopeInfo nodeId="3669895684330069416" fileName="ImportsContext.java" startLine="100" startPosition="0" endLine="110" endPosition="0">
+    <scopeInfo nodeId="3669895684330069416" fileName="ImportsContext.java" startLine="99" startPosition="0" endLine="109" endPosition="0">
       <varInfo nodeId="3669895684330069421" varName="fqName" />
     </scopeInfo>
-    <scopeInfo nodeId="6136230684046056276" fileName="ImportsContext.java" startLine="111" startPosition="66" endLine="121" endPosition="20">
+    <scopeInfo nodeId="6136230684046056276" fileName="ImportsContext.java" startLine="110" startPosition="66" endLine="120" endPosition="20">
       <varInfo nodeId="6136230684046056341" varName="instance" />
     </scopeInfo>
-    <scopeInfo nodeId="8461140963537451837" fileName="ImportsContext.java" startLine="42" startPosition="92" endLine="53" endPosition="95">
+    <scopeInfo nodeId="8461140963537451837" fileName="ImportsContext.java" startLine="41" startPosition="92" endLine="52" endPosition="95">
       <varInfo nodeId="7671513720556427485" varName="dotIndex" />
       <varInfo nodeId="7671513720556427291" varName="nestedName" />
       <varInfo nodeId="7671513720556427706" varName="nestedPart" />
       <varInfo nodeId="7671513720556427427" varName="rootClassifierName" />
     </scopeInfo>
-    <scopeInfo nodeId="6136230684046056273" fileName="ImportsContext.java" startLine="111" startPosition="0" endLine="123" endPosition="0">
+    <scopeInfo nodeId="6136230684046056273" fileName="ImportsContext.java" startLine="110" startPosition="0" endLine="122" endPosition="0">
       <varInfo nodeId="6136230684046056277" varName="buffer" />
     </scopeInfo>
-    <scopeInfo nodeId="6136230684045923690" fileName="ImportsContext.java" startLine="26" startPosition="64" endLine="39" endPosition="5" />
-    <scopeInfo nodeId="8461140963537451834" fileName="ImportsContext.java" startLine="42" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="6136230684045923690" fileName="ImportsContext.java" startLine="25" startPosition="64" endLine="38" endPosition="5" />
+    <scopeInfo nodeId="8461140963537451834" fileName="ImportsContext.java" startLine="41" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="9056120994487477608" varName="contextNode" />
       <varInfo nodeId="8461140963537451841" varName="fqName" />
       <varInfo nodeId="8461140963537451839" varName="packageName" />
     </scopeInfo>
-    <scopeInfo nodeId="6136230684045923687" fileName="ImportsContext.java" startLine="26" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="6136230684045923687" fileName="ImportsContext.java" startLine="25" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="8461140963537453283" varName="buffer" />
       <varInfo nodeId="6136230684045923691" varName="rootNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7671513720556427317" fileName="ImportsContext.java" startLine="56" startPosition="100" endLine="97" endPosition="21">
+    <scopeInfo nodeId="7671513720556427317" fileName="ImportsContext.java" startLine="55" startPosition="100" endLine="96" endPosition="21">
       <varInfo nodeId="7671513720556427648" varName="fqName" />
       <varInfo nodeId="9056120994487512607" varName="nestedClassifiersBinding" />
       <varInfo nodeId="3669895684330069947" varName="shouldBeImported" />
     </scopeInfo>
-    <scopeInfo nodeId="7671513720556427314" fileName="ImportsContext.java" startLine="56" startPosition="0" endLine="99" endPosition="0">
+    <scopeInfo nodeId="7671513720556427314" fileName="ImportsContext.java" startLine="55" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="7671513720556427320" varName="className" />
       <varInfo nodeId="7671513720556427701" varName="contextNode" />
       <varInfo nodeId="7671513720556427318" varName="packageName" />
     </scopeInfo>
-    <unitInfo nodeId="6136230684045923685" fileName="ImportsContext.java" startLine="17" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ImportsContext" />
+    <unitInfo nodeId="6136230684045923685" fileName="ImportsContext.java" startLine="17" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ImportsContext" />
   </root>
   <root nodeId="6227066020986630956" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
     <nodeInfo nodeId="6227066020986630956" fileName="PlaceholderMethodDeclaration_TextGen.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

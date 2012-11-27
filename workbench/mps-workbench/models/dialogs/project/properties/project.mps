@@ -25,7 +25,6 @@
   <import index="to5d" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)" version="-1" />
   <import index="kqhl" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="68ai" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)" version="-1" />
-  <import index="zw69" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.workbench.dialogs.choosers(MPS.Workbench/jetbrains.mps.workbench.dialogs.choosers@java_stub)" version="-1" />
   <import index="pvwh" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.workbench.action(MPS.Platform/jetbrains.mps.workbench.action@java_stub)" version="-1" />
   <import index="ai1m" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.icons(MPS.Platform/jetbrains.mps.ide.icons@java_stub)" version="-1" />
   <import index="6tyf" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.actionSystem(MPS.Platform/com.intellij.openapi.actionSystem@java_stub)" version="-1" />
@@ -44,6 +43,7 @@
   <import index="ec5l" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" version="-1" />
   <import index="88zw" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" version="-1" />
   <import index="h12" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.ui(MPS.Platform/com.intellij.openapi.ui@java_stub)" version="-1" />
+  <import index="vm9s" modelUID="f:java_stub#267ff2fa-bd8d-467e-8bfe-73a9c242da8b#jetbrains.mps.ide.ui.dialogs.properties.choosers(MPS.UI/jetbrains.mps.ide.ui.dialogs.properties.choosers@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -1247,17 +1247,14 @@
                                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kqhl.~ModuleReference" resolveInfo="ModuleReference" />
                                 </node>
                                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1918923653324390746">
-                                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zw69.~CommonChoosers" resolveInfo="CommonChoosers" />
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zw69.~CommonChoosers%dshowDialogModuleChooser(com%dintellij%dopenapi%dproject%dProject,java%dawt%dComponent,java%dlang%dString,java%dutil%dList,java%dutil%dList)%cjetbrains%dmps%dproject%dstructure%dmodules%dModuleReference" resolveInfo="showDialogModuleChooser" />
+                                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="vm9s.~CommonChoosers" resolveInfo="CommonChoosers" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vm9s.~CommonChoosers%dshowDialogModuleChooser(com%dintellij%dopenapi%dproject%dProject,java%dlang%dString,java%dutil%dList,java%dutil%dList)%cjetbrains%dmps%dproject%dstructure%dmodules%dModuleReference" resolveInfo="showDialogModuleChooser" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5882519022999975429">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="pt5l.~ProjectHelper%dtoIdeaProject(jetbrains%dmps%dproject%dProject)%ccom%dintellij%dopenapi%dproject%dProject" resolveInfo="toIdeaProject" />
                                     <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="pt5l.~ProjectHelper" resolveInfo="ProjectHelper" />
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5882519022999975430">
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3201642974933584627" resolveInfo="myProject" />
                                     </node>
-                                  </node>
-                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1918923653324390747">
-                                    <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="3201642974933584621" resolveInfo="TestConfigurationDialog.ModulePanel" />
                                   </node>
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1918923653324390748">
                                     <link role="classifier" roleId="tpee.1144433057691" targetNodeId="3201642974933584605" resolveInfo="TestConfigurationDialog" />
@@ -2028,17 +2025,14 @@
                               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModelReference" resolveInfo="SModelReference" />
                             </node>
                             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8715098193949534158">
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zw69.~CommonChoosers" resolveInfo="CommonChoosers" />
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zw69.~CommonChoosers%dshowDialogModelChooser(com%dintellij%dopenapi%dproject%dProject,java%dawt%dComponent,java%dutil%dList,java%dutil%dList)%cjetbrains%dmps%dsmodel%dSModelReference" resolveInfo="showDialogModelChooser" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="vm9s.~CommonChoosers" resolveInfo="CommonChoosers" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vm9s.~CommonChoosers%dshowDialogModelChooser(com%dintellij%dopenapi%dproject%dProject,java%dutil%dList,java%dutil%dList)%cjetbrains%dmps%dsmodel%dSModelReference" resolveInfo="showDialogModelChooser" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5882519022999975432">
                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="pt5l.~ProjectHelper%dtoIdeaProject(jetbrains%dmps%dproject%dProject)%ccom%dintellij%dopenapi%dproject%dProject" resolveInfo="toIdeaProject" />
                                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="pt5l.~ProjectHelper" resolveInfo="ProjectHelper" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5882519022999975433">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3201642974933584655" resolveInfo="myProject" />
                                 </node>
-                              </node>
-                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="8715098193949534159">
-                                <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="3201642974933584642" resolveInfo="TestConfigurationDialog.ModelsPanel" />
                               </node>
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8715098193949534430">
                                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8715098193949534413">

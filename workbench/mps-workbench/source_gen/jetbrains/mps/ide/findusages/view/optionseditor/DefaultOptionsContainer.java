@@ -22,7 +22,6 @@ public class DefaultOptionsContainer {
   private static final String FINDERS_OPTION = "finders_option";
   private static final String NODE_ID = "node";
   private static Logger LOG = Logger.getLogger(DefaultSearchOptionsComponent.class);
-
   private final HashMap<String, FindersOptions> myDefaultFinders = new HashMap<String, FindersOptions>();
   private FindUsagesOptions myDefaultOptions = createDefaultSearchOptions();
 

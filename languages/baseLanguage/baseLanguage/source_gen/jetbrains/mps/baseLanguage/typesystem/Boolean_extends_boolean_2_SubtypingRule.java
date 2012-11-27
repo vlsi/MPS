@@ -16,7 +16,6 @@ import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   private static SNodePointer SNODE_POINTER_9ehkah_a0a0a0a0b0c0a0a0a0a0a0c = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Boolean");
-
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
   public Boolean_extends_boolean_2_SubtypingRule() {

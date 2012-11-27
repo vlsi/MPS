@@ -44,7 +44,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
+import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelReference;
 import org.jdesktop.observablecollections.ObservableCollections;
@@ -80,7 +80,6 @@ public class TestConfigurationDialog extends DialogWrapper {
   private static final Logger LOG = Logger.getLogger(TestConfigurationDialog.class);
   private static final String MODEL = "model";
   private static final String MODULE = "module";
-
   private Project myProject;
   private BaseTestConfiguration myConfig;
   private BaseTestConfiguration myResult = null;
@@ -259,7 +258,7 @@ public class TestConfigurationDialog extends DialogWrapper {
             }
           }).toListSequence();
 
-          ModuleReference module = CommonChoosers.showDialogModuleChooser(ProjectHelper.toIdeaProject(myProject), ModulePanel.this, TestConfigurationDialog.MODULE, projectModuleRefs, moduleRefs);
+          ModuleReference module = CommonChoosers.showDialogModuleChooser(ProjectHelper.toIdeaProject(myProject), TestConfigurationDialog.MODULE, projectModuleRefs, moduleRefs);
           if (module == null) {
             return;
           }
@@ -337,7 +336,7 @@ public class TestConfigurationDialog extends DialogWrapper {
         protected int doAdd(AnActionEvent e) {
           Iterable<SModel> models = myProject.getComponent(MPSProject.class).getProjectModels();
           List<SModelDescriptor> descrs = SModelRepository.getInstance().getModelDescriptors();
-          SModelReference modelRef = CommonChoosers.showDialogModelChooser(ProjectHelper.toIdeaProject(myProject), ModelsPanel.this, Sequence.fromIterable(models).select(new ISelector<SModel, SModelReference>() {
+          SModelReference modelRef = CommonChoosers.showDialogModelChooser(ProjectHelper.toIdeaProject(myProject), Sequence.fromIterable(models).select(new ISelector<SModel, SModelReference>() {
             public SModelReference select(SModel it) {
               return (SModelReference) it.getModelReference();
             }

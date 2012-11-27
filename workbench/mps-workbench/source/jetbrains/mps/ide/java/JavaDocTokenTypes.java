@@ -17,8 +17,11 @@ package jetbrains.mps.ide.java;
 
 import com.intellij.lexer.DocCommentTokenTypes;
 import com.intellij.psi.tree.IElementType;
+import com.intellij.psi.tree.TokenSet;
 
 public class JavaDocTokenTypes implements DocCommentTokenTypes {
+  private final TokenSet mySpaceCommentsSet = TokenSet.create(JavaDocTokenType.DOC_SPACE, JavaDocTokenType.DOC_COMMENT_DATA);
+
   public IElementType commentStart() {
     return JavaDocTokenType.DOC_COMMENT_START;
   }
@@ -29,6 +32,11 @@ public class JavaDocTokenTypes implements DocCommentTokenTypes {
 
   public IElementType commentData() {
     return JavaDocTokenType.DOC_COMMENT_DATA;
+  }
+
+  @Override
+  public TokenSet spaceCommentsTokenSet() {
+    return mySpaceCommentsSet;
   }
 
   public IElementType space() {

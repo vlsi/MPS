@@ -36,7 +36,6 @@ public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer weavingConseq_417xrn_a0a1a5e = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main@generator)", "6186432342008533376");
   private static SNodePointer weavingRule_417xrn_a0a0f = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main@generator)", "6186432342008533360");
   private static SNodePointer weavingConseq_417xrn_a0a1a5f = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main@generator)", "6186432342008533361");
-
   private final Collection<TemplateRootMappingRule> rootRules;
   private final Collection<TemplateWeavingRule> weavings;
   private final Collection<TemplateDropRootRule> dropRules;

@@ -17,7 +17,6 @@ public class Variants {
   private static List<_FunctionTypes._void_P1_E0<? super Variants>> REGS = ListSequence.fromList(new LinkedList<_FunctionTypes._void_P1_E0<? super Variants>>());
   private static Variants INSTANCE = null;
   private static boolean DISPOSED = false;
-
   private List<Tuples._2<String, IModule>> variantLanguages = ListSequence.fromList(new ArrayList<Tuples._2<String, IModule>>());
 
   /*package*/ Variants() {

@@ -22,7 +22,6 @@ import jetbrains.mps.project.DevKit;
 
 public class MissingDependenciesFixer {
   private static Logger LOG = Logger.getLogger(MissingDependenciesFixer.class);
-
   private SModelDescriptor myModelDescriptor;
 
   public MissingDependenciesFixer(SModel modelDescriptor) {

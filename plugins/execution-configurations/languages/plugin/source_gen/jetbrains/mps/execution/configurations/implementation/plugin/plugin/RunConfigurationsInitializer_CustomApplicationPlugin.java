@@ -17,7 +17,6 @@ import com.intellij.util.containers.ContainerUtil;
 
 public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   protected static Log log = LogFactory.getLog(RunConfigurationsInitializer_CustomApplicationPlugin.class);
-
   private List<ConfigurationType> myRegisteredKinds = ListSequence.fromList(new ArrayList<ConfigurationType>());
   private List<RuntimeConfigurationProducer> myRegisteredProducers = ListSequence.fromList(new ArrayList<RuntimeConfigurationProducer>());
 

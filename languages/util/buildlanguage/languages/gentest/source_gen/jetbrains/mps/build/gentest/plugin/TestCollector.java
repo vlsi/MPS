@@ -35,7 +35,6 @@ public class TestCollector {
   private static final String TEST_ANN = "TEST_ANN";
   private static final String MPS_LAUNCH_ANN = "MPS_LAUNCH_ANN";
   private static final String IGNORE_ANN = "IGNORE_ANN";
-
   private Iterable<SModel> models;
   private Map<Tuples._2<SModelFqName, String>, SNode> nodeCache = MapSequence.fromMap(new HashMap<Tuples._2<SModelFqName, String>, SNode>());
 

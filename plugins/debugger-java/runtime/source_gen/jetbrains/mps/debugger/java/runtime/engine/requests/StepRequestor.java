@@ -16,7 +16,6 @@ import com.sun.jdi.Location;
 public class StepRequestor implements Requestor {
   public static final int STOP = 0;
   private static final Logger LOG = Logger.getLogger(StepRequestor.class);
-
   private final int myStepType;
   private String myDeclaringType;
   private int myLineNumber;

@@ -27,7 +27,6 @@ import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder
 
 /*package*/ class MyInMemoryJavaGenerationHandler extends InMemoryJavaGenerationHandler {
   protected static Log log = LogFactory.getLog(MyInMemoryJavaGenerationHandler.class);
-
   private final List<_FunctionTypes._void_P1_E0<? super SNode>> myGenerationListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
 
   public MyInMemoryJavaGenerationHandler(boolean reloadClasses, boolean keepSources, Iterable<_FunctionTypes._void_P1_E0<? super SNode>> listeners) {

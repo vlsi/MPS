@@ -7,4 +7,6 @@ import jetbrains.mps.smodel.SNode;
 public interface ClassifierMember_BehaviorDescriptor extends IVisible_BehaviorDescriptor, IClassifierMember_BehaviorDescriptor {
   public boolean virtual_isStatic_8986964027630462944(SNode thisNode);
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode);
+  public boolean virtual_needsEmptyLineBefore_641490355014296733(SNode thisNode);
+  public boolean virtual_needsEmptyLineAfter_641490355014298838(SNode thisNode);
 }

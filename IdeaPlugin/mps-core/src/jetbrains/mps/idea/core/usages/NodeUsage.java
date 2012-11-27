@@ -35,9 +35,7 @@ import jetbrains.mps.idea.core.usages.rules.UsageByCategory;
 import jetbrains.mps.idea.core.usages.rules.UsageInMPS;
 import jetbrains.mps.idea.core.usages.rules.UsageInModel;
 import jetbrains.mps.idea.core.usages.rules.UsageInRoot;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
@@ -45,21 +43,24 @@ import javax.swing.Icon;
 import java.util.ArrayList;
 
 public class NodeUsage extends NodeNavigatable implements Usage, UsagePresentation, UsageInMPS, UsageInModule, MergeableUsage, UsageInRoot, UsageInModel, UsageByCategory, Comparable<NodeUsage> {
-  private SModel myModel;
+  private SModelReference myModel;
   private TextChunk[] myChunks;
   private boolean myIsValid;
   private String myParentPresentation;
   private String myRole;
   private String myCategory;
 
-  public NodeUsage(@NotNull SNode node, @NotNull Project project, String category) {
+  public NodeUsage(@NotNull SNodePointer node, @NotNull Project project, String category) {
     super(node, project);
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        myModel = myNode.getModel();
-        myParentPresentation = myNode.getParent().getPresentation();
-        myRole = myNode.getRole_();
+        myModel = myNode.getModelReference();
+        SNode targetNode = myNode.getNode();
+        if (targetNode != null) {
+          myParentPresentation = targetNode.getParent().getPresentation();
+          myRole = targetNode.getRole_();
+        }
       }
     });
     myIsValid = isValid();
@@ -170,7 +171,8 @@ public class NodeUsage extends NodeNavigatable implements Usage, UsagePresentati
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
-        return !myNode.isDetached();
+        SNode node = myNode.getNode();
+        return node != null && !node.isDetached();
       }
     });
   }
@@ -181,12 +183,12 @@ public class NodeUsage extends NodeNavigatable implements Usage, UsagePresentati
   }
 
   @Override
-  public SModel getModel() {
-    return myModel;
+  public SModelDescriptor getModel() {
+    return SModelRepository.getInstance().getModelDescriptor(myModel);
   }
 
   @Override
-  public SNode getRoot() {
+  public SNodePointer getRoot() {
     return myRootNode;
   }
 

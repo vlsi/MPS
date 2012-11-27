@@ -8,7 +8,6 @@ import org.apache.tools.ant.BuildException;
 
 public class PerfomanceReport extends DataType {
   public static final String STDOUT = "stdout";
-
   private File myFile;
   private boolean myIsToConsole;
 

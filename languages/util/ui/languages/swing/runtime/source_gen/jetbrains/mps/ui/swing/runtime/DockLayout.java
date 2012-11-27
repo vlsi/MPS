@@ -17,7 +17,6 @@ import java.util.ArrayList;
 public class DockLayout implements LayoutManager, LayoutManager2 {
   private static Dimension ZERO = new Dimension(0, 0);
   private static Dimension MAX = new Dimension(Integer.MAX_VALUE, Integer.MAX_VALUE);
-
   private LinkedHashMap<Component, DockLayoutData> componentData = new LinkedHashMap<Component, DockLayoutData>();
   private List<Component> north;
   private List<Component> south;

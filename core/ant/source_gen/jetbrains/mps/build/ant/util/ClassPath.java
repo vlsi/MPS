@@ -23,7 +23,6 @@ public class ClassPath {
   private static final boolean myDebugTime = false;
   private static final long NS_THRESHOLD = 10000000L;
   private static PrintStream ourOrder;
-
   private final Stack<URL> myUrls = new Stack<URL>();
   private final ArrayList<Loader> myLoaders = new ArrayList<Loader>();
   private final HashMap<URL, Loader> myLoadersMap = new HashMap<URL, Loader>();

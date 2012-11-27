@@ -13,7 +13,6 @@ public class ABC<TT> {
    * 
    */
   public static final int SOME_CONSTANT = 4;
-
   /**
    * 
    * 

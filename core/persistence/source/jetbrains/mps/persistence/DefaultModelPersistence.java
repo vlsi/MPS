@@ -53,6 +53,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     try {
       dr = ModelPersistence.loadDescriptor(source.getFile());
     } catch (ModelReadException ignored) {
+      LOG.error("Can't read model: ", ignored);
       dr = new DescriptorLoadResult();
     }
 

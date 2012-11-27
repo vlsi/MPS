@@ -10,7 +10,6 @@ public class SolutionProperties extends ModuleProperties {
   public static final String OUTPUT_PATH = "outputPath";
   public static final String COMPILE_IN_MPS = "compileInMPS";
   public static final String KIND = "kind";
-
   private boolean myCompileInMPS;
   private String myOutputPath;
   private SolutionKind myKind;

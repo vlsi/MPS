@@ -19,7 +19,6 @@ import javax.swing.JPopupMenu;
 
 public class SubclassedClassifierEditorMessage extends AbstractLeftEditorHighlighterMessage {
   private static final EditorMessageIconRenderer.IconRendererType TYPE = new EditorMessageIconRenderer.IconRendererType(1);
-
   private boolean myIsInterface;
   private CellFinder<EditorCell> myClassifierNameCellFinder;
 

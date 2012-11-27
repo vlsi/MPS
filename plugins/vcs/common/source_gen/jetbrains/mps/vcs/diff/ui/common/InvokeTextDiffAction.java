@@ -14,7 +14,6 @@ import java.util.Map;
 
 public class InvokeTextDiffAction extends BaseAction implements DumbAware {
   private static final Icon TEXT_ICON = IconLoader.getIcon("/fileTypes/text.png");
-
   private DiffRequest myDiffRequest;
   private DialogWrapper myDialog;
   private DiffTool myDiffTool;

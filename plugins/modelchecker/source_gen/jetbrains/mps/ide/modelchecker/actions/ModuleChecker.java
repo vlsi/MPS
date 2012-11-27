@@ -14,7 +14,6 @@ import jetbrains.mps.util.NameUtil;
 
 public class ModuleChecker {
   protected static Log log = LogFactory.getLog(ModuleChecker.class);
-
   private SearchResults<ModelCheckerIssue> myResults = new SearchResults<ModelCheckerIssue>();
 
   public ModuleChecker() {

@@ -16,7 +16,6 @@ import jetbrains.mps.util.ConditionalIterable;
 
 public class ModelAndImportedModelsScope extends AbstractSearchScope {
   private static final Logger LOG = Logger.getLogger(ModelAndImportedModelsScope.class);
-
   private SModel myModel;
   private boolean myRootsOnly;
   private IScope myScope;

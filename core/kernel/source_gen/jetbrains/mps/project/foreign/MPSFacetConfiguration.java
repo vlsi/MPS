@@ -19,7 +19,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class MPSFacetConfiguration {
   private static final String OPT_VALUE = "value";
-
   public String UUID;
   public String generatorOutputPath;
   public boolean useModuleSourceFolder = false;

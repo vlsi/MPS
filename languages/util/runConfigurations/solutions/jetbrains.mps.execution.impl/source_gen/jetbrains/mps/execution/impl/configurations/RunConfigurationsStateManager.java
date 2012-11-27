@@ -39,7 +39,6 @@ import org.jdom.Element;
 
 public class RunConfigurationsStateManager implements ProjectComponent {
   protected static Log log = LogFactory.getLog(RunConfigurationsStateManager.class);
-
   private final Project myProject;
   private final PluginReloader myPluginReloader;
   private final PluginReloadingListener myPluginReloadingListener = new PluginReloadingListener() {

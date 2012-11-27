@@ -18,7 +18,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 @Deprecated
 public class ClassifierVisibleMembersScope extends AbstractSearchScope {
   private static Logger LOG = Logger.getLogger(ClassifierVisibleMembersScope.class);
-
   private SNode myClassifierType;
   private final SNode myContextNode;
   private final ClassifierAndSuperClassifiersScope myClassifierScope;

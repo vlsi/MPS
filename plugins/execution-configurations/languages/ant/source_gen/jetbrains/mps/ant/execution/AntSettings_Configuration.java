@@ -15,7 +15,6 @@ import com.intellij.openapi.util.InvalidDataException;
 
 public class AntSettings_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   private static Logger LOG = Logger.getLogger(AntSettings_Configuration.class);
-
   @NotNull
   private AntSettings_Configuration.MyState myState = new AntSettings_Configuration.MyState();
   private SettingsEditorEx<AntSettings_Configuration> myEditorEx;

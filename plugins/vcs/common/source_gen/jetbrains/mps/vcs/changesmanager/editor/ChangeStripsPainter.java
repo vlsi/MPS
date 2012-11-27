@@ -36,7 +36,6 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
   private static final int AREA_WIDTH = 6;
   private static final int ARROW_HEIGHT = 8;
   private static final Color AREA_FRAME_COLOR = Color.GRAY;
-
   private EditorHighlighter myEditorHighlighter;
   private ChangeGroupLayout myChangeGroupLayout;
   private ChangeGroup myGroupUnderMouse;

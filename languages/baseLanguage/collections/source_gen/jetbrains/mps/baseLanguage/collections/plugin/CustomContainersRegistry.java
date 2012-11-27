@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 
 public class CustomContainersRegistry {
   /*package*/ static CustomContainersRegistry INSTANCE = new CustomContainersRegistry();
-
   private List<_FunctionTypes._return_P0_E0<? extends List<SNode>>> providers = ListSequence.fromList(new ArrayList<_FunctionTypes._return_P0_E0<? extends List<SNode>>>());
 
   private CustomContainersRegistry() {

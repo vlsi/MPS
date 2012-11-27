@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import java.awt.Component;
 import javax.swing.JList;
-import jetbrains.mps.workbench.dialogs.project.components.parts.StateUtil;
+import jetbrains.mps.ide.ui.dialogs.properties.StateUtil;
 import java.awt.Color;
 
 public class ModelRenderer extends ProjectLevelRenderer {

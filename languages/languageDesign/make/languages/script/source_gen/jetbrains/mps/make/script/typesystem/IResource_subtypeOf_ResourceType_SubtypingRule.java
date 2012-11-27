@@ -16,7 +16,6 @@ import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class IResource_subtypeOf_ResourceType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   private static SNodePointer SNODE_POINTER_f565s9_a0a0a0a0b0c0a0a0a0a0a0c = new SNodePointer("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)", "6168415856807657256");
-
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
   public IResource_subtypeOf_ResourceType_SubtypingRule() {

@@ -89,11 +89,6 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
   }
 
   @Override
-  public Icon getIcon() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
-  }
-
-  @Override
   public String getHelpTopic() {
     return null;
   }

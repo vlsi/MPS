@@ -84,7 +84,6 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 
   /*package*/ static class ConceptsDataSet extends DataSet {
     public static final String ID = "CONCEPTS_DATASET";
-
     @NotNull
     private final SNode myTopConcept;
     private SNode[] myConcepts;
@@ -158,7 +157,6 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 
   /*package*/ static class PropertyDeclarationsDataSet extends DataSet {
     public static final String ID = "PROPERTY_DECLARATIONS_DATASET";
-
     private Map<String, SNode> myPropertyByName = null;
     private List<SNode> myProperties = null;
     private Set<SNode> myDependsOnNodes;
@@ -252,7 +250,6 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 
   /*package*/ static class LinkDeclarationsDataSet extends DataSet {
     public static final String ID = "LINK_DECLARATIONS_DATASET";
-
     private Map<String, SNode> myLinkByRole = null;
     private Map<SNode, SNode> myMostSpecificLinkBySpecializedLink = null;
     private List<SNode> myMostSpecificLinks = null;
@@ -398,7 +395,6 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 
   /*package*/ static class ConceptPropertiesDataSet extends DataSet {
     public static final String ID = "CONCEPT_PROPERTIES_DATASET";
-
     private Map<String, SNode> myPropertyByName = null;
     private Set<SNode> myDependsOnNodes;
 

@@ -49,7 +49,6 @@ import java.util.LinkedHashSet;
 
 public abstract class MpsWorker {
   private static Logger LOG = Logger.getLogger(MpsWorker.class);
-
   protected final List<String> myErrors = new ArrayList<String>();
   protected final List<String> myWarnings = new ArrayList<String>();
   protected final WhatToDo myWhatToDo;

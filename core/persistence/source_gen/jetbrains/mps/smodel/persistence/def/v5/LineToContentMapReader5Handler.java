@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.persistence.def.v4.VersionUtil;
 
 public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineContent>> {
   private static String[] EMPTY_ARRAY = new String[0];
-
   private LineToContentMapReader5Handler.ModelElementHandler modelhandler = new LineToContentMapReader5Handler.ModelElementHandler();
   private LineToContentMapReader5Handler.NodeElementHandler nodehandler = new LineToContentMapReader5Handler.NodeElementHandler();
   private LineToContentMapReader5Handler.PropertyElementHandler propertyhandler = new LineToContentMapReader5Handler.PropertyElementHandler();

@@ -56,7 +56,6 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class Java_Command {
   private static Logger LOG = Logger.getLogger(Java_Command.class);
-
   private File myWorkingDirectory_File = new File(SystemProperties.getUserHome());
   private String myJrePath_String = Java_Command.getJdkHome();
   private String myProgramParameter_String;

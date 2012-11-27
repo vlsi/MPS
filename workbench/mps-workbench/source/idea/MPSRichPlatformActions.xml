@@ -1,0 +1,25 @@
+<component xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <xi:include href="/idea/PlatformActions.xml" xpointer="xpointer(/component/*)"/>
+  <xi:include href="/idea/VcsActions.xml" xpointer="xpointer(/component/*)"/>
+  <xi:include href="/idea/MPSLangActions.xml" xpointer="xpointer(/component/*)"/>
+
+  <actions>
+
+    <!-- Analyze -->
+    <group id="AnalyzeActions">
+    </group>
+
+    <group id="AnalyzeMenu" popup="true">
+      <separator/>
+      <reference ref="AnalyzeActions"/>
+      <add-to-group group-id="MainMenu" anchor="after" relative-to-action="CodeMenu"/>
+    </group>
+
+    <group id="BuildMenu" popup="true">
+      <add-to-group group-id="MainMenu" anchor="before" relative-to-action="RunMenu"/>
+    </group>
+
+  </actions>
+
+</component>

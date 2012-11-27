@@ -10,7 +10,7 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.SwingConstants;
 import com.intellij.openapi.actionSystem.ToggleAction;
-import com.intellij.execution.testframework.TestsUIUtil;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
@@ -46,7 +46,7 @@ public class TestToolbarPanel extends JPanel {
   }
 
   private ToggleAction createHidePassedAction() {
-    return new ToggleAction("Hide Passed", "Hide passed tests", TestsUIUtil.loadIcon("hidePassed")) {
+    return new ToggleAction("Hide Passed", "Hide passed tests", AllIcons.RunConfigurations.HidePassed) {
       {
         setSelected(null, UnitTestOptions.isHidePased());
       }
@@ -63,7 +63,7 @@ public class TestToolbarPanel extends JPanel {
   }
 
   private ToggleAction cteateTrackRunningAction() {
-    return new ToggleAction("Track Running Test", "Select currently running test in tree", TestsUIUtil.loadIcon("trackTests")) {
+    return new ToggleAction("Track Running Test", "Select currently running test in tree", AllIcons.RunConfigurations.TrackTests) {
       {
         setSelected(null, UnitTestOptions.isTrackRunning());
       }
@@ -136,7 +136,7 @@ public class TestToolbarPanel extends JPanel {
   }
 
   private ToggleAction createSelectFirstFailedAction() {
-    return new ToggleAction("Select First Failed Test When Finished", "", TestsUIUtil.loadIcon("selectFirstDefect")) {
+    return new ToggleAction("Select First Failed Test When Finished", "", AllIcons.RunConfigurations.SelectFirstDefect) {
       {
         setSelected(null, UnitTestOptions.isSelectFirstFailded());
       }
@@ -152,7 +152,7 @@ public class TestToolbarPanel extends JPanel {
   }
 
   private AnAction createRerunFailedTestAction() {
-    return new AnAction("Rerun Failed Tests", "Rerun only tests that failed/crached after last run", TestsUIUtil.loadIcon("rerunFailedTests")) {
+    return new AnAction("Rerun Failed Tests", "Rerun only tests that failed/crached after last run", AllIcons.RunConfigurations.RerunFailedTests) {
       public void actionPerformed(AnActionEvent p0) {
         if (myTree.hasFailedTests()) {
           myTree.buildFailedTestTree();

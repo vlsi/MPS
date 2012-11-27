@@ -13,20 +13,27 @@
       <include name="javac2.jar" />
       <include name="jdom.jar" />
       <include name="asm.jar" />
+      <include name="asm4-all.jar" />
       <include name="asm-commons.jar" />
       <include name="jgoodies-forms.jar" />
     </fileset>
   </path>
   
+  <path id="path.jdk.classpath">
+    <pathelement path="${java.home}/../Classes/classes.jar" />
+    <fileset dir="${java.home}">
+      <include name="lib/*.jar" />
+    </fileset>
+  </path>
+  
   <path id="path.java.library.core-libraries">
-    <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
-    <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
+    <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
+    <fileset file="${artifacts.IDEA}/lib/guava-12.0.jar" />
     <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
     <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
     <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-    <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
+    <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
     <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-    <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
     <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
     <fileset file="${mps_home}/lib/asm.jar" />
     <fileset file="${mps_home}/lib/diffutils-1.2.1.jar" />
@@ -2060,7 +2067,7 @@
       <src>
         <path location="${mps_home}/languages/baseLanguage/tuples/runtime/source_gen" />
       </src>
-      <classpath />
+      <classpath refid="path.jdk.classpath" />
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-tuples">
       <fileset dir="${mps_home}/languages/baseLanguage/tuples/runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
@@ -2074,7 +2081,7 @@
       <src>
         <path location="${mps_home}/languages/baseLanguage/closures/runtime/source_gen" />
       </src>
-      <classpath />
+      <classpath refid="path.jdk.classpath" />
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-closures">
       <fileset dir="${mps_home}/languages/baseLanguage/closures/runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
@@ -2088,7 +2095,10 @@
       <src>
         <path location="${mps_home}/languages/baseLanguage/collections/runtime/source_gen" />
       </src>
-      <classpath path="${build.tmp}/java/out/mps-closures" />
+      <classpath>
+        <pathelement path="${build.tmp}/java/out/mps-closures" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-collections">
       <fileset dir="${mps_home}/languages/baseLanguage/collections/runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
@@ -2151,6 +2161,7 @@
         <pathelement path="${build.tmp}/java/out/mps-tuples" />
         <path refid="path.java.library.core-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-openapi">
@@ -2195,6 +2206,7 @@
         <pathelement path="${build.tmp}/java/out/mps-tuples" />
         <path refid="path.java.library.core-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-core">
@@ -2240,6 +2252,7 @@
         <pathelement path="${build.tmp}/java/out/mps-tuples" />
         <path refid="path.java.library.core-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-persistence">
@@ -2262,6 +2275,7 @@
         <pathelement path="${build.tmp}/java/out/mps-tuples" />
         <pathelement path="${build.tmp}/java/out/mps-core" />
         <path refid="path.java.library.core-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-editor-api">
@@ -2287,6 +2301,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-ant" />
         <path refid="path.java.library.junit-4.10" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-ant">
@@ -2313,6 +2328,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor-api" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-platform">
@@ -2339,6 +2355,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-debugger">
@@ -2371,6 +2388,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor-api" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-editor">
@@ -2405,6 +2423,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-ant" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-test">
@@ -2495,6 +2514,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage">
@@ -2524,6 +2544,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures">
@@ -2553,6 +2574,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collections">
@@ -2582,6 +2604,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguageInternal">
@@ -2611,6 +2634,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.blTypes">
@@ -2644,6 +2668,7 @@
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.checkedDots">
@@ -2673,6 +2698,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.classifiers">
@@ -2706,6 +2732,7 @@
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.constructors">
@@ -2735,6 +2762,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.javadoc">
@@ -2768,6 +2796,7 @@
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.jdk7">
@@ -2797,6 +2826,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.logging">
@@ -2830,6 +2860,7 @@
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.overloadedOperators">
@@ -2859,6 +2890,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.tuples">
@@ -2888,6 +2920,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.extensionMethods">
@@ -2922,6 +2955,7 @@
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp">
@@ -2936,7 +2970,7 @@
       <src>
         <path location="${mps_home}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/source_gen" />
       </src>
-      <classpath />
+      <classpath refid="path.jdk.classpath" />
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime">
       <fileset dir="${mps_home}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
@@ -2965,6 +2999,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.scopes">
@@ -2999,6 +3034,7 @@
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.builders">
@@ -3041,6 +3077,7 @@
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.varVariable">
@@ -3078,6 +3115,7 @@
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.dataFlow.analyzers">
@@ -3107,6 +3145,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.core">
@@ -3136,6 +3175,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.actions">
@@ -3165,6 +3205,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.behavior">
@@ -3194,6 +3235,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.constraints">
@@ -3233,6 +3275,7 @@
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.dataFlow">
@@ -3262,6 +3305,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.editor">
@@ -3296,6 +3340,7 @@
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.extension">
@@ -3383,6 +3428,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.3" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.findUsages">
@@ -3430,6 +3476,7 @@
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.descriptor">
@@ -3459,6 +3506,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.generator.generationContext">
@@ -3488,6 +3536,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.generator.generationParameters">
@@ -3517,6 +3566,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.generator">
@@ -3546,6 +3596,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.intentions">
@@ -3575,6 +3626,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.pattern">
@@ -3620,6 +3672,7 @@
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.plugin">
@@ -3649,6 +3702,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.checkedName">
@@ -3683,6 +3737,7 @@
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.access">
@@ -3713,6 +3768,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.resources">
@@ -3742,6 +3798,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.project">
@@ -3771,6 +3828,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.quotation">
@@ -3815,6 +3873,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.3" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.refactoring">
@@ -3844,6 +3903,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.script">
@@ -3873,6 +3933,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.sharedConcepts">
@@ -3902,6 +3963,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.smodel">
@@ -3916,7 +3978,7 @@
       <src>
         <path location="${mps_home}/languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.runtime/source_gen" />
       </src>
-      <classpath />
+      <classpath refid="path.jdk.classpath" />
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime">
       <fileset dir="${mps_home}/languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
@@ -3945,6 +4007,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.structure">
@@ -3981,6 +4044,7 @@
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.stubs">
@@ -4010,6 +4074,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.textGen">
@@ -4039,6 +4104,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.traceable">
@@ -4078,6 +4144,7 @@
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.traceable.operations">
@@ -4107,6 +4174,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem">
@@ -4136,6 +4204,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.scopes">
@@ -4165,6 +4234,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.scopes.runtime">
@@ -4196,6 +4266,7 @@
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.core.xml">
@@ -4229,6 +4300,7 @@
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.core.xml.sax">
@@ -4267,6 +4339,7 @@
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.make.facet">
@@ -4302,6 +4375,7 @@
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.make.script">
@@ -4348,6 +4422,7 @@
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.java.library.idea-ant" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.build.gentest">
@@ -4377,6 +4452,7 @@
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.build.reduced">

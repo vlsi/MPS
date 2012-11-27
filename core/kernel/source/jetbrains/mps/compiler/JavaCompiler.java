@@ -64,11 +64,16 @@ public class JavaCompiler {
   }
 
   public void compile(IClassPathItem classPath) {
-    CompilerOptions options = new CompilerOptions();
-    options.sourceLevel = ClassFileConstants.JDK1_6;
-    options.targetJDK = ClassFileConstants.JDK1_5;
-    options.produceDebugAttributes = ClassFileConstants.ATTR_SOURCE | ClassFileConstants.ATTR_LINES | ClassFileConstants.ATTR_VARS;
+    Map compilerOptions = new HashMap();
+    compilerOptions.put(CompilerOptions.OPTION_Compliance, CompilerOptions.VERSION_1_6);
+    compilerOptions.put(CompilerOptions.OPTION_Source, CompilerOptions.VERSION_1_6);
+    compilerOptions.put(CompilerOptions.OPTION_TargetPlatform, CompilerOptions.VERSION_1_6);
 
+    compilerOptions.put(CompilerOptions.OPTION_LocalVariableAttribute, CompilerOptions.GENERATE);
+    compilerOptions.put(CompilerOptions.OPTION_LineNumberAttribute, CompilerOptions.GENERATE);
+    compilerOptions.put(CompilerOptions.OPTION_SourceFileAttribute, CompilerOptions.GENERATE);
+
+    CompilerOptions options = new CompilerOptions(compilerOptions);
     org.eclipse.jdt.internal.compiler.Compiler c = new Compiler(new MyNameEnvironment(classPath), new MyErrorHandlingPolicy(), options, new MyCompilerRequestor(), new DefaultProblemFactory(), null);
     //c.options.verbose = true;
 

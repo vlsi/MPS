@@ -12,52 +12,52 @@
   </root>
   <root nodeId="3364928926666847271" modelId="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)">
     <nodeInfo nodeId="1519428872448363207" fileName="CheckersComponent.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
-    <nodeInfo nodeId="3364928926666865052" fileName="CheckersComponent.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCheckers" />
-    <nodeInfo nodeId="3364928926666865066" fileName="CheckersComponent.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguageChecker" />
-    <nodeInfo nodeId="3364928926666865070" fileName="CheckersComponent.java" startLine="18" startPosition="30" endLine="19" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3364928926666865089" fileName="CheckersComponent.java" startLine="19" startPosition="46" endLine="20" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3364928926666847292" fileName="CheckersComponent.java" startLine="25" startPosition="36" endLine="26" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1519428872448363243" fileName="CheckersComponent.java" startLine="30" startPosition="27" endLine="31" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="1519428872448363233" fileName="CheckersComponent.java" startLine="32" startPosition="5" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1519428872448363226" fileName="CheckersComponent.java" startLine="33" startPosition="0" endLine="34" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3364928926666865058" fileName="CheckersComponent.java" startLine="34" startPosition="20" endLine="35" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3364928926666865079" fileName="CheckersComponent.java" startLine="38" startPosition="25" endLine="39" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1519428872448363219" fileName="CheckersComponent.java" startLine="39" startPosition="71" endLine="40" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3364928926666865113" fileName="CheckersComponent.java" startLine="43" startPosition="48" endLine="44" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3364928926666865128" fileName="CheckersComponent.java" startLine="47" startPosition="51" endLine="48" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7736411024399746334" fileName="CheckersComponent.java" startLine="51" startPosition="43" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1519428872448363215" fileName="CheckersComponent.java" startLine="55" startPosition="49" endLine="56" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1519428872448363234" fileName="CheckersComponent.java" startLine="29" startPosition="22" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3364928926666865107" fileName="CheckersComponent.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addChecker#(Ljetbrains/mps/checkers/INodeChecker;)V" />
-    <nodeInfo nodeId="3364928926666865122" fileName="CheckersComponent.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeChecker#(Ljetbrains/mps/checkers/INodeChecker;)V" />
-    <nodeInfo nodeId="7736411024399746330" fileName="CheckersComponent.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCheckers#()Ljava/util/List;" />
-    <nodeInfo nodeId="1519428872448363211" fileName="CheckersComponent.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/checkers/CheckersComponent;" />
-    <nodeInfo nodeId="3364928926666847273" fileName="CheckersComponent.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckersComponent#()V" />
-    <nodeInfo nodeId="3364928926666847278" fileName="CheckersComponent.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="3364928926666847286" fileName="CheckersComponent.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3364928926666847282" fileName="CheckersComponent.java" startLine="29" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
-    <scopeInfo nodeId="3364928926666847291" fileName="CheckersComponent.java" startLine="25" startPosition="36" endLine="26" endPosition="22" />
-    <scopeInfo nodeId="1519428872448363235" fileName="CheckersComponent.java" startLine="30" startPosition="27" endLine="31" endPosition="63" />
-    <scopeInfo nodeId="3364928926666865110" fileName="CheckersComponent.java" startLine="43" startPosition="48" endLine="44" endPosition="58" />
-    <scopeInfo nodeId="3364928926666865125" fileName="CheckersComponent.java" startLine="47" startPosition="51" endLine="48" endPosition="61" />
-    <scopeInfo nodeId="7736411024399746333" fileName="CheckersComponent.java" startLine="51" startPosition="43" endLine="52" endPosition="22" />
-    <scopeInfo nodeId="1519428872448363214" fileName="CheckersComponent.java" startLine="55" startPosition="49" endLine="56" endPosition="20" />
-    <scopeInfo nodeId="3364928926666847276" fileName="CheckersComponent.java" startLine="18" startPosition="30" endLine="20" endPosition="71" />
-    <scopeInfo nodeId="3364928926666847281" fileName="CheckersComponent.java" startLine="38" startPosition="25" endLine="40" endPosition="20" />
-    <scopeInfo nodeId="3364928926666865107" fileName="CheckersComponent.java" startLine="43" startPosition="0" endLine="46" endPosition="0">
+    <nodeInfo nodeId="3364928926666865052" fileName="CheckersComponent.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCheckers" />
+    <nodeInfo nodeId="3364928926666865066" fileName="CheckersComponent.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguageChecker" />
+    <nodeInfo nodeId="3364928926666865070" fileName="CheckersComponent.java" startLine="17" startPosition="30" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3364928926666865089" fileName="CheckersComponent.java" startLine="18" startPosition="46" endLine="19" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3364928926666847292" fileName="CheckersComponent.java" startLine="24" startPosition="36" endLine="25" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1519428872448363243" fileName="CheckersComponent.java" startLine="29" startPosition="27" endLine="30" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="1519428872448363233" fileName="CheckersComponent.java" startLine="31" startPosition="5" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1519428872448363226" fileName="CheckersComponent.java" startLine="32" startPosition="0" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3364928926666865058" fileName="CheckersComponent.java" startLine="33" startPosition="20" endLine="34" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3364928926666865079" fileName="CheckersComponent.java" startLine="37" startPosition="25" endLine="38" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1519428872448363219" fileName="CheckersComponent.java" startLine="38" startPosition="71" endLine="39" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3364928926666865113" fileName="CheckersComponent.java" startLine="42" startPosition="48" endLine="43" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3364928926666865128" fileName="CheckersComponent.java" startLine="46" startPosition="51" endLine="47" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7736411024399746334" fileName="CheckersComponent.java" startLine="50" startPosition="43" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1519428872448363215" fileName="CheckersComponent.java" startLine="54" startPosition="49" endLine="55" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1519428872448363234" fileName="CheckersComponent.java" startLine="28" startPosition="22" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3364928926666865107" fileName="CheckersComponent.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addChecker#(Ljetbrains/mps/checkers/INodeChecker;)V" />
+    <nodeInfo nodeId="3364928926666865122" fileName="CheckersComponent.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeChecker#(Ljetbrains/mps/checkers/INodeChecker;)V" />
+    <nodeInfo nodeId="7736411024399746330" fileName="CheckersComponent.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCheckers#()Ljava/util/List;" />
+    <nodeInfo nodeId="1519428872448363211" fileName="CheckersComponent.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/checkers/CheckersComponent;" />
+    <nodeInfo nodeId="3364928926666847273" fileName="CheckersComponent.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckersComponent#()V" />
+    <nodeInfo nodeId="3364928926666847278" fileName="CheckersComponent.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="3364928926666847286" fileName="CheckersComponent.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3364928926666847282" fileName="CheckersComponent.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
+    <scopeInfo nodeId="3364928926666847291" fileName="CheckersComponent.java" startLine="24" startPosition="36" endLine="25" endPosition="22" />
+    <scopeInfo nodeId="1519428872448363235" fileName="CheckersComponent.java" startLine="29" startPosition="27" endLine="30" endPosition="63" />
+    <scopeInfo nodeId="3364928926666865110" fileName="CheckersComponent.java" startLine="42" startPosition="48" endLine="43" endPosition="58" />
+    <scopeInfo nodeId="3364928926666865125" fileName="CheckersComponent.java" startLine="46" startPosition="51" endLine="47" endPosition="61" />
+    <scopeInfo nodeId="7736411024399746333" fileName="CheckersComponent.java" startLine="50" startPosition="43" endLine="51" endPosition="22" />
+    <scopeInfo nodeId="1519428872448363214" fileName="CheckersComponent.java" startLine="54" startPosition="49" endLine="55" endPosition="20" />
+    <scopeInfo nodeId="3364928926666847276" fileName="CheckersComponent.java" startLine="17" startPosition="30" endLine="19" endPosition="71" />
+    <scopeInfo nodeId="3364928926666847281" fileName="CheckersComponent.java" startLine="37" startPosition="25" endLine="39" endPosition="20" />
+    <scopeInfo nodeId="3364928926666865107" fileName="CheckersComponent.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="3364928926666865111" varName="checker" />
     </scopeInfo>
-    <scopeInfo nodeId="3364928926666865122" fileName="CheckersComponent.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="3364928926666865122" fileName="CheckersComponent.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="3364928926666865126" varName="checker" />
     </scopeInfo>
-    <scopeInfo nodeId="7736411024399746330" fileName="CheckersComponent.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1519428872448363211" fileName="CheckersComponent.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="3364928926666847273" fileName="CheckersComponent.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="3364928926666847278" fileName="CheckersComponent.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="3364928926666847286" fileName="CheckersComponent.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="3364928926666847285" fileName="CheckersComponent.java" startLine="29" startPosition="22" endLine="35" endPosition="68" />
-    <scopeInfo nodeId="3364928926666847282" fileName="CheckersComponent.java" startLine="29" startPosition="0" endLine="37" endPosition="0" />
-    <unitInfo nodeId="3364928926666847271" fileName="CheckersComponent.java" startLine="12" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.checkers.CheckersComponent" />
+    <scopeInfo nodeId="7736411024399746330" fileName="CheckersComponent.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="1519428872448363211" fileName="CheckersComponent.java" startLine="54" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="3364928926666847273" fileName="CheckersComponent.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="3364928926666847278" fileName="CheckersComponent.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="3364928926666847286" fileName="CheckersComponent.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="3364928926666847285" fileName="CheckersComponent.java" startLine="28" startPosition="22" endLine="34" endPosition="68" />
+    <scopeInfo nodeId="3364928926666847282" fileName="CheckersComponent.java" startLine="28" startPosition="0" endLine="36" endPosition="0" />
+    <unitInfo nodeId="3364928926666847271" fileName="CheckersComponent.java" startLine="12" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.checkers.CheckersComponent" />
   </root>
   <root nodeId="3364928926666856641" modelId="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)">
     <nodeInfo nodeId="3364928926666856660" fileName="LanguageChecker.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRules" />

@@ -36,7 +36,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class JavaStubModelDataSource extends FolderSetDataSource implements FastFindSupportProvider, StubModelDataSource {
   public static final String FAST_FIND_ID = "java_stubs";
-
   private boolean skipPrivate;
 
   public JavaStubModelDataSource(boolean skipPrivate) {

@@ -14,7 +14,6 @@ import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule extends ComparisonRule_Runtime {
   private static SNodePointer SNODE_POINTER_vbthi0_a0a0a0a0b0c0a0a0a0a0a0d = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1083171877298");
-
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
 
   public comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule() {

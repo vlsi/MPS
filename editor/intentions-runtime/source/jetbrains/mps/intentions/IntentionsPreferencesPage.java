@@ -54,11 +54,6 @@ public class IntentionsPreferencesPage implements Configurable {
   }
 
   @Override
-  public Icon getIcon() {
-    return null;
-  }
-
-  @Override
   public String getHelpTopic() {
     // MPS-13404
     return "preferences.intentionPowerPack";

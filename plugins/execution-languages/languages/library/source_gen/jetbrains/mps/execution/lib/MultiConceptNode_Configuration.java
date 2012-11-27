@@ -27,7 +27,6 @@ import jetbrains.mps.util.NameUtil;
 
 public class MultiConceptNode_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   private static Logger LOG = Logger.getLogger(MultiConceptNode_Configuration.class);
-
   @NotNull
   private MultiConceptNode_Configuration.MyState myState = new MultiConceptNode_Configuration.MyState();
   private final List<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargets;

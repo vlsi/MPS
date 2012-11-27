@@ -39,7 +39,6 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
   private static final int MAX_MESSAGE_NUMBER = 5;
   private static final String LF = "\n";
   private static final String TOOLTIP_INDENT = LF + "    ";
-
   private boolean myIndexWasNotReady;
 
   public OverrideMethodsChecker() {

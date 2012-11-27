@@ -4,7 +4,7 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels;
 
 import javax.swing.JTable;
 import java.util.List;
-import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ColumnDescriptor;
+import jetbrains.mps.ide.ui.dialogs.properties.descriptors.ColumnDescriptor;
 import java.util.ArrayList;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import org.jetbrains.annotations.NotNull;

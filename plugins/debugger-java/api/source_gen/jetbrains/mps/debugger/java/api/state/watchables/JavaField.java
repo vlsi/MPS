@@ -17,7 +17,6 @@ import jetbrains.mps.debug.api.programState.WatchablesCategory;
 
 public class JavaField extends JavaWatchable implements IWatchable {
   private static Logger LOG = Logger.getLogger(ProxyForJava.class);
-
   private final Field myField;
   private final ObjectReference myParent;
   private JavaValue myCachedValue;

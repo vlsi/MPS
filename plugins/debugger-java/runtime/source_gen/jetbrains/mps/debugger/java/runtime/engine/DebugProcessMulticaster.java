@@ -11,7 +11,6 @@ import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 
 public class DebugProcessMulticaster {
   private static Logger LOG = Logger.getLogger(DebugProcessMulticaster.class);
-
   private final List<DebugProcessListener> myListeners = new ArrayList<DebugProcessListener>();
 
   public DebugProcessMulticaster() {

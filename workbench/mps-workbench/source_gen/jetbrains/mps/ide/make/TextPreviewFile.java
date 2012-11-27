@@ -5,21 +5,23 @@ package jetbrains.mps.ide.make;
 import com.intellij.openapi.vfs.newvfs.impl.StubVirtualFile;
 import java.util.Map;
 import java.util.Arrays;
-import com.intellij.openapi.util.io.FileUtil;
 import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFileSystem;
+import com.intellij.openapi.util.io.FileAttributes;
 import java.io.OutputStream;
 import java.io.InputStream;
+import com.intellij.util.ArrayUtil;
 
 public class TextPreviewFile extends StubVirtualFile {
   private static TextPreviewFile.TextPreviewVirtualFileSystem FS = new TextPreviewFile.TextPreviewVirtualFileSystem();
-
+  public static final String COMPLEX_CONTENT = "<complex content>";
   private String[] forkNames;
   private Map<String, Object> forks;
   private String name;
@@ -31,10 +33,6 @@ public class TextPreviewFile extends StubVirtualFile {
     this.forks = forks;
     this.forkNames = forks.keySet().toArray(new String[forks.size()]);
     Arrays.sort(forkNames);
-
-    // This is here to prevent MPS from importing jetbrains.mps.util.FileUtil 
-    // (used below) and introduce compilation problems into generated code 
-    int i = FileUtil.BA_DIRECTORY;
   }
 
   public String[] forkNames() {
@@ -58,12 +56,12 @@ public class TextPreviewFile extends StubVirtualFile {
         return ((String) next).getBytes(getCharset());
       }
     }
-    return "<complex content>".getBytes(getCharset());
+    return COMPLEX_CONTENT.getBytes(getCharset());
   }
 
   @Override
   public Charset getCharset() {
-    return jetbrains.mps.util.FileUtil.DEFAULT_CHARSET;
+    return FileUtil.DEFAULT_CHARSET;
   }
 
   @NotNull
@@ -132,6 +130,22 @@ public class TextPreviewFile extends StubVirtualFile {
       return file.getName();
     }
 
+    @Nullable
+    public FileAttributes getAttributes(@NotNull VirtualFile file) {
+      if (file instanceof TextPreviewFile) {
+        TextPreviewFile previewFile = (TextPreviewFile) file;
+        long length = COMPLEX_CONTENT.length();
+        if (previewFile.forks.size() == 1) {
+          Object next = previewFile.forks.values().iterator().next();
+          if (next instanceof String) {
+            length = ((String) next).length();
+          }
+        }
+        return new FileAttributes(false, false, false, false, length, previewFile.getModificationStamp(), false);
+      }
+      return null;
+    }
+
     @Override
     public boolean markNewFilesAsDirty() {
       return false;
@@ -172,17 +186,6 @@ public class TextPreviewFile extends StubVirtualFile {
     @Override
     public VirtualFile findFileByPath(@NotNull @NonNls String string) {
       return null;
-    }
-
-    @FileUtil.FileBooleanAttributes
-    public int getBooleanAttributes(@NotNull VirtualFile file, @FileUtil.FileBooleanAttributes int flags) {
-      return (((flags & FileUtil.BA_EXISTS) != 0 ?
-        FileUtil.BA_EXISTS :
-        0
-      )) | (((flags & FileUtil.BA_REGULAR) != 0 ?
-        FileUtil.BA_REGULAR :
-        0
-      ));
     }
 
     @Override
@@ -262,8 +265,9 @@ public class TextPreviewFile extends StubVirtualFile {
       return false;
     }
 
+    @NotNull
     public String[] list(VirtualFile file) {
-      return null;
+      return ArrayUtil.EMPTY_STRING_ARRAY;
     }
 
     @NonNls

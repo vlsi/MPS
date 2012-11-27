@@ -15,7 +15,6 @@ import com.intellij.openapi.application.ApplicationManager;
 
 public class CustomViewersManager implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(CustomViewersManager.class);
-
   private final Set<ValueWrapperFactory> myFactories = new HashSet<ValueWrapperFactory>();
 
   public CustomViewersManager() {

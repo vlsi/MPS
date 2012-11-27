@@ -13,7 +13,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public abstract class BreakpointIconRenderrerEx<B> implements EditorMessageIconRenderer {
   public static final EditorMessageIconRenderer.IconRendererType TYPE = new EditorMessageIconRenderer.IconRendererType(4);
-
   protected final B myBreakpoint;
   protected final Component myComponent;
 

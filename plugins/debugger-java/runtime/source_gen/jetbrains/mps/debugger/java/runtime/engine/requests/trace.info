@@ -27,119 +27,119 @@
   <root nodeId="6460341978864599228" modelId="r:d716148b-c6f9-495f-b5e7-22263b704aca(jetbrains.mps.debugger.java.runtime.engine.requests)">
     <nodeInfo nodeId="6460341978864599231" fileName="StepRequestor.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STOP" />
     <nodeInfo nodeId="6460341978864599235" fileName="StepRequestor.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="6460341978864599240" fileName="StepRequestor.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStepType" />
-    <nodeInfo nodeId="6460341978864599243" fileName="StepRequestor.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDeclaringType" />
-    <nodeInfo nodeId="6460341978864599246" fileName="StepRequestor.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLineNumber" />
-    <nodeInfo nodeId="6460341978864599249" fileName="StepRequestor.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFrameCount" />
-    <nodeInfo nodeId="6460341978864599252" fileName="StepRequestor.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySourceName" />
-    <nodeInfo nodeId="6460341978864599255" fileName="StepRequestor.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFramesSelector" />
-    <nodeInfo nodeId="6460341978864599268" fileName="StepRequestor.java" startLine="27" startPosition="104" endLine="28" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460341978864599272" fileName="StepRequestor.java" startLine="28" startPosition="26" endLine="29" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460341978864599307" fileName="StepRequestor.java" startLine="31" startPosition="27" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460341978864599313" fileName="StepRequestor.java" startLine="32" startPosition="43" endLine="33" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6460341978864599325" fileName="StepRequestor.java" startLine="34" startPosition="28" endLine="35" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460341978864599335" fileName="StepRequestor.java" startLine="35" startPosition="68" endLine="36" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460341978864599343" fileName="StepRequestor.java" startLine="36" startPosition="55" endLine="37" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460341978864599279" fileName="StepRequestor.java" startLine="40" startPosition="50" endLine="41" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460341978864599288" fileName="StepRequestor.java" startLine="42" startPosition="44" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460341978864599146" fileName="StepRequestor.java" startLine="47" startPosition="40" endLine="48" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6460341978864599640" fileName="StepRequestor.java" startLine="49" startPosition="25" endLine="50" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6460341978864599697" fileName="StepRequestor.java" startLine="53" startPosition="37" endLine="54" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6460341978864599547" fileName="StepRequestor.java" startLine="55" startPosition="7" endLine="56" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6460341978864599771" fileName="StepRequestor.java" startLine="56" startPosition="41" endLine="57" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6460341978864599767" fileName="StepRequestor.java" startLine="58" startPosition="50" endLine="59" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6460341978864599629" fileName="StepRequestor.java" startLine="64" startPosition="85" endLine="65" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6460341978864599638" fileName="StepRequestor.java" startLine="66" startPosition="5" endLine="67" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6460341978864599381" fileName="StepRequestor.java" startLine="70" startPosition="84" endLine="71" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6460341978864599403" fileName="StepRequestor.java" startLine="72" startPosition="85" endLine="73" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6460341978864599408" fileName="StepRequestor.java" startLine="73" startPosition="26" endLine="74" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6460341978864599414" fileName="StepRequestor.java" startLine="74" startPosition="43" endLine="75" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6460341978864599438" fileName="StepRequestor.java" startLine="76" startPosition="11" endLine="77" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460341978864599444" fileName="StepRequestor.java" startLine="77" startPosition="41" endLine="78" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460341978864599421" fileName="StepRequestor.java" startLine="79" startPosition="52" endLine="80" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460341978864599430" fileName="StepRequestor.java" startLine="81" startPosition="46" endLine="82" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460341978864599450" fileName="StepRequestor.java" startLine="83" startPosition="7" endLine="84" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6460341978864599452" fileName="StepRequestor.java" startLine="84" startPosition="61" endLine="85" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6460341978864599474" fileName="StepRequestor.java" startLine="86" startPosition="148" endLine="87" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6460341978864599476" fileName="StepRequestor.java" startLine="88" startPosition="7" endLine="89" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6460341978864599487" fileName="StepRequestor.java" startLine="89" startPosition="83" endLine="90" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6460341978864599508" fileName="StepRequestor.java" startLine="91" startPosition="183" endLine="92" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6460341978864599510" fileName="StepRequestor.java" startLine="94" startPosition="5" endLine="95" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6460341978864599653" fileName="StepRequestor.java" startLine="48" startPosition="44" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6460341978864599669" fileName="StepRequestor.java" startLine="52" startPosition="9" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6460341978864599627" fileName="StepRequestor.java" startLine="63" startPosition="33" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6460341978864599454" fileName="StepRequestor.java" startLine="85" startPosition="85" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6460341978864599489" fileName="StepRequestor.java" startLine="90" startPosition="59" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6460341978864599320" fileName="StepRequestor.java" startLine="33" startPosition="43" endLine="38" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6460341978864599623" fileName="StepRequestor.java" startLine="63" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="defaultStepType#()I" />
-    <nodeInfo nodeId="6460341978864599418" fileName="StepRequestor.java" startLine="75" startPosition="29" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6460341978864599302" fileName="StepRequestor.java" startLine="30" startPosition="9" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6460341978864599759" fileName="StepRequestor.java" startLine="51" startPosition="5" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6460341978864599276" fileName="StepRequestor.java" startLine="29" startPosition="38" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6460341978864599518" fileName="StepRequestor.java" startLine="47" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nextStep#(Lcom/sun/jdi/event/StepEvent;)I" />
-    <nodeInfo nodeId="6460341978864599258" fileName="StepRequestor.java" startLine="27" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StepRequestor#(Lcom/sun/jdi/ThreadReference;ILjetbrains/mps/debug/api/IDebuggableFramesSelector;)V" />
-    <nodeInfo nodeId="6460341978864599383" fileName="StepRequestor.java" startLine="71" startPosition="124" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6460341978864599373" fileName="StepRequestor.java" startLine="70" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nextStep#(Lcom/sun/jdi/ThreadReference;Lcom/sun/jdi/StackFrame;)I" />
-    <scopeInfo nodeId="6460341978864599277" fileName="StepRequestor.java" startLine="40" startPosition="0" endLine="41" endPosition="19">
+    <nodeInfo nodeId="6460341978864599240" fileName="StepRequestor.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStepType" />
+    <nodeInfo nodeId="6460341978864599243" fileName="StepRequestor.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDeclaringType" />
+    <nodeInfo nodeId="6460341978864599246" fileName="StepRequestor.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLineNumber" />
+    <nodeInfo nodeId="6460341978864599249" fileName="StepRequestor.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFrameCount" />
+    <nodeInfo nodeId="6460341978864599252" fileName="StepRequestor.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySourceName" />
+    <nodeInfo nodeId="6460341978864599255" fileName="StepRequestor.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFramesSelector" />
+    <nodeInfo nodeId="6460341978864599268" fileName="StepRequestor.java" startLine="26" startPosition="104" endLine="27" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460341978864599272" fileName="StepRequestor.java" startLine="27" startPosition="26" endLine="28" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460341978864599307" fileName="StepRequestor.java" startLine="30" startPosition="27" endLine="31" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460341978864599313" fileName="StepRequestor.java" startLine="31" startPosition="43" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6460341978864599325" fileName="StepRequestor.java" startLine="33" startPosition="28" endLine="34" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460341978864599335" fileName="StepRequestor.java" startLine="34" startPosition="68" endLine="35" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460341978864599343" fileName="StepRequestor.java" startLine="35" startPosition="55" endLine="36" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460341978864599279" fileName="StepRequestor.java" startLine="39" startPosition="50" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460341978864599288" fileName="StepRequestor.java" startLine="41" startPosition="44" endLine="42" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460341978864599146" fileName="StepRequestor.java" startLine="46" startPosition="40" endLine="47" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6460341978864599640" fileName="StepRequestor.java" startLine="48" startPosition="25" endLine="49" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6460341978864599697" fileName="StepRequestor.java" startLine="52" startPosition="37" endLine="53" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6460341978864599547" fileName="StepRequestor.java" startLine="54" startPosition="7" endLine="55" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6460341978864599771" fileName="StepRequestor.java" startLine="55" startPosition="41" endLine="56" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6460341978864599767" fileName="StepRequestor.java" startLine="57" startPosition="50" endLine="58" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6460341978864599629" fileName="StepRequestor.java" startLine="63" startPosition="85" endLine="64" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6460341978864599638" fileName="StepRequestor.java" startLine="65" startPosition="5" endLine="66" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6460341978864599381" fileName="StepRequestor.java" startLine="69" startPosition="84" endLine="70" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6460341978864599403" fileName="StepRequestor.java" startLine="71" startPosition="85" endLine="72" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6460341978864599408" fileName="StepRequestor.java" startLine="72" startPosition="26" endLine="73" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6460341978864599414" fileName="StepRequestor.java" startLine="73" startPosition="43" endLine="74" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6460341978864599438" fileName="StepRequestor.java" startLine="75" startPosition="11" endLine="76" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460341978864599444" fileName="StepRequestor.java" startLine="76" startPosition="41" endLine="77" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460341978864599421" fileName="StepRequestor.java" startLine="78" startPosition="52" endLine="79" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460341978864599430" fileName="StepRequestor.java" startLine="80" startPosition="46" endLine="81" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460341978864599450" fileName="StepRequestor.java" startLine="82" startPosition="7" endLine="83" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6460341978864599452" fileName="StepRequestor.java" startLine="83" startPosition="61" endLine="84" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6460341978864599474" fileName="StepRequestor.java" startLine="85" startPosition="148" endLine="86" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6460341978864599476" fileName="StepRequestor.java" startLine="87" startPosition="7" endLine="88" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6460341978864599487" fileName="StepRequestor.java" startLine="88" startPosition="83" endLine="89" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6460341978864599508" fileName="StepRequestor.java" startLine="90" startPosition="183" endLine="91" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6460341978864599510" fileName="StepRequestor.java" startLine="93" startPosition="5" endLine="94" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6460341978864599653" fileName="StepRequestor.java" startLine="47" startPosition="44" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6460341978864599669" fileName="StepRequestor.java" startLine="51" startPosition="9" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6460341978864599627" fileName="StepRequestor.java" startLine="62" startPosition="33" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6460341978864599454" fileName="StepRequestor.java" startLine="84" startPosition="85" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6460341978864599489" fileName="StepRequestor.java" startLine="89" startPosition="59" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6460341978864599320" fileName="StepRequestor.java" startLine="32" startPosition="43" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6460341978864599623" fileName="StepRequestor.java" startLine="62" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="defaultStepType#()I" />
+    <nodeInfo nodeId="6460341978864599418" fileName="StepRequestor.java" startLine="74" startPosition="29" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6460341978864599302" fileName="StepRequestor.java" startLine="29" startPosition="9" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6460341978864599759" fileName="StepRequestor.java" startLine="50" startPosition="5" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6460341978864599276" fileName="StepRequestor.java" startLine="28" startPosition="38" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6460341978864599518" fileName="StepRequestor.java" startLine="46" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nextStep#(Lcom/sun/jdi/event/StepEvent;)I" />
+    <nodeInfo nodeId="6460341978864599258" fileName="StepRequestor.java" startLine="26" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StepRequestor#(Lcom/sun/jdi/ThreadReference;ILjetbrains/mps/debug/api/IDebuggableFramesSelector;)V" />
+    <nodeInfo nodeId="6460341978864599383" fileName="StepRequestor.java" startLine="70" startPosition="124" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6460341978864599373" fileName="StepRequestor.java" startLine="69" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nextStep#(Lcom/sun/jdi/ThreadReference;Lcom/sun/jdi/StackFrame;)I" />
+    <scopeInfo nodeId="6460341978864599277" fileName="StepRequestor.java" startLine="39" startPosition="0" endLine="40" endPosition="19">
       <varInfo nodeId="6460341978864599284" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6460341978864599278" fileName="StepRequestor.java" startLine="40" startPosition="50" endLine="41" endPosition="19" />
-    <scopeInfo nodeId="6460341978864599286" fileName="StepRequestor.java" startLine="42" startPosition="0" endLine="43" endPosition="19">
+    <scopeInfo nodeId="6460341978864599278" fileName="StepRequestor.java" startLine="39" startPosition="50" endLine="40" endPosition="19" />
+    <scopeInfo nodeId="6460341978864599286" fileName="StepRequestor.java" startLine="41" startPosition="0" endLine="42" endPosition="19">
       <varInfo nodeId="6460341978864599293" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6460341978864599287" fileName="StepRequestor.java" startLine="42" startPosition="44" endLine="43" endPosition="19" />
-    <scopeInfo nodeId="6460341978864599654" fileName="StepRequestor.java" startLine="49" startPosition="25" endLine="50" endPosition="31" />
-    <scopeInfo nodeId="6460341978864599670" fileName="StepRequestor.java" startLine="53" startPosition="37" endLine="54" endPosition="33" />
-    <scopeInfo nodeId="6460341978864599762" fileName="StepRequestor.java" startLine="58" startPosition="0" endLine="59" endPosition="31">
+    <scopeInfo nodeId="6460341978864599287" fileName="StepRequestor.java" startLine="41" startPosition="44" endLine="42" endPosition="19" />
+    <scopeInfo nodeId="6460341978864599654" fileName="StepRequestor.java" startLine="48" startPosition="25" endLine="49" endPosition="31" />
+    <scopeInfo nodeId="6460341978864599670" fileName="StepRequestor.java" startLine="52" startPosition="37" endLine="53" endPosition="33" />
+    <scopeInfo nodeId="6460341978864599762" fileName="StepRequestor.java" startLine="57" startPosition="0" endLine="58" endPosition="31">
       <varInfo nodeId="6460341978864599763" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6460341978864599765" fileName="StepRequestor.java" startLine="58" startPosition="50" endLine="59" endPosition="31" />
-    <scopeInfo nodeId="6460341978864599628" fileName="StepRequestor.java" startLine="64" startPosition="85" endLine="65" endPosition="24" />
-    <scopeInfo nodeId="6460341978864599419" fileName="StepRequestor.java" startLine="79" startPosition="0" endLine="80" endPosition="21">
+    <scopeInfo nodeId="6460341978864599765" fileName="StepRequestor.java" startLine="57" startPosition="50" endLine="58" endPosition="31" />
+    <scopeInfo nodeId="6460341978864599628" fileName="StepRequestor.java" startLine="63" startPosition="85" endLine="64" endPosition="24" />
+    <scopeInfo nodeId="6460341978864599419" fileName="StepRequestor.java" startLine="78" startPosition="0" endLine="79" endPosition="21">
       <varInfo nodeId="6460341978864599426" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6460341978864599420" fileName="StepRequestor.java" startLine="79" startPosition="52" endLine="80" endPosition="21" />
-    <scopeInfo nodeId="6460341978864599428" fileName="StepRequestor.java" startLine="81" startPosition="0" endLine="82" endPosition="21">
+    <scopeInfo nodeId="6460341978864599420" fileName="StepRequestor.java" startLine="78" startPosition="52" endLine="79" endPosition="21" />
+    <scopeInfo nodeId="6460341978864599428" fileName="StepRequestor.java" startLine="80" startPosition="0" endLine="81" endPosition="21">
       <varInfo nodeId="6460341978864599435" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6460341978864599429" fileName="StepRequestor.java" startLine="81" startPosition="46" endLine="82" endPosition="21" />
-    <scopeInfo nodeId="6460341978864599473" fileName="StepRequestor.java" startLine="86" startPosition="148" endLine="87" endPosition="26" />
-    <scopeInfo nodeId="6460341978864599507" fileName="StepRequestor.java" startLine="91" startPosition="183" endLine="92" endPosition="26" />
-    <scopeInfo nodeId="6460341978864599437" fileName="StepRequestor.java" startLine="76" startPosition="11" endLine="78" endPosition="43" />
-    <scopeInfo nodeId="6460341978864599324" fileName="StepRequestor.java" startLine="34" startPosition="28" endLine="37" endPosition="55" />
-    <scopeInfo nodeId="6460341978864599626" fileName="StepRequestor.java" startLine="63" startPosition="33" endLine="67" endPosition="16" />
-    <scopeInfo nodeId="6460341978864599760" fileName="StepRequestor.java" startLine="52" startPosition="9" endLine="57" endPosition="37">
+    <scopeInfo nodeId="6460341978864599429" fileName="StepRequestor.java" startLine="80" startPosition="46" endLine="81" endPosition="21" />
+    <scopeInfo nodeId="6460341978864599473" fileName="StepRequestor.java" startLine="85" startPosition="148" endLine="86" endPosition="26" />
+    <scopeInfo nodeId="6460341978864599507" fileName="StepRequestor.java" startLine="90" startPosition="183" endLine="91" endPosition="26" />
+    <scopeInfo nodeId="6460341978864599437" fileName="StepRequestor.java" startLine="75" startPosition="11" endLine="77" endPosition="43" />
+    <scopeInfo nodeId="6460341978864599324" fileName="StepRequestor.java" startLine="33" startPosition="28" endLine="36" endPosition="55" />
+    <scopeInfo nodeId="6460341978864599626" fileName="StepRequestor.java" startLine="62" startPosition="33" endLine="66" endPosition="16" />
+    <scopeInfo nodeId="6460341978864599760" fileName="StepRequestor.java" startLine="51" startPosition="9" endLine="56" endPosition="37">
       <varInfo nodeId="6460341978864599548" varName="frame" />
     </scopeInfo>
-    <scopeInfo nodeId="6460341978864599623" fileName="StepRequestor.java" startLine="63" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="6460341978864599306" fileName="StepRequestor.java" startLine="31" startPosition="27" endLine="38" endPosition="9">
+    <scopeInfo nodeId="6460341978864599623" fileName="StepRequestor.java" startLine="62" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="6460341978864599306" fileName="StepRequestor.java" startLine="30" startPosition="27" endLine="37" endPosition="9">
       <varInfo nodeId="6460341978864599314" varName="frame" />
     </scopeInfo>
-    <scopeInfo nodeId="6460341978864599295" fileName="StepRequestor.java" startLine="30" startPosition="9" endLine="39" endPosition="7" />
-    <scopeInfo nodeId="6460341978864599521" fileName="StepRequestor.java" startLine="47" startPosition="40" endLine="60" endPosition="5">
+    <scopeInfo nodeId="6460341978864599295" fileName="StepRequestor.java" startLine="29" startPosition="9" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="6460341978864599521" fileName="StepRequestor.java" startLine="46" startPosition="40" endLine="59" endPosition="5">
       <varInfo nodeId="6460341978864599147" varName="thread" />
     </scopeInfo>
-    <scopeInfo nodeId="6460341978864599518" fileName="StepRequestor.java" startLine="47" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="6460341978864599518" fileName="StepRequestor.java" startLine="46" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="6460341978864599538" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6460341978864599267" fileName="StepRequestor.java" startLine="27" startPosition="104" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="6460341978864599258" fileName="StepRequestor.java" startLine="27" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="6460341978864599267" fileName="StepRequestor.java" startLine="26" startPosition="104" endLine="43" endPosition="5" />
+    <scopeInfo nodeId="6460341978864599258" fileName="StepRequestor.java" startLine="26" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="6460341978864599265" varName="framesSelector" />
       <varInfo nodeId="6460341978864599263" varName="stepType" />
       <varInfo nodeId="6460341978864599261" varName="thread" />
     </scopeInfo>
-    <scopeInfo nodeId="6460341978864599391" fileName="StepRequestor.java" startLine="72" startPosition="85" endLine="93" endPosition="7">
+    <scopeInfo nodeId="6460341978864599391" fileName="StepRequestor.java" startLine="71" startPosition="85" endLine="92" endPosition="7">
       <varInfo nodeId="6460341978864599477" varName="filesEqual" />
       <varInfo nodeId="6460341978864599404" varName="frameCount" />
       <varInfo nodeId="6460341978864599409" varName="location" />
       <varInfo nodeId="6460341978864599415" varName="sourceName" />
     </scopeInfo>
-    <scopeInfo nodeId="6460341978864599380" fileName="StepRequestor.java" startLine="70" startPosition="84" endLine="95" endPosition="16" />
-    <scopeInfo nodeId="6460341978864599373" fileName="StepRequestor.java" startLine="70" startPosition="0" endLine="97" endPosition="0">
+    <scopeInfo nodeId="6460341978864599380" fileName="StepRequestor.java" startLine="69" startPosition="84" endLine="94" endPosition="16" />
+    <scopeInfo nodeId="6460341978864599373" fileName="StepRequestor.java" startLine="69" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="6460341978864599378" varName="frame" />
       <varInfo nodeId="6460341978864599376" varName="thread" />
     </scopeInfo>
-    <unitInfo nodeId="6460341978864599228" fileName="StepRequestor.java" startLine="16" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.requests.StepRequestor" />
+    <unitInfo nodeId="6460341978864599228" fileName="StepRequestor.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.requests.StepRequestor" />
   </root>
 </debugInfo>
 

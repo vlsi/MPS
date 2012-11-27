@@ -10,7 +10,6 @@ import java.util.regex.Pattern;
 public class SmartWrapper<T> {
   private static Map<String, String> WRAPPERS_CACHE = MapSequence.fromMap(new HashMap<String, String>());
   private static Pattern PATTERN = Pattern.compile(".+\\.(.+)$");
-
   private final T towrap;
 
   public SmartWrapper(T towrap) {

@@ -17,7 +17,6 @@ public class ControlFlowGraph<T extends IInstruction<T>> {
   private static final int MARGIN_X = 20;
   private static final int MARGIN_Y = 20;
   private static final int LINE_SEGMENT_SIZE = 40;
-
   private IGraphCreator<T> myGraphCreator;
   private IProgram<T> myProgram;
   private Component myComponent;

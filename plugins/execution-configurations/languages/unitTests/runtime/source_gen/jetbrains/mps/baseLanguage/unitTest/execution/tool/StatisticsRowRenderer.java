@@ -19,7 +19,6 @@ import javax.swing.BorderFactory;
 
 public class StatisticsRowRenderer implements TableCellRenderer {
   private static final String INDENT = "    ";
-
   private final JPanel myTextPanel;
   private final JLabel myText;
   private final JLabel myAdvancedText;

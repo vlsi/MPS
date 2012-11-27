@@ -23,7 +23,6 @@ public class TemplateconvertMult implements TemplateDeclarationWeavingAware {
   private static SNodePointer copySrcMacro_eum2xg_a0a0a1a3a1a3a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992617088");
   private static SNodePointer copySrcMacro_eum2xg_a0a0a1a4a1a3a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992617084");
   private static SNodePointer weaveTfConst_eum2xg_a0c0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992617082");
-
   private SNode myLeft;
   private SNode myRight;
 

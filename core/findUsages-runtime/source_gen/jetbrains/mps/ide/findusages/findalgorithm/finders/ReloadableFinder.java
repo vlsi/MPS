@@ -12,7 +12,6 @@ import jetbrains.mps.progress.ProgressMonitor;
 
 public class ReloadableFinder implements IInterfacedFinder {
   private static final Logger LOG = Logger.getLogger(ReloadableFinder.class);
-
   private ModuleClassReference<GeneratedFinder> myModuleClassRef;
   private WeakReference<GeneratedFinder> myFinder = new WeakReference<GeneratedFinder>(null);
 

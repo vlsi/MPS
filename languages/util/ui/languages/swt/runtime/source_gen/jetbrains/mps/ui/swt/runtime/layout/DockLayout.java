@@ -13,7 +13,6 @@ import java.util.ArrayList;
 
 public class DockLayout extends Layout {
   private static Point ZERO = new Point(0, 0);
-
   private List<Control> north;
   private List<Control> south;
   private List<Control> east;

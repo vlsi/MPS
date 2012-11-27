@@ -11,7 +11,6 @@ import org.jetbrains.annotations.NotNull;
 
 public class CheckersComponent implements CoreComponent {
   private static CheckersComponent INSTANCE;
-
   private List<INodeChecker> myCheckers;
   private LanguageChecker myLanguageChecker;
 

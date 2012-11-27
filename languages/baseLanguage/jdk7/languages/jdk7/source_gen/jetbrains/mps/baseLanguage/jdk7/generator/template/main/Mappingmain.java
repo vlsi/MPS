@@ -24,7 +24,6 @@ import jetbrains.mps.generator.impl.AbandonRuleInputException;
 public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer reductionRule_417xrn_a0a2a = new SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550418980");
   private static SNodePointer conseq_417xrn_a0a0a4a = new SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550420131");
-
   private final Collection<TemplateReductionRule> rules;
   private final TemplateModel myModel;
 

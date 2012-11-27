@@ -72,7 +72,6 @@ public class ConceptPropertiesHelper {
   private static final String dontSubstituteName = "dontSubstituteByDefault";
   private static final String finalName = "final";
   private static final String shortDescriptionName = "shortDescription";
-
   private MPSProject project;
   private Project ideaProject;
   private IScope scope;

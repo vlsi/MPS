@@ -73,7 +73,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.ide.CopyPasteManager;
-import com.intellij.openapi.vcs.history.TextTransferrable;
+import com.intellij.util.ui.TextTransferrable;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -103,7 +103,6 @@ import com.intellij.openapi.vcs.VcsException;
 
 public class AnnotationColumn extends AbstractLeftColumn {
   private static final Color ANNOTATION_COLOR = new Color(0, 0, 128);
-
   private Font myFont = EditorSettings.getInstance().getDefaultEditorFont();
   private List<AnnotationAspectSubcolumn> myAspectSubcolumns = ListSequence.fromList(new ArrayList<AnnotationAspectSubcolumn>());
   private List<Integer> myPseudoLinesY;

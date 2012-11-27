@@ -24,8 +24,8 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({ProjectViewTests.class, FacetTests.class, EditorTests.class, MainMakeTests.class, SimpleMakeTest.class, ComplicatedMakeTests.class, BrokenMakeTest.class})
 public class AllTests {
-    @BeforeClass
-    public static void setTestMode() {
-        IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
-    }
+  @BeforeClass
+  public static void setTestMode() {
+    IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
+  }
 }

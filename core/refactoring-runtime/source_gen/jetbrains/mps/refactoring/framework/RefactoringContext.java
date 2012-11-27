@@ -50,7 +50,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 
 public class RefactoringContext {
   private static final Logger LOG = Logger.getLogger(RefactoringContext.class);
-
   private IRefactoring myRefactoring;
   private StructureModification myLoggedData = new StructureModification();
   private Map<String, Object> myParametersMap = new HashMap<String, Object>();

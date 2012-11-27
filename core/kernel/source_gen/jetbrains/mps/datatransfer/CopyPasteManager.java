@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class CopyPasteManager extends AbstractManager implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(CopyPasteManager.class);
   private static CopyPasteManager INSTANCE;
-
   private Map<SNode, AbstractManager.Descriptor<PastePostProcessor>> myPostProcessors = null;
   private Map<SNode, AbstractManager.Descriptor<CopyPreProcessor>> myPreProcessors = null;
   private boolean myLoaded = false;

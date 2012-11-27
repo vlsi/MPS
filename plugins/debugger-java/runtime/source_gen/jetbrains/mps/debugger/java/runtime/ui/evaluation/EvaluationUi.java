@@ -26,7 +26,6 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 public abstract class EvaluationUi extends JPanel {
   private static final Logger LOG = Logger.getLogger(EvaluationUi.class);
   public static final DataKey<AbstractEvaluationModel> EVALUATION_MODEL = DataKey.create("Evaluation Model");
-
   protected final DebugSession myDebugSession;
   protected final EvaluationTree myTree;
   private EvaluationUi.IErrorTextListener myErrorListener;

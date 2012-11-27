@@ -64,6 +64,14 @@ public class FieldDeclaration_BehaviorDescriptor extends VariableDeclaration_Beh
     return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
   }
 
+  public boolean virtual_needsEmptyLineAfter_641490355014298838(SNode thisNode) {
+    return ClassifierMember_Behavior.virtual_needsEmptyLineAfter_641490355014298838(thisNode);
+  }
+
+  public boolean virtual_needsEmptyLineBefore_641490355014296733(SNode thisNode) {
+    return ClassifierMember_Behavior.virtual_needsEmptyLineBefore_641490355014296733(thisNode);
+  }
+
   public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
     FieldDeclaration_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
   }

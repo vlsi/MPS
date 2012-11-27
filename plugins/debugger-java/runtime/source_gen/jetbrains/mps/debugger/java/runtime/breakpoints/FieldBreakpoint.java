@@ -24,7 +24,6 @@ import com.sun.jdi.InternalException;
 
 public class FieldBreakpoint extends JavaBreakpoint implements ILocationBreakpoint {
   private static final Logger LOG = Logger.getLogger(FieldBreakpoint.class);
-
   private final BreakpointLocation myLocation;
   private String myFieldName;
 

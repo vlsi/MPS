@@ -35,9 +35,11 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
 
+@Deprecated
 public class RuleOperandRenderer implements TableCellRenderer {
   private Map<Object, Component> myRenderersCache = MapSequence.fromMap(new WeakHashMap<Object, Component>());
 
+  @Deprecated
   public RuleOperandRenderer() {
   }
 

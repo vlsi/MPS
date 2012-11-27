@@ -14,7 +14,6 @@ import java.util.ArrayList;
 
 public class ManagerThread {
   protected static Log log = LogFactory.getLog(ManagerThread.class);
-
   private final BlockingQueue<IManagerCommand> myCommandQueue = new LinkedBlockingQueue<IManagerCommand>();
   private final ManagerThread.WorkerThread myThread = new ManagerThread.WorkerThread();
   private volatile boolean myClosed = false;

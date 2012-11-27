@@ -541,159 +541,159 @@
   </root>
   <root nodeId="2864517217433560582" modelId="r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)">
     <nodeInfo nodeId="790150688982649126" fileName="SModelReferenceDialog.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REFACTORING_NAME" />
-    <nodeInfo nodeId="2864517217433581774" fileName="SModelReferenceDialog.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChooser" />
-    <nodeInfo nodeId="2864517217434136698" fileName="SModelReferenceDialog.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="2864517217434136764" fileName="SModelReferenceDialog.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModels" />
-    <nodeInfo nodeId="2864517217434137922" fileName="SModelReferenceDialog.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="selectedModel" />
-    <nodeInfo nodeId="2864517217434137890" fileName="SModelReferenceDialog.java" startLine="30" startPosition="88" endLine="31" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2864517217434236231" fileName="SModelReferenceDialog.java" startLine="31" startPosition="25" endLine="32" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="920954161901933695" fileName="SModelReferenceDialog.java" startLine="32" startPosition="24" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="790150688982649132" fileName="SModelReferenceDialog.java" startLine="33" startPosition="22" endLine="34" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3735789545183162560" fileName="SModelReferenceDialog.java" startLine="34" startPosition="31" endLine="35" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207098577712377861" fileName="SModelReferenceDialog.java" startLine="38" startPosition="25" endLine="39" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="920954161902024102" fileName="SModelReferenceDialog.java" startLine="39" startPosition="19" endLine="40" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="920954161902025436" fileName="SModelReferenceDialog.java" startLine="40" startPosition="31" endLine="41" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2864517217434125980" fileName="SModelReferenceDialog.java" startLine="41" startPosition="26" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2864517217434136753" fileName="SModelReferenceDialog.java" startLine="44" startPosition="51" endLine="45" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="2864517217434136847" fileName="SModelReferenceDialog.java" startLine="56" startPosition="60" endLine="57" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2864517217434136864" fileName="SModelReferenceDialog.java" startLine="60" startPosition="49" endLine="61" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2864517217434136869" fileName="SModelReferenceDialog.java" startLine="63" startPosition="6" endLine="64" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3125670498081663595" fileName="SModelReferenceDialog.java" startLine="66" startPosition="44" endLine="67" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2864517217434137901" fileName="SModelReferenceDialog.java" startLine="69" startPosition="60" endLine="70" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="382243931051629616" fileName="SModelReferenceDialog.java" startLine="73" startPosition="52" endLine="74" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3125670498081632426" fileName="SModelReferenceDialog.java" startLine="77" startPosition="40" endLine="78" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3125670498081644359" fileName="SModelReferenceDialog.java" startLine="79" startPosition="40" endLine="80" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5918389564640884810" fileName="SModelReferenceDialog.java" startLine="81" startPosition="5" endLine="82" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="790150688982649119" fileName="SModelReferenceDialog.java" startLine="86" startPosition="44" endLine="87" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2864517217434137960" fileName="SModelReferenceDialog.java" startLine="90" startPosition="106" endLine="91" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2864517217434137973" fileName="SModelReferenceDialog.java" startLine="91" startPosition="84" endLine="92" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2864517217434137981" fileName="SModelReferenceDialog.java" startLine="92" startPosition="18" endLine="93" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2864517217434136742" fileName="SModelReferenceDialog.java" startLine="50" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="navigate#(Z)V" />
-    <nodeInfo nodeId="2864517217434136685" fileName="SModelReferenceDialog.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Ljetbrains/mps/smodel/IScope;)[Ljetbrains/mps/smodel/SModelReference;" />
-    <nodeInfo nodeId="2864517217434136858" fileName="SModelReferenceDialog.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadInitialCheckBoxState#()Z" />
-    <nodeInfo nodeId="2864517217434138379" fileName="SModelReferenceDialog.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="elementChosen#(Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="382243931051629611" fileName="SModelReferenceDialog.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="3125670498081644350" fileName="SModelReferenceDialog.java" startLine="78" startPosition="47" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2864517217434136735" fileName="SModelReferenceDialog.java" startLine="48" startPosition="87" endLine="52" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2864517217434136760" fileName="SModelReferenceDialog.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Z)[Ljetbrains/mps/smodel/SModelReference;" />
-    <nodeInfo nodeId="2864517217434137907" fileName="SModelReferenceDialog.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="2864517217434138349" fileName="SModelReferenceDialog.java" startLine="64" startPosition="77" endLine="69" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2864517217434137952" fileName="SModelReferenceDialog.java" startLine="90" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSelectedModel#(Lcom/intellij/openapi/project/Project;Ljava/util/List;)Ljetbrains/mps/smodel/SModelReference;" />
-    <nodeInfo nodeId="2864517217434136692" fileName="SModelReferenceDialog.java" startLine="48" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGetNavigationItem#(Ljetbrains/mps/smodel/SModelReference;)Lcom/intellij/navigation/NavigationItem;" />
-    <nodeInfo nodeId="2864517217433560584" fileName="SModelReferenceDialog.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SModelReferenceDialog#(Lcom/intellij/openapi/project/Project;Ljava/util/List;)V" />
-    <nodeInfo nodeId="2864517217434137903" fileName="SModelReferenceDialog.java" startLine="77" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
-    <nodeInfo nodeId="2864517217434125984" fileName="SModelReferenceDialog.java" startLine="42" startPosition="0" endLine="63" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2864517217434123948" fileName="SModelReferenceDialog.java" startLine="38" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
-    <scopeInfo nodeId="2864517217434136747" fileName="SModelReferenceDialog.java" startLine="50" startPosition="44" endLine="50" endPosition="44" />
-    <scopeInfo nodeId="2864517217434136691" fileName="SModelReferenceDialog.java" startLine="44" startPosition="51" endLine="45" endPosition="68" />
-    <scopeInfo nodeId="2864517217434136763" fileName="SModelReferenceDialog.java" startLine="56" startPosition="60" endLine="57" endPosition="85" />
-    <scopeInfo nodeId="2864517217434136861" fileName="SModelReferenceDialog.java" startLine="60" startPosition="49" endLine="61" endPosition="21" />
-    <scopeInfo nodeId="2864517217434138384" fileName="SModelReferenceDialog.java" startLine="66" startPosition="44" endLine="67" endPosition="30" />
-    <scopeInfo nodeId="382243931051629614" fileName="SModelReferenceDialog.java" startLine="73" startPosition="52" endLine="74" endPosition="52" />
-    <scopeInfo nodeId="3125670498081644351" fileName="SModelReferenceDialog.java" startLine="79" startPosition="40" endLine="80" endPosition="65" />
-    <scopeInfo nodeId="2864517217434137911" fileName="SModelReferenceDialog.java" startLine="86" startPosition="44" endLine="87" endPosition="32" />
-    <scopeInfo nodeId="2864517217434136742" fileName="SModelReferenceDialog.java" startLine="50" startPosition="0" endLine="52" endPosition="0">
+    <nodeInfo nodeId="2864517217433581774" fileName="SModelReferenceDialog.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChooser" />
+    <nodeInfo nodeId="2864517217434136698" fileName="SModelReferenceDialog.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="2864517217434136764" fileName="SModelReferenceDialog.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModels" />
+    <nodeInfo nodeId="2864517217434137922" fileName="SModelReferenceDialog.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="selectedModel" />
+    <nodeInfo nodeId="2864517217434137890" fileName="SModelReferenceDialog.java" startLine="29" startPosition="88" endLine="30" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2864517217434236231" fileName="SModelReferenceDialog.java" startLine="30" startPosition="25" endLine="31" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="920954161901933695" fileName="SModelReferenceDialog.java" startLine="31" startPosition="24" endLine="32" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="790150688982649132" fileName="SModelReferenceDialog.java" startLine="32" startPosition="22" endLine="33" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3735789545183162560" fileName="SModelReferenceDialog.java" startLine="33" startPosition="31" endLine="34" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207098577712377861" fileName="SModelReferenceDialog.java" startLine="37" startPosition="25" endLine="38" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="920954161902024102" fileName="SModelReferenceDialog.java" startLine="38" startPosition="19" endLine="39" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="920954161902025436" fileName="SModelReferenceDialog.java" startLine="39" startPosition="31" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2864517217434125980" fileName="SModelReferenceDialog.java" startLine="40" startPosition="26" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2864517217434136753" fileName="SModelReferenceDialog.java" startLine="43" startPosition="51" endLine="44" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="2864517217434136847" fileName="SModelReferenceDialog.java" startLine="55" startPosition="60" endLine="56" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2864517217434136864" fileName="SModelReferenceDialog.java" startLine="59" startPosition="49" endLine="60" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2864517217434136869" fileName="SModelReferenceDialog.java" startLine="62" startPosition="6" endLine="63" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3125670498081663595" fileName="SModelReferenceDialog.java" startLine="65" startPosition="44" endLine="66" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2864517217434137901" fileName="SModelReferenceDialog.java" startLine="68" startPosition="60" endLine="69" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="382243931051629616" fileName="SModelReferenceDialog.java" startLine="72" startPosition="52" endLine="73" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3125670498081632426" fileName="SModelReferenceDialog.java" startLine="76" startPosition="40" endLine="77" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3125670498081644359" fileName="SModelReferenceDialog.java" startLine="78" startPosition="40" endLine="79" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5918389564640884810" fileName="SModelReferenceDialog.java" startLine="80" startPosition="5" endLine="81" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="790150688982649119" fileName="SModelReferenceDialog.java" startLine="85" startPosition="44" endLine="86" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2864517217434137960" fileName="SModelReferenceDialog.java" startLine="89" startPosition="106" endLine="90" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2864517217434137973" fileName="SModelReferenceDialog.java" startLine="90" startPosition="84" endLine="91" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2864517217434137981" fileName="SModelReferenceDialog.java" startLine="91" startPosition="18" endLine="92" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2864517217434136742" fileName="SModelReferenceDialog.java" startLine="49" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="navigate#(Z)V" />
+    <nodeInfo nodeId="2864517217434136685" fileName="SModelReferenceDialog.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Ljetbrains/mps/smodel/IScope;)[Ljetbrains/mps/smodel/SModelReference;" />
+    <nodeInfo nodeId="2864517217434136858" fileName="SModelReferenceDialog.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadInitialCheckBoxState#()Z" />
+    <nodeInfo nodeId="2864517217434138379" fileName="SModelReferenceDialog.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="elementChosen#(Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="382243931051629611" fileName="SModelReferenceDialog.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="3125670498081644350" fileName="SModelReferenceDialog.java" startLine="77" startPosition="47" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2864517217434136735" fileName="SModelReferenceDialog.java" startLine="47" startPosition="87" endLine="51" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2864517217434136760" fileName="SModelReferenceDialog.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Z)[Ljetbrains/mps/smodel/SModelReference;" />
+    <nodeInfo nodeId="2864517217434137907" fileName="SModelReferenceDialog.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="2864517217434138349" fileName="SModelReferenceDialog.java" startLine="63" startPosition="77" endLine="68" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2864517217434137952" fileName="SModelReferenceDialog.java" startLine="89" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSelectedModel#(Lcom/intellij/openapi/project/Project;Ljava/util/List;)Ljetbrains/mps/smodel/SModelReference;" />
+    <nodeInfo nodeId="2864517217434136692" fileName="SModelReferenceDialog.java" startLine="47" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGetNavigationItem#(Ljetbrains/mps/smodel/SModelReference;)Lcom/intellij/navigation/NavigationItem;" />
+    <nodeInfo nodeId="2864517217433560584" fileName="SModelReferenceDialog.java" startLine="29" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SModelReferenceDialog#(Lcom/intellij/openapi/project/Project;Ljava/util/List;)V" />
+    <nodeInfo nodeId="2864517217434137903" fileName="SModelReferenceDialog.java" startLine="76" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
+    <nodeInfo nodeId="2864517217434125984" fileName="SModelReferenceDialog.java" startLine="41" startPosition="0" endLine="62" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2864517217434123948" fileName="SModelReferenceDialog.java" startLine="37" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
+    <scopeInfo nodeId="2864517217434136747" fileName="SModelReferenceDialog.java" startLine="49" startPosition="44" endLine="49" endPosition="44" />
+    <scopeInfo nodeId="2864517217434136691" fileName="SModelReferenceDialog.java" startLine="43" startPosition="51" endLine="44" endPosition="68" />
+    <scopeInfo nodeId="2864517217434136763" fileName="SModelReferenceDialog.java" startLine="55" startPosition="60" endLine="56" endPosition="85" />
+    <scopeInfo nodeId="2864517217434136861" fileName="SModelReferenceDialog.java" startLine="59" startPosition="49" endLine="60" endPosition="21" />
+    <scopeInfo nodeId="2864517217434138384" fileName="SModelReferenceDialog.java" startLine="65" startPosition="44" endLine="66" endPosition="30" />
+    <scopeInfo nodeId="382243931051629614" fileName="SModelReferenceDialog.java" startLine="72" startPosition="52" endLine="73" endPosition="52" />
+    <scopeInfo nodeId="3125670498081644351" fileName="SModelReferenceDialog.java" startLine="78" startPosition="40" endLine="79" endPosition="65" />
+    <scopeInfo nodeId="2864517217434137911" fileName="SModelReferenceDialog.java" startLine="85" startPosition="44" endLine="86" endPosition="32" />
+    <scopeInfo nodeId="2864517217434136742" fileName="SModelReferenceDialog.java" startLine="49" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="2864517217434136745" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="2864517217434136685" fileName="SModelReferenceDialog.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="2864517217434136685" fileName="SModelReferenceDialog.java" startLine="43" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="2864517217434136689" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="2864517217434136858" fileName="SModelReferenceDialog.java" startLine="60" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="2864517217434138379" fileName="SModelReferenceDialog.java" startLine="66" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="2864517217434136858" fileName="SModelReferenceDialog.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="2864517217434138379" fileName="SModelReferenceDialog.java" startLine="65" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="2864517217434138382" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="382243931051629611" fileName="SModelReferenceDialog.java" startLine="73" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="2864517217434137955" fileName="SModelReferenceDialog.java" startLine="90" startPosition="106" endLine="93" endPosition="32">
+    <scopeInfo nodeId="382243931051629611" fileName="SModelReferenceDialog.java" startLine="72" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="2864517217434137955" fileName="SModelReferenceDialog.java" startLine="89" startPosition="106" endLine="92" endPosition="32">
       <varInfo nodeId="2864517217434137961" varName="dialog" />
     </scopeInfo>
-    <scopeInfo nodeId="2864517217434136697" fileName="SModelReferenceDialog.java" startLine="48" startPosition="87" endLine="52" endPosition="10" />
-    <scopeInfo nodeId="2864517217434136760" fileName="SModelReferenceDialog.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="2864517217434136697" fileName="SModelReferenceDialog.java" startLine="47" startPosition="87" endLine="51" endPosition="10" />
+    <scopeInfo nodeId="2864517217434136760" fileName="SModelReferenceDialog.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="2864517217434136829" varName="checkBoxState" />
     </scopeInfo>
-    <scopeInfo nodeId="2864517217434137907" fileName="SModelReferenceDialog.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="2864517217433560587" fileName="SModelReferenceDialog.java" startLine="30" startPosition="88" endLine="35" endPosition="11" />
-    <scopeInfo nodeId="2864517217434137906" fileName="SModelReferenceDialog.java" startLine="77" startPosition="40" endLine="82" endPosition="32">
+    <scopeInfo nodeId="2864517217434137907" fileName="SModelReferenceDialog.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="2864517217433560587" fileName="SModelReferenceDialog.java" startLine="29" startPosition="88" endLine="34" endPosition="11" />
+    <scopeInfo nodeId="2864517217434137906" fileName="SModelReferenceDialog.java" startLine="76" startPosition="40" endLine="81" endPosition="32">
       <varInfo nodeId="3125670498081632427" varName="item" />
     </scopeInfo>
-    <scopeInfo nodeId="2864517217434137952" fileName="SModelReferenceDialog.java" startLine="90" startPosition="0" endLine="95" endPosition="0">
+    <scopeInfo nodeId="2864517217434137952" fileName="SModelReferenceDialog.java" startLine="89" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="920954161901903701" varName="models" />
       <varInfo nodeId="2864517217434137967" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="2864517217434136692" fileName="SModelReferenceDialog.java" startLine="48" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="2864517217434136692" fileName="SModelReferenceDialog.java" startLine="47" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="2864517217434136748" varName="modelReference" />
     </scopeInfo>
-    <scopeInfo nodeId="2864517217433560584" fileName="SModelReferenceDialog.java" startLine="30" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="2864517217433560584" fileName="SModelReferenceDialog.java" startLine="29" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="920954161901933684" varName="models" />
       <varInfo nodeId="2864517217433577075" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="2864517217434137903" fileName="SModelReferenceDialog.java" startLine="77" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="2864517217434123951" fileName="SModelReferenceDialog.java" startLine="38" startPosition="25" endLine="70" endPosition="17">
+    <scopeInfo nodeId="2864517217434137903" fileName="SModelReferenceDialog.java" startLine="76" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="2864517217434123951" fileName="SModelReferenceDialog.java" startLine="37" startPosition="25" endLine="69" endPosition="17">
       <varInfo nodeId="2864517217434125985" varName="goToModelModel" />
     </scopeInfo>
-    <scopeInfo nodeId="2864517217434123948" fileName="SModelReferenceDialog.java" startLine="38" startPosition="0" endLine="72" endPosition="0" />
-    <unitInfo nodeId="2864517217434136740" fileName="SModelReferenceDialog.java" startLine="49" startPosition="19" endLine="52" endPosition="9" unitName="jetbrains.mps.ide.refactoring.SModelReferenceDialog$2" />
-    <unitInfo nodeId="2864517217434138377" fileName="SModelReferenceDialog.java" startLine="65" startPosition="25" endLine="69" endPosition="5" unitName="jetbrains.mps.ide.refactoring.SModelReferenceDialog$2" />
-    <unitInfo nodeId="2864517217434136683" fileName="SModelReferenceDialog.java" startLine="43" startPosition="40" endLine="63" endPosition="5" unitName="jetbrains.mps.ide.refactoring.SModelReferenceDialog$1" />
-    <unitInfo nodeId="2864517217433560582" fileName="SModelReferenceDialog.java" startLine="22" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ide.refactoring.SModelReferenceDialog" />
+    <scopeInfo nodeId="2864517217434123948" fileName="SModelReferenceDialog.java" startLine="37" startPosition="0" endLine="71" endPosition="0" />
+    <unitInfo nodeId="2864517217434136740" fileName="SModelReferenceDialog.java" startLine="48" startPosition="19" endLine="51" endPosition="9" unitName="jetbrains.mps.ide.refactoring.SModelReferenceDialog$2" />
+    <unitInfo nodeId="2864517217434138377" fileName="SModelReferenceDialog.java" startLine="64" startPosition="25" endLine="68" endPosition="5" unitName="jetbrains.mps.ide.refactoring.SModelReferenceDialog$2" />
+    <unitInfo nodeId="2864517217434136683" fileName="SModelReferenceDialog.java" startLine="42" startPosition="40" endLine="62" endPosition="5" unitName="jetbrains.mps.ide.refactoring.SModelReferenceDialog$1" />
+    <unitInfo nodeId="2864517217433560582" fileName="SModelReferenceDialog.java" startLine="22" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.ide.refactoring.SModelReferenceDialog" />
   </root>
   <root nodeId="5101259057297944877" modelId="r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)">
     <nodeInfo nodeId="2299308718671920355" fileName="MoveUpDialog.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REFACTORING_NAME" />
-    <nodeInfo nodeId="5101259057297946104" fileName="MoveUpDialog.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTarget" />
-    <nodeInfo nodeId="5101259057297946138" fileName="MoveUpDialog.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
-    <nodeInfo nodeId="5101259057297946165" fileName="MoveUpDialog.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConcept" />
-    <nodeInfo nodeId="4946201340714972365" fileName="MoveUpDialog.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeType" />
-    <nodeInfo nodeId="5101259057297946096" fileName="MoveUpDialog.java" startLine="25" startPosition="80" endLine="26" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5101259057297946108" fileName="MoveUpDialog.java" startLine="26" startPosition="25" endLine="27" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4946201340714972377" fileName="MoveUpDialog.java" startLine="27" startPosition="27" endLine="28" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2299308718671920347" fileName="MoveUpDialog.java" startLine="28" startPosition="31" endLine="29" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2299308718671920362" fileName="MoveUpDialog.java" startLine="29" startPosition="11" endLine="30" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2299308718671920361" fileName="MoveUpDialog.java" startLine="30" startPosition="48" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4946201340714972334" fileName="MoveUpDialog.java" startLine="34" startPosition="40" endLine="35" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4946201340714972357" fileName="MoveUpDialog.java" startLine="36" startPosition="76" endLine="37" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4946201340714972405" fileName="MoveUpDialog.java" startLine="37" startPosition="151" endLine="38" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6188135140808769486" fileName="MoveUpDialog.java" startLine="39" startPosition="5" endLine="40" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8536960582516048688" fileName="MoveUpDialog.java" startLine="42" startPosition="25" endLine="43" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4946201340714972330" fileName="MoveUpDialog.java" startLine="45" startPosition="7" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5101259057297946169" fileName="MoveUpDialog.java" startLine="46" startPosition="0" endLine="47" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5918389564640884753" fileName="MoveUpDialog.java" startLine="47" startPosition="42" endLine="48" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5101259057297946142" fileName="MoveUpDialog.java" startLine="52" startPosition="44" endLine="53" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5101259057297946162" fileName="MoveUpDialog.java" startLine="53" startPosition="59" endLine="54" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5101259057297948661" fileName="MoveUpDialog.java" startLine="57" startPosition="91" endLine="58" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5101259057297948681" fileName="MoveUpDialog.java" startLine="58" startPosition="70" endLine="59" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5101259057297948690" fileName="MoveUpDialog.java" startLine="59" startPosition="18" endLine="60" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6188135140808769491" fileName="MoveUpDialog.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5278386773476806924" fileName="MoveUpDialog.java" startLine="35" startPosition="61" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6188135140808769490" fileName="MoveUpDialog.java" startLine="40" startPosition="63" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5101259057297946128" fileName="MoveUpDialog.java" startLine="51" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="5101259057297948655" fileName="MoveUpDialog.java" startLine="57" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConcept#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="5101259057297944879" fileName="MoveUpDialog.java" startLine="25" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveUpDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5101259057297946124" fileName="MoveUpDialog.java" startLine="34" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
-    <scopeInfo nodeId="6188135140808769492" fileName="MoveUpDialog.java" startLine="42" startPosition="25" endLine="43" endPosition="69" />
-    <scopeInfo nodeId="5278386773476806925" fileName="MoveUpDialog.java" startLine="36" startPosition="76" endLine="38" endPosition="13" />
-    <scopeInfo nodeId="5101259057297946132" fileName="MoveUpDialog.java" startLine="52" startPosition="44" endLine="54" endPosition="19" />
-    <scopeInfo nodeId="6188135140808769491" fileName="MoveUpDialog.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="5101259057297948658" fileName="MoveUpDialog.java" startLine="57" startPosition="91" endLine="60" endPosition="28">
+    <nodeInfo nodeId="5101259057297946104" fileName="MoveUpDialog.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTarget" />
+    <nodeInfo nodeId="5101259057297946138" fileName="MoveUpDialog.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
+    <nodeInfo nodeId="5101259057297946165" fileName="MoveUpDialog.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConcept" />
+    <nodeInfo nodeId="4946201340714972365" fileName="MoveUpDialog.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeType" />
+    <nodeInfo nodeId="5101259057297946096" fileName="MoveUpDialog.java" startLine="24" startPosition="80" endLine="25" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5101259057297946108" fileName="MoveUpDialog.java" startLine="25" startPosition="25" endLine="26" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4946201340714972377" fileName="MoveUpDialog.java" startLine="26" startPosition="27" endLine="27" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2299308718671920347" fileName="MoveUpDialog.java" startLine="27" startPosition="31" endLine="28" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2299308718671920362" fileName="MoveUpDialog.java" startLine="28" startPosition="11" endLine="29" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2299308718671920361" fileName="MoveUpDialog.java" startLine="29" startPosition="48" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4946201340714972334" fileName="MoveUpDialog.java" startLine="33" startPosition="40" endLine="34" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4946201340714972357" fileName="MoveUpDialog.java" startLine="35" startPosition="76" endLine="36" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4946201340714972405" fileName="MoveUpDialog.java" startLine="36" startPosition="151" endLine="37" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6188135140808769486" fileName="MoveUpDialog.java" startLine="38" startPosition="5" endLine="39" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8536960582516048688" fileName="MoveUpDialog.java" startLine="41" startPosition="25" endLine="42" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4946201340714972330" fileName="MoveUpDialog.java" startLine="44" startPosition="7" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5101259057297946169" fileName="MoveUpDialog.java" startLine="45" startPosition="0" endLine="46" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5918389564640884753" fileName="MoveUpDialog.java" startLine="46" startPosition="42" endLine="47" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5101259057297946142" fileName="MoveUpDialog.java" startLine="51" startPosition="44" endLine="52" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5101259057297946162" fileName="MoveUpDialog.java" startLine="52" startPosition="59" endLine="53" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5101259057297948661" fileName="MoveUpDialog.java" startLine="56" startPosition="91" endLine="57" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5101259057297948681" fileName="MoveUpDialog.java" startLine="57" startPosition="70" endLine="58" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5101259057297948690" fileName="MoveUpDialog.java" startLine="58" startPosition="18" endLine="59" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6188135140808769491" fileName="MoveUpDialog.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5278386773476806924" fileName="MoveUpDialog.java" startLine="34" startPosition="61" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6188135140808769490" fileName="MoveUpDialog.java" startLine="39" startPosition="63" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5101259057297946128" fileName="MoveUpDialog.java" startLine="50" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="5101259057297948655" fileName="MoveUpDialog.java" startLine="56" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConcept#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5101259057297944879" fileName="MoveUpDialog.java" startLine="24" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveUpDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5101259057297946124" fileName="MoveUpDialog.java" startLine="33" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
+    <scopeInfo nodeId="6188135140808769492" fileName="MoveUpDialog.java" startLine="41" startPosition="25" endLine="42" endPosition="69" />
+    <scopeInfo nodeId="5278386773476806925" fileName="MoveUpDialog.java" startLine="35" startPosition="76" endLine="37" endPosition="13" />
+    <scopeInfo nodeId="5101259057297946132" fileName="MoveUpDialog.java" startLine="51" startPosition="44" endLine="53" endPosition="19" />
+    <scopeInfo nodeId="6188135140808769491" fileName="MoveUpDialog.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="5101259057297948658" fileName="MoveUpDialog.java" startLine="56" startPosition="91" endLine="59" endPosition="28">
       <varInfo nodeId="5101259057297948662" varName="dialog" />
     </scopeInfo>
-    <scopeInfo nodeId="5101259057297946128" fileName="MoveUpDialog.java" startLine="51" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="5101259057297948655" fileName="MoveUpDialog.java" startLine="57" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="5101259057297946128" fileName="MoveUpDialog.java" startLine="50" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="5101259057297948655" fileName="MoveUpDialog.java" startLine="56" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="4946201340714979565" varName="nodeType" />
       <varInfo nodeId="5101259057297948671" varName="project" />
       <varInfo nodeId="5101259057297948674" varName="target" />
     </scopeInfo>
-    <scopeInfo nodeId="5101259057297944882" fileName="MoveUpDialog.java" startLine="25" startPosition="80" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="5101259057297944879" fileName="MoveUpDialog.java" startLine="25" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="5101259057297944882" fileName="MoveUpDialog.java" startLine="24" startPosition="80" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="5101259057297944879" fileName="MoveUpDialog.java" startLine="24" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="4946201340714972369" varName="nodeType" />
       <varInfo nodeId="5101259057297946091" varName="project" />
       <varInfo nodeId="5101259057297946101" varName="target" />
     </scopeInfo>
-    <scopeInfo nodeId="5101259057297946127" fileName="MoveUpDialog.java" startLine="34" startPosition="40" endLine="48" endPosition="32">
+    <scopeInfo nodeId="5101259057297946127" fileName="MoveUpDialog.java" startLine="33" startPosition="40" endLine="47" endPosition="32">
       <varInfo nodeId="6188135140808769487" varName="result" />
       <varInfo nodeId="4946201340714972335" varName="treeNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5101259057297946124" fileName="MoveUpDialog.java" startLine="34" startPosition="0" endLine="50" endPosition="0" />
-    <unitInfo nodeId="6188135140808769491" fileName="MoveUpDialog.java" startLine="41" startPosition="45" endLine="45" endPosition="5" unitName="jetbrains.mps.ide.refactoring.MoveUpDialog$1" />
-    <unitInfo nodeId="5101259057297944877" fileName="MoveUpDialog.java" startLine="17" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.ide.refactoring.MoveUpDialog" />
+    <scopeInfo nodeId="5101259057297946124" fileName="MoveUpDialog.java" startLine="33" startPosition="0" endLine="49" endPosition="0" />
+    <unitInfo nodeId="6188135140808769491" fileName="MoveUpDialog.java" startLine="40" startPosition="45" endLine="44" endPosition="5" unitName="jetbrains.mps.ide.refactoring.MoveUpDialog$1" />
+    <unitInfo nodeId="5101259057297944877" fileName="MoveUpDialog.java" startLine="17" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ide.refactoring.MoveUpDialog" />
   </root>
   <root nodeId="5101259057297948769" modelId="r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)">
     <nodeInfo nodeId="5101259057297974332" fileName="OptionDialog.java" startLine="13" startPosition="98" endLine="14" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
