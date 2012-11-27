@@ -20,7 +20,7 @@ public class map_extends_java_util_Map_SubtypingRule extends SubtypingRule_Runti
   }
 
   public SNode getSubOrSuperType(SNode mapType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_ngln7_a0a0(SLinkOperations.getTarget(mapType, "keyType", true), SLinkOperations.getTarget(mapType, "valueType", true));
+    return _quotation_createNode_ngln7_a0a1(SLinkOperations.getTarget(mapType, "keyType", true), SLinkOperations.getTarget(mapType, "valueType", true));
   }
 
   public String getApplicableConceptFQName() {
@@ -38,7 +38,7 @@ public class map_extends_java_util_Map_SubtypingRule extends SubtypingRule_Runti
     return true;
   }
 
-  private static SNode _quotation_createNode_ngln7_a0a0(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_ngln7_a0a1(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;

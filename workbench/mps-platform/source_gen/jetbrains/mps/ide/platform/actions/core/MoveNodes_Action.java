@@ -4,7 +4,6 @@ package jetbrains.mps.ide.platform.actions.core;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
@@ -25,10 +24,10 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
+import jetbrains.mps.logging.Logger;
 
 public class MoveNodes_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(MoveNodes_Action.class);
 
   public MoveNodes_Action() {
     super("Move Nodes", "", ICON);
@@ -121,4 +120,6 @@ public class MoveNodes_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "MoveNodes", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(MoveNodes_Action.class);
 }

@@ -29,7 +29,7 @@ public class typeof_VectorInitializer_InferenceRule extends AbstractInferenceRul
     {
       SNode _nodeToCheck_1029348928467 = initializer;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6219660258345567368", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6219660258345567379", true), (SNode) _quotation_createNode_gm7xg3_a0b0a(typeCheckingContext.typeOf(SLinkOperations.getTarget(initializer, "expression", true), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6219660258345702984", true)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6219660258345567379", true), (SNode) _quotation_createNode_gm7xg3_a0b0b(typeCheckingContext.typeOf(SLinkOperations.getTarget(initializer, "expression", true), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6219660258345702984", true)), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(initializer, "rowsCount", true);
@@ -53,7 +53,7 @@ public class typeof_VectorInitializer_InferenceRule extends AbstractInferenceRul
     return false;
   }
 
-  private static SNode _quotation_createNode_gm7xg3_a0b0a(Object parameter_1) {
+  private static SNode _quotation_createNode_gm7xg3_a0b0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.VectorType", null, null, GlobalScope.getInstance(), false);

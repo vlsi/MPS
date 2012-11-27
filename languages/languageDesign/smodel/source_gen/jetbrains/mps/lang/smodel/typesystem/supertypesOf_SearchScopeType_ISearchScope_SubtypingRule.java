@@ -18,7 +18,7 @@ public class supertypesOf_SearchScopeType_ISearchScope_SubtypingRule extends Sub
   }
 
   public SNode getSubOrSuperType(SNode node, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_dug57h_a0a0();
+    return _quotation_createNode_dug57h_a0a1();
   }
 
   public String getApplicableConceptFQName() {
@@ -36,7 +36,7 @@ public class supertypesOf_SearchScopeType_ISearchScope_SubtypingRule extends Sub
     return true;
   }
 
-  private static SNode _quotation_createNode_dug57h_a0a0() {
+  private static SNode _quotation_createNode_dug57h_a0a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.search(MPS.Core/jetbrains.mps.smodel.search@java_stub)"), SNodeId.fromString("~ISearchScope")));

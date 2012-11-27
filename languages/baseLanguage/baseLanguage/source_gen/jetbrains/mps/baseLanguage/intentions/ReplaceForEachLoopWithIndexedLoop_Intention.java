@@ -14,8 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
@@ -23,6 +21,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.intentions.IntentionDescriptor;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class ReplaceForEachLoopWithIndexedLoop_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -74,12 +74,6 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention implements IntentionFac
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ReplaceForEachLoopWithIndexedLoop_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
-  }
-
-  private static SNode _quotation_createNode_zgbvoa_a0a31a0() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
   }
 
   public class IntentionImplementation implements IntentionExecutable {
@@ -183,5 +177,11 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention implements IntentionFac
     public IntentionDescriptor getDescriptor() {
       return ReplaceForEachLoopWithIndexedLoop_Intention.this;
     }
+  }
+
+  private static SNode _quotation_createNode_zgbvoa_a0a31a0() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
   }
 }

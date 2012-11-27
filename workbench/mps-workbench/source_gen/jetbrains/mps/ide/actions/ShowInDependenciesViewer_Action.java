@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import javax.swing.tree.TreeNode;
@@ -17,10 +16,10 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.project.IModule;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.logging.Logger;
 
 public class ShowInDependenciesViewer_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ShowInDependenciesViewer_Action.class);
 
   public ShowInDependenciesViewer_Action() {
     super("Show Usages", "show usages in dependencies viewer", ICON);
@@ -34,7 +33,7 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return check_hezs1a_a0a0a0(as_nkoo1o_a0a0a0a1(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class)).linktype == DependencyUtil.LinkType.Depends;
+    return check_hezs1a_a0a0a0(as_nkoo1o_a0a0a0a3(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class)).linktype == DependencyUtil.LinkType.Depends;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -70,13 +69,15 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      IModule from = check_hezs1a_a0a0a(as_nkoo1o_a0a0a0a0e(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
-      IModule to = check_hezs1a_a0b0a(as_nkoo1o_a0a0b0a0e(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class));
+      IModule from = check_hezs1a_a0a0a(as_nkoo1o_a0a0a0a0g(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
+      IModule to = check_hezs1a_a0b0a(as_nkoo1o_a0a0b0a0g(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class));
       DependenciesUtil.analyzeDependencies(from, to, ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowInDependenciesViewer", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ShowInDependenciesViewer_Action.class);
 
   private static DependencyUtil.Link check_hezs1a_a0a0a0(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
@@ -99,21 +100,21 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
     return null;
   }
 
-  private static <T> T as_nkoo1o_a0a0a0a1(Object o, Class<T> type) {
+  private static <T> T as_nkoo1o_a0a0a0a3(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_nkoo1o_a0a0a0a0e(Object o, Class<T> type) {
+  private static <T> T as_nkoo1o_a0a0a0a0g(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_nkoo1o_a0a0b0a0e(Object o, Class<T> type) {
+  private static <T> T as_nkoo1o_a0a0b0a0g(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

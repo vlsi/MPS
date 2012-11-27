@@ -130,7 +130,7 @@ public class Mps25JavaApiMigration_MigrationScript extends BaseMigrationScript {
     quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
     quotedNode_13.setReference("annotation", SReference.create("annotation", quotedNode_13, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Override")));
     quotedNode_6.addChild("annotation", quotedNode_13);
-    quotedNode_3.addChild("method", quotedNode_6);
+    quotedNode_3.addChild("member", quotedNode_6);
     quotedNode_2.addChild("cls", quotedNode_3);
     return quotedNode_2;
   }

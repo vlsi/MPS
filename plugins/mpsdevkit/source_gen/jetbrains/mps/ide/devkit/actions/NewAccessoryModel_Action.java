@@ -4,8 +4,6 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -24,10 +22,11 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class NewAccessoryModel_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(NewAccessoryModel_Action.class);
 
   public NewAccessoryModel_Action() {
     super("New Accessory Model", "", ICON);
@@ -105,4 +104,6 @@ public class NewAccessoryModel_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(NewAccessoryModel_Action.class);
 }

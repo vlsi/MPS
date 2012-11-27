@@ -109,7 +109,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
     ModelAccess.assertLegalWrite();
 
     final SModel old = myModel;
-    check_bp2jat_a3a01(old);
+    check_bp2jat_a3a31(old);
 
     myModel = null;
     isChanged = false;
@@ -122,7 +122,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
             fireModelReplaced();
             fireModelStateChanged(ModelLoadingState.FULLY_LOADED, ModelLoadingState.NOT_LOADED);
 
-            check_bp2jat_a3a0a0a0j0k(old);
+            check_bp2jat_a3a0a0a0j0n(old);
           }
         });
       }
@@ -130,14 +130,14 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
 
   }
 
-  private static void check_bp2jat_a3a01(SModel checkedDotOperand) {
+  private static void check_bp2jat_a3a31(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.setModelDescriptor(null);
     }
 
   }
 
-  private static void check_bp2jat_a3a0a0a0j0k(SModel checkedDotOperand) {
+  private static void check_bp2jat_a3a0a0a0j0n(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.dispose();
     }

@@ -20,13 +20,13 @@ public class typeOf_AssertStatement_InferenceRule extends AbstractInferenceRule_
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(assertStatement, "condition", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176899078020", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176899056092", true), (SNode) _quotation_createNode_s4rvw8_a0a0a(), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176899056092", true), (SNode) _quotation_createNode_s4rvw8_a0a0b(), false, true, _info_12389875345);
     }
     if ((SLinkOperations.getTarget(assertStatement, "message", true) != null)) {
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(assertStatement, "message", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176899115123", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176899107820", true), (SNode) _quotation_createNode_s4rvw8_a0a0b0a(), false, true, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176899107820", true), (SNode) _quotation_createNode_s4rvw8_a0a0b0b(), false, true, _info_12389875345);
       }
     }
   }
@@ -46,13 +46,13 @@ public class typeOf_AssertStatement_InferenceRule extends AbstractInferenceRule_
     return false;
   }
 
-  private static SNode _quotation_createNode_s4rvw8_a0a0a() {
+  private static SNode _quotation_createNode_s4rvw8_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_s4rvw8_a0a0b0a() {
+  private static SNode _quotation_createNode_s4rvw8_a0a0b0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

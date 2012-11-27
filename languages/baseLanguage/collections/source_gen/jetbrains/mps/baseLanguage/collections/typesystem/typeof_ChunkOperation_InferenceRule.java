@@ -27,7 +27,7 @@ public class typeof_ChunkOperation_InferenceRule extends AbstractInferenceRule_R
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(co, "length", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1205753509659", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1205753511511", true), (SNode) _quotation_createNode_ul3z67_a0b0a(), true, true, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1205753511511", true), (SNode) _quotation_createNode_ul3z67_a0b0b(), true, true, _info_12389875345);
       }
     }
   }
@@ -47,7 +47,7 @@ public class typeof_ChunkOperation_InferenceRule extends AbstractInferenceRule_R
     return false;
   }
 
-  private static SNode _quotation_createNode_ul3z67_a0b0a() {
+  private static SNode _quotation_createNode_ul3z67_a0b0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

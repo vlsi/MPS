@@ -4,9 +4,9 @@ package jetbrains.mps.quickQueryLanguage.generator.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.quickQueryLanguage.runtime.QueryExecutor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.quickQueryLanguage.runtime.QueryExecutor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -15,12 +15,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class QueriesGenerated {
-  public static Object propertyMacro_GetPropertyValue_1218801182940(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false));
-  }
-
   public static Object propertyMacro_GetPropertyValue_1220257961588(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return QueryExecutor.GENERATED_QUERY_NAME;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1218801182940(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false));
   }
 
   public static SNode sourceNodeQuery_1219760682963(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

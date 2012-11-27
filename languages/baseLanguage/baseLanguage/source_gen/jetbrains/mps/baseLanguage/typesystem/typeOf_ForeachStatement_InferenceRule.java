@@ -25,7 +25,7 @@ public class typeOf_ForeachStatement_InferenceRule extends AbstractInferenceRule
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(foreachStatement, "iterable", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2262344491709407306", 0, null);
-      typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_9mvp38_a0b0a(typeCheckingContext.getRepresentative(T_typevar_1176561507041), typeCheckingContext.getRepresentative(T_typevar_1176561507041)), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(foreachStatement, "iterable", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1207147193776", true), false, true, _info_12389875345);
+      typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_9mvp38_a0b0b(typeCheckingContext.getRepresentative(T_typevar_1176561507041), typeCheckingContext.getRepresentative(T_typevar_1176561507041)), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(foreachStatement, "iterable", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1207147193776", true), false, true, _info_12389875345);
     }
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {
@@ -51,7 +51,7 @@ public class typeOf_ForeachStatement_InferenceRule extends AbstractInferenceRule
     return false;
   }
 
-  private static SNode _quotation_createNode_9mvp38_a0b0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_9mvp38_a0b0b(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;

@@ -26,8 +26,8 @@ public class supertypesOf_ListType_ListType_elementSNode_SubtypingRule extends S
   public List<SNode> getSubOrSuperTypes(SNode listType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> result = new ArrayList<SNode>();
     SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(listType, "elementType", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true, typeCheckingContext);
-    if (SLinkOperations.getTarget(classifierType, "classifier", false) == SLinkOperations.getTarget(_quotation_createNode_84rynv_a0a2a0(), "classifier", false)) {
-      ListSequence.fromList(result).addElement(_quotation_createNode_84rynv_a0a0a2a0());
+    if (SLinkOperations.getTarget(classifierType, "classifier", false) == SLinkOperations.getTarget(_quotation_createNode_84rynv_a0a2a1(), "classifier", false)) {
+      ListSequence.fromList(result).addElement(_quotation_createNode_84rynv_a0a0a2a1());
     }
     return result;
   }
@@ -47,7 +47,7 @@ public class supertypesOf_ListType_ListType_elementSNode_SubtypingRule extends S
     return true;
   }
 
-  private static SNode _quotation_createNode_84rynv_a0a0a2a0() {
+  private static SNode _quotation_createNode_84rynv_a0a0a2a1() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", null, null, GlobalScope.getInstance(), false);
@@ -56,7 +56,7 @@ public class supertypesOf_ListType_ListType_elementSNode_SubtypingRule extends S
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_84rynv_a0a2a0() {
+  private static SNode _quotation_createNode_84rynv_a0a2a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));

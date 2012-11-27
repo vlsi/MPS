@@ -36,7 +36,7 @@ public class VariableUnifyingMigration {
     return new MigrationConfig(referenceConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference")) {
       protected SNode createConditionInternal(SNode arg) {
         // <node> 
-        return _quotation_createNode_u7t7ux_a1a0a0a0a1(targetConcept, arg);
+        return _quotation_createNode_u7t7ux_a1a0a0a0a2(targetConcept, arg);
       }
 
       @Override
@@ -62,7 +62,7 @@ public class VariableUnifyingMigration {
     };
   }
 
-  private static SNode _quotation_createNode_u7t7ux_a1a0a0a0a1(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_u7t7ux_a1a0a0a0a2(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;

@@ -67,8 +67,8 @@
     <nodeInfo nodeId="7850891982542472813" fileName="SettingsEditorPanel.java" startLine="74" startPosition="36" endLine="75" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7850891982542472773" fileName="SettingsEditorPanel.java" startLine="78" startPosition="24" endLine="79" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7850891982542472817" fileName="SettingsEditorPanel.java" startLine="79" startPosition="40" endLine="80" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5348020929391627900" fileName="SettingsEditorPanel.java" startLine="84" startPosition="9" endLine="85" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5348020929391622570" fileName="SettingsEditorPanel.java" startLine="85" startPosition="50" endLine="86" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5348020929391627900" fileName="SettingsEditorPanel.java" startLine="84" startPosition="9" endLine="85" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5348020929391622570" fileName="SettingsEditorPanel.java" startLine="85" startPosition="51" endLine="86" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5348020929391622559" fileName="SettingsEditorPanel.java" startLine="86" startPosition="31" endLine="87" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5348020929391622564" fileName="SettingsEditorPanel.java" startLine="87" startPosition="45" endLine="88" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5348020929391623474" fileName="SettingsEditorPanel.java" startLine="89" startPosition="40" endLine="90" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -90,7 +90,7 @@
     <nodeInfo nodeId="7850891982542471350" fileName="SettingsEditorPanel.java" startLine="98" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplyAction#()Ljavax/swing/Action;" />
     <nodeInfo nodeId="7850891982542471402" fileName="SettingsEditorPanel.java" startLine="102" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResetAction#()Ljavax/swing/Action;" />
     <nodeInfo nodeId="7850891982542471423" fileName="SettingsEditorPanel.java" startLine="106" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCancelAction#()Ljavax/swing/Action;" />
-    <nodeInfo nodeId="5348020929391628554" fileName="SettingsEditorPanel.java" startLine="115" startPosition="132" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5348020929391628554" fileName="SettingsEditorPanel.java" startLine="115" startPosition="133" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7850891982542472795" fileName="SettingsEditorPanel.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setModified#(Z)V" />
     <nodeInfo nodeId="7850891982542471853" fileName="SettingsEditorPanel.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#()V" />
     <nodeInfo nodeId="7850891982542472769" fileName="SettingsEditorPanel.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reset#()V" />
@@ -100,7 +100,7 @@
     <nodeInfo nodeId="7850891982542472910" fileName="SettingsEditorPanel.java" startLine="36" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResetAction" />
     <nodeInfo nodeId="7850891982542472929" fileName="SettingsEditorPanel.java" startLine="41" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCancelAction" />
     <nodeInfo nodeId="7850891982542471808" fileName="SettingsEditorPanel.java" startLine="49" startPosition="98" endLine="54" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5348020929391628554" fileName="SettingsEditorPanel.java" startLine="115" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_gxk3ze_a0a0a4#(Ljetbrains/mps/execution/api/settings/ITemplatePersistentConfiguration;)V" />
+    <nodeInfo nodeId="5348020929391628554" fileName="SettingsEditorPanel.java" startLine="115" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_gxk3ze_a0a0a51#(Ljetbrains/mps/execution/api/settings/ITemplatePersistentConfiguration;)V" />
     <nodeInfo nodeId="5348020929391622546" fileName="SettingsEditorPanel.java" startLine="83" startPosition="27" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="7850891982542472786" fileName="SettingsEditorPanel.java" startLine="83" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateUi#()V" />
     <nodeInfo nodeId="7850891982542386444" fileName="SettingsEditorPanel.java" startLine="47" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SettingsEditorPanel#(Ljetbrains/mps/execution/api/settings/ITemplatePersistentConfiguration;)V" />
@@ -150,7 +150,7 @@
     <scopeInfo nodeId="7850891982542472769" fileName="SettingsEditorPanel.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
     <scopeInfo nodeId="5348020929391622547" fileName="SettingsEditorPanel.java" startLine="84" startPosition="9" endLine="88" endPosition="45" />
     <scopeInfo nodeId="7850891982542473010" fileName="SettingsEditorPanel.java" startLine="110" startPosition="0" endLine="114" endPosition="0" />
-    <scopeInfo nodeId="5348020929391628554" fileName="SettingsEditorPanel.java" startLine="115" startPosition="132" endLine="119" endPosition="0" />
+    <scopeInfo nodeId="5348020929391628554" fileName="SettingsEditorPanel.java" startLine="115" startPosition="133" endLine="119" endPosition="0" />
     <scopeInfo nodeId="5348020929391628554" fileName="SettingsEditorPanel.java" startLine="115" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="5348020929391628554" varName="checkedDotOperand" />
     </scopeInfo>
@@ -160,11 +160,11 @@
     <scopeInfo nodeId="7850891982542386444" fileName="SettingsEditorPanel.java" startLine="47" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="7850891982542408162" varName="configuration" />
     </scopeInfo>
-    <unitInfo nodeId="7850891982542472853" fileName="SettingsEditorPanel.java" startLine="26" startPosition="48" endLine="30" endPosition="3" unitName="jetbrains.mps.execution.api.settings.SettingsEditorPanel$2" />
-    <unitInfo nodeId="7850891982542472896" fileName="SettingsEditorPanel.java" startLine="31" startPosition="51" endLine="35" endPosition="3" unitName="jetbrains.mps.execution.api.settings.SettingsEditorPanel$3" />
-    <unitInfo nodeId="7850891982542472915" fileName="SettingsEditorPanel.java" startLine="36" startPosition="51" endLine="40" endPosition="3" unitName="jetbrains.mps.execution.api.settings.SettingsEditorPanel$4" />
-    <unitInfo nodeId="7850891982542472934" fileName="SettingsEditorPanel.java" startLine="41" startPosition="52" endLine="45" endPosition="3" unitName="jetbrains.mps.execution.api.settings.SettingsEditorPanel$5" />
-    <unitInfo nodeId="7850891982542471816" fileName="SettingsEditorPanel.java" startLine="50" startPosition="21" endLine="54" endPosition="5" unitName="jetbrains.mps.execution.api.settings.SettingsEditorPanel$1" />
+    <unitInfo nodeId="7850891982542472853" fileName="SettingsEditorPanel.java" startLine="26" startPosition="48" endLine="30" endPosition="3" unitName="jetbrains.mps.execution.api.settings.SettingsEditorPanel$1" />
+    <unitInfo nodeId="7850891982542472896" fileName="SettingsEditorPanel.java" startLine="31" startPosition="51" endLine="35" endPosition="3" unitName="jetbrains.mps.execution.api.settings.SettingsEditorPanel$2" />
+    <unitInfo nodeId="7850891982542472915" fileName="SettingsEditorPanel.java" startLine="36" startPosition="51" endLine="40" endPosition="3" unitName="jetbrains.mps.execution.api.settings.SettingsEditorPanel$3" />
+    <unitInfo nodeId="7850891982542472934" fileName="SettingsEditorPanel.java" startLine="41" startPosition="52" endLine="45" endPosition="3" unitName="jetbrains.mps.execution.api.settings.SettingsEditorPanel$4" />
+    <unitInfo nodeId="7850891982542471816" fileName="SettingsEditorPanel.java" startLine="50" startPosition="21" endLine="54" endPosition="5" unitName="jetbrains.mps.execution.api.settings.SettingsEditorPanel$5" />
     <unitInfo nodeId="7850891982542386442" fileName="SettingsEditorPanel.java" startLine="19" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.execution.api.settings.SettingsEditorPanel" />
   </root>
   <root nodeId="8413546332587496379" modelId="r:76273c4a-4818-4f7c-8673-bfc2aeb6debb(jetbrains.mps.execution.api.settings)">

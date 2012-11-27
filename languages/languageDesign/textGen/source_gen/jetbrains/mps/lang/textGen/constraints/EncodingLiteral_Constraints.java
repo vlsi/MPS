@@ -29,7 +29,7 @@ public class EncodingLiteral_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean validateValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "encoding";
-        if (isEmpty_p9uqyx_a0a0b0b0a1a0b0a(trim_p9uqyx_a0a0a1a1a0b0a1a0((SPropertyOperations.getString(propertyValue))))) {
+        if (isEmpty_p9uqyx_a0a0b0b0a1a0b0b(trim_p9uqyx_a0a0a1a1a0b0a1a1((SPropertyOperations.getString(propertyValue))))) {
           return false;
         }
         if ((SPropertyOperations.getString(propertyValue)).equals("binary")) {
@@ -46,11 +46,11 @@ public class EncodingLiteral_Constraints extends BaseConstraintsDescriptor {
     return properties;
   }
 
-  public static boolean isEmpty_p9uqyx_a0a0b0b0a1a0b0a(String str) {
+  public static boolean isEmpty_p9uqyx_a0a0b0b0a1a0b0b(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static String trim_p9uqyx_a0a0a1a1a0b0a1a0(String str) {
+  public static String trim_p9uqyx_a0a0a1a1a0b0a1a1(String str) {
     return (str == null ?
       null :
       str.trim()

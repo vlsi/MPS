@@ -22,13 +22,13 @@ public class listSubtypeOfNodeList_InequationReplacementRule extends AbstractIne
       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2938222244302954902", 0, null);
       _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-      typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) _quotation_createNode_ty2fp4_a0a0a(SLinkOperations.getTarget(supertype, "elementConcept", false)), false, inequalityIsWeak, inequalityIsLessThan, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) _quotation_createNode_ty2fp4_a0a0b(SLinkOperations.getTarget(supertype, "elementConcept", false)), false, inequalityIsWeak, inequalityIsLessThan, _info_12389875345);
     }
   }
 
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
-    result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) _quotation_createNode_ty2fp4_a0a0b0b(SLinkOperations.getTarget(supertype, "elementConcept", false)), true);
+    result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) _quotation_createNode_ty2fp4_a0a0b0c(SLinkOperations.getTarget(supertype, "elementConcept", false)), true);
     return result_14532009;
   }
 
@@ -58,14 +58,14 @@ public class listSubtypeOfNodeList_InequationReplacementRule extends AbstractIne
     return "jetbrains.mps.lang.smodel.structure.SNodeListType";
   }
 
-  private static SNode _quotation_createNode_ty2fp4_a0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_ty2fp4_a0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_ty2fp4_a0a0b0b(Object parameter_1) {
+  private static SNode _quotation_createNode_ty2fp4_a0a0b0c(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);

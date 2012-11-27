@@ -35,7 +35,7 @@ public class InequationReference_Constraints extends BaseConstraintsDescriptor {
 
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            if (isNotEmpty_q84ruw_a0a0b0a0a0a0a1a0b0a(SPropertyOperations.getString(_context.getParameterNode(), "label"))) {
+            if (isNotEmpty_q84ruw_a0a0b0a0a0a0a1a0b0b(SPropertyOperations.getString(_context.getParameterNode(), "label"))) {
               return SPropertyOperations.getString(_context.getParameterNode(), "label") + " " + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getParameterNode()), "conceptAlias");
             } else {
               return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getParameterNode()), "conceptAlias");
@@ -47,7 +47,7 @@ public class InequationReference_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  public static boolean isNotEmpty_q84ruw_a0a0b0a0a0a0a1a0b0a(String str) {
+  public static boolean isNotEmpty_q84ruw_a0a0b0a0a0a0a1a0b0b(String str) {
     return str != null && str.length() > 0;
   }
 }

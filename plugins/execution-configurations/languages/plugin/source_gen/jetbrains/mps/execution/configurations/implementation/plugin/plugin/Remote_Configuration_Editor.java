@@ -9,9 +9,6 @@ import com.intellij.openapi.options.ConfigurationException;
 public class Remote_Configuration_Editor extends SettingsEditorEx<Remote_Configuration> {
   private RemoteSettingsEditor myEditor;
 
-  public Remote_Configuration_Editor() {
-  }
-
   public void disposeEditor() {
   }
 
@@ -26,5 +23,8 @@ public class Remote_Configuration_Editor extends SettingsEditorEx<Remote_Configu
 
   public void resetEditorFrom(final Remote_Configuration configuration) {
     myEditor.reset(configuration.getSettings());
+  }
+
+  public Remote_Configuration_Editor() {
   }
 }

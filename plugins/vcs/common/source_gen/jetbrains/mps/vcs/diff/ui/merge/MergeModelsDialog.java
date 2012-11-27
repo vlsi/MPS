@@ -50,8 +50,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import javax.swing.JComponent;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -61,6 +59,8 @@ import com.intellij.ui.SimpleTextAttributes;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.vcs.diff.ui.common.ChangeColors;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public class MergeModelsDialog extends DialogWrapper {
   public static final Icon APPLY_NON_CONFLICTS = IconLoader.getIcon("/diff/applyNotConflicts.png");
@@ -159,7 +159,7 @@ public class MergeModelsDialog extends DialogWrapper {
 
   public void unregisterResultModel() {
     final SModel resultModel = myMergeSession.getResultModel();
-    assert check_3qqb0l_a0b0f(check_3qqb0l_a0a1a5(resultModel)) instanceof DiffTemporaryModule;
+    assert check_3qqb0l_a0b0s(check_3qqb0l_a0a1a81(resultModel)) instanceof DiffTemporaryModule;
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         DiffTemporaryModule.unregisterModel(resultModel, ProjectHelper.toMPSProject(myProject));
@@ -403,20 +403,6 @@ public class MergeModelsDialog extends DialogWrapper {
     }
   }
 
-  private static IModule check_3qqb0l_a0b0f(SModelDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-
-  private static SModelDescriptor check_3qqb0l_a0a1a5(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelDescriptor();
-    }
-    return null;
-  }
-
   private class MergeModelsTree extends DiffModelTree {
     private MergeModelsTree() {
       super(DiffTemporaryModule.getOperationContext(myProject, myMergeSession.getResultModel()));
@@ -505,5 +491,19 @@ public class MergeModelsDialog extends DialogWrapper {
     protected boolean isMultipleRootNames() {
       return true;
     }
+  }
+
+  private static IModule check_3qqb0l_a0b0s(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+
+  private static SModelDescriptor check_3qqb0l_a0a1a81(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelDescriptor();
+    }
+    return null;
   }
 }

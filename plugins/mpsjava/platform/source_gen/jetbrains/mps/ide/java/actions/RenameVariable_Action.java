@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -21,10 +20,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.platform.refactoring.RenameDialog;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.logging.Logger;
 
 public class RenameVariable_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(RenameVariable_Action.class);
 
   public RenameVariable_Action() {
     super("Rename Variable", "", ICON);
@@ -104,4 +103,6 @@ public class RenameVariable_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "RenameVariable", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(RenameVariable_Action.class);
 }

@@ -32,10 +32,10 @@ public class WindowsDemo_Swing {
   }
 
   public void buildUI(JComponent menu) {
-    final JXHyperlink widget_ucaale_a0a0a = new JXHyperlink();
-    widget_ucaale_a0a0a.setText("Dialog");
-    widget_ucaale_a0a0a.setActionCommand("dialog");
-    widget_ucaale_a0a0a.addActionListener(new ActionListener() {
+    final JXHyperlink widget_ucaale_a0a0c = new JXHyperlink();
+    widget_ucaale_a0a0c.setText("Dialog");
+    widget_ucaale_a0a0c.setActionCommand("dialog");
+    widget_ucaale_a0a0c.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -45,7 +45,7 @@ public class WindowsDemo_Swing {
         h.invoke(e);
       }
     });
-    menu.add(widget_ucaale_a0a0a);
+    menu.add(widget_ucaale_a0a0c);
   }
 
   public void dialog() {
@@ -59,13 +59,13 @@ public class WindowsDemo_Swing {
       it.next();
       it.remove();
     }
-    final JTabbedPane widget_ucaale_b0b0b = new JTabbedPane();
-    final ButtonGroup buttonGroup_ucaale_a0c0b0b = new ButtonGroup();
-    final JPanel widget_ucaale_a0a1a1a1 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-    final ButtonGroup buttonGroup_ucaale_a0b0d0b0b = new ButtonGroup();
-    final JButton widget_ucaale_a0a0a0b0b0b = new JButton();
-    widget_ucaale_a0a0a0b0b0b.setText("Dialog");
-    widget_ucaale_a0a0a0b0b0b.addActionListener(new ActionListener() {
+    final JTabbedPane widget_ucaale_b0b0d = new JTabbedPane();
+    final ButtonGroup buttonGroup_ucaale_a0c0b0d = new ButtonGroup();
+    final JPanel widget_ucaale_a0a1a1a3 = new JPanel(new FlowLayout(FlowLayout.LEFT));
+    final ButtonGroup buttonGroup_ucaale_a0b0d0b0d = new ButtonGroup();
+    final JButton widget_ucaale_a0a0a0b0b0d = new JButton();
+    widget_ucaale_a0a0a0b0b0d.setText("Dialog");
+    widget_ucaale_a0a0a0b0b0d.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -75,13 +75,13 @@ public class WindowsDemo_Swing {
         h.invoke(e);
       }
     });
-    widget_ucaale_a0a1a1a1.add(widget_ucaale_a0a0a0b0b0b);
-    widget_ucaale_b0b0b.addTab("Dialog", widget_ucaale_a0a1a1a1);
-    final JPanel widget_ucaale_b0a1a1a1 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-    final ButtonGroup buttonGroup_ucaale_a0f0d0b0b = new ButtonGroup();
-    final JButton widget_ucaale_a0a1a0b0b0b = new JButton();
-    widget_ucaale_a0a1a0b0b0b.setText("Form");
-    widget_ucaale_a0a1a0b0b0b.addActionListener(new ActionListener() {
+    widget_ucaale_a0a1a1a3.add(widget_ucaale_a0a0a0b0b0d);
+    widget_ucaale_b0b0d.addTab("Dialog", widget_ucaale_a0a1a1a3);
+    final JPanel widget_ucaale_b0a1a1a3 = new JPanel(new FlowLayout(FlowLayout.LEFT));
+    final ButtonGroup buttonGroup_ucaale_a0f0d0b0d = new ButtonGroup();
+    final JButton widget_ucaale_a0a1a0b0b0d = new JButton();
+    widget_ucaale_a0a1a0b0b0d.setText("Form");
+    widget_ucaale_a0a1a0b0b0d.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -91,150 +91,150 @@ public class WindowsDemo_Swing {
         h.invoke(e);
       }
     });
-    widget_ucaale_b0a1a1a1.add(widget_ucaale_a0a1a0b0b0b);
-    widget_ucaale_b0b0b.addTab("Form", widget_ucaale_b0a1a1a1);
-    dc.add(widget_ucaale_b0b0b, DockLayoutData.CENTER);
+    widget_ucaale_b0a1a1a3.add(widget_ucaale_a0a1a0b0b0d);
+    widget_ucaale_b0b0d.addTab("Form", widget_ucaale_b0a1a1a3);
+    dc.add(widget_ucaale_b0b0d, DockLayoutData.CENTER);
     dc.doLayout();
   }
 
   public void showDialog() {
-    final JDialog widget_ucaale_a0a0c = new _FunctionTypes._return_P1_E0<JDialog, JFrame>() {
+    final JDialog widget_ucaale_a0a0e = new _FunctionTypes._return_P1_E0<JDialog, JFrame>() {
       public JDialog invoke(JFrame context_ucaale_a) {
         JDialog dlg = new JDialog(WindowsDemo_Swing.this.uidemo.getRootPanel(), true);
         dlg.getContentPane().setLayout(new GridLayout(1, 1));
         return dlg;
       }
     }.invoke(this.uidemo.getRootPanel());
-    final JPanel widget_ucaale_a0b0c = new JPanel(new GridLayout(1, 1));
-    final ButtonGroup buttonGroup_ucaale_a0b0b0c = new ButtonGroup();
-    final JButton widget_ucaale_a0a0a1a2 = new JButton();
-    widget_ucaale_a0a0a1a2.setText("FOO");
-    widget_ucaale_a0a0a1a2.addActionListener(new ActionListener() {
+    final JPanel widget_ucaale_a0b0e = new JPanel(new GridLayout(1, 1));
+    final ButtonGroup buttonGroup_ucaale_a0b0b0e = new ButtonGroup();
+    final JButton widget_ucaale_a0a0a1a4 = new JButton();
+    widget_ucaale_a0a0a1a4.setText("FOO");
+    widget_ucaale_a0a0a1a4.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
-            widget_ucaale_a0a0c.setVisible(false);
+            widget_ucaale_a0a0e.setVisible(false);
           }
         };
         h.invoke(e);
       }
     });
-    widget_ucaale_a0b0c.add(widget_ucaale_a0a0a1a2);
-    widget_ucaale_a0a0c.getContentPane().add(widget_ucaale_a0b0c);
-    widget_ucaale_a0a0c.pack();
-    widget_ucaale_a0a0c.setVisible(true);
+    widget_ucaale_a0b0e.add(widget_ucaale_a0a0a1a4);
+    widget_ucaale_a0a0e.getContentPane().add(widget_ucaale_a0b0e);
+    widget_ucaale_a0a0e.pack();
+    widget_ucaale_a0a0e.setVisible(true);
   }
 
   public void showForm() {
-    final JDialog widget_ucaale_a0a0d = new _FunctionTypes._return_P1_E0<JDialog, JFrame>() {
+    final JDialog widget_ucaale_a0a0f = new _FunctionTypes._return_P1_E0<JDialog, JFrame>() {
       public JDialog invoke(JFrame context_ucaale_a_0) {
         JDialog dlg = new JDialog(WindowsDemo_Swing.this.uidemo.getRootPanel(), true);
         dlg.getContentPane().setLayout(new GridLayout(1, 1));
         return dlg;
       }
     }.invoke(this.uidemo.getRootPanel());
-    final JPanel widget_ucaale_a0b0d = new JPanel(new GridBagLayout());
-    final ButtonGroup buttonGroup_ucaale_a0b0b0d = new ButtonGroup();
-    final JLabel widget_ucaale_a0a0a1a3 = new JLabel();
-    widget_ucaale_a0a0a1a3.setText("Foo");
+    final JPanel widget_ucaale_a0b0f = new JPanel(new GridBagLayout());
+    final ButtonGroup buttonGroup_ucaale_a0b0b0f = new ButtonGroup();
+    final JLabel widget_ucaale_a0a0a1a5 = new JLabel();
+    widget_ucaale_a0a0a1a5.setText("Foo");
     {
-      GridBagConstraints gbc_a0a0d0c0b0d = new GridBagConstraints();
-      gbc_a0a0d0c0b0d.gridx = 0;
-      gbc_a0a0d0c0b0d.gridy = 0;
-      gbc_a0a0d0c0b0d.weightx = 1.0;
-      gbc_a0a0d0c0b0d.weighty = 1.0;
-      ((GridBagLayout) widget_ucaale_a0b0d.getLayout()).setConstraints(widget_ucaale_a0a0a1a3, gbc_a0a0d0c0b0d);
+      GridBagConstraints gbc_a0a0d0c0b0f = new GridBagConstraints();
+      gbc_a0a0d0c0b0f.gridx = 0;
+      gbc_a0a0d0c0b0f.gridy = 0;
+      gbc_a0a0d0c0b0f.weightx = 1.0;
+      gbc_a0a0d0c0b0f.weighty = 1.0;
+      ((GridBagLayout) widget_ucaale_a0b0f.getLayout()).setConstraints(widget_ucaale_a0a0a1a5, gbc_a0a0d0c0b0f);
     }
-    widget_ucaale_a0b0d.add(widget_ucaale_a0a0a1a3);
-    final JTextField widget_ucaale_b0a0a1a3 = new JTextField();
-    widget_ucaale_b0a0a1a3.setText(uidemo.bo.getBar());
+    widget_ucaale_a0b0f.add(widget_ucaale_a0a0a1a5);
+    final JTextField widget_ucaale_b0a0a1a5 = new JTextField();
+    widget_ucaale_b0a0a1a5.setText(uidemo.bo.getBar());
     {
-      GridBagConstraints gbc_a0a0h0c0b0d = new GridBagConstraints();
-      gbc_a0a0h0c0b0d.gridx = 1;
-      gbc_a0a0h0c0b0d.gridy = 0;
-      gbc_a0a0h0c0b0d.anchor = GridBagConstraints.CENTER;
-      gbc_a0a0h0c0b0d.fill = GridBagConstraints.HORIZONTAL;
-      gbc_a0a0h0c0b0d.gridwidth = 2;
-      gbc_a0a0h0c0b0d.weightx = 1.0;
-      gbc_a0a0h0c0b0d.weighty = 1.0;
-      ((GridBagLayout) widget_ucaale_a0b0d.getLayout()).setConstraints(widget_ucaale_b0a0a1a3, gbc_a0a0h0c0b0d);
+      GridBagConstraints gbc_a0a0h0c0b0f = new GridBagConstraints();
+      gbc_a0a0h0c0b0f.gridx = 1;
+      gbc_a0a0h0c0b0f.gridy = 0;
+      gbc_a0a0h0c0b0f.anchor = GridBagConstraints.CENTER;
+      gbc_a0a0h0c0b0f.fill = GridBagConstraints.HORIZONTAL;
+      gbc_a0a0h0c0b0f.gridwidth = 2;
+      gbc_a0a0h0c0b0f.weightx = 1.0;
+      gbc_a0a0h0c0b0f.weighty = 1.0;
+      ((GridBagLayout) widget_ucaale_a0b0f.getLayout()).setConstraints(widget_ucaale_b0a0a1a5, gbc_a0a0h0c0b0f);
       // <node> 
     }
-    widget_ucaale_a0b0d.add(widget_ucaale_b0a0a1a3);
-    final JButton widget_ucaale_c0a0a1a3 = new JButton();
-    widget_ucaale_c0a0a1a3.setText("<-  / <->");
-    widget_ucaale_c0a0a1a3.addActionListener(new ActionListener() {
+    widget_ucaale_a0b0f.add(widget_ucaale_b0a0a1a5);
+    final JButton widget_ucaale_c0a0a1a5 = new JButton();
+    widget_ucaale_c0a0a1a5.setText("<-  / <->");
+    widget_ucaale_c0a0a1a5.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
-            widget_ucaale_a0a0d.setVisible(false);
+            widget_ucaale_a0a0f.setVisible(false);
           }
         };
         h.invoke(e);
       }
     });
     {
-      GridBagConstraints gbc_a0a0m0c0b0d = new GridBagConstraints();
-      gbc_a0a0m0c0b0d.gridx = 2;
-      gbc_a0a0m0c0b0d.gridy = 1;
-      gbc_a0a0m0c0b0d.anchor = GridBagConstraints.WEST;
-      gbc_a0a0m0c0b0d.fill = GridBagConstraints.VERTICAL;
-      gbc_a0a0m0c0b0d.weightx = 1.0;
-      gbc_a0a0m0c0b0d.weighty = 1.0;
-      ((GridBagLayout) widget_ucaale_a0b0d.getLayout()).setConstraints(widget_ucaale_c0a0a1a3, gbc_a0a0m0c0b0d);
+      GridBagConstraints gbc_a0a0m0c0b0f = new GridBagConstraints();
+      gbc_a0a0m0c0b0f.gridx = 2;
+      gbc_a0a0m0c0b0f.gridy = 1;
+      gbc_a0a0m0c0b0f.anchor = GridBagConstraints.WEST;
+      gbc_a0a0m0c0b0f.fill = GridBagConstraints.VERTICAL;
+      gbc_a0a0m0c0b0f.weightx = 1.0;
+      gbc_a0a0m0c0b0f.weighty = 1.0;
+      ((GridBagLayout) widget_ucaale_a0b0f.getLayout()).setConstraints(widget_ucaale_c0a0a1a5, gbc_a0a0m0c0b0f);
       // <node> 
     }
-    widget_ucaale_a0b0d.add(widget_ucaale_c0a0a1a3);
-    final JButton widget_ucaale_d0a0a1a3 = new JButton();
-    widget_ucaale_d0a0a1a3.setText(" -> / <->");
-    widget_ucaale_d0a0a1a3.addActionListener(new ActionListener() {
+    widget_ucaale_a0b0f.add(widget_ucaale_c0a0a1a5);
+    final JButton widget_ucaale_d0a0a1a5 = new JButton();
+    widget_ucaale_d0a0a1a5.setText(" -> / <->");
+    widget_ucaale_d0a0a1a5.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
-            widget_ucaale_a0a0d.setVisible(false);
+            widget_ucaale_a0a0f.setVisible(false);
           }
         };
         h.invoke(e);
       }
     });
     {
-      GridBagConstraints gbc_a0a0r0c0b0d = new GridBagConstraints();
-      gbc_a0a0r0c0b0d.gridx = 2;
-      gbc_a0a0r0c0b0d.gridy = 2;
-      gbc_a0a0r0c0b0d.anchor = GridBagConstraints.EAST;
-      gbc_a0a0r0c0b0d.fill = GridBagConstraints.VERTICAL;
-      gbc_a0a0r0c0b0d.weightx = 1.0;
-      gbc_a0a0r0c0b0d.weighty = 1.0;
-      ((GridBagLayout) widget_ucaale_a0b0d.getLayout()).setConstraints(widget_ucaale_d0a0a1a3, gbc_a0a0r0c0b0d);
+      GridBagConstraints gbc_a0a0r0c0b0f = new GridBagConstraints();
+      gbc_a0a0r0c0b0f.gridx = 2;
+      gbc_a0a0r0c0b0f.gridy = 2;
+      gbc_a0a0r0c0b0f.anchor = GridBagConstraints.EAST;
+      gbc_a0a0r0c0b0f.fill = GridBagConstraints.VERTICAL;
+      gbc_a0a0r0c0b0f.weightx = 1.0;
+      gbc_a0a0r0c0b0f.weighty = 1.0;
+      ((GridBagLayout) widget_ucaale_a0b0f.getLayout()).setConstraints(widget_ucaale_d0a0a1a5, gbc_a0a0r0c0b0f);
       // <node> 
     }
-    widget_ucaale_a0b0d.add(widget_ucaale_d0a0a1a3);
-    final JButton widget_ucaale_e0a0a1a3 = new JButton();
-    widget_ucaale_e0a0a1a3.setText(" -  / <->");
-    widget_ucaale_e0a0a1a3.addActionListener(new ActionListener() {
+    widget_ucaale_a0b0f.add(widget_ucaale_d0a0a1a5);
+    final JButton widget_ucaale_e0a0a1a5 = new JButton();
+    widget_ucaale_e0a0a1a5.setText(" -  / <->");
+    widget_ucaale_e0a0a1a5.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
-            widget_ucaale_a0a0d.setVisible(false);
+            widget_ucaale_a0a0f.setVisible(false);
           }
         };
         h.invoke(e);
       }
     });
     {
-      GridBagConstraints gbc_a0a0w0c0b0d = new GridBagConstraints();
-      gbc_a0a0w0c0b0d.gridx = 2;
-      gbc_a0a0w0c0b0d.gridy = 3;
-      gbc_a0a0w0c0b0d.anchor = GridBagConstraints.CENTER;
-      gbc_a0a0w0c0b0d.fill = GridBagConstraints.VERTICAL;
-      gbc_a0a0w0c0b0d.weightx = 1.0;
-      gbc_a0a0w0c0b0d.weighty = 1.0;
-      ((GridBagLayout) widget_ucaale_a0b0d.getLayout()).setConstraints(widget_ucaale_e0a0a1a3, gbc_a0a0w0c0b0d);
+      GridBagConstraints gbc_a0a0w0c0b0f = new GridBagConstraints();
+      gbc_a0a0w0c0b0f.gridx = 2;
+      gbc_a0a0w0c0b0f.gridy = 3;
+      gbc_a0a0w0c0b0f.anchor = GridBagConstraints.CENTER;
+      gbc_a0a0w0c0b0f.fill = GridBagConstraints.VERTICAL;
+      gbc_a0a0w0c0b0f.weightx = 1.0;
+      gbc_a0a0w0c0b0f.weighty = 1.0;
+      ((GridBagLayout) widget_ucaale_a0b0f.getLayout()).setConstraints(widget_ucaale_e0a0a1a5, gbc_a0a0w0c0b0f);
       // <node> 
     }
-    widget_ucaale_a0b0d.add(widget_ucaale_e0a0a1a3);
-    widget_ucaale_a0a0d.getContentPane().add(widget_ucaale_a0b0d);
-    widget_ucaale_a0a0d.pack();
-    widget_ucaale_a0a0d.setVisible(true);
+    widget_ucaale_a0b0f.add(widget_ucaale_e0a0a1a5);
+    widget_ucaale_a0a0f.getContentPane().add(widget_ucaale_a0b0f);
+    widget_ucaale_a0a0f.pack();
+    widget_ucaale_a0a0f.setVisible(true);
   }
 }

@@ -18,7 +18,7 @@ public class complex_extends_Complex_SubtypingRule extends SubtypingRule_Runtime
   }
 
   public SNode getSubOrSuperType(SNode complexType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_jvezdz_a0a0();
+    return _quotation_createNode_jvezdz_a0a1();
   }
 
   public String getApplicableConceptFQName() {
@@ -36,7 +36,7 @@ public class complex_extends_Complex_SubtypingRule extends SubtypingRule_Runtime
     return false;
   }
 
-  private static SNode _quotation_createNode_jvezdz_a0a0() {
+  private static SNode _quotation_createNode_jvezdz_a0a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)"), SNodeId.fromString("877422884702771039")));

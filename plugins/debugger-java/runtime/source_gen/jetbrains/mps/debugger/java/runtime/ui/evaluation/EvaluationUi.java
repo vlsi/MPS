@@ -19,9 +19,9 @@ import jetbrains.mps.debugger.java.api.evaluation.InvocationTargetEvaluationExce
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import jetbrains.mps.debug.api.AbstractDebugSession;
 import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaThread;
-import jetbrains.mps.debug.api.AbstractDebugSession;
 
 public abstract class EvaluationUi extends JPanel {
   private static final Logger LOG = Logger.getLogger(EvaluationUi.class);
@@ -74,7 +74,7 @@ public abstract class EvaluationUi extends JPanel {
             LOG.error(t);
           }
         }
-      }, check_4q63yg_b0a2a1a3(myDebugSession.getUiState().getThread()));
+      }, check_4q63yg_b0a2a1a11(myDebugSession.getUiState().getThread()));
     } catch (InvalidEvaluatedExpressionException e) {
       setFailure(e.getCause(), null, model);
     } catch (InvocationTargetEvaluationException e) {
@@ -137,13 +137,6 @@ public abstract class EvaluationUi extends JPanel {
     myErrorListener = listener;
   }
 
-  private static ThreadReference check_4q63yg_b0a2a1a3(JavaThread checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getThread();
-    }
-    return null;
-  }
-
   public static interface IErrorTextListener {
     public void updateErrorText(String text);
   }
@@ -189,5 +182,12 @@ public abstract class EvaluationUi extends JPanel {
         });
       }
     }
+  }
+
+  private static ThreadReference check_4q63yg_b0a2a1a11(JavaThread checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getThread();
+    }
+    return null;
   }
 }

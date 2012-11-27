@@ -24,7 +24,7 @@ public class MergerRoleIdsHandler implements RoleIdsComponent.RoleIdsHandler {
 
   private <K, V> void storeAndCheckConsistency(Map<K, V> theMap, K key, V value) {
     if (MapSequence.fromMap(theMap).containsKey(key)) {
-      myConsistent = myConsistent && eq_clnjnl_a0a0a0a0a(MapSequence.fromMap(theMap).get(key), value);
+      myConsistent = myConsistent && eq_clnjnl_a0a0a0a0h(MapSequence.fromMap(theMap).get(key), value);
     } else {
       MapSequence.fromMap(theMap).put(key, value);
     }
@@ -74,7 +74,7 @@ public class MergerRoleIdsHandler implements RoleIdsComponent.RoleIdsHandler {
     return myConsistent;
   }
 
-  private static boolean eq_clnjnl_a0a0a0a0a(Object a, Object b) {
+  private static boolean eq_clnjnl_a0a0a0a0h(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

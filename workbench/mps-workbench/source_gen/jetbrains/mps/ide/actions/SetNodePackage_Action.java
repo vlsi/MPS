@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -29,10 +28,10 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Collections;
+import jetbrains.mps.logging.Logger;
 
 public class SetNodePackage_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(SetNodePackage_Action.class);
 
   public SetNodePackage_Action() {
     super("Set Virtual Package...", "", ICON);
@@ -156,4 +155,6 @@ public class SetNodePackage_Action extends BaseAction {
     Collections.sort(result);
     return result;
   }
+
+  private static Logger LOG = Logger.getLogger(SetNodePackage_Action.class);
 }

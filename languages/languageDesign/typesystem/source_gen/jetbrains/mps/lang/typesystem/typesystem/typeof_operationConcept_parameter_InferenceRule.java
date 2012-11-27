@@ -25,7 +25,7 @@ public class typeof_operationConcept_parameter_InferenceRule extends AbstractInf
         {
           SNode _nodeToCheck_1029348928467 = concept_parameter;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "2888402081996299036", 0, null);
-          typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "2888402081996299038", true), (SNode) _quotation_createNode_v9qm53_a0a0a0b0a(SLinkOperations.getTarget(opConcept, "concept", false)), false, true, _info_12389875345);
+          typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "2888402081996299038", true), (SNode) _quotation_createNode_v9qm53_a0a0a0b0b(SLinkOperations.getTarget(opConcept, "concept", false)), false, true, _info_12389875345);
         }
       }
     }
@@ -46,7 +46,7 @@ public class typeof_operationConcept_parameter_InferenceRule extends AbstractInf
     return true;
   }
 
-  private static SNode _quotation_createNode_v9qm53_a0a0a0b0a(Object parameter_1) {
+  private static SNode _quotation_createNode_v9qm53_a0a0a0b0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);

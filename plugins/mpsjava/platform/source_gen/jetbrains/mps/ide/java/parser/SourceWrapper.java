@@ -168,7 +168,7 @@ public abstract class SourceWrapper {
         myClassName = sb.toString();
         // replace package x.y.z; with import x.y.z.*; if necessary 
         int iPackage = source.indexOf(PACKAGE_);
-        if (0 <= iPackage && iPackage < i && isNotEmpty_kkyay4_a0a7a0f0a2(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(model))) {
+        if (0 <= iPackage && iPackage < i && isNotEmpty_kkyay4_a0a7a0f0b02(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(model))) {
           int iPackageEnd = iPackage + PACKAGE_.length();
           while (!(Character.isWhitespace(source.charAt(iPackageEnd)) || source.charAt(iPackageEnd) == ';')) {
             iPackageEnd++;
@@ -176,7 +176,7 @@ public abstract class SourceWrapper {
           source = source.substring(0, iPackage) + "import " + source.substring(iPackage + PACKAGE_.length(), iPackageEnd) + ".*" + source.substring(iPackageEnd);
         }
         // add package if necessary 
-        if (isEmpty_kkyay4_a0j0a5a0c(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(model))) {
+        if (isEmpty_kkyay4_a0j0a5a1u(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(model))) {
           myWrappedSource = source;
         } else {
           myWrappedSource = PACKAGE_ + jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(model) + ";\n" + source;
@@ -191,11 +191,11 @@ public abstract class SourceWrapper {
       return result;
     }
 
-    public static boolean isNotEmpty_kkyay4_a0a7a0f0a2(String str) {
+    public static boolean isNotEmpty_kkyay4_a0a7a0f0b02(String str) {
       return str != null && str.length() > 0;
     }
 
-    public static boolean isEmpty_kkyay4_a0j0a5a0c(String str) {
+    public static boolean isEmpty_kkyay4_a0j0a5a1u(String str) {
       return str == null || str.length() == 0;
     }
   }

@@ -7,13 +7,11 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
-  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.bash.structure.AbstractFollowingCommandList", "jetbrains.mps.bash.structure.ArgumentList", "jetbrains.mps.bash.structure.ArgumentReference", "jetbrains.mps.bash.structure.BasedIntegerLiteral", "jetbrains.mps.bash.structure.BasicParameterExpansion", "jetbrains.mps.bash.structure.Command", "jetbrains.mps.bash.structure.ExternalCommandCall", "jetbrains.mps.bash.structure.ExternalCommandDeclaration", "jetbrains.mps.bash.structure.ExternalOptionDeclaration", "jetbrains.mps.bash.structure.HexIntegerLiteral", "jetbrains.mps.bash.structure.InputLine", "jetbrains.mps.bash.structure.OptionReference", "jetbrains.mps.bash.structure.OptionSetReference", "jetbrains.mps.bash.structure.OptionWithParamReference", "jetbrains.mps.bash.structure.SimpleCommand", "jetbrains.mps.bash.structure.SimpleWord", "jetbrains.mps.bash.structure.VariableNameDeclaration", "jetbrains.mps.bash.structure.VariableReference"};
-
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
       case 3:
         return new BasedIntegerLiteral_Constraints();
       case 11:
@@ -55,4 +53,6 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new BaseConstraintsDescriptor(fqName);
     }
   }
+
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.bash.structure.AbstractFollowingCommandList", "jetbrains.mps.bash.structure.ArgumentList", "jetbrains.mps.bash.structure.ArgumentReference", "jetbrains.mps.bash.structure.BasedIntegerLiteral", "jetbrains.mps.bash.structure.BasicParameterExpansion", "jetbrains.mps.bash.structure.Command", "jetbrains.mps.bash.structure.ExternalCommandCall", "jetbrains.mps.bash.structure.ExternalCommandDeclaration", "jetbrains.mps.bash.structure.ExternalOptionDeclaration", "jetbrains.mps.bash.structure.HexIntegerLiteral", "jetbrains.mps.bash.structure.InputLine", "jetbrains.mps.bash.structure.OptionReference", "jetbrains.mps.bash.structure.OptionSetReference", "jetbrains.mps.bash.structure.OptionWithParamReference", "jetbrains.mps.bash.structure.SimpleCommand", "jetbrains.mps.bash.structure.SimpleWord", "jetbrains.mps.bash.structure.VariableNameDeclaration", "jetbrains.mps.bash.structure.VariableReference"};
 }

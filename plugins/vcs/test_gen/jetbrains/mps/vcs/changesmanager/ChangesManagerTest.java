@@ -265,8 +265,8 @@ public class ChangesManagerTest {
     myUtilDiff.setEnabled(true);
     waitForChangesManager();
 
-    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a9a8(myHtmlDiff.getChangeSet())).isNotEmpty());
-    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a01a8(myUiDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a9a92(myHtmlDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a01a92(myUiDiff.getChangeSet())).isNotEmpty());
     Assert.assertNull(myUtilDiff.getChangeSet());
   }
 
@@ -332,7 +332,7 @@ public class ChangesManagerTest {
     });
 
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a3a01(myUtilDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a3a13(myUtilDiff.getChangeSet())).isNotEmpty());
 
     MapSequence.fromMap(myExpectedFileStatuses).put("util.ImageLoader", FileStatus.MODIFIED);
     checkRootStatuses();
@@ -373,7 +373,7 @@ public class ChangesManagerTest {
     }, myUtilVirtualFile, null);
 
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a3a21(myUtilDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a3a33(myUtilDiff.getChangeSet())).isNotEmpty());
 
     MapSequence.fromMap(myExpectedFileStatuses).put("util.ImageLoader", FileStatus.MODIFIED);
     checkRootStatuses();
@@ -387,7 +387,7 @@ public class ChangesManagerTest {
   }
 
   private void modifyExternally() throws ModelReadException {
-    int changesBefore = ListSequence.fromList(check_4gxggu_a0a0a41(myUtilDiff.getChangeSet())).count();
+    int changesBefore = ListSequence.fromList(check_4gxggu_a0a0a53(myUtilDiff.getChangeSet())).count();
     final SModel modelContent = ModelPersistence.readModel(((DefaultSModelDescriptor) myUtilDiff.getModelDescriptor()).getSource().getFile(), false);
     createNewRoot(modelContent);
     final EditableSModelDescriptor modelDescriptor = myUtilDiff.getModelDescriptor();
@@ -413,7 +413,7 @@ public class ChangesManagerTest {
       }
     });
     waitForChangesManager();
-    Assert.assertEquals(changesBefore + 1, ListSequence.fromList(check_4gxggu_a1a6a41(myUtilDiff.getChangeSet())).count());
+    Assert.assertEquals(changesBefore + 1, ListSequence.fromList(check_4gxggu_a1a6a53(myUtilDiff.getChangeSet())).count());
 
     MapSequence.fromMap(myExpectedFileStatuses).put("util.NewRoot", FileStatus.ADDED);
     checkRootStatuses();
@@ -431,7 +431,7 @@ public class ChangesManagerTest {
       throw ListSequence.fromList(exceptions).first();
     }
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a5a51(myUtilDiff.getChangeSet())).isEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a5a63(myUtilDiff.getChangeSet())).isEmpty());
 
     SetSequence.fromSet(MapSequence.fromMap(myExpectedFileStatuses).keySet()).where(new IWhereFilter<String>() {
       public boolean accept(String k) {
@@ -526,7 +526,7 @@ public class ChangesManagerTest {
               fe = new DummyFileEditor(np);
             }
             UndoManager.getInstance(myIdeaProject).undo(fe);
-            check_4gxggu_a3a0a0a0a0a42(fe);
+            check_4gxggu_a3a0a0a0a0a54(fe);
           }
         });
       } catch (Throwable t) {
@@ -764,7 +764,7 @@ public class ChangesManagerTest {
       });
       waitAndCheck(myUiDiff);
 
-      Assert.assertEquals(ListSequence.fromList(changesBefore).count() - 1, ListSequence.fromList(check_4gxggu_a1a6a8a43(myUiDiff.getChangeSet())).count());
+      Assert.assertEquals(ListSequence.fromList(changesBefore).count() - 1, ListSequence.fromList(check_4gxggu_a1a6a8a55(myUiDiff.getChangeSet())).count());
 
       ListSequence.fromList(affectedNodePointers).addElement(new SNodePointer(myUiDiff.getModelDescriptor().getSModelReference(), changeToPick.getRootId()));
     }
@@ -788,12 +788,12 @@ public class ChangesManagerTest {
     String stringBeforeAll = getChangeSetString(myUiDiff.getChangeSet());
     final SModel model = myUiDiff.getModelDescriptor().getSModel();
 
-    List<SNodePointer> affectedRootPointers = ListSequence.fromList(check_4gxggu_a0a0a5a53(myUiDiff.getChangeSet())).select(new ISelector<ModelChange, SNodePointer>() {
+    List<SNodePointer> affectedRootPointers = ListSequence.fromList(check_4gxggu_a0a0a5a65(myUiDiff.getChangeSet())).select(new ISelector<ModelChange, SNodePointer>() {
       public SNodePointer select(ModelChange ch) {
         return new SNodePointer(myUiDiff.getModelDescriptor().getSModelReference(), ch.getRootId());
       }
     }).distinct().toListSequence();
-    final List<ModelChange> oppositeChanges = ListSequence.fromList(check_4gxggu_a0a0g0jb(myUiDiff.getChangeSet())).select(new ISelector<ModelChange, ModelChange>() {
+    final List<ModelChange> oppositeChanges = ListSequence.fromList(check_4gxggu_a0a0g0ec(myUiDiff.getChangeSet())).select(new ISelector<ModelChange, ModelChange>() {
       public ModelChange select(ModelChange ch) {
         return ch.getOppositeChange();
       }
@@ -819,7 +819,7 @@ public class ChangesManagerTest {
       }
     });
     waitAndCheck(myUiDiff);
-    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a9a53(myUiDiff.getChangeSet())).isEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a9a65(myUiDiff.getChangeSet())).isEmpty());
 
     MapSequence.fromMap(myExpectedFileStatuses).removeKey("ui.DocumentLayout");
     MapSequence.fromMap(myExpectedFileStatuses).removeKey("ui.HTMLPanel");
@@ -835,7 +835,7 @@ public class ChangesManagerTest {
 
   private void checkOneAddedRoot(CurrentDifference newModelDiff) {
     waitForChangesManager();
-    List<ModelChange> changes = check_4gxggu_a0b0kb(newModelDiff.getChangeSet());
+    List<ModelChange> changes = check_4gxggu_a0b0fc(newModelDiff.getChangeSet());
     Assert.assertEquals(2, ListSequence.fromList(changes).count());
     Assert.assertTrue(ListSequence.fromList(changes).any(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange it) {
@@ -877,7 +877,7 @@ public class ChangesManagerTest {
 
     newModelDiff.value.setEnabled(true);
     waitForChangesManager();
-    Assert.assertTrue((int) ListSequence.fromList(check_4gxggu_a0a0l0lb(newModelDiff.value.getChangeSet())).count() == 0);
+    Assert.assertTrue((int) ListSequence.fromList(check_4gxggu_a0a0l0gc(newModelDiff.value.getChangeSet())).count() == 0);
 
     checkRootStatuses();
 
@@ -979,111 +979,6 @@ public class ChangesManagerTest {
     TestMain.finishTestOnProjectCopy(ourProject, DESTINATION_PROJECT_DIR);
   }
 
-  private static List<ModelChange> check_4gxggu_a0a9a8(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_4gxggu_a0a01a8(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_4gxggu_a0a3a01(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_4gxggu_a0a3a21(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_4gxggu_a0a0a41(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_4gxggu_a1a6a41(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_4gxggu_a0a5a51(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static void check_4gxggu_a3a0a0a0a0a42(FileEditor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      checkedDotOperand.dispose();
-    }
-
-  }
-
-  private static List<ModelChange> check_4gxggu_a1a6a8a43(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_4gxggu_a0a0a5a53(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_4gxggu_a0a0g0jb(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_4gxggu_a0a9a53(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_4gxggu_a0b0kb(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_4gxggu_a0a0l0lb(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static void check_4gxggu_a0a0a1a(Runnable checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      checkedDotOperand.run();
-    }
-
-  }
-
   private class MyReloadListener implements FSChangesWatcher.IReloadListener {
     public MyReloadListener() {
     }
@@ -1093,8 +988,113 @@ public class ChangesManagerTest {
 
     public void reloadFinished() {
       synchronized (this) {
-        check_4gxggu_a0a0a1a(myAfterReloadTask);
+        check_4gxggu_a0a0a2lc(myAfterReloadTask);
       }
     }
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a9a92(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a01a92(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a3a13(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a3a33(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a0a53(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a1a6a53(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a5a63(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static void check_4gxggu_a3a0a0a0a0a54(FileEditor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.dispose();
+    }
+
+  }
+
+  private static List<ModelChange> check_4gxggu_a1a6a8a55(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a0a5a65(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a0g0ec(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a9a65(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0b0fc(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a0l0gc(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static void check_4gxggu_a0a0a2lc(Runnable checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.run();
+    }
+
   }
 }

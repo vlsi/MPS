@@ -194,7 +194,7 @@ public class EditorHighlighter implements EditorMessageOwner {
 
   @Nullable
   /*package*/ ChangeSet getChangeSet() {
-    return check_urq9my_a0a4(myCurrentDifference);
+    return check_urq9my_a0a21(myCurrentDifference);
   }
 
   /*package*/ ChangeStripsPainter getStripsPainter() {
@@ -211,20 +211,6 @@ public class EditorHighlighter implements EditorMessageOwner {
 
   /*package*/ LeftEditorHighlighter getLeftEditorHighlighter() {
     return myEditorComponent.getLeftEditorHighlighter();
-  }
-
-  private static ChangeSet check_urq9my_a0a4(CurrentDifference checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getChangeSet();
-    }
-    return null;
-  }
-
-  private static void check_urq9my_a3a0a2a(ChangeStripsPainter checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      checkedDotOperand.relayout();
-    }
-
   }
 
   public class MyCurrentDifferenceListener extends CurrentDifferenceAdapter {
@@ -256,11 +242,25 @@ public class EditorHighlighter implements EditorMessageOwner {
         for (ChangeEditorMessage addedMessage : ListSequence.fromList(myAddedMessages)) {
           nodeHighlightManager.mark(addedMessage);
         }
-        check_urq9my_a3a0a2a(myStripsPainter);
+        check_urq9my_a3a0a5r(myStripsPainter);
         nodeHighlightManager.repaintAndRebuildEditorMessages();
         ListSequence.fromList(myAddedMessages).clear();
         ListSequence.fromList(myRemovedMessages).clear();
       }
     }
+  }
+
+  private static ChangeSet check_urq9my_a0a21(CurrentDifference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getChangeSet();
+    }
+    return null;
+  }
+
+  private static void check_urq9my_a3a0a5r(ChangeStripsPainter checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.relayout();
+    }
+
   }
 }

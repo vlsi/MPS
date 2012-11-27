@@ -6,26 +6,18 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import javax.swing.JCheckBox;
 import jetbrains.mps.execution.lib.ui.FieldWithPathChooseDialog;
 import jetbrains.mps.execution.lib.ui.RawLineEditorComponent;
-import com.intellij.openapi.util.Factory;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import jetbrains.mps.ide.common.LayoutUtil;
 import javax.swing.JLabel;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.util.Factory;
 
 public class AntSettings_Configuration_Editor extends SettingsEditorEx<AntSettings_Configuration> {
   private JCheckBox myUseAlternativeAnt;
   private FieldWithPathChooseDialog myAlternativeAnt;
   private RawLineEditorComponent myAntOptions;
-
-  public AntSettings_Configuration_Editor() {
-    super(new Factory<AntSettings_Configuration>() {
-      public AntSettings_Configuration create() {
-        return new AntSettings_Configuration();
-      }
-    });
-  }
 
   public void disposeEditor() {
   }
@@ -56,5 +48,13 @@ public class AntSettings_Configuration_Editor extends SettingsEditorEx<AntSettin
     myUseAlternativeAnt.setSelected(configuration.getUseOtherAntLocation());
     myAlternativeAnt.setText(configuration.getOtherAntLocation());
     myAntOptions.setText(configuration.getAntOptions());
+  }
+
+  public AntSettings_Configuration_Editor() {
+    super(new Factory<AntSettings_Configuration>() {
+      public AntSettings_Configuration create() {
+        return new AntSettings_Configuration();
+      }
+    });
   }
 }

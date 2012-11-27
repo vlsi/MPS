@@ -21,7 +21,7 @@ public class typeof_ArrayCreator_InferenceRule extends AbstractInferenceRule_Run
   public void applyRule(final SNode arrayCreator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode type = SLinkOperations.getTarget(arrayCreator, "componentType", true);
     for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(arrayCreator, "dimensionExpression", true)).count(); i++) {
-      type = _quotation_createNode_vouny3_a0a0b0a(type);
+      type = _quotation_createNode_vouny3_a0a0b0b(type);
     }
     {
       SNode _nodeToCheck_1029348928467 = arrayCreator;
@@ -45,7 +45,7 @@ public class typeof_ArrayCreator_InferenceRule extends AbstractInferenceRule_Run
     return false;
   }
 
-  private static SNode _quotation_createNode_vouny3_a0a0b0a(Object parameter_1) {
+  private static SNode _quotation_createNode_vouny3_a0a0b0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, GlobalScope.getInstance(), false);

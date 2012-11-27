@@ -22,12 +22,12 @@ public class typeof_GetSizeOperation_InferenceRule extends AbstractInferenceRule
     {
       SNode _nodeToCheck_1029348928467 = input;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2414346554611884920", 0, null);
-      typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_jdnuju_a0c0a(typeCheckingContext.getRepresentative(elementType_typevar_1184847379888)), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184847389619", true), false, true, _info_12389875345);
+      typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_jdnuju_a0c0b(typeCheckingContext.getRepresentative(elementType_typevar_1184847379888)), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184847389619", true), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = op;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184847367971", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184847365040", true), (SNode) _quotation_createNode_jdnuju_a0d0a(), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184847365040", true), (SNode) _quotation_createNode_jdnuju_a0d0b(), _info_12389875345);
     }
   }
 
@@ -46,7 +46,7 @@ public class typeof_GetSizeOperation_InferenceRule extends AbstractInferenceRule
     return false;
   }
 
-  private static SNode _quotation_createNode_jdnuju_a0c0a(Object parameter_1) {
+  private static SNode _quotation_createNode_jdnuju_a0c0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);
@@ -57,7 +57,7 @@ public class typeof_GetSizeOperation_InferenceRule extends AbstractInferenceRule
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_jdnuju_a0d0a() {
+  private static SNode _quotation_createNode_jdnuju_a0d0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

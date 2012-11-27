@@ -49,7 +49,7 @@ public abstract class JavaUiStateImpl extends JavaUiState {
     if (thread == null) {
       return null;
     }
-    if (!(eq_vkri5_a0a4a4(newContext.getThread(), thread))) {
+    if (!(eq_vkri5_a0a4a6(newContext.getThread(), thread))) {
       return getEventProcessor().getContextManager().findContextForThread(thread.getThread());
     }
     return newContext;
@@ -59,7 +59,7 @@ public abstract class JavaUiStateImpl extends JavaUiState {
     return myDebugSession.getEventsProcessor();
   }
 
-  private static boolean eq_vkri5_a0a4a4(Object a, Object b) {
+  private static boolean eq_vkri5_a0a4a6(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

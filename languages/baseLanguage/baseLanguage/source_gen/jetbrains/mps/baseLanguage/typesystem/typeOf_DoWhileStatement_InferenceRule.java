@@ -20,7 +20,7 @@ public class typeOf_DoWhileStatement_InferenceRule extends AbstractInferenceRule
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(doWhileStatement, "condition", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1177667395187", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1177667395190", true), (SNode) _quotation_createNode_abze5y_a0a0a(), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1177667395190", true), (SNode) _quotation_createNode_abze5y_a0a0b(), false, true, _info_12389875345);
     }
   }
 
@@ -39,7 +39,7 @@ public class typeOf_DoWhileStatement_InferenceRule extends AbstractInferenceRule
     return false;
   }
 
-  private static SNode _quotation_createNode_abze5y_a0a0a() {
+  private static SNode _quotation_createNode_abze5y_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

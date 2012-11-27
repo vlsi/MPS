@@ -4,7 +4,6 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -16,10 +15,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.editor.runtime.ExtractComponentUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.logging.Logger;
 
 public class ExtractComponent_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ExtractComponent_Action.class);
 
   public ExtractComponent_Action() {
     super("Extract Component", "", ICON);
@@ -82,4 +81,6 @@ public class ExtractComponent_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "ExtractComponent", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ExtractComponent_Action.class);
 }

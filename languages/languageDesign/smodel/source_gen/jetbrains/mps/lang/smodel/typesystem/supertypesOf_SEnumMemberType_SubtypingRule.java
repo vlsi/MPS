@@ -23,9 +23,9 @@ public class supertypesOf_SEnumMemberType_SubtypingRule extends SubtypingRule_Ru
 
   public List<SNode> getSubOrSuperTypes(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> list = ListSequence.fromList(new ArrayList<SNode>());
-    ListSequence.fromList(list).addElement(_quotation_createNode_qj2lih_a0a1a0());
+    ListSequence.fromList(list).addElement(_quotation_createNode_qj2lih_a0a1a1());
     if ((SLinkOperations.getTarget(type, "enum", false) != null)) {
-      ListSequence.fromList(list).addElement(_quotation_createNode_qj2lih_a0a0a2a0());
+      ListSequence.fromList(list).addElement(_quotation_createNode_qj2lih_a0a0a2a1());
     }
     return list;
   }
@@ -45,14 +45,14 @@ public class supertypesOf_SEnumMemberType_SubtypingRule extends SubtypingRule_Ru
     return false;
   }
 
-  private static SNode _quotation_createNode_qj2lih_a0a1a0() {
+  private static SNode _quotation_createNode_qj2lih_a0a1a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)"), SNodeId.fromString("1083171877298")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_qj2lih_a0a0a2a0() {
+  private static SNode _quotation_createNode_qj2lih_a0a0a2a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

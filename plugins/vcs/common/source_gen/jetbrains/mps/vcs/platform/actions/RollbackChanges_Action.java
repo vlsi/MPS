@@ -5,8 +5,6 @@ package jetbrains.mps.vcs.platform.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -14,10 +12,11 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper;
 import jetbrains.mps.openapi.editor.EditorContext;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class RollbackChanges_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("reset.png");
-  protected static Log log = LogFactory.getLog(RollbackChanges_Action.class);
 
   public RollbackChanges_Action() {
     super("Rollback", "", ICON);
@@ -61,4 +60,6 @@ public class RollbackChanges_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(RollbackChanges_Action.class);
 }

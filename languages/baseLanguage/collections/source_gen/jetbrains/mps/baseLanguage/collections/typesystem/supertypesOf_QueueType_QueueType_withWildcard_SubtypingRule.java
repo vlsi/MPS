@@ -15,7 +15,7 @@ public class supertypesOf_QueueType_QueueType_withWildcard_SubtypingRule extends
   }
 
   public SNode getSubOrSuperType(SNode queueType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_y0z7r7_a0a0();
+    return _quotation_createNode_y0z7r7_a0a1();
   }
 
   public String getApplicableConceptFQName() {
@@ -37,7 +37,7 @@ public class supertypesOf_QueueType_QueueType_withWildcard_SubtypingRule extends
     return true;
   }
 
-  private static SNode _quotation_createNode_y0z7r7_a0a0() {
+  private static SNode _quotation_createNode_y0z7r7_a0a1() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.QueueType", null, null, GlobalScope.getInstance(), false);

@@ -21,7 +21,7 @@ public class TestsUtil {
     if (projectPath != null) {
       return projectPath;
     }
-    String url = check_6yh4up_a0c0a(check_6yh4up_a0a2a0(operationContext.getProject()));
+    String url = check_6yh4up_a0c0b(check_6yh4up_a0a2a1(operationContext.getProject()));
     if (url != null) {
       return MacrosFactory.getGlobal().shrinkPath(url);
     }
@@ -32,14 +32,14 @@ public class TestsUtil {
     return BehaviorReflection.invokeVirtual(String.class, testCase, "virtual_getClassName_1216136193905", new Object[]{}) + "$" + NodesTestCase_Behavior.getTestBodyName_1224602741295();
   }
 
-  private static String check_6yh4up_a0c0a(File checkedDotOperand) {
+  private static String check_6yh4up_a0c0b(File checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getAbsolutePath();
     }
     return null;
   }
 
-  private static File check_6yh4up_a0a2a0(Project checkedDotOperand) {
+  private static File check_6yh4up_a0a2a1(Project checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getProjectFile();
     }

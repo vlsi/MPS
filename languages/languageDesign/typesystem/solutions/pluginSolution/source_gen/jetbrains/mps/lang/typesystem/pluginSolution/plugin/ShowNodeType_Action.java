@@ -5,7 +5,6 @@ package jetbrains.mps.lang.typesystem.pluginSolution.plugin;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -22,10 +21,10 @@ import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.logging.Logger;
 
 public class ShowNodeType_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("types.png");
-  private static Logger LOG = Logger.getLogger(ShowNodeType_Action.class);
 
   public ShowNodeType_Action() {
     super("Show Type", "Show node's HELGINS type", ICON);
@@ -110,4 +109,6 @@ public class ShowNodeType_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "ShowNodeType", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ShowNodeType_Action.class);
 }

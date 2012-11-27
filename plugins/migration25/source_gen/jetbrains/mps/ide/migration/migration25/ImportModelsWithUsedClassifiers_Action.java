@@ -4,8 +4,6 @@ package jetbrains.mps.ide.migration.migration25;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -29,10 +27,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ImportModelsWithUsedClassifiers_Action.class);
 
   public ImportModelsWithUsedClassifiers_Action() {
     super("Import models with used classifiers", "", ICON);
@@ -107,4 +106,6 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(ImportModelsWithUsedClassifiers_Action.class);
 }

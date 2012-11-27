@@ -5,7 +5,6 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -18,10 +17,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.logging.Logger;
 
 public class ModelProperties_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("modelProperties.png");
-  private static Logger LOG = Logger.getLogger(ModelProperties_Action.class);
 
   public ModelProperties_Action() {
     super("Model Properties", "", ICON);
@@ -89,4 +88,6 @@ public class ModelProperties_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "ModelProperties", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ModelProperties_Action.class);
 }

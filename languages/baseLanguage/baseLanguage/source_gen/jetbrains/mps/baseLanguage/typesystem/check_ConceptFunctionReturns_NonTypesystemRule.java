@@ -28,7 +28,7 @@ public class check_ConceptFunctionReturns_NonTypesystemRule extends AbstractNonT
 
   public void applyRule(final SNode func, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode expectedRetType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), func, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
-    boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, _quotation_createNode_rs2pxi_b0a0a0b0a()));
+    boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, _quotation_createNode_rs2pxi_b0a0a0b0b()));
     Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(func, "body", true));
     if (noReturnExpected) {
       for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
@@ -77,7 +77,7 @@ public class check_ConceptFunctionReturns_NonTypesystemRule extends AbstractNonT
     return false;
   }
 
-  private static SNode _quotation_createNode_rs2pxi_b0a0a0b0a() {
+  private static SNode _quotation_createNode_rs2pxi_b0a0a0b0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

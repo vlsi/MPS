@@ -39,7 +39,7 @@ public class typeof_IMethodCall_InferenceRule extends AbstractInferenceRule_Runt
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, mcall, "virtual_isInTypeInferenceContext_4837286298388660615", new Object[]{}))) {
       for (SNode tvd : ListSequence.fromList(BaseMethodDeclaration_Behavior.call_getInferrableTypeVars_6848250892784543828(mdecl))) {
         // assume all unbound type vars outside an inference context are Object 
-        MapSequence.fromMap(subs).put(tvd, _quotation_createNode_2u2uyg_a0b0a0f0a());
+        MapSequence.fromMap(subs).put(tvd, _quotation_createNode_2u2uyg_a0b0a0f0b());
       }
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(mcall, "typeArgument", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(mdecl, "typeVariableDeclaration", true)).isNotEmpty()) {
@@ -135,7 +135,7 @@ public class typeof_IMethodCall_InferenceRule extends AbstractInferenceRule_Runt
     return false;
   }
 
-  private static SNode _quotation_createNode_2u2uyg_a0b0a0f0a() {
+  private static SNode _quotation_createNode_2u2uyg_a0b0a0f0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));

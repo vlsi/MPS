@@ -4,8 +4,6 @@ package jetbrains.mps.vcs.platform.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.vcs.platform.mergedriver.MergeDriverInstaller;
@@ -13,10 +11,11 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class InstalVcsAddons_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(InstalVcsAddons_Action.class);
 
   public InstalVcsAddons_Action() {
     super("Install MPS VCS Add-ons...", "Install custom merge driver for Git and custom diff3 for Subversion", ICON);
@@ -67,4 +66,6 @@ public class InstalVcsAddons_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(InstalVcsAddons_Action.class);
 }

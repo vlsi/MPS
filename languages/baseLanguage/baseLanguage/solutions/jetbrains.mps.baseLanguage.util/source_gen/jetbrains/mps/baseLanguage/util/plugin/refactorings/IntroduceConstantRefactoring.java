@@ -17,7 +17,7 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
   }
 
   public SNode doRefactoring() {
-    SNode newDeclaration = _quotation_createNode_2jj2z2_a0a0a(myVisibilityLevel.getNode(), SNodeOperations.copyNode(getExpressionType()), SNodeOperations.copyNode(getExpression()), getName());
+    SNode newDeclaration = _quotation_createNode_2jj2z2_a0a0b(myVisibilityLevel.getNode(), SNodeOperations.copyNode(getExpressionType()), SNodeOperations.copyNode(getExpression()), getName());
     SNode container = SNodeOperations.cast(this.myContainer, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     ListSequence.fromList(SLinkOperations.getTargets(container, "member", true)).addElement(newDeclaration);
     // <node> 
@@ -40,9 +40,9 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
 
   public void replaceNode(SNode node, SNode declaration) {
     if (Scope.getScope(Scope.parent(node), node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration")).contains(declaration)) {
-      SNodeOperations.replaceWithAnother(node, _quotation_createNode_2jj2z2_a0a0a0a2(declaration));
+      SNodeOperations.replaceWithAnother(node, _quotation_createNode_2jj2z2_a0a0a0a3(declaration));
     } else {
-      SNodeOperations.replaceWithAnother(node, _quotation_createNode_2jj2z2_a0a0a0a0c(this.myContainer, declaration));
+      SNodeOperations.replaceWithAnother(node, _quotation_createNode_2jj2z2_a0a0a0a0d(this.myContainer, declaration));
     }
   }
 
@@ -50,7 +50,7 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Expression") && (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null);
   }
 
-  private static SNode _quotation_createNode_2jj2z2_a0a0a(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
+  private static SNode _quotation_createNode_2jj2z2_a0a0b(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     SNode quotedNode_7 = null;
@@ -73,21 +73,21 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
     return quotedNode_5;
   }
 
-  private static SNode _quotation_createNode_2jj2z2_a0a0a3a0(Object parameter_1) {
+  private static SNode _quotation_createNode_2jj2z2_a0a0a3a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("variableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_2jj2z2_a0a0a0a2(Object parameter_1) {
+  private static SNode _quotation_createNode_2jj2z2_a0a0a0a3(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("variableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_2jj2z2_a0a0a0a0c(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_2jj2z2_a0a0a0a0d(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
     quotedNode_3.setReferenceTarget("classifier", (SNode) parameter_1);

@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -23,10 +22,10 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.java.util.StubResolver;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.logging.Logger;
 
 public class MigrateSourcesToMPS_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(MigrateSourcesToMPS_Action.class);
 
   public MigrateSourcesToMPS_Action() {
     super("Migrate Sources to MPS", "", ICON);
@@ -98,4 +97,6 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "MigrateSourcesToMPS", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(MigrateSourcesToMPS_Action.class);
 }

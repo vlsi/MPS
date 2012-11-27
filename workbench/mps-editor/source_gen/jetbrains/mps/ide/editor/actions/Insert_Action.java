@@ -4,7 +4,6 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -13,10 +12,10 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.logging.Logger;
 
 public class Insert_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(Insert_Action.class);
 
   public Insert_Action() {
     super("Insert New Element", "", ICON);
@@ -70,4 +69,6 @@ public class Insert_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "Insert", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(Insert_Action.class);
 }

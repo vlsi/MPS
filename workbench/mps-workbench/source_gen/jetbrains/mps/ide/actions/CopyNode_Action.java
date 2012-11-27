@@ -5,7 +5,6 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
@@ -16,10 +15,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
+import jetbrains.mps.logging.Logger;
 
 public class CopyNode_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("menu-copy.png");
-  private static Logger LOG = Logger.getLogger(CopyNode_Action.class);
 
   public CopyNode_Action() {
     super("Copy", "", ICON);
@@ -82,4 +81,6 @@ public class CopyNode_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "CopyNode", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(CopyNode_Action.class);
 }

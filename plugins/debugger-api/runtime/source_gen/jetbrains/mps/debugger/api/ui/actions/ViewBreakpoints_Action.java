@@ -5,8 +5,6 @@ package jetbrains.mps.debugger.api.ui.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -16,10 +14,11 @@ import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class ViewBreakpoints_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("viewBreakpoints.png");
-  protected static Log log = LogFactory.getLog(ViewBreakpoints_Action.class);
 
   public ViewBreakpoints_Action() {
     super("View Breakpoints", "", ICON);
@@ -68,4 +67,6 @@ public class ViewBreakpoints_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(ViewBreakpoints_Action.class);
 }

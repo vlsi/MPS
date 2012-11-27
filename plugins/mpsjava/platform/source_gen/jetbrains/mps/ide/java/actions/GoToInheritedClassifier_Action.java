@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -39,10 +38,10 @@ import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.util.GoToHelper;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.logging.Logger;
 
 public class GoToInheritedClassifier_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(GoToInheritedClassifier_Action.class);
 
   public GoToInheritedClassifier_Action() {
     super("Go to Inherited Classifiers", "", ICON);
@@ -166,4 +165,6 @@ public class GoToInheritedClassifier_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "GoToInheritedClassifier", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(GoToInheritedClassifier_Action.class);
 }

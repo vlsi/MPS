@@ -1725,7 +1725,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
     quotedNode_28.addChild("expression", quotedNode_29);
     quotedNode_25.addChild("statement", quotedNode_28);
     quotedNode_21.addChild("body", quotedNode_25);
-    quotedNode_19.addChild("method", quotedNode_21);
+    quotedNode_19.addChild("member", quotedNode_21);
     quotedNode_17.addChild("cls", quotedNode_19);
     quotedNode_11.addChild("creator", quotedNode_17);
     quotedNode_9.addChild("actualArgument", quotedNode_11);

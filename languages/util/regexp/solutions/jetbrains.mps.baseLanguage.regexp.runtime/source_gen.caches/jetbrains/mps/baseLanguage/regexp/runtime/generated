@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dq5m5n4zkq1na7pyiuq0zm7h2dw7rv8">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-uvseejb8lftjizgrik03igcx568a80" />
+<dependencies version="2" modelHash="-chwb1louh1hr4jodsr3a6cdb06uxl2j">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3i4sr9viv2mafxmv1gn7u5798g1tob7" />
   <common hash="8ahj7rvru7oj7bseim2owqbjiloq5oi" />
-  <source id="8235206972880844181" name="Replacer" hash="jsrw8kn96ribm4d90d49pmmqjmw4j2">
+  <source id="8235206972880844181" name="Replacer" hash="-5700wxaopu6q5px6nz65huhrqpdnkvd">
     <file name="Replacer.java" />
   </source>
-  <source id="8235206972880844189" name="RegexpOperations" hash="-49fxhoywvq891stkeaoyrl4bvoskr80">
+  <source id="8235206972880844189" name="RegexpOperations" hash="emljpcaye7vr5i3xac4cqltvu9ysdua">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="RegexpOperations.java" />
   </source>

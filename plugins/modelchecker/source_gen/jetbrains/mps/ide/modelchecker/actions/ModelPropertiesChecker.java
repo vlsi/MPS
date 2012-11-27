@@ -26,7 +26,7 @@ public class ModelPropertiesChecker extends SpecificChecker {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
     SModelDescriptor modelDescriptor = model.getModelDescriptor();
-    IScope scope = check_t4d01o_a0f0a(check_t4d01o_a0a5a0(modelDescriptor));
+    IScope scope = check_t4d01o_a0f0b(check_t4d01o_a0a5a1(modelDescriptor));
     if (scope != null) {
       List<String> errors = new ModelValidator(modelDescriptor).validate(scope);
       if (!(ListSequence.fromList(errors).isEmpty())) {
@@ -43,14 +43,14 @@ public class ModelPropertiesChecker extends SpecificChecker {
     return results;
   }
 
-  private static IScope check_t4d01o_a0f0a(IModule checkedDotOperand) {
+  private static IScope check_t4d01o_a0f0b(IModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScope();
     }
     return null;
   }
 
-  private static IModule check_t4d01o_a0a5a0(SModelDescriptor checkedDotOperand) {
+  private static IModule check_t4d01o_a0a5a1(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

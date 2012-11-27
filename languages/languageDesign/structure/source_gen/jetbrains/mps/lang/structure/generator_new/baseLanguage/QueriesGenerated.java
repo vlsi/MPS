@@ -70,6 +70,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1219108817229(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name") + "_PropertySupport";
+  }
+
   public static Object propertyMacro_GetPropertyValue_1212087871489(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if (SPropertyOperations.getString(_context.getNode(), "noValueText") != null) {
       return SPropertyOperations.getString(_context.getNode(), "noValueText");
@@ -77,7 +81,7 @@ public class QueriesGenerated {
     return "";
   }
 
-  public static Object propertyMacro_GetPropertyValue_1219108817229(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_1174696429121(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name") + "_PropertySupport";
   }
 
@@ -85,17 +89,13 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "constraint");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1174696429121(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name") + "_PropertySupport";
+  public static Object propertyMacro_GetPropertyValue_1225099518029(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String capitalizedName = NameUtil.capitalize(NameUtil.shortNameFromLongName(_context.getOriginalInputModel().getModelDescriptor().getModule().getModuleFqName()));
+    return capitalizedName + "_Language";
   }
 
   public static Object propertyMacro_GetPropertyValue_1225099631046(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.getOriginalInputModel().getModelDescriptor().getModule().getModuleReference().toString();
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1225099518029(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String capitalizedName = NameUtil.capitalize(NameUtil.shortNameFromLongName(_context.getOriginalInputModel().getModelDescriptor().getModule().getModuleFqName()));
-    return capitalizedName + "_Language";
   }
 
   public static Object propertyMacro_GetPropertyValue_1281791650135608761(final IOperationContext operationContext, final PropertyMacroContext _context) {

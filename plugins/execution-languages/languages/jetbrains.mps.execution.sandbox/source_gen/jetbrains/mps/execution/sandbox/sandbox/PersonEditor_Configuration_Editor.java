@@ -4,25 +4,17 @@ package jetbrains.mps.execution.sandbox.sandbox;
 
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import javax.swing.JTextField;
-import com.intellij.openapi.util.Factory;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import jetbrains.mps.ide.common.LayoutUtil;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.util.Factory;
 
 public class PersonEditor_Configuration_Editor extends SettingsEditorEx<PersonEditor_Configuration> {
   private JTextField myNameField;
   private JTextField myEmailField;
-
-  public PersonEditor_Configuration_Editor() {
-    super(new Factory<PersonEditor_Configuration>() {
-      public PersonEditor_Configuration create() {
-        return new PersonEditor_Configuration();
-      }
-    });
-  }
 
   public void disposeEditor() {
   }
@@ -47,5 +39,13 @@ public class PersonEditor_Configuration_Editor extends SettingsEditorEx<PersonEd
   public void resetEditorFrom(final PersonEditor_Configuration configuration) {
     myNameField.setText(configuration.getName());
     myEmailField.setText(configuration.getEmail());
+  }
+
+  public PersonEditor_Configuration_Editor() {
+    super(new Factory<PersonEditor_Configuration>() {
+      public PersonEditor_Configuration create() {
+        return new PersonEditor_Configuration();
+      }
+    });
   }
 }

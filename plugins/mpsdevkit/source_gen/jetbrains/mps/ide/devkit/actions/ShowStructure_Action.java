@@ -4,8 +4,6 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -17,10 +15,11 @@ import com.intellij.ide.structureView.StructureView;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup;
 import com.intellij.openapi.vfs.VirtualFile;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class ShowStructure_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ShowStructure_Action.class);
 
   public ShowStructure_Action() {
     super("Show Structure", "", ICON);
@@ -83,4 +82,6 @@ public class ShowStructure_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(ShowStructure_Action.class);
 }

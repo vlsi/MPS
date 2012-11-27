@@ -26,7 +26,7 @@ public class PrimitiveArraySupertypes_SubtypingRule extends SubtypingRule_Runtim
   public List<SNode> getSubOrSuperTypes(SNode arrayType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     // see JLS 3.0 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(arrayType, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
-      return Arrays.asList(_quotation_createNode_l6pagy_a0a0b0a(), _quotation_createNode_l6pagy_b0a0b0a(), _quotation_createNode_l6pagy_c0a0b0a());
+      return Arrays.asList(_quotation_createNode_l6pagy_a0a0b0b(), _quotation_createNode_l6pagy_b0a0b0b(), _quotation_createNode_l6pagy_c0a0b0b());
     }
     return ListSequence.fromList(new ArrayList<SNode>());
   }
@@ -46,21 +46,21 @@ public class PrimitiveArraySupertypes_SubtypingRule extends SubtypingRule_Runtim
     return false;
   }
 
-  private static SNode _quotation_createNode_l6pagy_a0a0b0a() {
+  private static SNode _quotation_createNode_l6pagy_a0a0b0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_l6pagy_b0a0b0a() {
+  private static SNode _quotation_createNode_l6pagy_b0a0b0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~Serializable")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_l6pagy_c0a0b0a() {
+  private static SNode _quotation_createNode_l6pagy_c0a0b0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Cloneable")));

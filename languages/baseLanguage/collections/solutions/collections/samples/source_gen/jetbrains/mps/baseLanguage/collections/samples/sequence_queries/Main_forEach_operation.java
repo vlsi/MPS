@@ -20,7 +20,6 @@ import jetbrains.mps.internal.collections.runtime.StopIteratingException;
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _3_num;
 
               protected boolean moveToNext() {
 __loop__:
@@ -58,6 +57,8 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _3_num;
             };
           }
         };

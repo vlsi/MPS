@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
@@ -23,6 +22,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -32,7 +32,6 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class GenerateEqualsAndHashCode_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(GenerateEqualsAndHashCode_Action.class);
 
   public GenerateEqualsAndHashCode_Action() {
     super("equals() and hashCode", "", ICON);
@@ -188,6 +187,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
   private SNode getClassConcept(final Map<String, Object> _params) {
     return SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
   }
+
+  private static Logger LOG = Logger.getLogger(GenerateEqualsAndHashCode_Action.class);
 
   private static SNode _quotation_createNode_x9xljz_a0m0a(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     SNode quotedNode_5 = null;

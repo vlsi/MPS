@@ -13,8 +13,8 @@ import jetbrains.mps.baseLanguage.overloadedOperators.util.BinaryOperationUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedBinaryOperator_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedBinaryOperator_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -30,12 +30,12 @@ public class QueriesGenerated {
     return BinaryOperationUtil.hasOverloadedOperators(_context.getNode(), TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), Sequence.fromIterable(operators).toListSequence());
   }
 
-  public static Object propertyMacro_GetPropertyValue_6677452554240291185(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return OverloadedBinaryOperator_Behavior.call_getFunctionName_6677452554240637506(_context.getNode());
-  }
-
   public static Object propertyMacro_GetPropertyValue_6677452554240269754(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6677452554240291185(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return OverloadedBinaryOperator_Behavior.call_getFunctionName_6677452554240637506(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_3524394717035465437(final IOperationContext operationContext, final PropertyMacroContext _context) {

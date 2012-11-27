@@ -29,8 +29,8 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public PositionInfo(@NotNull Element element) throws DataConversionException {
-    myNodeId = InternUtil.intern(check_1myh1n_a0a0a1(element.getAttribute(NODE_ID)));
-    myFileName = InternUtil.intern(check_1myh1n_a0a1a1(element.getAttribute(FILE_NAME)));
+    myNodeId = InternUtil.intern(check_1myh1n_a0a0a31(element.getAttribute(NODE_ID)));
+    myFileName = InternUtil.intern(check_1myh1n_a0a1a31(element.getAttribute(FILE_NAME)));
     myStartLine = element.getAttribute(PositionInfo.START_LINE).getIntValue();
     myStartPosition = element.getAttribute(PositionInfo.START_POSITION).getIntValue();
     myEndLine = element.getAttribute(PositionInfo.END_LINE).getIntValue();
@@ -149,11 +149,11 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public boolean isOccupyTheSameSpace(PositionInfo p) {
-    return (eq_1myh1n_a0a0a0a0q(myStartLine, p.myStartLine)) && (eq_1myh1n_a0a0a0a0q_0(myEndLine, p.myEndLine)) && (eq_1myh1n_a0a0a0a61(myStartPosition, p.myStartPosition)) && (eq_1myh1n_a0a0a0q(myEndPosition, p.myEndPosition));
+    return (eq_1myh1n_a0a0a0a0eb(myStartLine, p.myStartLine)) && (eq_1myh1n_a0a0a0a0eb_0(myEndLine, p.myEndLine)) && (eq_1myh1n_a0a0a0a03(myStartPosition, p.myStartPosition)) && (eq_1myh1n_a0a0a0eb(myEndPosition, p.myEndPosition));
   }
 
   public boolean isPositionInside(String file, int line) {
-    return eq_1myh1n_a0a0a0r(myFileName, file) && myStartLine <= line && line <= myEndLine;
+    return eq_1myh1n_a0a0a0fb(myFileName, file) && myStartLine <= line && line <= myEndLine;
   }
 
   public void fillFrom(PositionInfo position) {
@@ -165,49 +165,49 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
     myEndPosition = position.myEndPosition;
   }
 
-  private static String check_1myh1n_a0a0a1(Attribute checkedDotOperand) {
+  private static String check_1myh1n_a0a0a31(Attribute checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getValue();
     }
     return null;
   }
 
-  private static String check_1myh1n_a0a1a1(Attribute checkedDotOperand) {
+  private static String check_1myh1n_a0a1a31(Attribute checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getValue();
     }
     return null;
   }
 
-  private static boolean eq_1myh1n_a0a0a0a0q(Object a, Object b) {
+  private static boolean eq_1myh1n_a0a0a0a0eb(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_1myh1n_a0a0a0a0q_0(Object a, Object b) {
+  private static boolean eq_1myh1n_a0a0a0a0eb_0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_1myh1n_a0a0a0a61(Object a, Object b) {
+  private static boolean eq_1myh1n_a0a0a0a03(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_1myh1n_a0a0a0q(Object a, Object b) {
+  private static boolean eq_1myh1n_a0a0a0eb(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_1myh1n_a0a0a0r(Object a, Object b) {
+  private static boolean eq_1myh1n_a0a0a0fb(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

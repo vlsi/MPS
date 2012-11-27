@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
@@ -20,12 +19,12 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class GenerateMainMethod_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(GenerateMainMethod_Action.class);
 
   public GenerateMainMethod_Action() {
     super("main(Strins[] args)", "", ICON);
@@ -88,6 +87,8 @@ public class GenerateMainMethod_Action extends BaseAction {
   private SNode getClassConcept(final Map<String, Object> _params) {
     return SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
   }
+
+  private static Logger LOG = Logger.getLogger(GenerateMainMethod_Action.class);
 
   private static SNode _quotation_createNode_fb0mnr_a0b0a() {
     SNode quotedNode_1 = null;

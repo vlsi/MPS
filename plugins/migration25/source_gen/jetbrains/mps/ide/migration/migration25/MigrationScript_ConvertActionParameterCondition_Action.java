@@ -4,8 +4,6 @@ package jetbrains.mps.ide.migration.migration25;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -20,10 +18,11 @@ import com.intellij.openapi.command.CommandProcessorEx;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import java.awt.Frame;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class MigrationScript_ConvertActionParameterCondition_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(MigrationScript_ConvertActionParameterCondition_Action.class);
 
   public MigrationScript_ConvertActionParameterCondition_Action() {
     super("Apply Convert Action Parameter Condition", "", ICON);
@@ -79,4 +78,6 @@ public class MigrationScript_ConvertActionParameterCondition_Action extends Base
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(MigrationScript_ConvertActionParameterCondition_Action.class);
 }

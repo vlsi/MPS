@@ -4,7 +4,6 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
@@ -17,10 +16,10 @@ import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.logging.Logger;
 
 public class GoByCurrentReference_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(GoByCurrentReference_Action.class);
 
   public GoByCurrentReference_Action() {
     super("Declaration", "", ICON);
@@ -88,4 +87,6 @@ public class GoByCurrentReference_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "GoByCurrentReference", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(GoByCurrentReference_Action.class);
 }

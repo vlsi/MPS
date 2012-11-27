@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-32s28xkb960nmwku4tkglkqr6fqwihj">
+<dependencies version="2" modelHash="-34s3v6e0yfhq9s1oc0dwcdyo5r9xlv5">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -13,13 +13,13 @@
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/org.jetbrains.mps.openapi.persistence@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-uvseejb8lftjizgrik03igcx568a80" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3i4sr9viv2mafxmv1gn7u5798g1tob7" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-2rqveg90ftfn2b12k9dvrnr9oxg6a6s" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-a7expmn7xxet6s6dkjq7420bsxmootx" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-alf2ogeiijb2ox8l3f57xq8a4vsqut" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-8gkjv52v71imq18kaxuyidjydrn9svh" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="6f9jb5k2icdty624yqk3hbqvsk65dq5" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-42u6f9vbzpf201qzziwe8drcbr8ay4o" />
   <common hash="-b2mw5z0snou2m5ll6nd4ne9e6kle14g" />
-  <source id="8482273916971826666" name="JavaClassStubsModelRoot" hash="a00dvyjh775xhubmfyq6ulmgt5d86xz">
+  <source id="8482273916971826666" name="JavaClassStubsModelRoot" hash="-5nmjjwrd1q7hrimh8h2f6bkei6s1bhc">
     <dep root="8482273916972677061" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -33,23 +33,23 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JavaClassStubsModelRoot.java" />
   </source>
-  <source id="8482273916972677061" name="JavaClassStubConstants" hash="-6uivlbw314bbbpd0fwmjvv08t3m6b7p">
+  <source id="8482273916972677061" name="JavaClassStubConstants" hash="8j9yribn9iotr07h9147o38xkkgosv5">
     <file name="JavaClassStubConstants.java" />
   </source>
-  <source id="5592980646743658996" name="JavaClassStubModelRootFactory" hash="81h7ho0y6tmgc7cmmeft54ut138nbcb">
+  <source id="5592980646743658996" name="JavaClassStubModelRootFactory" hash="43145zippdfd71jnvu77mv5sfd2fsuw">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JavaClassStubModelRootFactory.java" />
   </source>
-  <source id="5592980646743690876" name="JavaClassStubModelRootSettingsProvider" hash="-c9mxz8zc40nevnuilo6ztaxy6tc5cki">
+  <source id="5592980646743690876" name="JavaClassStubModelRootSettingsProvider" hash="423b7anqxhjissld5zxlav2vt1qbfhm">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JavaClassStubModelRootSettingsProvider.java" />
   </source>
-  <source id="1066556226426762525" name="JavaClassStubsModelRootSettingsEditor" hash="-c2o3f5rju3y1ebxb8zbzvnt3utxtl1w">
+  <source id="1066556226426762525" name="JavaClassStubsModelRootSettingsEditor" hash="-edf51ygwmgva4kx7fouctl1u442jvcy">
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.ui.filechoosers.treefilechooser(MPS.Platform/jetbrains.mps.ide.ui.filechoosers.treefilechooser@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JavaClassStubsModelRootSettingsEditor.java" />
   </source>
-  <source id="7810928611204560052" name="JavaClassStubModelDescriptor" hash="e44hhuebxzeougxswgks5x09sngy7mj">
+  <source id="7810928611204560052" name="JavaClassStubModelDescriptor" hash="-3ay02vchzr4uldv7c9l3tk2ccg15oic">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />

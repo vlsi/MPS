@@ -32,7 +32,7 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
           }
         }
         if (matches_q6q799_a1a) {
-          ListSequence.fromList(result).addElement(_quotation_createNode_r0kks7_a0a0a0a2a1a1a0(SLinkOperations.getTarget(matchedNode_q6q799_b0, "classifier", false), SLinkOperations.getTargets(matchedNode_q6q799_b0, "typeParameter", true)));
+          ListSequence.fromList(result).addElement(_quotation_createNode_r0kks7_a0a0a0a2a1a1a1(SLinkOperations.getTarget(matchedNode_q6q799_b0, "classifier", false), SLinkOperations.getTargets(matchedNode_q6q799_b0, "typeParameter", true)));
         }
       }
     }
@@ -54,7 +54,7 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
     return false;
   }
 
-  private static SNode _quotation_createNode_r0kks7_a0a0a0a2a1a1a0(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_r0kks7_a0a0a0a2a1a1a1(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);

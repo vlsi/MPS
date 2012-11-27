@@ -105,17 +105,17 @@ public class TestMethodRow implements TestStatisticsRow {
   }
 
   public boolean matches(String testCase, String testMethod) {
-    return testCase == null || (eq_52sp5f_a0a0a0a61(testCase, myTestCaseName) && (testMethod == null || eq_52sp5f_a0a0a0a0a61(testMethod, myTestMethodName)));
+    return testCase == null || (eq_52sp5f_a0a0a0a82(testCase, myTestCaseName) && (testMethod == null || eq_52sp5f_a0a0a0a0a82(testMethod, myTestMethodName)));
   }
 
-  private static boolean eq_52sp5f_a0a0a0a0a61(Object a, Object b) {
+  private static boolean eq_52sp5f_a0a0a0a0a82(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_52sp5f_a0a0a0a61(Object a, Object b) {
+  private static boolean eq_52sp5f_a0a0a0a82(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

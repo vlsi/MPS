@@ -20,11 +20,6 @@ public class EditorUtils {
           public Iterator<EditorCell> iterator() {
             return new YieldingIterator<EditorCell>() {
               private int __CP__ = 0;
-              private EditorCell _5_childCell;
-              private Iterator<EditorCell> _5_childCell_it;
-              private Iterable<EditorCell> _9_cells;
-              private EditorCell _10__yield_5i6nbm_b0a0b0a0a0a;
-              private Iterator<EditorCell> _10__yield_5i6nbm_b0a0b0a0a0a_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -88,6 +83,12 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private EditorCell _5_childCell;
+              private Iterator<EditorCell> _5_childCell_it;
+              private Iterable<EditorCell> _9_cells;
+              private EditorCell _10__yield_5i6nbm_b0a0b0a0a0a;
+              private Iterator<EditorCell> _10__yield_5i6nbm_b0a0b0a0a0a_it;
             };
           }
         };

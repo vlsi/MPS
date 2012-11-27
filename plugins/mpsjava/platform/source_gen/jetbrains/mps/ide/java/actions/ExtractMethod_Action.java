@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
@@ -26,10 +25,10 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.java.platform.refactorings.ExtractMethodDialog;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.logging.Logger;
 
 public class ExtractMethod_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ExtractMethod_Action.class);
 
   public ExtractMethod_Action() {
     super("Extract Method", "", ICON);
@@ -109,4 +108,6 @@ public class ExtractMethod_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "ExtractMethod", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ExtractMethod_Action.class);
 }

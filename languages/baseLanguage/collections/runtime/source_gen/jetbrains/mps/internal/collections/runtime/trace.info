@@ -1537,12 +1537,12 @@
       <varInfo nodeId="6034304739317701422" varName="array" />
       <varInfo nodeId="6034304739317701419" varName="coll" />
     </scopeInfo>
-    <unitInfo nodeId="4279878350705222513" fileName="CollectionSequence.java" startLine="147" startPosition="15" endLine="151" endPosition="5" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence$5" />
-    <unitInfo nodeId="4279878350705222572" fileName="CollectionSequence.java" startLine="156" startPosition="15" endLine="160" endPosition="5" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence$6" />
-    <unitInfo nodeId="6256642990713378098" fileName="CollectionSequence.java" startLine="209" startPosition="15" endLine="213" endPosition="5" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence$1" />
-    <unitInfo nodeId="6034304739317701336" fileName="CollectionSequence.java" startLine="247" startPosition="15" endLine="251" endPosition="5" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence$2" />
-    <unitInfo nodeId="6034304739317701583" fileName="CollectionSequence.java" startLine="272" startPosition="19" endLine="276" endPosition="9" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence$3" />
-    <unitInfo nodeId="6034304739317701636" fileName="CollectionSequence.java" startLine="293" startPosition="15" endLine="297" endPosition="5" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence$4" />
+    <unitInfo nodeId="4279878350705222513" fileName="CollectionSequence.java" startLine="147" startPosition="15" endLine="151" endPosition="5" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence$1" />
+    <unitInfo nodeId="4279878350705222572" fileName="CollectionSequence.java" startLine="156" startPosition="15" endLine="160" endPosition="5" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence$2" />
+    <unitInfo nodeId="6256642990713378098" fileName="CollectionSequence.java" startLine="209" startPosition="15" endLine="213" endPosition="5" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence$3" />
+    <unitInfo nodeId="6034304739317701336" fileName="CollectionSequence.java" startLine="247" startPosition="15" endLine="251" endPosition="5" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence$4" />
+    <unitInfo nodeId="6034304739317701583" fileName="CollectionSequence.java" startLine="272" startPosition="19" endLine="276" endPosition="9" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence$5" />
+    <unitInfo nodeId="6034304739317701636" fileName="CollectionSequence.java" startLine="293" startPosition="15" endLine="297" endPosition="5" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence$6" />
     <unitInfo nodeId="6543581031674025475" fileName="CollectionSequence.java" startLine="16" startPosition="0" endLine="300" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
   </root>
   <root nodeId="6543581031674025921" modelId="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)">

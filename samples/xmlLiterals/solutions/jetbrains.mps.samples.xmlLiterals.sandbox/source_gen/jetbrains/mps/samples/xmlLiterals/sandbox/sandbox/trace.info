@@ -55,13 +55,13 @@
       <varInfo nodeId="7417816926334720677" varName="newAddress" />
     </scopeInfo>
     <scopeInfo nodeId="9152904044274464620" fileName="Person.java" startLine="43" startPosition="31" endLine="57" endPosition="42">
-      <varInfo nodeId="9152904044274464620" varName="elementMacro_jqm3zu_a0c0a0a0g" />
-      <varInfo nodeId="9152904044274464620" varName="simpleElement_jqm3zu_a0a0a0g" />
-      <varInfo nodeId="9152904044274464620" varName="simpleElement_jqm3zu_a0a0g" />
-      <varInfo nodeId="9152904044274464620" varName="simpleElement_jqm3zu_b0a0a0g" />
-      <varInfo nodeId="9152904044274464620" varName="simpleElement_jqm3zu_c0a0a0g" />
-      <varInfo nodeId="9152904044274464620" varName="text_jqm3zu_a0a0a0a0g" />
-      <varInfo nodeId="9152904044274464620" varName="text_jqm3zu_a0b0a0a0g" />
+      <varInfo nodeId="9152904044274464620" varName="elementMacro_jqm3zu_a0c0a0a0k" />
+      <varInfo nodeId="9152904044274464620" varName="simpleElement_jqm3zu_a0a0a0k" />
+      <varInfo nodeId="9152904044274464620" varName="simpleElement_jqm3zu_a0a0k" />
+      <varInfo nodeId="9152904044274464620" varName="simpleElement_jqm3zu_b0a0a0k" />
+      <varInfo nodeId="9152904044274464620" varName="simpleElement_jqm3zu_c0a0a0k" />
+      <varInfo nodeId="9152904044274464620" varName="text_jqm3zu_a0a0a0a0k" />
+      <varInfo nodeId="9152904044274464620" varName="text_jqm3zu_a0b0a0a0k" />
     </scopeInfo>
     <scopeInfo nodeId="9152904044274464620" fileName="Person.java" startLine="43" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="9152904044274458174" fileName="Person.java" startLine="41" startPosition="26" endLine="59" endPosition="15" />
@@ -89,8 +89,8 @@
     </scopeInfo>
     <scopeInfo nodeId="7417816926334720717" fileName="Address.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
     <scopeInfo nodeId="7417816926334720703" fileName="Address.java" startLine="22" startPosition="31" endLine="26" endPosition="42">
-      <varInfo nodeId="7417816926334720703" varName="simpleElement_49w4x6_a0a0b" />
-      <varInfo nodeId="7417816926334720703" varName="text_49w4x6_a0a0a0b" />
+      <varInfo nodeId="7417816926334720703" varName="simpleElement_49w4x6_a0a0d" />
+      <varInfo nodeId="7417816926334720703" varName="text_49w4x6_a0a0a0d" />
     </scopeInfo>
     <scopeInfo nodeId="7417816926334720703" fileName="Address.java" startLine="22" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="9152904044274518185" fileName="Address.java" startLine="20" startPosition="26" endLine="28" endPosition="15" />

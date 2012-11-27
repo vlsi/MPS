@@ -29,7 +29,7 @@ public class JUnit4TestWrapper extends AbstractTestWrapper<SNode> {
   @NonNls
   @Override
   public String getFqName() {
-    return check_rdmqn1_a0a1(getNode(), this);
+    return check_rdmqn1_a0a2(getNode(), this);
   }
 
   @NotNull
@@ -63,7 +63,7 @@ public class JUnit4TestWrapper extends AbstractTestWrapper<SNode> {
     return false;
   }
 
-  private static String check_rdmqn1_a0a1(SNode checkedDotOperand, JUnit4TestWrapper checkedDotThisExpression) {
+  private static String check_rdmqn1_a0a2(SNode checkedDotOperand, JUnit4TestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return BehaviorReflection.invokeVirtual(String.class, checkedDotOperand, "virtual_getFqName_1213877404258", new Object[]{});
     }

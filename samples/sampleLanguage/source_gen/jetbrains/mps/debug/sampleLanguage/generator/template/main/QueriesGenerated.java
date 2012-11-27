@@ -14,16 +14,16 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class QueriesGenerated {
+  public static Object propertyMacro_GetPropertyValue_1816315258006258206(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1816315258006258250(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if (SPropertyOperations.getBoolean(_context.getNode(), "isMain")) {
       return "main";
     } else {
       return SPropertyOperations.getString(_context.getNode(), "name");
     }
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1816315258006258206(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1816315258006258312(final IOperationContext operationContext, final PropertyMacroContext _context) {

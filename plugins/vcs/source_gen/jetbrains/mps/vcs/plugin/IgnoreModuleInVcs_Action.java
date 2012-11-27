@@ -4,8 +4,6 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -20,10 +18,11 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.changes.ui.IgnoreUnversionedDialog;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class IgnoreModuleInVcs_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(IgnoreModuleInVcs_Action.class);
 
   public IgnoreModuleInVcs_Action() {
     super("Ignore Module...", "", ICON);
@@ -81,4 +80,6 @@ public class IgnoreModuleInVcs_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(IgnoreModuleInVcs_Action.class);
 }

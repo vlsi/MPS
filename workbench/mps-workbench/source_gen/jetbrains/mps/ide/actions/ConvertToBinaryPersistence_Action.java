@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
@@ -28,10 +27,10 @@ import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.persistence.binary.BinaryPersistence;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.logging.Logger;
 
 public class ConvertToBinaryPersistence_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ConvertToBinaryPersistence_Action.class);
 
   public ConvertToBinaryPersistence_Action() {
     super("Convert to binary format", "", ICON);
@@ -130,4 +129,6 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "ConvertToBinaryPersistence", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ConvertToBinaryPersistence_Action.class);
 }

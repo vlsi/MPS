@@ -22,7 +22,7 @@ public class typeof_GetNextOperation_InferenceRule extends AbstractInferenceRule
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(next);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1383381939051695194", 0, null);
-      typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_4mxpld_a0b0a(typeCheckingContext.getRepresentative(elementType_typevar_1237471059662)), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237471059671", true), false, false, _info_12389875345);
+      typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_4mxpld_a0b0b(typeCheckingContext.getRepresentative(elementType_typevar_1237471059662)), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237471059671", true), false, false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = next;
@@ -46,7 +46,7 @@ public class typeof_GetNextOperation_InferenceRule extends AbstractInferenceRule
     return false;
   }
 
-  private static SNode _quotation_createNode_4mxpld_a0b0a(Object parameter_1) {
+  private static SNode _quotation_createNode_4mxpld_a0b0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.IteratorType", null, null, GlobalScope.getInstance(), false);

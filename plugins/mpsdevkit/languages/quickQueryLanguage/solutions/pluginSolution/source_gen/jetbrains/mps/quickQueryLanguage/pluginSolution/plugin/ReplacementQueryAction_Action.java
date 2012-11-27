@@ -4,7 +4,6 @@ package jetbrains.mps.quickQueryLanguage.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -15,10 +14,10 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.logging.Logger;
 
 public class ReplacementQueryAction_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ReplacementQueryAction_Action.class);
 
   public ReplacementQueryAction_Action() {
     super("Modify Instances by Condition", "", ICON);
@@ -85,4 +84,6 @@ public class ReplacementQueryAction_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "ReplacementQueryAction", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ReplacementQueryAction_Action.class);
 }

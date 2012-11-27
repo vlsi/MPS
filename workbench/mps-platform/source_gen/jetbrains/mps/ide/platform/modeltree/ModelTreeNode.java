@@ -8,9 +8,6 @@ import javax.swing.Icon;
 public class ModelTreeNode extends DefaultMutableTreeNode {
   private Icon myCollapsedIcon;
   private Icon myExpandedIcon;
-  private String myText;
-  private boolean myLeaf;
-  private boolean myInitialized;
 
   public ModelTreeNode(String label) {
     this(label, null, label);
@@ -49,6 +46,8 @@ public class ModelTreeNode extends DefaultMutableTreeNode {
     );
   }
 
+  private String myText;
+
   public String getText() {
     return this.myText;
   }
@@ -57,6 +56,8 @@ public class ModelTreeNode extends DefaultMutableTreeNode {
     this.myText = value;
   }
 
+  private boolean myLeaf;
+
   public boolean getLeaf() {
     return this.myLeaf;
   }
@@ -64,6 +65,8 @@ public class ModelTreeNode extends DefaultMutableTreeNode {
   public void setLeaf(boolean value) {
     this.myLeaf = value;
   }
+
+  private boolean myInitialized;
 
   public boolean getInitialized() {
     return this.myInitialized;

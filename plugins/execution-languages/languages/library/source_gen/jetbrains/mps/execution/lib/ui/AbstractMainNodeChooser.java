@@ -106,7 +106,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
   }
 
   public void setNode(SNode node) {
-    if (check_wlpn4v_a0a0e(this.myNodePointer, this) == node) {
+    if (check_wlpn4v_a0a0i(this.myNodePointer, this) == node) {
       return;
     }
     if (node == null) {
@@ -167,7 +167,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
     ListSequence.fromList(myListeners).clear();
   }
 
-  private static SNode check_wlpn4v_a0a0e(SNodePointer checkedDotOperand, AbstractMainNodeChooser checkedDotThisExpression) {
+  private static SNode check_wlpn4v_a0a0i(SNodePointer checkedDotOperand, AbstractMainNodeChooser checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNode();
     }

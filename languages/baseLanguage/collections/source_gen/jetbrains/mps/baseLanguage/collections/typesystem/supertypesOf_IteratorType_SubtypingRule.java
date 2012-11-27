@@ -20,7 +20,7 @@ public class supertypesOf_IteratorType_SubtypingRule extends SubtypingRule_Runti
   }
 
   public SNode getSubOrSuperType(SNode iteratorType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_3m2hv_a0a0(SLinkOperations.getTarget(iteratorType, "elementType", true));
+    return _quotation_createNode_3m2hv_a0a1(SLinkOperations.getTarget(iteratorType, "elementType", true));
   }
 
   public String getApplicableConceptFQName() {
@@ -38,7 +38,7 @@ public class supertypesOf_IteratorType_SubtypingRule extends SubtypingRule_Runti
     return true;
   }
 
-  private static SNode _quotation_createNode_3m2hv_a0a0(Object parameter_1) {
+  private static SNode _quotation_createNode_3m2hv_a0a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
