@@ -17,7 +17,6 @@ import com.intellij.openapi.project.Project;
 
 public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvider.BaseMpsBeforeRunTask> extends BeforeRunTaskProvider<T> {
   protected static Log log = LogFactory.getLog(BaseMpsBeforeTaskProvider.class);
-
   private final String myName;
   private final String myAlias;
 

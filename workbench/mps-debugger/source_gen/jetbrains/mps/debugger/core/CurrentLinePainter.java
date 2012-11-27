@@ -14,7 +14,6 @@ import java.awt.Graphics;
 
 public class CurrentLinePainter extends DebuggerCellPainter<SNodePointer> {
   private static final Color STRIPE_COLOR = new Color(0, 0, 255);
-
   @NotNull
   private final SNodePointer myNodePointer;
   private boolean myInvisible = false;

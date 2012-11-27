@@ -22,7 +22,6 @@ import org.jetbrains.annotations.Nullable;
 public class ScriptsGlobally_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ScriptsGlobally_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsGlobally_ActionGroup";
-
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
 
   public ScriptsGlobally_ActionGroup() {

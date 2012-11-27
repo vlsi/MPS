@@ -16,7 +16,6 @@ import com.intellij.openapi.extensions.Extensions;
 
 public class Ant_Kind implements ConfigurationType {
   private static final Icon ICON = IconUtil.getIcon("build.png");
-
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
 
   public Ant_Kind() {

@@ -26,7 +26,6 @@ import java.io.IOException;
 
 /*package*/ class ModelMerger extends SimpleMerger {
   protected static Log log = LogFactory.getLog(ModelMerger.class);
-
   private SModelFqName myModelFqName;
 
   /*package*/ ModelMerger() {

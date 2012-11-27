@@ -16,7 +16,6 @@ import javax.swing.JComponent;
 
 public class MoveUpDialog extends RefactoringDialog {
   private static String REFACTORING_NAME = RefactoringBundle.message("move.title");
-
   private SNode myTarget;
   private NodeHierarchyChooser myPanel;
   private SNode myConcept;

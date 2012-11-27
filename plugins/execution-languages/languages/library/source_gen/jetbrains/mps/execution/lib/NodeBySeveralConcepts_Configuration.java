@@ -26,7 +26,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class NodeBySeveralConcepts_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   private static Logger LOG = Logger.getLogger(NodeBySeveralConcepts_Configuration.class);
-
   @NotNull
   private NodeBySeveralConcepts_Configuration.MyState myState = new NodeBySeveralConcepts_Configuration.MyState();
   private final List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargets;

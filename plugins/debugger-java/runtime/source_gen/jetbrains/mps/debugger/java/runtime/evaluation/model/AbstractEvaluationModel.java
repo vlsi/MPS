@@ -49,7 +49,6 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 public abstract class AbstractEvaluationModel {
   /*package*/ static final String EVALUATOR_NAME = "EvaluatorInstance";
   public static final boolean IS_DEVELOPER_MODE = Boolean.getBoolean("evaluation.developer");
-
   protected JavaUiState myUiState;
   protected final DebugSession myDebugSession;
   protected final IOperationContext myContext;

@@ -263,108 +263,108 @@
   </root>
   <root nodeId="8321799582437916610" modelId="r:31e73d62-e873-4ed6-bd22-16d8721ebfa3(jetbrains.mps.debugger.api.lang.typesystem)">
     <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SNODE_POINTER_wcp5kc_a0a0a0a0b0c0a0a0a0a0a0d" />
-    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMatchingPattern2" />
-    <nodeInfo nodeId="8321799582437927607" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="23" startPosition="86" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="27" startPosition="27" endLine="28" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="32" startPosition="5" endLine="33" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="33" startPosition="116" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="39" startPosition="5" endLine="40" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="40" startPosition="105" endLine="41" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="41" startPosition="40" endLine="42" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="42" startPosition="38" endLine="43" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="47" startPosition="47" endLine="48" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="51" startPosition="47" endLine="52" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="60" startPosition="7" endLine="61" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="61" startPosition="56" endLine="62" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="63" startPosition="142" endLine="64" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="66" startPosition="9" endLine="67" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="68" startPosition="138" endLine="69" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="72" startPosition="7" endLine="73" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="76" startPosition="40" endLine="77" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="83" startPosition="51" endLine="84" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebuggerIsDebugger_ComparisonRule#()V" />
-    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="56" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Pattern_wcp5kc_a0a0a0a3#()V" />
-    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="80" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
-    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="87" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="areComparable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;)Z" />
-    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
-    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName1#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName2#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="62" startPosition="64" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="67" startPosition="78" endLine="70" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="76" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasAntiquotations#()Z" />
-    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="83" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="31" startPosition="59" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableFirst#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="38" startPosition="60" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="65" startPosition="9" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="65" startPosition="9" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="65" startPosition="9" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="38" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableSecond#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="62" startPosition="64" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="59" startPosition="45" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="59" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="match#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="20" startPosition="46" endLine="20" endPosition="46" />
-    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="56" startPosition="38" endLine="56" endPosition="38" />
-    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="80" startPosition="71" endLine="80" endPosition="71" />
-    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="87" startPosition="42" endLine="87" endPosition="42" />
-    <scopeInfo nodeId="8321799582437916612" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="23" startPosition="86" endLine="24" endPosition="16" />
-    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="27" startPosition="27" endLine="28" endPosition="16" />
-    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="47" startPosition="47" endLine="48" endPosition="68" />
-    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="51" startPosition="47" endLine="52" endPosition="65" />
-    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="63" startPosition="142" endLine="64" endPosition="23" />
-    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="68" startPosition="138" endLine="69" endPosition="25" />
-    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="76" startPosition="40" endLine="77" endPosition="19" />
-    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="83" startPosition="51" endLine="84" endPosition="18" />
-    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="32" startPosition="5" endLine="34" endPosition="45">
+    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMatchingPattern2" />
+    <nodeInfo nodeId="8321799582437927607" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="22" startPosition="86" endLine="23" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="26" startPosition="27" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="31" startPosition="5" endLine="32" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="32" startPosition="116" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="38" startPosition="5" endLine="39" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="39" startPosition="105" endLine="40" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="40" startPosition="40" endLine="41" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="41" startPosition="38" endLine="42" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="46" startPosition="47" endLine="47" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="50" startPosition="47" endLine="51" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="59" startPosition="7" endLine="60" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="60" startPosition="56" endLine="61" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="62" startPosition="142" endLine="63" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="65" startPosition="9" endLine="66" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="67" startPosition="138" endLine="68" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="71" startPosition="7" endLine="72" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="75" startPosition="40" endLine="76" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="82" startPosition="51" endLine="83" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebuggerIsDebugger_ComparisonRule#()V" />
+    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="55" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Pattern_wcp5kc_a0a0a0a3#()V" />
+    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="79" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
+    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="86" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="areComparable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;)Z" />
+    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
+    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName1#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName2#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="61" startPosition="64" endLine="64" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="66" startPosition="78" endLine="69" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="75" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasAntiquotations#()Z" />
+    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="82" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="30" startPosition="59" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableFirst#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="37" startPosition="60" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="64" startPosition="9" endLine="70" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="64" startPosition="9" endLine="70" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="64" startPosition="9" endLine="70" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="37" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableSecond#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="61" startPosition="64" endLine="70" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="58" startPosition="45" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="58" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="match#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="19" startPosition="46" endLine="19" endPosition="46" />
+    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="55" startPosition="38" endLine="55" endPosition="38" />
+    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="79" startPosition="71" endLine="79" endPosition="71" />
+    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="86" startPosition="42" endLine="86" endPosition="42" />
+    <scopeInfo nodeId="8321799582437916612" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="22" startPosition="86" endLine="23" endPosition="16" />
+    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="26" startPosition="27" endLine="27" endPosition="16" />
+    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="46" startPosition="47" endLine="47" endPosition="68" />
+    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="50" startPosition="47" endLine="51" endPosition="65" />
+    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="62" startPosition="142" endLine="63" endPosition="23" />
+    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="67" startPosition="138" endLine="68" endPosition="25" />
+    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="75" startPosition="40" endLine="76" endPosition="19" />
+    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="82" startPosition="51" endLine="83" endPosition="18" />
+    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45">
       <varInfo nodeId="8321799582437916610" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="56" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="80" startPosition="0" endLine="82" endPosition="0">
+    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="55" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="79" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="8321799582437916617" varName="pattern" />
     </scopeInfo>
-    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="87" startPosition="0" endLine="89" endPosition="0">
+    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="86" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="8321799582437916617" varName="o" />
     </scopeInfo>
-    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="8321799582437916610" varName="node1" />
       <varInfo nodeId="8321799582437916610" varName="node2" />
       <varInfo nodeId="8321799582437916610" varName="status" />
     </scopeInfo>
-    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="76" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="83" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="75" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="82" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="8321799582437916617" varName="fieldName" />
     </scopeInfo>
-    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="31" startPosition="59" endLine="35" endPosition="5" />
-    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="39" startPosition="5" endLine="43" endPosition="48">
+    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="30" startPosition="59" endLine="34" endPosition="5" />
+    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="38" startPosition="5" endLine="42" endPosition="48">
       <varInfo nodeId="8321799582437916610" varName="b" />
       <varInfo nodeId="8321799582437916610" varName="pattern" />
     </scopeInfo>
-    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="66" startPosition="9" endLine="70" endPosition="11">
+    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="65" startPosition="9" endLine="69" endPosition="11">
       <varInfo nodeId="8321799582437916617" varName="pointer" />
     </scopeInfo>
-    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="8321799582437916610" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="38" startPosition="60" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="65" startPosition="9" endLine="71" endPosition="9" />
-    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="38" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="37" startPosition="60" endLine="43" endPosition="5" />
+    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="64" startPosition="9" endLine="70" endPosition="9" />
+    <scopeInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="37" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="8321799582437916610" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="62" startPosition="64" endLine="71" endPosition="9" />
-    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="60" startPosition="7" endLine="71" endPosition="9">
+    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="61" startPosition="64" endLine="70" endPosition="9" />
+    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="59" startPosition="7" endLine="70" endPosition="9">
       <varInfo nodeId="8321799582437916617" varName="nodeToMatch_DebuggerIsDebugger_1iq6h2_a0a" />
     </scopeInfo>
-    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="59" startPosition="45" endLine="73" endPosition="18" />
-    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="59" startPosition="0" endLine="75" endPosition="0">
+    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="58" startPosition="45" endLine="72" endPosition="18" />
+    <scopeInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="58" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="8321799582437916617" varName="nodeToMatch" />
     </scopeInfo>
-    <unitInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="55" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.DebuggerIsDebugger_ComparisonRule$Pattern_wcp5kc_a0a0a0a3" />
-    <unitInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="15" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.DebuggerIsDebugger_ComparisonRule" />
+    <unitInfo nodeId="8321799582437916617" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="54" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.DebuggerIsDebugger_ComparisonRule$Pattern_wcp5kc_a0a0a0a3" />
+    <unitInfo nodeId="8321799582437916610" fileName="DebuggerIsDebugger_ComparisonRule.java" startLine="15" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.typesystem.DebuggerIsDebugger_ComparisonRule" />
   </root>
 </debugInfo>
 

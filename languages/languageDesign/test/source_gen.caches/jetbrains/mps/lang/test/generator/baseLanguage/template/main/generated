@@ -18,7 +18,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-2rqveg90ftfn2b12k9dvrnr9oxg6a6s" />
   <dep model="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)" hash="833em2wby2relqz8ulxwr8xvhayy3my" />
   <dep model="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" hash="4paqqbagqrl75orohafhxz9542d5ovj" />
-  <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" hash="89jgojbyjn9i8kd6ek1j4wtryqefdma" />
+  <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" hash="538iq417rn4d5mracksel94iuntv50x" />
   <dep model="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)" hash="-3zsenyjvwulkf9zn88y91d9qhics5ib" />
   <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="-eutdh4phmfxtdaud8b7rwy6r9xxcg0l" />
   <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" hash="-byat0jtoa2sg56j5hwpbb7hnjlqruyp" />

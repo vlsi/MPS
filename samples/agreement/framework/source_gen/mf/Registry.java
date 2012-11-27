@@ -7,7 +7,6 @@ import java.util.Hashtable;
 
 public class Registry {
   private static Registry ourSoleInstance = new Registry();
-
   private Dictionary myEntryPoints = new Hashtable();
 
   public Registry() {

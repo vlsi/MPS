@@ -28,7 +28,6 @@ public class MPSOpenProjectRunner extends Runner {
   private static String PROPERTY_PROJECT_NAME = "mps.junit.project";
   private static String PROPERTY_PREFIX_PATH_MACRO = "mps.junit.pathmacro.";
   private static Project ourMPSProject;
-
   private Description myDescription;
 
   public MPSOpenProjectRunner(Class<?> testClass) throws InitializationError {

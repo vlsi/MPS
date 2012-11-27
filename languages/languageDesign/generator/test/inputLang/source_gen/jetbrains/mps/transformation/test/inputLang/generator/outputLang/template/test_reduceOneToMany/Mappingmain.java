@@ -27,7 +27,6 @@ public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer conseq_417xrn_a0a0a4a = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414100169");
   private static SNodePointer rootMappingRule_417xrn_a0a0b = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414086885");
   private static SNodePointer rootMappingRule_417xrn_b0b0a0a4b = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414086885");
-
   private final Collection<TemplateReductionRule> rules;
   private final Collection<TemplateRootMappingRule> rootRules;
   private final TemplateModel myModel;

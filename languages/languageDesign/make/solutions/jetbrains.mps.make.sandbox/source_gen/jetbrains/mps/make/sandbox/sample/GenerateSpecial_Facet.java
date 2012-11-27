@@ -60,7 +60,6 @@ public class GenerateSpecial_Facet extends IFacet.Stub {
   public static class Target_GenerateSpecialTarget implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("GenerateSpecial.GenerateSpecialTarget");
 
     public Target_GenerateSpecialTarget() {

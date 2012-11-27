@@ -39,7 +39,6 @@ public class DebuggerToolContentBuilder implements Disposable {
   @NonNls
   private static final String JAVA_RUNNER = "JavaRunner";
   protected static Log log = LogFactory.getLog(DebuggerToolContentBuilder.class);
-
   private final ProgramRunner myRunner;
   private final Project myProject;
   private final ArrayList<Disposable> myDisposeables = new ArrayList<Disposable>();

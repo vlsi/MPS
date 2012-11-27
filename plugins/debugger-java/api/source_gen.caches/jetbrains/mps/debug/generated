@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-4qqtpn2anxc5yv6bxznf6jxue9fskcw">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="bavz98vwxhwhpog89k63m5eu2e8cbl3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-uvseejb8lftjizgrik03igcx568a80" />
   <dep model="r:0cf7389f-e174-4742-a3d2-15c79317838a(jetbrains.mps.debug.api.run)" hash="8728l7tk8q76mxn2doiaxxra8f8a2mt" />
   <common hash="-10ud7k1na5t20fi2su979n6ch5v31y1" />
   <source id="3432969378036017734" name="DebuggerKeys" hash="5cq7cwifnsrrl1us9r3m5zoyaemtshw">

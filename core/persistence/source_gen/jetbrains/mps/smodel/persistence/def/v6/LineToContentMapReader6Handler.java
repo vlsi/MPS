@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class LineToContentMapReader6Handler extends XMLSAXHandler<List<LineContent>> {
   private static String[] EMPTY_ARRAY = new String[0];
-
   private LineToContentMapReader6Handler.ModelElementHandler modelhandler = new LineToContentMapReader6Handler.ModelElementHandler();
   private LineToContentMapReader6Handler.NodeElementHandler nodehandler = new LineToContentMapReader6Handler.NodeElementHandler();
   private LineToContentMapReader6Handler.PropertyElementHandler propertyhandler = new LineToContentMapReader6Handler.PropertyElementHandler();

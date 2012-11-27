@@ -13,7 +13,6 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 public class LanguageProperties extends ModuleProperties {
   public static final String OUTPUT_PATH = "genPath";
   public static final String GENERATE_ADAPTERS = "generateAdapters";
-
   private String myGenPath;
   private List<SModelReference> myAccessoryModels;
   private List<ModuleReference> myExtendedLanguages;

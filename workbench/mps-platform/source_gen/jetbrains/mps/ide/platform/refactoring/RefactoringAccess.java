@@ -11,7 +11,6 @@ import jetbrains.mps.refactoring.framework.IRefactoring;
 
 public abstract class RefactoringAccess {
   private static RefactoringAccess ourInstance;
-
   private RefactoringFacade myRefactoringFacade;
 
   public RefactoringAccess() {

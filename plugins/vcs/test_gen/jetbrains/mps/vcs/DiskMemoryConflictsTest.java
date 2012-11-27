@@ -47,7 +47,6 @@ public class DiskMemoryConflictsTest {
   private static final String FIELD_DEFAULT_NAME = "theField";
   private static final String FIELD_NAME_IN_FILE = "theFieldInFile";
   private static final String FIELD_NAME_IN_MODEL = "theFieldInModel";
-
   private Project myProject;
   private Solution myModule;
   private SNode myNodeBackup;

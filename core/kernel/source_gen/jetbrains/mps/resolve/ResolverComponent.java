@@ -29,7 +29,6 @@ public class ResolverComponent implements CoreComponent {
       return 0;
     }
   };
-
   private List<IResolver> myResolvers;
   private ScopeResolver myScopeResolver;
 

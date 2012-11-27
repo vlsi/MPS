@@ -8,7 +8,6 @@ import com.google.gwt.resources.client.CssResource;
 
 public interface MyResources extends ClientBundle {
   public static final MyResources INSTANCE = GWT.create(MyResources.class);
-
   @ClientBundle.Source(value = "gwtdemo.css")
   public CssResource css();
 }

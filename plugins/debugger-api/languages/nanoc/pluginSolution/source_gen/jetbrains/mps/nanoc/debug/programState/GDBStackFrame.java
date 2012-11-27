@@ -23,7 +23,6 @@ public class GDBStackFrame implements IStackFrame {
   public static final String LOCALS = "locals";
   public static final String NAME = "name";
   public static final String VALUE = "value";
-
   private int myLevel;
   private String myRoutine;
   private String myFileAbsolutePath;

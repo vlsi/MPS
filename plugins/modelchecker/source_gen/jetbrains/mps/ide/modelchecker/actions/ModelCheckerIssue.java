@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.SModel;
 public abstract class ModelCheckerIssue {
   public static final CategoryKind CATEGORY_KIND_SEVERITY = new CategoryKind("Severity", Icons.ERROR_ICON, "Group by severity");
   public static final CategoryKind CATEGORY_KIND_ISSUE_TYPE = new CategoryKind("Issue type", jetbrains.mps.ide.findusages.view.icons.Icons.CATEGORY_ICON, "Group by issue type");
-
   private String myMessage;
   private IModelCheckerFix myFix;
 

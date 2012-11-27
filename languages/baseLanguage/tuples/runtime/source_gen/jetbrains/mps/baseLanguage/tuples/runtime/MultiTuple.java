@@ -6,7 +6,6 @@ import java.util.Arrays;
 
 public class MultiTuple {
   private static final Object[] EMPTY = new Object[0];
-
   private Object[] values;
 
   private MultiTuple(Object... objs) {

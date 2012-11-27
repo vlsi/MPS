@@ -47,7 +47,6 @@ import com.intellij.openapi.vcs.FileStatusListener;
 
 public class MPSVcsManager implements ProjectComponent {
   private static final Logger LOG = Logger.getLogger(MPSVcsManager.class);
-
   private final Project myProject;
   private FileStatus myLastProjectStatus;
   private final ProjectLevelVcsManager myManager;

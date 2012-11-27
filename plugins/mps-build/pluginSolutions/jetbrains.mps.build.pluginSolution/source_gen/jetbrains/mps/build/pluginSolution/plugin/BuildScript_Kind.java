@@ -38,7 +38,6 @@ public class BuildScript_Kind implements ConfigurationType {
     }
   }.invoke();
   private static Logger LOG = Logger.getLogger(BuildScript_Kind.class);
-
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
 
   public BuildScript_Kind() {

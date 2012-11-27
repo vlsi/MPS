@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class ReadHelper {
   private static Logger LOG = Logger.getLogger(ReadHelper.class);
-
   private SModelReference myModelRef;
   private Map<String, SModelReference> myModelByIx;
   private int myMaxImportIndex = 0;

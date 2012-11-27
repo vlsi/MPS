@@ -22,7 +22,6 @@ import java.io.FileNotFoundException;
 
 /*package*/ class GitGlobalInstaller extends AbstractInstaller {
   protected static Log log = LogFactory.getLog(GitGlobalInstaller.class);
-
   private File myConfigFile;
   private File myScriptFile;
 

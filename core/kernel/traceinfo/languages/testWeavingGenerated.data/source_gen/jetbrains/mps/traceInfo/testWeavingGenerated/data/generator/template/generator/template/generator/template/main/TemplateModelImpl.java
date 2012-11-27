@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class TemplateModelImpl implements TemplateModel {
   private static SModelReference modelRef_wo91o7_a0a1 = new SModelReference(new SModelFqName("jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main", "generator"), SModelId.regular(new UUID(6426117384470809586L, -7047529778099592719L)));
-
   private final Collection<TemplateMappingConfiguration> mappings;
   private final Collection<TemplateSwitchMapping> switches;
   private final TemplateModule templateModule;

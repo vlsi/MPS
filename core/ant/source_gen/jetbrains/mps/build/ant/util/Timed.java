@@ -16,7 +16,6 @@ import java.util.concurrent.TimeUnit;
 /*package*/ abstract class Timed<T> {
   private static final Logger LOG = Logger.getLogger("#com.intellij.util.Timed");
   private static final Map<Timed, Boolean> ourReferences = Collections.synchronizedMap(new WeakHashMap<Timed, Boolean>());
-
   /*package*/ int myLastCheckedAccessCount;
   /*package*/ int myAccessCount;
   protected T myT;

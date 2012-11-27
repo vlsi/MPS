@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SNode;
 public class SetBookmark_Action extends BaseAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(SetBookmark_Action.class);
-
   private int num;
 
   public SetBookmark_Action(int num_par) {

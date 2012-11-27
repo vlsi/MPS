@@ -50,7 +50,6 @@ public class XmlTestReporter implements ITestReporter {
   private static final String HOSTNAME = "hostname";
   private static Pattern REGEXP_rw4j9x_a0a0a01 = Pattern.compile(".+\\.([^\\.]+)$", 0);
   private static Pattern REGEXP_rw4j9x_a0a0a11 = Pattern.compile("(.*)\\.[^\\.]+$", 0);
-
   private JDOMFactory jdom = new DefaultJDOMFactory();
   private SimpleDateFormat simpleDateFormat;
   private Document document;

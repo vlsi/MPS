@@ -37,7 +37,6 @@ public class DebugInfo {
   private static final String ROOT_ID_ATTR = "nodeId";
   private static final String MODEL_ID_ATTR = "modelId";
   private static final Tuples._2<String, String> UNSPECIFIED = MultiTuple.<String,String>from((String) null, (String) null);
-
   private Map<Tuples._2<String, String>, DebugInfoRoot> myRoots = MapSequence.fromMap(new HashMap<Tuples._2<String, String>, DebugInfoRoot>());
 
   /*package*/ DebugInfo() {

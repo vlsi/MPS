@@ -14,7 +14,6 @@ import java.util.Arrays;
 
 public class SetSequence<T> extends CollectionSequence<T> implements ISetSequence<T>, Set<T>, Serializable {
   private static final long serialVersionUID = -5489490742621116508L;
-
   private Set<T> set;
 
   protected SetSequence(Set<T> set) {

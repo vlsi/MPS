@@ -38,7 +38,6 @@ public class Demo_Kind implements ConfigurationType {
     }
   }.invoke();
   private static Logger LOG = Logger.getLogger(Demo_Kind.class);
-
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
 
   public Demo_Kind() {

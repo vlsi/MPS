@@ -21,7 +21,6 @@ import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 public class AddToFavorites_Action extends BaseAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(AddToFavorites_Action.class);
-
   private String name;
 
   public AddToFavorites_Action(String name_par) {

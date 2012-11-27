@@ -17,7 +17,6 @@ import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   private static SNodePointer SNODE_POINTER_4viu4b_a0a0a0a0b0c0a0a0a0a0a0c = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Queue");
-
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
   public supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule() {

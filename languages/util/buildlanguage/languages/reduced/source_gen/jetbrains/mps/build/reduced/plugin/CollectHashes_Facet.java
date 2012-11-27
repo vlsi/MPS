@@ -66,7 +66,6 @@ public class CollectHashes_Facet extends IFacet.Stub {
   public static class Target_collect implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IGResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.build.reduced.CollectHashes.collect");
 
     public Target_collect() {

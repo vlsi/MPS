@@ -39,7 +39,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class ClassifiersScope extends FilteringScope {
   private static Logger LOG = Logger.getLogger(ClassifiersScope.class);
-
   private final SModel model;
   private final IScope scope;
 

@@ -91,7 +91,6 @@ public class JavaCompile_Facet extends IFacet.Stub {
   public static class Target_compile implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile");
 
     public Target_compile() {
@@ -257,7 +256,6 @@ public class JavaCompile_Facet extends IFacet.Stub {
   public static class Target_auxCompile implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.auxCompile");
 
     public Target_auxCompile() {
@@ -435,7 +433,6 @@ public class JavaCompile_Facet extends IFacet.Stub {
   public static class Target_compileToMemory implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IFResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory");
 
     public Target_compileToMemory() {

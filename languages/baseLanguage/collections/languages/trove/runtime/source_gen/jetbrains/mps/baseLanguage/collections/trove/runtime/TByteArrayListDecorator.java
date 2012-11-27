@@ -13,7 +13,6 @@ import java.util.NoSuchElementException;
 
 public class TByteArrayListDecorator extends AbstractList<Byte> implements List<Byte>, Serializable {
   private static final long serialVersionUID = -2994287303793904190L;
-
   private TByteArrayList primList;
 
   public TByteArrayListDecorator() {

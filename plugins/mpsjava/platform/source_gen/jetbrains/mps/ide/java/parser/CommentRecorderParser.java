@@ -10,7 +10,6 @@ import org.eclipse.jdt.internal.compiler.problem.ProblemSeverities;
 
 public class CommentRecorderParser extends Parser {
   protected static final int CommentIncrement = 100;
-
   /*package*/ int[] commentStops = new int[10];
   /*package*/ int[] commentStarts = new int[10];
   /*package*/ int commentPtr = -1;

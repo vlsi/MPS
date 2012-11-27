@@ -44,7 +44,6 @@ import com.intellij.openapi.vfs.newvfs.events.VFileMoveEvent;
 
 public class FSChangesWatcher implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(FSChangesWatcher.class);
-
   private final MessageBus myBus;
   private final ProjectManager myProjectManager;
   private final VirtualFileManager myVirtualFileManager;

@@ -13,7 +13,6 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class ChangeGroupMessages {
   public static final EditorMessageOwner ourOwner = new EditorMessageOwner() {};
-
   private ChangeGroupLayout myLayout;
   private boolean myLeft;
   private MessagesGutter myGutter;

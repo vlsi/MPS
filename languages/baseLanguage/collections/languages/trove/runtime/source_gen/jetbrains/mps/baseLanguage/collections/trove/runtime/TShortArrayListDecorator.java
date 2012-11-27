@@ -13,7 +13,6 @@ import java.util.NoSuchElementException;
 
 public class TShortArrayListDecorator extends AbstractList<Short> implements List<Short>, Serializable {
   private static final long serialVersionUID = -6388370221310077367L;
-
   private TShortArrayList primList;
 
   public TShortArrayListDecorator() {

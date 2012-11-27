@@ -8,7 +8,6 @@ import java.util.regex.Matcher;
 public class FqName {
   private static Pattern NAMESPACE = Pattern.compile("(.+)\\.(.+)$");
   private static final String DEFAULT_NS = "<default>";
-
   private String namespace;
   private String name;
 

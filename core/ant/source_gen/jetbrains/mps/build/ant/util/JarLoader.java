@@ -23,7 +23,6 @@ import java.io.FilterInputStream;
   @NonNls
   private static final String FILE_PROTOCOL = "file";
   private static final long NS_THRESHOLD = 10000000;
-
   private final URL myURL;
   private final boolean myCanLockJar;
   private final TimedComputable<ZipFile> myZipFileRef = new TimedComputable<ZipFile>() {

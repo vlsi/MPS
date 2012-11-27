@@ -27,7 +27,6 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
   private static final int GAP = 3;
   private static final int LEFT_MARGIN = 5;
   protected static final Icon MIRRORED_APPLY_ICON;
-
   private int myWidth;
   private ChangeGroupLayout myChangeGroupLayout;
   private boolean myHighlightLeft;

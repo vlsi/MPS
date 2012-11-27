@@ -30,7 +30,6 @@ public class WriteHelper {
   private static final int HASH_BASE = 10 + 26;
   private static final int HASH_SIZE = HASH_BASE * HASH_BASE * HASH_BASE * HASH_BASE;
   private static Logger LOG = Logger.getLogger(WriteHelper.class);
-
   private SModelReference myModelRef;
   private Map<SModelReference, String> myModelIndex;
   private Set<Integer> myUsedIndexes;

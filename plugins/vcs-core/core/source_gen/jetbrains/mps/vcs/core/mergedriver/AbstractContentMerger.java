@@ -9,7 +9,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
   public static final int MERGED = 0;
   public static final int CONFLICTS = 1;
   public static final int FATAL_ERROR = 2;
-
   protected byte[] myConflictStart;
   protected byte[] myConflictEnd;
   protected byte[] mySeparator;

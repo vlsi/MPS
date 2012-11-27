@@ -43,7 +43,6 @@ import jetbrains.mps.project.ModuleId;
 
 public class PluginMoveHelper {
   private static final String SOLUTION_NAME = "pluginSolution";
-
   private MPSProject myProject;
 
   public PluginMoveHelper(MPSProject p) {

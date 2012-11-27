@@ -11,7 +11,6 @@ import java.util.ArrayList;
 
 public class ClassifierSuccessors implements CoreComponent {
   private static ClassifierSuccessors INSTANCE;
-
   private ClassifierSuccessors.Finder myFastFinder;
 
   public ClassifierSuccessors() {

@@ -17,7 +17,6 @@ import org.jetbrains.annotations.NotNull;
 
 public class ExceptionBreakpoint extends JavaBreakpoint {
   private static final Logger LOG = Logger.getLogger(ExceptionBreakpoint.class);
-
   private final String myExceptionName;
 
   public ExceptionBreakpoint(String exceptionName, Project project) {

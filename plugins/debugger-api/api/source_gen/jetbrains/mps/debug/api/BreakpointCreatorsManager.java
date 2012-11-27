@@ -30,7 +30,6 @@ import com.intellij.openapi.application.ApplicationManager;
 
 public class BreakpointCreatorsManager implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(BreakpointCreatorsManager.class);
-
   private Set<Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>> myCreators = SetSequence.fromSet(new LinkedHashSet<Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>>());
   private Map<String, Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>> myAddedByConceptCreators = MapSequence.fromMap(new LinkedHashMap<String, Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>>(16, (float) 0.75, false));
 

@@ -27,7 +27,6 @@ public abstract class MergeDriverPacker {
   private static final String MERGEDRIVER_PATH = "mergedriver";
   private static final String MERGER_RT = "merger-rt.jar";
   protected static Log log = LogFactory.getLog(MergeDriverPacker.class);
-
   private Boolean myFromSources = null;
 
   public MergeDriverPacker() {

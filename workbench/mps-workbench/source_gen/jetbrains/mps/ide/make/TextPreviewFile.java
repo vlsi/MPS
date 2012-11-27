@@ -19,7 +19,6 @@ import java.io.InputStream;
 
 public class TextPreviewFile extends StubVirtualFile {
   private static TextPreviewFile.TextPreviewVirtualFileSystem FS = new TextPreviewFile.TextPreviewVirtualFileSystem();
-
   private String[] forkNames;
   private Map<String, Object> forks;
   private String name;

@@ -20,7 +20,6 @@ public class Templateaaaaa implements TemplateDeclarationWeavingAware {
   private static SNodePointer templateNode_54ml0j_a0a0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "7870321878389731890");
   private static SNodePointer templateNode_54ml0j_a0a0a1a3a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "7870321878389731891");
   private static SNodePointer weaveTfConst_54ml0j_a0c0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "7870321878389731892");
-
   private SNode myNnnn;
 
   public Templateaaaaa(SNode nnnn) {
