@@ -68,7 +68,6 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   private JPanel myContainer = new JPanel(new BorderLayout());
   private ActionToolbar myActionToolbar;
   private DiffStatusBar myStatusBar = new DiffStatusBar(TextDiffType.DIFF_TYPES);
-  private boolean myClosed;
   private DefaultActionGroup myActionGroup;
   private NextPreviousTraverser myTraverser;
 
@@ -282,21 +281,19 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
 
   @Override
   public void dispose() {
-    if (!(myClosed)) {
-      myClosed = true;
-      myActionGroup.removeAll();
-      myOldEditor.dispose();
-      myOldEditor = null;
-      myNewEditor.dispose();
-      myNewEditor = null;
-      ListSequence.fromList(myEditorSeparators).visitAll(new IVisitor<DiffEditorSeparator>() {
-        public void visit(DiffEditorSeparator s) {
-          s.dispose();
-        }
-      });
-      ListSequence.fromList(myEditorSeparators).clear();
-    }
-    myClosed = true;
+    myActionGroup.removeAll();
+    myActionGroup = null;
+    myOldEditor.dispose();
+    myOldEditor = null;
+    myNewEditor.dispose();
+    myNewEditor = null;
+    ListSequence.fromList(myEditorSeparators).visitAll(new IVisitor<DiffEditorSeparator>() {
+      public void visit(DiffEditorSeparator s) {
+        s.dispose();
+      }
+    });
+    ListSequence.fromList(myEditorSeparators).clear();
+    myEditorSeparators = null;
     super.dispose();
   }
 
