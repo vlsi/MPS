@@ -32,7 +32,6 @@ import jetbrains.mps.util.NameUtil;
 
 public class DirParser {
   private static final Logger LOG = Logger.getLogger(DirParser.class);
-
   private CompositeClassPathItem myClassPathItem;
   private Map<String, CompilationUnit> myCompilationUnits = new HashMap<String, CompilationUnit>();
   private List<SModel> myAffectedModels = ListSequence.fromList(new ArrayList<SModel>());

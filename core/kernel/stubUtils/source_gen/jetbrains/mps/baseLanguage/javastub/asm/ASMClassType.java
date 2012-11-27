@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.javastub.asm;
 
 public class ASMClassType extends ASMType {
   public static final ASMClassType OBJECT = new ASMClassType("java.lang.Object");
-
   private String myName;
 
   public ASMClassType(String name) {

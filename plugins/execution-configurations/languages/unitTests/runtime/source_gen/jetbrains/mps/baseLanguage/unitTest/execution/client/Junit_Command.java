@@ -33,7 +33,6 @@ import jetbrains.mps.debug.api.Debuggers;
 
 public class Junit_Command {
   private static Logger LOG = Logger.getLogger(Junit_Command.class);
-
   private String myDebuggerSettings_String;
   private String myVirtualMachineParameter_String;
   private String myJrePath_String;

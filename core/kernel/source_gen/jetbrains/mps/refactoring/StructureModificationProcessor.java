@@ -26,7 +26,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class StructureModificationProcessor {
   private static Logger LOG = Logger.getLogger(StructureModificationProcessor.class);
-
   private ModelLinkMap myModelMap;
   private SModel myModel;
 

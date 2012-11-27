@@ -15,7 +15,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 public class ProgressMonitorProgressStrategy extends AbstractProgressStrategy {
   private static final String TOTAL = "__TOTAL__";
   private static final int MAXWORK = 10000;
-
   @NotNull
   private ProgressMonitor monitor;
   private Deque<Tuples._2<ProgressMonitor, AbstractProgressStrategy.Work>> monitorWorkStack = DequeSequence.fromDeque(new LinkedList<Tuples._2<ProgressMonitor, AbstractProgressStrategy.Work>>());

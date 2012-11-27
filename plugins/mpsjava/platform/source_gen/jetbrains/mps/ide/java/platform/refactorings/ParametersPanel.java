@@ -30,7 +30,6 @@ import java.awt.event.ActionEvent;
 
 /*package*/ class ParametersPanel extends JPanel {
   private static final int MINIMUM_TABLE_COLUMN_WIDTH = 50;
-
   private ExtractMethodRefactoringParameters myModel;
   private ParametersTableModel myTableModel;
 

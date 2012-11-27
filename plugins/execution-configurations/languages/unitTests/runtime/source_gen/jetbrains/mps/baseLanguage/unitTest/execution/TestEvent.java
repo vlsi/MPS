@@ -18,7 +18,6 @@ public class TestEvent {
   public static final String FAILURE_TEST_SUFFIX = "<TEST_FAILURE_END>";
   private static List<String> ALL_TOKENS;
   private static Pattern REGEXP_6m48zo_a0a0b0b0c = Pattern.compile("([^:]+)(?::([^:]+))?:memory=(\\d+):time=(\\d+)", 0);
-
   private final String myToken;
   private final String myTestCaseName;
   private final String myTestMethodName;

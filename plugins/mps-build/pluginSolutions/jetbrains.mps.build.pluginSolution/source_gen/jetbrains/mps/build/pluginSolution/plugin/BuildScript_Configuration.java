@@ -32,7 +32,6 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildScript_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   private static Logger LOG = Logger.getLogger(BuildScript_Configuration.class);
-
   @NotNull
   private BuildScript_Configuration.MyState myState = new BuildScript_Configuration.MyState();
   private NodeByConcept_Configuration myNode = new NodeByConcept_Configuration("jetbrains.mps.build.structure.BuildProject", new _FunctionTypes._return_P1_E0<Boolean, SNode>() {

@@ -103,44 +103,44 @@
   </root>
   <root nodeId="4003657351907890045" modelId="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)">
     <nodeInfo nodeId="4003657351907890054" fileName="PerfomanceReport.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STDOUT" />
-    <nodeInfo nodeId="4003657351907890048" fileName="PerfomanceReport.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFile" />
-    <nodeInfo nodeId="4003657351907890051" fileName="PerfomanceReport.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsToConsole" />
-    <nodeInfo nodeId="4003657351907890066" fileName="PerfomanceReport.java" startLine="18" startPosition="25" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907890074" fileName="PerfomanceReport.java" startLine="22" startPosition="34" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907890082" fileName="PerfomanceReport.java" startLine="26" startPosition="30" endLine="27" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907890090" fileName="PerfomanceReport.java" startLine="30" startPosition="46" endLine="31" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907890114" fileName="PerfomanceReport.java" startLine="36" startPosition="25" endLine="37" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907890111" fileName="PerfomanceReport.java" startLine="39" startPosition="24" endLine="40" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907890106" fileName="PerfomanceReport.java" startLine="41" startPosition="12" endLine="42" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4003657351907890058" fileName="PerfomanceReport.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PerfomanceReport#()V" />
-    <nodeInfo nodeId="4003657351907890104" fileName="PerfomanceReport.java" startLine="41" startPosition="10" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4003657351907890062" fileName="PerfomanceReport.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFile#()Ljava/io/File;" />
-    <nodeInfo nodeId="4003657351907890068" fileName="PerfomanceReport.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFile#(Ljava/io/File;)V" />
-    <nodeInfo nodeId="4003657351907890078" fileName="PerfomanceReport.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStdOut#()Z" />
-    <nodeInfo nodeId="4003657351907890084" fileName="PerfomanceReport.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setStdOut#(Z)V" />
-    <nodeInfo nodeId="4003657351907890102" fileName="PerfomanceReport.java" startLine="38" startPosition="10" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907890098" fileName="PerfomanceReport.java" startLine="35" startPosition="28" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907890094" fileName="PerfomanceReport.java" startLine="34" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
-    <scopeInfo nodeId="4003657351907890061" fileName="PerfomanceReport.java" startLine="15" startPosition="29" endLine="15" endPosition="29" />
-    <scopeInfo nodeId="4003657351907890065" fileName="PerfomanceReport.java" startLine="18" startPosition="25" endLine="19" endPosition="18" />
-    <scopeInfo nodeId="4003657351907890073" fileName="PerfomanceReport.java" startLine="22" startPosition="34" endLine="23" endPosition="18" />
-    <scopeInfo nodeId="4003657351907890081" fileName="PerfomanceReport.java" startLine="26" startPosition="30" endLine="27" endPosition="25" />
-    <scopeInfo nodeId="4003657351907890089" fileName="PerfomanceReport.java" startLine="30" startPosition="46" endLine="31" endPosition="32" />
-    <scopeInfo nodeId="4003657351907890113" fileName="PerfomanceReport.java" startLine="36" startPosition="25" endLine="37" endPosition="38" />
-    <scopeInfo nodeId="4003657351907890110" fileName="PerfomanceReport.java" startLine="39" startPosition="24" endLine="40" endPosition="20" />
-    <scopeInfo nodeId="4003657351907890105" fileName="PerfomanceReport.java" startLine="41" startPosition="12" endLine="42" endPosition="69" />
-    <scopeInfo nodeId="4003657351907890058" fileName="PerfomanceReport.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="4003657351907890062" fileName="PerfomanceReport.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="4003657351907890068" fileName="PerfomanceReport.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+    <nodeInfo nodeId="4003657351907890048" fileName="PerfomanceReport.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFile" />
+    <nodeInfo nodeId="4003657351907890051" fileName="PerfomanceReport.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsToConsole" />
+    <nodeInfo nodeId="4003657351907890066" fileName="PerfomanceReport.java" startLine="17" startPosition="25" endLine="18" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907890074" fileName="PerfomanceReport.java" startLine="21" startPosition="34" endLine="22" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907890082" fileName="PerfomanceReport.java" startLine="25" startPosition="30" endLine="26" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907890090" fileName="PerfomanceReport.java" startLine="29" startPosition="46" endLine="30" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907890114" fileName="PerfomanceReport.java" startLine="35" startPosition="25" endLine="36" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907890111" fileName="PerfomanceReport.java" startLine="38" startPosition="24" endLine="39" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907890106" fileName="PerfomanceReport.java" startLine="40" startPosition="12" endLine="41" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4003657351907890058" fileName="PerfomanceReport.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PerfomanceReport#()V" />
+    <nodeInfo nodeId="4003657351907890104" fileName="PerfomanceReport.java" startLine="40" startPosition="10" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4003657351907890062" fileName="PerfomanceReport.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFile#()Ljava/io/File;" />
+    <nodeInfo nodeId="4003657351907890068" fileName="PerfomanceReport.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFile#(Ljava/io/File;)V" />
+    <nodeInfo nodeId="4003657351907890078" fileName="PerfomanceReport.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStdOut#()Z" />
+    <nodeInfo nodeId="4003657351907890084" fileName="PerfomanceReport.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setStdOut#(Z)V" />
+    <nodeInfo nodeId="4003657351907890102" fileName="PerfomanceReport.java" startLine="37" startPosition="10" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907890098" fileName="PerfomanceReport.java" startLine="34" startPosition="28" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907890094" fileName="PerfomanceReport.java" startLine="33" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
+    <scopeInfo nodeId="4003657351907890061" fileName="PerfomanceReport.java" startLine="14" startPosition="29" endLine="14" endPosition="29" />
+    <scopeInfo nodeId="4003657351907890065" fileName="PerfomanceReport.java" startLine="17" startPosition="25" endLine="18" endPosition="18" />
+    <scopeInfo nodeId="4003657351907890073" fileName="PerfomanceReport.java" startLine="21" startPosition="34" endLine="22" endPosition="18" />
+    <scopeInfo nodeId="4003657351907890081" fileName="PerfomanceReport.java" startLine="25" startPosition="30" endLine="26" endPosition="25" />
+    <scopeInfo nodeId="4003657351907890089" fileName="PerfomanceReport.java" startLine="29" startPosition="46" endLine="30" endPosition="32" />
+    <scopeInfo nodeId="4003657351907890113" fileName="PerfomanceReport.java" startLine="35" startPosition="25" endLine="36" endPosition="38" />
+    <scopeInfo nodeId="4003657351907890110" fileName="PerfomanceReport.java" startLine="38" startPosition="24" endLine="39" endPosition="20" />
+    <scopeInfo nodeId="4003657351907890105" fileName="PerfomanceReport.java" startLine="40" startPosition="12" endLine="41" endPosition="69" />
+    <scopeInfo nodeId="4003657351907890058" fileName="PerfomanceReport.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="4003657351907890062" fileName="PerfomanceReport.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="4003657351907890068" fileName="PerfomanceReport.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="4003657351907890071" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907890078" fileName="PerfomanceReport.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="4003657351907890084" fileName="PerfomanceReport.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="4003657351907890078" fileName="PerfomanceReport.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="4003657351907890084" fileName="PerfomanceReport.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="4003657351907890087" varName="isToConsole" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907890097" fileName="PerfomanceReport.java" startLine="35" startPosition="28" endLine="43" endPosition="5" />
-    <scopeInfo nodeId="4003657351907890094" fileName="PerfomanceReport.java" startLine="34" startPosition="0" endLine="45" endPosition="0" />
-    <unitInfo nodeId="4003657351907890045" fileName="PerfomanceReport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.build.ant.generation.PerfomanceReport" />
+    <scopeInfo nodeId="4003657351907890097" fileName="PerfomanceReport.java" startLine="34" startPosition="28" endLine="42" endPosition="5" />
+    <scopeInfo nodeId="4003657351907890094" fileName="PerfomanceReport.java" startLine="33" startPosition="0" endLine="44" endPosition="0" />
+    <unitInfo nodeId="4003657351907890045" fileName="PerfomanceReport.java" startLine="9" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.build.ant.generation.PerfomanceReport" />
   </root>
   <root nodeId="4003657351907891908" modelId="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)">
     <nodeInfo nodeId="4003657351907892082" fileName="TestGenerationOnTeamcity.java" startLine="15" startPosition="3" endLine="16" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -28,7 +28,6 @@ import org.jetbrains.annotations.Nullable;
 public class FeatureForestMap<V> {
   private static boolean ourLoggingEnabled = "true".equals(System.getProperty("changesmanager.debug"));
   protected static Log log = LogFactory.getLog(FeatureForestMap.class);
-
   private Map<Feature, V> myFeatureToValue = MapSequence.fromMap(new HashMap<Feature, V>());
   private Map<Feature, Feature[]> myFeatureToAncestors = MapSequence.fromMap(new HashMap<Feature, Feature[]>());
   private CounterMap<Feature> myFeaturesIsAncestorCounterMap = new CounterMap<Feature>(new FeatureForestMap.MyCounterMapHandler());

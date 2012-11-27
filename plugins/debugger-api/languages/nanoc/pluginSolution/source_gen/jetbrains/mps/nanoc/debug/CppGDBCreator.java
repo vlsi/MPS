@@ -19,7 +19,6 @@ import jetbrains.mps.debug.api.run.DebuggerRunProfileState;
 
 public class CppGDBCreator extends AbstractDebugSessionCreator {
   private static Logger LOG = Logger.getLogger(CppGDBCreator.class);
-
   private CppDebugSession myDebugSession;
 
   public CppGDBCreator() {

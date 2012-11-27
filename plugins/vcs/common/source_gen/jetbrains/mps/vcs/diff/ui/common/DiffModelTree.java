@@ -45,7 +45,6 @@ import java.awt.event.MouseEvent;
 
 public abstract class DiffModelTree extends SimpleTree implements DataProvider {
   public static DataKey<Ref<SNodeId>> NODE_ID_DATAKEY = DataKey.create("MPS_SNodeId");
-
   private List<DiffModelTree.RootTreeNode> myRootNodes;
   private Iterable<BaseAction> myActions;
 

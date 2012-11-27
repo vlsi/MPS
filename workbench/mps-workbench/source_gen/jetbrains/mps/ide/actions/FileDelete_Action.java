@@ -15,7 +15,6 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 public class FileDelete_Action extends BaseAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(FileDelete_Action.class);
-
   private AnAction action;
 
   public FileDelete_Action(AnAction action_par) {

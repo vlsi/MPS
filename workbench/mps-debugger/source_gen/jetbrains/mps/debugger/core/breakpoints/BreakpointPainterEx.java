@@ -12,7 +12,6 @@ public abstract class BreakpointPainterEx<B> extends DebuggerCellPainter<B> {
   private static final Color CELL_BACKGROUND_COLOR = new Color(255, 200, 200, 50);
   private static final Color STRIPE_BACKGROUND_COLOR = new Color(255, 200, 200);
   private static final Color FRAME_COLOR = new Color(255, 100, 100);
-
   protected final B myBreakpoint;
 
   public BreakpointPainterEx(B breakpoint) {

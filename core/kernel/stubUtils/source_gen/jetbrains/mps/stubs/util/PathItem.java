@@ -19,7 +19,6 @@ import java.io.FileOutputStream;
 
 public abstract class PathItem {
   private static List<String> EMPTY_LIST = ListSequence.fromList(new ArrayList<String>());
-
   private IFile file;
 
   public PathItem(String path) {

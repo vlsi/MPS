@@ -31,7 +31,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 public class MergeData {
   private static final String CHANGES_MINE_TXT = "changes.mine.txt";
   private static final String CHANGES_REPOSITORY_TXT = "changes.repository.txt";
-
   private final File myZipFileFile;
   private final ZipFile myZipFile;
   private String myBaseModelString;

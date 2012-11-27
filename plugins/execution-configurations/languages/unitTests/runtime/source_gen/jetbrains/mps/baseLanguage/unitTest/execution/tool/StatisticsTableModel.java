@@ -22,7 +22,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class StatisticsTableModel implements TableModel {
   private static final List<String> TEST_COLUMNS = ListSequence.fromListAndArray(new ArrayList<String>(), "Test", "Time elapsed", "Usage Delta", "Usage Before", "Usage After", "Results");
-
   private final List<TableModelListener> myListeners = ListSequence.fromList(new ArrayList<TableModelListener>());
   private List<TestStatisticsRow> myRows;
   private List<TestStatisticsRow> myFilteredRows = ListSequence.fromList(new ArrayList<TestStatisticsRow>());

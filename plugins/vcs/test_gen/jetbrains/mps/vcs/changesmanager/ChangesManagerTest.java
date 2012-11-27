@@ -93,7 +93,6 @@ public class ChangesManagerTest {
   private static final String MODEL_PREFIX = "ru.geevee.fugue.";
   private static Project ourProject;
   private static boolean ourEnabled;
-
   private CurrentDifferenceRegistry myRegistry;
   private Project myProject;
   private boolean myWaitCompleted;

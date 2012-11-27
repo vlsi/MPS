@@ -30,7 +30,6 @@ public class HistoryWriter {
   public static final String RENAME_TYPE = "type";
   public static final String OLD_VALUE = "from";
   public static final String NEW_VALUE = "to";
-
   private WriteHelper myHelper;
 
   public HistoryWriter() {

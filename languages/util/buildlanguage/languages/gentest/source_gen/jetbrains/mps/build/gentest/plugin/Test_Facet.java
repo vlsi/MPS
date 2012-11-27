@@ -70,7 +70,6 @@ public class Test_Facet extends IFacet.Stub {
   public static class Target_collectTest implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IGResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.build.gentest.Test.collectTest");
 
     public Target_collectTest() {
@@ -163,7 +162,6 @@ public class Test_Facet extends IFacet.Stub {
   public static class Target_runTests implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITestResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.build.gentest.Test.runTests");
 
     public Target_runTests() {

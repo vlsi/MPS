@@ -35,7 +35,6 @@ import java.util.Scanner;
 public abstract class MpsLoadTask extends Task {
   public static final String CONFIGURATION_NAME = "configuration.name";
   public static final String BUILD_NUMBER = "build.number";
-
   private File myMpsHome;
   protected final WhatToDo myWhatToDo = new WhatToDo();
   private boolean myUsePropertiesAsMacro = false;

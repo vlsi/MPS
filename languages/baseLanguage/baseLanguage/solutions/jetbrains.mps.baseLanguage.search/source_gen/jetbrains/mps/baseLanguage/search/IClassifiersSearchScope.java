@@ -25,7 +25,6 @@ public interface IClassifiersSearchScope extends ISearchScope {
   public static final int STATIC_MEMBER = STATIC_METHOD | STATIC_FIELD | ENUM_CONSTANT;
   public static final int ANY_MEMBER = INSTANCE_MEMBER | STATIC_MEMBER | CONSTRUCTOR;
   public static final int ANYTHING = 65535;
-
   @NotNull
   public List<SNode> getClassifiers();
   public List<SNode> getClassifierNodes();

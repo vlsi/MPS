@@ -17,7 +17,6 @@ import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   private static SNodePointer SNODE_POINTER_y1o6nk_a0a0a0a0b0c0a0a0a0a0a0c = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674030190");
-
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
   public mappingType_sypertypeOf_IMapping_interface_SubtypingRule() {

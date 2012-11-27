@@ -25,7 +25,6 @@ import jetbrains.mps.workbench.MPSDataKeys;
 public class MakeSelection_Action extends BaseAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(MakeSelection_Action.class);
-
   private boolean cleanMake;
 
   public MakeSelection_Action(boolean cleanMake_par) {

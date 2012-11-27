@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class TemplateModelImpl implements TemplateModel {
   private static SModelReference modelRef_wo91o7_a0a1 = new SModelReference(new SModelFqName("jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main", "generator"), SModelId.regular(new UUID(16384L, 1222075024220L)));
-
   private final Collection<TemplateMappingConfiguration> mappings;
   private final Collection<TemplateSwitchMapping> switches;
   private final TemplateModule templateModule;

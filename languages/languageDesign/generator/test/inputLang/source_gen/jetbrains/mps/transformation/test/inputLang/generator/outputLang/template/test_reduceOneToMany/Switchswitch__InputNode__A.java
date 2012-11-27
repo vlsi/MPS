@@ -17,7 +17,6 @@ import java.util.Collections;
 public class Switchswitch__InputNode__A implements TemplateSwitchMapping {
   private static SNodePointer reductionRule_t87kqm_a0a2a = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310367");
   private static SNodePointer conseq_t87kqm_a0a0a4a = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480311962");
-
   private final Iterable<TemplateReductionRule> rules;
 
   public Switchswitch__InputNode__A() {

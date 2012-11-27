@@ -9,7 +9,6 @@ import java.util.HashMap;
 
 public class IconResourceBundle_OverrideImplements implements IconResourceBundle {
   private static IconResourceBundle_OverrideImplements INSTANCE = new IconResourceBundle_OverrideImplements();
-
   private Map<String, Icon> icons = new HashMap<String, Icon>() {
     {
       put("IMPLEMENTED", IconContainer.ICON_a0);

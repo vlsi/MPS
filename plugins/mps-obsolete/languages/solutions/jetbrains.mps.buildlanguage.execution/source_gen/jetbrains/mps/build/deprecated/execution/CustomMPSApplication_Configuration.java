@@ -34,7 +34,6 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 
 public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   protected static Log log = LogFactory.getLog(CustomMPSApplication_Configuration.class);
-
   @NotNull
   private CustomMPSApplication_Configuration.MyState myState = new CustomMPSApplication_Configuration.MyState();
   private NodeByConcept_Configuration myNode = new NodeByConcept_Configuration("jetbrains.mps.build.packaging.structure.Layout", new _FunctionTypes._return_P1_E0<Boolean, SNode>() {

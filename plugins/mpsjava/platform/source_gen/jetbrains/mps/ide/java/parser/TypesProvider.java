@@ -41,7 +41,6 @@ import java.util.HashSet;
 
 public class TypesProvider {
   private static final Logger LOG = Logger.getLogger(TypesProvider.class);
-
   /*package*/ ReferentsCreator myReferentsCreator;
 
   public TypesProvider(ReferentsCreator referentsCreator) {

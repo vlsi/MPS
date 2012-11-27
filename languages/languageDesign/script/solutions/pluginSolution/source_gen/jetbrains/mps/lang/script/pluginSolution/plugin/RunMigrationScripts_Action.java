@@ -27,7 +27,6 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 public class RunMigrationScripts_Action extends BaseAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(RunMigrationScripts_Action.class);
-
   private List<SNode> scripts;
   private boolean selectionOnly;
 

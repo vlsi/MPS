@@ -124,6 +124,14 @@ public class ConstructorDeclaration_Behavior {
     }
   }
 
+  public static boolean virtual_needsEmptyLineBefore_641490355014296733(SNode thisNode) {
+    return true;
+  }
+
+  public static boolean virtual_needsEmptyLineAfter_641490355014298838(SNode thisNode) {
+    return true;
+  }
+
   @Deprecated
   public static Icon call_getAdditionalIcon_8884554759541375762(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Icon.class, thisNode, "virtual_getAdditionalIcon_5017341185733863694", new Object[]{});

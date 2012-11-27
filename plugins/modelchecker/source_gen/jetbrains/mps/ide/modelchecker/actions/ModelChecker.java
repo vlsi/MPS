@@ -24,7 +24,6 @@ public class ModelChecker {
   public static final String SEVERITY_WARNING = "Warnings";
   public static final String SEVERITY_INFO = "Infos";
   protected static Log log = LogFactory.getLog(ModelChecker.class);
-
   private SearchResults<ModelCheckerIssue> myResults;
   private IOperationContext myOperationContext;
   private List<SpecificChecker> mySpecificCheckers;

@@ -125,7 +125,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class JavaConverterTreeBuilder {
   private static final Logger LOG = Logger.getLogger(JavaConverterTreeBuilder.class);
-
   private SModel myCurrentModel;
   private Map<String, SModel> myModelMap;
   private boolean myIsolated = false;

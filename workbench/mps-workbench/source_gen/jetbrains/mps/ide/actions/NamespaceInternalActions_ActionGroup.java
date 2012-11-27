@@ -25,7 +25,6 @@ import org.jetbrains.annotations.Nullable;
 public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(NamespaceInternalActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.NamespaceInternalActions_ActionGroup";
-
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
 
   public NamespaceInternalActions_ActionGroup() {

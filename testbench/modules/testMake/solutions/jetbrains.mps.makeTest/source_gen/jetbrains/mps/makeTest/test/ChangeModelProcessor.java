@@ -32,7 +32,6 @@ public class ChangeModelProcessor {
   private static final String TEST_RESOURCES_PATH = "core/kernel/testMake/solutions/jetbrains.mps.testModels/jetbrains/mps/testModels/";
   private static final String STEP_TYPE_CHANGE = "changed";
   private static final String STEP_TYPE_REVERT = "reverted";
-
   private Project myProject;
   private EditableSModelDescriptor myTestModel;
   private EditableSModelDescriptor myModelToChange;

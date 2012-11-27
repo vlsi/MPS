@@ -47,7 +47,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
       return new ClassifierAndSuperClassifiersCache.FieldsDataSet(ownerCache);
     }
   };
-
   private final SNode myTopClassifier;
 
   @Deprecated
@@ -126,7 +125,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
   private static final class ClassifiersDataSet extends DataSet {
     public static final String ID = "CLASSIFIERS_DATASET";
-
     private SNode myTopClassifier;
     private List<SNode> myClassifiers;
     private Map<SNode, SNode> myTypeByTypeVariable;
@@ -275,7 +273,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
   private static final class MethodsDataSet extends DataSet {
     public static final String ID = "METHODS_DATASET";
-
     private Map<String, List<SNode>> myMethodsByName;
     private Map<SNode, List<SNode>> myOverriddenMethods;
     private Set<SNode> myDependsOnNodes;
@@ -439,7 +436,6 @@ forEachInAllMethods:
 
   private static class FieldsDataSet extends DataSet {
     public static final String ID = "FIELDS_DATASET";
-
     private Map<String, SNode> myFieldsByName;
     private Map<String, SNode> myStaticFieldsByName;
     private Set<SNode> myDependsOnNodes;

@@ -27,7 +27,6 @@ import jetbrains.mps.generator.info.GeneratorPathsComponent;
 
 public class FilesDelta implements IDelta {
   private static Logger LOG = Logger.getLogger(FilesDelta.class);
-
   private IFile rootDir;
   private Map<IFile, FilesDelta.Status> files = MapSequence.fromMap(new HashMap<IFile, FilesDelta.Status>());
   private Map<IFile, List<IFile>> generatedChildren = MapSequence.fromMap(new HashMap<IFile, List<IFile>>());

@@ -17,7 +17,6 @@ public class TestTreeIconAnimator implements Disposable, Runnable {
   private static final int FRAME_TIME = MOVIE_TIME / FRAMES_COUNT;
   private static Icon PAUSED_ICON = AllIcons.RunConfigurations.TestPaused;
   private static Icon[] FRAMES = new Icon[FRAMES_COUNT];
-
   private long myLastInvocationTime = -1;
   private Alarm myAlarm;
   private TestRunState myState;

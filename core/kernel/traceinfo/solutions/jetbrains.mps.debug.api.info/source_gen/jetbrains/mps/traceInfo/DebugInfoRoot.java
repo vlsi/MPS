@@ -23,7 +23,6 @@ public class DebugInfoRoot {
   private static final String NODE_INFO = "nodeInfo";
   private static final String SCOPE_INFO = "scopeInfo";
   private static final String UNIT_INFO = "unitInfo";
-
   private final String myRootId;
   @Nls
   private final String myModelId;

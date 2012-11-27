@@ -19,7 +19,6 @@ public class UnitTestRunner extends RunListener {
   public static final String END_TEST_PREFIX = "<END_TEST>";
   public static final String FAILURE_TEST_PREFIX = "<TEST_FAILURE_BEGIN>";
   public static final String FAILURE_TEST_SUFFIX = "<TEST_FAILURE_END>";
-
   private Description currentDesc;
 
   public UnitTestRunner() {

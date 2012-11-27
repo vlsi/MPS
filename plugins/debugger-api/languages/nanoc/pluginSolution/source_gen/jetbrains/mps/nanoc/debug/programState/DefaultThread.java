@@ -18,7 +18,6 @@ import jetbrains.mps.nanoc.debug.answer.StreamAnswer;
 public abstract class DefaultThread implements IThread {
   public static final String STACK = "stack";
   public static final String FRAME = "frame";
-
   private List<GDBStackFrame> myFrames = new ArrayList<GDBStackFrame>();
   private CppDebugSession myDebugSession;
 

@@ -7,7 +7,6 @@ import javax.swing.JComponent;
 
 public interface ProjectPrefsExtraPanel {
   public static ExtensionPointName<ProjectPrefsExtraPanel> EP_NAME = ExtensionPointName.create("com.intellij.mps.projectPrefsPanel");
-
   public JComponent getComponent();
   public boolean isModified();
   public void apply();

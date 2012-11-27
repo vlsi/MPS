@@ -14,7 +14,6 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class ReloadSession {
   private static Logger LOG = Logger.getLogger(ReloadSession.class);
-
   private final Set<FSChangesWatcher.IReloadListener> myReloadListeners;
   private boolean myReloaded = false;
   private FileProcessor myFileProcessor = new FileProcessor();

@@ -22,7 +22,6 @@ import com.intellij.util.ArrayUtil;
 public class TextPreviewFile extends StubVirtualFile {
   private static TextPreviewFile.TextPreviewVirtualFileSystem FS = new TextPreviewFile.TextPreviewVirtualFileSystem();
   public static final String COMPLEX_CONTENT = "<complex content>";
-
   private String[] forkNames;
   private Map<String, Object> forks;
   private String name;

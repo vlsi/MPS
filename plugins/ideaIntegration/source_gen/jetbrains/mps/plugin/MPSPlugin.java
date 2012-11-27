@@ -13,7 +13,6 @@ import jetbrains.mps.ide.ThreadUtils;
 public class MPSPlugin {
   private static final Logger LOG = Logger.getLogger(MPSPlugin.class);
   private static MPSPlugin ourInstance;
-
   private IMPSPlugin myPlugin = null;
   private boolean myMessageShown = false;
 

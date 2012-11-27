@@ -17,7 +17,6 @@ public class YNode {
       return t.getSubnodes();
     }
   };
-
   private String name;
   private YNode supernode;
   private YNode[] subnodes;

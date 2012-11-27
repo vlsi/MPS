@@ -11,7 +11,6 @@ import java.util.HashMap;
 
 public class PathItemsReloadableCache {
   private static Map<Object, PathItemsReloadableCache> Instances = MapSequence.fromMap(new WeakHashMap<Object, PathItemsReloadableCache>());
-
   private Map<String, PathItem> cache = null;
   private Class<? extends PathItem> pathItemClass;
 

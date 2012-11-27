@@ -12,7 +12,6 @@ import jetbrains.mps.util.Pair;
 
 public class StatCountNodeReadAccessInEditorListener extends NodeReadAccessInEditorListener {
   private static Map<String, Integer> ourStatistics = new HashMap<String, Integer>();
-
   private SNode mySNode;
   private int myReadCounter = 0;
   private List<String> myCallerMethods = new ArrayList<String>();
