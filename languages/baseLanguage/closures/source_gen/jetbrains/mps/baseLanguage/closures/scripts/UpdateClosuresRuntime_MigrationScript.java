@@ -7,15 +7,17 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.util.Constants;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -40,7 +42,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return "jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes".equals(NameUtil.nodeFQName(node)) && !(ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).any(new IWhereFilter<SNode>() {
+        return "jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SPropertyOperations.getString(it, "name").startsWith("_void");
           }
@@ -80,7 +82,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
             }));
 
             String name = "_void" + "_P" + params + "_E" + exceps;
-            ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).addElement(_quotation_createNode_awiph7_a0a11a1a1a0a(pdecls, exdecls, tvds, name));
+            ListSequence.fromList(SLinkOperations.getTargets(node, "member", true)).addElement(_quotation_createNode_awiph7_a0a11a1a1a0a(pdecls, exdecls, tvds, name));
 
             ListSequence.fromList(excepTypeVars).addElement(_quotation_createNode_awiph7_a0a31a1a1a0a("E" + (exceps + 1)));
           }
@@ -106,7 +108,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return "jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes".equals(NameUtil.nodeFQName(node)) && !(ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).any(new IWhereFilter<SNode>() {
+        return "jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SPropertyOperations.getString(it, "name").startsWith("_return");
           }
@@ -149,7 +151,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
             }));
 
             String name = "_return" + "_P" + params + "_E" + exceps;
-            ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).addElement(_quotation_createNode_awiph7_a0a41a1a1a0b(pdecls, retVal, exdecls, tvds, name));
+            ListSequence.fromList(SLinkOperations.getTargets(node, "member", true)).addElement(_quotation_createNode_awiph7_a0a41a1a1a0b(pdecls, retVal, exdecls, tvds, name));
 
             ListSequence.fromList(excepTypeVars).addElement(_quotation_createNode_awiph7_a0a61a1a1a0b("E" + (exceps + 1)));
           }
@@ -175,7 +177,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).any(new IWhereFilter<SNode>() {
+        return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SPropertyOperations.getString(it, "name").startsWith("_return_terminate");
           }
@@ -220,7 +222,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
             }));
 
             String name = "_return_terminate" + "_P" + params + "_E" + exceps;
-            ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).addElement(_quotation_createNode_awiph7_a0a61a1a1a0c(pdecls, retVal, exdecls, tvds, name));
+            ListSequence.fromList(SLinkOperations.getTargets(node, "member", true)).addElement(_quotation_createNode_awiph7_a0a61a1a1a0c(pdecls, retVal, exdecls, tvds, name));
 
             ListSequence.fromList(excepTypeVars).addElement(_quotation_createNode_awiph7_a0a81a1a1a0c("E" + (exceps + 1)));
           }
@@ -246,7 +248,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).any(new IWhereFilter<SNode>() {
+        return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SPropertyOperations.getString(it, "name").startsWith("_void_terminate");
           }
@@ -289,7 +291,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
             }));
 
             final String ename = "_return_terminate" + "_P" + params + "_E" + exceps;
-            SNode eifc = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).findFirst(new IWhereFilter<SNode>() {
+            SNode eifc = SNodeOperations.cast(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return ename.equals(SPropertyOperations.getString(it, "name"));
               }
@@ -302,7 +304,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
             }));
 
             String name = "_void_terminate" + "_P" + params + "_E" + exceps;
-            ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).addElement(_quotation_createNode_awiph7_a0a91a1a1a0d(t, eifcParams, eifc, pdecls, retVal, exdecls, tvds, name));
+            ListSequence.fromList(SLinkOperations.getTargets(node, "member", true)).addElement(_quotation_createNode_awiph7_a0a91a1a1a0d(t, eifcParams, eifc, pdecls, retVal, exdecls, tvds, name));
 
             ListSequence.fromList(excepTypeVars).addElement(_quotation_createNode_awiph7_a0a12a1a1a0d("E" + (exceps + 1)));
           }
@@ -328,7 +330,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).any(new IWhereFilter<SNode>() {
+        return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SPropertyOperations.getString(it, "name").startsWith("_return_void");
           }
@@ -371,7 +373,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
             }));
 
             final String ename = "_return_terminate" + "_P" + params + "_E" + exceps;
-            SNode eifc = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).findFirst(new IWhereFilter<SNode>() {
+            SNode eifc = SNodeOperations.cast(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return ename.equals(SPropertyOperations.getString(it, "name"));
               }
@@ -384,7 +386,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
             }));
 
             String name = "_return_void" + "_P" + params + "_E" + exceps;
-            ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).addElement(_quotation_createNode_awiph7_a0a91a1a1a0e(r, eifcParams, eifc, pdecls, retVal, exdecls, tvds, name));
+            ListSequence.fromList(SLinkOperations.getTargets(node, "member", true)).addElement(_quotation_createNode_awiph7_a0a91a1a1a0e(r, eifcParams, eifc, pdecls, retVal, exdecls, tvds, name));
 
             ListSequence.fromList(excepTypeVars).addElement(_quotation_createNode_awiph7_a0a12a1a1a0e("E" + (exceps + 1)));
           }
@@ -410,7 +412,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).any(new IWhereFilter<SNode>() {
+        return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SPropertyOperations.getString(it, "name").startsWith("_void_void");
           }
@@ -451,7 +453,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
             }));
 
             final String ename = "_return_terminate" + "_P" + params + "_E" + exceps;
-            SNode eifc = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).findFirst(new IWhereFilter<SNode>() {
+            SNode eifc = SNodeOperations.cast(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return ename.equals(SPropertyOperations.getString(it, "name"));
               }
@@ -464,7 +466,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
             }));
 
             String name = "_void_void" + "_P" + params + "_E" + exceps;
-            ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).addElement(_quotation_createNode_awiph7_a0a71a1a1a0f(eifcParams, eifc, pdecls, retVal, exdecls, tvds, name));
+            ListSequence.fromList(SLinkOperations.getTargets(node, "member", true)).addElement(_quotation_createNode_awiph7_a0a71a1a1a0f(eifcParams, eifc, pdecls, retVal, exdecls, tvds, name));
 
             ListSequence.fromList(excepTypeVars).addElement(_quotation_createNode_awiph7_a0a91a1a1a0f("E" + (exceps + 1)));
           }

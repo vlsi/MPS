@@ -18,6 +18,9 @@ import jetbrains.mps.ypath.behavior.MatchKindOperation_Behavior;
 import jetbrains.mps.ypath.behavior.TreeNodeKindProperty_Behavior;
 import jetbrains.mps.ypath.behavior.MatchDefaultPropertyOperation_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.ypath.behavior.ChildrenBlock_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -313,7 +316,7 @@ public class QueriesGenerated {
     final SNode fun = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     SNode feature = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature", false, false);
     SNode designClass = _context.getOutputNodeByInputNodeAndMappingLabel(feature, "feature_design");
-    SNode method = ListSequence.fromList(SLinkOperations.getTargets(designClass, "method", true)).where(new IWhereFilter<SNode>() {
+    SNode method = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(designClass)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(fun), "conceptAlias"));
       }
@@ -349,12 +352,12 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1184680030750(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode descClass = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "feature_descriptor");
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(descClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first();
+    return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.cast(descClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).first();
   }
 
   public static Object referenceMacro_GetReferent_1184237709773(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode descClass = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "feature_descriptor");
-    return ListSequence.fromList(SLinkOperations.getTargets(descClass, "constructor", true)).first();
+    return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(descClass)).first();
   }
 
   public static Object referenceMacro_GetReferent_1184236913540(final IOperationContext operationContext, final ReferenceMacroContext _context) {

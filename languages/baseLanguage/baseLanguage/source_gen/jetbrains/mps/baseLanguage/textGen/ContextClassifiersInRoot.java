@@ -11,7 +11,6 @@ import java.util.Collections;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
@@ -102,7 +101,7 @@ public class ContextClassifiersInRoot {
 
     // todo: classifiers with same names in different supertypes? 
     for (SNode superClassifier : Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
-      for (SNode nestedClassifier : SLinkOperations.getTargets(superClassifier, "staticInnerClassifiers", true)) {
+      for (SNode nestedClassifier : Classifier_Behavior.call_nestedClassifiers_5292274854859193142(superClassifier)) {
         addClassifierToBindingMap(nestedClassifiers, nestedClassifier);
       }
     }

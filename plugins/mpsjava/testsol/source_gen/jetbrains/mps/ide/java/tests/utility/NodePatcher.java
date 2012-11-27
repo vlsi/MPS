@@ -111,7 +111,7 @@ public class NodePatcher {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Classifier");
       }
     });
-    ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).addSequence(ListSequence.fromList(nested));
+    ListSequence.fromList(SLinkOperations.getTargets(node, "member", true)).addSequence(ListSequence.fromList(nested));
   }
 
   public static void removeSModelAttrs(SNode node) {

@@ -135,7 +135,7 @@ public class CreateMethodDeclaration_Intention implements IntentionFactory {
       if (!(isSameClassifier)) {
         SLinkOperations.setTarget(method, "visibility", _quotation_createNode_v1wtfy_a0a0h0a(), true);
       }
-      ListSequence.fromList(SLinkOperations.getTargets(classifier, "method", true)).addElement(method);
+      ListSequence.fromList(SLinkOperations.getTargets(classifier, "member", true)).addElement(method);
       SNodeOperations.replaceWithAnother(node, _quotation_createNode_v1wtfy_a0a9a0(method));
       if (isSameClassifier) {
         editorContext.selectWRTFocusPolicy(method);

@@ -24,6 +24,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -65,7 +67,7 @@ public class JUnit4TestCaseRef_Constraints extends BaseConstraintsDescriptor {
                 final SNode testAnn = SLinkOperations.getTarget(_quotation_createNode_qd3c0x_a0a0a0a0a1a0a(), "annotation", false);
                 List<SNode> res = super.getClassifiers();
                 for (Iterator<SNode> it = ListSequence.fromList(res).iterator(); it.hasNext();) {
-                  if (!(ListSequence.fromList(SLinkOperations.getTargets(it.next(), "method", true)).translate(new ITranslator2<SNode, SNode>() {
+                  if (!(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(it.next())).translate(new ITranslator2<SNode, SNode>() {
                     public Iterable<SNode> translate(SNode m) {
                       return SLinkOperations.getTargets(m, "annotation", true);
                     }

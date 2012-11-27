@@ -225,7 +225,7 @@
     <nodeInfo nodeId="2024340988248532266" fileName="JUnit4TestWrapper.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
     <nodeInfo nodeId="2024340988248532274" fileName="JUnit4TestWrapper.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Z" />
     <nodeInfo nodeId="2024340988248532183" fileName="JUnit4TestWrapper.java" startLine="54" startPosition="55" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2024340988248532197" fileName="JUnit4TestWrapper.java" startLine="58" startPosition="99" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2024340988248532197" fileName="JUnit4TestWrapper.java" startLine="58" startPosition="244" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2024340988248532228" fileName="JUnit4TestWrapper.java" startLine="66" startPosition="112" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2024340988248532222" fileName="JUnit4TestWrapper.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqName#()Ljava/lang/String;" />
     <nodeInfo nodeId="2024340988248532191" fileName="JUnit4TestWrapper.java" startLine="57" startPosition="5" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -255,7 +255,7 @@
     <scopeInfo nodeId="2024340988248532274" fileName="JUnit4TestWrapper.java" startLine="48" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="2024340988248532274" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532196" fileName="JUnit4TestWrapper.java" startLine="58" startPosition="99" endLine="61" endPosition="7" />
+    <scopeInfo nodeId="2024340988248532196" fileName="JUnit4TestWrapper.java" startLine="58" startPosition="244" endLine="61" endPosition="7" />
     <scopeInfo nodeId="2024340988248532228" fileName="JUnit4TestWrapper.java" startLine="66" startPosition="112" endLine="70" endPosition="16" />
     <scopeInfo nodeId="2024340988248532222" fileName="JUnit4TestWrapper.java" startLine="29" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="2024340988248532191" fileName="JUnit4TestWrapper.java" startLine="57" startPosition="5" endLine="62" endPosition="5">

@@ -23,6 +23,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 
 public class ClosureLiteralTarget {
   private TemplateQueryContext genContext;
@@ -144,7 +145,7 @@ with_queue:
 
   private SNode getFunctionMethod(SNode literal, SNode targetIface) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    for (SNode mth : SLinkOperations.getTargets(SLinkOperations.getTarget(targetIface, "classifier", false), "method", true)) {
+    for (SNode mth : Classifier_Behavior.call_methods_5292274854859311639(SLinkOperations.getTarget(targetIface, "classifier", false))) {
       if (!("equals".equals(SPropertyOperations.getString(mth, "name"))) && SPropertyOperations.getBoolean(mth, "isAbstract")) {
         ListSequence.fromList(result).addElement(mth);
       }

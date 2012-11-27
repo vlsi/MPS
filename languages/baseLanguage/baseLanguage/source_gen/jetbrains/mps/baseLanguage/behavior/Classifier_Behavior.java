@@ -137,7 +137,7 @@ public class Classifier_Behavior {
   }
 
   public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticField", true)).count() > 0;
+    return Sequence.fromIterable(Classifier_Behavior.call_staticFields_5292274854859223538(thisNode)).count() > 0;
   }
 
   public static String virtual_getNestedName_8540045600162184125(SNode thisNode) {
@@ -249,7 +249,7 @@ public class Classifier_Behavior {
 
   public static List<SNode> virtual_getOwnMethods_1906502351318572840(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)));
+    ListSequence.fromList(result).addSequence(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(thisNode)));
     return result;
   }
 

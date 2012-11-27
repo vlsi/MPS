@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class JUnit4TestWrapper extends AbstractTestWrapper<SNode> {
@@ -55,7 +55,7 @@ public class JUnit4TestWrapper extends AbstractTestWrapper<SNode> {
     if (SPropertyOperations.getBoolean(SNodeOperations.cast(clazz, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) {
       return false;
     }
-    for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(clazz, "method", true))) {
+    for (SNode method : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), clazz, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{}))) {
       if (JUnit4MethodWrapper.isJUnit4TestMethod(method)) {
         return true;
       }

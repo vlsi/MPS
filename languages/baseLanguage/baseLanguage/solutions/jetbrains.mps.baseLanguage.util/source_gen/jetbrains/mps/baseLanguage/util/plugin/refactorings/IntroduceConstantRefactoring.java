@@ -19,7 +19,7 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
   public SNode doRefactoring() {
     SNode newDeclaration = _quotation_createNode_2jj2z2_a0a0a(myVisibilityLevel.getNode(), SNodeOperations.copyNode(getExpressionType()), SNodeOperations.copyNode(getExpression()), getName());
     SNode container = SNodeOperations.cast(this.myContainer, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    ListSequence.fromList(SLinkOperations.getTargets(container, "staticField", true)).addElement(newDeclaration);
+    ListSequence.fromList(SLinkOperations.getTargets(container, "member", true)).addElement(newDeclaration);
     // <node> 
     replaceNode(getExpression(), newDeclaration);
     if (this.myIsReplacingAll) {

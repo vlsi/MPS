@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.ui.behavior.BeanPropertyView_Behavior;
 import java.beans.Introspector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -26,6 +27,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class BeanPropertyView_Constraints extends BaseConstraintsDescriptor {
@@ -85,7 +87,7 @@ public class BeanPropertyView_Constraints extends BaseConstraintsDescriptor {
         String propertyName = "canWrite";
         {
           String gn = BeanPropertyView_Behavior.call_setterName_8381258131358762400(node);
-          for (SNode imd : SLinkOperations.getTargets(SNodeOperations.as(SNodeOperations.getParent(SLinkOperations.getTarget(node, "getter", false)), "jetbrains.mps.baseLanguage.structure.Classifier"), "method", true)) {
+          for (SNode imd : Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.as(SNodeOperations.getParent(SLinkOperations.getTarget(node, "getter", false)), "jetbrains.mps.baseLanguage.structure.Classifier"))) {
             if (SPropertyOperations.getString(imd, "name").equals(gn) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(imd, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") && (int) ListSequence.fromList(SLinkOperations.getTargets(imd, "parameter", true)).count() == 1) {
               return MatchingUtil.matchNodes(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(imd, "parameter", true)).first(), "type", true), SLinkOperations.getTarget(SLinkOperations.getTarget(node, "getter", false), "returnType", true));
             }
@@ -137,7 +139,7 @@ public class BeanPropertyView_Constraints extends BaseConstraintsDescriptor {
               throw new NullPointerException();
             } catch (NullPointerException e) {
             }
-            return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(bt, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "method", true)).where(new IWhereFilter<SNode>() {
+            return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SLinkOperations.getTarget(SNodeOperations.as(bt, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode m) {
                 if (ListSequence.fromList(SLinkOperations.getTargets(m, "parameter", true)).isNotEmpty()) {
                   return false;

@@ -114,6 +114,7 @@ import org.eclipse.jdt.internal.compiler.ast.FieldDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.Initializer;
 import org.eclipse.jdt.internal.compiler.lookup.LocalTypeBinding;
 import org.eclipse.jdt.internal.compiler.ast.Argument;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.eclipse.jdt.internal.compiler.ast.AbstractVariableDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.Javadoc;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -1542,7 +1543,7 @@ public class JavaConverterTreeBuilder {
           TypeDeclaration anonymousEnumClass = ((QualifiedAllocationExpression) initializer).anonymousType;
           constructorBinding = ((ConstructorDeclaration) anonymousEnumClass.methods[0]).constructorCall.binding;
           SNode enumClassConstantBody = SNodeOperations.cast(myTypesProvider.getRaw(anonymousEnumClass.binding), "jetbrains.mps.baseLanguage.structure.EnumClass");
-          for (SNode imd : SLinkOperations.getTargets(enumClassConstantBody, "method", true)) {
+          for (SNode imd : BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), enumClassConstantBody, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})) {
             SNodeOperations.detachNode(imd);
             ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "method", true)).addElement(imd);
           }

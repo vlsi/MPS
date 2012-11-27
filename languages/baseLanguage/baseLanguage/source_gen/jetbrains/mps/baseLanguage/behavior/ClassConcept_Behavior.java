@@ -17,9 +17,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.HashSet;
 import java.util.Queue;
@@ -108,7 +108,7 @@ public class ClassConcept_Behavior {
   }
 
   public static SNode call_getMainMethod_1213877355884(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(ClassConcept_Behavior.call_staticMethods_5292274854859435867(thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return StaticMethodDeclaration_Behavior.call_isMainMethod_1213877536670(it);
       }
@@ -116,7 +116,7 @@ public class ClassConcept_Behavior {
   }
 
   public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
-    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", "virtual_hasStaticMemebers_1214840444586", new Object[]{}) || ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)).count() > 0;
+    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", "virtual_hasStaticMemebers_1214840444586", new Object[]{}) || Sequence.fromIterable(ClassConcept_Behavior.call_staticMethods_5292274854859435867(thisNode)).count() > 0;
   }
 
   public static List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
@@ -188,8 +188,8 @@ public class ClassConcept_Behavior {
 
   public static List<SNode> virtual_getOwnMethods_1906502351318572840(SNode thisNode) {
     List<SNode> baseMethodDeclarations = new ArrayList<SNode>();
-    ListSequence.fromList(baseMethodDeclarations).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)));
-    ListSequence.fromList(baseMethodDeclarations).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)));
+    ListSequence.fromList(baseMethodDeclarations).addSequence(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(thisNode)));
+    ListSequence.fromList(baseMethodDeclarations).addSequence(Sequence.fromIterable(ClassConcept_Behavior.call_staticMethods_5292274854859435867(thisNode)));
     return baseMethodDeclarations;
   }
 
@@ -251,7 +251,7 @@ public class ClassConcept_Behavior {
 
     // todo: remove this code from getMembers to getScope? 
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ThisConstructorKind")) {
-      return new NamedElementsScope(SLinkOperations.getTargets(thisNode, "constructor", true));
+      return new NamedElementsScope(ClassConcept_Behavior.call_constructors_5292274854859503373(thisNode));
     }
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperConstructorKind") || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperMethodKind")) {
       if (Classifier_Behavior.call_isSame_4855996797771684010(thisNode, SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"))) {

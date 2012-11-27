@@ -410,7 +410,7 @@ public class ResolveUnknownUtil {
 
   public static SNode findConstructor(SNode claz, List<SNode> args) {
     SNode result;
-    Iterable<SNode> conss = SLinkOperations.getTargets(claz, "constructor", true);
+    Iterable<SNode> conss = ClassConcept_Behavior.call_constructors_5292274854859503373(claz);
     if (Sequence.fromIterable(conss).isEmpty()) {
       result = null;
     } else if ((int) Sequence.fromIterable(conss).count() == 1) {

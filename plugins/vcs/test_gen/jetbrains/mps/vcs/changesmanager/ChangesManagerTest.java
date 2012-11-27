@@ -601,7 +601,7 @@ public class ChangesManagerTest {
     final Wrappers._T<SNode> method = new Wrappers._T<SNode>();
     doSomethingAndUndo(myUiDiff, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        method.value = ListSequence.fromList(SLinkOperations.getTargets(getDocumentLayoutRoot(), "method", true)).findFirst(new IWhereFilter<SNode>() {
+        method.value = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), getDocumentLayoutRoot(), "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode m) {
             return "selectAll".equals(SPropertyOperations.getString(m, "name"));
           }
@@ -625,7 +625,7 @@ public class ChangesManagerTest {
     doSomethingAndUndo(myUiDiff, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
         root.value = getDocumentLayoutRoot();
-        method.value = ListSequence.fromList(SLinkOperations.getTargets(root.value, "method", true)).findFirst(new IWhereFilter<SNode>() {
+        method.value = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), root.value, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode m) {
             return "getSize".equals(SPropertyOperations.getString(m, "name"));
           }
@@ -636,7 +636,7 @@ public class ChangesManagerTest {
       }
     }, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(method.value, "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", ListSequence.fromList(SLinkOperations.getTargets(root.value, "staticInnerClassifiers", true)).first(), false);
+        SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(method.value, "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), root.value, "jetbrains.mps.baseLanguage.structure.Classifier", "call_nestedClassifiers_5292274854859193142", new Object[]{})).first(), false);
         return SNodeOperations.getContainingRoot(method.value);
       }
     });
@@ -649,7 +649,7 @@ public class ChangesManagerTest {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         root.value = getDocumentLayoutRoot();
-        field.value = ListSequence.fromList(SLinkOperations.getTargets(root.value, "field", true)).findFirst(new IWhereFilter<SNode>() {
+        field.value = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), root.value, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{})).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode f) {
             return "textPositions".equals(SPropertyOperations.getString(f, "name"));
           }
@@ -673,8 +673,8 @@ public class ChangesManagerTest {
     };
     _FunctionTypes._return_P0_E0<? extends SNode> moveToOtherClass = new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        SNode inner = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(root.value, "staticInnerClassifiers", true)).first(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-        ListSequence.fromList(SLinkOperations.getTargets(inner, "field", true)).addElement(field.value);
+        SNode inner = SNodeOperations.cast(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), root.value, "jetbrains.mps.baseLanguage.structure.Classifier", "call_nestedClassifiers_5292274854859193142", new Object[]{})).first(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+        ListSequence.fromList(SLinkOperations.getTargets(inner, "member", true)).addElement(field.value);
         return SNodeOperations.getContainingRoot(field.value);
       }
     };
@@ -697,7 +697,7 @@ public class ChangesManagerTest {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         root.value = getDocumentLayoutRoot();
-        method.value = ListSequence.fromList(SLinkOperations.getTargets(root.value, "method", true)).findFirst(new IWhereFilter<SNode>() {
+        method.value = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), root.value, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode f) {
             return "getTextPosition".equals(SPropertyOperations.getString(f, "name"));
           }

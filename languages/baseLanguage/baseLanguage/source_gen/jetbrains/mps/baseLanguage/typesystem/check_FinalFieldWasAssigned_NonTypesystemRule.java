@@ -39,7 +39,7 @@ public class check_FinalFieldWasAssigned_NonTypesystemRule extends AbstractNonTy
 
     List<SNode> mayInitialize = new ArrayList<SNode>();
     ListSequence.fromList(mayInitialize).addSequence(Sequence.fromIterable(ClassConcept_Behavior.call_instanceInitializers_7702003619977535145(classifier)));
-    ListSequence.fromList(mayInitialize).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classifier, "constructor", true)));
+    ListSequence.fromList(mayInitialize).addSequence(Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(classifier)));
     for (SNode member : mayInitialize) {
       if (member != null) {
         for (SNode reference : ListSequence.fromList(SNodeOperations.getDescendants(member, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {

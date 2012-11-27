@@ -59,7 +59,7 @@ public class OverrideImplementMethodsHelper {
           ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "member", true)).insertElement(index, method);
         }
       } else {
-        ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "method", true)).addElement(method);
+        ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "member", true)).addElement(method);
       }
       update(method, baseMethod);
       ListSequence.fromList(result).addElement(method);

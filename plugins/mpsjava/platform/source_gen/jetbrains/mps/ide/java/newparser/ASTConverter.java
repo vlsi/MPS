@@ -101,6 +101,7 @@ import org.eclipse.jdt.internal.compiler.ast.MessageSend;
 import org.eclipse.jdt.internal.compiler.ast.NameReference;
 import org.eclipse.jdt.internal.compiler.ast.FieldReference;
 import org.eclipse.jdt.internal.compiler.ast.AllocationExpression;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.eclipse.jdt.internal.compiler.ast.QualifiedAllocationExpression;
 import org.eclipse.jdt.internal.compiler.ast.ClassLiteralAccess;
@@ -220,7 +221,7 @@ public class ASTConverter {
 
         try {
           SNode nested = convertTypeDecl(innerTyp);
-          SLinkOperations.getTargets(cls, "staticInnerClassifiers", true).add(nested);
+          SLinkOperations.getTargets(cls, "member", true).add(nested);
         } finally {
           // maintaining valid state of ClassNameResolver 
           myTypeResolver.leaveType();
@@ -403,7 +404,7 @@ public class ASTConverter {
       convertMethodGuts(method, clsStringId, result);
 
       if (attach) {
-        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).addElement(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
+        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "member", true)).addElement(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
       }
     }
 
@@ -1606,7 +1607,7 @@ public class ASTConverter {
 
   private SNode findConstructor(SNode claz, Expression[] args) {
     SNode result;
-    Iterable<SNode> conss = SLinkOperations.getTargets(claz, "constructor", true);
+    Iterable<SNode> conss = BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), claz, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{});
     if (Sequence.fromIterable(conss).isEmpty()) {
       result = null;
     } else if ((int) Sequence.fromIterable(conss).count() == 1) {

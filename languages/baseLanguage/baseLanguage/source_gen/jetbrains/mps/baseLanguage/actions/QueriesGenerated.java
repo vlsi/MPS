@@ -393,7 +393,7 @@ __switch__:
 
   public static void nodeFactory_NodeSetup_ClassConcept_1213605907037(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (!(SNodeOperations.isInstanceOf(_context.getNewNode(), "jetbrains.mps.baseLanguage.structure.IAnonymousClass"))) {
-      SNodeFactoryOperations.addNewChild(_context.getNewNode(), "constructor", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+      SNodeFactoryOperations.addNewChild(_context.getNewNode(), "member", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
     }
     if ((_context.getEnclosingNode() != null) && !(SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Interface"))) {
       SPropertyOperations.set(_context.getNewNode(), "nonStatic", "" + (true));
@@ -1033,7 +1033,7 @@ __switch__:
         Computable computable = new Computable() {
           public Object compute() {
             SNode thisConcept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-            return SLinkOperations.getTargets(thisConcept, "constructor", true);
+            return ClassConcept_Behavior.call_constructors_5292274854859503373(thisConcept);
           }
         };
         Iterable<SNode> queryResult = (Iterable) computable.compute();
@@ -1078,7 +1078,7 @@ __switch__:
             if (superClass == null) {
               superClass = SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_8p1vjw_a0a0a0c0a0b0(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
             }
-            return SLinkOperations.getTargets(superClass, "constructor", true);
+            return ClassConcept_Behavior.call_constructors_5292274854859503373(superClass);
           }
         };
         Iterable<SNode> queryResult = (Iterable) computable.compute();
@@ -1286,7 +1286,7 @@ __switch__:
                 SNode creator = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", null);
                 SLinkOperations.setTarget(creator, "cls", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClass", null), true);
                 SLinkOperations.setTarget(SLinkOperations.getTarget(creator, "cls", true), "classifier", (item), false);
-                List<SNode> methodsToImplement = ListSequence.fromList(SLinkOperations.getTargets((item), "method", true)).toListSequence();
+                List<SNode> methodsToImplement = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639((item))).toListSequence();
                 if (SNodeOperations.isInstanceOf((item), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
                   methodsToImplement = ListSequence.fromList(methodsToImplement).where(new IWhereFilter<SNode>() {
                     public boolean accept(SNode it) {
@@ -1307,7 +1307,7 @@ __switch__:
                   SNode method_copy = SNodeOperations.copyNode(method);
                   SPropertyOperations.set(method_copy, "isAbstract", "" + (false));
                   SNodeFactoryOperations.setNewChild(method_copy, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
-                  ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(creator, "cls", true), "method", true)).addElement(method_copy);
+                  ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(creator, "cls", true), "member", true)).addElement(method_copy);
                 }
                 // replace all type vars with Object 
                 List<SNode> typeVarRefs = SNodeOperations.getDescendants(SLinkOperations.getTarget(creator, "cls", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{});

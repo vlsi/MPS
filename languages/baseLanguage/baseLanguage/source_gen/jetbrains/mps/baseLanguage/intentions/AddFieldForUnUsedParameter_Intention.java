@@ -91,7 +91,7 @@ public class AddFieldForUnUsedParameter_Intention implements IntentionFactory {
       SNode field = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null);
       SPropertyOperations.set(field, "name", SPropertyOperations.getString(node, "name"));
       SLinkOperations.setTarget(field, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "type", true)), true);
-      ListSequence.fromList(SLinkOperations.getTargets(clazz, "field", true)).addElement(field);
+      ListSequence.fromList(SLinkOperations.getTargets(clazz, "member", true)).addElement(field);
       SNode newStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
       SNode expr = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null);
       SLinkOperations.setTarget(newStatement, "expression", expr, true);

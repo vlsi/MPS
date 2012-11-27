@@ -13,7 +13,8 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 
 public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
@@ -50,7 +51,7 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
           return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassConcept");
         }
       })) {
-        for (SNode sMethod : ListSequence.fromList(SLinkOperations.getTargets(classNode, "method", true))) {
+        for (SNode sMethod : Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(classNode))) {
           if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(sMethod, node)) {
             ListSequence.fromList(_results).addElement(sMethod);
           }

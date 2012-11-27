@@ -106,7 +106,7 @@ public class AddMainMethod_Intention implements IntentionFactory {
 
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode methodNode = _quotation_createNode_92yx0t_a0a0a();
-      ListSequence.fromList(SLinkOperations.getTargets(node, "staticMethod", true)).addElement(methodNode);
+      ListSequence.fromList(SLinkOperations.getTargets(node, "member", true)).addElement(methodNode);
       editorContext.select(methodNode);
     }
 
