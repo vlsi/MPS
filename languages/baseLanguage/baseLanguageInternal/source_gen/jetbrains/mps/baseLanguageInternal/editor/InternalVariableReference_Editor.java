@@ -6,29 +6,50 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
-import java.util.List;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class InternalVariableReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7tajt9_a(editorContext, node);
+  }
+
+  public static class InternalVariableReference_name_postfixCellMenu_a0d0 extends AbstractCellMenuPart_PropertyPostfixHints {
+    public InternalVariableReference_name_postfixCellMenu_a0d0() {
+    }
+
+    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      List<String> result;
+      SNode nodeType = SLinkOperations.getTarget(node, "type", true);
+      if (nodeType != null) {
+        result = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), nodeType, "virtual_getVariableSuffixes_1213877337304", new Object[]{});
+      } else {
+        result = ListSequence.fromList(new ArrayList<String>());
+      }
+      // we need this because of smart input 
+      // DO NOT REMOVE IT 
+      if (SPropertyOperations.getString(node, "name") != null) {
+        ListSequence.fromList(result).addElement(SPropertyOperations.getString(node, "name"));
+      }
+      return result;
+    }
   }
 
   private EditorCell createCollection_7tajt9_a(EditorContext editorContext, SNode node) {
@@ -97,26 +118,5 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  public static class InternalVariableReference_name_postfixCellMenu_a0d0 extends AbstractCellMenuPart_PropertyPostfixHints {
-    public InternalVariableReference_name_postfixCellMenu_a0d0() {
-    }
-
-    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      List<String> result;
-      SNode nodeType = SLinkOperations.getTarget(node, "type", true);
-      if (nodeType != null) {
-        result = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), nodeType, "virtual_getVariableSuffixes_1213877337304", new Object[]{});
-      } else {
-        result = ListSequence.fromList(new ArrayList<String>());
-      }
-      // we need this because of smart input 
-      // DO NOT REMOVE IT 
-      if (SPropertyOperations.getString(node, "name") != null) {
-        ListSequence.fromList(result).addElement(SPropertyOperations.getString(node, "name"));
-      }
-      return result;
-    }
   }
 }

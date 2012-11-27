@@ -100,10 +100,10 @@ public class ModelRoot_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_gn5t9c_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_gn5t9c_a0a0a(SPropertyOperations.getString(node, "path"));
+    return isNotEmpty_gn5t9c_a0a0h(SPropertyOperations.getString(node, "path"));
   }
 
-  public static boolean isNotEmpty_gn5t9c_a0a0a(String str) {
+  public static boolean isNotEmpty_gn5t9c_a0a0h(String str) {
     return str != null && str.length() > 0;
   }
 }

@@ -6,6 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.lang.core.editor.AliasEditorComponent;
+import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
@@ -13,14 +17,31 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.core.editor.AliasEditorComponent;
-import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet;
 
 public class CheckProperitesOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ti2jjv_a(editorContext, node);
+  }
+
+  public static class _Inline_ti2jjv_a0a extends InlineCellProvider {
+    public _Inline_ti2jjv_a0a() {
+      super();
+    }
+
+    public EditorCell createEditorCell(EditorContext editorContext) {
+      return this.createEditorCell(editorContext, this.getSNode());
+    }
+
+    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+      return this.createComponent_ti2jjv_a0a0(editorContext, node);
+    }
+
+    private EditorCell createComponent_ti2jjv_a0a0(EditorContext editorContext, SNode node) {
+      AbstractCellProvider provider = new AliasEditorComponent(node);
+      EditorCell editorCell = provider.createEditorCell(editorContext);
+      RunConfigurations_StyleSheet.getOperation(editorCell).apply(editorCell);
+      return editorCell;
+    }
   }
 
   private EditorCell createCollection_ti2jjv_a(EditorContext editorContext, SNode node) {
@@ -64,26 +85,5 @@ public class CheckProperitesOperation_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  public static class _Inline_ti2jjv_a0a extends InlineCellProvider {
-    public _Inline_ti2jjv_a0a() {
-      super();
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return this.createEditorCell(editorContext, this.getSNode());
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createComponent_ti2jjv_a0a0(editorContext, node);
-    }
-
-    private EditorCell createComponent_ti2jjv_a0a0(EditorContext editorContext, SNode node) {
-      AbstractCellProvider provider = new AliasEditorComponent(node);
-      EditorCell editorCell = provider.createEditorCell(editorContext);
-      RunConfigurations_StyleSheet.getOperation(editorCell).apply(editorCell);
-      return editorCell;
-    }
   }
 }

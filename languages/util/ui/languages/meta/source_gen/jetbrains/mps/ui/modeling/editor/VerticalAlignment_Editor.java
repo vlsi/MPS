@@ -6,22 +6,70 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import java.util.List;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.List;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 
 public class VerticalAlignment_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_cjpy1b_a(editorContext, node);
+  }
+
+  public static class VerticalAlignment_component_cellMenu_a0a0a implements SubstituteInfoPartExt {
+    private VerticalAlignment_Chooser myComponent;
+
+    public VerticalAlignment_component_cellMenu_a0a0a() {
+      this.myComponent = new VerticalAlignment_Chooser();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+  }
+
+  public static class VerticalAlignment_component_cellMenu_a0b0a implements SubstituteInfoPartExt {
+    private VerticalAlignment_Chooser myComponent;
+
+    public VerticalAlignment_component_cellMenu_a0b0a() {
+      this.myComponent = new VerticalAlignment_Chooser();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+  }
+
+  public static class VerticalAlignment_component_cellMenu_a0c0a implements SubstituteInfoPartExt {
+    private VerticalAlignment_Chooser myComponent;
+
+    public VerticalAlignment_component_cellMenu_a0c0a() {
+      this.myComponent = new VerticalAlignment_Chooser();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+  }
+
+  public static class VerticalAlignment_component_cellMenu_a0d0a implements SubstituteInfoPartExt {
+    private VerticalAlignment_Chooser myComponent;
+
+    public VerticalAlignment_component_cellMenu_a0d0a() {
+      this.myComponent = new VerticalAlignment_Chooser();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
   }
 
   private EditorCell createCollection_cjpy1b_a(EditorContext editorContext, SNode node) {
@@ -99,53 +147,5 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_cjpy1b_a3a0(SNode node, EditorContext editorContext, IScope scope) {
     return "FILL".equals(SPropertyOperations.getString_def(node, "value", "TOP"));
-  }
-
-  public static class VerticalAlignment_component_cellMenu_a0a0a implements SubstituteInfoPartExt {
-    private VerticalAlignment_Chooser myComponent;
-
-    public VerticalAlignment_component_cellMenu_a0a0a() {
-      this.myComponent = new VerticalAlignment_Chooser();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-  }
-
-  public static class VerticalAlignment_component_cellMenu_a0b0a implements SubstituteInfoPartExt {
-    private VerticalAlignment_Chooser myComponent;
-
-    public VerticalAlignment_component_cellMenu_a0b0a() {
-      this.myComponent = new VerticalAlignment_Chooser();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-  }
-
-  public static class VerticalAlignment_component_cellMenu_a0c0a implements SubstituteInfoPartExt {
-    private VerticalAlignment_Chooser myComponent;
-
-    public VerticalAlignment_component_cellMenu_a0c0a() {
-      this.myComponent = new VerticalAlignment_Chooser();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-  }
-
-  public static class VerticalAlignment_component_cellMenu_a0d0a implements SubstituteInfoPartExt {
-    private VerticalAlignment_Chooser myComponent;
-
-    public VerticalAlignment_component_cellMenu_a0d0a() {
-      this.myComponent = new VerticalAlignment_Chooser();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
   }
 }
