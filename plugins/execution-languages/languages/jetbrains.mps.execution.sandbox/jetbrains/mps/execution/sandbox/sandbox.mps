@@ -15,8 +15,8 @@
   <import index="8q6x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" version="-1" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
-  <import index="uw4" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.execution.api.settings(MPS.Workbench/jetbrains.mps.execution.api.settings@java_stub)" version="-1" />
-  <import index="5b61" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.execution.api.commands(MPS.Workbench/jetbrains.mps.execution.api.commands@java_stub)" version="-1" />
+  <import index="lk2n" modelUID="r:da044acc-81a4-4fd8-b89a-91df4cfe6214(jetbrains.mps.execution.api.commands)" version="-1" />
+  <import index="ic0f" modelUID="r:76273c4a-4818-4f7c-8673-bfc2aeb6debb(jetbrains.mps.execution.api.settings)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="f1er" modelUID="r:b2897562-8c8f-4b0e-a52e-5dedfbf1b862(jetbrains.mps.execution.demo.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
@@ -32,8 +32,8 @@
       <property name="name" nameId="tpck.1169194664001" value="SomeInvalid" />
     </node>
     <node type="f1er.SomeConcept" typeId="f1er.4928971978190304900" id="3347833162492309204">
-      <property name="name" nameId="tpck.1169194664001" value="SomeValid" />
       <property name="valid" nameId="f1er.4928971978190605252" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="SomeValid" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1058143989625184529">
       <property name="name" nameId="tpck.1169194664001" value="TemplateConfigurationTest" />
@@ -993,10 +993,10 @@
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="2372421611506004579">
       <property name="name" nameId="tpck.1169194664001" value="mySettingsPanel" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="2372421611506004580" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6131607264791629795">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uw4.~SettingsEditorPanel" resolveInfo="SettingsEditorPanel" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2557288013649383402">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ic0f.7850891982542386442" resolveInfo="SettingsEditorPanel" />
       </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="2372421611506004580" />
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5502823699574524007" />
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="5502823699574524008">
@@ -1025,7 +1025,7 @@
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2372421611506012904">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2372421611506012905">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uw4.~SettingsEditorPanel%d&lt;init&gt;(jetbrains%dmps%dexecution%dapi%dsettings%dITemplatePersistentConfiguration)" resolveInfo="SettingsEditorPanel" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ic0f.7850891982542386444" resolveInfo="SettingsEditorPanel" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2372421611506012906">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5502823699574524013" resolveInfo="twoFieldsConfiguration" />
                 </node>
@@ -1038,7 +1038,7 @@
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7x.~Container%dadd(java%dawt%dComponent,java%dlang%dObject)%cvoid" resolveInfo="add" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8413546332587496374">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8413546332587496378">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uw4.~SettingsEditorPanel%dgetComponent()%cjavax%dswing%dJComponent" resolveInfo="getComponent" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ic0f.7850891982542472989" resolveInfo="getComponent" />
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2372421611506012907">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2372421611506004579" resolveInfo="mySettingsPanel" />
@@ -1195,13 +1195,13 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JButton%d&lt;init&gt;(javax%dswing%dAction)" resolveInfo="JButton" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1936744753301953141">
                     <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1936744753301953156">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uw4.~ActionWrapper%d&lt;init&gt;(javax%dswing%dAction,jetbrains%dmps%dbaseLanguage%dclosures%druntime%d_FunctionTypes$_void_P1_E0)" resolveInfo="ActionWrapper" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ic0f.8413546332587496381" resolveInfo="ActionWrapper" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1936744753301953161">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1936744753301953160">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1936744753301953158" resolveInfo="editor" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1936744753301953982">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uw4.~SettingsEditorPanel%dgetOkAction()%cjavax%dswing%dAction" resolveInfo="getOkAction" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ic0f.7850891982542471310" resolveInfo="getOkAction" />
                         </node>
                       </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="1936744753301953984">
@@ -1286,13 +1286,13 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JButton%d&lt;init&gt;(javax%dswing%dAction)" resolveInfo="JButton" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1936744753301954019">
                     <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1936744753301954020">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uw4.~ActionWrapper%d&lt;init&gt;(javax%dswing%dAction,jetbrains%dmps%dbaseLanguage%dclosures%druntime%d_FunctionTypes$_void_P1_E0)" resolveInfo="ActionWrapper" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ic0f.8413546332587496381" resolveInfo="ActionWrapper" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1936744753301954021">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1936744753301954022">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1936744753301953158" resolveInfo="editor" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1936744753301954023">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uw4.~SettingsEditorPanel%dgetApplyAction()%cjavax%dswing%dAction" resolveInfo="getApplyAction" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ic0f.7850891982542471350" resolveInfo="getApplyAction" />
                         </node>
                       </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="1936744753301954024">
@@ -1372,13 +1372,13 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JButton%d&lt;init&gt;(javax%dswing%dAction)" resolveInfo="JButton" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1936744753301954054">
                     <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1936744753301954055">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uw4.~ActionWrapper%d&lt;init&gt;(javax%dswing%dAction,jetbrains%dmps%dbaseLanguage%dclosures%druntime%d_FunctionTypes$_void_P1_E0)" resolveInfo="ActionWrapper" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ic0f.8413546332587496381" resolveInfo="ActionWrapper" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1936744753301954056">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1936744753301954057">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1936744753301953158" resolveInfo="editor" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1936744753301954058">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uw4.~SettingsEditorPanel%dgetResetAction()%cjavax%dswing%dAction" resolveInfo="getResetAction" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ic0f.7850891982542471402" resolveInfo="getResetAction" />
                         </node>
                       </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="1936744753301954059">
@@ -1458,13 +1458,13 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JButton%d&lt;init&gt;(javax%dswing%dAction)" resolveInfo="JButton" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1936744753301954089">
                     <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1936744753301954090">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uw4.~ActionWrapper%d&lt;init&gt;(javax%dswing%dAction,jetbrains%dmps%dbaseLanguage%dclosures%druntime%d_FunctionTypes$_void_P1_E0)" resolveInfo="ActionWrapper" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ic0f.8413546332587496381" resolveInfo="ActionWrapper" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1936744753301954091">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1936744753301954092">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1936744753301953158" resolveInfo="editor" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1936744753301954093">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uw4.~SettingsEditorPanel%dgetCancelAction()%cjavax%dswing%dAction" resolveInfo="getCancelAction" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ic0f.7850891982542471423" resolveInfo="getCancelAction" />
                         </node>
                       </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="1936744753301954094">
@@ -1553,14 +1553,14 @@
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1936744753301953158">
         <property name="name" nameId="tpck.1169194664001" value="editor" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6131607264791629796">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uw4.~SettingsEditorPanel" resolveInfo="SettingsEditorPanel" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2557288013649390078">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ic0f.7850891982542386442" resolveInfo="SettingsEditorPanel" />
         </node>
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="2372421611505994107">
-      <property name="name" nameId="tpck.1169194664001" value="dispose" />
       <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="dispose" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2372421611505994108" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2372421611505994109" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2372421611505994110">
@@ -1623,12 +1623,12 @@
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1928697827310642831">
                         <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1928697827310642832">
                           <property name="name" nameId="tpck.1169194664001" value="dialog" />
-                          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6131607264791629801">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uw4.~SettingsEditorDialog" resolveInfo="SettingsEditorDialog" />
+                          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2557288013649371450">
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ic0f.8669494666333581720" resolveInfo="SettingsEditorDialog" />
                           </node>
                           <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1928697827310642834">
                             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1928697827310642835">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uw4.~SettingsEditorDialog%d&lt;init&gt;(jetbrains%dmps%dexecution%dapi%dsettings%dITemplatePersistentConfiguration)" resolveInfo="SettingsEditorDialog" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ic0f.8669494666333581722" resolveInfo="SettingsEditorDialog" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1928697827310642836">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1928697827310642826" resolveInfo="personEditor" />
                               </node>
@@ -1776,8 +1776,8 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3552883229438210286">
             <property name="name" nameId="tpck.1169194664001" value="parts" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3552883229438210294">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5b61.~ProcessHandlerBuilder%dsplitCommandInParts(java%dlang%dString)%cjava%dlang%dIterable" resolveInfo="splitCommandInParts" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="5b61.~ProcessHandlerBuilder" resolveInfo="ProcessHandlerBuilder" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lk2n.3908032508224771422" resolveInfo="ProcessHandlerBuilder" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lk2n.8851756219471015167" resolveInfo="splitCommandInParts" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3552883229438210295">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3552883229438210287" resolveInfo="string" />
               </node>
