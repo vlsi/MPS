@@ -137,10 +137,15 @@ public class TypeCheckingContextNew extends SingleTypecheckingContext {
 
   //--------
 
-
   @Override
   public boolean isIncrementalMode() {
     return !myTypeChecker.isGenerationMode() && getState().getInequalitySystem() == null;
+  }
+
+  public void runTypeCheckingAction(Runnable r) {
+    synchronized (TYPECHECKING_LOCK) {
+      r.run();
+    }
   }
 
   @Override

@@ -158,10 +158,6 @@ public abstract class TypeCheckingContext {
   @Deprecated
   public abstract NodeTypesComponent getBaseNodeTypesComponent();
 
-  public abstract void runTypeCheckingAction(Runnable r);
-
-  public abstract <T> T runTypeCheckingAction(Computable<T> c);
-
   /*package*/
   public abstract SNode computeTypeInferenceMode(SNode node);
 

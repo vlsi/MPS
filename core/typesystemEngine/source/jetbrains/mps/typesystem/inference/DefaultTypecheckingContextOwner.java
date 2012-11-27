@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2012 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,17 @@ package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.smodel.SNode;
 
-public interface ITypeContextOwner {
-  TypeCheckingContext createTypecheckingContext (SNode sNode, TypeContextManager typeContextManager);
+/**
+ * Created with IntelliJ IDEA.
+ * User: fyodor
+ * Date: 11/27/12
+ * Time: 11:32 AM
+ * To change this template use File | Settings | File Templates.
+ */
+public class DefaultTypecheckingContextOwner implements ITypeContextOwner {
 
+  @Override
+  public TypeCheckingContext createTypecheckingContext(SNode sNode, TypeContextManager typeContextManager) {
+    return typeContextManager.createTypeCheckingContext(sNode);
+  }
 }

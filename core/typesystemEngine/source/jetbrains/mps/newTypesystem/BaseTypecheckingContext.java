@@ -203,24 +203,9 @@ public abstract class BaseTypecheckingContext extends TypeCheckingContext {
     getState().clear(true);
   }
 
-
   @Override
   public SNode getNode() {
     return myRootNode;
-  }
-
-  @Override
-  public void runTypeCheckingAction(Runnable r) {
-    synchronized (TYPECHECKING_LOCK) {
-      r.run();
-    }
-  }
-
-  @Override
-  public <T> T runTypeCheckingAction(Computable<T> c) {
-    synchronized (TYPECHECKING_LOCK) {
-      return c.compute();
-    }
   }
 
   @Override

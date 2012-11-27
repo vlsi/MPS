@@ -20,6 +20,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.errors.QuickFixProvider;
 
 public class SpecificModelChecker extends SpecificChecker implements ITypeContextOwner {
@@ -42,23 +43,26 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
         break;
       }
       for (SNode rootNode : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
-        TypeContextManager.getInstance().getOrCreateContext(rootNode, this, true);
-        Set<IErrorReporter> iErrorReporters = checker.getErrors(rootNode, operationContext);
-        for (IErrorReporter errorReporter : SetSequence.fromSet(iErrorReporters)) {
-          final IErrorReporter reporter = errorReporter;
-          final QuickFix_Runtime quickFix = check_7763bz_a0b0c0d0d0a(check_7763bz_a0a1a2a3a3a0(errorReporter));
-          IModelCheckerFix fix = null;
-          if (quickFix != null) {
-            fix = new IModelCheckerFix() {
-              public boolean doFix() {
-                quickFix.execute(reporter.getSNode());
-                return true;
-              }
-            };
+        TypeContextManager.getInstance().acquireTypecheckingContext(rootNode, this);
+        try {
+          Set<IErrorReporter> iErrorReporters = checker.getErrors(rootNode, operationContext);
+          for (IErrorReporter errorReporter : SetSequence.fromSet(iErrorReporters)) {
+            final IErrorReporter reporter = errorReporter;
+            final QuickFix_Runtime quickFix = check_7763bz_a0b0b0b0d0d0a(check_7763bz_a0a1a1a1a3a3a0(errorReporter));
+            IModelCheckerFix fix = null;
+            if (quickFix != null) {
+              fix = new IModelCheckerFix() {
+                public boolean doFix() {
+                  quickFix.execute(reporter.getSNode());
+                  return true;
+                }
+              };
+            }
+            addIssue(results, errorReporter.getSNode(), errorReporter.reportError(), SpecificChecker.getResultCategory(errorReporter.getMessageStatus()), checker.getCategory(), fix);
           }
-          addIssue(results, errorReporter.getSNode(), errorReporter.reportError(), SpecificChecker.getResultCategory(errorReporter.getMessageStatus()), checker.getCategory(), fix);
+        } finally {
+          TypeContextManager.getInstance().releaseTypecheckingContext(rootNode, this);
         }
-        TypeContextManager.getInstance().removeOwnerForRootNodeContext(rootNode, this);
       }
       monitor.advance(1);
     }
@@ -67,17 +71,17 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
   }
 
   public TypeCheckingContext createTypecheckingContext(SNode node, TypeContextManager manager) {
-    return (new ITypeContextOwner.DEFAULT()).createTypecheckingContext(node, manager);
+    return (new DefaultTypecheckingContextOwner()).createTypecheckingContext(node, manager);
   }
 
-  private static QuickFix_Runtime check_7763bz_a0b0c0d0d0a(QuickFixProvider checkedDotOperand) {
+  private static QuickFix_Runtime check_7763bz_a0b0b0b0d0d0a(QuickFixProvider checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getQuickFix();
     }
     return null;
   }
 
-  private static QuickFixProvider check_7763bz_a0a1a2a3a3a0(IErrorReporter checkedDotOperand) {
+  private static QuickFixProvider check_7763bz_a0a1a1a1a3a3a0(IErrorReporter checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getIntentionProvider();
     }

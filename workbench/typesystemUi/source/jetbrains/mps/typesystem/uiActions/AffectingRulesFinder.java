@@ -26,8 +26,8 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
-import jetbrains.mps.typesystem.inference.ITypeContextOwner.DEFAULT;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.CollectionUtil;
@@ -44,10 +44,10 @@ public class AffectingRulesFinder implements IFinder {
 
     ITypeContextOwner owner = new MyTypeContextOwner();
     TypeContextManager manager = TypeContextManager.getInstance();
-    TypeCheckingContext context = manager.getOrCreateContext(root, owner, true);
-    NodeTypesComponent component = context.getBaseNodeTypesComponent();
 
+    TypeCheckingContext context = manager.acquireTypecheckingContext(root, owner);
     try{
+      NodeTypesComponent component = context.getBaseNodeTypesComponent();
       List<SearchResult<SNode>> rules = new ArrayList<SearchResult<SNode>>();
       if (component == null) return createResult(term, rules);
 
@@ -65,7 +65,7 @@ public class AffectingRulesFinder implements IFinder {
       }
       return createResult(term, rules);
     } finally {
-      manager.removeOwnerForRootNodeContext(root,owner);
+      manager.releaseTypecheckingContext(root,owner);
     }
   }
 
@@ -74,6 +74,6 @@ public class AffectingRulesFinder implements IFinder {
   }
 
 
-  private static class MyTypeContextOwner extends DEFAULT {
+  private static class MyTypeContextOwner extends DefaultTypecheckingContextOwner {
   }
 }

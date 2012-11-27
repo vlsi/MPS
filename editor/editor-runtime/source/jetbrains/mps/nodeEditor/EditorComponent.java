@@ -111,6 +111,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -859,7 +860,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   public TypeCheckingContext createTypecheckingContext(SNode sNode, TypeContextManager typeContextManager) {
-    return (new DEFAULT()).createTypecheckingContext(sNode, typeContextManager);
+    return (new DefaultTypecheckingContextOwner()).createTypecheckingContext(sNode, typeContextManager);
   }
 
   private String getMessagesTextFor(EditorCell cell) {
@@ -2267,7 +2268,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public TypeCheckingContext getTypeCheckingContext() {
-    return TypeContextManager.getInstance().getOrCreateContext(getNodeForTypechecking(), this, true);
+    TypeCheckingContext context = TypeContextManager.getInstance().lookupTypecheckingContext(getNodeForTypechecking(), this);
+    return context != null ? context : TypeContextManager.getInstance().acquireTypecheckingContext(getNodeForTypechecking(), this);
+  }
+
+  public ITypeContextOwner getTypecheckingContextOwner () {
+    return this;
   }
 
   protected void disposeTypeCheckingContext() {
