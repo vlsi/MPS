@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -222,6 +223,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), "isVirtual") && !(SPropertyOperations.getBoolean(_context.getNode(), "isStatic"));
   }
 
+  public static boolean ifMacro_Condition_5212852298298917224(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(SuperNodeExpression_Behavior.call_isSuperMethodStatic_5212852298298945349(_context.getNode()));
+  }
+
   public static boolean ifMacro_Condition_2061371070686302345(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(SPropertyOperations.getBoolean(_context.getNode(), "isStatic"));
   }
@@ -273,7 +278,7 @@ public class QueriesGenerated {
       // todo: remove getClassExpression here 
       return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), returnType, "virtual_getClassExpression_1213877337357", new Object[]{});
     } else {
-      return _quotation_createNode_x583g4_a0a0c0xb(returnType);
+      return _quotation_createNode_x583g4_a0a0c0yb(returnType);
     }
   }
 
@@ -291,7 +296,7 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.PrimitiveType") || (SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(returnType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).isEmpty()) || SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.StringType")) {
       return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), returnType, "virtual_getClassExpression_1213877337357", new Object[]{});
     } else {
-      return _quotation_createNode_x583g4_a0a0c0ac(returnType);
+      return _quotation_createNode_x583g4_a0a0c0bc(returnType);
     }
   }
 
@@ -299,7 +304,7 @@ public class QueriesGenerated {
     try {
       return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "type", true), "virtual_getClassExpression_1213877337357", new Object[]{});
     } catch (Exception e) {
-      return _quotation_createNode_x583g4_a0a0a0bc();
+      return _quotation_createNode_x583g4_a0a0a0cc();
     }
   }
 
@@ -580,7 +585,7 @@ public class QueriesGenerated {
     });
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0c0xb(Object parameter_1) {
+  private static SNode _quotation_createNode_x583g4_a0a0c0yb(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -609,7 +614,7 @@ public class QueriesGenerated {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0c0ac(Object parameter_1) {
+  private static SNode _quotation_createNode_x583g4_a0a0c0bc(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -638,7 +643,7 @@ public class QueriesGenerated {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0a0bc() {
+  private static SNode _quotation_createNode_x583g4_a0a0a0cc() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));

@@ -18,10 +18,18 @@ public class typeof_SuperNodeExpression_InferenceRule extends AbstractInferenceR
 
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode superConcept = SuperNodeExpression_Behavior.call_getSuperConcept_7448026190102457310(nodeToCheck);
-    {
-      SNode _nodeToCheck_1029348928467 = nodeToCheck;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "1225195239813", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "1225195239815", true), (SNode) _quotation_createNode_ts3rwu_a0b0a(superConcept), _info_12389875345);
+    if (SuperNodeExpression_Behavior.call_isSuperMethodStatic_5212852298298945349(nodeToCheck)) {
+      {
+        SNode _nodeToCheck_1029348928467 = nodeToCheck;
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "5527038142169120625", 0, null);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "5527038142169115307", true), (SNode) _quotation_createNode_ts3rwu_a0a0b0a(superConcept), _info_12389875345);
+      }
+    } else {
+      {
+        SNode _nodeToCheck_1029348928467 = nodeToCheck;
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "1225195239813", 0, null);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "1225195239815", true), (SNode) _quotation_createNode_ts3rwu_a0a0a1a0(superConcept), _info_12389875345);
+      }
     }
   }
 
@@ -40,7 +48,14 @@ public class typeof_SuperNodeExpression_InferenceRule extends AbstractInferenceR
     return false;
   }
 
-  private static SNode _quotation_createNode_ts3rwu_a0b0a(Object parameter_1) {
+  private static SNode _quotation_createNode_ts3rwu_a0a0b0a(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("conceptDeclaraton", (SNode) parameter_1);
+    return quotedNode_2;
+  }
+
+  private static SNode _quotation_createNode_ts3rwu_a0a0a1a0(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);

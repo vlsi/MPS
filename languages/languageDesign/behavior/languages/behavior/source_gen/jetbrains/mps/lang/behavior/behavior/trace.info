@@ -569,43 +569,58 @@
     <unitInfo nodeId="7148319044498527609" fileName="LocalBehaviorMethodCall_Behavior.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.LocalBehaviorMethodCall_Behavior" />
   </root>
   <root nodeId="7448026190102457307" modelId="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)">
-    <nodeInfo nodeId="7448026190102459281" fileName="SuperNodeExpression_Behavior.java" startLine="14" startPosition="80" endLine="15" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7448026190102459286" fileName="SuperNodeExpression_Behavior.java" startLine="16" startPosition="79" endLine="17" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7448026190102459299" fileName="SuperNodeExpression_Behavior.java" startLine="18" startPosition="12" endLine="19" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7448026190102459308" fileName="SuperNodeExpression_Behavior.java" startLine="19" startPosition="132" endLine="20" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7448026190102459316" fileName="SuperNodeExpression_Behavior.java" startLine="21" startPosition="111" endLine="22" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7448026190102459323" fileName="SuperNodeExpression_Behavior.java" startLine="22" startPosition="37" endLine="23" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7448026190102459335" fileName="SuperNodeExpression_Behavior.java" startLine="24" startPosition="14" endLine="25" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7448026190102459342" fileName="SuperNodeExpression_Behavior.java" startLine="25" startPosition="38" endLine="26" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7448026190102480590" fileName="SuperNodeExpression_Behavior.java" startLine="28" startPosition="5" endLine="29" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7448026190102457307" fileName="SuperNodeExpression_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="7448026190102459333" fileName="SuperNodeExpression_Behavior.java" startLine="24" startPosition="12" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7448026190102459314" fileName="SuperNodeExpression_Behavior.java" startLine="20" startPosition="77" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7448026190102459297" fileName="SuperNodeExpression_Behavior.java" startLine="18" startPosition="10" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7448026190102459284" fileName="SuperNodeExpression_Behavior.java" startLine="15" startPosition="17" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7448026190102457307" fileName="SuperNodeExpression_Behavior.java" startLine="14" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getSuperConcept_7448026190102457310#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="7448026190102457309" fileName="SuperNodeExpression_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="7448026190102459285" fileName="SuperNodeExpression_Behavior.java" startLine="16" startPosition="79" endLine="17" endPosition="74" />
-    <scopeInfo nodeId="7448026190102457307" fileName="SuperNodeExpression_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
+    <nodeInfo nodeId="7448026190102459281" fileName="SuperNodeExpression_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7448026190102459286" fileName="SuperNodeExpression_Behavior.java" startLine="17" startPosition="79" endLine="18" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7448026190102459299" fileName="SuperNodeExpression_Behavior.java" startLine="19" startPosition="12" endLine="20" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7448026190102459308" fileName="SuperNodeExpression_Behavior.java" startLine="20" startPosition="132" endLine="21" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7448026190102459316" fileName="SuperNodeExpression_Behavior.java" startLine="22" startPosition="111" endLine="23" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7448026190102459323" fileName="SuperNodeExpression_Behavior.java" startLine="23" startPosition="37" endLine="24" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7448026190102459335" fileName="SuperNodeExpression_Behavior.java" startLine="25" startPosition="14" endLine="26" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7448026190102459342" fileName="SuperNodeExpression_Behavior.java" startLine="26" startPosition="38" endLine="27" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7448026190102480590" fileName="SuperNodeExpression_Behavior.java" startLine="29" startPosition="5" endLine="30" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5527038142169087946" fileName="SuperNodeExpression_Behavior.java" startLine="33" startPosition="79" endLine="34" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5212852298298946662" fileName="SuperNodeExpression_Behavior.java" startLine="37" startPosition="86" endLine="38" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5212852298298946952" fileName="SuperNodeExpression_Behavior.java" startLine="38" startPosition="98" endLine="39" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7448026190102457307" fileName="SuperNodeExpression_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7448026190102459333" fileName="SuperNodeExpression_Behavior.java" startLine="25" startPosition="12" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7448026190102457307" fileName="SuperNodeExpression_Behavior.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getSuperMethod_5527038142169086661#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7448026190102457307" fileName="SuperNodeExpression_Behavior.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isSuperMethodStatic_5212852298298945349#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7448026190102459314" fileName="SuperNodeExpression_Behavior.java" startLine="21" startPosition="77" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7448026190102459297" fileName="SuperNodeExpression_Behavior.java" startLine="19" startPosition="10" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7448026190102459284" fileName="SuperNodeExpression_Behavior.java" startLine="16" startPosition="17" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7448026190102457307" fileName="SuperNodeExpression_Behavior.java" startLine="15" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getSuperConcept_7448026190102457310#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="7448026190102457309" fileName="SuperNodeExpression_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="7448026190102459285" fileName="SuperNodeExpression_Behavior.java" startLine="17" startPosition="79" endLine="18" endPosition="74" />
+    <scopeInfo nodeId="5527038142169086664" fileName="SuperNodeExpression_Behavior.java" startLine="33" startPosition="79" endLine="34" endPosition="129" />
+    <scopeInfo nodeId="7448026190102457307" fileName="SuperNodeExpression_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="7448026190102457307" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7448026190102459315" fileName="SuperNodeExpression_Behavior.java" startLine="21" startPosition="111" endLine="23" endPosition="65">
+    <scopeInfo nodeId="7448026190102459315" fileName="SuperNodeExpression_Behavior.java" startLine="22" startPosition="111" endLine="24" endPosition="65">
       <varInfo nodeId="7448026190102459317" varName="cd" />
     </scopeInfo>
-    <scopeInfo nodeId="7448026190102459334" fileName="SuperNodeExpression_Behavior.java" startLine="24" startPosition="14" endLine="26" endPosition="140">
+    <scopeInfo nodeId="7448026190102459334" fileName="SuperNodeExpression_Behavior.java" startLine="25" startPosition="14" endLine="27" endPosition="140">
       <varInfo nodeId="7448026190102459336" varName="icd" />
     </scopeInfo>
-    <scopeInfo nodeId="7448026190102459298" fileName="SuperNodeExpression_Behavior.java" startLine="18" startPosition="12" endLine="27" endPosition="7">
+    <scopeInfo nodeId="5212852298298945352" fileName="SuperNodeExpression_Behavior.java" startLine="37" startPosition="86" endLine="39" endPosition="80">
+      <varInfo nodeId="5212852298298946665" varName="method" />
+    </scopeInfo>
+    <scopeInfo nodeId="7448026190102457307" fileName="SuperNodeExpression_Behavior.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="7448026190102457307" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7448026190102457307" fileName="SuperNodeExpression_Behavior.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="7448026190102457307" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7448026190102459298" fileName="SuperNodeExpression_Behavior.java" startLine="19" startPosition="12" endLine="28" endPosition="7">
       <varInfo nodeId="7448026190102459300" varName="behaviour" />
       <varInfo nodeId="7448026190102459309" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="7448026190102457313" fileName="SuperNodeExpression_Behavior.java" startLine="14" startPosition="80" endLine="29" endPosition="18">
+    <scopeInfo nodeId="7448026190102457313" fileName="SuperNodeExpression_Behavior.java" startLine="15" startPosition="80" endLine="30" endPosition="18">
       <varInfo nodeId="7448026190102459282" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7448026190102457307" fileName="SuperNodeExpression_Behavior.java" startLine="14" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="7448026190102457307" fileName="SuperNodeExpression_Behavior.java" startLine="15" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="7448026190102457307" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="7448026190102457307" fileName="SuperNodeExpression_Behavior.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_Behavior" />
+    <unitInfo nodeId="7448026190102457307" fileName="SuperNodeExpression_Behavior.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_Behavior" />
   </root>
 </debugInfo>
 
