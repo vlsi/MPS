@@ -50,6 +50,15 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import com.intellij.openapi.wm.WindowManager;
+import jetbrains.mps.smodel.SModelDescriptor;
 import java.awt.GraphicsDevice;
 import java.awt.HeadlessException;
 
@@ -295,6 +304,42 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     ListSequence.fromList(myEditorSeparators).clear();
     myEditorSeparators = null;
     super.dispose();
+  }
+
+  public static void invokeDialog(final SModel oldModel, final SModel newModel, final SNodeId rootId, final Project project, final String[] contentTitles, @Nullable final Bounds scrollTo) {
+    assert contentTitles.length == 2;
+
+    jetbrains.mps.project.Project p = ProjectHelper.toMPSProject(project);
+    DiffTemporaryModule.createModuleForModel(oldModel, "old", p);
+    DiffTemporaryModule.createModuleForModel(newModel, "new", p);
+
+    final Wrappers._T<RootDifferenceDialog> dialog = new Wrappers._T<RootDifferenceDialog>();
+    ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<RootDifferenceDialog>() {
+      public RootDifferenceDialog invoke() {
+        ModelChangeSet changeSet = ChangeSetBuilder.buildChangeSet(oldModel, newModel, true);
+
+        SNode node = newModel.getNodeById(rootId);
+        if (node == null) {
+          node = oldModel.getNodeById(rootId);
+        }
+        String rootName = (node == null ?
+          "root" :
+          node.getPresentation()
+        );
+
+        boolean isEditable = newModel.getModelDescriptor() instanceof EditableSModelDescriptor && check_vu2gar_a0a0g0a7a0(SModelRepository.getInstance().getModelDescriptor(newModel.getSModelReference())) == newModel;
+
+        return dialog.value = new RootDifferenceDialog(project, changeSet, rootId, rootName, contentTitles, WindowManager.getInstance().getFrame(project), isEditable, null, scrollTo);
+      }
+    }));
+    dialog.value.show();
+  }
+
+  private static SModel check_vu2gar_a0a0g0a7a0(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSModel();
+    }
+    return null;
   }
 
   private static DisplayMode check_vu2gar_a0jb0a(GraphicsDevice checkedDotOperand) {

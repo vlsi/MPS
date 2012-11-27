@@ -99,6 +99,7 @@ import java.io.File;
 import com.intellij.openapi.vcs.changes.ContentRevision;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
+import jetbrains.mps.vcs.diff.ui.RootDifferenceDialog;
 import com.intellij.openapi.vcs.VcsException;
 
 public class AnnotationColumn extends AbstractLeftColumn {
@@ -644,6 +645,13 @@ __switch__:
     return null;
   }
 
+  private static SNodeId check_5mnya_a0d0a91a8a2a0a0a0a1a1a0c(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSNodeId();
+    }
+    return null;
+  }
+
   private class MyAnnotationListener implements AnnotationListener {
     public MyAnnotationListener() {
     }
@@ -750,41 +758,32 @@ __switch__:
                 assert after != null;
                 final SModel afterModel = ModelPersistence.readModel(after.getContent(), false);
 
-                final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
-                ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
-                  public SNode invoke() {
+                final Wrappers._T<SNodeId> rootId = new Wrappers._T<SNodeId>();
+                ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNodeId>() {
+                  public SNodeId invoke() {
                     SNodeId nodeId = check_5mnya_a0a0a91a8a2a0a0a0a1a1a0c(ListSequence.fromList(myFileLineToContent).getElement(myFileLine));
-                    node.value = afterModel.getNodeById(nodeId);
-                    if ((node.value == null)) {
-                      node.value = beforeModel.value.getNodeById(nodeId);
+                    SNode node = afterModel.getNodeById(nodeId);
+                    if ((node == null)) {
+                      node = beforeModel.value.getNodeById(nodeId);
                     }
-                    return node.value = SNodeOperations.getContainingRoot(node.value);
-
+                    return rootId.value = check_5mnya_a0d0a91a8a2a0a0a0a1a1a0c(SNodeOperations.getContainingRoot(node));
                   }
                 }));
 
-                final String beforeRevNumber = (before == null ?
+                final String[] titles = {(before == null ?
                   "<no revision>" :
                   before.getRevisionNumber().asString()
-                );
-                final String afterRevNumber = after.getRevisionNumber().asString();
-                if (node.value == null) {
-                  ApplicationManager.getApplication().invokeLater(new Runnable() {
-                    public void run() {
-                      new ModelDifferenceDialog(beforeModel.value, afterModel, project, beforeRevNumber, afterRevNumber).show();
+                ), after.getRevisionNumber().asString()};
+
+                ApplicationManager.getApplication().invokeLater(new Runnable() {
+                  public void run() {
+                    if (rootId.value == null) {
+                      new ModelDifferenceDialog(beforeModel.value, afterModel, project, titles[0], titles[1]).show();
+                    } else {
+                      RootDifferenceDialog.invokeDialog(beforeModel.value, afterModel, rootId.value, project, titles, null);
                     }
-                  });
-                } else {
-                  ModelAccess.instance().runReadInEDT(new Runnable() {
-                    public void run() {
-                      ModelDifferenceDialog modelDialog;
-                      SNodeId id;
-                      modelDialog = new ModelDifferenceDialog(beforeModel.value, afterModel, project, beforeRevNumber, afterRevNumber);
-                      id = node.value.getSNodeId();
-                      modelDialog.invokeRootDifference(id);
-                    }
-                  });
-                }
+                  }
+                });
               }
             } catch (final VcsException ve) {
               ApplicationManager.getApplication().invokeLater(new Runnable() {

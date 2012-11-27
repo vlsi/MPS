@@ -18,9 +18,9 @@ import com.intellij.openapi.vcs.changes.ContentRevision;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.vcs.diff.ui.RootDifferenceDialog;
 import com.intellij.openapi.vcs.VcsException;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -54,22 +54,23 @@ public class VcsActionsUtil {
   private VcsActionsUtil() {
   }
 
-  public static void showRootDifference(EditableSModelDescriptor modelDescriptor, final SNode node, final Project project, @Nullable Bounds bounds) {
+  public static void showRootDifference(EditableSModelDescriptor modelDescriptor, final SNode node, Project project, @Nullable Bounds bounds) {
     try {
       VirtualFile file = ModelUtil.getVFilesByModelDescriptor(modelDescriptor).iterator().next();
       AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(file);
-      final VcsRevisionNumber revisionNumber = vcs.getDiffProvider().getCurrentRevision(file);
+      VcsRevisionNumber revisionNumber = vcs.getDiffProvider().getCurrentRevision(file);
+      String[] contentTitles = {revisionNumber.asString() + " (Read-Only)", "Your Version"};
       ContentRevision content = vcs.getDiffProvider().createFileContent(revisionNumber, file);
-      final SModel oldModel = ModelPersistence.readModel(content.getContent(), false);
-      final Wrappers._T<ModelDifferenceDialog> modelDialog = new Wrappers._T<ModelDifferenceDialog>();
+      SModel oldModel = ModelPersistence.readModel(content.getContent(), false);
+      final Wrappers._T<SModel> newModel = new Wrappers._T<SModel>();
       final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          modelDialog.value = new ModelDifferenceDialog(oldModel, node.getModel(), project, revisionNumber.asString() + " (Read-Only)", "Your Version");
+          newModel.value = node.getModel();
           id.value = node.getSNodeId();
         }
       });
-      modelDialog.value.invokeRootDifference(id.value, bounds);
+      RootDifferenceDialog.invokeDialog(oldModel, newModel.value, id.value, project, contentTitles, bounds);
     } catch (VcsException e) {
       if (log.isWarnEnabled()) {
         log.warn("", e);
