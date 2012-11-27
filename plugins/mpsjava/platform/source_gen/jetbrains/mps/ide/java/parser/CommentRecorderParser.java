@@ -140,7 +140,7 @@ public class CommentRecorderParser extends Parser {
   }
 
   public void initializeScanner() {
-    this.scanner = new CommentRecorderScanner(false, false, this.options.getSeverity(CompilerOptions.NonExternalizedString) != ProblemSeverities.Ignore, this.options.sourceLevel, this.options.taskTags, this.options.taskPriorites, this.options.isTaskCaseSensitive);
+    this.scanner = new CommentRecorderScanner(false, false, this.options.getSeverity(CompilerOptions.NonExternalizedString) != ProblemSeverities.Ignore, this.options.sourceLevel, this.options.taskTags, this.options.taskPriorities, this.options.isTaskCaseSensitive);
   }
 
   private void pushOnCommentsStack(int start, int end) {

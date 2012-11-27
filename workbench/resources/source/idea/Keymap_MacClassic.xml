@@ -77,6 +77,13 @@
     <action id="RunGc"/>
     <action id="RunClass"/>
 
+    <action id="EditorChooseLookupItemAlways">
+      <keyboard-shortcut first-keystroke="control ENTER"/>
+    </action>
+
+    <action id="EditorLookupUp"> <keyboard-shortcut first-keystroke="control UP"/> </action>
+    <action id="EditorLookupDown"> <keyboard-shortcut first-keystroke="control DOWN"/> </action>
+
     <action id="GotoBookmark0">
       <keyboard-shortcut first-keystroke="control 0"/>
     </action>
@@ -144,6 +151,9 @@
     </action>
     <action id="NextTab">
       <keyboard-shortcut first-keystroke="control RIGHT"/>
+    </action>
+    <action id="ShowContent">
+      <keyboard-shortcut first-keystroke="control DOWN"/>
     </action>
     <action id="NextEditorTab">
       <keyboard-shortcut first-keystroke="control shift RIGHT"/>
@@ -227,7 +237,6 @@
       <keyboard-shortcut first-keystroke="END"/>
       <keyboard-shortcut first-keystroke="meta RIGHT"/>
     </action>
-    <action id="CloseWindow"/>
     <action id="Exit">
       <keyboard-shortcut first-keystroke="meta Q"/>
     </action>
@@ -308,8 +317,13 @@
       <keyboard-shortcut first-keystroke="meta M"/>
     </action>
 
+    <action id="ToggleFullScreen">
+      <keyboard-shortcut first-keystroke="meta control F"/>
+    </action>
+
     <action id="Vcs.ShowMessageHistory">
       <keyboard-shortcut first-keystroke="control M"/>
+      <keyboard-shortcut first-keystroke="meta E"/>
     </action>
 
     <action id="EditorScrollToCenter"/> <!-- Disables meta M -->

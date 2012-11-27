@@ -1,0 +1,78 @@
+<components>
+  <application-components>
+
+    <component>
+      <interface-class>com.intellij.openapi.fileEditor.impl.text.TextEditorProvider</interface-class>
+      <implementation-class>com.intellij.openapi.fileEditor.impl.text.TextEditorProvider</implementation-class>
+    </component>
+
+    <component>
+      <interface-class>com.intellij.util.indexing.FileBasedIndex</interface-class>
+      <implementation-class>com.intellij.util.indexing.FileBasedIndexImpl</implementation-class>
+    </component>
+    <component>
+      <interface-class>com.intellij.psi.stubs.SerializationManager</interface-class>
+      <implementation-class>com.intellij.psi.stubs.SerializationManagerImpl</implementation-class>
+    </component>
+
+  </application-components>
+
+  <project-components>
+    <component>
+      <interface-class>com.intellij.codeInsight.highlighting.HighlightManager</interface-class>
+      <implementation-class>com.intellij.codeInsight.highlighting.HighlightManagerImpl</implementation-class>
+      <skipForDummyProject/>
+    </component>
+
+    <component>
+      <interface-class>com.intellij.openapi.roots.ProjectRootManager</interface-class>
+      <implementation-class>com.intellij.openapi.roots.impl.ProjectRootManagerComponent</implementation-class>
+    </component>
+    <component>
+      <interface-class>com.intellij.openapi.roots.impl.DirectoryIndex</interface-class>
+      <implementation-class>com.intellij.openapi.roots.impl.DirectoryIndexComponent</implementation-class>
+      <loadForDefaultProject/>
+    </component>
+
+    <component>
+      <interface-class>com.intellij.psi.PsiManager</interface-class>
+      <implementation-class>jetbrains.mps.workbench.psi.NullPsiManager</implementation-class>
+      <loadForDefaultProject/>
+    </component>
+    <component>
+      <interface-class>com.intellij.psi.PsiDocumentManager</interface-class>
+      <implementation-class>jetbrains.mps.workbench.psi.NullPsiDocumentManager</implementation-class>
+      <loadForDefaultProject/>
+    </component>
+
+    <component>
+      <interface-class>com.intellij.openapi.module.ModuleManager</interface-class>
+      <implementation-class>jetbrains.mps.EmptyModuleManager</implementation-class>
+      <loadForDefaultProject/>
+    </component>
+
+    <component>
+      <interface-class>com.intellij.openapi.fileEditor.FileEditorManager</interface-class>
+      <implementation-class>com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl</implementation-class>
+      <headless-implementation-class>jetbrains.mps.MPSTestEditorManagerImpl</headless-implementation-class>
+      <option name="workspace" value="true"/>
+      <skipForDummyProject/>
+    </component>
+
+    <component>
+      <interface-class>com.intellij.problems.WolfTheProblemSolver</interface-class>
+      <implementation-class>com.intellij.codeInsight.problems.WolfTheProblemSolverImpl</implementation-class>
+      <headless-implementation-class>com.intellij.codeInsight.problems.MockWolfTheProblemSolver</headless-implementation-class>
+    </component>
+
+    <component>
+      <interface-class>com.intellij.codeInsight.daemon.DaemonCodeAnalyzer</interface-class>
+      <implementation-class>jetbrains.mps.workbench.codeInsight.NullDaemonCodeAnalyzer</implementation-class>
+      <loadForDefaultProject/>
+    </component>
+
+    <component>
+      <implementation-class>com.intellij.util.indexing.FileBasedIndexProjectHandler</implementation-class>
+    </component>
+  </project-components>
+</components>

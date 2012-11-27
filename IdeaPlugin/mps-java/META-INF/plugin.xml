@@ -19,9 +19,9 @@
   <name>MPS BaseLanguage support</name>
   <description>Support of MPS baseLanguage</description>
   <category>Custom Languages</category>
-  <version>2.5.1</version>
+  <version>3.0</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="117.105"></idea-version>
+  <idea-version since-build="122.746" />
   <depends>jetbrains.mps.core</depends>
 
   <xi:include href="../classes/jetbrains/mps/ide/java/actions/JavaActions.xml" xpointer="xpointer(/components/*)"/>

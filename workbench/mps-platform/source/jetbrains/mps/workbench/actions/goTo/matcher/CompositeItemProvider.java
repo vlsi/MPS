@@ -17,7 +17,9 @@ package jetbrains.mps.workbench.actions.goTo.matcher;
 
 import com.intellij.ide.util.gotoByName.ChooseByNameBase;
 import com.intellij.ide.util.gotoByName.ChooseByNameItemProvider;
+import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.util.Processor;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,10 +39,11 @@ public class CompositeItemProvider implements ChooseByNameItemProvider {
     return res;
   }
 
-  public void filterElements(ChooseByNameBase base, String pattern, boolean everywhere, com.intellij.openapi.util.Computable<Boolean> cancelled, Processor<Object> consumer) {
-    List<Object> res = new ArrayList<Object>();
+  public boolean filterElements(@NotNull ChooseByNameBase base, @NotNull String pattern, boolean everywhere, @NotNull ProgressIndicator cancelled, @NotNull Processor<Object> consumer) {
+    boolean result = true;
     for (ChooseByNameItemProvider matcher : myProviders) {
-      matcher.filterElements(base,pattern, everywhere, cancelled, consumer);
+      result = matcher.filterElements(base, pattern, everywhere, cancelled, consumer) && result;
     }
+    return result;
   }
 }

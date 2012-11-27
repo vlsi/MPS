@@ -17,15 +17,20 @@
 package jetbrains.mps.idea.core.usages.rules;
 
 
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.usages.Usage;
 import com.intellij.usages.UsageGroup;
 import com.intellij.usages.impl.rules.FileGroupingRule;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.ModelUtil;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collection;
+
 public class ModelUsageGroupingRule extends FileGroupingRule {
+  private static final Logger LOG = Logger.getInstance(ModelUsageGroupingRule.class);
   private Project project;
 
   public ModelUsageGroupingRule(Project project) {
@@ -37,12 +42,23 @@ public class ModelUsageGroupingRule extends FileGroupingRule {
   public UsageGroup groupUsage(@NotNull Usage usage) {
     if (usage instanceof UsageInModel) {
       final UsageInModel usageInModel = (UsageInModel) usage;
-      final VirtualFile modelFile = ModelUtil.getFileByModel(usageInModel.getModel());
-      return new FileUsageGroup(project, modelFile) {
-        public boolean canNavigate() {
-          return false;
-        }
-      };
+      SModelDescriptor modelDescriptor = usageInModel.getModel();
+      Collection<VirtualFile> filesByModelDescriptor = ModelUtil.getVFilesByModelDescriptor(modelDescriptor);
+      if (filesByModelDescriptor.isEmpty()) {
+        return null;
+      } else if (filesByModelDescriptor.size() > 1) {
+        // in case there are more than one file, result would be inaccurate, so better do not return anything
+        // it used to fail but I do not like that
+        // so adding an assert for a noble colleague who may encounter with this situation
+        LOG.warn("Multi-file model descriptor. Do not know what to do with it. Model " + modelDescriptor.getSModelReference());
+        return null;
+      } else {
+        return new FileUsageGroup(project, filesByModelDescriptor.iterator().next()) {
+          public boolean canNavigate() {
+            return false;
+          }
+        };
+      }
     }
     return null;
   }

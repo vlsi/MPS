@@ -15,6 +15,7 @@
     </content>
     <content url="file://$MODULE_DIR$/../../plugins/mpsjava/platform">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/platform/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/platform/source" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../workbench/mps-debugger">
       <sourceFolder url="file://$MODULE_DIR$/../../workbench/mps-debugger/source_gen" isTestSource="false" />

@@ -21,14 +21,9 @@ import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.refactoring.StructureModificationLog;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
-import jetbrains.mps.smodel.event.SModelFileChangedEvent;
-import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoader;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -41,14 +36,13 @@ import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.Collections;
 import java.util.Map;
 
 import static jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
 
-public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor, GeneratableSModelDescriptor, RefactorableSModelDescriptor, FastFindSupportProvider {
+public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implements GeneratableSModelDescriptor, RefactorableSModelDescriptor, FastFindSupportProvider {
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
   public static String FAST_FIND_ID = "regular";
 
@@ -57,13 +51,13 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     protected ModelLoadResult doLoad(ModelLoadingState state, @Nullable DefaultSModel current) {
       if (state == ModelLoadingState.NOT_LOADED) return new ModelLoadResult(null, ModelLoadingState.NOT_LOADED);
       if (state == ModelLoadingState.ROOTS_LOADED) {
-        ModelLoadResult result = load(ModelLoadingState.ROOTS_LOADED);
+        ModelLoadResult result = loadSModel(ModelLoadingState.ROOTS_LOADED);
         tryFixingVersion(result.getModel());
         updateDiskTimestamp();
         return result;
       }
       if (state == ModelLoadingState.FULLY_LOADED) {
-        DefaultSModel fullModel = load(ModelLoadingState.FULLY_LOADED).getModel();
+        DefaultSModel fullModel = loadSModel(ModelLoadingState.FULLY_LOADED).getModel();
         updateDiskTimestamp();
         if (current == null) return new ModelLoadResult(fullModel, ModelLoadingState.FULLY_LOADED);
         current.setUpdateMode(true);   //not to send events on changes
@@ -80,8 +74,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   private final Object myRefactoringHistoryLock = new Object();
   private StructureModificationLog myStructureModificationLog;
-
-  private boolean myChanged = false;
 
   public DefaultSModelDescriptor(FileDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
     super(modelReference, source);
@@ -117,16 +109,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     return myModel.getModel(null);
   }
 
-  @Override
-  public boolean isReadOnly() {
-    return getSource().isReadOnly();
-  }
-
   //just loads model, w/o changing state of SModelDescriptor
-  private ModelLoadResult load(ModelLoadingState loadingState) {
-    return loadSModel(loadingState);
-  }
-
   private ModelLoadResult loadSModel(ModelLoadingState state) {
     SModelReference dsmRef = getModelReference();
 
@@ -165,24 +148,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
 
-  @Override
-  public boolean isChanged() {
-    return myChanged;
-  }
-
-  @Override
-  public void setChanged(boolean changed) {
-    myChanged = changed;
-  }
-
   public int getPersistenceVersion() {
     return getSModelHeader().getPersistenceVersion();
-  }
-
-  @Override
-  @NotNull
-  public FileDataSource getSource() {
-    return (FileDataSource) super.getSource();
   }
 
   @Override
@@ -211,32 +178,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   @Override
-  public void save() {
-    ModelAccess.assertLegalWrite();
-
-    if (myModel.getState() == ModelLoadingState.NOT_LOADED) return;
-
-    //we must be in command since model save might change model by adding model/language imports
-    //if (!mySModel.isLoading()) LOG.assertInCommand();
-
-    LOG.info("Saving model " + getSModel().getSModelFqName());
-
-    if (!checkAndResolveConflictOnSave()) return;
-
-    setChanged(false);
-    boolean reload = saveModel();
-    if (reload) {
-      ModelLoadResult res = loadSModel(myModel.getState());
-      updateDiskTimestamp();
-      replaceModel(res.getModel(), res.getState());
-    }
-
-    updateDiskTimestamp();
-
-    fireModelSaved();
-  }
-
-  private boolean saveModel() {
+  protected boolean saveModel() {
     SModel smodel = getSModel();
     if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model
@@ -255,31 +197,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     return Boolean.parseBoolean(getSModelHeader().getOptionalProperty("useModelFolderForGeneration"));
   }
 
-  public void replaceModel(final DefaultSModel newModel, final ModelLoadingState state) {
-    ModelAccess.assertLegalWrite();
-
-    if (newModel == getCurrentModelInternal()) return;
-    myStructureModificationLog = null;
-    setChanged(false);
-    super.replaceModel(new Runnable() {
-      @Override
-      public void run() {
-        myModel.replaceWith(newModel, state);
-      }
-    });
-  }
-
   @Override
   public String getModelHash() {
-    IFile file = getSource().getFile();
-    if (file == null) return null;
-    return ModelDigestUtil.hash(file);
-  }
-
-  @Override
-  public void dispose() {
-    UnregisteredNodes.instance().clear(getModelReference());
-    super.dispose();
+    return ModelDigestUtil.hash(getSource().getFile());
   }
 
   @Override
@@ -320,18 +240,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     return Collections.unmodifiableMap(myMetadata);
   }
 
-  public void changeModelFile(IFile newModelFile) {
-    ModelAccess.assertLegalWrite();
-    if (getSource().getFile().getPath().equals(newModelFile.getPath())) return;
-
-    IFile oldFile = getSource().getFile();
-    SModel model = getSModel();
-    fireBeforeModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
-    getSource().setFile(newModelFile);
-    updateDiskTimestamp();
-    fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
-  }
-
   private void tryFixingVersion(SModel loadedSModel) {
     if (getVersion() != -1) return;
 
@@ -343,29 +251,21 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     }
   }
 
-  @Override
-  public void reloadFromDisk() {
+  public void replaceModel(final DefaultSModel newModel, final ModelLoadingState state) {
     ModelAccess.assertLegalWrite();
 
-    if (!getSource().getFile().exists()) {
-      SModelRepository.getInstance().removeModelDescriptor(this);
-      return;
-    }
-
-    reload();
-    LOG.assertLog(!needsReloading());
+    if (newModel == getCurrentModelInternal()) return;
+    myStructureModificationLog = null;
+    setChanged(false);
+    super.replaceModel(new Runnable() {
+      @Override
+      public void run() {
+        myModel.replaceWith(newModel, state);
+      }
+    });
   }
 
   @Override
-  public void reloadFromDiskSafe() {
-    ModelAccess.assertLegalWrite();
-    if (isChanged()) {
-      resolveDiskConflict();
-    } else {
-      reloadFromDisk();
-    }
-  }
-
   protected void reload() {
     DescriptorLoadResult dr;
     try {
@@ -380,68 +280,15 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
     updateDiskTimestamp();
 
-    if (myModel.getState() == ModelLoadingState.NOT_LOADED) return;
+    if (!isLoaded()) return;
 
-    ModelLoadResult result = load(myModel.getState());
+    ModelLoadResult result = loadSModel(myModel.getState());
     replaceModel(result.getModel(), result.getState());
-  }
-
-  public boolean checkAndResolveConflictOnSave() {
-    if (needsReloading()) {
-      LOG.warning("Model file " + getSModel().getSModelFqName() + " was modified externally!\n" +
-        "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
-      resolveDiskConflict();
-      return false;
-    }
-
-    // Paranoid check to avoid saving model during update (hack for MPS-6772)
-    if (needsReloading()) return false;
-    return true;
-  }
-
-  public void resolveDiskConflict() {
-    LOG.warning("Model=" + getSModel().getSModelFqName() + ", file ts=" + getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(), new Throwable());  // more information
-    DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getSource().getFile(), getSModel(), this);
-  }
-
-  public String toString() {
-    return getSModelReference().toString();
-  }
-
-  @Override
-  public void rename(SModelFqName newModelFqName, boolean changeFile) {
-    ModelAccess.assertLegalWrite();
-
-    SModelFqName oldFqName = getSModelReference().getSModelFqName();
-    SModel model = getSModel();
-    fireBeforeModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
-
-    SModelReference newModelReference = new SModelReference(newModelFqName, myModelReference.getSModelId());
-    model.changeModelReference(newModelReference);
-
-    if (!changeFile) {
-      save();
-    } else {
-      IFile oldFile = getSource().getFile();
-      ModelRoot root = ModelRootUtil.getModelRoot(this);
-      if (root instanceof DefaultModelRoot) {
-        IFile newFile = ((DefaultModelRoot) root).createSource(newModelFqName.toString(), MPSExtentions.MODEL).getFile();
-        newFile.getParent().mkdirs();
-        newFile.createNewFile();
-        changeModelFile(newFile);
-        save();
-        oldFile.delete();
-      }
-    }
-
-    myModelReference = newModelReference;
-
-    fireModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
   }
 
   @Nullable
   @Override
   public FastFindSupport getFastFindSupport() {
-    return FastFindSupportRegistry.getInstance().getFastFindSupport(DefaultSModelDescriptor.FAST_FIND_ID);
+    return FastFindSupportRegistry.getInstance().getFastFindSupport(FAST_FIND_ID);
   }
 }

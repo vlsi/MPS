@@ -31,12 +31,10 @@
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="library" name="Commons-net" level="project" />
     <orderEntry type="library" name="XmlRpc" level="project" />
-    <orderEntry type="library" name="Commons-collections" level="project" />
     <orderEntry type="library" name="Commons-codec" level="project" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="library" name="Trove" level="project" />
     <orderEntry type="library" name="JMock" level="project" />
-    <orderEntry type="library" name="Commons-lang" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Commons-logging" level="project" />
     <orderEntry type="library" name="Ant" level="project" />
     <orderEntry type="library" name="Diff-utils" level="project" />

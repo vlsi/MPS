@@ -70,6 +70,8 @@ public class CommonPaths {
         addEditorJars(result);
       } else if (type == ClassType.PLATFORM) {
         addIdeaJars(result);
+      } else if (type == ClassType.UI) {
+        addUIJars(result);
       } else if (type == ClassType.WORKBENCH) {
         addWorkbenchJars(result);
       } else if (type == ClassType.TEST) {
@@ -163,6 +165,7 @@ public class CommonPaths {
     addCoreJars(result);
     addEditorJars(result);
     addIdeaJars(result);
+    addUIJars(result);
     addWorkbenchJars(result);
     addToolsJar(result);
     addClasses(result, PathManager.getHomePath());
@@ -176,16 +179,15 @@ public class CommonPaths {
   private static void addCoreJars(CompositeClassPathItem result) {
     addIfExists(result, "/lib/mps-core.jar");
     addIfExists(result, "/lib/mps-closures.jar");
-    addIfExists(result, "/lib/mps-collections.jar");
     addIfExists(result, "/lib/mps-tuples.jar");
     addIfExists(result, "/lib/annotations.jar");
     addIfExists(result, "/lib/log4j.jar");
     addIfExists(result, "/lib/trove4j.jar");
     addIfExists(result, "/lib/commons-lang-2.4.jar");
     addIfExists(result, "/lib/jdom.jar");
-    addIfExists(result, "/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar");
-    addIfExists(result, "/lib/guava-11.0.1.jar");
-    addIfExists(result, "/lib/xstream.jar");
+    addIfExists(result, "/lib/ecj-4.2.jar");
+    addIfExists(result, "/lib/guava-12.0.jar");
+    addIfExists(result, "/lib/xstream-1.4.3.jar");
     addIfExists(result, "/lib/diffutils-1.2.1.jar");
     addIfExists(result, "/lib/commons-logging-1.1.1.jar");
     addIfExists(result, "/lib/asm.jar");
@@ -201,15 +203,18 @@ public class CommonPaths {
     addIfExists(result, "/lib/platform-api.jar");
     addIfExists(result, "/lib/platform.jar");
     addIfExists(result, "/lib/sanselan-0.98-snapshot.jar");
-    addIfExists(result, "/lib/execution-api.jar");
     addIfExists(result, "/lib/util.jar");
     addIfExists(result, "/lib/extensions.jar");
     addIfExists(result, "/lib/picocontainer.jar");
   }
 
+  private static void addUIJars(CompositeClassPathItem result) {
+    addIfExists(result, "/lib/mps-ui.jar");
+  }
+
   private static void addWorkbenchJars(CompositeClassPathItem result) {
     addIfExists(result, "/lib/mps-workbench.jar");
-    addIfExists(result, "/lib/junit-4.8.2.jar");
+    addIfExists(result, "/lib/junit-4.10.jar");
     addIfExists(result, "/lib/beansbinding-1.2.1.jar");
   }
 

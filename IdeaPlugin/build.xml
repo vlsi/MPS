@@ -114,7 +114,7 @@
     <copy todir="${plugins.sandbox.dir}/plugins/tests/projectView">
       <fileset dir="${base_dir}/IdeaPlugin/tests/projectView"/>
     </copy>
-    <mkdir dir="${plugins.sandbox.dir}/test/community/java/mockJDK-1.7"/>
+    <mkdir dir="${home.idea_ce}/java/mockJDK-1.7/jre/lib"/>
 
     <junit fork="true"
            dir="."
@@ -131,7 +131,7 @@
       <sysproperty key="idea.system.path" value="${plugins.sandbox.dir}/system"/>
       <sysproperty key="idea.plugins.path" value="${plugins.sandbox.dir}/plugins"/>
       <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core"/>
-      <sysproperty key="idea.home.path" value="${plugins.sandbox.dir}/test"/>
+      <sysproperty key="idea.home.path" value="${home.idea_ce}"/>
       <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
       <sysproperty key="file.encoding" value="UTF-8"/>
       <classpath>

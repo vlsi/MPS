@@ -1,0 +1,71 @@
+<component>
+  <actions>
+
+    <action id="RunConfiguration" class="com.intellij.execution.actions.RunConfigurationsComboBoxAction"/>
+    <action id="ChooseRunConfiguration" class="com.intellij.execution.actions.ChooseRunConfigurationPopupAction" text="Run..." description="Choose and run configuration" icon="AllIcons.Toolwindows.ToolWindowRun"/>
+    <action id="ChooseDebugConfiguration" class="com.intellij.execution.actions.ChooseDebugConfigurationPopupAction" text="Debug..." description="Choose and debug configuration" icon="AllIcons.General.Debug"/>
+
+    <group id="RunContextGroup" popup="false">
+      <action id="CreateRunConfiguration" class="com.intellij.execution.actions.CreateAction"/>
+    </group>
+
+    <!-- Code -->
+    <group id="CodeMenu" popup="true">
+      <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GoToMenu"/>
+    </group>
+
+    <!-- Run -->
+    <group id="RunMenu" popup="true">
+      <group id="RunnerActions"/>
+      <reference ref="ChooseRunConfiguration"/>
+      <reference ref="ChooseDebugConfiguration"/>
+      <action id="editRunConfigurations" class="com.intellij.execution.actions.EditRunConfigurationsAction"/>
+      <action id="Stop" class="com.intellij.execution.actions.StopAction" icon="AllIcons.Actions.Suspend"/>
+
+      <add-to-group group-id="MainMenu" anchor="after" relative-to-action="CodeMenu"/>
+    </group>
+
+    <group id="ToolbarRunGroup">
+      <separator/>
+      <reference ref="RunConfiguration"/>
+      <reference ref="RunnerActions"/>
+
+      <add-to-group group-id="MainToolBar" relative-to-action="Forward" anchor="after"/>
+    </group>
+
+    <group id="StructureViewPopupMenu">
+    </group>
+
+    <group id="RunnerLayoutActions">
+      <group id="Runner.Layout">
+        <action id="Runner.RestoreLayout" class="com.intellij.execution.ui.layout.actions.RestoreLayoutAction"
+                icon="AllIcons.Debugger.RestoreLayout"/>
+      </group>
+
+      <group id="Runner.View.Popup">
+        <action id="Runner.MinimizeView" class="com.intellij.execution.ui.layout.actions.MinimizeViewAction" icon="AllIcons.Actions.Minimize"/>
+        <separator/>
+        <action id="Runner.CloseView" class="com.intellij.execution.ui.layout.actions.CloseViewAction" icon="AllIcons.Actions.Cross"/>
+        <action id="Runner.CloseOtherViews" class="com.intellij.execution.ui.layout.actions.CloseOtherViewsAction" icon="AllIcons.Actions.Cross"/>
+        <action id="Runner.CloseAllViews" class="com.intellij.execution.ui.layout.actions.CloseAllViewsAction" icon="AllIcons.Actions.Cross"/>
+        <separator/>
+        <group id="Runner.Focus">
+          <action id="Runner.FocusOnStartup" class="com.intellij.execution.ui.actions.FocusOnStartAction"/>
+        </group>
+      </group>
+
+
+      <group id="Runner.View.Toolbar">
+        <reference ref="Runner.MinimizeView"/>
+        <reference ref="Runner.CloseView"/>
+      </group>
+    </group>
+
+    <group id="ConsoleView.PopupMenu">
+      <reference ref="ConsoleEditorPopupMenu"/>
+      <separator/>
+      <action id="ConsoleView.ClearAll" class="com.intellij.execution.impl.ConsoleViewImpl$ClearAllAction"/>
+    </group>
+
+  </actions>
+</component>

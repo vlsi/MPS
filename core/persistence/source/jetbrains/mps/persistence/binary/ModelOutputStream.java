@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.persistence.binary;
 
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelId.RegularSModelId;
@@ -40,8 +42,10 @@ public class ModelOutputStream extends DataOutputStream {
 
   private Map<String,Integer> stringToIndex = new HashMap<String, Integer>();
   private Map<SModelReference,Integer> modelrefToIndex = new HashMap<SModelReference, Integer>();
+  private Map<ModuleReference,Integer> moduleRefToIndex = new HashMap<ModuleReference, Integer>();
   private int myStringIndex = 0;
   private int myRefIndex = 0;
+  private int myModuleRefIndex = 0;
 
   public ModelOutputStream(OutputStream out) {
     super(new BufferedOutputStream(out, 65536));
@@ -69,6 +73,43 @@ public class ModelOutputStream extends DataOutputStream {
     }
   }
 
+  public void writeModuleReference(ModuleReference ref) throws IOException {
+    if (ref == null) {
+      writeByte(0x70);
+    } else {
+      Integer index = moduleRefToIndex.get(ref);
+      if (index == null) {
+        moduleRefToIndex.put(ref, myModuleRefIndex++);
+        if(ref.getModuleId() != null) {
+          writeByte(0x17);
+          writeModuleID(ref.getModuleId());
+        } else {
+          writeByte(0x18);
+        }
+        writeString(ref.getModuleName());
+      } else {
+        writeByte(0x19);
+        writeInt(index);
+      }
+    }
+  }
+
+  public void writeModuleID(ModuleId id) throws IOException {
+    if (id == null) {
+      writeByte(0x70);
+    } else if(id instanceof ModuleId.Regular) {
+      writeByte(0x48);
+      UUID uuid = ((ModuleId.Regular)id).getUUID();
+      writeLong(uuid.getMostSignificantBits());
+      writeLong(uuid.getLeastSignificantBits());
+    } else if(id instanceof ModuleId.Foreign) {
+      writeByte(0x47);
+      writeString(((ModuleId.Foreign) id).getName());
+    } else {
+      throw new IOException("unknown id");
+    }
+
+  }
   public void writeModelReference(SModelReference ref) throws IOException {
     if (ref == null) {
       writeByte(0x70);

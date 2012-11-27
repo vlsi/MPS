@@ -26,6 +26,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.SingleRootFileViewProvider;
 import com.intellij.util.containers.HashSet;
 import com.intellij.util.indexing.FileBasedIndex;
+import com.intellij.util.indexing.FileBasedIndexImpl;
 import com.intellij.util.indexing.IndexingStamp;
 import jetbrains.mps.smodel.ModelAccess;
 
@@ -33,10 +34,10 @@ import java.util.List;
 import java.util.Set;
 
 public class MPSUnindexedFilesUpdater implements CacheUpdater {
-  private final FileBasedIndex myIndex;
+  private final FileBasedIndexImpl myIndex;
   private ProjectRootManagerEx myManager;
 
-  public MPSUnindexedFilesUpdater(FileBasedIndex index, ProjectRootManagerEx manager) {
+  public MPSUnindexedFilesUpdater(FileBasedIndexImpl index, ProjectRootManagerEx manager) {
     myIndex = index;
     myManager = manager;
   }
@@ -60,7 +61,7 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
 
   public void processFile(final FileContent fileContent) {
     myIndex.indexFileContent(null, fileContent);
-    IndexingStamp.flushCache();
+    IndexingStamp.flushCache(fileContent.getVirtualFile());
   }
 
   private void iterateIndexableFiles(final ContentIterator processor) {

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 
 import com.intellij.openapi.Disposable;
 import javax.swing.Icon;
-import com.intellij.execution.testframework.TestsUIUtil;
+import com.intellij.icons.AllIcons;
 import com.intellij.util.Alarm;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import com.intellij.openapi.util.Disposer;
@@ -15,7 +15,7 @@ public class TestTreeIconAnimator implements Disposable, Runnable {
   private static final int FRAMES_COUNT = 8;
   private static final int MOVIE_TIME = 800;
   private static final int FRAME_TIME = MOVIE_TIME / FRAMES_COUNT;
-  private static Icon PAUSED_ICON = TestsUIUtil.loadIcon("testPaused");
+  private static Icon PAUSED_ICON = AllIcons.RunConfigurations.TestPaused;
   private static Icon[] FRAMES = new Icon[FRAMES_COUNT];
 
   private long myLastInvocationTime = -1;
@@ -91,8 +91,13 @@ public class TestTreeIconAnimator implements Disposable, Runnable {
   }
 
   static {
-    for (int i = 0; i < FRAMES_COUNT; i++) {
-      FRAMES[i] = TestsUIUtil.loadIcon("testInProgress" + (i + 1));
-    }
+    FRAMES[0] = AllIcons.RunConfigurations.TestInProgress1;
+    FRAMES[1] = AllIcons.RunConfigurations.TestInProgress2;
+    FRAMES[2] = AllIcons.RunConfigurations.TestInProgress3;
+    FRAMES[3] = AllIcons.RunConfigurations.TestInProgress4;
+    FRAMES[4] = AllIcons.RunConfigurations.TestInProgress5;
+    FRAMES[5] = AllIcons.RunConfigurations.TestInProgress6;
+    FRAMES[6] = AllIcons.RunConfigurations.TestInProgress7;
+    FRAMES[7] = AllIcons.RunConfigurations.TestInProgress8;
   }
 }

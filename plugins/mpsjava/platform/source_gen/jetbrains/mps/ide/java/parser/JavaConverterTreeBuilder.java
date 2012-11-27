@@ -55,7 +55,6 @@ import org.eclipse.jdt.internal.compiler.lookup.TypeBinding;
 import org.eclipse.jdt.internal.compiler.ast.PostfixExpression;
 import org.eclipse.jdt.internal.compiler.ast.PrefixExpression;
 import org.eclipse.jdt.internal.compiler.ast.CastExpression;
-import org.eclipse.jdt.internal.compiler.ast.NameReference;
 import org.eclipse.jdt.internal.compiler.ast.SuperReference;
 import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 import org.eclipse.jdt.internal.compiler.ast.NormalAnnotation;
@@ -558,9 +557,8 @@ public class JavaConverterTreeBuilder {
     if (x.type != null) {
       if (x.type.resolvedType != null) {
         SLinkOperations.setTarget(result, "type", createType(x.type.resolvedType), true);
-      } else if (x.type instanceof NameReference && ((NameReference) x.type).binding instanceof TypeBinding) {
-        SLinkOperations.setTarget(result, "type", createType((TypeBinding) ((NameReference) x.type).binding), true);
       }
+      // <node> 
     }
     return result;
   }

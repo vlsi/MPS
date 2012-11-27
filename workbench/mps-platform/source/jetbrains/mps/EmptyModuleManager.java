@@ -15,9 +15,10 @@
  */
 package jetbrains.mps;
 
-import com.intellij.openapi.Disposable;
-import com.intellij.openapi.module.*;
-import com.intellij.openapi.project.ModuleListener;
+import com.intellij.openapi.module.ModifiableModuleModel;
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.module.ModuleManager;
+import com.intellij.openapi.module.ModuleWithNameAlreadyExists;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.util.graph.Graph;
 import org.jdom.JDOMException;
@@ -31,7 +32,7 @@ import java.util.List;
 public class EmptyModuleManager extends ModuleManager{
   @NotNull
   @Override
-  public Module newModule(@NotNull @NonNls String filePath, @NotNull ModuleType moduleType) {
+  public Module newModule(@NotNull @NonNls String filePath, String moduleTypeId) {
     return null;
   }
 
@@ -90,21 +91,6 @@ public class EmptyModuleManager extends ModuleManager{
   @Override
   public Graph<Module> moduleGraph(boolean includeTests) {
     return null;
-  }
-
-  @Override
-  public void addModuleListener(@NotNull ModuleListener listener) {
-
-  }
-
-  @Override
-  public void addModuleListener(@NotNull ModuleListener listener, Disposable parentDisposable) {
-
-  }
-
-  @Override
-  public void removeModuleListener(@NotNull ModuleListener listener) {
-
   }
 
   @NotNull

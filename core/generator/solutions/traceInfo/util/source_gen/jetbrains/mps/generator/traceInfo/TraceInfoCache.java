@@ -111,8 +111,14 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
       return null;
     }
     IFile file = TraceInfoCache.getFileByURL(url);
-    if (file != null) {
-      myFilesToModels.put(file, sm);
+
+    // This block is synchronized because it can be executed from different threads simultaneously and use not thread-safe myFilesToModels map 
+    // All myFilesToModels map usages should be synchronized by myCache 
+    // Multi-thread call usage: loadCacheFromUrl called from getLastGeneratedDebugInfo called from fillDebugInfo in TextGenerator which executed concurrently 
+    synchronized (myCache) {
+      if (file != null) {
+        myFilesToModels.put(file, sm);
+      }
     }
     InputStream stream = null;
     try {

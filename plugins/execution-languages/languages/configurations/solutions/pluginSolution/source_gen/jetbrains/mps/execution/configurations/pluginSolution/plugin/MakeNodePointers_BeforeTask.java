@@ -24,10 +24,11 @@ public class MakeNodePointers_BeforeTask extends BaseMpsBeforeTaskProvider<MakeN
     return KEY;
   }
 
-  public static class MakeNodePointers_BeforeTask_RunTask extends BaseMpsBeforeTaskProvider.BaseMpsBeforeRunTask {
+  public static class MakeNodePointers_BeforeTask_RunTask extends BaseMpsBeforeTaskProvider.BaseMpsBeforeRunTask<MakeNodePointers_BeforeTask.MakeNodePointers_BeforeTask_RunTask> {
     private List<SNodePointer> myNodePointers;
 
     public MakeNodePointers_BeforeTask_RunTask() {
+      super(KEY);
     }
 
     public boolean configure(List<SNodePointer> nodePointers) {

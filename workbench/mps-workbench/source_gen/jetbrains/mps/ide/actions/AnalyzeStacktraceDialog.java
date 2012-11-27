@@ -15,7 +15,6 @@ import javax.swing.JLabel;
 import jetbrains.mps.ide.datatransfer.TextPasteUtil;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
-import com.intellij.execution.ui.ConsoleView;
 import com.intellij.unscramble.AnalyzeStacktraceUtil;
 
 public class AnalyzeStacktraceDialog extends DialogWrapper {
@@ -61,8 +60,7 @@ public class AnalyzeStacktraceDialog extends DialogWrapper {
 
   @Override
   protected void doOKAction() {
-    ConsoleView consoleView = AnalyzeStacktraceUtil.addConsole(myProject, null, "<Stacktrace>");
-    AnalyzeStacktraceUtil.printStacktrace(consoleView, myText.getText());
+    AnalyzeStacktraceUtil.addConsole(myProject, null, "<Stacktrace>", myText.getText());
     super.doOKAction();
   }
 }

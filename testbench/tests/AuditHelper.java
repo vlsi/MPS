@@ -43,10 +43,14 @@ public class AuditHelper {
     // TODO: some of error nodes is ClassifiersScope (MPS-16863)
     // TODO: and some of them is illegal concept for variable reference, check it with mikev
     DISABLED_MODULES.add("jetbrains.mps.baseLanguage.test");
+
+    // solution doesn't belong to MPS project, but rather IdeaPlugin project
+    // TODO properly handle exclusion at directory level, (see CheckProjectStructure)
+//    DISABLED_MODULES.add("jetbrains.mps.ide.java.psiStubs");
   }
 
   public static void init() {
-    CheckProjectStructureHelper.loadModules(ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), false));
+    CheckProjectStructureHelper.loadModules(ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), ProjectDirExclude.excludeSet, false));
   }
 
   private static String getDescription(ModuleHandle handle) {
@@ -61,7 +65,7 @@ public class AuditHelper {
   public static List<Object[]> filePathes(CheckProjectStructureHelper helper) {
     helper.init(new String[][]{{"samples_home", System.getProperty("user.dir") + "/samples"}});
 
-    List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), false);
+    List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), ProjectDirExclude.excludeSet, false);
 
     ArrayList<Object[]> res = new ArrayList<Object[]>();
     for (ModuleHandle moduleHandle : moduleHandles) {

@@ -27,7 +27,7 @@ import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.util.indexing.FileBasedIndex;
+import com.intellij.util.indexing.FileBasedIndexImpl;
 import com.intellij.util.indexing.IndexableFileSet;
 import jetbrains.mps.ide.make.StartupModuleMaker;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -43,7 +43,7 @@ import java.util.Set;
 public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent implements IndexableFileSet {
   private ProjectRootManagerEx myRootManager;
   private ProjectManager myProjectManager;
-  private final FileBasedIndex myIndex;
+  private final FileBasedIndexImpl myIndex;
   private Set<VirtualFile> myRootFiles = null;
   private ReloadListener myReloadHandler = new ReloadAdapter() {
     public void unload() {
@@ -56,7 +56,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
     }
   };
 
-  public MPSFileBasedIndexProjectHandler(final Project project, final ProjectRootManagerEx rootManager, ProjectManager projectManager, FileBasedIndex index, StartupModuleMaker maker) {
+  public MPSFileBasedIndexProjectHandler(final Project project, final ProjectRootManagerEx rootManager, ProjectManager projectManager, FileBasedIndexImpl index, StartupModuleMaker maker) {
     super(project);
     myRootManager = rootManager;
     myProjectManager = projectManager;
