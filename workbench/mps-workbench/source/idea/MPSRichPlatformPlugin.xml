@@ -1,0 +1,28 @@
+<idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <module value="com.intellij.modules.platform"/>
+  <module value="com.intellij.modules.lang"/>
+  <module value="com.intellij.modules.vcs"/>
+
+  <xi:include href="/componentSets/MPSIdeaComponents.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="/idea/MPSRichPlatformActions.xml" xpointer="xpointer(/component/*)"/>
+
+  <application-components>
+    <component>
+      <interface-class>com.intellij.ide.RecentProjectsManagerBase</interface-class>
+      <implementation-class>jetbrains.mps.workbench.recent.RecentMPSProjectsManager</implementation-class>
+    </component>
+  </application-components>
+
+  <extensionPoints>
+    <xi:include href="/META-INF/PlatformExtensionPoints.xml" xpointer="xpointer(/extensionPoints/*)"/>
+    <xi:include href="/META-INF/VcsExtensionPoints.xml" xpointer="xpointer(/extensionPoints/*)"/>
+    <xi:include href="/META-INF/LangExtensionPoints.xml" xpointer="xpointer(/extensionPoints/*)"/>
+  </extensionPoints>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <xi:include href="/META-INF/MPSPlatformExtensions.xml" xpointer="xpointer(/extensions/*)"/>
+    <xi:include href="/META-INF/VcsExtensions.xml" xpointer="xpointer(/extensions/*)"/>
+    <xi:include href="/META-INF/MPSLangExtensions.xml" xpointer="xpointer(/extensions/*)"/>
+  </extensions>
+</idea-plugin>

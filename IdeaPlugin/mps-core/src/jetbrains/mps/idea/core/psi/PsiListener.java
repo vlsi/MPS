@@ -18,6 +18,7 @@ package jetbrains.mps.idea.core.psi;
 
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
+import com.intellij.psi.PsiFileSystemItem;
 
 import java.util.List;
 import java.util.Map;
@@ -32,8 +33,8 @@ public interface PsiListener {
   void psiChanged(PsiEvent event);
 
   public static interface PsiEvent {
-    Iterable<PsiFile> getCreated();
-    Iterable<PsiFile> getRemoved();
+    Iterable<PsiFileSystemItem> getCreated();
+    Iterable<PsiFileSystemItem> getRemoved();
     Map<PsiFile,Set<PsiElement>> getChanged();
   }
 }

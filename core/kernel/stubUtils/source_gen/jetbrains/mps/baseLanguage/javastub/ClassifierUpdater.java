@@ -44,7 +44,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ClassifierUpdater {
   private static Logger LOG = Logger.getLogger(ClassifierUpdater.class);
-
   private SModel cm;
   private SNode myClassifier;
   private final boolean mySkipPrivate;

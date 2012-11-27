@@ -8,7 +8,7 @@
     <projectModules>
       <modulePath path="${project}/solutions/MPS.IdeaSdk/IdeaSdk.msd" folder="" />
       <modulePath path="${project}/solutions/Plugin.mps-core/mps-core.msd" folder="" />
-      <modulePath path="${project}/solutions/jetbrains.mps.ide.java.psiStubs/jetbrains.mps.ide.java.psiStubs.msd" folder="" />
+      <modulePath path="${project}/solutions/jetbrains.mps.idea.java.psiStubs/jetbrains.mps.idea.java.psiStubs.msd" folder="" />
     </projectModules>
     <genConfs />
   </component>

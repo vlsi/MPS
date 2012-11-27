@@ -9,6 +9,7 @@
     <classNode dependClassName="com.intellij.openapi.vfs.newvfs.RefreshSession" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileNotFoundException" />
+    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.PrintWriter" />
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Math" />

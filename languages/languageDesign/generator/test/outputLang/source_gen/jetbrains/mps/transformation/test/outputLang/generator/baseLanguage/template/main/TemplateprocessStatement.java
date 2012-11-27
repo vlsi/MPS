@@ -44,7 +44,6 @@ public class TemplateprocessStatement implements TemplateDeclarationWeavingAware
   private static SNodePointer weaveTfConst_slzep9_a0c0g = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2681305894288695031");
   private static SNodePointer weaveTfConst_slzep9_a0f0g = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "7870321878389838429");
   private static SNodePointer weaveTfConst_slzep9_a0i0g = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5005282049926092703");
-
   private String myName;
   private String myName2;
   private SNode myExpr;

@@ -11,7 +11,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
   private static final int IS_SELECTED_COLUMN_INDEX = 0;
   private static final int TYPE_COLUMN_INDEX = 1;
   private static final int NAME_COLUMN_INDEX = 2;
-
   private List<MethodParameter> myParameters;
 
   /*package*/ ParametersTableModel(List<MethodParameter> parameters) {

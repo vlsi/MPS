@@ -27,7 +27,6 @@ import org.jetbrains.annotations.Nullable;
 public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ScriptsForSelection_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsForSelection_ActionGroup";
-
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
 
   public ScriptsForSelection_ActionGroup() {

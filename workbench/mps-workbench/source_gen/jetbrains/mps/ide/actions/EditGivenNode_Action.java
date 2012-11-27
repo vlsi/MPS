@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.IOperationContext;
 public class EditGivenNode_Action extends BaseAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(EditGivenNode_Action.class);
-
   private SNodePointer targetNode;
   private String text;
 

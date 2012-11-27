@@ -5,6 +5,8 @@ package jetbrains.mps.lang.smodel.generator.baseLanguage.util;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.project.structure.modules.SolutionKind;
 
 public class ConceptMethodCallUtils {
   private ConceptMethodCallUtils() {
@@ -19,6 +21,11 @@ public class ConceptMethodCallUtils {
     }
     if (!(module instanceof Solution)) {
       return false;
+    }
+    if (((SolutionDescriptor) module.getModuleDescriptor()).getKind() == SolutionKind.NONE) {
+      // looks like this solution uses behavior method call 
+      // so someone who uses it outside mps should have mps-core in dependencies 
+      return true;
     }
     return !(module.isCompileInMPS());
   }

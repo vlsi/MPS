@@ -32,6 +32,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
+import java.io.IOException;
 import jetbrains.mps.ide.ThreadUtils;
 
 /**
@@ -43,11 +44,10 @@ public class DiskMemoryConflictsTest {
   private static final File PROJECT_ARCHIVE = new File("testbench/modules/simpleProject.zip");
   private static final String PROJECT_FILE = "simpleProject.mpr";
   private static final SModelReference MODEL_REFERENCE = SModelReference.fromString("r:21cf9f47-5464-40f2-9509-d94ba20bfe82(simpleModel)");
-  private static final File MODEL_FILE = new File(DESTINATION_PROJECT_DIR, "solutions/simpleProject/simpleModel.mps");
+  private static final File MODEL_FILE = getModelFile();
   private static final String FIELD_DEFAULT_NAME = "theField";
   private static final String FIELD_NAME_IN_FILE = "theFieldInFile";
   private static final String FIELD_NAME_IN_MODEL = "theFieldInModel";
-
   private Project myProject;
   private Solution myModule;
   private SNode myNodeBackup;
@@ -296,6 +296,16 @@ public class DiskMemoryConflictsTest {
       DiskMemoryConflictsTest.waitEDT();
     }
     checkInitialState();
+  }
+
+  private static File getModelFile() {
+    File modelFile = new File(DESTINATION_PROJECT_DIR, "solutions/simpleProject/simpleModel.mps");
+    try {
+      return modelFile.getCanonicalFile();
+    } catch (IOException ex) {
+      ex.printStackTrace();
+    }
+    return modelFile;
   }
 
   private static void setLastModified(long timeStamp) {

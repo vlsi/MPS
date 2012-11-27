@@ -584,67 +584,67 @@
   </root>
   <root nodeId="8150353254540241886" modelId="r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)">
     <nodeInfo nodeId="3434429991663274682" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourStatistics" />
-    <nodeInfo nodeId="8150353254540241907" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySNode" />
-    <nodeInfo nodeId="8150353254540243129" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReadCounter" />
-    <nodeInfo nodeId="8150353254540316716" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCallerMethods" />
-    <nodeInfo nodeId="8150353254540241926" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="20" startPosition="63" endLine="21" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8150353254540241913" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="21" startPosition="12" endLine="22" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8150353254540241935" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="26" startPosition="54" endLine="27" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7002098114789203845" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="27" startPosition="43" endLine="28" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8150353254540243135" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="32" startPosition="26" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8150353254540284581" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="33" startPosition="22" endLine="34" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8358368686240346778" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="34" startPosition="44" endLine="35" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8358368686240346701" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="35" startPosition="68" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8358368686240346892" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="38" startPosition="138" endLine="39" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8358368686240346904" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="39" startPosition="14" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8150353254540316806" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="46" startPosition="25" endLine="47" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8358368686240077353" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="55" startPosition="51" endLine="56" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8150353254540243156" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="59" startPosition="30" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8150353254540316846" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="60" startPosition="22" endLine="61" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3434429991663373073" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="64" startPosition="54" endLine="65" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3434429991663373079" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="68" startPosition="40" endLine="69" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8358368686240054593" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResults#()Ljetbrains/mps/util/Pair;" />
-    <nodeInfo nodeId="3434429991663373063" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getStatistics#()Ljava/util/Map;" />
-    <nodeInfo nodeId="3434429991663373075" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="resetStatistics#()V" />
-    <nodeInfo nodeId="8150353254540241888" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StatCountNodeReadAccessInEditorListener#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8358368686240346758" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="37" startPosition="45" endLine="41" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8358368686240346687" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="42" startPosition="7" endLine="46" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8358368686240347007" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="47" startPosition="38" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8150353254540243152" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resetResults#()V" />
-    <nodeInfo nodeId="8150353254540241928" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nodeUnclassifiedReadAccess#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8358368686240346707" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="36" startPosition="16" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="8150353254540241949" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="31" startPosition="44" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7002098114789203831" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="31" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateStatistic#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="8358368686240054595" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="55" startPosition="51" endLine="56" endPosition="74" />
-    <scopeInfo nodeId="3434429991663373066" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="64" startPosition="54" endLine="65" endPosition="25" />
-    <scopeInfo nodeId="3434429991663373078" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="68" startPosition="40" endLine="69" endPosition="26" />
-    <scopeInfo nodeId="8150353254540241891" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="20" startPosition="63" endLine="22" endPosition="20" />
-    <scopeInfo nodeId="8150353254540241933" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="26" startPosition="54" endLine="28" endPosition="26" />
-    <scopeInfo nodeId="8358368686240346759" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="38" startPosition="138" endLine="40" endPosition="16" />
-    <scopeInfo nodeId="8150353254540243154" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="59" startPosition="30" endLine="61" endPosition="28" />
-    <scopeInfo nodeId="8358368686240054593" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="3434429991663373063" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="64" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="3434429991663373075" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="68" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="8150353254540241888" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+    <nodeInfo nodeId="8150353254540241907" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySNode" />
+    <nodeInfo nodeId="8150353254540243129" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReadCounter" />
+    <nodeInfo nodeId="8150353254540316716" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCallerMethods" />
+    <nodeInfo nodeId="8150353254540241926" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="19" startPosition="63" endLine="20" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8150353254540241913" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="20" startPosition="12" endLine="21" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8150353254540241935" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="25" startPosition="54" endLine="26" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7002098114789203845" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="26" startPosition="43" endLine="27" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8150353254540243135" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="31" startPosition="26" endLine="32" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8150353254540284581" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="32" startPosition="22" endLine="33" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8358368686240346778" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="33" startPosition="44" endLine="34" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8358368686240346701" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="34" startPosition="68" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8358368686240346892" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="37" startPosition="138" endLine="38" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8358368686240346904" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="38" startPosition="14" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="8150353254540316806" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="45" startPosition="25" endLine="46" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8358368686240077353" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="54" startPosition="51" endLine="55" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8150353254540243156" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="58" startPosition="30" endLine="59" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8150353254540316846" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="59" startPosition="22" endLine="60" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3434429991663373073" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="63" startPosition="54" endLine="64" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3434429991663373079" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="67" startPosition="40" endLine="68" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8358368686240054593" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResults#()Ljetbrains/mps/util/Pair;" />
+    <nodeInfo nodeId="3434429991663373063" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getStatistics#()Ljava/util/Map;" />
+    <nodeInfo nodeId="3434429991663373075" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="resetStatistics#()V" />
+    <nodeInfo nodeId="8150353254540241888" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StatCountNodeReadAccessInEditorListener#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8358368686240346758" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="36" startPosition="45" endLine="40" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8358368686240346687" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="41" startPosition="7" endLine="45" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8358368686240347007" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="46" startPosition="38" endLine="50" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8150353254540243152" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resetResults#()V" />
+    <nodeInfo nodeId="8150353254540241928" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="24" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nodeUnclassifiedReadAccess#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8358368686240346707" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="35" startPosition="16" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="8150353254540241949" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="30" startPosition="44" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7002098114789203831" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="30" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateStatistic#(Ljetbrains/mps/smodel/SNode;)V" />
+    <scopeInfo nodeId="8358368686240054595" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="54" startPosition="51" endLine="55" endPosition="74" />
+    <scopeInfo nodeId="3434429991663373066" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="63" startPosition="54" endLine="64" endPosition="25" />
+    <scopeInfo nodeId="3434429991663373078" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="67" startPosition="40" endLine="68" endPosition="26" />
+    <scopeInfo nodeId="8150353254540241891" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="19" startPosition="63" endLine="21" endPosition="20" />
+    <scopeInfo nodeId="8150353254540241933" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="25" startPosition="54" endLine="27" endPosition="26" />
+    <scopeInfo nodeId="8358368686240346759" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="37" startPosition="138" endLine="39" endPosition="16" />
+    <scopeInfo nodeId="8150353254540243154" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="58" startPosition="30" endLine="60" endPosition="28" />
+    <scopeInfo nodeId="8358368686240054593" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="54" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="3434429991663373063" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="63" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="3434429991663373075" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="67" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="8150353254540241888" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="8150353254540241911" varName="sNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8358368686240346708" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="37" startPosition="45" endLine="41" endPosition="9" />
-    <scopeInfo nodeId="8150353254540243152" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="8150353254540241928" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="25" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="8358368686240346708" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="36" startPosition="45" endLine="40" endPosition="9" />
+    <scopeInfo nodeId="8150353254540243152" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="8150353254540241928" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="24" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="8150353254540241931" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8358368686240346707" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="36" startPosition="16" endLine="42" endPosition="7" />
-    <scopeInfo nodeId="8150353254540241950" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="32" startPosition="26" endLine="51" endPosition="9">
+    <scopeInfo nodeId="8358368686240346707" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="35" startPosition="16" endLine="41" endPosition="7" />
+    <scopeInfo nodeId="8150353254540241950" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="31" startPosition="26" endLine="50" endPosition="9">
       <varInfo nodeId="8358368686240346702" varName="i" />
       <varInfo nodeId="8358368686240346688" varName="methodName" />
       <varInfo nodeId="8150353254540284582" varName="throwable" />
       <varInfo nodeId="8358368686240346779" varName="traceElements" />
     </scopeInfo>
-    <scopeInfo nodeId="7002098114789203834" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="31" startPosition="44" endLine="52" endPosition="5" />
-    <scopeInfo nodeId="7002098114789203831" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="31" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="7002098114789203834" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="30" startPosition="44" endLine="51" endPosition="5" />
+    <scopeInfo nodeId="7002098114789203831" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="30" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="7002098114789203836" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="8150353254540241886" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="13" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.testRead.SNodeReadTest.StatCountNodeReadAccessInEditorListener" />
+    <unitInfo nodeId="8150353254540241886" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="13" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.testRead.SNodeReadTest.StatCountNodeReadAccessInEditorListener" />
   </root>
 </debugInfo>
 

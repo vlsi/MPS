@@ -36,7 +36,6 @@ public class AspectDependenciesChecker extends SpecificChecker {
   private static int EDITOR = 2;
   private static int WORKBENCH = 3;
   private static int OTHER = 4;
-
   private SModule coreModule;
   private SModule editorModule;
   private String languagesUtilPath;

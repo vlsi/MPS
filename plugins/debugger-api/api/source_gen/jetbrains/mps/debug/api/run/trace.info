@@ -9,33 +9,33 @@
   </root>
   <root nodeId="4474271214082913266" modelId="r:0cf7389f-e174-4742-a3d2-15c79317838a(jetbrains.mps.debug.api.run)">
     <nodeInfo nodeId="4474271214082913270" fileName="DebuggerRunProfileState.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="4474271214082913280" fileName="DebuggerRunProfileState.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUpdated" />
-    <nodeInfo nodeId="4474271214082913295" fileName="DebuggerRunProfileState.java" startLine="22" startPosition="20" endLine="23" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214082913300" fileName="DebuggerRunProfileState.java" startLine="23" startPosition="55" endLine="24" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214082913301" fileName="DebuggerRunProfileState.java" startLine="25" startPosition="5" endLine="26" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214082913305" fileName="DebuggerRunProfileState.java" startLine="26" startPosition="21" endLine="27" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214082913316" fileName="DebuggerRunProfileState.java" startLine="28" startPosition="35" endLine="29" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214082913324" fileName="DebuggerRunProfileState.java" startLine="34" startPosition="50" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214082913326" fileName="DebuggerRunProfileState.java" startLine="35" startPosition="29" endLine="36" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214082913275" fileName="DebuggerRunProfileState.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDebuggerSettings" />
-    <nodeInfo nodeId="4474271214082913284" fileName="DebuggerRunProfileState.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebuggerRunProfileState#()V" />
-    <nodeInfo nodeId="4474271214082913329" fileName="DebuggerRunProfileState.java" startLine="39" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebuggerConfiguration#()Ljetbrains/mps/debug/api/run/IDebuggerConfiguration;" />
-    <nodeInfo nodeId="4474271214082913311" fileName="DebuggerRunProfileState.java" startLine="27" startPosition="93" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214082913292" fileName="DebuggerRunProfileState.java" startLine="21" startPosition="43" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214082913320" fileName="DebuggerRunProfileState.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebuggerSettings#()Ljetbrains/mps/debug/api/IDebuggerSettings;" />
-    <nodeInfo nodeId="4474271214082913288" fileName="DebuggerRunProfileState.java" startLine="21" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateDebuggerSettings#()V" />
-    <scopeInfo nodeId="4474271214082913287" fileName="DebuggerRunProfileState.java" startLine="18" startPosition="36" endLine="18" endPosition="36" />
-    <scopeInfo nodeId="4474271214082913315" fileName="DebuggerRunProfileState.java" startLine="28" startPosition="35" endLine="29" endPosition="44" />
-    <scopeInfo nodeId="4474271214082913284" fileName="DebuggerRunProfileState.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="4474271214082913294" fileName="DebuggerRunProfileState.java" startLine="22" startPosition="20" endLine="24" endPosition="13" />
-    <scopeInfo nodeId="4474271214082913323" fileName="DebuggerRunProfileState.java" startLine="34" startPosition="50" endLine="36" endPosition="30" />
-    <scopeInfo nodeId="4474271214082913329" fileName="DebuggerRunProfileState.java" startLine="39" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="4474271214082913320" fileName="DebuggerRunProfileState.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="4474271214082913291" fileName="DebuggerRunProfileState.java" startLine="21" startPosition="43" endLine="30" endPosition="5">
+    <nodeInfo nodeId="4474271214082913280" fileName="DebuggerRunProfileState.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUpdated" />
+    <nodeInfo nodeId="4474271214082913295" fileName="DebuggerRunProfileState.java" startLine="21" startPosition="20" endLine="22" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214082913300" fileName="DebuggerRunProfileState.java" startLine="22" startPosition="55" endLine="23" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214082913301" fileName="DebuggerRunProfileState.java" startLine="24" startPosition="5" endLine="25" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214082913305" fileName="DebuggerRunProfileState.java" startLine="25" startPosition="21" endLine="26" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214082913316" fileName="DebuggerRunProfileState.java" startLine="27" startPosition="35" endLine="28" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214082913324" fileName="DebuggerRunProfileState.java" startLine="33" startPosition="50" endLine="34" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214082913326" fileName="DebuggerRunProfileState.java" startLine="34" startPosition="29" endLine="35" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214082913275" fileName="DebuggerRunProfileState.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDebuggerSettings" />
+    <nodeInfo nodeId="4474271214082913284" fileName="DebuggerRunProfileState.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebuggerRunProfileState#()V" />
+    <nodeInfo nodeId="4474271214082913329" fileName="DebuggerRunProfileState.java" startLine="38" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebuggerConfiguration#()Ljetbrains/mps/debug/api/run/IDebuggerConfiguration;" />
+    <nodeInfo nodeId="4474271214082913311" fileName="DebuggerRunProfileState.java" startLine="26" startPosition="93" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214082913292" fileName="DebuggerRunProfileState.java" startLine="20" startPosition="43" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214082913320" fileName="DebuggerRunProfileState.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebuggerSettings#()Ljetbrains/mps/debug/api/IDebuggerSettings;" />
+    <nodeInfo nodeId="4474271214082913288" fileName="DebuggerRunProfileState.java" startLine="20" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateDebuggerSettings#()V" />
+    <scopeInfo nodeId="4474271214082913287" fileName="DebuggerRunProfileState.java" startLine="17" startPosition="36" endLine="17" endPosition="36" />
+    <scopeInfo nodeId="4474271214082913315" fileName="DebuggerRunProfileState.java" startLine="27" startPosition="35" endLine="28" endPosition="44" />
+    <scopeInfo nodeId="4474271214082913284" fileName="DebuggerRunProfileState.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="4474271214082913294" fileName="DebuggerRunProfileState.java" startLine="21" startPosition="20" endLine="23" endPosition="13" />
+    <scopeInfo nodeId="4474271214082913323" fileName="DebuggerRunProfileState.java" startLine="33" startPosition="50" endLine="35" endPosition="30" />
+    <scopeInfo nodeId="4474271214082913329" fileName="DebuggerRunProfileState.java" startLine="38" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="4474271214082913320" fileName="DebuggerRunProfileState.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="4474271214082913291" fileName="DebuggerRunProfileState.java" startLine="20" startPosition="43" endLine="29" endPosition="5">
       <varInfo nodeId="4474271214082913306" varName="debuggerSettings" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214082913288" fileName="DebuggerRunProfileState.java" startLine="21" startPosition="0" endLine="32" endPosition="0" />
-    <unitInfo nodeId="4474271214082913266" fileName="DebuggerRunProfileState.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.debug.api.run.DebuggerRunProfileState" />
+    <scopeInfo nodeId="4474271214082913288" fileName="DebuggerRunProfileState.java" startLine="20" startPosition="0" endLine="31" endPosition="0" />
+    <unitInfo nodeId="4474271214082913266" fileName="DebuggerRunProfileState.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.debug.api.run.DebuggerRunProfileState" />
   </root>
 </debugInfo>
 

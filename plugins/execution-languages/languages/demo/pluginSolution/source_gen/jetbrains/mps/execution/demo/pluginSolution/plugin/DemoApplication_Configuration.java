@@ -36,7 +36,6 @@ import jetbrains.mps.smodel.SNodePointer;
 public class DemoApplication_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   private static final Icon ICON = IconUtil.getIcon("run.png");
   private static Logger LOG = Logger.getLogger(DemoApplication_Configuration.class);
-
   @NotNull
   private DemoApplication_Configuration.MyState myState = new DemoApplication_Configuration.MyState();
   private NodeByConcept_Configuration myNode = new NodeByConcept_Configuration("jetbrains.mps.execution.demo.structure.SomeConcept", new _FunctionTypes._return_P1_E0<Boolean, SNode>() {

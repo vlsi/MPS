@@ -16,7 +16,6 @@ import jetbrains.mps.textGen.TextGenManager;
 
 public class ImportsContext {
   private static String USER_OBJECT_KEY = "CLASS_IMPORTS_CONTEXT";
-
   private final TextGenBuffer buffer;
   private final String packageName;
   private final Set<String> packageSimpleNames;

@@ -73,7 +73,6 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
   private static final int SPACING = 10;
   private static final int PADDING_X = 5;
   private static final int PADDING_Y = 5;
-
   private JPanel myPanel = new JPanel();
   private Language myLanguage;
   private IOperationContext myOperationContext;

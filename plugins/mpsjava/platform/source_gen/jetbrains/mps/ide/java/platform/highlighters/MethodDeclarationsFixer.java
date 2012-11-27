@@ -47,7 +47,6 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   private static boolean DISABLED = false;
-
   private Set<SNodePointer> myCheckedMethodCalls = new HashSet<SNodePointer>();
   private Map<SNodePointer, Set<SNodePointer>> myMethodDeclsToCheckedMethodCalls = new HashMap<SNodePointer, Set<SNodePointer>>();
   private Map<Pair<String, String>, Set<SNodePointer>> myMethodConceptsAndNamesToCheckedMethodCalls = new HashMap<Pair<String, String>, Set<SNodePointer>>();

@@ -39,7 +39,7 @@ import java.io.IOException;
     } else {
       List<AbstractInstaller.State> states = Sequence.fromIterable(gitRoots).select(new ISelector<VcsRoot, AbstractInstaller.State>() {
         public AbstractInstaller.State select(VcsRoot r) {
-          return installForRoot(r.path, dryRun);
+          return installForRoot(r.getPath(), dryRun);
         }
       }).toListSequence();
       if (ListSequence.fromList(states).all(new IWhereFilter<AbstractInstaller.State>() {
@@ -68,7 +68,7 @@ import java.io.IOException;
   private int getRootsToInstall() {
     return Sequence.fromIterable(getGitRoots()).select(new ISelector<VcsRoot, AbstractInstaller.State>() {
       public AbstractInstaller.State select(VcsRoot r) {
-        return installForRoot(r.path, true);
+        return installForRoot(r.getPath(), true);
       }
     }).where(new IWhereFilter<AbstractInstaller.State>() {
       public boolean accept(AbstractInstaller.State st) {
@@ -81,7 +81,7 @@ import java.io.IOException;
     VcsRoot[] allRoots = myProject.getComponent(ProjectLevelVcsManager.class).getAllVcsRoots();
     return Sequence.fromIterable(Sequence.fromArray(allRoots)).where(new IWhereFilter<VcsRoot>() {
       public boolean accept(VcsRoot root) {
-        return "Git".equals(root.vcs.getName());
+        return "Git".equals(root.getVcs().getName());
       }
     });
   }
@@ -90,7 +90,7 @@ import java.io.IOException;
     int updated = 0;
     int failed = 0;
     for (VcsRoot root : Sequence.fromIterable(roots)) {
-      if (installForRoot(root.path, false) == AbstractInstaller.State.INSTALLED) {
+      if (installForRoot(root.getPath(), false) == AbstractInstaller.State.INSTALLED) {
         updated++;
       } else {
         failed++;

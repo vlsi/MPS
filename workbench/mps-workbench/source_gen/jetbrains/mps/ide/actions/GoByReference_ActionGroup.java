@@ -26,7 +26,6 @@ import org.jetbrains.annotations.Nullable;
 public class GoByReference_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GoByReference_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.GoByReference_ActionGroup";
-
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
 
   public GoByReference_ActionGroup() {

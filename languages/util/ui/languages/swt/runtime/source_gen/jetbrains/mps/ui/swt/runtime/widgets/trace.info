@@ -2,42 +2,42 @@
 <debugInfo>
   <root nodeId="4983682755224323286" modelId="r:365f182a-cc04-4509-a3b0-2053df8061d1(jetbrains.mps.ui.swt.runtime.widgets)">
     <nodeInfo nodeId="2172278393548617889" fileName="StubDialog.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STUB_DIALOG" />
-    <nodeInfo nodeId="2172278393548617945" fileName="StubDialog.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="shell" />
-    <nodeInfo nodeId="4983682755224323302" fileName="StubDialog.java" startLine="16" startPosition="46" endLine="17" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2172278393548617939" fileName="StubDialog.java" startLine="17" startPosition="25" endLine="18" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3351556818517870507" fileName="StubDialog.java" startLine="18" startPosition="99" endLine="19" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2172278393548617920" fileName="StubDialog.java" startLine="19" startPosition="43" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2172278393548617928" fileName="StubDialog.java" startLine="20" startPosition="39" endLine="21" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2172278393548617994" fileName="StubDialog.java" startLine="24" startPosition="27" endLine="25" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3351556818517870473" fileName="StubDialog.java" startLine="28" startPosition="22" endLine="29" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4983682755224323352" fileName="StubDialog.java" startLine="29" startPosition="22" endLine="30" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4983682755224323373" fileName="StubDialog.java" startLine="30" startPosition="22" endLine="31" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4983682755224323400" fileName="StubDialog.java" startLine="33" startPosition="41" endLine="34" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2172278393548617898" fileName="StubDialog.java" startLine="39" startPosition="55" endLine="40" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2172278393548617989" fileName="StubDialog.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShell#()Lorg/eclipse/swt/widgets/Shell;" />
-    <nodeInfo nodeId="4983682755224323389" fileName="StubDialog.java" startLine="32" startPosition="40" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2172278393548617247" fileName="StubDialog.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getStubDialog#(Lorg/eclipse/swt/widgets/Shell;)Ljetbrains/mps/ui/swt/runtime/widgets/StubDialog;" />
-    <nodeInfo nodeId="4983682755224323360" fileName="StubDialog.java" startLine="31" startPosition="52" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="4983682755224323288" fileName="StubDialog.java" startLine="16" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StubDialog#(Lorg/eclipse/swt/widgets/Shell;I)V" />
-    <nodeInfo nodeId="4983682755224323293" fileName="StubDialog.java" startLine="28" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="open#()V" />
-    <scopeInfo nodeId="2172278393548617992" fileName="StubDialog.java" startLine="24" startPosition="27" endLine="25" endPosition="22" />
-    <scopeInfo nodeId="4983682755224323391" fileName="StubDialog.java" startLine="33" startPosition="41" endLine="34" endPosition="24" />
-    <scopeInfo nodeId="2172278393548617250" fileName="StubDialog.java" startLine="39" startPosition="55" endLine="40" endPosition="62" />
-    <scopeInfo nodeId="2172278393548617989" fileName="StubDialog.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="4983682755224323362" fileName="StubDialog.java" startLine="32" startPosition="40" endLine="35" endPosition="7" />
-    <scopeInfo nodeId="2172278393548617247" fileName="StubDialog.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
+    <nodeInfo nodeId="2172278393548617945" fileName="StubDialog.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="shell" />
+    <nodeInfo nodeId="4983682755224323302" fileName="StubDialog.java" startLine="15" startPosition="46" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2172278393548617939" fileName="StubDialog.java" startLine="16" startPosition="25" endLine="17" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3351556818517870507" fileName="StubDialog.java" startLine="17" startPosition="99" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2172278393548617920" fileName="StubDialog.java" startLine="18" startPosition="43" endLine="19" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2172278393548617928" fileName="StubDialog.java" startLine="19" startPosition="39" endLine="20" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2172278393548617994" fileName="StubDialog.java" startLine="23" startPosition="27" endLine="24" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3351556818517870473" fileName="StubDialog.java" startLine="27" startPosition="22" endLine="28" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4983682755224323352" fileName="StubDialog.java" startLine="28" startPosition="22" endLine="29" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4983682755224323373" fileName="StubDialog.java" startLine="29" startPosition="22" endLine="30" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4983682755224323400" fileName="StubDialog.java" startLine="32" startPosition="41" endLine="33" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2172278393548617898" fileName="StubDialog.java" startLine="38" startPosition="55" endLine="39" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2172278393548617989" fileName="StubDialog.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShell#()Lorg/eclipse/swt/widgets/Shell;" />
+    <nodeInfo nodeId="4983682755224323389" fileName="StubDialog.java" startLine="31" startPosition="40" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2172278393548617247" fileName="StubDialog.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getStubDialog#(Lorg/eclipse/swt/widgets/Shell;)Ljetbrains/mps/ui/swt/runtime/widgets/StubDialog;" />
+    <nodeInfo nodeId="4983682755224323360" fileName="StubDialog.java" startLine="30" startPosition="52" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="4983682755224323288" fileName="StubDialog.java" startLine="15" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StubDialog#(Lorg/eclipse/swt/widgets/Shell;I)V" />
+    <nodeInfo nodeId="4983682755224323293" fileName="StubDialog.java" startLine="27" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="open#()V" />
+    <scopeInfo nodeId="2172278393548617992" fileName="StubDialog.java" startLine="23" startPosition="27" endLine="24" endPosition="22" />
+    <scopeInfo nodeId="4983682755224323391" fileName="StubDialog.java" startLine="32" startPosition="41" endLine="33" endPosition="24" />
+    <scopeInfo nodeId="2172278393548617250" fileName="StubDialog.java" startLine="38" startPosition="55" endLine="39" endPosition="62" />
+    <scopeInfo nodeId="2172278393548617989" fileName="StubDialog.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="4983682755224323362" fileName="StubDialog.java" startLine="31" startPosition="40" endLine="34" endPosition="7" />
+    <scopeInfo nodeId="2172278393548617247" fileName="StubDialog.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="2172278393548617252" varName="shell" />
     </scopeInfo>
-    <scopeInfo nodeId="4983682755224323291" fileName="StubDialog.java" startLine="16" startPosition="46" endLine="21" endPosition="42" />
-    <scopeInfo nodeId="4983682755224323288" fileName="StubDialog.java" startLine="16" startPosition="0" endLine="23" endPosition="0">
+    <scopeInfo nodeId="4983682755224323291" fileName="StubDialog.java" startLine="15" startPosition="46" endLine="20" endPosition="42" />
+    <scopeInfo nodeId="4983682755224323288" fileName="StubDialog.java" startLine="15" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="4983682755224323297" varName="parent" />
       <varInfo nodeId="4983682755224323299" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="4983682755224323296" fileName="StubDialog.java" startLine="28" startPosition="22" endLine="36" endPosition="5">
+    <scopeInfo nodeId="4983682755224323296" fileName="StubDialog.java" startLine="27" startPosition="22" endLine="35" endPosition="5">
       <varInfo nodeId="4983682755224323374" varName="display" />
     </scopeInfo>
-    <scopeInfo nodeId="4983682755224323293" fileName="StubDialog.java" startLine="28" startPosition="0" endLine="38" endPosition="0" />
-    <unitInfo nodeId="4983682755224323286" fileName="StubDialog.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ui.swt.runtime.widgets.StubDialog" />
+    <scopeInfo nodeId="4983682755224323293" fileName="StubDialog.java" startLine="27" startPosition="0" endLine="37" endPosition="0" />
+    <unitInfo nodeId="4983682755224323286" fileName="StubDialog.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ui.swt.runtime.widgets.StubDialog" />
   </root>
   <root nodeId="9003987136928267844" modelId="r:365f182a-cc04-4509-a3b0-2053df8061d1(jetbrains.mps.ui.swt.runtime.widgets)">
     <nodeInfo nodeId="9003987136928267854" fileName="ControlIterator.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="children" />

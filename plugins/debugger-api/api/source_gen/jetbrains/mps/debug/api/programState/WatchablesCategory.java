@@ -5,7 +5,6 @@ package jetbrains.mps.debug.api.programState;
 
 public class WatchablesCategory implements Comparable<WatchablesCategory> {
   public static final WatchablesCategory NONE = new WatchablesCategory("");
-
   private final String myCategoryName;
 
   public WatchablesCategory(String categoryName) {

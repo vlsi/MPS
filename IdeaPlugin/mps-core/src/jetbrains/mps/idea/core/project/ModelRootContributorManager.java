@@ -16,38 +16,49 @@
 
 package jetbrains.mps.idea.core.project;
 
+import com.intellij.facet.FacetManager;
 import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.module.ModuleManager;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.startup.StartupManager;
+import jetbrains.mps.idea.core.facet.MPSFacet;
+import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collection;
 import java.util.Set;
 
 /**
  * danilla 11/15/12
  */
 
+// Maybe this should be an extension point
 public class ModelRootContributorManager implements ProjectComponent {
 
+  private final Object LOCK = new Object();
+  private Project myProject;
   private Set<ModelRootContributor> myContributors = new HashSet<ModelRootContributor>();
+
+  public ModelRootContributorManager(Project p) {
+    myProject = p;
+  }
 
   @Override
   public void projectOpened() {
-    //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override
   public void projectClosed() {
-    //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override
   public void initComponent() {
-    //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override
   public void disposeComponent() {
-    //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @NotNull
@@ -57,11 +68,39 @@ public class ModelRootContributorManager implements ProjectComponent {
   }
 
   public void addContributor(ModelRootContributor contributor) {
-    myContributors.add(contributor);
+    synchronized (LOCK) {
+      myContributors.add(contributor);
+    }
+    informFacetSolutions();
+  }
+
+  public void removeContributor(ModelRootContributor contributor) {
+    synchronized (LOCK) {
+      myContributors.remove(contributor);
+    }
+    informFacetSolutions();
   }
 
   public Iterable<ModelRootContributor> getContributors() {
-    return myContributors;
+    synchronized (LOCK) {
+      return myContributors;
+    }
+  }
+
+  // Simple form of notification
+  // Not clear if anybody except SolutionIdea needs this.
+  // Maybe do it as listener.
+  private void informFacetSolutions() {
+    for (Module module: ModuleManager.getInstance(myProject).getModules()) {
+      Collection<MPSFacet> mpsFacets = FacetManager.getInstance(module).getFacetsByType(MPSFacetType.ID);
+      for (MPSFacet facet: mpsFacets) {
+        SolutionIdea solution = (SolutionIdea)facet.getSolution();
+        if (solution!=null) {
+          solution.contributedModelRootsChanged();
+        }
+      }
+    }
+
   }
 
 }

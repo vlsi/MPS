@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.IOperationContext;
 public class GoToTypeErrorRule_InGroup_Action extends BaseAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(GoToTypeErrorRule_InGroup_Action.class);
-
   private Pair<String, String> errorId;
   private boolean immediate;
 

@@ -36,17 +36,15 @@ import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.make.MPSCompilerComponent;
 import jetbrains.mps.vfs.IFile;
 
+import javax.swing.SwingUtilities;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.BrokenBarrierException;
-import java.util.concurrent.CyclicBarrier;
-import java.util.concurrent.Semaphore;
 
 public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
 
   private List<Asserter> asserters = new ArrayList<Asserter>();
-  
+
   protected void prepareTestData(MPSFacetConfiguration configuration, final IFile source) throws Exception {
     final ModuleRootManager mrm = ModuleRootManager.getInstance(configuration.getFacet().getModule());
     ApplicationManager.getApplication().runWriteAction(new Runnable() {
@@ -108,14 +106,14 @@ public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
     assertAsserters();
   }
 
-  private void assertAsserters () throws Exception {
-    for (Asserter ass: asserters) {
+  private void assertAsserters() throws Exception {
+    for (Asserter ass : asserters) {
       ass.doAssert();
     }
     asserters.clear();
   }
-  
-  protected void assertOnTeardown (Asserter ass) {
+
+  protected void assertOnTeardown(Asserter ass) {
     asserters.add(ass);
   }
 
@@ -137,21 +135,35 @@ public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
     assertCompiles(cm, 0, 0);
   }
 
-  protected void assertCompiles(CompilerManager cm, final int errors, final int warns) {
+  protected void assertCompiles(final CompilerManager cm, final int errors, final int warns) throws Exception {
     class Result {
       boolean aborted = true;
       int errors = -1;
       int warnings = -1;
     }
     final Result res = new Result();
-    cm.compile(myFacet.getModule(), new CompileStatusNotification() {
+    final boolean[] compilationFinished = new boolean[]{false};
+    SwingUtilities.invokeLater(new Runnable() {
       @Override
-      public void finished(boolean aborted, int errors, int warnings, CompileContext compileContext) {
-        res.aborted = aborted;
-        res.errors = errors;
-        res.warnings = warnings;
+      public void run() {
+        cm.compile(myFacet.getModule(), new CompileStatusNotification() {
+          @Override
+          public void finished(boolean aborted, int errors, int warnings, CompileContext compileContext) {
+            res.aborted = aborted;
+            res.errors = errors;
+            res.warnings = warnings;
+            compilationFinished[0] = true;
+          }
+        });
       }
     });
+    while (!compilationFinished[0]) {
+      try {
+        Thread.sleep(100);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
     assertOnTeardown(new Asserter() {
       @Override
       public void doAssert() throws Exception {
@@ -167,9 +179,8 @@ public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
   }
 
   private interface Asserter {
-    void doAssert () throws Exception;
+    void doAssert() throws Exception;
   }
-  
 
 
 }

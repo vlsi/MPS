@@ -54,7 +54,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class TreeHighlighter implements TreeMessageOwner {
   protected static Log log = LogFactory.getLog(TreeHighlighter.class);
-
   private Map<FileStatus, TreeMessage> myTreeMessages = MapSequence.fromMap(new HashMap<FileStatus, TreeMessage>());
   private CurrentDifferenceRegistry myRegistry;
   private SimpleCommandQueue myCommandQueue;

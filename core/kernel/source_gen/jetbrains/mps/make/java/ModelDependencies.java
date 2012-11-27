@@ -13,7 +13,6 @@ import java.util.List;
 public class ModelDependencies {
   private static final String DEPENDENCY = "dependency";
   private static final String DEPENDENCIES_ROOT = "dependenciesRoot";
-
   private Map<String, RootDependencies> myDependencies = MapSequence.fromMap(new HashMap<String, RootDependencies>());
 
   public ModelDependencies() {

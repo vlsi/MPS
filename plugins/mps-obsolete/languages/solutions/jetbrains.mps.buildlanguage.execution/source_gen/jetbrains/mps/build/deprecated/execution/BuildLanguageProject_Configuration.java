@@ -35,7 +35,6 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   protected static Log log = LogFactory.getLog(BuildLanguageProject_Configuration.class);
-
   @NotNull
   private BuildLanguageProject_Configuration.MyState myState = new BuildLanguageProject_Configuration.MyState();
   private NodeByConcept_Configuration myNode = new NodeByConcept_Configuration("jetbrains.mps.buildlanguage.structure.Project", null);

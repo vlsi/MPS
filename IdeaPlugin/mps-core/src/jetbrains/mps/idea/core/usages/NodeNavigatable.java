@@ -28,28 +28,32 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.choose.nodes.NodePresentation;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class NodeNavigatable implements Navigatable {
-  protected SNode myNode;
+  protected final SNodePointer myNode;
+  protected final Project myProject;
   protected String myTextPresentation;
-  protected SNode myRootNode;
-  protected Project myProject;
-  protected VirtualFile myFile;
   protected ItemPresentation myItemPresentation;
+  protected SNodePointer myRootNode;
+  protected VirtualFile myFile;
 
-  public NodeNavigatable(@NotNull SNode node, @NotNull Project project) {
+  public NodeNavigatable(@NotNull SNodePointer node, @NotNull Project project) {
     myNode = node;
     myProject = project;
-    myItemPresentation = new NodePresentation(node);
+    myItemPresentation = new NodePointerPresentation(node);
     myTextPresentation = myItemPresentation.getPresentableText();
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        myRootNode = myNode.getContainingRoot();
-        myFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(myRootNode);
+        SNode targetNode = myNode.getNode();
+        if(targetNode != null) {
+          myRootNode = new SNodePointer(targetNode.getTopmostAncestor());
+          myFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(myRootNode);
+        }
       }
     });
   }
@@ -67,7 +71,10 @@ public abstract class NodeNavigatable implements Navigatable {
   }
 
   public void openEditor(final boolean focus) {
-    SModelDescriptor modelDescriptor = myNode.getModel().getModelDescriptor();
+    SNode node = myNode.getNode();
+    if (node == null) return;
+
+    SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
     if (modelDescriptor == null) return;
 
     IModule module = modelDescriptor.getModule();
@@ -77,7 +84,7 @@ public abstract class NodeNavigatable implements Navigatable {
     if (project == null) return;
 
     ModuleContext context = new ModuleContext(module, project);
-    NavigationSupport.getInstance().openNode(context, myNode, focus, !myNode.isRoot());
+    NavigationSupport.getInstance().openNode(context, node, focus, !node.isRoot());
   }
 
   public abstract boolean isValid();

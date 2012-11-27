@@ -38,132 +38,132 @@
   </root>
   <root nodeId="8267733531687412090" modelId="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)">
     <nodeInfo nodeId="8267733531687412093" fileName="ReloadableFinder.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="8267733531687412098" fileName="ReloadableFinder.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModuleClassRef" />
-    <nodeInfo nodeId="8267733531687412102" fileName="ReloadableFinder.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFinder" />
-    <nodeInfo nodeId="8267733531687412118" fileName="ReloadableFinder.java" startLine="19" startPosition="74" endLine="20" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8267733531687412133" fileName="ReloadableFinder.java" startLine="23" startPosition="84" endLine="24" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="8267733531687412140" fileName="ReloadableFinder.java" startLine="24" startPosition="55" endLine="25" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8267733531687412158" fileName="ReloadableFinder.java" startLine="29" startPosition="33" endLine="30" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412165" fileName="ReloadableFinder.java" startLine="30" startPosition="72" endLine="31" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412182" fileName="ReloadableFinder.java" startLine="32" startPosition="11" endLine="33" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8267733531687412172" fileName="ReloadableFinder.java" startLine="34" startPosition="29" endLine="35" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8267733531687412177" fileName="ReloadableFinder.java" startLine="35" startPosition="21" endLine="36" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412188" fileName="ReloadableFinder.java" startLine="37" startPosition="7" endLine="38" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8267733531687412195" fileName="ReloadableFinder.java" startLine="39" startPosition="5" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412203" fileName="ReloadableFinder.java" startLine="43" startPosition="30" endLine="44" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412212" fileName="ReloadableFinder.java" startLine="45" startPosition="25" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412214" fileName="ReloadableFinder.java" startLine="47" startPosition="5" endLine="48" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412224" fileName="ReloadableFinder.java" startLine="51" startPosition="43" endLine="52" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412233" fileName="ReloadableFinder.java" startLine="53" startPosition="25" endLine="54" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412235" fileName="ReloadableFinder.java" startLine="55" startPosition="5" endLine="56" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412246" fileName="ReloadableFinder.java" startLine="59" startPosition="40" endLine="60" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412255" fileName="ReloadableFinder.java" startLine="61" startPosition="25" endLine="62" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412257" fileName="ReloadableFinder.java" startLine="63" startPosition="5" endLine="64" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412266" fileName="ReloadableFinder.java" startLine="67" startPosition="34" endLine="68" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412275" fileName="ReloadableFinder.java" startLine="69" startPosition="25" endLine="70" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412277" fileName="ReloadableFinder.java" startLine="71" startPosition="5" endLine="72" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412285" fileName="ReloadableFinder.java" startLine="75" startPosition="38" endLine="76" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412294" fileName="ReloadableFinder.java" startLine="77" startPosition="25" endLine="78" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412296" fileName="ReloadableFinder.java" startLine="79" startPosition="5" endLine="80" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412304" fileName="ReloadableFinder.java" startLine="83" startPosition="32" endLine="84" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412313" fileName="ReloadableFinder.java" startLine="85" startPosition="25" endLine="86" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412315" fileName="ReloadableFinder.java" startLine="87" startPosition="5" endLine="88" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412323" fileName="ReloadableFinder.java" startLine="91" startPosition="36" endLine="92" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412332" fileName="ReloadableFinder.java" startLine="93" startPosition="25" endLine="94" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412334" fileName="ReloadableFinder.java" startLine="95" startPosition="5" endLine="96" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412347" fileName="ReloadableFinder.java" startLine="99" startPosition="80" endLine="100" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8267733531687412356" fileName="ReloadableFinder.java" startLine="101" startPosition="25" endLine="102" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412359" fileName="ReloadableFinder.java" startLine="103" startPosition="5" endLine="104" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8267733531687412110" fileName="ReloadableFinder.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReloadableFinder#(Ljetbrains/mps/project/structure/modules/ModuleReference;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8267733531687412207" fileName="ReloadableFinder.java" startLine="44" startPosition="41" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8267733531687412228" fileName="ReloadableFinder.java" startLine="52" startPosition="41" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8267733531687412250" fileName="ReloadableFinder.java" startLine="60" startPosition="41" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8267733531687412270" fileName="ReloadableFinder.java" startLine="68" startPosition="41" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8267733531687412289" fileName="ReloadableFinder.java" startLine="76" startPosition="41" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8267733531687412308" fileName="ReloadableFinder.java" startLine="84" startPosition="41" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8267733531687412327" fileName="ReloadableFinder.java" startLine="92" startPosition="41" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8267733531687412351" fileName="ReloadableFinder.java" startLine="100" startPosition="41" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8267733531687412125" fileName="ReloadableFinder.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReloadableFinder#(Ljetbrains/mps/project/structure/modules/ModuleReference;Ljetbrains/mps/ide/findusages/findalgorithm/finders/GeneratedFinder;)V" />
-    <nodeInfo nodeId="8267733531687412169" fileName="ReloadableFinder.java" startLine="31" startPosition="36" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8267733531687412199" fileName="ReloadableFinder.java" startLine="43" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8267733531687412218" fileName="ReloadableFinder.java" startLine="51" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="8267733531687412240" fileName="ReloadableFinder.java" startLine="59" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isVisible#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="8267733531687412262" fileName="ReloadableFinder.java" startLine="67" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8267733531687412281" fileName="ReloadableFinder.java" startLine="75" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLongDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8267733531687412300" fileName="ReloadableFinder.java" startLine="83" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canNavigate#()Z" />
-    <nodeInfo nodeId="8267733531687412319" fileName="ReloadableFinder.java" startLine="91" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeToNavigate#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8267733531687412338" fileName="ReloadableFinder.java" startLine="99" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Ljetbrains/mps/progress/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
-    <nodeInfo nodeId="8267733531687412151" fileName="ReloadableFinder.java" startLine="28" startPosition="38" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8267733531687412147" fileName="ReloadableFinder.java" startLine="28" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFinder#()Ljetbrains/mps/ide/findusages/findalgorithm/finders/GeneratedFinder;" />
-    <scopeInfo nodeId="8267733531687412117" fileName="ReloadableFinder.java" startLine="19" startPosition="74" endLine="20" endPosition="72" />
-    <scopeInfo nodeId="8267733531687412181" fileName="ReloadableFinder.java" startLine="32" startPosition="11" endLine="33" endPosition="43" />
-    <scopeInfo nodeId="8267733531687412211" fileName="ReloadableFinder.java" startLine="45" startPosition="25" endLine="46" endPosition="16" />
-    <scopeInfo nodeId="8267733531687412232" fileName="ReloadableFinder.java" startLine="53" startPosition="25" endLine="54" endPosition="19" />
-    <scopeInfo nodeId="8267733531687412254" fileName="ReloadableFinder.java" startLine="61" startPosition="25" endLine="62" endPosition="19" />
-    <scopeInfo nodeId="8267733531687412274" fileName="ReloadableFinder.java" startLine="69" startPosition="25" endLine="70" endPosition="16" />
-    <scopeInfo nodeId="8267733531687412293" fileName="ReloadableFinder.java" startLine="77" startPosition="25" endLine="78" endPosition="16" />
-    <scopeInfo nodeId="8267733531687412312" fileName="ReloadableFinder.java" startLine="85" startPosition="25" endLine="86" endPosition="19" />
-    <scopeInfo nodeId="8267733531687412331" fileName="ReloadableFinder.java" startLine="93" startPosition="25" endLine="94" endPosition="18" />
-    <scopeInfo nodeId="8267733531687412355" fileName="ReloadableFinder.java" startLine="101" startPosition="25" endLine="102" endPosition="33" />
-    <scopeInfo nodeId="8267733531687412132" fileName="ReloadableFinder.java" startLine="23" startPosition="84" endLine="25" endPosition="58" />
-    <scopeInfo nodeId="8267733531687412170" fileName="ReloadableFinder.java" startLine="34" startPosition="0" endLine="36" endPosition="20">
+    <nodeInfo nodeId="8267733531687412098" fileName="ReloadableFinder.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModuleClassRef" />
+    <nodeInfo nodeId="8267733531687412102" fileName="ReloadableFinder.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFinder" />
+    <nodeInfo nodeId="8267733531687412118" fileName="ReloadableFinder.java" startLine="18" startPosition="74" endLine="19" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8267733531687412133" fileName="ReloadableFinder.java" startLine="22" startPosition="84" endLine="23" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="8267733531687412140" fileName="ReloadableFinder.java" startLine="23" startPosition="55" endLine="24" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8267733531687412158" fileName="ReloadableFinder.java" startLine="28" startPosition="33" endLine="29" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8267733531687412165" fileName="ReloadableFinder.java" startLine="29" startPosition="72" endLine="30" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8267733531687412182" fileName="ReloadableFinder.java" startLine="31" startPosition="11" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8267733531687412172" fileName="ReloadableFinder.java" startLine="33" startPosition="29" endLine="34" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8267733531687412177" fileName="ReloadableFinder.java" startLine="34" startPosition="21" endLine="35" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412188" fileName="ReloadableFinder.java" startLine="36" startPosition="7" endLine="37" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8267733531687412195" fileName="ReloadableFinder.java" startLine="38" startPosition="5" endLine="39" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412203" fileName="ReloadableFinder.java" startLine="42" startPosition="30" endLine="43" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8267733531687412212" fileName="ReloadableFinder.java" startLine="44" startPosition="25" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412214" fileName="ReloadableFinder.java" startLine="46" startPosition="5" endLine="47" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412224" fileName="ReloadableFinder.java" startLine="50" startPosition="43" endLine="51" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8267733531687412233" fileName="ReloadableFinder.java" startLine="52" startPosition="25" endLine="53" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412235" fileName="ReloadableFinder.java" startLine="54" startPosition="5" endLine="55" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412246" fileName="ReloadableFinder.java" startLine="58" startPosition="40" endLine="59" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8267733531687412255" fileName="ReloadableFinder.java" startLine="60" startPosition="25" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412257" fileName="ReloadableFinder.java" startLine="62" startPosition="5" endLine="63" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412266" fileName="ReloadableFinder.java" startLine="66" startPosition="34" endLine="67" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8267733531687412275" fileName="ReloadableFinder.java" startLine="68" startPosition="25" endLine="69" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412277" fileName="ReloadableFinder.java" startLine="70" startPosition="5" endLine="71" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412285" fileName="ReloadableFinder.java" startLine="74" startPosition="38" endLine="75" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8267733531687412294" fileName="ReloadableFinder.java" startLine="76" startPosition="25" endLine="77" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412296" fileName="ReloadableFinder.java" startLine="78" startPosition="5" endLine="79" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412304" fileName="ReloadableFinder.java" startLine="82" startPosition="32" endLine="83" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8267733531687412313" fileName="ReloadableFinder.java" startLine="84" startPosition="25" endLine="85" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412315" fileName="ReloadableFinder.java" startLine="86" startPosition="5" endLine="87" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412323" fileName="ReloadableFinder.java" startLine="90" startPosition="36" endLine="91" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8267733531687412332" fileName="ReloadableFinder.java" startLine="92" startPosition="25" endLine="93" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412334" fileName="ReloadableFinder.java" startLine="94" startPosition="5" endLine="95" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412347" fileName="ReloadableFinder.java" startLine="98" startPosition="80" endLine="99" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8267733531687412356" fileName="ReloadableFinder.java" startLine="100" startPosition="25" endLine="101" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412359" fileName="ReloadableFinder.java" startLine="102" startPosition="5" endLine="103" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8267733531687412110" fileName="ReloadableFinder.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReloadableFinder#(Ljetbrains/mps/project/structure/modules/ModuleReference;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8267733531687412207" fileName="ReloadableFinder.java" startLine="43" startPosition="41" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8267733531687412228" fileName="ReloadableFinder.java" startLine="51" startPosition="41" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8267733531687412250" fileName="ReloadableFinder.java" startLine="59" startPosition="41" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8267733531687412270" fileName="ReloadableFinder.java" startLine="67" startPosition="41" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8267733531687412289" fileName="ReloadableFinder.java" startLine="75" startPosition="41" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8267733531687412308" fileName="ReloadableFinder.java" startLine="83" startPosition="41" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8267733531687412327" fileName="ReloadableFinder.java" startLine="91" startPosition="41" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8267733531687412351" fileName="ReloadableFinder.java" startLine="99" startPosition="41" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8267733531687412125" fileName="ReloadableFinder.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReloadableFinder#(Ljetbrains/mps/project/structure/modules/ModuleReference;Ljetbrains/mps/ide/findusages/findalgorithm/finders/GeneratedFinder;)V" />
+    <nodeInfo nodeId="8267733531687412169" fileName="ReloadableFinder.java" startLine="30" startPosition="36" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8267733531687412199" fileName="ReloadableFinder.java" startLine="42" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8267733531687412218" fileName="ReloadableFinder.java" startLine="50" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="8267733531687412240" fileName="ReloadableFinder.java" startLine="58" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isVisible#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="8267733531687412262" fileName="ReloadableFinder.java" startLine="66" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8267733531687412281" fileName="ReloadableFinder.java" startLine="74" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLongDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8267733531687412300" fileName="ReloadableFinder.java" startLine="82" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canNavigate#()Z" />
+    <nodeInfo nodeId="8267733531687412319" fileName="ReloadableFinder.java" startLine="90" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeToNavigate#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8267733531687412338" fileName="ReloadableFinder.java" startLine="98" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Ljetbrains/mps/progress/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+    <nodeInfo nodeId="8267733531687412151" fileName="ReloadableFinder.java" startLine="27" startPosition="38" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8267733531687412147" fileName="ReloadableFinder.java" startLine="27" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFinder#()Ljetbrains/mps/ide/findusages/findalgorithm/finders/GeneratedFinder;" />
+    <scopeInfo nodeId="8267733531687412117" fileName="ReloadableFinder.java" startLine="18" startPosition="74" endLine="19" endPosition="72" />
+    <scopeInfo nodeId="8267733531687412181" fileName="ReloadableFinder.java" startLine="31" startPosition="11" endLine="32" endPosition="43" />
+    <scopeInfo nodeId="8267733531687412211" fileName="ReloadableFinder.java" startLine="44" startPosition="25" endLine="45" endPosition="16" />
+    <scopeInfo nodeId="8267733531687412232" fileName="ReloadableFinder.java" startLine="52" startPosition="25" endLine="53" endPosition="19" />
+    <scopeInfo nodeId="8267733531687412254" fileName="ReloadableFinder.java" startLine="60" startPosition="25" endLine="61" endPosition="19" />
+    <scopeInfo nodeId="8267733531687412274" fileName="ReloadableFinder.java" startLine="68" startPosition="25" endLine="69" endPosition="16" />
+    <scopeInfo nodeId="8267733531687412293" fileName="ReloadableFinder.java" startLine="76" startPosition="25" endLine="77" endPosition="16" />
+    <scopeInfo nodeId="8267733531687412312" fileName="ReloadableFinder.java" startLine="84" startPosition="25" endLine="85" endPosition="19" />
+    <scopeInfo nodeId="8267733531687412331" fileName="ReloadableFinder.java" startLine="92" startPosition="25" endLine="93" endPosition="18" />
+    <scopeInfo nodeId="8267733531687412355" fileName="ReloadableFinder.java" startLine="100" startPosition="25" endLine="101" endPosition="33" />
+    <scopeInfo nodeId="8267733531687412132" fileName="ReloadableFinder.java" startLine="22" startPosition="84" endLine="24" endPosition="58" />
+    <scopeInfo nodeId="8267733531687412170" fileName="ReloadableFinder.java" startLine="33" startPosition="0" endLine="35" endPosition="20">
       <varInfo nodeId="8267733531687412179" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412171" fileName="ReloadableFinder.java" startLine="34" startPosition="29" endLine="36" endPosition="20" />
-    <scopeInfo nodeId="8267733531687412110" fileName="ReloadableFinder.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
+    <scopeInfo nodeId="8267733531687412171" fileName="ReloadableFinder.java" startLine="33" startPosition="29" endLine="35" endPosition="20" />
+    <scopeInfo nodeId="8267733531687412110" fileName="ReloadableFinder.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="8267733531687412115" varName="finderClass" />
       <varInfo nodeId="8267733531687412113" varName="moduleRef" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412125" fileName="ReloadableFinder.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="8267733531687412125" fileName="ReloadableFinder.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="8267733531687412130" varName="finder" />
       <varInfo nodeId="8267733531687412128" varName="moduleReference" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412202" fileName="ReloadableFinder.java" startLine="43" startPosition="30" endLine="48" endPosition="31">
+    <scopeInfo nodeId="8267733531687412202" fileName="ReloadableFinder.java" startLine="42" startPosition="30" endLine="47" endPosition="31">
       <varInfo nodeId="8267733531687412204" varName="finder" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412223" fileName="ReloadableFinder.java" startLine="51" startPosition="43" endLine="56" endPosition="37">
+    <scopeInfo nodeId="8267733531687412223" fileName="ReloadableFinder.java" startLine="50" startPosition="43" endLine="55" endPosition="37">
       <varInfo nodeId="8267733531687412225" varName="finder" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412245" fileName="ReloadableFinder.java" startLine="59" startPosition="40" endLine="64" endPosition="34">
+    <scopeInfo nodeId="8267733531687412245" fileName="ReloadableFinder.java" startLine="58" startPosition="40" endLine="63" endPosition="34">
       <varInfo nodeId="8267733531687412247" varName="finder" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412265" fileName="ReloadableFinder.java" startLine="67" startPosition="34" endLine="72" endPosition="35">
+    <scopeInfo nodeId="8267733531687412265" fileName="ReloadableFinder.java" startLine="66" startPosition="34" endLine="71" endPosition="35">
       <varInfo nodeId="8267733531687412267" varName="finder" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412284" fileName="ReloadableFinder.java" startLine="75" startPosition="38" endLine="80" endPosition="39">
+    <scopeInfo nodeId="8267733531687412284" fileName="ReloadableFinder.java" startLine="74" startPosition="38" endLine="79" endPosition="39">
       <varInfo nodeId="8267733531687412286" varName="finder" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412303" fileName="ReloadableFinder.java" startLine="83" startPosition="32" endLine="88" endPosition="32">
+    <scopeInfo nodeId="8267733531687412303" fileName="ReloadableFinder.java" startLine="82" startPosition="32" endLine="87" endPosition="32">
       <varInfo nodeId="8267733531687412305" varName="finder" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412322" fileName="ReloadableFinder.java" startLine="91" startPosition="36" endLine="96" endPosition="38">
+    <scopeInfo nodeId="8267733531687412322" fileName="ReloadableFinder.java" startLine="90" startPosition="36" endLine="95" endPosition="38">
       <varInfo nodeId="8267733531687412324" varName="finder" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412346" fileName="ReloadableFinder.java" startLine="99" startPosition="80" endLine="104" endPosition="39">
+    <scopeInfo nodeId="8267733531687412346" fileName="ReloadableFinder.java" startLine="98" startPosition="80" endLine="103" endPosition="39">
       <varInfo nodeId="8267733531687412348" varName="finder" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412199" fileName="ReloadableFinder.java" startLine="43" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="8267733531687412218" fileName="ReloadableFinder.java" startLine="51" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="8267733531687412199" fileName="ReloadableFinder.java" startLine="42" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="8267733531687412218" fileName="ReloadableFinder.java" startLine="50" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="8267733531687412221" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412240" fileName="ReloadableFinder.java" startLine="59" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="8267733531687412240" fileName="ReloadableFinder.java" startLine="58" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="8267733531687412243" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412262" fileName="ReloadableFinder.java" startLine="67" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="8267733531687412281" fileName="ReloadableFinder.java" startLine="75" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="8267733531687412300" fileName="ReloadableFinder.java" startLine="83" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="8267733531687412319" fileName="ReloadableFinder.java" startLine="91" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="8267733531687412338" fileName="ReloadableFinder.java" startLine="99" startPosition="0" endLine="106" endPosition="0">
+    <scopeInfo nodeId="8267733531687412262" fileName="ReloadableFinder.java" startLine="66" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="8267733531687412281" fileName="ReloadableFinder.java" startLine="74" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="8267733531687412300" fileName="ReloadableFinder.java" startLine="82" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="8267733531687412319" fileName="ReloadableFinder.java" startLine="90" startPosition="0" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="8267733531687412338" fileName="ReloadableFinder.java" startLine="98" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="8267733531687412344" varName="monitor" />
       <varInfo nodeId="8267733531687412342" varName="query" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412157" fileName="ReloadableFinder.java" startLine="29" startPosition="33" endLine="38" endPosition="60">
+    <scopeInfo nodeId="8267733531687412157" fileName="ReloadableFinder.java" startLine="28" startPosition="33" endLine="37" endPosition="60">
       <varInfo nodeId="8267733531687412166" varName="finder" />
       <varInfo nodeId="8267733531687412159" varName="finderClass" />
     </scopeInfo>
-    <scopeInfo nodeId="8267733531687412150" fileName="ReloadableFinder.java" startLine="28" startPosition="38" endLine="40" endPosition="26" />
-    <scopeInfo nodeId="8267733531687412147" fileName="ReloadableFinder.java" startLine="28" startPosition="0" endLine="42" endPosition="0" />
-    <unitInfo nodeId="8267733531687412090" fileName="ReloadableFinder.java" startLine="13" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder" />
+    <scopeInfo nodeId="8267733531687412150" fileName="ReloadableFinder.java" startLine="27" startPosition="38" endLine="39" endPosition="26" />
+    <scopeInfo nodeId="8267733531687412147" fileName="ReloadableFinder.java" startLine="27" startPosition="0" endLine="41" endPosition="0" />
+    <unitInfo nodeId="8267733531687412090" fileName="ReloadableFinder.java" startLine="13" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder" />
   </root>
   <root nodeId="8267733531687412365" modelId="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)">
     <nodeInfo nodeId="8267733531687412369" fileName="GeneratedFinder.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

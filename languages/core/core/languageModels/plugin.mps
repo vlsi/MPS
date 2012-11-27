@@ -1192,6 +1192,12 @@
                             </node>
                           </node>
                         </node>
+                        <node role="statement" roleId="tpee.1068581517665" type="q9ra.ReportFeedbackStatement" typeId="q9ra.3668957831723333672" id="6648795410103966851">
+                          <property name="feedback" nameId="q9ra.3668957831723333678" value="ERROR" />
+                          <node role="message" roleId="q9ra.3668957831723336680" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6648795410103966852">
+                            <property name="value" nameId="tpee.1070475926801" value="Failed to generate text" />
+                          </node>
+                        </node>
                         <node role="statement" roleId="tpee.1068581517665" type="q9ra.ResultStatement" typeId="q9ra.7077360340906447917" id="4960740046992426366">
                           <property name="result" nameId="q9ra.7077360340906447918" value="FAILURE" />
                         </node>

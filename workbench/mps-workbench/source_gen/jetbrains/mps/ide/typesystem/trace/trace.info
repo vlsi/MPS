@@ -2,45 +2,45 @@
 <debugInfo>
   <root nodeId="866755926374575161" modelId="r:baaecce4-d235-4862-b71c-c60e946df6fa(jetbrains.mps.ide.typesystem.trace)">
     <nodeInfo nodeId="866755926374575167" fileName="BlockTreeNode.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COLOR_MAP" />
-    <nodeInfo nodeId="866755926374575164" fileName="BlockTreeNode.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBlock" />
-    <nodeInfo nodeId="866755926374575218" fileName="BlockTreeNode.java" startLine="23" startPosition="119" endLine="24" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="866755926374575224" fileName="BlockTreeNode.java" startLine="24" startPosition="66" endLine="25" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374575228" fileName="BlockTreeNode.java" startLine="25" startPosition="20" endLine="26" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374575234" fileName="BlockTreeNode.java" startLine="26" startPosition="33" endLine="27" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374575240" fileName="BlockTreeNode.java" startLine="27" startPosition="39" endLine="28" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374575244" fileName="BlockTreeNode.java" startLine="28" startPosition="20" endLine="29" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374575257" fileName="BlockTreeNode.java" startLine="33" startPosition="41" endLine="34" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374575269" fileName="BlockTreeNode.java" startLine="35" startPosition="62" endLine="36" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374575281" fileName="BlockTreeNode.java" startLine="37" startPosition="5" endLine="38" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374575290" fileName="BlockTreeNode.java" startLine="42" startPosition="37" endLine="43" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374575179" fileName="BlockTreeNode.java" startLine="46" startPosition="56" endLine="47" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374575188" fileName="BlockTreeNode.java" startLine="47" startPosition="73" endLine="48" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374575196" fileName="BlockTreeNode.java" startLine="48" startPosition="50" endLine="49" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374575204" fileName="BlockTreeNode.java" startLine="49" startPosition="52" endLine="50" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374575261" fileName="BlockTreeNode.java" startLine="34" startPosition="30" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374575285" fileName="BlockTreeNode.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVariables#()Ljava/util/List;" />
-    <nodeInfo nodeId="866755926374575173" fileName="BlockTreeNode.java" startLine="46" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="initColors#()Ljava/util/Map;" />
-    <nodeInfo nodeId="866755926374575206" fileName="BlockTreeNode.java" startLine="23" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BlockTreeNode#(Ljetbrains/mps/newTypesystem/state/blocks/Block;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/newTypesystem/state/State;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-    <nodeInfo nodeId="866755926374575253" fileName="BlockTreeNode.java" startLine="32" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdatePresentation#()V" />
-    <scopeInfo nodeId="866755926374575268" fileName="BlockTreeNode.java" startLine="35" startPosition="62" endLine="36" endPosition="89" />
-    <scopeInfo nodeId="866755926374575289" fileName="BlockTreeNode.java" startLine="42" startPosition="37" endLine="43" endPosition="41" />
-    <scopeInfo nodeId="866755926374575285" fileName="BlockTreeNode.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="866755926374575178" fileName="BlockTreeNode.java" startLine="46" startPosition="56" endLine="50" endPosition="18">
+    <nodeInfo nodeId="866755926374575164" fileName="BlockTreeNode.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBlock" />
+    <nodeInfo nodeId="866755926374575218" fileName="BlockTreeNode.java" startLine="22" startPosition="119" endLine="23" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="866755926374575224" fileName="BlockTreeNode.java" startLine="23" startPosition="66" endLine="24" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374575228" fileName="BlockTreeNode.java" startLine="24" startPosition="20" endLine="25" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374575234" fileName="BlockTreeNode.java" startLine="25" startPosition="33" endLine="26" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374575240" fileName="BlockTreeNode.java" startLine="26" startPosition="39" endLine="27" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374575244" fileName="BlockTreeNode.java" startLine="27" startPosition="20" endLine="28" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374575257" fileName="BlockTreeNode.java" startLine="32" startPosition="41" endLine="33" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374575269" fileName="BlockTreeNode.java" startLine="34" startPosition="62" endLine="35" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374575281" fileName="BlockTreeNode.java" startLine="36" startPosition="5" endLine="37" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374575290" fileName="BlockTreeNode.java" startLine="41" startPosition="37" endLine="42" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374575179" fileName="BlockTreeNode.java" startLine="45" startPosition="56" endLine="46" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374575188" fileName="BlockTreeNode.java" startLine="46" startPosition="73" endLine="47" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374575196" fileName="BlockTreeNode.java" startLine="47" startPosition="50" endLine="48" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374575204" fileName="BlockTreeNode.java" startLine="48" startPosition="52" endLine="49" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374575261" fileName="BlockTreeNode.java" startLine="33" startPosition="30" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374575285" fileName="BlockTreeNode.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVariables#()Ljava/util/List;" />
+    <nodeInfo nodeId="866755926374575173" fileName="BlockTreeNode.java" startLine="45" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="initColors#()Ljava/util/Map;" />
+    <nodeInfo nodeId="866755926374575206" fileName="BlockTreeNode.java" startLine="22" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BlockTreeNode#(Ljetbrains/mps/newTypesystem/state/blocks/Block;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/newTypesystem/state/State;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
+    <nodeInfo nodeId="866755926374575253" fileName="BlockTreeNode.java" startLine="31" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdatePresentation#()V" />
+    <scopeInfo nodeId="866755926374575268" fileName="BlockTreeNode.java" startLine="34" startPosition="62" endLine="35" endPosition="89" />
+    <scopeInfo nodeId="866755926374575289" fileName="BlockTreeNode.java" startLine="41" startPosition="37" endLine="42" endPosition="41" />
+    <scopeInfo nodeId="866755926374575285" fileName="BlockTreeNode.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="866755926374575178" fileName="BlockTreeNode.java" startLine="45" startPosition="56" endLine="49" endPosition="18">
       <varInfo nodeId="866755926374575180" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374575256" fileName="BlockTreeNode.java" startLine="33" startPosition="41" endLine="38" endPosition="20">
+    <scopeInfo nodeId="866755926374575256" fileName="BlockTreeNode.java" startLine="32" startPosition="41" endLine="37" endPosition="20">
       <varInfo nodeId="866755926374575258" varName="color" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374575217" fileName="BlockTreeNode.java" startLine="23" startPosition="119" endLine="29" endPosition="120" />
-    <scopeInfo nodeId="866755926374575173" fileName="BlockTreeNode.java" startLine="46" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="866755926374575206" fileName="BlockTreeNode.java" startLine="23" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="866755926374575217" fileName="BlockTreeNode.java" startLine="22" startPosition="119" endLine="28" endPosition="120" />
+    <scopeInfo nodeId="866755926374575173" fileName="BlockTreeNode.java" startLine="45" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="866755926374575206" fileName="BlockTreeNode.java" startLine="22" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="866755926374575209" varName="block" />
       <varInfo nodeId="866755926374575215" varName="editorComponent" />
       <varInfo nodeId="866755926374575211" varName="operationContext" />
       <varInfo nodeId="866755926374575213" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374575253" fileName="BlockTreeNode.java" startLine="32" startPosition="0" endLine="40" endPosition="0" />
-    <unitInfo nodeId="866755926374575161" fileName="BlockTreeNode.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.BlockTreeNode" />
+    <scopeInfo nodeId="866755926374575253" fileName="BlockTreeNode.java" startLine="31" startPosition="0" endLine="39" endPosition="0" />
+    <unitInfo nodeId="866755926374575161" fileName="BlockTreeNode.java" startLine="18" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.BlockTreeNode" />
   </root>
   <root nodeId="866755926374575296" modelId="r:baaecce4-d235-4862-b71c-c60e946df6fa(jetbrains.mps.ide.typesystem.trace)">
     <nodeInfo nodeId="866755926374575297" fileName="EquationTreeNode.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVariables" />

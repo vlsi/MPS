@@ -61,7 +61,6 @@ public class FFFFacet_Facet extends IFacet.Stub {
   public static class Target_QQQ implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("FFFFacet.QQQ");
 
     public Target_QQQ() {
@@ -167,7 +166,6 @@ public class FFFFacet_Facet extends IFacet.Stub {
   public static class Target_qweqwe implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("FFFFacet.qweqwe");
 
     public Target_qweqwe() {
@@ -248,7 +246,6 @@ public class FFFFacet_Facet extends IFacet.Stub {
   public static class Target_Nanana implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("FFFFacet.Nanana");
 
     public Target_Nanana() {

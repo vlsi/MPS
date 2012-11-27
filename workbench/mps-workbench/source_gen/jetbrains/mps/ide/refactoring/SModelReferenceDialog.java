@@ -21,7 +21,6 @@ import org.jetbrains.annotations.Nullable;
 
 public class SModelReferenceDialog extends RefactoringDialog {
   protected static String REFACTORING_NAME = "Move Concepts";
-
   private ChooseByNamePanel myChooser;
   private Project myProject;
   private List<SModelReference> myModels;

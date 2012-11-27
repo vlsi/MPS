@@ -25,7 +25,6 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
   private static final int CRITICAL_DELAY = 16000;
   private static final double DELAY_MUL = 2.0;
   private static final Object LOCK = new Object();
-
   private final Project myProject;
   private PluginStateWidget.MyTimer myTimer;
   private PluginStateWidget.State myState = PluginStateWidget.State.TRYING_TO_CONNECT;

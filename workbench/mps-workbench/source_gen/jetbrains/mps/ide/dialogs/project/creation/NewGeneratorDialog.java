@@ -46,7 +46,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class NewGeneratorDialog extends DialogWrapper {
   private static Logger LOG = Logger.getLogger(NewGeneratorDialog.class);
-
   private JPanel myContenetPane;
   private TextFieldWithBrowseButton myTemplateModelsDir;
   private JTextField myGeneratorName;

@@ -173,6 +173,10 @@ public class IdeaScopesUtils {
       return this;
     }
 
+    @Override
+    public void addLookupAdvertisement(@NotNull String s) {
+    }
+
     @NotNull
     @Override
     public CompletionResultSet caseInsensitive() {

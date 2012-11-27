@@ -10,7 +10,6 @@ import org.eclipse.swt.widgets.Display;
 
 public class StubDialog extends Dialog {
   private static String STUB_DIALOG = "jetbrains.mps.ui.swt.runtime.STUB_DIALOG";
-
   private Shell shell;
 
   public StubDialog(Shell parent, int style) {

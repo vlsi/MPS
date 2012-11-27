@@ -14,7 +14,6 @@ import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class ResourceType_comparableWith_IResource_ComparisonRule extends ComparisonRule_Runtime {
   private static SNodePointer SNODE_POINTER_v5k8je_a0a0a0a0b0c0a0a0a0a0a0d = new SNodePointer("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)", "6168415856807657256");
-
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
 
   public ResourceType_comparableWith_IResource_ComparisonRule() {

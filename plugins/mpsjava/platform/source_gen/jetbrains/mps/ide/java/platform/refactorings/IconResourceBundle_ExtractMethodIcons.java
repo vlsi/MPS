@@ -9,7 +9,6 @@ import java.util.HashMap;
 
 public class IconResourceBundle_ExtractMethodIcons implements IconResourceBundle {
   private static IconResourceBundle_ExtractMethodIcons INSTANCE = new IconResourceBundle_ExtractMethodIcons();
-
   private Map<String, Icon> icons = new HashMap<String, Icon>() {
     {
       put("CLASS", IconContainer.ICON_a0);

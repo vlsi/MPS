@@ -33,7 +33,6 @@ import com.intellij.openapi.vcs.changes.CommitContext;
 
 public class OptimizeImportsCheckinHandler extends CheckinHandler {
   private static final Logger LOG = Logger.getLogger(ThreadUtils.class);
-
   private Project myProject;
   private CheckinProjectPanel myPanel;
 

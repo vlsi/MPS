@@ -46,17 +46,6 @@ public class EditorTests extends DataMPSFixtureTestCase {
   private List<TransformationTest> tests = new ArrayList<TransformationTest>();
 
   @Override
-  protected boolean runInDispatchThread() {
-    return false;
-  }
-
-  @Override
-  protected void invokeTestRunnable(Runnable runnable) throws Exception {
-    // superclass's method always starts this in the EDT
-    runnable.run();
-  }
-
-  @Override
   protected void prepareTestData(MPSFacetConfiguration configuration) throws Exception {
     IFile test = copyResource("models", "test.mps", "test.mps", "/tests/editorTests/models/test.mps");
     DefaultModelRoot root = new DefaultModelRoot();
@@ -66,19 +55,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
 
   @Override
   protected void setUp() throws Exception {
-    final Exception[] thrown = new Exception[1];
-    UIUtil.invokeAndWaitIfNeeded(new Runnable() {
-      @Override
-      public void run() {
-        try {
-          EditorTests.super.setUp();
-        } catch (Exception e) {
-          thrown[0] = e;
-        }
-      }
-    });
-    if (thrown[0] != null) throw thrown[0];
-
+    super.setUp();
     // this is to prevent exceptions in the project components that get "projectClosed" notifications
     ApplicationManagerEx.getApplicationEx().doNotSave();
 
@@ -86,6 +63,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
     final IFile modelFile = FileSystem.getInstance().getFileByPath(sModelRoot.getPath() + "/test.mps");
     final List<SNode> roots = new ArrayList<SNode>();
 
+    final Exception[] thrown = new Exception[1];
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {

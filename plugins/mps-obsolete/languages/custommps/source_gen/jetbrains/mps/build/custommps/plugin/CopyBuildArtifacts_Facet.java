@@ -71,7 +71,6 @@ public class CopyBuildArtifacts_Facet extends IFacet.Stub {
   public static class Target_copyFiles implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.build.custommps.CopyBuildArtifacts.copyFiles");
 
     public Target_copyFiles() {

@@ -37,7 +37,6 @@ public class EventsProcessor {
   protected static final int STATE_ATTACHED = 1;
   protected static final int STATE_DETACHING = 2;
   protected static final int STATE_DETACHED = 3;
-
   private final ManagerThread myManagerThread = new ManagerThread();
   private EventsProcessor.EventProcessorRunnable myRunnable = new EventsProcessor.EventProcessorRunnable();
   private VirtualMachine myVirtualMachine;

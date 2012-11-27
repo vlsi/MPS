@@ -17,7 +17,6 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
   private static String END_LINE = "endLine";
   private static String END_POSITION = "endPosition";
   private static String NODE_ID = "nodeId";
-
   private String myFileName;
   @Nullable
   private String myNodeId;

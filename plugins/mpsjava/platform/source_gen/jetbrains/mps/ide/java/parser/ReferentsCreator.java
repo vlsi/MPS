@@ -52,7 +52,6 @@ import org.eclipse.jdt.internal.compiler.ast.ASTNode;
 
 public class ReferentsCreator {
   private static final Logger LOG = Logger.getLogger(ReferentsCreator.class);
-
   /*package*/ Map<Binding, SNode> myBindingMap = new HashMap<Binding, SNode>();
   /*package*/ SModel myCurrentModel;
   /*package*/ Map<String, SModel> myPackageNamesToModels;

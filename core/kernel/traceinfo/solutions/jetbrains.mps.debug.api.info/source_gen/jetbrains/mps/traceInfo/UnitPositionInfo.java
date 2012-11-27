@@ -9,7 +9,6 @@ import org.jdom.Attribute;
 
 public class UnitPositionInfo extends PositionInfo {
   private static final String UNIT_NAME = "unitName";
-
   private String myUnitName;
 
   public UnitPositionInfo() {

@@ -26,7 +26,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer {
   protected static Log log = LogFactory.getLog(BaseConfigCreator.class);
-
   private PsiElement mySourceElement;
   @Nullable
   private ConfigurationContext myContext;

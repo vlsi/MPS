@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.SReference;
 public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
   private static String[] EMPTY_ARRAY = new String[0];
   private static Logger LOG = Logger.getLogger(ModelReader6Handler.class);
-
   private ModelReader6Handler.ModelElementHandler modelhandler = new ModelReader6Handler.ModelElementHandler();
   private ModelReader6Handler.PersistenceElementHandler persistencehandler = new ModelReader6Handler.PersistenceElementHandler();
   private ModelReader6Handler.Tag_with_namespaceElementHandler tag_with_namespacehandler = new ModelReader6Handler.Tag_with_namespaceElementHandler();

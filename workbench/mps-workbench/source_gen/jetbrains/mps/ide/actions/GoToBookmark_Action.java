@@ -16,7 +16,6 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 public class GoToBookmark_Action extends BaseAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(GoToBookmark_Action.class);
-
   private int num;
 
   public GoToBookmark_Action(int num_par) {

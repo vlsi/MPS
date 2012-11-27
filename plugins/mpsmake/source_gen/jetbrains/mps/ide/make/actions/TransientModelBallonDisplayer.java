@@ -35,7 +35,6 @@ import jetbrains.mps.make.MakeNotification;
 
 public class TransientModelBallonDisplayer implements Disposable {
   private static final String ID = "Saving Transient Models Is On";
-
   private final IMakeNotificationListener myMakeNotificationListener = new TransientModelBallonDisplayer.MyMakeNotificationListener();
   private final Project myProject;
   private final TransientModelsWidget myWidget;

@@ -10,7 +10,6 @@ import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 
 public class DevkitProperties {
   public static final String NAMESPACE = "namespace";
-
   private String myNamespace;
   private List<ModuleReference> myExportedLanguages;
   private List<ModuleReference> myExportedSolutions;

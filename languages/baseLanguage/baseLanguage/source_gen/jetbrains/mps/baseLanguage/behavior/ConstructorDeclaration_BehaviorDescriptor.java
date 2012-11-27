@@ -61,6 +61,14 @@ public class ConstructorDeclaration_BehaviorDescriptor extends BaseMethodDeclara
     return ConstructorDeclaration_Behavior.virtual_jniSignature_8847328628797656446(thisNode);
   }
 
+  public boolean virtual_needsEmptyLineAfter_641490355014298838(SNode thisNode) {
+    return ConstructorDeclaration_Behavior.virtual_needsEmptyLineAfter_641490355014298838(thisNode);
+  }
+
+  public boolean virtual_needsEmptyLineBefore_641490355014296733(SNode thisNode) {
+    return ConstructorDeclaration_Behavior.virtual_needsEmptyLineBefore_641490355014296733(thisNode);
+  }
+
   public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
     ConstructorDeclaration_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifierType);
   }

@@ -22,10 +22,11 @@ public class GenerateBuild_BeforeTask extends BaseMpsBeforeTaskProvider<Generate
     return KEY;
   }
 
-  public static class GenerateBuild_BeforeTask_RunTask extends BaseMpsBeforeTaskProvider.BaseMpsBeforeRunTask {
+  public static class GenerateBuild_BeforeTask_RunTask extends BaseMpsBeforeTaskProvider.BaseMpsBeforeRunTask<GenerateBuild_BeforeTask.GenerateBuild_BeforeTask_RunTask> {
     private SNode myLayout;
 
     public GenerateBuild_BeforeTask_RunTask() {
+      super(KEY);
     }
 
     public boolean configure(SNode layout) {

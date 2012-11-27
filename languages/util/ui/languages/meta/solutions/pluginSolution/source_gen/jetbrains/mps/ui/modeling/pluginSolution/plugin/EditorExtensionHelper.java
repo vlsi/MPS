@@ -17,7 +17,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class EditorExtensionHelper {
   private static Iterable<SNode> EMPTY = Sequence.fromIterable(Collections.<SNode>emptyList());
-
   private IObjectsProvider<SNode, SNode> uiObjectTemplateProvider;
   private IObjectsProvider<SNode, SNode> eventHandlerProvider;
   private String templatesBase;

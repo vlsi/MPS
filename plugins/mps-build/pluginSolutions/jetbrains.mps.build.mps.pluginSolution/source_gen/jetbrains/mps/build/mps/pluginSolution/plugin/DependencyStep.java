@@ -77,7 +77,6 @@ public class DependencyStep extends AbstractStep {
     STANDALONE("Standalone IDE");
 
     public static final int DEFAULT = 0;
-
     private final String myText;
 
     DependencyKind(String text) {

@@ -8,7 +8,6 @@ public class Result<T, R> {
   public static Result<Object, Object> TERMINATE_VOID = new Result<Object, Object>(Outcome.TERMINATE_VOID);
   public static Result<Object, Object> BREAK = new Result<Object, Object>(Outcome.BREAK);
   public static Result<Object, Object> NONE = new Result<Object, Object>(Outcome.NONE);
-
   private Outcome outcome;
   private String breakLabel;
   private R retVal;

@@ -23,7 +23,6 @@ import org.jetbrains.annotations.Nullable;
 public class CreateRootNode_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(CreateRootNode_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.CreateRootNode_ActionGroup";
-
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
 
   public CreateRootNode_ActionGroup() {

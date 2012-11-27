@@ -128,7 +128,6 @@ public class FileStructurePopup implements Disposable {
   };
   @NonNls
   private static final String narrowDownPropertyKey = "FileStructurePopup.narrowDown";
-
   private final Project myProject;
   private final StructureViewModel myTreeModel;
   private final StructureViewModel myBaseTreeModel;

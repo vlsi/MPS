@@ -43,7 +43,7 @@ import java.util.List;
 
 
 @State(
-  name = "BookmarkManager",
+  name = "MPSBookmarkManager",
   storages = {
     @Storage(
       id = "other",

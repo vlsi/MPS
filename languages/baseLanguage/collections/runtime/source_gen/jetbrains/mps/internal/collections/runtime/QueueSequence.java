@@ -14,7 +14,6 @@ import java.util.Arrays;
 
 public class QueueSequence<T> extends CollectionSequence<T> implements Queue<T>, IQueueSequence<T>, Serializable {
   private static final long serialVersionUID = -7304432472048720900L;
-
   private Queue<T> queue;
 
   protected QueueSequence(Queue<T> queue) {

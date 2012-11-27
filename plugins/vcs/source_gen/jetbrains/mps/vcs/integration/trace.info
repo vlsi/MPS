@@ -51,7 +51,7 @@
     <nodeInfo nodeId="3521790172251226914" fileName="ModuleVcsPathPresenter.java" startLine="27" startPosition="23" endLine="28" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3521790172251226928" fileName="ModuleVcsPathPresenter.java" startLine="31" startPosition="31" endLine="32" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3521790172251226945" fileName="ModuleVcsPathPresenter.java" startLine="34" startPosition="56" endLine="35" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3521790172251226974" fileName="ModuleVcsPathPresenter.java" startLine="39" startPosition="58" endLine="40" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3521790172251226974" fileName="ModuleVcsPathPresenter.java" startLine="39" startPosition="63" endLine="40" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3521790172251226990" fileName="ModuleVcsPathPresenter.java" startLine="42" startPosition="9" endLine="43" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3521790172251227006" fileName="ModuleVcsPathPresenter.java" startLine="48" startPosition="114" endLine="49" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3521790172251226909" fileName="ModuleVcsPathPresenter.java" startLine="26" startPosition="71" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -66,7 +66,7 @@
     <nodeInfo nodeId="3521790172251226903" fileName="ModuleVcsPathPresenter.java" startLine="26" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentableRelativePathFor#(Lcom/intellij/openapi/vfs/VirtualFile;)Ljava/lang/String;" />
     <scopeInfo nodeId="3521790172251226913" fileName="ModuleVcsPathPresenter.java" startLine="27" startPosition="23" endLine="28" endPosition="16" />
     <scopeInfo nodeId="3521790172251226944" fileName="ModuleVcsPathPresenter.java" startLine="34" startPosition="56" endLine="35" endPosition="85" />
-    <scopeInfo nodeId="3521790172251226973" fileName="ModuleVcsPathPresenter.java" startLine="39" startPosition="58" endLine="40" endPosition="85" />
+    <scopeInfo nodeId="3521790172251226973" fileName="ModuleVcsPathPresenter.java" startLine="39" startPosition="63" endLine="40" endPosition="90" />
     <scopeInfo nodeId="3521790172251227005" fileName="ModuleVcsPathPresenter.java" startLine="48" startPosition="114" endLine="49" endPosition="106" />
     <scopeInfo nodeId="3521790172251226894" fileName="ModuleVcsPathPresenter.java" startLine="21" startPosition="94" endLine="23" endPosition="24" />
     <scopeInfo nodeId="3521790172251226938" fileName="ModuleVcsPathPresenter.java" startLine="33" startPosition="30" endLine="36" endPosition="11" />

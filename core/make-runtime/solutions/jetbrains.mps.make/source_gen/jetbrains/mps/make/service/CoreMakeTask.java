@@ -38,7 +38,6 @@ import jetbrains.mps.logging.LogEntry;
 
 public class CoreMakeTask {
   private static Logger LOG = Logger.getLogger(CoreMakeTask.class);
-
   private IResult myResult = null;
   protected final Iterable<IScript> myScripts;
   protected final String myScrName;
@@ -185,7 +184,6 @@ public class CoreMakeTask {
 
   public static class RelayingLoggingHandler implements ILoggingHandler {
     private static Tuples._2<ThreadGroup, IMessageHandler> GROUP_HANDLER;
-
     private ThreadLocal<IMessageHandler> messageHandler = new ThreadLocal<IMessageHandler>() {
       @Override
       protected IMessageHandler initialValue() {

@@ -10,7 +10,6 @@ import javax.swing.JOptionPane;
 
 public abstract class ModelOrNodeChooserDialog extends RefactoringDialog {
   protected static String REFACTORING_NAME = RefactoringBundle.message("move.title");
-
   protected Project myProject;
   protected ModelElementTargetChooser myChooser;
 
