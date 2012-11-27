@@ -34,12 +34,6 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new NodeFactory_BehaviorDescriptor();
       case 43:
         return new NodeSetupFunction_BehaviorDescriptor();
-      case 45:
-        return new NodeSetupFunction_NewNode_BehaviorDescriptor();
-      case 46:
-        return new NodeSetupFunction_SampleNode_BehaviorDescriptor();
-      case 44:
-        return new NodeSetupFunction_EnclosingNode_BehaviorDescriptor();
       case 0:
         return new AddMenuPart_BehaviorDescriptor();
       case 57:
@@ -218,6 +212,12 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new NF_LinkList_AddNewChildOperation_BehaviorDescriptor();
       case 19:
         return new ConceptFunctionParameter_targetNode_BehaviorDescriptor();
+      case 45:
+        return new NodeSetupFunction_NewNode_BehaviorDescriptor();
+      case 46:
+        return new NodeSetupFunction_SampleNode_BehaviorDescriptor();
+      case 44:
+        return new NodeSetupFunction_EnclosingNode_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

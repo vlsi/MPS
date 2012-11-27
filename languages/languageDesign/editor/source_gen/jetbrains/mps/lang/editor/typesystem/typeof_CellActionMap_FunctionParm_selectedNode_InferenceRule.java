@@ -18,13 +18,13 @@ public class typeof_CellActionMap_FunctionParm_selectedNode_InferenceRule extend
   public typeof_CellActionMap_FunctionParm_selectedNode_InferenceRule() {
   }
 
-  public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration", false, false), "applicableConcept", false);
+  public void applyRule(final SNode cellActionMap_FunctionParm_selectedNode, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(cellActionMap_FunctionParm_selectedNode, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration", false, false), "applicableConcept", false);
     if (applicableConcept == null) {
-      applicableConcept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(node, "jetbrains.mps.lang.editor.structure.BaseEditorComponent", false, false), "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
+      applicableConcept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(cellActionMap_FunctionParm_selectedNode, "jetbrains.mps.lang.editor.structure.BaseEditorComponent", false, false), "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
     }
     {
-      SNode _nodeToCheck_1029348928467 = node;
+      SNode _nodeToCheck_1029348928467 = cellActionMap_FunctionParm_selectedNode;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1223982086197", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1223982086202", true), (SNode) _quotation_createNode_j1qj82_a0c0a(applicableConcept), _info_12389875345);
     }

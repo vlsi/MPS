@@ -62,12 +62,6 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new CellKeyMapItem_BehaviorDescriptor();
       case 13:
         return new CellKeyMapKeystroke_BehaviorDescriptor();
-      case 16:
-        return new CellKeyMap_FunctionParm_selectedNode_BehaviorDescriptor();
-      case 17:
-        return new CellKeyMap_FunctionParm_selectedNodes_BehaviorDescriptor();
-      case 15:
-        return new CellKeyMap_FunctionParm_keyEvent_BehaviorDescriptor();
       case 18:
         return new CellKeyMap_IsApplicableFunction_BehaviorDescriptor();
       case 14:
@@ -80,8 +74,6 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new CellActionMapItem_BehaviorDescriptor();
       case 9:
         return new CellActionMap_ExecuteFunction_BehaviorDescriptor();
-      case 10:
-        return new CellActionMap_FunctionParm_selectedNode_BehaviorDescriptor();
       case 73:
         return new CellModel_Image_BehaviorDescriptor();
       case 147:
@@ -366,6 +358,14 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new IndentLayoutWrapAnchorStyleClassItem_BehaviorDescriptor();
       case 108:
         return new IndentLayoutIndentAnchorStyleClassItem_BehaviorDescriptor();
+      case 10:
+        return new CellActionMap_FunctionParm_selectedNode_BehaviorDescriptor();
+      case 16:
+        return new CellKeyMap_FunctionParm_selectedNode_BehaviorDescriptor();
+      case 17:
+        return new CellKeyMap_FunctionParm_selectedNodes_BehaviorDescriptor();
+      case 15:
+        return new CellKeyMap_FunctionParm_keyEvent_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

@@ -17,10 +17,10 @@ public class typeof_CellKeyMap_FunctionParm_selectedNode_InferenceRule extends A
   public typeof_CellKeyMap_FunctionParm_selectedNode_InferenceRule() {
   }
 
-  public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration", false, false), "applicableConcept", false);
+  public void applyRule(final SNode cellKeyMap_FunctionParm_selectedNode, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(cellKeyMap_FunctionParm_selectedNode, "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration", false, false), "applicableConcept", false);
     {
-      SNode _nodeToCheck_1029348928467 = node;
+      SNode _nodeToCheck_1029348928467 = cellKeyMap_FunctionParm_selectedNode;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1223982086188", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1223982086193", true), (SNode) _quotation_createNode_xp27pa_a0b0a(applicableConcept), _info_12389875345);
     }

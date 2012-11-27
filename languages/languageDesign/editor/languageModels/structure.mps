@@ -24,8 +24,8 @@
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1071666914219">
-      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/editor.png" />
       <property name="name" nameId="tpck.1169194664001" value="ConceptEditorDeclaration" />
@@ -112,8 +112,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1078938745671">
-      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/editorComponent.png" />
       <property name="name" nameId="tpck.1169194664001" value="EditorComponentDeclaration" />
@@ -141,8 +141,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1166049232041" resolveInfo="AbstractComponent" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1081293058843">
-      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/keyMap.png" />
       <property name="name" nameId="tpck.1169194664001" value="CellKeyMapDeclaration" />
@@ -302,8 +302,8 @@
       <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1138197631095" resolveInfo="none" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1139535219966">
-      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/actionMap.png" />
       <property name="name" nameId="tpck.1169194664001" value="CellActionMapDeclaration" />
@@ -611,8 +611,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1166040637528">
-      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/menuComponent.png" />
       <property name="name" nameId="tpck.1169194664001" value="CellMenuComponent" />
@@ -792,8 +792,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389658414" resolveInfo="CellModel_Property" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186402211651">
-      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/editorStylesheet.png" />
       <property name="name" nameId="tpck.1169194664001" value="StyleSheet" />
@@ -1077,8 +1077,8 @@
       <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1216308599511">
-      <property name="rootable" nameId="tpce.1096454100552" value="false" />
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="rootable" nameId="tpce.1096454100552" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="PositionStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
@@ -1398,8 +1398,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7667276221847612622">
-      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/parametersInformation.png" />
       <property name="name" nameId="tpck.1169194664001" value="ParametersInformationQuery" />
@@ -1599,6 +1599,34 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.IndentLayout" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="indent-layout-indent-anchor" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1402906326895675325">
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="selected node (action map function parameter)" />
+      <property name="name" nameId="tpck.1169194664001" value="CellActionMap_FunctionParm_selectedNode" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="MethodParameters" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1402906326896143883">
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="keymap function parameter" />
+      <property name="name" nameId="tpck.1169194664001" value="CellKeyMap_FunctionParm_selectedNode" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="MethodParameters" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1402906326896143909">
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="keymap function parameter" />
+      <property name="name" nameId="tpck.1169194664001" value="CellKeyMap_FunctionParm_selectedNodes" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="MethodParameters" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="selectedNodes" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1402906326896143932">
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="keymap function parameter" />
+      <property name="name" nameId="tpck.1169194664001" value="CellKeyMap_FunctionParm_keyEvent" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="MethodParameters" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="keyEvent" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
     </node>
   </roots>
   <root id="1071666914219">
@@ -2097,44 +2125,17 @@
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" roleId="tpce.1105736807942" targetNodeId="1161622981231" resolveInfo="ConceptFunctionParameter_editorContext" />
     </node>
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1137189922872">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137546998352" resolveInfo="conceptFunctionParameter" />
-      <node role="target" roleId="tpce.1105736901241" type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1137189922873">
-        <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-        <property name="final" nameId="tpce.4628067390765956807" value="false" />
-        <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="keymap function parameter" />
-        <property name="name" nameId="tpck.1169194664001" value="CellKeyMap_FunctionParm_selectedNode" />
-        <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node" />
-        <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-      </node>
+    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="1402906326896143900">
+      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" roleId="tpce.1105736807942" targetNodeId="1402906326896143883" resolveInfo="CellKeyMap_FunctionParm_selectedNode" />
     </node>
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1189582551383">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137546998352" resolveInfo="conceptFunctionParameter" />
-      <node role="target" roleId="tpce.1105736901241" type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1189582551384">
-        <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-        <property name="final" nameId="tpce.4628067390765956807" value="false" />
-        <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="keymap function parameter" />
-        <property name="name" nameId="tpck.1169194664001" value="CellKeyMap_FunctionParm_selectedNodes" />
-        <property name="conceptAlias" nameId="tpce.5092175715804935370" value="selectedNodes" />
-        <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-      </node>
+    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="1402906326896143924">
+      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" roleId="tpce.1105736807942" targetNodeId="1402906326896143909" resolveInfo="CellKeyMap_FunctionParm_selectedNodes" />
     </node>
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1143487952335">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137546998352" resolveInfo="conceptFunctionParameter" />
-      <node role="target" roleId="tpce.1105736901241" type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1143487955383">
-        <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-        <property name="final" nameId="tpce.4628067390765956807" value="false" />
-        <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="keymap function parameter" />
-        <property name="name" nameId="tpck.1169194664001" value="CellKeyMap_FunctionParm_keyEvent" />
-        <property name="conceptAlias" nameId="tpce.5092175715804935370" value="keyEvent" />
-        <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-        <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1143490306697">
-          <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545963098" resolveInfo="conceptFunctionParameterType" />
-          <node role="target" roleId="tpce.1105736901241" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1143490313729">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8q6x.~KeyEvent" resolveInfo="KeyEvent" />
-          </node>
-        </node>
-      </node>
+    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="1402906326896144087">
+      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" roleId="tpce.1105736807942" targetNodeId="1402906326896143932" resolveInfo="CellKeyMap_FunctionParm_keyEvent" />
     </node>
   </root>
   <root id="1136917249679">
@@ -2385,16 +2386,9 @@
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" roleId="tpce.1105736807942" targetNodeId="1161622981231" resolveInfo="ConceptFunctionParameter_editorContext" />
     </node>
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1139535439111">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137546998352" resolveInfo="conceptFunctionParameter" />
-      <node role="target" roleId="tpce.1105736901241" type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1139535439112">
-        <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-        <property name="final" nameId="tpce.4628067390765956807" value="false" />
-        <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="selected node (action map function parameter)" />
-        <property name="name" nameId="tpck.1169194664001" value="CellActionMap_FunctionParm_selectedNode" />
-        <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node" />
-        <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-      </node>
+    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="1402906326895680075">
+      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" roleId="tpce.1105736807942" targetNodeId="1402906326895675325" resolveInfo="CellActionMap_FunctionParm_selectedNode" />
     </node>
   </root>
   <root id="1139744471051">
@@ -4299,6 +4293,17 @@
       <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7667708318090725851">
         <link role="classifier" roleId="tpee.1144433057691" targetNodeId="mceb.~StyleAttributes" resolveInfo="StyleAttributes" />
         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="mceb.~StyleAttributes%dINDENT_LAYOUT_INDENT_ANCHOR" resolveInfo="INDENT_LAYOUT_INDENT_ANCHOR" />
+      </node>
+    </node>
+  </root>
+  <root id="1402906326895675325" />
+  <root id="1402906326896143883" />
+  <root id="1402906326896143909" />
+  <root id="1402906326896143932">
+    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1402906326896144073">
+      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545963098" resolveInfo="conceptFunctionParameterType" />
+      <node role="target" roleId="tpce.1105736901241" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1402906326896144074">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8q6x.~KeyEvent" resolveInfo="KeyEvent" />
       </node>
     </node>
   </root>

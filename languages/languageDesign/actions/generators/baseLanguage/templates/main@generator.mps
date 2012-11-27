@@ -472,19 +472,19 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1172252200685">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpdg.1158701289411" resolveInfo="NodeSetupFunction_NewNode" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpdg.5584396657084912703" resolveInfo="NodeSetupFunction_NewNode" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1172252210358">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="tpe8.1143148725345" resolveInfo="reduce_ConceptFunctionParameter_default" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1172252223344">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpdg.1158701352529" resolveInfo="NodeSetupFunction_SampleNode" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpdg.5584396657084920413" resolveInfo="NodeSetupFunction_SampleNode" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1172252230346">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="tpe8.1143148725345" resolveInfo="reduce_ConceptFunctionParameter_default" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1172252239816">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpdg.1158870465687" resolveInfo="NodeSetupFunction_EnclosingNode" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpdg.5584396657084920670" resolveInfo="NodeSetupFunction_EnclosingNode" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1172252251458">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="tpe8.1143148725345" resolveInfo="reduce_ConceptFunctionParameter_default" />
       </node>

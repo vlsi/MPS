@@ -745,6 +745,24 @@
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="targetNode" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5584396657084912703">
+      <property name="name" nameId="tpck.1169194664001" value="NodeSetupFunction_NewNode" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="conceptFunctionParameters" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="newNode" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5584396657084920413">
+      <property name="name" nameId="tpck.1169194664001" value="NodeSetupFunction_SampleNode" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="conceptFunctionParameters" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="sampleNode" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5584396657084920670">
+      <property name="name" nameId="tpck.1169194664001" value="NodeSetupFunction_EnclosingNode" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="conceptFunctionParameters" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="enclosingNode" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    </node>
   </roots>
   <root id="1112056943463">
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1173470386323">
@@ -981,43 +999,17 @@
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" roleId="tpce.1105736807942" targetNodeId="tpcw.1161622665029" resolveInfo="ConceptFunctionParameter_model" />
     </node>
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1158701286784">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137546998352" resolveInfo="conceptFunctionParameter" />
-      <node role="target" roleId="tpce.1105736901241" type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1158701289411">
-        <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-        <property name="final" nameId="tpce.4628067390765956807" value="false" />
-        <property name="name" nameId="tpck.1169194664001" value="NodeSetupFunction_NewNode" />
-        <property name="conceptAlias" nameId="tpce.5092175715804935370" value="newNode" />
-        <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-      </node>
+    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="5584396657084920402">
+      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" roleId="tpce.1105736807942" targetNodeId="5584396657084912703" resolveInfo="NodeSetupFunction_NewNode" />
     </node>
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1158701349058">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137546998352" resolveInfo="conceptFunctionParameter" />
-      <node role="target" roleId="tpce.1105736901241" type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1158701352529">
-        <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-        <property name="final" nameId="tpce.4628067390765956807" value="false" />
-        <property name="name" nameId="tpck.1169194664001" value="NodeSetupFunction_SampleNode" />
-        <property name="conceptAlias" nameId="tpce.5092175715804935370" value="sampleNode" />
-        <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-        <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1158701410265">
-          <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545963098" resolveInfo="conceptFunctionParameterType" />
-          <node role="target" roleId="tpce.1105736901241" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1158701414220" />
-        </node>
-      </node>
+    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="5584396657084920658">
+      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" roleId="tpce.1105736807942" targetNodeId="5584396657084920413" resolveInfo="NodeSetupFunction_SampleNode" />
     </node>
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1158870463216">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137546998352" resolveInfo="conceptFunctionParameter" />
-      <node role="target" roleId="tpce.1105736901241" type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1158870465687">
-        <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-        <property name="final" nameId="tpce.4628067390765956807" value="false" />
-        <property name="name" nameId="tpck.1169194664001" value="NodeSetupFunction_EnclosingNode" />
-        <property name="conceptAlias" nameId="tpce.5092175715804935370" value="enclosingNode" />
-        <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-        <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1158870531814">
-          <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545963098" resolveInfo="conceptFunctionParameterType" />
-          <node role="target" roleId="tpce.1105736901241" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1158870534660" />
-        </node>
-      </node>
+    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="5584396657084920695">
+      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" roleId="tpce.1105736807942" targetNodeId="5584396657084920670" resolveInfo="NodeSetupFunction_EnclosingNode" />
     </node>
   </root>
   <root id="1177323240852" />
@@ -2440,6 +2432,19 @@
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741642213">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+    </node>
+  </root>
+  <root id="5584396657084912703" />
+  <root id="5584396657084920413">
+    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="5584396657084920640">
+      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545963098" resolveInfo="conceptFunctionParameterType" />
+      <node role="target" roleId="tpce.1105736901241" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5584396657084920641" />
+    </node>
+  </root>
+  <root id="5584396657084920670">
+    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="5584396657084920683">
+      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545963098" resolveInfo="conceptFunctionParameterType" />
+      <node role="target" roleId="tpce.1105736901241" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5584396657084920684" />
     </node>
   </root>
 </model>

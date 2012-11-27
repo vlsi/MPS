@@ -4857,19 +4857,19 @@
       <link role="labelDeclaration" roleId="tpf8.1200917515464" targetNodeId="1215475930256" resolveInfo="generatedClass" />
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1189583762381">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1189582551384" resolveInfo="CellKeyMap_FunctionParm_selectedNodes" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1402906326896143909" resolveInfo="CellKeyMap_FunctionParm_selectedNodes" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1189583860481">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="tpe8.1143148725345" resolveInfo="reduce_ConceptFunctionParameter_default" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1167334333498">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1137189922873" resolveInfo="CellKeyMap_FunctionParm_selectedNode" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1402906326896143883" resolveInfo="CellKeyMap_FunctionParm_selectedNode" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1169687345184">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="tpe8.1143148725345" resolveInfo="reduce_ConceptFunctionParameter_default" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1167334341407">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1143487955383" resolveInfo="CellKeyMap_FunctionParm_keyEvent" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1402906326896143932" resolveInfo="CellKeyMap_FunctionParm_keyEvent" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1169687345185">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="tpe8.1143148725345" resolveInfo="reduce_ConceptFunctionParameter_default" />
       </node>
@@ -5818,7 +5818,7 @@
       <link role="labelDeclaration" roleId="tpf8.1200917515464" targetNodeId="1215475930256" resolveInfo="generatedClass" />
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1167334035907">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1139535439112" resolveInfo="CellActionMap_FunctionParm_selectedNode" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1402906326895675325" resolveInfo="CellActionMap_FunctionParm_selectedNode" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1169687518175">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="tpe8.1143148725345" resolveInfo="reduce_ConceptFunctionParameter_default" />
       </node>

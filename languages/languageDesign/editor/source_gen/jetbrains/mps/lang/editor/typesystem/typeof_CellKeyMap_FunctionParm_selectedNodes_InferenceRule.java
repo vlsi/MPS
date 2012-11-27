@@ -15,9 +15,9 @@ public class typeof_CellKeyMap_FunctionParm_selectedNodes_InferenceRule extends 
   public typeof_CellKeyMap_FunctionParm_selectedNodes_InferenceRule() {
   }
 
-  public void applyRule(final SNode selectedNodes, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+  public void applyRule(final SNode cellKeyMap_FunctionParm_selectedNodes, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
-      SNode _nodeToCheck_1029348928467 = selectedNodes;
+      SNode _nodeToCheck_1029348928467 = cellKeyMap_FunctionParm_selectedNodes;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1189583402141", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1189583398422", true), (SNode) _quotation_createNode_wy1ixd_a0a0a(), _info_12389875345);
     }
