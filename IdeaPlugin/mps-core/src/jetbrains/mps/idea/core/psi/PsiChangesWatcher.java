@@ -222,6 +222,7 @@ public class PsiChangesWatcher implements ProjectComponent {
     @Override
     public void run() {
       // notify our listeners
+      //  FIXME use runWriteInEDT ?
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
         @Override
         public void run() {

@@ -82,7 +82,9 @@ public class DefaultModelRoot extends FolderModelRootBase {
   public SModel createModel(String modelName) {
     ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL);
     FileDataSource source = createSource(modelName, MPSExtentions.MODEL);
-    return modelFactory.create(modelName, source);
+    SModel model = modelFactory.create(modelName, source);
+    if (model!=null) { register(model); }
+    return model;
   }
 
   public void collectModels(IFile dir, Collection<SModel> models) {

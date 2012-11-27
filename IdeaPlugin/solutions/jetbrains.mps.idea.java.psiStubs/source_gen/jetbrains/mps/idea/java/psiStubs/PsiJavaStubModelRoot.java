@@ -5,6 +5,7 @@ package jetbrains.mps.idea.java.psiStubs;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.idea.core.psi.PsiListener;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.module.Module;
 import java.util.Map;
 import com.intellij.psi.PsiDirectory;
@@ -12,14 +13,19 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import jetbrains.mps.idea.core.psi.PsiChangesWatcher;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.IMapping;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.psi.PsiManager;
-import jetbrains.mps.idea.core.psi.PsiChangesWatcher;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.psi.PsiJavaFile;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiClass;
@@ -36,23 +42,39 @@ import com.intellij.psi.PsiCodeBlock;
 import com.intellij.psi.PsiExpression;
 import com.intellij.psi.PsiWhiteSpace;
 import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.psi.PsiFileSystemItem;
 import com.intellij.psi.PsiFile;
-import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
   private static Logger LOG = Logger.getLogger(PsiJavaStubModelRoot.class);
   private static final String TYPE = "JavaPsiStubs";
 
-  private Module myModule;
+  @NotNull
+  private Module myIdeaModule;
   private Map<PsiDirectory, PsiJavaStubDataSource> myDataSources = MapSequence.fromMap(new HashMap<PsiDirectory, PsiJavaStubDataSource>());
-  private Map<PsiJavaStubDataSource, SModel> myModels;
+  private Map<PsiJavaStubDataSource, SModel> myModels = MapSequence.fromMap(new HashMap<PsiJavaStubDataSource, SModel>());
 
   public PsiJavaStubModelRoot(Module module) {
-    myModule = module;
+    myIdeaModule = module;
+  }
+
+  /**
+   * Equals is defined only by our ideaModule, all the state is not taken into acount
+   * We should be careful when working with ModelRoots in collections (see AbstractModule.doUpdateModelSet)
+   */
+  @Override
+  public boolean equals(Object root) {
+    if (!(root instanceof PsiJavaStubModelRoot)) {
+      return false;
+    }
+    return myIdeaModule.equals(((PsiJavaStubModelRoot) root).myIdeaModule);
+  }
+
+  @Override
+  public int hashCode() {
+    return myIdeaModule.hashCode();
   }
 
   @Override
@@ -62,74 +84,131 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
 
   @Override
   public String getPresentation() {
-    return "java PSI stubs";
+    return "Java PSI stubs";
   }
 
   @Override
   public SModel getModel(SModelId id) {
-    //  not clear if it's needed here 
+    // TODO 
     return null;
   }
 
   @Override
-  public Iterable<SModel> getModels() {
-
-    if (myModels != null) {
-      return MapSequence.fromMap(myModels).values();
-    }
-
-    myModels = MapSequence.fromMap(new HashMap<PsiJavaStubDataSource, SModel>());
-
-    final VirtualFile[] sourceRoots = ModuleRootManager.getInstance(myModule).getSourceRoots(false);
-    PsiManager psiMgr = PsiManager.getInstance(myModule.getProject());
-
-    for (VirtualFile root : sourceRoots) {
-      System.out.println("Source root: " + root.getName());
-      PsiDirectory dir = psiMgr.findDirectory(root);
-      // <node> 
-      addModelsForDir(dir, dir);
-    }
+  public void attach() {
+    super.attach();
 
     //  start to listen 
-    PsiChangesWatcher w = myModule.getProject().getComponent(PsiChangesWatcher.class);
+    PsiChangesWatcher w = myIdeaModule.getProject().getComponent(PsiChangesWatcher.class);
     w.addListener(this);
+  }
 
+  @Override
+  public void dispose() {
+    PsiChangesWatcher w = myIdeaModule.getProject().getComponent(PsiChangesWatcher.class);
+    w.removeListener(this);
+  }
+
+  @Override
+  public Iterable<SModel> getModels() {
+    myModels = getModelMap();
+    for (SModel model : Sequence.fromIterable(MapSequence.fromMap(myModels).values())) {
+      register(model);
+    }
+    syncDirectoryMap();
     return MapSequence.fromMap(myModels).values();
   }
 
-  private void addModelsForDir(PsiDirectory sourceRoot, PsiDirectory dir) {
+  @Override
+  public void update() {
+    ModelAccess.assertLegalWrite();
+
+    Map<PsiJavaStubDataSource, SModel> oldModelMap = new HashMap<PsiJavaStubDataSource, SModel>(myModels);
+    Map<PsiJavaStubDataSource, SModel> newModelMap = getModelMap();
+
+    for (IMapping<PsiJavaStubDataSource, SModel> pair : MapSequence.fromMap(oldModelMap)) {
+      if (MapSequence.fromMap(newModelMap).containsKey(pair.key())) {
+        continue;
+      }
+      unregister(pair.value());
+    }
+
+    for (SModel model : Sequence.fromIterable(MapSequence.fromMap(newModelMap).values())) {
+      register(model);
+    }
+
+    myModels = newModelMap;
+    syncDirectoryMap();
+  }
+
+  private Map<PsiJavaStubDataSource, SModel> getModelMap() {
+    // <node> 
+
+    Map<PsiJavaStubDataSource, SModel> modelMap = MapSequence.fromMap(new HashMap<PsiJavaStubDataSource, SModel>());
+
+    final VirtualFile[] sourceRoots = ModuleRootManager.getInstance(myIdeaModule).getSourceRoots(false);
+    PsiManager psiMgr = PsiManager.getInstance(myIdeaModule.getProject());
+
+    for (VirtualFile root : sourceRoots) {
+      PsiDirectory dir = psiMgr.findDirectory(root);
+      addModelsForDir(dir, dir, modelMap);
+    }
+
+    // <node> 
+    return modelMap;
+  }
+
+  private void addModelsForDir(PsiDirectory sourceRoot, PsiDirectory dir, Map<PsiJavaStubDataSource, SModel> resultMap) {
     if (Sequence.fromIterable(Sequence.fromArray(dir.getFiles())).ofType(PsiJavaFile.class).isNotEmpty()) {
 
-      PsiJavaStubModelDescriptor model = makeModelDescriptor(sourceRoot, dir);
-      PsiJavaStubDataSource ds = model.getSource();
-      MapSequence.fromMap(myDataSources).put(dir, ds);
-      MapSequence.fromMap(myModels).put(ds, model);
+      SModelReference modelRef = makeModelReference(sourceRoot, dir);
+      SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelRef);
+
+      if (model == null) {
+        model = makeModelDescriptor(sourceRoot, dir);
+      }
+
+      assert model instanceof PsiJavaStubModelDescriptor;
+
+      PsiJavaStubDataSource dataSource = ((PsiJavaStubModelDescriptor) model).getSource();
+      MapSequence.fromMap(resultMap).put(dataSource, model);
     }
 
     for (PsiDirectory subDir : dir.getSubdirectories()) {
-      addModelsForDir(sourceRoot, subDir);
+      addModelsForDir(sourceRoot, subDir, resultMap);
     }
   }
 
   private PsiJavaStubModelDescriptor makeModelDescriptor(PsiDirectory sourceRoot, PsiDirectory dir) {
 
+    SModelReference modelRef = makeModelReference(sourceRoot, dir);
+    PsiJavaStubDataSource ds = new PsiJavaStubDataSource(myIdeaModule, dir);
+    return new PsiJavaStubModelDescriptor(modelRef, ds);
+  }
+
+  private SModelReference makeModelReference(PsiDirectory sourceRoot, PsiDirectory dir) {
     int skipPrefix = sourceRoot.toString().length();
     String relativeDirName = dir.toString().substring(skipPrefix);
-
     String packageName = relativeDirName.replace('/', '.').replace('\\', '.');
+
     if (packageName.length() > 0 && packageName.charAt(0) == '.') {
       packageName = packageName.substring(1);
     }
+
     if (packageName.length() == 0) {
       packageName = "<default package>";
     }
 
     SModelFqName fqName = new SModelFqName(packageName, "java_stub_zzz");
     jetbrains.mps.smodel.SModelId modelId = jetbrains.mps.smodel.SModelId.foreign(fqName.getStereotype(), getModule().getModuleId().toString(), fqName.getLongName());
-    SModelReference modelRef = new SModelReference(fqName, modelId);
 
-    PsiJavaStubDataSource ds = new PsiJavaStubDataSource(myModule, dir);
-    return new PsiJavaStubModelDescriptor(modelRef, ds);
+    return new SModelReference(fqName, modelId);
+  }
+
+  private void syncDirectoryMap() {
+    MapSequence.fromMap(myDataSources).clear();
+    for (PsiJavaStubDataSource dataSource : SetSequence.fromSet(MapSequence.fromMap(myModels).keySet())) {
+      MapSequence.fromMap(myDataSources).put(dataSource.getDirectory(), dataSource);
+    }
   }
 
   @Override
@@ -307,9 +386,9 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
       }
 
       MapSequence.fromMap(myDataSources).removeKey(dir);
+      SModel model = MapSequence.fromMap(myModels).get(ds);
       MapSequence.fromMap(myModels).removeKey(ds);
-
-      modelSetChanged = true;
+      unregister(model);
     }
 
     // create models for new directories 
@@ -320,9 +399,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
       PsiJavaStubDataSource ds = model.getSource();
       MapSequence.fromMap(myDataSources).put(dir, ds);
       MapSequence.fromMap(myModels).put(ds, model);
-
-      System.out.println("Creating new model for dir " + dir.getName());
-      modelSetChanged = true;
+      register(model);
     }
 
     // notify data sources 
@@ -333,18 +410,14 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
         ds.dispatchEvent(change);
       }
     }
-
-    if (modelSetChanged) {
-      update();
-    }
   }
 
   private PsiDirectory findOurSourceRoot(PsiFileSystemItem item) {
-    for (VirtualFile sourceRoot : ModuleRootManager.getInstance(myModule).getSourceRoots()) {
+    for (VirtualFile sourceRoot : ModuleRootManager.getInstance(myIdeaModule).getSourceRoots()) {
       String rootPath = sourceRoot.toString();
       String itemPath = item.getVirtualFile().toString();
       if (itemPath.startsWith(rootPath)) {
-        return PsiManager.getInstance(myModule.getProject()).findDirectory(sourceRoot);
+        return PsiManager.getInstance(myIdeaModule.getProject()).findDirectory(sourceRoot);
       }
     }
     return null;

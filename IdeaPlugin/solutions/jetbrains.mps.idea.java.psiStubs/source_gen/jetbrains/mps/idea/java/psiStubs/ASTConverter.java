@@ -51,7 +51,9 @@ public class ASTConverter {
 
   public SNode convertClass(PsiClass x) {
 
-    System.out.println("DEBUG: converting class " + x.getName());
+    // <node> 
+
+    // <node> 
 
     final Wrappers._T<SNode> classifier = new Wrappers._T<SNode>();
 
@@ -74,7 +76,7 @@ public class ASTConverter {
 
     final Wrappers._T<ASTConverter> childConverter = new Wrappers._T<ASTConverter>(this);
 
-    if (isNotEmpty_rbndtb_a0q0b(SPropertyOperations.getString(classifier.value, "name"))) {
+    if (isNotEmpty_rbndtb_a0s0b(SPropertyOperations.getString(classifier.value, "name"))) {
       String id = getIdPrefix() + SPropertyOperations.getString(classifier.value, "name");
       classifier.value.setId(new SNodeId.Foreign(id));
       childConverter.value = new ASTConverter.WithState(id + ".");
@@ -490,7 +492,7 @@ public class ASTConverter {
     return quotedNode_2;
   }
 
-  public static boolean isNotEmpty_rbndtb_a0q0b(String str) {
+  public static boolean isNotEmpty_rbndtb_a0s0b(String str) {
     return str != null && str.length() > 0;
   }
 

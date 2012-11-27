@@ -54,6 +54,10 @@ public class PsiJavaStubDataSource extends DataSourceBase {
     }
   }
 
+  public PsiDirectory getDirectory() {
+    return myDirectory;
+  }
+
   public Iterable<PsiJavaFile> getJavaFiles() {
     return Sequence.fromIterable(Sequence.fromArray(myDirectory.getFiles())).ofType(PsiJavaFile.class);
   }

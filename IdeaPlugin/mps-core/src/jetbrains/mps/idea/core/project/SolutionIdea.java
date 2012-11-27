@@ -50,6 +50,7 @@ public class SolutionIdea extends Solution {
   @NotNull
   private Module myModule;
   private List<Dependency> myDependencies;
+  private Set<ModelRoot> myContributedModelRoots;
   private MessageBusConnection myConnection;
 
   public SolutionIdea(@NotNull Module module, SolutionDescriptor descriptor) {
@@ -115,16 +116,24 @@ public class SolutionIdea extends Solution {
 
   @Override
   protected Iterable<ModelRoot> loadRoots() {
+
+    if (myContributedModelRoots==null) {
+      myContributedModelRoots = new HashSet<ModelRoot>();
+      ModelRootContributorManager mgr = myModule.getProject().getComponent(ModelRootContributorManager.class);
+      for (ModelRootContributor contributor: mgr.getContributors()) {
+        for (ModelRoot root: contributor.getModelRoots(myModule)) {
+          myContributedModelRoots.add(root);
+        }
+      }
+    }
+
     List<ModelRoot> sum = new ArrayList<ModelRoot>();
     for (ModelRoot mr: super.loadRoots()) {
       sum.add(mr);
     }
-    ModelRootContributorManager mgr = myModule.getProject().getComponent(ModelRootContributorManager.class);
-    for (ModelRootContributor contributor: mgr.getContributors()) {
-      for (ModelRoot root: contributor.getModelRoots(myModule)) {
-        sum.add(root);
-      }
-    }
+
+    sum.addAll(myContributedModelRoots);
+
     return sum;
   }
 
@@ -193,6 +202,17 @@ public class SolutionIdea extends Solution {
   public void invalidateDependencies() {
     super.invalidateDependencies();
     myDependencies = null;
+  }
+
+  public void contributedModelRootsChanged() {
+    myContributedModelRoots = null;
+    // update models
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        setModuleDescriptor(getModuleDescriptor(), false);
+      }
+    });
   }
 
   @Override

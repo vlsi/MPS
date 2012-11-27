@@ -81,7 +81,7 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
 
   private final static String SOLUTION_NAME_PREFIX = "JavaCodeIn";
 
-  public ProjectJavaSourceImporter(MPSCoreComponents core, Project project) {
+  public ProjectJavaSourceImporter(MPSCoreComponents core, Project project, ModelRootContributorManager modelRootContributorManager) {
     myProject = project;
     myModuleManager = ModuleManager.getInstance(project);
     facetConnection = project.getMessageBus().connect();
@@ -294,6 +294,8 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
     }
   }
 
+
+  private Map<Module, PsiJavaStubModelRoot> x;
   @Override
   public Iterable<ModelRoot> getModelRoots(Module module) {
     List<ModelRoot> singleton = new ArrayList<ModelRoot>(1);
@@ -314,7 +316,6 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
       if (!hasMPSFacet()) deactivate();
     }
   }
-
 
   class ModuleWatcher extends ModuleAdapter {
     private Project myProject;
