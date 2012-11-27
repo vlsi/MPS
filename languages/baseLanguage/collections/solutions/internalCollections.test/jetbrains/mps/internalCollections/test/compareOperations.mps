@@ -17,8 +17,8 @@
       <property name="testCaseName" nameId="tpe3.1171931851045" value="Union" />
     </node>
     <node type="tpe3.BTestCase" typeId="tpe3.1171931851043" id="1205514854257">
-      <property name="testCaseName" nameId="tpe3.1171931851045" value="SubtractTest" />
       <property name="name" nameId="tpck.1169194664001" value="SubtractTest_Test" />
+      <property name="testCaseName" nameId="tpe3.1171931851045" value="SubtractTest" />
     </node>
     <node type="tpe3.BTestCase" typeId="tpe3.1171931851043" id="1205515610187">
       <property name="testCaseName" nameId="tpe3.1171931851045" value="Intersect" />
@@ -2580,7 +2580,7 @@
   </root>
   <root id="2796241438627699186">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2796241438627699187" />
-    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="2796241438627699188">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="2796241438627699188">
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2796241438627699189" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2796241438627699190" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2796241438627699191" />
@@ -2588,13 +2588,13 @@
   </root>
   <root id="2796241438627699197">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2796241438627699198" />
-    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="2796241438627699199">
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2796241438627699208">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2796241438627699186" resolveInfo="Foo" />
+    </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="2796241438627699199">
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2796241438627699200" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2796241438627699201" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2796241438627699202" />
-    </node>
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2796241438627699208">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2796241438627699186" resolveInfo="Foo" />
     </node>
   </root>
 </model>
