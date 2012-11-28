@@ -19,6 +19,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.NullErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.operation.TraceMessageOperation;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.blocks.MultipleWhenConcreteBlock;
@@ -225,4 +226,13 @@ public abstract class BaseTypecheckingContext extends TypeCheckingContext {
     return getState().expand(node);
   }
 
+  @Override
+  public AbstractOperation getOperation() {
+    return getState().getOperation();
+  }
+
+  @Override
+  public void checkRootInTraceMode(final boolean refreshTypes) {
+    assert false;
+  }
 }

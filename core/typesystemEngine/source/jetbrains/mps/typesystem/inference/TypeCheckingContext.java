@@ -19,6 +19,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.newTypesystem.NodeTypesComponent;
+import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
@@ -196,6 +197,10 @@ public abstract class TypeCheckingContext {
   public abstract IErrorReporter getTypeMessageDontCheck(SNode node);
   public abstract boolean isSingleTypeComputation();
   public abstract void clear();
+
+  public abstract AbstractOperation getOperation();
+
+  public abstract void checkRootInTraceMode(boolean refreshTypes);
 
   public static class NodeInfo {
     SNode myNode;

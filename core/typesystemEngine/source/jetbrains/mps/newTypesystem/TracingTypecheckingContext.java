@@ -32,4 +32,8 @@ public class TracingTypecheckingContext extends SingleTypecheckingContext{
     super(rootNode, typeChecker);
   }
 
+  @Override
+  public void checkRootInTraceMode(boolean refreshTypes) {
+    checkRoot(refreshTypes);
+  }
 }

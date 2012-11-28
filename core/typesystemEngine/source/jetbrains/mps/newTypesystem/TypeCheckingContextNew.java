@@ -59,21 +59,12 @@ public class TypeCheckingContextNew extends SingleTypecheckingContext {
   }
 
 
-  public void checkRootInTraceMode(final boolean refreshTypes) {
-    assert false;
-  }
-
-
   public TypeChecker getTypeChecker() {
     return myTypeChecker;
   }
 
   public SubTypingManagerNew getSubTyping() {
     return (SubTypingManagerNew) myTypeChecker.getSubtypingManager();
-  }
-
-  public AbstractOperation getOperation() {
-    return getState().getOperation();
   }
 
 

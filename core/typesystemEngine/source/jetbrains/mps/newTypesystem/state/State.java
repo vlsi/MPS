@@ -94,22 +94,7 @@ public class State {
   @StateObject
   private final Set<Block> myBlocks = new THashSet<Block>();
 
-  public State(TypeCheckingContext tcc) {
-    myTypeCheckingContext = tcc;
-    myEquations = new Equations(this);
-    myInequalities = new Inequalities(this);
-    myNodeMaps = new NodeMaps(this);
-    myVariableIdentifier = new VariableIdentifier();
-    {
-      myBlocksAndInputs.put(ConditionKind.SHALLOW, new ManyToManyMap<SNode, Block>());
-      myBlocksAndInputs.put(ConditionKind.CONCRETE, new ManyToManyMap<SNode, Block>());
-    }
-    myOperationStack = new Stack<AbstractOperation>();
-    myOperation = new CheckAllOperation();
-    myOperationStack.push(myOperation);
-  }
-
-  public State(TypeCheckingContextNew tcc, AbstractOperation operation) {
+  public State(TypeCheckingContext tcc, AbstractOperation operation) {
     myTypeCheckingContext = tcc;
     myEquations = new Equations(this);
     myInequalities = new Inequalities(this);
@@ -122,6 +107,10 @@ public class State {
     myOperationStack = new Stack<AbstractOperation>();
     myOperation = operation;
     myOperationStack.push(myOperation);
+  }
+
+  public State(TypeCheckingContext tcc) {
+    this(tcc, new CheckAllOperation());
   }
 
   @StateMethod
