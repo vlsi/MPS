@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1213104844334" modelId="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)">
     <nodeInfo nodeId="1213104844334" fileName="IMemberOperation_Constraints.java" startLine="29" startPosition="41" endLine="30" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1213104844334" fileName="IMemberOperation_Constraints.java" startLine="34" startPosition="83" endLine="35" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -236,6 +236,47 @@
       <varInfo nodeId="1217433542422" varName="parentNode" />
     </scopeInfo>
     <unitInfo nodeId="1217433542422" fileName="SuperClassifierExpresson_Constraints.java" startLine="15" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.SuperClassifierExpresson_Constraints" />
+  </root>
+  <root nodeId="4448365440080463734" modelId="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)">
+    <nodeInfo nodeId="4448365440080463734" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="14" startPosition="58" endLine="15" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4448365440080463734" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="19" startPosition="43" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4448365440080463734" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="24" startPosition="200" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4448365440080463734" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="25" startPosition="96" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4448365440080463734" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="27" startPosition="51" endLine="28" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4448365440080463734" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="29" startPosition="5" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4448365440080463734" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="30" startPosition="0" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4448365440080464127" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="34" startPosition="148" endLine="35" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4448365440080463734" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
+    <nodeInfo nodeId="4448365440080463734" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultClassifierFieldDeclaration_Constraints#()V" />
+    <nodeInfo nodeId="4448365440080463734" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="26" startPosition="0" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4448365440080463734" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+    <nodeInfo nodeId="4448365440080463734" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
+    <nodeInfo nodeId="4448365440080463734" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="23" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+    <scopeInfo nodeId="4448365440080463734" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="14" startPosition="58" endLine="15" endPosition="96" />
+    <scopeInfo nodeId="4448365440080463734" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="19" startPosition="43" endLine="20" endPosition="16" />
+    <scopeInfo nodeId="4448365440080463734" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="27" startPosition="51" endLine="28" endPosition="67" />
+    <scopeInfo nodeId="4448365440080463940" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="34" startPosition="148" endLine="35" endPosition="138" />
+    <scopeInfo nodeId="4448365440080463734" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="4448365440080463734" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="4448365440080463734" varName="childConcept" />
+      <varInfo nodeId="4448365440080463734" varName="link" />
+      <varInfo nodeId="4448365440080463734" varName="node" />
+      <varInfo nodeId="4448365440080463734" varName="operationContext" />
+      <varInfo nodeId="4448365440080463734" varName="parentNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4448365440080463734" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="4448365440080463734" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="24" startPosition="200" endLine="31" endPosition="18">
+      <varInfo nodeId="4448365440080463734" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="4448365440080463734" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="23" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="4448365440080463734" varName="checkingNodeContext" />
+      <varInfo nodeId="4448365440080463734" varName="childConcept" />
+      <varInfo nodeId="4448365440080463734" varName="link" />
+      <varInfo nodeId="4448365440080463734" varName="node" />
+      <varInfo nodeId="4448365440080463734" varName="operationContext" />
+      <varInfo nodeId="4448365440080463734" varName="parentNode" />
+    </scopeInfo>
+    <unitInfo nodeId="4448365440080463734" fileName="DefaultClassifierFieldDeclaration_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.constraints.DefaultClassifierFieldDeclaration_Constraints" />
   </root>
 </debugInfo>
 
