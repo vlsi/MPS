@@ -21,11 +21,11 @@ import com.intellij.facet.Facet;
 import com.intellij.facet.FacetManager;
 import com.intellij.facet.FacetManagerAdapter;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.*;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryTable.Listener;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.util.CommonProcessors.FindFirstProcessor;
 import com.intellij.util.CommonProcessors.FindProcessor;
 import com.intellij.util.Processor;
 import com.intellij.util.messages.MessageBusConnection;
@@ -179,9 +179,12 @@ public class SolutionIdea extends Solution {
   }
 
   private void addUsedLibraries(final List<Dependency> dependencies) {
-    ModuleRootManager moduleRootManager = ModuleRootManager.getInstance(myModule);
+    dependencies.addAll(calculateLibraryDependencies(ModuleRootManager.getInstance(myModule).orderEntries(), myModule.getProject()));
+  }
+
+  public static List<Dependency> calculateLibraryDependencies(OrderEnumerator orderEnumerator, final Project project) {
     final Map<ModuleReference, Boolean> modules = new HashMap<ModuleReference, Boolean>();
-    moduleRootManager.orderEntries().forEach(new Processor<OrderEntry>() {
+    orderEnumerator.forEach(new Processor<OrderEntry>() {
       public boolean process(OrderEntry oe) {
         if (!(oe instanceof LibraryOrderEntry)) {
           return true;
@@ -193,7 +196,7 @@ public class SolutionIdea extends Solution {
         }
 
         if (SolutionLibraryType.isSolutionLibrary(library)) {
-          Set<ModuleReference> moduleReferences = SolutionLibrariesIndex.getInstance(myModule.getProject()).getModules(library);
+          Set<ModuleReference> moduleReferences = SolutionLibrariesIndex.getInstance(project).getModules(library);
           for (ModuleReference moduleReference : moduleReferences) {
             if (modules.containsKey(moduleReference)) {
               if (loe.isExported()) {
@@ -213,9 +216,11 @@ public class SolutionIdea extends Solution {
         return true;
       }
     });
+    List<Dependency> result = new ArrayList<Dependency>();
     for (Entry<ModuleReference, Boolean> entry : modules.entrySet()) {
-      dependencies.add(new Dependency(entry.getKey(), entry.getValue()));
+      result.add(new Dependency(entry.getKey(), entry.getValue()));
     }
+    return result;
   }
 
   @Override

@@ -33,14 +33,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.util.*;
 
-/**
- * Was used for a dependencies list is idea solution. Unused now, just do not want to delete it.
- */
 public abstract class MpsElementsWithCheckboxesTable<E, S> {
   private final Border NO_FOCUS_BORDER = BorderFactory.createEmptyBorder(1, 1, 1, 1);
 
   private MpsElementsTableModel<E> myElementsTableModel;
-  private JBTable myElementsTable;
+  protected JBTable myElementsTable;
 
   protected abstract Class<E> getCheckedElementClass();
   protected abstract Class<S> getElementClass();
