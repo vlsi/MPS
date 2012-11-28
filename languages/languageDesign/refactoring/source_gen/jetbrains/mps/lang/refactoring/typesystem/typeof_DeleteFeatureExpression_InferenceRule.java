@@ -20,7 +20,7 @@ public class typeof_DeleteFeatureExpression_InferenceRule extends AbstractInfere
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(nodeToCheck, "feature", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "3302086321379403362", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "3302086321379403367", true), (SNode) _quotation_createNode_n5f8x1_a0a0a(), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "3302086321379403367", true), (SNode) _quotation_createNode_n5f8x1_a0a0b(), false, true, _info_12389875345);
     }
   }
 
@@ -39,7 +39,7 @@ public class typeof_DeleteFeatureExpression_InferenceRule extends AbstractInfere
     return false;
   }
 
-  private static SNode _quotation_createNode_n5f8x1_a0a0a() {
+  private static SNode _quotation_createNode_n5f8x1_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

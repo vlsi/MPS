@@ -20,7 +20,7 @@ public class NamedTuple_subtypeOf_extended_SubtypingRule extends SubtypingRule_R
 
   public List<SNode> getSubOrSuperTypes(SNode ntt, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ntt, "classifier", false), "extended", true), "classifier", false) != null)) {
-      return ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_xrnhlx_a0a0a0a0(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ntt, "classifier", false), "extended", true), "classifier", false)));
+      return ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_xrnhlx_a0a0a0a1(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ntt, "classifier", false), "extended", true), "classifier", false)));
     }
     return null;
   }
@@ -40,7 +40,7 @@ public class NamedTuple_subtypeOf_extended_SubtypingRule extends SubtypingRule_R
     return false;
   }
 
-  private static SNode _quotation_createNode_xrnhlx_a0a0a0a0(Object parameter_1) {
+  private static SNode _quotation_createNode_xrnhlx_a0a0a0a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", null, null, GlobalScope.getInstance(), false);

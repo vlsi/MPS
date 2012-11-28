@@ -21,7 +21,7 @@ public class supertypesOf_UIObjectType_SubtypingRule extends SubtypingRule_Runti
   public List<SNode> getSubOrSuperTypes(SNode uiot, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> res = new ArrayList<SNode>();
     if ((SLinkOperations.getTarget(uiot, "uiObject", false) != null)) {
-      ListSequence.fromList(res).addElement(_quotation_createNode_bsrb1x_a0a0a1a0(SLinkOperations.getTarget(SLinkOperations.getTarget(uiot, "uiObject", false), "extends", false)));
+      ListSequence.fromList(res).addElement(_quotation_createNode_bsrb1x_a0a0a1a1(SLinkOperations.getTarget(SLinkOperations.getTarget(uiot, "uiObject", false), "extends", false)));
     }
     return res;
   }
@@ -41,7 +41,7 @@ public class supertypesOf_UIObjectType_SubtypingRule extends SubtypingRule_Runti
     return false;
   }
 
-  private static SNode _quotation_createNode_bsrb1x_a0a0a1a0(Object parameter_1) {
+  private static SNode _quotation_createNode_bsrb1x_a0a0a1a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.UIObjectType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("uiObject", (SNode) parameter_1);

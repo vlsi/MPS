@@ -28,12 +28,12 @@ public class typeof_InternalNewExpression_InferenceRule extends AbstractInferenc
     if ((SLinkOperations.getTarget(internalNewExpression, "type", true) != null)) {
       type = SLinkOperations.getTarget(internalNewExpression, "type", true);
     } else {
-      type = _quotation_createNode_8luvtd_a0a0a1a0();
+      type = _quotation_createNode_8luvtd_a0a0a1a1();
     }
     {
       SNode _nodeToCheck_1029348928467 = internalNewExpression;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1196525371896", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1196525371898", true), (SNode) _quotation_createNode_8luvtd_a0c0a(SPropertyOperations.getString(internalNewExpression, "fqClassName"), SLinkOperations.getTarget(SNodeOperations.as(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), SLinkOperations.getTargets(SNodeOperations.as(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1196525371898", true), (SNode) _quotation_createNode_8luvtd_a0c0b(SPropertyOperations.getString(internalNewExpression, "fqClassName"), SLinkOperations.getTarget(SNodeOperations.as(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), SLinkOperations.getTargets(SNodeOperations.as(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)), _info_12389875345);
     }
   }
 
@@ -52,14 +52,14 @@ public class typeof_InternalNewExpression_InferenceRule extends AbstractInferenc
     return true;
   }
 
-  private static SNode _quotation_createNode_8luvtd_a0a0a1a0() {
+  private static SNode _quotation_createNode_8luvtd_a0a0a1a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_8luvtd_a0c0a(Object parameter_1, Object parameter_2, Object parameter_3) {
+  private static SNode _quotation_createNode_8luvtd_a0c0b(Object parameter_1, Object parameter_2, Object parameter_3) {
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", null, null, GlobalScope.getInstance(), false);

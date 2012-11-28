@@ -21,7 +21,7 @@ public class typeof_NodeExpression_InferenceRule extends AbstractInferenceRule_R
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1215000098427", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1215000094393", true), (SNode) _quotation_createNode_1tz9kf_a0a0a(SLinkOperations.getTarget(SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.lang.refactoring.structure.OldRefactoring", false, false), "applicableConcept", false)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1215000094393", true), (SNode) _quotation_createNode_1tz9kf_a0a0b(SLinkOperations.getTarget(SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.lang.refactoring.structure.OldRefactoring", false, false), "applicableConcept", false)), _info_12389875345);
     }
   }
 
@@ -40,7 +40,7 @@ public class typeof_NodeExpression_InferenceRule extends AbstractInferenceRule_R
     return false;
   }
 
-  private static SNode _quotation_createNode_1tz9kf_a0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_1tz9kf_a0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);

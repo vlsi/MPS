@@ -21,12 +21,12 @@ public class typeof_EditorExpression_InferenceRule extends AbstractInferenceRule
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(editorExpression, "persistentPropertyDeclaration", false);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477881", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477883", true), (SNode) _quotation_createNode_a3jan8_a0b0a(typeCheckingContext.getRepresentative(T_typevar_6981317760235477880)), false, false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477883", true), (SNode) _quotation_createNode_a3jan8_a0b0b(typeCheckingContext.getRepresentative(T_typevar_6981317760235477880)), false, false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = editorExpression;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477893", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477900", true), (SNode) _quotation_createNode_a3jan8_a0c0a(typeCheckingContext.getRepresentative(T_typevar_6981317760235477880)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477900", true), (SNode) _quotation_createNode_a3jan8_a0c0b(typeCheckingContext.getRepresentative(T_typevar_6981317760235477880)), _info_12389875345);
     }
   }
 
@@ -45,14 +45,14 @@ public class typeof_EditorExpression_InferenceRule extends AbstractInferenceRule
     return false;
   }
 
-  private static SNode _quotation_createNode_a3jan8_a0b0a(Object parameter_1) {
+  private static SNode _quotation_createNode_a3jan8_a0b0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("persistentConfiguration", (SNode) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_a3jan8_a0c0a(Object parameter_1) {
+  private static SNode _quotation_createNode_a3jan8_a0c0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.SettingsEditorType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("configuration", (SNode) parameter_1);

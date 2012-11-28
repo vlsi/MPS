@@ -30,12 +30,12 @@ public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends
   public List<SNode> getSubOrSuperTypes(SNode itt, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> result = new ArrayList<SNode>();
     final String ifcname = "_" + ListSequence.fromList(SLinkOperations.getTargets(itt, "componentType", true)).count();
-    SNode ifc = Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(SLinkOperations.getTarget(_quotation_createNode_tm6bn3_a0a0a2a0(), "classifier", false))).findFirst(new IWhereFilter<SNode>() {
+    SNode ifc = Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(SLinkOperations.getTarget(_quotation_createNode_tm6bn3_a0a0a2a1(), "classifier", false))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode ifc) {
         return ifcname.equals(SPropertyOperations.getString(ifc, "name"));
       }
     });
-    SNode supertype = _quotation_createNode_tm6bn3_a0d0a(ifc);
+    SNode supertype = _quotation_createNode_tm6bn3_a0d0b(ifc);
     ListSequence.fromList(result).addElement(supertype);
     for (SNode comptype : SLinkOperations.getTargets(itt, "componentType", true)) {
       SNode javatype = ClassifierTypeUtil.getTypeCoercedToClassifierType(comptype);
@@ -59,14 +59,14 @@ public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends
     return true;
   }
 
-  private static SNode _quotation_createNode_tm6bn3_a0a0a2a0() {
+  private static SNode _quotation_createNode_tm6bn3_a0a0a2a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:33366a6f-09e8-45e7-ae7f-cb8cf0c7ed05(jetbrains.mps.baseLanguage.tuples.runtime)"), SNodeId.fromString("1238932923132")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_tm6bn3_a0d0a(Object parameter_1) {
+  private static SNode _quotation_createNode_tm6bn3_a0d0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("classifier", (SNode) parameter_1);

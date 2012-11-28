@@ -21,7 +21,7 @@ public class typeof_CompartmentProviderStatement_InferenceRule extends AbstractI
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(cps, "context", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "8923564134257084397", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "8923564134257084389", true), (SNode) _quotation_createNode_1xz5fc_a0b0a(), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "8923564134257084389", true), (SNode) _quotation_createNode_1xz5fc_a0b0b(), false, true, _info_12389875345);
     }
   }
 
@@ -40,7 +40,7 @@ public class typeof_CompartmentProviderStatement_InferenceRule extends AbstractI
     return false;
   }
 
-  private static SNode _quotation_createNode_1xz5fc_a0b0a() {
+  private static SNode _quotation_createNode_1xz5fc_a0b0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

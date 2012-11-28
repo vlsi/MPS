@@ -19,7 +19,7 @@ public class typeof_BinaryStringOperation_InferenceRule extends AbstractInferenc
     {
       SNode _nodeToCheck_1029348928467 = binaryStringOperation;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "1888188276221891155", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "1888188276221891152", true), (SNode) _quotation_createNode_wf0uj2_a0a0a(), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "1888188276221891152", true), (SNode) _quotation_createNode_wf0uj2_a0a0b(), _info_12389875345);
     }
   }
 
@@ -38,7 +38,7 @@ public class typeof_BinaryStringOperation_InferenceRule extends AbstractInferenc
     return false;
   }
 
-  private static SNode _quotation_createNode_wf0uj2_a0a0a() {
+  private static SNode _quotation_createNode_wf0uj2_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.StringType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
