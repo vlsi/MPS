@@ -165,7 +165,6 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
 
     public static class RelayingLoggingHandler implements ILoggingHandler {
       private static Tuples._2<ThreadGroup, IMessageHandler> GROUP_HANDLER;
-
       private ThreadLocal<IMessageHandler> messageHandler = new ThreadLocal<IMessageHandler>() {
         @Override
         protected IMessageHandler initialValue() {

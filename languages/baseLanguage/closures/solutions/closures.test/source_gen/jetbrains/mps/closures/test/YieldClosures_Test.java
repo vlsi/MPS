@@ -149,8 +149,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _3_i;
-              private int _9_j;
 
               protected boolean moveToNext() {
 __loop__:
@@ -223,6 +221,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _3_i;
+              private int _9_j;
             };
           }
         };
@@ -256,8 +257,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _4_i;
-              private int _10_j;
 
               protected boolean moveToNext() {
 __loop__:
@@ -341,6 +340,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _4_i;
+              private int _10_j;
             };
           }
         };
@@ -364,8 +366,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _2_i;
-              private int _6_j;
 
               protected boolean moveToNext() {
 __loop__:
@@ -424,6 +424,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _2_i;
+              private int _6_j;
             };
           }
         };
@@ -451,10 +454,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _2_i;
-              private Iterator<Integer> _2_i_it;
-              private int _6_j;
-              private Iterator<Integer> _6_j_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -515,6 +514,11 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _2_i;
+              private Iterator<Integer> _2_i_it;
+              private int _6_j;
+              private Iterator<Integer> _6_j_it;
             };
           }
         };
@@ -544,9 +548,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _3_a;
-              private int _8_j;
-              private int _4_i;
 
               protected boolean moveToNext() {
 __loop__:
@@ -623,6 +624,10 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _3_a;
+              private int _8_j;
+              private int _4_i;
             };
           }
         };
@@ -654,8 +659,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private Fruits _2_fr;
-              private Iterator<Fruits> _2_fr_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -734,6 +737,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private Fruits _2_fr;
+              private Iterator<Fruits> _2_fr_it;
             };
           }
         };
@@ -765,7 +771,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _2_i;
 
               protected boolean moveToNext() {
 __loop__:
@@ -858,6 +863,8 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _2_i;
             };
           }
         };
@@ -890,11 +897,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private List<Integer> _7_ll;
-              private Integer _16__yield_75e5vq_a0c0a0a1a0c0i0;
-              private Iterator<Integer> _16__yield_75e5vq_a0c0a0a1a0c0i0_it;
-              private Integer _13_ii;
-              private Iterator<Integer> _13_ii_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -976,6 +978,12 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private List<Integer> _7_ll;
+              private Integer _16__yield_75e5vq_a0c0a0a1a0c0i0;
+              private Iterator<Integer> _16__yield_75e5vq_a0c0a0a1a0c0i0_it;
+              private Integer _13_ii;
+              private Iterator<Integer> _13_ii_it;
             };
           }
         };
@@ -1004,8 +1012,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _3_val;
-              private int _11_foo;
 
               protected boolean moveToNext() {
 __loop__:
@@ -1062,6 +1068,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _3_val;
+              private int _11_foo;
             };
           }
         };
@@ -1107,8 +1116,6 @@ label3:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _3_i;
-              private int _6_j;
 
               protected boolean moveToNext() {
 __loop__:
@@ -1221,6 +1228,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _3_i;
+              private int _6_j;
             };
           }
         };
@@ -1252,8 +1262,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private Integer _2__yield_75e5vq_a0b0a0a21a;
-              private Iterator<Integer> _2__yield_75e5vq_a0b0a0a21a_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -1293,6 +1301,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private Integer _2__yield_75e5vq_a0b0a0a21a;
+              private Iterator<Integer> _2__yield_75e5vq_a0b0a0a21a_it;
             };
           }
         };
@@ -1311,8 +1322,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private Integer _3__yield_75e5vq_b0b0a0a31a;
-              private Iterator<Integer> _3__yield_75e5vq_b0b0a0a31a_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -1352,6 +1361,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private Integer _3__yield_75e5vq_b0b0a0a31a;
+              private Iterator<Integer> _3__yield_75e5vq_b0b0a0a31a_it;
             };
           }
         };
@@ -1370,10 +1382,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private Integer _2__yield_75e5vq_a0b0a0a41a;
-              private Iterator<Integer> _2__yield_75e5vq_a0b0a0a41a_it;
-              private Integer _6__yield_75e5vq_b0b0a0a41a;
-              private Iterator<Integer> _6__yield_75e5vq_b0b0a0a41a_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -1426,6 +1434,11 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private Integer _2__yield_75e5vq_a0b0a0a41a;
+              private Iterator<Integer> _2__yield_75e5vq_a0b0a0a41a_it;
+              private Integer _6__yield_75e5vq_b0b0a0a41a;
+              private Iterator<Integer> _6__yield_75e5vq_b0b0a0a41a_it;
             };
           }
         };
@@ -1444,9 +1457,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private Integer _6__yield_75e5vq_a0a0b0a0a51a;
-              private Iterator<Integer> _6__yield_75e5vq_a0a0b0a0a51a_it;
-              private int _2_i;
 
               protected boolean moveToNext() {
 __loop__:
@@ -1498,6 +1508,10 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private Integer _6__yield_75e5vq_a0a0b0a0a51a;
+              private Iterator<Integer> _6__yield_75e5vq_a0a0b0a0a51a_it;
+              private int _2_i;
             };
           }
         };
@@ -1618,7 +1632,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _2_i;
 
               protected boolean moveToNext() {
 __loop__:
@@ -1662,6 +1675,8 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _2_i;
             };
           }
         };
@@ -1716,12 +1731,6 @@ __switch__:
           public Iterator<String> iterator() {
             return new YieldingIterator<String>() {
               private int __CP__ = 0;
-              private String _2__yield_75e5vq_a0a0a0a3a91a;
-              private Iterator<String> _2__yield_75e5vq_a0a0a0a3a91a_it;
-              private String _6__yield_75e5vq_b0a0a0a3a91a;
-              private Iterator<String> _6__yield_75e5vq_b0a0a0a3a91a_it;
-              private String _10__yield_75e5vq_c0a0a0a3a91a;
-              private Iterator<String> _10__yield_75e5vq_c0a0a0a3a91a_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -1791,6 +1800,13 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private String _2__yield_75e5vq_a0a0a0a3a91a;
+              private Iterator<String> _2__yield_75e5vq_a0a0a0a3a91a_it;
+              private String _6__yield_75e5vq_b0a0a0a3a91a;
+              private Iterator<String> _6__yield_75e5vq_b0a0a0a3a91a_it;
+              private String _10__yield_75e5vq_c0a0a0a3a91a;
+              private Iterator<String> _10__yield_75e5vq_c0a0a0a3a91a_it;
             };
           }
         };
@@ -1937,10 +1953,6 @@ __switch__:
           public Iterator<Object> iterator() {
             return new YieldingIterator<Object>() {
               private int __CP__ = 0;
-              private Object _5_os;
-              private int _5_os_idx;
-              private Object _8__yield_75e5vq_a0a0b0a0a1a22a;
-              private Iterator<Object> _8__yield_75e5vq_a0a0b0a0a1a22a_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -2003,6 +2015,11 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private Object _5_os;
+              private int _5_os_idx;
+              private Object _8__yield_75e5vq_a0a0b0a0a1a22a;
+              private Iterator<Object> _8__yield_75e5vq_a0a0b0a0a1a22a_it;
             };
           }
         };
@@ -2018,8 +2035,6 @@ __switch__:
           public Iterator<Number> iterator() {
             return new YieldingIterator<Number>() {
               private int __CP__ = 0;
-              private Number _5__yield_75e5vq_d0a0a0a32a;
-              private Iterator<? extends Number> _5__yield_75e5vq_d0a0a0a32a_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -2067,6 +2082,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private Number _5__yield_75e5vq_d0a0a0a32a;
+              private Iterator<? extends Number> _5__yield_75e5vq_d0a0a0a32a_it;
             };
           }
         };

@@ -5,8 +5,6 @@ package jetbrains.mps.debugger.java.runtime.ui.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -15,10 +13,11 @@ import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationMo
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class RemoveWatchAction_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("remove.png");
-  protected static Log log = LogFactory.getLog(RemoveWatchAction_Action.class);
 
   public RemoveWatchAction_Action() {
     super("Remove Watch", "", ICON);
@@ -62,4 +61,6 @@ public class RemoveWatchAction_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(RemoveWatchAction_Action.class);
 }

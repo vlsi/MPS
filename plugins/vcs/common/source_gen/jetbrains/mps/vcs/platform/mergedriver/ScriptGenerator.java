@@ -42,7 +42,7 @@ import com.intellij.openapi.ui.Messages;
           List<String> linesInFile = StringsIO.readLines(scriptFile);
           if ((int) ListSequence.fromList(linesInFile).count() == lines.length) {
             for (int i = 0; i < lines.length; i++) {
-              if (neq_7mp2j8_a0a0a0b0a0a0d0a(ListSequence.fromList(linesInFile).getElement(i), lines[i])) {
+              if (neq_7mp2j8_a0a0a0b0a0a0d0d(ListSequence.fromList(linesInFile).getElement(i), lines[i])) {
                 return AbstractInstaller.State.OUTDATED;
               }
             }
@@ -65,7 +65,7 @@ import com.intellij.openapi.ui.Messages;
     }
   }
 
-  private static boolean neq_7mp2j8_a0a0a0b0a0a0d0a(Object a, Object b) {
+  private static boolean neq_7mp2j8_a0a0a0b0a0a0d0d(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

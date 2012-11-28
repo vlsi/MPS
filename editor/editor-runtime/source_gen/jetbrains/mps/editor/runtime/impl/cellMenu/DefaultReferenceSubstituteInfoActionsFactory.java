@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
  */
 public class DefaultReferenceSubstituteInfoActionsFactory {
   private static final Logger LOG = Logger.getLogger(DefaultReferenceSubstituteInfoActionsFactory.class);
-
   private SNode mySourceNode;
   private SNode myLinkDeclaration;
   private SNode myCurrentReferent;

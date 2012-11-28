@@ -4,7 +4,6 @@ package jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -18,10 +17,10 @@ import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.logging.Logger;
 
 public class ShowInferredNodeType_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ShowInferredNodeType_Action.class);
 
   public ShowInferredNodeType_Action() {
     super("Show Inferred Type", "Show type inferred using check only inequations, too", ICON);
@@ -81,4 +80,6 @@ public class ShowInferredNodeType_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "ShowInferredNodeType", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ShowInferredNodeType_Action.class);
 }

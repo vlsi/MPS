@@ -27,22 +27,12 @@ public enum _Colors_Enum {
   black("black", "black");
 
   private String myName;
-  private String myValue;
-
-  _Colors_Enum(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -132,5 +122,16 @@ public enum _Colors_Enum {
       return _Colors_Enum.black;
     }
     return _Colors_Enum.getDefault();
+  }
+
+  private String myValue;
+
+  _Colors_Enum(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

@@ -4,14 +4,9 @@ package jetbrains.mps.execution.lib;
 
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
-import java.util.List;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jdom.Element;
@@ -20,22 +15,19 @@ import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
+import java.util.List;
+import jetbrains.mps.execution.api.settings.SettingsEditorEx;
+import jetbrains.mps.logging.Logger;
 
 public class MultiConceptNode_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
-  private static Logger LOG = Logger.getLogger(MultiConceptNode_Configuration.class);
-
   @NotNull
   private MultiConceptNode_Configuration.MyState myState = new MultiConceptNode_Configuration.MyState();
-  private final List<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargets;
-  private SettingsEditorEx<MultiConceptNode_Configuration> myEditorEx;
-
-  public MultiConceptNode_Configuration(List<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> targets) {
-    myTargets = targets;
-  }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
     {
@@ -148,6 +140,29 @@ public class MultiConceptNode_Configuration implements IPersistentConfiguration,
     return clone;
   }
 
+  public class MyState {
+    public String myNodeId;
+    public String myModelId;
+
+    public MyState() {
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+      MultiConceptNode_Configuration.MyState state = new MultiConceptNode_Configuration.MyState();
+      state.myNodeId = myNodeId;
+      state.myModelId = myModelId;
+      return state;
+    }
+  }
+
+  public MultiConceptNode_Configuration(List<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> targets) {
+    myTargets = targets;
+  }
+
+  private final List<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargets;
+  private SettingsEditorEx<MultiConceptNode_Configuration> myEditorEx;
+
   public MultiConceptNode_Configuration createCloneTemplate() {
     return new MultiConceptNode_Configuration(myTargets);
   }
@@ -163,26 +178,12 @@ public class MultiConceptNode_Configuration implements IPersistentConfiguration,
     return myEditorEx;
   }
 
+  private static Logger LOG = Logger.getLogger(MultiConceptNode_Configuration.class);
+
   private static SNode check_u1vs2g_a0a0a2a0(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNode();
     }
     return null;
-  }
-
-  public class MyState {
-    public String myNodeId;
-    public String myModelId;
-
-    public MyState() {
-    }
-
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-      MultiConceptNode_Configuration.MyState state = new MultiConceptNode_Configuration.MyState();
-      state.myNodeId = myNodeId;
-      state.myModelId = myModelId;
-      return state;
-    }
   }
 }

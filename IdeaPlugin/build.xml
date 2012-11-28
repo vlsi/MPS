@@ -28,7 +28,7 @@
     </fileset>
   </path>
 
-  <target name="prepare" depends="buildCore, buildJavaSourceStubs">
+  <target name="prepare" depends="buildCore">
     <delete dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib" flatten="true">
@@ -43,18 +43,6 @@
     <copy todir="${base_dir}/IdeaPlugin/mps-core/languages">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCore/mps-core/languages"/>
     </copy>
-
-    <mkdir dir="${base_dir}/IdeaPlugin/mps-java/stubs"/>
-    <copy todir="${base_dir}/IdeaPlugin/mps-java/stubs">
-      <fileset dir="${base_dir}/plugins/mpsjava/stubs"/> <!-- TEMPORARY SOLUTION, it must be rebuilt by hand -->
-    </copy>
-    <!--
-    <copy todir="${base_dir}/IdeaPlugin/mps-java/stubs">
-      <fileset file="${base_dir}/plugins/mpsjava/stubs/sources.msd"/>
-      <fileset dir="${build.home}/tmp/buildPlugins/java/out/jetbrains.mps.ide.java.sourceStubs"/>
-    </copy>
-    -->
-
   </target>
 
   <target name="clean">

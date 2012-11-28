@@ -45,7 +45,6 @@ import java.awt.event.MouseEvent;
 
 public abstract class DiffModelTree extends SimpleTree implements DataProvider {
   public static DataKey<Ref<SNodeId>> NODE_ID_DATAKEY = DataKey.create("MPS_SNodeId");
-
   private List<DiffModelTree.RootTreeNode> myRootNodes;
   private Iterable<BaseAction> myActions;
 
@@ -86,7 +85,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
     }, true).toListSequence();
     for (DiffModelTree.RootTreeNode rtn : ListSequence.fromList(myRootNodes)) {
       DiffModelTree.TreeNode parentNode = modelNode;
-      if (isNotEmpty_5x0uld_a0b0c0a(rtn.myVirtualPackage)) {
+      if (isNotEmpty_5x0uld_a0b0c0e(rtn.myVirtualPackage)) {
         for (final String sub : Sequence.fromIterable(Sequence.fromArray(rtn.myVirtualPackage.split("\\.")))) {
           Iterable<DiffModelTree.TreeNode> children = Collections.list(parentNode.children());
           DiffModelTree.TreeNode child = Sequence.fromIterable(children).findFirst(new IWhereFilter<DiffModelTree.TreeNode>() {
@@ -184,10 +183,6 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       return;
     }
     ActionUtils.updateAndPerformAction(Sequence.fromIterable(myActions).first(), new AnActionEvent(null, DataManager.getInstance().getDataContext(DiffModelTree.this), ActionPlaces.UNKNOWN, new Presentation(), ActionManager.getInstance(), 0));
-  }
-
-  public static boolean isNotEmpty_5x0uld_a0b0c0a(String str) {
-    return str != null && str.length() > 0;
   }
 
   public class ModelTreeNode extends DiffModelTree.TreeNode {
@@ -351,5 +346,9 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
         processDoubleClick();
       }
     }
+  }
+
+  public static boolean isNotEmpty_5x0uld_a0b0c0e(String str) {
+    return str != null && str.length() > 0;
   }
 }

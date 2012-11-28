@@ -6,7 +6,6 @@ package jetbrains.mps.samples.complex.runtime;
 public class Complex {
   private static double EPSILON = 0.000001;
   private static Complex I = new Complex(0, 1);
-
   private double myReal;
   private double myImaginary;
 

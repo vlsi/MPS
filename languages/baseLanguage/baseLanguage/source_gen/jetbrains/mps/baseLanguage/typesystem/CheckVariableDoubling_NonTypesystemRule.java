@@ -35,7 +35,7 @@ public class CheckVariableDoubling_NonTypesystemRule extends AbstractNonTypesyst
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_6gv83m_a0a0a0a0a0a0a0(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(localVariableDeclaration, "name"));
+        return eq_6gv83m_a0a0a0a0a0a0a1(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(localVariableDeclaration, "name"));
       }
     });
     final SNode nearestMethod = SNodeOperations.getAncestor(localVariableDeclaration, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
@@ -73,7 +73,7 @@ public class CheckVariableDoubling_NonTypesystemRule extends AbstractNonTypesyst
     return false;
   }
 
-  private static boolean eq_6gv83m_a0a0a0a0a0a0a0(Object a, Object b) {
+  private static boolean eq_6gv83m_a0a0a0a0a0a0a1(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

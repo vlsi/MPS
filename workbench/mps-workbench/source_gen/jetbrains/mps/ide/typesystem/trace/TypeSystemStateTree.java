@@ -235,7 +235,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
             continue;
           }
           for (SNode var : vars) {
-            SNode node = check_x8yvv7_a0a0d0c0a0a0a0b0n(maps, var);
+            SNode node = check_x8yvv7_a0a0d0c0a0a0a0b0t(maps, var);
             if (node != null && node.getModel() != null) {
               EditorCell nodeCell = myEditorComponent.findNodeCell(node);
               if (nodeCell != null) {
@@ -264,7 +264,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
           return;
         }
         for (SNode var : vars) {
-          SNode node = check_x8yvv7_a0a0d0a0a0a0d0o(maps, var);
+          SNode node = check_x8yvv7_a0a0d0a0a0a0d0u(maps, var);
           if (node != null && node.getModel() != null) {
             final SNodePointer pointer = new SNodePointer(node);
             group.add(new BaseAction("Go to node with type " + var) {
@@ -300,20 +300,6 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
         return null;
       }
       return new Pair<String, String>(ruleModel, ruleId);
-    }
-    return null;
-  }
-
-  private static SNode check_x8yvv7_a0a0d0c0a0a0a0b0n(NodeMaps checkedDotOperand, SNode var) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getNode(var);
-    }
-    return null;
-  }
-
-  private static SNode check_x8yvv7_a0a0d0a0a0a0d0o(NodeMaps checkedDotOperand, SNode var) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getNode(var);
     }
     return null;
   }
@@ -396,5 +382,19 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
       }
       highlightNodesWithTypes(selection);
     }
+  }
+
+  private static SNode check_x8yvv7_a0a0d0c0a0a0a0b0t(NodeMaps checkedDotOperand, SNode var) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getNode(var);
+    }
+    return null;
+  }
+
+  private static SNode check_x8yvv7_a0a0d0a0a0a0d0u(NodeMaps checkedDotOperand, SNode var) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getNode(var);
+    }
+    return null;
   }
 }

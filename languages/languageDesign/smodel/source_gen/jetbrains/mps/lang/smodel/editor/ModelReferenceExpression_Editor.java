@@ -6,6 +6,14 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -19,15 +27,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
-import java.util.List;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -36,6 +36,36 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_uy53zt_a_0(editorContext, node);
+  }
+
+  public static class ModelReferenceExpression_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Group {
+    public ModelReferenceExpression_generic_cellMenu_a0c0() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      return SModelRepository.getInstance().getModelDescriptors();
+    }
+
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((SModelDescriptor) parameterObject, node, model, scope, operationContext, editorContext);
+    }
+
+    public void handleAction_impl(SModelDescriptor parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SPropertyOperations.set(node, "name", parameterObject.getLongName());
+      SPropertyOperations.set(node, "stereotype", parameterObject.getStereotype());
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
+
+    public String getMatchingText(Object parameterObject) {
+      return this.getMatchingText_internal((SModelDescriptor) parameterObject);
+    }
+
+    public String getMatchingText_internal(SModelDescriptor parameterObject) {
+      return parameterObject.getLongName() + "@" + parameterObject.getStereotype();
+    }
   }
 
   private EditorCell createCollection_uy53zt_a(EditorContext editorContext, SNode node) {
@@ -175,35 +205,5 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  public static class ModelReferenceExpression_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Group {
-    public ModelReferenceExpression_generic_cellMenu_a0c0() {
-    }
-
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      return SModelRepository.getInstance().getModelDescriptors();
-    }
-
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((SModelDescriptor) parameterObject, node, model, scope, operationContext, editorContext);
-    }
-
-    public void handleAction_impl(SModelDescriptor parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "name", parameterObject.getLongName());
-      SPropertyOperations.set(node, "stereotype", parameterObject.getStereotype());
-    }
-
-    public boolean isReferentPresentation() {
-      return false;
-    }
-
-    public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((SModelDescriptor) parameterObject);
-    }
-
-    public String getMatchingText_internal(SModelDescriptor parameterObject) {
-      return parameterObject.getLongName() + "@" + parameterObject.getStereotype();
-    }
   }
 }

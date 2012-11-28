@@ -60,6 +60,10 @@ public class QueriesGenerated {
     return SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "declaration", false)).getSNodeId().toString();
   }
 
+  public static Object propertyMacro_GetPropertyValue_1216995305411(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getSimpleClassName_1229278847513", new Object[]{});
+  }
+
   public static Object propertyMacro_GetPropertyValue_1216996538619(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getTestName_1216136419751", new Object[]{});
   }
@@ -96,8 +100,8 @@ public class QueriesGenerated {
     return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getTestName_1216136419751", new Object[]{});
   }
 
-  public static Object propertyMacro_GetPropertyValue_1216995305411(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getSimpleClassName_1229278847513", new Object[]{});
+  public static Object propertyMacro_GetPropertyValue_1224603647998(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NodesTestCase_Behavior.getTestBodyName_1224602741295();
   }
 
   public static Object propertyMacro_GetPropertyValue_1226937589842(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -124,10 +128,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1224603647998(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NodesTestCase_Behavior.getTestBodyName_1224602741295();
-  }
-
   public static Object propertyMacro_GetPropertyValue_1225976113121(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.getNode().getSNodeId().toString();
   }
@@ -140,20 +140,8 @@ public class QueriesGenerated {
     return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "intention", false)).getLongName() + "." + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "intention", false), "virtual_getGeneratedName_6263518417926802289", new Object[]{});
   }
 
-  public static Object propertyMacro_GetPropertyValue_5364632142688376317(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "nodeToEdit", true).getSNodeId().toString();
-  }
-
-  public static Object propertyMacro_GetPropertyValue_5364632142688376328(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if (SLinkOperations.getTarget(_context.getNode(), "result", true) != null) {
-      return SLinkOperations.getTarget(_context.getNode(), "result", true).getSNodeId().toString();
-    } else {
-      return "";
-    }
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1229211902562(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NodesTestCase_Behavior.getTestBodyName_1224602741295();
+  public static Object propertyMacro_GetPropertyValue_1229198684556(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getSimpleClassName_1229278847513", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1229198973212(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -172,8 +160,20 @@ public class QueriesGenerated {
     return TestsUtil.getTestBodyClassName(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_1229198684556(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getSimpleClassName_1229278847513", new Object[]{});
+  public static Object propertyMacro_GetPropertyValue_1229211902562(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NodesTestCase_Behavior.getTestBodyName_1224602741295();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5364632142688376317(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "nodeToEdit", true).getSNodeId().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5364632142688376328(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (SLinkOperations.getTarget(_context.getNode(), "result", true) != null) {
+      return SLinkOperations.getTarget(_context.getNode(), "result", true).getSNodeId().toString();
+    } else {
+      return "";
+    }
   }
 
   public static Object referenceMacro_GetReferent_1225533437717(final IOperationContext operationContext, final ReferenceMacroContext _context) {

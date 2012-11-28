@@ -39,7 +39,7 @@ public class forbid_Insert {
           if (cell.getSNode() != node) {
             break;
           }
-          if (neq_pledwy_a0b0a0a2a1a(cell.getRole(), "parts")) {
+          if (neq_pledwy_a0b0a0a2a3b(cell.getRole(), "parts")) {
             break;
           }
           cell = cell.getParent();
@@ -50,7 +50,7 @@ public class forbid_Insert {
       }
     }
 
-    private static boolean neq_pledwy_a0b0a0a2a1a(Object a, Object b) {
+    private static boolean neq_pledwy_a0b0a0a2a3b(Object a, Object b) {
       return !((a != null ?
         a.equals(b) :
         a == b
@@ -82,7 +82,7 @@ public class forbid_Insert {
           if (cell.getSNode() != node) {
             break;
           }
-          if (neq_pledwy_a0b0a0a2a1b(cell.getRole(), "parts")) {
+          if (neq_pledwy_a0b0a0a2a3c(cell.getRole(), "parts")) {
             break;
           }
           cell = cell.getParent();
@@ -93,7 +93,7 @@ public class forbid_Insert {
       }
     }
 
-    private static boolean neq_pledwy_a0b0a0a2a1b(Object a, Object b) {
+    private static boolean neq_pledwy_a0b0a0a2a3c(Object a, Object b) {
       return !((a != null ?
         a.equals(b) :
         a == b

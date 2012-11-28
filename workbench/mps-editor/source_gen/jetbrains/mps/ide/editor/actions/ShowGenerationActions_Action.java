@@ -4,7 +4,6 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import com.intellij.openapi.actionSystem.ActionGroup;
@@ -22,10 +21,10 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Point;
+import jetbrains.mps.logging.Logger;
 
 public class ShowGenerationActions_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ShowGenerationActions_Action.class);
 
   public ShowGenerationActions_Action() {
     super("Insert...", "", ICON);
@@ -96,4 +95,6 @@ public class ShowGenerationActions_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "ShowGenerationActions", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ShowGenerationActions_Action.class);
 }

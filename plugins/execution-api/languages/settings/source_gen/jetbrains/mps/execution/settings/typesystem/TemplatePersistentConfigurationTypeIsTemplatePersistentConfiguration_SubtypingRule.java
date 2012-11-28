@@ -15,7 +15,7 @@ public class TemplatePersistentConfigurationTypeIsTemplatePersistentConfiguratio
   }
 
   public SNode getSubOrSuperType(SNode templatePersistentConfigurationType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_n8elw8_a0a0();
+    return _quotation_createNode_n8elw8_a0a1();
   }
 
   public String getApplicableConceptFQName() {
@@ -37,7 +37,7 @@ public class TemplatePersistentConfigurationTypeIsTemplatePersistentConfiguratio
     return true;
   }
 
-  private static SNode _quotation_createNode_n8elw8_a0a0() {
+  private static SNode _quotation_createNode_n8elw8_a0a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6gsm2ecxch91tjmlga7202v15clwo8i">
+<dependencies version="2" modelHash="3u1shaxzwrsl5tw02uaa087vix50q8m">
   <dep model="f:java_stub#fdb93da0-59ed-4001-b2aa-4fad79ec058e#com.sun.jdi.request(JDK.Tools/com.sun.jdi.request@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="bavz98vwxhwhpog89k63m5eu2e8cbl3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3i4sr9viv2mafxmv1gn7u5798g1tob7" />
   <common hash="-9xn1oz5q25bk81359te72wq5bznb1tw" />
   <source id="2891782949125146377" name="Requestor" hash="-2jjinzpqo0wja3hxmuxot760u07hko8">
     <file name="Requestor.java" />
   </source>
-  <source id="2891782949125170507" name="ClassPrepareRequestor" hash="95lws627ojyewvmka801yvkkdeidzsj">
+  <source id="2891782949125170507" name="ClassPrepareRequestor" hash="54w6yd8ftvyxi2gd5rlmiv5g7s0aw3b">
     <file name="ClassPrepareRequestor.java" />
   </source>
-  <source id="2891782949125205202" name="LocatableEventRequestor" hash="-8uexjk9pvipqg3eyt9lq6w1n0y80ld6">
+  <source id="2891782949125205202" name="LocatableEventRequestor" hash="dblks7tkvlfo2mp3j4d0t33b62rg6kz">
     <file name="LocatableEventRequestor.java" />
   </source>
   <source id="6460341978864598530" name="IRequestManager" hash="732mhdlpezha2dvmvvfi9i4j1gr1rbl">
     <file name="IRequestManager.java" />
   </source>
-  <source id="6460341978864599228" name="StepRequestor" hash="5hhhpjl6n61yj8f6dwpuhg4xfa76g05">
+  <source id="6460341978864599228" name="StepRequestor" hash="-8abo48bcdvajq38vzst7ryqigqqswuu">
     <dep model="f:java_stub#fdb93da0-59ed-4001-b2aa-4fad79ec058e#com.sun.jdi.request(JDK.Tools/com.sun.jdi.request@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="StepRequestor.java" />

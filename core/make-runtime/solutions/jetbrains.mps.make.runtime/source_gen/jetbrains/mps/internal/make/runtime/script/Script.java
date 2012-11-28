@@ -48,7 +48,6 @@ import jetbrains.mps.make.resources.IResourceWithProperties;
 public class Script implements IScript {
   private static Logger LOG = Logger.getLogger(Script.class);
   public static final ITarget.Name TIME_STATISTIC_RESULT_NAME = new ITarget.Name("TIME_STATISTIC");
-
   private ITarget.Name startingTarget;
   private ITarget.Name finalTarget;
   private TargetRange targetRange;

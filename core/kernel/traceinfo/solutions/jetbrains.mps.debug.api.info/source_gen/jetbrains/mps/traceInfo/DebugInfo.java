@@ -37,7 +37,6 @@ public class DebugInfo {
   private static final String ROOT_ID_ATTR = "nodeId";
   private static final String MODEL_ID_ATTR = "modelId";
   private static final Tuples._2<String, String> UNSPECIFIED = MultiTuple.<String,String>from((String) null, (String) null);
-
   private Map<Tuples._2<String, String>, DebugInfoRoot> myRoots = MapSequence.fromMap(new HashMap<Tuples._2<String, String>, DebugInfoRoot>());
 
   /*package*/ DebugInfo() {
@@ -90,7 +89,7 @@ public class DebugInfo {
         return it.getPositions();
       }
     })) {
-      if (eq_exfyrk_a0a0b0h(element.getNodeId(), nodeId)) {
+      if (eq_exfyrk_a0a0b0o(element.getNodeId(), nodeId)) {
         return element;
       }
     }
@@ -106,7 +105,7 @@ public class DebugInfo {
     }
     return SetSequence.fromSet(root.getPositions()).findFirst(new IWhereFilter<TraceablePositionInfo>() {
       public boolean accept(TraceablePositionInfo it) {
-        return eq_exfyrk_a0a0a0a0a0d0i(it.getNodeId(), node.getSNodeId().toString());
+        return eq_exfyrk_a0a0a0a0a0d0p(it.getNodeId(), node.getSNodeId().toString());
       }
     });
   }
@@ -120,7 +119,7 @@ public class DebugInfo {
     // for mbeddr 
     return SetSequence.fromSetWithValues(new HashSet<TraceablePositionInfo>(), SetSequence.fromSet(MapSequence.fromMap(myRoots).keySet()).where(new IWhereFilter<Tuples._2<String, String>>() {
       public boolean accept(Tuples._2<String, String> it) {
-        return eq_exfyrk_a0a0a0a0a0b0b0j(it._0(), rootId);
+        return eq_exfyrk_a0a0a0a0a0b0b0q(it._0(), rootId);
       }
     }).translate(new ITranslator2<Tuples._2<String, String>, TraceablePositionInfo>() {
       public Iterable<TraceablePositionInfo> translate(Tuples._2<String, String> it) {
@@ -150,7 +149,7 @@ public class DebugInfo {
         }
       }, false).where(new IWhereFilter<UnitPositionInfo>() {
         public boolean accept(UnitPositionInfo it) {
-          return eq_exfyrk_a0a0a0a0a0a0a2a11(it.getNodeId(), tuple._0());
+          return eq_exfyrk_a0a0a0a0a0a0a2a81(it.getNodeId(), tuple._0());
         }
       }).toListSequence();
     }
@@ -250,7 +249,7 @@ public class DebugInfo {
       }, true);
       for (Tuples._2<String, String> id : sorted) {
         DebugInfoRoot dir = MapSequence.fromMap(myRoots).get(id);
-        if (isEmpty_exfyrk_a0b0b0b0s(id._0())) {
+        if (isEmpty_exfyrk_a0b0b0b0z(id._0())) {
           dir.toXml(element);
         } else {
           Element e = new Element(DebugInfo.ROOT);
@@ -313,49 +312,49 @@ public class DebugInfo {
 
   @Nullable
   public static SNodePointer nodePointerFrom(@NotNull Tuples._2<String, String> tuple) {
-    if (isEmpty_exfyrk_a0a0a4_0(tuple._0()) || isEmpty_exfyrk_a0a0a4(tuple._1())) {
+    if (isEmpty_exfyrk_a0a0a03_0(tuple._0()) || isEmpty_exfyrk_a0a0a03(tuple._1())) {
       return null;
     }
     return new SNodePointer(SModelReference.fromString(tuple._1()), SNodeId.fromString(tuple._0()));
   }
 
-  private static boolean eq_exfyrk_a0a0b0h(Object a, Object b) {
+  private static boolean eq_exfyrk_a0a0b0o(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_exfyrk_a0a0a0a0a0d0i(Object a, Object b) {
+  private static boolean eq_exfyrk_a0a0a0a0a0d0p(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_exfyrk_a0a0a0a0a0b0b0j(Object a, Object b) {
+  private static boolean eq_exfyrk_a0a0a0a0a0b0b0q(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_exfyrk_a0a0a0a0a0a0a2a11(Object a, Object b) {
+  private static boolean eq_exfyrk_a0a0a0a0a0a0a2a81(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  public static boolean isEmpty_exfyrk_a0b0b0b0s(String str) {
+  public static boolean isEmpty_exfyrk_a0b0b0b0z(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isEmpty_exfyrk_a0a0a4(String str) {
+  public static boolean isEmpty_exfyrk_a0a0a03(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isEmpty_exfyrk_a0a0a4_0(String str) {
+  public static boolean isEmpty_exfyrk_a0a0a03_0(String str) {
     return str == null || str.length() == 0;
   }
 }

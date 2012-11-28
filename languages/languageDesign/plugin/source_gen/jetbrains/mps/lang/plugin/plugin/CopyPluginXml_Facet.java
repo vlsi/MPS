@@ -70,7 +70,6 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
   public static class Target_copyPluginXml implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.plugin.CopyPluginXml.copyPluginXml");
 
     public Target_copyPluginXml() {
@@ -99,7 +98,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
                         new DeltaReconciler(tres.delta()).visitAll(new FilesDelta.Visitor() {
                           @Override
                           public boolean acceptWritten(IFile file) {
-                            if (eq_mk86fn_a0a0a0a0a0b0b0b0e0a0c0a1a0a0a0a0a(file.getName(), "plugin.xml")) {
+                            if (eq_mk86fn_a0a0a0a0a0b0b0b0e0a0c0a1a0a0a0a4j(file.getName(), "plugin.xml")) {
                               pluginXml[0] = file;
                               monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf("Copying " + file + " to " + metaInf + " directory.")));
                               return false;
@@ -198,13 +197,6 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
       return 10;
     }
 
-    private static boolean eq_mk86fn_a0a0a0a0a0b0b0b0e0a0c0a1a0a0a0a0a(Object a, Object b) {
-      return (a != null ?
-        a.equals(b) :
-        a == b
-      );
-    }
-
     public static class Parameters extends MultiTuple._1<String> {
       public Parameters() {
         super();
@@ -226,6 +218,13 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
       public CopyPluginXml_Facet.Target_copyPluginXml.Parameters assignFrom(Tuples._1<String> from) {
         return (CopyPluginXml_Facet.Target_copyPluginXml.Parameters) super.assign(from);
       }
+    }
+
+    private static boolean eq_mk86fn_a0a0a0a0a0b0b0b0e0a0c0a1a0a0a0a4j(Object a, Object b) {
+      return (a != null ?
+        a.equals(b) :
+        a == b
+      );
     }
   }
 

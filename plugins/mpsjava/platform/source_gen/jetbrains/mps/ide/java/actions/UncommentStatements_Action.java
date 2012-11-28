@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -16,10 +15,10 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.logging.Logger;
 
 public class UncommentStatements_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(UncommentStatements_Action.class);
 
   public UncommentStatements_Action() {
     super("Uncomment Statements", "", ICON);
@@ -82,4 +81,6 @@ public class UncommentStatements_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "UncommentStatements", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(UncommentStatements_Action.class);
 }

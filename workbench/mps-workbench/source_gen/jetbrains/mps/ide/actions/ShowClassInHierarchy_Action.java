@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
@@ -15,10 +14,10 @@ import jetbrains.mps.ide.hierarchy.BaseLanguageHierarchyViewTool;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.logging.Logger;
 
 public class ShowClassInHierarchy_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ShowClassInHierarchy_Action.class);
 
   public ShowClassInHierarchy_Action() {
     super("Show Class in Hierarchy", "", ICON);
@@ -96,4 +95,6 @@ public class ShowClassInHierarchy_Action extends BaseAction {
     SNode outerClass = SNodeOperations.cast(SNodeOperations.getAncestorWhereConceptInList(((SNode) MapSequence.fromMap(_params).get("node")), new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.baseLanguage.structure.Interface"}, true, false), "jetbrains.mps.baseLanguage.structure.Classifier");
     return outerClass;
   }
+
+  private static Logger LOG = Logger.getLogger(ShowClassInHierarchy_Action.class);
 }

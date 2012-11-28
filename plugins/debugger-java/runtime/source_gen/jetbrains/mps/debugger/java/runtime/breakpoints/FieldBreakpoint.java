@@ -24,7 +24,6 @@ import com.sun.jdi.InternalException;
 
 public class FieldBreakpoint extends JavaBreakpoint implements ILocationBreakpoint {
   private static final Logger LOG = Logger.getLogger(FieldBreakpoint.class);
-
   private final BreakpointLocation myLocation;
   private String myFieldName;
 
@@ -101,7 +100,7 @@ public class FieldBreakpoint extends JavaBreakpoint implements ILocationBreakpoi
       return false;
     }
 
-    return eq_he6f5h_a0d0g(myLocation, ((FieldBreakpoint) o).myLocation);
+    return eq_he6f5h_a0d0l(myLocation, ((FieldBreakpoint) o).myLocation);
   }
 
   @Override
@@ -114,7 +113,7 @@ public class FieldBreakpoint extends JavaBreakpoint implements ILocationBreakpoi
     return result;
   }
 
-  private static boolean eq_he6f5h_a0d0g(Object a, Object b) {
+  private static boolean eq_he6f5h_a0d0l(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

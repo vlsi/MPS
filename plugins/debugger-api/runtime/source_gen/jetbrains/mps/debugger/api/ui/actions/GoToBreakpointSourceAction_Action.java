@@ -5,8 +5,6 @@ package jetbrains.mps.debugger.api.ui.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -17,10 +15,11 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog;
 import jetbrains.mps.smodel.IOperationContext;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class GoToBreakpointSourceAction_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("go_to_source.png");
-  protected static Log log = LogFactory.getLog(GoToBreakpointSourceAction_Action.class);
 
   public GoToBreakpointSourceAction_Action() {
     super("Go To", "Go To Source", ICON);
@@ -75,4 +74,6 @@ public class GoToBreakpointSourceAction_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(GoToBreakpointSourceAction_Action.class);
 }

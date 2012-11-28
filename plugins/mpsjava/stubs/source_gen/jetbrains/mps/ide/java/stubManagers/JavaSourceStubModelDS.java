@@ -34,7 +34,6 @@ import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 
 public class JavaSourceStubModelDS extends FolderSetDataSource implements FastFindSupportProvider, StubModelDataSource {
   private static Logger LOG = Logger.getLogger(JavaSourceStubModelDS.class);
-
   private boolean myModelLoaded = false;
 
   public JavaSourceStubModelDS() {

@@ -6,6 +6,14 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
@@ -19,15 +27,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
-import java.util.List;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -36,6 +36,35 @@ public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_c6z1wa_a_0(editorContext, node);
+  }
+
+  public static class ModuleReferenceExpression_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Group {
+    public ModuleReferenceExpression_generic_cellMenu_a0c0() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      return BehaviorReflection.invokeVirtual((Class<List<IModule>>) ((Class) Object.class), node, "virtual_getVisibleModules_4040588429969394404", new Object[]{scope});
+    }
+
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((IModule) parameterObject, node, model, scope, operationContext, editorContext);
+    }
+
+    public void handleAction_impl(IModule parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SPropertyOperations.set(node, "moduleId", parameterObject.getModuleReference().getModuleId().toString());
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
+
+    public String getMatchingText(Object parameterObject) {
+      return this.getMatchingText_internal((IModule) parameterObject);
+    }
+
+    public String getMatchingText_internal(IModule parameterObject) {
+      return parameterObject.getModuleFqName();
+    }
   }
 
   private EditorCell createCollection_c6z1wa_a(EditorContext editorContext, SNode node) {
@@ -127,34 +156,5 @@ public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  public static class ModuleReferenceExpression_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Group {
-    public ModuleReferenceExpression_generic_cellMenu_a0c0() {
-    }
-
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      return BehaviorReflection.invokeVirtual((Class<List<IModule>>) ((Class) Object.class), node, "virtual_getVisibleModules_4040588429969394404", new Object[]{scope});
-    }
-
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((IModule) parameterObject, node, model, scope, operationContext, editorContext);
-    }
-
-    public void handleAction_impl(IModule parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "moduleId", parameterObject.getModuleReference().getModuleId().toString());
-    }
-
-    public boolean isReferentPresentation() {
-      return false;
-    }
-
-    public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((IModule) parameterObject);
-    }
-
-    public String getMatchingText_internal(IModule parameterObject) {
-      return parameterObject.getModuleFqName();
-    }
   }
 }

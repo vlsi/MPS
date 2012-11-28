@@ -4,8 +4,6 @@ package jetbrains.mps.build.deprecated.execution;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.lib.NodeByConcept_Configuration;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -15,12 +13,12 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ant.execution.AntSettings_Configuration;
-import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
@@ -31,10 +29,10 @@ import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
-  protected static Log log = LogFactory.getLog(CustomMPSApplication_Configuration.class);
-
   @NotNull
   private CustomMPSApplication_Configuration.MyState myState = new CustomMPSApplication_Configuration.MyState();
   private NodeByConcept_Configuration myNode = new NodeByConcept_Configuration("jetbrains.mps.build.packaging.structure.Layout", new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
@@ -50,12 +48,8 @@ public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration 
   });
   private AntSettings_Configuration mySettings = new AntSettings_Configuration();
 
-  public CustomMPSApplication_Configuration(Project project, CustomMPSApplication_Configuration_Factory factory, String name) {
-    super(project, factory, name);
-  }
-
   public void checkConfiguration() throws RuntimeConfigurationException {
-    if (isEmpty_pdwtc4_a0a0a0a(this.getConfigurationId())) {
+    if (isEmpty_pdwtc4_a0a0a0d(this.getConfigurationId())) {
       throw new RuntimeConfigurationException("Configuration to run is not selected.");
     } else if ((getConfiguration() == null)) {
       throw new RuntimeConfigurationException("Could not find configuration with id " + this.getConfigurationId() + ".");
@@ -148,6 +142,24 @@ public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration 
     return clone;
   }
 
+  public class MyState {
+    public String myConfigurationId;
+
+    public MyState() {
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+      CustomMPSApplication_Configuration.MyState state = new CustomMPSApplication_Configuration.MyState();
+      state.myConfigurationId = myConfigurationId;
+      return state;
+    }
+  }
+
+  public CustomMPSApplication_Configuration(Project project, CustomMPSApplication_Configuration_Factory factory, String name) {
+    super(project, factory, name);
+  }
+
   @Nullable
   public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment environment) throws ExecutionException {
     return new CustomMPSApplication_Configuration_RunProfileState(this, executor, environment);
@@ -183,21 +195,9 @@ public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration 
     return new Object[]{SNodeOperations.cast(this.getNode().getNode(), "jetbrains.mps.build.packaging.structure.Layout")};
   }
 
-  public static boolean isEmpty_pdwtc4_a0a0a0a(String str) {
+  protected static Log log = LogFactory.getLog(CustomMPSApplication_Configuration.class);
+
+  public static boolean isEmpty_pdwtc4_a0a0a0d(String str) {
     return str == null || str.length() == 0;
-  }
-
-  public class MyState {
-    public String myConfigurationId;
-
-    public MyState() {
-    }
-
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-      CustomMPSApplication_Configuration.MyState state = new CustomMPSApplication_Configuration.MyState();
-      state.myConfigurationId = myConfigurationId;
-      return state;
-    }
   }
 }

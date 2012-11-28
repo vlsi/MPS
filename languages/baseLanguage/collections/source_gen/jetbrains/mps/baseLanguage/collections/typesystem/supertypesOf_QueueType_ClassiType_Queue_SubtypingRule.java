@@ -20,7 +20,7 @@ public class supertypesOf_QueueType_ClassiType_Queue_SubtypingRule extends Subty
   }
 
   public SNode getSubOrSuperType(SNode queueType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_1k31p3_a0a0(SLinkOperations.getTarget(queueType, "elementType", true));
+    return _quotation_createNode_1k31p3_a0a1(SLinkOperations.getTarget(queueType, "elementType", true));
   }
 
   public String getApplicableConceptFQName() {
@@ -38,7 +38,7 @@ public class supertypesOf_QueueType_ClassiType_Queue_SubtypingRule extends Subty
     return true;
   }
 
-  private static SNode _quotation_createNode_1k31p3_a0a0(Object parameter_1) {
+  private static SNode _quotation_createNode_1k31p3_a0a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);

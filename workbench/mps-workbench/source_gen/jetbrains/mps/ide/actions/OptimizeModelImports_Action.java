@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
@@ -22,10 +21,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelRepository;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.logging.Logger;
 
 public class OptimizeModelImports_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(OptimizeModelImports_Action.class);
 
   public OptimizeModelImports_Action() {
     super("Optimize Imports", "", ICON);
@@ -92,4 +91,6 @@ public class OptimizeModelImports_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "OptimizeModelImports", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(OptimizeModelImports_Action.class);
 }

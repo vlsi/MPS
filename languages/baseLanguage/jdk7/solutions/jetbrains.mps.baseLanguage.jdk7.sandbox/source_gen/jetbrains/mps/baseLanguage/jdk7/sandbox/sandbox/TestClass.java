@@ -5,14 +5,12 @@ package jetbrains.mps.baseLanguage.jdk7.sandbox.sandbox;
 import java.util.Arrays;
 
 public class TestClass {
-  private static String[] stringSwitchCases_6lh81f_a0b0a = new String[]{"1", "2"};
-
   public TestClass() {
   }
 
   public static void main() {
     String t = "1";
-    switch (Arrays.binarySearch(stringSwitchCases_6lh81f_a0b0a, t)) {
+    switch (Arrays.binarySearch(stringSwitchCases_6lh81f_a0b0b, t)) {
       case 0:
         System.out.println("Hello World");
       case 1:
@@ -21,4 +19,6 @@ public class TestClass {
         System.out.println(":-( again");
     }
   }
+
+  private static String[] stringSwitchCases_6lh81f_a0b0b = new String[]{"1", "2"};
 }

@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -34,10 +33,10 @@ import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.awt.Point;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.logging.Logger;
 
 public class ShowImplementations_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ShowImplementations_Action.class);
 
   public ShowImplementations_Action() {
     super("Show Implementation", "", ICON);
@@ -145,4 +144,6 @@ public class ShowImplementations_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "ShowImplementations", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ShowImplementations_Action.class);
 }

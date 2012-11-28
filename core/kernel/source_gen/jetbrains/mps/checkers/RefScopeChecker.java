@@ -15,10 +15,10 @@ import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.resolve.ResolverComponent;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public class RefScopeChecker extends AbstractConstraintsChecker {
   public RefScopeChecker() {
@@ -28,7 +28,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
     if (operationContext == null || node == null || SNodeOperations.getModel(node) == null) {
       return;
     }
-    IModule module = check_bt3k2y_a0b0a(SNodeOperations.getModel(node).getModelDescriptor());
+    IModule module = check_bt3k2y_a0b0b(SNodeOperations.getModel(node).getModelDescriptor());
     if (module == null) {
       return;
     }
@@ -68,13 +68,6 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
     }
   }
 
-  private static IModule check_bt3k2y_a0b0a(SModelDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-
   public class ResolveReferenceQuickFix implements QuickFixProvider {
     private boolean myIsError;
     private SReference myReference;
@@ -108,5 +101,12 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
     public boolean isError() {
       return myIsError;
     }
+  }
+
+  private static IModule check_bt3k2y_a0b0b(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
   }
 }

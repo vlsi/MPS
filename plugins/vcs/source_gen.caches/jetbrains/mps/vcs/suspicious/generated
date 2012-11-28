@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4hjb0xbrsdc67pvpn32ux9g5qigsc9h">
+<dependencies version="2" modelHash="53h1exvz538u176xdm8njwlitq140bc">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
@@ -14,12 +14,12 @@
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.util.ui(MPS.Platform/com.intellij.util.ui@java_stub)" />
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.vfs(MPS.Platform/jetbrains.mps.ide.vfs@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-uvseejb8lftjizgrik03igcx568a80" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-ajx3tbmj913lpllsy57180fd07jxqa3" />
-  <dep model="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)" hash="-ma680a7b5vh9b8hv50v4wm38kj0vnj" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-alf2ogeiijb2ox8l3f57xq8a4vsqut" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3i4sr9viv2mafxmv1gn7u5798g1tob7" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="6f9jb5k2icdty624yqk3hbqvsk65dq5" />
+  <dep model="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)" hash="1rekm639ngptudq4k9klfuu3tmq3r5u" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-42u6f9vbzpf201qzziwe8drcbr8ay4o" />
   <common hash="-90mcuzzs459p9um2fowetf6darqy6kx" />
-  <source id="4707157387247635635" name="BaseTaskQueue" hash="-4xnlodm8inj963odvox2c581mcxpezg">
+  <source id="4707157387247635635" name="BaseTaskQueue" hash="-eecnthao968olbbwz0piau6n0raghpu">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi(MPS.Platform/com.intellij.openapi@java_stub)" />
@@ -28,11 +28,11 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="BaseTaskQueue.java" />
   </source>
-  <source id="4707157387247635742" name="TaskQueue" hash="-42ziu1sp1xip9ukkuvlszjjare465y8">
+  <source id="4707157387247635742" name="TaskQueue" hash="-ado3naydhvg0j05u4c6rc8rzk5qzm2u">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TaskQueue.java" />
   </source>
-  <source id="4093906047203395592" name="SuspiciousModelIndex" hash="-872dyrjr9x0bg8c53avkwi92os4pf42">
+  <source id="4093906047203395592" name="SuspiciousModelIndex" hash="-7jdb4a9dqaphx7f3l1i7ugbod2iq5m0">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
@@ -52,15 +52,15 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SuspiciousModelIndex.java" />
   </source>
-  <source id="4093906047203396099" name="Conflictable" hash="-cvrmvkgqm47eorojysxalwzh8yjnwlp">
+  <source id="4093906047203396099" name="Conflictable" hash="73rhj6mx42y1n8oz1muic1g95gas6xe">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Conflictable.java" />
   </source>
-  <source id="4093906047203396155" name="ConflictableModelAdapter" hash="5oh4anfm55yh9dk20w2k5o9kg8sw8po">
+  <source id="4093906047203396155" name="ConflictableModelAdapter" hash="-en88quoeklkk9ohfefw9pqg9oclcrmx">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ConflictableModelAdapter.java" />
   </source>
-  <source id="4093906047203396210" name="ConflictableModuleAdapter" hash="-9c6dtchfq6emz3eh0121ofhspp4b6jl">
+  <source id="4093906047203396210" name="ConflictableModuleAdapter" hash="-ev352edadfs2xlu2rjxj7k1zd9cyilx">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ConflictableModuleAdapter.java" />
   </source>

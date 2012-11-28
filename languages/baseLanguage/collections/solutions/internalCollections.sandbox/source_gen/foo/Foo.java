@@ -43,7 +43,6 @@ public class Foo {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _3_i;
 
               protected boolean moveToNext() {
 __loop__:
@@ -81,6 +80,8 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _3_i;
             };
           }
         };
@@ -128,10 +129,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private Integer _3__yield_rbn_b0a0b0a;
-              private Iterator<Integer> _3__yield_rbn_b0a0b0a_it;
-              private Integer _8__yield_rbn_d0a0b0a;
-              private Iterator<Integer> _8__yield_rbn_d0a0b0a_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -142,28 +139,28 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 3:
-                      this._3__yield_rbn_b0a0b0a_it = Sequence.fromIterable(seq).iterator();
+                      this._3__yield_rbn_b0a0b0c_it = Sequence.fromIterable(seq).iterator();
                     case 4:
-                      if (!(this._3__yield_rbn_b0a0b0a_it.hasNext())) {
+                      if (!(this._3__yield_rbn_b0a0b0c_it.hasNext())) {
                         this.__CP__ = 6;
                         break;
                       }
-                      this._3__yield_rbn_b0a0b0a = this._3__yield_rbn_b0a0b0a_it.next();
+                      this._3__yield_rbn_b0a0b0c = this._3__yield_rbn_b0a0b0c_it.next();
                       this.__CP__ = 5;
                       break;
                     case 8:
-                      this._8__yield_rbn_d0a0b0a_it = Sequence.fromIterable(seq).iterator();
+                      this._8__yield_rbn_d0a0b0c_it = Sequence.fromIterable(seq).iterator();
                     case 9:
-                      if (!(this._8__yield_rbn_d0a0b0a_it.hasNext())) {
+                      if (!(this._8__yield_rbn_d0a0b0c_it.hasNext())) {
                         this.__CP__ = 1;
                         break;
                       }
-                      this._8__yield_rbn_d0a0b0a = this._8__yield_rbn_d0a0b0a_it.next();
+                      this._8__yield_rbn_d0a0b0c = this._8__yield_rbn_d0a0b0c_it.next();
                       this.__CP__ = 10;
                       break;
                     case 7:
                       this.__CP__ = 4;
-                      this.yield(_3__yield_rbn_b0a0b0a);
+                      this.yield(_3__yield_rbn_b0a0b0c);
                       return true;
                     case 6:
                       this.__CP__ = 8;
@@ -171,7 +168,7 @@ __switch__:
                       return true;
                     case 11:
                       this.__CP__ = 9;
-                      this.yield(_8__yield_rbn_d0a0b0a);
+                      this.yield(_8__yield_rbn_d0a0b0c);
                       return true;
                     case 0:
                       /*/* error: statement w/o textGen:yield */
@@ -190,6 +187,11 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private Integer _3__yield_rbn_b0a0b0c;
+              private Iterator<Integer> _3__yield_rbn_b0a0b0c_it;
+              private Integer _8__yield_rbn_d0a0b0c;
+              private Iterator<Integer> _8__yield_rbn_d0a0b0c_it;
             };
           }
         };

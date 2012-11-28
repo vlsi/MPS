@@ -20,7 +20,6 @@ public class UrlClassLoader extends ClassLoader {
   /*package*/ static final String CLASS_EXTENSION = ".class";
   protected static final boolean myDebugTime = false;
   protected static final long NS_THRESHOLD = 10000000;
-
   private final ClassPath myClassPath;
   private final List<URL> myURLs;
 

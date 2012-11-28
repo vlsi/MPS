@@ -14,8 +14,8 @@ import jetbrains.mps.util.NameUtil;
 public class NewNode {
   public void newNode1(SModel model) {
     SNode newClass = SModelOperations.createNewRootNode(model, "jetbrains.mps.baseLanguage.structure.ClassConcept", null);
-    SLinkOperations.addNewChild(newClass, "constructor", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
-    SLinkOperations.addNewChild(SLinkOperations.addNewChild(newClass, "constructor", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "parameter", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+    SLinkOperations.addNewChild(newClass, "member", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+    SLinkOperations.addNewChild(SLinkOperations.addNewChild(newClass, "member", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "parameter", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
   }
 
   public void newNode2(SNode node) {

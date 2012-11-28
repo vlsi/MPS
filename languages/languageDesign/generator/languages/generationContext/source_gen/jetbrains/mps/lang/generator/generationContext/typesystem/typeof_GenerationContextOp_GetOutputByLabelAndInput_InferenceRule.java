@@ -20,12 +20,12 @@ public class typeof_GenerationContextOp_GetOutputByLabelAndInput_InferenceRule e
     {
       SNode _nodeToCheck_1029348928467 = op;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "1216860931341", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "1216860931352", true), (SNode) _quotation_createNode_mhpw2a_a0a0a(SLinkOperations.getTarget(SLinkOperations.getTarget(op, "label", false), "targetConcept", false)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "1216860931352", true), (SNode) _quotation_createNode_mhpw2a_a0a0b(SLinkOperations.getTarget(SLinkOperations.getTarget(op, "label", false), "targetConcept", false)), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(op, "inputNode", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "1216860931354", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "1216860931356", true), (SNode) _quotation_createNode_mhpw2a_a0b0a(SLinkOperations.getTarget(SLinkOperations.getTarget(op, "label", false), "sourceConcept", false)), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "1216860931356", true), (SNode) _quotation_createNode_mhpw2a_a0b0b(SLinkOperations.getTarget(SLinkOperations.getTarget(op, "label", false), "sourceConcept", false)), false, true, _info_12389875345);
     }
   }
 
@@ -44,14 +44,14 @@ public class typeof_GenerationContextOp_GetOutputByLabelAndInput_InferenceRule e
     return true;
   }
 
-  private static SNode _quotation_createNode_mhpw2a_a0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_mhpw2a_a0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_mhpw2a_a0b0a(Object parameter_1) {
+  private static SNode _quotation_createNode_mhpw2a_a0b0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);

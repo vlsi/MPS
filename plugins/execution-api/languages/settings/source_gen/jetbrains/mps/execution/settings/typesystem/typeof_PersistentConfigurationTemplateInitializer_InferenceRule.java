@@ -25,7 +25,7 @@ public class typeof_PersistentConfigurationTemplateInitializer_InferenceRule ext
     {
       SNode _nodeToCheck_1029348928467 = configurationTemplateInitializer;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477809", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477818", true), (SNode) _quotation_createNode_xmb8fa_a0a0a(SLinkOperations.getTarget(configurationTemplateInitializer, "template", false)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477818", true), (SNode) _quotation_createNode_xmb8fa_a0a0b(SLinkOperations.getTarget(configurationTemplateInitializer, "template", false)), _info_12389875345);
     }
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(configurationTemplateInitializer, "template", false), "templateParameter", true);
     for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(configurationTemplateInitializer, "parameter", true)).count(); i++) {
@@ -60,7 +60,7 @@ public class typeof_PersistentConfigurationTemplateInitializer_InferenceRule ext
     return false;
   }
 
-  private static SNode _quotation_createNode_xmb8fa_a0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_xmb8fa_a0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("persistentConfiguration", (SNode) parameter_1);

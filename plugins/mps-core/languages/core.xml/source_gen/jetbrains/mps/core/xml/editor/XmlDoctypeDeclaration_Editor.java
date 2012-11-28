@@ -6,6 +6,12 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceChild_Item;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -14,19 +20,51 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceChild_Item;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_kqvvq_a(editorContext, node);
+  }
+
+  public static class XmlDoctypeDeclaration_externalId_cellMenu_a0c1a extends AbstractCellMenuPart_ReplaceChild_Item {
+    public XmlDoctypeDeclaration_externalId_cellMenu_a0c1a() {
+    }
+
+    public String getMatchingText() {
+      return "PUBLIC";
+    }
+
+    public boolean isCustomCreateChildNode() {
+      return true;
+    }
+
+    public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SNode newId = SLinkOperations.setNewChild(node, "externalId", "jetbrains.mps.core.xml.structure.XmlExternalId");
+      SPropertyOperations.set(newId, "isPublic", "" + (true));
+      return newId;
+    }
+  }
+
+  public static class XmlDoctypeDeclaration_externalId_cellMenu_b0c1a extends AbstractCellMenuPart_ReplaceChild_Item {
+    public XmlDoctypeDeclaration_externalId_cellMenu_b0c1a() {
+    }
+
+    public String getMatchingText() {
+      return "SYSTEM";
+    }
+
+    public boolean isCustomCreateChildNode() {
+      return true;
+    }
+
+    public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SNode newId = SLinkOperations.setNewChild(node, "externalId", "jetbrains.mps.core.xml.structure.XmlExternalId");
+      SPropertyOperations.set(newId, "isPublic", "" + (false));
+      return newId;
+    }
   }
 
   private EditorCell createAlternation_kqvvq_a0(EditorContext editorContext, SNode node) {
@@ -175,43 +213,5 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_kqvvq_a2a(SNode node, EditorContext editorContext, IScope scope) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{});
-  }
-
-  public static class XmlDoctypeDeclaration_externalId_cellMenu_a0c1a extends AbstractCellMenuPart_ReplaceChild_Item {
-    public XmlDoctypeDeclaration_externalId_cellMenu_a0c1a() {
-    }
-
-    public String getMatchingText() {
-      return "PUBLIC";
-    }
-
-    public boolean isCustomCreateChildNode() {
-      return true;
-    }
-
-    public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SNode newId = SLinkOperations.setNewChild(node, "externalId", "jetbrains.mps.core.xml.structure.XmlExternalId");
-      SPropertyOperations.set(newId, "isPublic", "" + (true));
-      return newId;
-    }
-  }
-
-  public static class XmlDoctypeDeclaration_externalId_cellMenu_b0c1a extends AbstractCellMenuPart_ReplaceChild_Item {
-    public XmlDoctypeDeclaration_externalId_cellMenu_b0c1a() {
-    }
-
-    public String getMatchingText() {
-      return "SYSTEM";
-    }
-
-    public boolean isCustomCreateChildNode() {
-      return true;
-    }
-
-    public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SNode newId = SLinkOperations.setNewChild(node, "externalId", "jetbrains.mps.core.xml.structure.XmlExternalId");
-      SPropertyOperations.set(newId, "isPublic", "" + (false));
-      return newId;
-    }
   }
 }

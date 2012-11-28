@@ -4,8 +4,6 @@ package jetbrains.mps.vcs.platform.integration;
 
 import com.intellij.openapi.diff.impl.mergeTool.MergeTool;
 import jetbrains.mps.logging.Logger;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.diff.impl.mergeTool.MergeRequestImpl;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -25,10 +23,11 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nullable;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class ModelMergeTool extends MergeTool {
   private static final Logger LOG = Logger.getLogger(ModelMergeTool.class);
-  protected static Log log = LogFactory.getLog(ModelMergeTool.class);
 
   public ModelMergeTool() {
   }
@@ -106,4 +105,6 @@ public class ModelMergeTool extends MergeTool {
     }
     return null;
   }
+
+  protected static Log log = LogFactory.getLog(ModelMergeTool.class);
 }

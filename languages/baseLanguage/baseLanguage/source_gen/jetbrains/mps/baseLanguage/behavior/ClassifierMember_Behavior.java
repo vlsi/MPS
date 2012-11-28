@@ -16,6 +16,7 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ClassifierMember_Behavior {
@@ -90,6 +91,18 @@ public class ClassifierMember_Behavior {
     return ClassifierMember_Behavior.call_isStatic_8986964027630462944(thisNode);
   }
 
+  public static boolean virtual_needsEmptyLineBefore_641490355014296733(SNode thisNode) {
+    return false;
+  }
+
+  public static boolean virtual_needsEmptyLineAfter_641490355014298838(SNode thisNode) {
+    return false;
+  }
+
+  public static boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
+    return false;
+  }
+
   @Deprecated
   public static boolean call_isStatic_8986964027630462944(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isStatic_8986964027630462944", new Object[]{});
@@ -101,6 +114,16 @@ public class ClassifierMember_Behavior {
   }
 
   @Deprecated
+  public static boolean call_needsEmptyLineBefore_641490355014296733(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_needsEmptyLineBefore_641490355014296733", new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_needsEmptyLineAfter_641490355014298838(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_needsEmptyLineAfter_641490355014298838", new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isStatic_8986964027630462944(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_isStatic_8986964027630462944", new Class[]{SNode.class}, new Object[]{});
   }
@@ -108,6 +131,16 @@ public class ClassifierMember_Behavior {
   @Deprecated
   public static boolean callSuper_isVisible_8083692786967482069(SNode thisNode, String callerConceptFqName, SNode contextClassifier, SNode contextNode) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_isVisible_8083692786967482069", new Class[]{SNode.class, SNode.class, SNode.class}, new Object[]{contextClassifier, contextNode});
+  }
+
+  @Deprecated
+  public static boolean callSuper_needsEmptyLineBefore_641490355014296733(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_needsEmptyLineBefore_641490355014296733", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean callSuper_needsEmptyLineAfter_641490355014298838(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_needsEmptyLineAfter_641490355014298838", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static boolean eq_i8o263_a0a0l0c(Object a, Object b) {

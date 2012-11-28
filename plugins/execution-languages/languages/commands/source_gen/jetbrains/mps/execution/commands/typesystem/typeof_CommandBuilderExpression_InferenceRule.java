@@ -21,7 +21,7 @@ public class typeof_CommandBuilderExpression_InferenceRule extends AbstractInfer
     {
       SNode _nodeToCheck_1029348928467 = commandBuilderExpression;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863702", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863704", true), (SNode) _quotation_createNode_mdceom_a0a0a(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(SLinkOperations.getTarget(commandBuilderExpression, "commandPart", false))), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863704", true), (SNode) _quotation_createNode_mdceom_a0a0b(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(SLinkOperations.getTarget(commandBuilderExpression, "commandPart", false))), _info_12389875345);
     }
   }
 
@@ -40,7 +40,7 @@ public class typeof_CommandBuilderExpression_InferenceRule extends AbstractInfer
     return false;
   }
 
-  private static SNode _quotation_createNode_mdceom_a0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_mdceom_a0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandProcessType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("commandDeclaration", (SNode) parameter_1);

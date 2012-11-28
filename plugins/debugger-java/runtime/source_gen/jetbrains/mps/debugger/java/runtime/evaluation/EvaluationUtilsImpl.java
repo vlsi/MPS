@@ -367,7 +367,7 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
           public String invoke() throws EvaluationException {
             ObjectReference object = (ObjectReference) value;
             IObjectValueProxy valueProxy = (IObjectValueProxy) MirrorUtil.getInstance().getValueProxy(object);
-            SNode toString = _quotation_createNode_wi3cqi_a0c0a0a0a0a0a0a0a42();
+            SNode toString = _quotation_createNode_wi3cqi_a0c0a0a0a0a0a0a0a52();
             IValueProxy result = valueProxy.invokeMethod(SPropertyOperations.getString(toString, "name"), BehaviorReflection.invokeVirtual(String.class, toString, "virtual_jniSignature_8847328628797656446", new Object[]{}), threadReference);
             return getStringPresentation(result.getJDIValue(), threadReference);
           }
@@ -376,7 +376,7 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
     }
   }
 
-  private static SNode _quotation_createNode_wi3cqi_a0c0a0a0a0a0a0a0a42() {
+  private static SNode _quotation_createNode_wi3cqi_a0c0a0a0a0a0a0a0a52() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

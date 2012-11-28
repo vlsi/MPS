@@ -19,7 +19,7 @@ public class typeof_CustomStatementRef_InferenceRule extends AbstractInferenceRu
     {
       SNode _nodeToCheck_1029348928467 = customStatementRef;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:fa0a0934-5f41-4999-a12b-c153e96f8a6c(jetbrains.mps.transformation.test.outputLang.typesystem)", "2163819695913393697", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:fa0a0934-5f41-4999-a12b-c153e96f8a6c(jetbrains.mps.transformation.test.outputLang.typesystem)", "2163819695913379864", true), (SNode) _quotation_createNode_zf4e30_a0a0a(), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:fa0a0934-5f41-4999-a12b-c153e96f8a6c(jetbrains.mps.transformation.test.outputLang.typesystem)", "2163819695913379864", true), (SNode) _quotation_createNode_zf4e30_a0a0b(), _info_12389875345);
     }
   }
 
@@ -38,7 +38,7 @@ public class typeof_CustomStatementRef_InferenceRule extends AbstractInferenceRu
     return false;
   }
 
-  private static SNode _quotation_createNode_zf4e30_a0a0a() {
+  private static SNode _quotation_createNode_zf4e30_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

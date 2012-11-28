@@ -19,7 +19,6 @@ public class EditorExtensions {
   private static List<_FunctionTypes._void_P1_E0<? super EditorExtensions>> DisposeDelayedBlocks = ListSequence.fromList(new LinkedList<_FunctionTypes._void_P1_E0<? super EditorExtensions>>());
   private static EditorExtensions INSTANCE = null;
   private static boolean DISPOSED = false;
-
   private List<IObjectsProvider<SNode, SNode>> uiObjectTemplateProviders = ListSequence.fromList(new ArrayList<IObjectsProvider<SNode, SNode>>());
   private List<IObjectsProvider<SNode, SNode>> eventHandlerTemplateProviders = ListSequence.fromList(new ArrayList<IObjectsProvider<SNode, SNode>>());
 

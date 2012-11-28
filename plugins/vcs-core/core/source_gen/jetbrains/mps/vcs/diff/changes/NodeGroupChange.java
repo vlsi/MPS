@@ -159,7 +159,7 @@ public class NodeGroupChange extends ModelChange {
       myRole :
       NameUtil.formatNumericalString(myResultEnd - myResultBegin, myRole)
     );
-    if (eq_yjf6x2_a0a6a21(newStuff, myRole) && eq_yjf6x2_a0a6a21_0(oldStuff, myRole)) {
+    if (eq_yjf6x2_a0a6a12(newStuff, myRole) && eq_yjf6x2_a0a6a12_0(oldStuff, myRole)) {
       newStuff = "another";
     } else if (myEnd != myBegin) {
       newStuff = "another " + newStuff;
@@ -197,14 +197,14 @@ public class NodeGroupChange extends ModelChange {
     );
   }
 
-  private static boolean eq_yjf6x2_a0a6a21(Object a, Object b) {
+  private static boolean eq_yjf6x2_a0a6a12(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_yjf6x2_a0a6a21_0(Object a, Object b) {
+  private static boolean eq_yjf6x2_a0a6a12_0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

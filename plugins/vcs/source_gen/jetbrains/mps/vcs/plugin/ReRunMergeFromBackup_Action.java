@@ -4,8 +4,6 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
@@ -34,10 +32,11 @@ import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.generator.ModelDigestUtil;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class ReRunMergeFromBackup_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ReRunMergeFromBackup_Action.class);
 
   public ReRunMergeFromBackup_Action() {
     super("Rerun Merge from Backup", "", ICON);
@@ -157,4 +156,6 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(ReRunMergeFromBackup_Action.class);
 }

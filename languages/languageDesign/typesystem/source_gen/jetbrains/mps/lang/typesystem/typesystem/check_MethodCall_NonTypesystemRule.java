@@ -23,13 +23,13 @@ public class check_MethodCall_NonTypesystemRule extends AbstractNonTypesystemRul
 
   public void applyRule(final SNode baseMethodCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     for (SNode annotationInstance : SLinkOperations.getTargets(SLinkOperations.getTarget(baseMethodCall, "baseMethodDeclaration", false), "annotation", true)) {
-      if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(_quotation_createNode_j1qutw_a0a0a0a0(), "classifier", false)) {
+      if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(_quotation_createNode_j1qutw_a0a0a0a1(), "classifier", false)) {
         if (!(RulesUtil.withinInferenceItem(baseMethodCall))) {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(baseMethodCall, "inference method should be called only within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1196178341653", null, errorTarget);
         }
         return;
-      } else if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(_quotation_createNode_j1qutw_a0a0a0a0a(), "classifier", false)) {
+      } else if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(_quotation_createNode_j1qutw_a0a0a0a0b(), "classifier", false)) {
         if (!(RulesUtil.withinCheckingItem(baseMethodCall))) {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(baseMethodCall, "checking method should be called only within checking methods and inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "5239146621999661342", null, errorTarget);
@@ -54,14 +54,14 @@ public class check_MethodCall_NonTypesystemRule extends AbstractNonTypesystemRul
     return false;
   }
 
-  private static SNode _quotation_createNode_j1qutw_a0a0a0a0() {
+  private static SNode _quotation_createNode_j1qutw_a0a0a0a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)"), SNodeId.fromString("1196177069451")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_j1qutw_a0a0a0a0a() {
+  private static SNode _quotation_createNode_j1qutw_a0a0a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)"), SNodeId.fromString("1223644778913")));

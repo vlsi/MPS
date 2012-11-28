@@ -12,7 +12,6 @@ import jetbrains.mps.util.InternUtil;
 
 public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
   private static String[] EMPTY_ARRAY = new String[0];
-
   private BLDependenciesHandler.DependenciesRootElementHandler dependenciesRoothandler = new BLDependenciesHandler.DependenciesRootElementHandler();
   private BLDependenciesHandler.DependencyElementHandler dependencyhandler = new BLDependenciesHandler.DependencyElementHandler();
   private BLDependenciesHandler.ClassNodeElementHandler classNodehandler = new BLDependenciesHandler.ClassNodeElementHandler();

@@ -7,7 +7,6 @@ import org.jdom.Element;
 public class VarInfo {
   private static String VAR_NAME = "varName";
   private static String NODE_ID = "nodeId";
-
   private String myVarName;
   private String myNodeId;
 

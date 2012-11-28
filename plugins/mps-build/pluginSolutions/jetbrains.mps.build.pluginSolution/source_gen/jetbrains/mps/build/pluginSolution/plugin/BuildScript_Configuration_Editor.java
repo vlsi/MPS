@@ -19,11 +19,6 @@ public class BuildScript_Configuration_Editor extends SettingsEditorEx<BuildScri
   private NodeByConcept_Configuration_Editor myNode;
   private AntSettings_Configuration_Editor mySettings;
 
-  public BuildScript_Configuration_Editor(NodeByConcept_Configuration_Editor node, AntSettings_Configuration_Editor settings) {
-    myNode = node;
-    mySettings = settings;
-  }
-
   public void disposeEditor() {
     myChooser.dispose();
     Disposer.dispose(myNode);
@@ -52,5 +47,10 @@ public class BuildScript_Configuration_Editor extends SettingsEditorEx<BuildScri
   public void resetEditorFrom(final BuildScript_Configuration configuration) {
     myNode.resetEditorFrom(configuration.getNode());
     mySettings.resetEditorFrom(configuration.getSettings());
+  }
+
+  public BuildScript_Configuration_Editor(NodeByConcept_Configuration_Editor node, AntSettings_Configuration_Editor settings) {
+    myNode = node;
+    mySettings = settings;
   }
 }

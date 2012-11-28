@@ -95,7 +95,6 @@ public class ConfReader {
   private static final String REFERENCE = "reference";
   private static final String SEPARATOR = "separator";
   private static final String REF = "ref";
-
   private ConfReader.Resolver confstubResolver;
   private ConfReader.Resolver javastubResolver;
 

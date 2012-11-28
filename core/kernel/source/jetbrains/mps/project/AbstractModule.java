@@ -109,7 +109,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     model.setChanged(true);
     model.save();
 
-    ((ModelRootBase) root).register(model);
+//    ((ModelRootBase) root).register(model);
 
     for (ModelCreationListener listener : ourModelCreationListeners) {
       if (listener.isApplicable(this, model)) {

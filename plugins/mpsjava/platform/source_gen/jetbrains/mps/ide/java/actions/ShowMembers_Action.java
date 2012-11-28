@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -19,10 +18,10 @@ import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.Disposable;
 import jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.logging.Logger;
 
 public class ShowMembers_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ShowMembers_Action.class);
 
   public ShowMembers_Action() {
     super("Show Members", "", ICON);
@@ -101,4 +100,6 @@ public class ShowMembers_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "ShowMembers", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ShowMembers_Action.class);
 }

@@ -24,7 +24,7 @@ public class SNodeCompare {
     Map<String, String> aMap = (Map<String, String>) SNodeOperations.getProperties(a);
     Map<String, String> bMap = (Map<String, String>) SNodeOperations.getProperties(b);
     for (String p : SetSequence.fromSet(MapSequence.fromMap(aMap).keySet()).union(SetSequence.fromSet(MapSequence.fromMap(bMap).keySet()))) {
-      if (neq_acety0_a0a0c0a(MapSequence.fromMap(aMap).get(p), MapSequence.fromMap(bMap).get(p))) {
+      if (neq_acety0_a0a0c0b(MapSequence.fromMap(aMap).get(p), MapSequence.fromMap(bMap).get(p))) {
         return false;
       }
     }
@@ -53,10 +53,10 @@ public class SNodeCompare {
         return false;
       }
 
-      if (neq_acety0_a0e0f0b(aRef.getTargetSModelReference(), bRef.getTargetSModelReference())) {
+      if (neq_acety0_a0e0f0c(aRef.getTargetSModelReference(), bRef.getTargetSModelReference())) {
         return false;
       }
-      if (neq_acety0_a0f0f0b(aRef.getResolveInfo(), bRef.getResolveInfo())) {
+      if (neq_acety0_a0f0f0c(aRef.getResolveInfo(), bRef.getResolveInfo())) {
         return false;
       }
       if (aRef instanceof DynamicReference || bRef instanceof DynamicReference) {
@@ -68,7 +68,7 @@ public class SNodeCompare {
         }
       } else {
         // both static 
-        if (neq_acety0_a0b0a6a5a1(aRef.getTargetNodeId(), bRef.getTargetNodeId())) {
+        if (neq_acety0_a0b0a6a5a2(aRef.getTargetNodeId(), bRef.getTargetNodeId())) {
           return false;
         }
       }
@@ -95,45 +95,45 @@ public class SNodeCompare {
   }
 
   public static boolean nodeEquals(SNode a, SNode b) {
-    return eq_acety0_a0a0a0a0d_0(a.getConcept().getId(), b.getConcept().getId()) && eq_acety0_a0a0a0a0d(a.getSNodeId(), b.getSNodeId()) && nodePropertiesEquals(a, b) && nodeReferencesEquals(a, b) && nodeChildrenEquals(a, b);
+    return eq_acety0_a0a0a0a0e_0(a.getConcept().getId(), b.getConcept().getId()) && eq_acety0_a0a0a0a0e(a.getSNodeId(), b.getSNodeId()) && nodePropertiesEquals(a, b) && nodeReferencesEquals(a, b) && nodeChildrenEquals(a, b);
   }
 
-  private static boolean neq_acety0_a0a0c0a(Object a, Object b) {
+  private static boolean neq_acety0_a0a0c0b(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean neq_acety0_a0e0f0b(Object a, Object b) {
+  private static boolean neq_acety0_a0e0f0c(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean neq_acety0_a0f0f0b(Object a, Object b) {
+  private static boolean neq_acety0_a0f0f0c(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean neq_acety0_a0b0a6a5a1(Object a, Object b) {
+  private static boolean neq_acety0_a0b0a6a5a2(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean eq_acety0_a0a0a0a0d(Object a, Object b) {
+  private static boolean eq_acety0_a0a0a0a0e(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_acety0_a0a0a0a0d_0(Object a, Object b) {
+  private static boolean eq_acety0_a0a0a0a0e_0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

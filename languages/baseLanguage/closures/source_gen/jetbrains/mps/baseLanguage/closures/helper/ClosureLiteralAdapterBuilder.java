@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -65,7 +66,7 @@ public class ClosureLiteralAdapterBuilder {
   }
 
   private SNode lookupAdapterClassAnnotation(SNode literal) {
-    final SNode adapterAnn = SLinkOperations.getTarget(_quotation_createNode_wzrebk_a0a0a3(), "annotation", false);
+    final SNode adapterAnn = SLinkOperations.getTarget(_quotation_createNode_wzrebk_a0a0a5(), "annotation", false);
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(literal), "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "parameter", true)).getElement(SNodeOperations.getIndexInParent(literal)), "jetbrains.mps.baseLanguage.structure.HasAnnotation"), "annotation", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode ann) {
         return SLinkOperations.getTarget(ann, "annotation", false) == adapterAnn;
@@ -82,14 +83,14 @@ public class ClosureLiteralAdapterBuilder {
   }
 
   private SNode getAdapterClassFunctionType(SNode cls) {
-    return FunctionMethodDeclaration_Behavior.call_functionType_2857237956452412451(SNodeOperations.cast(Sequence.fromIterable(SLinkOperations.getTargets(cls, "method", true)).findFirst(new IWhereFilter<SNode>() {
+    return FunctionMethodDeclaration_Behavior.call_functionType_2857237956452412451(SNodeOperations.cast(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(cls)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode md) {
         return SNodeOperations.isInstanceOf(md, "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration");
       }
     }), "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration"));
   }
 
-  private static SNode _quotation_createNode_wzrebk_a0a0a3() {
+  private static SNode _quotation_createNode_wzrebk_a0a0a5() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, SModelReference.fromString("r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)"), SNodeId.fromString("8649343297855554552")));

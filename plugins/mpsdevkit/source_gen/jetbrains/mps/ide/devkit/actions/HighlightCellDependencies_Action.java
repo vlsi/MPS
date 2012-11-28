@@ -4,8 +4,6 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -20,10 +18,11 @@ import java.util.Set;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SNodePointer;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class HighlightCellDependencies_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(HighlightCellDependencies_Action.class);
 
   public HighlightCellDependencies_Action() {
     super("Higlighted Cell's Dependent Nodes", "", ICON);
@@ -88,4 +87,6 @@ public class HighlightCellDependencies_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(HighlightCellDependencies_Action.class);
 }

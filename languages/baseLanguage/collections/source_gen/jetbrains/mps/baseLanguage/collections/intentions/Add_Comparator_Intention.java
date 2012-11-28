@@ -12,11 +12,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.intentions.IntentionDescriptor;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class Add_Comparator_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -70,6 +70,23 @@ public class Add_Comparator_Intention implements IntentionFactory {
     return myCachedExecutable;
   }
 
+  public class IntentionImplementation implements IntentionExecutable {
+    public IntentionImplementation() {
+    }
+
+    public String getDescription(final SNode node, final EditorContext editorContext) {
+      return "Specify Comparator";
+    }
+
+    public void execute(final SNode node, final EditorContext editorContext) {
+      SLinkOperations.setTarget(node, "comparator", _quotation_createNode_1k32yi_a0a0a0(SNodeOperations.copyNode(SLinkOperations.getTarget(node, "elementType", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(node, "elementType", true))), true);
+    }
+
+    public IntentionDescriptor getDescriptor() {
+      return Add_Comparator_Intention.this;
+    }
+  }
+
   private static SNode _quotation_createNode_1k32yi_a0a0a0(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -95,22 +112,5 @@ public class Add_Comparator_Intention implements IntentionFactory {
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
     quotedNode_3.addChild("body", quotedNode_6);
     return quotedNode_3;
-  }
-
-  public class IntentionImplementation implements IntentionExecutable {
-    public IntentionImplementation() {
-    }
-
-    public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Specify Comparator";
-    }
-
-    public void execute(final SNode node, final EditorContext editorContext) {
-      SLinkOperations.setTarget(node, "comparator", _quotation_createNode_1k32yi_a0a0a0(SNodeOperations.copyNode(SLinkOperations.getTarget(node, "elementType", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(node, "elementType", true))), true);
-    }
-
-    public IntentionDescriptor getDescriptor() {
-      return Add_Comparator_Intention.this;
-    }
   }
 }

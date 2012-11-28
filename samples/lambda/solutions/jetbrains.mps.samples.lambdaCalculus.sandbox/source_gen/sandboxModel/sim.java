@@ -18,10 +18,6 @@ public class sim {
     return (Integer) let_2167053794906818091(new sim.Function_2167053794906818092());
   }
 
-  public static Object let_2167053794906818091(Function sq) {
-    return ((Integer) ((Function) sq.copy()).apply((Integer) ((Function) sq.copy()).apply(2)));
-  }
-
   public static class Function_2167053794906818092 extends Function {
     private List myOuterVars = new ArrayList();
 
@@ -48,5 +44,9 @@ public class sim {
     public Function copy() {
       return new sim.Function_2167053794906818092(myOuterVars);
     }
+  }
+
+  public static Object let_2167053794906818091(Function sq) {
+    return ((Integer) ((Function) sq.copy()).apply((Integer) ((Function) sq.copy()).apply(2)));
   }
 }

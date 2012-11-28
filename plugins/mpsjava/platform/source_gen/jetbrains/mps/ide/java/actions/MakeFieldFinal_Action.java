@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
@@ -18,10 +17,10 @@ import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.logging.Logger;
 
 public class MakeFieldFinal_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(MakeFieldFinal_Action.class);
 
   public MakeFieldFinal_Action() {
     super("Make Field Final", "", ICON);
@@ -89,4 +88,6 @@ public class MakeFieldFinal_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "MakeFieldFinal", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(MakeFieldFinal_Action.class);
 }

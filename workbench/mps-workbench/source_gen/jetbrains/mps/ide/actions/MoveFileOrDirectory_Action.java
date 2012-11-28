@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -23,10 +22,10 @@ import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
+import jetbrains.mps.logging.Logger;
 
 public class MoveFileOrDirectory_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(MoveFileOrDirectory_Action.class);
 
   public MoveFileOrDirectory_Action() {
     super("Move...", "", ICON);
@@ -110,4 +109,6 @@ public class MoveFileOrDirectory_Action extends BaseAction {
     }
     return false;
   }
+
+  private static Logger LOG = Logger.getLogger(MoveFileOrDirectory_Action.class);
 }

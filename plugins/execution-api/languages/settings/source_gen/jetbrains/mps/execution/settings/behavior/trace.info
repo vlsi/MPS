@@ -688,7 +688,7 @@
       <varInfo nodeId="946964771156067000" varName="name" />
       <varInfo nodeId="946964771156066990" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="946964771156067009" fileName="EditorOperationDeclaration_Behavior.java" startLine="19" startPosition="470" endLine="23" endPosition="5" unitName="jetbrains.mps.execution.settings.behavior.EditorOperationDeclaration_Behavior$1" />
+    <unitInfo nodeId="946964771156067009" fileName="EditorOperationDeclaration_Behavior.java" startLine="19" startPosition="490" endLine="23" endPosition="5" unitName="jetbrains.mps.execution.settings.behavior.EditorOperationDeclaration_Behavior$1" />
     <unitInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="14" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.EditorOperationDeclaration_Behavior" />
   </root>
   <root nodeId="946964771156067020" modelId="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)">

@@ -20,7 +20,7 @@ public class typeof_Source_ConceptFunctionParameter_InferenceRule extends Abstra
     {
       SNode _nodeToCheck_1029348928467 = source;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "3642991921658150985", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "3642991921658150982", true), (SNode) typeCheckingContext.typeOf(check_b03dtm_a0a0a0(SNodeOperations.getAncestor(source, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", false, false)), "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "3642991921658150996", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "3642991921658150982", true), (SNode) typeCheckingContext.typeOf(check_b03dtm_a0a0a1(SNodeOperations.getAncestor(source, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", false, false)), "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "3642991921658150996", true), _info_12389875345);
     }
   }
 
@@ -39,7 +39,7 @@ public class typeof_Source_ConceptFunctionParameter_InferenceRule extends Abstra
     return true;
   }
 
-  private static SNode check_b03dtm_a0a0a0(SNode checkedDotOperand) {
+  private static SNode check_b03dtm_a0a0a1(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, "source", true);
     }

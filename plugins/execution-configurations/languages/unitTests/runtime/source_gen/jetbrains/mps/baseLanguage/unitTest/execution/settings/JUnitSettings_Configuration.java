@@ -4,9 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.settings;
 
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jdom.Element;
@@ -25,16 +23,12 @@ import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.execution.api.settings.SettingsEditorEx;
+import jetbrains.mps.logging.Logger;
 
 public class JUnitSettings_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
-  private static Logger LOG = Logger.getLogger(JUnitSettings_Configuration.class);
-
   @NotNull
   private JUnitSettings_Configuration.MyState myState = new JUnitSettings_Configuration.MyState();
-  private SettingsEditorEx<JUnitSettings_Configuration> myEditorEx;
-
-  public JUnitSettings_Configuration() {
-  }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
     if (this.getRunType() == null) {
@@ -43,7 +37,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     if (this.getRunType() != null) {
       // We do not validate, only check if there is something to test, since validating everything be very slow 
       // see MPS-8781 JUnit run configuration check method performance. 
-      if (neq_jtq3ac_a0a2a1a0a0(this.getRunType(), JUnitRunTypes2.PROJECT) && ListSequence.fromList(getTests(null)).isEmpty()) {
+      if (neq_jtq3ac_a0a2a1a0a1(this.getRunType(), JUnitRunTypes2.PROJECT) && ListSequence.fromList(getTests(null)).isEmpty()) {
         throw new RuntimeConfigurationException("Could not find tests to run.");
       }
     }
@@ -130,7 +124,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
         }
       }
     };
-    if (eq_jtq3ac_a0a4a41_0(this.getRunType(), JUnitRunTypes2.PROJECT) || eq_jtq3ac_a0a4a41(this.getRunType(), JUnitRunTypes2.MODULE)) {
+    if (eq_jtq3ac_a0a4a51_0(this.getRunType(), JUnitRunTypes2.PROJECT) || eq_jtq3ac_a0a4a51(this.getRunType(), JUnitRunTypes2.MODULE)) {
       // collecting for module/project is slow, so execute under progress 
       // todo: get rid of casts to MPSProject 
       ProgressManager.getInstance().runProcessWithProgressSynchronously(collect, "Collecting Tests To Run", false, ProjectHelper.toIdeaProject(project));
@@ -167,42 +161,6 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     return clone;
   }
 
-  public JUnitSettings_Configuration createCloneTemplate() {
-    return new JUnitSettings_Configuration();
-  }
-
-  public JUnitSettings_Configuration_Editor getEditor() {
-    return new JUnitSettings_Configuration_Editor();
-  }
-
-  public SettingsEditorEx<JUnitSettings_Configuration> getEditorEx() {
-    if (myEditorEx == null) {
-      myEditorEx = getEditor();
-    }
-    return myEditorEx;
-  }
-
-  private static boolean neq_jtq3ac_a0a2a1a0a0(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
-  }
-
-  private static boolean eq_jtq3ac_a0a4a41(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_jtq3ac_a0a4a41_0(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
   public class MyState {
     public String myModel;
     public String myModule;
@@ -227,5 +185,48 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
       state.myRunType = myRunType;
       return state;
     }
+  }
+
+  public JUnitSettings_Configuration() {
+  }
+
+  private SettingsEditorEx<JUnitSettings_Configuration> myEditorEx;
+
+  public JUnitSettings_Configuration createCloneTemplate() {
+    return new JUnitSettings_Configuration();
+  }
+
+  public JUnitSettings_Configuration_Editor getEditor() {
+    return new JUnitSettings_Configuration_Editor();
+  }
+
+  public SettingsEditorEx<JUnitSettings_Configuration> getEditorEx() {
+    if (myEditorEx == null) {
+      myEditorEx = getEditor();
+    }
+    return myEditorEx;
+  }
+
+  private static Logger LOG = Logger.getLogger(JUnitSettings_Configuration.class);
+
+  private static boolean neq_jtq3ac_a0a2a1a0a1(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
+  }
+
+  private static boolean eq_jtq3ac_a0a4a51(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_jtq3ac_a0a4a51_0(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

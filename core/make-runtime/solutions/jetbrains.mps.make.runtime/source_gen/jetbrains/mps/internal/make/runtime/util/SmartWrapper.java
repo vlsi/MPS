@@ -10,7 +10,6 @@ import java.util.regex.Pattern;
 public class SmartWrapper<T> {
   private static Map<String, String> WRAPPERS_CACHE = MapSequence.fromMap(new HashMap<String, String>());
   private static Pattern PATTERN = Pattern.compile(".+\\.(.+)$");
-
   private final T towrap;
 
   public SmartWrapper(T towrap) {
@@ -45,7 +44,7 @@ public class SmartWrapper<T> {
     if (!(that instanceof SmartWrapper)) {
       return false;
     }
-    return eq_awov2t_a0c0d(this.towrap, ((SmartWrapper) that).towrap);
+    return eq_awov2t_a0c0h(this.towrap, ((SmartWrapper) that).towrap);
   }
 
   @Override
@@ -58,7 +57,7 @@ public class SmartWrapper<T> {
     return h;
   }
 
-  private static boolean eq_awov2t_a0c0d(Object a, Object b) {
+  private static boolean eq_awov2t_a0c0h(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

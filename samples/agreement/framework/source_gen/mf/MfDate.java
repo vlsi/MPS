@@ -12,7 +12,6 @@ public class MfDate implements Comparable {
   private static MfDate myToday;
   public static final MfDate PAST = new MfDate(new GregorianCalendar(0, 1, 1));
   public static final MfDate FUTURE = new MfDate(new GregorianCalendar(10000, 1, 1));
-
   private SimpleDateFormat myFormatter = (SimpleDateFormat) DateFormat.getDateInstance();
   private GregorianCalendar myBase;
 

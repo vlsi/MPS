@@ -22,7 +22,7 @@ public class typeof_InsertElementOperation_InferenceRule extends AbstractInferen
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(op, "index", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1225622529097", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1225622519598", true), (SNode) _quotation_createNode_fjdk84_a0a0a(), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1225622519598", true), (SNode) _quotation_createNode_fjdk84_a0a0b(), false, true, _info_12389875345);
     }
     final SNode elementType_typevar_1225625140805 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
@@ -59,7 +59,7 @@ public class typeof_InsertElementOperation_InferenceRule extends AbstractInferen
     return false;
   }
 
-  private static SNode _quotation_createNode_fjdk84_a0a0a() {
+  private static SNode _quotation_createNode_fjdk84_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

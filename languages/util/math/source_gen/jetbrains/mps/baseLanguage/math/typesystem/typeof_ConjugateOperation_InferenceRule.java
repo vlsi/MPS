@@ -29,7 +29,7 @@ public class typeof_ConjugateOperation_InferenceRule extends AbstractInferenceRu
       typeCheckingContext.whenConcrete(t, new Runnable() {
         public void run() {
           if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType")) {
-            SNode result = _quotation_createNode_2f5qmh_a0a0a0a0a(MathTypeUtil.getElementType(typeCheckingContext.getExpandedNode(t)));
+            SNode result = _quotation_createNode_2f5qmh_a0a0a0a0b(MathTypeUtil.getElementType(typeCheckingContext.getExpandedNode(t)));
             SPropertyOperations.set(result, "columns", "" + (SPropertyOperations.getInteger(SNodeOperations.cast(typeCheckingContext.getExpandedNode(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType"), "rows")));
             SPropertyOperations.set(result, "rows", "" + (SPropertyOperations.getInteger(SNodeOperations.cast(typeCheckingContext.getExpandedNode(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType"), "columns")));
             {
@@ -38,7 +38,7 @@ public class typeof_ConjugateOperation_InferenceRule extends AbstractInferenceRu
               typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7388416617632229314", true), (SNode) result, false, true, _info_12389875345);
             }
           } else if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(t), "jetbrains.mps.baseLanguage.math.structure.VectorType")) {
-            SNode result = _quotation_createNode_2f5qmh_a0a0a0a0a0(MathTypeUtil.getElementType(typeCheckingContext.getExpandedNode(t)));
+            SNode result = _quotation_createNode_2f5qmh_a0a0a0a0a1(MathTypeUtil.getElementType(typeCheckingContext.getExpandedNode(t)));
             SPropertyOperations.set(result, "columns", "" + (SPropertyOperations.getInteger(SNodeOperations.cast(typeCheckingContext.getExpandedNode(t), "jetbrains.mps.baseLanguage.math.structure.VectorType"), "height")));
             SPropertyOperations.set(result, "rows", "" + (1));
             {
@@ -78,7 +78,7 @@ public class typeof_ConjugateOperation_InferenceRule extends AbstractInferenceRu
     return false;
   }
 
-  private static SNode _quotation_createNode_2f5qmh_a0a0a0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_2f5qmh_a0a0a0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
@@ -89,7 +89,7 @@ public class typeof_ConjugateOperation_InferenceRule extends AbstractInferenceRu
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_2f5qmh_a0a0a0a0a0(Object parameter_1) {
+  private static SNode _quotation_createNode_2f5qmh_a0a0a0a0a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);

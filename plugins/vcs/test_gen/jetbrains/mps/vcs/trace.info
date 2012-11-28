@@ -9,380 +9,380 @@
     <nodeInfo nodeId="7314351270975463292" fileName="DiskMemoryConflictsTest.java" startLine="48" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FIELD_DEFAULT_NAME" />
     <nodeInfo nodeId="7314351270975463296" fileName="DiskMemoryConflictsTest.java" startLine="49" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FIELD_NAME_IN_FILE" />
     <nodeInfo nodeId="7314351270975463300" fileName="DiskMemoryConflictsTest.java" startLine="50" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FIELD_NAME_IN_MODEL" />
-    <nodeInfo nodeId="7314351270975463280" fileName="DiskMemoryConflictsTest.java" startLine="52" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="7314351270975463283" fileName="DiskMemoryConflictsTest.java" startLine="53" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModule" />
-    <nodeInfo nodeId="7314351270975463286" fileName="DiskMemoryConflictsTest.java" startLine="54" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeBackup" />
-    <nodeInfo nodeId="7314351270975463289" fileName="DiskMemoryConflictsTest.java" startLine="55" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelDescriptor" />
-    <nodeInfo nodeId="7314351270975463312" fileName="DiskMemoryConflictsTest.java" startLine="61" startPosition="41" endLine="62" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7314351270975463321" fileName="DiskMemoryConflictsTest.java" startLine="62" startPosition="97" endLine="63" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7314351270975463330" fileName="DiskMemoryConflictsTest.java" startLine="63" startPosition="127" endLine="64" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7884566175275140831" fileName="DiskMemoryConflictsTest.java" startLine="66" startPosition="53" endLine="67" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7884566175275140852" fileName="DiskMemoryConflictsTest.java" startLine="68" startPosition="13" endLine="69" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7884566175275140856" fileName="DiskMemoryConflictsTest.java" startLine="69" startPosition="30" endLine="70" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7884566175275140865" fileName="DiskMemoryConflictsTest.java" startLine="70" startPosition="147" endLine="71" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7884566175275140884" fileName="DiskMemoryConflictsTest.java" startLine="73" startPosition="31" endLine="74" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7884566175275140895" fileName="DiskMemoryConflictsTest.java" startLine="76" startPosition="13" endLine="77" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7884566175275140912" fileName="DiskMemoryConflictsTest.java" startLine="80" startPosition="114" endLine="81" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7884566175275140918" fileName="DiskMemoryConflictsTest.java" startLine="81" startPosition="37" endLine="82" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7884566175275140924" fileName="DiskMemoryConflictsTest.java" startLine="82" startPosition="38" endLine="83" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7884566175275140930" fileName="DiskMemoryConflictsTest.java" startLine="83" startPosition="48" endLine="84" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7884566175275140935" fileName="DiskMemoryConflictsTest.java" startLine="84" startPosition="50" endLine="85" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7884566175275140937" fileName="DiskMemoryConflictsTest.java" startLine="88" startPosition="11" endLine="89" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7884566175275140843" fileName="DiskMemoryConflictsTest.java" startLine="90" startPosition="31" endLine="91" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7884566175275140847" fileName="DiskMemoryConflictsTest.java" startLine="91" startPosition="30" endLine="92" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7884566175275140943" fileName="DiskMemoryConflictsTest.java" startLine="93" startPosition="9" endLine="94" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7314351270975463476" fileName="DiskMemoryConflictsTest.java" startLine="97" startPosition="20" endLine="98" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463502" fileName="DiskMemoryConflictsTest.java" startLine="102" startPosition="68" endLine="103" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7314351270975463538" fileName="DiskMemoryConflictsTest.java" startLine="107" startPosition="15" endLine="108" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7314351270975463542" fileName="DiskMemoryConflictsTest.java" startLine="108" startPosition="71" endLine="109" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463545" fileName="DiskMemoryConflictsTest.java" startLine="109" startPosition="50" endLine="110" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7314351270975463554" fileName="DiskMemoryConflictsTest.java" startLine="110" startPosition="88" endLine="111" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463570" fileName="DiskMemoryConflictsTest.java" startLine="112" startPosition="38" endLine="113" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463563" fileName="DiskMemoryConflictsTest.java" startLine="114" startPosition="20" endLine="115" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463580" fileName="DiskMemoryConflictsTest.java" startLine="121" startPosition="18" endLine="122" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463582" fileName="DiskMemoryConflictsTest.java" startLine="122" startPosition="38" endLine="123" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7314351270975463592" fileName="DiskMemoryConflictsTest.java" startLine="126" startPosition="50" endLine="127" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463599" fileName="DiskMemoryConflictsTest.java" startLine="130" startPosition="42" endLine="131" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7314351270975463608" fileName="DiskMemoryConflictsTest.java" startLine="134" startPosition="67" endLine="135" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7314351270975463616" fileName="DiskMemoryConflictsTest.java" startLine="136" startPosition="33" endLine="137" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7314351270975463626" fileName="DiskMemoryConflictsTest.java" startLine="139" startPosition="9" endLine="140" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7314351270975463632" fileName="DiskMemoryConflictsTest.java" startLine="140" startPosition="48" endLine="141" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7314351270975463636" fileName="DiskMemoryConflictsTest.java" startLine="141" startPosition="107" endLine="142" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7314351270975463643" fileName="DiskMemoryConflictsTest.java" startLine="142" startPosition="91" endLine="143" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7314351270975463647" fileName="DiskMemoryConflictsTest.java" startLine="143" startPosition="30" endLine="144" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7314351270975463659" fileName="DiskMemoryConflictsTest.java" startLine="145" startPosition="37" endLine="146" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7314351270975463713" fileName="DiskMemoryConflictsTest.java" startLine="147" startPosition="171" endLine="148" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463673" fileName="DiskMemoryConflictsTest.java" startLine="150" startPosition="22" endLine="151" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7314351270975463707" fileName="DiskMemoryConflictsTest.java" startLine="153" startPosition="38" endLine="154" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7314351270975463691" fileName="DiskMemoryConflictsTest.java" startLine="155" startPosition="20" endLine="156" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463701" fileName="DiskMemoryConflictsTest.java" startLine="156" startPosition="89" endLine="157" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463705" fileName="DiskMemoryConflictsTest.java" startLine="157" startPosition="30" endLine="158" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7314351270975463717" fileName="DiskMemoryConflictsTest.java" startLine="161" startPosition="9" endLine="162" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463722" fileName="DiskMemoryConflictsTest.java" startLine="163" startPosition="7" endLine="164" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463726" fileName="DiskMemoryConflictsTest.java" startLine="164" startPosition="22" endLine="165" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7314351270975463732" fileName="DiskMemoryConflictsTest.java" startLine="165" startPosition="58" endLine="166" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7314351270975463743" fileName="DiskMemoryConflictsTest.java" startLine="167" startPosition="33" endLine="168" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463748" fileName="DiskMemoryConflictsTest.java" startLine="169" startPosition="7" endLine="170" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463759" fileName="DiskMemoryConflictsTest.java" startLine="171" startPosition="60" endLine="172" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463764" fileName="DiskMemoryConflictsTest.java" startLine="173" startPosition="7" endLine="174" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463621" fileName="DiskMemoryConflictsTest.java" startLine="175" startPosition="39" endLine="176" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463776" fileName="DiskMemoryConflictsTest.java" startLine="177" startPosition="5" endLine="178" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7314351270975463782" fileName="DiskMemoryConflictsTest.java" startLine="181" startPosition="41" endLine="182" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7314351270975463791" fileName="DiskMemoryConflictsTest.java" startLine="185" startPosition="48" endLine="186" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463798" fileName="DiskMemoryConflictsTest.java" startLine="189" startPosition="36" endLine="190" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463808" fileName="DiskMemoryConflictsTest.java" startLine="193" startPosition="67" endLine="194" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463812" fileName="DiskMemoryConflictsTest.java" startLine="194" startPosition="60" endLine="195" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463828" fileName="DiskMemoryConflictsTest.java" startLine="196" startPosition="28" endLine="197" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463822" fileName="DiskMemoryConflictsTest.java" startLine="198" startPosition="12" endLine="199" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463846" fileName="DiskMemoryConflictsTest.java" startLine="203" startPosition="207" endLine="204" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463858" fileName="DiskMemoryConflictsTest.java" startLine="205" startPosition="78" endLine="206" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463855" fileName="DiskMemoryConflictsTest.java" startLine="207" startPosition="12" endLine="208" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463861" fileName="DiskMemoryConflictsTest.java" startLine="209" startPosition="5" endLine="210" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463863" fileName="DiskMemoryConflictsTest.java" startLine="210" startPosition="17" endLine="211" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7314351270975463883" fileName="DiskMemoryConflictsTest.java" startLine="214" startPosition="39" endLine="215" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463935" fileName="DiskMemoryConflictsTest.java" startLine="229" startPosition="56" endLine="230" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7314351270975463948" fileName="DiskMemoryConflictsTest.java" startLine="233" startPosition="27" endLine="234" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463917" fileName="DiskMemoryConflictsTest.java" startLine="237" startPosition="12" endLine="238" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7314351270975463930" fileName="DiskMemoryConflictsTest.java" startLine="240" startPosition="27" endLine="241" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463954" fileName="DiskMemoryConflictsTest.java" startLine="244" startPosition="5" endLine="245" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463977" fileName="DiskMemoryConflictsTest.java" startLine="253" startPosition="5" endLine="254" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463982" fileName="DiskMemoryConflictsTest.java" startLine="254" startPosition="43" endLine="255" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7314351270975464007" fileName="DiskMemoryConflictsTest.java" startLine="256" startPosition="76" endLine="257" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464002" fileName="DiskMemoryConflictsTest.java" startLine="259" startPosition="80" endLine="260" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463997" fileName="DiskMemoryConflictsTest.java" startLine="261" startPosition="14" endLine="262" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464011" fileName="DiskMemoryConflictsTest.java" startLine="264" startPosition="5" endLine="265" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464018" fileName="DiskMemoryConflictsTest.java" startLine="268" startPosition="29" endLine="269" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7314351270975464035" fileName="DiskMemoryConflictsTest.java" startLine="270" startPosition="39" endLine="271" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464044" fileName="DiskMemoryConflictsTest.java" startLine="272" startPosition="5" endLine="273" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7314351270975464053" fileName="DiskMemoryConflictsTest.java" startLine="273" startPosition="84" endLine="274" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="7314351270975464057" fileName="DiskMemoryConflictsTest.java" startLine="274" startPosition="22" endLine="275" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464062" fileName="DiskMemoryConflictsTest.java" startLine="275" startPosition="19" endLine="276" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464124" fileName="DiskMemoryConflictsTest.java" startLine="280" startPosition="30" endLine="281" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464127" fileName="DiskMemoryConflictsTest.java" startLine="281" startPosition="45" endLine="282" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464140" fileName="DiskMemoryConflictsTest.java" startLine="284" startPosition="27" endLine="285" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464076" fileName="DiskMemoryConflictsTest.java" startLine="288" startPosition="12" endLine="289" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7314351270975464089" fileName="DiskMemoryConflictsTest.java" startLine="291" startPosition="27" endLine="292" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464108" fileName="DiskMemoryConflictsTest.java" startLine="292" startPosition="199" endLine="293" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464116" fileName="DiskMemoryConflictsTest.java" startLine="293" startPosition="90" endLine="294" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464121" fileName="DiskMemoryConflictsTest.java" startLine="296" startPosition="20" endLine="297" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464144" fileName="DiskMemoryConflictsTest.java" startLine="298" startPosition="5" endLine="299" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1581213309338464409" fileName="DiskMemoryConflictsTest.java" startLine="302" startPosition="38" endLine="303" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1581213309338494791" fileName="DiskMemoryConflictsTest.java" startLine="304" startPosition="9" endLine="305" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1581213309338544008" fileName="DiskMemoryConflictsTest.java" startLine="306" startPosition="30" endLine="307" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1581213309338421310" fileName="DiskMemoryConflictsTest.java" startLine="308" startPosition="5" endLine="309" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7314351270975464152" fileName="DiskMemoryConflictsTest.java" startLine="312" startPosition="55" endLine="313" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7314351270975464154" fileName="DiskMemoryConflictsTest.java" startLine="313" startPosition="49" endLine="314" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7314351270975464156" fileName="DiskMemoryConflictsTest.java" startLine="314" startPosition="67" endLine="315" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7314351270975464171" fileName="DiskMemoryConflictsTest.java" startLine="316" startPosition="68" endLine="317" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464174" fileName="DiskMemoryConflictsTest.java" startLine="317" startPosition="14" endLine="318" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464185" fileName="DiskMemoryConflictsTest.java" startLine="319" startPosition="11" endLine="320" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464179" fileName="DiskMemoryConflictsTest.java" startLine="321" startPosition="40" endLine="322" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464181" fileName="DiskMemoryConflictsTest.java" startLine="322" startPosition="22" endLine="323" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7314351270975464188" fileName="DiskMemoryConflictsTest.java" startLine="325" startPosition="5" endLine="326" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464197" fileName="DiskMemoryConflictsTest.java" startLine="329" startPosition="32" endLine="330" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7314351270975464199" fileName="DiskMemoryConflictsTest.java" startLine="330" startPosition="60" endLine="331" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7314351270975464201" fileName="DiskMemoryConflictsTest.java" startLine="331" startPosition="67" endLine="332" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7314351270975464215" fileName="DiskMemoryConflictsTest.java" startLine="333" startPosition="50" endLine="334" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464218" fileName="DiskMemoryConflictsTest.java" startLine="334" startPosition="14" endLine="335" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464229" fileName="DiskMemoryConflictsTest.java" startLine="336" startPosition="11" endLine="337" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464223" fileName="DiskMemoryConflictsTest.java" startLine="338" startPosition="40" endLine="339" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464225" fileName="DiskMemoryConflictsTest.java" startLine="339" startPosition="22" endLine="340" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7314351270975464232" fileName="DiskMemoryConflictsTest.java" startLine="342" startPosition="5" endLine="343" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464241" fileName="DiskMemoryConflictsTest.java" startLine="346" startPosition="33" endLine="347" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463304" fileName="DiskMemoryConflictsTest.java" startLine="57" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiskMemoryConflictsTest#()V" />
-    <nodeInfo nodeId="7314351270975463561" fileName="DiskMemoryConflictsTest.java" startLine="114" startPosition="18" endLine="116" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7314351270975463820" fileName="DiskMemoryConflictsTest.java" startLine="198" startPosition="10" endLine="200" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7314351270975463853" fileName="DiskMemoryConflictsTest.java" startLine="207" startPosition="10" endLine="209" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7314351270975463973" fileName="DiskMemoryConflictsTest.java" startLine="248" startPosition="0" endLine="250" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7314351270975463995" fileName="DiskMemoryConflictsTest.java" startLine="261" startPosition="12" endLine="263" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7314351270975463233" fileName="DiskMemoryConflictsTest.java" startLine="359" startPosition="0" endLine="361" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Action#()V" />
-    <nodeInfo nodeId="7314351270975463240" fileName="DiskMemoryConflictsTest.java" startLine="367" startPosition="0" endLine="369" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VersionToChoose#()V" />
-    <nodeInfo nodeId="7314351270975463247" fileName="DiskMemoryConflictsTest.java" startLine="375" startPosition="0" endLine="377" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiskModification#()V" />
-    <nodeInfo nodeId="7884566175275140880" fileName="DiskMemoryConflictsTest.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7314351270975463472" fileName="DiskMemoryConflictsTest.java" startLine="96" startPosition="28" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7314351270975463586" fileName="DiskMemoryConflictsTest.java" startLine="126" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFieldNameInModel#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7314351270975463595" fileName="DiskMemoryConflictsTest.java" startLine="130" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldNameFromModel#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7314351270975463610" fileName="DiskMemoryConflictsTest.java" startLine="135" startPosition="19" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7314351270975463738" fileName="DiskMemoryConflictsTest.java" startLine="166" startPosition="50" endLine="169" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7314351270975463752" fileName="DiskMemoryConflictsTest.java" startLine="170" startPosition="16" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7314351270975463778" fileName="DiskMemoryConflictsTest.java" startLine="181" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldNameFromFile#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7314351270975463785" fileName="DiskMemoryConflictsTest.java" startLine="185" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFieldNameInFile#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7314351270975463794" fileName="DiskMemoryConflictsTest.java" startLine="189" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkInitialState#()V" />
-    <nodeInfo nodeId="7314351270975463926" fileName="DiskMemoryConflictsTest.java" startLine="240" startPosition="0" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7314351270975464025" fileName="DiskMemoryConflictsTest.java" startLine="269" startPosition="80" endLine="272" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7314351270975464136" fileName="DiskMemoryConflictsTest.java" startLine="284" startPosition="0" endLine="287" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7314351270975464250" fileName="DiskMemoryConflictsTest.java" startLine="349" startPosition="0" endLine="352" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7314351270975463689" fileName="DiskMemoryConflictsTest.java" startLine="155" startPosition="18" endLine="159" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7314351270975463903" fileName="DiskMemoryConflictsTest.java" startLine="216" startPosition="82" endLine="220" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7314351270975463895" fileName="DiskMemoryConflictsTest.java" startLine="221" startPosition="16" endLine="225" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7314351270975463944" fileName="DiskMemoryConflictsTest.java" startLine="232" startPosition="0" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7314351270975463968" fileName="DiskMemoryConflictsTest.java" startLine="246" startPosition="9" endLine="250" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7884566175275140873" fileName="DiskMemoryConflictsTest.java" startLine="71" startPosition="62" endLine="76" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463557" fileName="DiskMemoryConflictsTest.java" startLine="111" startPosition="39" endLine="116" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7314351270975463816" fileName="DiskMemoryConflictsTest.java" startLine="195" startPosition="59" endLine="200" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7314351270975463849" fileName="DiskMemoryConflictsTest.java" startLine="204" startPosition="45" endLine="209" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7314351270975463893" fileName="DiskMemoryConflictsTest.java" startLine="221" startPosition="14" endLine="226" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7314351270975463919" fileName="DiskMemoryConflictsTest.java" startLine="238" startPosition="26" endLine="243" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463991" fileName="DiskMemoryConflictsTest.java" startLine="258" startPosition="12" endLine="263" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7314351270975464129" fileName="DiskMemoryConflictsTest.java" startLine="282" startPosition="19" endLine="287" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975464085" fileName="DiskMemoryConflictsTest.java" startLine="291" startPosition="0" endLine="296" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1581213309338525668" fileName="DiskMemoryConflictsTest.java" startLine="303" startPosition="98" endLine="308" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7314351270975464245" fileName="DiskMemoryConflictsTest.java" startLine="347" startPosition="45" endLine="352" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463937" fileName="DiskMemoryConflictsTest.java" startLine="230" startPosition="33" endLine="236" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463989" fileName="DiskMemoryConflictsTest.java" startLine="258" startPosition="10" endLine="264" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7314351270975464176" fileName="DiskMemoryConflictsTest.java" startLine="318" startPosition="18" endLine="324" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7314351270975464220" fileName="DiskMemoryConflictsTest.java" startLine="335" startPosition="18" endLine="341" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7884566175275140907" fileName="DiskMemoryConflictsTest.java" startLine="79" startPosition="115" endLine="86" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7314351270975463685" fileName="DiskMemoryConflictsTest.java" startLine="152" startPosition="34" endLine="159" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7314351270975463915" fileName="DiskMemoryConflictsTest.java" startLine="237" startPosition="10" endLine="244" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7314351270975464078" fileName="DiskMemoryConflictsTest.java" startLine="289" startPosition="24" endLine="296" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463958" fileName="DiskMemoryConflictsTest.java" startLine="245" startPosition="45" endLine="253" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7314351270975464237" fileName="DiskMemoryConflictsTest.java" startLine="346" startPosition="0" endLine="354" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="waitEDT#()V" />
-    <nodeInfo nodeId="7884566175275140902" fileName="DiskMemoryConflictsTest.java" startLine="78" startPosition="92" endLine="87" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7314351270975463680" fileName="DiskMemoryConflictsTest.java" startLine="151" startPosition="59" endLine="160" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7314351270975463801" fileName="DiskMemoryConflictsTest.java" startLine="193" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkSynchronizedState#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7314351270975463985" fileName="DiskMemoryConflictsTest.java" startLine="255" startPosition="29" endLine="264" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1581213309338397147" fileName="DiskMemoryConflictsTest.java" startLine="302" startPosition="0" endLine="311" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModelFile#()Ljava/io/File;" />
-    <nodeInfo nodeId="7314351270975464014" fileName="DiskMemoryConflictsTest.java" startLine="268" startPosition="0" endLine="278" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refreshVfs#()V" />
-    <nodeInfo nodeId="7314351270975464074" fileName="DiskMemoryConflictsTest.java" startLine="288" startPosition="10" endLine="298" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7314351270975464160" fileName="DiskMemoryConflictsTest.java" startLine="315" startPosition="18" endLine="325" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="7314351270975464205" fileName="DiskMemoryConflictsTest.java" startLine="332" startPosition="18" endLine="342" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="7884566175275140897" fileName="DiskMemoryConflictsTest.java" startLine="77" startPosition="30" endLine="88" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7314351270975463889" fileName="DiskMemoryConflictsTest.java" startLine="215" startPosition="35" endLine="226" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7314351270975463532" fileName="DiskMemoryConflictsTest.java" startLine="106" startPosition="112" endLine="118" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7314351270975463670" fileName="DiskMemoryConflictsTest.java" startLine="149" startPosition="14" endLine="161" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7314351270975463522" fileName="DiskMemoryConflictsTest.java" startLine="105" startPosition="25" endLine="119" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7314351270975463665" fileName="DiskMemoryConflictsTest.java" startLine="146" startPosition="41" endLine="161" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7314351270975463877" fileName="DiskMemoryConflictsTest.java" startLine="213" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="show#(Ljava/lang/String;)I" />
-    <nodeInfo nodeId="7314351270975463518" fileName="DiskMemoryConflictsTest.java" startLine="105" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7314351270975463911" fileName="DiskMemoryConflictsTest.java" startLine="228" startPosition="7" endLine="244" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7314351270975464146" fileName="DiskMemoryConflictsTest.java" startLine="312" startPosition="0" endLine="328" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setLastModified#(J)V" />
-    <nodeInfo nodeId="7314351270975464193" fileName="DiskMemoryConflictsTest.java" startLine="329" startPosition="0" endLine="345" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="delete#()V" />
-    <nodeInfo nodeId="7314351270975463872" fileName="DiskMemoryConflictsTest.java" startLine="211" startPosition="54" endLine="228" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463511" fileName="DiskMemoryConflictsTest.java" startLine="103" startPosition="42" endLine="121" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7314351270975463654" fileName="DiskMemoryConflictsTest.java" startLine="144" startPosition="51" endLine="163" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="7314351270975464070" fileName="DiskMemoryConflictsTest.java" startLine="279" startPosition="47" endLine="298" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7314351270975464066" fileName="DiskMemoryConflictsTest.java" startLine="279" startPosition="0" endLine="301" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="restoreAndCheckOriginalState#()V" />
-    <nodeInfo nodeId="7314351270975463496" fileName="DiskMemoryConflictsTest.java" startLine="102" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processFieldNameInModel#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7884566175275140840" fileName="DiskMemoryConflictsTest.java" startLine="67" startPosition="51" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7884566175275140825" fileName="DiskMemoryConflictsTest.java" startLine="66" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/project/Project;)Z" />
-    <nodeInfo nodeId="7314351270975463339" fileName="DiskMemoryConflictsTest.java" startLine="64" startPosition="116" endLine="96" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7314351270975463618" fileName="DiskMemoryConflictsTest.java" startLine="138" startPosition="5" endLine="177" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7314351270975463308" fileName="DiskMemoryConflictsTest.java" startLine="60" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testDiskMemoryConflicts#()V" />
-    <nodeInfo nodeId="7314351270975463602" fileName="DiskMemoryConflictsTest.java" startLine="134" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processFieldNameInFile#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7314351270975463836" fileName="DiskMemoryConflictsTest.java" startLine="203" startPosition="0" endLine="267" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="provokeAndCheckConflict#(Ljetbrains/mps/vcs/DiskMemoryConflictsTest/Action;Ljetbrains/mps/vcs/DiskMemoryConflictsTest/DiskModification;Ljetbrains/mps/vcs/DiskMemoryConflictsTest/VersionToChoose;)V" />
-    <scopeInfo nodeId="7314351270975463307" fileName="DiskMemoryConflictsTest.java" startLine="57" startPosition="36" endLine="57" endPosition="36" />
-    <scopeInfo nodeId="7314351270975463533" fileName="DiskMemoryConflictsTest.java" startLine="117" startPosition="0" endLine="117" endPosition="39">
+    <nodeInfo nodeId="7314351270975463280" fileName="DiskMemoryConflictsTest.java" startLine="51" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="7314351270975463283" fileName="DiskMemoryConflictsTest.java" startLine="52" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModule" />
+    <nodeInfo nodeId="7314351270975463286" fileName="DiskMemoryConflictsTest.java" startLine="53" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeBackup" />
+    <nodeInfo nodeId="7314351270975463289" fileName="DiskMemoryConflictsTest.java" startLine="54" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelDescriptor" />
+    <nodeInfo nodeId="7314351270975463312" fileName="DiskMemoryConflictsTest.java" startLine="60" startPosition="41" endLine="61" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975463321" fileName="DiskMemoryConflictsTest.java" startLine="61" startPosition="97" endLine="62" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975463330" fileName="DiskMemoryConflictsTest.java" startLine="62" startPosition="127" endLine="63" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7884566175275140831" fileName="DiskMemoryConflictsTest.java" startLine="65" startPosition="53" endLine="66" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7884566175275140852" fileName="DiskMemoryConflictsTest.java" startLine="67" startPosition="13" endLine="68" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7884566175275140856" fileName="DiskMemoryConflictsTest.java" startLine="68" startPosition="30" endLine="69" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7884566175275140865" fileName="DiskMemoryConflictsTest.java" startLine="69" startPosition="147" endLine="70" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7884566175275140884" fileName="DiskMemoryConflictsTest.java" startLine="72" startPosition="31" endLine="73" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7884566175275140895" fileName="DiskMemoryConflictsTest.java" startLine="75" startPosition="13" endLine="76" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7884566175275140912" fileName="DiskMemoryConflictsTest.java" startLine="79" startPosition="114" endLine="80" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7884566175275140918" fileName="DiskMemoryConflictsTest.java" startLine="80" startPosition="37" endLine="81" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7884566175275140924" fileName="DiskMemoryConflictsTest.java" startLine="81" startPosition="38" endLine="82" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7884566175275140930" fileName="DiskMemoryConflictsTest.java" startLine="82" startPosition="48" endLine="83" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7884566175275140935" fileName="DiskMemoryConflictsTest.java" startLine="83" startPosition="50" endLine="84" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7884566175275140937" fileName="DiskMemoryConflictsTest.java" startLine="87" startPosition="11" endLine="88" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7884566175275140843" fileName="DiskMemoryConflictsTest.java" startLine="89" startPosition="31" endLine="90" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7884566175275140847" fileName="DiskMemoryConflictsTest.java" startLine="90" startPosition="30" endLine="91" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7884566175275140943" fileName="DiskMemoryConflictsTest.java" startLine="92" startPosition="9" endLine="93" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7314351270975463476" fileName="DiskMemoryConflictsTest.java" startLine="96" startPosition="20" endLine="97" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463502" fileName="DiskMemoryConflictsTest.java" startLine="101" startPosition="68" endLine="102" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975463538" fileName="DiskMemoryConflictsTest.java" startLine="106" startPosition="15" endLine="107" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975463542" fileName="DiskMemoryConflictsTest.java" startLine="107" startPosition="71" endLine="108" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463545" fileName="DiskMemoryConflictsTest.java" startLine="108" startPosition="50" endLine="109" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975463554" fileName="DiskMemoryConflictsTest.java" startLine="109" startPosition="88" endLine="110" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463570" fileName="DiskMemoryConflictsTest.java" startLine="111" startPosition="38" endLine="112" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463563" fileName="DiskMemoryConflictsTest.java" startLine="113" startPosition="20" endLine="114" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463580" fileName="DiskMemoryConflictsTest.java" startLine="120" startPosition="18" endLine="121" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463582" fileName="DiskMemoryConflictsTest.java" startLine="121" startPosition="38" endLine="122" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7314351270975463592" fileName="DiskMemoryConflictsTest.java" startLine="125" startPosition="50" endLine="126" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463599" fileName="DiskMemoryConflictsTest.java" startLine="129" startPosition="42" endLine="130" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7314351270975463608" fileName="DiskMemoryConflictsTest.java" startLine="133" startPosition="67" endLine="134" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7314351270975463616" fileName="DiskMemoryConflictsTest.java" startLine="135" startPosition="33" endLine="136" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7314351270975463626" fileName="DiskMemoryConflictsTest.java" startLine="138" startPosition="9" endLine="139" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975463632" fileName="DiskMemoryConflictsTest.java" startLine="139" startPosition="48" endLine="140" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975463636" fileName="DiskMemoryConflictsTest.java" startLine="140" startPosition="107" endLine="141" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975463643" fileName="DiskMemoryConflictsTest.java" startLine="141" startPosition="91" endLine="142" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975463647" fileName="DiskMemoryConflictsTest.java" startLine="142" startPosition="30" endLine="143" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975463659" fileName="DiskMemoryConflictsTest.java" startLine="144" startPosition="37" endLine="145" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975463713" fileName="DiskMemoryConflictsTest.java" startLine="146" startPosition="171" endLine="147" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463673" fileName="DiskMemoryConflictsTest.java" startLine="149" startPosition="22" endLine="150" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975463707" fileName="DiskMemoryConflictsTest.java" startLine="152" startPosition="38" endLine="153" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7314351270975463691" fileName="DiskMemoryConflictsTest.java" startLine="154" startPosition="20" endLine="155" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463701" fileName="DiskMemoryConflictsTest.java" startLine="155" startPosition="89" endLine="156" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463705" fileName="DiskMemoryConflictsTest.java" startLine="156" startPosition="30" endLine="157" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7314351270975463717" fileName="DiskMemoryConflictsTest.java" startLine="160" startPosition="9" endLine="161" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463722" fileName="DiskMemoryConflictsTest.java" startLine="162" startPosition="7" endLine="163" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463726" fileName="DiskMemoryConflictsTest.java" startLine="163" startPosition="22" endLine="164" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975463732" fileName="DiskMemoryConflictsTest.java" startLine="164" startPosition="58" endLine="165" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975463743" fileName="DiskMemoryConflictsTest.java" startLine="166" startPosition="33" endLine="167" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463748" fileName="DiskMemoryConflictsTest.java" startLine="168" startPosition="7" endLine="169" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463759" fileName="DiskMemoryConflictsTest.java" startLine="170" startPosition="60" endLine="171" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463764" fileName="DiskMemoryConflictsTest.java" startLine="172" startPosition="7" endLine="173" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463621" fileName="DiskMemoryConflictsTest.java" startLine="174" startPosition="39" endLine="175" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463776" fileName="DiskMemoryConflictsTest.java" startLine="176" startPosition="5" endLine="177" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7314351270975463782" fileName="DiskMemoryConflictsTest.java" startLine="180" startPosition="41" endLine="181" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7314351270975463791" fileName="DiskMemoryConflictsTest.java" startLine="184" startPosition="48" endLine="185" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463798" fileName="DiskMemoryConflictsTest.java" startLine="188" startPosition="36" endLine="189" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463808" fileName="DiskMemoryConflictsTest.java" startLine="192" startPosition="67" endLine="193" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463812" fileName="DiskMemoryConflictsTest.java" startLine="193" startPosition="60" endLine="194" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463828" fileName="DiskMemoryConflictsTest.java" startLine="195" startPosition="28" endLine="196" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463822" fileName="DiskMemoryConflictsTest.java" startLine="197" startPosition="12" endLine="198" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463846" fileName="DiskMemoryConflictsTest.java" startLine="202" startPosition="207" endLine="203" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463858" fileName="DiskMemoryConflictsTest.java" startLine="204" startPosition="78" endLine="205" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463855" fileName="DiskMemoryConflictsTest.java" startLine="206" startPosition="12" endLine="207" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463861" fileName="DiskMemoryConflictsTest.java" startLine="208" startPosition="5" endLine="209" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463863" fileName="DiskMemoryConflictsTest.java" startLine="209" startPosition="17" endLine="210" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975463883" fileName="DiskMemoryConflictsTest.java" startLine="213" startPosition="39" endLine="214" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463935" fileName="DiskMemoryConflictsTest.java" startLine="228" startPosition="56" endLine="229" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7314351270975463948" fileName="DiskMemoryConflictsTest.java" startLine="232" startPosition="27" endLine="233" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463917" fileName="DiskMemoryConflictsTest.java" startLine="236" startPosition="12" endLine="237" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7314351270975463930" fileName="DiskMemoryConflictsTest.java" startLine="239" startPosition="27" endLine="240" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463954" fileName="DiskMemoryConflictsTest.java" startLine="243" startPosition="5" endLine="244" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463977" fileName="DiskMemoryConflictsTest.java" startLine="252" startPosition="5" endLine="253" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463982" fileName="DiskMemoryConflictsTest.java" startLine="253" startPosition="43" endLine="254" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975464007" fileName="DiskMemoryConflictsTest.java" startLine="255" startPosition="76" endLine="256" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464002" fileName="DiskMemoryConflictsTest.java" startLine="258" startPosition="80" endLine="259" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463997" fileName="DiskMemoryConflictsTest.java" startLine="260" startPosition="14" endLine="261" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464011" fileName="DiskMemoryConflictsTest.java" startLine="263" startPosition="5" endLine="264" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464018" fileName="DiskMemoryConflictsTest.java" startLine="267" startPosition="29" endLine="268" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975464035" fileName="DiskMemoryConflictsTest.java" startLine="269" startPosition="39" endLine="270" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464044" fileName="DiskMemoryConflictsTest.java" startLine="271" startPosition="5" endLine="272" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975464053" fileName="DiskMemoryConflictsTest.java" startLine="272" startPosition="84" endLine="273" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="7314351270975464057" fileName="DiskMemoryConflictsTest.java" startLine="273" startPosition="22" endLine="274" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464062" fileName="DiskMemoryConflictsTest.java" startLine="274" startPosition="19" endLine="275" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464124" fileName="DiskMemoryConflictsTest.java" startLine="279" startPosition="30" endLine="280" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464127" fileName="DiskMemoryConflictsTest.java" startLine="280" startPosition="45" endLine="281" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464140" fileName="DiskMemoryConflictsTest.java" startLine="283" startPosition="27" endLine="284" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464076" fileName="DiskMemoryConflictsTest.java" startLine="287" startPosition="12" endLine="288" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7314351270975464089" fileName="DiskMemoryConflictsTest.java" startLine="290" startPosition="27" endLine="291" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464108" fileName="DiskMemoryConflictsTest.java" startLine="291" startPosition="199" endLine="292" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464116" fileName="DiskMemoryConflictsTest.java" startLine="292" startPosition="90" endLine="293" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464121" fileName="DiskMemoryConflictsTest.java" startLine="295" startPosition="20" endLine="296" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464144" fileName="DiskMemoryConflictsTest.java" startLine="297" startPosition="5" endLine="298" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1581213309338464409" fileName="DiskMemoryConflictsTest.java" startLine="301" startPosition="38" endLine="302" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1581213309338494791" fileName="DiskMemoryConflictsTest.java" startLine="303" startPosition="9" endLine="304" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1581213309338544008" fileName="DiskMemoryConflictsTest.java" startLine="305" startPosition="30" endLine="306" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1581213309338421310" fileName="DiskMemoryConflictsTest.java" startLine="307" startPosition="5" endLine="308" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7314351270975464152" fileName="DiskMemoryConflictsTest.java" startLine="311" startPosition="55" endLine="312" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7314351270975464154" fileName="DiskMemoryConflictsTest.java" startLine="312" startPosition="49" endLine="313" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7314351270975464156" fileName="DiskMemoryConflictsTest.java" startLine="313" startPosition="67" endLine="314" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975464171" fileName="DiskMemoryConflictsTest.java" startLine="315" startPosition="68" endLine="316" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464174" fileName="DiskMemoryConflictsTest.java" startLine="316" startPosition="14" endLine="317" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464185" fileName="DiskMemoryConflictsTest.java" startLine="318" startPosition="11" endLine="319" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464179" fileName="DiskMemoryConflictsTest.java" startLine="320" startPosition="40" endLine="321" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464181" fileName="DiskMemoryConflictsTest.java" startLine="321" startPosition="22" endLine="322" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7314351270975464188" fileName="DiskMemoryConflictsTest.java" startLine="324" startPosition="5" endLine="325" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464197" fileName="DiskMemoryConflictsTest.java" startLine="328" startPosition="32" endLine="329" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7314351270975464199" fileName="DiskMemoryConflictsTest.java" startLine="329" startPosition="60" endLine="330" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7314351270975464201" fileName="DiskMemoryConflictsTest.java" startLine="330" startPosition="67" endLine="331" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975464215" fileName="DiskMemoryConflictsTest.java" startLine="332" startPosition="50" endLine="333" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464218" fileName="DiskMemoryConflictsTest.java" startLine="333" startPosition="14" endLine="334" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464229" fileName="DiskMemoryConflictsTest.java" startLine="335" startPosition="11" endLine="336" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464223" fileName="DiskMemoryConflictsTest.java" startLine="337" startPosition="40" endLine="338" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464225" fileName="DiskMemoryConflictsTest.java" startLine="338" startPosition="22" endLine="339" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7314351270975464232" fileName="DiskMemoryConflictsTest.java" startLine="341" startPosition="5" endLine="342" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464241" fileName="DiskMemoryConflictsTest.java" startLine="345" startPosition="33" endLine="346" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463304" fileName="DiskMemoryConflictsTest.java" startLine="56" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiskMemoryConflictsTest#()V" />
+    <nodeInfo nodeId="7314351270975463561" fileName="DiskMemoryConflictsTest.java" startLine="113" startPosition="18" endLine="115" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7314351270975463820" fileName="DiskMemoryConflictsTest.java" startLine="197" startPosition="10" endLine="199" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7314351270975463853" fileName="DiskMemoryConflictsTest.java" startLine="206" startPosition="10" endLine="208" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7314351270975463973" fileName="DiskMemoryConflictsTest.java" startLine="247" startPosition="0" endLine="249" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7314351270975463995" fileName="DiskMemoryConflictsTest.java" startLine="260" startPosition="12" endLine="262" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7314351270975463233" fileName="DiskMemoryConflictsTest.java" startLine="358" startPosition="0" endLine="360" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Action#()V" />
+    <nodeInfo nodeId="7314351270975463240" fileName="DiskMemoryConflictsTest.java" startLine="366" startPosition="0" endLine="368" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VersionToChoose#()V" />
+    <nodeInfo nodeId="7314351270975463247" fileName="DiskMemoryConflictsTest.java" startLine="374" startPosition="0" endLine="376" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiskModification#()V" />
+    <nodeInfo nodeId="7884566175275140880" fileName="DiskMemoryConflictsTest.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7314351270975463472" fileName="DiskMemoryConflictsTest.java" startLine="95" startPosition="28" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7314351270975463586" fileName="DiskMemoryConflictsTest.java" startLine="125" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFieldNameInModel#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7314351270975463595" fileName="DiskMemoryConflictsTest.java" startLine="129" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldNameFromModel#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7314351270975463610" fileName="DiskMemoryConflictsTest.java" startLine="134" startPosition="19" endLine="137" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7314351270975463738" fileName="DiskMemoryConflictsTest.java" startLine="165" startPosition="50" endLine="168" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7314351270975463752" fileName="DiskMemoryConflictsTest.java" startLine="169" startPosition="16" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7314351270975463778" fileName="DiskMemoryConflictsTest.java" startLine="180" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldNameFromFile#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7314351270975463785" fileName="DiskMemoryConflictsTest.java" startLine="184" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFieldNameInFile#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7314351270975463794" fileName="DiskMemoryConflictsTest.java" startLine="188" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkInitialState#()V" />
+    <nodeInfo nodeId="7314351270975463926" fileName="DiskMemoryConflictsTest.java" startLine="239" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7314351270975464025" fileName="DiskMemoryConflictsTest.java" startLine="268" startPosition="80" endLine="271" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7314351270975464136" fileName="DiskMemoryConflictsTest.java" startLine="283" startPosition="0" endLine="286" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7314351270975464250" fileName="DiskMemoryConflictsTest.java" startLine="348" startPosition="0" endLine="351" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7314351270975463689" fileName="DiskMemoryConflictsTest.java" startLine="154" startPosition="18" endLine="158" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7314351270975463903" fileName="DiskMemoryConflictsTest.java" startLine="215" startPosition="82" endLine="219" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7314351270975463895" fileName="DiskMemoryConflictsTest.java" startLine="220" startPosition="16" endLine="224" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7314351270975463944" fileName="DiskMemoryConflictsTest.java" startLine="231" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7314351270975463968" fileName="DiskMemoryConflictsTest.java" startLine="245" startPosition="9" endLine="249" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7884566175275140873" fileName="DiskMemoryConflictsTest.java" startLine="70" startPosition="62" endLine="75" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463557" fileName="DiskMemoryConflictsTest.java" startLine="110" startPosition="39" endLine="115" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7314351270975463816" fileName="DiskMemoryConflictsTest.java" startLine="194" startPosition="59" endLine="199" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7314351270975463849" fileName="DiskMemoryConflictsTest.java" startLine="203" startPosition="45" endLine="208" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7314351270975463893" fileName="DiskMemoryConflictsTest.java" startLine="220" startPosition="14" endLine="225" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7314351270975463919" fileName="DiskMemoryConflictsTest.java" startLine="237" startPosition="26" endLine="242" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463991" fileName="DiskMemoryConflictsTest.java" startLine="257" startPosition="12" endLine="262" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7314351270975464129" fileName="DiskMemoryConflictsTest.java" startLine="281" startPosition="19" endLine="286" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975464085" fileName="DiskMemoryConflictsTest.java" startLine="290" startPosition="0" endLine="295" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1581213309338525668" fileName="DiskMemoryConflictsTest.java" startLine="302" startPosition="98" endLine="307" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7314351270975464245" fileName="DiskMemoryConflictsTest.java" startLine="346" startPosition="45" endLine="351" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463937" fileName="DiskMemoryConflictsTest.java" startLine="229" startPosition="33" endLine="235" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463989" fileName="DiskMemoryConflictsTest.java" startLine="257" startPosition="10" endLine="263" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7314351270975464176" fileName="DiskMemoryConflictsTest.java" startLine="317" startPosition="18" endLine="323" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7314351270975464220" fileName="DiskMemoryConflictsTest.java" startLine="334" startPosition="18" endLine="340" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7884566175275140907" fileName="DiskMemoryConflictsTest.java" startLine="78" startPosition="115" endLine="85" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7314351270975463685" fileName="DiskMemoryConflictsTest.java" startLine="151" startPosition="34" endLine="158" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7314351270975463915" fileName="DiskMemoryConflictsTest.java" startLine="236" startPosition="10" endLine="243" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7314351270975464078" fileName="DiskMemoryConflictsTest.java" startLine="288" startPosition="24" endLine="295" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463958" fileName="DiskMemoryConflictsTest.java" startLine="244" startPosition="45" endLine="252" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7314351270975464237" fileName="DiskMemoryConflictsTest.java" startLine="345" startPosition="0" endLine="353" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="waitEDT#()V" />
+    <nodeInfo nodeId="7884566175275140902" fileName="DiskMemoryConflictsTest.java" startLine="77" startPosition="92" endLine="86" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7314351270975463680" fileName="DiskMemoryConflictsTest.java" startLine="150" startPosition="59" endLine="159" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7314351270975463801" fileName="DiskMemoryConflictsTest.java" startLine="192" startPosition="0" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkSynchronizedState#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7314351270975463985" fileName="DiskMemoryConflictsTest.java" startLine="254" startPosition="29" endLine="263" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1581213309338397147" fileName="DiskMemoryConflictsTest.java" startLine="301" startPosition="0" endLine="310" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModelFile#()Ljava/io/File;" />
+    <nodeInfo nodeId="7314351270975464014" fileName="DiskMemoryConflictsTest.java" startLine="267" startPosition="0" endLine="277" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refreshVfs#()V" />
+    <nodeInfo nodeId="7314351270975464074" fileName="DiskMemoryConflictsTest.java" startLine="287" startPosition="10" endLine="297" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7314351270975464160" fileName="DiskMemoryConflictsTest.java" startLine="314" startPosition="18" endLine="324" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="7314351270975464205" fileName="DiskMemoryConflictsTest.java" startLine="331" startPosition="18" endLine="341" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="7884566175275140897" fileName="DiskMemoryConflictsTest.java" startLine="76" startPosition="30" endLine="87" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7314351270975463889" fileName="DiskMemoryConflictsTest.java" startLine="214" startPosition="35" endLine="225" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7314351270975463532" fileName="DiskMemoryConflictsTest.java" startLine="105" startPosition="112" endLine="117" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7314351270975463670" fileName="DiskMemoryConflictsTest.java" startLine="148" startPosition="14" endLine="160" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7314351270975463522" fileName="DiskMemoryConflictsTest.java" startLine="104" startPosition="25" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7314351270975463665" fileName="DiskMemoryConflictsTest.java" startLine="145" startPosition="41" endLine="160" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7314351270975463877" fileName="DiskMemoryConflictsTest.java" startLine="212" startPosition="0" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="show#(Ljava/lang/String;)I" />
+    <nodeInfo nodeId="7314351270975463518" fileName="DiskMemoryConflictsTest.java" startLine="104" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7314351270975463911" fileName="DiskMemoryConflictsTest.java" startLine="227" startPosition="7" endLine="243" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7314351270975464146" fileName="DiskMemoryConflictsTest.java" startLine="311" startPosition="0" endLine="327" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setLastModified#(J)V" />
+    <nodeInfo nodeId="7314351270975464193" fileName="DiskMemoryConflictsTest.java" startLine="328" startPosition="0" endLine="344" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="delete#()V" />
+    <nodeInfo nodeId="7314351270975463872" fileName="DiskMemoryConflictsTest.java" startLine="210" startPosition="54" endLine="227" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463511" fileName="DiskMemoryConflictsTest.java" startLine="102" startPosition="42" endLine="120" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7314351270975463654" fileName="DiskMemoryConflictsTest.java" startLine="143" startPosition="51" endLine="162" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="7314351270975464070" fileName="DiskMemoryConflictsTest.java" startLine="278" startPosition="47" endLine="297" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7314351270975464066" fileName="DiskMemoryConflictsTest.java" startLine="278" startPosition="0" endLine="300" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="restoreAndCheckOriginalState#()V" />
+    <nodeInfo nodeId="7314351270975463496" fileName="DiskMemoryConflictsTest.java" startLine="101" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processFieldNameInModel#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7884566175275140840" fileName="DiskMemoryConflictsTest.java" startLine="66" startPosition="51" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7884566175275140825" fileName="DiskMemoryConflictsTest.java" startLine="65" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/project/Project;)Z" />
+    <nodeInfo nodeId="7314351270975463339" fileName="DiskMemoryConflictsTest.java" startLine="63" startPosition="116" endLine="95" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7314351270975463618" fileName="DiskMemoryConflictsTest.java" startLine="137" startPosition="5" endLine="176" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7314351270975463308" fileName="DiskMemoryConflictsTest.java" startLine="59" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testDiskMemoryConflicts#()V" />
+    <nodeInfo nodeId="7314351270975463602" fileName="DiskMemoryConflictsTest.java" startLine="133" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processFieldNameInFile#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7314351270975463836" fileName="DiskMemoryConflictsTest.java" startLine="202" startPosition="0" endLine="266" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="provokeAndCheckConflict#(Ljetbrains/mps/vcs/DiskMemoryConflictsTest/Action;Ljetbrains/mps/vcs/DiskMemoryConflictsTest/DiskModification;Ljetbrains/mps/vcs/DiskMemoryConflictsTest/VersionToChoose;)V" />
+    <scopeInfo nodeId="7314351270975463307" fileName="DiskMemoryConflictsTest.java" startLine="56" startPosition="36" endLine="56" endPosition="36" />
+    <scopeInfo nodeId="7314351270975463533" fileName="DiskMemoryConflictsTest.java" startLine="116" startPosition="0" endLine="116" endPosition="39">
       <varInfo nodeId="7314351270975463535" varName="ignored" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975463534" fileName="DiskMemoryConflictsTest.java" startLine="117" startPosition="39" endLine="117" endPosition="39" />
-    <scopeInfo nodeId="7314351270975463976" fileName="DiskMemoryConflictsTest.java" startLine="248" startPosition="27" endLine="248" endPosition="27" />
-    <scopeInfo nodeId="7314351270975463959" fileName="DiskMemoryConflictsTest.java" startLine="251" startPosition="0" endLine="251" endPosition="38">
+    <scopeInfo nodeId="7314351270975463534" fileName="DiskMemoryConflictsTest.java" startLine="116" startPosition="39" endLine="116" endPosition="39" />
+    <scopeInfo nodeId="7314351270975463976" fileName="DiskMemoryConflictsTest.java" startLine="247" startPosition="27" endLine="247" endPosition="27" />
+    <scopeInfo nodeId="7314351270975463959" fileName="DiskMemoryConflictsTest.java" startLine="250" startPosition="0" endLine="250" endPosition="38">
       <varInfo nodeId="7314351270975463961" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975463960" fileName="DiskMemoryConflictsTest.java" startLine="251" startPosition="38" endLine="251" endPosition="38" />
-    <scopeInfo nodeId="7314351270975463963" fileName="DiskMemoryConflictsTest.java" startLine="252" startPosition="0" endLine="252" endPosition="43">
+    <scopeInfo nodeId="7314351270975463960" fileName="DiskMemoryConflictsTest.java" startLine="250" startPosition="38" endLine="250" endPosition="38" />
+    <scopeInfo nodeId="7314351270975463963" fileName="DiskMemoryConflictsTest.java" startLine="251" startPosition="0" endLine="251" endPosition="43">
       <varInfo nodeId="7314351270975463965" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975463964" fileName="DiskMemoryConflictsTest.java" startLine="252" startPosition="43" endLine="252" endPosition="43" />
-    <scopeInfo nodeId="7314351270975464253" fileName="DiskMemoryConflictsTest.java" startLine="350" startPosition="25" endLine="350" endPosition="25" />
-    <scopeInfo nodeId="7314351270975463236" fileName="DiskMemoryConflictsTest.java" startLine="359" startPosition="14" endLine="359" endPosition="14" />
-    <scopeInfo nodeId="7314351270975463243" fileName="DiskMemoryConflictsTest.java" startLine="367" startPosition="23" endLine="367" endPosition="23" />
-    <scopeInfo nodeId="7314351270975463250" fileName="DiskMemoryConflictsTest.java" startLine="375" startPosition="24" endLine="375" endPosition="24" />
-    <scopeInfo nodeId="7884566175275140883" fileName="DiskMemoryConflictsTest.java" startLine="73" startPosition="31" endLine="74" endPosition="110" />
-    <scopeInfo nodeId="7314351270975463475" fileName="DiskMemoryConflictsTest.java" startLine="97" startPosition="20" endLine="98" endPosition="156" />
-    <scopeInfo nodeId="7314351270975463569" fileName="DiskMemoryConflictsTest.java" startLine="112" startPosition="38" endLine="113" endPosition="51" />
-    <scopeInfo nodeId="7314351270975463562" fileName="DiskMemoryConflictsTest.java" startLine="114" startPosition="20" endLine="115" endPosition="52" />
-    <scopeInfo nodeId="7314351270975463591" fileName="DiskMemoryConflictsTest.java" startLine="126" startPosition="50" endLine="127" endPosition="35" />
-    <scopeInfo nodeId="7314351270975463598" fileName="DiskMemoryConflictsTest.java" startLine="130" startPosition="42" endLine="131" endPosition="41" />
-    <scopeInfo nodeId="7314351270975463615" fileName="DiskMemoryConflictsTest.java" startLine="136" startPosition="33" endLine="137" endPosition="18" />
-    <scopeInfo nodeId="7314351270975463712" fileName="DiskMemoryConflictsTest.java" startLine="147" startPosition="171" endLine="148" endPosition="25" />
-    <scopeInfo nodeId="7314351270975463706" fileName="DiskMemoryConflictsTest.java" startLine="153" startPosition="38" endLine="154" endPosition="38" />
-    <scopeInfo nodeId="7314351270975463742" fileName="DiskMemoryConflictsTest.java" startLine="167" startPosition="33" endLine="168" endPosition="24" />
-    <scopeInfo nodeId="7314351270975463758" fileName="DiskMemoryConflictsTest.java" startLine="171" startPosition="60" endLine="172" endPosition="75" />
-    <scopeInfo nodeId="7314351270975463619" fileName="DiskMemoryConflictsTest.java" startLine="175" startPosition="0" endLine="176" endPosition="20">
+    <scopeInfo nodeId="7314351270975463964" fileName="DiskMemoryConflictsTest.java" startLine="251" startPosition="43" endLine="251" endPosition="43" />
+    <scopeInfo nodeId="7314351270975464253" fileName="DiskMemoryConflictsTest.java" startLine="349" startPosition="25" endLine="349" endPosition="25" />
+    <scopeInfo nodeId="7314351270975463236" fileName="DiskMemoryConflictsTest.java" startLine="358" startPosition="14" endLine="358" endPosition="14" />
+    <scopeInfo nodeId="7314351270975463243" fileName="DiskMemoryConflictsTest.java" startLine="366" startPosition="23" endLine="366" endPosition="23" />
+    <scopeInfo nodeId="7314351270975463250" fileName="DiskMemoryConflictsTest.java" startLine="374" startPosition="24" endLine="374" endPosition="24" />
+    <scopeInfo nodeId="7884566175275140883" fileName="DiskMemoryConflictsTest.java" startLine="72" startPosition="31" endLine="73" endPosition="110" />
+    <scopeInfo nodeId="7314351270975463475" fileName="DiskMemoryConflictsTest.java" startLine="96" startPosition="20" endLine="97" endPosition="156" />
+    <scopeInfo nodeId="7314351270975463569" fileName="DiskMemoryConflictsTest.java" startLine="111" startPosition="38" endLine="112" endPosition="51" />
+    <scopeInfo nodeId="7314351270975463562" fileName="DiskMemoryConflictsTest.java" startLine="113" startPosition="20" endLine="114" endPosition="52" />
+    <scopeInfo nodeId="7314351270975463591" fileName="DiskMemoryConflictsTest.java" startLine="125" startPosition="50" endLine="126" endPosition="35" />
+    <scopeInfo nodeId="7314351270975463598" fileName="DiskMemoryConflictsTest.java" startLine="129" startPosition="42" endLine="130" endPosition="41" />
+    <scopeInfo nodeId="7314351270975463615" fileName="DiskMemoryConflictsTest.java" startLine="135" startPosition="33" endLine="136" endPosition="18" />
+    <scopeInfo nodeId="7314351270975463712" fileName="DiskMemoryConflictsTest.java" startLine="146" startPosition="171" endLine="147" endPosition="25" />
+    <scopeInfo nodeId="7314351270975463706" fileName="DiskMemoryConflictsTest.java" startLine="152" startPosition="38" endLine="153" endPosition="38" />
+    <scopeInfo nodeId="7314351270975463742" fileName="DiskMemoryConflictsTest.java" startLine="166" startPosition="33" endLine="167" endPosition="24" />
+    <scopeInfo nodeId="7314351270975463758" fileName="DiskMemoryConflictsTest.java" startLine="170" startPosition="60" endLine="171" endPosition="75" />
+    <scopeInfo nodeId="7314351270975463619" fileName="DiskMemoryConflictsTest.java" startLine="174" startPosition="0" endLine="175" endPosition="20">
       <varInfo nodeId="7314351270975463623" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975463620" fileName="DiskMemoryConflictsTest.java" startLine="175" startPosition="39" endLine="176" endPosition="20" />
-    <scopeInfo nodeId="7314351270975463781" fileName="DiskMemoryConflictsTest.java" startLine="181" startPosition="41" endLine="182" endPosition="40" />
-    <scopeInfo nodeId="7314351270975463790" fileName="DiskMemoryConflictsTest.java" startLine="185" startPosition="48" endLine="186" endPosition="33" />
-    <scopeInfo nodeId="7314351270975463797" fileName="DiskMemoryConflictsTest.java" startLine="189" startPosition="36" endLine="190" endPosition="47" />
-    <scopeInfo nodeId="7314351270975463827" fileName="DiskMemoryConflictsTest.java" startLine="196" startPosition="28" endLine="197" endPosition="115" />
-    <scopeInfo nodeId="7314351270975463821" fileName="DiskMemoryConflictsTest.java" startLine="198" startPosition="12" endLine="199" endPosition="56" />
-    <scopeInfo nodeId="7314351270975463857" fileName="DiskMemoryConflictsTest.java" startLine="205" startPosition="78" endLine="206" endPosition="45" />
-    <scopeInfo nodeId="7314351270975463854" fileName="DiskMemoryConflictsTest.java" startLine="207" startPosition="12" endLine="208" endPosition="39" />
-    <scopeInfo nodeId="7314351270975463947" fileName="DiskMemoryConflictsTest.java" startLine="233" startPosition="27" endLine="234" endPosition="51" />
-    <scopeInfo nodeId="7314351270975463929" fileName="DiskMemoryConflictsTest.java" startLine="240" startPosition="27" endLine="241" endPosition="49" />
-    <scopeInfo nodeId="7314351270975464006" fileName="DiskMemoryConflictsTest.java" startLine="256" startPosition="76" endLine="257" endPosition="46" />
-    <scopeInfo nodeId="7314351270975464001" fileName="DiskMemoryConflictsTest.java" startLine="259" startPosition="80" endLine="260" endPosition="47" />
-    <scopeInfo nodeId="7314351270975463996" fileName="DiskMemoryConflictsTest.java" startLine="261" startPosition="14" endLine="262" endPosition="33" />
-    <scopeInfo nodeId="7314351270975464034" fileName="DiskMemoryConflictsTest.java" startLine="270" startPosition="39" endLine="271" endPosition="86" />
-    <scopeInfo nodeId="7314351270975464139" fileName="DiskMemoryConflictsTest.java" startLine="284" startPosition="27" endLine="285" endPosition="45" />
-    <scopeInfo nodeId="1581213309338525669" fileName="DiskMemoryConflictsTest.java" startLine="304" startPosition="9" endLine="305" endPosition="42" />
-    <scopeInfo nodeId="1581213309338525670" fileName="DiskMemoryConflictsTest.java" startLine="306" startPosition="0" endLine="307" endPosition="27">
+    <scopeInfo nodeId="7314351270975463620" fileName="DiskMemoryConflictsTest.java" startLine="174" startPosition="39" endLine="175" endPosition="20" />
+    <scopeInfo nodeId="7314351270975463781" fileName="DiskMemoryConflictsTest.java" startLine="180" startPosition="41" endLine="181" endPosition="40" />
+    <scopeInfo nodeId="7314351270975463790" fileName="DiskMemoryConflictsTest.java" startLine="184" startPosition="48" endLine="185" endPosition="33" />
+    <scopeInfo nodeId="7314351270975463797" fileName="DiskMemoryConflictsTest.java" startLine="188" startPosition="36" endLine="189" endPosition="47" />
+    <scopeInfo nodeId="7314351270975463827" fileName="DiskMemoryConflictsTest.java" startLine="195" startPosition="28" endLine="196" endPosition="115" />
+    <scopeInfo nodeId="7314351270975463821" fileName="DiskMemoryConflictsTest.java" startLine="197" startPosition="12" endLine="198" endPosition="56" />
+    <scopeInfo nodeId="7314351270975463857" fileName="DiskMemoryConflictsTest.java" startLine="204" startPosition="78" endLine="205" endPosition="45" />
+    <scopeInfo nodeId="7314351270975463854" fileName="DiskMemoryConflictsTest.java" startLine="206" startPosition="12" endLine="207" endPosition="39" />
+    <scopeInfo nodeId="7314351270975463947" fileName="DiskMemoryConflictsTest.java" startLine="232" startPosition="27" endLine="233" endPosition="51" />
+    <scopeInfo nodeId="7314351270975463929" fileName="DiskMemoryConflictsTest.java" startLine="239" startPosition="27" endLine="240" endPosition="49" />
+    <scopeInfo nodeId="7314351270975464006" fileName="DiskMemoryConflictsTest.java" startLine="255" startPosition="76" endLine="256" endPosition="46" />
+    <scopeInfo nodeId="7314351270975464001" fileName="DiskMemoryConflictsTest.java" startLine="258" startPosition="80" endLine="259" endPosition="47" />
+    <scopeInfo nodeId="7314351270975463996" fileName="DiskMemoryConflictsTest.java" startLine="260" startPosition="14" endLine="261" endPosition="33" />
+    <scopeInfo nodeId="7314351270975464034" fileName="DiskMemoryConflictsTest.java" startLine="269" startPosition="39" endLine="270" endPosition="86" />
+    <scopeInfo nodeId="7314351270975464139" fileName="DiskMemoryConflictsTest.java" startLine="283" startPosition="27" endLine="284" endPosition="45" />
+    <scopeInfo nodeId="1581213309338525669" fileName="DiskMemoryConflictsTest.java" startLine="303" startPosition="9" endLine="304" endPosition="42" />
+    <scopeInfo nodeId="1581213309338525670" fileName="DiskMemoryConflictsTest.java" startLine="305" startPosition="0" endLine="306" endPosition="27">
       <varInfo nodeId="1581213309338525671" varName="ex" />
     </scopeInfo>
-    <scopeInfo nodeId="1581213309338525673" fileName="DiskMemoryConflictsTest.java" startLine="306" startPosition="30" endLine="307" endPosition="27" />
-    <scopeInfo nodeId="7314351270975464184" fileName="DiskMemoryConflictsTest.java" startLine="319" startPosition="11" endLine="320" endPosition="26" />
-    <scopeInfo nodeId="7314351270975464228" fileName="DiskMemoryConflictsTest.java" startLine="336" startPosition="11" endLine="337" endPosition="26" />
-    <scopeInfo nodeId="7314351270975463304" fileName="DiskMemoryConflictsTest.java" startLine="57" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="7884566175275140841" fileName="DiskMemoryConflictsTest.java" startLine="90" startPosition="0" endLine="92" endPosition="23">
+    <scopeInfo nodeId="1581213309338525673" fileName="DiskMemoryConflictsTest.java" startLine="305" startPosition="30" endLine="306" endPosition="27" />
+    <scopeInfo nodeId="7314351270975464184" fileName="DiskMemoryConflictsTest.java" startLine="318" startPosition="11" endLine="319" endPosition="26" />
+    <scopeInfo nodeId="7314351270975464228" fileName="DiskMemoryConflictsTest.java" startLine="335" startPosition="11" endLine="336" endPosition="26" />
+    <scopeInfo nodeId="7314351270975463304" fileName="DiskMemoryConflictsTest.java" startLine="56" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="7884566175275140841" fileName="DiskMemoryConflictsTest.java" startLine="89" startPosition="0" endLine="91" endPosition="23">
       <varInfo nodeId="7884566175275140849" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7884566175275140842" fileName="DiskMemoryConflictsTest.java" startLine="90" startPosition="31" endLine="92" endPosition="23" />
-    <scopeInfo nodeId="7314351270975463973" fileName="DiskMemoryConflictsTest.java" startLine="248" startPosition="0" endLine="250" endPosition="0" />
-    <scopeInfo nodeId="7314351270975464177" fileName="DiskMemoryConflictsTest.java" startLine="321" startPosition="0" endLine="323" endPosition="15">
+    <scopeInfo nodeId="7884566175275140842" fileName="DiskMemoryConflictsTest.java" startLine="89" startPosition="31" endLine="91" endPosition="23" />
+    <scopeInfo nodeId="7314351270975463973" fileName="DiskMemoryConflictsTest.java" startLine="247" startPosition="0" endLine="249" endPosition="0" />
+    <scopeInfo nodeId="7314351270975464177" fileName="DiskMemoryConflictsTest.java" startLine="320" startPosition="0" endLine="322" endPosition="15">
       <varInfo nodeId="7314351270975464182" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975464178" fileName="DiskMemoryConflictsTest.java" startLine="321" startPosition="40" endLine="323" endPosition="15" />
-    <scopeInfo nodeId="7314351270975464221" fileName="DiskMemoryConflictsTest.java" startLine="338" startPosition="0" endLine="340" endPosition="15">
+    <scopeInfo nodeId="7314351270975464178" fileName="DiskMemoryConflictsTest.java" startLine="320" startPosition="40" endLine="322" endPosition="15" />
+    <scopeInfo nodeId="7314351270975464221" fileName="DiskMemoryConflictsTest.java" startLine="337" startPosition="0" endLine="339" endPosition="15">
       <varInfo nodeId="7314351270975464226" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975464222" fileName="DiskMemoryConflictsTest.java" startLine="338" startPosition="40" endLine="340" endPosition="15" />
-    <scopeInfo nodeId="7314351270975463233" fileName="DiskMemoryConflictsTest.java" startLine="359" startPosition="0" endLine="361" endPosition="0" />
-    <scopeInfo nodeId="7314351270975463240" fileName="DiskMemoryConflictsTest.java" startLine="367" startPosition="0" endLine="369" endPosition="0" />
-    <scopeInfo nodeId="7314351270975463247" fileName="DiskMemoryConflictsTest.java" startLine="375" startPosition="0" endLine="377" endPosition="0" />
-    <scopeInfo nodeId="7884566175275140880" fileName="DiskMemoryConflictsTest.java" startLine="73" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="7314351270975463586" fileName="DiskMemoryConflictsTest.java" startLine="126" startPosition="0" endLine="129" endPosition="0">
+    <scopeInfo nodeId="7314351270975464222" fileName="DiskMemoryConflictsTest.java" startLine="337" startPosition="40" endLine="339" endPosition="15" />
+    <scopeInfo nodeId="7314351270975463233" fileName="DiskMemoryConflictsTest.java" startLine="358" startPosition="0" endLine="360" endPosition="0" />
+    <scopeInfo nodeId="7314351270975463240" fileName="DiskMemoryConflictsTest.java" startLine="366" startPosition="0" endLine="368" endPosition="0" />
+    <scopeInfo nodeId="7314351270975463247" fileName="DiskMemoryConflictsTest.java" startLine="374" startPosition="0" endLine="376" endPosition="0" />
+    <scopeInfo nodeId="7884566175275140880" fileName="DiskMemoryConflictsTest.java" startLine="72" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="7314351270975463586" fileName="DiskMemoryConflictsTest.java" startLine="125" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="7314351270975463589" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975463595" fileName="DiskMemoryConflictsTest.java" startLine="130" startPosition="0" endLine="133" endPosition="0" />
-    <scopeInfo nodeId="7314351270975463690" fileName="DiskMemoryConflictsTest.java" startLine="155" startPosition="20" endLine="158" endPosition="23" />
-    <scopeInfo nodeId="7314351270975463738" fileName="DiskMemoryConflictsTest.java" startLine="166" startPosition="50" endLine="169" endPosition="7">
+    <scopeInfo nodeId="7314351270975463595" fileName="DiskMemoryConflictsTest.java" startLine="129" startPosition="0" endLine="132" endPosition="0" />
+    <scopeInfo nodeId="7314351270975463690" fileName="DiskMemoryConflictsTest.java" startLine="154" startPosition="20" endLine="157" endPosition="23" />
+    <scopeInfo nodeId="7314351270975463738" fileName="DiskMemoryConflictsTest.java" startLine="165" startPosition="50" endLine="168" endPosition="7">
       <varInfo nodeId="7314351270975463740" varName="line" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975463778" fileName="DiskMemoryConflictsTest.java" startLine="181" startPosition="0" endLine="184" endPosition="0" />
-    <scopeInfo nodeId="7314351270975463785" fileName="DiskMemoryConflictsTest.java" startLine="185" startPosition="0" endLine="188" endPosition="0">
+    <scopeInfo nodeId="7314351270975463778" fileName="DiskMemoryConflictsTest.java" startLine="180" startPosition="0" endLine="183" endPosition="0" />
+    <scopeInfo nodeId="7314351270975463785" fileName="DiskMemoryConflictsTest.java" startLine="184" startPosition="0" endLine="187" endPosition="0">
       <varInfo nodeId="7314351270975463788" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975463794" fileName="DiskMemoryConflictsTest.java" startLine="189" startPosition="0" endLine="192" endPosition="0" />
-    <scopeInfo nodeId="7314351270975463926" fileName="DiskMemoryConflictsTest.java" startLine="240" startPosition="0" endLine="243" endPosition="0" />
-    <scopeInfo nodeId="7314351270975464136" fileName="DiskMemoryConflictsTest.java" startLine="284" startPosition="0" endLine="287" endPosition="0" />
-    <scopeInfo nodeId="7314351270975464088" fileName="DiskMemoryConflictsTest.java" startLine="291" startPosition="27" endLine="294" endPosition="35" />
-    <scopeInfo nodeId="7314351270975464250" fileName="DiskMemoryConflictsTest.java" startLine="349" startPosition="0" endLine="352" endPosition="0" />
-    <scopeInfo nodeId="7314351270975463902" fileName="DiskMemoryConflictsTest.java" startLine="216" startPosition="82" endLine="220" endPosition="12" />
-    <scopeInfo nodeId="7314351270975463894" fileName="DiskMemoryConflictsTest.java" startLine="221" startPosition="16" endLine="225" endPosition="12" />
-    <scopeInfo nodeId="7314351270975463944" fileName="DiskMemoryConflictsTest.java" startLine="232" startPosition="0" endLine="236" endPosition="0" />
-    <scopeInfo nodeId="7314351270975463967" fileName="DiskMemoryConflictsTest.java" startLine="246" startPosition="9" endLine="250" endPosition="9" />
-    <scopeInfo nodeId="7884566175275140911" fileName="DiskMemoryConflictsTest.java" startLine="80" startPosition="114" endLine="85" endPosition="47" />
-    <scopeInfo nodeId="7314351270975463990" fileName="DiskMemoryConflictsTest.java" startLine="258" startPosition="12" endLine="263" endPosition="7" />
-    <scopeInfo nodeId="7314351270975464085" fileName="DiskMemoryConflictsTest.java" startLine="291" startPosition="0" endLine="296" endPosition="0" />
-    <scopeInfo nodeId="7314351270975463916" fileName="DiskMemoryConflictsTest.java" startLine="237" startPosition="12" endLine="243" endPosition="9" />
-    <scopeInfo nodeId="7314351270975464240" fileName="DiskMemoryConflictsTest.java" startLine="346" startPosition="33" endLine="352" endPosition="7" />
-    <scopeInfo nodeId="7884566175275140906" fileName="DiskMemoryConflictsTest.java" startLine="79" startPosition="115" endLine="86" endPosition="15" />
-    <scopeInfo nodeId="7884566175275140907" fileName="DiskMemoryConflictsTest.java" startLine="79" startPosition="115" endLine="86" endPosition="15">
+    <scopeInfo nodeId="7314351270975463794" fileName="DiskMemoryConflictsTest.java" startLine="188" startPosition="0" endLine="191" endPosition="0" />
+    <scopeInfo nodeId="7314351270975463926" fileName="DiskMemoryConflictsTest.java" startLine="239" startPosition="0" endLine="242" endPosition="0" />
+    <scopeInfo nodeId="7314351270975464136" fileName="DiskMemoryConflictsTest.java" startLine="283" startPosition="0" endLine="286" endPosition="0" />
+    <scopeInfo nodeId="7314351270975464088" fileName="DiskMemoryConflictsTest.java" startLine="290" startPosition="27" endLine="293" endPosition="35" />
+    <scopeInfo nodeId="7314351270975464250" fileName="DiskMemoryConflictsTest.java" startLine="348" startPosition="0" endLine="351" endPosition="0" />
+    <scopeInfo nodeId="7314351270975463902" fileName="DiskMemoryConflictsTest.java" startLine="215" startPosition="82" endLine="219" endPosition="12" />
+    <scopeInfo nodeId="7314351270975463894" fileName="DiskMemoryConflictsTest.java" startLine="220" startPosition="16" endLine="224" endPosition="12" />
+    <scopeInfo nodeId="7314351270975463944" fileName="DiskMemoryConflictsTest.java" startLine="231" startPosition="0" endLine="235" endPosition="0" />
+    <scopeInfo nodeId="7314351270975463967" fileName="DiskMemoryConflictsTest.java" startLine="245" startPosition="9" endLine="249" endPosition="9" />
+    <scopeInfo nodeId="7884566175275140911" fileName="DiskMemoryConflictsTest.java" startLine="79" startPosition="114" endLine="84" endPosition="47" />
+    <scopeInfo nodeId="7314351270975463990" fileName="DiskMemoryConflictsTest.java" startLine="257" startPosition="12" endLine="262" endPosition="7" />
+    <scopeInfo nodeId="7314351270975464085" fileName="DiskMemoryConflictsTest.java" startLine="290" startPosition="0" endLine="295" endPosition="0" />
+    <scopeInfo nodeId="7314351270975463916" fileName="DiskMemoryConflictsTest.java" startLine="236" startPosition="12" endLine="242" endPosition="9" />
+    <scopeInfo nodeId="7314351270975464240" fileName="DiskMemoryConflictsTest.java" startLine="345" startPosition="33" endLine="351" endPosition="7" />
+    <scopeInfo nodeId="7884566175275140906" fileName="DiskMemoryConflictsTest.java" startLine="78" startPosition="115" endLine="85" endPosition="15" />
+    <scopeInfo nodeId="7884566175275140907" fileName="DiskMemoryConflictsTest.java" startLine="78" startPosition="115" endLine="85" endPosition="15">
       <varInfo nodeId="7884566175275140909" varName="v" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975463684" fileName="DiskMemoryConflictsTest.java" startLine="152" startPosition="34" endLine="159" endPosition="13" />
-    <scopeInfo nodeId="7314351270975463807" fileName="DiskMemoryConflictsTest.java" startLine="193" startPosition="67" endLine="200" endPosition="5" />
-    <scopeInfo nodeId="7314351270975463934" fileName="DiskMemoryConflictsTest.java" startLine="229" startPosition="56" endLine="236" endPosition="20" />
-    <scopeInfo nodeId="7314351270975464123" fileName="DiskMemoryConflictsTest.java" startLine="280" startPosition="30" endLine="287" endPosition="9" />
-    <scopeInfo nodeId="1581213309338397150" fileName="DiskMemoryConflictsTest.java" startLine="302" startPosition="38" endLine="309" endPosition="21">
+    <scopeInfo nodeId="7314351270975463684" fileName="DiskMemoryConflictsTest.java" startLine="151" startPosition="34" endLine="158" endPosition="13" />
+    <scopeInfo nodeId="7314351270975463807" fileName="DiskMemoryConflictsTest.java" startLine="192" startPosition="67" endLine="199" endPosition="5" />
+    <scopeInfo nodeId="7314351270975463934" fileName="DiskMemoryConflictsTest.java" startLine="228" startPosition="56" endLine="235" endPosition="20" />
+    <scopeInfo nodeId="7314351270975464123" fileName="DiskMemoryConflictsTest.java" startLine="279" startPosition="30" endLine="286" endPosition="9" />
+    <scopeInfo nodeId="1581213309338397150" fileName="DiskMemoryConflictsTest.java" startLine="301" startPosition="38" endLine="308" endPosition="21">
       <varInfo nodeId="1581213309338464410" varName="modelFile" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975464017" fileName="DiskMemoryConflictsTest.java" startLine="268" startPosition="29" endLine="276" endPosition="16">
+    <scopeInfo nodeId="7314351270975464017" fileName="DiskMemoryConflictsTest.java" startLine="267" startPosition="29" endLine="275" endPosition="16">
       <varInfo nodeId="7314351270975464045" varName="rs" />
       <varInfo nodeId="7314351270975464019" varName="vf" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975464170" fileName="DiskMemoryConflictsTest.java" startLine="316" startPosition="68" endLine="324" endPosition="7" />
-    <scopeInfo nodeId="7314351270975464214" fileName="DiskMemoryConflictsTest.java" startLine="333" startPosition="50" endLine="341" endPosition="7" />
-    <scopeInfo nodeId="7314351270975464237" fileName="DiskMemoryConflictsTest.java" startLine="346" startPosition="0" endLine="354" endPosition="0" />
-    <scopeInfo nodeId="7884566175275140901" fileName="DiskMemoryConflictsTest.java" startLine="78" startPosition="92" endLine="87" endPosition="13" />
-    <scopeInfo nodeId="7884566175275140902" fileName="DiskMemoryConflictsTest.java" startLine="78" startPosition="92" endLine="87" endPosition="13">
+    <scopeInfo nodeId="7314351270975464170" fileName="DiskMemoryConflictsTest.java" startLine="315" startPosition="68" endLine="323" endPosition="7" />
+    <scopeInfo nodeId="7314351270975464214" fileName="DiskMemoryConflictsTest.java" startLine="332" startPosition="50" endLine="340" endPosition="7" />
+    <scopeInfo nodeId="7314351270975464237" fileName="DiskMemoryConflictsTest.java" startLine="345" startPosition="0" endLine="353" endPosition="0" />
+    <scopeInfo nodeId="7884566175275140901" fileName="DiskMemoryConflictsTest.java" startLine="77" startPosition="92" endLine="86" endPosition="13" />
+    <scopeInfo nodeId="7884566175275140902" fileName="DiskMemoryConflictsTest.java" startLine="77" startPosition="92" endLine="86" endPosition="13">
       <varInfo nodeId="7884566175275140904" varName="dm" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975463537" fileName="DiskMemoryConflictsTest.java" startLine="107" startPosition="15" endLine="116" endPosition="13">
+    <scopeInfo nodeId="7314351270975463537" fileName="DiskMemoryConflictsTest.java" startLine="106" startPosition="15" endLine="115" endPosition="13">
       <varInfo nodeId="7314351270975463539" varName="modelDescriptor" />
       <varInfo nodeId="7314351270975463546" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975463801" fileName="DiskMemoryConflictsTest.java" startLine="193" startPosition="0" endLine="202" endPosition="0">
+    <scopeInfo nodeId="7314351270975463801" fileName="DiskMemoryConflictsTest.java" startLine="192" startPosition="0" endLine="201" endPosition="0">
       <varInfo nodeId="7314351270975463804" varName="fieldName" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975464075" fileName="DiskMemoryConflictsTest.java" startLine="288" startPosition="12" endLine="297" endPosition="40" />
-    <scopeInfo nodeId="1581213309338397147" fileName="DiskMemoryConflictsTest.java" startLine="302" startPosition="0" endLine="311" endPosition="0" />
-    <scopeInfo nodeId="7314351270975463672" fileName="DiskMemoryConflictsTest.java" startLine="150" startPosition="22" endLine="160" endPosition="11">
+    <scopeInfo nodeId="7314351270975464075" fileName="DiskMemoryConflictsTest.java" startLine="287" startPosition="12" endLine="296" endPosition="40" />
+    <scopeInfo nodeId="1581213309338397147" fileName="DiskMemoryConflictsTest.java" startLine="301" startPosition="0" endLine="310" endPosition="0" />
+    <scopeInfo nodeId="7314351270975463672" fileName="DiskMemoryConflictsTest.java" startLine="149" startPosition="22" endLine="159" endPosition="11">
       <varInfo nodeId="7314351270975463674" varName="matcher" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975464014" fileName="DiskMemoryConflictsTest.java" startLine="268" startPosition="0" endLine="278" endPosition="0" />
-    <scopeInfo nodeId="7884566175275140897" fileName="DiskMemoryConflictsTest.java" startLine="77" startPosition="30" endLine="88" endPosition="11">
+    <scopeInfo nodeId="7314351270975464014" fileName="DiskMemoryConflictsTest.java" startLine="267" startPosition="0" endLine="277" endPosition="0" />
+    <scopeInfo nodeId="7884566175275140897" fileName="DiskMemoryConflictsTest.java" startLine="76" startPosition="30" endLine="87" endPosition="11">
       <varInfo nodeId="7884566175275140899" varName="a" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975463531" fileName="DiskMemoryConflictsTest.java" startLine="106" startPosition="112" endLine="118" endPosition="11" />
-    <scopeInfo nodeId="7314351270975463882" fileName="DiskMemoryConflictsTest.java" startLine="214" startPosition="39" endLine="226" endPosition="9" />
-    <scopeInfo nodeId="7314351270975463521" fileName="DiskMemoryConflictsTest.java" startLine="105" startPosition="25" endLine="119" endPosition="9" />
-    <scopeInfo nodeId="7314351270975464151" fileName="DiskMemoryConflictsTest.java" startLine="312" startPosition="55" endLine="326" endPosition="34">
+    <scopeInfo nodeId="7314351270975463531" fileName="DiskMemoryConflictsTest.java" startLine="105" startPosition="112" endLine="117" endPosition="11" />
+    <scopeInfo nodeId="7314351270975463882" fileName="DiskMemoryConflictsTest.java" startLine="213" startPosition="39" endLine="225" endPosition="9" />
+    <scopeInfo nodeId="7314351270975463521" fileName="DiskMemoryConflictsTest.java" startLine="104" startPosition="25" endLine="118" endPosition="9" />
+    <scopeInfo nodeId="7314351270975464151" fileName="DiskMemoryConflictsTest.java" startLine="311" startPosition="55" endLine="325" endPosition="34">
       <varInfo nodeId="7314351270975464157" varName="count" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975464196" fileName="DiskMemoryConflictsTest.java" startLine="329" startPosition="32" endLine="343" endPosition="34">
+    <scopeInfo nodeId="7314351270975464196" fileName="DiskMemoryConflictsTest.java" startLine="328" startPosition="32" endLine="342" endPosition="34">
       <varInfo nodeId="7314351270975464202" varName="count" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975463877" fileName="DiskMemoryConflictsTest.java" startLine="213" startPosition="0" endLine="228" endPosition="0">
+    <scopeInfo nodeId="7314351270975463877" fileName="DiskMemoryConflictsTest.java" startLine="212" startPosition="0" endLine="227" endPosition="0">
       <varInfo nodeId="7314351270975463880" varName="message" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975463518" fileName="DiskMemoryConflictsTest.java" startLine="105" startPosition="0" endLine="121" endPosition="0" />
-    <scopeInfo nodeId="7314351270975464146" fileName="DiskMemoryConflictsTest.java" startLine="312" startPosition="0" endLine="328" endPosition="0">
+    <scopeInfo nodeId="7314351270975463518" fileName="DiskMemoryConflictsTest.java" startLine="104" startPosition="0" endLine="120" endPosition="0" />
+    <scopeInfo nodeId="7314351270975464146" fileName="DiskMemoryConflictsTest.java" startLine="311" startPosition="0" endLine="327" endPosition="0">
       <varInfo nodeId="7314351270975464149" varName="timeStamp" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975464193" fileName="DiskMemoryConflictsTest.java" startLine="329" startPosition="0" endLine="345" endPosition="0" />
-    <scopeInfo nodeId="7314351270975463658" fileName="DiskMemoryConflictsTest.java" startLine="145" startPosition="37" endLine="162" endPosition="24">
+    <scopeInfo nodeId="7314351270975464193" fileName="DiskMemoryConflictsTest.java" startLine="328" startPosition="0" endLine="344" endPosition="0" />
+    <scopeInfo nodeId="7314351270975463658" fileName="DiskMemoryConflictsTest.java" startLine="144" startPosition="37" endLine="161" endPosition="24">
       <varInfo nodeId="7314351270975463660" varName="line" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975464069" fileName="DiskMemoryConflictsTest.java" startLine="279" startPosition="47" endLine="299" endPosition="24" />
-    <scopeInfo nodeId="7884566175275140851" fileName="DiskMemoryConflictsTest.java" startLine="68" startPosition="13" endLine="89" endPosition="30" />
-    <scopeInfo nodeId="7314351270975463501" fileName="DiskMemoryConflictsTest.java" startLine="102" startPosition="68" endLine="123" endPosition="21">
+    <scopeInfo nodeId="7314351270975464069" fileName="DiskMemoryConflictsTest.java" startLine="278" startPosition="47" endLine="298" endPosition="24" />
+    <scopeInfo nodeId="7884566175275140851" fileName="DiskMemoryConflictsTest.java" startLine="67" startPosition="13" endLine="88" endPosition="30" />
+    <scopeInfo nodeId="7314351270975463501" fileName="DiskMemoryConflictsTest.java" startLine="101" startPosition="68" endLine="122" endPosition="21">
       <varInfo nodeId="7314351270975463503" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975464066" fileName="DiskMemoryConflictsTest.java" startLine="279" startPosition="0" endLine="301" endPosition="0" />
-    <scopeInfo nodeId="7314351270975463496" fileName="DiskMemoryConflictsTest.java" startLine="102" startPosition="0" endLine="125" endPosition="0">
+    <scopeInfo nodeId="7314351270975464066" fileName="DiskMemoryConflictsTest.java" startLine="278" startPosition="0" endLine="300" endPosition="0" />
+    <scopeInfo nodeId="7314351270975463496" fileName="DiskMemoryConflictsTest.java" startLine="101" startPosition="0" endLine="124" endPosition="0">
       <varInfo nodeId="7314351270975463499" varName="nameToWrite" />
     </scopeInfo>
-    <scopeInfo nodeId="7884566175275140830" fileName="DiskMemoryConflictsTest.java" startLine="66" startPosition="53" endLine="94" endPosition="28">
+    <scopeInfo nodeId="7884566175275140830" fileName="DiskMemoryConflictsTest.java" startLine="65" startPosition="53" endLine="93" endPosition="28">
       <varInfo nodeId="7884566175275140832" varName="resultArr" />
     </scopeInfo>
-    <scopeInfo nodeId="7884566175275140825" fileName="DiskMemoryConflictsTest.java" startLine="66" startPosition="0" endLine="96" endPosition="0">
+    <scopeInfo nodeId="7884566175275140825" fileName="DiskMemoryConflictsTest.java" startLine="65" startPosition="0" endLine="95" endPosition="0">
       <varInfo nodeId="7884566175275140828" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975463625" fileName="DiskMemoryConflictsTest.java" startLine="139" startPosition="9" endLine="174" endPosition="106">
+    <scopeInfo nodeId="7314351270975463625" fileName="DiskMemoryConflictsTest.java" startLine="138" startPosition="9" endLine="173" endPosition="106">
       <varInfo nodeId="7314351270975463633" varName="FIELD_PATTERN" />
       <varInfo nodeId="7314351270975463637" varName="fieldNamePattern" />
       <varInfo nodeId="7314351270975463644" varName="inField" />
@@ -391,40 +391,40 @@
       <varInfo nodeId="7314351270975463627" varName="scanner" />
       <varInfo nodeId="7314351270975463733" varName="w" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975463311" fileName="DiskMemoryConflictsTest.java" startLine="61" startPosition="41" endLine="99" endPosition="5">
+    <scopeInfo nodeId="7314351270975463311" fileName="DiskMemoryConflictsTest.java" startLine="60" startPosition="41" endLine="98" endPosition="5">
       <varInfo nodeId="7314351270975463340" varName="result" />
       <varInfo nodeId="7314351270975463313" varName="startedAction" />
       <varInfo nodeId="7314351270975463322" varName="startedDiskModification" />
       <varInfo nodeId="7314351270975463331" varName="startedVersion" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975463308" fileName="DiskMemoryConflictsTest.java" startLine="60" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="7314351270975463607" fileName="DiskMemoryConflictsTest.java" startLine="134" startPosition="67" endLine="178" endPosition="16" />
-    <scopeInfo nodeId="7314351270975463602" fileName="DiskMemoryConflictsTest.java" startLine="134" startPosition="0" endLine="180" endPosition="0">
+    <scopeInfo nodeId="7314351270975463308" fileName="DiskMemoryConflictsTest.java" startLine="59" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="7314351270975463607" fileName="DiskMemoryConflictsTest.java" startLine="133" startPosition="67" endLine="177" endPosition="16" />
+    <scopeInfo nodeId="7314351270975463602" fileName="DiskMemoryConflictsTest.java" startLine="133" startPosition="0" endLine="179" endPosition="0">
       <varInfo nodeId="7314351270975463605" varName="nameToWrite" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975463845" fileName="DiskMemoryConflictsTest.java" startLine="203" startPosition="207" endLine="265" endPosition="46">
+    <scopeInfo nodeId="7314351270975463845" fileName="DiskMemoryConflictsTest.java" startLine="202" startPosition="207" endLine="264" endPosition="46">
       <varInfo nodeId="7314351270975463864" varName="dialogWasInvoked" />
       <varInfo nodeId="7314351270975463983" varName="expectedFieldName" />
     </scopeInfo>
-    <scopeInfo nodeId="7314351270975463836" fileName="DiskMemoryConflictsTest.java" startLine="203" startPosition="0" endLine="267" endPosition="0">
+    <scopeInfo nodeId="7314351270975463836" fileName="DiskMemoryConflictsTest.java" startLine="202" startPosition="0" endLine="266" endPosition="0">
       <varInfo nodeId="7314351270975463839" varName="action" />
       <varInfo nodeId="7314351270975463841" varName="diskModification" />
       <varInfo nodeId="7314351270975463843" varName="versionToChoose" />
     </scopeInfo>
-    <unitInfo nodeId="7314351270975463972" fileName="DiskMemoryConflictsTest.java" startLine="247" startPosition="39" endLine="250" endPosition="7" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$6" />
-    <unitInfo nodeId="7884566175275140879" fileName="DiskMemoryConflictsTest.java" startLine="72" startPosition="51" endLine="76" endPosition="11" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$2" />
-    <unitInfo nodeId="7314351270975463925" fileName="DiskMemoryConflictsTest.java" startLine="239" startPosition="47" endLine="243" endPosition="7" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$4" />
-    <unitInfo nodeId="7314351270975464135" fileName="DiskMemoryConflictsTest.java" startLine="283" startPosition="48" endLine="287" endPosition="7" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$8" />
-    <unitInfo nodeId="7314351270975464249" fileName="DiskMemoryConflictsTest.java" startLine="348" startPosition="41" endLine="352" endPosition="5" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$9" />
-    <unitInfo nodeId="7314351270975463943" fileName="DiskMemoryConflictsTest.java" startLine="231" startPosition="49" endLine="236" endPosition="7" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$5" />
-    <unitInfo nodeId="7314351270975464084" fileName="DiskMemoryConflictsTest.java" startLine="290" startPosition="49" endLine="296" endPosition="7" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$7" />
-    <unitInfo nodeId="7314351270975463226" fileName="DiskMemoryConflictsTest.java" startLine="355" startPosition="0" endLine="362" endPosition="0" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$Action" />
-    <unitInfo nodeId="7314351270975463228" fileName="DiskMemoryConflictsTest.java" startLine="363" startPosition="0" endLine="370" endPosition="0" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$VersionToChoose" />
-    <unitInfo nodeId="7314351270975463227" fileName="DiskMemoryConflictsTest.java" startLine="371" startPosition="0" endLine="378" endPosition="0" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$DiskModification" />
-    <unitInfo nodeId="7314351270975463876" fileName="DiskMemoryConflictsTest.java" startLine="212" startPosition="31" endLine="228" endPosition="5" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$3" />
-    <unitInfo nodeId="7314351270975463517" fileName="DiskMemoryConflictsTest.java" startLine="104" startPosition="47" endLine="121" endPosition="5" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$2" />
-    <unitInfo nodeId="7884566175275140824" fileName="DiskMemoryConflictsTest.java" startLine="65" startPosition="114" endLine="96" endPosition="5" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$1" />
-    <unitInfo nodeId="7314351270975463225" fileName="DiskMemoryConflictsTest.java" startLine="38" startPosition="0" endLine="379" endPosition="0" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest" />
+    <unitInfo nodeId="7314351270975463972" fileName="DiskMemoryConflictsTest.java" startLine="246" startPosition="39" endLine="249" endPosition="7" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$6" />
+    <unitInfo nodeId="7884566175275140879" fileName="DiskMemoryConflictsTest.java" startLine="71" startPosition="51" endLine="75" endPosition="11" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$2" />
+    <unitInfo nodeId="7314351270975463925" fileName="DiskMemoryConflictsTest.java" startLine="238" startPosition="47" endLine="242" endPosition="7" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$4" />
+    <unitInfo nodeId="7314351270975464135" fileName="DiskMemoryConflictsTest.java" startLine="282" startPosition="48" endLine="286" endPosition="7" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$8" />
+    <unitInfo nodeId="7314351270975464249" fileName="DiskMemoryConflictsTest.java" startLine="347" startPosition="41" endLine="351" endPosition="5" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$9" />
+    <unitInfo nodeId="7314351270975463943" fileName="DiskMemoryConflictsTest.java" startLine="230" startPosition="49" endLine="235" endPosition="7" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$5" />
+    <unitInfo nodeId="7314351270975464084" fileName="DiskMemoryConflictsTest.java" startLine="289" startPosition="49" endLine="295" endPosition="7" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$7" />
+    <unitInfo nodeId="7314351270975463226" fileName="DiskMemoryConflictsTest.java" startLine="354" startPosition="0" endLine="361" endPosition="0" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$Action" />
+    <unitInfo nodeId="7314351270975463228" fileName="DiskMemoryConflictsTest.java" startLine="362" startPosition="0" endLine="369" endPosition="0" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$VersionToChoose" />
+    <unitInfo nodeId="7314351270975463227" fileName="DiskMemoryConflictsTest.java" startLine="370" startPosition="0" endLine="377" endPosition="0" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$DiskModification" />
+    <unitInfo nodeId="7314351270975463876" fileName="DiskMemoryConflictsTest.java" startLine="211" startPosition="31" endLine="227" endPosition="5" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$3" />
+    <unitInfo nodeId="7314351270975463517" fileName="DiskMemoryConflictsTest.java" startLine="103" startPosition="47" endLine="120" endPosition="5" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$2" />
+    <unitInfo nodeId="7884566175275140824" fileName="DiskMemoryConflictsTest.java" startLine="64" startPosition="114" endLine="95" endPosition="5" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest$1" />
+    <unitInfo nodeId="7314351270975463225" fileName="DiskMemoryConflictsTest.java" startLine="38" startPosition="0" endLine="378" endPosition="0" unitName="jetbrains.mps.vcs.DiskMemoryConflictsTest" />
   </root>
 </debugInfo>
 

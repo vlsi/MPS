@@ -20,7 +20,7 @@ public class typeof_NodeSource_InferenceRule extends AbstractInferenceRule_Runti
     {
       SNode _nodeToCheck_1029348928467 = nodeSource;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "529406319400446683", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "529406319400446680", true), (SNode) _quotation_createNode_ygg18w_a0a0a(SLinkOperations.getTarget(nodeSource, "concept", false)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "529406319400446680", true), (SNode) _quotation_createNode_ygg18w_a0a0b(SLinkOperations.getTarget(nodeSource, "concept", false)), _info_12389875345);
     }
   }
 
@@ -39,7 +39,7 @@ public class typeof_NodeSource_InferenceRule extends AbstractInferenceRule_Runti
     return true;
   }
 
-  private static SNode _quotation_createNode_ygg18w_a0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_ygg18w_a0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);

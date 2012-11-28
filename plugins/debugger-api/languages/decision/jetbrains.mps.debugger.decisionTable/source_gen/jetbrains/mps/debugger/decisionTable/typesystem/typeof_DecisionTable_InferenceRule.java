@@ -21,20 +21,20 @@ public class typeof_DecisionTable_InferenceRule extends AbstractInferenceRule_Ru
     {
       SNode _nodeToCheck_1029348928467 = table;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:fe1ce518-bbce-495d-bf96-771053a6aafd(jetbrains.mps.debugger.decisionTable.typesystem)", "6409088484822290096", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:fe1ce518-bbce-495d-bf96-771053a6aafd(jetbrains.mps.debugger.decisionTable.typesystem)", "6409088484822290079", true), (SNode) _quotation_createNode_ro75ql_a0a0a(), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:fe1ce518-bbce-495d-bf96-771053a6aafd(jetbrains.mps.debugger.decisionTable.typesystem)", "6409088484822290079", true), (SNode) _quotation_createNode_ro75ql_a0a0b(), _info_12389875345);
     }
     for (SNode caseX : ListSequence.fromList(SLinkOperations.getTargets(table, "caseX", true))) {
       {
         SNode _nodeToCheck_1029348928467 = caseX;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:fe1ce518-bbce-495d-bf96-771053a6aafd(jetbrains.mps.debugger.decisionTable.typesystem)", "5202024118203926624", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:fe1ce518-bbce-495d-bf96-771053a6aafd(jetbrains.mps.debugger.decisionTable.typesystem)", "5202024118203926601", true), (SNode) _quotation_createNode_ro75ql_a0a0b0a(), false, true, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:fe1ce518-bbce-495d-bf96-771053a6aafd(jetbrains.mps.debugger.decisionTable.typesystem)", "5202024118203926601", true), (SNode) _quotation_createNode_ro75ql_a0a0b0b(), false, true, _info_12389875345);
       }
     }
     for (SNode caseY : ListSequence.fromList(SLinkOperations.getTargets(table, "caseY", true))) {
       {
         SNode _nodeToCheck_1029348928467 = caseY;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:fe1ce518-bbce-495d-bf96-771053a6aafd(jetbrains.mps.debugger.decisionTable.typesystem)", "5202024118203926638", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:fe1ce518-bbce-495d-bf96-771053a6aafd(jetbrains.mps.debugger.decisionTable.typesystem)", "5202024118203926643", true), (SNode) _quotation_createNode_ro75ql_a0a0c0a(), false, true, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:fe1ce518-bbce-495d-bf96-771053a6aafd(jetbrains.mps.debugger.decisionTable.typesystem)", "5202024118203926643", true), (SNode) _quotation_createNode_ro75ql_a0a0c0b(), false, true, _info_12389875345);
       }
     }
   }
@@ -54,19 +54,19 @@ public class typeof_DecisionTable_InferenceRule extends AbstractInferenceRule_Ru
     return false;
   }
 
-  private static SNode _quotation_createNode_ro75ql_a0a0a() {
+  private static SNode _quotation_createNode_ro75ql_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debugger.decisionTable.structure.DecisionTableType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_ro75ql_a0a0b0a() {
+  private static SNode _quotation_createNode_ro75ql_a0a0b0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_ro75ql_a0a0c0a() {
+  private static SNode _quotation_createNode_ro75ql_a0a0c0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

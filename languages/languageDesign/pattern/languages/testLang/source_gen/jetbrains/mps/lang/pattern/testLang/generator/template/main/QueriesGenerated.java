@@ -4,32 +4,20 @@ package jetbrains.mps.lang.pattern.testLang.generator.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_Behavior;
 import jetbrains.mps.lang.test.generator.baseLanguage.template.util.TestsUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class QueriesGenerated {
-  public static Object propertyMacro_GetPropertyValue_602731281382641311(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "test" + SPropertyOperations.getString(_context.getNode(), "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1563914226484903755(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "patternVar_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variable", true), "declaration", false), "varName");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1563914226484925040(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "patternVar_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variable", true), "declaration", false), "varName");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1563914226484968044(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "patternVar_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variable", true), "listPattern", false), "varName");
+  public static Object propertyMacro_GetPropertyValue_815823070325289644(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return PatternTest_Behavior.call_getPatternTestName_394224946578869064(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_602731281382637730(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -48,8 +36,20 @@ public class QueriesGenerated {
     return "test" + SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_815823070325289644(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return PatternTest_Behavior.call_getPatternTestName_394224946578869064(_context.getNode());
+  public static Object propertyMacro_GetPropertyValue_602731281382641311(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "test" + SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1563914226484903755(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "patternVar_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variable", true), "declaration", false), "varName");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1563914226484925040(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "patternVar_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variable", true), "declaration", false), "varName");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1563914226484968044(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "patternVar_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variable", true), "listPattern", false), "varName");
   }
 
   public static boolean ifMacro_Condition_1563914226484976394(final IOperationContext operationContext, final IfMacroContext _context) {

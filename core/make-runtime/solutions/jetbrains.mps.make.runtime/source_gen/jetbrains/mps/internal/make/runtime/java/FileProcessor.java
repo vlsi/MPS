@@ -24,7 +24,6 @@ import jetbrains.mps.util.JDOMUtil;
 
 /*package*/ class FileProcessor {
   private static final Logger LOG = Logger.getLogger(FileProcessor.class);
-
   private final List<SModel> myModels = new ArrayList<SModel>();
   private final List<FileProcessor.FileAndContent> myFilesAndContents = new ArrayList<FileProcessor.FileAndContent>();
   private final List<IFile> myFilesToDelete = new ArrayList<IFile>();

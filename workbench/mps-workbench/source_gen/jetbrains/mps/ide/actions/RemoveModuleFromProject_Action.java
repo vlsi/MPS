@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -23,10 +22,10 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JLabel;
 import jetbrains.mps.project.StandaloneMPSProject;
+import jetbrains.mps.logging.Logger;
 
 public class RemoveModuleFromProject_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(RemoveModuleFromProject_Action.class);
 
   public RemoveModuleFromProject_Action() {
     super("Remove from Project", "", ICON);
@@ -108,4 +107,6 @@ public class RemoveModuleFromProject_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "RemoveModuleFromProject", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(RemoveModuleFromProject_Action.class);
 }

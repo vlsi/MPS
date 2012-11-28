@@ -4,7 +4,6 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -15,10 +14,10 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.logging.Logger;
 
 public class AddLanguageImport_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(AddLanguageImport_Action.class);
 
   public AddLanguageImport_Action() {
     super("Add Language Import", "", ICON);
@@ -73,4 +72,6 @@ public class AddLanguageImport_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "AddLanguageImport", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(AddLanguageImport_Action.class);
 }

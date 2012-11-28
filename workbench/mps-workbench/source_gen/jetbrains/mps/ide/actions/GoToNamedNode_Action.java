@@ -4,16 +4,14 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.logging.Logger;
 
 public class GoToNamedNode_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(GoToNamedNode_Action.class);
-
   private AnAction action;
 
   public GoToNamedNode_Action(AnAction action_par) {
@@ -65,4 +63,6 @@ public class GoToNamedNode_Action extends BaseAction {
   public static String action_State(AnAction object) {
     return "";
   }
+
+  private static Logger LOG = Logger.getLogger(GoToNamedNode_Action.class);
 }

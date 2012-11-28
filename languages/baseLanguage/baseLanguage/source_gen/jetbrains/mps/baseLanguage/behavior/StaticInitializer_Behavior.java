@@ -21,6 +21,14 @@ public class StaticInitializer_Behavior {
     return markIcons;
   }
 
+  public static boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
+    return false;
+  }
+
+  public static boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
+    return true;
+  }
+
   @Deprecated
   public static List<Icon> call_getMarkIcons_5039675756633082351(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<List<Icon>>) ((Class) Object.class), thisNode, "virtual_getMarkIcons_3923831204883340393", new Object[]{});

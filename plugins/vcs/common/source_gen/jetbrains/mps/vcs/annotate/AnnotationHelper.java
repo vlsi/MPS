@@ -56,8 +56,8 @@ public class AnnotationHelper {
       return true;
     }
     final SNode root = editorComponent.getEditedNode();
-    SModel model = check_19hp0u_a0d0b(root);
-    SModelDescriptor modelDescriptor = check_19hp0u_a0e0b(model);
+    SModel model = check_19hp0u_a0d0c(root);
+    SModelDescriptor modelDescriptor = check_19hp0u_a0e0c(model);
     if (!((modelDescriptor instanceof DefaultSModelDescriptor))) {
       return false;
     }
@@ -131,14 +131,14 @@ public class AnnotationHelper {
     return annotate(editorComponent, true);
   }
 
-  private static SModel check_19hp0u_a0d0b(SNode checkedDotOperand) {
+  private static SModel check_19hp0u_a0d0c(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }
     return null;
   }
 
-  private static SModelDescriptor check_19hp0u_a0e0b(SModel checkedDotOperand) {
+  private static SModelDescriptor check_19hp0u_a0e0c(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

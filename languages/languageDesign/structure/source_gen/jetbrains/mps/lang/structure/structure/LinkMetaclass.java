@@ -11,22 +11,12 @@ public enum LinkMetaclass {
   aggregation("aggregation", "aggregation");
 
   private String myName;
-  private String myValue;
-
-  LinkMetaclass(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -52,5 +42,16 @@ public enum LinkMetaclass {
       return LinkMetaclass.aggregation;
     }
     return LinkMetaclass.getDefault();
+  }
+
+  private String myValue;
+
+  LinkMetaclass(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

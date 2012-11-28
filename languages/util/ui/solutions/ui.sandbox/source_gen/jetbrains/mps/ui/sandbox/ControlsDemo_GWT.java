@@ -24,10 +24,10 @@ public class ControlsDemo_GWT {
   }
 
   public void buildUI(Panel menu) {
-    final Hyperlink widget_z343cv_a0a0a = new Hyperlink();
-    widget_z343cv_a0a0a.setText("Tree");
-    widget_z343cv_a0a0a.setTargetHistoryToken("tree");
-    widget_z343cv_a0a0a.addClickHandler(new ClickHandler() {
+    final Hyperlink widget_z343cv_a0a0c = new Hyperlink();
+    widget_z343cv_a0a0c.setText("Tree");
+    widget_z343cv_a0a0c.setTargetHistoryToken("tree");
+    widget_z343cv_a0a0c.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent e) {
         Executor<ClickEvent> he = new Executor<ClickEvent>() {
           public void doIt(ClickEvent event) {
@@ -37,11 +37,11 @@ public class ControlsDemo_GWT {
         he.doIt(e);
       }
     });
-    menu.add(widget_z343cv_a0a0a);
-    final Hyperlink widget_z343cv_b0a0a = new Hyperlink();
-    widget_z343cv_b0a0a.setText("Table");
-    widget_z343cv_b0a0a.setTargetHistoryToken("tree");
-    widget_z343cv_b0a0a.addClickHandler(new ClickHandler() {
+    menu.add(widget_z343cv_a0a0c);
+    final Hyperlink widget_z343cv_b0a0c = new Hyperlink();
+    widget_z343cv_b0a0c.setText("Table");
+    widget_z343cv_b0a0c.setTargetHistoryToken("tree");
+    widget_z343cv_b0a0c.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent e) {
         Executor<ClickEvent> he = new Executor<ClickEvent>() {
           public void doIt(ClickEvent event) {
@@ -51,7 +51,7 @@ public class ControlsDemo_GWT {
         he.doIt(e);
       }
     });
-    menu.add(widget_z343cv_b0a0a);
+    menu.add(widget_z343cv_b0a0c);
   }
 
   public void tree() {
@@ -65,24 +65,24 @@ public class ControlsDemo_GWT {
       it.next();
       it.remove();
     }
-    final TabLayoutPanel widget_z343cv_b0b0b = new TabLayoutPanel(2, Style.Unit.EM);
-    final String groupName_z343cv_a0c0b0b = "defaultGroup";
-    final LayoutPanel widget_z343cv_a0a1a1a1 = new LayoutPanel();
-    final String groupName_z343cv_a0b0d0b0b = "defaultGroup";
-    final Tree widget_z343cv_a0a0a0b0b0b = new Tree();
-    final TreeItem widget_z343cv_a0a0a0a0a1a1a1 = new TreeItem();
-    widget_z343cv_a0a0a0a0a1a1a1.setText(String.valueOf("ROOT"));
+    final TabLayoutPanel widget_z343cv_b0b0d = new TabLayoutPanel(2, Style.Unit.EM);
+    final String groupName_z343cv_a0c0b0d = "defaultGroup";
+    final LayoutPanel widget_z343cv_a0a1a1a3 = new LayoutPanel();
+    final String groupName_z343cv_a0b0d0b0d = "defaultGroup";
+    final Tree widget_z343cv_a0a0a0b0b0d = new Tree();
+    final TreeItem widget_z343cv_a0a0a0a0a1a1a3 = new TreeItem();
+    widget_z343cv_a0a0a0a0a1a1a3.setText(String.valueOf("ROOT"));
     for (int i = 0; i < 5; i++) {
-      final TreeItem widget_z343cv_a0a0a0a0a0a0a0b0b0b = new TreeItem();
-      widget_z343cv_a0a0a0a0a0a0a0b0b0b.setText(String.valueOf("Leaf"));
-      widget_z343cv_a0a0a0a0a1a1a1.addItem(widget_z343cv_a0a0a0a0a0a0a0b0b0b);
+      final TreeItem widget_z343cv_a0a0a0a0a0a0a0b0b0d = new TreeItem();
+      widget_z343cv_a0a0a0a0a0a0a0b0b0d.setText(String.valueOf("Leaf"));
+      widget_z343cv_a0a0a0a0a1a1a3.addItem(widget_z343cv_a0a0a0a0a0a0a0b0b0d);
     }
-    widget_z343cv_a0a0a0b0b0b.addItem(widget_z343cv_a0a0a0a0a1a1a1);
-    widget_z343cv_a0a1a1a1.add(widget_z343cv_a0a0a0b0b0b);
-    widget_z343cv_b0b0b.add(widget_z343cv_a0a1a1a1, "Tree");
-    dc.add(widget_z343cv_b0b0b);
-    widget_z343cv_b0b0b.setWidth("100%");
-    widget_z343cv_b0b0b.setHeight("100%");
+    widget_z343cv_a0a0a0b0b0d.addItem(widget_z343cv_a0a0a0a0a1a1a3);
+    widget_z343cv_a0a1a1a3.add(widget_z343cv_a0a0a0b0b0d);
+    widget_z343cv_b0b0d.add(widget_z343cv_a0a1a1a3, "Tree");
+    dc.add(widget_z343cv_b0b0d);
+    widget_z343cv_b0b0d.setWidth("100%");
+    widget_z343cv_b0b0d.setHeight("100%");
   }
 
   public void table() {
@@ -96,29 +96,29 @@ public class ControlsDemo_GWT {
       it.next();
       it.remove();
     }
-    final TabLayoutPanel widget_z343cv_b0b0c = new TabLayoutPanel(2, Style.Unit.EM);
-    final String groupName_z343cv_a0c0b0c = "defaultGroup";
-    final LayoutPanel widget_z343cv_a0a1a1a2 = new LayoutPanel();
-    final String groupName_z343cv_a0b0d0b0c = "defaultGroup";
-    final Grid widget_z343cv_a0a0a0b0b0c = new Grid();
-    final String[] widget_z343cv_a0a0a0a0a1a1a2 = new String[1];
-    ((String[]) widget_z343cv_a0a0a0a0a1a1a2)[0] = "Foo";
-    widget_z343cv_a0a0a0b0b0c.resizeColumns(widget_z343cv_a0a0a0b0b0c.getColumnCount() + 1);
-    final String[] widget_z343cv_b0a0a0a0a1a1a2 = new String[1];
-    ((String[]) widget_z343cv_b0a0a0a0a1a1a2)[0] = "Bar";
-    widget_z343cv_a0a0a0b0b0c.resizeColumns(widget_z343cv_a0a0a0b0b0c.getColumnCount() + 1);
+    final TabLayoutPanel widget_z343cv_b0b0e = new TabLayoutPanel(2, Style.Unit.EM);
+    final String groupName_z343cv_a0c0b0e = "defaultGroup";
+    final LayoutPanel widget_z343cv_a0a1a1a4 = new LayoutPanel();
+    final String groupName_z343cv_a0b0d0b0e = "defaultGroup";
+    final Grid widget_z343cv_a0a0a0b0b0e = new Grid();
+    final String[] widget_z343cv_a0a0a0a0a1a1a4 = new String[1];
+    ((String[]) widget_z343cv_a0a0a0a0a1a1a4)[0] = "Foo";
+    widget_z343cv_a0a0a0b0b0e.resizeColumns(widget_z343cv_a0a0a0b0b0e.getColumnCount() + 1);
+    final String[] widget_z343cv_b0a0a0a0a1a1a4 = new String[1];
+    ((String[]) widget_z343cv_b0a0a0a0a1a1a4)[0] = "Bar";
+    widget_z343cv_a0a0a0b0b0e.resizeColumns(widget_z343cv_a0a0a0b0b0e.getColumnCount() + 1);
     for (int i = 0; i < 128; i++) {
-      final Object[][] widget_z343cv_a0a0b0a0a0a1a1a2 = (Object[][]) new Object[1][];
-      ((Object[]) widget_z343cv_a0a0b0a0a0a1a1a2)[0] = new String[]{"" + (i + 32), "" + Character.valueOf((char) (' ' + i))};
-      widget_z343cv_a0a0a0b0b0c.resizeRows(widget_z343cv_a0a0a0b0b0c.getRowCount() + 1);
-      for (int c = 0; c < widget_z343cv_a0a0a0b0b0c.getColumnCount() && c < widget_z343cv_a0a0b0a0a0a1a1a2[0].length; c++) {
-        widget_z343cv_a0a0a0b0b0c.setText(widget_z343cv_a0a0a0b0b0c.getRowCount() - 1, c, String.valueOf(widget_z343cv_a0a0b0a0a0a1a1a2[0][c]));
+      final Object[][] widget_z343cv_a0a0b0a0a0a1a1a4 = (Object[][]) new Object[1][];
+      ((Object[]) widget_z343cv_a0a0b0a0a0a1a1a4)[0] = new String[]{"" + (i + 32), "" + Character.valueOf((char) (' ' + i))};
+      widget_z343cv_a0a0a0b0b0e.resizeRows(widget_z343cv_a0a0a0b0b0e.getRowCount() + 1);
+      for (int c = 0; c < widget_z343cv_a0a0a0b0b0e.getColumnCount() && c < widget_z343cv_a0a0b0a0a0a1a1a4[0].length; c++) {
+        widget_z343cv_a0a0a0b0b0e.setText(widget_z343cv_a0a0a0b0b0e.getRowCount() - 1, c, String.valueOf(widget_z343cv_a0a0b0a0a0a1a1a4[0][c]));
       }
     }
-    widget_z343cv_a0a1a1a2.add(widget_z343cv_a0a0a0b0b0c);
-    widget_z343cv_b0b0c.add(widget_z343cv_a0a1a1a2, "Tree");
-    dc.add(widget_z343cv_b0b0c);
-    widget_z343cv_b0b0c.setWidth("100%");
-    widget_z343cv_b0b0c.setHeight("100%");
+    widget_z343cv_a0a1a1a4.add(widget_z343cv_a0a0a0b0b0e);
+    widget_z343cv_b0b0e.add(widget_z343cv_a0a1a1a4, "Tree");
+    dc.add(widget_z343cv_b0b0e);
+    widget_z343cv_b0b0e.setWidth("100%");
+    widget_z343cv_b0b0e.setHeight("100%");
   }
 }

@@ -4,10 +4,7 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
@@ -16,6 +13,7 @@ import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.util.MacrosFactory;
 import java.io.File;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.util.FileUtil;
 import org.jdom.Document;
@@ -33,22 +31,18 @@ import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class MPSInstance_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
-  protected static Log log = LogFactory.getLog(MPSInstance_Configuration.class);
-
   @NotNull
   private MPSInstance_Configuration.MyState myState = new MPSInstance_Configuration.MyState();
 
-  public MPSInstance_Configuration(Project project, MPSInstance_Configuration_Factory factory, String name) {
-    super(project, factory, name);
-  }
-
   public void checkConfiguration() throws RuntimeConfigurationException {
-    if (isEmpty_uovwmm_a0a0a0a(this.getConfigurationPath())) {
+    if (isEmpty_uovwmm_a0a0a0b(this.getConfigurationPath())) {
       throw new RuntimeConfigurationException("Configuration path is empty.");
     }
-    if (isEmpty_uovwmm_a0b0a0a(this.getSystemPath())) {
+    if (isEmpty_uovwmm_a0b0a0b(this.getSystemPath())) {
       throw new RuntimeConfigurationException("System path is empty.");
     }
   }
@@ -191,6 +185,34 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
     return clone;
   }
 
+  public class MyState {
+    public String myVmOptions;
+    public String myJrePath;
+    public String mySystemPath = shinkPath(Mps_Command.getDefaultSystemPath());
+    public String myConfigurationPath = shinkPath(Mps_Command.getDefaultConfigurationPath());
+    public boolean myOpenCurrentProject = false;
+    public String myProjectToOpen;
+
+    public MyState() {
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+      MPSInstance_Configuration.MyState state = new MPSInstance_Configuration.MyState();
+      state.myVmOptions = myVmOptions;
+      state.myJrePath = myJrePath;
+      state.mySystemPath = mySystemPath;
+      state.myConfigurationPath = myConfigurationPath;
+      state.myOpenCurrentProject = myOpenCurrentProject;
+      state.myProjectToOpen = myProjectToOpen;
+      return state;
+    }
+  }
+
+  public MPSInstance_Configuration(Project project, MPSInstance_Configuration_Factory factory, String name) {
+    super(project, factory, name);
+  }
+
   @Nullable
   public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment environment) throws ExecutionException {
     return new MPSInstance_Configuration_RunProfileState(this, executor, environment);
@@ -222,35 +244,13 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
     return MPSInstance_Configuration_RunProfileState.canExecute(executorId);
   }
 
-  public static boolean isEmpty_uovwmm_a0a0a0a(String str) {
+  protected static Log log = LogFactory.getLog(MPSInstance_Configuration.class);
+
+  public static boolean isEmpty_uovwmm_a0a0a0b(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isEmpty_uovwmm_a0b0a0a(String str) {
+  public static boolean isEmpty_uovwmm_a0b0a0b(String str) {
     return str == null || str.length() == 0;
-  }
-
-  public class MyState {
-    public String myVmOptions;
-    public String myJrePath;
-    public String mySystemPath = shinkPath(Mps_Command.getDefaultSystemPath());
-    public String myConfigurationPath = shinkPath(Mps_Command.getDefaultConfigurationPath());
-    public boolean myOpenCurrentProject = false;
-    public String myProjectToOpen;
-
-    public MyState() {
-    }
-
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-      MPSInstance_Configuration.MyState state = new MPSInstance_Configuration.MyState();
-      state.myVmOptions = myVmOptions;
-      state.myJrePath = myJrePath;
-      state.mySystemPath = mySystemPath;
-      state.myConfigurationPath = myConfigurationPath;
-      state.myOpenCurrentProject = myOpenCurrentProject;
-      state.myProjectToOpen = myProjectToOpen;
-      return state;
-    }
   }
 }

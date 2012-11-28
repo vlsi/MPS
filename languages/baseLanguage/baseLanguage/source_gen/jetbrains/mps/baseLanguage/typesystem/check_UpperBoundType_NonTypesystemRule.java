@@ -24,7 +24,7 @@ public class check_UpperBoundType_NonTypesystemRule extends AbstractNonTypesyste
   }
 
   public void applyRule(final SNode upperBoundType, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(upperBoundType, "bound", true), "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(upperBoundType, "bound", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(_quotation_createNode_koiwc0_a0a0a0a(), "classifier", false)) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(upperBoundType, "bound", true), "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(upperBoundType, "bound", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(_quotation_createNode_koiwc0_a0a0a0b(), "classifier", false)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(upperBoundType, "Wildcard type argument '?' explicitly extends java.lang.Object", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2298236629740276241", null, errorTarget);
@@ -51,7 +51,7 @@ public class check_UpperBoundType_NonTypesystemRule extends AbstractNonTypesyste
     return false;
   }
 
-  private static SNode _quotation_createNode_koiwc0_a0a0a0a() {
+  private static SNode _quotation_createNode_koiwc0_a0a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));

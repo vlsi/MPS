@@ -52,7 +52,6 @@ import org.eclipse.jdt.internal.compiler.ast.ASTNode;
 
 public class ReferentsCreator {
   private static final Logger LOG = Logger.getLogger(ReferentsCreator.class);
-
   /*package*/ Map<Binding, SNode> myBindingMap = new HashMap<Binding, SNode>();
   /*package*/ SModel myCurrentModel;
   /*package*/ Map<String, SModel> myPackageNamesToModels;
@@ -335,7 +334,7 @@ public class ReferentsCreator {
             SourceTypeBinding enclosingClass = memberTypeBinding.enclosingType;
             SNode enclosingClassifier = SNodeOperations.cast(myReferentsCreator.myBindingMap.get(enclosingClass), "jetbrains.mps.baseLanguage.structure.Classifier");
             SPropertyOperations.set(classifier, "nonStatic", "" + (!(memberTypeBinding.isStatic())));
-            ListSequence.fromList(SLinkOperations.getTargets(enclosingClassifier, "staticInnerClassifiers", true)).addElement(classifier);
+            ListSequence.fromList(SLinkOperations.getTargets(enclosingClassifier, "member", true)).addElement(classifier);
           }
         }
         TypeParameter[] typeParameters = typeDeclaration.typeParameters;
@@ -420,12 +419,12 @@ public class ReferentsCreator {
           SPropertyOperations.set(fieldDeclaration, "isVolatile", "" + (binding.isVolatile()));
         }
         assert (SNodeOperations.isInstanceOf(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
-        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true)).addElement(fieldDeclaration);
+        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "member", true)).addElement(fieldDeclaration);
         field = fieldDeclaration;
       } else {
         SNode staticFieldDeclaration = SModelOperations.createNewNode(myReferentsCreator.myCurrentModel, null, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
         field = staticFieldDeclaration;
-        ListSequence.fromList(SLinkOperations.getTargets(enclosingClassifier, "staticField", true)).addElement(staticFieldDeclaration);
+        ListSequence.fromList(SLinkOperations.getTargets(enclosingClassifier, "member", true)).addElement(staticFieldDeclaration);
       }
       if (binding != null) {
         SPropertyOperations.set(field, "isFinal", "" + (binding.isFinal()));
@@ -476,7 +475,7 @@ public class ReferentsCreator {
         processMethodTypeParameters(ctorDecl, constructorDeclaration);
         mapParameters(constructorDeclaration, ctorDecl);
         if (!(SNodeOperations.isInstanceOf(classConcept, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
-          ListSequence.fromList(SLinkOperations.getTargets(classConcept, "constructor", true)).addElement(constructorDeclaration);
+          ListSequence.fromList(SLinkOperations.getTargets(classConcept, "member", true)).addElement(constructorDeclaration);
         }
         return true;
       } catch (Throwable e) {
@@ -505,7 +504,7 @@ public class ReferentsCreator {
         SLinkOperations.setTarget(staticMethodDeclaration, "visibility", getMethodVisibility(b), true);
         if (SNodeOperations.isInstanceOf(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
           SNode classConcept = SNodeOperations.cast(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-          ListSequence.fromList(SLinkOperations.getTargets(classConcept, "staticMethod", true)).addElement(staticMethodDeclaration);
+          ListSequence.fromList(SLinkOperations.getTargets(classConcept, "member", true)).addElement(staticMethodDeclaration);
         }
         result = staticMethodDeclaration;
       } else {
@@ -517,7 +516,7 @@ public class ReferentsCreator {
           SPropertyOperations.set(instanceMethodDeclaration, "isAbstract", "" + (b.isAbstract()));
           SLinkOperations.setTarget(instanceMethodDeclaration, "visibility", getMethodVisibility(b), true);
         }
-        ListSequence.fromList(SLinkOperations.getTargets(enclosingClassifier, "method", true)).addElement(instanceMethodDeclaration);
+        ListSequence.fromList(SLinkOperations.getTargets(enclosingClassifier, "member", true)).addElement(instanceMethodDeclaration);
         result = instanceMethodDeclaration;
       }
       if (b != null) {

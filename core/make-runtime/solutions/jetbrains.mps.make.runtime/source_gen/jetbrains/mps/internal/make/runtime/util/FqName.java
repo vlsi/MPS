@@ -8,7 +8,6 @@ import java.util.regex.Matcher;
 public class FqName {
   private static Pattern NAMESPACE = Pattern.compile("(.+)\\.(.+)$");
   private static final String DEFAULT_NS = "<default>";
-
   private String namespace;
   private String name;
 
@@ -43,7 +42,7 @@ public class FqName {
     if (!(that instanceof FqName)) {
       return false;
     }
-    return eq_hgd34b_a0a2a4(this.namespace, ((FqName) that).namespace) && eq_hgd34b_a0a2a4_0(this.name, ((FqName) that).name);
+    return eq_hgd34b_a0a2a9(this.namespace, ((FqName) that).namespace) && eq_hgd34b_a0a2a9_0(this.name, ((FqName) that).name);
   }
 
   private void init(String fqn) {
@@ -57,14 +56,14 @@ public class FqName {
     }
   }
 
-  private static boolean eq_hgd34b_a0a2a4(Object a, Object b) {
+  private static boolean eq_hgd34b_a0a2a9(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_hgd34b_a0a2a4_0(Object a, Object b) {
+  private static boolean eq_hgd34b_a0a2a9_0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

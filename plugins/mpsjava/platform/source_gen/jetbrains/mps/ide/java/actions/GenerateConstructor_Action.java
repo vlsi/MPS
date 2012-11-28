@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
@@ -15,21 +14,22 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class GenerateConstructor_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(GenerateConstructor_Action.class);
 
   public GenerateConstructor_Action() {
     super("Constructor", "", ICON);
@@ -85,15 +85,15 @@ public class GenerateConstructor_Action extends BaseAction {
       if (superclass == null) {
         superclass = SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
       }
-      if (ListSequence.fromList(SLinkOperations.getTargets(superclass, "constructor", true)).count() > 1) {
+      if (Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), superclass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).count() > 1) {
         needsShowConstructorsDialog = true;
-        ctors = ListSequence.fromList(SLinkOperations.getTargets(superclass, "constructor", true)).select(new ISelector<SNode, SNodePointer>() {
+        ctors = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), superclass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).select(new ISelector<SNode, SNodePointer>() {
           public SNodePointer select(SNode it) {
             return new SNodePointer(it);
           }
         }).toGenericArray(SNodePointer.class);
       } else {
-        selectedConstructors = new SNodePointer[]{new SNodePointer(ListSequence.fromList(SLinkOperations.getTargets(superclass, "constructor", true)).first())};
+        selectedConstructors = new SNodePointer[]{new SNodePointer(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), superclass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).first())};
       }
       if (needsShowConstructorsDialog) {
         SelectConstructorsDialog selectConstructorsDialog = new SelectConstructorsDialog(ctors, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getProject());
@@ -112,9 +112,9 @@ public class GenerateConstructor_Action extends BaseAction {
 
       boolean needsShowFieldsDialog = false;
       SNodePointer[] fields = null;
-      if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "field", true)).isNotEmpty()) {
+      if (Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{})).isNotEmpty()) {
         needsShowFieldsDialog = true;
-        fields = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "field", true)).select(new ISelector<SNode, SNodePointer>() {
+        fields = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{})).select(new ISelector<SNode, SNodePointer>() {
           public SNodePointer select(SNode it) {
             return new SNodePointer(it);
           }
@@ -137,7 +137,7 @@ public class GenerateConstructor_Action extends BaseAction {
       Project project = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getProject();
       for (SNodePointer ptr : selectedConstructors) {
         SNode selectedSuperConstructor = SNodeOperations.cast(ptr.getNode(), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
-        SNode constructor = SNodeFactoryOperations.addNewChild(classConcept, "constructor", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+        SNode constructor = SNodeFactoryOperations.addNewChild(classConcept, "member", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
         constructorDeclaration = constructor;
         SNodeFactoryOperations.setNewChild(constructor, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
         if (ListSequence.fromList(SLinkOperations.getTargets(selectedSuperConstructor, "parameter", true)).isNotEmpty()) {
@@ -172,6 +172,8 @@ public class GenerateConstructor_Action extends BaseAction {
   private SNode getClassConcept(final Map<String, Object> _params) {
     return SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
   }
+
+  private static Logger LOG = Logger.getLogger(GenerateConstructor_Action.class);
 
   private static SNode _quotation_createNode_yl16du_a0b0f0r0a(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;

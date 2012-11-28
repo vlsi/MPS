@@ -46,7 +46,7 @@ public class ConflictsUtil {
     if (module instanceof Generator) {
       module = ((Generator) module).getSourceLanguage();
     }
-    VirtualFile vf = VirtualFileUtils.getVirtualFile(check_h51169_a0a1a2(module));
+    VirtualFile vf = VirtualFileUtils.getVirtualFile(check_h51169_a0a1a3(module));
     if (vf != null) {
       FileStatus status = FileStatusManager.getInstance(project).getStatus(vf);
       if (FileStatus.MERGED_WITH_CONFLICTS == status || FileStatus.MERGED_WITH_BOTH_CONFLICTS == status) {
@@ -56,7 +56,7 @@ public class ConflictsUtil {
     return null;
   }
 
-  private static IFile check_h51169_a0a1a2(IModule checkedDotOperand) {
+  private static IFile check_h51169_a0a1a3(IModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getDescriptorFile();
     }

@@ -18,7 +18,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
           public Iterator<T> iterator() {
             return new YieldingIterator<T>() {
               private int __CP__ = 0;
-              private T _7_next;
 
               protected boolean moveToNext() {
 __loop__:
@@ -72,6 +71,8 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private T _7_next;
             };
           }
         };

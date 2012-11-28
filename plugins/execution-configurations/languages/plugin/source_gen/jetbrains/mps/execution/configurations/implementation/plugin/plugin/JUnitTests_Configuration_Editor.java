@@ -16,11 +16,6 @@ public class JUnitTests_Configuration_Editor extends SettingsEditorEx<JUnitTests
   private JUnitSettings_Configuration_Editor myJUnitSettings;
   private JavaRunParameters_Configuration_Editor myJavaRunParameters;
 
-  public JUnitTests_Configuration_Editor(JUnitSettings_Configuration_Editor jUnitSettings, JavaRunParameters_Configuration_Editor javaRunParameters) {
-    myJUnitSettings = jUnitSettings;
-    myJavaRunParameters = javaRunParameters;
-  }
-
   public void disposeEditor() {
     myJUnitSettings.dispose();
     Disposer.dispose(myJUnitSettings);
@@ -46,5 +41,10 @@ public class JUnitTests_Configuration_Editor extends SettingsEditorEx<JUnitTests
     configuration.migrate();
     myJavaRunParameters.resetEditorFrom(configuration.getJavaRunParameters());
     myJUnitSettings.resetEditorFrom(configuration.getJUnitSettings());
+  }
+
+  public JUnitTests_Configuration_Editor(JUnitSettings_Configuration_Editor jUnitSettings, JavaRunParameters_Configuration_Editor javaRunParameters) {
+    myJUnitSettings = jUnitSettings;
+    myJavaRunParameters = javaRunParameters;
   }
 }

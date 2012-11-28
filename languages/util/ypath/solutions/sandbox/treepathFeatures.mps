@@ -45,8 +45,8 @@
     <node role="nodeKinds" roleId="tpki.1172240749936" type="tpki.TreeNodeKind" typeId="tpki.1172240563057" id="1197705668634">
       <property name="name" nameId="tpck.1169194664001" value="foo" />
       <node role="properties" roleId="tpki.1175162866857" type="tpki.TreeNodeKindProperty" typeId="tpki.1175160940972" id="1197705676415">
-        <property name="name" nameId="tpck.1169194664001" value="BAR" />
         <property name="default" nameId="tpki.1175877871677" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="BAR" />
         <node role="getter" roleId="tpki.1175160966691" type="tpki.PropertyGetter" typeId="tpki.1175161007000" id="1197705676416">
           <node role="parameter" roleId="tpki.1168428725556" type="tpki.LambdaMethodParameter" typeId="tpki.1168428709096" id="1197705676417">
             <property name="name" nameId="tpck.1169194664001" value="node" />
@@ -61,8 +61,8 @@
         </node>
       </node>
       <node role="properties" roleId="tpki.1175162866857" type="tpki.TreeNodeKindProperty" typeId="tpki.1175160940972" id="1197705912407">
-        <property name="name" nameId="tpck.1169194664001" value="BAZ" />
         <property name="default" nameId="tpki.1175877871677" value="false" />
+        <property name="name" nameId="tpck.1169194664001" value="BAZ" />
         <node role="getter" roleId="tpki.1175160966691" type="tpki.PropertyGetter" typeId="tpki.1175161007000" id="1197705912408">
           <node role="parameter" roleId="tpki.1168428725556" type="tpki.LambdaMethodParameter" typeId="tpki.1168428709096" id="1197705912409">
             <property name="name" nameId="tpck.1169194664001" value="node" />
@@ -90,9 +90,9 @@
       </node>
     </node>
     <node role="features" roleId="tpki.1183980376561" type="tpki.ListFeature" typeId="tpki.1183978481785" id="1184067892215">
-      <property name="name" nameId="tpck.1169194664001" value="nodes" />
-      <property name="writable" nameId="tpki.1184066216986" value="false" />
       <property name="default" nameId="tpki.1184094715536" value="false" />
+      <property name="writable" nameId="tpki.1184066216986" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="nodes" />
       <node role="getFunction" roleId="tpki.1183979776626" type="tpki.FeatureGetFun" typeId="tpki.1183978641483" id="1184067892216">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1184067892217">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1184067910293">
@@ -130,9 +130,9 @@
       </node>
     </node>
     <node role="features" roleId="tpki.1183980376561" type="tpki.SequenceFeature" typeId="tpki.1184066481897" id="1184068102100">
-      <property name="writable" nameId="tpki.1184066216986" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="attributes" />
       <property name="default" nameId="tpki.1184094715536" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="attributes" />
+      <property name="writable" nameId="tpki.1184066216986" value="false" />
       <node role="sequenceFunction" roleId="tpki.1184066514754" type="tpki.FeatureSequenceFun" typeId="tpki.1184064321014" id="1184068102101">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1184068102102">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1184068366994">
@@ -268,7 +268,8 @@
     </node>
   </root>
   <root id="1184148497590">
-    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1184148507065">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1184148497591" />
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1184148507065">
       <property name="name" nameId="tpck.1169194664001" value="main" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1184148507066" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1184148507067" />
@@ -413,12 +414,11 @@
         </node>
       </node>
     </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1184148497591" />
   </root>
   <root id="1184685688047">
     <node role="features" roleId="tpki.1183980376561" type="tpki.ParamSequenceFeature" typeId="tpki.1184658874084" id="1184685792724">
-      <property name="name" nameId="tpck.1169194664001" value="child" />
       <property name="default" nameId="tpki.1184094715536" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="child" />
       <node role="sequenceFunction" roleId="tpki.1184066514754" type="tpki.ParamFeatureSequenceFun" typeId="tpki.1184658165849" id="1184685792725">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1184685792726">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1184687034428">
@@ -630,9 +630,9 @@
       </node>
     </node>
     <node role="features" roleId="tpki.1183980376561" type="tpki.ParamSequenceFeature" typeId="tpki.1184658874084" id="1184688224775">
-      <property name="name" nameId="tpck.1169194664001" value="link" />
       <property name="default" nameId="tpki.1184094715536" value="false" />
       <property name="writable" nameId="tpki.1184066216986" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="link" />
       <node role="sequenceFunction" roleId="tpki.1184066514754" type="tpki.ParamFeatureSequenceFun" typeId="tpki.1184658165849" id="1184688224776">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1184688224777">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1184688446655">
@@ -882,7 +882,8 @@
     </node>
   </root>
   <root id="1184773002627">
-    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1184773009709">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1184773002628" />
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1184773009709">
       <property name="name" nameId="tpck.1169194664001" value="main" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1184773009710" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1184773009711" />
@@ -1252,8 +1253,8 @@
               <property name="axis" nameId="tpki.1168527174196" value="CHILDREN" />
               <link role="usedFeature" roleId="tpki.1184147586245" targetNodeId="1184685792724" resolveInfo="child" />
               <node role="paramObject" roleId="tpki.1184776023529" type="tpki.ParameterWrapper" typeId="tpki.1184768155075" id="7098165822327402128">
-                <property name="paramValue" nameId="tpki.1190284493458" value="implements" />
                 <property name="name" nameId="tpck.1169194664001" value="implements" />
+                <property name="paramValue" nameId="tpki.1190284493458" value="implements" />
               </node>
             </node>
           </node>
@@ -1351,12 +1352,11 @@
         </node>
       </node>
     </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1184773002628" />
   </root>
   <root id="1191934136657">
     <node role="features" roleId="tpki.1183980376561" type="tpki.GenericParamFeature" typeId="tpki.4581582910844784750" id="4145095496975344165">
-      <property name="name" nameId="tpck.1169194664001" value="child" />
       <property name="default" nameId="tpki.1184094715536" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="child" />
       <property name="ascending" nameId="tpki.1199012172872" value="false" />
       <node role="getter" roleId="tpki.1192877073256" type="tpki.GFGetterParamFun" typeId="tpki.1190800051916" id="1192878365675">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1192878365676">
@@ -1625,8 +1625,8 @@
       </node>
     </node>
     <node role="features" roleId="tpki.1183980376561" type="tpki.GenericParamFeature" typeId="tpki.4581582910844784750" id="4145095496975344219">
-      <property name="name" nameId="tpck.1169194664001" value="link" />
       <property name="default" nameId="tpki.1184094715536" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="link" />
       <property name="ascending" nameId="tpki.1199012172872" value="false" />
       <node role="getter" roleId="tpki.1192877073256" type="tpki.GFGetterParamFun" typeId="tpki.1190800051916" id="1192878435112">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1192878435113">
@@ -1908,8 +1908,8 @@
       </node>
     </node>
     <node role="features" roleId="tpki.1183980376561" type="tpki.GenericFeature" typeId="tpki.4581582910844536269" id="4145095496975144451">
-      <property name="name" nameId="tpck.1169194664001" value="allChildren" />
       <property name="default" nameId="tpki.1184094715536" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="allChildren" />
       <property name="ascending" nameId="tpki.1199012172872" value="false" />
       <link role="opposite" roleId="tpki.1197826813331" targetNodeId="4145095496975180718" resolveInfo="parent" />
       <node role="getter" roleId="tpki.1192877073256" type="tpki.GFGetterFun" typeId="tpki.1196857052853" id="1199450600144">
@@ -1930,8 +1930,8 @@
       </node>
     </node>
     <node role="features" roleId="tpki.1183980376561" type="tpki.GenericFeature" typeId="tpki.4581582910844536269" id="4145095496975180718">
-      <property name="name" nameId="tpck.1169194664001" value="parent" />
       <property name="default" nameId="tpki.1184094715536" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="parent" />
       <property name="ascending" nameId="tpki.1199012172872" value="true" />
       <node role="getter" roleId="tpki.1192877073256" type="tpki.GFGetterFun" typeId="tpki.1196857052853" id="1199450600158">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1199450600159">
@@ -1960,7 +1960,8 @@
     </node>
   </root>
   <root id="1240329957161">
-    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1240329969386">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1240329957162" />
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1240329969386">
       <property name="name" nameId="tpck.1169194664001" value="singleCardinality" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1240329972750" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1240329969388" />
@@ -2013,7 +2014,6 @@
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="4853609160933722473" />
       </node>
     </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1240329957162" />
   </root>
 </model>
 

@@ -34,7 +34,7 @@ import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
 import jetbrains.mps.scope.FilteringByNameScope;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScopeAdapter;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -69,8 +69,11 @@ public class Classifier_Behavior {
 
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     List<SNode> members = new ArrayList<SNode>();
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticField", true)));
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)));
+    ListSequence.fromList(members).addSequence(Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(thisNode)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.core.structure.INamedConcept");
+      }
+    }));
     return members;
   }
 
@@ -134,7 +137,7 @@ public class Classifier_Behavior {
   }
 
   public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticField", true)).count() > 0;
+    return Sequence.fromIterable(Classifier_Behavior.call_staticFields_5292274854859223538(thisNode)).count() > 0;
   }
 
   public static String virtual_getNestedName_8540045600162184125(SNode thisNode) {
@@ -246,7 +249,7 @@ public class Classifier_Behavior {
 
   public static List<SNode> virtual_getOwnMethods_1906502351318572840(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)));
+    ListSequence.fromList(result).addSequence(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(thisNode)));
     return result;
   }
 
@@ -436,45 +439,74 @@ public class Classifier_Behavior {
 
   public static Iterable<SNode> call_members_1465982738252129704(SNode thisNode) {
     // todo: change on .members 
-    final List<SNode> members = ListSequence.fromList(new ArrayList<SNode>());
-    _FunctionTypes._void_P2_E0<? super Iterable<SNode>, ? super Boolean> addMembersToResult = new _FunctionTypes._void_P2_E0<Iterable<SNode>, Boolean>() {
-      public void invoke(Iterable<SNode> curMembers, Boolean addWhitespaceAfterEachMember) {
-        for (SNode member : Sequence.fromIterable(curMembers)) {
-          ListSequence.fromList(members).addElement(member);
-          if (addWhitespaceAfterEachMember) {
-            ListSequence.fromList(members).addElement(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PlaceholderMember", null));
-          }
-        }
-        if (Sequence.fromIterable(curMembers).isNotEmpty() && !(addWhitespaceAfterEachMember)) {
-          ListSequence.fromList(members).addElement(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PlaceholderMember", null));
-        }
-      }
-    };
-    _FunctionTypes._void_P1_E0<? super SNode> addMemberToResult = new _FunctionTypes._void_P1_E0<SNode>() {
-      public void invoke(SNode member) {
-        if ((member != null)) {
-          ListSequence.fromList(members).addElement(member);
-          ListSequence.fromList(members).addElement(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PlaceholderMember", null));
-        }
-      }
-    };
+    List<SNode> members = ListSequence.fromList(new ArrayList<SNode>());
 
     SNode asClass = SNodeOperations.as(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept");
 
-    addMemberToResult.invoke(SLinkOperations.getTarget(asClass, "instanceInitializer", true));
-    addMembersToResult.invoke(SLinkOperations.getTargets(thisNode, "staticField", true), false);
-    addMembersToResult.invoke(SLinkOperations.getTargets(asClass, "field", true), false);
-    addMembersToResult.invoke(SLinkOperations.getTargets(asClass, "constructor", true), true);
-    addMembersToResult.invoke(SLinkOperations.getTargets(thisNode, "method", true), !(SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.structure.Interface")));
-    addMembersToResult.invoke(SLinkOperations.getTargets(asClass, "staticMethod", true), true);
-    addMembersToResult.invoke(SLinkOperations.getTargets(thisNode, "staticInnerClassifiers", true), true);
-    addMemberToResult.invoke(SLinkOperations.getTarget(asClass, "classInitializer", true));
-
-    if (ListSequence.fromList(members).count() > 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(members).last(), "jetbrains.mps.baseLanguage.structure.PlaceholderMember")) {
-      ListSequence.fromList(members).removeLastElement();
+    if ((SLinkOperations.getTarget(asClass, "instanceInitializer", true) != null)) {
+      ListSequence.fromList(members).addElement(SLinkOperations.getTarget(asClass, "instanceInitializer", true));
+    }
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticField", true)));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(asClass, "field", true)));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(asClass, "constructor", true)));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(asClass, "staticMethod", true)));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticInnerClassifiers", true)));
+    if ((SLinkOperations.getTarget(asClass, "classInitializer", true) != null)) {
+      ListSequence.fromList(members).addElement(SLinkOperations.getTarget(asClass, "classInitializer", true));
     }
 
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "member", true)));
+
     return members;
+  }
+
+  public static Iterable<SNode> call_nestedClassifiers_5292274854859193142(SNode thisNode) {
+    return Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(thisNode)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Classifier");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier");
+      }
+    });
+  }
+
+  public static Iterable<SNode> call_staticFields_5292274854859223538(SNode thisNode) {
+    return Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(thisNode)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+      }
+    });
+  }
+
+  public static Iterable<SNode> call_methods_5292274854859311639(SNode thisNode) {
+    return Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(thisNode)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+      }
+    });
+  }
+
+  public static boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
+    return true;
+  }
+
+  public static boolean virtual_needsEmptyLineBefore_641490355014296733(SNode thisNode) {
+    return true;
+  }
+
+  public static boolean virtual_needsEmptyLineAfter_641490355014298838(SNode thisNode) {
+    return true;
   }
 
   public static List<SNode> getNonStaticContextClassifiers_6775591514230482802(SNode context) {

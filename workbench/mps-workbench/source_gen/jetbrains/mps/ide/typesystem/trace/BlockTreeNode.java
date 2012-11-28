@@ -17,7 +17,6 @@ import java.util.HashMap;
 
 public class BlockTreeNode extends TypeSystemStateTreeNode {
   private static final Map<RelationKind, Color> COLOR_MAP = initColors();
-
   private Block myBlock;
 
   public BlockTreeNode(Block block, IOperationContext operationContext, State state, EditorComponent editorComponent) {

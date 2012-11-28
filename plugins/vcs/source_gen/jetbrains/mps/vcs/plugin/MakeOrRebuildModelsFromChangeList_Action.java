@@ -4,8 +4,6 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
@@ -23,11 +21,11 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.make.actions.MakeActionImpl;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(MakeOrRebuildModelsFromChangeList_Action.class);
-
   private boolean rebuild;
 
   public MakeOrRebuildModelsFromChangeList_Action(boolean rebuild_par) {
@@ -104,4 +102,6 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
     res.append("!");
     return res.toString();
   }
+
+  protected static Log log = LogFactory.getLog(MakeOrRebuildModelsFromChangeList_Action.class);
 }

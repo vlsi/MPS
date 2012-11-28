@@ -5,16 +5,6 @@ package jetbrains.mps.baseLanguage.util;
 import org.jetbrains.annotations.NotNull;
 
 public class CodeStyleSettings {
-  private String myFieldPrefix;
-  private String myFieldSuffix;
-  private String myStaticFieldPrefix;
-  private String myStaticFieldSuffix;
-  private String myParameterPrefix;
-  private String myParameterSuffix;
-  private String myLocalVariablePrefix;
-  private String myLocalVariableSuffix;
-  private String myLineSeparator;
-
   public CodeStyleSettings() {
   }
 
@@ -26,6 +16,8 @@ public class CodeStyleSettings {
     );
   }
 
+  private String myFieldPrefix;
+
   public String getFieldPrefix() {
     return this.myFieldPrefix;
   }
@@ -33,6 +25,8 @@ public class CodeStyleSettings {
   public void setFieldPrefix(String value) {
     this.myFieldPrefix = value;
   }
+
+  private String myFieldSuffix;
 
   public String getFieldSuffix() {
     return this.myFieldSuffix;
@@ -42,6 +36,8 @@ public class CodeStyleSettings {
     this.myFieldSuffix = value;
   }
 
+  private String myStaticFieldPrefix;
+
   public String getStaticFieldPrefix() {
     return this.myStaticFieldPrefix;
   }
@@ -49,6 +45,8 @@ public class CodeStyleSettings {
   public void setStaticFieldPrefix(String value) {
     this.myStaticFieldPrefix = value;
   }
+
+  private String myStaticFieldSuffix;
 
   public String getStaticFieldSuffix() {
     return this.myStaticFieldSuffix;
@@ -58,6 +56,8 @@ public class CodeStyleSettings {
     this.myStaticFieldSuffix = value;
   }
 
+  private String myParameterPrefix;
+
   public String getParameterPrefix() {
     return this.myParameterPrefix;
   }
@@ -65,6 +65,8 @@ public class CodeStyleSettings {
   public void setParameterPrefix(String value) {
     this.myParameterPrefix = value;
   }
+
+  private String myParameterSuffix;
 
   public String getParameterSuffix() {
     return this.myParameterSuffix;
@@ -74,6 +76,8 @@ public class CodeStyleSettings {
     this.myParameterSuffix = value;
   }
 
+  private String myLocalVariablePrefix;
+
   public String getLocalVariablePrefix() {
     return this.myLocalVariablePrefix;
   }
@@ -82,6 +86,8 @@ public class CodeStyleSettings {
     this.myLocalVariablePrefix = value;
   }
 
+  private String myLocalVariableSuffix;
+
   public String getLocalVariableSuffix() {
     return this.myLocalVariableSuffix;
   }
@@ -89,6 +95,8 @@ public class CodeStyleSettings {
   public void setLocalVariableSuffix(String value) {
     this.myLocalVariableSuffix = value;
   }
+
+  private String myLineSeparator;
 
   public String getLineSeparator() {
     return this.myLineSeparator;

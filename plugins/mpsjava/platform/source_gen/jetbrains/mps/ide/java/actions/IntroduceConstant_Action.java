@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefactoring;
@@ -22,10 +21,10 @@ import jetbrains.mps.ide.java.platform.refactorings.IntroduceConstantDialog;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.openapi.editor.EditorContext;
 import javax.swing.JOptionPane;
+import jetbrains.mps.logging.Logger;
 
 public class IntroduceConstant_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(IntroduceConstant_Action.class);
 
   public IntroduceConstant_Action() {
     super("Introduce Constant...", "", ICON);
@@ -103,4 +102,6 @@ public class IntroduceConstant_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "IntroduceConstant", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(IntroduceConstant_Action.class);
 }

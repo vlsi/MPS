@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 
 public class Generator implements TemplateModule {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("791a790e-6d6d-4aa8-8917-3b269a164450(jetbrains.mps.traceInfo.tracemacro.testlang#7980748436587788163)");
-
   private Language sourceLanguage;
   private final Collection<TemplateMappingPriorityRule> priorities;
   private final Collection<TemplateModel> models;

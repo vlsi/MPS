@@ -4,7 +4,6 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -14,10 +13,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.logging.Logger;
 
 public class DoNotSuppressErrors_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(DoNotSuppressErrors_Action.class);
 
   public DoNotSuppressErrors_Action() {
     super("Do not Supress Errors", "", ICON);
@@ -57,4 +56,6 @@ public class DoNotSuppressErrors_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "DoNotSuppressErrors", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(DoNotSuppressErrors_Action.class);
 }

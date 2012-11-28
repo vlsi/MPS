@@ -4,12 +4,17 @@ package jetbrains.mps.baseLanguage.extensionMethods.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class ExtensionMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor {
   public ExtensionMethodDeclaration_BehaviorDescriptor() {
+  }
+
+  public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
+    return ClassifierMember_Behavior.virtual_canBeInterfaceMember_2949815620938109095(thisConcept);
   }
 
   public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
@@ -26,6 +31,14 @@ public class ExtensionMethodDeclaration_BehaviorDescriptor extends BaseMethodDec
 
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
+  }
+
+  public boolean virtual_needsEmptyLineAfter_641490355014298838(SNode thisNode) {
+    return ClassifierMember_Behavior.virtual_needsEmptyLineAfter_641490355014298838(thisNode);
+  }
+
+  public boolean virtual_needsEmptyLineBefore_641490355014296733(SNode thisNode) {
+    return ClassifierMember_Behavior.virtual_needsEmptyLineBefore_641490355014296733(thisNode);
   }
 
   public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {

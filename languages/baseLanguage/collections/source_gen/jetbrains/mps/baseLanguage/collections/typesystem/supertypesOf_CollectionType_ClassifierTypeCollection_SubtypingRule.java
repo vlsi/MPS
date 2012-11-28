@@ -26,7 +26,7 @@ public class supertypesOf_CollectionType_ClassifierTypeCollection_SubtypingRule 
     if (SNodeOperations.isInstanceOf(et, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       et = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), et, "virtual_getUnboxedType_1213877337320", new Object[]{});
     }
-    return _quotation_createNode_pn6k9h_a2a0(et);
+    return _quotation_createNode_pn6k9h_a2a1(et);
   }
 
   public String getApplicableConceptFQName() {
@@ -44,7 +44,7 @@ public class supertypesOf_CollectionType_ClassifierTypeCollection_SubtypingRule 
     return true;
   }
 
-  private static SNode _quotation_createNode_pn6k9h_a2a0(Object parameter_1) {
+  private static SNode _quotation_createNode_pn6k9h_a2a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);

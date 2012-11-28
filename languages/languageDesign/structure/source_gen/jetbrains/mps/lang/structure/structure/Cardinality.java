@@ -13,22 +13,12 @@ public enum Cardinality {
   _1__n("1..n", "1..n");
 
   private String myName;
-  private String myValue;
-
-  Cardinality(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -62,5 +52,16 @@ public enum Cardinality {
       return Cardinality._1__n;
     }
     return Cardinality.getDefault();
+  }
+
+  private String myValue;
+
+  Cardinality(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

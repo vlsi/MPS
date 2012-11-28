@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SModelReference;
 
 public class BreakpointLocation {
   private static final Logger LOG = Logger.getLogger(BreakpointLocation.class);
-
   private final SNodePointer myNodePointer;
 
   public BreakpointLocation(@NotNull SNodePointer nodePointer) {
@@ -114,7 +113,7 @@ public class BreakpointLocation {
       return false;
     }
 
-    return eq_ei108j_a0d0j(myNodePointer, ((BreakpointLocation) o).myNodePointer);
+    return eq_ei108j_a0d0n(myNodePointer, ((BreakpointLocation) o).myNodePointer);
   }
 
   @Override
@@ -127,7 +126,7 @@ public class BreakpointLocation {
     return result;
   }
 
-  private static boolean eq_ei108j_a0d0j(Object a, Object b) {
+  private static boolean eq_ei108j_a0d0n(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

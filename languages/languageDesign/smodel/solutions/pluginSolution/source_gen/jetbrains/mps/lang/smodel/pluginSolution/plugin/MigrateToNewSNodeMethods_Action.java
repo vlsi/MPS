@@ -4,7 +4,6 @@ package jetbrains.mps.lang.smodel.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -13,10 +12,10 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.logging.Logger;
 
 public class MigrateToNewSNodeMethods_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(MigrateToNewSNodeMethods_Action.class);
 
   public MigrateToNewSNodeMethods_Action() {
     super("Migrate to new SNode methods", "", ICON);
@@ -60,4 +59,6 @@ public class MigrateToNewSNodeMethods_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "MigrateToNewSNodeMethods", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(MigrateToNewSNodeMethods_Action.class);
 }

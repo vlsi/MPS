@@ -30,7 +30,7 @@ public class StructureModification {
 
   public void addDependencyModel(SModelReference modelRef) {
     if (!(MapSequence.fromMap(myDependencies).containsKey(modelRef))) {
-      RefactorableSModelDescriptor model = as_hr78sn_a0a0a0a1(SModelRepository.getInstance().getModelDescriptor(modelRef), RefactorableSModelDescriptor.class);
+      RefactorableSModelDescriptor model = as_hr78sn_a0a0a0a4(SModelRepository.getInstance().getModelDescriptor(modelRef), RefactorableSModelDescriptor.class);
       MapSequence.fromMap(myDependencies).put(modelRef, (model == null ?
         -1 :
         model.getVersion()
@@ -81,13 +81,6 @@ public class StructureModification {
     return (eq ?
       StructureModification.Relation.EQUAL :
       StructureModification.Relation.NONE
-    );
-  }
-
-  private static <T> T as_hr78sn_a0a0a0a1(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
     );
   }
 
@@ -193,5 +186,12 @@ public class StructureModification {
       }
       return this;
     }
+  }
+
+  private static <T> T as_hr78sn_a0a0a0a4(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
   }
 }

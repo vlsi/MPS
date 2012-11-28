@@ -72,7 +72,7 @@ public class JUnitCommand_Test extends BaseTransformationTest4 {
         } else if (exitcode < 0) {
           Assert.fail("Process running too long.");
         }
-        if (isNotEmpty_16es9m_a0k0a0c0(checkListener.getMessages())) {
+        if (isNotEmpty_16es9m_a0k0a0c2(checkListener.getMessages())) {
           Assert.fail(checkListener.getMessages());
         }
       } catch (ExecutionException e) {
@@ -88,7 +88,7 @@ public class JUnitCommand_Test extends BaseTransformationTest4 {
           for (final String name : Sequence.fromIterable(names)) {
             SNode mainNode = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.core.structure.INamedConcept")).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return eq_16es9m_a0a0a0a0a0a0a1a0a0a0a1a3a(SPropertyOperations.getString(it, "name"), name);
+                return eq_16es9m_a0a0a0a0a0a0a1a0a0a0a1a3c(SPropertyOperations.getString(it, "name"), name);
               }
             });
             ListSequence.fromList(result).addElement(TestNodeWrapperFactory.tryToWrap(mainNode));
@@ -98,11 +98,11 @@ public class JUnitCommand_Test extends BaseTransformationTest4 {
       return result;
     }
 
-    public static boolean isNotEmpty_16es9m_a0k0a0c0(String str) {
+    public static boolean isNotEmpty_16es9m_a0k0a0c2(String str) {
       return str != null && str.length() > 0;
     }
 
-    private static boolean eq_16es9m_a0a0a0a0a0a0a1a0a0a0a1a3a(Object a, Object b) {
+    private static boolean eq_16es9m_a0a0a0a0a0a0a1a0a0a0a1a3c(Object a, Object b) {
       return (a != null ?
         a.equals(b) :
         a == b

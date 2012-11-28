@@ -21,7 +21,7 @@ public class typeof_LayoutConstraintExpression_InferenceRule extends AbstractInf
     {
       SNode _nodeToCheck_1029348928467 = lce;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "2663453265345937597", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "2663453265345937594", true), (SNode) _quotation_createNode_vm1bpd_a0a0a(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(lce, "constraint", true))), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "2663453265345937594", true), (SNode) _quotation_createNode_vm1bpd_a0a0b(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(lce, "constraint", true))), _info_12389875345);
     }
   }
 
@@ -40,7 +40,7 @@ public class typeof_LayoutConstraintExpression_InferenceRule extends AbstractInf
     return false;
   }
 
-  private static SNode _quotation_createNode_vm1bpd_a0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_vm1bpd_a0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.modeling.structure.LayoutConstraintType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("constraintConcept", (SNode) parameter_1);

@@ -77,7 +77,7 @@ public class TraceDown {
     }
     return SetSequence.fromSet(rootInfo.getPositions()).findFirst(new IWhereFilter<TraceablePositionInfo>() {
       public boolean accept(TraceablePositionInfo it) {
-        return eq_mk0t6b_a0a0a0a0a0a2a3(it.getNodeId(), node.getSNodeId().toString());
+        return eq_mk0t6b_a0a0a0a0a0a2a4(it.getNodeId(), node.getSNodeId().toString());
       }
     }) != null;
   }
@@ -90,7 +90,7 @@ public class TraceDown {
     return isTraceable(node, info);
   }
 
-  private static boolean eq_mk0t6b_a0a0a0a0a0a2a3(Object a, Object b) {
+  private static boolean eq_mk0t6b_a0a0a0a0a0a2a4(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

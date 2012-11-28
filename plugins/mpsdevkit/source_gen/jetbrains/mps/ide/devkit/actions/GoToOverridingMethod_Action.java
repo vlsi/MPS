@@ -4,8 +4,6 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.ide.editor.util.GoToHelper;
@@ -19,10 +17,11 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import com.intellij.openapi.project.Project;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class GoToOverridingMethod_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(GoToOverridingMethod_Action.class);
 
   public GoToOverridingMethod_Action() {
     super("Go to Overriding Methods", "", ICON);
@@ -94,4 +93,6 @@ public class GoToOverridingMethod_Action extends BaseAction {
   private String getFinderName(final Map<String, Object> _params) {
     return "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder";
   }
+
+  protected static Log log = LogFactory.getLog(GoToOverridingMethod_Action.class);
 }

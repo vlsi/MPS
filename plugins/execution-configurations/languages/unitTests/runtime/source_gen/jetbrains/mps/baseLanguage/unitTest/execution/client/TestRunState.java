@@ -21,7 +21,6 @@ import org.jetbrains.annotations.NotNull;
 
 public class TestRunState {
   private static final Object lock = new Object();
-
   private final List<String> myTestMethods = ListSequence.fromList(new ArrayList<String>());
   private Map<ITestNodeWrapper, List<ITestNodeWrapper>> myTestToMethodsMap = MapSequence.fromMap(new LinkedHashMap<ITestNodeWrapper, List<ITestNodeWrapper>>(16, (float) 0.75, false));
   private final Set<TestView> myViewsList = SetSequence.fromSet(new HashSet<TestView>());

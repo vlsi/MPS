@@ -5,15 +5,14 @@ package jetbrains.mps.make.sandbox.icons;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class DummyAction_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("mpsHome.png");
-  protected static Log log = LogFactory.getLog(DummyAction_Action.class);
 
   public DummyAction_Action() {
     super("Dummy", "", ICON);
@@ -52,4 +51,6 @@ public class DummyAction_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(DummyAction_Action.class);
 }

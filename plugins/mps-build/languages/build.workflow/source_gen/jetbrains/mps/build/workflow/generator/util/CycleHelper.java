@@ -73,7 +73,7 @@ public class CycleHelper {
     for (SNode jm : modules) {
       CycleHelper.Module module = new CycleHelper.Module(jm);
       map.put(jm, module);
-      if (isEmpty_yc0kju_a0c0d0b(SPropertyOperations.getString(jm, "outputFolder"))) {
+      if (isEmpty_yc0kju_a0c0d0f(SPropertyOperations.getString(jm, "outputFolder"))) {
         genContext.showErrorMessage(jm, "empty output path");
       } else if (SPropertyOperations.getString(jm, "outputFolder").endsWith("/") || SPropertyOperations.getString(jm, "outputFolder").endsWith("\\")) {
         genContext.showErrorMessage(jm, "output path shouldn't end with slash");
@@ -211,10 +211,6 @@ public class CycleHelper {
     }
   }
 
-  public static boolean isEmpty_yc0kju_a0c0d0b(String str) {
-    return str == null || str.length() == 0;
-  }
-
   public class Module implements IVertex {
     private final SNode module;
     private Set<CycleHelper.Module> targets;
@@ -249,5 +245,9 @@ public class CycleHelper {
     public SNode getModule() {
       return module;
     }
+  }
+
+  public static boolean isEmpty_yc0kju_a0c0d0f(String str) {
+    return str == null || str.length() == 0;
   }
 }

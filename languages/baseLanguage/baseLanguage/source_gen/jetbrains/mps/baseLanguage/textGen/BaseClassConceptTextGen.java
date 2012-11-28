@@ -6,10 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public abstract class BaseClassConceptTextGen {
   public static void membersWithBrackets(SNode classifier, boolean newLineOnEmptyMembers, final SNodeTextGen textGen) {
@@ -26,9 +26,20 @@ public abstract class BaseClassConceptTextGen {
   }
 
   public static void members(SNode classifier, final SNodeTextGen textGen) {
-    if (Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(classifier)).isNotEmpty()) {
-      for (SNode item : Classifier_Behavior.call_members_1465982738252129704(classifier)) {
-        TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
+    // just for first element 
+    boolean isWrappedElementBefore = true;
+    SNode lastMember = Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(classifier)).last();
+    for (SNode member : Classifier_Behavior.call_members_1465982738252129704(classifier)) {
+      if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
+        boolean needsLineBefore = BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_needsEmptyLineBefore_641490355014296733", new Object[]{});
+        boolean needsLineAfter = BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_needsEmptyLineAfter_641490355014298838", new Object[]{});
+        BaseLanguageTextGen.newLine(needsLineBefore && !(isWrappedElementBefore), textGen);
+        TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), member, textGen.getSNode());
+        BaseLanguageTextGen.newLine(needsLineAfter && !(lastMember == member), textGen);
+        isWrappedElementBefore = needsLineAfter;
+      } else {
+        TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), member, textGen.getSNode());
+        isWrappedElementBefore = false;
       }
     }
     if ((SLinkOperations.getTarget(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticInitializer", true) != null)) {
@@ -47,9 +58,10 @@ public abstract class BaseClassConceptTextGen {
   }
 
   public static void innerClassifiers(SNode concept, final SNodeTextGen textGen) {
-    for (SNode classifier : SLinkOperations.getTargets(concept, "staticInnerClassifiers", true)) {
+    SNode last = Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(concept)).last();
+    for (SNode classifier : Classifier_Behavior.call_nestedClassifiers_5292274854859193142(concept)) {
       TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), classifier, textGen.getSNode());
-      if (!(classifier.equals(ListSequence.fromList(SLinkOperations.getTargets(concept, "staticInnerClassifiers", true)).last()))) {
+      if (!(classifier.equals(last))) {
         textGen.appendNewLine();
       }
     }

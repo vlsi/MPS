@@ -184,7 +184,7 @@ public class VisibleArtifacts {
       }
     }
     if (dependenciesHelper == null) {
-      throw new IllegalStateException("findArtifact() should be called in generation context only");
+      throw new IllegalStateException("findArtifact() should be called in generation context only: ");
     }
     SNode result = dependenciesHelper.artifacts().get(id);
     if (result != null) {

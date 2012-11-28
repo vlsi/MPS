@@ -23,7 +23,7 @@ public class typeof_Validator_InferenceRule extends AbstractInferenceRule_Runtim
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(validator, "validateBlock", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "5224413709453691573", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "5224413709453691565", true), (SNode) _quotation_createNode_gapff1_a0b0a(typeCheckingContext.getRepresentative(PARAM_TYPE_typevar_5224413709453691586)), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "5224413709453691565", true), (SNode) _quotation_createNode_gapff1_a0b0b(typeCheckingContext.getRepresentative(PARAM_TYPE_typevar_5224413709453691586)), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = validator;
@@ -47,7 +47,7 @@ public class typeof_Validator_InferenceRule extends AbstractInferenceRule_Runtim
     return false;
   }
 
-  private static SNode _quotation_createNode_gapff1_a0b0a(Object parameter_1) {
+  private static SNode _quotation_createNode_gapff1_a0b0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;

@@ -23,12 +23,12 @@ public class typeof_JoinOperation_InferenceRule extends AbstractInferenceRule_Ru
     {
       SNode _nodeToCheck_1029348928467 = operation;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240688372882", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(STRING_typevar_1240688053371), (SNode) _quotation_createNode_mb39ki_a0b0a(), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(STRING_typevar_1240688053371), (SNode) _quotation_createNode_mb39ki_a0b0b(), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(operation);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "7668447476859120539", 0, null);
-      typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_mb39ki_a0c0a(typeCheckingContext.getRepresentative(STRING_typevar_1240688053371)), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240687848904", true), false, true, _info_12389875345);
+      typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_mb39ki_a0c0b(typeCheckingContext.getRepresentative(STRING_typevar_1240688053371)), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240687848904", true), false, true, _info_12389875345);
     }
     if ((SLinkOperations.getTarget(operation, "delimiter", true) != null)) {
       if (!(typeCheckingContext.isSingleTypeComputation())) {
@@ -61,13 +61,13 @@ public class typeof_JoinOperation_InferenceRule extends AbstractInferenceRule_Ru
     return false;
   }
 
-  private static SNode _quotation_createNode_mb39ki_a0b0a() {
+  private static SNode _quotation_createNode_mb39ki_a0b0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_mb39ki_a0c0a(Object parameter_1) {
+  private static SNode _quotation_createNode_mb39ki_a0c0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);

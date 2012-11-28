@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
@@ -22,10 +21,10 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
+import jetbrains.mps.logging.Logger;
 
 public class ConvertAnonymousClass_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ConvertAnonymousClass_Action.class);
 
   public ConvertAnonymousClass_Action() {
     super("Convert Anonymous Class", "", ICON);
@@ -103,4 +102,6 @@ public class ConvertAnonymousClass_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "ConvertAnonymousClass", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ConvertAnonymousClass_Action.class);
 }

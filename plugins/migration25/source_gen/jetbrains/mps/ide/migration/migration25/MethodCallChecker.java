@@ -84,7 +84,7 @@ public class MethodCallChecker extends SpecificChecker {
             public boolean doFix() {
               if (scope.getModelDescriptor(uid) == null && SModelRepository.getInstance().getModelDescriptor(uid) != null) {
                 SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(uid);
-                check_lz161n_a1a0a5a0a7a1a6a0(check_lz161n_a0b0a0f0a0h0b0g0a(model.getModelDescriptor()), sm);
+                check_lz161n_a1a0a5a0a7a1a6a1(check_lz161n_a0b0a0f0a0h0b0g0b(model.getModelDescriptor()), sm);
                 return true;
               }
               return false;
@@ -97,28 +97,28 @@ public class MethodCallChecker extends SpecificChecker {
     return results;
   }
 
-  private static void check_lz161n_a1a0a5a0a7a1a6a0(IModule checkedDotOperand, SModelDescriptor sm) {
+  private static void check_lz161n_a1a0a5a0a7a1a6a1(IModule checkedDotOperand, SModelDescriptor sm) {
     if (null != checkedDotOperand) {
-      checkedDotOperand.addDependency(check_lz161n_a0a1a0a5a0a7a1a6a0(check_lz161n_a0a0b0a0f0a0h0b0g0a(sm)), false);
+      checkedDotOperand.addDependency(check_lz161n_a0a1a0a5a0a7a1a6a1(check_lz161n_a0a0b0a0f0a0h0b0g0b(sm)), false);
     }
 
   }
 
-  private static ModuleReference check_lz161n_a0a1a0a5a0a7a1a6a0(IModule checkedDotOperand) {
+  private static ModuleReference check_lz161n_a0a1a0a5a0a7a1a6a1(IModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();
     }
     return null;
   }
 
-  private static IModule check_lz161n_a0a0b0a0f0a0h0b0g0a(SModelDescriptor checkedDotOperand) {
+  private static IModule check_lz161n_a0a0b0a0f0a0h0b0g0b(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static IModule check_lz161n_a0b0a0f0a0h0b0g0a(SModelDescriptor checkedDotOperand) {
+  private static IModule check_lz161n_a0b0a0f0a0h0b0g0b(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

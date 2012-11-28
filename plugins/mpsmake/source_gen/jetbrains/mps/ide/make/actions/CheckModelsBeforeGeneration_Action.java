@@ -4,18 +4,17 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.generator.Icons;
 import com.intellij.util.ui.EmptyIcon;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class CheckModelsBeforeGeneration_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(CheckModelsBeforeGeneration_Action.class);
 
   public CheckModelsBeforeGeneration_Action() {
     super("Check Models Before Generation", "Check models for errors before generation", ICON);
@@ -63,4 +62,6 @@ public class CheckModelsBeforeGeneration_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(CheckModelsBeforeGeneration_Action.class);
 }

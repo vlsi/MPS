@@ -54,7 +54,7 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
         return tmp;
       }
     }).toListSequence();
-    SNode newType = _quotation_createNode_bcpcms_a0i0a(tdecl, typeParam);
+    SNode newType = _quotation_createNode_bcpcms_a0i0b(tdecl, typeParam);
     BehaviorReflection.invokeVirtual(Void.class, newType, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
 
     for (SNode cref : ListSequence.fromList(SLinkOperations.getTargets(literal, "componentRef", true))) {
@@ -90,7 +90,7 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
     return false;
   }
 
-  private static SNode _quotation_createNode_bcpcms_a0i0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_bcpcms_a0i0b(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", null, null, GlobalScope.getInstance(), false);

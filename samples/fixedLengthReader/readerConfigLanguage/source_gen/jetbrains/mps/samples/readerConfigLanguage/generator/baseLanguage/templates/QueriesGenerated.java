@@ -14,6 +14,10 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesGenerated {
+  public static Object propertyMacro_GetPropertyValue_1197680735636(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1197681249881(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "code");
   }
@@ -37,10 +41,6 @@ public class QueriesGenerated {
       suffix = suffix.substring(index + 1);
     }
     return "Configure" + suffix;
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1197680735636(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static Object referenceMacro_GetReferent_1197681322565(final IOperationContext operationContext, final ReferenceMacroContext _context) {

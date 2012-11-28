@@ -12,22 +12,12 @@ public enum _YesNoDefault_Enum {
   none("none", null);
 
   private String myName;
-  private String myValue;
-
-  _YesNoDefault_Enum(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -57,5 +47,16 @@ public enum _YesNoDefault_Enum {
       return _YesNoDefault_Enum.none;
     }
     return _YesNoDefault_Enum.getDefault();
+  }
+
+  private String myValue;
+
+  _YesNoDefault_Enum(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

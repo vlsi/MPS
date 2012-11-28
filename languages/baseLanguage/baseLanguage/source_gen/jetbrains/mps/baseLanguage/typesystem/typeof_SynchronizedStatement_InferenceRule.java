@@ -22,7 +22,7 @@ public class typeof_SynchronizedStatement_InferenceRule extends AbstractInferenc
     {
       SNode _nodeToCheck_1029348928467 = synchronizedStatement;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4663972844383684981", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4663972844383684978", true), (SNode) _quotation_createNode_u6zvkx_a0a0a(), false, false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4663972844383684978", true), (SNode) _quotation_createNode_u6zvkx_a0a0b(), false, false, _info_12389875345);
     }
   }
 
@@ -41,7 +41,7 @@ public class typeof_SynchronizedStatement_InferenceRule extends AbstractInferenc
     return false;
   }
 
-  private static SNode _quotation_createNode_u6zvkx_a0a0a() {
+  private static SNode _quotation_createNode_u6zvkx_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));

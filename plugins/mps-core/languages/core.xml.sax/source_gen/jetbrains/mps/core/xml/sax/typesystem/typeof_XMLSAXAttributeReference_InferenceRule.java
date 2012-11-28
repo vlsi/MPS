@@ -19,7 +19,7 @@ public class typeof_XMLSAXAttributeReference_InferenceRule extends AbstractInfer
     {
       SNode _nodeToCheck_1029348928467 = xmlsaxAttributeReference;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)", "2264311582634140530", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)", "2264311582634140535", true), (SNode) _quotation_createNode_b8goj7_a0a0a(), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)", "2264311582634140535", true), (SNode) _quotation_createNode_b8goj7_a0a0b(), _info_12389875345);
     }
   }
 
@@ -38,7 +38,7 @@ public class typeof_XMLSAXAttributeReference_InferenceRule extends AbstractInfer
     return false;
   }
 
-  private static SNode _quotation_createNode_b8goj7_a0a0a() {
+  private static SNode _quotation_createNode_b8goj7_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

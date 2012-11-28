@@ -23,7 +23,7 @@ public class typeof_OperationParm_LinkQualifier_LinkQualifier_InferenceRule exte
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(operationParam, "linkQualifier", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "5168775467716640777", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "5168775467716640780", true), (SNode) _quotation_createNode_hqb9q_a0a0a(), false, false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "5168775467716640780", true), (SNode) _quotation_createNode_hqb9q_a0a0b(), false, false, _info_12389875345);
     }
   }
 
@@ -42,7 +42,7 @@ public class typeof_OperationParm_LinkQualifier_LinkQualifier_InferenceRule exte
     return false;
   }
 
-  private static SNode _quotation_createNode_hqb9q_a0a0a() {
+  private static SNode _quotation_createNode_hqb9q_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)"), SNodeId.fromString("1071489288298")));

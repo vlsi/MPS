@@ -28,7 +28,7 @@ public class typeof_EventHandlerParam_InferenceRule extends AbstractInferenceRul
     {
       SNode _nodeToCheck_1029348928467 = ehp;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "8115675450774809726", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "12091369613268997", true), (SNode) _quotation_createNode_3reh76_a0c0a(typeCheckingContext.getRepresentative(EVENT_TYPE_typevar_8115675450774809684)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "12091369613268997", true), (SNode) _quotation_createNode_3reh76_a0c0b(typeCheckingContext.getRepresentative(EVENT_TYPE_typevar_8115675450774809684)), _info_12389875345);
     }
   }
 
@@ -47,7 +47,7 @@ public class typeof_EventHandlerParam_InferenceRule extends AbstractInferenceRul
     return false;
   }
 
-  private static SNode _quotation_createNode_3reh76_a0c0a(Object parameter_1) {
+  private static SNode _quotation_createNode_3reh76_a0c0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;

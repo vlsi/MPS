@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ThisConstructorInvocation_Behavior {
   public static void init(SNode thisNode) {
@@ -12,6 +11,6 @@ public class ThisConstructorInvocation_Behavior {
 
   public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     SNode classConcept = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    return SLinkOperations.getTargets(classConcept, "constructor", true);
+    return ClassConcept_Behavior.call_constructors_5292274854859503373(classConcept);
   }
 }

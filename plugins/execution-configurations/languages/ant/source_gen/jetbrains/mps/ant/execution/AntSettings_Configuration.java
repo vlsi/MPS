@@ -4,24 +4,18 @@ package jetbrains.mps.ant.execution;
 
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import jetbrains.mps.execution.api.settings.SettingsEditorEx;
+import jetbrains.mps.logging.Logger;
 
 public class AntSettings_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
-  private static Logger LOG = Logger.getLogger(AntSettings_Configuration.class);
-
   @NotNull
   private AntSettings_Configuration.MyState myState = new AntSettings_Configuration.MyState();
-  private SettingsEditorEx<AntSettings_Configuration> myEditorEx;
-
-  public AntSettings_Configuration() {
-  }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
   }
@@ -76,21 +70,6 @@ public class AntSettings_Configuration implements IPersistentConfiguration, ITem
     return clone;
   }
 
-  public AntSettings_Configuration createCloneTemplate() {
-    return new AntSettings_Configuration();
-  }
-
-  public AntSettings_Configuration_Editor getEditor() {
-    return new AntSettings_Configuration_Editor();
-  }
-
-  public SettingsEditorEx<AntSettings_Configuration> getEditorEx() {
-    if (myEditorEx == null) {
-      myEditorEx = getEditor();
-    }
-    return myEditorEx;
-  }
-
   public class MyState {
     public boolean myUseOtherAntLocation;
     public String myOtherAntLocation;
@@ -108,4 +87,26 @@ public class AntSettings_Configuration implements IPersistentConfiguration, ITem
       return state;
     }
   }
+
+  public AntSettings_Configuration() {
+  }
+
+  private SettingsEditorEx<AntSettings_Configuration> myEditorEx;
+
+  public AntSettings_Configuration createCloneTemplate() {
+    return new AntSettings_Configuration();
+  }
+
+  public AntSettings_Configuration_Editor getEditor() {
+    return new AntSettings_Configuration_Editor();
+  }
+
+  public SettingsEditorEx<AntSettings_Configuration> getEditorEx() {
+    if (myEditorEx == null) {
+      myEditorEx = getEditor();
+    }
+    return myEditorEx;
+  }
+
+  private static Logger LOG = Logger.getLogger(AntSettings_Configuration.class);
 }

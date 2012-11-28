@@ -62,7 +62,7 @@ public class SpecialMigrations {
     return migrations;
   }
 
-  private static SNode _quotation_createNode_i1zgmn_a0c0a0b0c0a0a0h0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_i1zgmn_a0c0a0b0c0a0a0h0b(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", null, null, GlobalScope.getInstance(), false);

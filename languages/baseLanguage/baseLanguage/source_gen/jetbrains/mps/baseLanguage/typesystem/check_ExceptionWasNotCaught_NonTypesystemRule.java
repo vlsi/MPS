@@ -29,7 +29,7 @@ public class check_ExceptionWasNotCaught_NonTypesystemRule extends AbstractNonTy
     List<SNode> caughtExceptions = new ArrayList<SNode>();
     for (SNode catchClause : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), iTryCatchStatement, "virtual_getCatchClauses_3718132079121388582", new Object[]{})) {
       SNode catchType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(catchType, _quotation_createNode_6gl2l4_b0a1a1a0())) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(catchType, _quotation_createNode_6gl2l4_b0a1a1a1())) {
         for (SNode caughtType : caughtExceptions) {
           if (TypeChecker.getInstance().getSubtypingManager().isSubtype(catchType, caughtType)) {
             {
@@ -58,7 +58,7 @@ public class check_ExceptionWasNotCaught_NonTypesystemRule extends AbstractNonTy
     return false;
   }
 
-  private static SNode _quotation_createNode_6gl2l4_b0a1a1a0() {
+  private static SNode _quotation_createNode_6gl2l4_b0a1a1a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Throwable")));

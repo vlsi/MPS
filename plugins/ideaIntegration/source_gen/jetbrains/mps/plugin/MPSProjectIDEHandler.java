@@ -42,7 +42,6 @@ import jetbrains.mps.util.Computable;
 
 public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDEHandler, ProjectComponent {
   private static final Logger LOG = Logger.getLogger(MPSProjectIDEHandler.class);
-
   private Project myProject;
 
   public MPSProjectIDEHandler(Project project) throws RemoteException {

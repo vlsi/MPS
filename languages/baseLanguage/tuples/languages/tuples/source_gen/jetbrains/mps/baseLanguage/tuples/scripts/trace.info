@@ -1,384 +1,384 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="5684843424312914767" modelId="r:e1f907d4-9f20-482f-9ee2-2b580163f28a(jetbrains.mps.baseLanguage.tuples.scripts)">
-    <nodeInfo nodeId="5684843424312914767" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="23" startPosition="82" endLine="24" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="26" startPosition="31" endLine="27" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="30" startPosition="41" endLine="31" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="34" startPosition="59" endLine="35" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5684843424313036259" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="40" startPosition="43" endLine="41" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5684843424313045653" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="46" startPosition="52" endLine="47" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313048749" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="48" startPosition="38" endLine="49" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313056631" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="50" startPosition="39" endLine="51" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313143239" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="52" startPosition="11" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5684843424313092633" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="53" startPosition="0" endLine="54" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313129963" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="55" startPosition="39" endLine="56" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313143320" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="57" startPosition="11" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5684843424313143056" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="58" startPosition="0" endLine="59" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313143728" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="60" startPosition="39" endLine="61" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313379712" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="63" startPosition="39" endLine="64" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4122688303676537359" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="65" startPosition="11" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4122688303676531872" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="66" startPosition="0" endLine="67" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4122688303676532407" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="68" startPosition="28" endLine="69" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4122688303676537129" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="70" startPosition="11" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5684843424313045671" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="71" startPosition="0" endLine="72" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313395320" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="72" startPosition="94" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4122688303677527200" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="75" startPosition="43" endLine="76" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5684843424313441536" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="80" startPosition="43" endLine="81" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5684843424313518501" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="83" startPosition="37" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5684843424313457308" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="84" startPosition="0" endLine="85" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="89" startPosition="42" endLine="90" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4690171080783176284" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="92" startPosition="7" endLine="93" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5684843424312914767" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="92" startPosition="7" endLine="93" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313066584" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="96" startPosition="85" endLine="97" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313066584" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="97" startPosition="30" endLine="98" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313066584" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="98" startPosition="174" endLine="99" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313066584" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="99" startPosition="59" endLine="100" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5684843424313140103" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="103" startPosition="85" endLine="104" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313140103" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="104" startPosition="30" endLine="105" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313140103" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="105" startPosition="172" endLine="106" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313140103" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="106" startPosition="84" endLine="107" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="110" startPosition="125" endLine="111" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="111" startPosition="30" endLine="112" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="112" startPosition="30" endLine="113" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424312914767" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="25" startPosition="82" endLine="26" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="28" startPosition="31" endLine="29" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="32" startPosition="41" endLine="33" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="36" startPosition="59" endLine="37" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5684843424313036259" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="42" startPosition="43" endLine="43" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5684843424313045653" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="48" startPosition="52" endLine="49" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313048749" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="50" startPosition="38" endLine="51" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313056631" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="52" startPosition="39" endLine="53" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313143239" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="54" startPosition="11" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5684843424313092633" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="55" startPosition="0" endLine="56" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313129963" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="57" startPosition="39" endLine="58" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313143320" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="59" startPosition="11" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5684843424313143056" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="60" startPosition="0" endLine="61" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313143728" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="62" startPosition="39" endLine="63" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313379712" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="65" startPosition="39" endLine="66" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4122688303676537359" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="67" startPosition="11" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4122688303676531872" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="68" startPosition="0" endLine="69" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4122688303676532407" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="70" startPosition="28" endLine="71" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4122688303676537129" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="72" startPosition="11" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5684843424313045671" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="73" startPosition="0" endLine="74" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313395320" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="74" startPosition="94" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4122688303677527200" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="77" startPosition="43" endLine="78" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5684843424313441536" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="82" startPosition="43" endLine="83" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5684843424313518501" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="85" startPosition="37" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5684843424313457308" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="86" startPosition="0" endLine="87" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="91" startPosition="42" endLine="92" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4690171080783176284" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="94" startPosition="7" endLine="95" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5684843424312914767" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="94" startPosition="7" endLine="95" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313066584" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="98" startPosition="85" endLine="99" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313066584" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="99" startPosition="30" endLine="100" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313066584" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="100" startPosition="174" endLine="101" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313066584" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="101" startPosition="59" endLine="102" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5684843424313140103" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="105" startPosition="85" endLine="106" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313140103" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="106" startPosition="30" endLine="107" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313140103" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="107" startPosition="172" endLine="108" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313140103" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="108" startPosition="84" endLine="109" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="112" startPosition="125" endLine="113" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="113" startPosition="30" endLine="114" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="114" startPosition="30" endLine="115" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="115" startPosition="30" endLine="116" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="116" startPosition="30" endLine="117" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="117" startPosition="176" endLine="118" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="118" startPosition="51" endLine="119" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="119" startPosition="59" endLine="120" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="120" startPosition="171" endLine="121" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="121" startPosition="46" endLine="122" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="123" startPosition="31" endLine="124" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="125" startPosition="5" endLine="126" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="126" startPosition="53" endLine="127" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="127" startPosition="167" endLine="128" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="128" startPosition="54" endLine="129" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="129" startPosition="164" endLine="130" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="130" startPosition="48" endLine="131" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="132" startPosition="31" endLine="133" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="134" startPosition="5" endLine="135" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="138" startPosition="105" endLine="139" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="139" startPosition="30" endLine="140" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="140" startPosition="30" endLine="141" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="116" startPosition="30" endLine="117" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="117" startPosition="30" endLine="118" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="118" startPosition="30" endLine="119" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="119" startPosition="176" endLine="120" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="120" startPosition="51" endLine="121" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="121" startPosition="59" endLine="122" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="122" startPosition="171" endLine="123" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="123" startPosition="46" endLine="124" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="125" startPosition="31" endLine="126" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="127" startPosition="5" endLine="128" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="128" startPosition="53" endLine="129" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="129" startPosition="167" endLine="130" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="130" startPosition="54" endLine="131" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="131" startPosition="164" endLine="132" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="132" startPosition="48" endLine="133" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="134" startPosition="31" endLine="135" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="136" startPosition="5" endLine="137" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="140" startPosition="105" endLine="141" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="141" startPosition="30" endLine="142" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="142" startPosition="30" endLine="143" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="143" startPosition="176" endLine="144" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="144" startPosition="51" endLine="145" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="145" startPosition="59" endLine="146" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="146" startPosition="167" endLine="147" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="147" startPosition="54" endLine="148" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="148" startPosition="164" endLine="149" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="149" startPosition="48" endLine="150" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="151" startPosition="31" endLine="152" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="153" startPosition="5" endLine="154" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="157" startPosition="104" endLine="158" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="158" startPosition="30" endLine="159" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="159" startPosition="30" endLine="160" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="160" startPosition="165" endLine="161" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="162" startPosition="5" endLine="163" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="164" startPosition="33" endLine="165" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="167" startPosition="5" endLine="168" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="171" startPosition="142" endLine="172" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="172" startPosition="30" endLine="173" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="173" startPosition="30" endLine="174" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="142" startPosition="30" endLine="143" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="143" startPosition="30" endLine="144" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="144" startPosition="30" endLine="145" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="145" startPosition="176" endLine="146" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="146" startPosition="51" endLine="147" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="147" startPosition="59" endLine="148" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="148" startPosition="167" endLine="149" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="149" startPosition="54" endLine="150" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="150" startPosition="164" endLine="151" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="151" startPosition="48" endLine="152" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="153" startPosition="31" endLine="154" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="155" startPosition="5" endLine="156" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="159" startPosition="104" endLine="160" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="160" startPosition="30" endLine="161" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="161" startPosition="30" endLine="162" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="162" startPosition="165" endLine="163" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="164" startPosition="5" endLine="165" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="166" startPosition="33" endLine="167" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="169" startPosition="5" endLine="170" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="173" startPosition="142" endLine="174" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="174" startPosition="30" endLine="175" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="175" startPosition="30" endLine="176" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="176" startPosition="30" endLine="177" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="177" startPosition="31" endLine="178" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="178" startPosition="31" endLine="179" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="179" startPosition="31" endLine="180" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="180" startPosition="160" endLine="181" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="181" startPosition="50" endLine="182" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="182" startPosition="59" endLine="183" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="184" startPosition="31" endLine="185" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="187" startPosition="5" endLine="188" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="189" startPosition="33" endLine="190" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="192" startPosition="5" endLine="193" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="193" startPosition="167" endLine="194" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="195" startPosition="5" endLine="196" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="197" startPosition="33" endLine="198" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="200" startPosition="5" endLine="201" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="204" startPosition="88" endLine="205" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="205" startPosition="30" endLine="206" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="206" startPosition="30" endLine="207" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="207" startPosition="165" endLine="208" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="209" startPosition="31" endLine="210" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="211" startPosition="5" endLine="212" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="215" startPosition="144" endLine="216" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="216" startPosition="30" endLine="217" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="217" startPosition="30" endLine="218" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="176" startPosition="30" endLine="177" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="177" startPosition="30" endLine="178" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="178" startPosition="30" endLine="179" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="179" startPosition="31" endLine="180" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="180" startPosition="31" endLine="181" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="181" startPosition="31" endLine="182" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="182" startPosition="160" endLine="183" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="183" startPosition="50" endLine="184" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="184" startPosition="59" endLine="185" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="186" startPosition="31" endLine="187" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="188" startPosition="5" endLine="189" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="189" startPosition="167" endLine="190" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="191" startPosition="5" endLine="192" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="193" startPosition="33" endLine="194" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="197" startPosition="5" endLine="198" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="199" startPosition="33" endLine="200" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="202" startPosition="5" endLine="203" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="206" startPosition="88" endLine="207" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="207" startPosition="30" endLine="208" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="208" startPosition="30" endLine="209" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="209" startPosition="165" endLine="210" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="211" startPosition="31" endLine="212" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="213" startPosition="5" endLine="214" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="217" startPosition="144" endLine="218" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="218" startPosition="30" endLine="219" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="219" startPosition="30" endLine="220" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="220" startPosition="30" endLine="221" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="221" startPosition="31" endLine="222" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="222" startPosition="31" endLine="223" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="223" startPosition="31" endLine="224" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="224" startPosition="176" endLine="225" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="225" startPosition="51" endLine="226" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="226" startPosition="47" endLine="227" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="227" startPosition="171" endLine="228" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="228" startPosition="45" endLine="229" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="229" startPosition="166" endLine="230" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="231" startPosition="5" endLine="232" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="233" startPosition="33" endLine="234" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="236" startPosition="5" endLine="237" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="237" startPosition="49" endLine="238" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="238" startPosition="53" endLine="239" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="239" startPosition="167" endLine="240" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="240" startPosition="54" endLine="241" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="241" startPosition="164" endLine="242" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="242" startPosition="48" endLine="243" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="243" startPosition="165" endLine="244" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="245" startPosition="5" endLine="246" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="247" startPosition="33" endLine="248" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="250" startPosition="5" endLine="251" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="251" startPosition="54" endLine="252" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5684843424313066584" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="97" startPosition="30" endLine="99" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313066584" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="97" startPosition="30" endLine="99" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313140103" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="104" startPosition="30" endLine="106" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313140103" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="104" startPosition="30" endLine="106" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="126" startPosition="53" endLine="128" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="126" startPosition="53" endLine="128" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="128" startPosition="54" endLine="130" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="128" startPosition="54" endLine="130" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="145" startPosition="59" endLine="147" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="145" startPosition="59" endLine="147" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="147" startPosition="54" endLine="149" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="147" startPosition="54" endLine="149" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="192" startPosition="5" endLine="194" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="192" startPosition="5" endLine="194" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="238" startPosition="53" endLine="240" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="238" startPosition="53" endLine="240" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="240" startPosition="54" endLine="242" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="240" startPosition="54" endLine="242" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5684843424313036257" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="5684843424313048810" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="49" startPosition="57" endLine="52" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="5684843424313177160" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="54" startPosition="56" endLine="57" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="5684843424313143605" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="59" startPosition="55" endLine="62" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="5684843424313379705" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="62" startPosition="11" endLine="65" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="4122688303676532892" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="67" startPosition="33" endLine="70" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4122688303677526317" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="75" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="5684843424313440902" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="89" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="122" startPosition="39" endLine="125" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="131" startPosition="39" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="150" startPosition="39" endLine="153" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="163" startPosition="52" endLine="166" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="183" startPosition="39" endLine="186" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="188" startPosition="52" endLine="191" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="196" startPosition="52" endLine="199" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="208" startPosition="39" endLine="211" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="232" startPosition="52" endLine="235" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="246" startPosition="52" endLine="249" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="121" startPosition="46" endLine="125" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="121" startPosition="46" endLine="125" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="130" startPosition="48" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="130" startPosition="48" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="149" startPosition="48" endLine="153" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="149" startPosition="48" endLine="153" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="182" startPosition="59" endLine="186" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="182" startPosition="59" endLine="186" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="207" startPosition="165" endLine="211" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="207" startPosition="165" endLine="211" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424312918794" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="38" startPosition="59" endLine="43" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4122688303677526309" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="73" startPosition="0" endLine="78" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5684843424313381206" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="78" startPosition="30" endLine="83" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="206" startPosition="30" endLine="211" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="206" startPosition="30" endLine="211" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313066584" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="96" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_yti4yq_a0a0a1a1a0a#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="5684843424313140103" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="103" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_yti4yq_a0a0a4a1a0a#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="161" startPosition="71" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="161" startPosition="71" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="186" startPosition="5" endLine="192" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="186" startPosition="5" endLine="192" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="194" startPosition="54" endLine="200" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="194" startPosition="54" endLine="200" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="230" startPosition="72" endLine="236" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="230" startPosition="72" endLine="236" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="244" startPosition="71" endLine="250" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="244" startPosition="71" endLine="250" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="119" startPosition="59" endLine="126" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="119" startPosition="59" endLine="126" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="159" startPosition="30" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="159" startPosition="30" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="228" startPosition="45" endLine="237" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="228" startPosition="45" endLine="237" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="242" startPosition="48" endLine="251" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="242" startPosition="48" endLine="251" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="204" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_yti4yq_a0a0a0a0p0b0a0#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="142" startPosition="30" endLine="153" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="142" startPosition="30" endLine="153" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="226" startPosition="47" endLine="238" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="226" startPosition="47" endLine="238" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="157" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_yti4yq_a0a0l0b0a0#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="116" startPosition="30" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="116" startPosition="30" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="138" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_yti4yq_a0a0a8a1a0a#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="179" startPosition="31" endLine="200" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="179" startPosition="31" endLine="200" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="110" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_yti4yq_a0a0a7a1a0a#(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="223" startPosition="31" endLine="251" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="223" startPosition="31" endLine="251" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="171" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_yti4yq_a0n0b0a0#(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1238920044947" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="47" startPosition="25" endLine="86" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="215" startPosition="0" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_yti4yq_a0a61a1a0a#(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="46" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="5684843424312914767" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="24" startPosition="58" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="24" startPosition="58" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5684843424312914767" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="23" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UpdateTuplesRuntime_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <scopeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="26" startPosition="31" endLine="27" endPosition="32" />
-    <scopeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="30" startPosition="41" endLine="31" endPosition="32" />
-    <scopeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="34" startPosition="59" endLine="35" endPosition="67" />
-    <scopeInfo nodeId="5684843424313036258" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="40" startPosition="43" endLine="41" endPosition="80" />
-    <scopeInfo nodeId="5684843424313048812" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="50" startPosition="39" endLine="51" endPosition="107" />
-    <scopeInfo nodeId="5684843424313177166" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="55" startPosition="39" endLine="56" endPosition="145" />
-    <scopeInfo nodeId="5684843424313143611" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="60" startPosition="39" endLine="61" endPosition="251" />
-    <scopeInfo nodeId="5684843424313379711" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="63" startPosition="39" endLine="64" endPosition="178" />
-    <scopeInfo nodeId="4122688303676532894" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="68" startPosition="28" endLine="69" endPosition="126" />
-    <scopeInfo nodeId="4122688303677526318" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="75" startPosition="43" endLine="76" endPosition="95" />
-    <scopeInfo nodeId="5684843424313440903" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="80" startPosition="43" endLine="81" endPosition="50" />
-    <scopeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="89" startPosition="42" endLine="90" endPosition="21" />
-    <scopeInfo nodeId="4690171080783176284" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="92" startPosition="7" endLine="93" endPosition="18" />
-    <scopeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="123" startPosition="31" endLine="124" endPosition="73" />
-    <scopeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="132" startPosition="31" endLine="133" endPosition="79" />
-    <scopeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="151" startPosition="31" endLine="152" endPosition="79" />
-    <scopeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="164" startPosition="33" endLine="165" endPosition="73" />
-    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="184" startPosition="31" endLine="185" endPosition="86" />
-    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="189" startPosition="33" endLine="190" endPosition="70" />
-    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="197" startPosition="33" endLine="198" endPosition="87" />
-    <scopeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="209" startPosition="31" endLine="210" endPosition="74" />
-    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="233" startPosition="33" endLine="234" endPosition="74" />
-    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="247" startPosition="33" endLine="248" endPosition="73" />
-    <scopeInfo nodeId="5684843424313066584" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="97" startPosition="30" endLine="99" endPosition="59" />
-    <scopeInfo nodeId="5684843424313140103" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="104" startPosition="30" endLine="106" endPosition="84" />
-    <scopeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="126" startPosition="53" endLine="128" endPosition="54" />
-    <scopeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="128" startPosition="54" endLine="130" endPosition="48" />
-    <scopeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="145" startPosition="59" endLine="147" endPosition="54" />
-    <scopeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="147" startPosition="54" endLine="149" endPosition="48" />
-    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="192" startPosition="5" endLine="194" endPosition="54" />
-    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="238" startPosition="53" endLine="240" endPosition="54" />
-    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="240" startPosition="54" endLine="242" endPosition="48" />
-    <scopeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="5684843424313036257" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="40" startPosition="0" endLine="43" endPosition="0">
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="220" startPosition="30" endLine="221" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="221" startPosition="30" endLine="222" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="222" startPosition="30" endLine="223" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="223" startPosition="31" endLine="224" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="224" startPosition="31" endLine="225" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="225" startPosition="31" endLine="226" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="226" startPosition="176" endLine="227" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="227" startPosition="51" endLine="228" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="228" startPosition="47" endLine="229" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="229" startPosition="171" endLine="230" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="230" startPosition="45" endLine="231" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="231" startPosition="166" endLine="232" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="233" startPosition="5" endLine="234" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="235" startPosition="33" endLine="236" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="238" startPosition="5" endLine="239" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="239" startPosition="49" endLine="240" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="240" startPosition="53" endLine="241" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="241" startPosition="167" endLine="242" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="242" startPosition="54" endLine="243" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="243" startPosition="164" endLine="244" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="244" startPosition="48" endLine="245" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="245" startPosition="165" endLine="246" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="247" startPosition="5" endLine="248" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="249" startPosition="33" endLine="250" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="252" startPosition="5" endLine="253" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="253" startPosition="54" endLine="254" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5684843424313066584" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="99" startPosition="30" endLine="101" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313066584" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="99" startPosition="30" endLine="101" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313140103" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="106" startPosition="30" endLine="108" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313140103" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="106" startPosition="30" endLine="108" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="128" startPosition="53" endLine="130" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="128" startPosition="53" endLine="130" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="130" startPosition="54" endLine="132" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="130" startPosition="54" endLine="132" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="147" startPosition="59" endLine="149" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="147" startPosition="59" endLine="149" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="149" startPosition="54" endLine="151" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="149" startPosition="54" endLine="151" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="188" startPosition="5" endLine="190" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="188" startPosition="5" endLine="190" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="240" startPosition="53" endLine="242" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="240" startPosition="53" endLine="242" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="242" startPosition="54" endLine="244" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="242" startPosition="54" endLine="244" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5684843424313036257" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="5684843424313048810" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="51" startPosition="57" endLine="54" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="5684843424313177160" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="56" startPosition="56" endLine="59" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="5684843424313143605" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="61" startPosition="55" endLine="64" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="5684843424313379705" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="64" startPosition="11" endLine="67" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="4122688303676532892" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="69" startPosition="33" endLine="72" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4122688303677526317" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5684843424313440902" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="82" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="124" startPosition="39" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="133" startPosition="39" endLine="136" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="152" startPosition="39" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="165" startPosition="52" endLine="168" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="185" startPosition="39" endLine="188" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="192" startPosition="52" endLine="195" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="198" startPosition="52" endLine="201" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="210" startPosition="39" endLine="213" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="234" startPosition="52" endLine="237" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="248" startPosition="52" endLine="251" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="123" startPosition="46" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="123" startPosition="46" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="132" startPosition="48" endLine="136" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="132" startPosition="48" endLine="136" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="151" startPosition="48" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="151" startPosition="48" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="184" startPosition="59" endLine="188" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="184" startPosition="59" endLine="188" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="209" startPosition="165" endLine="213" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="209" startPosition="165" endLine="213" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424312918794" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="40" startPosition="59" endLine="45" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4122688303677526309" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="75" startPosition="0" endLine="80" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5684843424313381206" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="80" startPosition="30" endLine="85" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="208" startPosition="30" endLine="213" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="208" startPosition="30" endLine="213" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313066584" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="98" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_yti4yq_a0a0a1a1a0a#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5684843424313140103" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="105" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_yti4yq_a0a0a4a1a0a#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="163" startPosition="71" endLine="169" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="163" startPosition="71" endLine="169" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="190" startPosition="54" endLine="196" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="190" startPosition="54" endLine="196" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="196" startPosition="5" endLine="202" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="196" startPosition="5" endLine="202" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="232" startPosition="72" endLine="238" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="232" startPosition="72" endLine="238" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="246" startPosition="71" endLine="252" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="246" startPosition="71" endLine="252" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="40" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="121" startPosition="59" endLine="128" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="121" startPosition="59" endLine="128" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="161" startPosition="30" endLine="169" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="161" startPosition="30" endLine="169" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="230" startPosition="45" endLine="239" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="230" startPosition="45" endLine="239" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="244" startPosition="48" endLine="253" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="244" startPosition="48" endLine="253" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="206" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_yti4yq_a0a0a0a0p0b0a0#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="144" startPosition="30" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="144" startPosition="30" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="228" startPosition="47" endLine="240" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="228" startPosition="47" endLine="240" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="159" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_yti4yq_a0a0l0b0a0#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="118" startPosition="30" endLine="136" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="118" startPosition="30" endLine="136" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="140" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_yti4yq_a0a0a8a1a0a#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="181" startPosition="31" endLine="202" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="181" startPosition="31" endLine="202" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="112" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_yti4yq_a0a0a7a1a0a#(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="225" startPosition="31" endLine="253" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="225" startPosition="31" endLine="253" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="173" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_yti4yq_a0n0b0a0#(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1238920044947" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="49" startPosition="25" endLine="88" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="217" startPosition="0" endLine="256" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_yti4yq_a0a61a1a0a#(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="48" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5684843424312914767" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="26" startPosition="58" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="26" startPosition="58" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5684843424312914767" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="25" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UpdateTuplesRuntime_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <scopeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="28" startPosition="31" endLine="29" endPosition="32" />
+    <scopeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="32" startPosition="41" endLine="33" endPosition="32" />
+    <scopeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="36" startPosition="59" endLine="37" endPosition="67" />
+    <scopeInfo nodeId="5684843424313036258" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="42" startPosition="43" endLine="43" endPosition="80" />
+    <scopeInfo nodeId="5684843424313048812" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="52" startPosition="39" endLine="53" endPosition="107" />
+    <scopeInfo nodeId="5684843424313177166" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="57" startPosition="39" endLine="58" endPosition="145" />
+    <scopeInfo nodeId="5684843424313143611" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="62" startPosition="39" endLine="63" endPosition="251" />
+    <scopeInfo nodeId="5684843424313379711" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="65" startPosition="39" endLine="66" endPosition="178" />
+    <scopeInfo nodeId="4122688303676532894" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="70" startPosition="28" endLine="71" endPosition="126" />
+    <scopeInfo nodeId="4122688303677526318" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="77" startPosition="43" endLine="78" endPosition="95" />
+    <scopeInfo nodeId="5684843424313440903" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="82" startPosition="43" endLine="83" endPosition="50" />
+    <scopeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="91" startPosition="42" endLine="92" endPosition="21" />
+    <scopeInfo nodeId="4690171080783176284" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="94" startPosition="7" endLine="95" endPosition="18" />
+    <scopeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="125" startPosition="31" endLine="126" endPosition="73" />
+    <scopeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="134" startPosition="31" endLine="135" endPosition="79" />
+    <scopeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="153" startPosition="31" endLine="154" endPosition="79" />
+    <scopeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="166" startPosition="33" endLine="167" endPosition="73" />
+    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="186" startPosition="31" endLine="187" endPosition="86" />
+    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="193" startPosition="33" endLine="194" endPosition="87" />
+    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="199" startPosition="33" endLine="200" endPosition="70" />
+    <scopeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="211" startPosition="31" endLine="212" endPosition="74" />
+    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="235" startPosition="33" endLine="236" endPosition="74" />
+    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="249" startPosition="33" endLine="250" endPosition="73" />
+    <scopeInfo nodeId="5684843424313066584" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="99" startPosition="30" endLine="101" endPosition="59" />
+    <scopeInfo nodeId="5684843424313140103" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="106" startPosition="30" endLine="108" endPosition="84" />
+    <scopeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="128" startPosition="53" endLine="130" endPosition="54" />
+    <scopeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="130" startPosition="54" endLine="132" endPosition="48" />
+    <scopeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="147" startPosition="59" endLine="149" endPosition="54" />
+    <scopeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="149" startPosition="54" endLine="151" endPosition="48" />
+    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="188" startPosition="5" endLine="190" endPosition="54" />
+    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="240" startPosition="53" endLine="242" endPosition="54" />
+    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="242" startPosition="54" endLine="244" endPosition="48" />
+    <scopeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="5684843424313036257" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="5684843424313036257" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313048810" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="49" startPosition="57" endLine="52" endPosition="11">
+    <scopeInfo nodeId="5684843424313048810" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="51" startPosition="57" endLine="54" endPosition="11">
       <varInfo nodeId="5684843424313048813" varName="j" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313177160" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="54" startPosition="56" endLine="57" endPosition="11">
+    <scopeInfo nodeId="5684843424313177160" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="56" startPosition="56" endLine="59" endPosition="11">
       <varInfo nodeId="5684843424313177180" varName="j" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313143605" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="59" startPosition="55" endLine="62" endPosition="11">
+    <scopeInfo nodeId="5684843424313143605" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="61" startPosition="55" endLine="64" endPosition="11">
       <varInfo nodeId="5684843424313143622" varName="j" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313379705" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="62" startPosition="11" endLine="65" endPosition="11">
+    <scopeInfo nodeId="5684843424313379705" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="64" startPosition="11" endLine="67" endPosition="11">
       <varInfo nodeId="5684843424313379739" varName="j" />
     </scopeInfo>
-    <scopeInfo nodeId="4122688303677526317" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="75" startPosition="0" endLine="78" endPosition="0">
+    <scopeInfo nodeId="4122688303677526317" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="77" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="4122688303677526317" varName="tr" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313440902" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="80" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="5684843424313440902" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="82" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="5684843424313440902" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="89" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="163" startPosition="52" endLine="166" endPosition="7">
+    <scopeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="91" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="165" startPosition="52" endLine="168" endPosition="7">
       <varInfo nodeId="4122688303676531875" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="188" startPosition="52" endLine="191" endPosition="7">
+    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="192" startPosition="52" endLine="195" endPosition="7">
       <varInfo nodeId="5684843424313045656" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="196" startPosition="52" endLine="199" endPosition="7">
+    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="198" startPosition="52" endLine="201" endPosition="7">
       <varInfo nodeId="5684843424313045656" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="232" startPosition="52" endLine="235" endPosition="7">
+    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="234" startPosition="52" endLine="237" endPosition="7">
       <varInfo nodeId="5684843424313392849" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="246" startPosition="52" endLine="249" endPosition="7">
+    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="248" startPosition="52" endLine="251" endPosition="7">
       <varInfo nodeId="5684843424313392849" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313066584" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="96" startPosition="85" endLine="100" endPosition="24">
+    <scopeInfo nodeId="5684843424313066584" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="98" startPosition="85" endLine="102" endPosition="24">
       <varInfo nodeId="5684843424313066584" varName="quotedNode_2" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313140103" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="103" startPosition="85" endLine="107" endPosition="24">
+    <scopeInfo nodeId="5684843424313140103" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="105" startPosition="85" endLine="109" endPosition="24">
       <varInfo nodeId="5684843424313140103" varName="quotedNode_2" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="121" startPosition="46" endLine="125" endPosition="5" />
-    <scopeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="130" startPosition="48" endLine="134" endPosition="5" />
-    <scopeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="149" startPosition="48" endLine="153" endPosition="5" />
-    <scopeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="162" startPosition="5" endLine="166" endPosition="7">
+    <scopeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="123" startPosition="46" endLine="127" endPosition="5" />
+    <scopeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="132" startPosition="48" endLine="136" endPosition="5" />
+    <scopeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="151" startPosition="48" endLine="155" endPosition="5" />
+    <scopeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="164" startPosition="5" endLine="168" endPosition="7">
       <varInfo nodeId="4122688303676531875" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="182" startPosition="59" endLine="186" endPosition="5" />
-    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="187" startPosition="5" endLine="191" endPosition="7">
+    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="184" startPosition="59" endLine="188" endPosition="5" />
+    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="191" startPosition="5" endLine="195" endPosition="7">
       <varInfo nodeId="5684843424313045656" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="195" startPosition="5" endLine="199" endPosition="7">
+    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="197" startPosition="5" endLine="201" endPosition="7">
       <varInfo nodeId="5684843424313045656" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="207" startPosition="165" endLine="211" endPosition="5" />
-    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="231" startPosition="5" endLine="235" endPosition="7">
+    <scopeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="209" startPosition="165" endLine="213" endPosition="5" />
+    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="233" startPosition="5" endLine="237" endPosition="7">
       <varInfo nodeId="5684843424313392849" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="245" startPosition="5" endLine="249" endPosition="7">
+    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="247" startPosition="5" endLine="251" endPosition="7">
       <varInfo nodeId="5684843424313392849" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424312918074" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="38" startPosition="59" endLine="43" endPosition="12" />
-    <scopeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="206" startPosition="30" endLine="211" endPosition="5" />
-    <scopeInfo nodeId="5684843424313066584" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="96" startPosition="0" endLine="102" endPosition="0">
+    <scopeInfo nodeId="5684843424312918074" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="40" startPosition="59" endLine="45" endPosition="12" />
+    <scopeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="208" startPosition="30" endLine="213" endPosition="5" />
+    <scopeInfo nodeId="5684843424313066584" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="98" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="5684843424313066584" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313140103" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="103" startPosition="0" endLine="109" endPosition="0">
+    <scopeInfo nodeId="5684843424313140103" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="105" startPosition="0" endLine="111" endPosition="0">
       <varInfo nodeId="5684843424313140103" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="161" startPosition="71" endLine="167" endPosition="5" />
-    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="186" startPosition="5" endLine="192" endPosition="5" />
-    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="194" startPosition="54" endLine="200" endPosition="5" />
-    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="230" startPosition="72" endLine="236" endPosition="5" />
-    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="244" startPosition="71" endLine="250" endPosition="5" />
-    <scopeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="163" startPosition="71" endLine="169" endPosition="5" />
+    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="190" startPosition="54" endLine="196" endPosition="5" />
+    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="196" startPosition="5" endLine="202" endPosition="5" />
+    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="232" startPosition="72" endLine="238" endPosition="5" />
+    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="246" startPosition="71" endLine="252" endPosition="5" />
+    <scopeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="40" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="5684843424312914770" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="119" startPosition="59" endLine="126" endPosition="53" />
-    <scopeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="159" startPosition="30" endLine="167" endPosition="5" />
-    <scopeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="204" startPosition="88" endLine="212" endPosition="24">
+    <scopeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="121" startPosition="59" endLine="128" endPosition="53" />
+    <scopeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="161" startPosition="30" endLine="169" endPosition="5" />
+    <scopeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="206" startPosition="88" endLine="214" endPosition="24">
       <varInfo nodeId="4122688303677527198" varName="quotedNode_2" />
       <varInfo nodeId="4122688303677527198" varName="quotedNode_3" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="228" startPosition="45" endLine="237" endPosition="49" />
-    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="242" startPosition="48" endLine="251" endPosition="54" />
-    <scopeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="204" startPosition="0" endLine="214" endPosition="0">
+    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="230" startPosition="45" endLine="239" endPosition="49" />
+    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="244" startPosition="48" endLine="253" endPosition="54" />
+    <scopeInfo nodeId="4122688303677527198" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="206" startPosition="0" endLine="216" endPosition="0">
       <varInfo nodeId="4122688303677527198" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="142" startPosition="30" endLine="153" endPosition="5" />
-    <scopeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="157" startPosition="104" endLine="168" endPosition="24">
+    <scopeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="144" startPosition="30" endLine="155" endPosition="5" />
+    <scopeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="159" startPosition="104" endLine="170" endPosition="24">
       <varInfo nodeId="4122688303676531875" varName="quotedNode_3" />
       <varInfo nodeId="4122688303676531875" varName="quotedNode_4" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="226" startPosition="47" endLine="238" endPosition="53" />
-    <scopeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="157" startPosition="0" endLine="170" endPosition="0">
+    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="228" startPosition="47" endLine="240" endPosition="53" />
+    <scopeInfo nodeId="4122688303676531875" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="159" startPosition="0" endLine="172" endPosition="0">
       <varInfo nodeId="4122688303676531875" varName="parameter_1" />
       <varInfo nodeId="4122688303676531875" varName="parameter_2" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="138" startPosition="105" endLine="154" endPosition="24">
+    <scopeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="140" startPosition="105" endLine="156" endPosition="24">
       <varInfo nodeId="5684843424313379715" varName="quotedNode_3" />
       <varInfo nodeId="5684843424313379715" varName="quotedNode_4" />
       <varInfo nodeId="5684843424313379715" varName="quotedNode_5" />
       <varInfo nodeId="5684843424313379715" varName="quotedNode_6" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="116" startPosition="30" endLine="134" endPosition="5" />
-    <scopeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="138" startPosition="0" endLine="156" endPosition="0">
+    <scopeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="118" startPosition="30" endLine="136" endPosition="5" />
+    <scopeInfo nodeId="5684843424313379715" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="140" startPosition="0" endLine="158" endPosition="0">
       <varInfo nodeId="5684843424313379715" varName="parameter_1" />
       <varInfo nodeId="5684843424313379715" varName="parameter_2" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="179" startPosition="31" endLine="200" endPosition="5" />
-    <scopeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="110" startPosition="125" endLine="135" endPosition="24">
+    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="181" startPosition="31" endLine="202" endPosition="5" />
+    <scopeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="112" startPosition="125" endLine="137" endPosition="24">
       <varInfo nodeId="5684843424313154273" varName="quotedNode_4" />
       <varInfo nodeId="5684843424313154273" varName="quotedNode_5" />
       <varInfo nodeId="5684843424313154273" varName="quotedNode_6" />
@@ -386,13 +386,13 @@
       <varInfo nodeId="5684843424313154273" varName="quotedNode_8" />
       <varInfo nodeId="5684843424313154273" varName="quotedNode_9" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="110" startPosition="0" endLine="137" endPosition="0">
+    <scopeInfo nodeId="5684843424313154273" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="112" startPosition="0" endLine="139" endPosition="0">
       <varInfo nodeId="5684843424313154273" varName="parameter_1" />
       <varInfo nodeId="5684843424313154273" varName="parameter_2" />
       <varInfo nodeId="5684843424313154273" varName="parameter_3" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="223" startPosition="31" endLine="251" endPosition="54" />
-    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="171" startPosition="142" endLine="201" endPosition="24">
+    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="225" startPosition="31" endLine="253" endPosition="54" />
+    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="173" startPosition="142" endLine="203" endPosition="24">
       <varInfo nodeId="5684843424313045656" varName="quotedNode_10" />
       <varInfo nodeId="5684843424313045656" varName="quotedNode_11" />
       <varInfo nodeId="5684843424313045656" varName="quotedNode_12" />
@@ -402,20 +402,20 @@
       <varInfo nodeId="5684843424313045656" varName="quotedNode_8" />
       <varInfo nodeId="5684843424313045656" varName="quotedNode_9" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="171" startPosition="0" endLine="203" endPosition="0">
+    <scopeInfo nodeId="5684843424313045656" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="173" startPosition="0" endLine="205" endPosition="0">
       <varInfo nodeId="5684843424313045656" varName="parameter_1" />
       <varInfo nodeId="5684843424313045656" varName="parameter_2" />
       <varInfo nodeId="5684843424313045656" varName="parameter_3" />
       <varInfo nodeId="5684843424313045656" varName="parameter_4" />
     </scopeInfo>
-    <scopeInfo nodeId="1238920044948" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="48" startPosition="38" endLine="85" endPosition="114">
+    <scopeInfo nodeId="1238920044948" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="50" startPosition="38" endLine="87" endPosition="98">
       <varInfo nodeId="4122688303677526310" varName="extParams" />
       <varInfo nodeId="4122688303676531873" varName="extendIfc" />
       <varInfo nodeId="5684843424313143059" varName="methods" />
       <varInfo nodeId="5684843424313048752" varName="typedecls" />
       <varInfo nodeId="5684843424313092636" varName="typerefs" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="215" startPosition="144" endLine="252" endPosition="24">
+    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="217" startPosition="144" endLine="254" endPosition="24">
       <varInfo nodeId="5684843424313392849" varName="quotedNode_10" />
       <varInfo nodeId="5684843424313392849" varName="quotedNode_11" />
       <varInfo nodeId="5684843424313392849" varName="quotedNode_12" />
@@ -425,31 +425,31 @@
       <varInfo nodeId="5684843424313392849" varName="quotedNode_8" />
       <varInfo nodeId="5684843424313392849" varName="quotedNode_9" />
     </scopeInfo>
-    <scopeInfo nodeId="1238920044947" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="47" startPosition="25" endLine="86" endPosition="9">
+    <scopeInfo nodeId="1238920044947" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="49" startPosition="25" endLine="88" endPosition="9">
       <varInfo nodeId="1238920044950" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="215" startPosition="0" endLine="254" endPosition="0">
+    <scopeInfo nodeId="5684843424313392849" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="217" startPosition="0" endLine="256" endPosition="0">
       <varInfo nodeId="5684843424313392849" varName="parameter_1" />
       <varInfo nodeId="5684843424313392849" varName="parameter_2" />
       <varInfo nodeId="5684843424313392849" varName="parameter_3" />
       <varInfo nodeId="5684843424313392849" varName="parameter_4" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424312914774" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="46" startPosition="52" endLine="86" endPosition="9">
+    <scopeInfo nodeId="5684843424312914774" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="48" startPosition="52" endLine="88" endPosition="9">
       <varInfo nodeId="5684843424313045654" varName="ifc" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="46" startPosition="0" endLine="88" endPosition="0">
+    <scopeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="48" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="5684843424312914770" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="24" startPosition="58" endLine="92" endPosition="7" />
-    <scopeInfo nodeId="5684843424312914767" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="23" startPosition="82" endLine="93" endPosition="18" />
-    <scopeInfo nodeId="5684843424312914767" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="23" startPosition="0" endLine="95" endPosition="0">
+    <scopeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="26" startPosition="58" endLine="94" endPosition="7" />
+    <scopeInfo nodeId="5684843424312914767" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="25" startPosition="82" endLine="95" endPosition="18" />
+    <scopeInfo nodeId="5684843424312914767" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="25" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="5684843424312914767" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="5684843424313036257" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="39" startPosition="279" endLine="43" endPosition="9" unitName="jetbrains.mps.baseLanguage.tuples.scripts.UpdateTuplesRuntime_MigrationScript$2" />
-    <unitInfo nodeId="4122688303677526317" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="74" startPosition="77" endLine="78" endPosition="11" unitName="jetbrains.mps.baseLanguage.tuples.scripts.UpdateTuplesRuntime_MigrationScript$2" />
-    <unitInfo nodeId="5684843424313440902" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="79" startPosition="191" endLine="83" endPosition="11" unitName="jetbrains.mps.baseLanguage.tuples.scripts.UpdateTuplesRuntime_MigrationScript$2" />
-    <unitInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="25" startPosition="28" endLine="92" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.scripts.UpdateTuplesRuntime_MigrationScript$1" />
-    <unitInfo nodeId="5684843424312914767" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="22" startPosition="0" endLine="255" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.scripts.UpdateTuplesRuntime_MigrationScript" />
+    <unitInfo nodeId="5684843424313036257" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="41" startPosition="283" endLine="45" endPosition="9" unitName="jetbrains.mps.baseLanguage.tuples.scripts.UpdateTuplesRuntime_MigrationScript$2" />
+    <unitInfo nodeId="4122688303677526317" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="76" startPosition="77" endLine="80" endPosition="11" unitName="jetbrains.mps.baseLanguage.tuples.scripts.UpdateTuplesRuntime_MigrationScript$2" />
+    <unitInfo nodeId="5684843424313440902" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="81" startPosition="191" endLine="85" endPosition="11" unitName="jetbrains.mps.baseLanguage.tuples.scripts.UpdateTuplesRuntime_MigrationScript$2" />
+    <unitInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="27" startPosition="28" endLine="94" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.scripts.UpdateTuplesRuntime_MigrationScript$1" />
+    <unitInfo nodeId="5684843424312914767" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="24" startPosition="0" endLine="257" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.scripts.UpdateTuplesRuntime_MigrationScript" />
   </root>
 </debugInfo>
 

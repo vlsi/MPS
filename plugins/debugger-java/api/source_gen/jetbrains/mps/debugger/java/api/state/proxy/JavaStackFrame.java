@@ -23,7 +23,6 @@ import jetbrains.mps.debug.api.programState.IValue;
 
 public class JavaStackFrame extends ProxyForJava implements IStackFrame {
   private static final Logger LOG = Logger.getLogger(JavaStackFrame.class);
-
   private final String myClassFqName;
   private final int myIndex;
   private final JavaLocation myLocation;

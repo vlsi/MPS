@@ -16,10 +16,10 @@
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1236765926225">
-      <property name="name" nameId="tpck.1169194664001" value="MigrationToCollections" />
-      <property name="title" nameId="tp33.1177457669450" value="Migration from List to Collections" />
       <property name="category" nameId="tp33.1206123296179" value="collections" />
+      <property name="title" nameId="tp33.1177457669450" value="Migration from List to Collections" />
       <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
+      <property name="name" nameId="tpck.1169194664001" value="MigrationToCollections" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1236863766974">
       <property name="name" nameId="tpck.1169194664001" value="ListMigrationUtil" />
@@ -28,10 +28,10 @@
       <property name="name" nameId="tpck.1169194664001" value="ParameterType" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1238516564139">
-      <property name="name" nameId="tpck.1169194664001" value="MigrationFromMapsToCollections" />
-      <property name="category" nameId="tp33.1206123296179" value="collections" />
       <property name="title" nameId="tp33.1177457669450" value="Migration from Map to Collections" />
+      <property name="category" nameId="tp33.1206123296179" value="collections" />
       <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
+      <property name="name" nameId="tpck.1169194664001" value="MigrationFromMapsToCollections" />
     </node>
   </roots>
   <root id="1236765926225">
@@ -2582,7 +2582,13 @@
     </node>
   </root>
   <root id="1236863766974">
-    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1237037981322">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1236863767059" />
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="1236863767060">
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1236863767061" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1236863767062" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1236863767063" />
+    </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1237037981322">
       <property name="name" nameId="tpck.1169194664001" value="isApplicableForLists" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1237037981323">
         <property name="name" nameId="tpck.1169194664001" value="node" />
@@ -2702,7 +2708,7 @@
         </node>
       </node>
     </node>
-    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1237218573103">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1237218573103">
       <property name="name" nameId="tpck.1169194664001" value="isApplicableForSet" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1237218573104">
         <property name="name" nameId="tpck.1169194664001" value="node" />
@@ -2810,7 +2816,7 @@
         </node>
       </node>
     </node>
-    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1238772012592">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1238772012592">
       <property name="name" nameId="tpck.1169194664001" value="isApplicableForIterator" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1238772012593">
         <property name="name" nameId="tpck.1169194664001" value="node" />
@@ -2918,7 +2924,7 @@
         </node>
       </node>
     </node>
-    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1237030023768">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1237030023768">
       <property name="name" nameId="tpck.1169194664001" value="isApplicableForAll" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1237030088159">
         <property name="name" nameId="tpck.1169194664001" value="node" />
@@ -3050,7 +3056,7 @@
         </node>
       </node>
     </node>
-    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1238518113112">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1238518113112">
       <property name="name" nameId="tpck.1169194664001" value="isApplicableForMap" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1238518113113">
         <property name="name" nameId="tpck.1169194664001" value="node" />
@@ -3158,13 +3164,7 @@
         </node>
       </node>
     </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1236863767059" />
-    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="1236863767060">
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1236863767061" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1236863767062" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1236863767063" />
-    </node>
-    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1237030149899">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1237030149899">
       <property name="name" nameId="tpck.1169194664001" value="isApplicableMethod" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1237030149900" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1237030149901" />
@@ -3386,7 +3386,7 @@
         </node>
       </node>
     </node>
-    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1237031067491">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1237031067491">
       <property name="name" nameId="tpck.1169194664001" value="isApplicableForType" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1237031073730" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1177458442161" />
@@ -3568,7 +3568,7 @@
       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1237030526915" resolveInfo="ParameterType" />
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1237030526914" />
-    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="1237030526915">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="1237030526915">
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1237030526916" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1237030526917" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1237030526918" />

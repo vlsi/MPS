@@ -19,7 +19,7 @@ public class typeof_ProcessBuilderCommandPart_InferenceRule extends AbstractInfe
     {
       SNode _nodeToCheck_1029348928467 = processBuilderCommandPart;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "8234001627573984196", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "8234001627573984193", true), (SNode) _quotation_createNode_a37qgd_a0a0a(), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "8234001627573984193", true), (SNode) _quotation_createNode_a37qgd_a0a0b(), _info_12389875345);
     }
   }
 
@@ -38,7 +38,7 @@ public class typeof_ProcessBuilderCommandPart_InferenceRule extends AbstractInfe
     return false;
   }
 
-  private static SNode _quotation_createNode_a37qgd_a0a0a() {
+  private static SNode _quotation_createNode_a37qgd_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPartType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

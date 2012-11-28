@@ -412,8 +412,6 @@ public class QueriesGenerated {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _3_opp;
-              private SNode _7_io;
 
               protected boolean moveToNext() {
 __loop__:
@@ -451,6 +449,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private SNode _3_opp;
+              private SNode _7_io;
             };
           }
         };
@@ -467,8 +468,6 @@ __switch__:
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _3_opp;
-              private SNode _7_io;
 
               protected boolean moveToNext() {
 __loop__:
@@ -505,6 +504,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private SNode _3_opp;
+              private SNode _7_io;
             };
           }
         };
@@ -533,8 +535,6 @@ __switch__:
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _3_opp;
-              private SNode _7_io;
 
               protected boolean moveToNext() {
 __loop__:
@@ -571,6 +571,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private SNode _3_opp;
+              private SNode _7_io;
             };
           }
         };
@@ -589,8 +592,6 @@ __switch__:
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _3_opp;
-              private SNode _7_io;
 
               protected boolean moveToNext() {
 __loop__:
@@ -628,6 +629,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private SNode _3_opp;
+              private SNode _7_io;
             };
           }
         };

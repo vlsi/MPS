@@ -8,7 +8,6 @@ import java.util.Iterator;
 
 public class Interval<T extends Comparable> implements Iterable<T> {
   private static final Map<Class, Interval.IteratorFactory> ourIteratorFactories = new HashMap<Class, Interval.IteratorFactory>();
-
   private final T myStart;
   private final T myEnd;
   private final boolean myStartIncluded;

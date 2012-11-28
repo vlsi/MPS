@@ -85,14 +85,6 @@ public class HelpHelper {
     BrowserUtil.launchBrowser(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "helpURL"));
   }
 
-  public static boolean isNotEmpty_nv0oxj_a0b0c(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_nv0oxj_a0b0d(String str) {
-    return str != null && str.length() > 0;
-  }
-
   public static   enum HelpType {
     NODE("node"),
     ROOT_NODE("root"),
@@ -107,5 +99,13 @@ public class HelpHelper {
     public String getName() {
       return this.myName;
     }
+  }
+
+  public static boolean isNotEmpty_nv0oxj_a0b0c(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  public static boolean isNotEmpty_nv0oxj_a0b0d(String str) {
+    return str != null && str.length() > 0;
   }
 }

@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -18,17 +17,14 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import java.util.Arrays;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.scripts.NonMigratableUsagesFinder;
 import jetbrains.mps.ide.actions.InternalActionsUtils;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.logging.Logger;
 
 public class FindNotMigratableLinks_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(FindNotMigratableLinks_Action.class);
 
   public FindNotMigratableLinks_Action() {
     super("Find potentially not migratable classifier links (.field, .method etc) usages", "", ICON);
@@ -68,10 +64,7 @@ public class FindNotMigratableLinks_Action extends BaseAction {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           for (SNode link : Arrays.asList(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "method"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "staticField"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "staticInnerClassifiers"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "constructor"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "staticMethod"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "field"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "property"))) {
-
-            SearchResults<SNode> results = FindUtils.getSearchResults(new EmptyProgressMonitor(), link, GlobalScope.getInstance(), "jetbrains.mps.lang.script.findUsages.Potentially_not_migratable_usages_Finder");
-            System.out.println(results.getSearchResults().size());
-            for (SNode node : SetSequence.fromSet(results.getResultObjects())) {
+            for (SNode node : Sequence.fromIterable(NonMigratableUsagesFinder.findNonMigratableUsages(link))) {
               ListSequence.fromList(usages).addElement(new SNodePointer(node));
             }
           }
@@ -83,4 +76,6 @@ public class FindNotMigratableLinks_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "FindNotMigratableLinks", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(FindNotMigratableLinks_Action.class);
 }

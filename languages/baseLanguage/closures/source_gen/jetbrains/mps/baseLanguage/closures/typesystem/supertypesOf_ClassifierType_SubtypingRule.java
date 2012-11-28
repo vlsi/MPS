@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Iterator;
@@ -32,7 +33,7 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
     List<SNode> supertypes = ListSequence.fromList(new ArrayList<SNode>());
     SNode classifier = SLinkOperations.getTarget(ct, "classifier", false);
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) {
-      Iterable<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
+      Iterable<SNode> methods = Classifier_Behavior.call_methods_5292274854859311639(classifier);
       Iterable<SNode> cands = Sequence.fromIterable(methods).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode m) {
           return !("equals".equals(SPropertyOperations.getString(m, "name"))) && SPropertyOperations.getBoolean(m, "isAbstract");
@@ -61,7 +62,7 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
         if (SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
           rt = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(rt, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
         }
-        supertypes = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_qen718_a0a0j0e0c0a(paramTypes, rt));
+        supertypes = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_qen718_a0a0j0e0c0b(paramTypes, rt));
       }
     }
     return supertypes;
@@ -82,7 +83,7 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
     return true;
   }
 
-  private static SNode _quotation_createNode_qen718_a0a0j0e0c0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_qen718_a0a0j0e0c0b(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;

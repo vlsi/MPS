@@ -8,10 +8,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder;
 import jetbrains.mps.debugger.java.customViewers.behavior.HighLevelCustomViewer_Behavior;
+import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -35,7 +37,7 @@ public class QueriesGenerated {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer")).isNotEmpty();
   }
 
-  public static Object propertyMacro_GetPropertyValue_4089989733346843322(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_4089989733346843071(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
@@ -43,20 +45,20 @@ public class QueriesGenerated {
     return "MyWatchable_" + SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_4089989733346843071(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_4089989733346843322(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_264293128390879124(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name") + "Wrapper";
+  public static Object propertyMacro_GetPropertyValue_264293128390879201(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return HighLevelCustomViewer_Behavior.call_getClassName_7570572250661284600(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_6446777246631435404(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return TransformatorBuilder.getInstance().getJniSignatureFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
   }
 
-  public static Object propertyMacro_GetPropertyValue_264293128390879201(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return HighLevelCustomViewer_Behavior.call_getClassName_7570572250661284600(_context.getNode());
+  public static Object propertyMacro_GetPropertyValue_264293128390879124(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name") + "Wrapper";
   }
 
   public static Object propertyMacro_GetPropertyValue_8275758777999533495(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -68,11 +70,19 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_8275758777999533505(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "watchable", false), "watchable"), "constructor", true)).first();
+    return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "watchable", false), "watchable"))).first();
   }
 
   public static boolean ifMacro_Condition_4089989733346843275(final IOperationContext operationContext, final IfMacroContext _context) {
     return isNotEmpty_x583g4_a0a0k(SPropertyOperations.getString(_context.getNode(), "iconPath"));
+  }
+
+  public static boolean ifMacro_Condition_5493844864801812989(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "canWrap", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_2685024263846493110(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "canWrap", true) != null);
   }
 
   public static boolean ifMacro_Condition_264293128390879160(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -83,12 +93,16 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "getPresentation", true) != null);
   }
 
-  public static boolean ifMacro_Condition_5493844864801812989(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "canWrap", true) != null);
+  public static SNode sourceNodeQuery_5493844864801812976(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return TransformatorBuilder.getInstance().getProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
   }
 
-  public static boolean ifMacro_Condition_2685024263846493110(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "canWrap", true) != null);
+  public static SNode sourceNodeQuery_2685024263846491797(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return TransformatorBuilder.getInstance().getProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
+  }
+
+  public static SNode sourceNodeQuery_2685024263846491806(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "canWrap", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_3798344557789646276(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -115,18 +129,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "getPresentation", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_5493844864801812976(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TransformatorBuilder.getInstance().getProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
-  }
-
-  public static SNode sourceNodeQuery_2685024263846491797(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TransformatorBuilder.getInstance().getProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
-  }
-
-  public static SNode sourceNodeQuery_2685024263846491806(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "canWrap", true), "body", true);
-  }
-
   public static SNode sourceNodeQuery_4599835250971300521(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "valueProxyType", true);
   }
@@ -143,15 +145,15 @@ public class QueriesGenerated {
     return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer");
   }
 
+  public static void mapSrcMacro_post_mapper_721063219978402837(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod")), "jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod");
+  }
+
   public static void mapSrcMacro_post_mapper_721063219978405017(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
     AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod")), "jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod");
   }
 
   public static void mapSrcMacro_post_mapper_721063219978405039(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod")), "jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod");
-  }
-
-  public static void mapSrcMacro_post_mapper_721063219978402837(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
     AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod")), "jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod");
   }
 

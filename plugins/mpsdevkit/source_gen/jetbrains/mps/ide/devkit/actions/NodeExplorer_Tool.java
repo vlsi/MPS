@@ -20,7 +20,6 @@ import java.awt.Container;
 
 public class NodeExplorer_Tool extends GeneratedTool {
   private static final Icon ICON = IconUtil.getIcon("default.png");
-
   private NodeExplorerComponent myNodeExplorer;
   private JPanel myPanel;
 

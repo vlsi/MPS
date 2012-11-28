@@ -18,7 +18,7 @@ public class PresentationUtil {
   }
 
   public static String getNodePresentation(EditorComponent editorComponent, SNode node) {
-    String text = check_6aa0xa_a0a0a(check_6aa0xa_a0a0a0(check_6aa0xa_a0a0a0a(editorComponent, node)));
+    String text = check_6aa0xa_a0a0b(check_6aa0xa_a0a0a1(check_6aa0xa_a0a0a0b(editorComponent, node)));
     if (text != null && text.length() > 80) {
       return text.substring(0, 80) + "...";
     }
@@ -29,7 +29,7 @@ public class PresentationUtil {
     StringBuilder sb = new StringBuilder();
     NodeMaps maps = state.getNodeMaps();
     for (SNode var : variables) {
-      SNode node = check_6aa0xa_a0a0c0b(maps, var);
+      SNode node = check_6aa0xa_a0a0c0c(maps, var);
       if (node != null) {
         sb.append(var);
         sb.append(" is a type of ");
@@ -52,28 +52,28 @@ public class PresentationUtil {
     return result;
   }
 
-  private static String check_6aa0xa_a0a0a(TextBuilder checkedDotOperand) {
+  private static String check_6aa0xa_a0a0b(TextBuilder checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getText();
     }
     return null;
   }
 
-  private static TextBuilder check_6aa0xa_a0a0a0(EditorCell checkedDotOperand) {
+  private static TextBuilder check_6aa0xa_a0a0a1(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.renderText();
     }
     return null;
   }
 
-  private static EditorCell check_6aa0xa_a0a0a0a(EditorComponent checkedDotOperand, SNode node) {
+  private static EditorCell check_6aa0xa_a0a0a0b(EditorComponent checkedDotOperand, SNode node) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.findNodeCell(node);
     }
     return null;
   }
 
-  private static SNode check_6aa0xa_a0a0c0b(NodeMaps checkedDotOperand, SNode var) {
+  private static SNode check_6aa0xa_a0a0c0c(NodeMaps checkedDotOperand, SNode var) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNode(var);
     }

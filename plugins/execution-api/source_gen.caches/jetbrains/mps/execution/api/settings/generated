@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-si92kh5va7q72zh1indx0h5bz407mv">
+<dependencies version="2" modelHash="-1eeesj2q08k7p7ibhau61lpva1j2woe">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.geom(JDK/java.awt.geom@java_stub)" />
@@ -14,20 +14,20 @@
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi(MPS.Platform/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.options(MPS.Platform/com.intellij.openapi.options@java_stub)" />
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.util(MPS.Platform/com.intellij.openapi.util@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-uvseejb8lftjizgrik03igcx568a80" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3i4sr9viv2mafxmv1gn7u5798g1tob7" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-baumsvy45qwk0i0m1tzx9fili68fouh" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-a7expmn7xxet6s6dkjq7420bsxmootx" />
-  <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" hash="-e9hdtmof7ycjz2x1x9xoiq9j7zrn5pa" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="6f9jb5k2icdty624yqk3hbqvsk65dq5" />
+  <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" hash="-civmjgp9lyvc1592lp0bed4tl3qfjvc" />
   <dep model="r:b45707fc-ff12-4ef7-8bef-69287f7e33f2(jetbrains.mps.baseLanguage.checkedDots.generator.template.main@generator)" hash="8mn07c9e4qowk70gg8qiy9s9gzz9qir" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="3vh6ws77llhw5tlhdfffr8964224td2" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-3t350ymnztu1bi083p2mhorjil0w76j" />
   <common hash="-b4496kp4ltpomzg723mhzcbbvnp2tv0" />
-  <source id="3908032508224771772" name="IPersistentConfiguration" hash="4fu6xffgg1d5her5up1s2trijf7jucd">
+  <source id="3908032508224771772" name="IPersistentConfiguration" hash="-6rkcl67yke7x5eyipcfrppwfl0xniqr">
     <file name="IPersistentConfiguration.java" />
   </source>
-  <source id="3908032508224771790" name="ITemplatePersistentConfiguration" hash="23y80h7chl9vgoof4urkpcgt8zlovlh">
+  <source id="3908032508224771790" name="ITemplatePersistentConfiguration" hash="3xzn0rwbs7q0wx78bvsyobo0pew5k11">
     <file name="ITemplatePersistentConfiguration.java" />
   </source>
-  <source id="3908032508224771799" name="SettingsEditorEx" hash="-2ji1rcpqgc4r47a6ziwu0imhltfqm2d">
+  <source id="3908032508224771799" name="SettingsEditorEx" hash="-ox94u2fr28eph7jrkzsfayi62r7mvr">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -38,7 +38,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SettingsEditorEx.java" />
   </source>
-  <source id="7850891982542386442" name="SettingsEditorPanel" hash="2ffrqj6p0hxhwkrsfyutkb8syek945q">
+  <source id="7850891982542386442" name="SettingsEditorPanel" hash="-azoyeqvtsadiqzhsucctaqn8m8xl6el">
     <dep root="3908032508224771772" />
     <dep root="3908032508224771790" />
     <dep root="3908032508224771799" />
@@ -54,7 +54,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SettingsEditorPanel.java" />
   </source>
-  <source id="8413546332587496379" name="ActionWrapper" hash="-61rfjhnq0qy8aei7s9tvfora89g0527">
+  <source id="8413546332587496379" name="ActionWrapper" hash="1as7r5cv4uhnq5yr8wm4rp6dhrlui1u">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.beans(JDK/java.beans@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -64,7 +64,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ActionWrapper.java" />
   </source>
-  <source id="8669494666333581720" name="SettingsEditorDialog" hash="2lnouy5as11ixfe4ajme93ajy79qsiz">
+  <source id="8669494666333581720" name="SettingsEditorDialog" hash="-67ld2l8u1folxwejmwjydts1b7pyokz">
     <dep root="7850891982542386442" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />

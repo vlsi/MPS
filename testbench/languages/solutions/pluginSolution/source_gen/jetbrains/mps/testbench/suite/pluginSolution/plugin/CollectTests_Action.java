@@ -4,7 +4,6 @@ package jetbrains.mps.testbench.suite.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.InternalFlag;
@@ -19,6 +18,7 @@ import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModel;
 import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;
@@ -44,7 +44,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class CollectTests_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(CollectTests_Action.class);
 
   public CollectTests_Action() {
     super("Collect Tests", "", ICON);
@@ -217,4 +216,6 @@ public class CollectTests_Action extends BaseAction {
       }
     }).toListSequence();
   }
+
+  private static Logger LOG = Logger.getLogger(CollectTests_Action.class);
 }

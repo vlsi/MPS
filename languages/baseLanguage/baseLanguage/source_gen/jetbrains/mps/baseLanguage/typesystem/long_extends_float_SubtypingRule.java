@@ -15,7 +15,7 @@ public class long_extends_float_SubtypingRule extends SubtypingRule_Runtime impl
   }
 
   public SNode getSubOrSuperType(SNode longType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_gbknn_a0a0();
+    return _quotation_createNode_gbknn_a0a1();
   }
 
   public String getApplicableConceptFQName() {
@@ -33,7 +33,7 @@ public class long_extends_float_SubtypingRule extends SubtypingRule_Runtime impl
     return false;
   }
 
-  private static SNode _quotation_createNode_gbknn_a0a0() {
+  private static SNode _quotation_createNode_gbknn_a0a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

@@ -20,10 +20,10 @@ public class Address {
   public Element toXml() {
     return new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {
-        Element simpleElement_49w4x6_a0a0b = new Element("address");
-        Text text_49w4x6_a0a0a0b = new Text(Address.this.getAddressString());
-        simpleElement_49w4x6_a0a0b.addContent(text_49w4x6_a0a0a0b);
-        return simpleElement_49w4x6_a0a0b;
+        Element simpleElement_49w4x6_a0a0d = new Element("address");
+        Text text_49w4x6_a0a0a0d = new Text(Address.this.getAddressString());
+        simpleElement_49w4x6_a0a0d.addContent(text_49w4x6_a0a0a0d);
+        return simpleElement_49w4x6_a0a0d;
       }
     }.invoke();
   }

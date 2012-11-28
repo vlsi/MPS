@@ -48,10 +48,6 @@ public class TestClosure {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _3_foo;
-              private int _6_bar;
-              private int _13_bar;
-              private int _20_bar;
 
               protected boolean moveToNext() {
 __loop__:
@@ -155,6 +151,11 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _3_foo;
+              private int _6_bar;
+              private int _13_bar;
+              private int _20_bar;
             };
           }
         };
@@ -170,8 +171,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _2_i;
-              private int _6_j;
 
               protected boolean moveToNext() {
 __loop__:
@@ -236,6 +235,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _2_i;
+              private int _6_j;
             };
           }
         };
@@ -250,8 +252,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _3_i;
-              private int _7_j;
 
               protected boolean moveToNext() {
 __loop__:
@@ -304,6 +304,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _3_i;
+              private int _7_j;
             };
           }
         };
@@ -318,7 +321,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _2_i;
 
               protected boolean moveToNext() {
 __loop__:
@@ -357,6 +359,8 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _2_i;
             };
           }
         };
@@ -368,8 +372,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private Integer _2_i;
-              private Iterator<Integer> _2_i_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -405,6 +407,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private Integer _2_i;
+              private Iterator<Integer> _2_i_it;
             };
           }
         };
@@ -418,11 +423,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _3_i;
-              private TestClosure.Enm[] _4_consts;
-              private TestClosure.Enm _5_e;
-              private int _9_j;
-              private int _14_r;
 
               protected boolean moveToNext() {
 __loop__:
@@ -510,6 +510,12 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _3_i;
+              private TestClosure.Enm[] _4_consts;
+              private TestClosure.Enm _5_e;
+              private int _9_j;
+              private int _14_r;
             };
           }
         };

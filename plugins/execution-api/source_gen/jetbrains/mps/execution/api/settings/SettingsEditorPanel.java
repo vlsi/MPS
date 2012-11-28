@@ -82,7 +82,7 @@ public class SettingsEditorPanel {
 
   private void updateUi() {
     try {
-      check_gxk3ze_a0a0a4(myEditor.getSnapshot());
+      check_gxk3ze_a0a0a51(myEditor.getSnapshot());
       myErrorLabel.setText("");
       myApplyAction.setEnabled(myIsModified);
       myResetAction.setEnabled(myIsModified);
@@ -112,7 +112,7 @@ public class SettingsEditorPanel {
     Disposer.dispose(myEditor);
   }
 
-  private static void check_gxk3ze_a0a0a4(ITemplatePersistentConfiguration checkedDotOperand) throws RuntimeConfigurationException {
+  private static void check_gxk3ze_a0a0a51(ITemplatePersistentConfiguration checkedDotOperand) throws RuntimeConfigurationException {
     if (null != checkedDotOperand) {
       checkedDotOperand.checkConfiguration();
     }

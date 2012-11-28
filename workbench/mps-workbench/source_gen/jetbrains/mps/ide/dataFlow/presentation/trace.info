@@ -330,297 +330,297 @@
     <nodeInfo nodeId="4282822416100097585" fileName="ControlFlowGraph.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MARGIN_X" />
     <nodeInfo nodeId="4282822416100097589" fileName="ControlFlowGraph.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MARGIN_Y" />
     <nodeInfo nodeId="4282822416100097593" fileName="ControlFlowGraph.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LINE_SEGMENT_SIZE" />
-    <nodeInfo nodeId="4282822416100097597" fileName="ControlFlowGraph.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGraphCreator" />
-    <nodeInfo nodeId="4282822416100097601" fileName="ControlFlowGraph.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProgram" />
-    <nodeInfo nodeId="4282822416100097605" fileName="ControlFlowGraph.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
-    <nodeInfo nodeId="4282822416100097608" fileName="ControlFlowGraph.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBlocks" />
-    <nodeInfo nodeId="4282822416100097617" fileName="ControlFlowGraph.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLines" />
-    <nodeInfo nodeId="4282822416100097624" fileName="ControlFlowGraph.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myArrowHeads" />
-    <nodeInfo nodeId="4282822416100097631" fileName="ControlFlowGraph.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFreeZoneMap" />
-    <nodeInfo nodeId="4282822416100097640" fileName="ControlFlowGraph.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMaxLineIndentRight" />
-    <nodeInfo nodeId="4282822416100097642" fileName="ControlFlowGraph.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMaxLineIndentLeft" />
-    <nodeInfo nodeId="4282822416100097644" fileName="ControlFlowGraph.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWidth" />
-    <nodeInfo nodeId="4282822416100097647" fileName="ControlFlowGraph.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHeight" />
-    <nodeInfo nodeId="4282822416100097661" fileName="ControlFlowGraph.java" startLine="33" startPosition="79" endLine="34" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097667" fileName="ControlFlowGraph.java" startLine="34" startPosition="29" endLine="35" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097679" fileName="ControlFlowGraph.java" startLine="35" startPosition="39" endLine="36" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7125738324217628371" fileName="ControlFlowGraph.java" startLine="39" startPosition="29" endLine="40" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7125738324217628422" fileName="ControlFlowGraph.java" startLine="41" startPosition="74" endLine="42" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4282822416100097697" fileName="ControlFlowGraph.java" startLine="42" startPosition="89" endLine="43" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7125738324217628398" fileName="ControlFlowGraph.java" startLine="43" startPosition="31" endLine="44" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7125738324217628474" fileName="ControlFlowGraph.java" startLine="46" startPosition="74" endLine="47" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7125738324217628545" fileName="ControlFlowGraph.java" startLine="47" startPosition="57" endLine="48" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7125738324217628571" fileName="ControlFlowGraph.java" startLine="49" startPosition="66" endLine="50" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7125738324217628669" fileName="ControlFlowGraph.java" startLine="51" startPosition="7" endLine="52" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097732" fileName="ControlFlowGraph.java" startLine="57" startPosition="40" endLine="58" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097737" fileName="ControlFlowGraph.java" startLine="59" startPosition="5" endLine="60" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4282822416100097747" fileName="ControlFlowGraph.java" startLine="60" startPosition="57" endLine="61" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097755" fileName="ControlFlowGraph.java" startLine="62" startPosition="29" endLine="63" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097772" fileName="ControlFlowGraph.java" startLine="65" startPosition="51" endLine="66" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1410818700511174480" fileName="ControlFlowGraph.java" startLine="70" startPosition="49" endLine="71" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097781" fileName="ControlFlowGraph.java" startLine="74" startPosition="26" endLine="75" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097787" fileName="ControlFlowGraph.java" startLine="75" startPosition="25" endLine="76" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097793" fileName="ControlFlowGraph.java" startLine="76" startPosition="30" endLine="77" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097799" fileName="ControlFlowGraph.java" startLine="77" startPosition="34" endLine="78" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097805" fileName="ControlFlowGraph.java" startLine="78" startPosition="33" endLine="79" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097822" fileName="ControlFlowGraph.java" startLine="80" startPosition="40" endLine="81" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097829" fileName="ControlFlowGraph.java" startLine="82" startPosition="5" endLine="83" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4282822416100097833" fileName="ControlFlowGraph.java" startLine="83" startPosition="21" endLine="84" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4282822416100097845" fileName="ControlFlowGraph.java" startLine="85" startPosition="40" endLine="86" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097853" fileName="ControlFlowGraph.java" startLine="86" startPosition="54" endLine="87" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097861" fileName="ControlFlowGraph.java" startLine="88" startPosition="5" endLine="89" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4282822416100097873" fileName="ControlFlowGraph.java" startLine="90" startPosition="40" endLine="91" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097878" fileName="ControlFlowGraph.java" startLine="91" startPosition="31" endLine="92" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097883" fileName="ControlFlowGraph.java" startLine="92" startPosition="27" endLine="93" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097888" fileName="ControlFlowGraph.java" startLine="93" startPosition="20" endLine="94" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097894" fileName="ControlFlowGraph.java" startLine="94" startPosition="29" endLine="95" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097909" fileName="ControlFlowGraph.java" startLine="97" startPosition="52" endLine="98" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4282822416100097959" fileName="ControlFlowGraph.java" startLine="100" startPosition="56" endLine="101" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097952" fileName="ControlFlowGraph.java" startLine="102" startPosition="16" endLine="103" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097970" fileName="ControlFlowGraph.java" startLine="106" startPosition="5" endLine="107" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100097979" fileName="ControlFlowGraph.java" startLine="107" startPosition="82" endLine="108" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098000" fileName="ControlFlowGraph.java" startLine="108" startPosition="120" endLine="109" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098021" fileName="ControlFlowGraph.java" startLine="113" startPosition="40" endLine="114" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098037" fileName="ControlFlowGraph.java" startLine="116" startPosition="51" endLine="117" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098053" fileName="ControlFlowGraph.java" startLine="119" startPosition="36" endLine="120" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098068" fileName="ControlFlowGraph.java" startLine="124" startPosition="73" endLine="125" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4282822416100098077" fileName="ControlFlowGraph.java" startLine="125" startPosition="55" endLine="126" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4282822416100098086" fileName="ControlFlowGraph.java" startLine="126" startPosition="51" endLine="127" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4282822416100098090" fileName="ControlFlowGraph.java" startLine="127" startPosition="24" endLine="128" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4282822416100098094" fileName="ControlFlowGraph.java" startLine="128" startPosition="23" endLine="129" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4282822416100098100" fileName="ControlFlowGraph.java" startLine="129" startPosition="47" endLine="130" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4282822416100098109" fileName="ControlFlowGraph.java" startLine="131" startPosition="32" endLine="132" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4282822416100098121" fileName="ControlFlowGraph.java" startLine="133" startPosition="23" endLine="134" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098125" fileName="ControlFlowGraph.java" startLine="134" startPosition="24" endLine="135" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="4282822416100098126" fileName="ControlFlowGraph.java" startLine="136" startPosition="7" endLine="137" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098139" fileName="ControlFlowGraph.java" startLine="138" startPosition="23" endLine="139" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098143" fileName="ControlFlowGraph.java" startLine="139" startPosition="23" endLine="140" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="4282822416100098149" fileName="ControlFlowGraph.java" startLine="142" startPosition="5" endLine="143" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098159" fileName="ControlFlowGraph.java" startLine="143" startPosition="81" endLine="144" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098169" fileName="ControlFlowGraph.java" startLine="144" startPosition="78" endLine="145" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4282822416100098181" fileName="ControlFlowGraph.java" startLine="145" startPosition="73" endLine="146" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4282822416100098274" fileName="ControlFlowGraph.java" startLine="147" startPosition="27" endLine="148" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4282822416100098284" fileName="ControlFlowGraph.java" startLine="148" startPosition="69" endLine="149" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4282822416100098294" fileName="ControlFlowGraph.java" startLine="149" startPosition="63" endLine="150" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098310" fileName="ControlFlowGraph.java" startLine="150" startPosition="142" endLine="151" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098326" fileName="ControlFlowGraph.java" startLine="151" startPosition="136" endLine="152" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098342" fileName="ControlFlowGraph.java" startLine="152" startPosition="139" endLine="153" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098202" fileName="ControlFlowGraph.java" startLine="155" startPosition="26" endLine="156" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4282822416100098208" fileName="ControlFlowGraph.java" startLine="156" startPosition="45" endLine="157" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4282822416100098214" fileName="ControlFlowGraph.java" startLine="157" startPosition="41" endLine="158" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098230" fileName="ControlFlowGraph.java" startLine="158" startPosition="141" endLine="159" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098246" fileName="ControlFlowGraph.java" startLine="159" startPosition="135" endLine="160" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098262" fileName="ControlFlowGraph.java" startLine="160" startPosition="138" endLine="161" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098363" fileName="ControlFlowGraph.java" startLine="165" startPosition="58" endLine="166" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4282822416100098377" fileName="ControlFlowGraph.java" startLine="167" startPosition="27" endLine="168" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098388" fileName="ControlFlowGraph.java" startLine="168" startPosition="55" endLine="169" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098396" fileName="ControlFlowGraph.java" startLine="170" startPosition="5" endLine="171" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4282822416100098404" fileName="ControlFlowGraph.java" startLine="171" startPosition="58" endLine="172" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4282822416100098414" fileName="ControlFlowGraph.java" startLine="175" startPosition="65" endLine="176" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4282822416100098426" fileName="ControlFlowGraph.java" startLine="176" startPosition="48" endLine="177" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098446" fileName="ControlFlowGraph.java" startLine="177" startPosition="110" endLine="178" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098463" fileName="ControlFlowGraph.java" startLine="181" startPosition="25" endLine="182" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4282822416100098471" fileName="ControlFlowGraph.java" startLine="185" startPosition="26" endLine="186" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4282822416100098490" fileName="ControlFlowGraph.java" startLine="190" startPosition="40" endLine="191" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098510" fileName="ControlFlowGraph.java" startLine="196" startPosition="40" endLine="197" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100098535" fileName="ControlFlowGraph.java" startLine="203" startPosition="45" endLine="204" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4282822416100097950" fileName="ControlFlowGraph.java" startLine="102" startPosition="14" endLine="104" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7125738324217628498" fileName="ControlFlowGraph.java" startLine="48" startPosition="47" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4282822416100097725" fileName="ControlFlowGraph.java" startLine="56" startPosition="33" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4282822416100097750" fileName="ControlFlowGraph.java" startLine="61" startPosition="28" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4282822416100097765" fileName="ControlFlowGraph.java" startLine="64" startPosition="5" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1410818700511174440" fileName="ControlFlowGraph.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setComponent#(Ljava/awt/Component;)V" />
-    <nodeInfo nodeId="4282822416100097814" fileName="ControlFlowGraph.java" startLine="79" startPosition="58" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4282822416100098014" fileName="ControlFlowGraph.java" startLine="112" startPosition="38" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4282822416100098030" fileName="ControlFlowGraph.java" startLine="115" startPosition="5" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4282822416100098046" fileName="ControlFlowGraph.java" startLine="118" startPosition="5" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4282822416100098459" fileName="ControlFlowGraph.java" startLine="181" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWidth#()I" />
-    <nodeInfo nodeId="4282822416100098467" fileName="ControlFlowGraph.java" startLine="185" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHeight#()I" />
-    <nodeInfo nodeId="4282822416100098482" fileName="ControlFlowGraph.java" startLine="189" startPosition="57" endLine="192" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4282822416100098502" fileName="ControlFlowGraph.java" startLine="195" startPosition="60" endLine="198" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4282822416100098529" fileName="ControlFlowGraph.java" startLine="202" startPosition="40" endLine="205" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4282822416100097837" fileName="ControlFlowGraph.java" startLine="84" startPosition="22" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4282822416100098118" fileName="ControlFlowGraph.java" startLine="132" startPosition="76" endLine="136" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4282822416100098136" fileName="ControlFlowGraph.java" startLine="137" startPosition="69" endLine="141" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4282822416100098372" fileName="ControlFlowGraph.java" startLine="166" startPosition="50" endLine="170" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4282822416100097650" fileName="ControlFlowGraph.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ControlFlowGraph#(Ljetbrains/mps/ide/dataFlow/presentation/IProgram;Ljetbrains/mps/ide/dataFlow/presentation/IGraphCreator;)V" />
-    <nodeInfo nodeId="4282822416100097687" fileName="ControlFlowGraph.java" startLine="40" startPosition="93" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4282822416100097939" fileName="ControlFlowGraph.java" startLine="99" startPosition="45" endLine="104" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4282822416100098406" fileName="ControlFlowGraph.java" startLine="175" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSimpleLine#(Ljetbrains/mps/ide/dataFlow/presentation/IBlock;Ljetbrains/mps/ide/dataFlow/presentation/IBlock;)V" />
-    <nodeInfo nodeId="4282822416100098475" fileName="ControlFlowGraph.java" startLine="189" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addBlockListener#(Ljetbrains/mps/ide/dataFlow/presentation/IBlockListener;)V" />
-    <nodeInfo nodeId="4282822416100098495" fileName="ControlFlowGraph.java" startLine="195" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeBlockListener#(Ljetbrains/mps/ide/dataFlow/presentation/IBlockListener;)V" />
-    <nodeInfo nodeId="4282822416100098521" fileName="ControlFlowGraph.java" startLine="201" startPosition="53" endLine="206" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4282822416100097865" fileName="ControlFlowGraph.java" startLine="89" startPosition="21" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4282822416100097919" fileName="ControlFlowGraph.java" startLine="98" startPosition="42" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4282822416100098515" fileName="ControlFlowGraph.java" startLine="201" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processMousePressed#(Ljava/awt/event/MouseEvent;)V" />
-    <nodeInfo nodeId="7125738324217628432" fileName="ControlFlowGraph.java" startLine="45" startPosition="5" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4282822416100098197" fileName="ControlFlowGraph.java" startLine="154" startPosition="10" endLine="162" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4282822416100098353" fileName="ControlFlowGraph.java" startLine="165" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeAdded#(III)Z" />
-    <nodeInfo nodeId="4282822416100097900" fileName="ControlFlowGraph.java" startLine="96" startPosition="5" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="4282822416100098008" fileName="ControlFlowGraph.java" startLine="112" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="shiftLeft#(I)V" />
-    <nodeInfo nodeId="4282822416100098106" fileName="ControlFlowGraph.java" startLine="130" startPosition="46" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="4282822416100097719" fileName="ControlFlowGraph.java" startLine="56" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;)V" />
-    <nodeInfo nodeId="4282822416100097683" fileName="ControlFlowGraph.java" startLine="39" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildBlocks#()V" />
-    <nodeInfo nodeId="4282822416100098193" fileName="ControlFlowGraph.java" startLine="146" startPosition="67" endLine="162" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4282822416100097777" fileName="ControlFlowGraph.java" startLine="74" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayout#()V" />
-    <nodeInfo nodeId="4282822416100098058" fileName="ControlFlowGraph.java" startLine="124" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAdditionalLine#(Ljetbrains/mps/ide/dataFlow/presentation/IBlock;Ljetbrains/mps/ide/dataFlow/presentation/IBlock;)V" />
-    <scopeInfo nodeId="7125738324217628499" fileName="ControlFlowGraph.java" startLine="49" startPosition="66" endLine="50" endPosition="58" />
-    <scopeInfo nodeId="4282822416100097731" fileName="ControlFlowGraph.java" startLine="57" startPosition="40" endLine="58" endPosition="21" />
-    <scopeInfo nodeId="4282822416100097754" fileName="ControlFlowGraph.java" startLine="62" startPosition="29" endLine="63" endPosition="54" />
-    <scopeInfo nodeId="4282822416100097771" fileName="ControlFlowGraph.java" startLine="65" startPosition="51" endLine="66" endPosition="25" />
-    <scopeInfo nodeId="1410818700511174443" fileName="ControlFlowGraph.java" startLine="70" startPosition="49" endLine="71" endPosition="33" />
-    <scopeInfo nodeId="4282822416100097821" fileName="ControlFlowGraph.java" startLine="80" startPosition="40" endLine="81" endPosition="39" />
-    <scopeInfo nodeId="4282822416100097958" fileName="ControlFlowGraph.java" startLine="100" startPosition="56" endLine="101" endPosition="67" />
-    <scopeInfo nodeId="4282822416100097951" fileName="ControlFlowGraph.java" startLine="102" startPosition="16" endLine="103" endPosition="71" />
-    <scopeInfo nodeId="4282822416100098020" fileName="ControlFlowGraph.java" startLine="113" startPosition="40" endLine="114" endPosition="40" />
-    <scopeInfo nodeId="4282822416100098036" fileName="ControlFlowGraph.java" startLine="116" startPosition="51" endLine="117" endPosition="48" />
-    <scopeInfo nodeId="4282822416100098052" fileName="ControlFlowGraph.java" startLine="119" startPosition="36" endLine="120" endPosition="29" />
-    <scopeInfo nodeId="4282822416100098462" fileName="ControlFlowGraph.java" startLine="181" startPosition="25" endLine="182" endPosition="24" />
-    <scopeInfo nodeId="4282822416100098470" fileName="ControlFlowGraph.java" startLine="185" startPosition="26" endLine="186" endPosition="25" />
-    <scopeInfo nodeId="4282822416100098489" fileName="ControlFlowGraph.java" startLine="190" startPosition="40" endLine="191" endPosition="39" />
-    <scopeInfo nodeId="4282822416100098509" fileName="ControlFlowGraph.java" startLine="196" startPosition="40" endLine="197" endPosition="42" />
-    <scopeInfo nodeId="4282822416100098534" fileName="ControlFlowGraph.java" startLine="203" startPosition="45" endLine="204" endPosition="15" />
-    <scopeInfo nodeId="4282822416100097844" fileName="ControlFlowGraph.java" startLine="85" startPosition="40" endLine="87" endPosition="57" />
-    <scopeInfo nodeId="4282822416100098120" fileName="ControlFlowGraph.java" startLine="133" startPosition="23" endLine="135" endPosition="14" />
-    <scopeInfo nodeId="4282822416100098138" fileName="ControlFlowGraph.java" startLine="138" startPosition="23" endLine="140" endPosition="14" />
-    <scopeInfo nodeId="4282822416100098376" fileName="ControlFlowGraph.java" startLine="167" startPosition="27" endLine="169" endPosition="42" />
-    <scopeInfo nodeId="4282822416100097660" fileName="ControlFlowGraph.java" startLine="33" startPosition="79" endLine="36" endPosition="40" />
-    <scopeInfo nodeId="4282822416100097696" fileName="ControlFlowGraph.java" startLine="41" startPosition="74" endLine="44" endPosition="49">
+    <nodeInfo nodeId="4282822416100097597" fileName="ControlFlowGraph.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGraphCreator" />
+    <nodeInfo nodeId="4282822416100097601" fileName="ControlFlowGraph.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProgram" />
+    <nodeInfo nodeId="4282822416100097605" fileName="ControlFlowGraph.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
+    <nodeInfo nodeId="4282822416100097608" fileName="ControlFlowGraph.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBlocks" />
+    <nodeInfo nodeId="4282822416100097617" fileName="ControlFlowGraph.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLines" />
+    <nodeInfo nodeId="4282822416100097624" fileName="ControlFlowGraph.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myArrowHeads" />
+    <nodeInfo nodeId="4282822416100097631" fileName="ControlFlowGraph.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFreeZoneMap" />
+    <nodeInfo nodeId="4282822416100097640" fileName="ControlFlowGraph.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMaxLineIndentRight" />
+    <nodeInfo nodeId="4282822416100097642" fileName="ControlFlowGraph.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMaxLineIndentLeft" />
+    <nodeInfo nodeId="4282822416100097644" fileName="ControlFlowGraph.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWidth" />
+    <nodeInfo nodeId="4282822416100097647" fileName="ControlFlowGraph.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHeight" />
+    <nodeInfo nodeId="4282822416100097661" fileName="ControlFlowGraph.java" startLine="32" startPosition="79" endLine="33" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097667" fileName="ControlFlowGraph.java" startLine="33" startPosition="29" endLine="34" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097679" fileName="ControlFlowGraph.java" startLine="34" startPosition="39" endLine="35" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7125738324217628371" fileName="ControlFlowGraph.java" startLine="38" startPosition="29" endLine="39" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7125738324217628422" fileName="ControlFlowGraph.java" startLine="40" startPosition="74" endLine="41" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4282822416100097697" fileName="ControlFlowGraph.java" startLine="41" startPosition="89" endLine="42" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7125738324217628398" fileName="ControlFlowGraph.java" startLine="42" startPosition="31" endLine="43" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7125738324217628474" fileName="ControlFlowGraph.java" startLine="45" startPosition="74" endLine="46" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7125738324217628545" fileName="ControlFlowGraph.java" startLine="46" startPosition="57" endLine="47" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7125738324217628571" fileName="ControlFlowGraph.java" startLine="48" startPosition="66" endLine="49" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7125738324217628669" fileName="ControlFlowGraph.java" startLine="50" startPosition="7" endLine="51" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097732" fileName="ControlFlowGraph.java" startLine="56" startPosition="40" endLine="57" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097737" fileName="ControlFlowGraph.java" startLine="58" startPosition="5" endLine="59" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4282822416100097747" fileName="ControlFlowGraph.java" startLine="59" startPosition="57" endLine="60" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097755" fileName="ControlFlowGraph.java" startLine="61" startPosition="29" endLine="62" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097772" fileName="ControlFlowGraph.java" startLine="64" startPosition="51" endLine="65" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1410818700511174480" fileName="ControlFlowGraph.java" startLine="69" startPosition="49" endLine="70" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097781" fileName="ControlFlowGraph.java" startLine="73" startPosition="26" endLine="74" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097787" fileName="ControlFlowGraph.java" startLine="74" startPosition="25" endLine="75" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097793" fileName="ControlFlowGraph.java" startLine="75" startPosition="30" endLine="76" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097799" fileName="ControlFlowGraph.java" startLine="76" startPosition="34" endLine="77" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097805" fileName="ControlFlowGraph.java" startLine="77" startPosition="33" endLine="78" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097822" fileName="ControlFlowGraph.java" startLine="79" startPosition="40" endLine="80" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097829" fileName="ControlFlowGraph.java" startLine="81" startPosition="5" endLine="82" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4282822416100097833" fileName="ControlFlowGraph.java" startLine="82" startPosition="21" endLine="83" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4282822416100097845" fileName="ControlFlowGraph.java" startLine="84" startPosition="40" endLine="85" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097853" fileName="ControlFlowGraph.java" startLine="85" startPosition="54" endLine="86" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097861" fileName="ControlFlowGraph.java" startLine="87" startPosition="5" endLine="88" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4282822416100097873" fileName="ControlFlowGraph.java" startLine="89" startPosition="40" endLine="90" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097878" fileName="ControlFlowGraph.java" startLine="90" startPosition="31" endLine="91" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097883" fileName="ControlFlowGraph.java" startLine="91" startPosition="27" endLine="92" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097888" fileName="ControlFlowGraph.java" startLine="92" startPosition="20" endLine="93" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097894" fileName="ControlFlowGraph.java" startLine="93" startPosition="29" endLine="94" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097909" fileName="ControlFlowGraph.java" startLine="96" startPosition="52" endLine="97" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4282822416100097959" fileName="ControlFlowGraph.java" startLine="99" startPosition="56" endLine="100" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097952" fileName="ControlFlowGraph.java" startLine="101" startPosition="16" endLine="102" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097970" fileName="ControlFlowGraph.java" startLine="105" startPosition="5" endLine="106" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100097979" fileName="ControlFlowGraph.java" startLine="106" startPosition="82" endLine="107" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098000" fileName="ControlFlowGraph.java" startLine="107" startPosition="120" endLine="108" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098021" fileName="ControlFlowGraph.java" startLine="112" startPosition="40" endLine="113" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098037" fileName="ControlFlowGraph.java" startLine="115" startPosition="51" endLine="116" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098053" fileName="ControlFlowGraph.java" startLine="118" startPosition="36" endLine="119" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098068" fileName="ControlFlowGraph.java" startLine="123" startPosition="73" endLine="124" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4282822416100098077" fileName="ControlFlowGraph.java" startLine="124" startPosition="55" endLine="125" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4282822416100098086" fileName="ControlFlowGraph.java" startLine="125" startPosition="51" endLine="126" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4282822416100098090" fileName="ControlFlowGraph.java" startLine="126" startPosition="24" endLine="127" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4282822416100098094" fileName="ControlFlowGraph.java" startLine="127" startPosition="23" endLine="128" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4282822416100098100" fileName="ControlFlowGraph.java" startLine="128" startPosition="47" endLine="129" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4282822416100098109" fileName="ControlFlowGraph.java" startLine="130" startPosition="32" endLine="131" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4282822416100098121" fileName="ControlFlowGraph.java" startLine="132" startPosition="23" endLine="133" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098125" fileName="ControlFlowGraph.java" startLine="133" startPosition="24" endLine="134" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="4282822416100098126" fileName="ControlFlowGraph.java" startLine="135" startPosition="7" endLine="136" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098139" fileName="ControlFlowGraph.java" startLine="137" startPosition="23" endLine="138" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098143" fileName="ControlFlowGraph.java" startLine="138" startPosition="23" endLine="139" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="4282822416100098149" fileName="ControlFlowGraph.java" startLine="141" startPosition="5" endLine="142" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098159" fileName="ControlFlowGraph.java" startLine="142" startPosition="81" endLine="143" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098169" fileName="ControlFlowGraph.java" startLine="143" startPosition="78" endLine="144" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4282822416100098181" fileName="ControlFlowGraph.java" startLine="144" startPosition="73" endLine="145" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4282822416100098274" fileName="ControlFlowGraph.java" startLine="146" startPosition="27" endLine="147" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4282822416100098284" fileName="ControlFlowGraph.java" startLine="147" startPosition="69" endLine="148" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4282822416100098294" fileName="ControlFlowGraph.java" startLine="148" startPosition="63" endLine="149" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098310" fileName="ControlFlowGraph.java" startLine="149" startPosition="142" endLine="150" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098326" fileName="ControlFlowGraph.java" startLine="150" startPosition="136" endLine="151" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098342" fileName="ControlFlowGraph.java" startLine="151" startPosition="139" endLine="152" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098202" fileName="ControlFlowGraph.java" startLine="154" startPosition="26" endLine="155" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4282822416100098208" fileName="ControlFlowGraph.java" startLine="155" startPosition="45" endLine="156" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4282822416100098214" fileName="ControlFlowGraph.java" startLine="156" startPosition="41" endLine="157" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098230" fileName="ControlFlowGraph.java" startLine="157" startPosition="141" endLine="158" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098246" fileName="ControlFlowGraph.java" startLine="158" startPosition="135" endLine="159" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098262" fileName="ControlFlowGraph.java" startLine="159" startPosition="138" endLine="160" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098363" fileName="ControlFlowGraph.java" startLine="164" startPosition="58" endLine="165" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4282822416100098377" fileName="ControlFlowGraph.java" startLine="166" startPosition="27" endLine="167" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098388" fileName="ControlFlowGraph.java" startLine="167" startPosition="55" endLine="168" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098396" fileName="ControlFlowGraph.java" startLine="169" startPosition="5" endLine="170" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4282822416100098404" fileName="ControlFlowGraph.java" startLine="170" startPosition="58" endLine="171" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4282822416100098414" fileName="ControlFlowGraph.java" startLine="174" startPosition="65" endLine="175" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4282822416100098426" fileName="ControlFlowGraph.java" startLine="175" startPosition="48" endLine="176" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098446" fileName="ControlFlowGraph.java" startLine="176" startPosition="110" endLine="177" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098463" fileName="ControlFlowGraph.java" startLine="180" startPosition="25" endLine="181" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4282822416100098471" fileName="ControlFlowGraph.java" startLine="184" startPosition="26" endLine="185" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4282822416100098490" fileName="ControlFlowGraph.java" startLine="189" startPosition="40" endLine="190" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098510" fileName="ControlFlowGraph.java" startLine="195" startPosition="40" endLine="196" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100098535" fileName="ControlFlowGraph.java" startLine="202" startPosition="45" endLine="203" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4282822416100097950" fileName="ControlFlowGraph.java" startLine="101" startPosition="14" endLine="103" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7125738324217628498" fileName="ControlFlowGraph.java" startLine="47" startPosition="47" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4282822416100097725" fileName="ControlFlowGraph.java" startLine="55" startPosition="33" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4282822416100097750" fileName="ControlFlowGraph.java" startLine="60" startPosition="28" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4282822416100097765" fileName="ControlFlowGraph.java" startLine="63" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1410818700511174440" fileName="ControlFlowGraph.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setComponent#(Ljava/awt/Component;)V" />
+    <nodeInfo nodeId="4282822416100097814" fileName="ControlFlowGraph.java" startLine="78" startPosition="58" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4282822416100098014" fileName="ControlFlowGraph.java" startLine="111" startPosition="38" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4282822416100098030" fileName="ControlFlowGraph.java" startLine="114" startPosition="5" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4282822416100098046" fileName="ControlFlowGraph.java" startLine="117" startPosition="5" endLine="120" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4282822416100098459" fileName="ControlFlowGraph.java" startLine="180" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWidth#()I" />
+    <nodeInfo nodeId="4282822416100098467" fileName="ControlFlowGraph.java" startLine="184" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHeight#()I" />
+    <nodeInfo nodeId="4282822416100098482" fileName="ControlFlowGraph.java" startLine="188" startPosition="57" endLine="191" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4282822416100098502" fileName="ControlFlowGraph.java" startLine="194" startPosition="60" endLine="197" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4282822416100098529" fileName="ControlFlowGraph.java" startLine="201" startPosition="40" endLine="204" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4282822416100097837" fileName="ControlFlowGraph.java" startLine="83" startPosition="22" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4282822416100098118" fileName="ControlFlowGraph.java" startLine="131" startPosition="76" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4282822416100098136" fileName="ControlFlowGraph.java" startLine="136" startPosition="69" endLine="140" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4282822416100098372" fileName="ControlFlowGraph.java" startLine="165" startPosition="50" endLine="169" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4282822416100097650" fileName="ControlFlowGraph.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ControlFlowGraph#(Ljetbrains/mps/ide/dataFlow/presentation/IProgram;Ljetbrains/mps/ide/dataFlow/presentation/IGraphCreator;)V" />
+    <nodeInfo nodeId="4282822416100097687" fileName="ControlFlowGraph.java" startLine="39" startPosition="93" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4282822416100097939" fileName="ControlFlowGraph.java" startLine="98" startPosition="45" endLine="103" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4282822416100098406" fileName="ControlFlowGraph.java" startLine="174" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSimpleLine#(Ljetbrains/mps/ide/dataFlow/presentation/IBlock;Ljetbrains/mps/ide/dataFlow/presentation/IBlock;)V" />
+    <nodeInfo nodeId="4282822416100098475" fileName="ControlFlowGraph.java" startLine="188" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addBlockListener#(Ljetbrains/mps/ide/dataFlow/presentation/IBlockListener;)V" />
+    <nodeInfo nodeId="4282822416100098495" fileName="ControlFlowGraph.java" startLine="194" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeBlockListener#(Ljetbrains/mps/ide/dataFlow/presentation/IBlockListener;)V" />
+    <nodeInfo nodeId="4282822416100098521" fileName="ControlFlowGraph.java" startLine="200" startPosition="53" endLine="205" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4282822416100097865" fileName="ControlFlowGraph.java" startLine="88" startPosition="21" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4282822416100097919" fileName="ControlFlowGraph.java" startLine="97" startPosition="42" endLine="104" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4282822416100098515" fileName="ControlFlowGraph.java" startLine="200" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processMousePressed#(Ljava/awt/event/MouseEvent;)V" />
+    <nodeInfo nodeId="7125738324217628432" fileName="ControlFlowGraph.java" startLine="44" startPosition="5" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4282822416100098197" fileName="ControlFlowGraph.java" startLine="153" startPosition="10" endLine="161" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4282822416100098353" fileName="ControlFlowGraph.java" startLine="164" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeAdded#(III)Z" />
+    <nodeInfo nodeId="4282822416100097900" fileName="ControlFlowGraph.java" startLine="95" startPosition="5" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="4282822416100098008" fileName="ControlFlowGraph.java" startLine="111" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="shiftLeft#(I)V" />
+    <nodeInfo nodeId="4282822416100098106" fileName="ControlFlowGraph.java" startLine="129" startPosition="46" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="4282822416100097719" fileName="ControlFlowGraph.java" startLine="55" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;)V" />
+    <nodeInfo nodeId="4282822416100097683" fileName="ControlFlowGraph.java" startLine="38" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildBlocks#()V" />
+    <nodeInfo nodeId="4282822416100098193" fileName="ControlFlowGraph.java" startLine="145" startPosition="67" endLine="161" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4282822416100097777" fileName="ControlFlowGraph.java" startLine="73" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayout#()V" />
+    <nodeInfo nodeId="4282822416100098058" fileName="ControlFlowGraph.java" startLine="123" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAdditionalLine#(Ljetbrains/mps/ide/dataFlow/presentation/IBlock;Ljetbrains/mps/ide/dataFlow/presentation/IBlock;)V" />
+    <scopeInfo nodeId="7125738324217628499" fileName="ControlFlowGraph.java" startLine="48" startPosition="66" endLine="49" endPosition="58" />
+    <scopeInfo nodeId="4282822416100097731" fileName="ControlFlowGraph.java" startLine="56" startPosition="40" endLine="57" endPosition="21" />
+    <scopeInfo nodeId="4282822416100097754" fileName="ControlFlowGraph.java" startLine="61" startPosition="29" endLine="62" endPosition="54" />
+    <scopeInfo nodeId="4282822416100097771" fileName="ControlFlowGraph.java" startLine="64" startPosition="51" endLine="65" endPosition="25" />
+    <scopeInfo nodeId="1410818700511174443" fileName="ControlFlowGraph.java" startLine="69" startPosition="49" endLine="70" endPosition="33" />
+    <scopeInfo nodeId="4282822416100097821" fileName="ControlFlowGraph.java" startLine="79" startPosition="40" endLine="80" endPosition="39" />
+    <scopeInfo nodeId="4282822416100097958" fileName="ControlFlowGraph.java" startLine="99" startPosition="56" endLine="100" endPosition="67" />
+    <scopeInfo nodeId="4282822416100097951" fileName="ControlFlowGraph.java" startLine="101" startPosition="16" endLine="102" endPosition="71" />
+    <scopeInfo nodeId="4282822416100098020" fileName="ControlFlowGraph.java" startLine="112" startPosition="40" endLine="113" endPosition="40" />
+    <scopeInfo nodeId="4282822416100098036" fileName="ControlFlowGraph.java" startLine="115" startPosition="51" endLine="116" endPosition="48" />
+    <scopeInfo nodeId="4282822416100098052" fileName="ControlFlowGraph.java" startLine="118" startPosition="36" endLine="119" endPosition="29" />
+    <scopeInfo nodeId="4282822416100098462" fileName="ControlFlowGraph.java" startLine="180" startPosition="25" endLine="181" endPosition="24" />
+    <scopeInfo nodeId="4282822416100098470" fileName="ControlFlowGraph.java" startLine="184" startPosition="26" endLine="185" endPosition="25" />
+    <scopeInfo nodeId="4282822416100098489" fileName="ControlFlowGraph.java" startLine="189" startPosition="40" endLine="190" endPosition="39" />
+    <scopeInfo nodeId="4282822416100098509" fileName="ControlFlowGraph.java" startLine="195" startPosition="40" endLine="196" endPosition="42" />
+    <scopeInfo nodeId="4282822416100098534" fileName="ControlFlowGraph.java" startLine="202" startPosition="45" endLine="203" endPosition="15" />
+    <scopeInfo nodeId="4282822416100097844" fileName="ControlFlowGraph.java" startLine="84" startPosition="40" endLine="86" endPosition="57" />
+    <scopeInfo nodeId="4282822416100098120" fileName="ControlFlowGraph.java" startLine="132" startPosition="23" endLine="134" endPosition="14" />
+    <scopeInfo nodeId="4282822416100098138" fileName="ControlFlowGraph.java" startLine="137" startPosition="23" endLine="139" endPosition="14" />
+    <scopeInfo nodeId="4282822416100098376" fileName="ControlFlowGraph.java" startLine="166" startPosition="27" endLine="168" endPosition="42" />
+    <scopeInfo nodeId="4282822416100097660" fileName="ControlFlowGraph.java" startLine="32" startPosition="79" endLine="35" endPosition="40" />
+    <scopeInfo nodeId="4282822416100097696" fileName="ControlFlowGraph.java" startLine="40" startPosition="74" endLine="43" endPosition="49">
       <varInfo nodeId="7125738324217628423" varName="block" />
     </scopeInfo>
-    <scopeInfo nodeId="7125738324217628498" fileName="ControlFlowGraph.java" startLine="48" startPosition="47" endLine="51" endPosition="7">
+    <scopeInfo nodeId="7125738324217628498" fileName="ControlFlowGraph.java" startLine="47" startPosition="47" endLine="50" endPosition="7">
       <varInfo nodeId="7125738324217628501" varName="instructionSucc" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100097725" fileName="ControlFlowGraph.java" startLine="56" startPosition="33" endLine="59" endPosition="5">
+    <scopeInfo nodeId="4282822416100097725" fileName="ControlFlowGraph.java" startLine="55" startPosition="33" endLine="58" endPosition="5">
       <varInfo nodeId="4282822416100097729" varName="block" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100097750" fileName="ControlFlowGraph.java" startLine="61" startPosition="28" endLine="64" endPosition="5">
+    <scopeInfo nodeId="4282822416100097750" fileName="ControlFlowGraph.java" startLine="60" startPosition="28" endLine="63" endPosition="5">
       <varInfo nodeId="4282822416100097752" varName="line" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100097765" fileName="ControlFlowGraph.java" startLine="64" startPosition="5" endLine="67" endPosition="5">
+    <scopeInfo nodeId="4282822416100097765" fileName="ControlFlowGraph.java" startLine="63" startPosition="5" endLine="66" endPosition="5">
       <varInfo nodeId="4282822416100097769" varName="arrowHead" />
     </scopeInfo>
-    <scopeInfo nodeId="1410818700511174440" fileName="ControlFlowGraph.java" startLine="70" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="1410818700511174440" fileName="ControlFlowGraph.java" startLine="69" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="1410818700511174461" varName="component" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100097814" fileName="ControlFlowGraph.java" startLine="79" startPosition="58" endLine="82" endPosition="5">
+    <scopeInfo nodeId="4282822416100097814" fileName="ControlFlowGraph.java" startLine="78" startPosition="58" endLine="81" endPosition="5">
       <varInfo nodeId="4282822416100097818" varName="block" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100098014" fileName="ControlFlowGraph.java" startLine="112" startPosition="38" endLine="115" endPosition="5">
+    <scopeInfo nodeId="4282822416100098014" fileName="ControlFlowGraph.java" startLine="111" startPosition="38" endLine="114" endPosition="5">
       <varInfo nodeId="4282822416100098018" varName="block" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100098030" fileName="ControlFlowGraph.java" startLine="115" startPosition="5" endLine="118" endPosition="5">
+    <scopeInfo nodeId="4282822416100098030" fileName="ControlFlowGraph.java" startLine="114" startPosition="5" endLine="117" endPosition="5">
       <varInfo nodeId="4282822416100098034" varName="arrowHead" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100098046" fileName="ControlFlowGraph.java" startLine="118" startPosition="5" endLine="121" endPosition="5">
+    <scopeInfo nodeId="4282822416100098046" fileName="ControlFlowGraph.java" startLine="117" startPosition="5" endLine="120" endPosition="5">
       <varInfo nodeId="4282822416100098050" varName="line" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100098413" fileName="ControlFlowGraph.java" startLine="175" startPosition="65" endLine="178" endPosition="87">
+    <scopeInfo nodeId="4282822416100098413" fileName="ControlFlowGraph.java" startLine="174" startPosition="65" endLine="177" endPosition="87">
       <varInfo nodeId="4282822416100098415" varName="x" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100098459" fileName="ControlFlowGraph.java" startLine="181" startPosition="0" endLine="184" endPosition="0" />
-    <scopeInfo nodeId="4282822416100098467" fileName="ControlFlowGraph.java" startLine="185" startPosition="0" endLine="188" endPosition="0" />
-    <scopeInfo nodeId="4282822416100098481" fileName="ControlFlowGraph.java" startLine="189" startPosition="57" endLine="192" endPosition="5" />
-    <scopeInfo nodeId="4282822416100098482" fileName="ControlFlowGraph.java" startLine="189" startPosition="57" endLine="192" endPosition="5">
+    <scopeInfo nodeId="4282822416100098459" fileName="ControlFlowGraph.java" startLine="180" startPosition="0" endLine="183" endPosition="0" />
+    <scopeInfo nodeId="4282822416100098467" fileName="ControlFlowGraph.java" startLine="184" startPosition="0" endLine="187" endPosition="0" />
+    <scopeInfo nodeId="4282822416100098481" fileName="ControlFlowGraph.java" startLine="188" startPosition="57" endLine="191" endPosition="5" />
+    <scopeInfo nodeId="4282822416100098482" fileName="ControlFlowGraph.java" startLine="188" startPosition="57" endLine="191" endPosition="5">
       <varInfo nodeId="4282822416100098486" varName="block" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100098501" fileName="ControlFlowGraph.java" startLine="195" startPosition="60" endLine="198" endPosition="5" />
-    <scopeInfo nodeId="4282822416100098502" fileName="ControlFlowGraph.java" startLine="195" startPosition="60" endLine="198" endPosition="5">
+    <scopeInfo nodeId="4282822416100098501" fileName="ControlFlowGraph.java" startLine="194" startPosition="60" endLine="197" endPosition="5" />
+    <scopeInfo nodeId="4282822416100098502" fileName="ControlFlowGraph.java" startLine="194" startPosition="60" endLine="197" endPosition="5">
       <varInfo nodeId="4282822416100098506" varName="block" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100098528" fileName="ControlFlowGraph.java" startLine="202" startPosition="40" endLine="205" endPosition="7" />
-    <scopeInfo nodeId="4282822416100097837" fileName="ControlFlowGraph.java" startLine="84" startPosition="22" endLine="88" endPosition="5">
+    <scopeInfo nodeId="4282822416100098528" fileName="ControlFlowGraph.java" startLine="201" startPosition="40" endLine="204" endPosition="7" />
+    <scopeInfo nodeId="4282822416100097837" fileName="ControlFlowGraph.java" startLine="83" startPosition="22" endLine="87" endPosition="5">
       <varInfo nodeId="4282822416100097841" varName="block" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100097650" fileName="ControlFlowGraph.java" startLine="33" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="4282822416100097650" fileName="ControlFlowGraph.java" startLine="32" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="4282822416100097655" varName="graphCreator" />
       <varInfo nodeId="4282822416100097652" varName="program" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100097687" fileName="ControlFlowGraph.java" startLine="40" startPosition="93" endLine="45" endPosition="5">
+    <scopeInfo nodeId="4282822416100097687" fileName="ControlFlowGraph.java" startLine="39" startPosition="93" endLine="44" endPosition="5">
       <varInfo nodeId="4282822416100097693" varName="instruction" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100097872" fileName="ControlFlowGraph.java" startLine="90" startPosition="40" endLine="95" endPosition="25" />
-    <scopeInfo nodeId="4282822416100097928" fileName="ControlFlowGraph.java" startLine="99" startPosition="45" endLine="104" endPosition="9" />
-    <scopeInfo nodeId="4282822416100098406" fileName="ControlFlowGraph.java" startLine="175" startPosition="0" endLine="180" endPosition="0">
+    <scopeInfo nodeId="4282822416100097872" fileName="ControlFlowGraph.java" startLine="89" startPosition="40" endLine="94" endPosition="25" />
+    <scopeInfo nodeId="4282822416100097928" fileName="ControlFlowGraph.java" startLine="98" startPosition="45" endLine="103" endPosition="9" />
+    <scopeInfo nodeId="4282822416100098406" fileName="ControlFlowGraph.java" startLine="174" startPosition="0" endLine="179" endPosition="0">
       <varInfo nodeId="4282822416100098409" varName="block" />
       <varInfo nodeId="4282822416100098411" varName="nextBlock" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100098475" fileName="ControlFlowGraph.java" startLine="189" startPosition="0" endLine="194" endPosition="0">
+    <scopeInfo nodeId="4282822416100098475" fileName="ControlFlowGraph.java" startLine="188" startPosition="0" endLine="193" endPosition="0">
       <varInfo nodeId="4282822416100098478" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100098495" fileName="ControlFlowGraph.java" startLine="195" startPosition="0" endLine="200" endPosition="0">
+    <scopeInfo nodeId="4282822416100098495" fileName="ControlFlowGraph.java" startLine="194" startPosition="0" endLine="199" endPosition="0">
       <varInfo nodeId="4282822416100098498" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100098520" fileName="ControlFlowGraph.java" startLine="201" startPosition="53" endLine="206" endPosition="5" />
-    <scopeInfo nodeId="4282822416100098521" fileName="ControlFlowGraph.java" startLine="201" startPosition="53" endLine="206" endPosition="5">
+    <scopeInfo nodeId="4282822416100098520" fileName="ControlFlowGraph.java" startLine="200" startPosition="53" endLine="205" endPosition="5" />
+    <scopeInfo nodeId="4282822416100098521" fileName="ControlFlowGraph.java" startLine="200" startPosition="53" endLine="205" endPosition="5">
       <varInfo nodeId="4282822416100098525" varName="block" />
     </scopeInfo>
-    <scopeInfo nodeId="7125738324217628433" fileName="ControlFlowGraph.java" startLine="46" startPosition="74" endLine="52" endPosition="26">
+    <scopeInfo nodeId="7125738324217628433" fileName="ControlFlowGraph.java" startLine="45" startPosition="74" endLine="51" endPosition="26">
       <varInfo nodeId="7125738324217628475" varName="block" />
       <varInfo nodeId="7125738324217628546" varName="succ" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100098273" fileName="ControlFlowGraph.java" startLine="147" startPosition="27" endLine="153" endPosition="97">
+    <scopeInfo nodeId="4282822416100098273" fileName="ControlFlowGraph.java" startLine="146" startPosition="27" endLine="152" endPosition="97">
       <varInfo nodeId="4282822416100098285" varName="endBlockExit" />
       <varInfo nodeId="4282822416100098275" varName="startBlockExit" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100098201" fileName="ControlFlowGraph.java" startLine="155" startPosition="26" endLine="161" endPosition="98">
+    <scopeInfo nodeId="4282822416100098201" fileName="ControlFlowGraph.java" startLine="154" startPosition="26" endLine="160" endPosition="98">
       <varInfo nodeId="4282822416100098209" varName="endBlockExit" />
       <varInfo nodeId="4282822416100098203" varName="startBlockExit" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100097865" fileName="ControlFlowGraph.java" startLine="89" startPosition="21" endLine="96" endPosition="5">
+    <scopeInfo nodeId="4282822416100097865" fileName="ControlFlowGraph.java" startLine="88" startPosition="21" endLine="95" endPosition="5">
       <varInfo nodeId="4282822416100097869" varName="block" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100097919" fileName="ControlFlowGraph.java" startLine="98" startPosition="42" endLine="105" endPosition="7">
+    <scopeInfo nodeId="4282822416100097919" fileName="ControlFlowGraph.java" startLine="97" startPosition="42" endLine="104" endPosition="7">
       <varInfo nodeId="4282822416100097925" varName="succBlock" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100098362" fileName="ControlFlowGraph.java" startLine="165" startPosition="58" endLine="172" endPosition="22">
+    <scopeInfo nodeId="4282822416100098362" fileName="ControlFlowGraph.java" startLine="164" startPosition="58" endLine="171" endPosition="22">
       <varInfo nodeId="4282822416100098397" varName="canBeAdded" />
       <varInfo nodeId="4282822416100098364" varName="freeZone" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100098515" fileName="ControlFlowGraph.java" startLine="201" startPosition="0" endLine="208" endPosition="0">
+    <scopeInfo nodeId="4282822416100098515" fileName="ControlFlowGraph.java" startLine="200" startPosition="0" endLine="207" endPosition="0">
       <varInfo nodeId="4282822416100098518" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="7125738324217628432" fileName="ControlFlowGraph.java" startLine="45" startPosition="5" endLine="53" endPosition="5">
+    <scopeInfo nodeId="7125738324217628432" fileName="ControlFlowGraph.java" startLine="44" startPosition="5" endLine="52" endPosition="5">
       <varInfo nodeId="7125738324217628435" varName="instruction" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100097908" fileName="ControlFlowGraph.java" startLine="97" startPosition="52" endLine="105" endPosition="7">
+    <scopeInfo nodeId="4282822416100097908" fileName="ControlFlowGraph.java" startLine="96" startPosition="52" endLine="104" endPosition="7">
       <varInfo nodeId="4282822416100097910" varName="block" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100098013" fileName="ControlFlowGraph.java" startLine="112" startPosition="38" endLine="121" endPosition="5" />
-    <scopeInfo nodeId="4282822416100098353" fileName="ControlFlowGraph.java" startLine="165" startPosition="0" endLine="174" endPosition="0">
+    <scopeInfo nodeId="4282822416100098013" fileName="ControlFlowGraph.java" startLine="111" startPosition="38" endLine="120" endPosition="5" />
+    <scopeInfo nodeId="4282822416100098353" fileName="ControlFlowGraph.java" startLine="164" startPosition="0" endLine="173" endPosition="0">
       <varInfo nodeId="4282822416100098356" varName="first" />
       <varInfo nodeId="4282822416100098360" varName="i" />
       <varInfo nodeId="4282822416100098358" varName="last" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100097900" fileName="ControlFlowGraph.java" startLine="96" startPosition="5" endLine="106" endPosition="5">
+    <scopeInfo nodeId="4282822416100097900" fileName="ControlFlowGraph.java" startLine="95" startPosition="5" endLine="105" endPosition="5">
       <varInfo nodeId="4282822416100097967" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100098108" fileName="ControlFlowGraph.java" startLine="131" startPosition="32" endLine="141" endPosition="7">
+    <scopeInfo nodeId="4282822416100098108" fileName="ControlFlowGraph.java" startLine="130" startPosition="32" endLine="140" endPosition="7">
       <varInfo nodeId="4282822416100098110" varName="canBeAdded" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100097724" fileName="ControlFlowGraph.java" startLine="56" startPosition="33" endLine="67" endPosition="5">
+    <scopeInfo nodeId="4282822416100097724" fileName="ControlFlowGraph.java" startLine="55" startPosition="33" endLine="66" endPosition="5">
       <varInfo nodeId="4282822416100097738" varName="lines" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100098008" fileName="ControlFlowGraph.java" startLine="112" startPosition="0" endLine="123" endPosition="0">
+    <scopeInfo nodeId="4282822416100098008" fileName="ControlFlowGraph.java" startLine="111" startPosition="0" endLine="122" endPosition="0">
       <varInfo nodeId="4282822416100098011" varName="indent" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100098106" fileName="ControlFlowGraph.java" startLine="130" startPosition="46" endLine="142" endPosition="5">
+    <scopeInfo nodeId="4282822416100098106" fileName="ControlFlowGraph.java" startLine="129" startPosition="46" endLine="141" endPosition="5">
       <varInfo nodeId="4282822416100098146" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100097719" fileName="ControlFlowGraph.java" startLine="56" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="4282822416100097719" fileName="ControlFlowGraph.java" startLine="55" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="4282822416100097722" varName="g" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100097686" fileName="ControlFlowGraph.java" startLine="39" startPosition="29" endLine="53" endPosition="5">
+    <scopeInfo nodeId="4282822416100097686" fileName="ControlFlowGraph.java" startLine="38" startPosition="29" endLine="52" endPosition="5">
       <varInfo nodeId="7125738324217628372" varName="instructionToBlock" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100097683" fileName="ControlFlowGraph.java" startLine="39" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="4282822416100097780" fileName="ControlFlowGraph.java" startLine="74" startPosition="26" endLine="109" endPosition="33">
+    <scopeInfo nodeId="4282822416100097683" fileName="ControlFlowGraph.java" startLine="38" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="4282822416100097780" fileName="ControlFlowGraph.java" startLine="73" startPosition="26" endLine="108" endPosition="33">
       <varInfo nodeId="4282822416100097834" varName="maxHeight" />
       <varInfo nodeId="4282822416100097830" varName="maxWidth" />
       <varInfo nodeId="4282822416100097862" varName="y" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100097777" fileName="ControlFlowGraph.java" startLine="74" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="4282822416100098067" fileName="ControlFlowGraph.java" startLine="124" startPosition="73" endLine="162" endPosition="5">
+    <scopeInfo nodeId="4282822416100097777" fileName="ControlFlowGraph.java" startLine="73" startPosition="0" endLine="110" endPosition="0" />
+    <scopeInfo nodeId="4282822416100098067" fileName="ControlFlowGraph.java" startLine="123" startPosition="73" endLine="161" endPosition="5">
       <varInfo nodeId="4282822416100098182" varName="endBlockLevel" />
       <varInfo nodeId="4282822416100098078" varName="endIndex" />
       <varInfo nodeId="4282822416100098095" varName="first" />
@@ -630,11 +630,11 @@
       <varInfo nodeId="4282822416100098170" varName="startBlockLevel" />
       <varInfo nodeId="4282822416100098069" varName="startIndex" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100098058" fileName="ControlFlowGraph.java" startLine="124" startPosition="0" endLine="164" endPosition="0">
+    <scopeInfo nodeId="4282822416100098058" fileName="ControlFlowGraph.java" startLine="123" startPosition="0" endLine="163" endPosition="0">
       <varInfo nodeId="4282822416100098064" varName="endBlock" />
       <varInfo nodeId="4282822416100098061" varName="startBlock" />
     </scopeInfo>
-    <unitInfo nodeId="4282822416100097580" fileName="ControlFlowGraph.java" startLine="16" startPosition="0" endLine="209" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.ControlFlowGraph" />
+    <unitInfo nodeId="4282822416100097580" fileName="ControlFlowGraph.java" startLine="16" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.ControlFlowGraph" />
   </root>
   <root nodeId="4282822416100098546" modelId="r:c6e01f98-6040-4dd0-a88b-62f17e77e610(jetbrains.mps.ide.dataFlow.presentation)">
     <nodeInfo nodeId="4282822416100098551" fileName="IGraphCreator.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createBlock#(nullIIII)Ljetbrains/mps/ide/dataFlow/presentation/IBlock;" />
@@ -812,39 +812,39 @@
     <nodeInfo nodeId="4282822416100099663" fileName="ShowCFGDialog.java" startLine="55" startPosition="32" endLine="56" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3544826152738994601" fileName="ShowCFGDialog.java" startLine="60" startPosition="44" endLine="61" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="222564635107964943" fileName="ShowCFGDialog.java" startLine="64" startPosition="38" endLine="65" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7125738324217627105" fileName="ShowCFGDialog.java" startLine="69" startPosition="36" endLine="70" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7125738324217627105" fileName="ShowCFGDialog.java" startLine="71" startPosition="5" endLine="72" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4282822416100099548" fileName="ShowCFGDialog.java" startLine="76" startPosition="26" endLine="77" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100099744" fileName="ShowCFGDialog.java" startLine="79" startPosition="48" endLine="80" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100099679" fileName="ShowCFGDialog.java" startLine="85" startPosition="34" endLine="86" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4282822416100099684" fileName="ShowCFGDialog.java" startLine="89" startPosition="35" endLine="90" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100099691" fileName="ShowCFGDialog.java" startLine="90" startPosition="39" endLine="91" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100099703" fileName="ShowCFGDialog.java" startLine="91" startPosition="58" endLine="92" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100099711" fileName="ShowCFGDialog.java" startLine="95" startPosition="59" endLine="96" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4282822416100099716" fileName="ShowCFGDialog.java" startLine="99" startPosition="41" endLine="100" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4282822416100099730" fileName="ShowCFGDialog.java" startLine="103" startPosition="98" endLine="104" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4282822416100099733" fileName="ShowCFGDialog.java" startLine="107" startPosition="99" endLine="108" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4282822416100099738" fileName="ShowCFGDialog.java" startLine="111" startPosition="55" endLine="112" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4282822416100099741" fileName="ShowCFGDialog.java" startLine="115" startPosition="56" endLine="116" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4282822416100099548" fileName="ShowCFGDialog.java" startLine="69" startPosition="26" endLine="70" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100099744" fileName="ShowCFGDialog.java" startLine="72" startPosition="48" endLine="73" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100099679" fileName="ShowCFGDialog.java" startLine="78" startPosition="34" endLine="79" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4282822416100099684" fileName="ShowCFGDialog.java" startLine="82" startPosition="35" endLine="83" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100099691" fileName="ShowCFGDialog.java" startLine="83" startPosition="39" endLine="84" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100099703" fileName="ShowCFGDialog.java" startLine="84" startPosition="58" endLine="85" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100099711" fileName="ShowCFGDialog.java" startLine="88" startPosition="59" endLine="89" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4282822416100099716" fileName="ShowCFGDialog.java" startLine="92" startPosition="41" endLine="93" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4282822416100099730" fileName="ShowCFGDialog.java" startLine="96" startPosition="98" endLine="97" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4282822416100099733" fileName="ShowCFGDialog.java" startLine="100" startPosition="99" endLine="101" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4282822416100099738" fileName="ShowCFGDialog.java" startLine="104" startPosition="55" endLine="105" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4282822416100099741" fileName="ShowCFGDialog.java" startLine="108" startPosition="56" endLine="109" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7125738324217627105" fileName="ShowCFGDialog.java" startLine="114" startPosition="36" endLine="115" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7125738324217627105" fileName="ShowCFGDialog.java" startLine="116" startPosition="5" endLine="117" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7125738324217627118" fileName="ShowCFGDialog.java" startLine="44" startPosition="80" endLine="47" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4282822416100099659" fileName="ShowCFGDialog.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBackground#()Ljava/awt/Color;" />
     <nodeInfo nodeId="222564635107936181" fileName="ShowCFGDialog.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#()[Ljavax/swing/Action;" />
-    <nodeInfo nodeId="7125738324217627105" fileName="ShowCFGDialog.java" startLine="68" startPosition="88" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4282822416100099673" fileName="ShowCFGDialog.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;)V" />
-    <nodeInfo nodeId="4282822416100099489" fileName="ShowCFGDialog.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBackground#()Ljava/awt/Color;" />
-    <nodeInfo nodeId="4282822416100099497" fileName="ShowCFGDialog.java" startLine="95" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredScrollableViewportSize#()Ljava/awt/Dimension;" />
-    <nodeInfo nodeId="4282822416100099500" fileName="ShowCFGDialog.java" startLine="99" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredSize#()Ljava/awt/Dimension;" />
-    <nodeInfo nodeId="4282822416100099503" fileName="ShowCFGDialog.java" startLine="103" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScrollableUnitIncrement#(Ljava/awt/Rectangle;II)I" />
-    <nodeInfo nodeId="4282822416100099512" fileName="ShowCFGDialog.java" startLine="107" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScrollableBlockIncrement#(Ljava/awt/Rectangle;II)I" />
-    <nodeInfo nodeId="4282822416100099521" fileName="ShowCFGDialog.java" startLine="111" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScrollableTracksViewportWidth#()Z" />
-    <nodeInfo nodeId="4282822416100099524" fileName="ShowCFGDialog.java" startLine="115" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScrollableTracksViewportHeight#()Z" />
+    <nodeInfo nodeId="4282822416100099673" fileName="ShowCFGDialog.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;)V" />
+    <nodeInfo nodeId="4282822416100099489" fileName="ShowCFGDialog.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBackground#()Ljava/awt/Color;" />
+    <nodeInfo nodeId="4282822416100099497" fileName="ShowCFGDialog.java" startLine="88" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredScrollableViewportSize#()Ljava/awt/Dimension;" />
+    <nodeInfo nodeId="4282822416100099500" fileName="ShowCFGDialog.java" startLine="92" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredSize#()Ljava/awt/Dimension;" />
+    <nodeInfo nodeId="4282822416100099503" fileName="ShowCFGDialog.java" startLine="96" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScrollableUnitIncrement#(Ljava/awt/Rectangle;II)I" />
+    <nodeInfo nodeId="4282822416100099512" fileName="ShowCFGDialog.java" startLine="100" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScrollableBlockIncrement#(Ljava/awt/Rectangle;II)I" />
+    <nodeInfo nodeId="4282822416100099521" fileName="ShowCFGDialog.java" startLine="104" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScrollableTracksViewportWidth#()Z" />
+    <nodeInfo nodeId="4282822416100099524" fileName="ShowCFGDialog.java" startLine="108" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScrollableTracksViewportHeight#()Z" />
+    <nodeInfo nodeId="7125738324217627105" fileName="ShowCFGDialog.java" startLine="113" startPosition="88" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3544826152738994444" fileName="ShowCFGDialog.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="4282822416100099666" fileName="ShowCFGDialog.java" startLine="77" startPosition="41" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100099492" fileName="ShowCFGDialog.java" startLine="89" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;)V" />
+    <nodeInfo nodeId="4282822416100099666" fileName="ShowCFGDialog.java" startLine="70" startPosition="41" endLine="75" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4282822416100099492" fileName="ShowCFGDialog.java" startLine="82" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;)V" />
     <nodeInfo nodeId="1071422968910413478" fileName="ShowCFGDialog.java" startLine="43" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7125738324217627105" fileName="ShowCFGDialog.java" startLine="68" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_wx2hhz_a0a0a0a0a0a0a0a8a0#(Ljetbrains/mps/smodel/SNodePointer;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7125738324217627105" fileName="ShowCFGDialog.java" startLine="113" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_wx2hhz_a0a0a0a0a0a0a0a8a3#(Ljetbrains/mps/smodel/SNodePointer;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1071422968910412245" fileName="ShowCFGDialog.java" startLine="41" startPosition="70" endLine="49" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100099487" fileName="ShowCFGDialog.java" startLine="76" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyComponent#()V" />
+    <nodeInfo nodeId="4282822416100099487" fileName="ShowCFGDialog.java" startLine="69" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyComponent#()V" />
     <nodeInfo nodeId="4282822416100099637" fileName="ShowCFGDialog.java" startLine="41" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;Ljetbrains/mps/ide/dataFlow/presentation/IBlock;)V" />
     <nodeInfo nodeId="4282822416100099627" fileName="ShowCFGDialog.java" startLine="39" startPosition="21" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4282822416100099537" fileName="ShowCFGDialog.java" startLine="31" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ShowCFGDialog#(Ljetbrains/mps/ide/dataFlow/presentation/ControlFlowGraph;Ljetbrains/mps/smodel/IOperationContext;Lcom/intellij/openapi/project/Project;)V" />
@@ -852,51 +852,51 @@
     <scopeInfo nodeId="4282822416100099662" fileName="ShowCFGDialog.java" startLine="55" startPosition="32" endLine="56" endPosition="28" />
     <scopeInfo nodeId="3544826152738994448" fileName="ShowCFGDialog.java" startLine="60" startPosition="44" endLine="61" endPosition="24" />
     <scopeInfo nodeId="222564635107936184" fileName="ShowCFGDialog.java" startLine="64" startPosition="38" endLine="65" endPosition="25" />
-    <scopeInfo nodeId="7125738324217627105" fileName="ShowCFGDialog.java" startLine="69" startPosition="36" endLine="70" endPosition="41" />
-    <scopeInfo nodeId="4282822416100099743" fileName="ShowCFGDialog.java" startLine="79" startPosition="48" endLine="80" endPosition="71" />
-    <scopeInfo nodeId="4282822416100099678" fileName="ShowCFGDialog.java" startLine="85" startPosition="34" endLine="86" endPosition="48" />
-    <scopeInfo nodeId="4282822416100099710" fileName="ShowCFGDialog.java" startLine="95" startPosition="59" endLine="96" endPosition="37" />
-    <scopeInfo nodeId="4282822416100099715" fileName="ShowCFGDialog.java" startLine="99" startPosition="41" endLine="100" endPosition="128" />
-    <scopeInfo nodeId="4282822416100099729" fileName="ShowCFGDialog.java" startLine="103" startPosition="98" endLine="104" endPosition="16" />
-    <scopeInfo nodeId="4282822416100099732" fileName="ShowCFGDialog.java" startLine="107" startPosition="99" endLine="108" endPosition="32" />
-    <scopeInfo nodeId="4282822416100099737" fileName="ShowCFGDialog.java" startLine="111" startPosition="55" endLine="112" endPosition="19" />
-    <scopeInfo nodeId="4282822416100099740" fileName="ShowCFGDialog.java" startLine="115" startPosition="56" endLine="116" endPosition="19" />
+    <scopeInfo nodeId="4282822416100099743" fileName="ShowCFGDialog.java" startLine="72" startPosition="48" endLine="73" endPosition="71" />
+    <scopeInfo nodeId="4282822416100099678" fileName="ShowCFGDialog.java" startLine="78" startPosition="34" endLine="79" endPosition="48" />
+    <scopeInfo nodeId="4282822416100099710" fileName="ShowCFGDialog.java" startLine="88" startPosition="59" endLine="89" endPosition="37" />
+    <scopeInfo nodeId="4282822416100099715" fileName="ShowCFGDialog.java" startLine="92" startPosition="41" endLine="93" endPosition="128" />
+    <scopeInfo nodeId="4282822416100099729" fileName="ShowCFGDialog.java" startLine="96" startPosition="98" endLine="97" endPosition="16" />
+    <scopeInfo nodeId="4282822416100099732" fileName="ShowCFGDialog.java" startLine="100" startPosition="99" endLine="101" endPosition="32" />
+    <scopeInfo nodeId="4282822416100099737" fileName="ShowCFGDialog.java" startLine="104" startPosition="55" endLine="105" endPosition="19" />
+    <scopeInfo nodeId="4282822416100099740" fileName="ShowCFGDialog.java" startLine="108" startPosition="56" endLine="109" endPosition="19" />
+    <scopeInfo nodeId="7125738324217627105" fileName="ShowCFGDialog.java" startLine="114" startPosition="36" endLine="115" endPosition="41" />
     <scopeInfo nodeId="4282822416100099659" fileName="ShowCFGDialog.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="222564635107936181" fileName="ShowCFGDialog.java" startLine="64" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="4282822416100099673" fileName="ShowCFGDialog.java" startLine="79" startPosition="0" endLine="82" endPosition="0">
+    <scopeInfo nodeId="4282822416100099673" fileName="ShowCFGDialog.java" startLine="72" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="4282822416100099676" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100099489" fileName="ShowCFGDialog.java" startLine="85" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="4282822416100099683" fileName="ShowCFGDialog.java" startLine="89" startPosition="35" endLine="92" endPosition="53" />
-    <scopeInfo nodeId="4282822416100099497" fileName="ShowCFGDialog.java" startLine="95" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="4282822416100099500" fileName="ShowCFGDialog.java" startLine="99" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="4282822416100099503" fileName="ShowCFGDialog.java" startLine="103" startPosition="0" endLine="106" endPosition="0">
+    <scopeInfo nodeId="4282822416100099489" fileName="ShowCFGDialog.java" startLine="78" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="4282822416100099683" fileName="ShowCFGDialog.java" startLine="82" startPosition="35" endLine="85" endPosition="53" />
+    <scopeInfo nodeId="4282822416100099497" fileName="ShowCFGDialog.java" startLine="88" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="4282822416100099500" fileName="ShowCFGDialog.java" startLine="92" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="4282822416100099503" fileName="ShowCFGDialog.java" startLine="96" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="4282822416100099510" varName="direction" />
       <varInfo nodeId="4282822416100099508" varName="orientation" />
       <varInfo nodeId="4282822416100099506" varName="visibleRect" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100099512" fileName="ShowCFGDialog.java" startLine="107" startPosition="0" endLine="110" endPosition="0">
+    <scopeInfo nodeId="4282822416100099512" fileName="ShowCFGDialog.java" startLine="100" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="4282822416100099519" varName="direction" />
       <varInfo nodeId="4282822416100099517" varName="orientation" />
       <varInfo nodeId="4282822416100099515" varName="visibleRect" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100099521" fileName="ShowCFGDialog.java" startLine="111" startPosition="0" endLine="114" endPosition="0" />
-    <scopeInfo nodeId="4282822416100099524" fileName="ShowCFGDialog.java" startLine="115" startPosition="0" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="4282822416100099521" fileName="ShowCFGDialog.java" startLine="104" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="4282822416100099524" fileName="ShowCFGDialog.java" startLine="108" startPosition="0" endLine="111" endPosition="0" />
     <scopeInfo nodeId="1071422968910413479" fileName="ShowCFGDialog.java" startLine="43" startPosition="29" endLine="47" endPosition="13">
       <varInfo nodeId="7125738324217627029" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="3544826152738994444" fileName="ShowCFGDialog.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="7125738324217627105" fileName="ShowCFGDialog.java" startLine="68" startPosition="88" endLine="72" endPosition="16" />
-    <scopeInfo nodeId="4282822416100099492" fileName="ShowCFGDialog.java" startLine="89" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="7125738324217627105" fileName="ShowCFGDialog.java" startLine="113" startPosition="88" endLine="117" endPosition="16" />
+    <scopeInfo nodeId="4282822416100099492" fileName="ShowCFGDialog.java" startLine="82" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="4282822416100099495" varName="g" />
     </scopeInfo>
     <scopeInfo nodeId="1071422968910413478" fileName="ShowCFGDialog.java" startLine="43" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="7125738324217627105" fileName="ShowCFGDialog.java" startLine="68" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="4282822416100099665" fileName="ShowCFGDialog.java" startLine="69" startPosition="26" endLine="75" endPosition="9" />
+    <scopeInfo nodeId="7125738324217627105" fileName="ShowCFGDialog.java" startLine="113" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="7125738324217627105" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100099665" fileName="ShowCFGDialog.java" startLine="76" startPosition="26" endLine="82" endPosition="9" />
     <scopeInfo nodeId="4282822416100099751" fileName="ShowCFGDialog.java" startLine="41" startPosition="70" endLine="49" endPosition="11" />
-    <scopeInfo nodeId="4282822416100099487" fileName="ShowCFGDialog.java" startLine="76" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="4282822416100099487" fileName="ShowCFGDialog.java" startLine="69" startPosition="0" endLine="77" endPosition="0" />
     <scopeInfo nodeId="4282822416100099637" fileName="ShowCFGDialog.java" startLine="41" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="7125738324217620657" varName="block" />
       <varInfo nodeId="4282822416100099640" varName="event" />
@@ -907,10 +907,10 @@
       <varInfo nodeId="4282822416100099541" varName="operationContext" />
       <varInfo nodeId="4282822416100099543" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="4282822416100099672" fileName="ShowCFGDialog.java" startLine="78" startPosition="32" endLine="82" endPosition="7" unitName="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$1" />
+    <unitInfo nodeId="4282822416100099672" fileName="ShowCFGDialog.java" startLine="71" startPosition="32" endLine="75" endPosition="7" unitName="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$1" />
     <unitInfo nodeId="1071422968910413478" fileName="ShowCFGDialog.java" startLine="42" startPosition="49" endLine="49" endPosition="9" unitName="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$2" />
     <unitInfo nodeId="4282822416100099635" fileName="ShowCFGDialog.java" startLine="40" startPosition="49" endLine="51" endPosition="5" unitName="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$1" />
-    <unitInfo nodeId="4282822416100099483" fileName="ShowCFGDialog.java" startLine="75" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$MyComponent" />
+    <unitInfo nodeId="4282822416100099483" fileName="ShowCFGDialog.java" startLine="68" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$MyComponent" />
     <unitInfo nodeId="4282822416100099480" fileName="ShowCFGDialog.java" startLine="26" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog" />
   </root>
   <root nodeId="4282822416100099790" modelId="r:c6e01f98-6040-4dd0-a88b-62f17e77e610(jetbrains.mps.ide.dataFlow.presentation)">

@@ -17,7 +17,6 @@ import javax.swing.JComponent;
 
 public class RunReplacement_Tool extends GeneratedTabbedTool {
   private static final Icon ICON = IconUtil.getIcon("find.png");
-
   private Project myProject;
 
   public RunReplacement_Tool(Project project) {

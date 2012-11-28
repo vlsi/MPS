@@ -5,7 +5,6 @@ package jetbrains.mps.build.mps.pluginSolution.plugin;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -16,10 +15,10 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import jetbrains.mps.logging.Logger;
 
 public class GenerateBuildForProjectAction_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("buildProject.png");
-  private static Logger LOG = Logger.getLogger(GenerateBuildForProjectAction_Action.class);
 
   public GenerateBuildForProjectAction_Action() {
     super("Build Solution", "", ICON);
@@ -72,4 +71,6 @@ public class GenerateBuildForProjectAction_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "GenerateBuildForProjectAction", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(GenerateBuildForProjectAction_Action.class);
 }

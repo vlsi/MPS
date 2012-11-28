@@ -12,7 +12,6 @@ public enum JavaBreakpointKind implements IBreakpointKind<JavaBreakpoint> {
   FIELD_BREAKPOINT("Java Field Breakpoint");
 
   private static final String LANGUAGE_PREFIX = "JAVA_";
-
   private final String myPresentation;
 
   JavaBreakpointKind(String presentation) {

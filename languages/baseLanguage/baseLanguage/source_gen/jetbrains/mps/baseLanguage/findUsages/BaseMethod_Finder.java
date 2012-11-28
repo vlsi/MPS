@@ -15,7 +15,8 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 
@@ -68,13 +69,13 @@ public class BaseMethod_Finder extends GeneratedFinder {
         Iterable<SNode> classMethods = null;
         if (isStatic) {
           if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-            classMethods = SLinkOperations.getTargets(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticMethod", true);
+            classMethods = ClassConcept_Behavior.call_staticMethods_5292274854859435867(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
           }
         } else {
           if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-            classMethods = SLinkOperations.getTargets(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true);
+            classMethods = Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
           } else {
-            classMethods = SLinkOperations.getTargets(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.Interface"), "method", true);
+            classMethods = Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.Interface"));
           }
         }
         for (SNode classMethod : Sequence.fromIterable(classMethods)) {

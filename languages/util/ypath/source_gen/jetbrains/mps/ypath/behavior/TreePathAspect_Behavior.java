@@ -22,8 +22,6 @@ public class TreePathAspect_Behavior {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _2_prop;
-              private Iterator<SNode> _2_prop_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -69,6 +67,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private SNode _2_prop;
+              private Iterator<SNode> _2_prop_it;
             };
           }
         };

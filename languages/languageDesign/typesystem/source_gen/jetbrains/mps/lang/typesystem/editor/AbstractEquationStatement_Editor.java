@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
@@ -22,7 +23,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -31,6 +31,15 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createComponent_ie6eqd_a(editorContext, node);
+  }
+
+  public static class ReplaceWith_AbstractEquationStatement_cellMenu_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_AbstractEquationStatement_cellMenu_a0b0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement";
+    }
   }
 
   private EditorCell createCollection_ie6eqd_a(EditorContext editorContext, SNode node) {
@@ -116,15 +125,6 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
       return Color.GRAY;
     } else {
       return Color.BLACK;
-    }
-  }
-
-  public static class ReplaceWith_AbstractEquationStatement_cellMenu_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_AbstractEquationStatement_cellMenu_a0b0() {
-    }
-
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement";
     }
   }
 }

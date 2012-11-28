@@ -20,8 +20,8 @@ public class SimpleParallelForSample {
     final String value = "Set to null and see that potential NPE is correctly detected inside the loop";
 
     {
-      final CountDownLatch latch_e0a = new CountDownLatch(Sequence.fromIterable(numbers).count());
-      final List<Exception> exceptions_e0a = new CopyOnWriteArrayList<Exception>();
+      final CountDownLatch latch_e0b = new CountDownLatch(Sequence.fromIterable(numbers).count());
+      final List<Exception> exceptions_e0b = new CopyOnWriteArrayList<Exception>();
 
       for (final int a : numbers) {
 
@@ -37,11 +37,11 @@ public class SimpleParallelForSample {
               value.length();
               SimpleParallelForSample.Logger.log("Done with " + localA);
             } catch (RuntimeException e) {
-              ListSequence.fromList(exceptions_e0a).addElement(e);
+              ListSequence.fromList(exceptions_e0b).addElement(e);
             } catch (InterruptedException e) {
-              ListSequence.fromList(exceptions_e0a).addElement(e);
+              ListSequence.fromList(exceptions_e0b).addElement(e);
             } finally {
-              latch_e0a.countDown();
+              latch_e0b.countDown();
             }
           }
         };
@@ -50,12 +50,12 @@ public class SimpleParallelForSample {
 
       }
       try {
-        latch_e0a.await();
+        latch_e0b.await();
       } catch (InterruptedException e) {
-        ListSequence.fromList(exceptions_e0a).addElement(e);
+        ListSequence.fromList(exceptions_e0b).addElement(e);
       }
-      if (ListSequence.fromList(exceptions_e0a).isNotEmpty()) {
-        throw new ParallelLoopException("Some parallel calculations failed", exceptions_e0a);
+      if (ListSequence.fromList(exceptions_e0b).isNotEmpty()) {
+        throw new ParallelLoopException("Some parallel calculations failed", exceptions_e0b);
       }
 
     }
