@@ -113,7 +113,7 @@ public class ImportedSolutionsTable extends MpsElementsWithCheckboxesTable<Depen
   }
 
   private List<Dependency> getDependency() {
-    return SolutionIdea.calculateLibraryDependencies(myContext.getRootModel().orderEntries(), myContext.getProject());
+    return SolutionIdea.calculateLibraryDependencies(myContext.getRootModel().orderEntries(), myContext.getProject(), false);
   }
 
   @Override

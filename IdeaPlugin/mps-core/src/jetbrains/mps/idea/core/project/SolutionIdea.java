@@ -173,10 +173,10 @@ public class SolutionIdea extends Solution {
   }
 
   private void addUsedLibraries(final List<Dependency> dependencies) {
-    dependencies.addAll(calculateLibraryDependencies(ModuleRootManager.getInstance(myModule).orderEntries(), myModule.getProject()));
+    dependencies.addAll(calculateLibraryDependencies(ModuleRootManager.getInstance(myModule).orderEntries(), myModule.getProject(), true));
   }
 
-  public static List<Dependency> calculateLibraryDependencies(OrderEnumerator orderEnumerator, final Project project) {
+  public static List<Dependency> calculateLibraryDependencies(OrderEnumerator orderEnumerator, final Project project, final boolean includeStubs) {
     final Map<ModuleReference, Boolean> modules = new HashMap<ModuleReference, Boolean>();
     orderEnumerator.forEach(new Processor<OrderEntry>() {
       public boolean process(OrderEntry oe) {
@@ -200,7 +200,7 @@ public class SolutionIdea extends Solution {
               modules.put(moduleReference, loe.isExported());
             }
           }
-        } else {
+        } else if (includeStubs) {
           // try to find stub solution
           Solution s = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.foreign(library.getName()));
           if (s != null) {
