@@ -21,11 +21,12 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Collections;
+import org.jetbrains.annotations.Nullable;
+import javax.swing.tree.TreePath;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.tree.DefaultTreeModel;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.ide.DataManager;
@@ -108,9 +109,21 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
         return r == null;
       }
     })) {
-      modelNode.add(new DiffModelTree.MetadataTreeNode());
+      DiffModelTree.RootTreeNode metadataNode = new DiffModelTree.MetadataTreeNode();
+      ListSequence.fromList(myRootNodes).addElement(metadataNode);
+      modelNode.add(metadataNode);
     }
     return modelNode;
+  }
+
+  public void setSelected(@Nullable SNodeId rootId) {
+    // todo: find path by rootId 
+    TreePath path = null;
+    if (path != null) {
+      expandPath(path);
+      setSelectionPath(path);
+      scrollPathToVisible(path);
+    }
   }
 
   public void rebuildLater() {
@@ -139,33 +152,38 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
     return false;
   }
 
-  private DiffModelTree.RootTreeNode findRootNode(@NotNull final SNodeId nodeId) {
+  private DiffModelTree.RootTreeNode findRootNode(@Nullable final SNodeId nodeId) {
     return ListSequence.fromList(myRootNodes).findFirst(new IWhereFilter<DiffModelTree.RootTreeNode>() {
       public boolean accept(DiffModelTree.RootTreeNode r) {
-        return nodeId.equals(r.myRootId);
+        return (nodeId == null ?
+          r.myRootId == null :
+          nodeId.equals(r.myRootId)
+        );
       }
     });
   }
 
-  @Nullable
-  public SNodeId getNeighbourRoot(@NotNull SNodeId nodeId, boolean next) {
-    int index = ListSequence.fromList(myRootNodes).indexOf(findRootNode(nodeId));
-    if (index == -1) {
-      return null;
-    }
-    index = (next ?
+  private int advanceIndex(int index, boolean next) {
+    return (next ?
       index + 1 :
       index - 1
     );
-    if (index == -1 || index == (int) ListSequence.fromList(myRootNodes).count()) {
-      return null;
-    } else {
-      return ListSequence.fromList(myRootNodes).getElement(index).myRootId;
-    }
   }
 
-  public String getNameForRoot(@NotNull SNodeId nodeId) {
-    return findRootNode(nodeId).myPresentation;
+  public boolean hasNeighbour(SNodeId nodeId, boolean next) {
+    int index = advanceIndex(ListSequence.fromList(myRootNodes).indexOf(findRootNode(nodeId)), next);
+    return index >= 0 && index < ListSequence.fromList(myRootNodes).count();
+  }
+
+  @Nullable
+  public SNodeId getNeighbourRoot(@Nullable SNodeId nodeId, boolean next) {
+    int index = advanceIndex(ListSequence.fromList(myRootNodes).indexOf(findRootNode(nodeId)), next);
+    assert index >= 0 && index < ListSequence.fromList(myRootNodes).count();
+    return ListSequence.fromList(myRootNodes).getElement(index).myRootId;
+  }
+
+  public String getNameForRoot(@Nullable SNodeId nodeId) {
+    return findRootNode(nodeId).getPresentation();
   }
 
   @Nullable
@@ -251,6 +269,10 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
     public SNodeId getRootId() {
       return myRootId;
     }
+
+    public String getPresentation() {
+      return myPresentation;
+    }
   }
 
   public class MetadataTreeNode extends DiffModelTree.RootTreeNode {
@@ -265,6 +287,11 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       setText("Model Properties");
       setIcon(IdeIcons.PROPERTIES_ICON);
       updateRootCustomPresentation(this);
+    }
+
+    @Override
+    public String getPresentation() {
+      return "Model Properties";
     }
   }
 

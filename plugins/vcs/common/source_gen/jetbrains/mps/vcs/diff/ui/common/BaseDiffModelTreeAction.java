@@ -7,21 +7,20 @@ import com.intellij.openapi.project.DumbAware;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import com.intellij.openapi.util.Ref;
 import jetbrains.mps.smodel.SNodeId;
+import com.intellij.openapi.util.Ref;
 
 public abstract class BaseDiffModelTreeAction extends BaseAction implements DumbAware {
   public BaseDiffModelTreeAction(String text, Icon icon) {
     super(text, null, icon);
     setExecuteOutsideCommand(true);
     setDisableOnNoProject(false);
+    setIsAlwaysVisible(false);
   }
 
   @Override
   protected void doUpdate(AnActionEvent event, Map<String, Object> map) {
-    Ref<SNodeId> rootIdRef = getRootIdRef(event);
-    event.getPresentation().setEnabled(rootIdRef != null);
-    event.getPresentation().setVisible(rootIdRef != null);
+    setEnabledState(event.getPresentation(), getRootIdRef(event) != null);
   }
 
   protected static SNodeId getRootId(AnActionEvent event) {
