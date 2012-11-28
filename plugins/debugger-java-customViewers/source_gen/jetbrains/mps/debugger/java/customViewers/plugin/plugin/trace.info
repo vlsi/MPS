@@ -799,7 +799,7 @@
     <scopeInfo nodeId="5494815557703847191" fileName="Plugin_PluginInitializer.java" startLine="13" startPosition="0" endLine="24" endPosition="0" />
     <unitInfo nodeId="5494815557703847191" fileName="Plugin_PluginInitializer.java" startLine="14" startPosition="54" endLine="22" endPosition="5" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Plugin_PluginInitializer$1" />
     <unitInfo nodeId="5494815557703847191" fileName="Plugin_PluginInitializer.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Plugin_PluginInitializer" />
-    <unitInfo nodeId="5494815557703847191" fileName="plugin.xml" startLine="1" startPosition="0" endLine="20" endPosition="14" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.plugin" />
+    <unitInfo nodeId="5494815557703847191" fileName="plugin.xml" startLine="1" startPosition="0" endLine="21" endPosition="14" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.plugin" />
   </root>
   <root nodeId="7162597690968011947" modelId="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)">
     <nodeInfo nodeId="7162597690968011947" fileName="Plugin_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />

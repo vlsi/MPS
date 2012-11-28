@@ -8039,7 +8039,7 @@
     <scopeInfo nodeId="3531023421907756759" fileName="Ide_PluginInitializer.java" startLine="14" startPosition="0" endLine="28" endPosition="0" />
     <unitInfo nodeId="3531023421907756759" fileName="Ide_PluginInitializer.java" startLine="15" startPosition="54" endLine="26" endPosition="5" unitName="jetbrains.mps.ide.actions.Ide_PluginInitializer$1" />
     <unitInfo nodeId="3531023421907756759" fileName="Ide_PluginInitializer.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_PluginInitializer" />
-    <unitInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="1" startPosition="0" endLine="19" endPosition="14" unitName="jetbrains.mps.ide.actions.plugin" />
+    <unitInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="1" startPosition="0" endLine="20" endPosition="14" unitName="jetbrains.mps.ide.actions.plugin" />
   </root>
   <root nodeId="3575273646046443826" modelId="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)">
     <nodeInfo nodeId="3575273646046443826" fileName="DeleteModels_Action.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

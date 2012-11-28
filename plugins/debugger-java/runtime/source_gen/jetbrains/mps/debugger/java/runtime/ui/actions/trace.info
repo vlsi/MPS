@@ -27,7 +27,7 @@
     <scopeInfo nodeId="3585489156472415414" fileName="Runtime_PluginInitializer.java" startLine="13" startPosition="0" endLine="24" endPosition="0" />
     <unitInfo nodeId="3585489156472415414" fileName="Runtime_PluginInitializer.java" startLine="14" startPosition="54" endLine="22" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.Runtime_PluginInitializer$1" />
     <unitInfo nodeId="3585489156472415414" fileName="Runtime_PluginInitializer.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.Runtime_PluginInitializer" />
-    <unitInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="1" startPosition="0" endLine="16" endPosition="14" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.plugin" />
+    <unitInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="1" startPosition="0" endLine="17" endPosition="14" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.plugin" />
   </root>
   <root nodeId="4613144939628065112" modelId="r:a3396333-01e8-4d8f-ac7d-92203e663cdb(jetbrains.mps.debugger.java.runtime.ui.actions)">
     <nodeInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

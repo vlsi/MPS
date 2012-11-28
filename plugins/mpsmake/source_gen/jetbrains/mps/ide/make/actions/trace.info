@@ -1775,7 +1775,7 @@
     <scopeInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="13" startPosition="0" endLine="24" endPosition="0" />
     <unitInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="14" startPosition="54" endLine="22" endPosition="5" unitName="jetbrains.mps.ide.make.actions.Make_PluginInitializer$1" />
     <unitInfo nodeId="5882989260841555164" fileName="Make_PluginInitializer.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Make_PluginInitializer" />
-    <unitInfo nodeId="5882989260841555164" fileName="plugin.xml" startLine="1" startPosition="0" endLine="19" endPosition="14" unitName="jetbrains.mps.ide.make.actions.plugin" />
+    <unitInfo nodeId="5882989260841555164" fileName="plugin.xml" startLine="1" startPosition="0" endLine="20" endPosition="14" unitName="jetbrains.mps.ide.make.actions.plugin" />
   </root>
   <root nodeId="6005576522675134787" modelId="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)">
     <nodeInfo nodeId="6005576522675224746" fileName="TransientModelsNotification.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />

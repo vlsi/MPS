@@ -30,7 +30,7 @@
     <scopeInfo nodeId="1453248744423272128" fileName="Modelchecker_PluginInitializer.java" startLine="14" startPosition="0" endLine="28" endPosition="0" />
     <unitInfo nodeId="1453248744423272128" fileName="Modelchecker_PluginInitializer.java" startLine="15" startPosition="54" endLine="26" endPosition="5" unitName="jetbrains.mps.ide.modelchecker.actions.Modelchecker_PluginInitializer$1" />
     <unitInfo nodeId="1453248744423272128" fileName="Modelchecker_PluginInitializer.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.Modelchecker_PluginInitializer" />
-    <unitInfo nodeId="1453248744423272128" fileName="plugin.xml" startLine="1" startPosition="0" endLine="19" endPosition="14" unitName="jetbrains.mps.ide.modelchecker.actions.plugin" />
+    <unitInfo nodeId="1453248744423272128" fileName="plugin.xml" startLine="1" startPosition="0" endLine="20" endPosition="14" unitName="jetbrains.mps.ide.modelchecker.actions.plugin" />
   </root>
   <root nodeId="1453248744423272129" modelId="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)">
     <nodeInfo nodeId="1453248744423272129" fileName="Default_KeymapChanges.java" startLine="11" startPosition="34" endLine="12" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />

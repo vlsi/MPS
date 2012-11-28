@@ -24,7 +24,7 @@
     <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="12" startPosition="0" endLine="20" endPosition="0" />
     <unitInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="13" startPosition="54" endLine="18" endPosition="5" unitName="jetbrains.mps.execution.languages.plugin.Languages_PluginInitializer$1" />
     <unitInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.execution.languages.plugin.Languages_PluginInitializer" />
-    <unitInfo nodeId="6863272677075182370" fileName="plugin.xml" startLine="1" startPosition="0" endLine="23" endPosition="14" unitName="jetbrains.mps.execution.languages.plugin.plugin" />
+    <unitInfo nodeId="6863272677075182370" fileName="plugin.xml" startLine="1" startPosition="0" endLine="24" endPosition="14" unitName="jetbrains.mps.execution.languages.plugin.plugin" />
   </root>
 </debugInfo>
 

@@ -5272,7 +5272,7 @@
     <scopeInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="14" startPosition="0" endLine="28" endPosition="0" />
     <unitInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="15" startPosition="54" endLine="26" endPosition="5" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_PluginInitializer$1" />
     <unitInfo nodeId="8586967776370586377" fileName="Mpsdevkit_PluginInitializer.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_PluginInitializer" />
-    <unitInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="1" startPosition="0" endLine="19" endPosition="14" unitName="jetbrains.mps.ide.devkit.actions.plugin" />
+    <unitInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="1" startPosition="0" endLine="20" endPosition="14" unitName="jetbrains.mps.ide.devkit.actions.plugin" />
   </root>
   <root nodeId="8970236339104100116" modelId="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)">
     <nodeInfo nodeId="8970236339104100116" fileName="ShowNodeInExplorer_Action.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
