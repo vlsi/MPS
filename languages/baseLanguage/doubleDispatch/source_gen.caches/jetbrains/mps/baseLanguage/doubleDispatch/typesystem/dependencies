@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchArgsHierarchy_NonTypesystemRule" file="DispatchArgsHierarchy_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroup" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchMethodCollector" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchUtil" />
@@ -61,12 +62,13 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroup" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroupDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

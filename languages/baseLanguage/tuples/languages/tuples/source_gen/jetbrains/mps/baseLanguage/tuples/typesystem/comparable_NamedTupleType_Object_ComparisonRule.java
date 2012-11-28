@@ -18,7 +18,7 @@ public class comparable_NamedTupleType_Object_ComparisonRule extends ComparisonR
   }
 
   public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
-    return SLinkOperations.getTarget(node2, "classifier", false) == SLinkOperations.getTarget(_quotation_createNode_6f56oq_a0a0a0(), "classifier", false);
+    return SLinkOperations.getTarget(node2, "classifier", false) == SLinkOperations.getTarget(_quotation_createNode_6f56oq_a0a0a1(), "classifier", false);
   }
 
   public boolean isWeak() {
@@ -47,7 +47,7 @@ public class comparable_NamedTupleType_Object_ComparisonRule extends ComparisonR
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
 
-  private static SNode _quotation_createNode_6f56oq_a0a0a0() {
+  private static SNode _quotation_createNode_6f56oq_a0a0a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));

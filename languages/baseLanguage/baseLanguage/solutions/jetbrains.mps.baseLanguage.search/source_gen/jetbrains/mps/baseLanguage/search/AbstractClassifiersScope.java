@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -61,35 +63,35 @@ public abstract class AbstractClassifiersScope extends AbstractSearchScope imple
           result.add(classifier);
         }
         if ((constraint & IClassifiersSearchScope.CONSTRUCTOR) == IClassifiersSearchScope.CONSTRUCTOR && isClassConcept) {
-          for (SNode constructorDeclaration : ListSequence.fromList(SLinkOperations.getTargets((jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "constructor", true))) {
+          for (SNode constructorDeclaration : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{}))) {
             if (condition.met(constructorDeclaration)) {
               result.add(constructorDeclaration);
             }
           }
         }
         if ((constraint & IClassifiersSearchScope.INSTANCE_FIELD) == IClassifiersSearchScope.INSTANCE_FIELD && isClassConcept) {
-          for (SNode member : ListSequence.fromList(SLinkOperations.getTargets((jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "field", true))) {
+          for (SNode member : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{}))) {
             if (condition.met(member)) {
               result.add(member);
             }
           }
         }
         if ((constraint & IClassifiersSearchScope.INSTANCE_METHOD) == IClassifiersSearchScope.INSTANCE_METHOD && isClassConcept) {
-          for (SNode member : ListSequence.fromList(SLinkOperations.getTargets((jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "method", true))) {
+          for (SNode member : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{}))) {
             if (condition.met(member)) {
               result.add(member);
             }
           }
         }
         if ((constraint & IClassifiersSearchScope.STATIC_FIELD) == IClassifiersSearchScope.STATIC_FIELD && isClassConcept) {
-          for (SNode member : ListSequence.fromList(SLinkOperations.getTargets((jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "staticField", true))) {
+          for (SNode member : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "jetbrains.mps.baseLanguage.structure.Classifier", "call_staticFields_5292274854859223538", new Object[]{}))) {
             if (condition.met(member)) {
               result.add(member);
             }
           }
         }
         if ((constraint & IClassifiersSearchScope.STATIC_METHOD) == IClassifiersSearchScope.STATIC_METHOD && isClassConcept) {
-          for (SNode member : ListSequence.fromList(SLinkOperations.getTargets((jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "staticMethod", true))) {
+          for (SNode member : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_staticMethods_5292274854859435867", new Object[]{}))) {
             if (condition.met(member)) {
               result.add(member);
             }

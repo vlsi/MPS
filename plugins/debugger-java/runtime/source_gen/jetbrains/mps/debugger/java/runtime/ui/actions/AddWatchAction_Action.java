@@ -5,18 +5,17 @@ package jetbrains.mps.debugger.java.runtime.ui.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class AddWatchAction_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("add.png");
-  protected static Log log = LogFactory.getLog(AddWatchAction_Action.class);
 
   public AddWatchAction_Action() {
     super("New Watch...", "New Watch...", ICON);
@@ -59,4 +58,6 @@ public class AddWatchAction_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(AddWatchAction_Action.class);
 }

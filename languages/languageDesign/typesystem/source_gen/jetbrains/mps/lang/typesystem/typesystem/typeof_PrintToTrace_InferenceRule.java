@@ -21,7 +21,7 @@ public class typeof_PrintToTrace_InferenceRule extends AbstractInferenceRule_Run
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(printToTrace, "message", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "4251858506886757259", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "4251858506886757261", true), (SNode) _quotation_createNode_o0btxc_a0a0a(), true, true, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "4251858506886757261", true), (SNode) _quotation_createNode_o0btxc_a0a0b(), true, true, _info_12389875345);
       }
     }
   }
@@ -41,7 +41,7 @@ public class typeof_PrintToTrace_InferenceRule extends AbstractInferenceRule_Run
     return false;
   }
 
-  private static SNode _quotation_createNode_o0btxc_a0a0a() {
+  private static SNode _quotation_createNode_o0btxc_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

@@ -6,19 +6,19 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 /*package*/ class MatchIteration {
-  private static Pattern REGEXP_m02t0c_a0a0b0a = Pattern.compile("(\\d+)", 0);
-
   public MatchIteration() {
   }
 
   /*package*/ void forEachMatch() {
     String test = "239 239 239";
     {
-      Pattern _pattern_0 = REGEXP_m02t0c_a0a0b0a;
+      Pattern _pattern_0 = REGEXP_m02t0c_a0a0b0b;
       Matcher _matcher_0 = _pattern_0.matcher(test);
       while (_matcher_0.find()) {
         System.out.println("number = " + _matcher_0.group(1));
       }
     }
   }
+
+  private static Pattern REGEXP_m02t0c_a0a0b0b = Pattern.compile("(\\d+)", 0);
 }

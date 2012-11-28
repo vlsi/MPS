@@ -4,10 +4,12 @@ package jetbrains.mps.platform.conf.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -21,7 +23,7 @@ public class BeanUtil {
 
   public static boolean isBean(final SNode _this) {
     final SNode attrAnn = SLinkOperations.getTarget(_quotation_createNode_bgndvd_a0a0a0(), "annotation", false);
-    return ListSequence.fromList(SLinkOperations.getTargets(_this, "field", true)).translate(new ITranslator2<SNode, SNode>() {
+    return Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(_this)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getTargets(it, "annotation", true);
       }
@@ -38,7 +40,7 @@ public class BeanUtil {
 
   public static Iterable<BeanProperty> properties(final SNode _this) {
     final SNode attrAnn = SLinkOperations.getTarget(_quotation_createNode_bgndvd_a0a0a1(), "annotation", false);
-    return ListSequence.fromList(SLinkOperations.getTargets(_this, "field", true)).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(_this)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode fd) {
         return ListSequence.fromList(SLinkOperations.getTargets(fd, "annotation", true)).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode ai) {

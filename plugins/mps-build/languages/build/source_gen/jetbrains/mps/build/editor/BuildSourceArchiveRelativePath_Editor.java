@@ -6,20 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.FocusPolicy;
-import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -32,10 +22,61 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.FocusPolicy;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 
 public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4z471d_a(editorContext, node);
+  }
+
+  public static class BuildSourceArchiveRelativePath_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Group {
+    public BuildSourceArchiveRelativePath_generic_cellMenu_a0c0() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      IFile file = FileSystem.getInstance().getFileByPath(BehaviorReflection.invokeVirtual(String.class, node, "virtual_getBasePath_4959435991187140515", new Object[]{Context.defaultContext()}));
+      if (!(file.exists())) {
+        return ListSequence.fromList(new ArrayList<String>());
+      }
+      List<IFile> children = file.getChildren();
+      Iterable<String> names = ListSequence.fromList(children).select(new ISelector<IFile, String>() {
+        public String select(IFile it) {
+          return it.getName();
+        }
+      });
+      if (file.getParent() != null) {
+        names = Sequence.fromIterable(names).union(Sequence.fromIterable(Sequence.<String>singleton("..")));
+      }
+      return Sequence.fromIterable(names).sort(new ISelector<String, String>() {
+        public String select(String it) {
+          return it;
+        }
+      }, true).toListSequence();
+    }
+
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
+    }
+
+    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      if ((SLinkOperations.getTarget(node, "compositePart", true) == null)) {
+        SNodeFactoryOperations.setNewChild(node, "compositePart", "jetbrains.mps.build.structure.BuildCompositePath");
+      }
+      SPropertyOperations.set(SLinkOperations.getTarget(node, "compositePart", true), "head", parameterObject);
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
   }
 
   private EditorCell createCollection_4z471d_a(EditorContext editorContext, SNode node) {
@@ -102,46 +143,5 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  public static class BuildSourceArchiveRelativePath_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Group {
-    public BuildSourceArchiveRelativePath_generic_cellMenu_a0c0() {
-    }
-
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      IFile file = FileSystem.getInstance().getFileByPath(BehaviorReflection.invokeVirtual(String.class, node, "virtual_getBasePath_4959435991187140515", new Object[]{Context.defaultContext()}));
-      if (!(file.exists())) {
-        return ListSequence.fromList(new ArrayList<String>());
-      }
-      List<IFile> children = file.getChildren();
-      Iterable<String> names = ListSequence.fromList(children).select(new ISelector<IFile, String>() {
-        public String select(IFile it) {
-          return it.getName();
-        }
-      });
-      if (file.getParent() != null) {
-        names = Sequence.fromIterable(names).union(Sequence.fromIterable(Sequence.<String>singleton("..")));
-      }
-      return Sequence.fromIterable(names).sort(new ISelector<String, String>() {
-        public String select(String it) {
-          return it;
-        }
-      }, true).toListSequence();
-    }
-
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
-    }
-
-    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      if ((SLinkOperations.getTarget(node, "compositePart", true) == null)) {
-        SNodeFactoryOperations.setNewChild(node, "compositePart", "jetbrains.mps.build.structure.BuildCompositePath");
-      }
-      SPropertyOperations.set(SLinkOperations.getTarget(node, "compositePart", true), "head", parameterObject);
-    }
-
-    public boolean isReferentPresentation() {
-      return false;
-    }
   }
 }

@@ -912,51 +912,51 @@
     <unitInfo nodeId="1210954246889" fileName="RemarkStatement_DataFlow.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RemarkStatement_DataFlow" />
   </root>
   <root nodeId="1214499184018" modelId="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)">
-    <nodeInfo nodeId="1214502049364" fileName="AnonymousClassCreator_DataFlow.java" startLine="21" startPosition="102" endLine="22" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1214502174629" fileName="AnonymousClassCreator_DataFlow.java" startLine="22" startPosition="162" endLine="23" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1214502248594" fileName="AnonymousClassCreator_DataFlow.java" startLine="24" startPosition="34" endLine="25" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1214502357422" fileName="AnonymousClassCreator_DataFlow.java" startLine="27" startPosition="28" endLine="28" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1220273846014" fileName="AnonymousClassCreator_DataFlow.java" startLine="30" startPosition="130" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="36748822578041384" fileName="AnonymousClassCreator_DataFlow.java" startLine="33" startPosition="135" endLine="34" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9026942911488182287" fileName="AnonymousClassCreator_DataFlow.java" startLine="36" startPosition="138" endLine="37" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1214499184018" fileName="AnonymousClassCreator_DataFlow.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AnonymousClassCreator_DataFlow#()V" />
-    <nodeInfo nodeId="1214502101968" fileName="AnonymousClassCreator_DataFlow.java" startLine="23" startPosition="64" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1214502325565" fileName="AnonymousClassCreator_DataFlow.java" startLine="26" startPosition="5" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1220273827737" fileName="AnonymousClassCreator_DataFlow.java" startLine="29" startPosition="5" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="36748822578041347" fileName="AnonymousClassCreator_DataFlow.java" startLine="32" startPosition="5" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="9026942911488170852" fileName="AnonymousClassCreator_DataFlow.java" startLine="35" startPosition="5" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1214499184018" fileName="AnonymousClassCreator_DataFlow.java" startLine="21" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
-    <scopeInfo nodeId="1214499184018" fileName="AnonymousClassCreator_DataFlow.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
-    <scopeInfo nodeId="1214502101969" fileName="AnonymousClassCreator_DataFlow.java" startLine="24" startPosition="34" endLine="25" endPosition="190" />
-    <scopeInfo nodeId="1214502325566" fileName="AnonymousClassCreator_DataFlow.java" startLine="27" startPosition="28" endLine="28" endPosition="42" />
-    <scopeInfo nodeId="1220273827738" fileName="AnonymousClassCreator_DataFlow.java" startLine="30" startPosition="130" endLine="31" endPosition="48" />
-    <scopeInfo nodeId="36748822578041348" fileName="AnonymousClassCreator_DataFlow.java" startLine="33" startPosition="135" endLine="34" endPosition="48" />
-    <scopeInfo nodeId="9026942911488170853" fileName="AnonymousClassCreator_DataFlow.java" startLine="36" startPosition="138" endLine="37" endPosition="60" />
-    <scopeInfo nodeId="1214499184018" fileName="AnonymousClassCreator_DataFlow.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1214502101968" fileName="AnonymousClassCreator_DataFlow.java" startLine="23" startPosition="64" endLine="26" endPosition="5">
+    <nodeInfo nodeId="1214502049364" fileName="AnonymousClassCreator_DataFlow.java" startLine="22" startPosition="102" endLine="23" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1214502174629" fileName="AnonymousClassCreator_DataFlow.java" startLine="23" startPosition="162" endLine="24" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1214502248594" fileName="AnonymousClassCreator_DataFlow.java" startLine="25" startPosition="34" endLine="26" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1214502357422" fileName="AnonymousClassCreator_DataFlow.java" startLine="28" startPosition="28" endLine="29" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1220273846014" fileName="AnonymousClassCreator_DataFlow.java" startLine="31" startPosition="130" endLine="32" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="36748822578041384" fileName="AnonymousClassCreator_DataFlow.java" startLine="34" startPosition="135" endLine="35" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9026942911488182287" fileName="AnonymousClassCreator_DataFlow.java" startLine="37" startPosition="150" endLine="38" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1214499184018" fileName="AnonymousClassCreator_DataFlow.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AnonymousClassCreator_DataFlow#()V" />
+    <nodeInfo nodeId="1214502101968" fileName="AnonymousClassCreator_DataFlow.java" startLine="24" startPosition="64" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1214502325565" fileName="AnonymousClassCreator_DataFlow.java" startLine="27" startPosition="5" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1220273827737" fileName="AnonymousClassCreator_DataFlow.java" startLine="30" startPosition="5" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="36748822578041347" fileName="AnonymousClassCreator_DataFlow.java" startLine="33" startPosition="5" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="9026942911488170852" fileName="AnonymousClassCreator_DataFlow.java" startLine="36" startPosition="5" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1214499184018" fileName="AnonymousClassCreator_DataFlow.java" startLine="22" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="1214499184018" fileName="AnonymousClassCreator_DataFlow.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="1214502101969" fileName="AnonymousClassCreator_DataFlow.java" startLine="25" startPosition="34" endLine="26" endPosition="190" />
+    <scopeInfo nodeId="1214502325566" fileName="AnonymousClassCreator_DataFlow.java" startLine="28" startPosition="28" endLine="29" endPosition="42" />
+    <scopeInfo nodeId="1220273827738" fileName="AnonymousClassCreator_DataFlow.java" startLine="31" startPosition="130" endLine="32" endPosition="48" />
+    <scopeInfo nodeId="36748822578041348" fileName="AnonymousClassCreator_DataFlow.java" startLine="34" startPosition="135" endLine="35" endPosition="48" />
+    <scopeInfo nodeId="9026942911488170853" fileName="AnonymousClassCreator_DataFlow.java" startLine="37" startPosition="150" endLine="38" endPosition="60" />
+    <scopeInfo nodeId="1214499184018" fileName="AnonymousClassCreator_DataFlow.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1214502101968" fileName="AnonymousClassCreator_DataFlow.java" startLine="24" startPosition="64" endLine="27" endPosition="5">
       <varInfo nodeId="1214502101972" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="1214502325565" fileName="AnonymousClassCreator_DataFlow.java" startLine="26" startPosition="5" endLine="29" endPosition="5">
+    <scopeInfo nodeId="1214502325565" fileName="AnonymousClassCreator_DataFlow.java" startLine="27" startPosition="5" endLine="30" endPosition="5">
       <varInfo nodeId="1214502325569" varName="var" />
     </scopeInfo>
-    <scopeInfo nodeId="1220273827737" fileName="AnonymousClassCreator_DataFlow.java" startLine="29" startPosition="5" endLine="32" endPosition="5">
+    <scopeInfo nodeId="1220273827737" fileName="AnonymousClassCreator_DataFlow.java" startLine="30" startPosition="5" endLine="33" endPosition="5">
       <varInfo nodeId="1220273827741" varName="expr" />
     </scopeInfo>
-    <scopeInfo nodeId="36748822578041347" fileName="AnonymousClassCreator_DataFlow.java" startLine="32" startPosition="5" endLine="35" endPosition="5">
+    <scopeInfo nodeId="36748822578041347" fileName="AnonymousClassCreator_DataFlow.java" startLine="33" startPosition="5" endLine="36" endPosition="5">
       <varInfo nodeId="36748822578041351" varName="expr" />
     </scopeInfo>
-    <scopeInfo nodeId="9026942911488170852" fileName="AnonymousClassCreator_DataFlow.java" startLine="35" startPosition="5" endLine="38" endPosition="5">
+    <scopeInfo nodeId="9026942911488170852" fileName="AnonymousClassCreator_DataFlow.java" startLine="36" startPosition="5" endLine="39" endPosition="5">
       <varInfo nodeId="9026942911488170856" varName="fieldDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="1214499189974" fileName="AnonymousClassCreator_DataFlow.java" startLine="21" startPosition="102" endLine="38" endPosition="5">
+    <scopeInfo nodeId="1214499189974" fileName="AnonymousClassCreator_DataFlow.java" startLine="22" startPosition="102" endLine="39" endPosition="5">
       <varInfo nodeId="1214502049365" varName="methods" />
       <varInfo nodeId="1214502174630" varName="vars" />
     </scopeInfo>
-    <scopeInfo nodeId="1214499184018" fileName="AnonymousClassCreator_DataFlow.java" startLine="21" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="1214499184018" fileName="AnonymousClassCreator_DataFlow.java" startLine="22" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="1214499184018" varName="_context" />
       <varInfo nodeId="1214499184018" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="1214499184018" fileName="AnonymousClassCreator_DataFlow.java" startLine="17" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.AnonymousClassCreator_DataFlow" />
+    <unitInfo nodeId="1214499184018" fileName="AnonymousClassCreator_DataFlow.java" startLine="18" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.AnonymousClassCreator_DataFlow" />
   </root>
   <root nodeId="1215696302779" modelId="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)">
     <nodeInfo nodeId="1215696303815" fileName="BaseAssignmentExpression_DataFlow.java" startLine="19" startPosition="136" endLine="20" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2609,10 +2609,10 @@
     <nodeInfo nodeId="7597254041024527677" fileName="DataFlowTryCatchUtil.java" startLine="33" startPosition="50" endLine="36" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7597254041024527675" fileName="DataFlowTryCatchUtil.java" startLine="32" startPosition="14" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7597254041024527673" fileName="DataFlowTryCatchUtil.java" startLine="32" startPosition="12" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7597254041024527663" fileName="DataFlowTryCatchUtil.java" startLine="43" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_l1x7gt_b0a0a1a3a0#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7597254041024527667" fileName="DataFlowTryCatchUtil.java" startLine="50" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_l1x7gt_b0a0a1a3a0_0#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7597254041024527670" fileName="DataFlowTryCatchUtil.java" startLine="57" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_l1x7gt_a0a0b0d0a#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7597254041024527685" fileName="DataFlowTryCatchUtil.java" startLine="64" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_l1x7gt_a0a0a0a0b0d0a#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7597254041024527663" fileName="DataFlowTryCatchUtil.java" startLine="43" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_l1x7gt_b0a0a1a3a1#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7597254041024527667" fileName="DataFlowTryCatchUtil.java" startLine="50" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_l1x7gt_b0a0a1a3a1_0#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7597254041024527670" fileName="DataFlowTryCatchUtil.java" startLine="57" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_l1x7gt_a0a0b0d0b#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7597254041024527685" fileName="DataFlowTryCatchUtil.java" startLine="64" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_l1x7gt_a0a0a0a0b0d0b#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="7597254041024527652" fileName="DataFlowTryCatchUtil.java" startLine="29" startPosition="124" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7597254041024527642" fileName="DataFlowTryCatchUtil.java" startLine="27" startPosition="117" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7597254041024463765" fileName="DataFlowTryCatchUtil.java" startLine="24" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPossibleCatches#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Ljava/util/List;" />

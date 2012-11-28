@@ -4,20 +4,12 @@ package jetbrains.mps.baseLanguage.execution.api;
 
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.baseLanguage.execution.api.ui.JavaConfigOptions;
-import com.intellij.openapi.util.Factory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.util.Factory;
 
 public class JavaRunParameters_Configuration_Editor extends SettingsEditorEx<JavaRunParameters_Configuration> {
   private JavaConfigOptions myJavaOptionsEditor = new JavaConfigOptions();
-
-  public JavaRunParameters_Configuration_Editor() {
-    super(new Factory<JavaRunParameters_Configuration>() {
-      public JavaRunParameters_Configuration create() {
-        return new JavaRunParameters_Configuration();
-      }
-    });
-  }
 
   public void disposeEditor() {
     myJavaOptionsEditor.dispose();
@@ -34,5 +26,13 @@ public class JavaRunParameters_Configuration_Editor extends SettingsEditorEx<Jav
 
   public void resetEditorFrom(final JavaRunParameters_Configuration configuration) {
     myJavaOptionsEditor.reset(configuration.getJavaRunParameters());
+  }
+
+  public JavaRunParameters_Configuration_Editor() {
+    super(new Factory<JavaRunParameters_Configuration>() {
+      public JavaRunParameters_Configuration create() {
+        return new JavaRunParameters_Configuration();
+      }
+    });
   }
 }

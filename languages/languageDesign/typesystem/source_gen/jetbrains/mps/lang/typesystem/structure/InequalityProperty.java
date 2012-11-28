@@ -12,12 +12,6 @@ public enum InequalityProperty {
   opposite_to_inequality("opposite to inequality", 2);
 
   private String myName;
-  private int myValue;
-
-  InequalityProperty(String name, int value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
@@ -25,10 +19,6 @@ public enum InequalityProperty {
 
   public String getValueAsString() {
     return "" + this.myValue;
-  }
-
-  public int getValue() {
-    return this.myValue;
   }
 
   public static List<InequalityProperty> getConstants() {
@@ -57,5 +47,16 @@ public enum InequalityProperty {
       return InequalityProperty.opposite_to_inequality;
     }
     return InequalityProperty.getDefault();
+  }
+
+  private int myValue;
+
+  InequalityProperty(String name, int value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public int getValue() {
+    return this.myValue;
   }
 }

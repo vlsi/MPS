@@ -65,10 +65,10 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
     }
     SourcePosition lastPointer = PositionProvider.getInstance(myProject).getPosition(lastUnitName, lastFileName, lastLineNumber, mySession);
     SourcePosition nextPointer = PositionProvider.getInstance(myProject).getPosition(nextUnitName, nextFileName, nextLineNumber, mySession);
-    return eq_xhry8p_a0d0e(lastPointer, nextPointer);
+    return eq_xhry8p_a0d0h(lastPointer, nextPointer);
   }
 
-  private static boolean eq_xhry8p_a0d0e(Object a, Object b) {
+  private static boolean eq_xhry8p_a0d0h(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

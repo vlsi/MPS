@@ -5,8 +5,6 @@ package jetbrains.mps.vcs.platform.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper;
@@ -14,10 +12,11 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class CopyOldNodes_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("menu-copy.png");
-  protected static Log log = LogFactory.getLog(CopyOldNodes_Action.class);
 
   public CopyOldNodes_Action() {
     super("Copy Old Code", "", ICON);
@@ -68,4 +67,6 @@ public class CopyOldNodes_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(CopyOldNodes_Action.class);
 }

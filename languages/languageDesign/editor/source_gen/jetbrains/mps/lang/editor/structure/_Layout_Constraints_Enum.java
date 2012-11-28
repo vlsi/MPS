@@ -12,22 +12,12 @@ public enum _Layout_Constraints_Enum {
   none("none", null);
 
   private String myName;
-  private String myValue;
-
-  _Layout_Constraints_Enum(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -57,5 +47,16 @@ public enum _Layout_Constraints_Enum {
       return _Layout_Constraints_Enum.none;
     }
     return _Layout_Constraints_Enum.getDefault();
+  }
+
+  private String myValue;
+
+  _Layout_Constraints_Enum(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

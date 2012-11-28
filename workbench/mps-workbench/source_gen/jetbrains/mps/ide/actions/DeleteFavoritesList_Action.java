@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
@@ -15,10 +14,10 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.ide.projectView.ProjectView;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
+import jetbrains.mps.logging.Logger;
 
 public class DeleteFavoritesList_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(DeleteFavoritesList_Action.class);
 
   public DeleteFavoritesList_Action() {
     super("Delete Favorites List", "", ICON);
@@ -71,4 +70,6 @@ public class DeleteFavoritesList_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "DeleteFavoritesList", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(DeleteFavoritesList_Action.class);
 }

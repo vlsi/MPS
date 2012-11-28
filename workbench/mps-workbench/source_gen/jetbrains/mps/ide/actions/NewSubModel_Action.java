@@ -5,7 +5,6 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -20,10 +19,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.logging.Logger;
 
 public class NewSubModel_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("model.png");
-  private static Logger LOG = Logger.getLogger(NewSubModel_Action.class);
 
   public NewSubModel_Action() {
     super("Model", "", ICON);
@@ -103,4 +102,6 @@ public class NewSubModel_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "NewSubModel", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(NewSubModel_Action.class);
 }

@@ -20,7 +20,7 @@ public class typeof_HighLevelValue_ConceptFunctionParameter_InferenceRule extend
     {
       SNode _nodeToCheck_1029348928467 = highLevelValue_ConceptFunctionParameter;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debugger.java.customViewers.typesystem)", "43370322128303945", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debugger.java.customViewers.typesystem)", "43370322128303942", true), (SNode) check_vmwfy8_a0a0a(SNodeOperations.getAncestor(highLevelValue_ConceptFunctionParameter, "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer", false, false)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debugger.java.customViewers.typesystem)", "43370322128303942", true), (SNode) check_vmwfy8_a0a0b(SNodeOperations.getAncestor(highLevelValue_ConceptFunctionParameter, "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer", false, false)), _info_12389875345);
     }
   }
 
@@ -39,7 +39,7 @@ public class typeof_HighLevelValue_ConceptFunctionParameter_InferenceRule extend
     return false;
   }
 
-  private static SNode check_vmwfy8_a0a0a(SNode checkedDotOperand) {
+  private static SNode check_vmwfy8_a0a0b(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, "valueType", true);
     }

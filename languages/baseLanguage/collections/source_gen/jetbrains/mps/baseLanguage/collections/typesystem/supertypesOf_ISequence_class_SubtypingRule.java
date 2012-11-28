@@ -24,12 +24,12 @@ public class supertypesOf_ISequence_class_SubtypingRule extends SubtypingRule_Ru
 
   public List<SNode> getSubOrSuperTypes(SNode ct, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
-    if (SLinkOperations.getTarget(_quotation_createNode_gd2fo6_a0a1a0(), "classifier", false) == SLinkOperations.getTarget(ct, "classifier", false)) {
+    if (SLinkOperations.getTarget(_quotation_createNode_gd2fo6_a0a1a1(), "classifier", false) == SLinkOperations.getTarget(ct, "classifier", false)) {
       res = ListSequence.fromList(new ArrayList<SNode>());
       List<SNode> ptypes = SLinkOperations.getTargets(ct, "parameter", true);
       if (ListSequence.fromList(ptypes).count() > 0) {
         SNode elType = ListSequence.fromList(ptypes).getElement(0);
-        ListSequence.fromList(res).addElement(_quotation_createNode_gd2fo6_a0a1a2a1a0(elType));
+        ListSequence.fromList(res).addElement(_quotation_createNode_gd2fo6_a0a1a2a1a1(elType));
       }
     }
     return res;
@@ -50,7 +50,7 @@ public class supertypesOf_ISequence_class_SubtypingRule extends SubtypingRule_Ru
     return true;
   }
 
-  private static SNode _quotation_createNode_gd2fo6_a0a1a2a1a0(Object parameter_1) {
+  private static SNode _quotation_createNode_gd2fo6_a0a1a2a1a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);
@@ -61,7 +61,7 @@ public class supertypesOf_ISequence_class_SubtypingRule extends SubtypingRule_Ru
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_gd2fo6_a0a1a0() {
+  private static SNode _quotation_createNode_gd2fo6_a0a1a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)"), SNodeId.fromString("6543581031674024311")));

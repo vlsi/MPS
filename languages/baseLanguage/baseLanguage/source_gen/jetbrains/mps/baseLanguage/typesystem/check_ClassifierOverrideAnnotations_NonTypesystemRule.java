@@ -9,6 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.util.OverridingMethodsFinder;
 import java.util.Set;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -24,7 +25,7 @@ public class check_ClassifierOverrideAnnotations_NonTypesystemRule extends Abstr
   public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     OverridingMethodsFinder finder = new OverridingMethodsFinder(classifier);
     Set<SNode> overridingMethods = finder.getOverridingMethods();
-    for (SNode method : SLinkOperations.getTargets(classifier, "method", true)) {
+    for (SNode method : Classifier_Behavior.call_methods_5292274854859311639(classifier)) {
       for (SNode annotationInstance : SLinkOperations.getTargets(method, "annotation", true)) {
         if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Override") && !(SetSequence.fromSet(overridingMethods).contains(method))) {
           {

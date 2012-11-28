@@ -30,7 +30,7 @@ public class ExceptionChooserDialog extends StubsClassChooserDialog {
   @Override
   protected boolean isValid(SNode node) {
     SNode base = node;
-    while (base != null && SNodeOperations.isInstanceOf(base, "jetbrains.mps.baseLanguage.structure.ClassConcept") && !((eq_lt001m_a0a0a1a0(base, myThrowableClassifier)))) {
+    while (base != null && SNodeOperations.isInstanceOf(base, "jetbrains.mps.baseLanguage.structure.ClassConcept") && !((eq_lt001m_a0a0a1a2(base, myThrowableClassifier)))) {
       base = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(base, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true), "classifier", false);
     }
     return (base != null) && SNodeOperations.isInstanceOf(base, "jetbrains.mps.baseLanguage.structure.ClassConcept");
@@ -43,7 +43,7 @@ public class ExceptionChooserDialog extends StubsClassChooserDialog {
     return ExceptionChooserDialog.class.getName();
   }
 
-  private static boolean eq_lt001m_a0a0a1a0(Object a, Object b) {
+  private static boolean eq_lt001m_a0a0a1a2(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

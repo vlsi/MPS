@@ -16,6 +16,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
 import java.util.Map;
@@ -77,7 +79,7 @@ public class VisibleClassConstructorsScope extends VisibleClassifiersScope {
       }
       SNode classifier = SNodeOperations.cast(classifier_, "jetbrains.mps.baseLanguage.structure.Classifier");
       if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-        List<SNode> constructors = ListSequence.fromList(SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "constructor", true)).toListSequence();
+        List<SNode> constructors = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), (SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).toListSequence();
         if ((int) ListSequence.fromList(constructors).count() == 1) {
           return ListSequence.fromList(constructors).first();
         } else

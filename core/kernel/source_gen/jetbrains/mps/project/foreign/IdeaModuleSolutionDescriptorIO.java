@@ -27,24 +27,24 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
     SolutionDescriptor sd;
     sd = new _FunctionTypes._return_P0_E0<SolutionDescriptor>() {
       public SolutionDescriptor invoke() {
-        final SolutionDescriptor result_56japk_a0a0e0a = new SolutionDescriptor();
+        final SolutionDescriptor result_56japk_a0a0e0b = new SolutionDescriptor();
         // TODO: namespace 
-        final String result_56japk_a1a0a0e0a = file.getName();
-        result_56japk_a0a0e0a.setNamespace(result_56japk_a1a0a0e0a);
+        final String result_56japk_a1a0a0e0b = file.getName();
+        result_56japk_a0a0e0b.setNamespace(result_56japk_a1a0a0e0b);
 
-        final String result_56japk_a3a0a0e0a = mpsConf.UUID;
-        result_56japk_a0a0e0a.setUUID(result_56japk_a3a0a0e0a);
+        final String result_56japk_a3a0a0e0b = mpsConf.UUID;
+        result_56japk_a0a0e0b.setUUID(result_56japk_a3a0a0e0b);
 
         // TODO: pluginKind 
 
-        final boolean result_56japk_a7a0a0e0a = true;
-        result_56japk_a0a0e0a.setCompileInMPS(result_56japk_a7a0a0e0a);
+        final boolean result_56japk_a7a0a0e0b = true;
+        result_56japk_a0a0e0b.setCompileInMPS(result_56japk_a7a0a0e0b);
 
-        final boolean result_56japk_a9a0a0e0a = mpsConf.useTransientOutputFolder;
-        result_56japk_a0a0e0a.setUseTransientOutput(result_56japk_a9a0a0e0a);
+        final boolean result_56japk_a9a0a0e0b = mpsConf.useTransientOutputFolder;
+        result_56japk_a0a0e0b.setUseTransientOutput(result_56japk_a9a0a0e0b);
 
-        final String result_56japk_a11a0a0e0a = macroHelper.expandPath(mpsConf.generatorOutputPath);
-        result_56japk_a0a0e0a.setOutputPath(result_56japk_a11a0a0e0a);
+        final String result_56japk_a11a0a0e0b = macroHelper.expandPath(mpsConf.generatorOutputPath);
+        result_56japk_a0a0e0b.setOutputPath(result_56japk_a11a0a0e0b);
 
         if (mpsConf.rootDescriptors != null) {
           for (ModelRootDescriptor mrp : mpsConf.rootDescriptors) {
@@ -52,7 +52,7 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
             if (mrp.getMemento().get("path") != null) {
               mrp.getMemento().put("path", macroHelper.expandPath(mrp.getMemento().get("path")));
             }
-            result_56japk_a0a0e0a.getModelRootDescriptors().add(mrp);
+            result_56japk_a0a0e0b.getModelRootDescriptors().add(mrp);
           }
 
         }
@@ -62,7 +62,7 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
         // TODO: dependencies 
         if (mpsConf.usedLanguages != null) {
           for (String usedLang : mpsConf.usedLanguages) {
-            result_56japk_a0a0e0a.getUsedLanguages().add(ModuleReference.fromString(usedLang));
+            result_56japk_a0a0e0b.getUsedLanguages().add(ModuleReference.fromString(usedLang));
           }
         }
 
@@ -71,7 +71,7 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
         // TODO : class paths 
 
         // TODO: source paths 
-        return result_56japk_a0a0e0a;
+        return result_56japk_a0a0e0b;
       }
     }.invoke();
     sd.setTimestamp(Long.toString(file.lastModified()));

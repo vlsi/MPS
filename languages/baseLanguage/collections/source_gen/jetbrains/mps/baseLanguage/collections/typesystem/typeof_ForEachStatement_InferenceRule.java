@@ -43,7 +43,7 @@ public class typeof_ForEachStatement_InferenceRule extends AbstractInferenceRule
               {
                 SNode _nodeToCheck_1029348928467 = forEachStatement;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "3261041752321174546", 0, null);
-                typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_tq8cec_a0b0a0a2a2a0(typeCheckingContext.getRepresentative(elementType_typevar_1184771826645)), (SNode) typeCheckingContext.getExpandedNode(IST), false, true, _info_12389875345);
+                typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_tq8cec_a0b0a0a2a2a1(typeCheckingContext.getRepresentative(elementType_typevar_1184771826645)), (SNode) typeCheckingContext.getExpandedNode(IST), false, true, _info_12389875345);
               }
               {
                 SNode _nodeToCheck_1029348928467 = variable;
@@ -72,7 +72,7 @@ public class typeof_ForEachStatement_InferenceRule extends AbstractInferenceRule
     return false;
   }
 
-  private static SNode _quotation_createNode_tq8cec_a0b0a0a2a2a0(Object parameter_1) {
+  private static SNode _quotation_createNode_tq8cec_a0b0a0a2a2a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);

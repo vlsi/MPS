@@ -8,10 +8,6 @@ import java.util.regex.Matcher;
 import junit.framework.Assert;
 
 public class Statements_Test extends TestCase {
-  private static Pattern REGEXP_yyh11i_a0a0c0a = Pattern.compile("(?:\\w+@\\w(?:.\\w+)*)", 0);
-  private static Pattern REGEXP_yyh11i_a0a0b0b = Pattern.compile("ab", 0);
-  private static Pattern REGEXP_yyh11i_a0a0b0c = Pattern.compile("(\\w\\w)", 0);
-
   public void test_ifmatch() throws Exception {
     String input = "reader@gmail.com";
     boolean matches = false;
@@ -49,4 +45,8 @@ public class Statements_Test extends TestCase {
     }
     Assert.assertEquals(4, i);
   }
+
+  private static Pattern REGEXP_yyh11i_a0a0c0a = Pattern.compile("(?:\\w+@\\w(?:.\\w+)*)", 0);
+  private static Pattern REGEXP_yyh11i_a0a0b0b = Pattern.compile("ab", 0);
+  private static Pattern REGEXP_yyh11i_a0a0b0c = Pattern.compile("(\\w\\w)", 0);
 }

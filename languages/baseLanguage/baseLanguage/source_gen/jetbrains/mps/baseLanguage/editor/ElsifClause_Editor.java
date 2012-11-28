@@ -6,6 +6,15 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.baseLanguage.behavior.ElsifClause_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -15,20 +24,43 @@ import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
-import java.util.List;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.baseLanguage.behavior.ElsifClause_Behavior;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SModel;
 
 public class ElsifClause_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_m61dlm_a(editorContext, node);
+  }
+
+  public static class ElsifClause_generic_cellMenu_a0a0 extends AbstractCellMenuPart_Generic_Group {
+    public ElsifClause_generic_cellMenu_a0a0() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      // todo: this is quite a hackish stuff but we need it 
+      // todo: but we need it since we can't enable/disable 
+      // todo: menu items by condition 
+      SNode ifStatement = ElsifClause_Behavior.call_getIfStatement_1213877360521(node);
+      List<String> result = ListSequence.fromList(new ArrayList<String>());
+      if ((SLinkOperations.getTarget(ifStatement, "ifFalseStatement", true) == null)) {
+        ListSequence.fromList(result).addElement("else");
+      }
+      ListSequence.fromList(result).addElement("else if");
+      return result;
+    }
+
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
+    }
+
+    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      if ("else".equals(parameterObject)) {
+        ElsifClause_Behavior.call_convertToElseClause_1217846674032(node);
+      }
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
   }
 
   private EditorCell createCollection_m61dlm_a(EditorContext editorContext, SNode node) {
@@ -139,37 +171,5 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  public static class ElsifClause_generic_cellMenu_a0a0 extends AbstractCellMenuPart_Generic_Group {
-    public ElsifClause_generic_cellMenu_a0a0() {
-    }
-
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      // todo: this is quite a hackish stuff but we need it 
-      // todo: but we need it since we can't enable/disable 
-      // todo: menu items by condition 
-      SNode ifStatement = ElsifClause_Behavior.call_getIfStatement_1213877360521(node);
-      List<String> result = ListSequence.fromList(new ArrayList<String>());
-      if ((SLinkOperations.getTarget(ifStatement, "ifFalseStatement", true) == null)) {
-        ListSequence.fromList(result).addElement("else");
-      }
-      ListSequence.fromList(result).addElement("else if");
-      return result;
-    }
-
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
-    }
-
-    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      if ("else".equals(parameterObject)) {
-        ElsifClause_Behavior.call_convertToElseClause_1217846674032(node);
-      }
-    }
-
-    public boolean isReferentPresentation() {
-      return false;
-    }
   }
 }

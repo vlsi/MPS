@@ -27,7 +27,7 @@ public class typeof_PrimitiveClassExpression_InferenceRule extends AbstractInfer
       {
         SNode _nodeToCheck_1029348928467 = primitiveClassExpression;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4564374268190697521", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4564374268190697523", true), (SNode) _quotation_createNode_im3uqe_a0a0b0a(SLinkOperations.getTarget(SNodeOperations.cast(unboxedType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false)), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4564374268190697523", true), (SNode) _quotation_createNode_im3uqe_a0a0b0b(SLinkOperations.getTarget(SNodeOperations.cast(unboxedType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false)), _info_12389875345);
       }
     }
   }
@@ -47,7 +47,7 @@ public class typeof_PrimitiveClassExpression_InferenceRule extends AbstractInfer
     return false;
   }
 
-  private static SNode _quotation_createNode_im3uqe_a0a0b0a(Object parameter_1) {
+  private static SNode _quotation_createNode_im3uqe_a0a0b0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);

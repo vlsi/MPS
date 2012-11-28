@@ -12,8 +12,8 @@
   <import index="fb0y" modelUID="r:4bcef4e7-5bde-4076-8e02-73a0681ac6a3(jetbrains.mps.ui.structure)" version="0" implicit="yes" />
   <roots>
     <node type="sqp9.UIObject" typeId="sqp9.8381258131358158044" id="7421785601023770739">
-      <property name="name" nameId="tpck.1169194664001" value="ButtonBase" />
       <property name="abstract" nameId="sqp9.9106854556041516986" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="ButtonBase" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="widgets" />
       <link role="extends" roleId="sqp9.8381258131358158057" targetNodeId="7421785601023770745" resolveInfo="Widget" />
     </node>
@@ -94,8 +94,8 @@
       <link role="belongsTo" roleId="sqp9.1719339442170193729" targetNodeId="3616339824038852574" resolveInfo="Table" />
     </node>
     <node type="sqp9.UIObject" typeId="sqp9.8381258131358158044" id="7936848552255359513">
-      <property name="name" nameId="tpck.1169194664001" value="AbstractTreeNode" />
       <property name="abstract" nameId="sqp9.9106854556041516986" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="AbstractTreeNode" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="widgets" />
     </node>
     <node type="sqp9.UIObject" typeId="sqp9.8381258131358158044" id="7936848552255362162">
@@ -235,8 +235,8 @@
     <node role="compartment" roleId="sqp9.4391079257750042252" type="sqp9.Container" typeId="sqp9.4391079257750042251" id="262873202871571544">
       <property name="name" nameId="tpck.1169194664001" value="north" />
       <node role="requiredAspect" roleId="sqp9.6424935405034408112" type="sqp9.ChildAspectDefinition" typeId="sqp9.6424935405034408143" id="2204726755035669284">
-        <property name="name" nameId="tpck.1169194664001" value="size" />
         <property name="optional" nameId="sqp9.6030013275786405028" value="false" />
+        <property name="name" nameId="tpck.1169194664001" value="size" />
         <node role="aspectType" roleId="sqp9.6424935405034408144" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2204726755035669287" />
       </node>
     </node>
@@ -347,7 +347,12 @@
       </node>
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="513490887686270245" />
-    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="513490887686270246">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="513490887686270254">
+      <property name="name" nameId="tpck.1169194664001" value="name" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="513490887686270255" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="513490887686270256" />
+    </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="513490887686270246">
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="513490887686270247" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="513490887686270248" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="513490887686270249">
@@ -369,11 +374,6 @@
         <property name="name" nameId="tpck.1169194664001" value="name" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="513490887686270253" />
       </node>
-    </node>
-    <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="513490887686270254">
-      <property name="name" nameId="tpck.1169194664001" value="name" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="513490887686270255" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="513490887686270256" />
     </node>
   </root>
   <root id="513490887686270269">
@@ -399,7 +399,12 @@
       </node>
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="513490887686270270" />
-    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="513490887686270271">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="513490887686270277">
+      <property name="name" nameId="tpck.1169194664001" value="name" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="513490887686270278" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="513490887686270279" />
+    </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="513490887686270271">
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="513490887686270272" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="513490887686270273" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="513490887686270274">
@@ -421,11 +426,6 @@
         <property name="name" nameId="tpck.1169194664001" value="name" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="513490887686270276" />
       </node>
-    </node>
-    <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="513490887686270277">
-      <property name="name" nameId="tpck.1169194664001" value="name" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="513490887686270278" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="513490887686270279" />
     </node>
   </root>
   <root id="513490887686296700">
@@ -485,8 +485,8 @@
         </node>
       </node>
       <node role="requiredAspect" roleId="sqp9.6424935405034408112" type="sqp9.ChildAspectDefinition" typeId="sqp9.6424935405034408143" id="7930737280446910201">
-        <property name="name" nameId="tpck.1169194664001" value="align" />
         <property name="optional" nameId="sqp9.6030013275786405028" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="align" />
         <node role="aspectType" roleId="sqp9.6424935405034408144" type="sqp9.LayoutConstraintType" typeId="sqp9.2663453265345756661" id="7930737280446910204">
           <link role="constraintConcept" roleId="sqp9.2663453265345756703" targetNodeId="sqp9.3619322115897256358" resolveInfo="AlignmentLayoutConstraint" />
         </node>

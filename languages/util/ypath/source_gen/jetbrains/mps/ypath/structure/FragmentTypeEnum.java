@@ -19,22 +19,12 @@ public enum FragmentTypeEnum {
   insert_after("insert after", "INSERT_AFTER");
 
   private String myName;
-  private String myValue;
-
-  FragmentTypeEnum(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -92,5 +82,16 @@ public enum FragmentTypeEnum {
       return FragmentTypeEnum.insert_after;
     }
     return FragmentTypeEnum.getDefault();
+  }
+
+  private String myValue;
+
+  FragmentTypeEnum(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

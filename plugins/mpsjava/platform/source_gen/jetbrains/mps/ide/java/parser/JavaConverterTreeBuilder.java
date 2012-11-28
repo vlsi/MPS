@@ -114,6 +114,7 @@ import org.eclipse.jdt.internal.compiler.ast.FieldDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.Initializer;
 import org.eclipse.jdt.internal.compiler.lookup.LocalTypeBinding;
 import org.eclipse.jdt.internal.compiler.ast.Argument;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.eclipse.jdt.internal.compiler.ast.AbstractVariableDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.Javadoc;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -147,7 +148,7 @@ public class JavaConverterTreeBuilder {
         result = SModelOperations.createNewNode(myCurrentModel, null, "jetbrains.mps.baseLanguage.structure.NullLiteral");
       } else {
         // import token as string constant even if it was an error in literal 
-        result = _quotation_createNode_m30mvz_a0b0a0a1a0(NameUtil.escapeString(new String(((Literal) expression).source())));
+        result = _quotation_createNode_m30mvz_a0b0a0a1a11(NameUtil.escapeString(new String(((Literal) expression).source())));
       }
     }
     if ((result == null)) {
@@ -646,7 +647,7 @@ public class JavaConverterTreeBuilder {
     if (fieldBinding == null) {
       SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
       ref.setReference(myTypesProvider.createErrorReference("fieldDeclaration", new String(x.token), ref).getRole(), myTypesProvider.createErrorReference("fieldDeclaration", new String(x.token), ref));
-      return _quotation_createNode_m30mvz_a2a1a93(processExpressionRefl(x.receiver), ref);
+      return _quotation_createNode_m30mvz_a2a1a05(processExpressionRefl(x.receiver), ref);
     }
     return expressionFromFieldBinding(fieldBinding, processExpressionRefl(x.receiver));
   }
@@ -1141,7 +1142,7 @@ public class JavaConverterTreeBuilder {
       }
     })) {
       // we don't support for ( a=5, b=6; ...) {} in baseLanguage, workaround here 
-      result = _quotation_createNode_m30mvz_a0b0d0tc(init, forStatement);
+      result = _quotation_createNode_m30mvz_a0b0d0ed(init, forStatement);
     } else if (!(init.isEmpty())) {
       boolean first = true;
       for (SNode statement : init) {
@@ -1332,7 +1333,7 @@ public class JavaConverterTreeBuilder {
   }
 
   private SNode createCommentStatement(String text) {
-    return _quotation_createNode_m30mvz_a0a08(text);
+    return _quotation_createNode_m30mvz_a0a19(text);
   }
 
   public SNode processType(TypeDeclaration x) {
@@ -1491,13 +1492,13 @@ public class JavaConverterTreeBuilder {
     SNode body;
     if (initializer.isStatic()) {
       SNode staticInitializer = SModelOperations.createNewNode(myCurrentModel, null, "jetbrains.mps.baseLanguage.structure.StaticInitializer");
-      SLinkOperations.setTarget(classConcept, "classInitializer", staticInitializer, true);
+      ListSequence.fromList(SLinkOperations.getTargets(classConcept, "member", true)).addElement(staticInitializer);
       SLinkOperations.setTarget(staticInitializer, "statementList", SModelOperations.createNewNode(myCurrentModel, null, "jetbrains.mps.baseLanguage.structure.StatementList"), true);
       addBlock(SLinkOperations.getTarget(staticInitializer, "statementList", true), initializer.declarationSourceStart, initializer.declarationSourceEnd);
       body = SLinkOperations.getTarget(staticInitializer, "statementList", true);
     } else {
       SNode instanceInitializer = SModelOperations.createNewNode(myCurrentModel, null, "jetbrains.mps.baseLanguage.structure.InstanceInitializer");
-      SLinkOperations.setTarget(classConcept, "instanceInitializer", instanceInitializer, true);
+      ListSequence.fromList(SLinkOperations.getTargets(classConcept, "member", true)).addElement(instanceInitializer);
       SLinkOperations.setTarget(instanceInitializer, "statementList", SModelOperations.createNewNode(myCurrentModel, null, "jetbrains.mps.baseLanguage.structure.StatementList"), true);
       addBlock(SLinkOperations.getTarget(instanceInitializer, "statementList", true), initializer.declarationSourceStart, initializer.declarationSourceEnd);
       body = SLinkOperations.getTarget(instanceInitializer, "statementList", true);
@@ -1542,7 +1543,7 @@ public class JavaConverterTreeBuilder {
           TypeDeclaration anonymousEnumClass = ((QualifiedAllocationExpression) initializer).anonymousType;
           constructorBinding = ((ConstructorDeclaration) anonymousEnumClass.methods[0]).constructorCall.binding;
           SNode enumClassConstantBody = SNodeOperations.cast(myTypesProvider.getRaw(anonymousEnumClass.binding), "jetbrains.mps.baseLanguage.structure.EnumClass");
-          for (SNode imd : SLinkOperations.getTargets(enumClassConstantBody, "method", true)) {
+          for (SNode imd : BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), enumClassConstantBody, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})) {
             SNodeOperations.detachNode(imd);
             ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "method", true)).addElement(imd);
           }
@@ -1726,14 +1727,14 @@ public class JavaConverterTreeBuilder {
     return result;
   }
 
-  private static SNode _quotation_createNode_m30mvz_a0b0a0a1a0(Object parameter_1) {
+  private static SNode _quotation_createNode_m30mvz_a0b0a0a1a11(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setProperty("value", (String) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_m30mvz_a2a1a93(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_m30mvz_a2a1a05(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -1749,7 +1750,7 @@ public class JavaConverterTreeBuilder {
     return quotedNode_3;
   }
 
-  private static SNode _quotation_createNode_m30mvz_a0b0d0tc(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_m30mvz_a0b0d0ed(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -1777,7 +1778,7 @@ public class JavaConverterTreeBuilder {
     return quotedNode_3;
   }
 
-  private static SNode _quotation_createNode_m30mvz_a0a08(Object parameter_1) {
+  private static SNode _quotation_createNode_m30mvz_a0a19(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SingleLineComment", null, null, GlobalScope.getInstance(), false);

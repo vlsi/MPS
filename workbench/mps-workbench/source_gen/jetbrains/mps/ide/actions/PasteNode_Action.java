@@ -5,7 +5,6 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -30,10 +29,10 @@ import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.logging.Logger;
 
 public class PasteNode_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("menu-paste.png");
-  private static Logger LOG = Logger.getLogger(PasteNode_Action.class);
 
   public PasteNode_Action() {
     super("Paste", "", ICON);
@@ -155,4 +154,6 @@ public class PasteNode_Action extends BaseAction {
   private boolean canPasteNodes(final Map<String, Object> _params) {
     return PasteNode_Action.this.getPasteData(_params) != null;
   }
+
+  private static Logger LOG = Logger.getLogger(PasteNode_Action.class);
 }

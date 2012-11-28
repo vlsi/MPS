@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceFieldRefactoring;
@@ -22,10 +21,10 @@ import jetbrains.mps.ide.java.platform.refactorings.IntroduceFieldDialog;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.openapi.editor.EditorContext;
 import javax.swing.JOptionPane;
+import jetbrains.mps.logging.Logger;
 
 public class IntroduceField_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(IntroduceField_Action.class);
 
   public IntroduceField_Action() {
     super("Introduce Field...", "", ICON);
@@ -102,4 +101,6 @@ public class IntroduceField_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "IntroduceField", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(IntroduceField_Action.class);
 }

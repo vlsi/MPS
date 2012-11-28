@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9lltnzcm0shaah3xyfdztk7ro8c623t">
+<dependencies version="2" modelHash="-cinqco0eahbu9bmib370l02kyrolm4g">
   <common hash="777v8l0hh06jixa9ysoxrh8y8vet9g4" />
-  <source id="3882421039144497491" name="Query" hash="1qocoxdnp7rr11za2q88fxgujdvosvm">
+  <source id="3882421039144497491" name="Query" hash="5bod71j2u37zsq4mj1710rbvqcpoe0u">
     <file name="Query.java" />
   </source>
-  <source id="8605904462131236214" name="QueryExecutor" hash="-dksawkj10rt0h1jen38lrpzgqcn7wv3">
+  <source id="8605904462131236214" name="QueryExecutor" hash="e6tmpff3panipxg4zn0jfud614vk8hc">
     <file name="QueryExecutor.java" />
   </source>
 </dependencies>

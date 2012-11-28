@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public abstract class BaseClassConceptTextGen {
   public static void membersWithBrackets(SNode classifier, boolean newLineOnEmptyMembers, final SNodeTextGen textGen) {
@@ -59,9 +58,10 @@ public abstract class BaseClassConceptTextGen {
   }
 
   public static void innerClassifiers(SNode concept, final SNodeTextGen textGen) {
-    for (SNode classifier : SLinkOperations.getTargets(concept, "staticInnerClassifiers", true)) {
+    SNode last = Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(concept)).last();
+    for (SNode classifier : Classifier_Behavior.call_nestedClassifiers_5292274854859193142(concept)) {
       TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), classifier, textGen.getSNode());
-      if (!(classifier.equals(ListSequence.fromList(SLinkOperations.getTargets(concept, "staticInnerClassifiers", true)).last()))) {
+      if (!(classifier.equals(last))) {
         textGen.appendNewLine();
       }
     }

@@ -112,7 +112,7 @@ public abstract class JavaBreakpoint extends AbstractBreakpoint implements Class
       return false;
     }
     try {
-      final StackFrame stackFrame = check_e43rhl_a0a0c0m(event.thread());
+      final StackFrame stackFrame = check_e43rhl_a0a0c0q(event.thread());
       if (stackFrame == null) {
         //  might be if the thread has been collected 
         return false;
@@ -124,7 +124,7 @@ public abstract class JavaBreakpoint extends AbstractBreakpoint implements Class
     return true;
   }
 
-  private static StackFrame check_e43rhl_a0a0c0m(ThreadReference checkedDotOperand) throws IncompatibleThreadStateException {
+  private static StackFrame check_e43rhl_a0a0c0q(ThreadReference checkedDotOperand) throws IncompatibleThreadStateException {
     if (null != checkedDotOperand) {
       return checkedDotOperand.frame(0);
     }

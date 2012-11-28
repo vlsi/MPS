@@ -44,7 +44,7 @@ public final class VisibilityUtil {
           if (SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") && SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation") || SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
             // check ExpressionName or PrimaryExpression is subclass of cls, works only with right context 
             //  will not work in the case: otherClass.method(protectedMethod()) with enclosed node as context 
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(context), "jetbrains.mps.baseLanguage.structure.DotExpression"), "jetbrains.mps.baseLanguage.structure.DotExpression", "call_getOperandType_8871623299328377715", new Object[]{}), _quotation_createNode_v8uv56_b0a2a0a0a2a7a0(cls))) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(context), "jetbrains.mps.baseLanguage.structure.DotExpression"), "jetbrains.mps.baseLanguage.structure.DotExpression", "call_getOperandType_8871623299328377715", new Object[]{}), _quotation_createNode_v8uv56_b0a2a0a0a2a7a1(cls))) {
               return true;
             }
           } else if (SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
@@ -107,7 +107,7 @@ public final class VisibilityUtil {
     });
   }
 
-  private static SNode _quotation_createNode_v8uv56_b0a2a0a0a2a7a0(Object parameter_1) {
+  private static SNode _quotation_createNode_v8uv56_b0a2a0a0a2a7a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("classifier", (SNode) parameter_1);

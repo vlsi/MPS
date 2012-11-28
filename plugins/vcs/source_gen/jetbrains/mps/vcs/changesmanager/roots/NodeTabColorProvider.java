@@ -39,7 +39,7 @@ public class NodeTabColorProvider implements TabColorProvider {
         return s == ListSequence.fromList(statuses).first();
       }
     })) {
-      return check_6tqz68_a0a1a0(ListSequence.fromList(statuses).first());
+      return check_6tqz68_a0a1a2(ListSequence.fromList(statuses).first());
     } else {
       return FileStatus.MODIFIED.getColor();
     }
@@ -47,17 +47,17 @@ public class NodeTabColorProvider implements TabColorProvider {
 
   @Nullable
   public Color getNodeColor(@NotNull SNode node) {
-    return check_6tqz68_a0a1(myFileStatusMapping.getStatus(node));
+    return check_6tqz68_a0a3(myFileStatusMapping.getStatus(node));
   }
 
-  private static Color check_6tqz68_a0a1a0(FileStatus checkedDotOperand) {
+  private static Color check_6tqz68_a0a1a2(FileStatus checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getColor();
     }
     return null;
   }
 
-  private static Color check_6tqz68_a0a1(FileStatus checkedDotOperand) {
+  private static Color check_6tqz68_a0a3(FileStatus checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getColor();
     }

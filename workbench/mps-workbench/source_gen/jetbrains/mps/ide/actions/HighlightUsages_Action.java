@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -28,10 +27,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.logging.Logger;
 
 public class HighlightUsages_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(HighlightUsages_Action.class);
 
   public HighlightUsages_Action() {
     super("Highlight Usages", "", ICON);
@@ -109,4 +108,6 @@ public class HighlightUsages_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "HighlightUsages", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(HighlightUsages_Action.class);
 }

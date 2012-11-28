@@ -37,10 +37,10 @@ public class PanelsDemo_Swing {
   }
 
   public void buildUI(JComponent menu) {
-    final JXHyperlink widget_wgtfc_a0a0a = new JXHyperlink();
-    widget_wgtfc_a0a0a.setText("Vertical");
-    widget_wgtfc_a0a0a.setActionCommand("vertical");
-    widget_wgtfc_a0a0a.addActionListener(new ActionListener() {
+    final JXHyperlink widget_wgtfc_a0a0c = new JXHyperlink();
+    widget_wgtfc_a0a0c.setText("Vertical");
+    widget_wgtfc_a0a0c.setActionCommand("vertical");
+    widget_wgtfc_a0a0c.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -50,11 +50,11 @@ public class PanelsDemo_Swing {
         h.invoke(e);
       }
     });
-    menu.add(widget_wgtfc_a0a0a);
-    final JXHyperlink widget_wgtfc_b0a0a = new JXHyperlink();
-    widget_wgtfc_b0a0a.setText("Horizontal");
-    widget_wgtfc_b0a0a.setActionCommand("horizontal");
-    widget_wgtfc_b0a0a.addActionListener(new ActionListener() {
+    menu.add(widget_wgtfc_a0a0c);
+    final JXHyperlink widget_wgtfc_b0a0c = new JXHyperlink();
+    widget_wgtfc_b0a0c.setText("Horizontal");
+    widget_wgtfc_b0a0c.setActionCommand("horizontal");
+    widget_wgtfc_b0a0c.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -64,11 +64,11 @@ public class PanelsDemo_Swing {
         h.invoke(e);
       }
     });
-    menu.add(widget_wgtfc_b0a0a);
-    final JXHyperlink widget_wgtfc_c0a0a = new JXHyperlink();
-    widget_wgtfc_c0a0a.setText("Dock");
-    widget_wgtfc_c0a0a.setActionCommand("dock");
-    widget_wgtfc_c0a0a.addActionListener(new ActionListener() {
+    menu.add(widget_wgtfc_b0a0c);
+    final JXHyperlink widget_wgtfc_c0a0c = new JXHyperlink();
+    widget_wgtfc_c0a0c.setText("Dock");
+    widget_wgtfc_c0a0c.setActionCommand("dock");
+    widget_wgtfc_c0a0c.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -78,11 +78,11 @@ public class PanelsDemo_Swing {
         h.invoke(e);
       }
     });
-    menu.add(widget_wgtfc_c0a0a);
-    final JXHyperlink widget_wgtfc_d0a0a = new JXHyperlink();
-    widget_wgtfc_d0a0a.setText("Flow");
-    widget_wgtfc_d0a0a.setActionCommand("flow");
-    widget_wgtfc_d0a0a.addActionListener(new ActionListener() {
+    menu.add(widget_wgtfc_c0a0c);
+    final JXHyperlink widget_wgtfc_d0a0c = new JXHyperlink();
+    widget_wgtfc_d0a0c.setText("Flow");
+    widget_wgtfc_d0a0c.setActionCommand("flow");
+    widget_wgtfc_d0a0c.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -92,11 +92,11 @@ public class PanelsDemo_Swing {
         h.invoke(e);
       }
     });
-    menu.add(widget_wgtfc_d0a0a);
-    final JXHyperlink widget_wgtfc_e0a0a = new JXHyperlink();
-    widget_wgtfc_e0a0a.setText("Layout");
-    widget_wgtfc_e0a0a.setActionCommand("layout");
-    widget_wgtfc_e0a0a.addActionListener(new ActionListener() {
+    menu.add(widget_wgtfc_d0a0c);
+    final JXHyperlink widget_wgtfc_e0a0c = new JXHyperlink();
+    widget_wgtfc_e0a0c.setText("Layout");
+    widget_wgtfc_e0a0c.setActionCommand("layout");
+    widget_wgtfc_e0a0c.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -106,11 +106,11 @@ public class PanelsDemo_Swing {
         h.invoke(e);
       }
     });
-    menu.add(widget_wgtfc_e0a0a);
-    final JXHyperlink widget_wgtfc_f0a0a = new JXHyperlink();
-    widget_wgtfc_f0a0a.setText("Grid");
-    widget_wgtfc_f0a0a.setActionCommand("grid");
-    widget_wgtfc_f0a0a.addActionListener(new ActionListener() {
+    menu.add(widget_wgtfc_e0a0c);
+    final JXHyperlink widget_wgtfc_f0a0c = new JXHyperlink();
+    widget_wgtfc_f0a0c.setText("Grid");
+    widget_wgtfc_f0a0c.setActionCommand("grid");
+    widget_wgtfc_f0a0c.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -120,7 +120,7 @@ public class PanelsDemo_Swing {
         h.invoke(e);
       }
     });
-    menu.add(widget_wgtfc_f0a0a);
+    menu.add(widget_wgtfc_f0a0c);
 
   }
 
@@ -135,48 +135,48 @@ public class PanelsDemo_Swing {
       it.next();
       it.remove();
     }
-    final JTabbedPane widget_wgtfc_b0b0b = new JTabbedPane();
-    final ButtonGroup buttonGroup_wgtfc_a0c0b0b = new ButtonGroup();
-    final JPanel widget_wgtfc_a0a1a1a1 = new JPanel(new GridLayout(1, 1));
-    final ButtonGroup buttonGroup_wgtfc_a0b0d0b0b = new ButtonGroup();
-    final JPanel widget_wgtfc_a0a0a0b0b0b = new _FunctionTypes._return_P0_E0<JPanel>() {
+    final JTabbedPane widget_wgtfc_b0b0d = new JTabbedPane();
+    final ButtonGroup buttonGroup_wgtfc_a0c0b0d = new ButtonGroup();
+    final JPanel widget_wgtfc_a0a1a1a3 = new JPanel(new GridLayout(1, 1));
+    final ButtonGroup buttonGroup_wgtfc_a0b0d0b0d = new ButtonGroup();
+    final JPanel widget_wgtfc_a0a0a0b0b0d = new _FunctionTypes._return_P0_E0<JPanel>() {
       public JPanel invoke() {
         JPanel jp = new JPanel();
         jp.setLayout(new BoxLayout(jp, BoxLayout.Y_AXIS));
         return jp;
       }
     }.invoke();
-    final ButtonGroup buttonGroup_wgtfc_a0b0c0d0b0b = new ButtonGroup();
-    final JRadioButton widget_wgtfc_a0a0a0a0a1a1a1 = new _FunctionTypes._return_P1_E0<JRadioButton, JComponent>() {
+    final ButtonGroup buttonGroup_wgtfc_a0b0c0d0b0d = new ButtonGroup();
+    final JRadioButton widget_wgtfc_a0a0a0a0a1a1a3 = new _FunctionTypes._return_P1_E0<JRadioButton, JComponent>() {
       public JRadioButton invoke(JComponent context_wgtfc_a) {
         JRadioButton rb = new JRadioButton();
-        buttonGroup_wgtfc_a0b0c0d0b0b.add(rb);
+        buttonGroup_wgtfc_a0b0c0d0b0d.add(rb);
         return rb;
       }
-    }.invoke(widget_wgtfc_a0a0a0b0b0b);
-    widget_wgtfc_a0a0a0a0a1a1a1.setText("Stage 1");
-    widget_wgtfc_a0a0a0b0b0b.add(widget_wgtfc_a0a0a0a0a1a1a1);
-    final JRadioButton widget_wgtfc_b0a0a0a0a1a1a1 = new _FunctionTypes._return_P1_E0<JRadioButton, JComponent>() {
+    }.invoke(widget_wgtfc_a0a0a0b0b0d);
+    widget_wgtfc_a0a0a0a0a1a1a3.setText("Stage 1");
+    widget_wgtfc_a0a0a0b0b0d.add(widget_wgtfc_a0a0a0a0a1a1a3);
+    final JRadioButton widget_wgtfc_b0a0a0a0a1a1a3 = new _FunctionTypes._return_P1_E0<JRadioButton, JComponent>() {
       public JRadioButton invoke(JComponent context_wgtfc_a_0) {
         JRadioButton rb = new JRadioButton();
-        buttonGroup_wgtfc_a0b0c0d0b0b.add(rb);
+        buttonGroup_wgtfc_a0b0c0d0b0d.add(rb);
         return rb;
       }
-    }.invoke(widget_wgtfc_a0a0a0b0b0b);
-    widget_wgtfc_b0a0a0a0a1a1a1.setText("Stage 2");
-    widget_wgtfc_a0a0a0b0b0b.add(widget_wgtfc_b0a0a0a0a1a1a1);
-    final JRadioButton widget_wgtfc_c0a0a0a0a1a1a1 = new _FunctionTypes._return_P1_E0<JRadioButton, JComponent>() {
+    }.invoke(widget_wgtfc_a0a0a0b0b0d);
+    widget_wgtfc_b0a0a0a0a1a1a3.setText("Stage 2");
+    widget_wgtfc_a0a0a0b0b0d.add(widget_wgtfc_b0a0a0a0a1a1a3);
+    final JRadioButton widget_wgtfc_c0a0a0a0a1a1a3 = new _FunctionTypes._return_P1_E0<JRadioButton, JComponent>() {
       public JRadioButton invoke(JComponent context_wgtfc_a_1) {
         JRadioButton rb = new JRadioButton();
-        buttonGroup_wgtfc_a0b0c0d0b0b.add(rb);
+        buttonGroup_wgtfc_a0b0c0d0b0d.add(rb);
         return rb;
       }
-    }.invoke(widget_wgtfc_a0a0a0b0b0b);
-    widget_wgtfc_c0a0a0a0a1a1a1.setText("Stage 3");
-    widget_wgtfc_a0a0a0b0b0b.add(widget_wgtfc_c0a0a0a0a1a1a1);
-    widget_wgtfc_a0a1a1a1.add(widget_wgtfc_a0a0a0b0b0b);
-    widget_wgtfc_b0b0b.addTab("Vertical", widget_wgtfc_a0a1a1a1);
-    dc.add(widget_wgtfc_b0b0b, DockLayoutData.CENTER);
+    }.invoke(widget_wgtfc_a0a0a0b0b0d);
+    widget_wgtfc_c0a0a0a0a1a1a3.setText("Stage 3");
+    widget_wgtfc_a0a0a0b0b0d.add(widget_wgtfc_c0a0a0a0a1a1a3);
+    widget_wgtfc_a0a1a1a3.add(widget_wgtfc_a0a0a0b0b0d);
+    widget_wgtfc_b0b0d.addTab("Vertical", widget_wgtfc_a0a1a1a3);
+    dc.add(widget_wgtfc_b0b0d, DockLayoutData.CENTER);
     dc.doLayout();
   }
 
@@ -191,41 +191,41 @@ public class PanelsDemo_Swing {
       it.next();
       it.remove();
     }
-    final JTabbedPane widget_wgtfc_b0b0c = new JTabbedPane();
-    final ButtonGroup buttonGroup_wgtfc_a0c0b0c = new ButtonGroup();
-    final JPanel widget_wgtfc_a0a1a1a2 = new JPanel(new GridLayout(1, 1));
-    final ButtonGroup buttonGroup_wgtfc_a0b0d0b0c = new ButtonGroup();
-    final JPanel widget_wgtfc_a0a0a0b0b0c = new _FunctionTypes._return_P0_E0<JPanel>() {
+    final JTabbedPane widget_wgtfc_b0b0e = new JTabbedPane();
+    final ButtonGroup buttonGroup_wgtfc_a0c0b0e = new ButtonGroup();
+    final JPanel widget_wgtfc_a0a1a1a4 = new JPanel(new GridLayout(1, 1));
+    final ButtonGroup buttonGroup_wgtfc_a0b0d0b0e = new ButtonGroup();
+    final JPanel widget_wgtfc_a0a0a0b0b0e = new _FunctionTypes._return_P0_E0<JPanel>() {
       public JPanel invoke() {
         JPanel jp = new JPanel();
         jp.setLayout(new BoxLayout(jp, BoxLayout.X_AXIS));
         return jp;
       }
     }.invoke();
-    final ButtonGroup buttonGroup_wgtfc_a0b0c0d0b0c = new ButtonGroup();
-    final JButton widget_wgtfc_a0a0a0a0a1a1a2 = new JButton();
-    widget_wgtfc_a0a0a0a0a1a1a2.setText("Button1");
-    widget_wgtfc_a0a0a0b0b0c.add(widget_wgtfc_a0a0a0a0a1a1a2);
-    widget_wgtfc_a0a0a0a0a1a1a2.setAlignmentY(Component.TOP_ALIGNMENT);
-    final JButton widget_wgtfc_b0a0a0a0a1a1a2 = new JButton();
-    widget_wgtfc_b0a0a0a0a1a1a2.setText("Button2");
-    widget_wgtfc_a0a0a0b0b0c.add(widget_wgtfc_b0a0a0a0a1a1a2);
-    widget_wgtfc_b0a0a0a0a1a1a2.setAlignmentY(Component.TOP_ALIGNMENT);
-    final JButton widget_wgtfc_c0a0a0a0a1a1a2 = new JButton();
-    widget_wgtfc_c0a0a0a0a1a1a2.setText("Button3");
-    widget_wgtfc_a0a0a0b0b0c.add(widget_wgtfc_c0a0a0a0a1a1a2);
-    widget_wgtfc_c0a0a0a0a1a1a2.setAlignmentY(Component.TOP_ALIGNMENT);
-    final JButton widget_wgtfc_d0a0a0a0a1a1a2 = new JButton();
-    widget_wgtfc_d0a0a0a0a1a1a2.setText("Button4");
-    widget_wgtfc_a0a0a0b0b0c.add(widget_wgtfc_d0a0a0a0a1a1a2);
-    widget_wgtfc_d0a0a0a0a1a1a2.setAlignmentY(Component.TOP_ALIGNMENT);
-    final JButton widget_wgtfc_e0a0a0a0a1a1a2 = new JButton();
-    widget_wgtfc_e0a0a0a0a1a1a2.setText("Button5");
-    widget_wgtfc_a0a0a0b0b0c.add(widget_wgtfc_e0a0a0a0a1a1a2);
-    widget_wgtfc_e0a0a0a0a1a1a2.setAlignmentY(Component.TOP_ALIGNMENT);
-    widget_wgtfc_a0a1a1a2.add(widget_wgtfc_a0a0a0b0b0c);
-    widget_wgtfc_b0b0c.addTab("Horizontal", widget_wgtfc_a0a1a1a2);
-    dc.add(widget_wgtfc_b0b0c, DockLayoutData.CENTER);
+    final ButtonGroup buttonGroup_wgtfc_a0b0c0d0b0e = new ButtonGroup();
+    final JButton widget_wgtfc_a0a0a0a0a1a1a4 = new JButton();
+    widget_wgtfc_a0a0a0a0a1a1a4.setText("Button1");
+    widget_wgtfc_a0a0a0b0b0e.add(widget_wgtfc_a0a0a0a0a1a1a4);
+    widget_wgtfc_a0a0a0a0a1a1a4.setAlignmentY(Component.TOP_ALIGNMENT);
+    final JButton widget_wgtfc_b0a0a0a0a1a1a4 = new JButton();
+    widget_wgtfc_b0a0a0a0a1a1a4.setText("Button2");
+    widget_wgtfc_a0a0a0b0b0e.add(widget_wgtfc_b0a0a0a0a1a1a4);
+    widget_wgtfc_b0a0a0a0a1a1a4.setAlignmentY(Component.TOP_ALIGNMENT);
+    final JButton widget_wgtfc_c0a0a0a0a1a1a4 = new JButton();
+    widget_wgtfc_c0a0a0a0a1a1a4.setText("Button3");
+    widget_wgtfc_a0a0a0b0b0e.add(widget_wgtfc_c0a0a0a0a1a1a4);
+    widget_wgtfc_c0a0a0a0a1a1a4.setAlignmentY(Component.TOP_ALIGNMENT);
+    final JButton widget_wgtfc_d0a0a0a0a1a1a4 = new JButton();
+    widget_wgtfc_d0a0a0a0a1a1a4.setText("Button4");
+    widget_wgtfc_a0a0a0b0b0e.add(widget_wgtfc_d0a0a0a0a1a1a4);
+    widget_wgtfc_d0a0a0a0a1a1a4.setAlignmentY(Component.TOP_ALIGNMENT);
+    final JButton widget_wgtfc_e0a0a0a0a1a1a4 = new JButton();
+    widget_wgtfc_e0a0a0a0a1a1a4.setText("Button5");
+    widget_wgtfc_a0a0a0b0b0e.add(widget_wgtfc_e0a0a0a0a1a1a4);
+    widget_wgtfc_e0a0a0a0a1a1a4.setAlignmentY(Component.TOP_ALIGNMENT);
+    widget_wgtfc_a0a1a1a4.add(widget_wgtfc_a0a0a0b0b0e);
+    widget_wgtfc_b0b0e.addTab("Horizontal", widget_wgtfc_a0a1a1a4);
+    dc.add(widget_wgtfc_b0b0e, DockLayoutData.CENTER);
     dc.doLayout();
   }
 
@@ -240,80 +240,80 @@ public class PanelsDemo_Swing {
       it.next();
       it.remove();
     }
-    final JTabbedPane widget_wgtfc_b0b0d = new JTabbedPane();
-    final ButtonGroup buttonGroup_wgtfc_a0c0b0d = new ButtonGroup();
-    final JPanel widget_wgtfc_a0a1a1a3 = new JPanel(new DockLayout());
-    final ButtonGroup buttonGroup_wgtfc_a0b0d0b0d = new ButtonGroup();
-    final JPanel cmp1 = widget_wgtfc_a0a1a1a3;
-    final JButton widget_wgtfc_b0a0a0b0b0d = new JButton();
-    widget_wgtfc_b0a0a0b0b0d.setText("North");
-    widget_wgtfc_b0a0a0b0b0d.addActionListener(new ActionListener() {
+    final JTabbedPane widget_wgtfc_b0b0f = new JTabbedPane();
+    final ButtonGroup buttonGroup_wgtfc_a0c0b0f = new ButtonGroup();
+    final JPanel widget_wgtfc_a0a1a1a5 = new JPanel(new DockLayout());
+    final ButtonGroup buttonGroup_wgtfc_a0b0d0b0f = new ButtonGroup();
+    final JPanel cmp1 = widget_wgtfc_a0a1a1a5;
+    final JButton widget_wgtfc_b0a0a0b0b0f = new JButton();
+    widget_wgtfc_b0a0a0b0b0f.setText("North");
+    widget_wgtfc_b0a0a0b0b0f.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
-            final JButton widget_wgtfc_a0a0a0a1a0a0a1a1a3 = new JButton();
-            widget_wgtfc_a0a0a0a1a0a0a1a1a3.setText("North");
-            cmp1.add(widget_wgtfc_a0a0a0a1a0a0a1a1a3, DockLayoutData.NORTH);
+            final JButton widget_wgtfc_a0a0a0a1a0a0a1a1a5 = new JButton();
+            widget_wgtfc_a0a0a0a1a0a0a1a1a5.setText("North");
+            cmp1.add(widget_wgtfc_a0a0a0a1a0a0a1a1a5, DockLayoutData.NORTH);
             cmp1.doLayout();
           }
         };
         h.invoke(e);
       }
     });
-    widget_wgtfc_a0a1a1a3.add(widget_wgtfc_b0a0a0b0b0d, DockLayoutData.NORTH);
-    final JPanel cmp2 = widget_wgtfc_a0a1a1a3;
-    final JButton widget_wgtfc_b0b0a0b0b0d = new JButton();
-    widget_wgtfc_b0b0a0b0b0d.setText("South");
-    widget_wgtfc_b0b0a0b0b0d.addActionListener(new ActionListener() {
+    widget_wgtfc_a0a1a1a5.add(widget_wgtfc_b0a0a0b0b0f, DockLayoutData.NORTH);
+    final JPanel cmp2 = widget_wgtfc_a0a1a1a5;
+    final JButton widget_wgtfc_b0b0a0b0b0f = new JButton();
+    widget_wgtfc_b0b0a0b0b0f.setText("South");
+    widget_wgtfc_b0b0a0b0b0f.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
-            final JButton widget_wgtfc_a0a0a0a1a1a0a1a1a3 = new JButton();
-            widget_wgtfc_a0a0a0a1a1a0a1a1a3.setText("South");
-            cmp2.add(widget_wgtfc_a0a0a0a1a1a0a1a1a3, DockLayoutData.SOUTH);
+            final JButton widget_wgtfc_a0a0a0a1a1a0a1a1a5 = new JButton();
+            widget_wgtfc_a0a0a0a1a1a0a1a1a5.setText("South");
+            cmp2.add(widget_wgtfc_a0a0a0a1a1a0a1a1a5, DockLayoutData.SOUTH);
             cmp2.doLayout();
           }
         };
         h.invoke(e);
       }
     });
-    widget_wgtfc_a0a1a1a3.add(widget_wgtfc_b0b0a0b0b0d, DockLayoutData.SOUTH);
-    final JPanel cmp3 = widget_wgtfc_a0a1a1a3;
-    final JButton widget_wgtfc_b0c0a0b0b0d = new JButton();
-    widget_wgtfc_b0c0a0b0b0d.setText("East");
-    widget_wgtfc_b0c0a0b0b0d.addActionListener(new ActionListener() {
+    widget_wgtfc_a0a1a1a5.add(widget_wgtfc_b0b0a0b0b0f, DockLayoutData.SOUTH);
+    final JPanel cmp3 = widget_wgtfc_a0a1a1a5;
+    final JButton widget_wgtfc_b0c0a0b0b0f = new JButton();
+    widget_wgtfc_b0c0a0b0b0f.setText("East");
+    widget_wgtfc_b0c0a0b0b0f.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
-            final JButton widget_wgtfc_a0a0a0a1a2a0a1a1a3 = new JButton();
-            widget_wgtfc_a0a0a0a1a2a0a1a1a3.setText("East");
-            cmp3.add(widget_wgtfc_a0a0a0a1a2a0a1a1a3, DockLayoutData.EAST);
+            final JButton widget_wgtfc_a0a0a0a1a2a0a1a1a5 = new JButton();
+            widget_wgtfc_a0a0a0a1a2a0a1a1a5.setText("East");
+            cmp3.add(widget_wgtfc_a0a0a0a1a2a0a1a1a5, DockLayoutData.EAST);
             cmp3.doLayout();
           }
         };
         h.invoke(e);
       }
     });
-    widget_wgtfc_a0a1a1a3.add(widget_wgtfc_b0c0a0b0b0d, DockLayoutData.EAST);
-    final JPanel cmp4 = widget_wgtfc_a0a1a1a3;
-    final JButton widget_wgtfc_b0d0a0b0b0d = new JButton();
-    widget_wgtfc_b0d0a0b0b0d.setText("West");
-    widget_wgtfc_b0d0a0b0b0d.addActionListener(new ActionListener() {
+    widget_wgtfc_a0a1a1a5.add(widget_wgtfc_b0c0a0b0b0f, DockLayoutData.EAST);
+    final JPanel cmp4 = widget_wgtfc_a0a1a1a5;
+    final JButton widget_wgtfc_b0d0a0b0b0f = new JButton();
+    widget_wgtfc_b0d0a0b0b0f.setText("West");
+    widget_wgtfc_b0d0a0b0b0f.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
-            final JButton widget_wgtfc_a0a0a0a1a3a0a1a1a3 = new JButton();
-            widget_wgtfc_a0a0a0a1a3a0a1a1a3.setText("West");
-            cmp4.add(widget_wgtfc_a0a0a0a1a3a0a1a1a3, DockLayoutData.WEST);
+            final JButton widget_wgtfc_a0a0a0a1a3a0a1a1a5 = new JButton();
+            widget_wgtfc_a0a0a0a1a3a0a1a1a5.setText("West");
+            cmp4.add(widget_wgtfc_a0a0a0a1a3a0a1a1a5, DockLayoutData.WEST);
             cmp4.doLayout();
           }
         };
         h.invoke(e);
       }
     });
-    widget_wgtfc_a0a1a1a3.add(widget_wgtfc_b0d0a0b0b0d, DockLayoutData.WEST);
-    widget_wgtfc_b0b0d.addTab("Dock", widget_wgtfc_a0a1a1a3);
-    dc.add(widget_wgtfc_b0b0d, DockLayoutData.CENTER);
+    widget_wgtfc_a0a1a1a5.add(widget_wgtfc_b0d0a0b0b0f, DockLayoutData.WEST);
+    widget_wgtfc_b0b0f.addTab("Dock", widget_wgtfc_a0a1a1a5);
+    dc.add(widget_wgtfc_b0b0f, DockLayoutData.CENTER);
     dc.doLayout();
   }
 
@@ -328,17 +328,17 @@ public class PanelsDemo_Swing {
       it.next();
       it.remove();
     }
-    final JTabbedPane widget_wgtfc_b0b0e = new JTabbedPane();
-    final ButtonGroup buttonGroup_wgtfc_a0c0b0e = new ButtonGroup();
-    final JPanel widget_wgtfc_a0a1a1a4 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-    final ButtonGroup buttonGroup_wgtfc_a0b0d0b0e = new ButtonGroup();
+    final JTabbedPane widget_wgtfc_b0b0g = new JTabbedPane();
+    final ButtonGroup buttonGroup_wgtfc_a0c0b0g = new ButtonGroup();
+    final JPanel widget_wgtfc_a0a1a1a6 = new JPanel(new FlowLayout(FlowLayout.LEFT));
+    final ButtonGroup buttonGroup_wgtfc_a0b0d0b0g = new ButtonGroup();
     for (int i = 1; i <= 100; i++) {
-      final JButton widget_wgtfc_a0a0a0a0b0b0e = new JButton();
-      widget_wgtfc_a0a0a0a0b0b0e.setText("Button" + i);
-      widget_wgtfc_a0a1a1a4.add(widget_wgtfc_a0a0a0a0b0b0e);
+      final JButton widget_wgtfc_a0a0a0a0b0b0g = new JButton();
+      widget_wgtfc_a0a0a0a0b0b0g.setText("Button" + i);
+      widget_wgtfc_a0a1a1a6.add(widget_wgtfc_a0a0a0a0b0b0g);
     }
-    widget_wgtfc_b0b0e.addTab("Flow", widget_wgtfc_a0a1a1a4);
-    dc.add(widget_wgtfc_b0b0e, DockLayoutData.CENTER);
+    widget_wgtfc_b0b0g.addTab("Flow", widget_wgtfc_a0a1a1a6);
+    dc.add(widget_wgtfc_b0b0g, DockLayoutData.CENTER);
     dc.doLayout();
   }
 
@@ -353,11 +353,11 @@ public class PanelsDemo_Swing {
       it.next();
       it.remove();
     }
-    final JTabbedPane widget_wgtfc_b0b0f = new JTabbedPane();
-    final ButtonGroup buttonGroup_wgtfc_a0c0b0f = new ButtonGroup();
-    final JPanel widget_wgtfc_a0a1a1a5 = new JPanel(new GridLayout(1, 1));
-    final ButtonGroup buttonGroup_wgtfc_a0b0d0b0f = new ButtonGroup();
-    final JPanel widget_wgtfc_a0a0a0b0b0f = new _FunctionTypes._return_P1_E0<JPanel, JComponent>() {
+    final JTabbedPane widget_wgtfc_b0b0h = new JTabbedPane();
+    final ButtonGroup buttonGroup_wgtfc_a0c0b0h = new ButtonGroup();
+    final JPanel widget_wgtfc_a0a1a1a7 = new JPanel(new GridLayout(1, 1));
+    final ButtonGroup buttonGroup_wgtfc_a0b0d0b0h = new ButtonGroup();
+    final JPanel widget_wgtfc_a0a0a0b0b0h = new _FunctionTypes._return_P1_E0<JPanel, JComponent>() {
       public JPanel invoke(JComponent context_wgtfc_a_2) {
         return new JPanel(new SpringLayout()) {
           @Override
@@ -377,110 +377,110 @@ public class PanelsDemo_Swing {
           }
         };
       }
-    }.invoke(widget_wgtfc_a0a1a1a5);
-    final ButtonGroup buttonGroup_wgtfc_a0b0c0d0b0f = new ButtonGroup();
-    final JButton widget_wgtfc_a0a0a0a0a1a1a5 = new JButton();
-    widget_wgtfc_a0a0a0a0a1a1a5.setText("Button #1");
-    widget_wgtfc_a0a0a0b0b0f.add(widget_wgtfc_a0a0a0a0a1a1a5);
+    }.invoke(widget_wgtfc_a0a1a1a7);
+    final ButtonGroup buttonGroup_wgtfc_a0b0c0d0b0h = new ButtonGroup();
+    final JButton widget_wgtfc_a0a0a0a0a1a1a7 = new JButton();
+    widget_wgtfc_a0a0a0a0a1a1a7.setText("Button #1");
+    widget_wgtfc_a0a0a0b0b0h.add(widget_wgtfc_a0a0a0a0a1a1a7);
     {
-      Spring swidth_b0a0d0c0c0d0b0f = Spring.width(widget_wgtfc_a0a0a0b0b0f);
-      Spring sheight_b0a0d0c0c0d0b0f = Spring.height(widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.WEST, widget_wgtfc_a0a0a0a0a1a1a5, Spring.scale(swidth_b0a0d0c0c0d0b0f, 0.01f * (0)), SpringLayout.WEST, widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.EAST, widget_wgtfc_a0a0a0a0a1a1a5, Spring.scale(swidth_b0a0d0c0c0d0b0f, 0.01f * (80)), SpringLayout.WEST, widget_wgtfc_a0a0a0a0a1a1a5);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.NORTH, widget_wgtfc_a0a0a0a0a1a1a5, Spring.scale(swidth_b0a0d0c0c0d0b0f, 0.01f * (0)), SpringLayout.NORTH, widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.SOUTH, widget_wgtfc_a0a0a0a0a1a1a5, Spring.scale(swidth_b0a0d0c0c0d0b0f, 0.01f * (60)), SpringLayout.NORTH, widget_wgtfc_a0a0a0a0a1a1a5);
+      Spring swidth_b0a0d0c0c0d0b0h = Spring.width(widget_wgtfc_a0a0a0b0b0h);
+      Spring sheight_b0a0d0c0c0d0b0h = Spring.height(widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.WEST, widget_wgtfc_a0a0a0a0a1a1a7, Spring.scale(swidth_b0a0d0c0c0d0b0h, 0.01f * (0)), SpringLayout.WEST, widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.EAST, widget_wgtfc_a0a0a0a0a1a1a7, Spring.scale(swidth_b0a0d0c0c0d0b0h, 0.01f * (80)), SpringLayout.WEST, widget_wgtfc_a0a0a0a0a1a1a7);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.NORTH, widget_wgtfc_a0a0a0a0a1a1a7, Spring.scale(swidth_b0a0d0c0c0d0b0h, 0.01f * (0)), SpringLayout.NORTH, widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.SOUTH, widget_wgtfc_a0a0a0a0a1a1a7, Spring.scale(swidth_b0a0d0c0c0d0b0h, 0.01f * (60)), SpringLayout.NORTH, widget_wgtfc_a0a0a0a0a1a1a7);
     }
-    final JButton widget_wgtfc_b0a0a0a0a1a1a5 = new JButton();
-    widget_wgtfc_b0a0a0a0a1a1a5.setText("Button #2");
-    widget_wgtfc_a0a0a0b0b0f.add(widget_wgtfc_b0a0a0a0a1a1a5);
+    final JButton widget_wgtfc_b0a0a0a0a1a1a7 = new JButton();
+    widget_wgtfc_b0a0a0a0a1a1a7.setText("Button #2");
+    widget_wgtfc_a0a0a0b0b0h.add(widget_wgtfc_b0a0a0a0a1a1a7);
     {
-      Spring swidth_b0a0h0c0c0d0b0f = Spring.width(widget_wgtfc_a0a0a0b0b0f);
-      Spring sheight_b0a0h0c0c0d0b0f = Spring.height(widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.WEST, widget_wgtfc_b0a0a0a0a1a1a5, Spring.scale(swidth_b0a0h0c0c0d0b0f, 0.01f * (80)), SpringLayout.WEST, widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.EAST, widget_wgtfc_b0a0a0a0a1a1a5, Spring.scale(swidth_b0a0h0c0c0d0b0f, 0.01f * (20)), SpringLayout.WEST, widget_wgtfc_b0a0a0a0a1a1a5);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.NORTH, widget_wgtfc_b0a0a0a0a1a1a5, Spring.scale(swidth_b0a0h0c0c0d0b0f, 0.01f * (0)), SpringLayout.NORTH, widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.SOUTH, widget_wgtfc_b0a0a0a0a1a1a5, Spring.scale(swidth_b0a0h0c0c0d0b0f, 0.01f * (20)), SpringLayout.NORTH, widget_wgtfc_b0a0a0a0a1a1a5);
+      Spring swidth_b0a0h0c0c0d0b0h = Spring.width(widget_wgtfc_a0a0a0b0b0h);
+      Spring sheight_b0a0h0c0c0d0b0h = Spring.height(widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.WEST, widget_wgtfc_b0a0a0a0a1a1a7, Spring.scale(swidth_b0a0h0c0c0d0b0h, 0.01f * (80)), SpringLayout.WEST, widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.EAST, widget_wgtfc_b0a0a0a0a1a1a7, Spring.scale(swidth_b0a0h0c0c0d0b0h, 0.01f * (20)), SpringLayout.WEST, widget_wgtfc_b0a0a0a0a1a1a7);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.NORTH, widget_wgtfc_b0a0a0a0a1a1a7, Spring.scale(swidth_b0a0h0c0c0d0b0h, 0.01f * (0)), SpringLayout.NORTH, widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.SOUTH, widget_wgtfc_b0a0a0a0a1a1a7, Spring.scale(swidth_b0a0h0c0c0d0b0h, 0.01f * (20)), SpringLayout.NORTH, widget_wgtfc_b0a0a0a0a1a1a7);
     }
-    final JButton widget_wgtfc_c0a0a0a0a1a1a5 = new JButton();
-    widget_wgtfc_c0a0a0a0a1a1a5.setText("Button #3");
-    widget_wgtfc_a0a0a0b0b0f.add(widget_wgtfc_c0a0a0a0a1a1a5);
+    final JButton widget_wgtfc_c0a0a0a0a1a1a7 = new JButton();
+    widget_wgtfc_c0a0a0a0a1a1a7.setText("Button #3");
+    widget_wgtfc_a0a0a0b0b0h.add(widget_wgtfc_c0a0a0a0a1a1a7);
     {
-      Spring swidth_b0a0l0c0c0d0b0f = Spring.width(widget_wgtfc_a0a0a0b0b0f);
-      Spring sheight_b0a0l0c0c0d0b0f = Spring.height(widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.WEST, widget_wgtfc_c0a0a0a0a1a1a5, Spring.scale(swidth_b0a0l0c0c0d0b0f, 0.01f * (80)), SpringLayout.WEST, widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.EAST, widget_wgtfc_c0a0a0a0a1a1a5, Spring.scale(swidth_b0a0l0c0c0d0b0f, 0.01f * (20)), SpringLayout.WEST, widget_wgtfc_c0a0a0a0a1a1a5);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.NORTH, widget_wgtfc_c0a0a0a0a1a1a5, Spring.scale(swidth_b0a0l0c0c0d0b0f, 0.01f * (20)), SpringLayout.NORTH, widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.SOUTH, widget_wgtfc_c0a0a0a0a1a1a5, Spring.scale(swidth_b0a0l0c0c0d0b0f, 0.01f * (20)), SpringLayout.NORTH, widget_wgtfc_c0a0a0a0a1a1a5);
+      Spring swidth_b0a0l0c0c0d0b0h = Spring.width(widget_wgtfc_a0a0a0b0b0h);
+      Spring sheight_b0a0l0c0c0d0b0h = Spring.height(widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.WEST, widget_wgtfc_c0a0a0a0a1a1a7, Spring.scale(swidth_b0a0l0c0c0d0b0h, 0.01f * (80)), SpringLayout.WEST, widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.EAST, widget_wgtfc_c0a0a0a0a1a1a7, Spring.scale(swidth_b0a0l0c0c0d0b0h, 0.01f * (20)), SpringLayout.WEST, widget_wgtfc_c0a0a0a0a1a1a7);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.NORTH, widget_wgtfc_c0a0a0a0a1a1a7, Spring.scale(swidth_b0a0l0c0c0d0b0h, 0.01f * (20)), SpringLayout.NORTH, widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.SOUTH, widget_wgtfc_c0a0a0a0a1a1a7, Spring.scale(swidth_b0a0l0c0c0d0b0h, 0.01f * (20)), SpringLayout.NORTH, widget_wgtfc_c0a0a0a0a1a1a7);
     }
-    final JButton widget_wgtfc_d0a0a0a0a1a1a5 = new JButton();
-    widget_wgtfc_d0a0a0a0a1a1a5.setText("Button #4");
-    widget_wgtfc_a0a0a0b0b0f.add(widget_wgtfc_d0a0a0a0a1a1a5);
+    final JButton widget_wgtfc_d0a0a0a0a1a1a7 = new JButton();
+    widget_wgtfc_d0a0a0a0a1a1a7.setText("Button #4");
+    widget_wgtfc_a0a0a0b0b0h.add(widget_wgtfc_d0a0a0a0a1a1a7);
     {
-      Spring swidth_b0a0p0c0c0d0b0f = Spring.width(widget_wgtfc_a0a0a0b0b0f);
-      Spring sheight_b0a0p0c0c0d0b0f = Spring.height(widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.WEST, widget_wgtfc_d0a0a0a0a1a1a5, Spring.scale(swidth_b0a0p0c0c0d0b0f, 0.01f * (80)), SpringLayout.WEST, widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.EAST, widget_wgtfc_d0a0a0a0a1a1a5, Spring.scale(swidth_b0a0p0c0c0d0b0f, 0.01f * (20)), SpringLayout.WEST, widget_wgtfc_d0a0a0a0a1a1a5);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.NORTH, widget_wgtfc_d0a0a0a0a1a1a5, Spring.scale(swidth_b0a0p0c0c0d0b0f, 0.01f * (40)), SpringLayout.NORTH, widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.SOUTH, widget_wgtfc_d0a0a0a0a1a1a5, Spring.scale(swidth_b0a0p0c0c0d0b0f, 0.01f * (20)), SpringLayout.NORTH, widget_wgtfc_d0a0a0a0a1a1a5);
+      Spring swidth_b0a0p0c0c0d0b0h = Spring.width(widget_wgtfc_a0a0a0b0b0h);
+      Spring sheight_b0a0p0c0c0d0b0h = Spring.height(widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.WEST, widget_wgtfc_d0a0a0a0a1a1a7, Spring.scale(swidth_b0a0p0c0c0d0b0h, 0.01f * (80)), SpringLayout.WEST, widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.EAST, widget_wgtfc_d0a0a0a0a1a1a7, Spring.scale(swidth_b0a0p0c0c0d0b0h, 0.01f * (20)), SpringLayout.WEST, widget_wgtfc_d0a0a0a0a1a1a7);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.NORTH, widget_wgtfc_d0a0a0a0a1a1a7, Spring.scale(swidth_b0a0p0c0c0d0b0h, 0.01f * (40)), SpringLayout.NORTH, widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.SOUTH, widget_wgtfc_d0a0a0a0a1a1a7, Spring.scale(swidth_b0a0p0c0c0d0b0h, 0.01f * (20)), SpringLayout.NORTH, widget_wgtfc_d0a0a0a0a1a1a7);
     }
-    final JButton widget_wgtfc_e0a0a0a0a1a1a5 = new JButton();
-    widget_wgtfc_e0a0a0a0a1a1a5.setText("Button #5");
-    widget_wgtfc_a0a0a0b0b0f.add(widget_wgtfc_e0a0a0a0a1a1a5);
+    final JButton widget_wgtfc_e0a0a0a0a1a1a7 = new JButton();
+    widget_wgtfc_e0a0a0a0a1a1a7.setText("Button #5");
+    widget_wgtfc_a0a0a0b0b0h.add(widget_wgtfc_e0a0a0a0a1a1a7);
     {
-      Spring swidth_b0a0t0c0c0d0b0f = Spring.width(widget_wgtfc_a0a0a0b0b0f);
-      Spring sheight_b0a0t0c0c0d0b0f = Spring.height(widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.WEST, widget_wgtfc_e0a0a0a0a1a1a5, Spring.scale(swidth_b0a0t0c0c0d0b0f, 0.01f * (0)), SpringLayout.WEST, widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.EAST, widget_wgtfc_e0a0a0a0a1a1a5, Spring.scale(swidth_b0a0t0c0c0d0b0f, 0.01f * (20)), SpringLayout.WEST, widget_wgtfc_e0a0a0a0a1a1a5);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.NORTH, widget_wgtfc_e0a0a0a0a1a1a5, Spring.scale(swidth_b0a0t0c0c0d0b0f, 0.01f * (60)), SpringLayout.NORTH, widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.SOUTH, widget_wgtfc_e0a0a0a0a1a1a5, Spring.scale(swidth_b0a0t0c0c0d0b0f, 0.01f * (20)), SpringLayout.NORTH, widget_wgtfc_e0a0a0a0a1a1a5);
+      Spring swidth_b0a0t0c0c0d0b0h = Spring.width(widget_wgtfc_a0a0a0b0b0h);
+      Spring sheight_b0a0t0c0c0d0b0h = Spring.height(widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.WEST, widget_wgtfc_e0a0a0a0a1a1a7, Spring.scale(swidth_b0a0t0c0c0d0b0h, 0.01f * (0)), SpringLayout.WEST, widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.EAST, widget_wgtfc_e0a0a0a0a1a1a7, Spring.scale(swidth_b0a0t0c0c0d0b0h, 0.01f * (20)), SpringLayout.WEST, widget_wgtfc_e0a0a0a0a1a1a7);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.NORTH, widget_wgtfc_e0a0a0a0a1a1a7, Spring.scale(swidth_b0a0t0c0c0d0b0h, 0.01f * (60)), SpringLayout.NORTH, widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.SOUTH, widget_wgtfc_e0a0a0a0a1a1a7, Spring.scale(swidth_b0a0t0c0c0d0b0h, 0.01f * (20)), SpringLayout.NORTH, widget_wgtfc_e0a0a0a0a1a1a7);
     }
-    final JButton widget_wgtfc_f0a0a0a0a1a1a5 = new JButton();
-    widget_wgtfc_f0a0a0a0a1a1a5.setText("Button #6");
-    widget_wgtfc_a0a0a0b0b0f.add(widget_wgtfc_f0a0a0a0a1a1a5);
+    final JButton widget_wgtfc_f0a0a0a0a1a1a7 = new JButton();
+    widget_wgtfc_f0a0a0a0a1a1a7.setText("Button #6");
+    widget_wgtfc_a0a0a0b0b0h.add(widget_wgtfc_f0a0a0a0a1a1a7);
     {
-      Spring swidth_b0a0x0c0c0d0b0f = Spring.width(widget_wgtfc_a0a0a0b0b0f);
-      Spring sheight_b0a0x0c0c0d0b0f = Spring.height(widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.WEST, widget_wgtfc_f0a0a0a0a1a1a5, Spring.scale(swidth_b0a0x0c0c0d0b0f, 0.01f * (40)), SpringLayout.WEST, widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.EAST, widget_wgtfc_f0a0a0a0a1a1a5, Spring.scale(swidth_b0a0x0c0c0d0b0f, 0.01f * (20)), SpringLayout.WEST, widget_wgtfc_f0a0a0a0a1a1a5);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.NORTH, widget_wgtfc_f0a0a0a0a1a1a5, Spring.scale(swidth_b0a0x0c0c0d0b0f, 0.01f * (60)), SpringLayout.NORTH, widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.SOUTH, widget_wgtfc_f0a0a0a0a1a1a5, Spring.scale(swidth_b0a0x0c0c0d0b0f, 0.01f * (20)), SpringLayout.NORTH, widget_wgtfc_f0a0a0a0a1a1a5);
+      Spring swidth_b0a0x0c0c0d0b0h = Spring.width(widget_wgtfc_a0a0a0b0b0h);
+      Spring sheight_b0a0x0c0c0d0b0h = Spring.height(widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.WEST, widget_wgtfc_f0a0a0a0a1a1a7, Spring.scale(swidth_b0a0x0c0c0d0b0h, 0.01f * (40)), SpringLayout.WEST, widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.EAST, widget_wgtfc_f0a0a0a0a1a1a7, Spring.scale(swidth_b0a0x0c0c0d0b0h, 0.01f * (20)), SpringLayout.WEST, widget_wgtfc_f0a0a0a0a1a1a7);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.NORTH, widget_wgtfc_f0a0a0a0a1a1a7, Spring.scale(swidth_b0a0x0c0c0d0b0h, 0.01f * (60)), SpringLayout.NORTH, widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.SOUTH, widget_wgtfc_f0a0a0a0a1a1a7, Spring.scale(swidth_b0a0x0c0c0d0b0h, 0.01f * (20)), SpringLayout.NORTH, widget_wgtfc_f0a0a0a0a1a1a7);
     }
-    final JButton widget_wgtfc_g0a0a0a0a1a1a5 = new JButton();
-    widget_wgtfc_g0a0a0a0a1a1a5.setText("Button #7");
-    widget_wgtfc_a0a0a0b0b0f.add(widget_wgtfc_g0a0a0a0a1a1a5);
+    final JButton widget_wgtfc_g0a0a0a0a1a1a7 = new JButton();
+    widget_wgtfc_g0a0a0a0a1a1a7.setText("Button #7");
+    widget_wgtfc_a0a0a0b0b0h.add(widget_wgtfc_g0a0a0a0a1a1a7);
     {
-      Spring swidth_b0a0bb0c0c0d0b0f = Spring.width(widget_wgtfc_a0a0a0b0b0f);
-      Spring sheight_b0a0bb0c0c0d0b0f = Spring.height(widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.WEST, widget_wgtfc_g0a0a0a0a1a1a5, Spring.scale(swidth_b0a0bb0c0c0d0b0f, 0.01f * (60)), SpringLayout.WEST, widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.EAST, widget_wgtfc_g0a0a0a0a1a1a5, Spring.scale(swidth_b0a0bb0c0c0d0b0f, 0.01f * (20)), SpringLayout.WEST, widget_wgtfc_g0a0a0a0a1a1a5);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.NORTH, widget_wgtfc_g0a0a0a0a1a1a5, Spring.scale(swidth_b0a0bb0c0c0d0b0f, 0.01f * (60)), SpringLayout.NORTH, widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.SOUTH, widget_wgtfc_g0a0a0a0a1a1a5, Spring.scale(swidth_b0a0bb0c0c0d0b0f, 0.01f * (20)), SpringLayout.NORTH, widget_wgtfc_g0a0a0a0a1a1a5);
+      Spring swidth_b0a0bb0c0c0d0b0h = Spring.width(widget_wgtfc_a0a0a0b0b0h);
+      Spring sheight_b0a0bb0c0c0d0b0h = Spring.height(widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.WEST, widget_wgtfc_g0a0a0a0a1a1a7, Spring.scale(swidth_b0a0bb0c0c0d0b0h, 0.01f * (60)), SpringLayout.WEST, widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.EAST, widget_wgtfc_g0a0a0a0a1a1a7, Spring.scale(swidth_b0a0bb0c0c0d0b0h, 0.01f * (20)), SpringLayout.WEST, widget_wgtfc_g0a0a0a0a1a1a7);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.NORTH, widget_wgtfc_g0a0a0a0a1a1a7, Spring.scale(swidth_b0a0bb0c0c0d0b0h, 0.01f * (60)), SpringLayout.NORTH, widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.SOUTH, widget_wgtfc_g0a0a0a0a1a1a7, Spring.scale(swidth_b0a0bb0c0c0d0b0h, 0.01f * (20)), SpringLayout.NORTH, widget_wgtfc_g0a0a0a0a1a1a7);
     }
-    final JButton widget_wgtfc_h0a0a0a0a1a1a5 = new JButton();
-    widget_wgtfc_h0a0a0a0a1a1a5.setText("Button #8");
-    widget_wgtfc_a0a0a0b0b0f.add(widget_wgtfc_h0a0a0a0a1a1a5);
+    final JButton widget_wgtfc_h0a0a0a0a1a1a7 = new JButton();
+    widget_wgtfc_h0a0a0a0a1a1a7.setText("Button #8");
+    widget_wgtfc_a0a0a0b0b0h.add(widget_wgtfc_h0a0a0a0a1a1a7);
     {
-      Spring swidth_b0a0fb0c0c0d0b0f = Spring.width(widget_wgtfc_a0a0a0b0b0f);
-      Spring sheight_b0a0fb0c0c0d0b0f = Spring.height(widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.WEST, widget_wgtfc_h0a0a0a0a1a1a5, Spring.scale(swidth_b0a0fb0c0c0d0b0f, 0.01f * (20)), SpringLayout.WEST, widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.EAST, widget_wgtfc_h0a0a0a0a1a1a5, Spring.scale(swidth_b0a0fb0c0c0d0b0f, 0.01f * (20)), SpringLayout.WEST, widget_wgtfc_h0a0a0a0a1a1a5);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.NORTH, widget_wgtfc_h0a0a0a0a1a1a5, Spring.scale(swidth_b0a0fb0c0c0d0b0f, 0.01f * (80)), SpringLayout.NORTH, widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.SOUTH, widget_wgtfc_h0a0a0a0a1a1a5, Spring.scale(swidth_b0a0fb0c0c0d0b0f, 0.01f * (20)), SpringLayout.NORTH, widget_wgtfc_h0a0a0a0a1a1a5);
+      Spring swidth_b0a0fb0c0c0d0b0h = Spring.width(widget_wgtfc_a0a0a0b0b0h);
+      Spring sheight_b0a0fb0c0c0d0b0h = Spring.height(widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.WEST, widget_wgtfc_h0a0a0a0a1a1a7, Spring.scale(swidth_b0a0fb0c0c0d0b0h, 0.01f * (20)), SpringLayout.WEST, widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.EAST, widget_wgtfc_h0a0a0a0a1a1a7, Spring.scale(swidth_b0a0fb0c0c0d0b0h, 0.01f * (20)), SpringLayout.WEST, widget_wgtfc_h0a0a0a0a1a1a7);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.NORTH, widget_wgtfc_h0a0a0a0a1a1a7, Spring.scale(swidth_b0a0fb0c0c0d0b0h, 0.01f * (80)), SpringLayout.NORTH, widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.SOUTH, widget_wgtfc_h0a0a0a0a1a1a7, Spring.scale(swidth_b0a0fb0c0c0d0b0h, 0.01f * (20)), SpringLayout.NORTH, widget_wgtfc_h0a0a0a0a1a1a7);
     }
-    final JButton widget_wgtfc_i0a0a0a0a1a1a5 = new JButton();
-    widget_wgtfc_i0a0a0a0a1a1a5.setText("Button #5");
-    widget_wgtfc_a0a0a0b0b0f.add(widget_wgtfc_i0a0a0a0a1a1a5);
+    final JButton widget_wgtfc_i0a0a0a0a1a1a7 = new JButton();
+    widget_wgtfc_i0a0a0a0a1a1a7.setText("Button #5");
+    widget_wgtfc_a0a0a0b0b0h.add(widget_wgtfc_i0a0a0a0a1a1a7);
     {
-      Spring swidth_b0a0jb0c0c0d0b0f = Spring.width(widget_wgtfc_a0a0a0b0b0f);
-      Spring sheight_b0a0jb0c0c0d0b0f = Spring.height(widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.WEST, widget_wgtfc_i0a0a0a0a1a1a5, Spring.scale(swidth_b0a0jb0c0c0d0b0f, 0.01f * (60)), SpringLayout.WEST, widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.EAST, widget_wgtfc_i0a0a0a0a1a1a5, Spring.scale(swidth_b0a0jb0c0c0d0b0f, 0.01f * (20)), SpringLayout.WEST, widget_wgtfc_i0a0a0a0a1a1a5);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.NORTH, widget_wgtfc_i0a0a0a0a1a1a5, Spring.scale(swidth_b0a0jb0c0c0d0b0f, 0.01f * (80)), SpringLayout.NORTH, widget_wgtfc_a0a0a0b0b0f);
-      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0f).getLayout()).putConstraint(SpringLayout.SOUTH, widget_wgtfc_i0a0a0a0a1a1a5, Spring.scale(swidth_b0a0jb0c0c0d0b0f, 0.01f * (20)), SpringLayout.NORTH, widget_wgtfc_i0a0a0a0a1a1a5);
+      Spring swidth_b0a0jb0c0c0d0b0h = Spring.width(widget_wgtfc_a0a0a0b0b0h);
+      Spring sheight_b0a0jb0c0c0d0b0h = Spring.height(widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.WEST, widget_wgtfc_i0a0a0a0a1a1a7, Spring.scale(swidth_b0a0jb0c0c0d0b0h, 0.01f * (60)), SpringLayout.WEST, widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.EAST, widget_wgtfc_i0a0a0a0a1a1a7, Spring.scale(swidth_b0a0jb0c0c0d0b0h, 0.01f * (20)), SpringLayout.WEST, widget_wgtfc_i0a0a0a0a1a1a7);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.NORTH, widget_wgtfc_i0a0a0a0a1a1a7, Spring.scale(swidth_b0a0jb0c0c0d0b0h, 0.01f * (80)), SpringLayout.NORTH, widget_wgtfc_a0a0a0b0b0h);
+      ((SpringLayout) ((Container) widget_wgtfc_a0a0a0b0b0h).getLayout()).putConstraint(SpringLayout.SOUTH, widget_wgtfc_i0a0a0a0a1a1a7, Spring.scale(swidth_b0a0jb0c0c0d0b0h, 0.01f * (20)), SpringLayout.NORTH, widget_wgtfc_i0a0a0a0a1a1a7);
     }
-    widget_wgtfc_a0a1a1a5.add(widget_wgtfc_a0a0a0b0b0f);
-    widget_wgtfc_b0b0f.addTab("Layout", widget_wgtfc_a0a1a1a5);
-    dc.add(widget_wgtfc_b0b0f, DockLayoutData.CENTER);
+    widget_wgtfc_a0a1a1a7.add(widget_wgtfc_a0a0a0b0b0h);
+    widget_wgtfc_b0b0h.addTab("Layout", widget_wgtfc_a0a1a1a7);
+    dc.add(widget_wgtfc_b0b0h, DockLayoutData.CENTER);
     dc.doLayout();
   }
 
@@ -495,48 +495,48 @@ public class PanelsDemo_Swing {
       it.next();
       it.remove();
     }
-    final JTabbedPane widget_wgtfc_b0b0g = new JTabbedPane();
-    final ButtonGroup buttonGroup_wgtfc_a0c0b0g = new ButtonGroup();
-    final JPanel widget_wgtfc_a0a1a1a6 = new JPanel(new GridLayout(1, 1));
-    final ButtonGroup buttonGroup_wgtfc_a0b0d0b0g = new ButtonGroup();
-    final JPanel widget_wgtfc_a0a0a0b0b0g = new JPanel(new GridBagLayout());
-    final ButtonGroup buttonGroup_wgtfc_a0b0c0d0b0g = new ButtonGroup();
-    final JButton widget_wgtfc_a0a0a0a0a1a1a6 = new JButton();
-    widget_wgtfc_a0a0a0a0a1a1a6.setText("Whatsup?");
+    final JTabbedPane widget_wgtfc_b0b0i = new JTabbedPane();
+    final ButtonGroup buttonGroup_wgtfc_a0c0b0i = new ButtonGroup();
+    final JPanel widget_wgtfc_a0a1a1a8 = new JPanel(new GridLayout(1, 1));
+    final ButtonGroup buttonGroup_wgtfc_a0b0d0b0i = new ButtonGroup();
+    final JPanel widget_wgtfc_a0a0a0b0b0i = new JPanel(new GridBagLayout());
+    final ButtonGroup buttonGroup_wgtfc_a0b0c0d0b0i = new ButtonGroup();
+    final JButton widget_wgtfc_a0a0a0a0a1a1a8 = new JButton();
+    widget_wgtfc_a0a0a0a0a1a1a8.setText("Whatsup?");
     {
-      GridBagConstraints gbc_a0a0d0c0c0d0b0g = new GridBagConstraints();
-      gbc_a0a0d0c0c0d0b0g.gridx = 2;
-      gbc_a0a0d0c0c0d0b0g.gridy = 2;
-      gbc_a0a0d0c0c0d0b0g.weightx = 1.0;
-      gbc_a0a0d0c0c0d0b0g.weighty = 1.0;
-      ((GridBagLayout) widget_wgtfc_a0a0a0b0b0g.getLayout()).setConstraints(widget_wgtfc_a0a0a0a0a1a1a6, gbc_a0a0d0c0c0d0b0g);
+      GridBagConstraints gbc_a0a0d0c0c0d0b0i = new GridBagConstraints();
+      gbc_a0a0d0c0c0d0b0i.gridx = 2;
+      gbc_a0a0d0c0c0d0b0i.gridy = 2;
+      gbc_a0a0d0c0c0d0b0i.weightx = 1.0;
+      gbc_a0a0d0c0c0d0b0i.weighty = 1.0;
+      ((GridBagLayout) widget_wgtfc_a0a0a0b0b0i.getLayout()).setConstraints(widget_wgtfc_a0a0a0a0a1a1a8, gbc_a0a0d0c0c0d0b0i);
     }
-    widget_wgtfc_a0a0a0b0b0g.add(widget_wgtfc_a0a0a0a0a1a1a6);
-    final JButton widget_wgtfc_b0a0a0a0a1a1a6 = new JButton();
-    widget_wgtfc_b0a0a0a0a1a1a6.setText("Boo-hoo!");
+    widget_wgtfc_a0a0a0b0b0i.add(widget_wgtfc_a0a0a0a0a1a1a8);
+    final JButton widget_wgtfc_b0a0a0a0a1a1a8 = new JButton();
+    widget_wgtfc_b0a0a0a0a1a1a8.setText("Boo-hoo!");
     {
-      GridBagConstraints gbc_a0a0h0c0c0d0b0g = new GridBagConstraints();
-      gbc_a0a0h0c0c0d0b0g.gridx = 0;
-      gbc_a0a0h0c0c0d0b0g.gridy = 0;
-      gbc_a0a0h0c0c0d0b0g.weightx = 1.0;
-      gbc_a0a0h0c0c0d0b0g.weighty = 1.0;
-      ((GridBagLayout) widget_wgtfc_a0a0a0b0b0g.getLayout()).setConstraints(widget_wgtfc_b0a0a0a0a1a1a6, gbc_a0a0h0c0c0d0b0g);
+      GridBagConstraints gbc_a0a0h0c0c0d0b0i = new GridBagConstraints();
+      gbc_a0a0h0c0c0d0b0i.gridx = 0;
+      gbc_a0a0h0c0c0d0b0i.gridy = 0;
+      gbc_a0a0h0c0c0d0b0i.weightx = 1.0;
+      gbc_a0a0h0c0c0d0b0i.weighty = 1.0;
+      ((GridBagLayout) widget_wgtfc_a0a0a0b0b0i.getLayout()).setConstraints(widget_wgtfc_b0a0a0a0a1a1a8, gbc_a0a0h0c0c0d0b0i);
     }
-    widget_wgtfc_a0a0a0b0b0g.add(widget_wgtfc_b0a0a0a0a1a1a6);
-    final JButton widget_wgtfc_c0a0a0a0a1a1a6 = new JButton();
-    widget_wgtfc_c0a0a0a0a1a1a6.setText("Let's do it!");
+    widget_wgtfc_a0a0a0b0b0i.add(widget_wgtfc_b0a0a0a0a1a1a8);
+    final JButton widget_wgtfc_c0a0a0a0a1a1a8 = new JButton();
+    widget_wgtfc_c0a0a0a0a1a1a8.setText("Let's do it!");
     {
-      GridBagConstraints gbc_a0a0l0c0c0d0b0g = new GridBagConstraints();
-      gbc_a0a0l0c0c0d0b0g.gridx = 1;
-      gbc_a0a0l0c0c0d0b0g.gridy = 1;
-      gbc_a0a0l0c0c0d0b0g.weightx = 1.0;
-      gbc_a0a0l0c0c0d0b0g.weighty = 1.0;
-      ((GridBagLayout) widget_wgtfc_a0a0a0b0b0g.getLayout()).setConstraints(widget_wgtfc_c0a0a0a0a1a1a6, gbc_a0a0l0c0c0d0b0g);
+      GridBagConstraints gbc_a0a0l0c0c0d0b0i = new GridBagConstraints();
+      gbc_a0a0l0c0c0d0b0i.gridx = 1;
+      gbc_a0a0l0c0c0d0b0i.gridy = 1;
+      gbc_a0a0l0c0c0d0b0i.weightx = 1.0;
+      gbc_a0a0l0c0c0d0b0i.weighty = 1.0;
+      ((GridBagLayout) widget_wgtfc_a0a0a0b0b0i.getLayout()).setConstraints(widget_wgtfc_c0a0a0a0a1a1a8, gbc_a0a0l0c0c0d0b0i);
     }
-    widget_wgtfc_a0a0a0b0b0g.add(widget_wgtfc_c0a0a0a0a1a1a6);
-    widget_wgtfc_a0a1a1a6.add(widget_wgtfc_a0a0a0b0b0g);
-    widget_wgtfc_b0b0g.addTab("Grid", widget_wgtfc_a0a1a1a6);
-    dc.add(widget_wgtfc_b0b0g, DockLayoutData.CENTER);
+    widget_wgtfc_a0a0a0b0b0i.add(widget_wgtfc_c0a0a0a0a1a1a8);
+    widget_wgtfc_a0a1a1a8.add(widget_wgtfc_a0a0a0b0b0i);
+    widget_wgtfc_b0b0i.addTab("Grid", widget_wgtfc_a0a1a1a8);
+    dc.add(widget_wgtfc_b0b0i, DockLayoutData.CENTER);
     dc.doLayout();
   }
 }

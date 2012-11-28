@@ -26,7 +26,7 @@ public class subtyping_arrayType_SubtypingRule extends SubtypingRule_Runtime imp
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(arrayType, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType"))) {
       for (SNode componentTypeSupertype : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(SLinkOperations.getTarget(arrayType, "componentType", true))) {
         if (SNodeOperations.isInstanceOf(componentTypeSupertype, "jetbrains.mps.baseLanguage.structure.Type")) {
-          ListSequence.fromList(result).addElement(_quotation_createNode_ny91lb_a0a0a0a0a1a0(componentTypeSupertype));
+          ListSequence.fromList(result).addElement(_quotation_createNode_ny91lb_a0a0a0a0a1a1(componentTypeSupertype));
         }
       }
     }
@@ -48,7 +48,7 @@ public class subtyping_arrayType_SubtypingRule extends SubtypingRule_Runtime imp
     return false;
   }
 
-  private static SNode _quotation_createNode_ny91lb_a0a0a0a0a1a0(Object parameter_1) {
+  private static SNode _quotation_createNode_ny91lb_a0a0a0a0a1a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, GlobalScope.getInstance(), false);

@@ -109,15 +109,6 @@ public class MakeActionParameters {
           public Iterator<SModel> iterator() {
             return new YieldingIterator<SModel>() {
               private int __CP__ = 0;
-              private Iterable<SModel> _7_models;
-              private SModel _8__yield_nk3wxj_b0a0a0a0a0c0b;
-              private Iterator<SModel> _8__yield_nk3wxj_b0a0a0a0a0c0b_it;
-              private Iterable<SModel> _14_modelsFromModule;
-              private SModel _15__yield_nk3wxj_c0b0a0a0a0c0b;
-              private Iterator<SModel> _15__yield_nk3wxj_c0b0a0a0a0c0b_it;
-              private Iterable<SModel> _21_modelsFromModules;
-              private SModel _22__yield_nk3wxj_c0c0a0a0a0c0b;
-              private Iterator<SModel> _22__yield_nk3wxj_c0c0a0a0a0c0b_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -128,37 +119,37 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 8:
-                      this._8__yield_nk3wxj_b0a0a0a0a0c0b_it = Sequence.fromIterable(Sequence.fromIterable(_7_models).where(new IWhereFilter<SModel>() {
+                      this._8__yield_nk3wxj_b0a0a0a0a0c0h_it = Sequence.fromIterable(Sequence.fromIterable(_7_models).where(new IWhereFilter<SModel>() {
                         public boolean accept(SModel md) {
                           return md instanceof SModelDescriptor && ((SModelDescriptor) md).isGeneratable();
                         }
                       })).iterator();
                     case 9:
-                      if (!(this._8__yield_nk3wxj_b0a0a0a0a0c0b_it.hasNext())) {
+                      if (!(this._8__yield_nk3wxj_b0a0a0a0a0c0h_it.hasNext())) {
                         this.__CP__ = 1;
                         break;
                       }
-                      this._8__yield_nk3wxj_b0a0a0a0a0c0b = this._8__yield_nk3wxj_b0a0a0a0a0c0b_it.next();
+                      this._8__yield_nk3wxj_b0a0a0a0a0c0h = this._8__yield_nk3wxj_b0a0a0a0a0c0h_it.next();
                       this.__CP__ = 10;
                       break;
                     case 15:
-                      this._15__yield_nk3wxj_c0b0a0a0a0c0b_it = Sequence.fromIterable(_14_modelsFromModule).iterator();
+                      this._15__yield_nk3wxj_c0b0a0a0a0c0h_it = Sequence.fromIterable(_14_modelsFromModule).iterator();
                     case 16:
-                      if (!(this._15__yield_nk3wxj_c0b0a0a0a0c0b_it.hasNext())) {
+                      if (!(this._15__yield_nk3wxj_c0b0a0a0a0c0h_it.hasNext())) {
                         this.__CP__ = 1;
                         break;
                       }
-                      this._15__yield_nk3wxj_c0b0a0a0a0c0b = this._15__yield_nk3wxj_c0b0a0a0a0c0b_it.next();
+                      this._15__yield_nk3wxj_c0b0a0a0a0c0h = this._15__yield_nk3wxj_c0b0a0a0a0c0h_it.next();
                       this.__CP__ = 17;
                       break;
                     case 22:
-                      this._22__yield_nk3wxj_c0c0a0a0a0c0b_it = Sequence.fromIterable(_21_modelsFromModules).iterator();
+                      this._22__yield_nk3wxj_c0c0a0a0a0c0h_it = Sequence.fromIterable(_21_modelsFromModules).iterator();
                     case 23:
-                      if (!(this._22__yield_nk3wxj_c0c0a0a0a0c0b_it.hasNext())) {
+                      if (!(this._22__yield_nk3wxj_c0c0a0a0a0c0h_it.hasNext())) {
                         this.__CP__ = 1;
                         break;
                       }
-                      this._22__yield_nk3wxj_c0c0a0a0a0c0b = this._22__yield_nk3wxj_c0c0a0a0a0c0b_it.next();
+                      this._22__yield_nk3wxj_c0c0a0a0a0c0h = this._22__yield_nk3wxj_c0c0a0a0a0c0h_it.next();
                       this.__CP__ = 24;
                       break;
                     case 2:
@@ -179,7 +170,7 @@ __switch__:
                       break;
                     case 11:
                       this.__CP__ = 9;
-                      this.yield(_8__yield_nk3wxj_b0a0a0a0a0c0b);
+                      this.yield(_8__yield_nk3wxj_b0a0a0a0a0c0h);
                       return true;
                     case 4:
                       this.__CP__ = 1;
@@ -187,11 +178,11 @@ __switch__:
                       return true;
                     case 18:
                       this.__CP__ = 16;
-                      this.yield(_15__yield_nk3wxj_c0b0a0a0a0c0b);
+                      this.yield(_15__yield_nk3wxj_c0b0a0a0a0c0h);
                       return true;
                     case 25:
                       this.__CP__ = 23;
-                      this.yield(_22__yield_nk3wxj_c0c0a0a0a0c0b);
+                      this.yield(_22__yield_nk3wxj_c0c0a0a0a0c0h);
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -237,6 +228,16 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private Iterable<SModel> _7_models;
+              private SModel _8__yield_nk3wxj_b0a0a0a0a0c0h;
+              private Iterator<SModel> _8__yield_nk3wxj_b0a0a0a0a0c0h_it;
+              private Iterable<SModel> _14_modelsFromModule;
+              private SModel _15__yield_nk3wxj_c0b0a0a0a0c0h;
+              private Iterator<SModel> _15__yield_nk3wxj_c0b0a0a0a0c0h_it;
+              private Iterable<SModel> _21_modelsFromModules;
+              private SModel _22__yield_nk3wxj_c0c0a0a0a0c0h;
+              private Iterator<SModel> _22__yield_nk3wxj_c0c0a0a0a0c0h_it;
             };
           }
         };

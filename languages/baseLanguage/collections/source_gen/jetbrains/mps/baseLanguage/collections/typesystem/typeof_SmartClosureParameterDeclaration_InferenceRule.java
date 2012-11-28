@@ -40,7 +40,7 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
             {
               SNode _nodeToCheck_1029348928467 = scpd;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "7668447476859120558", 0, null);
-              typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_5rdbtv_a0a0d0a0a(typeCheckingContext.getRepresentative(paramType_typevar_1230315924141)), (SNode) typeCheckingContext.getRepresentative(seqType_typevar_2684739085678948053), false, true, _info_12389875345);
+              typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_5rdbtv_a0a0d0a0b(typeCheckingContext.getRepresentative(paramType_typevar_1230315924141)), (SNode) typeCheckingContext.getRepresentative(seqType_typevar_2684739085678948053), false, true, _info_12389875345);
             }
             {
               SNode _nodeToCheck_1029348928467 = scpd;
@@ -90,7 +90,7 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
     return true;
   }
 
-  private static SNode _quotation_createNode_5rdbtv_a0a0d0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_5rdbtv_a0a0d0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);
@@ -101,7 +101,7 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_5rdbtv_a0a0e0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_5rdbtv_a0a0e0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);

@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.MPSProject;
@@ -18,10 +17,10 @@ import jetbrains.mps.project.StandaloneMPSProject;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.logging.Logger;
 
 public class SetModuleFolder_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(SetModuleFolder_Action.class);
 
   public SetModuleFolder_Action() {
     super("Set Folder", "", ICON);
@@ -91,4 +90,6 @@ public class SetModuleFolder_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "SetModuleFolder", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(SetModuleFolder_Action.class);
 }

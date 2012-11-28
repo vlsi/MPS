@@ -78,7 +78,7 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
       return false;
     }
 
-    return eq_bv30lc_a0d0g(myExceptionName, ((ExceptionBreakpoint) o).myExceptionName);
+    return eq_bv30lc_a0d0j(myExceptionName, ((ExceptionBreakpoint) o).myExceptionName);
   }
 
   @Override
@@ -89,13 +89,6 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
       0
     ));
     return result;
-  }
-
-  private static boolean eq_bv30lc_a0d0g(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
   }
 
   public static class ExceptionBreakpointInfo {
@@ -122,5 +115,12 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
       breakpoint.setSuspendPolicy(mySuspendPolicy);
       breakpoint.setLogMessage(myIsLogMessage);
     }
+  }
+
+  private static boolean eq_bv30lc_a0d0j(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

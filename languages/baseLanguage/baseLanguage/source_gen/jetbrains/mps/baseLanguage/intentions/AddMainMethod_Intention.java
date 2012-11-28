@@ -12,11 +12,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class AddMainMethod_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -70,6 +70,25 @@ public class AddMainMethod_Intention implements IntentionFactory {
     return myCachedExecutable;
   }
 
+  public class IntentionImplementation implements IntentionExecutable {
+    public IntentionImplementation() {
+    }
+
+    public String getDescription(final SNode node, final EditorContext editorContext) {
+      return "Add Main Method";
+    }
+
+    public void execute(final SNode node, final EditorContext editorContext) {
+      SNode methodNode = _quotation_createNode_92yx0t_a0a0a();
+      ListSequence.fromList(SLinkOperations.getTargets(node, "member", true)).addElement(methodNode);
+      editorContext.select(methodNode);
+    }
+
+    public IntentionDescriptor getDescriptor() {
+      return AddMainMethod_Intention.this;
+    }
+  }
+
   private static SNode _quotation_createNode_92yx0t_a0a0a() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -94,24 +113,5 @@ public class AddMainMethod_Intention implements IntentionFactory {
     quotedNode_5.addChild("type", quotedNode_6);
     quotedNode_1.addChild("parameter", quotedNode_5);
     return quotedNode_1;
-  }
-
-  public class IntentionImplementation implements IntentionExecutable {
-    public IntentionImplementation() {
-    }
-
-    public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Add Main Method";
-    }
-
-    public void execute(final SNode node, final EditorContext editorContext) {
-      SNode methodNode = _quotation_createNode_92yx0t_a0a0a();
-      ListSequence.fromList(SLinkOperations.getTargets(node, "staticMethod", true)).addElement(methodNode);
-      editorContext.select(methodNode);
-    }
-
-    public IntentionDescriptor getDescriptor() {
-      return AddMainMethod_Intention.this;
-    }
   }
 }

@@ -32,7 +32,7 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
 
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
     {
-      GeneratedMatchingPattern pattern_e5spwb_a0a = new generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.Pattern_nn7be_a0a0a0a0(SLinkOperations.getTarget(supertype, "classifier", false));
+      GeneratedMatchingPattern pattern_e5spwb_a0a = new generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.Pattern_nn7be_a0a0a0a1(SLinkOperations.getTarget(supertype, "classifier", false));
       SNode coercedNode_e5spwb_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(subtype, pattern_e5spwb_a0a);
       if (coercedNode_e5spwb_a0a != null) {
         return ListSequence.fromList(SLinkOperations.getTargets(coercedNode_e5spwb_a0a, "parameter", true)).isNotEmpty() && ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).isNotEmpty();
@@ -44,7 +44,7 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
 
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     {
-      GeneratedMatchingPattern pattern_e5spwb_a0 = new generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.Pattern_nn7be_a0a0a0a1(SLinkOperations.getTarget(supertype, "classifier", false));
+      GeneratedMatchingPattern pattern_e5spwb_a0 = new generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.Pattern_nn7be_a0a0a0a2(SLinkOperations.getTarget(supertype, "classifier", false));
       SNode coercedNode_e5spwb_a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(subtype, pattern_e5spwb_a0);
       if (coercedNode_e5spwb_a0 != null) {
         Map<SNode, SNode> subsLeft = MapSequence.fromMap(new HashMap<SNode, SNode>());
@@ -120,7 +120,7 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     {
-      GeneratedMatchingPattern pattern_e5spwb_a0_0 = new generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.Pattern_nn7be_a0a0a0a1a2(SLinkOperations.getTarget(supertype, "classifier", false));
+      GeneratedMatchingPattern pattern_e5spwb_a0_0 = new generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.Pattern_nn7be_a0a0a0a1a3(SLinkOperations.getTarget(supertype, "classifier", false));
       SNode coercedNode_e5spwb_a0_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(subtype, pattern_e5spwb_a0_0);
       if (coercedNode_e5spwb_a0_0 != null) {
         Map<SNode, SNode> subsLeft = MapSequence.fromMap(new HashMap<SNode, SNode>());
@@ -186,10 +186,10 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
 
-  public static class Pattern_nn7be_a0a0a0a0 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_nn7be_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ Object AntiquotationField_e5spwb_a0a0a0a0;
 
-    public Pattern_nn7be_a0a0a0a0(Object parameter_e5spwb_a0a0a0a0) {
+    public Pattern_nn7be_a0a0a0a1(Object parameter_e5spwb_a0a0a0a0) {
       this.AntiquotationField_e5spwb_a0a0a0a0 = parameter_e5spwb_a0a0a0a0;
     }
 
@@ -226,10 +226,10 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
     }
   }
 
-  public static class Pattern_nn7be_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_nn7be_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ Object AntiquotationField_e5spwb_a0a0a0a;
 
-    public Pattern_nn7be_a0a0a0a1(Object parameter_e5spwb_a0a0a0a) {
+    public Pattern_nn7be_a0a0a0a2(Object parameter_e5spwb_a0a0a0a) {
       this.AntiquotationField_e5spwb_a0a0a0a = parameter_e5spwb_a0a0a0a;
     }
 
@@ -266,10 +266,10 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
     }
   }
 
-  public static class Pattern_nn7be_a0a0a0a1a2 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_nn7be_a0a0a0a1a3 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ Object AntiquotationField_e5spwb_a0a0a0a_0;
 
-    public Pattern_nn7be_a0a0a0a1a2(Object parameter_e5spwb_a0a0a0a_0) {
+    public Pattern_nn7be_a0a0a0a1a3(Object parameter_e5spwb_a0a0a0a_0) {
       this.AntiquotationField_e5spwb_a0a0a0a_0 = parameter_e5spwb_a0a0a0a_0;
     }
 

@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -19,10 +18,10 @@ import javax.swing.SwingUtilities;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
+import jetbrains.mps.logging.Logger;
 
 public class RenameFileOrDirectory_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(RenameFileOrDirectory_Action.class);
 
   public RenameFileOrDirectory_Action() {
     super("Rename...", "", ICON);
@@ -105,6 +104,8 @@ public class RenameFileOrDirectory_Action extends BaseAction {
     }
     return false;
   }
+
+  private static Logger LOG = Logger.getLogger(RenameFileOrDirectory_Action.class);
 
   private static VirtualFile check_g7rid4_a0b0a(VirtualFile checkedDotOperand, String result) {
     if (null != checkedDotOperand) {

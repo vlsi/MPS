@@ -21,7 +21,12 @@
     </node>
   </roots>
   <root id="1178529045424">
-    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1178529072362">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="1848533035883009391">
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1848533035883009392" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1848533035883009393" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1848533035883009394" />
+    </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1178529072362">
       <property name="name" nameId="tpck.1169194664001" value="msain" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1178529113481">
         <property name="name" nameId="tpck.1169194664001" value="emailToAnalyse" />
@@ -150,11 +155,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="1848533035883009391">
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1848533035883009392" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1848533035883009393" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1848533035883009394" />
     </node>
   </root>
   <root id="1178530020197">
@@ -294,8 +294,8 @@
       </node>
     </node>
     <node role="regexp" roleId="tpfo.1174662369010" type="tpfo.RegexpDeclaration" typeId="tpfo.1174483125581" id="1220353872410">
-      <property name="name" nameId="tpck.1169194664001" value="tst" />
       <property name="description" nameId="tpfo.1174662978120" value="tst" />
+      <property name="name" nameId="tpck.1169194664001" value="tst" />
       <node role="regexp" roleId="tpfo.1174483133849" type="tpfo.PositiveSymbolClassRegexp" typeId="tpfo.1174554211468" id="1220354315016">
         <node role="part" roleId="tpfo.1174557628217" type="tpfo.IntersectionSymbolClassPart" typeId="tpfo.1220021842985" id="1220363152593">
           <node role="right" roleId="tpfo.1220356007276" type="tpfo.NegativeSymbolClassRegexp" typeId="tpfo.1174554238051" id="1220363156281">
@@ -313,7 +313,12 @@
     </node>
   </root>
   <root id="1178535069057">
-    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1178535091152">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="1848533035883009395">
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1848533035883009396" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1848533035883009397" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1848533035883009398" />
+    </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1178535091152">
       <property name="name" nameId="tpck.1169194664001" value="email" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1178535120003">
         <property name="name" nameId="tpck.1169194664001" value="emailToAnalyse" />
@@ -408,7 +413,7 @@
         </node>
       </node>
     </node>
-    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1178535132007">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1178535132007">
       <property name="name" nameId="tpck.1169194664001" value="contains" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1178535135407">
         <property name="name" nameId="tpck.1169194664001" value="s" />
@@ -450,7 +455,7 @@
         </node>
       </node>
     </node>
-    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1178535173848">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1178535173848">
       <property name="name" nameId="tpck.1169194664001" value="forEach" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1178535178763">
         <property name="name" nameId="tpck.1169194664001" value="test" />
@@ -497,7 +502,7 @@
         </node>
       </node>
     </node>
-    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1178535219991">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1178535219991">
       <property name="name" nameId="tpck.1169194664001" value="replaceAll" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1178535225064">
         <property name="name" nameId="tpck.1169194664001" value="s" />
@@ -564,7 +569,7 @@
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="1225196754210" />
     </node>
-    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1178535280596">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1178535280596">
       <property name="name" nameId="tpck.1169194664001" value="split" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1178535293360">
         <property name="name" nameId="tpck.1169194664001" value="s" />
@@ -615,11 +620,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="1848533035883009395">
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1848533035883009396" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1848533035883009397" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1848533035883009398" />
     </node>
   </root>
 </model>

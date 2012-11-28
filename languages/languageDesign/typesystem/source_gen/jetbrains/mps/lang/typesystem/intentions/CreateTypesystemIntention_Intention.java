@@ -14,11 +14,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class CreateTypesystemIntention_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -75,6 +75,28 @@ public class CreateTypesystemIntention_Intention implements IntentionFactory {
     return myCachedExecutable;
   }
 
+  public class IntentionImplementation implements IntentionExecutable {
+    public IntentionImplementation() {
+    }
+
+    public String getDescription(final SNode node, final EditorContext editorContext) {
+      return "Create New QuickFix";
+    }
+
+    public void execute(final SNode node, final EditorContext editorContext) {
+      SNode quickFixNode = _quotation_createNode_wv8vj7_a0a0a();
+
+      SNode quickFixCall = _quotation_createNode_wv8vj7_a0c0a(quickFixNode);
+
+      SModelOperations.addRootNode(SNodeOperations.getModel(node), quickFixNode);
+      ListSequence.fromList(SLinkOperations.getTargets(node, "helginsIntention", true)).addElement(quickFixCall);
+    }
+
+    public IntentionDescriptor getDescriptor() {
+      return CreateTypesystemIntention_Intention.this;
+    }
+  }
+
   private static SNode _quotation_createNode_wv8vj7_a0a0a() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -98,27 +120,5 @@ public class CreateTypesystemIntention_Intention implements IntentionFactory {
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypesystemIntention", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("quickFix", (SNode) parameter_1);
     return quotedNode_2;
-  }
-
-  public class IntentionImplementation implements IntentionExecutable {
-    public IntentionImplementation() {
-    }
-
-    public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Create New QuickFix";
-    }
-
-    public void execute(final SNode node, final EditorContext editorContext) {
-      SNode quickFixNode = _quotation_createNode_wv8vj7_a0a0a();
-
-      SNode quickFixCall = _quotation_createNode_wv8vj7_a0c0a(quickFixNode);
-
-      SModelOperations.addRootNode(SNodeOperations.getModel(node), quickFixNode);
-      ListSequence.fromList(SLinkOperations.getTargets(node, "helginsIntention", true)).addElement(quickFixCall);
-    }
-
-    public IntentionDescriptor getDescriptor() {
-      return CreateTypesystemIntention_Intention.this;
-    }
   }
 }

@@ -113,15 +113,15 @@ public class DependencyTree extends MPSTree implements DataProvider {
 
   @Nullable
   public Object getData(@NonNls String id) {
-    ModuleDependencyNode current = as_he3vmc_a0a0a21(getCurrentNode(), ModuleDependencyNode.class);
+    ModuleDependencyNode current = as_he3vmc_a0a0a91(getCurrentNode(), ModuleDependencyNode.class);
     if (id.equals(MPSDataKeys.LOGICAL_VIEW_NODE.getName())) {
       return current;
     }
     if (id.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
-      return check_he3vmc_a0a2a21(current);
+      return check_he3vmc_a0a2a91(current);
     }
     if (id.equals(MPSCommonDataKeys.MODULE.getName())) {
-      List<IModule> modules = check_he3vmc_a0a0d0m(current);
+      List<IModule> modules = check_he3vmc_a0a0d0t(current);
       TreePath[] selection = getSelectionPaths();
       if (ListSequence.fromList(modules).count() != 1 || (selection != null && selection.length > 1)) {
         return null;
@@ -131,21 +131,21 @@ public class DependencyTree extends MPSTree implements DataProvider {
     return null;
   }
 
-  private static IOperationContext check_he3vmc_a0a2a21(ModuleDependencyNode checkedDotOperand) {
+  private static IOperationContext check_he3vmc_a0a2a91(ModuleDependencyNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getOperationContext();
     }
     return null;
   }
 
-  private static List<IModule> check_he3vmc_a0a0d0m(ModuleDependencyNode checkedDotOperand) {
+  private static List<IModule> check_he3vmc_a0a0d0t(ModuleDependencyNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModules();
     }
     return null;
   }
 
-  private static <T> T as_he3vmc_a0a0a21(Object o, Class<T> type) {
+  private static <T> T as_he3vmc_a0a0a91(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3ylm0yzjp8eo96is00ow213cmrrjjr3">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-uvseejb8lftjizgrik03igcx568a80" />
+<dependencies version="2" modelHash="-dcitl9aornbjd7vx8nr5zwwzy8qp8va">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3i4sr9viv2mafxmv1gn7u5798g1tob7" />
   <common hash="-aqsvvn5sdwrfeivuuhg36aah6nlni0b" />
-  <source id="5052799592147817874" name="GWTTransientValues" hash="47mllkidzafnj793pn82fpgxdcutvrj">
+  <source id="5052799592147817874" name="GWTTransientValues" hash="3nvsmkmzlrnmlz3yqz44p0al5bd9297">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="GWTTransientValues.java" />
   </source>

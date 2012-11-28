@@ -16,7 +16,7 @@ public class TemplatePersistentPropertyIsSubtypeOfPersistentConfiguration_Subtyp
   }
 
   public SNode getSubOrSuperType(SNode templatePersistentPropertyType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_5pnrvt_a0a0(SLinkOperations.getTarget(templatePersistentPropertyType, "persistentConfiguration", false));
+    return _quotation_createNode_5pnrvt_a0a1(SLinkOperations.getTarget(templatePersistentPropertyType, "persistentConfiguration", false));
   }
 
   public String getApplicableConceptFQName() {
@@ -34,7 +34,7 @@ public class TemplatePersistentPropertyIsSubtypeOfPersistentConfiguration_Subtyp
     return false;
   }
 
-  private static SNode _quotation_createNode_5pnrvt_a0a0(Object parameter_1) {
+  private static SNode _quotation_createNode_5pnrvt_a0a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("persistentConfiguration", (SNode) parameter_1);

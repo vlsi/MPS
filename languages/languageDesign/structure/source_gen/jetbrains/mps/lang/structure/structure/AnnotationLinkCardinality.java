@@ -11,22 +11,12 @@ public enum AnnotationLinkCardinality {
   _0__n("*", "0..n");
 
   private String myName;
-  private String myValue;
-
-  AnnotationLinkCardinality(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -52,5 +42,16 @@ public enum AnnotationLinkCardinality {
       return AnnotationLinkCardinality._0__n;
     }
     return AnnotationLinkCardinality.getDefault();
+  }
+
+  private String myValue;
+
+  AnnotationLinkCardinality(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

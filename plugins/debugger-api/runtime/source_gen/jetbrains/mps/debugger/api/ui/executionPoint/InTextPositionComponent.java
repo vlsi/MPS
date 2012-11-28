@@ -94,8 +94,8 @@ public class InTextPositionComponent implements ProjectComponent {
     if (detach != null || attach != null) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          check_uzwzqp_a0a0a0a0a0a2a7(detach);
-          check_uzwzqp_a1a0a0a0a0a2a7(attach);
+          check_uzwzqp_a0a0a0a0a0a2a41(detach);
+          check_uzwzqp_a1a0a0a0a0a2a41(attach);
         }
       });
 
@@ -108,8 +108,8 @@ public class InTextPositionComponent implements ProjectComponent {
     if (detach != null || attach != null) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          check_uzwzqp_a0a0a0a0a0a2a8(detach);
-          check_uzwzqp_a1a0a0a0a0a2a8(attach);
+          check_uzwzqp_a0a0a0a0a0a2a51(detach);
+          check_uzwzqp_a1a0a0a0a0a2a51(attach);
         }
       });
 
@@ -199,34 +199,6 @@ public class InTextPositionComponent implements ProjectComponent {
     return highlighter;
   }
 
-  private static void check_uzwzqp_a0a0a0a0a0a2a7(_FunctionTypes._void_P0_E0 checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      checkedDotOperand.invoke();
-    }
-
-  }
-
-  private static void check_uzwzqp_a1a0a0a0a0a2a7(_FunctionTypes._void_P0_E0 checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      checkedDotOperand.invoke();
-    }
-
-  }
-
-  private static void check_uzwzqp_a0a0a0a0a0a2a8(_FunctionTypes._void_P0_E0 checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      checkedDotOperand.invoke();
-    }
-
-  }
-
-  private static void check_uzwzqp_a1a0a0a0a0a2a8(_FunctionTypes._void_P0_E0 checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      checkedDotOperand.invoke();
-    }
-
-  }
-
   private class MyCurrentDebugSessionListener implements DebugSessionManagerComponent.DebugSessionListener {
     private MyCurrentDebugSessionListener() {
     }
@@ -266,5 +238,33 @@ public class InTextPositionComponent implements ProjectComponent {
     public void resumed(AbstractDebugSession session) {
       detachPainter();
     }
+  }
+
+  private static void check_uzwzqp_a0a0a0a0a0a2a41(_FunctionTypes._void_P0_E0 checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.invoke();
+    }
+
+  }
+
+  private static void check_uzwzqp_a1a0a0a0a0a2a41(_FunctionTypes._void_P0_E0 checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.invoke();
+    }
+
+  }
+
+  private static void check_uzwzqp_a0a0a0a0a0a2a51(_FunctionTypes._void_P0_E0 checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.invoke();
+    }
+
+  }
+
+  private static void check_uzwzqp_a1a0a0a0a0a2a51(_FunctionTypes._void_P0_E0 checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.invoke();
+    }
+
   }
 }

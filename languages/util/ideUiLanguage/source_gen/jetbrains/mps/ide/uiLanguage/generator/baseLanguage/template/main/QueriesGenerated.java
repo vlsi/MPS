@@ -42,6 +42,10 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "component", false), "root", true), "jetbrains.mps.ide.uiLanguage.structure.IDEDialog");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1203598695864(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_6543398808695633970(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "root", true), "jetbrains.mps.ide.uiLanguage.structure.IDEDialog"), "title");
   }
@@ -88,10 +92,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1203596854674(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.createUniqueName("buttonMethod", null);
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1203598695864(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_6543398808695822601(final IOperationContext operationContext, final PropertyMacroContext _context) {

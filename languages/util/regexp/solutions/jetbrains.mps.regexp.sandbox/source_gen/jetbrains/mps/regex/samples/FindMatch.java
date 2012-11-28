@@ -6,19 +6,19 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 /*package*/ class FindMatch {
-  private static Pattern REGEXP_jzh4fq_a0a0b0a = Pattern.compile("(\\d+)", 0);
-
   public FindMatch() {
   }
 
   /*package*/ void main() {
     String s = "abcdef2323";
     {
-      Pattern _pattern_0 = REGEXP_jzh4fq_a0a0b0a;
+      Pattern _pattern_0 = REGEXP_jzh4fq_a0a0b0b;
       Matcher _matcher_0 = _pattern_0.matcher(s);
       if (_matcher_0.find()) {
         System.out.println(_matcher_0.group(1));
       }
     }
   }
+
+  private static Pattern REGEXP_jzh4fq_a0a0b0b = Pattern.compile("(\\d+)", 0);
 }

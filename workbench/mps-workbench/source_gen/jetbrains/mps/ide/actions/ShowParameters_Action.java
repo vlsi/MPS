@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
@@ -21,10 +20,10 @@ import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.ToolTipData;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.logging.Logger;
 
 public class ShowParameters_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ShowParameters_Action.class);
 
   public ShowParameters_Action() {
     super("Show Parameters", "", ICON);
@@ -97,4 +96,6 @@ public class ShowParameters_Action extends BaseAction {
   /*package*/ SNode getCellNode(final Map<String, Object> _params) {
     return ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNode();
   }
+
+  private static Logger LOG = Logger.getLogger(ShowParameters_Action.class);
 }

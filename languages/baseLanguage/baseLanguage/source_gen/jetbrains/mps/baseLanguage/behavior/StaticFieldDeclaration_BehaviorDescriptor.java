@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor;
+import org.jetbrains.mps.openapi.language.SConcept;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
@@ -13,6 +14,10 @@ import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class StaticFieldDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, StaticKind_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, IBLDeprecatable_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor {
   public StaticFieldDeclaration_BehaviorDescriptor() {
+  }
+
+  public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
+    return StaticFieldDeclaration_Behavior.virtual_canBeInterfaceMember_2949815620938109095(thisConcept);
   }
 
   public Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {

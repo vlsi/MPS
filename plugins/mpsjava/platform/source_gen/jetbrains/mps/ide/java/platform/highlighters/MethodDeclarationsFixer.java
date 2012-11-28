@@ -240,7 +240,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     } else {
       return resolveMethodByCandidatesAndTypes(methodCall, Sequence.fromIterable(((Iterable<SNode>) scope.getAvailableElements(name))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_vo5uqs_a0a0a0a0a1a0a0e0h(SPropertyOperations.getString(it, "name"), name);
+          return eq_vo5uqs_a0a0a0a0a1a0a0e0r(SPropertyOperations.getString(it, "name"), name);
         }
       }), null);
     }
@@ -368,7 +368,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     clearCaches();
   }
 
-  private static boolean eq_vo5uqs_a0a0a0a0a1a0a0e0h(Object a, Object b) {
+  private static boolean eq_vo5uqs_a0a0a0a0a1a0a0e0r(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

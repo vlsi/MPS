@@ -67,7 +67,7 @@ public class DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesyste
             return;
           }
 
-          final SNode targetClassifier = check_ttr84v_a0c0c0c0c0a(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(dotExpression, "operand", true)), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+          final SNode targetClassifier = check_ttr84v_a0c0c0c0c0b(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(dotExpression, "operand", true)), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
           if (SNodeOperations.isInstanceOf(targetClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
             SNode clazz = SNodeOperations.cast(targetClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
             if (AttributeOperations.getAttribute(clazz, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"))) != null && SPropertyOperations.getBoolean(clazz, "isFinal")) {
@@ -113,7 +113,7 @@ public class DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesyste
     return false;
   }
 
-  private static SNode check_ttr84v_a0c0c0c0c0a(SNode checkedDotOperand) {
+  private static SNode check_ttr84v_a0c0c0c0c0b(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, "classifier", false);
     }

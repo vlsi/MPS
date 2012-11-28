@@ -22,7 +22,7 @@ public class typeof_VisitNodesStatement_InferenceRule extends AbstractInferenceR
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SLinkOperations.getTarget(visitNodesStatement, "visitBlock", true), "expression", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1180009374907", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1180009367649", true), (SNode) _quotation_createNode_iezi0_a0b0a(typeCheckingContext.getRepresentative(T_typevar_1180009898513)), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1180009367649", true), (SNode) _quotation_createNode_iezi0_a0b0b(typeCheckingContext.getRepresentative(T_typevar_1180009898513)), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = visitNodesStatement;
@@ -46,7 +46,7 @@ public class typeof_VisitNodesStatement_InferenceRule extends AbstractInferenceR
     return false;
   }
 
-  private static SNode _quotation_createNode_iezi0_a0b0a(Object parameter_1) {
+  private static SNode _quotation_createNode_iezi0_a0b0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathType", null, null, GlobalScope.getInstance(), false);

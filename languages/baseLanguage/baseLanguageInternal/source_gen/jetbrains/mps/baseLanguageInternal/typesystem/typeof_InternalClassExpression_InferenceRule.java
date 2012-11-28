@@ -24,7 +24,7 @@ public class typeof_InternalClassExpression_InferenceRule extends AbstractInfere
     {
       SNode _nodeToCheck_1029348928467 = e;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1196525371913", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1196525371915", true), (SNode) _quotation_createNode_qvdecd_a0a0a(SLinkOperations.getTarget(e, "type", true)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1196525371915", true), (SNode) _quotation_createNode_qvdecd_a0a0b(SLinkOperations.getTarget(e, "type", true)), _info_12389875345);
     }
   }
 
@@ -43,7 +43,7 @@ public class typeof_InternalClassExpression_InferenceRule extends AbstractInfere
     return false;
   }
 
-  private static SNode _quotation_createNode_qvdecd_a0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_qvdecd_a0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);

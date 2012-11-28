@@ -54,7 +54,7 @@ public class MigrateString_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return eq_8h3uxw_a0a0h(SPropertyOperations.getString(SLinkOperations.getTarget(node, "classifier", false), "name"), "String");
+    return eq_8h3uxw_a0a0j(SPropertyOperations.getString(SLinkOperations.getTarget(node, "classifier", false), "name"), "String");
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -66,13 +66,6 @@ public class MigrateString_Intention implements IntentionFactory {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MigrateString_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
-  }
-
-  private static boolean eq_8h3uxw_a0a0h(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
   }
 
   public class IntentionImplementation implements IntentionExecutable {
@@ -91,5 +84,12 @@ public class MigrateString_Intention implements IntentionFactory {
     public IntentionDescriptor getDescriptor() {
       return MigrateString_Intention.this;
     }
+  }
+
+  private static boolean eq_8h3uxw_a0a0j(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

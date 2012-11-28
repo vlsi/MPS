@@ -26,45 +26,45 @@ public class DeploymentDescriptorPersistence {
 
       descriptor = new _FunctionTypes._return_P0_E0<DeploymentDescriptor>() {
         public DeploymentDescriptor invoke() {
-          final DeploymentDescriptor result_wu2j1h_a0a0d0c0a = new DeploymentDescriptor();
-          final String result_wu2j1h_a0a0a0d0c0a = rootElement.getAttributeValue("namespace");
-          result_wu2j1h_a0a0d0c0a.setNamespace(result_wu2j1h_a0a0a0d0c0a);
-          final String result_wu2j1h_a1a0a0d0c0a = rootElement.getAttributeValue("uuid");
-          result_wu2j1h_a0a0d0c0a.setUUID(result_wu2j1h_a1a0a0d0c0a);
-          final String result_wu2j1h_a2a0a0d0c0a = rootElement.getAttributeValue("type");
-          result_wu2j1h_a0a0d0c0a.setType(result_wu2j1h_a2a0a0d0c0a);
+          final DeploymentDescriptor result_wu2j1h_a0a0d0c0b = new DeploymentDescriptor();
+          final String result_wu2j1h_a0a0a0d0c0b = rootElement.getAttributeValue("namespace");
+          result_wu2j1h_a0a0d0c0b.setNamespace(result_wu2j1h_a0a0a0d0c0b);
+          final String result_wu2j1h_a1a0a0d0c0b = rootElement.getAttributeValue("uuid");
+          result_wu2j1h_a0a0d0c0b.setUUID(result_wu2j1h_a1a0a0d0c0b);
+          final String result_wu2j1h_a2a0a0d0c0b = rootElement.getAttributeValue("type");
+          result_wu2j1h_a0a0d0c0b.setType(result_wu2j1h_a2a0a0d0c0b);
 
           for (Element a : Sequence.fromIterable(XmlUtil.children(rootElement, "dependencies"))) {
             for (final Element module : Sequence.fromIterable(XmlUtil.children(a, "module"))) {
-              result_wu2j1h_a0a0d0c0a.getDependencies().add(new _FunctionTypes._return_P0_E0<Dependency>() {
+              result_wu2j1h_a0a0d0c0b.getDependencies().add(new _FunctionTypes._return_P0_E0<Dependency>() {
                 public Dependency invoke() {
-                  final Dependency result_wu2j1h_a0a0a0a0a4a0a0d0c0a = new Dependency();
-                  final ModuleReference result_wu2j1h_a0a0a0a0a0a4a0a0d0c0a = ModuleReference.fromString(module.getAttributeValue("ref"));
-                  result_wu2j1h_a0a0a0a0a4a0a0d0c0a.setModuleRef(result_wu2j1h_a0a0a0a0a0a4a0a0d0c0a);
-                  final boolean result_wu2j1h_a1a0a0a0a0a4a0a0d0c0a = false;
-                  result_wu2j1h_a0a0a0a0a4a0a0d0c0a.setReexport(result_wu2j1h_a1a0a0a0a0a4a0a0d0c0a);
-                  return result_wu2j1h_a0a0a0a0a4a0a0d0c0a;
+                  final Dependency result_wu2j1h_a0a0a0a0a4a0a0d0c0b = new Dependency();
+                  final ModuleReference result_wu2j1h_a0a0a0a0a0a4a0a0d0c0b = ModuleReference.fromString(module.getAttributeValue("ref"));
+                  result_wu2j1h_a0a0a0a0a4a0a0d0c0b.setModuleRef(result_wu2j1h_a0a0a0a0a0a4a0a0d0c0b);
+                  final boolean result_wu2j1h_a1a0a0a0a0a4a0a0d0c0b = false;
+                  result_wu2j1h_a0a0a0a0a4a0a0d0c0b.setReexport(result_wu2j1h_a1a0a0a0a0a4a0a0d0c0b);
+                  return result_wu2j1h_a0a0a0a0a4a0a0d0c0b;
                 }
               }.invoke());
             }
           }
 
           for (Element b : Sequence.fromIterable(XmlUtil.children(rootElement, "runtime"))) {
-            result_wu2j1h_a0a0d0c0a.getRuntimeJars().add(b.getAttributeValue("jar"));
+            result_wu2j1h_a0a0d0c0b.getRuntimeJars().add(b.getAttributeValue("jar"));
           }
           for (Element b : Sequence.fromIterable(XmlUtil.children(rootElement, "library"))) {
-            result_wu2j1h_a0a0d0c0a.getLibraries().add(b.getAttributeValue("jar"));
+            result_wu2j1h_a0a0d0c0b.getLibraries().add(b.getAttributeValue("jar"));
           }
 
           Element sources = XmlUtil.first(rootElement, "sources");
           if (sources != null) {
-            final String result_wu2j1h_a0a01a0a0d0c0a = sources.getAttributeValue("jar");
-            result_wu2j1h_a0a0d0c0a.setSourcesJar(result_wu2j1h_a0a01a0a0d0c0a);
-            final String result_wu2j1h_a1a01a0a0d0c0a = sources.getAttributeValue("descriptor");
-            result_wu2j1h_a0a0d0c0a.setDescriptorFile(result_wu2j1h_a1a01a0a0d0c0a);
+            final String result_wu2j1h_a0a01a0a0d0c0b = sources.getAttributeValue("jar");
+            result_wu2j1h_a0a0d0c0b.setSourcesJar(result_wu2j1h_a0a01a0a0d0c0b);
+            final String result_wu2j1h_a1a01a0a0d0c0b = sources.getAttributeValue("descriptor");
+            result_wu2j1h_a0a0d0c0b.setDescriptorFile(result_wu2j1h_a1a01a0a0d0c0b);
           }
 
-          return result_wu2j1h_a0a0d0c0a;
+          return result_wu2j1h_a0a0d0c0b;
         }
       }.invoke();
     } catch (Exception e) {

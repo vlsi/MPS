@@ -4,7 +4,6 @@ package jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -13,10 +12,10 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.nodeEditor.GoToTypeErrorRuleUtil;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.logging.Logger;
 
 public class GoToTypeErrorRule_InGroup_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(GoToTypeErrorRule_InGroup_Action.class);
   private Pair<String, String> errorId;
   private boolean immediate;
 
@@ -86,4 +85,6 @@ public class GoToTypeErrorRule_InGroup_Action extends BaseAction {
   public static String errorId_State(Pair<String, String> object) {
     return object.o1 + "#" + object.o2;
   }
+
+  private static Logger LOG = Logger.getLogger(GoToTypeErrorRule_InGroup_Action.class);
 }

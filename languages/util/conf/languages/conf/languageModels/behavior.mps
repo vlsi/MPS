@@ -16,6 +16,7 @@
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
+  <import index="tpek" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1740160309778233536">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.extensions" />
@@ -30,12 +31,12 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="cs0q.1740160309778171006" resolveInfo="BeanExtensionPoint" />
     </node>
     <node type="cx9y.NamedTupleDeclaration" typeId="cx9y.1239360506533" id="6121364846593790745">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.extensionPoints" />
       <property name="name" nameId="tpck.1169194664001" value="BeanProperty" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.extensionPoints" />
     </node>
     <node type="uigu.TypeExtension" typeId="uigu.1894531970723270160" id="6121364846593825092">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.extensionPoints" />
       <property name="name" nameId="tpck.1169194664001" value="BeanUtil" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.extensionPoints" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3919891163767797429">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.containers" />
@@ -308,10 +309,10 @@
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6121364846593826322">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6121364846593826317">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6121364846593826312">
-                  <node role="operand" roleId="tpee.1197027771414" type="uigu.ThisExtensionExpression" typeId="uigu.3316739663067157299" id="6121364846593826311" />
-                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="6121364846593826316">
-                    <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.1068390468199" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2752112839363164342">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.5292274854859383272" resolveInfo="fields" />
                   </node>
+                  <node role="operand" roleId="tpee.1197027771414" type="uigu.ThisExtensionExpression" typeId="uigu.3316739663067157299" id="6121364846593826311" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkImplicitSelect" typeId="tp25.3562215692195599741" id="6121364846593826321">
                   <link role="link" roleId="tp25.3562215692195600259" targetNodeId="tpee.1188208488637" />
@@ -388,10 +389,10 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6121364846593826469">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6121364846593826420">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6121364846593826415">
-                <node role="operand" roleId="tpee.1197027771414" type="uigu.ThisExtensionExpression" typeId="uigu.3316739663067157299" id="6121364846593826414" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="6121364846593826419">
-                  <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.1068390468199" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2752112839363167690">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.5292274854859383272" resolveInfo="fields" />
                 </node>
+                <node role="operand" roleId="tpee.1197027771414" type="uigu.ThisExtensionExpression" typeId="uigu.3316739663067157299" id="6121364846593826414" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp2q.WhereOperation" typeId="tp2q.1202120902084" id="6121364846593826424">
                 <node role="closure" roleId="tp2q.1204796294226" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="6121364846593826425">

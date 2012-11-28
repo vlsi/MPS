@@ -4,8 +4,6 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -21,10 +19,11 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class NewAspectModel_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(NewAspectModel_Action.class);
   private LanguageAspect aspect;
 
   public NewAspectModel_Action(LanguageAspect aspect_par) {
@@ -100,4 +99,6 @@ public class NewAspectModel_Action extends BaseAction {
   public static String aspect_State(LanguageAspect object) {
     return object.getName();
   }
+
+  protected static Log log = LogFactory.getLog(NewAspectModel_Action.class);
 }

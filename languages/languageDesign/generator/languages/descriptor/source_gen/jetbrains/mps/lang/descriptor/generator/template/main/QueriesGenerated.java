@@ -10,13 +10,15 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -98,6 +100,14 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "nodeID");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1698302279987411159(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode l = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.project.structure.Language");
+    return ((int) ListSequence.fromList(SLinkOperations.getTargets(l, "generator", true)).count() == 1 ?
+      "Generator" :
+      "Generator" + ListSequence.fromList(SLinkOperations.getTargets(l, "generator", true)).indexOf(_context.getNode())
+    );
+  }
+
   public static Object propertyMacro_GetPropertyValue_7633657384060768610(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getModuleReference_9020561928507315628", new Object[]{});
   }
@@ -121,14 +131,6 @@ public class QueriesGenerated {
     return _context.getNode().getProperty("aa");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1698302279987411159(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode l = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.project.structure.Language");
-    return ((int) ListSequence.fromList(SLinkOperations.getTargets(l, "generator", true)).count() == 1 ?
-      "Generator" :
-      "Generator" + ListSequence.fromList(SLinkOperations.getTargets(l, "generator", true)).indexOf(_context.getNode())
-    );
-  }
-
   public static Object propertyMacro_GetPropertyValue_5102832340571646536(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode l = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.project.structure.Language");
     return SPropertyOperations.getString(l, "namespace") + "/" + ((isEmpty_x583g4_a0a0a1a91(SPropertyOperations.getString(_context.getNode(), "name")) ?
@@ -138,7 +140,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_5554116809065233210(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generator.descriptor"), "constructor", true)).first();
+    return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generator.descriptor"))).first();
   }
 
   public static boolean ifMacro_Condition_5828571963818937566(final IOperationContext operationContext, final IfMacroContext _context) {

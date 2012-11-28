@@ -64,7 +64,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
   }
 
   private static RootDependencies mergeRootDependencies(RootDependencies rd1, RootDependencies rd2) throws JavaDependenciesMerger.MergeException {
-    if (neq_bqsatu_a0a0d(rd1.getClassName(), rd2.getClassName())) {
+    if (neq_bqsatu_a0a0f(rd1.getClassName(), rd2.getClassName())) {
       throw new JavaDependenciesMerger.MergeException("Different class names: " + rd1.getClassName() + " and " + rd2.getClassName());
     }
     Set<String> dependNodes = rd1.getDependencies();
@@ -74,16 +74,16 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
     return new RootDependencies(rd1.getClassName(), rd1.getFileName(), SetSequence.fromSet(dependNodes).toListSequence(), SetSequence.fromSet(extendsNodes).toListSequence());
   }
 
-  private static boolean neq_bqsatu_a0a0d(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
-  }
-
   private static class MergeException extends Exception {
     private MergeException(String msg) {
       super(msg);
     }
+  }
+
+  private static boolean neq_bqsatu_a0a0f(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
   }
 }

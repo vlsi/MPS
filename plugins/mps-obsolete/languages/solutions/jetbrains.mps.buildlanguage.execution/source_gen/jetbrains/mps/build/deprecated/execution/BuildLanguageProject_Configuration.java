@@ -4,12 +4,9 @@ package jetbrains.mps.build.deprecated.execution;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.lib.NodeByConcept_Configuration;
 import jetbrains.mps.ant.execution.AntSettings_Configuration;
-import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
@@ -20,6 +17,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
 import com.intellij.execution.runners.ExecutionEnvironment;
@@ -32,17 +30,14 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
-  protected static Log log = LogFactory.getLog(BuildLanguageProject_Configuration.class);
   @NotNull
   private BuildLanguageProject_Configuration.MyState myState = new BuildLanguageProject_Configuration.MyState();
   private NodeByConcept_Configuration myNode = new NodeByConcept_Configuration("jetbrains.mps.buildlanguage.structure.Project", null);
   private AntSettings_Configuration mySettings = new AntSettings_Configuration();
-
-  public BuildLanguageProject_Configuration(Project project, BuildLanguageProject_Configuration_Factory factory, String name) {
-    super(project, factory, name);
-  }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
   }
@@ -108,7 +103,7 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
 
   @Nullable
   public SNode getTarget() {
-    if (isEmpty_skhqmd_a0a0h(this.getTargetId())) {
+    if (isEmpty_skhqmd_a0a0k(this.getTargetId())) {
       return null;
     }
     final Wrappers._T<SNode> target = new Wrappers._T<SNode>();
@@ -140,6 +135,24 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
       }
     }
     return clone;
+  }
+
+  public class MyState {
+    public String myTargetId;
+
+    public MyState() {
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+      BuildLanguageProject_Configuration.MyState state = new BuildLanguageProject_Configuration.MyState();
+      state.myTargetId = myTargetId;
+      return state;
+    }
+  }
+
+  public BuildLanguageProject_Configuration(Project project, BuildLanguageProject_Configuration_Factory factory, String name) {
+    super(project, factory, name);
   }
 
   @Nullable
@@ -177,21 +190,9 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
     return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodePointer>(), this.getNode().getNodePointer())};
   }
 
-  public static boolean isEmpty_skhqmd_a0a0h(String str) {
+  protected static Log log = LogFactory.getLog(BuildLanguageProject_Configuration.class);
+
+  public static boolean isEmpty_skhqmd_a0a0k(String str) {
     return str == null || str.length() == 0;
-  }
-
-  public class MyState {
-    public String myTargetId;
-
-    public MyState() {
-    }
-
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-      BuildLanguageProject_Configuration.MyState state = new BuildLanguageProject_Configuration.MyState();
-      state.myTargetId = myTargetId;
-      return state;
-    }
   }
 }

@@ -4,7 +4,6 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -29,10 +28,10 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.logging.Logger;
 
 public class AddModelImportByRoot_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(AddModelImportByRoot_Action.class);
 
   public AddModelImportByRoot_Action() {
     super("Add Model Import by Root", "", ICON);
@@ -134,14 +133,16 @@ public class AddModelImportByRoot_Action extends BaseAction {
     EditorCell selectedCell = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectedCell();
     if (selectedCell instanceof EditorCell_Label) {
       EditorCell_Label editorCellLabel = (EditorCell_Label) selectedCell;
-      if (editorCellLabel.isErrorState() && !(isEmpty_3mx29z_a0a0b0c0f(editorCellLabel.getText()))) {
+      if (editorCellLabel.isErrorState() && !(isEmpty_3mx29z_a0a0b0c0h(editorCellLabel.getText()))) {
         return editorCellLabel;
       }
     }
     return null;
   }
 
-  public static boolean isEmpty_3mx29z_a0a0b0c0f(String str) {
+  private static Logger LOG = Logger.getLogger(AddModelImportByRoot_Action.class);
+
+  public static boolean isEmpty_3mx29z_a0a0b0c0h(String str) {
     return str == null || str.length() == 0;
   }
 }

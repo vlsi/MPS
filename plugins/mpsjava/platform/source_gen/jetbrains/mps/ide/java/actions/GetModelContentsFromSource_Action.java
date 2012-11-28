@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -24,10 +23,10 @@ import java.awt.Frame;
 import jetbrains.mps.ide.java.parser.JavaCompiler;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.logging.Logger;
 
 public class GetModelContentsFromSource_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(GetModelContentsFromSource_Action.class);
 
   public GetModelContentsFromSource_Action() {
     super("Get Model Contents from Source", "", ICON);
@@ -122,4 +121,6 @@ public class GetModelContentsFromSource_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "GetModelContentsFromSource", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(GetModelContentsFromSource_Action.class);
 }

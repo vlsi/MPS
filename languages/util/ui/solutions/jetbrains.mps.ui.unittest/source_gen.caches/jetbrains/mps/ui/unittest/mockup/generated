@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5o6uuku3g7r40wrhsiq44sehsla4iu9">
+<dependencies version="2" modelHash="ey001c0hz2qb0114jxpjunekox80uxd">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.tuples.runtime(MPS.Core/jetbrains.mps.baseLanguage.tuples.runtime@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-uvseejb8lftjizgrik03igcx568a80" />
-  <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="698zfbt34wnu2izdfzwct56rjrbcfgy" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3i4sr9viv2mafxmv1gn7u5798g1tob7" />
+  <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="2jj75ckcxs97yshd841onhq085nic5v" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-dtcjnjk6lww15wxj6oyv44k28fu5g1d" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-alf2ogeiijb2ox8l3f57xq8a4vsqut" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-42u6f9vbzpf201qzziwe8drcbr8ay4o" />
   <common hash="-76ss6q3eno7j7dt1sem729d0dshbucy" />
-  <source id="5211164146775800836" name="MockWidget" hash="-2l9k7i3sjezz757vxmalg14lar3sk82">
+  <source id="5211164146775800836" name="MockWidget" hash="-cif029jnrg07a3ycaxt72oeu15dy5ca">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -16,7 +16,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MockWidget.java" />
   </source>
-  <source id="1850528335647299603" name="MockPanel" hash="-14svmeeayvg2927954azxrq9ccsd7vn">
+  <source id="1850528335647299603" name="MockPanel" hash="d2ljyf0mqtf64valnjl1jqep7mk1gc5">
     <dep root="5211164146775800836" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -27,17 +27,17 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MockPanel.java" />
   </source>
-  <source id="5520428330967858496" name="MockPropChngHandler" hash="-56olfncdp2zsuff9qwt8ej7idkm0w7l">
+  <source id="5520428330967858496" name="MockPropChngHandler" hash="musjelk4riy5b9dir7ob0mgfwcjeo3">
     <file name="MockPropChngHandler.java" />
   </source>
-  <source id="6876714382651943235" name="MockEvent" hash="52gqu24bsrbny1z523wz0zdwpbevm6g">
+  <source id="6876714382651943235" name="MockEvent" hash="6jrpkj8jblhpmrf5t7sofnkikxrdygk">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MockEvent.java" />
   </source>
-  <source id="6876714382652027729" name="MockEventHandler" hash="7cr2f3mamw5dm1mllh50vyfxdo71pdc">
+  <source id="6876714382652027729" name="MockEventHandler" hash="b624u1wsqdoru861we4wzzw016yo6a">
     <file name="MockEventHandler.java" />
   </source>
 </dependencies>

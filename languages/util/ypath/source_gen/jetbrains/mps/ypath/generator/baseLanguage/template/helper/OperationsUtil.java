@@ -43,10 +43,6 @@ public class OperationsUtil {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _6_po;
-              private Iterator<SNode> _6_po_it;
-              private SNode _10_io;
-              private SNode _18_io;
 
               protected boolean moveToNext() {
 __loop__:
@@ -132,6 +128,11 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private SNode _6_po;
+              private Iterator<SNode> _6_po_it;
+              private SNode _10_io;
+              private SNode _18_io;
             };
           }
         };

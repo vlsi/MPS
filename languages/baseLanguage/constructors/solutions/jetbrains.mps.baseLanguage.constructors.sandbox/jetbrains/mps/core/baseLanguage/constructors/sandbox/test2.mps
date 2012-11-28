@@ -18,7 +18,13 @@
     </node>
   </roots>
   <root id="3391577739832808340">
-    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="3391577739832808354">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3391577739832808341" />
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="3391577739832808342">
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3391577739832808343" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3391577739832808344" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3391577739832808345" />
+    </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="3391577739832808354">
       <property name="name" nameId="tpck.1169194664001" value="main" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3391577739832808355" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3391577739832808356" />
@@ -76,18 +82,12 @@
         </node>
       </node>
     </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3391577739832808341" />
-    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="3391577739832808342">
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3391577739832808343" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3391577739832808344" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3391577739832808345" />
-    </node>
   </root>
   <root id="4413962600136177711">
     <node role="constructors" roleId="fbxt.3041831561922340678" type="fbxt.CustomConstructor" typeId="fbxt.526936149311701954" id="4413962600136177712">
       <property name="name" nameId="tpck.1169194664001" value="Point" />
-      <property name="leftParenthesis" nameId="fbxt.3330196687714050064" value="{" />
       <property name="rightParenthesis" nameId="fbxt.3330196687714050065" value="}" />
+      <property name="leftParenthesis" nameId="fbxt.3330196687714050064" value="{" />
       <property name="separator" nameId="fbxt.3330196687714050063" value="," />
       <node role="returnType" roleId="fbxt.3330196687714050067" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4413962600136180686">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ar19.~Point2D" resolveInfo="Point2D" />
@@ -120,8 +120,8 @@
     </node>
     <node role="constructors" roleId="fbxt.3041831561922340678" type="fbxt.CustomConstructor" typeId="fbxt.526936149311701954" id="4413962600136184953">
       <property name="name" nameId="tpck.1169194664001" value="Rectangle" />
-      <property name="leftParenthesis" nameId="fbxt.3330196687714050064" value="[" />
       <property name="rightParenthesis" nameId="fbxt.3330196687714050065" value="]" />
+      <property name="leftParenthesis" nameId="fbxt.3330196687714050064" value="[" />
       <property name="separator" nameId="fbxt.3330196687714050063" value="&gt;" />
       <node role="returnType" roleId="fbxt.3330196687714050067" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4413962600136184963">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ar19.~Rectangle2D" resolveInfo="Rectangle2D" />

@@ -11,7 +11,8 @@ import java.util.List;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 
 public class OverridingMethods_Finder extends GeneratedFinder {
@@ -40,7 +41,7 @@ public class OverridingMethods_Finder extends GeneratedFinder {
     monitor.start(getDescription(), 1);
     try {
       for (SNode classNode : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(node), scope, monitor.subTask(1)))) {
-        for (SNode sMethod : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true))) {
+        for (SNode sMethod : Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept")))) {
           if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(sMethod, node)) {
             ListSequence.fromList(_results).addElement(sMethod);
           }

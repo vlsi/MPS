@@ -6,6 +6,14 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
@@ -17,20 +25,55 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.smodel.SModel;
 
 public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_gl82dd_a(editorContext, node);
+  }
+
+  public static class TreeNodeKindProperty_generic_cellMenu_a0a0 extends AbstractCellMenuPart_Generic_Group {
+    public TreeNodeKindProperty_generic_cellMenu_a0a0() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      return ListSequence.fromListAndArray(new ArrayList<Boolean>(), true, false);
+    }
+
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((Boolean) parameterObject, node, model, scope, operationContext, editorContext);
+    }
+
+    public void handleAction_impl(Boolean parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SPropertyOperations.set(node, "default", "" + (parameterObject));
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
+
+    public String getMatchingText(Object parameterObject) {
+      return this.getMatchingText_internal((Boolean) parameterObject);
+    }
+
+    public String getMatchingText_internal(Boolean parameterObject) {
+      return (parameterObject ?
+        "default" :
+        "regular"
+      );
+    }
+
+    public String getDescriptionText(Object parameterObject) {
+      return this.getDescriptionText_internal((Boolean) parameterObject);
+    }
+
+    public String getDescriptionText_internal(Boolean parameterObject) {
+      return (parameterObject ?
+        "allows to omit the property when testing" :
+        "property must be always specified"
+      );
+    }
   }
 
   private EditorCell createAlternation_gl82dd_a0(EditorContext editorContext, SNode node) {
@@ -131,48 +174,5 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_gl82dd_a0a(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "default");
-  }
-
-  public static class TreeNodeKindProperty_generic_cellMenu_a0a0 extends AbstractCellMenuPart_Generic_Group {
-    public TreeNodeKindProperty_generic_cellMenu_a0a0() {
-    }
-
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      return ListSequence.fromListAndArray(new ArrayList<Boolean>(), true, false);
-    }
-
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((Boolean) parameterObject, node, model, scope, operationContext, editorContext);
-    }
-
-    public void handleAction_impl(Boolean parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "default", "" + (parameterObject));
-    }
-
-    public boolean isReferentPresentation() {
-      return false;
-    }
-
-    public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((Boolean) parameterObject);
-    }
-
-    public String getMatchingText_internal(Boolean parameterObject) {
-      return (parameterObject ?
-        "default" :
-        "regular"
-      );
-    }
-
-    public String getDescriptionText(Object parameterObject) {
-      return this.getDescriptionText_internal((Boolean) parameterObject);
-    }
-
-    public String getDescriptionText_internal(Boolean parameterObject) {
-      return (parameterObject ?
-        "allows to omit the property when testing" :
-        "property must be always specified"
-      );
-    }
   }
 }

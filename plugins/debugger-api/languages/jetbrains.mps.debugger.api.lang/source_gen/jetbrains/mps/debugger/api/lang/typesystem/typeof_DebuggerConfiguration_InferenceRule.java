@@ -20,7 +20,7 @@ public class typeof_DebuggerConfiguration_InferenceRule extends AbstractInferenc
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(debuggerConfiguration, "debugger", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:31e73d62-e873-4ed6-bd22-16d8721ebfa3(jetbrains.mps.debugger.api.lang.typesystem)", "6586232406240905084", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:31e73d62-e873-4ed6-bd22-16d8721ebfa3(jetbrains.mps.debugger.api.lang.typesystem)", "6586232406240905090", true), (SNode) _quotation_createNode_p6alym_a0a0a(), false, false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:31e73d62-e873-4ed6-bd22-16d8721ebfa3(jetbrains.mps.debugger.api.lang.typesystem)", "6586232406240905090", true), (SNode) _quotation_createNode_p6alym_a0a0b(), false, false, _info_12389875345);
     }
   }
 
@@ -39,7 +39,7 @@ public class typeof_DebuggerConfiguration_InferenceRule extends AbstractInferenc
     return false;
   }
 
-  private static SNode _quotation_createNode_p6alym_a0a0a() {
+  private static SNode _quotation_createNode_p6alym_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debugger.api.lang.structure.DebuggerType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

@@ -12,22 +12,12 @@ public enum NodePresentationOptions {
   custom_("custom", "custom");
 
   private String myName;
-  private String myValue;
-
-  NodePresentationOptions(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -57,5 +47,16 @@ public enum NodePresentationOptions {
       return NodePresentationOptions.custom_;
     }
     return NodePresentationOptions.getDefault();
+  }
+
+  private String myValue;
+
+  NodePresentationOptions(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

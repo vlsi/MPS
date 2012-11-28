@@ -66,7 +66,7 @@ public class typeof_LocalMethodCall_InferenceRule extends AbstractInferenceRule_
         }).toListSequence();
         for (SNode tvd : ListSequence.fromList(inferrableTypeVars).subtract(ListSequence.fromList(boundTypeVars))) {
           // assume all unbound type vars outside an inference context are Object 
-          MapSequence.fromMap(subs).put(tvd, _quotation_createNode_v9rubd_a0b0c0g0a0a());
+          MapSequence.fromMap(subs).put(tvd, _quotation_createNode_v9rubd_a0b0c0g0a0b());
         }
       }
       if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(mdecl, "typeVariableDeclaration", true)).isNotEmpty()) {
@@ -180,7 +180,7 @@ public class typeof_LocalMethodCall_InferenceRule extends AbstractInferenceRule_
       }).toListSequence();
       for (SNode tvd : ListSequence.fromList(inferrableTypeVars).subtract(ListSequence.fromList(boundTypeVars))) {
         // assume all unbound type vars outside an inference context are Object 
-        MapSequence.fromMap(subs).put(tvd, _quotation_createNode_v9rubd_a0b0c0m0a());
+        MapSequence.fromMap(subs).put(tvd, _quotation_createNode_v9rubd_a0b0c0m0b());
       }
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(mdecl, "typeVariableDeclaration", true)).isNotEmpty()) {
@@ -272,14 +272,14 @@ public class typeof_LocalMethodCall_InferenceRule extends AbstractInferenceRule_
     return true;
   }
 
-  private static SNode _quotation_createNode_v9rubd_a0b0c0g0a0a() {
+  private static SNode _quotation_createNode_v9rubd_a0b0c0g0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_v9rubd_a0b0c0m0a() {
+  private static SNode _quotation_createNode_v9rubd_a0b0c0m0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));

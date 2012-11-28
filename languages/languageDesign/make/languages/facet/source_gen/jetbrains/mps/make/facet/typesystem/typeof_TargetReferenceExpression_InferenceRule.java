@@ -22,7 +22,7 @@ public class typeof_TargetReferenceExpression_InferenceRule extends AbstractInfe
     {
       SNode _nodeToCheck_1029348928467 = tre;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e67eab7b-bc9a-4900-b958-c99ccf24a565(jetbrains.mps.make.facet.typesystem)", "8703512757937156103", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e67eab7b-bc9a-4900-b958-c99ccf24a565(jetbrains.mps.make.facet.typesystem)", "8703512757937156100", true), (SNode) _quotation_createNode_kzmuql_a0a0a(), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e67eab7b-bc9a-4900-b958-c99ccf24a565(jetbrains.mps.make.facet.typesystem)", "8703512757937156100", true), (SNode) _quotation_createNode_kzmuql_a0a0b(), _info_12389875345);
     }
   }
 
@@ -41,7 +41,7 @@ public class typeof_TargetReferenceExpression_InferenceRule extends AbstractInfe
     return false;
   }
 
-  private static SNode _quotation_createNode_kzmuql_a0a0a() {
+  private static SNode _quotation_createNode_kzmuql_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)"), SNodeId.fromString("6168415856807657135")));

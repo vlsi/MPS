@@ -319,10 +319,10 @@
       <varInfo nodeId="445606167100298454" varName="session" />
     </scopeInfo>
     <scopeInfo nodeId="445606167100297402" fileName="MergeData.java" startLine="79" startPosition="0" endLine="111" endPosition="0" />
-    <unitInfo nodeId="445606167100350462" fileName="MergeData.java" startLine="88" startPosition="63" endLine="92" endPosition="5" unitName="jetbrains.mps.vcs.diff.merge.MergeData$4" />
-    <unitInfo nodeId="445606167100350697" fileName="MergeData.java" startLine="156" startPosition="90" endLine="160" endPosition="5" unitName="jetbrains.mps.vcs.diff.merge.MergeData$2" />
-    <unitInfo nodeId="445606167100350821" fileName="MergeData.java" startLine="162" startPosition="103" endLine="166" endPosition="7" unitName="jetbrains.mps.vcs.diff.merge.MergeData$1" />
-    <unitInfo nodeId="68133678146703248" fileName="MergeData.java" startLine="199" startPosition="73" endLine="203" endPosition="7" unitName="jetbrains.mps.vcs.diff.merge.MergeData$3" />
+    <unitInfo nodeId="445606167100350462" fileName="MergeData.java" startLine="88" startPosition="63" endLine="92" endPosition="5" unitName="jetbrains.mps.vcs.diff.merge.MergeData$1" />
+    <unitInfo nodeId="445606167100350697" fileName="MergeData.java" startLine="156" startPosition="90" endLine="160" endPosition="5" unitName="jetbrains.mps.vcs.diff.merge.MergeData$3" />
+    <unitInfo nodeId="445606167100350821" fileName="MergeData.java" startLine="162" startPosition="103" endLine="166" endPosition="7" unitName="jetbrains.mps.vcs.diff.merge.MergeData$2" />
+    <unitInfo nodeId="68133678146703248" fileName="MergeData.java" startLine="199" startPosition="73" endLine="203" endPosition="7" unitName="jetbrains.mps.vcs.diff.merge.MergeData$4" />
     <unitInfo nodeId="445606167100287301" fileName="MergeData.java" startLine="31" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.vcs.diff.merge.MergeData" />
   </root>
 </debugInfo>

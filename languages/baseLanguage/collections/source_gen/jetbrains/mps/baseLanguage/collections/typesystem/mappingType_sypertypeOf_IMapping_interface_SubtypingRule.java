@@ -4,26 +4,25 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER_y1o6nk_a0a0a0a0b0c0a0a0a0a0a0c = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674030190");
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
   public mappingType_sypertypeOf_IMapping_interface_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode ignore, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_y1o6nk_a0a0(((SNode) status.getPattern().getFieldValue("patternVar_KEY")), ((SNode) status.getPattern().getFieldValue("patternVar_VALUE")));
+    return _quotation_createNode_y1o6nk_a0a2(((SNode) status.getPattern().getFieldValue("patternVar_KEY")), ((SNode) status.getPattern().getFieldValue("patternVar_VALUE")));
   }
 
   public String getApplicableConceptFQName() {
@@ -32,7 +31,7 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      GeneratedMatchingPattern pattern = new mappingType_sypertypeOf_IMapping_interface_SubtypingRule.Pattern_y1o6nk_a0a0a0a2();
+      GeneratedMatchingPattern pattern = new mappingType_sypertypeOf_IMapping_interface_SubtypingRule.Pattern_y1o6nk_a0a0a0a4();
       this.myMatchingPattern = pattern;
       boolean b = pattern.match(argument);
       return new IsApplicableStatus(b, pattern);
@@ -43,27 +42,11 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
     return true;
   }
 
-  private static SNode _quotation_createNode_y1o6nk_a0a0(Object parameter_1, Object parameter_2) {
-    SNode quotedNode_3 = null;
-    SNode quotedNode_4 = null;
-    SNode quotedNode_5 = null;
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MappingType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4 = (SNode) parameter_1;
-    if (quotedNode_4 != null) {
-      quotedNode_3.addChild("keyType", HUtil.copyIfNecessary(quotedNode_4));
-    }
-    quotedNode_5 = (SNode) parameter_2;
-    if (quotedNode_5 != null) {
-      quotedNode_3.addChild("valueType", HUtil.copyIfNecessary(quotedNode_5));
-    }
-    return quotedNode_3;
-  }
-
-  public static class Pattern_y1o6nk_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_y1o6nk_a0a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_KEY;
     /*package*/ SNode patternVar_VALUE;
 
-    public Pattern_y1o6nk_a0a0a0a2() {
+    public Pattern_y1o6nk_a0a0a0a4() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -74,7 +57,7 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_y1o6nk_a0a0a0a0b0c0a0a0a0a0a0c;
+          SNodePointer pointer = SNODE_POINTER_y1o6nk_a0a0a0a0b0c0a0a0a0a0a0e;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
@@ -121,4 +104,22 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
     public void performActions(Object o) {
     }
   }
+
+  private static SNode _quotation_createNode_y1o6nk_a0a2(Object parameter_1, Object parameter_2) {
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    SNode quotedNode_5 = null;
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MappingType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_4 = (SNode) parameter_1;
+    if (quotedNode_4 != null) {
+      quotedNode_3.addChild("keyType", HUtil.copyIfNecessary(quotedNode_4));
+    }
+    quotedNode_5 = (SNode) parameter_2;
+    if (quotedNode_5 != null) {
+      quotedNode_3.addChild("valueType", HUtil.copyIfNecessary(quotedNode_5));
+    }
+    return quotedNode_3;
+  }
+
+  private static SNodePointer SNODE_POINTER_y1o6nk_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674030190");
 }

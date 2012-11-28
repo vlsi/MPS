@@ -4,7 +4,6 @@ package jetbrains.mps.lang.dataFlow.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -13,10 +12,10 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
+import jetbrains.mps.logging.Logger;
 
 public class PrintDFAResult_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(PrintDFAResult_Action.class);
 
   public PrintDFAResult_Action() {
     super("Print DFA", "", ICON);
@@ -62,4 +61,6 @@ public class PrintDFAResult_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "PrintDFAResult", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(PrintDFAResult_Action.class);
 }

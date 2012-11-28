@@ -4,27 +4,15 @@ package jetbrains.mps.execution.lib;
 
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.execution.lib.ui.NodeByConceptChooser;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.SNode;
-import com.intellij.openapi.util.Factory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.options.ConfigurationException;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.SNode;
+import com.intellij.openapi.util.Factory;
 
 public class NodeByConcept_Configuration_Editor extends SettingsEditorEx<NodeByConcept_Configuration> {
   private NodeByConceptChooser myChooser;
-  private String myConcept;
-  private _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myIsValid;
-
-  public NodeByConcept_Configuration_Editor(final String concept, final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> isValid) {
-    super(new Factory<NodeByConcept_Configuration>() {
-      public NodeByConcept_Configuration create() {
-        return new NodeByConcept_Configuration(concept, isValid);
-      }
-    });
-    myConcept = concept;
-    myIsValid = isValid;
-  }
 
   public void disposeEditor() {
   }
@@ -51,5 +39,18 @@ public class NodeByConcept_Configuration_Editor extends SettingsEditorEx<NodeByC
         myChooser.setNode(configuration.getNode());
       }
     });
+  }
+
+  private String myConcept;
+  private _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myIsValid;
+
+  public NodeByConcept_Configuration_Editor(final String concept, final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> isValid) {
+    super(new Factory<NodeByConcept_Configuration>() {
+      public NodeByConcept_Configuration create() {
+        return new NodeByConcept_Configuration(concept, isValid);
+      }
+    });
+    myConcept = concept;
+    myIsValid = isValid;
   }
 }

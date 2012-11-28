@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
@@ -39,10 +38,10 @@ import jetbrains.mps.baseLanguage.util.OverridingMethodsFinder;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.HashSet;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.logging.Logger;
 
 public class GoToOverridenMethod_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(GoToOverridenMethod_Action.class);
 
   public GoToOverridenMethod_Action() {
     super("Go to Overriden Method", "", ICON);
@@ -152,4 +151,6 @@ public class GoToOverridenMethod_Action extends BaseAction {
     }
     return result;
   }
+
+  private static Logger LOG = Logger.getLogger(GoToOverridenMethod_Action.class);
 }

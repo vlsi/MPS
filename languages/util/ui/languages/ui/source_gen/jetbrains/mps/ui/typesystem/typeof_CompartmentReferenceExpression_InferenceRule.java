@@ -21,12 +21,12 @@ public class typeof_CompartmentReferenceExpression_InferenceRule extends Abstrac
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(cre, "uiObject", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "5776545240964942393", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "5776545240964942385", true), (SNode) _quotation_createNode_mr322_a0b0a(typeCheckingContext.getRepresentative(UIOBJECT_typevar_5776545240964942406)), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "5776545240964942385", true), (SNode) _quotation_createNode_mr322_a0b0b(typeCheckingContext.getRepresentative(UIOBJECT_typevar_5776545240964942406)), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = cre;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "5776545240964961890", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "5776545240964942409", true), (SNode) _quotation_createNode_mr322_a0c0a(SLinkOperations.getTarget(cre, "container", false), typeCheckingContext.getRepresentative(UIOBJECT_typevar_5776545240964942406)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "5776545240964942409", true), (SNode) _quotation_createNode_mr322_a0c0b(SLinkOperations.getTarget(cre, "container", false), typeCheckingContext.getRepresentative(UIOBJECT_typevar_5776545240964942406)), _info_12389875345);
     }
   }
 
@@ -45,14 +45,14 @@ public class typeof_CompartmentReferenceExpression_InferenceRule extends Abstrac
     return false;
   }
 
-  private static SNode _quotation_createNode_mr322_a0b0a(Object parameter_1) {
+  private static SNode _quotation_createNode_mr322_a0b0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.UIObjectType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("uiObject", (SNode) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_mr322_a0c0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_mr322_a0c0b(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, null, GlobalScope.getInstance(), false);
     quotedNode_3.setReferenceTarget("container", (SNode) parameter_1);

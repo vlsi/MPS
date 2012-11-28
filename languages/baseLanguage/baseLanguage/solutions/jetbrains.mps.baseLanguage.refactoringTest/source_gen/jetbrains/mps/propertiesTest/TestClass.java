@@ -5,8 +5,6 @@ package jetbrains.mps.propertiesTest;
 
 public class TestClass {
   public int value;
-  private int myPropertyValue;
-  private int mySecondPropertyValue;
 
   public TestClass(int initialValue) {
     TestClass.this.setPropertyValue(initialValue);
@@ -21,22 +19,6 @@ public class TestClass {
     new TestClass.PropertyChanger(newValue);
   }
 
-  public int getPropertyValue() {
-    return this.myPropertyValue;
-  }
-
-  private void setPropertyValue(int value) {
-    this.myPropertyValue = value;
-  }
-
-  public int getSecondPropertyValue() {
-    return this.mySecondPropertyValue;
-  }
-
-  private void setSecondPropertyValue(int value) {
-    this.mySecondPropertyValue = value;
-  }
-
   public class PropertyChanger {
     public PropertyChanger(int newValue) {
       TestClass.this.setPropertyValue(newValue);
@@ -46,5 +28,25 @@ public class TestClass {
       asLocalValue = TestClass.this.getPropertyValue();
       TestClass.this.setSecondPropertyValue(TestClass.this.getPropertyValue());
     }
+  }
+
+  private int myPropertyValue;
+
+  public int getPropertyValue() {
+    return this.myPropertyValue;
+  }
+
+  private void setPropertyValue(int value) {
+    this.myPropertyValue = value;
+  }
+
+  private int mySecondPropertyValue;
+
+  public int getSecondPropertyValue() {
+    return this.mySecondPropertyValue;
+  }
+
+  private void setSecondPropertyValue(int value) {
+    this.mySecondPropertyValue = value;
   }
 }

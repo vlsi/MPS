@@ -21,11 +21,11 @@ public class typeof_PersistentPropertyDeclaration_InferenceRule extends Abstract
   }
 
   public void applyRule(final SNode persistentPropertyDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode primitive = SLinkOperations.getTarget(_quotation_createNode_sacma3_a0a0a0(), "descriptor", false);
+    SNode primitive = SLinkOperations.getTarget(_quotation_createNode_sacma3_a0a0a1(), "descriptor", false);
     {
       SNode _nodeToCheck_1029348928467 = persistentPropertyDeclaration;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "5527296032508935722", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(persistentPropertyDeclaration, "type", true), (SNode) _quotation_createNode_sacma3_a0b0a(primitive), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(persistentPropertyDeclaration, "type", true), (SNode) _quotation_createNode_sacma3_a0b0b(primitive), false, true, _info_12389875345);
     }
   }
 
@@ -44,14 +44,14 @@ public class typeof_PersistentPropertyDeclaration_InferenceRule extends Abstract
     return false;
   }
 
-  private static SNode _quotation_createNode_sacma3_a0a0a0() {
+  private static SNode _quotation_createNode_sacma3_a0a0a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("descriptor", SReference.create("descriptor", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683941620")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_sacma3_a0b0a(Object parameter_1) {
+  private static SNode _quotation_createNode_sacma3_a0b0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;

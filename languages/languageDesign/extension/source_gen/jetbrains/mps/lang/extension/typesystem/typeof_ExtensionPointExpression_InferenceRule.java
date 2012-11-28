@@ -21,7 +21,7 @@ public class typeof_ExtensionPointExpression_InferenceRule extends AbstractInfer
     {
       SNode _nodeToCheck_1029348928467 = epe;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)", "6626851894249791047", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)", "6626851894249791042", true), (SNode) _quotation_createNode_x0hnp2_a0b0a(SLinkOperations.getTarget(epe, "extensionPoint", false)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)", "6626851894249791042", true), (SNode) _quotation_createNode_x0hnp2_a0b0b(SLinkOperations.getTarget(epe, "extensionPoint", false)), _info_12389875345);
     }
   }
 
@@ -40,7 +40,7 @@ public class typeof_ExtensionPointExpression_InferenceRule extends AbstractInfer
     return false;
   }
 
-  private static SNode _quotation_createNode_x0hnp2_a0b0a(Object parameter_1) {
+  private static SNode _quotation_createNode_x0hnp2_a0b0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.extension.structure.ExtensionPointType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("extensionPoint", (SNode) parameter_1);

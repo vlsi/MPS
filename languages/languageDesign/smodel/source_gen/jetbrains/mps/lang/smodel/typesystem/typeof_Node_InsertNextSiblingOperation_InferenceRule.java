@@ -22,7 +22,7 @@ public class typeof_Node_InsertNextSiblingOperation_InferenceRule extends Abstra
       {
         SNode _nodeToCheck_1029348928467 = parameter;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, "incompatible type: snode expected", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057239246", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(parameter, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057239248", true), (SNode) _quotation_createNode_yio9mj_a0a0b0a(), false, false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(parameter, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057239248", true), (SNode) _quotation_createNode_yio9mj_a0a0b0b(), false, false, _info_12389875345);
       }
     }
     // op returns node passed in parameter 
@@ -48,7 +48,7 @@ public class typeof_Node_InsertNextSiblingOperation_InferenceRule extends Abstra
     return true;
   }
 
-  private static SNode _quotation_createNode_yio9mj_a0a0b0a() {
+  private static SNode _quotation_createNode_yio9mj_a0a0b0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

@@ -29,7 +29,7 @@ public class BaseMethodParameterInformationQueryUtil {
     }
     List<SNode> methodsToShow = new ArrayList<SNode>();
     for (SNode member : Sequence.fromIterable(members)) {
-      if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && eq_bha4h6_a0a0a5a0(SPropertyOperations.getString(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "name"), SPropertyOperations.getString(method, "name"))) {
+      if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && eq_bha4h6_a0a0a5a1(SPropertyOperations.getString(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "name"), SPropertyOperations.getString(method, "name"))) {
         ListSequence.fromList(methodsToShow).addElement(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
       }
     }
@@ -88,7 +88,7 @@ public class BaseMethodParameterInformationQueryUtil {
     styledText.append(")");
   }
 
-  private static boolean eq_bha4h6_a0a0a5a0(Object a, Object b) {
+  private static boolean eq_bha4h6_a0a0a5a1(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

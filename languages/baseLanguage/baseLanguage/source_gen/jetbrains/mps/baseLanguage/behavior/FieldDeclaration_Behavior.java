@@ -11,6 +11,7 @@ import javax.swing.Icon;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.baseLanguage.util.CodeStyleSettings;
@@ -48,7 +49,7 @@ public class FieldDeclaration_Behavior {
 
   public static boolean call_hasGetter_1213877243808(SNode thisNode, SNode classConcept) {
     final SNode fieldDeclaration = thisNode;
-    return ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(classConcept)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return FieldDeclaration_Behavior.call_isGetter_1213877243833(fieldDeclaration, it);
       }
@@ -65,7 +66,7 @@ public class FieldDeclaration_Behavior {
 
   public static boolean call_hasSetter_1213877243871(SNode thisNode, SNode classConcept) {
     final SNode fieldDeclaration = thisNode;
-    return ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(classConcept)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return FieldDeclaration_Behavior.call_isSetter_1213877243896(fieldDeclaration, it);
       }

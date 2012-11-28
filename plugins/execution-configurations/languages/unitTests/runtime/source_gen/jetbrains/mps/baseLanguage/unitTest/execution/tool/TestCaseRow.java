@@ -13,10 +13,10 @@ public class TestCaseRow extends TestContainerRow {
   }
 
   public boolean matches(String testCase, String testMethod) {
-    return testCase == null || eq_f4t6f0_a0a0a0(testCase, myTestCaseName);
+    return testCase == null || eq_f4t6f0_a0a0a2(testCase, myTestCaseName);
   }
 
-  private static boolean eq_f4t6f0_a0a0a0(Object a, Object b) {
+  private static boolean eq_f4t6f0_a0a0a2(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

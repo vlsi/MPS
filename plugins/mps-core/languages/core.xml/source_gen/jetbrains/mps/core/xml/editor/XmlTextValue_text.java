@@ -67,7 +67,7 @@ public class XmlTextValue_text extends EditorCellKeyMap {
       if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.core.xml.structure.XmlValuePart")) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.core.xml.structure.XmlAttribute"))) {
         return false;
       }
-      return isNotEmpty_w6ww0f_a0c0e0(SPropertyOperations.getString(node, "text"));
+      return isNotEmpty_w6ww0f_a0c0f1(SPropertyOperations.getString(node, "text"));
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
@@ -93,7 +93,7 @@ public class XmlTextValue_text extends EditorCellKeyMap {
       return " \"";
     }
 
-    public static boolean isNotEmpty_w6ww0f_a0c0e0(String str) {
+    public static boolean isNotEmpty_w6ww0f_a0c0f1(String str) {
       return str != null && str.length() > 0;
     }
   }
@@ -139,7 +139,7 @@ public class XmlTextValue_text extends EditorCellKeyMap {
       if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.core.xml.structure.XmlValuePart")) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.core.xml.structure.XmlAttribute"))) {
         return false;
       }
-      return isNotEmpty_w6ww0f_a0c0e1(SPropertyOperations.getString(node, "text"));
+      return isNotEmpty_w6ww0f_a0c0f2(SPropertyOperations.getString(node, "text"));
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
@@ -163,7 +163,7 @@ public class XmlTextValue_text extends EditorCellKeyMap {
       return " &";
     }
 
-    public static boolean isNotEmpty_w6ww0f_a0c0e1(String str) {
+    public static boolean isNotEmpty_w6ww0f_a0c0f2(String str) {
       return str != null && str.length() > 0;
     }
   }

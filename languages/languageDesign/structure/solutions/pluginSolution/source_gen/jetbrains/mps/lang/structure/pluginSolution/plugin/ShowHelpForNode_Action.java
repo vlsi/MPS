@@ -4,7 +4,6 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
@@ -13,10 +12,10 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.logging.Logger;
 
 public class ShowHelpForNode_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ShowHelpForNode_Action.class);
 
   public ShowHelpForNode_Action() {
     super("Show Help for Node", "", ICON);
@@ -70,4 +69,6 @@ public class ShowHelpForNode_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "ShowHelpForNode", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ShowHelpForNode_Action.class);
 }

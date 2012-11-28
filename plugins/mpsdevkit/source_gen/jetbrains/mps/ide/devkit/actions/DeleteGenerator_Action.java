@@ -4,8 +4,6 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -21,10 +19,11 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.devkit.util.DeleteGeneratorHelper;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class DeleteGenerator_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(DeleteGenerator_Action.class);
 
   public DeleteGenerator_Action() {
     super("Delete Generator...", "", ICON);
@@ -102,4 +101,6 @@ public class DeleteGenerator_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(DeleteGenerator_Action.class);
 }

@@ -31,7 +31,7 @@ public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends Abs
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(mae, "index", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238857999186", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238857984180", true), (SNode) _quotation_createNode_290su0_a0b0a(), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238857984180", true), (SNode) _quotation_createNode_290su0_a0b0b(), false, true, _info_12389875345);
     }
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(mae, "index", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{})) {
       Object idxValue = BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(mae, "index", true), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(SLinkOperations.getTarget(mae, "index", true)).getModelDescriptor().getModule()});
@@ -76,7 +76,7 @@ public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends Abs
     return false;
   }
 
-  private static SNode _quotation_createNode_290su0_a0b0a() {
+  private static SNode _quotation_createNode_290su0_a0b0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

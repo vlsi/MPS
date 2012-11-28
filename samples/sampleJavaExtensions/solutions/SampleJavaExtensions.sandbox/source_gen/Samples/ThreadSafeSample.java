@@ -40,8 +40,8 @@ public class ThreadSafeSample {
     final List<String> names = ListSequence.fromListAndArray(new ArrayList<String>(), "Joe", "Dave", "Alice");
 
     {
-      final CountDownLatch latch_n0a = new CountDownLatch(ListSequence.fromList(names).count());
-      final List<Exception> exceptions_n0a = new CopyOnWriteArrayList<Exception>();
+      final CountDownLatch latch_n0c = new CountDownLatch(ListSequence.fromList(names).count());
+      final List<Exception> exceptions_n0c = new CopyOnWriteArrayList<Exception>();
 
       for (final String name : names) {
 
@@ -59,9 +59,9 @@ public class ThreadSafeSample {
                 throw new RuntimeException(e);
               }
             } catch (RuntimeException e) {
-              ListSequence.fromList(exceptions_n0a).addElement(e);
+              ListSequence.fromList(exceptions_n0c).addElement(e);
             } finally {
-              latch_n0a.countDown();
+              latch_n0c.countDown();
             }
           }
         };
@@ -70,12 +70,12 @@ public class ThreadSafeSample {
 
       }
       try {
-        latch_n0a.await();
+        latch_n0c.await();
       } catch (InterruptedException e) {
-        ListSequence.fromList(exceptions_n0a).addElement(e);
+        ListSequence.fromList(exceptions_n0c).addElement(e);
       }
-      if (ListSequence.fromList(exceptions_n0a).isNotEmpty()) {
-        throw new ParallelLoopException("Some parallel calculations failed", exceptions_n0a);
+      if (ListSequence.fromList(exceptions_n0c).isNotEmpty()) {
+        throw new ParallelLoopException("Some parallel calculations failed", exceptions_n0c);
       }
 
     }
@@ -86,8 +86,8 @@ public class ThreadSafeSample {
     final String fixedValue = " fixed value ";
 
     {
-      final CountDownLatch latch_u0a = new CountDownLatch(ListSequence.fromList(names).count());
-      final List<Exception> exceptions_u0a = new CopyOnWriteArrayList<Exception>();
+      final CountDownLatch latch_u0c = new CountDownLatch(ListSequence.fromList(names).count());
+      final List<Exception> exceptions_u0c = new CopyOnWriteArrayList<Exception>();
 
       for (final String name : names) {
 
@@ -99,9 +99,9 @@ public class ThreadSafeSample {
               String finalString = localA + fixedValue.toUpperCase() + fixedFieldValue;
               log("Result: " + finalString);
             } catch (RuntimeException e) {
-              ListSequence.fromList(exceptions_u0a).addElement(e);
+              ListSequence.fromList(exceptions_u0c).addElement(e);
             } finally {
-              latch_u0a.countDown();
+              latch_u0c.countDown();
             }
           }
         };
@@ -110,12 +110,12 @@ public class ThreadSafeSample {
 
       }
       try {
-        latch_u0a.await();
+        latch_u0c.await();
       } catch (InterruptedException e) {
-        ListSequence.fromList(exceptions_u0a).addElement(e);
+        ListSequence.fromList(exceptions_u0c).addElement(e);
       }
-      if (ListSequence.fromList(exceptions_u0a).isNotEmpty()) {
-        throw new ParallelLoopException("Some parallel calculations failed", exceptions_u0a);
+      if (ListSequence.fromList(exceptions_u0c).isNotEmpty()) {
+        throw new ParallelLoopException("Some parallel calculations failed", exceptions_u0c);
       }
 
     }

@@ -4,7 +4,6 @@ package jetbrains.mps.quickQueryLanguage.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -14,10 +13,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.logging.Logger;
 
 public class FindInstancesByCondition_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(FindInstancesByCondition_Action.class);
 
   public FindInstancesByCondition_Action() {
     super("Find Instances by Condition", "", ICON);
@@ -77,4 +76,6 @@ public class FindInstancesByCondition_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "FindInstancesByCondition", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(FindInstancesByCondition_Action.class);
 }

@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -20,11 +21,28 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class SolutionRef_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ns5ajd_a(editorContext, node);
+  }
+
+  public static class ReplaceWith_SolutionRef_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SolutionRef_cellMenu_a0a0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.testbench.suite.structure.SolutionRef";
+    }
+  }
+
+  public static class ReplaceWith_SolutionRef_cellMenu_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SolutionRef_cellMenu_a0b0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.testbench.suite.structure.SolutionRef";
+    }
   }
 
   private EditorCell createCollection_ns5ajd_a(EditorContext editorContext, SNode node) {
@@ -64,23 +82,5 @@ public class SolutionRef_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SolutionRef_Editor.ReplaceWith_SolutionRef_cellMenu_a0b0()}));
     editorCell.setCellId("ReadOnlyModelAccessor_ns5ajd_b0");
     return editorCell;
-  }
-
-  public static class ReplaceWith_SolutionRef_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_SolutionRef_cellMenu_a0a0() {
-    }
-
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.testbench.suite.structure.SolutionRef";
-    }
-  }
-
-  public static class ReplaceWith_SolutionRef_cellMenu_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_SolutionRef_cellMenu_a0b0() {
-    }
-
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.testbench.suite.structure.SolutionRef";
-    }
   }
 }

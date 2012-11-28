@@ -10,13 +10,13 @@ import junit.framework.TestCase;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import junit.framework.Assert;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 @MPSLaunch
 public class PatternProperty_Test extends BaseTransformationTest4 {
@@ -39,8 +39,8 @@ public class PatternProperty_Test extends BaseTransformationTest4 {
     }
 
     public boolean match() {
-      SNode nodeToMatch = _quotation_createNode_xihehy_a0a0b0();
-      GeneratedMatchingPattern pattern = new PatternProperty_Test.TestBody.Pattern_xihehy_a0a1a1a();
+      SNode nodeToMatch = _quotation_createNode_xihehy_a0a0c2();
+      GeneratedMatchingPattern pattern = new PatternProperty_Test.TestBody.Pattern_xihehy_a0a1a2c();
       boolean matchNeeded = true;
       boolean matches = pattern.match(nodeToMatch);
       if (matchNeeded != matches) {
@@ -53,32 +53,13 @@ public class PatternProperty_Test extends BaseTransformationTest4 {
       return true;
     }
 
-    private static SNode _quotation_createNode_xihehy_a0a0b0() {
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
-      SNode quotedNode_4 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
-      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
-      quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~System")));
-      quotedNode_2.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~System.out")));
-      quotedNode_1.addChild("operand", quotedNode_2);
-      quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
-      quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~PrintStream.println(java.lang.String):void")));
-      quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
-      quotedNode_4.setProperty("value", "something");
-      quotedNode_3.addChild("actualArgument", quotedNode_4);
-      quotedNode_1.addChild("operation", quotedNode_3);
-      return quotedNode_1;
-    }
-
-    public static class Pattern_xihehy_a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
+    public static class Pattern_xihehy_a0a1a2c extends GeneratedMatchingPattern implements IMatchingPattern {
       /*package*/ SNode patternVar_field;
       /*package*/ SNode patternVar_className;
       /*package*/ SNode patternVar_method;
       /*package*/ String patternVar_printed;
 
-      public Pattern_xihehy_a0a1a1a() {
+      public Pattern_xihehy_a0a1a2c() {
       }
 
       public boolean match(SNode nodeToMatch) {
@@ -175,6 +156,25 @@ public class PatternProperty_Test extends BaseTransformationTest4 {
 
       public void performActions(Object o) {
       }
+    }
+
+    private static SNode _quotation_createNode_xihehy_a0a0c2() {
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
+      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
+      quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~System")));
+      quotedNode_2.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~System.out")));
+      quotedNode_1.addChild("operand", quotedNode_2);
+      quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
+      quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~PrintStream.println(java.lang.String):void")));
+      quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
+      quotedNode_4.setProperty("value", "something");
+      quotedNode_3.addChild("actualArgument", quotedNode_4);
+      quotedNode_1.addChild("operation", quotedNode_3);
+      return quotedNode_1;
     }
   }
 }

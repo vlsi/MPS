@@ -88,8 +88,6 @@ public class QueriesGenerated {
                   public Iterator<Tuples._2<SNode, SNode>> iterator() {
                     return new YieldingIterator<Tuples._2<SNode, SNode>>() {
                       private int __CP__ = 0;
-                      private SNode _2_em;
-                      private Iterator<SNode> _2_em_it;
 
                       protected boolean moveToNext() {
 __loop__:
@@ -125,6 +123,9 @@ __switch__:
                         } while (true);
                         return false;
                       }
+
+                      private SNode _2_em;
+                      private Iterator<SNode> _2_em_it;
                     };
                   }
                 };

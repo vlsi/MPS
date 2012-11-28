@@ -24,7 +24,7 @@ public class typeof_ParallelFor_InferenceRule extends AbstractInferenceRule_Runt
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(parallelFor, "threadPool", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)", "4659204813808532920", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)", "4659204813808501251", true), (SNode) _quotation_createNode_68f1fp_a0a0a(), false, false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)", "4659204813808501251", true), (SNode) _quotation_createNode_68f1fp_a0a0b(), false, false, _info_12389875345);
     }
     SNode variable = SLinkOperations.getTarget(parallelFor, "loopVariable", true);
     SNode inputSequence = SLinkOperations.getTarget(parallelFor, "inputSequence", true);
@@ -33,7 +33,7 @@ public class typeof_ParallelFor_InferenceRule extends AbstractInferenceRule_Runt
       {
         SNode _nodeToCheck_1029348928467 = inputSequence;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)", "3261041752321174546", 0, null);
-        typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_68f1fp_a0b0d0a(typeCheckingContext.getRepresentative(elementType_typevar_1184771826645), typeCheckingContext.getRepresentative(elementType_typevar_1184771826645)), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)", "3261041752321174570", true), false, true, _info_12389875345);
+        typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_68f1fp_a0b0d0b(typeCheckingContext.getRepresentative(elementType_typevar_1184771826645), typeCheckingContext.getRepresentative(elementType_typevar_1184771826645)), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)", "3261041752321174570", true), false, true, _info_12389875345);
       }
       {
         SNode _nodeToCheck_1029348928467 = variable;
@@ -58,14 +58,14 @@ public class typeof_ParallelFor_InferenceRule extends AbstractInferenceRule_Runt
     return false;
   }
 
-  private static SNode _quotation_createNode_68f1fp_a0a0a() {
+  private static SNode _quotation_createNode_68f1fp_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)"), SNodeId.fromString("~ExecutorService")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_68f1fp_a0b0d0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_68f1fp_a0b0d0b(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;

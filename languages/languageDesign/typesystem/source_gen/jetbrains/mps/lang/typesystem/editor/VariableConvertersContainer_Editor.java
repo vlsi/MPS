@@ -6,57 +6,22 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 
 public class VariableConvertersContainer_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_hoc63h_a(editorContext, node);
-  }
-
-  private EditorCell createCollection_hoc63h_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_hoc63h_a");
-    editorCell.addEditorCell(this.createConstant_hoc63h_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_hoc63h_b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_hoc63h_c0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_hoc63h_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Variable Converters:");
-    editorCell.setCellId("Constant_hoc63h_a0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_hoc63h_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_hoc63h_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNodeList_hoc63h_c0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new VariableConvertersContainer_Editor.converterItemListHandler_hoc63h_c0(node, "converterItem", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_converterItem");
-    editorCell.setRole(handler.getElementRole());
-    return editorCell;
   }
 
   private static class converterItemListHandler_hoc63h_c0 extends RefNodeListHandler {
@@ -93,5 +58,40 @@ public class VariableConvertersContainer_Editor extends DefaultNodeEditor {
         }
       }
     }
+  }
+
+  private EditorCell createCollection_hoc63h_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_hoc63h_a");
+    editorCell.addEditorCell(this.createConstant_hoc63h_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_hoc63h_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_hoc63h_c0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_hoc63h_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Variable Converters:");
+    editorCell.setCellId("Constant_hoc63h_a0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_hoc63h_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_hoc63h_b0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_hoc63h_c0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new VariableConvertersContainer_Editor.converterItemListHandler_hoc63h_c0(node, "converterItem", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
+    editorCell.setCellId("refNodeList_converterItem");
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
   }
 }

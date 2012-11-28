@@ -39,9 +39,6 @@ public class check_LinkDeclaration_NonTypesystemRule extends AbstractNonTypesyst
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private List<SNode> _3_links;
-              private SNode _4_link;
-              private Iterator<SNode> _4_link_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -78,6 +75,10 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private List<SNode> _3_links;
+              private SNode _4_link;
+              private Iterator<SNode> _4_link_it;
             };
           }
         };

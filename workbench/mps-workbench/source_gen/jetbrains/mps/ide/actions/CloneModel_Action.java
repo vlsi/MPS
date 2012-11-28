@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -17,10 +16,10 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel.CloneModelDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.logging.Logger;
 
 public class CloneModel_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(CloneModel_Action.class);
 
   public CloneModel_Action() {
     super("Clone Model", "", ICON);
@@ -90,4 +89,6 @@ public class CloneModel_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "CloneModel", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(CloneModel_Action.class);
 }

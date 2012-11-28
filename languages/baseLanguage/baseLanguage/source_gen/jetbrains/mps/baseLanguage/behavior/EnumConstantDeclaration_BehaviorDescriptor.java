@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 import javax.swing.Icon;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +17,10 @@ public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_Beha
 
   public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return HasAnnotation_Behavior.virtual_canBeAnnotated_1233076312117(thisNode);
+  }
+
+  public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
+    return ClassifierMember_Behavior.virtual_canBeInterfaceMember_2949815620938109095(thisConcept);
   }
 
   public SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {

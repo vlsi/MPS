@@ -5,7 +5,6 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -20,10 +19,10 @@ import com.intellij.openapi.ui.InputValidator;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 import java.util.List;
 import javax.swing.tree.TreeNode;
+import jetbrains.mps.logging.Logger;
 
 public class AddToNewFavoritesList_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("addFavoritesList.png");
-  private static Logger LOG = Logger.getLogger(AddToNewFavoritesList_Action.class);
 
   public AddToNewFavoritesList_Action() {
     super("Add to New Favorites List", "", ICON);
@@ -85,4 +84,6 @@ public class AddToNewFavoritesList_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "AddToNewFavoritesList", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(AddToNewFavoritesList_Action.class);
 }
