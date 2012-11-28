@@ -50,7 +50,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
   private static Logger LOG = Logger.getLogger(PsiJavaStubModelRoot.class);
   private static final String TYPE = "JavaPsiStubs";
-
   @NotNull
   private Module myIdeaModule;
   private Map<PsiDirectory, PsiJavaStubDataSource> myDataSources = MapSequence.fromMap(new HashMap<PsiDirectory, PsiJavaStubDataSource>());
@@ -193,12 +192,12 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
     if (packageName.length() > 0 && packageName.charAt(0) == '.') {
       packageName = packageName.substring(1);
     }
-
     if (packageName.length() == 0) {
       packageName = "<default package>";
     }
 
-    SModelFqName fqName = new SModelFqName(packageName, "java_stub_zzz");
+
+    SModelFqName fqName = new SModelFqName(packageName, "java_stub");
     jetbrains.mps.smodel.SModelId modelId = jetbrains.mps.smodel.SModelId.foreign(fqName.getStereotype(), getModule().getModuleId().toString(), fqName.getLongName());
 
     return new SModelReference(fqName, modelId);
