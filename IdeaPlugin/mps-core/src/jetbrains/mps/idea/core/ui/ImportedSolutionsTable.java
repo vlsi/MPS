@@ -51,11 +51,6 @@ public class ImportedSolutionsTable extends MpsElementsWithCheckboxesTable<Depen
   }
 
   @Override
-  protected void check(Dependency element, boolean value) {
-    element.setReexport(value);
-  }
-
-  @Override
   protected boolean isChecked(Dependency element) {
     return element.isReexport();
   }
@@ -93,11 +88,6 @@ public class ImportedSolutionsTable extends MpsElementsWithCheckboxesTable<Depen
   }
 
   @Override
-  protected String getChooserTitle() {
-    return MPSBundle.message("used.solutions.chooser.title");
-  }
-
-  @Override
   protected String getText(ModuleReference element) {
     return element.getModuleFqName();
   }
@@ -122,7 +112,11 @@ public class ImportedSolutionsTable extends MpsElementsWithCheckboxesTable<Depen
 
   @Override
   public boolean isModified(MPSConfigurationBean data) {
-    return isModified(getDependency());
+    return false;
+  }
+
+  public boolean needsUpdate(List<Dependency> dependency) {
+    return isModified(dependency);
   }
 
   @Override
@@ -133,7 +127,7 @@ public class ImportedSolutionsTable extends MpsElementsWithCheckboxesTable<Depen
   @Override
   public void onTabEntering() {
     List<Dependency> dependency = getDependency();
-    if (isModified(dependency)) {
+    if (needsUpdate(dependency)) {
       setElements(dependency);
     }
   }

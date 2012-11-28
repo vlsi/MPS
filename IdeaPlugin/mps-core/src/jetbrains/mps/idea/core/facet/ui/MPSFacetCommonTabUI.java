@@ -116,35 +116,7 @@ public class MPSFacetCommonTabUI implements IModuleConfigurationTab {
         });
       }
     };
-    ImportedSolutionsTable importedSolutionsTable = new ImportedSolutionsTable(myContext) {
-      @Override
-      protected void doAddElements(Set<Dependency> elementsToAdd) {
-        super.doAddElements(elementsToAdd);
-        final Collection<ModuleReference> referencesToAdd = new ArrayList<ModuleReference>();
-        for (Dependency dependency : elementsToAdd) {
-          referencesToAdd.add(dependency.getModuleRef());
-        }
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-          @Override
-          public void run() {
-            new ModuleRuntimeLibrariesImporter(myContext, referencesToAdd).addMissingLibraries();
-          }
-        });
-      }
-
-      @Override
-      protected void check(Dependency element, boolean value) {
-        super.check(element, value);
-        // If we reexport mps module then we should reexport its lib as well.
-//        Library moduleLibrary = SolutionLibrariesIndex.getInstance(myContext.getProject()).getLibraries(element.getModuleRef());
-//        if (moduleLibrary != null) {
-//          LibraryOrderEntry libraryOrderEntry = myContext.getModifiableRootModel().findLibraryOrderEntry(moduleLibrary);
-//          if (libraryOrderEntry != null) {
-//            libraryOrderEntry.setExported(value);
-//          }
-//        }
-      }
-    };
+    ImportedSolutionsTable importedSolutionsTable = new ImportedSolutionsTable(myContext);
 
     // can not make it final and init in declaration since idea forms generator does not like it and put $$$setupUI$$$ call before setting the field
     myTabs = new ArrayList<IModuleConfigurationTab>();

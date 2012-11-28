@@ -41,7 +41,6 @@ public abstract class MpsElementsWithCheckboxesTable<E, S> {
 
   protected abstract Class<E> getCheckedElementClass();
   protected abstract Class<S> getElementClass();
-  protected abstract void check(E element, boolean value);
   protected abstract boolean isChecked(E element);
   protected abstract S getElement(E checkedElement);
   protected abstract String getText(S element);
@@ -49,7 +48,6 @@ public abstract class MpsElementsWithCheckboxesTable<E, S> {
   protected abstract Icon getIcon();
   protected abstract List<E> getAllVisibleElements();
   protected abstract String getCheckBoxTitle();
-  protected abstract String getChooserTitle();
 
   public JComponent createComponent() {
     myElementsTableModel = new CheckboxTableModel();
@@ -66,43 +64,13 @@ public abstract class MpsElementsWithCheckboxesTable<E, S> {
 
     myElementsTable.setBorder(new LineBorder(UIUtil.getBorderColor()));
 
-    myElementsTable.getSelectionModel().setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
     myElementsTable.setColumnSelectionAllowed(false);
-    myElementsTable.setRowSelectionAllowed(true);
-    if (myElementsTable.getRowCount() > 0) {
-      myElementsTable.getSelectionModel().setSelectionInterval(0, 0);
-    }
+    myElementsTable.setRowSelectionAllowed(false);
 
     TableColumn firstColumn = myElementsTable.getColumnModel().getColumn(0);
-    firstColumn.setCellEditor(new BooleanTableCellEditor());
     firstColumn.setResizable(false);
     TableColumn headerColumn = myElementsTable.getTableHeader().getColumnModel().getColumn(0);
     headerColumn.setMaxWidth(headerColumn.getPreferredWidth());
-
-    myElementsTable.registerKeyboardAction(
-      new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-          int[] selectedRows = myElementsTable.getSelectedRows();
-          boolean currentlyMarked = true;
-          List<E> elements = myElementsTableModel.getElements();
-          for (int selectedRow : selectedRows) {
-            E element = elements.get(selectedRow);
-            if (selectedRow < 0) {
-              return;
-            }
-            currentlyMarked &= isChecked(element);
-          }
-          for (final int selectedRow : selectedRows) {
-            check(elements.get(selectedRow), !currentlyMarked);
-          }
-          myElementsTableModel.fireTableDataChanged();
-          TableUtil.selectRows(myElementsTable, selectedRows);
-        }
-      },
-      KeyStroke.getKeyStroke(KeyEvent.VK_SPACE, 0),
-      JComponent.WHEN_FOCUSED
-    );
 
     new SpeedSearchBase<JBTable>(myElementsTable) {
       public int getSelectedIndex() {
@@ -137,62 +105,9 @@ public abstract class MpsElementsWithCheckboxesTable<E, S> {
     };
 
     ToolbarDecorator decorator = ToolbarDecorator.createDecorator(myElementsTable);
-    decorator.setAddAction(new AnActionButtonRunnable() {
-      @Override
-      public void run(AnActionButton anActionButton) {
-        ModelAccess.instance().runReadInEDT(new Runnable() {
-          @Override
-          public void run() {
-            final List<E> allElements = getAllVisibleElements();
-            Set<S> addedElements = getAddedElements();
-
-            Iterator<E> it = allElements.iterator();
-            while (it.hasNext()) {
-              if (addedElements.contains(getElement(it.next()))){
-                it.remove();
-              }
-            }
-            Collections.sort(allElements, getComparator());
-
-            SwingUtilities.invokeLater(new Runnable() {
-              @Override
-              public void run() {
-                ChooseElementsDialog<E> chooseElementsDialog = new ChooseElementsDialog<E>(myElementsTable, allElements, getChooserTitle()) {
-                  @Override
-                  protected String getItemText(E item) {
-                    return getText(getElement(item));
-                  }
-
-                  @Override
-                  protected Icon getItemIcon(E item) {
-                    return getIcon();
-                  }
-                };
-                chooseElementsDialog.show();
-                Set<E> elementsToAdd = new HashSet<E>(chooseElementsDialog.getChosenElements());
-                doAddElements(elementsToAdd);
-              }
-            });
-          }
-        });
-      }
-    }).setRemoveAction(new AnActionButtonRunnable() {
-      @Override
-      public void run(AnActionButton anActionButton) {
-        TableUtil.removeSelectedItems(myElementsTable);
-        myElementsTableModel.fireTableDataChanged();
-      }
-    });
-    return postDecoratePanel(decorator.createPanel());
-  }
-
-  private Set<S> getAddedElements() {
-    List<E> addedElements = getElements();
-    Set<S> added = new HashSet<S>();
-    for (E element : addedElements) {
-      added.add(getElement(element));
-    }
-    return added;
+    JPanel panel = decorator.createPanel();
+    panel.setBorder(null);
+    return panel;
   }
 
   protected TableCellRenderer createDefaultRenderer() {
@@ -212,25 +127,6 @@ public abstract class MpsElementsWithCheckboxesTable<E, S> {
     };
   }
 
-  protected void doAddElements(Set<E> elementsToAdd) {
-    myElementsTableModel.addElements(elementsToAdd);
-    myElementsTableModel.fireTableDataChanged();
-    ListSelectionModel selectionModel = myElementsTable.getSelectionModel();
-    if (!elementsToAdd.isEmpty()) {
-      selectionModel.clearSelection();
-      for (int i = 0; i < myElementsTableModel.getRowCount(); i++) {
-        if (elementsToAdd.contains(myElementsTableModel.getValueAt(i, 0))) {
-          selectionModel.addSelectionInterval(i, i);
-        }
-      }
-    }
-  }
-
-  protected JPanel postDecoratePanel(JPanel panel) {
-    panel.setBorder(null);
-    return panel;
-  }
-
   public List<E> getElements() {
     return myElementsTableModel.getElements();
   }
@@ -243,7 +139,7 @@ public abstract class MpsElementsWithCheckboxesTable<E, S> {
     }
   }
 
-  public boolean isModified(List<E> elements) {
+  protected boolean isModified(List<E> elements) {
     List<E> sortedLanguagesList = new ArrayList<E>(elements);
     Collections.sort(sortedLanguagesList, getComparator());
     return !getElements().equals(sortedLanguagesList);
@@ -287,15 +183,11 @@ public abstract class MpsElementsWithCheckboxesTable<E, S> {
 
     @Override
     public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
-      if (columnIndex == 0) {
-        check(getElements().get(rowIndex), (Boolean) aValue);
-      }
-      fireTableDataChanged();
     }
 
     @Override
     public boolean isCellEditable(int rowIndex, int columnIndex) {
-      return columnIndex == 0;
+      return false;
     }
   }
 
