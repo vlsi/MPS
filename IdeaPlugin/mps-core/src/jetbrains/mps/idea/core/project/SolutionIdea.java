@@ -24,7 +24,6 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.*;
 import com.intellij.openapi.roots.libraries.Library;
-import com.intellij.openapi.roots.libraries.LibraryTable.Listener;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.CommonProcessors.FindProcessor;
 import com.intellij.util.Processor;
@@ -56,13 +55,10 @@ public class SolutionIdea extends Solution {
   private final Module myModule;
   private List<Dependency> myDependencies;
   private MessageBusConnection myConnection;
-  private final MyLibraryTableListener myLibraryTableListener = new MyLibraryTableListener();
 
   public SolutionIdea(@NotNull Module module, SolutionDescriptor descriptor) {
     super(descriptor, null);
     myModule = module;
-//    uncomment after (if) idea fixes IDEA-95190
-//    ModuleRootManager.getInstance(myModule).getModifiableModel().getModuleLibraryTable().addListener(myLibraryTableListener);
     // TODO: simply set solution descriptor local variable?
     setSolutionDescriptor(descriptor, false);
     myConnection = myModule.getProject().getMessageBus().connect();
@@ -129,8 +125,6 @@ public class SolutionIdea extends Solution {
   @Override
   public void dispose() {
     super.dispose();
-//    uncomment after (if) idea fixes IDEA-95190
-//    ModuleRootManager.getInstance(myModule).getModifiableModel().getModuleLibraryTable().removeListener(myLibraryTableListener);
     myConnection.disconnect();
   }
 
@@ -320,25 +314,5 @@ public class SolutionIdea extends Solution {
 
   public Module getIdeaModule() {
     return myModule;
-  }
-
-  private class MyLibraryTableListener implements Listener {
-    @Override
-    public void afterLibraryAdded(Library newLibrary) {
-      invalidateDependencies();
-    }
-
-    @Override
-    public void afterLibraryRenamed(Library library) {
-    }
-
-    @Override
-    public void beforeLibraryRemoved(Library library) {
-    }
-
-    @Override
-    public void afterLibraryRemoved(Library library) {
-      invalidateDependencies();
-    }
   }
 }
