@@ -4,7 +4,6 @@ package jetbrains.mps.lang.dataFlow.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -23,10 +22,10 @@ import jetbrains.mps.ide.dataFlow.presentation.GraphCreator;
 import jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.logging.Logger;
 
 public class ShowDFA_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ShowDFA_Action.class);
 
   public ShowDFA_Action() {
     super("Show Data Flow Graph", "", ICON);
@@ -87,4 +86,6 @@ public class ShowDFA_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "ShowDFA", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ShowDFA_Action.class);
 }

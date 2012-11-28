@@ -4,23 +4,18 @@ package jetbrains.mps.baseLanguage.execution.api;
 
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import jetbrains.mps.execution.api.settings.SettingsEditorEx;
+import jetbrains.mps.logging.Logger;
 
 public class JavaRunParameters_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
-  private static Logger LOG = Logger.getLogger(JavaRunParameters_Configuration.class);
   @NotNull
   private JavaRunParameters_Configuration.MyState myState = new JavaRunParameters_Configuration.MyState();
-  private SettingsEditorEx<JavaRunParameters_Configuration> myEditorEx;
-
-  public JavaRunParameters_Configuration() {
-  }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
   }
@@ -59,21 +54,6 @@ public class JavaRunParameters_Configuration implements IPersistentConfiguration
     return clone;
   }
 
-  public JavaRunParameters_Configuration createCloneTemplate() {
-    return new JavaRunParameters_Configuration();
-  }
-
-  public JavaRunParameters_Configuration_Editor getEditor() {
-    return new JavaRunParameters_Configuration_Editor();
-  }
-
-  public SettingsEditorEx<JavaRunParameters_Configuration> getEditorEx() {
-    if (myEditorEx == null) {
-      myEditorEx = getEditor();
-    }
-    return myEditorEx;
-  }
-
   public class MyState {
     public JavaRunParameters myJavaRunParameters = new JavaRunParameters(null, null, null, null, false);
 
@@ -89,4 +69,26 @@ public class JavaRunParameters_Configuration implements IPersistentConfiguration
       return state;
     }
   }
+
+  public JavaRunParameters_Configuration() {
+  }
+
+  private SettingsEditorEx<JavaRunParameters_Configuration> myEditorEx;
+
+  public JavaRunParameters_Configuration createCloneTemplate() {
+    return new JavaRunParameters_Configuration();
+  }
+
+  public JavaRunParameters_Configuration_Editor getEditor() {
+    return new JavaRunParameters_Configuration_Editor();
+  }
+
+  public SettingsEditorEx<JavaRunParameters_Configuration> getEditorEx() {
+    if (myEditorEx == null) {
+      myEditorEx = getEditor();
+    }
+    return myEditorEx;
+  }
+
+  private static Logger LOG = Logger.getLogger(JavaRunParameters_Configuration.class);
 }

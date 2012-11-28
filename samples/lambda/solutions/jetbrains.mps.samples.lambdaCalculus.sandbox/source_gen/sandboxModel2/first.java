@@ -18,18 +18,6 @@ public class first {
     return lambdaAbstr_816130369292799546(3);
   }
 
-  public static Integer lambdaAbstr_816130369292799546(Integer x) {
-    return (Integer) let_816130369292799560(new first.Function_816130369292799568(), x);
-  }
-
-  public static Object let_816130369292799560(Function sum_sq, Integer x) {
-    return lambdaAbstr_816130369292799665(x, x, sum_sq);
-  }
-
-  public static Integer lambdaAbstr_816130369292799665(Integer a, Integer x, Function sum_sq) {
-    return (Integer) ((Function) sum_sq.copy()).apply(2, x) - a;
-  }
-
   public static class Function_816130369292799568 extends Function {
     private List myOuterVars = new ArrayList();
 
@@ -57,5 +45,17 @@ public class first {
     public Function copy() {
       return new first.Function_816130369292799568(myOuterVars);
     }
+  }
+
+  public static Integer lambdaAbstr_816130369292799546(Integer x) {
+    return (Integer) let_816130369292799560(new first.Function_816130369292799568(), x);
+  }
+
+  public static Object let_816130369292799560(Function sum_sq, Integer x) {
+    return lambdaAbstr_816130369292799665(x, x, sum_sq);
+  }
+
+  public static Integer lambdaAbstr_816130369292799665(Integer a, Integer x, Function sum_sq) {
+    return (Integer) ((Function) sum_sq.copy()).apply(2, x) - a;
   }
 }

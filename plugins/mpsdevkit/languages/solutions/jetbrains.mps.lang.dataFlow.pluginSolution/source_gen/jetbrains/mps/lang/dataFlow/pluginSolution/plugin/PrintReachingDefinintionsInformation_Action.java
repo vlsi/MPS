@@ -4,7 +4,6 @@ package jetbrains.mps.lang.dataFlow.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -17,10 +16,10 @@ import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
 import java.util.Set;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.ReachingDefinitionsAnalyzer;
+import jetbrains.mps.logging.Logger;
 
 public class PrintReachingDefinintionsInformation_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(PrintReachingDefinintionsInformation_Action.class);
 
   public PrintReachingDefinintionsInformation_Action() {
     super("Print DFA Reaching Definitions Information", "", ICON);
@@ -67,4 +66,6 @@ public class PrintReachingDefinintionsInformation_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "PrintReachingDefinintionsInformation", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(PrintReachingDefinintionsInformation_Action.class);
 }

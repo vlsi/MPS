@@ -73,8 +73,8 @@
     <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="48" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="31" startPosition="21" endLine="45" endPosition="21" />
     <scopeInfo nodeId="1241366278147" fileName="mySalary.java" startLine="31" startPosition="0" endLine="47" endPosition="0" />
-    <unitInfo nodeId="1241366278147" fileName="mySalary.java" startLine="60" startPosition="35" endLine="64" endPosition="5" unitName="jetbrains.mps.calculator.sandbox.sandbox.mySalary$1" />
-    <unitInfo nodeId="1241366278147" fileName="mySalary.java" startLine="14" startPosition="42" endLine="26" endPosition="3" unitName="jetbrains.mps.calculator.sandbox.sandbox.mySalary$2" />
+    <unitInfo nodeId="1241366278147" fileName="mySalary.java" startLine="60" startPosition="35" endLine="64" endPosition="5" unitName="jetbrains.mps.calculator.sandbox.sandbox.mySalary$2" />
+    <unitInfo nodeId="1241366278147" fileName="mySalary.java" startLine="14" startPosition="42" endLine="26" endPosition="3" unitName="jetbrains.mps.calculator.sandbox.sandbox.mySalary$1" />
     <unitInfo nodeId="1241366278147" fileName="mySalary.java" startLine="13" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.calculator.sandbox.sandbox.mySalary" />
   </root>
 </debugInfo>

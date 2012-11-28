@@ -4,26 +4,16 @@ package jetbrains.mps.execution.lib;
 
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.execution.lib.ui.MultiConceptChooser;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.options.ConfigurationException;
 import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.util.Factory;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.options.ConfigurationException;
 
 public class MultiConceptNode_Configuration_Editor extends SettingsEditorEx<MultiConceptNode_Configuration> {
   private MultiConceptChooser myChooser;
-  private List<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargets;
-
-  public MultiConceptNode_Configuration_Editor(final List<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> targets) {
-    super(new Factory<MultiConceptNode_Configuration>() {
-      public MultiConceptNode_Configuration create() {
-        return new MultiConceptNode_Configuration(targets);
-      }
-    });
-    myTargets = targets;
-  }
 
   public void disposeEditor() {
   }
@@ -40,5 +30,16 @@ public class MultiConceptNode_Configuration_Editor extends SettingsEditorEx<Mult
 
   public void resetEditorFrom(final MultiConceptNode_Configuration configuration) {
     myChooser.setNode(configuration.getNode());
+  }
+
+  private List<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargets;
+
+  public MultiConceptNode_Configuration_Editor(final List<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> targets) {
+    super(new Factory<MultiConceptNode_Configuration>() {
+      public MultiConceptNode_Configuration create() {
+        return new MultiConceptNode_Configuration(targets);
+      }
+    });
+    myTargets = targets;
   }
 }
