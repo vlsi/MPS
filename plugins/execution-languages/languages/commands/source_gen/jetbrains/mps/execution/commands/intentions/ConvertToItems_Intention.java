@@ -66,7 +66,7 @@ public class ConvertToItems_Intention implements IntentionFactory {
   }
 
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
-    return eq_icoqxr_a0a0i(SNodeOperations.getContainingLinkRole(childNode), "list");
+    return eq_icoqxr_a0a0k(SNodeOperations.getContainingLinkRole(childNode), "list");
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -78,13 +78,6 @@ public class ConvertToItems_Intention implements IntentionFactory {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertToItems_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
-  }
-
-  private static boolean eq_icoqxr_a0a0i(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
   }
 
   public class IntentionImplementation implements IntentionExecutable {
@@ -104,5 +97,12 @@ public class ConvertToItems_Intention implements IntentionFactory {
     public IntentionDescriptor getDescriptor() {
       return ConvertToItems_Intention.this;
     }
+  }
+
+  private static boolean eq_icoqxr_a0a0k(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

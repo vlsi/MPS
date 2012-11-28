@@ -11,9 +11,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -23,6 +20,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.intentions.IntentionDescriptor;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -69,6 +69,46 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention implem
     return myCachedExecutable;
   }
 
+  public class IntentionImplementation implements IntentionExecutable {
+    public IntentionImplementation() {
+    }
+
+    public String getDescription(final SNode node, final EditorContext editorContext) {
+      return "Replace with foreach from collections language";
+    }
+
+    public void execute(final SNode node, final EditorContext editorContext) {
+      final List<SNode> mfps = ListSequence.fromList(SLinkOperations.getTargets(node, "loopVariable", true)).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode lv) {
+          return _quotation_createNode_kx76k7_a0a0a0a0a0a(SPropertyOperations.getString(SLinkOperations.getTarget(lv, "variable", true), "name"), SNodeOperations.copyNode(SLinkOperations.getTarget(lv, "iterable", true)));
+        }
+      }).toListSequence();
+      SNode mfs = SNodeOperations.replaceWithAnother(node, _quotation_createNode_kx76k7_a0a0b0a(mfps, SNodeOperations.copyNode(SLinkOperations.getTarget(node, "body", true))));
+      final List<SNode> lvs = ListSequence.fromList(SLinkOperations.getTargets(node, "loopVariable", true)).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode lv) {
+          return SLinkOperations.getTarget(lv, "variable", true);
+        }
+      }).toListSequence();
+      ListSequence.fromList(SNodeOperations.getDescendants(mfs, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+        }
+      }).toListSequence().where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode lvr) {
+          return ListSequence.fromList(lvs).contains(SNodeOperations.cast(SLinkOperations.getTarget(lvr, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
+        }
+      }).toListSequence().visitAll(new IVisitor<SNode>() {
+        public void visit(SNode lvr) {
+          SNodeOperations.replaceWithAnother(lvr, _quotation_createNode_kx76k7_a0a0a0a0d0a(SLinkOperations.getTarget(ListSequence.fromList(mfps).getElement(SNodeOperations.getIndexInParent(SNodeOperations.getParent(SLinkOperations.getTarget(lvr, "variableDeclaration", false)))), "variable", true)));
+        }
+      });
+    }
+
+    public IntentionDescriptor getDescriptor() {
+      return MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.this;
+    }
+  }
+
   private static SNode _quotation_createNode_kx76k7_a0a0a0a0a0a(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -109,45 +149,5 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention implem
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariableReference", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("variable", (SNode) parameter_1);
     return quotedNode_2;
-  }
-
-  public class IntentionImplementation implements IntentionExecutable {
-    public IntentionImplementation() {
-    }
-
-    public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Replace with foreach from collections language";
-    }
-
-    public void execute(final SNode node, final EditorContext editorContext) {
-      final List<SNode> mfps = ListSequence.fromList(SLinkOperations.getTargets(node, "loopVariable", true)).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode lv) {
-          return _quotation_createNode_kx76k7_a0a0a0a0a0a(SPropertyOperations.getString(SLinkOperations.getTarget(lv, "variable", true), "name"), SNodeOperations.copyNode(SLinkOperations.getTarget(lv, "iterable", true)));
-        }
-      }).toListSequence();
-      SNode mfs = SNodeOperations.replaceWithAnother(node, _quotation_createNode_kx76k7_a0a0b0a(mfps, SNodeOperations.copyNode(SLinkOperations.getTarget(node, "body", true))));
-      final List<SNode> lvs = ListSequence.fromList(SLinkOperations.getTargets(node, "loopVariable", true)).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode lv) {
-          return SLinkOperations.getTarget(lv, "variable", true);
-        }
-      }).toListSequence();
-      ListSequence.fromList(SNodeOperations.getDescendants(mfs, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
-        }
-      }).toListSequence().where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode lvr) {
-          return ListSequence.fromList(lvs).contains(SNodeOperations.cast(SLinkOperations.getTarget(lvr, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
-        }
-      }).toListSequence().visitAll(new IVisitor<SNode>() {
-        public void visit(SNode lvr) {
-          SNodeOperations.replaceWithAnother(lvr, _quotation_createNode_kx76k7_a0a0a0a0d0a(SLinkOperations.getTarget(ListSequence.fromList(mfps).getElement(SNodeOperations.getIndexInParent(SNodeOperations.getParent(SLinkOperations.getTarget(lvr, "variableDeclaration", false)))), "variable", true)));
-        }
-      });
-    }
-
-    public IntentionDescriptor getDescriptor() {
-      return MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.this;
-    }
   }
 }

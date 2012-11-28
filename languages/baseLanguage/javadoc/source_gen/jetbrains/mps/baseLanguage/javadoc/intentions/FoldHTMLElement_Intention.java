@@ -63,16 +63,12 @@ public class FoldHTMLElement_Intention implements IntentionFactory {
     return myCachedExecutable;
   }
 
-  public static boolean isEmpty_ngv5m6_a0a0a0a0(String str) {
-    return str == null || str.length() == 0;
-  }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      String name = (isEmpty_ngv5m6_a0a0a0a0(SPropertyOperations.getString(node, "name")) ?
+      String name = (isEmpty_ngv5m6_a0a0a0b11(SPropertyOperations.getString(node, "name")) ?
         "..." :
         SPropertyOperations.getString(node, "name")
       );
@@ -93,5 +89,9 @@ public class FoldHTMLElement_Intention implements IntentionFactory {
     public IntentionDescriptor getDescriptor() {
       return FoldHTMLElement_Intention.this;
     }
+  }
+
+  public static boolean isEmpty_ngv5m6_a0a0a0b11(String str) {
+    return str == null || str.length() == 0;
   }
 }
