@@ -124,7 +124,7 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
           String aRole = SNodeOperations.getContainingLinkRole(a);
           String bRole = SNodeOperations.getContainingLinkRole(b);
 
-          if (neq_sivw9t_a0d0c0a0a0a0d0a(aRole, bRole)) {
+          if (neq_sivw9t_a0d0c0a0a0a0d0n(aRole, bRole)) {
             return aRole.compareTo(bRole);
           }
 
@@ -151,7 +151,7 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
     }).toGenericArray(SNodePointer.class);
   }
 
-  private static boolean neq_sivw9t_a0d0c0a0a0a0d0a(Object a, Object b) {
+  private static boolean neq_sivw9t_a0d0c0a0a0a0d0n(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

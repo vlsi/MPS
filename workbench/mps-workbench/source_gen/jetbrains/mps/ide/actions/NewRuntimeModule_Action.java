@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -34,10 +33,10 @@ import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.openapi.application.ModalityState;
+import jetbrains.mps.logging.Logger;
 
 public class NewRuntimeModule_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(NewRuntimeModule_Action.class);
 
   public NewRuntimeModule_Action() {
     super("New Runtime Module", "", ICON);
@@ -135,4 +134,6 @@ public class NewRuntimeModule_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "NewRuntimeModule", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(NewRuntimeModule_Action.class);
 }

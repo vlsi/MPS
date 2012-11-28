@@ -11,13 +11,13 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.baseLanguage.actions.ExpectedType_FactoryUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class SurroundWithTypeCast_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -71,25 +71,6 @@ public class SurroundWithTypeCast_Intention implements IntentionFactory {
     return myCachedExecutable;
   }
 
-  private static SNode _quotation_createNode_3zfq0u_a0b0a(Object parameter_1, Object parameter_2) {
-    SNode quotedNode_3 = null;
-    SNode quotedNode_4 = null;
-    SNode quotedNode_5 = null;
-    SNode quotedNode_6 = null;
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5 = (SNode) parameter_1;
-    if (quotedNode_5 != null) {
-      quotedNode_4.addChild("expression", HUtil.copyIfNecessary(quotedNode_5));
-    }
-    quotedNode_6 = (SNode) parameter_2;
-    if (quotedNode_6 != null) {
-      quotedNode_4.addChild("type", HUtil.copyIfNecessary(quotedNode_6));
-    }
-    quotedNode_3.addChild("expression", quotedNode_4);
-    return quotedNode_3;
-  }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
@@ -112,5 +93,24 @@ public class SurroundWithTypeCast_Intention implements IntentionFactory {
     public IntentionDescriptor getDescriptor() {
       return SurroundWithTypeCast_Intention.this;
     }
+  }
+
+  private static SNode _quotation_createNode_3zfq0u_a0b0a(Object parameter_1, Object parameter_2) {
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    SNode quotedNode_5 = null;
+    SNode quotedNode_6 = null;
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", null, null, GlobalScope.getInstance(), false);
+    quotedNode_5 = (SNode) parameter_1;
+    if (quotedNode_5 != null) {
+      quotedNode_4.addChild("expression", HUtil.copyIfNecessary(quotedNode_5));
+    }
+    quotedNode_6 = (SNode) parameter_2;
+    if (quotedNode_6 != null) {
+      quotedNode_4.addChild("type", HUtil.copyIfNecessary(quotedNode_6));
+    }
+    quotedNode_3.addChild("expression", quotedNode_4);
+    return quotedNode_3;
   }
 }

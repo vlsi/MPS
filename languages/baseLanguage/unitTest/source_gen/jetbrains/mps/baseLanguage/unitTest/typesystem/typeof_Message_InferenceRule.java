@@ -20,7 +20,7 @@ public class typeof_Message_InferenceRule extends AbstractInferenceRule_Runtime 
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(message, "message", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:2b2539c5-00c8-487d-9567-ecc2b9274c7b(jetbrains.mps.baseLanguage.unitTest.typesystem)", "2032731141110265660", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:2b2539c5-00c8-487d-9567-ecc2b9274c7b(jetbrains.mps.baseLanguage.unitTest.typesystem)", "2032731141110265662", true), (SNode) _quotation_createNode_t8mumf_a0a0a(), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:2b2539c5-00c8-487d-9567-ecc2b9274c7b(jetbrains.mps.baseLanguage.unitTest.typesystem)", "2032731141110265662", true), (SNode) _quotation_createNode_t8mumf_a0a0b(), false, true, _info_12389875345);
     }
   }
 
@@ -39,7 +39,7 @@ public class typeof_Message_InferenceRule extends AbstractInferenceRule_Runtime 
     return false;
   }
 
-  private static SNode _quotation_createNode_t8mumf_a0a0a() {
+  private static SNode _quotation_createNode_t8mumf_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

@@ -8,13 +8,11 @@ import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
-  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.debugger.decisionTable.structure.CaseExpression", "jetbrains.mps.debugger.decisionTable.structure.DecideOperation", "jetbrains.mps.debugger.decisionTable.structure.DecisionTable", "jetbrains.mps.debugger.decisionTable.structure.DecisionTableType", "jetbrains.mps.debugger.decisionTable.structure.XVariableReference", "jetbrains.mps.debugger.decisionTable.structure.YVariableReference"};
-
   public StructureAspectDescriptor() {
   }
 
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
         return new CompiledConceptDescriptor("jetbrains.mps.debugger.decisionTable.structure.CaseExpression", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 1:
@@ -31,4 +29,6 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
+
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.debugger.decisionTable.structure.CaseExpression", "jetbrains.mps.debugger.decisionTable.structure.DecideOperation", "jetbrains.mps.debugger.decisionTable.structure.DecisionTable", "jetbrains.mps.debugger.decisionTable.structure.DecisionTableType", "jetbrains.mps.debugger.decisionTable.structure.XVariableReference", "jetbrains.mps.debugger.decisionTable.structure.YVariableReference"};
 }

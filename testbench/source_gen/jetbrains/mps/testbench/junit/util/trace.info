@@ -151,8 +151,8 @@
       <varInfo nodeId="4052780437579009241" varName="notFounded" />
       <varInfo nodeId="4052780437579009239" varName="unExpected" />
     </scopeInfo>
-    <unitInfo nodeId="3798371591902458037" fileName="ScopesTest.java" startLine="105" startPosition="45" endLine="116" endPosition="5" unitName="jetbrains.mps.testbench.junit.util.ScopesTest$1" />
-    <unitInfo nodeId="3798371591902428451" fileName="ScopesTest.java" startLine="80" startPosition="45" endLine="100" endPosition="5" unitName="jetbrains.mps.testbench.junit.util.ScopesTest$2" />
+    <unitInfo nodeId="3798371591902458037" fileName="ScopesTest.java" startLine="105" startPosition="45" endLine="116" endPosition="5" unitName="jetbrains.mps.testbench.junit.util.ScopesTest$2" />
+    <unitInfo nodeId="3798371591902428451" fileName="ScopesTest.java" startLine="80" startPosition="45" endLine="100" endPosition="5" unitName="jetbrains.mps.testbench.junit.util.ScopesTest$1" />
     <unitInfo nodeId="4052780437579008133" fileName="ScopesTest.java" startLine="23" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.testbench.junit.util.ScopesTest" />
   </root>
 </debugInfo>

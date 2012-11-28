@@ -18,7 +18,7 @@ public class TemplatePersistentConfigurationIsITemplatePersistentConfigurationCl
   }
 
   public SNode getSubOrSuperType(SNode templatePersistentConfigurationType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_ov7vps_a0a0();
+    return _quotation_createNode_ov7vps_a0a1();
   }
 
   public String getApplicableConceptFQName() {
@@ -36,7 +36,7 @@ public class TemplatePersistentConfigurationIsITemplatePersistentConfigurationCl
     return false;
   }
 
-  private static SNode _quotation_createNode_ov7vps_a0a0() {
+  private static SNode _quotation_createNode_ov7vps_a0a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.execution.api.settings(MPS.Workbench/jetbrains.mps.execution.api.settings@java_stub)"), SNodeId.fromString("~ITemplatePersistentConfiguration")));

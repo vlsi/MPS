@@ -30,7 +30,7 @@ public class MakeStaticMethodNotStatic_QuickFix extends QuickFix_Runtime {
     ListSequence.fromList(SLinkOperations.getTargets(methodDeclaration, "annotation", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]), "annotation", true)));
     ListSequence.fromList(SLinkOperations.getTargets(methodDeclaration, "typeVariableDeclaration", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]), "typeVariableDeclaration", true)));
     SLinkOperations.setTarget(methodDeclaration, "visibility", SLinkOperations.getTarget(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]), "visibility", true), true);
-    ListSequence.fromList(SLinkOperations.getTargets(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("containingClass")[0]), "method", true)).addElement(methodDeclaration);
+    ListSequence.fromList(SLinkOperations.getTargets(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("containingClass")[0]), "member", true)).addElement(methodDeclaration);
     SNodeOperations.detachNode(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]));
     SNodeOperations.deleteNode(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]));
   }

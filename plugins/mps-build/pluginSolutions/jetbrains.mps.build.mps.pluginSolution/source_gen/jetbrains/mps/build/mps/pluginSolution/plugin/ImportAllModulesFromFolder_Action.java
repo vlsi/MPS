@@ -5,7 +5,6 @@ package jetbrains.mps.build.mps.pluginSolution.plugin;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -29,10 +28,10 @@ import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.PathConverter;
 import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.logging.Logger;
 
 public class ImportAllModulesFromFolder_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("import.png");
-  private static Logger LOG = Logger.getLogger(ImportAllModulesFromFolder_Action.class);
 
   public ImportAllModulesFromFolder_Action() {
     super("Import All Modules from Folder", "", ICON);
@@ -95,7 +94,7 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           basePath.value = BuildProject_Behavior.call_getBasePath_4959435991187146924(((SNode) MapSequence.fromMap(_params).get("node")), Context.defaultContext());
-          if (basePath.value != null && isNotEmpty_mmt9i1_a0a1a0a0a0a5a0a3(basePath.value)) {
+          if (basePath.value != null && isNotEmpty_mmt9i1_a0a1a0a0a0a5a0a5(basePath.value)) {
             projectFolder.value = FileSystem.getInstance().getFileByPath(basePath.value);
           }
         }
@@ -145,7 +144,9 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
     }
   }
 
-  public static boolean isNotEmpty_mmt9i1_a0a1a0a0a0a5a0a3(String str) {
+  private static Logger LOG = Logger.getLogger(ImportAllModulesFromFolder_Action.class);
+
+  public static boolean isNotEmpty_mmt9i1_a0a1a0a0a0a5a0a5(String str) {
     return str != null && str.length() > 0;
   }
 }

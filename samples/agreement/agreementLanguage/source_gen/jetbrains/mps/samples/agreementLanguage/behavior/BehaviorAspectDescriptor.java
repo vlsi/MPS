@@ -7,13 +7,11 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.samples.agreementLanguage.structure.AccountType", "jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations", "jetbrains.mps.samples.agreementLanguage.structure.Date", "jetbrains.mps.samples.agreementLanguage.structure.Date_Future", "jetbrains.mps.samples.agreementLanguage.structure.Date_Past", "jetbrains.mps.samples.agreementLanguage.structure.Event", "jetbrains.mps.samples.agreementLanguage.structure.EventType", "jetbrains.mps.samples.agreementLanguage.structure.EventVariable", "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference", "jetbrains.mps.samples.agreementLanguage.structure.Plan", "jetbrains.mps.samples.agreementLanguage.structure.PostingRule", "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.Quantity", "jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.Value", "jetbrains.mps.samples.agreementLanguage.structure.ValueReference"};
-
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 9:
         return new Plan_BehaviorDescriptor();
       case 14:
@@ -50,4 +48,6 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
+
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.samples.agreementLanguage.structure.AccountType", "jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations", "jetbrains.mps.samples.agreementLanguage.structure.Date", "jetbrains.mps.samples.agreementLanguage.structure.Date_Future", "jetbrains.mps.samples.agreementLanguage.structure.Date_Past", "jetbrains.mps.samples.agreementLanguage.structure.Event", "jetbrains.mps.samples.agreementLanguage.structure.EventType", "jetbrains.mps.samples.agreementLanguage.structure.EventVariable", "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference", "jetbrains.mps.samples.agreementLanguage.structure.Plan", "jetbrains.mps.samples.agreementLanguage.structure.PostingRule", "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.Quantity", "jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.Value", "jetbrains.mps.samples.agreementLanguage.structure.ValueReference"};
 }

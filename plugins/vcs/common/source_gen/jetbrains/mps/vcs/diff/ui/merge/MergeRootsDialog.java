@@ -50,10 +50,10 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import javax.swing.Action;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
-import java.awt.GraphicsDevice;
-import java.awt.HeadlessException;
 import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
 import org.jetbrains.annotations.NotNull;
+import java.awt.GraphicsDevice;
+import java.awt.HeadlessException;
 
 public class MergeRootsDialog extends DialogWrapper {
   private MergeSession myMergeSession;
@@ -120,7 +120,7 @@ public class MergeRootsDialog extends DialogWrapper {
     highlightAllChanges();
 
     neighbourTraverser.goToFirstChangeLater();
-    DisplayMode displayMode = check_3816sg_a0hb0a(check_3816sg_a0a33a0(GraphicsEnvironment.getLocalGraphicsEnvironment()));
+    DisplayMode displayMode = check_3816sg_a0hb0r(check_3816sg_a0a33a71(GraphicsEnvironment.getLocalGraphicsEnvironment()));
     int width = (displayMode == null ?
       800 :
       displayMode.getWidth() - 100
@@ -371,20 +371,6 @@ public class MergeRootsDialog extends DialogWrapper {
     super.dispose();
   }
 
-  private static DisplayMode check_3816sg_a0hb0a(GraphicsDevice checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getDisplayMode();
-    }
-    return null;
-  }
-
-  private static GraphicsDevice check_3816sg_a0a33a0(GraphicsEnvironment checkedDotOperand) throws HeadlessException {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getDefaultScreenDevice();
-    }
-    return null;
-  }
-
   private class MyGoToNeighbourRootActions extends GoToNeighbourRootActions {
     public MyGoToNeighbourRootActions() {
     }
@@ -398,5 +384,19 @@ public class MergeRootsDialog extends DialogWrapper {
     protected SNodeId getNeighbourId(boolean next) {
       return myModelsDialog.getNeighbourRoot(myRootId, next);
     }
+  }
+
+  private static DisplayMode check_3816sg_a0hb0r(GraphicsDevice checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getDisplayMode();
+    }
+    return null;
+  }
+
+  private static GraphicsDevice check_3816sg_a0a33a71(GraphicsEnvironment checkedDotOperand) throws HeadlessException {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getDefaultScreenDevice();
+    }
+    return null;
   }
 }

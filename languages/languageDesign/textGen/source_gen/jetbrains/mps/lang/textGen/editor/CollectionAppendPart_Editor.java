@@ -180,18 +180,18 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_wfu8o0_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "withSeparator") || isNotEmpty_wfu8o0_a0a0a0(SPropertyOperations.getString(node, "separator"));
+    return SPropertyOperations.getBoolean(node, "withSeparator") || isNotEmpty_wfu8o0_a0a0a41(SPropertyOperations.getString(node, "separator"));
   }
 
   private static boolean renderingCondition_wfu8o0_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_wfu8o0_a0a0b(SPropertyOperations.getString(node, "separator"));
+    return isNotEmpty_wfu8o0_a0a0p(SPropertyOperations.getString(node, "separator"));
   }
 
-  public static boolean isNotEmpty_wfu8o0_a0a0a0(String str) {
+  public static boolean isNotEmpty_wfu8o0_a0a0a41(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isNotEmpty_wfu8o0_a0a0b(String str) {
+  public static boolean isNotEmpty_wfu8o0_a0a0p(String str) {
     return str != null && str.length() > 0;
   }
 }

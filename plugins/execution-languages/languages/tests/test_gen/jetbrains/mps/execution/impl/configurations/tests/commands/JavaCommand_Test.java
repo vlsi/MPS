@@ -45,7 +45,7 @@ public class JavaCommand_Test extends BaseTransformationTest4 {
           SModel model = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox", "tests")).getSModel();
           SNode mainNode = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.core.structure.INamedConcept")).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return eq_849b2c_a0a0a0a0a0a1a0a0a0a1a0a(SPropertyOperations.getString(it, "name"), Main.class.getSimpleName());
+              return eq_849b2c_a0a0a0a0a0a1a0a0a0a1a0b(SPropertyOperations.getString(it, "name"), Main.class.getSimpleName());
             }
           });
           pointer.value = new SNodePointer(mainNode);
@@ -62,7 +62,7 @@ public class JavaCommand_Test extends BaseTransformationTest4 {
         @Override
         public void onTextAvailable(ProcessEvent event, Key key) {
           if (ProcessOutputTypes.STDERR.equals(key)) {
-            if (neq_849b2c_a0a0a0a0a1a3a1a(event.getText(), expectedSysErr)) {
+            if (neq_849b2c_a0a0a0a0a1a3a1b(event.getText(), expectedSysErr)) {
               failed[0] = event;
               System.err.print(event.getText());
             } else {
@@ -86,14 +86,14 @@ public class JavaCommand_Test extends BaseTransformationTest4 {
       }
     }
 
-    private static boolean eq_849b2c_a0a0a0a0a0a1a0a0a0a1a0a(Object a, Object b) {
+    private static boolean eq_849b2c_a0a0a0a0a0a1a0a0a0a1a0b(Object a, Object b) {
       return (a != null ?
         a.equals(b) :
         a == b
       );
     }
 
-    private static boolean neq_849b2c_a0a0a0a0a1a3a1a(Object a, Object b) {
+    private static boolean neq_849b2c_a0a0a0a0a1a3a1b(Object a, Object b) {
       return !((a != null ?
         a.equals(b) :
         a == b

@@ -5,7 +5,6 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -14,10 +13,10 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.GoToTypeErrorRuleUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.logging.Logger;
 
 public class GoToRule_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("rule.png");
-  private static Logger LOG = Logger.getLogger(GoToRule_Action.class);
 
   public GoToRule_Action() {
     super("Go to Rule", "go to rule action", ICON);
@@ -61,4 +60,6 @@ public class GoToRule_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "GoToRule", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(GoToRule_Action.class);
 }

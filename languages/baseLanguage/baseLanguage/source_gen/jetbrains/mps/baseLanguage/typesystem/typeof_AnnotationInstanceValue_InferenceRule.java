@@ -25,7 +25,7 @@ public class typeof_AnnotationInstanceValue_InferenceRule extends AbstractInfere
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(annotationInstanceValue, "value", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4177787410910106416", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4177787410910106418", true), (SNode) _quotation_createNode_2fsed6_a0b0b0a(type, elementType), false, true, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4177787410910106418", true), (SNode) _quotation_createNode_2fsed6_a0b0b0b(type, elementType), false, true, _info_12389875345);
       }
     } else {
       {
@@ -51,7 +51,7 @@ public class typeof_AnnotationInstanceValue_InferenceRule extends AbstractInfere
     return false;
   }
 
-  private static SNode _quotation_createNode_2fsed6_a0b0b0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_2fsed6_a0b0b0b(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;

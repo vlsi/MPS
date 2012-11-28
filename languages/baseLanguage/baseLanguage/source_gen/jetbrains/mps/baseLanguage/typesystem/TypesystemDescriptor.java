@@ -14,12 +14,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.typesystem.runtime.OverloadedOpsProvider_OneTypeSpecified;
+import jetbrains.mps.lang.typesystem.runtime.OverloadedOperationsTypesProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.lang.typesystem.runtime.OverloadedOperationsTypesProvider;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -1044,36 +1044,17 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return _quotation_createNode_3ist9o_a0a0a0a0a0a0qj0a();
+          return _quotation_createNode_3ist9o_a0a1a0a0a0a0qj0a();
         }
       };
       this.myOverloadedOperationsTypesProviders.add(provider);
     }
   }
 
-  private static SNode _quotation_createNode_3ist9o_a0a1a0a0a0ij0a() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_3ist9o_a0a0a0a0a0a0qj0a() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_3ist9o_a0a0a0a0a0a0a052a0() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
-  }
-
   public static class CustomOverloadedOperationsTypesProvider_a extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_a(String conceptFQ) {
-      this.myLeftOperandType = SLinkOperations.getTarget(_quotation_createNode_3ist9o_a0a0a0a(), "descriptor", false);
-      this.myRightOperandType = SLinkOperations.getTarget(_quotation_createNode_3ist9o_a0a1a0a(), "descriptor", false);
+      this.myLeftOperandType = SLinkOperations.getTarget(_quotation_createNode_3ist9o_a0a0a0b(), "descriptor", false);
+      this.myRightOperandType = SLinkOperations.getTarget(_quotation_createNode_3ist9o_a0a1a0b(), "descriptor", false);
       this.myOperationConceptFQName = conceptFQ;
       this.myLeftTypeIsExact = false;
       this.myRightTypeIsExact = false;
@@ -1087,42 +1068,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       } else {
         return Queries.getBinaryOperationType(leftOperandType, rightOperandType);
       }
-    }
-
-    private static SNode _quotation_createNode_3ist9o_a0a0a0a() {
-      SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", null, null, GlobalScope.getInstance(), false);
-      quotedNode_1.setReference("descriptor", SReference.create("descriptor", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-      return quotedNode_1;
-    }
-
-    private static SNode _quotation_createNode_3ist9o_a0a1a0a() {
-      SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", null, null, GlobalScope.getInstance(), false);
-      quotedNode_1.setReference("descriptor", SReference.create("descriptor", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-      return quotedNode_1;
-    }
-  }
-
-  public static class CustomOverloadedOperationsTypesProvider_g extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider_g(String conceptFQ) {
-      this.myLeftOperandType = SLinkOperations.getTarget(_quotation_createNode_3ist9o_a0a0a0b(), "descriptor", false);
-      this.myRightOperandType = SLinkOperations.getTarget(_quotation_createNode_3ist9o_a0a1a0b(), "descriptor", false);
-      this.myOperationConceptFQName = conceptFQ;
-      this.myLeftTypeIsExact = false;
-      this.myRightTypeIsExact = false;
-      this.myRightIsStrong = false;
-      this.myLeftIsStrong = false;
-    }
-
-    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return _quotation_createNode_3ist9o_a0a0b();
-    }
-
-    private static SNode _quotation_createNode_3ist9o_a0a0b() {
-      SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
-      return quotedNode_1;
     }
 
     private static SNode _quotation_createNode_3ist9o_a0a0a0b() {
@@ -1140,10 +1085,46 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
+  public static class CustomOverloadedOperationsTypesProvider_g extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_g(String conceptFQ) {
+      this.myLeftOperandType = SLinkOperations.getTarget(_quotation_createNode_3ist9o_a0a0a0c(), "descriptor", false);
+      this.myRightOperandType = SLinkOperations.getTarget(_quotation_createNode_3ist9o_a0a1a0c(), "descriptor", false);
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
+    }
+
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return _quotation_createNode_3ist9o_a0a1c();
+    }
+
+    private static SNode _quotation_createNode_3ist9o_a0a0a0c() {
+      SNode quotedNode_1 = null;
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1.setReference("descriptor", SReference.create("descriptor", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
+      return quotedNode_1;
+    }
+
+    private static SNode _quotation_createNode_3ist9o_a0a1a0c() {
+      SNode quotedNode_1 = null;
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1.setReference("descriptor", SReference.create("descriptor", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
+      return quotedNode_1;
+    }
+
+    private static SNode _quotation_createNode_3ist9o_a0a1c() {
+      SNode quotedNode_1 = null;
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
+      return quotedNode_1;
+    }
+  }
+
   public static class CustomOverloadedOperationsTypesProvider_h extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_h(String conceptFQ) {
-      this.myLeftOperandType = SLinkOperations.getTarget(_quotation_createNode_3ist9o_a0a0a0c(), "descriptor", false);
-      this.myRightOperandType = _quotation_createNode_3ist9o_a0b0a2();
+      this.myLeftOperandType = SLinkOperations.getTarget(_quotation_createNode_3ist9o_a0a0a0d(), "descriptor", false);
+      this.myRightOperandType = _quotation_createNode_3ist9o_a0b0a3();
       this.myOperationConceptFQName = conceptFQ;
       this.myLeftTypeIsExact = false;
       this.myRightTypeIsExact = false;
@@ -1163,40 +1144,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       }
     }
 
-    private static SNode _quotation_createNode_3ist9o_a0a0a0c() {
-      SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", null, null, GlobalScope.getInstance(), false);
-      quotedNode_1.setReference("descriptor", SReference.create("descriptor", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-      return quotedNode_1;
-    }
-
-    private static SNode _quotation_createNode_3ist9o_a0b0a2() {
-      SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-      quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
-      return quotedNode_1;
-    }
-  }
-
-  public static class CustomOverloadedOperationsTypesProvider_b extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider_b(String conceptFQ) {
-      this.myLeftOperandType = SLinkOperations.getTarget(_quotation_createNode_3ist9o_a0a0a0d(), "descriptor", false);
-      this.myRightOperandType = _quotation_createNode_3ist9o_a0b0a3();
-      this.myOperationConceptFQName = conceptFQ;
-      this.myLeftTypeIsExact = false;
-      this.myRightTypeIsExact = false;
-      this.myRightIsStrong = false;
-      this.myLeftIsStrong = false;
-    }
-
-    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(rightOperandType, leftOperandType)) {
-        return leftOperandType;
-      } else {
-        return null;
-      }
-    }
-
     private static SNode _quotation_createNode_3ist9o_a0a0a0d() {
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", null, null, GlobalScope.getInstance(), false);
@@ -1212,9 +1159,9 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider_c extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider_c(String conceptFQ) {
-      this.myLeftOperandType = _quotation_createNode_3ist9o_a0a0a4();
+  public static class CustomOverloadedOperationsTypesProvider_b extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_b(String conceptFQ) {
+      this.myLeftOperandType = SLinkOperations.getTarget(_quotation_createNode_3ist9o_a0a0a0e(), "descriptor", false);
       this.myRightOperandType = _quotation_createNode_3ist9o_a0b0a4();
       this.myOperationConceptFQName = conceptFQ;
       this.myLeftTypeIsExact = false;
@@ -1224,24 +1171,30 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return leftOperandType;
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(rightOperandType, leftOperandType)) {
+        return leftOperandType;
+      } else {
+        return null;
+      }
     }
 
-    private static SNode _quotation_createNode_3ist9o_a0a0a4() {
+    private static SNode _quotation_createNode_3ist9o_a0a0a0e() {
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1.setReference("descriptor", SReference.create("descriptor", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
       return quotedNode_1;
     }
 
     private static SNode _quotation_createNode_3ist9o_a0b0a4() {
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
       return quotedNode_1;
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider_d extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider_d(String conceptFQ) {
+  public static class CustomOverloadedOperationsTypesProvider_c extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_c(String conceptFQ) {
       this.myLeftOperandType = _quotation_createNode_3ist9o_a0a0a5();
       this.myRightOperandType = _quotation_createNode_3ist9o_a0b0a5();
       this.myOperationConceptFQName = conceptFQ;
@@ -1257,20 +1210,19 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
 
     private static SNode _quotation_createNode_3ist9o_a0a0a5() {
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
       return quotedNode_1;
     }
 
     private static SNode _quotation_createNode_3ist9o_a0b0a5() {
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-      quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
       return quotedNode_1;
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider_e extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider_e(String conceptFQ) {
+  public static class CustomOverloadedOperationsTypesProvider_d extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_d(String conceptFQ) {
       this.myLeftOperandType = _quotation_createNode_3ist9o_a0a0a6();
       this.myRightOperandType = _quotation_createNode_3ist9o_a0b0a6();
       this.myOperationConceptFQName = conceptFQ;
@@ -1281,25 +1233,73 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return _quotation_createNode_3ist9o_a0a0g();
-    }
-
-    private static SNode _quotation_createNode_3ist9o_a0a0g() {
-      SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
-      return quotedNode_1;
+      return leftOperandType;
     }
 
     private static SNode _quotation_createNode_3ist9o_a0a0a6() {
       SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
       return quotedNode_1;
     }
 
     private static SNode _quotation_createNode_3ist9o_a0b0a6() {
       SNode quotedNode_1 = null;
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+      quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+      return quotedNode_1;
+    }
+  }
+
+  public static class CustomOverloadedOperationsTypesProvider_e extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_e(String conceptFQ) {
+      this.myLeftOperandType = _quotation_createNode_3ist9o_a0a0a7();
+      this.myRightOperandType = _quotation_createNode_3ist9o_a0b0a7();
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
+    }
+
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return _quotation_createNode_3ist9o_a0a1h();
+    }
+
+    private static SNode _quotation_createNode_3ist9o_a0a0a7() {
+      SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
       return quotedNode_1;
     }
+
+    private static SNode _quotation_createNode_3ist9o_a0b0a7() {
+      SNode quotedNode_1 = null;
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
+      return quotedNode_1;
+    }
+
+    private static SNode _quotation_createNode_3ist9o_a0a1h() {
+      SNode quotedNode_1 = null;
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
+      return quotedNode_1;
+    }
+  }
+
+  private static SNode _quotation_createNode_3ist9o_a0a1a0a0a0ij0a() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_3ist9o_a0a0a0a0a0a0a052a0() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_3ist9o_a0a1a0a0a0a0qj0a() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
   }
 }

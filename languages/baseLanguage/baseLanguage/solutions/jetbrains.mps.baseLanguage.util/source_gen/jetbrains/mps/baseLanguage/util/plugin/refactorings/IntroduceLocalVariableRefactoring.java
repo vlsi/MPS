@@ -19,7 +19,7 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
 
   public SNode doRefactoring() {
     this.findDuplicates();
-    SNode var = _quotation_createNode_nngwe4_a0b0a(this.getExpressionType(), this.getExpression(), this.getName());
+    SNode var = _quotation_createNode_nngwe4_a0b0b(this.getExpressionType(), this.getExpression(), this.getName());
     if (myIsFinal) {
       SPropertyOperations.set(SLinkOperations.getTarget(var, "localVariableDeclaration", true), "isFinal", "" + (true));
     }
@@ -82,7 +82,7 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
     return SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.Expression") && SNodeOperations.getAncestor(expr, "jetbrains.mps.baseLanguage.structure.StatementList", false, false) != null;
   }
 
-  private static SNode _quotation_createNode_nngwe4_a0b0a(Object parameter_1, Object parameter_2, Object parameter_3) {
+  private static SNode _quotation_createNode_nngwe4_a0b0b(Object parameter_1, Object parameter_2, Object parameter_3) {
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;

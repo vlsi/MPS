@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -23,10 +22,10 @@ import jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialog;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import java.awt.Frame;
+import jetbrains.mps.logging.Logger;
 
 public class InlineMethod_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(InlineMethod_Action.class);
 
   public InlineMethod_Action() {
     super("Inline Method", "", ICON);
@@ -103,4 +102,6 @@ public class InlineMethod_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "InlineMethod", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(InlineMethod_Action.class);
 }

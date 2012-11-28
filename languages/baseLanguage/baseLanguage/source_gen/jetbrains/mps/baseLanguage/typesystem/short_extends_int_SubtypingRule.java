@@ -15,7 +15,7 @@ public class short_extends_int_SubtypingRule extends SubtypingRule_Runtime imple
   }
 
   public SNode getSubOrSuperType(SNode shortType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_q77eql_a0a0();
+    return _quotation_createNode_q77eql_a0a1();
   }
 
   public String getApplicableConceptFQName() {
@@ -33,7 +33,7 @@ public class short_extends_int_SubtypingRule extends SubtypingRule_Runtime imple
     return false;
   }
 
-  private static SNode _quotation_createNode_q77eql_a0a0() {
+  private static SNode _quotation_createNode_q77eql_a0a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

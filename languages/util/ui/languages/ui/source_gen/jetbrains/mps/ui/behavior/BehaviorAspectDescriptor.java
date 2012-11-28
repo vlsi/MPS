@@ -7,13 +7,11 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.ui.structure.AccessUIPropertyOperation", "jetbrains.mps.ui.structure.AppendUIObjectStatement", "jetbrains.mps.ui.structure.BeanPropertyView", "jetbrains.mps.ui.structure.CallUIActionOperation", "jetbrains.mps.ui.structure.ChildAspect", "jetbrains.mps.ui.structure.ClearCompartmentStatement", "jetbrains.mps.ui.structure.CompartmentProviderStatement", "jetbrains.mps.ui.structure.CompartmentReferenceExpression", "jetbrains.mps.ui.structure.ContainerCompartment", "jetbrains.mps.ui.structure.ContainerType", "jetbrains.mps.ui.structure.ControllerBinding", "jetbrains.mps.ui.structure.CreateUIObjectStatement", "jetbrains.mps.ui.structure.EnclosingContextCompartmentExpression", "jetbrains.mps.ui.structure.EventHandingBlock", "jetbrains.mps.ui.structure.EventPropertyAccessOp", "jetbrains.mps.ui.structure.EventType", "jetbrains.mps.ui.structure.ExpressionView", "jetbrains.mps.ui.structure.ForceLayoutStatement", "jetbrains.mps.ui.structure.FunctionParameterDeclaration", "jetbrains.mps.ui.structure.InlineController", "jetbrains.mps.ui.structure.InsertUIObjectStatement", "jetbrains.mps.ui.structure.IterateContentsStatement", "jetbrains.mps.ui.structure.IterateContentsVariable", "jetbrains.mps.ui.structure.IterateContentsVariableReference", "jetbrains.mps.ui.structure.RemoveUIObjectStatement", "jetbrains.mps.ui.structure.UIObjectProviderStatement", "jetbrains.mps.ui.structure.UIObjectReference", "jetbrains.mps.ui.structure.UIObjectType", "jetbrains.mps.ui.structure.ValidateBlock", "jetbrains.mps.ui.structure.ValidatingView", "jetbrains.mps.ui.structure.Validator", "jetbrains.mps.ui.structure.ViewBinding"};
-
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 30:
         return new Validator_BehaviorDescriptor();
       case 2:
@@ -82,4 +80,6 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
+
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.ui.structure.AccessUIPropertyOperation", "jetbrains.mps.ui.structure.AppendUIObjectStatement", "jetbrains.mps.ui.structure.BeanPropertyView", "jetbrains.mps.ui.structure.CallUIActionOperation", "jetbrains.mps.ui.structure.ChildAspect", "jetbrains.mps.ui.structure.ClearCompartmentStatement", "jetbrains.mps.ui.structure.CompartmentProviderStatement", "jetbrains.mps.ui.structure.CompartmentReferenceExpression", "jetbrains.mps.ui.structure.ContainerCompartment", "jetbrains.mps.ui.structure.ContainerType", "jetbrains.mps.ui.structure.ControllerBinding", "jetbrains.mps.ui.structure.CreateUIObjectStatement", "jetbrains.mps.ui.structure.EnclosingContextCompartmentExpression", "jetbrains.mps.ui.structure.EventHandingBlock", "jetbrains.mps.ui.structure.EventPropertyAccessOp", "jetbrains.mps.ui.structure.EventType", "jetbrains.mps.ui.structure.ExpressionView", "jetbrains.mps.ui.structure.ForceLayoutStatement", "jetbrains.mps.ui.structure.FunctionParameterDeclaration", "jetbrains.mps.ui.structure.InlineController", "jetbrains.mps.ui.structure.InsertUIObjectStatement", "jetbrains.mps.ui.structure.IterateContentsStatement", "jetbrains.mps.ui.structure.IterateContentsVariable", "jetbrains.mps.ui.structure.IterateContentsVariableReference", "jetbrains.mps.ui.structure.RemoveUIObjectStatement", "jetbrains.mps.ui.structure.UIObjectProviderStatement", "jetbrains.mps.ui.structure.UIObjectReference", "jetbrains.mps.ui.structure.UIObjectType", "jetbrains.mps.ui.structure.ValidateBlock", "jetbrains.mps.ui.structure.ValidatingView", "jetbrains.mps.ui.structure.Validator", "jetbrains.mps.ui.structure.ViewBinding"};
 }

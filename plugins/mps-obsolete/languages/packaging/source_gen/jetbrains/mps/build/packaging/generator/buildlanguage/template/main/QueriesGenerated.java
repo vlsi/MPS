@@ -1455,10 +1455,6 @@ public class QueriesGenerated {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _7__yield_x583g4_a0a0a0a0a0jk;
-              private Iterator<SNode> _7__yield_x583g4_a0a0a0a0a0jk_it;
-              private SNode _2_apc;
-              private Iterator<SNode> _2_apc_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -1524,6 +1520,11 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private SNode _7__yield_x583g4_a0a0a0a0a0jk;
+              private Iterator<SNode> _7__yield_x583g4_a0a0a0a0a0jk_it;
+              private SNode _2_apc;
+              private Iterator<SNode> _2_apc_it;
             };
           }
         };

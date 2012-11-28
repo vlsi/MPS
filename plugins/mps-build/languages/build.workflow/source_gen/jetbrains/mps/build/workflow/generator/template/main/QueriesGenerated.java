@@ -466,26 +466,6 @@ public class QueriesGenerated {
     return parts;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0a0w(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0jb(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0mb(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0a93(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0a34(String str) {
-    return str != null && str.length() > 0;
-  }
-
   public static class Pattern_x583g4_a0a0a37 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_pathvalue;
 
@@ -852,5 +832,25 @@ public class QueriesGenerated {
 
     public void performActions(Object o) {
     }
+  }
+
+  public static boolean isNotEmpty_x583g4_a0a0a0w(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  public static boolean isNotEmpty_x583g4_a0a0jb(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  public static boolean isNotEmpty_x583g4_a0a0mb(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  public static boolean isNotEmpty_x583g4_a0a0a93(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  public static boolean isNotEmpty_x583g4_a0a0a34(String str) {
+    return str != null && str.length() > 0;
   }
 }

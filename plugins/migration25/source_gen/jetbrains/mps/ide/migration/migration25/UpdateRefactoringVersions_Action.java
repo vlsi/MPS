@@ -4,8 +4,6 @@ package jetbrains.mps.ide.migration.migration25;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -20,10 +18,11 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class UpdateRefactoringVersions_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(UpdateRefactoringVersions_Action.class);
 
   public UpdateRefactoringVersions_Action() {
     super("Update model versions", "Update model version according to .history, save the latest imported model versions", ICON);
@@ -105,7 +104,7 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
   /*package*/ void updateImportVersions(EditableSModelDescriptor model, final Map<String, Object> _params) {
     jetbrains.mps.smodel.SModel m = model.getSModel();
     for (jetbrains.mps.smodel.SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(model.getSModel()))) {
-      RefactorableSModelDescriptor usedModel = as_hexye9_a0a0a1a5(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), RefactorableSModelDescriptor.class);
+      RefactorableSModelDescriptor usedModel = as_hexye9_a0a0a1a7(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), RefactorableSModelDescriptor.class);
       if (usedModel == null) {
         continue;
       }
@@ -125,7 +124,9 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
     }
   }
 
-  private static <T> T as_hexye9_a0a0a1a5(Object o, Class<T> type) {
+  protected static Log log = LogFactory.getLog(UpdateRefactoringVersions_Action.class);
+
+  private static <T> T as_hexye9_a0a0a1a7(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

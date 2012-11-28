@@ -16,9 +16,10 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.List;
@@ -65,7 +66,7 @@ public class TestCollector {
   }
 
   private boolean hasJUnit38TestMethods(final SNode maybetest) {
-    return ListSequence.fromList(SLinkOperations.getTargets(maybetest, "method", true)).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(maybetest)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode meth) {
         return "public".equals(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(meth, "visibility", true)), "conceptAlias")) && SPropertyOperations.getString(meth, "name").startsWith("test");
       }
@@ -81,7 +82,7 @@ public class TestCollector {
   }
 
   private boolean hasJUnit4TestMethods(final SNode maybetest) {
-    return ListSequence.fromList(SLinkOperations.getTargets(maybetest, "method", true)).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(maybetest)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode meth) {
         return "public".equals(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(meth, "visibility", true)), "conceptAlias")) && hasAnnotation(meth, getTestAnnotation(SNodeOperations.getModel(maybetest)));
       }
@@ -107,7 +108,7 @@ public class TestCollector {
   private SNode getTestCaseClass(final SModel context) {
     return SNodeOperations.cast(getNode(context, TEST_CASE, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        final String testCase = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0c0a0a6(), "classifier", false), "virtual_getFqName_1213877404258", new Object[]{});
+        final String testCase = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0c0a0a31(), "classifier", false), "virtual_getFqName_1213877404258", new Object[]{});
         return SNodeOperations.cast(ListSequence.fromList(TestCollector.this.allClassifiers(context)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode cls) {
             return BehaviorReflection.invokeVirtual(String.class, cls, "virtual_getFqName_1213877404258", new Object[]{}).equals(testCase);
@@ -120,7 +121,7 @@ public class TestCollector {
   private SNode getTestAnnotation(final SModel context) {
     return SNodeOperations.cast(getNode(context, TEST_ANN, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        final String testAnn = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0c0a0a7(), "classifier", false), "virtual_getFqName_1213877404258", new Object[]{});
+        final String testAnn = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0c0a0a41(), "classifier", false), "virtual_getFqName_1213877404258", new Object[]{});
         return ListSequence.fromList(TestCollector.this.allAnnotations(context)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode ann) {
             return BehaviorReflection.invokeVirtual(String.class, ann, "virtual_getFqName_1213877404258", new Object[]{}).equals(testAnn);
@@ -133,7 +134,7 @@ public class TestCollector {
   private SNode getIgnoreAnnotation(final SModel context) {
     return SNodeOperations.cast(getNode(context, IGNORE_ANN, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        final String ignoreAnn = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0c0a0a8(), "classifier", false), "virtual_getFqName_1213877404258", new Object[]{});
+        final String ignoreAnn = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0c0a0a51(), "classifier", false), "virtual_getFqName_1213877404258", new Object[]{});
         return ListSequence.fromList(TestCollector.this.allAnnotations(context)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode ann) {
             return BehaviorReflection.invokeVirtual(String.class, ann, "virtual_getFqName_1213877404258", new Object[]{}).equals(ignoreAnn);
@@ -146,7 +147,7 @@ public class TestCollector {
   private SNode getMPSLaunchAnnotation(final SModel context) {
     return SNodeOperations.cast(getNode(context, MPS_LAUNCH_ANN, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        final String mpslaunchAnn = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0c0a0a9(), "classifier", false), "virtual_getFqName_1213877404258", new Object[]{});
+        final String mpslaunchAnn = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0c0a0a61(), "classifier", false), "virtual_getFqName_1213877404258", new Object[]{});
         return ListSequence.fromList(TestCollector.this.allAnnotations(context)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode ann) {
             return BehaviorReflection.invokeVirtual(String.class, ann, "virtual_getFqName_1213877404258", new Object[]{}).equals(mpslaunchAnn);
@@ -173,28 +174,28 @@ public class TestCollector {
     return (List<SNode>) new ReachableClassifiersScope(context, IClassifiersSearchScope.ANNOTATION, GlobalScope.getInstance()).getClassifiers();
   }
 
-  private static SNode _quotation_createNode_rpw6il_a0a0a0c0a0a6() {
+  private static SNode _quotation_createNode_rpw6il_a0a0a0c0a0a31() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/junit.framework@java_stub)"), SNodeId.fromString("~TestCase")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_rpw6il_a0a0a0c0a0a7() {
+  private static SNode _quotation_createNode_rpw6il_a0a0a0c0a0a41() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), SNodeId.fromString("~Test")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_rpw6il_a0a0a0c0a0a8() {
+  private static SNode _quotation_createNode_rpw6il_a0a0a0c0a0a51() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), SNodeId.fromString("~Ignore")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_rpw6il_a0a0a0c0a0a9() {
+  private static SNode _quotation_createNode_rpw6il_a0a0a0c0a0a61() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#920eaa0e-ecca-46bc-bee7-4e5c59213dd6#jetbrains.mps(Testbench/jetbrains.mps@java_stub)"), SNodeId.fromString("~MPSLaunch")));

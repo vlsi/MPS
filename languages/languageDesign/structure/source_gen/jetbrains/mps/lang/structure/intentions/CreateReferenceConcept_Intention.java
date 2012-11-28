@@ -12,11 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -28,6 +23,11 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.intentions.IntentionDescriptor;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class CreateReferenceConcept_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -81,6 +81,39 @@ public class CreateReferenceConcept_Intention implements IntentionFactory {
     return myCachedExecutable;
   }
 
+  public class IntentionImplementation implements IntentionExecutable {
+    public IntentionImplementation() {
+    }
+
+    public String getDescription(final SNode node, final EditorContext editorContext) {
+      return "Create Reference Concept";
+    }
+
+    public void execute(final SNode node, final EditorContext editorContext) {
+      // structure 
+      SNode concept = _quotation_createNode_vn7eng_a0b0a(NameUtil.decapitalize(SPropertyOperations.getString(node, "name")), node, SPropertyOperations.getString(node, "name") + "Reference");
+      SModelOperations.addRootNode(SNodeOperations.getModel(node), concept);
+      SPropertyOperations.set(concept, "virtualPackage", SPropertyOperations.getString(node, "virtualPackage"));
+      SNode link = ListSequence.fromList(SLinkOperations.getTargets(concept, "linkDeclaration", true)).first();
+
+      // find editor model 
+      Language language = Language.getLanguageFor(SNodeOperations.getModel(node).getModelDescriptor());
+      SModel editorModel = LanguageAspect.EDITOR.get(language).getSModel();
+
+      // editor 
+      SNode editor = _quotation_createNode_vn7eng_a0l0a(concept, link);
+      SModelOperations.addRootNode(editorModel, editor);
+      SPropertyOperations.set(editor, "virtualPackage", SPropertyOperations.getString(node, "virtualPackage"));
+
+      IOperationContext context = editorContext.getOperationContext();
+      NavigationSupport.getInstance().openNode(context, concept, true, true);
+    }
+
+    public IntentionDescriptor getDescriptor() {
+      return CreateReferenceConcept_Intention.this;
+    }
+  }
+
   private static SNode _quotation_createNode_vn7eng_a0b0a(Object parameter_1, Object parameter_2, Object parameter_3) {
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -113,38 +146,5 @@ public class CreateReferenceConcept_Intention implements IntentionFactory {
     quotedNode_4.addChild("editorComponent", quotedNode_5);
     quotedNode_3.addChild("cellModel", quotedNode_4);
     return quotedNode_3;
-  }
-
-  public class IntentionImplementation implements IntentionExecutable {
-    public IntentionImplementation() {
-    }
-
-    public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Create Reference Concept";
-    }
-
-    public void execute(final SNode node, final EditorContext editorContext) {
-      // structure 
-      SNode concept = _quotation_createNode_vn7eng_a0b0a(NameUtil.decapitalize(SPropertyOperations.getString(node, "name")), node, SPropertyOperations.getString(node, "name") + "Reference");
-      SModelOperations.addRootNode(SNodeOperations.getModel(node), concept);
-      SPropertyOperations.set(concept, "virtualPackage", SPropertyOperations.getString(node, "virtualPackage"));
-      SNode link = ListSequence.fromList(SLinkOperations.getTargets(concept, "linkDeclaration", true)).first();
-
-      // find editor model 
-      Language language = Language.getLanguageFor(SNodeOperations.getModel(node).getModelDescriptor());
-      SModel editorModel = LanguageAspect.EDITOR.get(language).getSModel();
-
-      // editor 
-      SNode editor = _quotation_createNode_vn7eng_a0l0a(concept, link);
-      SModelOperations.addRootNode(editorModel, editor);
-      SPropertyOperations.set(editor, "virtualPackage", SPropertyOperations.getString(node, "virtualPackage"));
-
-      IOperationContext context = editorContext.getOperationContext();
-      NavigationSupport.getInstance().openNode(context, concept, true, true);
-    }
-
-    public IntentionDescriptor getDescriptor() {
-      return CreateReferenceConcept_Intention.this;
-    }
   }
 }

@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import javax.swing.tree.TreeNode;
@@ -15,10 +14,10 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.logging.Logger;
 
 public class ShowModuleDependencyLoop_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ShowModuleDependencyLoop_Action.class);
 
   public ShowModuleDependencyLoop_Action() {
     super("Show Cycle Paths", "Show All Cycle Paths for Selected Module", ICON);
@@ -32,7 +31,7 @@ public class ShowModuleDependencyLoop_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return check_mdxcvg_a0a0((as_hir9am_a0a0a0b(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.class)));
+    return check_mdxcvg_a0a0((as_hir9am_a0a0a0d(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.class)));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -64,11 +63,13 @@ public class ShowModuleDependencyLoop_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class).ShowLoops(as_hir9am_a0a0a0a0e(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.class));
+      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class).ShowLoops(as_hir9am_a0a0a0a0g(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.class));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowModuleDependencyLoop", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ShowModuleDependencyLoop_Action.class);
 
   private static boolean check_mdxcvg_a0a0(ModuleDependencyNode checkedDotOperand) {
     if (null != checkedDotOperand) {
@@ -77,14 +78,14 @@ public class ShowModuleDependencyLoop_Action extends BaseAction {
     return false;
   }
 
-  private static <T> T as_hir9am_a0a0a0b(Object o, Class<T> type) {
+  private static <T> T as_hir9am_a0a0a0d(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_hir9am_a0a0a0a0e(Object o, Class<T> type) {
+  private static <T> T as_hir9am_a0a0a0a0g(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

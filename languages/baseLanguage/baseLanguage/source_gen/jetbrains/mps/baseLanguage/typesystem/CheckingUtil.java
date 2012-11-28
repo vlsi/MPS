@@ -9,6 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class CheckingUtil {
@@ -45,7 +48,7 @@ public class CheckingUtil {
     }
     SNode classifier = SNodeOperations.getAncestor(fieldDecl, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     List<SNode> allFields = new ArrayList<SNode>();
-    ListSequence.fromList(allFields).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classifier, "staticField", true))).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true)));
+    ListSequence.fromList(allFields).addSequence(Sequence.fromIterable(Classifier_Behavior.call_staticFields_5292274854859223538(classifier))).addSequence(Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     return ListSequence.fromList(allFields).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return it != fieldDecl && SPropertyOperations.hasValue(it, "name", name);

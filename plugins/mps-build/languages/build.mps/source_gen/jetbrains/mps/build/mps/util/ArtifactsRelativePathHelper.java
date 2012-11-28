@@ -120,21 +120,21 @@ public class ArtifactsRelativePathHelper {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildTextStringPart");
       }
     })) {
-      return eq_fa9ylc_a0a0b0d(SPropertyOperations.getString(left, "name"), SPropertyOperations.getString(right, "name"));
+      return eq_fa9ylc_a0a0b0g(SPropertyOperations.getString(left, "name"), SPropertyOperations.getString(right, "name"));
     }
     return false;
-  }
-
-  private static boolean eq_fa9ylc_a0a0b0d(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
   }
 
   public static class RelativePathException extends Exception {
     public RelativePathException(String p0) {
       super(p0);
     }
+  }
+
+  private static boolean eq_fa9ylc_a0a0b0g(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

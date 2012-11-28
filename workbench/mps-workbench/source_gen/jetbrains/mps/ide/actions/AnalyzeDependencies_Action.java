@@ -5,7 +5,6 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -23,11 +22,11 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 public class AnalyzeDependencies_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("inspector.png");
-  private static Logger LOG = Logger.getLogger(AnalyzeDependencies_Action.class);
 
   public AnalyzeDependencies_Action() {
     super("Analyze Dependencies", "", ICON);
@@ -100,6 +99,8 @@ public class AnalyzeDependencies_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "AnalyzeDependencies", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(AnalyzeDependencies_Action.class);
 
   private static SNode check_rkpdtm_a0a0c0a2a0(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {

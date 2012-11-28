@@ -27,7 +27,7 @@ public class AttributeUtil {
     SNode lastValue = null;
     for (SNode part : SLinkOperations.getTargets(attr, "value", true)) {
       if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.core.xml.structure.XmlTextValue")) {
-        if (isEmpty_u51ahb_a0a0a0e0b(SPropertyOperations.getString(SNodeOperations.cast(part, "jetbrains.mps.core.xml.structure.XmlTextValue"), "text"))) {
+        if (isEmpty_u51ahb_a0a0a0e0c(SPropertyOperations.getString(SNodeOperations.cast(part, "jetbrains.mps.core.xml.structure.XmlTextValue"), "text"))) {
           ListSequence.fromList(valuesToDelete).addElement(part);
         } else if (lastValue != null) {
           SPropertyOperations.set(lastValue, "text", SPropertyOperations.getString_def(lastValue, "text", "") + SPropertyOperations.getString(SNodeOperations.cast(part, "jetbrains.mps.core.xml.structure.XmlTextValue"), "text"));
@@ -44,7 +44,7 @@ public class AttributeUtil {
     }
   }
 
-  public static boolean isEmpty_u51ahb_a0a0a0e0b(String str) {
+  public static boolean isEmpty_u51ahb_a0a0a0e0c(String str) {
     return str == null || str.length() == 0;
   }
 }

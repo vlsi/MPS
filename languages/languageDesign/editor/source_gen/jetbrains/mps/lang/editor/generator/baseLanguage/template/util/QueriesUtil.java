@@ -53,7 +53,6 @@ public class QueriesUtil {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _5_output;
 
               protected boolean moveToNext() {
 __loop__:
@@ -99,6 +98,8 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private SNode _5_output;
             };
           }
         };

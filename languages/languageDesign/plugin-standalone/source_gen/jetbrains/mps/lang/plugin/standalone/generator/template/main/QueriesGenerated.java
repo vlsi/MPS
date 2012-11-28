@@ -69,12 +69,12 @@ public class QueriesGenerated {
     return PreferencesComponentDeclaration_Behavior.call_getGeneratedClassFQName_4911466715314111449(SLinkOperations.getTarget(_context.getNode(), "componentDeclaration", false));
   }
 
-  public static Object propertyMacro_GetPropertyValue_6291350464112430620(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getModelDescriptor().getModule().getModuleFqName();
-  }
-
   public static Object propertyMacro_GetPropertyValue_1215266495353(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return PluginNameUtils.getApplicationPluginName(PluginNameUtils.getOriginalModule(_context));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6291350464112430620(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getOriginalInputModel().getModelDescriptor().getModule().getModuleFqName();
   }
 
   public static Object propertyMacro_GetPropertyValue_1212583749804(final IOperationContext operationContext, final PropertyMacroContext _context) {

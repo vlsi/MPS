@@ -6,22 +6,22 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -30,6 +30,44 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_wbyfib_a_0(editorContext, node);
+  }
+
+  public static class _Inline_wbyfib_a2a extends InlineCellProvider {
+    public _Inline_wbyfib_a2a() {
+      super();
+    }
+
+    public EditorCell createEditorCell(EditorContext editorContext) {
+      return this.createEditorCell(editorContext, this.getSNode());
+    }
+
+    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+      return this.createProperty_wbyfib_a0c0(editorContext, node);
+    }
+
+    private EditorCell createProperty_wbyfib_a0c0(EditorContext editorContext, SNode node) {
+      CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+      provider.setRole("name");
+      provider.setNoTargetText("<no name>");
+      provider.setReadOnly(true);
+      EditorCell editorCell;
+      editorCell = provider.createEditorCell(editorContext);
+      editorCell.setCellId("property_name");
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+        style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+      }
+      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+      SNode attributeConcept = provider.getRoleAttribute();
+      Class attributeKind = provider.getRoleAttributeClass();
+      if (attributeConcept != null) {
+        IOperationContext opContext = editorContext.getOperationContext();
+        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+        return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+      } else
+      return editorCell;
+    }
   }
 
   private EditorCell createCollection_wbyfib_a(EditorContext editorContext, SNode node) {
@@ -230,64 +268,26 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_wbyfib_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "rule", false) != null) && (isEmpty_wbyfib_a0a0a0a0(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName")) || SPropertyOperations.getBoolean(node, "overrideTag"));
+    return (SLinkOperations.getTarget(node, "rule", false) != null) && (isEmpty_wbyfib_a0a0a0a81(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName")) || SPropertyOperations.getBoolean(node, "overrideTag"));
   }
 
   private static boolean renderingCondition_wbyfib_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "rule", false) != null) && (isEmpty_wbyfib_a0a0a0a1(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName")) || SPropertyOperations.getBoolean(node, "overrideTag"));
+    return (SLinkOperations.getTarget(node, "rule", false) != null) && (isEmpty_wbyfib_a0a0a0a91(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName")) || SPropertyOperations.getBoolean(node, "overrideTag"));
   }
 
   private static boolean renderingCondition_wbyfib_a1a_0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "rule", false) != null) && isNotEmpty_wbyfib_a0a0a2(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName"));
+    return (SLinkOperations.getTarget(node, "rule", false) != null) && isNotEmpty_wbyfib_a0a0a02(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName"));
   }
 
-  public static boolean isEmpty_wbyfib_a0a0a0a0(String str) {
+  public static boolean isEmpty_wbyfib_a0a0a0a81(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isEmpty_wbyfib_a0a0a0a1(String str) {
+  public static boolean isEmpty_wbyfib_a0a0a0a91(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isNotEmpty_wbyfib_a0a0a2(String str) {
+  public static boolean isNotEmpty_wbyfib_a0a0a02(String str) {
     return str != null && str.length() > 0;
-  }
-
-  public static class _Inline_wbyfib_a2a extends InlineCellProvider {
-    public _Inline_wbyfib_a2a() {
-      super();
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return this.createEditorCell(editorContext, this.getSNode());
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_wbyfib_a0c0(editorContext, node);
-    }
-
-    private EditorCell createProperty_wbyfib_a0c0(EditorContext editorContext, SNode node) {
-      CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-      provider.setRole("name");
-      provider.setNoTargetText("<no name>");
-      provider.setReadOnly(true);
-      EditorCell editorCell;
-      editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("property_name");
-      {
-        Style style = editorCell.getStyle();
-        style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-        style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      }
-      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-      SNode attributeConcept = provider.getRoleAttribute();
-      Class attributeKind = provider.getRoleAttributeClass();
-      if (attributeConcept != null) {
-        IOperationContext opContext = editorContext.getOperationContext();
-        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-        return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-      } else
-      return editorCell;
-    }
   }
 }

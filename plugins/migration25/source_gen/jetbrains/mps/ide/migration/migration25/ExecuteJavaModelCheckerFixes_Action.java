@@ -4,8 +4,6 @@ package jetbrains.mps.ide.migration.migration25;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -24,10 +22,11 @@ import com.intellij.openapi.command.CommandProcessorEx;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import java.awt.Frame;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class ExecuteJavaModelCheckerFixes_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ExecuteJavaModelCheckerFixes_Action.class);
 
   public ExecuteJavaModelCheckerFixes_Action() {
     super("Execute Java ModelChecker Fixes", "", ICON);
@@ -88,4 +87,6 @@ public class ExecuteJavaModelCheckerFixes_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(ExecuteJavaModelCheckerFixes_Action.class);
 }

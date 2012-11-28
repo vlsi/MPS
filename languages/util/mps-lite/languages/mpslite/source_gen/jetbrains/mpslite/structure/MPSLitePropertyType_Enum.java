@@ -11,22 +11,12 @@ public enum MPSLitePropertyType_Enum {
   numeric("numeric", "numeric");
 
   private String myName;
-  private String myValue;
-
-  MPSLitePropertyType_Enum(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -52,5 +42,16 @@ public enum MPSLitePropertyType_Enum {
       return MPSLitePropertyType_Enum.numeric;
     }
     return MPSLitePropertyType_Enum.getDefault();
+  }
+
+  private String myValue;
+
+  MPSLitePropertyType_Enum(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

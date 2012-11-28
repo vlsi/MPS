@@ -255,18 +255,18 @@ public class DeprecatedAnnotation_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_lchw91_a1a0(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_lchw91_a0a0a(SPropertyOperations.getString(node, "since"));
+    return isNotEmpty_lchw91_a0a0u(SPropertyOperations.getString(node, "since"));
   }
 
   private static boolean renderingCondition_lchw91_a2a0(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_lchw91_a0a0b(SPropertyOperations.getString(node, "comment"));
+    return isNotEmpty_lchw91_a0a0v(SPropertyOperations.getString(node, "comment"));
   }
 
-  public static boolean isNotEmpty_lchw91_a0a0a(String str) {
+  public static boolean isNotEmpty_lchw91_a0a0u(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isNotEmpty_lchw91_a0a0b(String str) {
+  public static boolean isNotEmpty_lchw91_a0a0v(String str) {
     return str != null && str.length() > 0;
   }
 }

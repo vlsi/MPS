@@ -4,8 +4,6 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -22,10 +20,11 @@ import javax.swing.JOptionPane;
 import java.awt.Frame;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.IGenerationTracer;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class ShowGenerationTrace_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ShowGenerationTrace_Action.class);
 
   public ShowGenerationTrace_Action() {
     super("Show Generation Trace", "", ICON);
@@ -103,4 +102,6 @@ public class ShowGenerationTrace_Action extends BaseAction {
   private GenerationTracer getGenTracer(final Map<String, Object> _params) {
     return (GenerationTracer) ((Project) MapSequence.fromMap(_params).get("project")).getComponent(IGenerationTracer.class);
   }
+
+  protected static Log log = LogFactory.getLog(ShowGenerationTrace_Action.class);
 }

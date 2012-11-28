@@ -7,13 +7,11 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
-  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.build.packaging.structure.AbstractProjectComponent", "jetbrains.mps.build.packaging.structure.Antcall", "jetbrains.mps.build.packaging.structure.BaseDirPath", "jetbrains.mps.build.packaging.structure.Branding", "jetbrains.mps.build.packaging.structure.Configuration", "jetbrains.mps.build.packaging.structure.Delete", "jetbrains.mps.build.packaging.structure.Echo", "jetbrains.mps.build.packaging.structure.File", "jetbrains.mps.build.packaging.structure.Folder", "jetbrains.mps.build.packaging.structure.Jar", "jetbrains.mps.build.packaging.structure.MacroReference", "jetbrains.mps.build.packaging.structure.Module", "jetbrains.mps.build.packaging.structure.Plugin", "jetbrains.mps.build.packaging.structure.PluginModule", "jetbrains.mps.build.packaging.structure.Variable"};
-
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
       case 8:
         return new Folder_Constraints();
       case 9:
@@ -49,4 +47,6 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new BaseConstraintsDescriptor(fqName);
     }
   }
+
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.build.packaging.structure.AbstractProjectComponent", "jetbrains.mps.build.packaging.structure.Antcall", "jetbrains.mps.build.packaging.structure.BaseDirPath", "jetbrains.mps.build.packaging.structure.Branding", "jetbrains.mps.build.packaging.structure.Configuration", "jetbrains.mps.build.packaging.structure.Delete", "jetbrains.mps.build.packaging.structure.Echo", "jetbrains.mps.build.packaging.structure.File", "jetbrains.mps.build.packaging.structure.Folder", "jetbrains.mps.build.packaging.structure.Jar", "jetbrains.mps.build.packaging.structure.MacroReference", "jetbrains.mps.build.packaging.structure.Module", "jetbrains.mps.build.packaging.structure.Plugin", "jetbrains.mps.build.packaging.structure.PluginModule", "jetbrains.mps.build.packaging.structure.Variable"};
 }

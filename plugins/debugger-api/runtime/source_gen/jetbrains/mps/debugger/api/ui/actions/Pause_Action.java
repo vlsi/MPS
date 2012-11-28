@@ -5,8 +5,6 @@ package jetbrains.mps.debugger.api.ui.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -14,10 +12,11 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class Pause_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("pause.png");
-  protected static Log log = LogFactory.getLog(Pause_Action.class);
 
   public Pause_Action() {
     super("Pause", "Pause Execution", ICON);
@@ -64,4 +63,6 @@ public class Pause_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(Pause_Action.class);
 }

@@ -26,10 +26,10 @@ public class FieldSignature implements Signature {
       return false;
     }
     FieldSignature arg = (FieldSignature) object;
-    return eq_kjk96n_a0c0b(this.singature, arg.singature);
+    return eq_kjk96n_a0c0d(this.singature, arg.singature);
   }
 
-  private static boolean eq_kjk96n_a0c0b(Object a, Object b) {
+  private static boolean eq_kjk96n_a0c0d(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

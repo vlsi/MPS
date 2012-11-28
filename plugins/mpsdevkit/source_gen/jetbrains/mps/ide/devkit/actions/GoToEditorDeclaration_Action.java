@@ -5,8 +5,6 @@ package jetbrains.mps.ide.devkit.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -28,10 +26,11 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class GoToEditorDeclaration_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("editor.png");
-  protected static Log log = LogFactory.getLog(GoToEditorDeclaration_Action.class);
 
   public GoToEditorDeclaration_Action() {
     super("Editor Declaration", "", ICON);
@@ -143,4 +142,6 @@ public class GoToEditorDeclaration_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(GoToEditorDeclaration_Action.class);
 }

@@ -19,7 +19,7 @@ public class typeof_XVariableReference_InferenceRule extends AbstractInferenceRu
     {
       SNode _nodeToCheck_1029348928467 = x;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:fe1ce518-bbce-495d-bf96-771053a6aafd(jetbrains.mps.debugger.decisionTable.typesystem)", "5202024118203927982", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:fe1ce518-bbce-495d-bf96-771053a6aafd(jetbrains.mps.debugger.decisionTable.typesystem)", "5202024118203927984", true), (SNode) _quotation_createNode_21vuyl_a0a0a(), false, false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:fe1ce518-bbce-495d-bf96-771053a6aafd(jetbrains.mps.debugger.decisionTable.typesystem)", "5202024118203927984", true), (SNode) _quotation_createNode_21vuyl_a0a0b(), false, false, _info_12389875345);
     }
   }
 
@@ -38,7 +38,7 @@ public class typeof_XVariableReference_InferenceRule extends AbstractInferenceRu
     return false;
   }
 
-  private static SNode _quotation_createNode_21vuyl_a0a0a() {
+  private static SNode _quotation_createNode_21vuyl_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

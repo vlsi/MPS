@@ -5,8 +5,6 @@ package jetbrains.mps.ide.devkit.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -17,10 +15,11 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class GoToConceptDeclaration_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("structure.png");
-  protected static Log log = LogFactory.getLog(GoToConceptDeclaration_Action.class);
 
   public GoToConceptDeclaration_Action() {
     super("Concept Declaration", "", ICON);
@@ -82,4 +81,6 @@ public class GoToConceptDeclaration_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(GoToConceptDeclaration_Action.class);
 }

@@ -311,7 +311,7 @@
       <modulePath path="${project}/plugins/execution-languages/languages/common/common.mpl" folder="languages.execution" />
       <modulePath path="${project}/plugins/execution-languages/languages/configurations/configurations.mpl" folder="languages.execution" />
       <modulePath path="${project}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/pluginSolution.msd" folder="languages.execution" />
-      <modulePath path="${project}/plugins/execution-languages/languages/demo/demo.mpl" folder="languages.execution.languages-plugin" />
+      <modulePath path="${project}/plugins/execution-languages/languages/demo/demo.mpl" folder="languages.execution.demo" />
       <modulePath path="${project}/plugins/execution-languages/languages/demo/pluginSolution/pluginSolution.msd" folder="languages.execution.demo" />
       <modulePath path="${project}/plugins/execution-languages/languages/deprecated.runtime/runtime.msd" folder="languages.execution.languages-plugin" />
       <modulePath path="${project}/plugins/execution-languages/languages/deprecated/runConfigurations.mpl" folder="languages.execution.languages-plugin" />

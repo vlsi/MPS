@@ -8,13 +8,11 @@ import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
-  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.gwt.client.structure.Attr", "jetbrains.mps.gwt.client.structure.CaseSensitive", "jetbrains.mps.gwt.client.structure.DefaultExcludes", "jetbrains.mps.gwt.client.structure.Element", "jetbrains.mps.gwt.client.structure.EntryPoint", "jetbrains.mps.gwt.client.structure.Exclude", "jetbrains.mps.gwt.client.structure.Excludes", "jetbrains.mps.gwt.client.structure.GWTModule", "jetbrains.mps.gwt.client.structure.Include", "jetbrains.mps.gwt.client.structure.Includes", "jetbrains.mps.gwt.client.structure.Inherits", "jetbrains.mps.gwt.client.structure.Path", "jetbrains.mps.gwt.client.structure.Pattern", "jetbrains.mps.gwt.client.structure.PatternFilter", "jetbrains.mps.gwt.client.structure.PatternHolder", "jetbrains.mps.gwt.client.structure.Public", "jetbrains.mps.gwt.client.structure.RenameTo", "jetbrains.mps.gwt.client.structure.Source", "jetbrains.mps.gwt.client.structure.SuperSource"};
-
   public StructureAspectDescriptor() {
   }
 
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
         return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Attr", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
       case 1:
@@ -57,4 +55,6 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
+
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.gwt.client.structure.Attr", "jetbrains.mps.gwt.client.structure.CaseSensitive", "jetbrains.mps.gwt.client.structure.DefaultExcludes", "jetbrains.mps.gwt.client.structure.Element", "jetbrains.mps.gwt.client.structure.EntryPoint", "jetbrains.mps.gwt.client.structure.Exclude", "jetbrains.mps.gwt.client.structure.Excludes", "jetbrains.mps.gwt.client.structure.GWTModule", "jetbrains.mps.gwt.client.structure.Include", "jetbrains.mps.gwt.client.structure.Includes", "jetbrains.mps.gwt.client.structure.Inherits", "jetbrains.mps.gwt.client.structure.Path", "jetbrains.mps.gwt.client.structure.Pattern", "jetbrains.mps.gwt.client.structure.PatternFilter", "jetbrains.mps.gwt.client.structure.PatternHolder", "jetbrains.mps.gwt.client.structure.Public", "jetbrains.mps.gwt.client.structure.RenameTo", "jetbrains.mps.gwt.client.structure.Source", "jetbrains.mps.gwt.client.structure.SuperSource"};
 }

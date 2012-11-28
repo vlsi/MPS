@@ -8,13 +8,11 @@ import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
-  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.build.workflow.structure.BwfAntStatement", "jetbrains.mps.build.workflow.structure.BwfAntTaskDeclaration", "jetbrains.mps.build.workflow.structure.BwfCustomMacro", "jetbrains.mps.build.workflow.structure.BwfDependency", "jetbrains.mps.build.workflow.structure.BwfFileSet", "jetbrains.mps.build.workflow.structure.BwfJavaClassPath", "jetbrains.mps.build.workflow.structure.BwfJavaDependency", "jetbrains.mps.build.workflow.structure.BwfJavaDescriptor", "jetbrains.mps.build.workflow.structure.BwfJavaLibrary", "jetbrains.mps.build.workflow.structure.BwfJavaLibraryReference", "jetbrains.mps.build.workflow.structure.BwfJavaModule", "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference", "jetbrains.mps.build.workflow.structure.BwfMacro", "jetbrains.mps.build.workflow.structure.BwfMacroListImport", "jetbrains.mps.build.workflow.structure.BwfPathDeclaration", "jetbrains.mps.build.workflow.structure.BwfPathReference", "jetbrains.mps.build.workflow.structure.BwfProject", "jetbrains.mps.build.workflow.structure.BwfProjectPart", "jetbrains.mps.build.workflow.structure.BwfStatement", "jetbrains.mps.build.workflow.structure.BwfSubTask", "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency", "jetbrains.mps.build.workflow.structure.BwfTask", "jetbrains.mps.build.workflow.structure.BwfTaskDependency", "jetbrains.mps.build.workflow.structure.BwfTaskLibrary", "jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency", "jetbrains.mps.build.workflow.structure.BwfTaskPart"};
-
   public StructureAspectDescriptor() {
   }
 
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
         return new CompiledConceptDescriptor("jetbrains.mps.build.workflow.structure.BwfAntStatement", "jetbrains.mps.build.workflow.structure.BwfStatement", false, new String[]{"jetbrains.mps.build.workflow.structure.BwfStatement"}, new String[]{}, new String[]{});
       case 1:
@@ -71,4 +69,6 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
+
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.build.workflow.structure.BwfAntStatement", "jetbrains.mps.build.workflow.structure.BwfAntTaskDeclaration", "jetbrains.mps.build.workflow.structure.BwfCustomMacro", "jetbrains.mps.build.workflow.structure.BwfDependency", "jetbrains.mps.build.workflow.structure.BwfFileSet", "jetbrains.mps.build.workflow.structure.BwfJavaClassPath", "jetbrains.mps.build.workflow.structure.BwfJavaDependency", "jetbrains.mps.build.workflow.structure.BwfJavaDescriptor", "jetbrains.mps.build.workflow.structure.BwfJavaLibrary", "jetbrains.mps.build.workflow.structure.BwfJavaLibraryReference", "jetbrains.mps.build.workflow.structure.BwfJavaModule", "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference", "jetbrains.mps.build.workflow.structure.BwfMacro", "jetbrains.mps.build.workflow.structure.BwfMacroListImport", "jetbrains.mps.build.workflow.structure.BwfPathDeclaration", "jetbrains.mps.build.workflow.structure.BwfPathReference", "jetbrains.mps.build.workflow.structure.BwfProject", "jetbrains.mps.build.workflow.structure.BwfProjectPart", "jetbrains.mps.build.workflow.structure.BwfStatement", "jetbrains.mps.build.workflow.structure.BwfSubTask", "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency", "jetbrains.mps.build.workflow.structure.BwfTask", "jetbrains.mps.build.workflow.structure.BwfTaskDependency", "jetbrains.mps.build.workflow.structure.BwfTaskLibrary", "jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency", "jetbrains.mps.build.workflow.structure.BwfTaskPart"};
 }

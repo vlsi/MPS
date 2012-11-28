@@ -19,7 +19,7 @@ public class double_extends_floatingPoint_SubtypingRule extends SubtypingRule_Ru
   }
 
   public SNode getSubOrSuperType(SNode doubleType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return SLinkOperations.getTarget(_quotation_createNode_424orp_a0a0a(), "descriptor", false);
+    return SLinkOperations.getTarget(_quotation_createNode_424orp_a0a0b(), "descriptor", false);
   }
 
   public String getApplicableConceptFQName() {
@@ -37,7 +37,7 @@ public class double_extends_floatingPoint_SubtypingRule extends SubtypingRule_Ru
     return false;
   }
 
-  private static SNode _quotation_createNode_424orp_a0a0a() {
+  private static SNode _quotation_createNode_424orp_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("descriptor", SReference.create("descriptor", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683630235")));

@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -26,7 +27,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -35,6 +35,24 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_mi4qyq_a_0(editorContext, node);
+  }
+
+  public static class ReplaceWith_AbstractEquationStatement_cellMenu_a0d0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_AbstractEquationStatement_cellMenu_a0d0a() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement";
+    }
+  }
+
+  public static class ReplaceWith_AbstractEquationStatement_cellMenu_a0b1a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_AbstractEquationStatement_cellMenu_a0b1a() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement";
+    }
   }
 
   private EditorCell createCollection_mi4qyq_a(EditorContext editorContext, SNode node) {
@@ -328,23 +346,5 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
 
   private static Color _StyleParameter_QueryFunction_mi4qyq_a0f0a(SNode node, EditorContext editorContext) {
     return MPSColors.DARK_BLUE;
-  }
-
-  public static class ReplaceWith_AbstractEquationStatement_cellMenu_a0d0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_AbstractEquationStatement_cellMenu_a0d0a() {
-    }
-
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement";
-    }
-  }
-
-  public static class ReplaceWith_AbstractEquationStatement_cellMenu_a0b1a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_AbstractEquationStatement_cellMenu_a0b1a() {
-    }
-
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement";
-    }
   }
 }

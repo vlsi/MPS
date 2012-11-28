@@ -4,8 +4,6 @@ package jetbrains.mps.ide.modelchecker.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -28,10 +26,11 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class FindWrongAspectDependencies_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(FindWrongAspectDependencies_Action.class);
 
   public FindWrongAspectDependencies_Action() {
     super("Find Wrong Aspect Dependencies", "Finds wrong references between core, editor and workbench", ICON);
@@ -98,4 +97,6 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
     }
     return false;
   }
+
+  protected static Log log = LogFactory.getLog(FindWrongAspectDependencies_Action.class);
 }

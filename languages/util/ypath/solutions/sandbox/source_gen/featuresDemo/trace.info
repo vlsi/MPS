@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1197995958228" modelId="r:00000000-0000-4000-0000-011c895905b7(featuresDemo)">
-    <nodeInfo nodeId="1227876790258" fileName="DOM_NG.java" startLine="153" startPosition="30" endLine="153" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1227876790258" fileName="DOM_NG.java" startLine="150" startPosition="30" endLine="150" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="21" startPosition="19" endLine="22" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="22" startPosition="58" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="23" startPosition="63" endLine="24" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -28,64 +28,64 @@
     <nodeInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="97" startPosition="46" endLine="98" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197997357470" fileName="DOM_NG.java" startLine="101" startPosition="38" endLine="102" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="108" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
-    <nodeInfo nodeId="1227876790241" fileName="DOM_NG.java" startLine="109" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_3_attributes" />
-    <nodeInfo nodeId="1227876790249" fileName="DOM_NG.java" startLine="110" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_7_count" />
-    <nodeInfo nodeId="1227876790255" fileName="DOM_NG.java" startLine="111" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_8_idx" />
-    <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="118" startPosition="30" endLine="119" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="119" startPosition="56" endLine="120" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="121" startPosition="29" endLine="122" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="124" startPosition="51" endLine="125" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="125" startPosition="42" endLine="126" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="127" startPosition="25" endLine="128" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="128" startPosition="41" endLine="129" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="130" startPosition="30" endLine="131" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="131" startPosition="33" endLine="132" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="132" startPosition="40" endLine="133" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876790246" fileName="DOM_NG.java" startLine="135" startPosition="52" endLine="136" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790246" fileName="DOM_NG.java" startLine="136" startPosition="42" endLine="137" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876790246" fileName="DOM_NG.java" startLine="138" startPosition="25" endLine="139" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790246" fileName="DOM_NG.java" startLine="139" startPosition="40" endLine="140" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876819025" fileName="DOM_NG.java" startLine="141" startPosition="30" endLine="142" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876819025" fileName="DOM_NG.java" startLine="142" startPosition="41" endLine="143" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876819025" fileName="DOM_NG.java" startLine="143" startPosition="71" endLine="144" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227876790239" fileName="DOM_NG.java" startLine="145" startPosition="29" endLine="146" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1227876790240" fileName="DOM_NG.java" startLine="145" startPosition="29" endLine="146" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790239" fileName="DOM_NG.java" startLine="146" startPosition="67" endLine="147" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790239" fileName="DOM_NG.java" startLine="147" startPosition="40" endLine="148" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876790247" fileName="DOM_NG.java" startLine="149" startPosition="29" endLine="150" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1227876790248" fileName="DOM_NG.java" startLine="149" startPosition="29" endLine="150" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790247" fileName="DOM_NG.java" startLine="150" startPosition="66" endLine="151" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790247" fileName="DOM_NG.java" startLine="151" startPosition="40" endLine="152" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876790258" fileName="DOM_NG.java" startLine="153" startPosition="30" endLine="154" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790258" fileName="DOM_NG.java" startLine="154" startPosition="41" endLine="155" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="156" startPosition="30" endLine="157" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="159" startPosition="33" endLine="160" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="169" startPosition="38" endLine="170" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197997357514" fileName="DOM_NG.java" startLine="173" startPosition="23" endLine="174" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="179" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="thisNode" />
-    <nodeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="181" startPosition="42" endLine="182" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198246407456" fileName="DOM_NG.java" startLine="185" startPosition="38" endLine="186" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="193" startPosition="38" endLine="194" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197998075283" fileName="DOM_NG.java" startLine="197" startPosition="23" endLine="198" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="206" startPosition="50" endLine="207" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="210" startPosition="33" endLine="211" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="214" startPosition="29" endLine="215" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="218" startPosition="32" endLine="219" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="222" startPosition="34" endLine="223" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="231" startPosition="50" endLine="232" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="235" startPosition="33" endLine="236" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="239" startPosition="29" endLine="240" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="243" startPosition="32" endLine="244" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="247" startPosition="34" endLine="248" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="256" startPosition="50" endLine="257" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="260" startPosition="33" endLine="261" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="264" startPosition="29" endLine="265" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="268" startPosition="32" endLine="269" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="272" startPosition="34" endLine="273" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="115" startPosition="30" endLine="116" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="116" startPosition="56" endLine="117" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="118" startPosition="29" endLine="119" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="121" startPosition="51" endLine="122" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="122" startPosition="42" endLine="123" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="124" startPosition="25" endLine="125" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="125" startPosition="41" endLine="126" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="127" startPosition="30" endLine="128" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="128" startPosition="33" endLine="129" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="129" startPosition="40" endLine="130" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876790246" fileName="DOM_NG.java" startLine="132" startPosition="52" endLine="133" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790246" fileName="DOM_NG.java" startLine="133" startPosition="42" endLine="134" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876790246" fileName="DOM_NG.java" startLine="135" startPosition="25" endLine="136" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790246" fileName="DOM_NG.java" startLine="136" startPosition="40" endLine="137" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876819025" fileName="DOM_NG.java" startLine="138" startPosition="30" endLine="139" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876819025" fileName="DOM_NG.java" startLine="139" startPosition="41" endLine="140" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876819025" fileName="DOM_NG.java" startLine="140" startPosition="71" endLine="141" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227876790239" fileName="DOM_NG.java" startLine="142" startPosition="29" endLine="143" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1227876790240" fileName="DOM_NG.java" startLine="142" startPosition="29" endLine="143" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790239" fileName="DOM_NG.java" startLine="143" startPosition="67" endLine="144" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790239" fileName="DOM_NG.java" startLine="144" startPosition="40" endLine="145" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876790247" fileName="DOM_NG.java" startLine="146" startPosition="29" endLine="147" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1227876790248" fileName="DOM_NG.java" startLine="146" startPosition="29" endLine="147" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790247" fileName="DOM_NG.java" startLine="147" startPosition="66" endLine="148" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790247" fileName="DOM_NG.java" startLine="148" startPosition="40" endLine="149" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876790258" fileName="DOM_NG.java" startLine="150" startPosition="30" endLine="151" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790258" fileName="DOM_NG.java" startLine="151" startPosition="41" endLine="152" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="153" startPosition="30" endLine="154" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="156" startPosition="33" endLine="157" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227876790241" fileName="DOM_NG.java" startLine="160" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_3_attributes" />
+    <nodeInfo nodeId="1227876790249" fileName="DOM_NG.java" startLine="161" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_7_count" />
+    <nodeInfo nodeId="1227876790255" fileName="DOM_NG.java" startLine="162" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_8_idx" />
+    <nodeInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="170" startPosition="38" endLine="171" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197997357514" fileName="DOM_NG.java" startLine="174" startPosition="23" endLine="175" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="180" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="thisNode" />
+    <nodeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="182" startPosition="42" endLine="183" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198246407456" fileName="DOM_NG.java" startLine="186" startPosition="38" endLine="187" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="194" startPosition="38" endLine="195" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197998075283" fileName="DOM_NG.java" startLine="198" startPosition="23" endLine="199" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="207" startPosition="50" endLine="208" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="211" startPosition="33" endLine="212" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="215" startPosition="29" endLine="216" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="219" startPosition="32" endLine="220" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="223" startPosition="34" endLine="224" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="232" startPosition="50" endLine="233" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="236" startPosition="33" endLine="237" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="240" startPosition="29" endLine="241" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="244" startPosition="32" endLine="245" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="248" startPosition="34" endLine="249" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="257" startPosition="50" endLine="258" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="261" startPosition="33" endLine="262" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="265" startPosition="29" endLine="266" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="269" startPosition="32" endLine="270" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="273" startPosition="34" endLine="274" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1198083374774" fileName="DOM_NG.java" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ELEMENT_NodeKindTrigger#()V" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="203" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Desc_Feature_nodes#()V" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="228" startPosition="0" endLine="230" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Desc_Feature_attributes#()V" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="253" startPosition="0" endLine="255" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Desc_Feature_parent#()V" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="204" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Desc_Feature_nodes#()V" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="229" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Desc_Feature_attributes#()V" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="254" startPosition="0" endLine="256" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Desc_Feature_parent#()V" />
     <nodeInfo nodeId="1198083374774" fileName="DOM_NG.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/w3c/dom/Node;)Z" />
     <nodeInfo nodeId="1198083374774" fileName="DOM_NG.java" startLine="37" startPosition="47" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1198083374765" fileName="DOM_NG.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getValue#(Lorg/w3c/dom/Node;)Ljava/lang/String;" />
@@ -93,29 +93,29 @@
     <nodeInfo nodeId="1197997328269" fileName="DOM_NG.java" startLine="82" startPosition="30" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1197997328269" fileName="DOM_NG.java" startLine="89" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
     <nodeInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Feature_attributes#(Lorg/w3c/dom/Node;)V" />
-    <nodeInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="169" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="173" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
-    <nodeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="181" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Feature_parent#(Lorg/w3c/dom/Node;)V" />
-    <nodeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="193" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="197" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="206" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContents#(Lorg/w3c/dom/Node;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="210" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOpposite#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="214" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="218" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDefault#()Z" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="222" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAscending#()Z" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="231" startPosition="0" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContents#(Lorg/w3c/dom/Node;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="235" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOpposite#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="239" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="243" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDefault#()Z" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="247" startPosition="0" endLine="250" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAscending#()Z" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="256" startPosition="0" endLine="259" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContents#(Lorg/w3c/dom/Node;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="260" startPosition="0" endLine="263" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOpposite#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="264" startPosition="0" endLine="267" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="268" startPosition="0" endLine="271" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDefault#()Z" />
-    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="272" startPosition="0" endLine="275" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAscending#()Z" />
-    <nodeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="123" startPosition="29" endLine="127" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1227876790246" fileName="DOM_NG.java" startLine="134" startPosition="29" endLine="138" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1198246423836" fileName="DOM_NG.java" startLine="186" startPosition="54" endLine="190" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="170" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="174" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
+    <nodeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="182" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Feature_parent#(Lorg/w3c/dom/Node;)V" />
+    <nodeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="194" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="198" startPosition="0" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="207" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContents#(Lorg/w3c/dom/Node;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="211" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOpposite#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="215" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="219" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDefault#()Z" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="223" startPosition="0" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAscending#()Z" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="232" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContents#(Lorg/w3c/dom/Node;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="236" startPosition="0" endLine="239" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOpposite#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="240" startPosition="0" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="244" startPosition="0" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDefault#()Z" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="248" startPosition="0" endLine="251" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAscending#()Z" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="257" startPosition="0" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContents#(Lorg/w3c/dom/Node;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="261" startPosition="0" endLine="264" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOpposite#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="265" startPosition="0" endLine="268" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="269" startPosition="0" endLine="272" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDefault#()Z" />
+    <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="273" startPosition="0" endLine="276" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAscending#()Z" />
+    <nodeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="120" startPosition="29" endLine="124" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1227876790246" fileName="DOM_NG.java" startLine="131" startPosition="29" endLine="135" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1198246423836" fileName="DOM_NG.java" startLine="187" startPosition="54" endLine="191" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DOM_NG#()V" />
     <nodeInfo nodeId="1198083374764" fileName="DOM_NG.java" startLine="50" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="1198083374764" fileName="DOM_NG.java" startLine="58" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
@@ -123,24 +123,24 @@
     <nodeInfo nodeId="1197997328269" fileName="DOM_NG.java" startLine="82" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#(I)Lorg/w3c/dom/Node;" />
     <nodeInfo nodeId="1198083374764" fileName="DOM_NG.java" startLine="48" startPosition="31" endLine="55" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1198083374764" fileName="DOM_NG.java" startLine="56" startPosition="14" endLine="63" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="185" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sequence#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="186" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sequence#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1198083374764" fileName="DOM_NG.java" startLine="56" startPosition="12" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1198083374764" fileName="DOM_NG.java" startLine="47" startPosition="21" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1198083374764" fileName="DOM_NG.java" startLine="46" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMatcher#(Ljava/lang/String;)Ljetbrains/mps/ypath/runtime/IFilter;" />
-    <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="115" startPosition="22" endLine="158" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="113" startPosition="48" endLine="159" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="113" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
-    <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="106" startPosition="46" endLine="162" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="106" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="104" startPosition="42" endLine="164" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="104" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1197997357474" fileName="DOM_NG.java" startLine="102" startPosition="39" endLine="166" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="101" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sequence#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="112" startPosition="22" endLine="155" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="110" startPosition="48" endLine="156" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+    <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="110" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
+    <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="106" startPosition="46" endLine="163" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="106" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="104" startPosition="42" endLine="165" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="104" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1197997357474" fileName="DOM_NG.java" startLine="102" startPosition="39" endLine="167" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="101" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sequence#()Ljava/lang/Iterable;" />
     <scopeInfo nodeId="1198083374774" fileName="DOM_NG.java" startLine="30" startPosition="39" endLine="30" endPosition="39" />
-    <scopeInfo nodeId="1227876790258" fileName="DOM_NG.java" startLine="153" startPosition="30" endLine="153" endPosition="30" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="203" startPosition="33" endLine="203" endPosition="33" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="228" startPosition="38" endLine="228" endPosition="38" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="253" startPosition="34" endLine="253" endPosition="34" />
+    <scopeInfo nodeId="1227876790258" fileName="DOM_NG.java" startLine="150" startPosition="30" endLine="150" endPosition="30" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="204" startPosition="33" endLine="204" endPosition="33" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="229" startPosition="38" endLine="229" endPosition="38" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="254" startPosition="34" endLine="254" endPosition="34" />
     <scopeInfo nodeId="1198083374776" fileName="DOM_NG.java" startLine="33" startPosition="35" endLine="34" endPosition="34" />
     <scopeInfo nodeId="1198083374774" fileName="DOM_NG.java" startLine="38" startPosition="29" endLine="39" endPosition="56" />
     <scopeInfo nodeId="1198083374767" fileName="DOM_NG.java" startLine="69" startPosition="45" endLine="70" endPosition="42" />
@@ -149,38 +149,38 @@
     <scopeInfo nodeId="1197997328271" fileName="DOM_NG.java" startLine="85" startPosition="7" endLine="86" endPosition="53" />
     <scopeInfo nodeId="1197997328278" fileName="DOM_NG.java" startLine="89" startPosition="23" endLine="90" endPosition="55" />
     <scopeInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="97" startPosition="46" endLine="98" endPosition="31" />
-    <scopeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="121" startPosition="29" endLine="122" endPosition="40" />
-    <scopeInfo nodeId="1227876790239" fileName="DOM_NG.java" startLine="145" startPosition="29" endLine="146" endPosition="67" />
-    <scopeInfo nodeId="1227876790247" fileName="DOM_NG.java" startLine="149" startPosition="29" endLine="150" endPosition="66" />
-    <scopeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="156" startPosition="30" endLine="157" endPosition="39" />
-    <scopeInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="169" startPosition="38" endLine="170" endPosition="40" />
-    <scopeInfo nodeId="1197997357513" fileName="DOM_NG.java" startLine="173" startPosition="23" endLine="174" endPosition="55" />
-    <scopeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="181" startPosition="42" endLine="182" endPosition="31" />
-    <scopeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="193" startPosition="38" endLine="194" endPosition="40" />
-    <scopeInfo nodeId="1197998065641" fileName="DOM_NG.java" startLine="197" startPosition="23" endLine="198" endPosition="15" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="206" startPosition="50" endLine="207" endPosition="44" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="210" startPosition="33" endLine="211" endPosition="22" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="214" startPosition="29" endLine="215" endPosition="21" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="218" startPosition="32" endLine="219" endPosition="18" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="222" startPosition="34" endLine="223" endPosition="19" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="231" startPosition="50" endLine="232" endPosition="49" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="235" startPosition="33" endLine="236" endPosition="18" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="239" startPosition="29" endLine="240" endPosition="26" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="243" startPosition="32" endLine="244" endPosition="19" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="247" startPosition="34" endLine="248" endPosition="19" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="256" startPosition="50" endLine="257" endPosition="45" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="260" startPosition="33" endLine="261" endPosition="18" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="264" startPosition="29" endLine="265" endPosition="22" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="268" startPosition="32" endLine="269" endPosition="19" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="272" startPosition="34" endLine="273" endPosition="19" />
+    <scopeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="118" startPosition="29" endLine="119" endPosition="40" />
+    <scopeInfo nodeId="1227876790239" fileName="DOM_NG.java" startLine="142" startPosition="29" endLine="143" endPosition="67" />
+    <scopeInfo nodeId="1227876790247" fileName="DOM_NG.java" startLine="146" startPosition="29" endLine="147" endPosition="66" />
+    <scopeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="153" startPosition="30" endLine="154" endPosition="39" />
+    <scopeInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="170" startPosition="38" endLine="171" endPosition="40" />
+    <scopeInfo nodeId="1197997357513" fileName="DOM_NG.java" startLine="174" startPosition="23" endLine="175" endPosition="55" />
+    <scopeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="182" startPosition="42" endLine="183" endPosition="31" />
+    <scopeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="194" startPosition="38" endLine="195" endPosition="40" />
+    <scopeInfo nodeId="1197998065641" fileName="DOM_NG.java" startLine="198" startPosition="23" endLine="199" endPosition="15" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="207" startPosition="50" endLine="208" endPosition="44" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="211" startPosition="33" endLine="212" endPosition="22" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="215" startPosition="29" endLine="216" endPosition="21" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="219" startPosition="32" endLine="220" endPosition="18" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="223" startPosition="34" endLine="224" endPosition="19" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="232" startPosition="50" endLine="233" endPosition="49" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="236" startPosition="33" endLine="237" endPosition="18" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="240" startPosition="29" endLine="241" endPosition="26" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="244" startPosition="32" endLine="245" endPosition="19" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="248" startPosition="34" endLine="249" endPosition="19" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="257" startPosition="50" endLine="258" endPosition="45" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="261" startPosition="33" endLine="262" endPosition="18" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="265" startPosition="29" endLine="266" endPosition="22" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="269" startPosition="32" endLine="270" endPosition="19" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="273" startPosition="34" endLine="274" endPosition="19" />
     <scopeInfo nodeId="1198083374774" fileName="DOM_NG.java" startLine="30" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="118" startPosition="30" endLine="120" endPosition="37" />
-    <scopeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="124" startPosition="51" endLine="126" endPosition="32" />
-    <scopeInfo nodeId="1227876790246" fileName="DOM_NG.java" startLine="135" startPosition="52" endLine="137" endPosition="32" />
-    <scopeInfo nodeId="1227876790258" fileName="DOM_NG.java" startLine="153" startPosition="30" endLine="155" endPosition="30" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="203" startPosition="0" endLine="205" endPosition="0" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="228" startPosition="0" endLine="230" endPosition="0" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="253" startPosition="0" endLine="255" endPosition="0" />
+    <scopeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="115" startPosition="30" endLine="117" endPosition="37" />
+    <scopeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="121" startPosition="51" endLine="123" endPosition="32" />
+    <scopeInfo nodeId="1227876790246" fileName="DOM_NG.java" startLine="132" startPosition="52" endLine="134" endPosition="32" />
+    <scopeInfo nodeId="1227876790258" fileName="DOM_NG.java" startLine="150" startPosition="30" endLine="152" endPosition="30" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="204" startPosition="0" endLine="206" endPosition="0" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="229" startPosition="0" endLine="231" endPosition="0" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="254" startPosition="0" endLine="256" endPosition="0" />
     <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="21" startPosition="19" endLine="24" endPosition="59" />
     <scopeInfo nodeId="1198083374774" fileName="DOM_NG.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="1198083374774" varName="e" />
@@ -203,38 +203,38 @@
     <scopeInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="97" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="1197997357467" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="130" startPosition="30" endLine="133" endPosition="30" />
-    <scopeInfo nodeId="1227876819025" fileName="DOM_NG.java" startLine="141" startPosition="30" endLine="144" endPosition="36" />
-    <scopeInfo nodeId="1227876790239" fileName="DOM_NG.java" startLine="145" startPosition="29" endLine="148" endPosition="30" />
-    <scopeInfo nodeId="1227876790247" fileName="DOM_NG.java" startLine="149" startPosition="29" endLine="152" endPosition="30" />
-    <scopeInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="169" startPosition="0" endLine="172" endPosition="0" />
-    <scopeInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="173" startPosition="0" endLine="176" endPosition="0" />
-    <scopeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="181" startPosition="0" endLine="184" endPosition="0">
+    <scopeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="127" startPosition="30" endLine="130" endPosition="30" />
+    <scopeInfo nodeId="1227876819025" fileName="DOM_NG.java" startLine="138" startPosition="30" endLine="141" endPosition="36" />
+    <scopeInfo nodeId="1227876790239" fileName="DOM_NG.java" startLine="142" startPosition="29" endLine="145" endPosition="30" />
+    <scopeInfo nodeId="1227876790247" fileName="DOM_NG.java" startLine="146" startPosition="29" endLine="149" endPosition="30" />
+    <scopeInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="170" startPosition="0" endLine="173" endPosition="0" />
+    <scopeInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="174" startPosition="0" endLine="177" endPosition="0" />
+    <scopeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="182" startPosition="0" endLine="185" endPosition="0">
       <varInfo nodeId="1197998065637" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="193" startPosition="0" endLine="196" endPosition="0" />
-    <scopeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="197" startPosition="0" endLine="200" endPosition="0" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="206" startPosition="0" endLine="209" endPosition="0">
+    <scopeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="194" startPosition="0" endLine="197" endPosition="0" />
+    <scopeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="198" startPosition="0" endLine="201" endPosition="0" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="207" startPosition="0" endLine="210" endPosition="0">
       <varInfo nodeId="1197995958228" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="210" startPosition="0" endLine="213" endPosition="0" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="214" startPosition="0" endLine="217" endPosition="0" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="218" startPosition="0" endLine="221" endPosition="0" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="222" startPosition="0" endLine="225" endPosition="0" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="231" startPosition="0" endLine="234" endPosition="0">
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="211" startPosition="0" endLine="214" endPosition="0" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="215" startPosition="0" endLine="218" endPosition="0" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="219" startPosition="0" endLine="222" endPosition="0" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="223" startPosition="0" endLine="226" endPosition="0" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="232" startPosition="0" endLine="235" endPosition="0">
       <varInfo nodeId="1197995958228" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="235" startPosition="0" endLine="238" endPosition="0" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="239" startPosition="0" endLine="242" endPosition="0" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="243" startPosition="0" endLine="246" endPosition="0" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="247" startPosition="0" endLine="250" endPosition="0" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="256" startPosition="0" endLine="259" endPosition="0">
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="236" startPosition="0" endLine="239" endPosition="0" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="240" startPosition="0" endLine="243" endPosition="0" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="244" startPosition="0" endLine="247" endPosition="0" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="248" startPosition="0" endLine="251" endPosition="0" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="257" startPosition="0" endLine="260" endPosition="0">
       <varInfo nodeId="1197995958228" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="260" startPosition="0" endLine="263" endPosition="0" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="264" startPosition="0" endLine="267" endPosition="0" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="268" startPosition="0" endLine="271" endPosition="0" />
-    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="272" startPosition="0" endLine="275" endPosition="0" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="261" startPosition="0" endLine="264" endPosition="0" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="265" startPosition="0" endLine="268" endPosition="0" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="269" startPosition="0" endLine="272" endPosition="0" />
+    <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="273" startPosition="0" endLine="276" endPosition="0" />
     <scopeInfo nodeId="1198083374774" fileName="DOM_NG.java" startLine="37" startPosition="47" endLine="41" endPosition="22" />
     <scopeInfo nodeId="1197997328269" fileName="DOM_NG.java" startLine="82" startPosition="30" endLine="86" endPosition="53" />
     <scopeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
@@ -244,50 +244,50 @@
     <scopeInfo nodeId="1198083374764" fileName="DOM_NG.java" startLine="58" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="1198083374764" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1197998065639" fileName="DOM_NG.java" startLine="185" startPosition="38" endLine="190" endPosition="8">
+    <scopeInfo nodeId="1197998065639" fileName="DOM_NG.java" startLine="186" startPosition="38" endLine="191" endPosition="8">
       <varInfo nodeId="1198246407457" varName="parentNode" />
     </scopeInfo>
     <scopeInfo nodeId="1198083374774" fileName="DOM_NG.java" startLine="37" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="1197997328269" fileName="DOM_NG.java" startLine="82" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="1197997328269" varName="idx" />
     </scopeInfo>
-    <scopeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="123" startPosition="29" endLine="129" endPosition="30" />
-    <scopeInfo nodeId="1227876790246" fileName="DOM_NG.java" startLine="134" startPosition="29" endLine="140" endPosition="30" />
+    <scopeInfo nodeId="1227876790254" fileName="DOM_NG.java" startLine="120" startPosition="29" endLine="126" endPosition="30" />
+    <scopeInfo nodeId="1227876790246" fileName="DOM_NG.java" startLine="131" startPosition="29" endLine="137" endPosition="30" />
     <scopeInfo nodeId="1198083374764" fileName="DOM_NG.java" startLine="48" startPosition="31" endLine="55" endPosition="10" />
     <scopeInfo nodeId="1198083374764" fileName="DOM_NG.java" startLine="56" startPosition="14" endLine="63" endPosition="10" />
-    <scopeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="185" startPosition="0" endLine="192" endPosition="0" />
+    <scopeInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="186" startPosition="0" endLine="193" endPosition="0" />
     <scopeInfo nodeId="1198083374764" fileName="DOM_NG.java" startLine="46" startPosition="69" endLine="65" endPosition="36">
       <varInfo nodeId="1198083374764" varName="filter" />
     </scopeInfo>
     <scopeInfo nodeId="1198083374764" fileName="DOM_NG.java" startLine="46" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="1198083374764" varName="matchValue" />
     </scopeInfo>
-    <scopeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="115" startPosition="22" endLine="158" endPosition="21" />
-    <scopeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="113" startPosition="48" endLine="160" endPosition="31" />
-    <scopeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="113" startPosition="0" endLine="162" endPosition="0" />
-    <scopeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="106" startPosition="46" endLine="162" endPosition="16" />
-    <scopeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="106" startPosition="0" endLine="164" endPosition="0" />
-    <scopeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="104" startPosition="42" endLine="164" endPosition="12" />
-    <scopeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="104" startPosition="0" endLine="166" endPosition="0" />
-    <scopeInfo nodeId="1197997357469" fileName="DOM_NG.java" startLine="101" startPosition="38" endLine="166" endPosition="9">
+    <scopeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="112" startPosition="22" endLine="155" endPosition="21" />
+    <scopeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="110" startPosition="48" endLine="157" endPosition="31" />
+    <scopeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="110" startPosition="0" endLine="159" endPosition="0" />
+    <scopeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="106" startPosition="46" endLine="163" endPosition="16" />
+    <scopeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="106" startPosition="0" endLine="165" endPosition="0" />
+    <scopeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="104" startPosition="42" endLine="165" endPosition="12" />
+    <scopeInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="104" startPosition="0" endLine="167" endPosition="0" />
+    <scopeInfo nodeId="1197997357469" fileName="DOM_NG.java" startLine="101" startPosition="38" endLine="167" endPosition="9">
       <varInfo nodeId="1197997357471" varName="_node" />
     </scopeInfo>
-    <scopeInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="101" startPosition="0" endLine="168" endPosition="0" />
+    <scopeInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="101" startPosition="0" endLine="169" endPosition="0" />
     <unitInfo nodeId="1198083374765" fileName="DOM_NG.java" startLine="68" startPosition="0" endLine="73" endPosition="0" unitName="featuresDemo.DOM_NG$ELEMENT_tag_Property$Getter" />
     <unitInfo nodeId="1198083374764" fileName="DOM_NG.java" startLine="49" startPosition="21" endLine="55" endPosition="9" unitName="featuresDemo.DOM_NG$1" />
     <unitInfo nodeId="1198083374764" fileName="DOM_NG.java" startLine="57" startPosition="21" endLine="63" endPosition="9" unitName="featuresDemo.DOM_NG$2" />
     <unitInfo nodeId="1198083374774" fileName="DOM_NG.java" startLine="27" startPosition="0" endLine="44" endPosition="0" unitName="featuresDemo.DOM_NG$ELEMENT_NodeKindTrigger" />
     <unitInfo nodeId="1197997328269" fileName="DOM_NG.java" startLine="75" startPosition="0" endLine="93" endPosition="0" unitName="featuresDemo.DOM_NG$Feature_nodes" />
-    <unitInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="178" startPosition="0" endLine="201" endPosition="0" unitName="featuresDemo.DOM_NG$Feature_parent" />
-    <unitInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="202" startPosition="0" endLine="226" endPosition="0" unitName="featuresDemo.DOM_NG$Desc_Feature_nodes" />
-    <unitInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="227" startPosition="0" endLine="251" endPosition="0" unitName="featuresDemo.DOM_NG$Desc_Feature_attributes" />
-    <unitInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="252" startPosition="0" endLine="276" endPosition="0" unitName="featuresDemo.DOM_NG$Desc_Feature_parent" />
+    <unitInfo nodeId="1197998065637" fileName="DOM_NG.java" startLine="179" startPosition="0" endLine="202" endPosition="0" unitName="featuresDemo.DOM_NG$Feature_parent" />
+    <unitInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="203" startPosition="0" endLine="227" endPosition="0" unitName="featuresDemo.DOM_NG$Desc_Feature_nodes" />
+    <unitInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="228" startPosition="0" endLine="252" endPosition="0" unitName="featuresDemo.DOM_NG$Desc_Feature_attributes" />
+    <unitInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="253" startPosition="0" endLine="277" endPosition="0" unitName="featuresDemo.DOM_NG$Desc_Feature_parent" />
     <unitInfo nodeId="1198083374764" fileName="DOM_NG.java" startLine="45" startPosition="0" endLine="74" endPosition="0" unitName="featuresDemo.DOM_NG$ELEMENT_tag_Property" />
-    <unitInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="107" startPosition="25" endLine="162" endPosition="15" unitName="featuresDemo.DOM_NG$3" />
-    <unitInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="105" startPosition="21" endLine="164" endPosition="11" unitName="featuresDemo.DOM_NG$2" />
-    <unitInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="103" startPosition="38" endLine="166" endPosition="7" unitName="featuresDemo.DOM_NG$1" />
-    <unitInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="94" startPosition="0" endLine="177" endPosition="0" unitName="featuresDemo.DOM_NG$Feature_attributes" />
-    <unitInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="20" startPosition="0" endLine="277" endPosition="0" unitName="featuresDemo.DOM_NG" />
+    <unitInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="107" startPosition="25" endLine="163" endPosition="15" unitName="featuresDemo.DOM_NG$3" />
+    <unitInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="105" startPosition="21" endLine="165" endPosition="11" unitName="featuresDemo.DOM_NG$2" />
+    <unitInfo nodeId="1227876790238" fileName="DOM_NG.java" startLine="103" startPosition="38" endLine="167" endPosition="7" unitName="featuresDemo.DOM_NG$1" />
+    <unitInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="94" startPosition="0" endLine="178" endPosition="0" unitName="featuresDemo.DOM_NG$Feature_attributes" />
+    <unitInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="20" startPosition="0" endLine="278" endPosition="0" unitName="featuresDemo.DOM_NG" />
   </root>
   <root nodeId="1197998525686" modelId="r:00000000-0000-4000-0000-011c895905b7(featuresDemo)">
     <nodeInfo nodeId="1197998561024" fileName="DomDemo.java" startLine="15" startPosition="42" endLine="16" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

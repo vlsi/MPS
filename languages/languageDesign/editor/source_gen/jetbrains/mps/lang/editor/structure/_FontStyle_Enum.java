@@ -14,22 +14,12 @@ public enum _FontStyle_Enum {
   query("query", "QUERY");
 
   private String myName;
-  private String myValue;
-
-  _FontStyle_Enum(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -67,5 +57,16 @@ public enum _FontStyle_Enum {
       return _FontStyle_Enum.query;
     }
     return _FontStyle_Enum.getDefault();
+  }
+
+  private String myValue;
+
+  _FontStyle_Enum(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

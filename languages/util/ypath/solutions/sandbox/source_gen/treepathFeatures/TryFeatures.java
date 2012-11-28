@@ -144,8 +144,6 @@ public class TryFeatures extends TreePath<Node> {
             public Iterator<Node> iterator() {
               return new YieldingIterator<Node>() {
                 private int __CP__ = 0;
-                private int _3_count;
-                private int _4_idx;
 
                 protected boolean moveToNext() {
 __loop__:
@@ -185,6 +183,9 @@ __switch__:
                   } while (true);
                   return false;
                 }
+
+                private int _3_count;
+                private int _4_idx;
               };
             }
           };

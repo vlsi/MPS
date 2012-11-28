@@ -25,7 +25,7 @@ public class typeof_MathSymbolIndex_InferenceRule extends AbstractInferenceRule_
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(index, "iterable", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1236428024064", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1236428005978", true), (SNode) _quotation_createNode_xcqvod_a0b0a(typeCheckingContext.getRepresentative(T_typevar_1236428072284)), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1236428005978", true), (SNode) _quotation_createNode_xcqvod_a0b0b(typeCheckingContext.getRepresentative(T_typevar_1236428072284)), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = index;
@@ -49,7 +49,7 @@ public class typeof_MathSymbolIndex_InferenceRule extends AbstractInferenceRule_
     return false;
   }
 
-  private static SNode _quotation_createNode_xcqvod_a0b0a(Object parameter_1) {
+  private static SNode _quotation_createNode_xcqvod_a0b0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);

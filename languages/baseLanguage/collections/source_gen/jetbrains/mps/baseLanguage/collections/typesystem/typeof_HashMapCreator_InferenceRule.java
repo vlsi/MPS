@@ -21,14 +21,14 @@ public class typeof_HashMapCreator_InferenceRule extends AbstractInferenceRule_R
     {
       SNode _nodeToCheck_1029348928467 = hashMapCreator;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1198082330971", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1198082325421", true), (SNode) _quotation_createNode_dvqbcx_a0a0a(SLinkOperations.getTarget(hashMapCreator, "keyType", true), SLinkOperations.getTarget(hashMapCreator, "valueType", true)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1198082325421", true), (SNode) _quotation_createNode_dvqbcx_a0a0b(SLinkOperations.getTarget(hashMapCreator, "keyType", true), SLinkOperations.getTarget(hashMapCreator, "valueType", true)), _info_12389875345);
     }
     if ((SLinkOperations.getTarget(hashMapCreator, "initSize", true) != null)) {
       if (!(typeCheckingContext.isSingleTypeComputation())) {
         {
           SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(hashMapCreator, "initSize", true);
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1562299158921037865", 0, null);
-          typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1562299158921037853", true), (SNode) _quotation_createNode_dvqbcx_a0a0b0a(), true, true, _info_12389875345);
+          typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1562299158921037853", true), (SNode) _quotation_createNode_dvqbcx_a0a0b0b(), true, true, _info_12389875345);
         }
       }
     }
@@ -49,7 +49,7 @@ public class typeof_HashMapCreator_InferenceRule extends AbstractInferenceRule_R
     return false;
   }
 
-  private static SNode _quotation_createNode_dvqbcx_a0a0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_dvqbcx_a0a0b(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -65,7 +65,7 @@ public class typeof_HashMapCreator_InferenceRule extends AbstractInferenceRule_R
     return quotedNode_3;
   }
 
-  private static SNode _quotation_createNode_dvqbcx_a0a0b0a() {
+  private static SNode _quotation_createNode_dvqbcx_a0a0b0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

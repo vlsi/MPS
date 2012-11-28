@@ -4,8 +4,6 @@ package jetbrains.mps.build.deprecated.execution;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -14,10 +12,11 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class GenerateBuildAction_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(GenerateBuildAction_Action.class);
 
   public GenerateBuildAction_Action() {
     super("Generate Build Files", "Generate Build Files And Place Them Into Base Directory", ICON);
@@ -77,4 +76,6 @@ public class GenerateBuildAction_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(GenerateBuildAction_Action.class);
 }

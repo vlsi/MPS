@@ -4,17 +4,16 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.logging.Logger;
 
 public class RevertMemoryChanges_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(RevertMemoryChanges_Action.class);
 
   public RevertMemoryChanges_Action() {
     super("Revert Memory Changes", "", ICON);
@@ -64,4 +63,6 @@ public class RevertMemoryChanges_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "RevertMemoryChanges", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(RevertMemoryChanges_Action.class);
 }

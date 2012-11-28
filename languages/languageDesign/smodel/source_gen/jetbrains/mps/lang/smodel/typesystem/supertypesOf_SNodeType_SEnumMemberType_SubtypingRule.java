@@ -4,25 +4,24 @@ package jetbrains.mps.lang.smodel.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class supertypesOf_SNodeType_SEnumMemberType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER_2cenap_a0a0a0a0b0c0a0a0a0a0a0c = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1083171877298");
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
   public supertypesOf_SNodeType_SEnumMemberType_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode node, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_2cenap_a0a0();
+    return _quotation_createNode_2cenap_a0a2();
   }
 
   public String getApplicableConceptFQName() {
@@ -31,7 +30,7 @@ public class supertypesOf_SNodeType_SEnumMemberType_SubtypingRule extends Subtyp
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      GeneratedMatchingPattern pattern = new supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.Pattern_2cenap_a0a0a0a2();
+      GeneratedMatchingPattern pattern = new supertypesOf_SNodeType_SEnumMemberType_SubtypingRule.Pattern_2cenap_a0a0a0a4();
       this.myMatchingPattern = pattern;
       boolean b = pattern.match(argument);
       return new IsApplicableStatus(b, pattern);
@@ -42,14 +41,8 @@ public class supertypesOf_SNodeType_SEnumMemberType_SubtypingRule extends Subtyp
     return true;
   }
 
-  private static SNode _quotation_createNode_2cenap_a0a0() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
-  }
-
-  public static class Pattern_2cenap_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_2cenap_a0a0a0a2() {
+  public static class Pattern_2cenap_a0a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_2cenap_a0a0a0a4() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -60,7 +53,7 @@ public class supertypesOf_SNodeType_SEnumMemberType_SubtypingRule extends Subtyp
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_2cenap_a0a0a0a0b0c0a0a0a0a0a0c;
+          SNodePointer pointer = SNODE_POINTER_2cenap_a0a0a0a0b0c0a0a0a0a0a0e;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_SNodeType_SEnumMemberType_6v72fr_a0a.getReferenceTarget("concept")))) {
             return false;
           }
@@ -83,4 +76,12 @@ public class supertypesOf_SNodeType_SEnumMemberType_SubtypingRule extends Subtyp
     public void performActions(Object o) {
     }
   }
+
+  private static SNode _quotation_createNode_2cenap_a0a2() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
+  }
+
+  private static SNodePointer SNODE_POINTER_2cenap_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1083171877298");
 }

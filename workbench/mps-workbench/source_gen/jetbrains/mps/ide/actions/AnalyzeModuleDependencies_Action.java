@@ -5,7 +5,6 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
@@ -16,10 +15,10 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.logging.Logger;
 
 public class AnalyzeModuleDependencies_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("dependencies.png");
-  private static Logger LOG = Logger.getLogger(AnalyzeModuleDependencies_Action.class);
 
   public AnalyzeModuleDependencies_Action() {
     super("Analyze Module Dependencies", "", ICON);
@@ -72,4 +71,6 @@ public class AnalyzeModuleDependencies_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "AnalyzeModuleDependencies", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(AnalyzeModuleDependencies_Action.class);
 }

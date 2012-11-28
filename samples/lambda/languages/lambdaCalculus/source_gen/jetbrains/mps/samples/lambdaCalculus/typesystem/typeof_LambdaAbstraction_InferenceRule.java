@@ -39,7 +39,7 @@ public class typeof_LambdaAbstraction_InferenceRule extends AbstractInferenceRul
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "627759474950193423", 0, null);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "627759474950193434", true), (SNode) typeCheckingContext.getRepresentative(D_typevar_6115593414628019700), _info_12389875345);
       }
-      result = _quotation_createNode_e7wm7n_a0c0f0a(typeCheckingContext.getRepresentative(D_typevar_6115593414628019700), result);
+      result = _quotation_createNode_e7wm7n_a0c0f0b(typeCheckingContext.getRepresentative(D_typevar_6115593414628019700), result);
     }
     {
       SNode _nodeToCheck_1029348928467 = lambdaAbstraction;
@@ -63,7 +63,7 @@ public class typeof_LambdaAbstraction_InferenceRule extends AbstractInferenceRul
     return false;
   }
 
-  private static SNode _quotation_createNode_e7wm7n_a0c0f0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_e7wm7n_a0c0f0b(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;

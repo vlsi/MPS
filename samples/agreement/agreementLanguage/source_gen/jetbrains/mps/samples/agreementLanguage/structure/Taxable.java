@@ -11,12 +11,6 @@ public enum Taxable {
   tax_free("TAXFREE", false);
 
   private String myName;
-  private boolean myValue;
-
-  Taxable(String name, boolean value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
@@ -24,10 +18,6 @@ public enum Taxable {
 
   public String getValueAsString() {
     return "" + this.myValue;
-  }
-
-  public boolean getValue() {
-    return this.myValue;
   }
 
   public static List<Taxable> getConstants() {
@@ -52,5 +42,16 @@ public enum Taxable {
       return Taxable.tax_free;
     }
     return Taxable.getDefault();
+  }
+
+  private boolean myValue;
+
+  Taxable(String name, boolean value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public boolean getValue() {
+    return this.myValue;
   }
 }

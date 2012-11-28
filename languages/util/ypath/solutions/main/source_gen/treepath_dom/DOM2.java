@@ -176,9 +176,6 @@ public class DOM2 extends TreePath<Node> {
             public Iterator<Node> iterator() {
               return new YieldingIterator<Node>() {
                 private int __CP__ = 0;
-                private NamedNodeMap _3_attributes;
-                private int _7_count;
-                private int _8_idx;
 
                 protected boolean moveToNext() {
 __loop__:
@@ -229,6 +226,10 @@ __switch__:
                   } while (true);
                   return false;
                 }
+
+                private NamedNodeMap _3_attributes;
+                private int _7_count;
+                private int _8_idx;
               };
             }
           };

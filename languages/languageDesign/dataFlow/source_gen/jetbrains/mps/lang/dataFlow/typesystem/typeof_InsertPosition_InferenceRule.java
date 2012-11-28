@@ -20,7 +20,7 @@ public class typeof_InsertPosition_InferenceRule extends AbstractInferenceRule_R
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(insertPosition, "instruction", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959037a(jetbrains.mps.lang.dataFlow.typesystem)", "1823319949748892463", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959037a(jetbrains.mps.lang.dataFlow.typesystem)", "1823319949748871124", true), (SNode) _quotation_createNode_src0b7_a0a0a(), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959037a(jetbrains.mps.lang.dataFlow.typesystem)", "1823319949748871124", true), (SNode) _quotation_createNode_src0b7_a0a0b(), _info_12389875345);
     }
   }
 
@@ -39,7 +39,7 @@ public class typeof_InsertPosition_InferenceRule extends AbstractInferenceRule_R
     return false;
   }
 
-  private static SNode _quotation_createNode_src0b7_a0a0a() {
+  private static SNode _quotation_createNode_src0b7_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.InstructionType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

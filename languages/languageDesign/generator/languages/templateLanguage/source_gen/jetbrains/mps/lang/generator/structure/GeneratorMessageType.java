@@ -12,22 +12,12 @@ public enum GeneratorMessageType {
   error("error", "error");
 
   private String myName;
-  private String myValue;
-
-  GeneratorMessageType(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -57,5 +47,16 @@ public enum GeneratorMessageType {
       return GeneratorMessageType.error;
     }
     return GeneratorMessageType.getDefault();
+  }
+
+  private String myValue;
+
+  GeneratorMessageType(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

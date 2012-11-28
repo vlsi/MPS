@@ -42,7 +42,7 @@ public class DispatchUtil {
   public static Iterable<SNode> ancestors(final SNode arg, boolean concreteFirst) {
     // true for baseLanguage, 
     // for smodel it would be node<BaseConcept> 
-    final SNode rootOfHierarchy = SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_pzuztq_a0a0c0c(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    final SNode rootOfHierarchy = SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_pzuztq_a0a0c0d(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
 
     Iterable<SNode> classes = Sequence.fromClosure(new ISequenceClosure<SNode>() {
       public Iterable<SNode> iterable() {
@@ -50,7 +50,6 @@ public class DispatchUtil {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _3_cl;
 
               protected boolean moveToNext() {
 __loop__:
@@ -111,6 +110,8 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private SNode _3_cl;
             };
           }
         };
@@ -141,7 +142,7 @@ __switch__:
 
   }
 
-  private static SNode _quotation_createNode_pzuztq_a0a0c0c() {
+  private static SNode _quotation_createNode_pzuztq_a0a0c0d() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));

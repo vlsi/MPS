@@ -41,20 +41,20 @@ public class Person {
   public Element toXml() {
     return new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {
-        Element simpleElement_jqm3zu_a0a0g = new Element("person");
-        Element simpleElement_jqm3zu_a0a0a0g = new Element("name");
-        Text text_jqm3zu_a0a0a0a0g = new Text(Person.this.getName());
-        simpleElement_jqm3zu_a0a0a0g.addContent(text_jqm3zu_a0a0a0a0g);
-        Element simpleElement_jqm3zu_b0a0a0g = new Element("lastName");
-        Text text_jqm3zu_a0b0a0a0g = new Text(Person.this.getLastName());
-        simpleElement_jqm3zu_b0a0a0g.addContent(text_jqm3zu_a0b0a0a0g);
-        Element simpleElement_jqm3zu_c0a0a0g = new Element("address");
-        Element elementMacro_jqm3zu_a0c0a0a0g = Person.this.getAddress().toXml();
-        simpleElement_jqm3zu_c0a0a0g.addContent(elementMacro_jqm3zu_a0c0a0a0g);
-        simpleElement_jqm3zu_a0a0a0g.addContent(simpleElement_jqm3zu_a0a0a0g);
-        simpleElement_jqm3zu_b0a0a0g.addContent(simpleElement_jqm3zu_b0a0a0g);
-        simpleElement_jqm3zu_c0a0a0g.addContent(simpleElement_jqm3zu_c0a0a0g);
-        return simpleElement_jqm3zu_a0a0g;
+        Element simpleElement_jqm3zu_a0a0k = new Element("person");
+        Element simpleElement_jqm3zu_a0a0a0k = new Element("name");
+        Text text_jqm3zu_a0a0a0a0k = new Text(Person.this.getName());
+        simpleElement_jqm3zu_a0a0a0k.addContent(text_jqm3zu_a0a0a0a0k);
+        Element simpleElement_jqm3zu_b0a0a0k = new Element("lastName");
+        Text text_jqm3zu_a0b0a0a0k = new Text(Person.this.getLastName());
+        simpleElement_jqm3zu_b0a0a0k.addContent(text_jqm3zu_a0b0a0a0k);
+        Element simpleElement_jqm3zu_c0a0a0k = new Element("address");
+        Element elementMacro_jqm3zu_a0c0a0a0k = Person.this.getAddress().toXml();
+        simpleElement_jqm3zu_c0a0a0k.addContent(elementMacro_jqm3zu_a0c0a0a0k);
+        simpleElement_jqm3zu_a0a0a0k.addContent(simpleElement_jqm3zu_a0a0a0k);
+        simpleElement_jqm3zu_b0a0a0k.addContent(simpleElement_jqm3zu_b0a0a0k);
+        simpleElement_jqm3zu_c0a0a0k.addContent(simpleElement_jqm3zu_c0a0a0k);
+        return simpleElement_jqm3zu_a0a0k;
       }
     }.invoke();
   }

@@ -53,22 +53,12 @@ public enum CellActionId {
   SHOW_MESSAGE("SHOW_MESSAGE", "show_message_action_id");
 
   private String myName;
-  private String myValue;
-
-  CellActionId(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -262,5 +252,16 @@ public enum CellActionId {
       return CellActionId.SHOW_MESSAGE;
     }
     return CellActionId.getDefault();
+  }
+
+  private String myValue;
+
+  CellActionId(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

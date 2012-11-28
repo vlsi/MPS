@@ -4,7 +4,6 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
@@ -20,10 +19,10 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
+import jetbrains.mps.logging.Logger;
 
 public class MoveProperyUp_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(MoveProperyUp_Action.class);
 
   public MoveProperyUp_Action() {
     super("Move Property Up", "", ICON);
@@ -110,4 +109,6 @@ public class MoveProperyUp_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "MoveProperyUp", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(MoveProperyUp_Action.class);
 }

@@ -13,6 +13,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
@@ -37,7 +38,7 @@ public class typeof_ClassConcept_NonTypesystemRule extends AbstractNonTypesystem
         }
       }
     }
-    for (SNode m : SLinkOperations.getTargets(cls, "method", true)) {
+    for (SNode m : Classifier_Behavior.call_methods_5292274854859311639(cls)) {
       typeCheckingContext.addDependencyForCurrent(m);
     }
     if (!(SPropertyOperations.getBoolean(cls, "abstractClass")) && ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), cls, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{})).isNotEmpty()) {

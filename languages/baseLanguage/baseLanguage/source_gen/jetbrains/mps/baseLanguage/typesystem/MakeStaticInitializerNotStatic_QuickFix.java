@@ -5,8 +5,9 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class MakeStaticInitializerNotStatic_QuickFix extends QuickFix_Runtime {
@@ -18,11 +19,17 @@ public class MakeStaticInitializerNotStatic_QuickFix extends QuickFix_Runtime {
   }
 
   public void execute(SNode node) {
-    if ((SLinkOperations.getTarget(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), "instanceInitializer", true) == null)) {
-      SLinkOperations.setNewChild(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), "instanceInitializer", "jetbrains.mps.baseLanguage.structure.InstanceInitializer");
-    }
-    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), "instanceInitializer", true), "statementList", true), "statement", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]), "statementList", true), "statement", true)));
+    int index = ListSequence.fromList(SLinkOperations.getTargets(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), "member", true)).indexOf(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]));
+
+    SNode initializer = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceInitializer", null);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(initializer, "statementList", true), "statement", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]), "statementList", true), "statement", true)));
+
     SNodeOperations.detachNode(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]));
-    SNodeOperations.deleteNode(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]));
+
+    if (index == -1) {
+      ListSequence.fromList(SLinkOperations.getTargets(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), "member", true)).addElement(initializer);
+    } else {
+      ListSequence.fromList(SLinkOperations.getTargets(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), "member", true)).insertElement(index, initializer);
+    }
   }
 }

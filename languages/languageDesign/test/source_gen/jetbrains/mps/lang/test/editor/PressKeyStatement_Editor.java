@@ -6,56 +6,23 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 
 public class PressKeyStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_pkvqak_a(editorContext, node);
-  }
-
-  private EditorCell createCollection_pkvqak_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_pkvqak_a");
-    editorCell.addEditorCell(this.createConstant_pkvqak_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_pkvqak_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_pkvqak_c0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_pkvqak_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "press keys");
-    editorCell.setCellId("Constant_pkvqak_a0");
-    transformationTest_StyleSheet.getEditorOperation(editorCell).apply(editorCell);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_pkvqak_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_pkvqak_c0");
-    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNodeList_pkvqak_b0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new PressKeyStatement_Editor.keyStrokesListHandler_pkvqak_b0(node, "keyStrokes", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_keyStrokes");
-    editorCell.setRole(handler.getElementRole());
-    return editorCell;
   }
 
   private static class keyStrokesListHandler_pkvqak_b0 extends RefNodeListHandler {
@@ -102,5 +69,38 @@ public class PressKeyStatement_Editor extends DefaultNodeEditor {
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
       return editorCell;
     }
+  }
+
+  private EditorCell createCollection_pkvqak_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_pkvqak_a");
+    editorCell.addEditorCell(this.createConstant_pkvqak_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_pkvqak_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pkvqak_c0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_pkvqak_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "press keys");
+    editorCell.setCellId("Constant_pkvqak_a0");
+    transformationTest_StyleSheet.getEditorOperation(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_pkvqak_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
+    editorCell.setCellId("Constant_pkvqak_c0");
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_pkvqak_b0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new PressKeyStatement_Editor.keyStrokesListHandler_pkvqak_b0(node, "keyStrokes", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    editorCell.setCellId("refNodeList_keyStrokes");
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
   }
 }

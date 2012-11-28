@@ -159,8 +159,8 @@
       <varInfo nodeId="230599087727051240" varName="pName" />
       <varInfo nodeId="230599087727051237" varName="result" />
     </scopeInfo>
-    <unitInfo nodeId="230599087727050894" fileName="JavaStubModelDataSource.java" startLine="48" startPosition="77" endLine="52" endPosition="5" unitName="jetbrains.mps.stubs.util.JavaStubModelDataSource$2" />
-    <unitInfo nodeId="230599087727051262" fileName="JavaStubModelDataSource.java" startLine="114" startPosition="21" endLine="142" endPosition="7" unitName="jetbrains.mps.stubs.util.JavaStubModelDataSource$1" />
+    <unitInfo nodeId="230599087727050894" fileName="JavaStubModelDataSource.java" startLine="48" startPosition="77" endLine="52" endPosition="5" unitName="jetbrains.mps.stubs.util.JavaStubModelDataSource$1" />
+    <unitInfo nodeId="230599087727051262" fileName="JavaStubModelDataSource.java" startLine="114" startPosition="21" endLine="142" endPosition="7" unitName="jetbrains.mps.stubs.util.JavaStubModelDataSource$2" />
     <unitInfo nodeId="230599087727050842" fileName="JavaStubModelDataSource.java" startLine="37" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.stubs.util.JavaStubModelDataSource" />
   </root>
   <root nodeId="230599087727051164" modelId="r:a0983393-0813-40ae-b2fa-3d40356087e3(jetbrains.mps.stubs.util)">

@@ -22,7 +22,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import javax.swing.JPopupMenu;
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -33,6 +32,7 @@ import javax.swing.Action;
 import jetbrains.mps.ide.icons.IconManager;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 public class GoToRulesHelper {
   public GoToRulesHelper() {
@@ -62,7 +62,7 @@ public class GoToRulesHelper {
     if (language == null) {
       return Collections.emptyList();
     }
-    SModel typesystemModel = check_l17hf5_a0c0b(LanguageAspect.TYPESYSTEM.get(language));
+    SModel typesystemModel = check_l17hf5_a0c0c(LanguageAspect.TYPESYSTEM.get(language));
     if (typesystemModel == null) {
       return Collections.emptyList();
     }
@@ -133,13 +133,6 @@ public class GoToRulesHelper {
     }
   }
 
-  private static SModel check_l17hf5_a0c0b(EditableSModelDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getSModel();
-    }
-    return null;
-  }
-
   private static class MyMenu extends JPopupMenu {
     public MyMenu(List<SNode> list, final IOperationContext operationContext) {
       setBackground(Color.WHITE);
@@ -178,5 +171,12 @@ public class GoToRulesHelper {
         }).setBackground(Color.WHITE);
       }
     }
+  }
+
+  private static SModel check_l17hf5_a0c0c(EditableSModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSModel();
+    }
+    return null;
   }
 }

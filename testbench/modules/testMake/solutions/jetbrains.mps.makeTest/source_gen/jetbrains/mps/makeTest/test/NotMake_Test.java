@@ -6,11 +6,13 @@ import jetbrains.mps.MPSLaunch;
 import junit.framework.TestCase;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 @MPSLaunch
 public class NotMake_Test extends TestCase {
@@ -20,7 +22,7 @@ public class NotMake_Test extends TestCase {
       @Override
       public void change(SModel model) {
         super.change(model);
-        SPropertyOperations.set(ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.Classifier")).first(), "method", true)).first(), "isAbstract", "" + (true));
+        SPropertyOperations.set(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.Classifier")).first(), "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).first(), "isAbstract", "" + (true));
       }
     });
   }
@@ -47,7 +49,7 @@ public class NotMake_Test extends TestCase {
           SNode voidType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VoidType", null);
           SPropertyOperations.set(method, "name", "abc");
           SLinkOperations.setTarget(method, "returnType", voidType, true);
-          ListSequence.fromList(SLinkOperations.getTargets(root, "method", true)).addElement(method);
+          ListSequence.fromList(SLinkOperations.getTargets(root, "member", true)).addElement(method);
         }
       }
     });
@@ -59,7 +61,7 @@ public class NotMake_Test extends TestCase {
       @Override
       public void change(SModel model) {
         super.change(model);
-        SPropertyOperations.set(ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.Classifier")).first(), "method", true)).first(), "isAbstract", "" + (true));
+        SPropertyOperations.set(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.Classifier")).first(), "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).first(), "isAbstract", "" + (true));
       }
     });
   }

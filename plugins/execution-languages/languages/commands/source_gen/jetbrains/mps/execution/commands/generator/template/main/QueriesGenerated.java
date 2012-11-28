@@ -68,8 +68,8 @@ public class QueriesGenerated {
     return CommandDeclaration_Behavior.getGetDebuggerMethodName_856705193941282096();
   }
 
-  public static Object propertyMacro_GetPropertyValue_865001690840233113(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return CommandDeclaration_Behavior.getGetDebuggerMethodName_856705193941282096();
+  public static Object propertyMacro_GetPropertyValue_865001690840233190(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getGeneratedClassName_946964771156905488", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_865001690840232963(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -92,12 +92,12 @@ public class QueriesGenerated {
     return CommandDeclaration_Behavior.getCreateProcessMethodName_856705193941282090();
   }
 
-  public static Object propertyMacro_GetPropertyValue_865001690840233169(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+  public static Object propertyMacro_GetPropertyValue_865001690840233113(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return CommandDeclaration_Behavior.getGetDebuggerMethodName_856705193941282096();
   }
 
-  public static Object propertyMacro_GetPropertyValue_865001690840233190(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getGeneratedClassName_946964771156905488", new Object[]{});
+  public static Object propertyMacro_GetPropertyValue_865001690840233169(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_6226796386650472933(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -153,16 +153,16 @@ public class QueriesGenerated {
     return !(ExplicitCommandParameterDeclaration_Behavior.call_isRequired_856705193941282030(SLinkOperations.getTarget(_context.getNode(), "parameter", false)));
   }
 
-  public static boolean ifMacro_Condition_865001690840233106(final IOperationContext operationContext, final IfMacroContext _context) {
-    return CommandDeclaration_Behavior.call_isDebuggable_856705193941282102(_context.getNode());
-  }
-
   public static boolean ifMacro_Condition_865001690840232971(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "initializer", true) != null);
   }
 
   public static boolean ifMacro_Condition_357096973092207652(final IOperationContext operationContext, final IfMacroContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isComparable(SLinkOperations.getTarget(_context.getNode(), "type", true), _quotation_createNode_x583g4_b0a0a92(), true);
+    return TypeChecker.getInstance().getSubtypingManager().isComparable(SLinkOperations.getTarget(_context.getNode(), "type", true), _quotation_createNode_x583g4_b0a0a82(), true);
+  }
+
+  public static boolean ifMacro_Condition_865001690840233106(final IOperationContext operationContext, final IfMacroContext _context) {
+    return CommandDeclaration_Behavior.call_isDebuggable_856705193941282102(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_4675583320452238291(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -505,7 +505,7 @@ public class QueriesGenerated {
     }
   }
 
-  private static SNode _quotation_createNode_x583g4_b0a0a92() {
+  private static SNode _quotation_createNode_x583g4_b0a0a82() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

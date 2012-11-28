@@ -4,7 +4,6 @@ package jetbrains.mps.lang.script.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
@@ -23,10 +22,10 @@ import jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.logging.Logger;
 
 public class RunMigrationScripts_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(RunMigrationScripts_Action.class);
   private List<SNode> scripts;
   private boolean selectionOnly;
 
@@ -111,4 +110,6 @@ public class RunMigrationScripts_Action extends BaseAction {
   public static String scripts_State(List<SNode> object) {
     return "";
   }
+
+  private static Logger LOG = Logger.getLogger(RunMigrationScripts_Action.class);
 }

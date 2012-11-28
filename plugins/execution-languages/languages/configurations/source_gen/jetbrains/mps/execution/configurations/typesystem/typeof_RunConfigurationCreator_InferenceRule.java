@@ -20,12 +20,12 @@ public class typeof_RunConfigurationCreator_InferenceRule extends AbstractInfere
     {
       SNode _nodeToCheck_1029348928467 = creator;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "3642991921658122741", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "3642991921658122738", true), (SNode) _quotation_createNode_ijawlg_a0a0a(SLinkOperations.getTarget(creator, "configuration", false)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "3642991921658122738", true), (SNode) _quotation_createNode_ijawlg_a0a0b(SLinkOperations.getTarget(creator, "configuration", false)), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(creator, "configurationName", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "529406319400385987", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "529406319400385979", true), (SNode) _quotation_createNode_ijawlg_a0b0a(), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "529406319400385979", true), (SNode) _quotation_createNode_ijawlg_a0b0b(), _info_12389875345);
     }
   }
 
@@ -44,14 +44,14 @@ public class typeof_RunConfigurationCreator_InferenceRule extends AbstractInfere
     return false;
   }
 
-  private static SNode _quotation_createNode_ijawlg_a0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_ijawlg_a0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("persistentConfiguration", (SNode) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_ijawlg_a0b0a() {
+  private static SNode _quotation_createNode_ijawlg_a0b0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

@@ -4,8 +4,6 @@ package jetbrains.mps.debugger.java.runtime.ui.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -13,10 +11,11 @@ import jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi;
 import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class EditWatchAction_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(EditWatchAction_Action.class);
 
   public EditWatchAction_Action() {
     super("Edit Watch", "", ICON);
@@ -58,4 +57,6 @@ public class EditWatchAction_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(EditWatchAction_Action.class);
 }

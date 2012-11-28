@@ -18,8 +18,8 @@ import jetbrains.mps.lang.actions.behavior.NodeSubstituteActionsBuilder_Behavior
 import jetbrains.mps.lang.actions.behavior.SideTransformHintSubstituteActionsBuilder_Behavior;
 import jetbrains.mps.lang.actions.behavior.NodeFactory_Behavior;
 import jetbrains.mps.lang.actions.behavior.RemoveSTByConditionPart_Behavior;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.datatransfer.PasteWrappersManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.actions.behavior.PastePostProcessor_Behavior;
 import jetbrains.mps.lang.actions.behavior.CopyPreProcessor_Behavior;
 import jetbrains.mps.util.NameUtil;
@@ -129,6 +129,10 @@ public class QueriesGenerated {
     return RemoveSTByConditionPart_Behavior.call_getQueryMethodName_1220279474449(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_1221139659867(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return PasteWrappersManager.PASTE_WRAPPER_CLASS_NAME;
+  }
+
   public static Object propertyMacro_GetPropertyValue_1238774270946(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "sourceConcept", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
@@ -139,10 +143,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1221139734444(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return PasteWrappersManager.PASTE_WRAPPERS_FACTORY_METHOD;
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1221139659867(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return PasteWrappersManager.PASTE_WRAPPER_CLASS_NAME;
   }
 
   public static Object propertyMacro_GetPropertyValue_1235659476375(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -169,16 +169,16 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPastePostProcess"), "conceptAlias");
   }
 
+  public static Object propertyMacro_GetPropertyValue_5948027493682405974(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return CopyPreProcessor_Behavior.call_getClassName_5948027493682347861(_context.getNode());
+  }
+
   public static Object propertyMacro_GetPropertyValue_5948027493682498288(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcess"), "conceptAlias");
   }
 
   public static Object propertyMacro_GetPropertyValue_5948027493682498325(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcessOriginal"), "conceptAlias");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_5948027493682405974(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return CopyPreProcessor_Behavior.call_getClassName_5948027493682347861(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_5979988948250981408(final IOperationContext operationContext, final PropertyMacroContext _context) {

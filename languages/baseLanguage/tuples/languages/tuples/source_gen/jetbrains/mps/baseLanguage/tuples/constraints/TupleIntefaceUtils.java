@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -27,7 +29,7 @@ public class TupleIntefaceUtils {
     List<Property> accessors = ListSequence.fromList(new ArrayList<Property>());
     List<Property> mutators = ListSequence.fromList(new ArrayList<Property>());
     int ignored = 0;
-    for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(ifc, "method", true))) {
+    for (SNode method : Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(ifc))) {
       if ((int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 0 && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
         ListSequence.fromList(accessors).addElement(new Property(true, SPropertyOperations.getString(method, "name"), SLinkOperations.getTarget(method, "returnType", true)));
       } else if ((int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && MatchingUtil.matchNodes(SLinkOperations.getTarget(method, "returnType", true), ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).toListSequence().first())) {

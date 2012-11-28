@@ -15,7 +15,7 @@ public class CommandProcessCanSurviveWithoutCommand_SubtypingRule extends Subtyp
   }
 
   public SNode getSubOrSuperType(SNode commandProcessType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_6vbhke_a0a0();
+    return _quotation_createNode_6vbhke_a0a1();
   }
 
   public String getApplicableConceptFQName() {
@@ -37,7 +37,7 @@ public class CommandProcessCanSurviveWithoutCommand_SubtypingRule extends Subtyp
     return true;
   }
 
-  private static SNode _quotation_createNode_6vbhke_a0a0() {
+  private static SNode _quotation_createNode_6vbhke_a0a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandProcessType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

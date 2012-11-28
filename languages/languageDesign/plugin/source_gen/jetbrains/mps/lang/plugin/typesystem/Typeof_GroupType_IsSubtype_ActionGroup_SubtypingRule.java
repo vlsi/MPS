@@ -18,7 +18,7 @@ public class Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule extends Subtyp
   }
 
   public SNode getSubOrSuperType(SNode groupType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_o1uhq5_a0a0();
+    return _quotation_createNode_o1uhq5_a0a1();
   }
 
   public String getApplicableConceptFQName() {
@@ -36,7 +36,7 @@ public class Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule extends Subtyp
     return false;
   }
 
-  private static SNode _quotation_createNode_o1uhq5_a0a0() {
+  private static SNode _quotation_createNode_o1uhq5_a0a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.plugins.actions(MPS.Platform/jetbrains.mps.plugins.actions@java_stub)"), SNodeId.fromString("~GeneratedActionGroup")));

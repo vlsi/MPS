@@ -15,16 +15,18 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.intentions.IntentionDescriptor;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class convert_test_case_to_unittest_case_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -78,6 +80,38 @@ public class convert_test_case_to_unittest_case_Intention implements IntentionFa
     return myCachedExecutable;
   }
 
+  public class IntentionImplementation implements IntentionExecutable {
+    public IntentionImplementation() {
+    }
+
+    public String getDescription(final SNode node, final EditorContext editorContext) {
+      return "Convert to UnitTest Case";
+    }
+
+    public void execute(final SNode node, final EditorContext editorContext) {
+      SNode testCase = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase");
+      SPropertyOperations.set(testCase, "name", SPropertyOperations.getString(node, "name"));
+      SPropertyOperations.set(testCase, "testCaseName", SPropertyOperations.getString(node, "name"));
+      if ((SLinkOperations.getTarget(node, "superclass", true) != null) && SLinkOperations.getTarget(SLinkOperations.getTarget(node, "superclass", true), "classifier", false) != SLinkOperations.getTarget(_quotation_createNode_g240td_a0a0d0a(), "classifier", false)) {
+        SLinkOperations.setTarget(SLinkOperations.getTarget(testCase, "superclass", true), "classifier", SLinkOperations.getTarget(SLinkOperations.getTarget(node, "superclass", true), "classifier", false), false);
+      }
+      for (SNode m : Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node))) {
+        if (SPropertyOperations.getString(m, "name").startsWith("test")) {
+          ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(testCase, "testMethodList", true), "testMethod", true)).addElement(_quotation_createNode_g240td_a0a0a0a4a0(SNodeOperations.detachNode(SLinkOperations.getTarget(m, "body", true)), SPropertyOperations.getString(m, "name").substring("test".length())));
+        } else {
+          ListSequence.fromList(SLinkOperations.getTargets(testCase, "member", true)).addElement(SNodeOperations.detachNode(m));
+        }
+      }
+      for (SNode f : Sequence.fromIterable(Classifier_Behavior.call_staticFields_5292274854859223538(node))) {
+        ListSequence.fromList(SLinkOperations.getTargets(testCase, "member", true)).addElement(SNodeOperations.detachNode(f));
+      }
+    }
+
+    public IntentionDescriptor getDescriptor() {
+      return convert_test_case_to_unittest_case_Intention.this;
+    }
+  }
+
   private static SNode _quotation_createNode_g240td_b0a0a0a() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
@@ -105,37 +139,5 @@ public class convert_test_case_to_unittest_case_Intention implements IntentionFa
       quotedNode_3.addChild("body", HUtil.copyIfNecessary(quotedNode_5));
     }
     return quotedNode_3;
-  }
-
-  public class IntentionImplementation implements IntentionExecutable {
-    public IntentionImplementation() {
-    }
-
-    public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Convert to UnitTest Case";
-    }
-
-    public void execute(final SNode node, final EditorContext editorContext) {
-      SNode testCase = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase");
-      SPropertyOperations.set(testCase, "name", SPropertyOperations.getString(node, "name"));
-      SPropertyOperations.set(testCase, "testCaseName", SPropertyOperations.getString(node, "name"));
-      if ((SLinkOperations.getTarget(node, "superclass", true) != null) && SLinkOperations.getTarget(SLinkOperations.getTarget(node, "superclass", true), "classifier", false) != SLinkOperations.getTarget(_quotation_createNode_g240td_a0a0d0a(), "classifier", false)) {
-        SLinkOperations.setTarget(SLinkOperations.getTarget(testCase, "superclass", true), "classifier", SLinkOperations.getTarget(SLinkOperations.getTarget(node, "superclass", true), "classifier", false), false);
-      }
-      for (SNode m : ListSequence.fromList(SLinkOperations.getTargets(node, "method", true))) {
-        if (SPropertyOperations.getString(m, "name").startsWith("test")) {
-          ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(testCase, "testMethodList", true), "testMethod", true)).addElement(_quotation_createNode_g240td_a0a0a0a4a0(SNodeOperations.detachNode(SLinkOperations.getTarget(m, "body", true)), SPropertyOperations.getString(m, "name").substring("test".length())));
-        } else {
-          ListSequence.fromList(SLinkOperations.getTargets(testCase, "method", true)).addElement(SNodeOperations.detachNode(m));
-        }
-      }
-      for (SNode f : ListSequence.fromList(SLinkOperations.getTargets(node, "staticField", true))) {
-        ListSequence.fromList(SLinkOperations.getTargets(testCase, "staticField", true)).addElement(SNodeOperations.detachNode(f));
-      }
-    }
-
-    public IntentionDescriptor getDescriptor() {
-      return convert_test_case_to_unittest_case_Intention.this;
-    }
   }
 }

@@ -8,13 +8,11 @@ import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
-  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction", "jetbrains.mps.quickQueryLanguage.structure.BaseQuery", "jetbrains.mps.quickQueryLanguage.structure.ModelQuery", "jetbrains.mps.quickQueryLanguage.structure.QueryCondition", "jetbrains.mps.quickQueryLanguage.structure.QueryReplace", "jetbrains.mps.quickQueryLanguage.structure.Query_node_Parameter", "jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery"};
-
   public StructureAspectDescriptor() {
   }
 
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
         return new CompiledConceptDescriptor("jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
       case 1:
@@ -33,4 +31,6 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
+
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction", "jetbrains.mps.quickQueryLanguage.structure.BaseQuery", "jetbrains.mps.quickQueryLanguage.structure.ModelQuery", "jetbrains.mps.quickQueryLanguage.structure.QueryCondition", "jetbrains.mps.quickQueryLanguage.structure.QueryReplace", "jetbrains.mps.quickQueryLanguage.structure.Query_node_Parameter", "jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery"};
 }

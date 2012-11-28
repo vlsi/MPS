@@ -15,7 +15,7 @@ public class Util {
   public static boolean isPlusMinusExpressionMoneyExpression(SNode expr) {
     SNode rtype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "rightExpression", true));
     SNode ltype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "leftExpression", true));
-    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(ltype, _quotation_createNode_sd8x_b0a0c0a_0()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rtype, _quotation_createNode_sd8x_b0a0c0a())) {
+    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(ltype, _quotation_createNode_sd8x_b0a0c0b_0()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rtype, _quotation_createNode_sd8x_b0a0c0b())) {
       return true;
     }
     return false;
@@ -24,31 +24,31 @@ public class Util {
   public static boolean isMulDivExpressionMoneyExpression(SNode expr) {
     SNode rtype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "rightExpression", true));
     SNode ltype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "leftExpression", true));
-    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(ltype, _quotation_createNode_sd8x_b0a0c0b_0()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rtype, _quotation_createNode_sd8x_b0a0c0b())) {
+    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(ltype, _quotation_createNode_sd8x_b0a0c0c_0()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rtype, _quotation_createNode_sd8x_b0a0c0c())) {
       return true;
     }
     return false;
   }
 
-  private static SNode _quotation_createNode_sd8x_b0a0c0a() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_sd8x_b0a0c0a_0() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
-  }
-
   private static SNode _quotation_createNode_sd8x_b0a0c0b() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_sd8x_b0a0c0b_0() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_sd8x_b0a0c0c() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_sd8x_b0a0c0b_0() {
+  private static SNode _quotation_createNode_sd8x_b0a0c0c_0() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

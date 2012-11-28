@@ -19,7 +19,7 @@ public class typeof_ModelTarget_InferenceRule extends AbstractInferenceRule_Runt
     {
       SNode _nodeToCheck_1029348928467 = target;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1817812116820062090", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1817812116820062087", true), (SNode) _quotation_createNode_ew1bht_a0a0a(), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1817812116820062087", true), (SNode) _quotation_createNode_ew1bht_a0a0b(), _info_12389875345);
     }
   }
 
@@ -38,7 +38,7 @@ public class typeof_ModelTarget_InferenceRule extends AbstractInferenceRule_Runt
     return false;
   }
 
-  private static SNode _quotation_createNode_ew1bht_a0a0a() {
+  private static SNode _quotation_createNode_ew1bht_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SModelType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

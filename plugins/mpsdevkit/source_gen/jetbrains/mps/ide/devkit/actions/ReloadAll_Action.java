@@ -5,8 +5,6 @@ package jetbrains.mps.ide.devkit.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -19,10 +17,11 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class ReloadAll_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("reload.png");
-  protected static Log log = LogFactory.getLog(ReloadAll_Action.class);
 
   public ReloadAll_Action() {
     super("Reload All Classes", "Reload all MPS classes", ICON);
@@ -74,4 +73,6 @@ public class ReloadAll_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(ReloadAll_Action.class);
 }

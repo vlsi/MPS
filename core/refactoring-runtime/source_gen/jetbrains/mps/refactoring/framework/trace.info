@@ -1761,8 +1761,8 @@
     <scopeInfo nodeId="4792031542972814603" fileName="RefactoringContext.java" startLine="349" startPosition="0" endLine="464" endPosition="0">
       <varInfo nodeId="4792031542972814606" varName="model" />
     </scopeInfo>
-    <unitInfo nodeId="6154323256625882565" fileName="RefactoringContext.java" startLine="681" startPosition="45" endLine="685" endPosition="5" unitName="jetbrains.mps.refactoring.framework.RefactoringContext$1" />
-    <unitInfo nodeId="1882732308087355113" fileName="RefactoringContext.java" startLine="584" startPosition="45" endLine="622" endPosition="5" unitName="jetbrains.mps.refactoring.framework.RefactoringContext$2" />
+    <unitInfo nodeId="6154323256625882565" fileName="RefactoringContext.java" startLine="681" startPosition="45" endLine="685" endPosition="5" unitName="jetbrains.mps.refactoring.framework.RefactoringContext$2" />
+    <unitInfo nodeId="1882732308087355113" fileName="RefactoringContext.java" startLine="584" startPosition="45" endLine="622" endPosition="5" unitName="jetbrains.mps.refactoring.framework.RefactoringContext$1" />
     <unitInfo nodeId="4792031542972811415" fileName="RefactoringContext.java" startLine="51" startPosition="0" endLine="689" endPosition="0" unitName="jetbrains.mps.refactoring.framework.RefactoringContext" />
   </root>
   <root nodeId="4792031542972815535" modelId="r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)">

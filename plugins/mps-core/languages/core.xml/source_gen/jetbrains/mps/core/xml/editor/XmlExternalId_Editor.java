@@ -6,24 +6,48 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import java.util.List;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.List;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 
 public class XmlExternalId_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_dsthrr_a(editorContext, node);
+  }
+
+  public static class XmlExternalId_component_cellMenu_a0a0a0 implements SubstituteInfoPartExt {
+    private ExternalIdMenu myComponent;
+
+    public XmlExternalId_component_cellMenu_a0a0a0() {
+      this.myComponent = new ExternalIdMenu();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+  }
+
+  public static class XmlExternalId_component_cellMenu_a0a0a implements SubstituteInfoPartExt {
+    private ExternalIdMenu myComponent;
+
+    public XmlExternalId_component_cellMenu_a0a0a() {
+      this.myComponent = new ExternalIdMenu();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
   }
 
   private EditorCell createAlternation_dsthrr_a0(EditorContext editorContext, SNode node) {
@@ -114,29 +138,5 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_dsthrr_a0a(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isPublic");
-  }
-
-  public static class XmlExternalId_component_cellMenu_a0a0a0 implements SubstituteInfoPartExt {
-    private ExternalIdMenu myComponent;
-
-    public XmlExternalId_component_cellMenu_a0a0a0() {
-      this.myComponent = new ExternalIdMenu();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-  }
-
-  public static class XmlExternalId_component_cellMenu_a0a0a implements SubstituteInfoPartExt {
-    private ExternalIdMenu myComponent;
-
-    public XmlExternalId_component_cellMenu_a0a0a() {
-      this.myComponent = new ExternalIdMenu();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
   }
 }

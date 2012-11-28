@@ -5,7 +5,6 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import javax.swing.tree.TreeNode;
@@ -26,10 +25,10 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
 import java.util.List;
 import jetbrains.mps.ide.projectPane.SortUtil;
+import jetbrains.mps.logging.Logger;
 
 public class NewSubTestModel_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("testModel.png");
-  private static Logger LOG = Logger.getLogger(NewSubTestModel_Action.class);
 
   public NewSubTestModel_Action() {
     super("Test Model", "", ICON);
@@ -134,4 +133,6 @@ public class NewSubTestModel_Action extends BaseAction {
     }
     return builder.toString();
   }
+
+  private static Logger LOG = Logger.getLogger(NewSubTestModel_Action.class);
 }

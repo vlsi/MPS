@@ -4,7 +4,6 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -14,10 +13,10 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.logging.Logger;
 
 public class SelectLocalHome_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(SelectLocalHome_Action.class);
 
   public SelectLocalHome_Action() {
     super("Move Caret to Previous Word with Selection", "", ICON);
@@ -77,4 +76,6 @@ public class SelectLocalHome_Action extends BaseAction {
   private boolean canCallSelectLocalHome(final Map<String, Object> _params) {
     return ((EditorCell) MapSequence.fromMap(_params).get("editorCell")) instanceof EditorCell_Label && !(((EditorCell) MapSequence.fromMap(_params).get("editorCell")).isFirstCaretPosition()) && ((EditorCell_Label) ((EditorCell) MapSequence.fromMap(_params).get("editorCell"))).isFirstPositionAllowed();
   }
+
+  private static Logger LOG = Logger.getLogger(SelectLocalHome_Action.class);
 }

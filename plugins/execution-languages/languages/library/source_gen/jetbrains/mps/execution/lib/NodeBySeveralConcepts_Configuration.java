@@ -4,16 +4,11 @@ package jetbrains.mps.execution.lib;
 
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
-import java.util.List;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
@@ -22,18 +17,16 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
+import jetbrains.mps.execution.api.settings.SettingsEditorEx;
+import jetbrains.mps.logging.Logger;
 
 public class NodeBySeveralConcepts_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
-  private static Logger LOG = Logger.getLogger(NodeBySeveralConcepts_Configuration.class);
   @NotNull
   private NodeBySeveralConcepts_Configuration.MyState myState = new NodeBySeveralConcepts_Configuration.MyState();
-  private final List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargets;
-  private SettingsEditorEx<NodeBySeveralConcepts_Configuration> myEditorEx;
-
-  public NodeBySeveralConcepts_Configuration(List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> targets) {
-    myTargets = targets;
-  }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
     {
@@ -48,7 +41,7 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
           }
         }
       });
-      if (isNotEmpty_8tyej6_a0c0a0a(errorText.value)) {
+      if (isNotEmpty_8tyej6_a0c0a0b(errorText.value)) {
         throw new RuntimeConfigurationException(errorText.value);
       }
     }
@@ -136,6 +129,29 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
     return clone;
   }
 
+  public class MyState {
+    public String myNodeId;
+    public String myModelId;
+
+    public MyState() {
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+      NodeBySeveralConcepts_Configuration.MyState state = new NodeBySeveralConcepts_Configuration.MyState();
+      state.myNodeId = myNodeId;
+      state.myModelId = myModelId;
+      return state;
+    }
+  }
+
+  public NodeBySeveralConcepts_Configuration(List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> targets) {
+    myTargets = targets;
+  }
+
+  private final List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargets;
+  private SettingsEditorEx<NodeBySeveralConcepts_Configuration> myEditorEx;
+
   public NodeBySeveralConcepts_Configuration createCloneTemplate() {
     return new NodeBySeveralConcepts_Configuration(myTargets);
   }
@@ -151,23 +167,9 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
     return myEditorEx;
   }
 
-  public static boolean isNotEmpty_8tyej6_a0c0a0a(String str) {
+  private static Logger LOG = Logger.getLogger(NodeBySeveralConcepts_Configuration.class);
+
+  public static boolean isNotEmpty_8tyej6_a0c0a0b(String str) {
     return str != null && str.length() > 0;
-  }
-
-  public class MyState {
-    public String myNodeId;
-    public String myModelId;
-
-    public MyState() {
-    }
-
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-      NodeBySeveralConcepts_Configuration.MyState state = new NodeBySeveralConcepts_Configuration.MyState();
-      state.myNodeId = myNodeId;
-      state.myModelId = myModelId;
-      return state;
-    }
   }
 }

@@ -5,8 +5,6 @@ package jetbrains.mps.vcs.plugin;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -25,10 +23,11 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.vcs.platform.actions.VcsActionsUtil;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("diff.png");
-  protected static Log log = LogFactory.getLog(ShowDiffererenceWithCurrentRevision_Action.class);
 
   public ShowDiffererenceWithCurrentRevision_Action() {
     super("Compare with the Same Repository Version", "", ICON);
@@ -95,4 +94,6 @@ public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(ShowDiffererenceWithCurrentRevision_Action.class);
 }

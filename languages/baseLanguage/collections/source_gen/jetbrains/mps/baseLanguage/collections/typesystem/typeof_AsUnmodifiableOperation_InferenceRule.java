@@ -22,7 +22,7 @@ public class typeof_AsUnmodifiableOperation_InferenceRule extends AbstractInfere
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(auo);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "7668447476859018469", 0, null);
-      typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_jqf8bk_a0b0a(typeCheckingContext.getRepresentative(ELEMENT_typevar_2526372162255517322)), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "7668447476859120404", true), false, true, _info_12389875345);
+      typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_jqf8bk_a0b0b(typeCheckingContext.getRepresentative(ELEMENT_typevar_2526372162255517322)), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "7668447476859120404", true), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = auo;
@@ -46,7 +46,7 @@ public class typeof_AsUnmodifiableOperation_InferenceRule extends AbstractInfere
     return false;
   }
 
-  private static SNode _quotation_createNode_jqf8bk_a0b0a(Object parameter_1) {
+  private static SNode _quotation_createNode_jqf8bk_a0b0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);

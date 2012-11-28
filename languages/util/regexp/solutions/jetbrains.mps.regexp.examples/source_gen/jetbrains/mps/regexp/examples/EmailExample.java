@@ -6,23 +6,23 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 /*package*/ class EmailExample {
-  private static Pattern REGEXP_qkhp2f_a0a0a0a = Pattern.compile("(\\w+)@(\\w+(?:\\.\\w+))", 0);
-  private static Pattern REGEXP_qkhp2f_a0a1a0 = Pattern.compile("(\\A+)", 0);
-
   public EmailExample() {
   }
 
   public static void msain(String emailToAnalyse) {
     {
-      Pattern _pattern_0 = REGEXP_qkhp2f_a0a0a0a;
+      Pattern _pattern_0 = REGEXP_qkhp2f_a0a0a0b;
       Matcher _matcher_0 = _pattern_0.matcher(emailToAnalyse);
       if (_matcher_0.matches()) {
         System.out.println("User name = " + _matcher_0.group(1));
         System.out.println("Domain = " + _matcher_0.group(2));
       }
     }
-    if (REGEXP_qkhp2f_a0a1a0.matcher(emailToAnalyse).matches()) {
+    if (REGEXP_qkhp2f_a0a1a1.matcher(emailToAnalyse).matches()) {
       System.out.println("");
     }
   }
+
+  private static Pattern REGEXP_qkhp2f_a0a0a0b = Pattern.compile("(\\w+)@(\\w+(?:\\.\\w+))", 0);
+  private static Pattern REGEXP_qkhp2f_a0a1a1 = Pattern.compile("(\\A+)", 0);
 }

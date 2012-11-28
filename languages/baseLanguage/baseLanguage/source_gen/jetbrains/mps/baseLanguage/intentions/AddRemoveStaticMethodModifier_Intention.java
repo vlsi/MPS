@@ -101,9 +101,9 @@ public class AddRemoveStaticMethodModifier_Intention implements IntentionFactory
       SNode classConcept = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       SNode method;
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
-        method = SNodeFactoryOperations.addNewChild(classConcept, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+        method = SNodeFactoryOperations.addNewChild(classConcept, "member", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
       } else {
-        method = SNodeFactoryOperations.addNewChild(classConcept, "staticMethod", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
+        method = SNodeFactoryOperations.addNewChild(classConcept, "member", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
       }
       SLinkOperations.setTarget(method, "returnType", SLinkOperations.getTarget(node, "returnType", true), true);
       ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)));

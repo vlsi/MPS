@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
@@ -29,10 +28,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.navigation.NavigationProvider;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.logging.Logger;
 
 public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(GoByCurrentReferenceToIDEA_Action.class);
 
   public GoByCurrentReferenceToIDEA_Action() {
     super("Open Declaration in IDEA", "", ICON);
@@ -55,7 +54,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     }
     String targetSter = SNodeOperations.getModel(targetNode).getStereotype();
     String stubSter = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
-    return eq_xgilk9_a0f0b(stubSter, targetSter);
+    return eq_xgilk9_a0f0d(stubSter, targetSter);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -180,7 +179,9 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     return ref.getLongName() + "." + SPropertyOperations.getString(classifier, "name");
   }
 
-  private static boolean eq_xgilk9_a0f0b(Object a, Object b) {
+  private static Logger LOG = Logger.getLogger(GoByCurrentReferenceToIDEA_Action.class);
+
+  private static boolean eq_xgilk9_a0f0d(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

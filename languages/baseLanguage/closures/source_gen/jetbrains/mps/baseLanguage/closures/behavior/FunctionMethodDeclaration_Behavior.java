@@ -8,6 +8,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -23,6 +24,10 @@ public class FunctionMethodDeclaration_Behavior {
       }
     }).toListSequence();
     return _quotation_createNode_c7xn2w_a1a0(params, SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "returnType", true)));
+  }
+
+  public static boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
+    return false;
   }
 
   private static SNode _quotation_createNode_c7xn2w_a1a0(Object parameter_1, Object parameter_2) {

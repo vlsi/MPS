@@ -4,8 +4,6 @@ package jetbrains.mps.ide.migration.migration25;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -26,10 +24,11 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class AddGenerationSupportLanguages_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(AddGenerationSupportLanguages_Action.class);
 
   public AddGenerationSupportLanguages_Action() {
     super("Add Generation Languages to Generators", "", ICON);
@@ -110,4 +109,6 @@ public class AddGenerationSupportLanguages_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(AddGenerationSupportLanguages_Action.class);
 }

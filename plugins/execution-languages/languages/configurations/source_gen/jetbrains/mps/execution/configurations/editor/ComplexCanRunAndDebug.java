@@ -6,6 +6,14 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -18,15 +26,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class ComplexCanRunAndDebug extends AbstractCellProvider {
   public ComplexCanRunAndDebug(SNode node) {
@@ -45,6 +45,58 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
   public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
     return createEditorCell((EditorContext) editorContext);
+  }
+
+  public static class RunConfigurationExecutor_generic_cellMenu_a0b1a_0 extends AbstractCellMenuPart_Generic_Item {
+    public RunConfigurationExecutor_generic_cellMenu_a0b1a_0() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SPropertyOperations.set(node, "canRun", "" + (false));
+    }
+
+    public String getMatchingText() {
+      return "can't run";
+    }
+  }
+
+  public static class RunConfigurationExecutor_generic_cellMenu_a0c1a_0 extends AbstractCellMenuPart_Generic_Item {
+    public RunConfigurationExecutor_generic_cellMenu_a0c1a_0() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SPropertyOperations.set(node, "canRun", "" + (true));
+    }
+
+    public String getMatchingText() {
+      return "run";
+    }
+  }
+
+  public static class RunConfigurationExecutor_generic_cellMenu_a0a1c0 extends AbstractCellMenuPart_Generic_Item {
+    public RunConfigurationExecutor_generic_cellMenu_a0a1c0() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SNodeOperations.deleteNode(SLinkOperations.getTarget(node, "debuggerConfiguration", true));
+    }
+
+    public String getMatchingText() {
+      return "can't debug";
+    }
+  }
+
+  public static class RunConfigurationExecutor_generic_cellMenu_a0c2a extends AbstractCellMenuPart_Generic_Item {
+    public RunConfigurationExecutor_generic_cellMenu_a0c2a() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SNodeFactoryOperations.setNewChild(node, "debuggerConfiguration", "jetbrains.mps.debugger.api.lang.structure.DebuggerConfiguration");
+    }
+
+    public String getMatchingText() {
+      return "debug";
+    }
   }
 
   private EditorCell createCollection_2konf7_a(EditorContext editorContext, SNode node) {
@@ -197,57 +249,5 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
 
   private static boolean renderingCondition_2konf7_a2c0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "debuggerConfiguration", true) == null);
-  }
-
-  public static class RunConfigurationExecutor_generic_cellMenu_a0b1a_0 extends AbstractCellMenuPart_Generic_Item {
-    public RunConfigurationExecutor_generic_cellMenu_a0b1a_0() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "canRun", "" + (false));
-    }
-
-    public String getMatchingText() {
-      return "can't run";
-    }
-  }
-
-  public static class RunConfigurationExecutor_generic_cellMenu_a0c1a_0 extends AbstractCellMenuPart_Generic_Item {
-    public RunConfigurationExecutor_generic_cellMenu_a0c1a_0() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "canRun", "" + (true));
-    }
-
-    public String getMatchingText() {
-      return "run";
-    }
-  }
-
-  public static class RunConfigurationExecutor_generic_cellMenu_a0a1c0 extends AbstractCellMenuPart_Generic_Item {
-    public RunConfigurationExecutor_generic_cellMenu_a0a1c0() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeOperations.deleteNode(SLinkOperations.getTarget(node, "debuggerConfiguration", true));
-    }
-
-    public String getMatchingText() {
-      return "can't debug";
-    }
-  }
-
-  public static class RunConfigurationExecutor_generic_cellMenu_a0c2a extends AbstractCellMenuPart_Generic_Item {
-    public RunConfigurationExecutor_generic_cellMenu_a0c2a() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeFactoryOperations.setNewChild(node, "debuggerConfiguration", "jetbrains.mps.debugger.api.lang.structure.DebuggerConfiguration");
-    }
-
-    public String getMatchingText() {
-      return "debug";
-    }
   }
 }

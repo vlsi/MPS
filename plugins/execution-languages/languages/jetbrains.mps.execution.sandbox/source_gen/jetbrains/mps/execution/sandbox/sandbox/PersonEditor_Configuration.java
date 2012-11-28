@@ -4,24 +4,19 @@ package jetbrains.mps.execution.sandbox.sandbox;
 
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import jetbrains.mps.execution.api.settings.SettingsEditorEx;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class PersonEditor_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
-  protected static Log log = LogFactory.getLog(PersonEditor_Configuration.class);
   @NotNull
   private PersonEditor_Configuration.MyState myState = new PersonEditor_Configuration.MyState();
-  private SettingsEditorEx<PersonEditor_Configuration> myEditorEx;
-
-  public PersonEditor_Configuration() {
-  }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
     if (!(check_s1toyp_a0a0a(this.getName()))) {
@@ -76,6 +71,27 @@ public class PersonEditor_Configuration implements IPersistentConfiguration, ITe
     return clone;
   }
 
+  public class MyState {
+    public String myName;
+    public String myEmail;
+
+    public MyState() {
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+      PersonEditor_Configuration.MyState state = new PersonEditor_Configuration.MyState();
+      state.myName = myName;
+      state.myEmail = myEmail;
+      return state;
+    }
+  }
+
+  public PersonEditor_Configuration() {
+  }
+
+  private SettingsEditorEx<PersonEditor_Configuration> myEditorEx;
+
   public PersonEditor_Configuration createCloneTemplate() {
     return new PersonEditor_Configuration();
   }
@@ -91,6 +107,8 @@ public class PersonEditor_Configuration implements IPersistentConfiguration, ITe
     return myEditorEx;
   }
 
+  protected static Log log = LogFactory.getLog(PersonEditor_Configuration.class);
+
   private static boolean check_s1toyp_a0a0a(String checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.matches("(\\w|\\s)*");
@@ -103,21 +121,5 @@ public class PersonEditor_Configuration implements IPersistentConfiguration, ITe
       return checkedDotOperand.matches("(\\w|\\.)*@(\\w|\\.)*");
     }
     return false;
-  }
-
-  public class MyState {
-    public String myName;
-    public String myEmail;
-
-    public MyState() {
-    }
-
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-      PersonEditor_Configuration.MyState state = new PersonEditor_Configuration.MyState();
-      state.myName = myName;
-      state.myEmail = myEmail;
-      return state;
-    }
   }
 }

@@ -33,7 +33,7 @@ public class MethodSignature implements Signature {
       return false;
     }
     MethodSignature arg = (MethodSignature) object;
-    return eq_1fkaqj_a0c0b(this.singature, arg.singature);
+    return eq_1fkaqj_a0c0e(this.singature, arg.singature);
   }
 
   public static String getStringSignature(SNode method, Map<SNode, SNode> typeByTypeVariable, @Nullable MembersPopulatingContext context) {
@@ -67,7 +67,7 @@ public class MethodSignature implements Signature {
     return result.toString();
   }
 
-  private static boolean eq_1fkaqj_a0c0b(Object a, Object b) {
+  private static boolean eq_1fkaqj_a0c0e(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

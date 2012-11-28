@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration_Behavior;
 import jetbrains.mps.generator.template.ITemplateGenerator;
@@ -62,7 +64,7 @@ public class QueriesUtil {
       methodName = "getBoolean";
     }
     SNode operationClass = SNodeOperations.getNode("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)", "6599163591527282020");
-    for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(operationClass, "staticMethod", true))) {
+    for (SNode method : Sequence.fromIterable(ClassConcept_Behavior.call_staticMethods_5292274854859435867(operationClass))) {
       if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
         return method;
       }
@@ -78,7 +80,7 @@ public class QueriesUtil {
       methodName = "setBoolean";
     }
     SNode operationClass = SNodeOperations.getNode("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)", "6599163591527282020");
-    for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(operationClass, "staticMethod", true))) {
+    for (SNode method : Sequence.fromIterable(ClassConcept_Behavior.call_staticMethods_5292274854859435867(operationClass))) {
       if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
         return method;
       }
@@ -98,7 +100,7 @@ public class QueriesUtil {
       }
     }
     SNode operationClass = SNodeOperations.getNode("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)", "6599163591527298519");
-    for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(operationClass, "staticMethod", true))) {
+    for (SNode method : Sequence.fromIterable(ClassConcept_Behavior.call_staticMethods_5292274854859435867(operationClass))) {
       if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
         return method;
       }
@@ -116,7 +118,7 @@ public class QueriesUtil {
       methodName = "getBoolean_def";
     }
     SNode operationClass = SNodeOperations.getNode("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)", "6599163591527298519");
-    for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(operationClass, "staticMethod", true))) {
+    for (SNode method : Sequence.fromIterable(ClassConcept_Behavior.call_staticMethods_5292274854859435867(operationClass))) {
       if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
         return method;
       }

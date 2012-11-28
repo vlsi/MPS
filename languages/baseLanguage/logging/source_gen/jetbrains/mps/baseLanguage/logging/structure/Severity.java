@@ -15,22 +15,12 @@ public enum Severity {
   trace("trace", "trace");
 
   private String myName;
-  private String myValue;
-
-  Severity(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -72,5 +62,16 @@ public enum Severity {
       return Severity.trace;
     }
     return Severity.getDefault();
+  }
+
+  private String myValue;
+
+  Severity(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

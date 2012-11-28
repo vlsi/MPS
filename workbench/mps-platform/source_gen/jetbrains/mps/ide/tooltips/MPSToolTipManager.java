@@ -109,7 +109,7 @@ public class MPSToolTipManager implements ApplicationComponent {
 
   private void showToolTip(ToolTipData data, JComponent component, Point point, boolean rightAligned) {
     if (myToolTip != null) {
-      if (eq_k25xh9_a0a0a0l(myToolTip.getText(), data.getText())) {
+      if (eq_k25xh9_a0a0a0r(myToolTip.getText(), data.getText())) {
         return;
       }
       hideToolTip();
@@ -131,7 +131,7 @@ public class MPSToolTipManager implements ApplicationComponent {
     if (text.contains("\n")) {
       text = "<html>" + HtmlCharsUtil.asHtml(text, false) + "</html>";
     }
-    if (eq_k25xh9_a0c0n(myText, text)) {
+    if (eq_k25xh9_a0c0t(myText, text)) {
       return;
     }
     myText = text;
@@ -167,14 +167,14 @@ public class MPSToolTipManager implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(MPSToolTipManager.class);
   }
 
-  private static boolean eq_k25xh9_a0a0a0l(Object a, Object b) {
+  private static boolean eq_k25xh9_a0a0a0r(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_k25xh9_a0c0n(Object a, Object b) {
+  private static boolean eq_k25xh9_a0c0t(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

@@ -593,8 +593,8 @@
   </root>
   <root nodeId="1146260811624" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
     <nodeInfo nodeId="1166649349905" fileName="NewNode.java" startLine="15" startPosition="38" endLine="16" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1166649175865" fileName="NewNode.java" startLine="16" startPosition="122" endLine="17" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1166649357812" fileName="NewNode.java" startLine="17" startPosition="120" endLine="18" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1166649175865" fileName="NewNode.java" startLine="16" startPosition="122" endLine="17" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1166649357812" fileName="NewNode.java" startLine="17" startPosition="115" endLine="18" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1166649120556" fileName="NewNode.java" startLine="21" startPosition="36" endLine="22" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1166649120564" fileName="NewNode.java" startLine="22" startPosition="148" endLine="23" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1166649120572" fileName="NewNode.java" startLine="23" startPosition="133" endLine="24" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -606,7 +606,7 @@
     <nodeInfo nodeId="1146260830963" fileName="NewNode.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="newNode1#(Ljetbrains/mps/smodel/SModel;)V" />
     <nodeInfo nodeId="1166649120551" fileName="NewNode.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="newNode2#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1180648407741" fileName="NewNode.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="newNode3#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="1146260830967" fileName="NewNode.java" startLine="15" startPosition="38" endLine="18" endPosition="223">
+    <scopeInfo nodeId="1146260830967" fileName="NewNode.java" startLine="15" startPosition="38" endLine="18" endPosition="218">
       <varInfo nodeId="1166649349906" varName="newClass" />
     </scopeInfo>
     <scopeInfo nodeId="1166649120555" fileName="NewNode.java" startLine="21" startPosition="36" endLine="25" endPosition="181">

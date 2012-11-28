@@ -4,11 +4,10 @@ package jetbrains.mps.lang.extension.tests.plugin;
 
 
 public class TestObject {
-  private boolean myShutDown;
-  private String myValue;
-
   public TestObject() {
   }
+
+  private boolean myShutDown;
 
   public boolean getShutDown() {
     return this.myShutDown;
@@ -17,6 +16,8 @@ public class TestObject {
   public void setShutDown(boolean value) {
     this.myShutDown = value;
   }
+
+  private String myValue;
 
   public String getValue() {
     return this.myValue;

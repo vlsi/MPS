@@ -26,12 +26,12 @@ public class typeof_InternalClassCreator_InferenceRule extends AbstractInference
     if ((SLinkOperations.getTarget(internalClassCreator, "type", true) != null)) {
       type = SLinkOperations.getTarget(internalClassCreator, "type", true);
     } else {
-      type = _quotation_createNode_dg32ga_a0a0a1a0();
+      type = _quotation_createNode_dg32ga_a0a0a1a1();
     }
     {
       SNode _nodeToCheck_1029348928467 = internalClassCreator;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1100832983841501789", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1100832983841501791", true), (SNode) _quotation_createNode_dg32ga_a0c0a(SPropertyOperations.getString(internalClassCreator, "fqClassName"), SLinkOperations.getTarget(SNodeOperations.as(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1100832983841501791", true), (SNode) _quotation_createNode_dg32ga_a0c0b(SPropertyOperations.getString(internalClassCreator, "fqClassName"), SLinkOperations.getTarget(SNodeOperations.as(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false)), _info_12389875345);
     }
   }
 
@@ -50,14 +50,14 @@ public class typeof_InternalClassCreator_InferenceRule extends AbstractInference
     return false;
   }
 
-  private static SNode _quotation_createNode_dg32ga_a0a0a1a0() {
+  private static SNode _quotation_createNode_dg32ga_a0a0a1a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_dg32ga_a0c0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_dg32ga_a0c0b(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_3.setProperty("fqClassName", (String) parameter_1);

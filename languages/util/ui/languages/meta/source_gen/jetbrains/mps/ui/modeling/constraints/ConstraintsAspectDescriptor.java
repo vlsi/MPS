@@ -7,13 +7,11 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
-  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.ui.modeling.structure.AspectParameterDecl", "jetbrains.mps.ui.modeling.structure.AspectParameterRef", "jetbrains.mps.ui.modeling.structure.AuxObjectAccessOp", "jetbrains.mps.ui.modeling.structure.Container", "jetbrains.mps.ui.modeling.structure.ContainerTemplate", "jetbrains.mps.ui.modeling.structure.Context", "jetbrains.mps.ui.modeling.structure.ContextUIObjectParam", "jetbrains.mps.ui.modeling.structure.EditableUIPropertyAccessCode", "jetbrains.mps.ui.modeling.structure.EventHandlerTemplate", "jetbrains.mps.ui.modeling.structure.EventPropertyGetter", "jetbrains.mps.ui.modeling.structure.LayoutConstraintType", "jetbrains.mps.ui.modeling.structure.UIObject", "jetbrains.mps.ui.modeling.structure.UIPropertyAccessCode"};
-
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
       case 12:
         return new UIPropertyAccessCode_Constraints();
       case 8:
@@ -45,4 +43,6 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new BaseConstraintsDescriptor(fqName);
     }
   }
+
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.ui.modeling.structure.AspectParameterDecl", "jetbrains.mps.ui.modeling.structure.AspectParameterRef", "jetbrains.mps.ui.modeling.structure.AuxObjectAccessOp", "jetbrains.mps.ui.modeling.structure.Container", "jetbrains.mps.ui.modeling.structure.ContainerTemplate", "jetbrains.mps.ui.modeling.structure.Context", "jetbrains.mps.ui.modeling.structure.ContextUIObjectParam", "jetbrains.mps.ui.modeling.structure.EditableUIPropertyAccessCode", "jetbrains.mps.ui.modeling.structure.EventHandlerTemplate", "jetbrains.mps.ui.modeling.structure.EventPropertyGetter", "jetbrains.mps.ui.modeling.structure.LayoutConstraintType", "jetbrains.mps.ui.modeling.structure.UIObject", "jetbrains.mps.ui.modeling.structure.UIPropertyAccessCode"};
 }

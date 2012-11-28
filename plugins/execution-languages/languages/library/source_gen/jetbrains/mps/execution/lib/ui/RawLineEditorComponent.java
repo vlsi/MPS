@@ -26,7 +26,7 @@ public class RawLineEditorComponent extends BaseFieldWithButtonComponent {
       }
     });
     this.add(this.myField, BorderLayout.CENTER);
-    final Icon icon = IconContainer.ICON_a0d0a;
+    final Icon icon = IconContainer.ICON_a0d0c;
     if (icon != null) {
       this.myField.setButtonIcon(icon);
       this.setDescriptor(null);

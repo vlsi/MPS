@@ -35,7 +35,7 @@ public class typeof_IsEmptyOperation_InferenceRule extends AbstractInferenceRule
           {
             SNode _nodeToCheck_1029348928467 = op;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1219443376597", 0, null);
-            typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1219443376599", true), (SNode) _quotation_createNode_23wedg_a0a0a0c0b0b0a(), _info_12389875345);
+            typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1219443376599", true), (SNode) _quotation_createNode_23wedg_a0a0a0c0b0b0b(), _info_12389875345);
           }
         } else {
           {
@@ -62,7 +62,7 @@ public class typeof_IsEmptyOperation_InferenceRule extends AbstractInferenceRule
     return false;
   }
 
-  private static SNode _quotation_createNode_23wedg_a0a0a0c0b0b0a() {
+  private static SNode _quotation_createNode_23wedg_a0a0a0c0b0b0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

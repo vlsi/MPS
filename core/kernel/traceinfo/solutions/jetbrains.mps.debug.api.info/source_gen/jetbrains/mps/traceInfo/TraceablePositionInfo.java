@@ -19,7 +19,7 @@ public class TraceablePositionInfo extends PositionInfo {
 
   public TraceablePositionInfo(Element element) throws DataConversionException {
     super(element);
-    myConceptFqName = InternUtil.intern(check_cke0sr_a0a1a1(element.getAttribute(CONCEPT_FQ_NAME)));
+    myConceptFqName = InternUtil.intern(check_cke0sr_a0a1a5(element.getAttribute(CONCEPT_FQ_NAME)));
     myPropertyString = element.getAttributeValue(PROPERTY_STRING);
   }
 
@@ -75,7 +75,7 @@ public class TraceablePositionInfo extends PositionInfo {
     return -1;
   }
 
-  private static String check_cke0sr_a0a1a1(Attribute checkedDotOperand) {
+  private static String check_cke0sr_a0a1a5(Attribute checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getValue();
     }

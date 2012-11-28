@@ -25,7 +25,7 @@ public class typeof_ConstraintFunctionParameter_linkTarget_InferenceRule extends
     {
       SNode _nodeToCheck_1029348928467 = node;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)", "7432497532426426069", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)", "7432497532426426066", true), (SNode) _quotation_createNode_1zv1u5_a0c0a(target), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)", "7432497532426426066", true), (SNode) _quotation_createNode_1zv1u5_a0c0b(target), _info_12389875345);
     }
   }
 
@@ -44,7 +44,7 @@ public class typeof_ConstraintFunctionParameter_linkTarget_InferenceRule extends
     return false;
   }
 
-  private static SNode _quotation_createNode_1zv1u5_a0c0a(Object parameter_1) {
+  private static SNode _quotation_createNode_1zv1u5_a0c0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("conceptDeclaraton", (SNode) parameter_1);

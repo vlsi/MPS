@@ -17,8 +17,8 @@ import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
+import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -76,10 +76,6 @@ public class TestUtils {
           public Iterator<ITestNodeWrapper> iterator() {
             return new YieldingIterator<ITestNodeWrapper>() {
               private int __CP__ = 0;
-              private String _2_pointerString;
-              private Iterator<String> _2_pointerString_it;
-              private SNode _6_node;
-              private ITestNodeWrapper _10_wrapper;
 
               protected boolean moveToNext() {
 __loop__:
@@ -121,7 +117,7 @@ __switch__:
                       this.__CP__ = 2;
                       break;
                     case 4:
-                      this._6_node = check_6qi07j_a0a0a0a0a1a2(stringToPointer(_2_pointerString));
+                      this._6_node = check_6qi07j_a0a0a0a0a1a5(stringToPointer(_2_pointerString));
                       this.__CP__ = 7;
                       break;
                     case 8:
@@ -137,6 +133,11 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private String _2_pointerString;
+              private Iterator<String> _2_pointerString_it;
+              private SNode _6_node;
+              private ITestNodeWrapper _10_wrapper;
             };
           }
         };
@@ -256,7 +257,7 @@ __switch__:
     });
   }
 
-  private static SNode check_6qi07j_a0a0a0a0a1a2(SNodePointer checkedDotOperand) {
+  private static SNode check_6qi07j_a0a0a0a0a1a5(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNode();
     }

@@ -194,10 +194,10 @@
       <varInfo nodeId="4973209361579636882" varName="renamer" />
     </scopeInfo>
     <scopeInfo nodeId="4973209361579636826" fileName="RenameLanguageDialog.java" startLine="66" startPosition="0" endLine="121" endPosition="0" />
-    <unitInfo nodeId="4973209361579636742" fileName="RenameLanguageDialog.java" startLine="46" startPosition="89" endLine="50" endPosition="5" unitName="jetbrains.mps.ide.refactoring.RenameLanguageDialog$4" />
-    <unitInfo nodeId="4973209361579636890" fileName="RenameLanguageDialog.java" startLine="80" startPosition="55" endLine="85" endPosition="5" unitName="jetbrains.mps.ide.refactoring.RenameLanguageDialog$1" />
-    <unitInfo nodeId="4973209361579636917" fileName="RenameLanguageDialog.java" startLine="88" startPosition="47" endLine="93" endPosition="7" unitName="jetbrains.mps.ide.refactoring.RenameLanguageDialog$2" />
-    <unitInfo nodeId="4973209361579636948" fileName="RenameLanguageDialog.java" startLine="95" startPosition="72" endLine="106" endPosition="9" unitName="jetbrains.mps.ide.refactoring.RenameLanguageDialog$3" />
+    <unitInfo nodeId="4973209361579636742" fileName="RenameLanguageDialog.java" startLine="46" startPosition="89" endLine="50" endPosition="5" unitName="jetbrains.mps.ide.refactoring.RenameLanguageDialog$1" />
+    <unitInfo nodeId="4973209361579636890" fileName="RenameLanguageDialog.java" startLine="80" startPosition="55" endLine="85" endPosition="5" unitName="jetbrains.mps.ide.refactoring.RenameLanguageDialog$2" />
+    <unitInfo nodeId="4973209361579636917" fileName="RenameLanguageDialog.java" startLine="88" startPosition="47" endLine="93" endPosition="7" unitName="jetbrains.mps.ide.refactoring.RenameLanguageDialog$3" />
+    <unitInfo nodeId="4973209361579636948" fileName="RenameLanguageDialog.java" startLine="95" startPosition="72" endLine="106" endPosition="9" unitName="jetbrains.mps.ide.refactoring.RenameLanguageDialog$4" />
     <unitInfo nodeId="2482360940803571011" fileName="RenameLanguageDialog.java" startLine="35" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.ide.refactoring.RenameLanguageDialog" />
   </root>
   <root nodeId="2482360940803571464" modelId="r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)">
@@ -914,10 +914,10 @@
       <varInfo nodeId="4366542054834705987" varName="initialValue" />
       <varInfo nodeId="4366542054834703773" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="2270577049313342665" fileName="ModelOrNodeChooser.java" startLine="22" startPosition="47" endLine="26" endPosition="3" unitName="jetbrains.mps.ide.refactoring.ModelOrNodeChooser$3" />
-    <unitInfo nodeId="3548249452606133079" fileName="ModelOrNodeChooser.java" startLine="56" startPosition="45" endLine="64" endPosition="5" unitName="jetbrains.mps.ide.refactoring.ModelOrNodeChooser$2" />
-    <unitInfo nodeId="4366542054834703311" fileName="ModelOrNodeChooser.java" startLine="35" startPosition="39" endLine="48" endPosition="9" unitName="jetbrains.mps.ide.refactoring.ModelOrNodeChooser$2" />
-    <unitInfo nodeId="4366542054834703297" fileName="ModelOrNodeChooser.java" startLine="32" startPosition="40" endLine="50" endPosition="5" unitName="jetbrains.mps.ide.refactoring.ModelOrNodeChooser$1" />
+    <unitInfo nodeId="2270577049313342665" fileName="ModelOrNodeChooser.java" startLine="22" startPosition="47" endLine="26" endPosition="3" unitName="jetbrains.mps.ide.refactoring.ModelOrNodeChooser$1" />
+    <unitInfo nodeId="3548249452606133079" fileName="ModelOrNodeChooser.java" startLine="56" startPosition="45" endLine="64" endPosition="5" unitName="jetbrains.mps.ide.refactoring.ModelOrNodeChooser$3" />
+    <unitInfo nodeId="4366542054834703311" fileName="ModelOrNodeChooser.java" startLine="35" startPosition="39" endLine="48" endPosition="9" unitName="jetbrains.mps.ide.refactoring.ModelOrNodeChooser$3" />
+    <unitInfo nodeId="4366542054834703297" fileName="ModelOrNodeChooser.java" startLine="32" startPosition="40" endLine="50" endPosition="5" unitName="jetbrains.mps.ide.refactoring.ModelOrNodeChooser$2" />
     <unitInfo nodeId="7012097027058828343" fileName="ModelOrNodeChooser.java" startLine="20" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.refactoring.ModelOrNodeChooser" />
   </root>
 </debugInfo>

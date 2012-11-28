@@ -18,9 +18,9 @@ import com.intellij.openapi.vfs.VirtualFileEvent;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SModelDescriptor;
 import com.intellij.openapi.vfs.VirtualFileAdapter;
 import com.intellij.openapi.vfs.VirtualFileMoveEvent;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public class ModelCacheReloader implements ApplicationComponent {
   private VirtualFileManager myVirtualFileManager;
@@ -51,18 +51,11 @@ public class ModelCacheReloader implements ApplicationComponent {
 
   private void invalidateForFile(VirtualFileEvent event) {
     final IFile file = VirtualFileUtils.toIFile(event.getFile());
-    check_hmm83z_a1a3(ListSequence.fromList(myCaches).findFirst(new IWhereFilter<BaseModelCache>() {
+    check_hmm83z_a1a7(ListSequence.fromList(myCaches).findFirst(new IWhereFilter<BaseModelCache>() {
       public boolean accept(BaseModelCache c) {
         return c.getCacheFileName().equalsIgnoreCase(file.getName());
       }
     }), file);
-  }
-
-  private static SModelDescriptor check_hmm83z_a1a3(BaseModelCache checkedDotOperand, IFile file) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.invalidateCacheForFile(file);
-    }
-    return null;
   }
 
   private class CacheFileListener extends VirtualFileAdapter {
@@ -88,5 +81,12 @@ public class ModelCacheReloader implements ApplicationComponent {
     public void contentsChanged(VirtualFileEvent event) {
       invalidateForFile(event);
     }
+  }
+
+  private static SModelDescriptor check_hmm83z_a1a7(BaseModelCache checkedDotOperand, IFile file) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.invalidateCacheForFile(file);
+    }
+    return null;
   }
 }

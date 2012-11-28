@@ -14,7 +14,6 @@ public class WhileBreak_Test extends ClosuresBase_Test {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private boolean _3_condition;
 
               protected boolean moveToNext() {
 __loop__:
@@ -85,6 +84,8 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private boolean _3_condition;
             };
           }
         };

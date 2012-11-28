@@ -4,26 +4,14 @@ package jetbrains.mps.execution.lib;
 
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.execution.lib.ui.MainNodeChooser;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.options.ConfigurationException;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.util.Factory;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.options.ConfigurationException;
 
 public class Node_Configuration_Editor extends SettingsEditorEx<Node_Configuration> {
   private MainNodeChooser myChooser;
-  private SNode myConcept;
-  private _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myIsValid;
-
-  public Node_Configuration_Editor(final SNode concept, final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> isValid) {
-    super(new Factory<Node_Configuration>() {
-      public Node_Configuration create() {
-        return new Node_Configuration(concept, isValid);
-      }
-    });
-    myConcept = concept;
-    myIsValid = isValid;
-  }
 
   public void disposeEditor() {
   }
@@ -42,5 +30,18 @@ public class Node_Configuration_Editor extends SettingsEditorEx<Node_Configurati
 
   public void resetEditorFrom(final Node_Configuration configuration) {
     myChooser.setNode(configuration.getNode());
+  }
+
+  private SNode myConcept;
+  private _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myIsValid;
+
+  public Node_Configuration_Editor(final SNode concept, final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> isValid) {
+    super(new Factory<Node_Configuration>() {
+      public Node_Configuration create() {
+        return new Node_Configuration(concept, isValid);
+      }
+    });
+    myConcept = concept;
+    myIsValid = isValid;
   }
 }

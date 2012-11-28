@@ -26,7 +26,7 @@ public class typeof_ConceptFunctionParameter_method_InferenceRule extends Abstra
       {
         SNode _nodeToCheck_1029348928467 = parameterObject;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "7806530711847280124", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "7806530711847280121", true), (SNode) _quotation_createNode_79hskf_a0a0b0a(), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "7806530711847280121", true), (SNode) _quotation_createNode_79hskf_a0a0b0b(), _info_12389875345);
       }
     } else {
       {
@@ -52,7 +52,7 @@ public class typeof_ConceptFunctionParameter_method_InferenceRule extends Abstra
     return false;
   }
 
-  private static SNode _quotation_createNode_79hskf_a0a0b0a() {
+  private static SNode _quotation_createNode_79hskf_a0a0b0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));

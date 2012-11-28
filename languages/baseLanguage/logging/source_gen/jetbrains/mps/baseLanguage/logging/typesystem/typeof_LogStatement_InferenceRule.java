@@ -26,13 +26,13 @@ public class typeof_LogStatement_InferenceRule extends AbstractInferenceRule_Run
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(logStatement, "logExpression", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)", "6813690308469672910", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)", "6813690308469669795", true), (SNode) _quotation_createNode_hwerzr_a0a0a0a(), false, false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)", "6813690308469669795", true), (SNode) _quotation_createNode_hwerzr_a0a0a0b(), false, false, _info_12389875345);
       }
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(logStatement, "exception", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)", "6813690308470257496", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)", "6813690308470255146", true), (SNode) _quotation_createNode_hwerzr_a0b0a(), false, false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)", "6813690308470255146", true), (SNode) _quotation_createNode_hwerzr_a0b0b(), false, false, _info_12389875345);
     }
   }
 
@@ -51,13 +51,13 @@ public class typeof_LogStatement_InferenceRule extends AbstractInferenceRule_Run
     return true;
   }
 
-  private static SNode _quotation_createNode_hwerzr_a0a0a0a() {
+  private static SNode _quotation_createNode_hwerzr_a0a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_hwerzr_a0b0a() {
+  private static SNode _quotation_createNode_hwerzr_a0b0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Throwable")));

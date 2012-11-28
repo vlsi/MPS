@@ -4,8 +4,6 @@ package jetbrains.mps.vcs.platform.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
@@ -31,10 +29,11 @@ import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.openapi.ui.Messages;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class ReportModelMergeProblem_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ReportModelMergeProblem_Action.class);
 
   public ReportModelMergeProblem_Action() {
     super("Report Model Merge Problem...", "", ICON);
@@ -51,7 +50,7 @@ public class ReportModelMergeProblem_Action extends BaseAction {
     List<VcsDirectoryMapping> mappings = ProjectLevelVcsManager.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getDirectoryMappings();
     return ListSequence.fromList(mappings).any(new IWhereFilter<VcsDirectoryMapping>() {
       public boolean accept(VcsDirectoryMapping m) {
-        return isNotEmpty_6wdzvw_a0a0a0a0a0b0b(m.getVcs());
+        return isNotEmpty_6wdzvw_a0a0a0a0a0b0d(m.getVcs());
       }
     });
   }
@@ -147,7 +146,9 @@ public class ReportModelMergeProblem_Action extends BaseAction {
     Messages.showInfoMessage(((Project) MapSequence.fromMap(_params).get("project")), "No merge backups available, that is MPS merge was not invoked.", "Model Merge Problem");
   }
 
-  public static boolean isNotEmpty_6wdzvw_a0a0a0a0a0b0b(String str) {
+  protected static Log log = LogFactory.getLog(ReportModelMergeProblem_Action.class);
+
+  public static boolean isNotEmpty_6wdzvw_a0a0a0a0a0b0d(String str) {
     return str != null && str.length() > 0;
   }
 }

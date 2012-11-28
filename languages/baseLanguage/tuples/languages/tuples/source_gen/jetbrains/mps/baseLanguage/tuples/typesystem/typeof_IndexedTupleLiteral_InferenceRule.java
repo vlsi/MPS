@@ -28,7 +28,7 @@ public class typeof_IndexedTupleLiteral_InferenceRule extends AbstractInferenceR
     {
       SNode _nodeToCheck_1029348928467 = tuple;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238854056178", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238854050913", true), (SNode) _quotation_createNode_6bpfww_a0c0a(memberTypes), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238854050913", true), (SNode) _quotation_createNode_6bpfww_a0c0b(memberTypes), _info_12389875345);
     }
   }
 
@@ -47,7 +47,7 @@ public class typeof_IndexedTupleLiteral_InferenceRule extends AbstractInferenceR
     return false;
   }
 
-  private static SNode _quotation_createNode_6bpfww_a0c0a(Object parameter_1) {
+  private static SNode _quotation_createNode_6bpfww_a0c0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType", null, null, GlobalScope.getInstance(), false);
