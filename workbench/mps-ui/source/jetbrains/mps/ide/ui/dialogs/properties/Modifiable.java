@@ -13,24 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.ui.dialogs.properties.tables.models;
+package jetbrains.mps.ide.ui.dialogs.properties;
 
-import javax.swing.Icon;
-
-public abstract class ConnectionsTableItem<T> {
-  protected T myItem;
-
-  public ConnectionsTableItem(T value) {
-    myItem = value;
-  }
-
-  public T getItem() {
-    return myItem;
-  }
-
-  public abstract Icon getIcon();
-
-  public abstract String getPresentation();
-
-  public abstract boolean isValid();
+public interface Modifiable {
+  void init();
+  boolean isModified();
+  void apply();
 }
