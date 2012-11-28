@@ -27,7 +27,6 @@ import com.intellij.openapi.actionSystem.ToggleAction;
 import jetbrains.mps.ide.typesystem.trace.icons.Icons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.workbench.action.BaseAction;
 import java.util.Map;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -40,6 +39,7 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
   private EditorComponent myEditorComponent;
   private BaseTool myTool;
   private MPSTree myDetailsTree;
+  private TypecheckingContextTracker myContextTracker;
 
   public TypeSystemTracePanel(BaseTool tool) {
     this.setLayout(new BorderLayout());
@@ -59,12 +59,12 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
   }
 
   public void showTraceForNode(TypeCheckingContextNew typeCheckingContext, final IOperationContext operationContext, SNode node, EditorComponent editorComponent, boolean rebuild) {
-    if (rebuild) {
-      typeCheckingContext.checkRootInTraceMode(true);
-    }
+//    if (rebuild) {
+//      typeCheckingContext.checkRootInTraceMode(true);
+//    }
     cleanUp();
     myEditorComponent = editorComponent;
-    myTraceTree = new TypeSystemTraceTree(operationContext, typeCheckingContext, node, this, editorComponent);
+    myTraceTree = new TypeSystemTraceTree(operationContext, node, this, editorComponent);
     // TODO: refactor into a separate class 
     this.myDetailsTree = myTraceTree.getDetailsTree();
     myStateTree = new TypeSystemStateTree(operationContext, myTraceTree.getState(), editorComponent);

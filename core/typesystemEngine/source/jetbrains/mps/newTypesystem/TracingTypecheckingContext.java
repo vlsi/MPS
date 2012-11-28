@@ -36,4 +36,9 @@ public class TracingTypecheckingContext extends SingleTypecheckingContext{
   public void checkRootInTraceMode(boolean refreshTypes) {
     checkRoot(refreshTypes);
   }
+
+  @Override
+  public boolean isSingleTypeComputation() {
+    return false;
+  }
 }

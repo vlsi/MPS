@@ -6,7 +6,6 @@ import jetbrains.mps.ide.ui.MPSTree;
 import com.intellij.openapi.actionSystem.DataProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
-import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import jetbrains.mps.newTypesystem.state.State;
@@ -21,7 +20,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import javax.swing.tree.TreeSelectionModel;
 
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import java.util.ArrayList;
@@ -62,103 +60,7 @@ import java.util.Collections;
 
 public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   private final IOperationContext myOperationContext;
-  private final ContextTracker myContextTracker;
-
-  private static class ContextTracker {
-
-    private final TypeCheckingContext myTypeCheckingContextNew;
-    private TypeCheckingContext myCurrentContext;
-    private AbstractOperation myOperation;
-    private AbstractOperation myOldOperation;
-    private State myCurrentState;
-    private State myStateCopy;
-    private boolean generationMode = false;
-
-    private ContextTracker(TypeCheckingContext tcc) {
-      myTypeCheckingContextNew = tcc;
-      myOperation = tcc.getOperation();
-      myStateCopy = new State(tcc, tcc.getState().getOperation());
-      myCurrentState = myStateCopy;
-      myCurrentContext = tcc;
-    }
-
-    public void setGenerationMode(boolean generationMode, SNode selectedNode) {
-      if (generationMode == this.generationMode) {
-        return;
-      }
-      this.generationMode = generationMode;
-      myOldOperation = null;
-      if (this.generationMode) {
-        TypeCheckingContextNew context = (TypeCheckingContextNew) TypeContextManager.getInstance().createTypeCheckingContext(selectedNode);
-        context.getTypeInGenerationMode(selectedNode);
-        myOperation = context.getOperation();
-        myCurrentContext = context;
-        myCurrentState = context.getState();
-      } else {
-        myOperation = myTypeCheckingContextNew.getOperation();
-        myCurrentContext = myTypeCheckingContextNew;
-        myCurrentState = myStateCopy;
-      }
-    }
-
-    public State resetCurrentState(AbstractOperation fromDiff) {
-      AbstractOperation rootDiff = myCurrentContext.getOperation();
-      if (myOldOperation == null) {
-        myCurrentState.clear(false);
-        myCurrentState.executeOperationsBeforeAnchor(rootDiff, fromDiff);
-      } else {
-        myCurrentState.updateState(myOldOperation, fromDiff);
-      }
-      return myCurrentState;
-    }
-    
-    public State updateCurrentState(AbstractOperation fromDiff, AbstractOperation toDiff) {
-      myCurrentState.updateState(fromDiff, toDiff);
-      myOldOperation = toDiff;
-      return myCurrentState;
-    }
-
-    public State updateCurrentState(AbstractOperation difference) {
-      AbstractOperation nextDiff = findUltimateConsequence(difference);
-      if (nextDiff != null && nextDiff != difference) {
-        myCurrentState.updateState(difference, nextDiff);
-        myOldOperation = nextDiff;
-        return myCurrentState;
-      } else {
-        myOldOperation = difference;
-      }
-      return null;
-    }
-
-    private AbstractOperation findUltimateConsequence(AbstractOperation op) {
-      if (op == null) {
-        return null;
-      }
-      AbstractOperation result = op;
-      List<AbstractOperation> consequences = result.getConsequences();
-      while (consequences != null && consequences.size() > 0) {
-        result = consequences.get(consequences.size() - 1);
-        consequences = result.getConsequences();
-      }
-      return result;
-    }
-
-    public State getStateCopy() {
-      return myStateCopy;
-    }
-
-    public State getCurrentState() {
-      return myCurrentState;
-    }
-
-    public AbstractOperation getOperation () {
-      return myOperation;
-    }
-
-    public void checkRoot(boolean refresh) {
-      myTypeCheckingContextNew.checkRootInTraceMode(refresh);
-    }
-  }
+  private final TypecheckingContextTracker myContextTracker;
 
 
   private final SNode mySelectedNode;
@@ -170,9 +72,9 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   private final NodeHighlightManager myHighlightManager;
   private EditorMessageOwner myMessageOwner;
 
-  public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContext tcc, SNode node, TypeSystemTracePanel parent, EditorComponent editorComponent) {
+  public TypeSystemTraceTree(IOperationContext operationContext, SNode node, TypeSystemTracePanel parent, EditorComponent editorComponent) {
     myOperationContext = operationContext;
-    myContextTracker = new ContextTracker(tcc);
+    myContextTracker = new TypecheckingContextTracker(node.getTopmostAncestor());
     myParent = parent;
     myEditorComponent = editorComponent;
     mySelectedNode = node;
@@ -272,6 +174,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   @Override
   public void dispose() {
     myHighlightManager.clearForOwner(myMessageOwner);
+    myContextTracker.dispose();
     super.dispose();
   }
 

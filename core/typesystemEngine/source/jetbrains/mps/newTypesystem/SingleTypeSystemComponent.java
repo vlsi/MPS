@@ -108,7 +108,9 @@ import java.util.Set;
   protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
     if (refreshTypes) {
       clear();
-      setTargetNode(initialNode);
+      if (initialNode != null) {
+        setTargetNode(initialNode);
+      }
     } else {
       myState.clearStateObjects();
       doInvalidate();
