@@ -20,7 +20,9 @@ import com.intellij.facet.impl.ui.FacetEditorContextBase;
 import com.intellij.facet.ui.FacetEditorContext;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.roots.LibraryOrderEntry;
 import com.intellij.openapi.roots.ModifiableRootModel;
+import com.intellij.openapi.roots.OrderEntry;
 import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.ui.configuration.libraryEditor.NewLibraryEditor;
@@ -38,6 +40,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
@@ -46,6 +49,7 @@ import java.util.*;
  * Date: 6/8/12
  */
 public class ModuleRuntimeLibrariesImporter {
+  private static final String AUTO_SUFFIX = "_auto";
   public static final String LIBRARY_PREFIX = "mps.";
   private final Collection<ModuleReference> myAddedModules;
   private final ModifiableRootModel myModifiableRootModel;
@@ -68,6 +72,13 @@ public class ModuleRuntimeLibrariesImporter {
   public void addMissingLibraries() {
     Project project = getProject();
 
+    Set<ModuleReference> alreadyImported = new HashSet<ModuleReference>();
+    for (OrderEntry entry : myModifiableRootModel.getOrderEntries()){
+      if (entry instanceof LibraryOrderEntry) {
+        alreadyImported.addAll(SolutionLibrariesIndex.getInstance(getProject()).getModules(((LibraryOrderEntry) entry).getLibrary()));
+      }
+    }
+
     Collection<Library> projectLibs2Add = new HashSet<Library>();
     Map<ModuleReference, Collection<VirtualFile>> projectLibs2Create = new HashMap<ModuleReference, Collection<VirtualFile>>();
     for (IModule usedModule : collectRuntimeModules(myAddedModules)) {
@@ -76,9 +87,13 @@ public class ModuleRuntimeLibrariesImporter {
         continue;
       }
 
-      Collection<Library> library = SolutionLibrariesIndex.getInstance(project).getLibraries(usedModule.getModuleReference());
-      if (!library.isEmpty()) {
-        projectLibs2Add.add(library.iterator().next());
+      if (alreadyImported.contains(usedModule.getModuleReference())) {
+        continue;
+      }
+
+      Library library = getAutoLibrary(usedModule.getModuleReference());
+      if (library != null) {
+        projectLibs2Add.add(library);
       } else {
         Set<VirtualFile> stubFiles = SolutionLibraryType.getSolutionJars((Solution) usedModule);
         projectLibs2Create.put(usedModule.getModuleReference(), stubFiles);
@@ -97,12 +112,23 @@ public class ModuleRuntimeLibrariesImporter {
     }
   }
 
+  @Nullable
+    private Library getAutoLibrary(ModuleReference reference) {
+      String libraryName = LIBRARY_PREFIX + reference.getModuleFqName() + AUTO_SUFFIX;
+      for (Library lib : SolutionLibrariesIndex.getInstance(getProject()).getLibraries(reference)) {
+        if (lib.getName().equals(libraryName)) {
+          return lib;
+        }
+      }
+      return null;
+    }
+
   private Project getProject() {
     return myLibrariesContainer.getProject();
   }
 
   private Library createProjectLibrary(String moduleName, Collection<VirtualFile> libraryFiles) {
-    String libName = LIBRARY_PREFIX + moduleName;
+    String libName = LIBRARY_PREFIX + moduleName + AUTO_SUFFIX;
 
     NewLibraryEditor editor = new NewLibraryEditor();
     editor.setName(libName);
