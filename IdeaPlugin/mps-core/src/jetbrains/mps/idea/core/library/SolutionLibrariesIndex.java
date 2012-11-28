@@ -140,7 +140,7 @@ public class SolutionLibrariesIndex implements ProjectComponent, Disposable {
           VirtualFile solutionBundleHome = SolutionLibraryType.getJarFile(solution.getBundleHome().getPath());
           if (solutionBundleHome != null && solutionBundleHome.equals(file)) {
             addLibrary(newLibrary, solution.getModuleReference());
-            break;
+            // we do not break, since there can be several solutions in a bundle
           }
         }
       }
