@@ -31,7 +31,7 @@ public class TypesystemChecker extends DefaultTypecheckingContextOwner implement
         result.addAll(pair.o2);
       }
     } finally {
-      TypeContextManager.getInstance().removeOwnerForRootNodeContext(node, this);
+      TypeContextManager.getInstance().releaseTypecheckingContext(node, this);
     }
     return result;
   }

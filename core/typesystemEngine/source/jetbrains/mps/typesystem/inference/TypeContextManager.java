@@ -241,7 +241,7 @@ public class TypeContextManager implements CoreComponent {
     removeOwnerForRootNodeContext(rootNode, contextOwner);
   }
 
-  public TypeCheckingContext getOrCreateContext(SNode node, ITypeContextOwner owner, boolean createIfAbsent) {
+  private TypeCheckingContext getOrCreateContext(SNode node, ITypeContextOwner owner, boolean createIfAbsent) {
     ModelAccess.assertLegalRead();
     if (node == null) return null;
     synchronized (myLock) {
@@ -282,7 +282,7 @@ public class TypeContextManager implements CoreComponent {
     }
   }
 
-  public void removeOwnerForRootNodeContext(final SNode node, final ITypeContextOwner owner) {
+  private void removeOwnerForRootNodeContext(final SNode node, final ITypeContextOwner owner) {
     ModelAccess.assertLegalRead();
     if (node == null || node.getModel() == null) return;
     //if node is disposed, then context was removed by beforeModelDisposed/beforeRootDeleted listener

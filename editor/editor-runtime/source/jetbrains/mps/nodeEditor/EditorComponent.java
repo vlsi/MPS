@@ -2280,7 +2280,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        TypeContextManager.getInstance().removeOwnerForRootNodeContext(getNodeForTypechecking(), EditorComponent.this);
+        TypeContextManager.getInstance().releaseTypecheckingContext(getNodeForTypechecking(), EditorComponent.this);
       }
     });
   }
