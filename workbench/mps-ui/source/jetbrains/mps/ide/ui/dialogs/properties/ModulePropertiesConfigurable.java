@@ -83,7 +83,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.models.MPSPropertiesAnActi
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModelDepTableItem;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModuleDepTableItem;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModuleDependTableModel;
-import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModuleRootsTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModuleUsedLangTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
 import org.jetbrains.annotations.Nls;
@@ -96,6 +95,8 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableColumn;
 import java.util.ArrayList;
@@ -104,25 +105,27 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IModule> {
+public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   private ModuleDescriptor myModuleDescriptor;
+  private IModule myModule;
 
   public ModulePropertiesConfigurable(IModule module, Project project) {
-    super(module, project);
+    super(project);
+    myModule = module;
     myModuleDescriptor = module.getModuleDescriptor();
   }
 
   @Override
   protected void chooseShownTabs() {
     myTabs.add(new ModuleCommonTab());
-    if(!(myConfigurableItem instanceof DevKit)) {
+    if(!(myModule instanceof DevKit)) {
       myTabs.add(new ModuleDependenciesTab());
-      if(myConfigurableItem instanceof Language)
+      if(myModule instanceof Language)
         myTabs.add(new RuntimeTab());
       myTabs.add(new ModuleUsedLanguagesTab());
-      if((myConfigurableItem instanceof Language || myConfigurableItem instanceof Solution) && dependOnBL())
-          myTabs.add(new LanguageAndSolutionAdvancedTab());
-      if(myConfigurableItem instanceof Generator)
+      if((myModule instanceof Language || myModule instanceof Solution) && dependOnBL())
+          myTabs.add((myTab = new LanguageAndSolutionAdvancedTab()));
+      if(myModule instanceof Generator)
         myTabs.add(new GeneratorAdvancesTab());
     }
   }
@@ -140,24 +143,23 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
 
   @Override
   protected void save() {
-    myConfigurableItem.setModuleDescriptor(myModuleDescriptor, true);
-    myConfigurableItem.save();
+    myModule.setModuleDescriptor(myModuleDescriptor, true);
+    myModule.save();
   }
 
   @Nls
   @Override
   public String getDisplayName() {
     StringBuilder builder = new StringBuilder();
-    builder.append(myConfigurableItem.getClass().getSimpleName());
+    builder.append(myModule.getClass().getSimpleName());
     builder.append(PropertiesBundle.message("mps.properties.configurable.module.title"));
-    builder.append(myConfigurableItem.getModuleName());
+    builder.append(myModule.getModuleName());
     return builder.toString();
   }
 
   public class ModuleCommonTab extends CommonTab {
 
     private ModuleDependenciesTab myModuleDependenciesTab;
-    private ModuleRootsTableModel myRootsTableModel;
     private ContentEntriesEditor myEntriesEditor;
 
     @Override
@@ -167,15 +169,15 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
 
     @Override
     protected String getConfigItemPath() {
-      if(myConfigurableItem instanceof Generator)
+      if(myModule instanceof Generator)
         return "";
-      return myConfigurableItem.getDescriptorFile().getPath();
+      return myModule.getDescriptorFile().getPath();
     }
 
     @Override
     protected void initUI() {
       super.initUI();
-      if(myConfigurableItem instanceof DevKit) {
+      if(myModule instanceof DevKit) {
 
         myModuleDependenciesTab = new ModuleDependenciesTab();
 
@@ -197,7 +199,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
     public boolean isModified() {
       return super.isModified()
         || (
-        myConfigurableItem instanceof DevKit
+        myModule instanceof DevKit
           ? myModuleDependenciesTab.isModified()
           : myEntriesEditor.isModified()
       );
@@ -208,7 +210,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
       if(super.isModified()) {
         myModuleDescriptor.setNamespace(myTextFieldName.getText());
       }
-      if(myConfigurableItem instanceof DevKit)
+      if(myModule instanceof DevKit)
         myModuleDependenciesTab.apply();
       else {
         myEntriesEditor.apply();
@@ -235,7 +237,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
             myDependTableModel.addItem(new ModuleDepTableItem(dependency.getModuleRef(), DependenciesTableItemRole.DEPEND, dependency.isReexport()));
         }
       });
-      if(myConfigurableItem instanceof Language) {
+      if(myModule instanceof Language) {
         list.add(new MPSPropertiesAnActionButton(PropertiesBundle.message("mps.properties.configurable.module.dependenciestab.actions.extend"), IdeIcons.PROJECT_LANGUAGE_ICON) {
           @Override
           public void actionPerformed(AnActionEvent e) {
@@ -245,9 +247,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
               myDependTableModel.addItem(new ModuleDepTableItem(reference, DependenciesTableItemRole.EXTEND));
           }
         });
-      } else if(myConfigurableItem instanceof Solution) {
+      } else if(myModule instanceof Solution) {
       }
-      else if(myConfigurableItem instanceof Generator) {
+      else if(myModule instanceof Generator) {
         list.add(new MPSPropertiesAnActionButton(PropertiesBundle.message("mps.properties.configurable.module.dependenciestab.actions.dependongen"), IdeIcons.GENERATOR_ICON) {
           @Override
           public void actionPerformed(AnActionEvent e) {
@@ -258,7 +260,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
           }
         });
       }
-      else if(myConfigurableItem instanceof DevKit) {
+      else if(myModule instanceof DevKit) {
         list.clear();
         list.add(new MPSPropertiesAnActionButton(DevKit.class, IdeIcons.DEVKIT_ICON) {
           @Override
@@ -501,11 +503,34 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
     }
   }
 
+  private MPSPropertiesConfigurable.Tab myTab;
+
   public class ModuleUsedLanguagesTab extends UsedLanguagesTab {
 
     @Override
     protected UsedLangsTableModel getUsedLangsTableModel() {
-      return new ModuleUsedLangTableModel(myModuleDescriptor);
+      final UsedLangsTableModel tableModel = new ModuleUsedLangTableModel(myModuleDescriptor);
+      tableModel.addTableModelListener(new TableModelListener() {
+        @Override
+        public void tableChanged(TableModelEvent e) {
+          IModule bl = MPSModuleRepository.getInstance().getModuleByFqName("jetbrains.mps.baseLanguage");
+          if(e.getType() == TableModelEvent.UPDATE) {
+            if(tableModel.getUsedLanguages().contains(bl.getModuleReference())) {
+              ModulePropertiesConfigurable.this.addTab(
+                ModulePropertiesConfigurable.this.myTab == null
+                  ? (ModulePropertiesConfigurable.this.myTab = new LanguageAndSolutionAdvancedTab())
+                  : ModulePropertiesConfigurable.this.myTab
+              );
+            }
+          }
+          else if (e.getType() == TableModelEvent.DELETE) {
+            if(!tableModel.getUsedLanguages().contains(bl.getModuleReference())) {
+              ModulePropertiesConfigurable.this.removeTab(ModulePropertiesConfigurable.this.myTab);
+            }
+          }
+        }
+      });
+      return tableModel;
     }
   }
 
@@ -525,7 +550,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
     @Override
     protected void initUI() {
       JPanel advancedTab = new JPanel();
-      advancedTab.setLayout(new GridLayoutManager((myConfigurableItem instanceof Solution ? 5 : 3), 2, INSETS, -1, -1));
+      advancedTab.setLayout(new GridLayoutManager((myModule instanceof Solution ? 5 : 3), 2, INSETS, -1, -1));
 
       int row = 0;
 
@@ -544,7 +569,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
 
       advancedTab.add(genOutPath, new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
-      if(myConfigurableItem instanceof Solution) {
+      if(myModule instanceof Solution) {
         SolutionDescriptor descriptor = (SolutionDescriptor)myModuleDescriptor;
         myCheckBox = new JBCheckBox(PropertiesBundle.message("mps.properties.configurable.module.javatab.compileinmps"), descriptor.getCompileInMPS());
         advancedTab.add(myCheckBox, new GridConstraints(row++, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -563,7 +588,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
     }
 
     private String getGenOutPath() {
-      return myConfigurableItem.getGeneratorOutputPath();
+      return myModule.getGeneratorOutputPath();
     }
     
     private JComponent getSourcePathsTable() {
@@ -601,7 +626,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
         @Override
         public void run(AnActionButton anActionButton) {
           List<ModelRootDescriptor> modelRoots = new ArrayList<ModelRootDescriptor>(myModuleDescriptor.getModelRootDescriptors());
-          StubRootChooser stubRootChooser = new StubRootChooser(modelRoots, (myConfigurableItem instanceof Language ? true : false));
+          StubRootChooser stubRootChooser = new StubRootChooser(modelRoots, (myModule instanceof Language ? true : false));
           myLibraryTableModel.addAll(stubRootChooser.compute());
         }
       }).setRemoveAction(new AnActionButtonRunnable() {
@@ -621,7 +646,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
     @Override
     public boolean isModified() {
       boolean solutionCheck = false;
-      if(myConfigurableItem instanceof Solution) {
+      if(myModule instanceof Solution) {
         SolutionDescriptor descriptor = (SolutionDescriptor) myModuleDescriptor;
         solutionCheck = descriptor.getCompileInMPS() != myCheckBox.isSelected()
           || descriptor.getKind() != myComboBox.getSelectedItem();
@@ -785,7 +810,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
 
     @Override
     protected void initUI() {
-      List<ModuleReference> list = new ArrayList<ModuleReference>(((GeneratorDescriptor)myConfigurableItem.getModuleDescriptor()).getDepGenerators());
+      List<ModuleReference> list = new ArrayList<ModuleReference>(((GeneratorDescriptor) myModule.getModuleDescriptor()).getDepGenerators());
 
       JPanel panel = new JPanel();
       panel.setLayout(new GridLayoutManager(2, 1, INSETS, -1, -1));
@@ -799,13 +824,13 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
 
       TableColumn column;
       column = table.getColumnModel().getColumn(0);
-      column.setCellEditor(new RuleOperandEditor((Generator) myConfigurableItem, list, true));
+      column.setCellEditor(new RuleOperandEditor((Generator) myModule, list, true));
       column = table.getColumnModel().getColumn(1);
       column.setCellEditor(new RuleTypeEditor());
       column.setMaxWidth(50);
       column.setResizable(false);
       column = table.getColumnModel().getColumn(2);
-      column.setCellEditor(new RuleOperandEditor((Generator)myConfigurableItem, list, false));
+      column.setCellEditor(new RuleOperandEditor((Generator) myModule, list, false));
 
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(table);
       decorator.setAddAction(new AnActionButtonRunnable() {
@@ -825,7 +850,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable<IMod
 
       panel.add(decorator.createPanel(), new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
-      myCheckBox = new JBCheckBox(PropertiesBundle.message("mps.properties.configurable.module.generatortab.gentempcheckbox"), ((GeneratorDescriptor)myConfigurableItem.getModuleDescriptor()).isGenerateTemplates());
+      myCheckBox = new JBCheckBox(PropertiesBundle.message("mps.properties.configurable.module.generatortab.gentempcheckbox"), ((GeneratorDescriptor) myModule.getModuleDescriptor()).isGenerateTemplates());
       panel.add(myCheckBox, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
       
       setTabComponent(panel);

@@ -49,12 +49,14 @@ import javax.swing.JPanel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable<SModelDescriptor> {
+public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
   private ModelProperties myModelProperties;
+  private SModelDescriptor myModelDescriptor;
 
-  public ModelPropertiesConfigurable(SModelDescriptor model, IOperationContext context) {
-    super(model, context.getProject());
-    myModelProperties = new ModelProperties(model, context);
+  public ModelPropertiesConfigurable(SModelDescriptor modelDescriptor, IOperationContext context) {
+    super(context.getProject());
+    myModelDescriptor = modelDescriptor;
+    myModelProperties = new ModelProperties(modelDescriptor, context);
   }
 
   @Nls
@@ -62,7 +64,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable<SMode
   public String getDisplayName() {
     StringBuilder builder = new StringBuilder();
     builder.append(PropertiesBundle.message("mps.properties.configurable.model.title"));
-    builder.append(myConfigurableItem.getModelName());
+    builder.append(myModelDescriptor.getModelName());
     return builder.toString();
   }
 
@@ -84,13 +86,13 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable<SMode
 
     @Override
     protected String getConfigItemName() {
-      return myConfigurableItem.getModelName();
+      return myModelDescriptor.getModelName();
     }
 
     @Override
     protected String getConfigItemPath() {
-      if (myConfigurableItem instanceof EditableSModelDescriptor) {
-        DataSource source = ((EditableSModelDescriptor) myConfigurableItem).getSource();
+      if (myModelDescriptor instanceof EditableSModelDescriptor) {
+        DataSource source = ((EditableSModelDescriptor) myModelDescriptor).getSource();
         if (source instanceof FileDataSource) {
           return ((FileDataSource) source).getFile().getPath();
         }
@@ -204,7 +206,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable<SMode
           int references = 0;
           int properties = 0;
           messageText.append("<html>");
-          SModel model = myConfigurableItem.getSModel();
+          SModel model = myModelDescriptor.getSModel();
           for (SNode node : model.nodes()) {
             references += node.getReferences().size();
             properties += jetbrains.mps.util.SNodeOperations.getProperties(node).keySet().size();

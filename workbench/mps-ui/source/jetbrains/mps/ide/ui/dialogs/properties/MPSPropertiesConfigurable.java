@@ -70,15 +70,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public abstract class MPSPropertiesConfigurable<T> implements Configurable, Disposable {
+public abstract class MPSPropertiesConfigurable implements Configurable, Disposable {
   private TabbedPaneWrapper myTabbedPaneWrapper;
   protected List<Tab> myTabs = new ArrayList<Tab>();
   protected final Project myProject;
 
-  protected T myConfigurableItem;
-
-  public MPSPropertiesConfigurable(T configurableItem, Project project) {
-    myConfigurableItem = configurableItem;
+  public MPSPropertiesConfigurable(Project project) {
     myProject = project;
   }
 
@@ -98,6 +95,21 @@ public abstract class MPSPropertiesConfigurable<T> implements Configurable, Disp
     for (Tab tab : myTabs)
       addTab(tab);
     return myTabbedPaneWrapper.getComponent();
+  }
+
+  protected int getTabsCount() {
+    return myTabbedPaneWrapper.getTabCount();
+  }
+
+  protected void removeTab(int index) {
+    if(index < 0)
+      return;
+    myTabbedPaneWrapper.removeTabAt(index);
+  }
+
+  protected void removeTab(Tab tab) {
+    if(tab == null) return;
+    removeTab(myTabbedPaneWrapper.indexOfComponent(tab.getTabComponent()));
   }
 
 
@@ -132,16 +144,20 @@ public abstract class MPSPropertiesConfigurable<T> implements Configurable, Disp
   }
 
   protected abstract void chooseShownTabs();
-  protected abstract void save();
 
-  private void addTab(Tab tab) {
+  /**
+   * If apply method in each tab separately take a lot of time,
+   * override this method to perform real save after all applies
+   */
+  protected void save() {}
+
+  protected void addTab(Tab tab) {
     if(tab == null || tab.getTabComponent() == null) return;
     if(tab.getTip() == null) tab.setTip(tab.getName());
 
-    if(tab.getIcon() != null)
+    if(!myTabs.contains(tab)) myTabs.add(tab);
+    if(myTabbedPaneWrapper.indexOfComponent(tab.getTabComponent()) < 0)
       myTabbedPaneWrapper.addTab(tab.getName(), tab.getIcon(), tab.getTabComponent(), tab.getTip());
-    else
-      myTabbedPaneWrapper.addTab(tab.getName(), tab.getTabComponent());
   }
 
   private void setFixedColumnWidth(JBTable table, final int columnIndex) {
@@ -305,39 +321,45 @@ public abstract class MPSPropertiesConfigurable<T> implements Configurable, Disp
       decorator.setAddAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton button) {
-          final JBPopup popup = JBPopupFactory.getInstance().createListPopup(
-            new BaseListPopupStep<MPSPropertiesAnActionButton>(null, getAnActions()) {
-              @Override
-              public Icon getIconFor(MPSPropertiesAnActionButton aValue) {
-                return aValue.getIcon();
-              }
+          final List<MPSPropertiesAnActionButton> list = getAnActions();
+          if(list.size() == 0) return;
+          else if(list.size() == 1) {
+            list.get(0).actionPerformed(null);
+          } else {
+            final JBPopup popup = JBPopupFactory.getInstance().createListPopup(
+              new BaseListPopupStep<MPSPropertiesAnActionButton>(null, getAnActions()) {
+                @Override
+                public Icon getIconFor(MPSPropertiesAnActionButton aValue) {
+                  return aValue.getIcon();
+                }
 
-              @Override
-              public boolean hasSubstep(MPSPropertiesAnActionButton selectedValue) {
-                return false;
-              }
+                @Override
+                public boolean hasSubstep(MPSPropertiesAnActionButton selectedValue) {
+                  return false;
+                }
 
-              @Override
-              public boolean isMnemonicsNavigationEnabled() {
-                return true;
-              }
+                @Override
+                public boolean isMnemonicsNavigationEnabled() {
+                  return true;
+                }
 
-              @Override
-              public PopupStep onChosen(final MPSPropertiesAnActionButton selectedValue, final boolean finalChoice) {
-                return doFinalStep(new Runnable() {
-                  public void run() {
-                    selectedValue.actionPerformed(null);
-                  }
-                });
-              }
+                @Override
+                public PopupStep onChosen(final MPSPropertiesAnActionButton selectedValue, final boolean finalChoice) {
+                  return doFinalStep(new Runnable() {
+                    public void run() {
+                      selectedValue.actionPerformed(null);
+                    }
+                  });
+                }
 
-              @Override
-              @NotNull
-              public String getTextFor(MPSPropertiesAnActionButton value) {
-                return value.getText();
-              }
-            });
-          popup.show(button.getPreferredPopupPoint());
+                @Override
+                @NotNull
+                public String getTextFor(MPSPropertiesAnActionButton value) {
+                  return value.getText();
+                }
+              });
+            popup.show(button.getPreferredPopupPoint());
+          }
         }
       }).setRemoveAction(new AnActionButtonRunnable() {
         @Override
@@ -451,8 +473,10 @@ public abstract class MPSPropertiesConfigurable<T> implements Configurable, Disp
       }).setRemoveAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
+          int first = usedLangsTable.getSelectionModel().getMinSelectionIndex();
+          int last = usedLangsTable.getSelectionModel().getMaxSelectionIndex();
           TableUtil.removeSelectedItems(usedLangsTable);
-          myUsedLangsTableModel.fireTableDataChanged();
+          myUsedLangsTableModel.fireTableRowsDeleted(first, last);
         }
       });
 

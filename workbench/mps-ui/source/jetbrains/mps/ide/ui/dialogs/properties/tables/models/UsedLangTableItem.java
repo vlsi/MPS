@@ -55,6 +55,12 @@ public class UsedLangTableItem extends ConnectionsTableItem<ModuleReference> {
     return true;
   }
 
+  @Override
+  public boolean equals(Object obj) {
+    if(!(obj instanceof UsedLangTableItem))
+       return false;
+    return myItem.equals(((UsedLangTableItem) obj).myItem);
+  }
 
   public static TableCellRenderer createDefaultRenderer() {
     return new ColoredTableCellRenderer() {
