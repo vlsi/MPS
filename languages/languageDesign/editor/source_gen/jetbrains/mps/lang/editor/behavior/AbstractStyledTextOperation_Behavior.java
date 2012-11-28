@@ -4,6 +4,9 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class AbstractStyledTextOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -11,5 +14,9 @@ public class AbstractStyledTextOperation_Behavior {
 
   public static String virtual_getMethodToGenerate_1262430001741492328(SConcept thisConcept) {
     return null;
+  }
+
+  public static List<SNode> virtual_getOperationArgumentType_6575219246652510406(SConcept thisConcept) {
+    return ListSequence.fromList(new ArrayList<SNode>());
   }
 }

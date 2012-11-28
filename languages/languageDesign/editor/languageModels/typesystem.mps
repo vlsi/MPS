@@ -1058,16 +1058,19 @@
       <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6050628152418938572">
         <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6050628152418938573">
           <property name="name" nameId="tpck.1169194664001" value="argumentTypes" />
+          <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6575219246652721429">
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="6575219246652722956">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcb.6575219246652510406" resolveInfo="getOperationArgumentType" />
+            </node>
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6575219246652715405">
+              <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="6050628152418938576">
+                <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="6050628152418936549" resolveInfo="operation" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetConceptOperation" typeId="tp25.1172323065820" id="6575219246652719613" />
+            </node>
+          </node>
           <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="6050628152418938574">
             <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
-          </node>
-          <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6050628152418938575">
-            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="6050628152418938576">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="6050628152418936549" resolveInfo="operation" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.SConceptLinkAccess" typeId="tp25.1175618182947" id="6050628152418938577">
-              <link role="conceptLinkDeclaration" roleId="tp25.1175618223511" targetNodeId="tpc2.4531786690998812992" resolveInfo="operationArgumentType" />
-            </node>
           </node>
         </node>
       </node>

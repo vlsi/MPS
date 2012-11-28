@@ -6,6 +6,7 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IOperation_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
+import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 
@@ -15,6 +16,10 @@ public abstract class AbstractStyledTextOperation_BehaviorDescriptor extends Bas
 
   public String virtual_getMethodToGenerate_1262430001741492328(SConcept thisConcept) {
     return AbstractStyledTextOperation_Behavior.virtual_getMethodToGenerate_1262430001741492328(thisConcept);
+  }
+
+  public List<SNode> virtual_getOperationArgumentType_6575219246652510406(SConcept thisConcept) {
+    return AbstractStyledTextOperation_Behavior.virtual_getOperationArgumentType_6575219246652510406(thisConcept);
   }
 
   public String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {

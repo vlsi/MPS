@@ -2,8 +2,8 @@
 <debugInfo>
   <unitInfo fileName="AbstractComponent_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.AbstractComponent_BehaviorDescriptor" />
   <unitInfo fileName="AbstractPaddingStyleClassItem_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.AbstractPaddingStyleClassItem_BehaviorDescriptor" />
-  <unitInfo fileName="AbstractStyledTextOperation_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.AbstractStyledTextOperation_BehaviorDescriptor" />
-  <unitInfo fileName="AppendTextOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.AppendTextOperation_BehaviorDescriptor" />
+  <unitInfo fileName="AbstractStyledTextOperation_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.AbstractStyledTextOperation_BehaviorDescriptor" />
+  <unitInfo fileName="AppendTextOperation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.AppendTextOperation_BehaviorDescriptor" />
   <unitInfo fileName="AutoDeletableStyleClassItem_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.AutoDeletableStyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="BackgroundColorStyleClassItem_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.BackgroundColorStyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="BaseEditorComponent_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.BaseEditorComponent_BehaviorDescriptor" />
@@ -182,7 +182,7 @@
   <unitInfo fileName="SelectParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.SelectParameter_BehaviorDescriptor" />
   <unitInfo fileName="SelectPositionParameter_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.SelectPositionParameter_BehaviorDescriptor" />
   <unitInfo fileName="SelectableStyleSheetItem_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.SelectableStyleSheetItem_BehaviorDescriptor" />
-  <unitInfo fileName="SetBoldOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.SetBoldOperation_BehaviorDescriptor" />
+  <unitInfo fileName="SetBoldOperation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.SetBoldOperation_BehaviorDescriptor" />
   <unitInfo fileName="SideTransformAnchorTagStyleClassItem_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.SideTransformAnchorTagStyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="StrikeOutStyleSheet_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StrikeOutStyleSheet_BehaviorDescriptor" />
   <unitInfo fileName="StyleClassItem_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleClassItem_BehaviorDescriptor" />
@@ -2311,32 +2311,59 @@
     <unitInfo nodeId="1239873372471" fileName="CellModel_ListWithRole_Behavior.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_Behavior" />
   </root>
   <root nodeId="1262430001741492331" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
-    <nodeInfo nodeId="1262430001741492327" fileName="AbstractStyledTextOperation_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741492331" fileName="AbstractStyledTextOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1262430001741492331" fileName="AbstractStyledTextOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMethodToGenerate_1262430001741492328#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1262430001741492552" fileName="AbstractStyledTextOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741492330" fileName="AbstractStyledTextOperation_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="16" />
-    <scopeInfo nodeId="1262430001741492331" fileName="AbstractStyledTextOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+    <nodeInfo nodeId="1262430001741492327" fileName="AbstractStyledTextOperation_Behavior.java" startLine="15" startPosition="94" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6575219246652513067" fileName="AbstractStyledTextOperation_Behavior.java" startLine="19" startPosition="104" endLine="20" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741492331" fileName="AbstractStyledTextOperation_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741492331" fileName="AbstractStyledTextOperation_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMethodToGenerate_1262430001741492328#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1262430001741492331" fileName="AbstractStyledTextOperation_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperationArgumentType_6575219246652510406#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <scopeInfo nodeId="1262430001741492552" fileName="AbstractStyledTextOperation_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="1262430001741492330" fileName="AbstractStyledTextOperation_Behavior.java" startLine="15" startPosition="94" endLine="16" endPosition="16" />
+    <scopeInfo nodeId="6575219246652510409" fileName="AbstractStyledTextOperation_Behavior.java" startLine="19" startPosition="104" endLine="20" endPosition="57" />
+    <scopeInfo nodeId="1262430001741492331" fileName="AbstractStyledTextOperation_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="1262430001741492331" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741492331" fileName="AbstractStyledTextOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="1262430001741492331" fileName="AbstractStyledTextOperation_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1262430001741492331" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="1262430001741492331" fileName="AbstractStyledTextOperation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.AbstractStyledTextOperation_Behavior" />
+    <scopeInfo nodeId="1262430001741492331" fileName="AbstractStyledTextOperation_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="1262430001741492331" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741492331" fileName="AbstractStyledTextOperation_Behavior.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.AbstractStyledTextOperation_Behavior" />
   </root>
   <root nodeId="1262430001741646585" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
-    <nodeInfo nodeId="1262430001741646584" fileName="AppendTextOperation_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741646585" fileName="AppendTextOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1262430001741646585" fileName="AppendTextOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMethodToGenerate_1262430001741492328#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1262430001741646587" fileName="AppendTextOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741646582" fileName="AppendTextOperation_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="20" />
-    <scopeInfo nodeId="1262430001741646585" fileName="AppendTextOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+    <nodeInfo nodeId="1262430001741646584" fileName="AppendTextOperation_Behavior.java" startLine="17" startPosition="94" endLine="18" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6575219246652567699" fileName="AppendTextOperation_Behavior.java" startLine="21" startPosition="104" endLine="22" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6575219246652568449" fileName="AppendTextOperation_Behavior.java" startLine="22" startPosition="259" endLine="23" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6575219246652588994" fileName="AppendTextOperation_Behavior.java" startLine="23" startPosition="83" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6575219246652588103" fileName="AppendTextOperation_Behavior.java" startLine="27" startPosition="61" endLine="28" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6575219246652588103" fileName="AppendTextOperation_Behavior.java" startLine="28" startPosition="30" endLine="29" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6575219246652588103" fileName="AppendTextOperation_Behavior.java" startLine="28" startPosition="30" endLine="29" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6575219246652588103" fileName="AppendTextOperation_Behavior.java" startLine="28" startPosition="30" endLine="29" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6575219246652588103" fileName="AppendTextOperation_Behavior.java" startLine="29" startPosition="161" endLine="30" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741646585" fileName="AppendTextOperation_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741646585" fileName="AppendTextOperation_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMethodToGenerate_1262430001741492328#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1262430001741646585" fileName="AppendTextOperation_Behavior.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperationArgumentType_6575219246652510406#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <nodeInfo nodeId="6575219246652588103" fileName="AppendTextOperation_Behavior.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_jh7h4_a0a1a1#()Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="1262430001741646587" fileName="AppendTextOperation_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="1262430001741646582" fileName="AppendTextOperation_Behavior.java" startLine="17" startPosition="94" endLine="18" endPosition="20" />
+    <scopeInfo nodeId="6575219246652588103" fileName="AppendTextOperation_Behavior.java" startLine="28" startPosition="30" endLine="29" endPosition="161" />
+    <scopeInfo nodeId="1262430001741646585" fileName="AppendTextOperation_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="1262430001741646585" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741646585" fileName="AppendTextOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="1262430001741646585" fileName="AppendTextOperation_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1262430001741646585" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="1262430001741646585" fileName="AppendTextOperation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.AppendTextOperation_Behavior" />
+    <scopeInfo nodeId="6575219246652567161" fileName="AppendTextOperation_Behavior.java" startLine="21" startPosition="104" endLine="24" endPosition="18">
+      <varInfo nodeId="6575219246652567702" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="6575219246652588103" fileName="AppendTextOperation_Behavior.java" startLine="27" startPosition="61" endLine="30" endPosition="24">
+      <varInfo nodeId="6575219246652588103" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741646585" fileName="AppendTextOperation_Behavior.java" startLine="21" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1262430001741646585" varName="thisConcept" />
+    </scopeInfo>
+    <scopeInfo nodeId="6575219246652588103" fileName="AppendTextOperation_Behavior.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
+    <unitInfo nodeId="1262430001741646585" fileName="AppendTextOperation_Behavior.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.AppendTextOperation_Behavior" />
   </root>
   <root nodeId="1262430001741647335" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
     <nodeInfo nodeId="1262430001741647333" fileName="ConceptFunctionParameter_parameterObject_Behavior.java" startLine="12" startPosition="98" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2353,18 +2380,39 @@
     <unitInfo nodeId="1262430001741647335" fileName="ConceptFunctionParameter_parameterObject_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.ConceptFunctionParameter_parameterObject_Behavior" />
   </root>
   <root nodeId="1262430001741718316" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
-    <nodeInfo nodeId="1262430001741718315" fileName="SetBoldOperation_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741718316" fileName="SetBoldOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1262430001741718316" fileName="SetBoldOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMethodToGenerate_1262430001741492328#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1262430001741718318" fileName="SetBoldOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741718313" fileName="SetBoldOperation_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="21" />
-    <scopeInfo nodeId="1262430001741718316" fileName="SetBoldOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+    <nodeInfo nodeId="1262430001741718315" fileName="SetBoldOperation_Behavior.java" startLine="17" startPosition="94" endLine="18" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6575219246652590714" fileName="SetBoldOperation_Behavior.java" startLine="21" startPosition="104" endLine="22" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6575219246652590721" fileName="SetBoldOperation_Behavior.java" startLine="22" startPosition="259" endLine="23" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6575219246652590727" fileName="SetBoldOperation_Behavior.java" startLine="23" startPosition="84" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6575219246652590724" fileName="SetBoldOperation_Behavior.java" startLine="27" startPosition="62" endLine="28" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6575219246652590724" fileName="SetBoldOperation_Behavior.java" startLine="28" startPosition="30" endLine="29" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6575219246652590724" fileName="SetBoldOperation_Behavior.java" startLine="28" startPosition="30" endLine="29" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6575219246652590724" fileName="SetBoldOperation_Behavior.java" startLine="28" startPosition="30" endLine="29" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6575219246652590724" fileName="SetBoldOperation_Behavior.java" startLine="29" startPosition="162" endLine="30" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718316" fileName="SetBoldOperation_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741718316" fileName="SetBoldOperation_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMethodToGenerate_1262430001741492328#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1262430001741718316" fileName="SetBoldOperation_Behavior.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperationArgumentType_6575219246652510406#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <nodeInfo nodeId="6575219246652590724" fileName="SetBoldOperation_Behavior.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_s26y4o_a0a1a1#()Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="1262430001741718318" fileName="SetBoldOperation_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="1262430001741718313" fileName="SetBoldOperation_Behavior.java" startLine="17" startPosition="94" endLine="18" endPosition="21" />
+    <scopeInfo nodeId="6575219246652590724" fileName="SetBoldOperation_Behavior.java" startLine="28" startPosition="30" endLine="29" endPosition="162" />
+    <scopeInfo nodeId="1262430001741718316" fileName="SetBoldOperation_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="1262430001741718316" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741718316" fileName="SetBoldOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="1262430001741718316" fileName="SetBoldOperation_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1262430001741718316" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="1262430001741718316" fileName="SetBoldOperation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.SetBoldOperation_Behavior" />
+    <scopeInfo nodeId="6575219246652590064" fileName="SetBoldOperation_Behavior.java" startLine="21" startPosition="104" endLine="24" endPosition="18">
+      <varInfo nodeId="6575219246652590715" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="6575219246652590724" fileName="SetBoldOperation_Behavior.java" startLine="27" startPosition="62" endLine="30" endPosition="24">
+      <varInfo nodeId="6575219246652590724" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741718316" fileName="SetBoldOperation_Behavior.java" startLine="21" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1262430001741718316" varName="thisConcept" />
+    </scopeInfo>
+    <scopeInfo nodeId="6575219246652590724" fileName="SetBoldOperation_Behavior.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
+    <unitInfo nodeId="1262430001741718316" fileName="SetBoldOperation_Behavior.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.SetBoldOperation_Behavior" />
   </root>
   <root nodeId="1262585326111603260" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
     <nodeInfo nodeId="1262585326111603278" fileName="SelectableStyleSheetItem_Behavior.java" startLine="13" startPosition="94" endLine="14" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
