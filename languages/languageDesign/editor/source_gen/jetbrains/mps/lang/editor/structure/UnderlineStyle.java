@@ -12,12 +12,6 @@ public enum UnderlineStyle {
   underlined("underlined", 2);
 
   private String myName;
-  private int myValue;
-
-  UnderlineStyle(String name, int value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
@@ -25,10 +19,6 @@ public enum UnderlineStyle {
 
   public String getValueAsString() {
     return "" + this.myValue;
-  }
-
-  public int getValue() {
-    return this.myValue;
   }
 
   public static List<UnderlineStyle> getConstants() {
@@ -57,5 +47,16 @@ public enum UnderlineStyle {
       return UnderlineStyle.underlined;
     }
     return UnderlineStyle.getDefault();
+  }
+
+  private int myValue;
+
+  UnderlineStyle(String name, int value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public int getValue() {
+    return this.myValue;
   }
 }

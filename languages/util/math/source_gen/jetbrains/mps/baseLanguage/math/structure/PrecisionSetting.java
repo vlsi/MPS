@@ -14,12 +14,6 @@ public enum PrecisionSetting {
   UNLIMITED("UNLIMITED", 4);
 
   private String myName;
-  private int myValue;
-
-  PrecisionSetting(String name, int value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
@@ -27,10 +21,6 @@ public enum PrecisionSetting {
 
   public String getValueAsString() {
     return "" + this.myValue;
-  }
-
-  public int getValue() {
-    return this.myValue;
   }
 
   public static List<PrecisionSetting> getConstants() {
@@ -67,5 +57,16 @@ public enum PrecisionSetting {
       return PrecisionSetting.UNLIMITED;
     }
     return PrecisionSetting.getDefault();
+  }
+
+  private int myValue;
+
+  PrecisionSetting(String name, int value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public int getValue() {
+    return this.myValue;
   }
 }

@@ -13,12 +13,6 @@ public enum MatrixNormKind {
   normMax("max", 3);
 
   private String myName;
-  private int myValue;
-
-  MatrixNormKind(String name, int value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
@@ -26,10 +20,6 @@ public enum MatrixNormKind {
 
   public String getValueAsString() {
     return "" + this.myValue;
-  }
-
-  public int getValue() {
-    return this.myValue;
   }
 
   public static List<MatrixNormKind> getConstants() {
@@ -62,5 +52,16 @@ public enum MatrixNormKind {
       return MatrixNormKind.normMax;
     }
     return MatrixNormKind.getDefault();
+  }
+
+  private int myValue;
+
+  MatrixNormKind(String name, int value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public int getValue() {
+    return this.myValue;
   }
 }

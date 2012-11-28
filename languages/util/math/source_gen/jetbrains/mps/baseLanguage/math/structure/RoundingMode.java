@@ -17,12 +17,6 @@ public enum RoundingMode {
   UP("UP", 7);
 
   private String myName;
-  private int myValue;
-
-  RoundingMode(String name, int value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
@@ -30,10 +24,6 @@ public enum RoundingMode {
 
   public String getValueAsString() {
     return "" + this.myValue;
-  }
-
-  public int getValue() {
-    return this.myValue;
   }
 
   public static List<RoundingMode> getConstants() {
@@ -82,5 +72,16 @@ public enum RoundingMode {
       return RoundingMode.UP;
     }
     return RoundingMode.getDefault();
+  }
+
+  private int myValue;
+
+  RoundingMode(String name, int value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public int getValue() {
+    return this.myValue;
   }
 }

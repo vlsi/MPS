@@ -14,22 +14,12 @@ public enum RefactoringTargetKind_Enum {
   devkit("devkit", "devkit");
 
   private String myName;
-  private String myValue;
-
-  RefactoringTargetKind_Enum(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -67,5 +57,16 @@ public enum RefactoringTargetKind_Enum {
       return RefactoringTargetKind_Enum.devkit;
     }
     return RefactoringTargetKind_Enum.getDefault();
+  }
+
+  private String myValue;
+
+  RefactoringTargetKind_Enum(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

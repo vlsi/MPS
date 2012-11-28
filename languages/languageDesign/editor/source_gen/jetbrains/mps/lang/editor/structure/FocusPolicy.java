@@ -13,12 +13,6 @@ public enum FocusPolicy {
   attractsRecursively("attractsRecursively", 3);
 
   private String myName;
-  private int myValue;
-
-  FocusPolicy(String name, int value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
@@ -26,10 +20,6 @@ public enum FocusPolicy {
 
   public String getValueAsString() {
     return "" + this.myValue;
-  }
-
-  public int getValue() {
-    return this.myValue;
   }
 
   public static List<FocusPolicy> getConstants() {
@@ -62,5 +52,16 @@ public enum FocusPolicy {
       return FocusPolicy.attractsRecursively;
     }
     return FocusPolicy.getDefault();
+  }
+
+  private int myValue;
+
+  FocusPolicy(String name, int value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public int getValue() {
+    return this.myValue;
   }
 }

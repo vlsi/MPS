@@ -4,34 +4,34 @@
   <unitInfo fileName="Typesystem_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.Typesystem_Language" />
   <root nodeId="1193662402729" modelId="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)">
     <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="17" startPosition="53" endLine="18" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="18" startPosition="23" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="22" startPosition="27" endLine="23" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="26" startPosition="36" endLine="27" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="30" startPosition="28" endLine="31" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="34" startPosition="61" endLine="35" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="35" startPosition="104" endLine="36" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="36" startPosition="72" endLine="37" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="37" startPosition="72" endLine="38" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="38" startPosition="73" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="42" startPosition="53" endLine="43" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="47" startPosition="24" endLine="48" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="50" startPosition="71" endLine="51" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="53" startPosition="71" endLine="54" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="56" startPosition="72" endLine="57" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="58" startPosition="5" endLine="59" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/lang/typesystem/structure/EquationDirection_Enum;" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="46" startPosition="65" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="49" startPosition="5" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="52" startPosition="5" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="55" startPosition="5" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EquationDirection_Enum#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="34" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
-    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="46" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/typesystem/structure/EquationDirection_Enum;" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="16" startPosition="27" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="20" startPosition="36" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="24" startPosition="61" endLine="25" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="25" startPosition="104" endLine="26" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="26" startPosition="72" endLine="27" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="27" startPosition="72" endLine="28" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="28" startPosition="73" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="32" startPosition="53" endLine="33" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="37" startPosition="24" endLine="38" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="40" startPosition="71" endLine="41" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="43" startPosition="71" endLine="44" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="46" startPosition="72" endLine="47" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="48" startPosition="5" endLine="49" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="52" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="54" startPosition="53" endLine="55" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="55" startPosition="23" endLine="56" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="59" startPosition="28" endLine="60" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/lang/typesystem/structure/EquationDirection_Enum;" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="36" startPosition="65" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="39" startPosition="5" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="42" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="45" startPosition="5" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EquationDirection_Enum#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="24" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
+    <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="36" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/typesystem/structure/EquationDirection_Enum;" />
     <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -55,29 +55,29 @@
     <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="22" startPosition="27" endLine="23" endPosition="23" />
-    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="26" startPosition="36" endLine="27" endPosition="24" />
-    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="30" startPosition="28" endLine="31" endPosition="24" />
-    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="42" startPosition="53" endLine="43" endPosition="39" />
-    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="47" startPosition="24" endLine="48" endPosition="49" />
-    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="50" startPosition="71" endLine="51" endPosition="41" />
-    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="53" startPosition="71" endLine="54" endPosition="41" />
-    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="56" startPosition="72" endLine="57" endPosition="42" />
-    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="17" startPosition="53" endLine="19" endPosition="25" />
-    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="16" startPosition="27" endLine="17" endPosition="23" />
+    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="20" startPosition="36" endLine="21" endPosition="24" />
+    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="32" startPosition="53" endLine="33" endPosition="39" />
+    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="37" startPosition="24" endLine="38" endPosition="49" />
+    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="40" startPosition="71" endLine="41" endPosition="41" />
+    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="43" startPosition="71" endLine="44" endPosition="41" />
+    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="46" startPosition="72" endLine="47" endPosition="42" />
+    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="59" startPosition="28" endLine="60" endPosition="24" />
+    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="54" startPosition="53" endLine="56" endPosition="25" />
+    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="1193662402729" varName="name" />
       <varInfo nodeId="1193662402729" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="34" startPosition="61" endLine="39" endPosition="16">
+    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="24" startPosition="61" endLine="29" endPosition="16">
       <varInfo nodeId="1193662402729" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="34" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="46" startPosition="65" endLine="59" endPosition="47" />
-    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="46" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="24" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="36" startPosition="65" endLine="49" endPosition="47" />
+    <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="36" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="1193662402729" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" />
@@ -109,45 +109,45 @@
     <scopeInfo nodeId="1193662402729" fileName="EquationDirection_Enum_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1193662402729" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.EquationDirection_Enum" />
+    <unitInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="9" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.EquationDirection_Enum" />
     <unitInfo nodeId="1193662402729" fileName="EquationDirection_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.EquationDirection_Enum_PropertySupport" />
   </root>
   <root nodeId="1212056179025" modelId="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)">
     <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="19" startPosition="46" endLine="20" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="20" startPosition="23" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="24" startPosition="27" endLine="25" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="28" startPosition="36" endLine="29" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="32" startPosition="25" endLine="33" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="36" startPosition="57" endLine="37" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="37" startPosition="96" endLine="38" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="38" startPosition="66" endLine="39" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="39" startPosition="66" endLine="40" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="40" startPosition="66" endLine="41" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="41" startPosition="66" endLine="42" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="42" startPosition="67" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="46" startPosition="49" endLine="47" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="51" startPosition="24" endLine="52" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="54" startPosition="65" endLine="55" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="57" startPosition="65" endLine="58" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="60" startPosition="65" endLine="61" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="63" startPosition="65" endLine="64" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="66" startPosition="66" endLine="67" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="68" startPosition="5" endLine="69" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()I" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/lang/typesystem/structure/InequationPriority;" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="50" startPosition="61" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="53" startPosition="5" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="56" startPosition="5" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="59" startPosition="5" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="62" startPosition="5" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="65" startPosition="5" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InequationPriority#(Ljava/lang/String;I)V" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="36" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
-    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="50" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/typesystem/structure/InequationPriority;" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="18" startPosition="27" endLine="19" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="22" startPosition="36" endLine="23" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="26" startPosition="57" endLine="27" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="27" startPosition="96" endLine="28" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="28" startPosition="66" endLine="29" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="29" startPosition="66" endLine="30" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="30" startPosition="66" endLine="31" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="31" startPosition="66" endLine="32" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="32" startPosition="67" endLine="33" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="36" startPosition="49" endLine="37" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="41" startPosition="24" endLine="42" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="44" startPosition="65" endLine="45" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="47" startPosition="65" endLine="48" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="50" startPosition="65" endLine="51" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="53" startPosition="65" endLine="54" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="56" startPosition="66" endLine="57" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="58" startPosition="5" endLine="59" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="62" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="64" startPosition="46" endLine="65" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="65" startPosition="23" endLine="66" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="69" startPosition="25" endLine="70" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/lang/typesystem/structure/InequationPriority;" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="40" startPosition="61" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="43" startPosition="5" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="46" startPosition="5" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="49" startPosition="5" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="52" startPosition="5" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="55" startPosition="5" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()I" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InequationPriority#(Ljava/lang/String;I)V" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="26" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
+    <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="40" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/typesystem/structure/InequationPriority;" />
     <nodeInfo nodeId="1212056179025" fileName="InequationPriority_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1212056179025" fileName="InequationPriority_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1212056179025" fileName="InequationPriority_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -171,31 +171,31 @@
     <nodeInfo nodeId="1212056179025" fileName="InequationPriority_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="1212056179025" fileName="InequationPriority_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="1212056179025" fileName="InequationPriority_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="24" startPosition="27" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="28" startPosition="36" endLine="29" endPosition="29" />
-    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="32" startPosition="25" endLine="33" endPosition="24" />
-    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="46" startPosition="49" endLine="47" endPosition="33" />
-    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="51" startPosition="24" endLine="52" endPosition="45" />
-    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="54" startPosition="65" endLine="55" endPosition="35" />
-    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="57" startPosition="65" endLine="58" endPosition="35" />
-    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="60" startPosition="65" endLine="61" endPosition="35" />
-    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="63" startPosition="65" endLine="64" endPosition="35" />
-    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="66" startPosition="66" endLine="67" endPosition="36" />
-    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="19" startPosition="46" endLine="21" endPosition="25" />
-    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
+    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="18" startPosition="27" endLine="19" endPosition="23" />
+    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="22" startPosition="36" endLine="23" endPosition="29" />
+    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="36" startPosition="49" endLine="37" endPosition="33" />
+    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="41" startPosition="24" endLine="42" endPosition="45" />
+    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="44" startPosition="65" endLine="45" endPosition="35" />
+    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="47" startPosition="65" endLine="48" endPosition="35" />
+    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="50" startPosition="65" endLine="51" endPosition="35" />
+    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="53" startPosition="65" endLine="54" endPosition="35" />
+    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="56" startPosition="66" endLine="57" endPosition="36" />
+    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="69" startPosition="25" endLine="70" endPosition="24" />
+    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="64" startPosition="46" endLine="66" endPosition="25" />
+    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="69" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="1212056179025" varName="name" />
       <varInfo nodeId="1212056179025" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="36" startPosition="57" endLine="43" endPosition="16">
+    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="26" startPosition="57" endLine="33" endPosition="16">
       <varInfo nodeId="1212056179025" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="36" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="50" startPosition="61" endLine="69" endPosition="43" />
-    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="50" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="26" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="40" startPosition="61" endLine="59" endPosition="43" />
+    <scopeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="40" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1212056179025" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1212056179025" fileName="InequationPriority_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" />
@@ -227,36 +227,36 @@
     <scopeInfo nodeId="1212056179025" fileName="InequationPriority_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1212056179025" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequationPriority" />
+    <unitInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="9" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequationPriority" />
     <unitInfo nodeId="1212056179025" fileName="InequationPriority_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequationPriority_PropertySupport" />
   </root>
   <root nodeId="1212573620175" modelId="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)">
     <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="16" startPosition="46" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="17" startPosition="23" endLine="18" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="21" startPosition="27" endLine="22" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="25" startPosition="36" endLine="26" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="29" startPosition="28" endLine="30" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="33" startPosition="54" endLine="34" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="34" startPosition="90" endLine="35" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="35" startPosition="67" endLine="36" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="36" startPosition="68" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="40" startPosition="46" endLine="41" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="45" startPosition="24" endLine="46" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="48" startPosition="66" endLine="49" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="51" startPosition="67" endLine="52" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="53" startPosition="5" endLine="54" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/lang/typesystem/structure/RestrictionKind;" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="44" startPosition="58" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="47" startPosition="5" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="50" startPosition="5" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RestrictionKind#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
-    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="44" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/typesystem/structure/RestrictionKind;" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="15" startPosition="27" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="19" startPosition="36" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="23" startPosition="54" endLine="24" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="24" startPosition="90" endLine="25" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="25" startPosition="67" endLine="26" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="26" startPosition="68" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="30" startPosition="46" endLine="31" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="35" startPosition="24" endLine="36" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="38" startPosition="66" endLine="39" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="41" startPosition="67" endLine="42" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="43" startPosition="5" endLine="44" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="49" startPosition="46" endLine="50" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="50" startPosition="23" endLine="51" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="54" startPosition="28" endLine="55" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/lang/typesystem/structure/RestrictionKind;" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="34" startPosition="58" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="37" startPosition="5" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="40" startPosition="5" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RestrictionKind#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="23" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
+    <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="34" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/typesystem/structure/RestrictionKind;" />
     <nodeInfo nodeId="1212573620175" fileName="RestrictionKind_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1212573620175" fileName="RestrictionKind_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1212573620175" fileName="RestrictionKind_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -280,28 +280,28 @@
     <nodeInfo nodeId="1212573620175" fileName="RestrictionKind_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="1212573620175" fileName="RestrictionKind_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="1212573620175" fileName="RestrictionKind_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="21" startPosition="27" endLine="22" endPosition="23" />
-    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="25" startPosition="36" endLine="26" endPosition="24" />
-    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="29" startPosition="28" endLine="30" endPosition="24" />
-    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="40" startPosition="46" endLine="41" endPosition="34" />
-    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="45" startPosition="24" endLine="46" endPosition="42" />
-    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="48" startPosition="66" endLine="49" endPosition="36" />
-    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="51" startPosition="67" endLine="52" endPosition="37" />
-    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="16" startPosition="46" endLine="18" endPosition="25" />
-    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="15" startPosition="27" endLine="16" endPosition="23" />
+    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="19" startPosition="36" endLine="20" endPosition="24" />
+    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="30" startPosition="46" endLine="31" endPosition="34" />
+    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="35" startPosition="24" endLine="36" endPosition="42" />
+    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="38" startPosition="66" endLine="39" endPosition="36" />
+    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="41" startPosition="67" endLine="42" endPosition="37" />
+    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="54" startPosition="28" endLine="55" endPosition="24" />
+    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="49" startPosition="46" endLine="51" endPosition="25" />
+    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="54" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="23" startPosition="54" endLine="27" endPosition="16">
+      <varInfo nodeId="1212573620175" varName="list" />
+    </scopeInfo>
+    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="1212573620175" varName="name" />
       <varInfo nodeId="1212573620175" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="33" startPosition="54" endLine="37" endPosition="16">
-      <varInfo nodeId="1212573620175" varName="list" />
-    </scopeInfo>
-    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="33" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="44" startPosition="58" endLine="54" endPosition="40" />
-    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="44" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="23" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="34" startPosition="58" endLine="44" endPosition="40" />
+    <scopeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="34" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="1212573620175" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1212573620175" fileName="RestrictionKind_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" />
@@ -333,39 +333,39 @@
     <scopeInfo nodeId="1212573620175" fileName="RestrictionKind_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1212573620175" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.RestrictionKind" />
+    <unitInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="9" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.RestrictionKind" />
     <unitInfo nodeId="1212573620175" fileName="RestrictionKind_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.RestrictionKind_PropertySupport" />
   </root>
   <root nodeId="7739208407757103780" modelId="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)">
     <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="17" startPosition="46" endLine="18" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="18" startPosition="23" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="22" startPosition="27" endLine="23" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="26" startPosition="36" endLine="27" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="30" startPosition="25" endLine="31" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="34" startPosition="57" endLine="35" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="35" startPosition="96" endLine="36" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="36" startPosition="69" endLine="37" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="37" startPosition="82" endLine="38" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="38" startPosition="86" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="42" startPosition="49" endLine="43" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="47" startPosition="24" endLine="48" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="50" startPosition="68" endLine="51" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="53" startPosition="81" endLine="54" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="56" startPosition="85" endLine="57" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="58" startPosition="5" endLine="59" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()I" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/lang/typesystem/structure/InequalityProperty;" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="46" startPosition="61" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="49" startPosition="5" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="52" startPosition="5" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="55" startPosition="5" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InequalityProperty#(Ljava/lang/String;I)V" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="34" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
-    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="46" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/typesystem/structure/InequalityProperty;" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="16" startPosition="27" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="20" startPosition="36" endLine="21" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="24" startPosition="57" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="25" startPosition="96" endLine="26" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="26" startPosition="69" endLine="27" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="27" startPosition="82" endLine="28" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="28" startPosition="86" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="32" startPosition="49" endLine="33" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="37" startPosition="24" endLine="38" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="40" startPosition="68" endLine="41" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="43" startPosition="81" endLine="44" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="46" startPosition="85" endLine="47" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="48" startPosition="5" endLine="49" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="52" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="54" startPosition="46" endLine="55" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="55" startPosition="23" endLine="56" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="59" startPosition="25" endLine="60" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/lang/typesystem/structure/InequalityProperty;" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="36" startPosition="61" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="39" startPosition="5" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="42" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="45" startPosition="5" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()I" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InequalityProperty#(Ljava/lang/String;I)V" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="24" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
+    <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="36" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/typesystem/structure/InequalityProperty;" />
     <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -389,29 +389,29 @@
     <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="22" startPosition="27" endLine="23" endPosition="23" />
-    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="26" startPosition="36" endLine="27" endPosition="29" />
-    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="30" startPosition="25" endLine="31" endPosition="24" />
-    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="42" startPosition="49" endLine="43" endPosition="36" />
-    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="47" startPosition="24" endLine="48" endPosition="45" />
-    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="50" startPosition="68" endLine="51" endPosition="38" />
-    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="53" startPosition="81" endLine="54" endPosition="51" />
-    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="56" startPosition="85" endLine="57" endPosition="55" />
-    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="17" startPosition="46" endLine="19" endPosition="25" />
-    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="16" startPosition="27" endLine="17" endPosition="23" />
+    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="20" startPosition="36" endLine="21" endPosition="29" />
+    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="32" startPosition="49" endLine="33" endPosition="36" />
+    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="37" startPosition="24" endLine="38" endPosition="45" />
+    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="40" startPosition="68" endLine="41" endPosition="38" />
+    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="43" startPosition="81" endLine="44" endPosition="51" />
+    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="46" startPosition="85" endLine="47" endPosition="55" />
+    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="59" startPosition="25" endLine="60" endPosition="24" />
+    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="54" startPosition="46" endLine="56" endPosition="25" />
+    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="7739208407757103780" varName="name" />
       <varInfo nodeId="7739208407757103780" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="34" startPosition="57" endLine="39" endPosition="16">
+    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="24" startPosition="57" endLine="29" endPosition="16">
       <varInfo nodeId="7739208407757103780" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="34" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="46" startPosition="61" endLine="59" endPosition="43" />
-    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="46" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="24" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="36" startPosition="61" endLine="49" endPosition="43" />
+    <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="36" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="7739208407757103780" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" />
@@ -443,7 +443,7 @@
     <scopeInfo nodeId="7739208407757103780" fileName="InequalityProperty_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="7739208407757103780" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequalityProperty" />
+    <unitInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="9" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequalityProperty" />
     <unitInfo nodeId="7739208407757103780" fileName="InequalityProperty_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequalityProperty_PropertySupport" />
   </root>
 </debugInfo>

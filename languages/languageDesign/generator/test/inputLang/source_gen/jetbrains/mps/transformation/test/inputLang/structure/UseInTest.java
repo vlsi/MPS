@@ -17,22 +17,12 @@ public enum UseInTest {
   none("none", "none");
 
   private String myName;
-  private String myValue;
-
-  UseInTest(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -82,5 +72,16 @@ public enum UseInTest {
       return UseInTest.none;
     }
     return UseInTest.getDefault();
+  }
+
+  private String myValue;
+
+  UseInTest(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

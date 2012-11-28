@@ -11,22 +11,12 @@ public enum Unit {
   PERCENT("%", "PERCENT");
 
   private String myName;
-  private String myValue;
-
-  Unit(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -52,5 +42,16 @@ public enum Unit {
       return Unit.PERCENT;
     }
     return Unit.getDefault();
+  }
+
+  private String myValue;
+
+  Unit(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

@@ -8,13 +8,11 @@ import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
-  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.nanoc.structure.CAssignmentExpression", "jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CBody", "jetbrains.mps.nanoc.structure.CChar", "jetbrains.mps.nanoc.structure.CDouble", "jetbrains.mps.nanoc.structure.CExpression", "jetbrains.mps.nanoc.structure.CExpressionStatement", "jetbrains.mps.nanoc.structure.CFloat", "jetbrains.mps.nanoc.structure.CFor", "jetbrains.mps.nanoc.structure.CInt", "jetbrains.mps.nanoc.structure.CLong", "jetbrains.mps.nanoc.structure.CParenthesis", "jetbrains.mps.nanoc.structure.CShort", "jetbrains.mps.nanoc.structure.CStatement", "jetbrains.mps.nanoc.structure.CType", "jetbrains.mps.nanoc.structure.CWhile", "jetbrains.mps.nanoc.structure.DivOp", "jetbrains.mps.nanoc.structure.EqualOp", "jetbrains.mps.nanoc.structure.File", "jetbrains.mps.nanoc.structure.GreaterEqOp", "jetbrains.mps.nanoc.structure.GreaterOp", "jetbrains.mps.nanoc.structure.IntConst", "jetbrains.mps.nanoc.structure.LessEqOp", "jetbrains.mps.nanoc.structure.LessOp", "jetbrains.mps.nanoc.structure.MinusOp", "jetbrains.mps.nanoc.structure.MultOp", "jetbrains.mps.nanoc.structure.PlusOp", "jetbrains.mps.nanoc.structure.VarDecl", "jetbrains.mps.nanoc.structure.VarDeclStatement", "jetbrains.mps.nanoc.structure.VarRef"};
-
   public StructureAspectDescriptor() {
   }
 
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
         return new CompiledConceptDescriptor("jetbrains.mps.nanoc.structure.CAssignmentExpression", "jetbrains.mps.nanoc.structure.CExpression", false, new String[]{"jetbrains.mps.nanoc.structure.CExpression"}, new String[]{}, new String[]{});
       case 1:
@@ -79,4 +77,6 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
+
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.nanoc.structure.CAssignmentExpression", "jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CBody", "jetbrains.mps.nanoc.structure.CChar", "jetbrains.mps.nanoc.structure.CDouble", "jetbrains.mps.nanoc.structure.CExpression", "jetbrains.mps.nanoc.structure.CExpressionStatement", "jetbrains.mps.nanoc.structure.CFloat", "jetbrains.mps.nanoc.structure.CFor", "jetbrains.mps.nanoc.structure.CInt", "jetbrains.mps.nanoc.structure.CLong", "jetbrains.mps.nanoc.structure.CParenthesis", "jetbrains.mps.nanoc.structure.CShort", "jetbrains.mps.nanoc.structure.CStatement", "jetbrains.mps.nanoc.structure.CType", "jetbrains.mps.nanoc.structure.CWhile", "jetbrains.mps.nanoc.structure.DivOp", "jetbrains.mps.nanoc.structure.EqualOp", "jetbrains.mps.nanoc.structure.File", "jetbrains.mps.nanoc.structure.GreaterEqOp", "jetbrains.mps.nanoc.structure.GreaterOp", "jetbrains.mps.nanoc.structure.IntConst", "jetbrains.mps.nanoc.structure.LessEqOp", "jetbrains.mps.nanoc.structure.LessOp", "jetbrains.mps.nanoc.structure.MinusOp", "jetbrains.mps.nanoc.structure.MultOp", "jetbrains.mps.nanoc.structure.PlusOp", "jetbrains.mps.nanoc.structure.VarDecl", "jetbrains.mps.nanoc.structure.VarDeclStatement", "jetbrains.mps.nanoc.structure.VarRef"};
 }

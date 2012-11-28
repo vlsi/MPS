@@ -15,22 +15,12 @@ public enum SideTransformTag {
   ext_5("ext_5", "ext_5_RTransform");
 
   private String myName;
-  private String myValue;
-
-  SideTransformTag(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -72,5 +62,16 @@ public enum SideTransformTag {
       return SideTransformTag.ext_5;
     }
     return SideTransformTag.getDefault();
+  }
+
+  private String myValue;
+
+  SideTransformTag(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

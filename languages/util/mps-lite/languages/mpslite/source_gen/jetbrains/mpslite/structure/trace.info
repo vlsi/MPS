@@ -22,31 +22,31 @@
   </root>
   <root nodeId="1237383987373" modelId="r:00000000-0000-4000-0000-011c895905d5(jetbrains.mpslite.structure)">
     <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="16" startPosition="55" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="17" startPosition="23" endLine="18" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="21" startPosition="27" endLine="22" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="25" startPosition="36" endLine="26" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="29" startPosition="28" endLine="30" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="33" startPosition="63" endLine="34" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="34" startPosition="108" endLine="35" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="35" startPosition="76" endLine="36" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="36" startPosition="77" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="40" startPosition="55" endLine="41" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="45" startPosition="24" endLine="46" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="48" startPosition="75" endLine="49" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="51" startPosition="76" endLine="52" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="53" startPosition="5" endLine="54" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mpslite/structure/MPSLitePropertyType_Enum;" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="44" startPosition="67" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="47" startPosition="5" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="50" startPosition="5" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSLitePropertyType_Enum#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
-    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="44" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mpslite/structure/MPSLitePropertyType_Enum;" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="15" startPosition="27" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="19" startPosition="36" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="23" startPosition="63" endLine="24" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="24" startPosition="108" endLine="25" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="25" startPosition="76" endLine="26" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="26" startPosition="77" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="30" startPosition="55" endLine="31" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="35" startPosition="24" endLine="36" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="38" startPosition="75" endLine="39" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="41" startPosition="76" endLine="42" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="43" startPosition="5" endLine="44" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="49" startPosition="55" endLine="50" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="50" startPosition="23" endLine="51" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="54" startPosition="28" endLine="55" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mpslite/structure/MPSLitePropertyType_Enum;" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="34" startPosition="67" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="37" startPosition="5" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="40" startPosition="5" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSLitePropertyType_Enum#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="23" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
+    <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="34" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mpslite/structure/MPSLitePropertyType_Enum;" />
     <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -70,28 +70,28 @@
     <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="21" startPosition="27" endLine="22" endPosition="23" />
-    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="25" startPosition="36" endLine="26" endPosition="24" />
-    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="29" startPosition="28" endLine="30" endPosition="24" />
-    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="40" startPosition="55" endLine="41" endPosition="43" />
-    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="45" startPosition="24" endLine="46" endPosition="51" />
-    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="48" startPosition="75" endLine="49" endPosition="45" />
-    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="51" startPosition="76" endLine="52" endPosition="46" />
-    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="16" startPosition="55" endLine="18" endPosition="25" />
-    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="15" startPosition="27" endLine="16" endPosition="23" />
+    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="19" startPosition="36" endLine="20" endPosition="24" />
+    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="30" startPosition="55" endLine="31" endPosition="43" />
+    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="35" startPosition="24" endLine="36" endPosition="51" />
+    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="38" startPosition="75" endLine="39" endPosition="45" />
+    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="41" startPosition="76" endLine="42" endPosition="46" />
+    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="54" startPosition="28" endLine="55" endPosition="24" />
+    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="49" startPosition="55" endLine="51" endPosition="25" />
+    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="54" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="23" startPosition="63" endLine="27" endPosition="16">
+      <varInfo nodeId="1237383987373" varName="list" />
+    </scopeInfo>
+    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="1237383987373" varName="name" />
       <varInfo nodeId="1237383987373" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="33" startPosition="63" endLine="37" endPosition="16">
-      <varInfo nodeId="1237383987373" varName="list" />
-    </scopeInfo>
-    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="33" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="44" startPosition="67" endLine="54" endPosition="49" />
-    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="44" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="23" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="34" startPosition="67" endLine="44" endPosition="49" />
+    <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="34" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="1237383987373" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" />
@@ -123,7 +123,7 @@
     <scopeInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1237383987373" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mpslite.structure.MPSLitePropertyType_Enum" />
+    <unitInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum.java" startLine="9" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mpslite.structure.MPSLitePropertyType_Enum" />
     <unitInfo nodeId="1237383987373" fileName="MPSLitePropertyType_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mpslite.structure.MPSLitePropertyType_Enum_PropertySupport" />
   </root>
 </debugInfo>

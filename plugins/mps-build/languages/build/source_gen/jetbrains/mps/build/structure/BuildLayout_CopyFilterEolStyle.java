@@ -14,22 +14,12 @@ public enum BuildLayout_CopyFilterEolStyle {
   crlf("convert to the pair CRLF", "crlf");
 
   private String myName;
-  private String myValue;
-
-  BuildLayout_CopyFilterEolStyle(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -67,5 +57,16 @@ public enum BuildLayout_CopyFilterEolStyle {
       return BuildLayout_CopyFilterEolStyle.crlf;
     }
     return BuildLayout_CopyFilterEolStyle.getDefault();
+  }
+
+  private String myValue;
+
+  BuildLayout_CopyFilterEolStyle(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }
