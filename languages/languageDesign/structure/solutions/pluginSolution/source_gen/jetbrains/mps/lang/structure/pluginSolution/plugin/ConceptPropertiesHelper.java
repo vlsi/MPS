@@ -14,11 +14,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
@@ -27,7 +30,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -47,15 +49,13 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.editor.scripts.MigrationUtil;
 import jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior;
 import java.util.Iterator;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
@@ -129,41 +129,48 @@ public class ConceptPropertiesHelper {
 
   private void migrateConceptPropertiesAndLiks() {
     final Set<SNode> conceptPropertyUsages = SetSequence.fromSet(new HashSet<SNode>());
+    final Set<SNode> conceptPropertyDeclarationUsages = SetSequence.fromSet(new HashSet<SNode>());
     final Set<SNode> accessUsages = SetSequence.fromSet(new HashSet<SNode>());
     final Set<SNode> cellUsages = SetSequence.fromSet(new HashSet<SNode>());
     final Set<SNode> conceptLinkUsages = SetSequence.fromSet(new HashSet<SNode>());
+    final Set<SNode> conceptLinkDeclarationUsages = SetSequence.fromSet(new HashSet<SNode>());
     final Set<SNode> linkAccessUsages = SetSequence.fromSet(new HashSet<SNode>());
     final Set<SearchResult<SNode>> allUsages = SetSequence.fromSet(new HashSet<SearchResult<SNode>>());
-    final Set<SNode> searchedConceptProperties = getSearchedConceptPropertiesAndLinks();
-
-    Set<SReference> usages = FindUsagesManager.getInstance().findUsages((searchedConceptProperties), SearchType.USAGES, scope, new EmptyProgressMonitor());
+    Set<SNode> usages = FindUsagesManager.getInstance().findUsages(nodesToFind(), SearchType.INSTANCES, scope, new EmptyProgressMonitor());
 
     boolean usageIsFound;
-    for (SReference usage : SetSequence.fromSet(usages)) {
+    for (SNode usage : SetSequence.fromSet(usages)) {
       usageIsFound = true;
-      SNode source = usage.getSourceNode();
-      if (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.structure.structure.ConceptProperty")) {
-        SetSequence.fromSet(conceptPropertyUsages).addElement(SNodeOperations.cast(source, "jetbrains.mps.lang.structure.structure.ConceptProperty"));
-      } else if (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess") && needToMigrate(source)) {
-        SetSequence.fromSet(accessUsages).addElement(SNodeOperations.cast(source, "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess"));
-      } else if (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty")) {
-        SetSequence.fromSet(cellUsages).addElement(SNodeOperations.cast(source, "jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty"));
-      } else if (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink")) {
-        SetSequence.fromSet(conceptLinkUsages).addElement(SNodeOperations.cast(source, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"));
-      } else if (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.smodel.structure.SConceptLinkAccess")) {
-        SetSequence.fromSet(linkAccessUsages).addElement(SNodeOperations.cast(source, "jetbrains.mps.lang.smodel.structure.SConceptLinkAccess"));
+      if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.structure.structure.ConceptProperty")) {
+        SetSequence.fromSet(conceptPropertyUsages).addElement(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ConceptProperty"));
+      } else if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess") && needToMigrate(usage)) {
+        SetSequence.fromSet(accessUsages).addElement(SNodeOperations.cast(usage, "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess"));
+      } else if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty")) {
+        SetSequence.fromSet(cellUsages).addElement(SNodeOperations.cast(usage, "jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty"));
+      } else if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink")) {
+        SetSequence.fromSet(conceptLinkUsages).addElement(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"));
+      } else if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.smodel.structure.SConceptLinkAccess") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(usage, "jetbrains.mps.lang.smodel.structure.SConceptLinkAccess"), "conceptLinkDeclaration", false), "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration")) {
+        SetSequence.fromSet(linkAccessUsages).addElement(SNodeOperations.cast(usage, "jetbrains.mps.lang.smodel.structure.SConceptLinkAccess"));
+      } else if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration") && (AttributeOperations.getAttribute(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation"))) == null)) {
+        SetSequence.fromSet(conceptPropertyDeclarationUsages).addElement(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"));
+      } else if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration") && (AttributeOperations.getAttribute(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation"))) == null)) {
+        SetSequence.fromSet(conceptLinkDeclarationUsages).addElement(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration"));
       } else {
         usageIsFound = false;
       }
       if (usageIsFound) {
-        SetSequence.fromSet(allUsages).addElement(new SearchResult<SNode>(source, ""));
+        SetSequence.fromSet(allUsages).addElement(new SearchResult<SNode>(usage, ""));
       }
     }
+    Set<SNode> searchedNodes = SetSequence.fromSet(new HashSet<SNode>());
+    SetSequence.fromSet(searchedNodes).addSequence(SetSequence.fromSet(conceptPropertyDeclarationUsages));
+    SetSequence.fromSet(searchedNodes).addSequence(SetSequence.fromSet(conceptLinkDeclarationUsages));
 
-    final SearchResults searchResults = new SearchResults<SNode>((searchedConceptProperties), SetSequence.fromSet(allUsages).toListSequence());
+
+    final SearchResults searchResults = new SearchResults<SNode>(searchedNodes, SetSequence.fromSet(allUsages).toListSequence());
     showRefactoringView(new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        doMigrate(searchedConceptProperties, cellUsages, accessUsages, conceptPropertyUsages, linkAccessUsages, conceptLinkUsages);
+        doMigrate(conceptPropertyDeclarationUsages, conceptLinkDeclarationUsages, cellUsages, accessUsages, conceptPropertyUsages, linkAccessUsages, conceptLinkUsages);
       }
     }, searchResults);
     final Set<SModelDescriptor> sourceModels = new HashSet<SModelDescriptor>();
@@ -172,7 +179,7 @@ public class ConceptPropertiesHelper {
     }
   }
 
-  public Set<SNode> getSearchedConceptPropertiesAndLinks() {
+  private Set<SNode> getSearchedConceptPropertiesAndLinks() {
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
     for (Language module : SetSequence.fromSet(getProjectLanguages())) {
       for (SModelDescriptor modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
@@ -186,10 +193,14 @@ public class ConceptPropertiesHelper {
         }
         for (SNode abstractConceptDeclaration : ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
           List<SNode> conceptPropertyDeclaration = SLinkOperations.getTargets(abstractConceptDeclaration, "conceptPropertyDeclaration", true);
-          SetSequence.fromSet(result).addSequence(ListSequence.fromList(conceptPropertyDeclaration));
+          SetSequence.fromSet(result).addSequence(ListSequence.fromList(conceptPropertyDeclaration).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"))) == null);
+            }
+          }));
           SetSequence.fromSet(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(abstractConceptDeclaration, "conceptLinkDeclaration", true)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration");
+              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration") && (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"))) == null);
             }
           }));
         }
@@ -198,27 +209,15 @@ public class ConceptPropertiesHelper {
     return result;
   }
 
-  private Set<SNode> getSearchedConceptLinks() {
+  private Set<SNode> nodesToFind() {
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
-    for (Language module : SetSequence.fromSet(getProjectLanguages())) {
-      for (SModelDescriptor modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
-        if (SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype())) {
-          continue;
-        }
-
-        SModel model = modelDescriptor.getSModel();
-        if (!(LanguageAspect.STRUCTURE.is(model))) {
-          continue;
-        }
-        for (SNode abstractConceptDeclaration : ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
-          SetSequence.fromSet(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(abstractConceptDeclaration, "conceptLinkDeclaration", true)).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration");
-            }
-          }));
-        }
-      }
-    }
+    SetSequence.fromSet(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"));
+    SetSequence.fromSet(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptProperty"));
+    SetSequence.fromSet(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess"));
+    SetSequence.fromSet(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty"));
+    SetSequence.fromSet(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration"));
+    SetSequence.fromSet(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ReferenceConceptLink"));
+    SetSequence.fromSet(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptLinkAccess"));
     return result;
   }
 
@@ -286,28 +285,30 @@ public class ConceptPropertiesHelper {
     return true;
   }
 
-  private void doMigrate(final Set<SNode> conceptPropertyLinkDeclarations, final Set<SNode> cellUsages, final Set<SNode> accessUsages, final Set<SNode> conceptPropertyUsages, final Set<SNode> accessLinkUsages, final Set<SNode> conceptLinkUsages) {
+  private void doMigrate(final Set<SNode> conceptPropertyDeclarations, final Set<SNode> conceptLinkDeclarations, final Set<SNode> cellUsages, final Set<SNode> accessUsages, final Set<SNode> conceptPropertyUsages, final Set<SNode> accessLinkUsages, final Set<SNode> conceptLinkUsages) {
+
     Map<SNode, SNode> cplToMethodMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
-    Map<SNode, List<SNode>> completedConceptsbyDeclaration = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
-    for (SNode conceptPropertyLinkDecl : SetSequence.fromSet(conceptPropertyLinkDeclarations)) {
+    for (SNode conceptPropertyDecl : SetSequence.fromSet(conceptPropertyDeclarations)) {
       SNode migratedToMethodAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation", null);
       SNode deprecatedNodeAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", null);
-      if (SNodeOperations.isInstanceOf(conceptPropertyLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration")) {
-        SNode method = replaceConceptPropertyDeclarations(SNodeOperations.cast(conceptPropertyLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"), conceptPropertyUsages);
-        MapSequence.fromMap(cplToMethodMap).put(SNodeOperations.cast(conceptPropertyLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"), method);
-        SLinkOperations.setTarget(migratedToMethodAnnotation, "method", method, false);
-        AttributeOperations.setAttribute(SNodeOperations.cast(conceptPropertyLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation")), migratedToMethodAnnotation);
-        AttributeOperations.setAttribute(SNodeOperations.cast(conceptPropertyLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), deprecatedNodeAnnotation);
+      SNode method = replaceConceptPropertyDeclarations(conceptPropertyDecl, conceptPropertyUsages);
+      MapSequence.fromMap(cplToMethodMap).put(conceptPropertyDecl, method);
+      SLinkOperations.setTarget(migratedToMethodAnnotation, "method", method, false);
+      AttributeOperations.setAttribute(SNodeOperations.cast(conceptPropertyDecl, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation")), migratedToMethodAnnotation);
+      AttributeOperations.setAttribute(SNodeOperations.cast(conceptPropertyDecl, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), deprecatedNodeAnnotation);
+    }
 
-      } else if (SNodeOperations.isInstanceOf(conceptPropertyLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration")) {
-        SNode method = replaceConceptLinkDeclaration(SNodeOperations.cast(conceptPropertyLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"), conceptLinkUsages);
-        MapSequence.fromMap(cplToMethodMap).put(SNodeOperations.cast(conceptPropertyLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"), method);
-        MapSequence.fromMap(completedConceptsbyDeclaration).put(SNodeOperations.cast(conceptPropertyLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"), new ArrayList<SNode>());
-        SLinkOperations.setTarget(migratedToMethodAnnotation, "method", method, false);
-        AttributeOperations.setAttribute(SNodeOperations.cast(conceptPropertyLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation")), migratedToMethodAnnotation);
-        AttributeOperations.setAttribute(SNodeOperations.cast(conceptPropertyLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), deprecatedNodeAnnotation);
+    Map<SNode, List<SNode>> completedConceptsByDeclaration = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
 
-      }
+    for (SNode conceptLinkDecl : SetSequence.fromSet(conceptLinkDeclarations)) {
+      SNode migratedToMethodAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation", null);
+      SNode deprecatedNodeAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", null);
+      SNode method = replaceConceptLinkDeclaration(SNodeOperations.cast(conceptLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"), conceptLinkUsages);
+      MapSequence.fromMap(cplToMethodMap).put(SNodeOperations.cast(conceptLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"), method);
+      MapSequence.fromMap(completedConceptsByDeclaration).put(SNodeOperations.cast(conceptLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"), ListSequence.fromList(new ArrayList<SNode>()));
+      SLinkOperations.setTarget(migratedToMethodAnnotation, "method", method, false);
+      AttributeOperations.setAttribute(SNodeOperations.cast(conceptLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation")), migratedToMethodAnnotation);
+      AttributeOperations.setAttribute(SNodeOperations.cast(conceptLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), deprecatedNodeAnnotation);
     }
     for (SNode conceptProperty : SetSequence.fromSet(conceptPropertyUsages)) {
       replaceConceptPropertyUsages(conceptProperty, getMethodFromMapOrFromAnnotation(cplToMethodMap, SLinkOperations.getTarget(conceptProperty, "conceptPropertyDeclaration", false)));
@@ -319,7 +320,7 @@ public class ConceptPropertiesHelper {
       replaceCellUsages(cell, getMethodFromMapOrFromAnnotation(cplToMethodMap, SLinkOperations.getTarget(cell, "relationDeclaration", false)));
     }
     for (SNode conceptLink : SetSequence.fromSet(conceptLinkUsages)) {
-      replaceConceptLinkUsages(conceptLink, getMethodFromMapOrFromAnnotation(cplToMethodMap, SLinkOperations.getTarget(conceptLink, "conceptLinkDeclaration", false)), completedConceptsbyDeclaration);
+      replaceConceptLinkUsages(conceptLink, getMethodFromMapOrFromAnnotation(cplToMethodMap, SLinkOperations.getTarget(conceptLink, "conceptLinkDeclaration", false)), completedConceptsByDeclaration);
     }
     for (SNode access : SetSequence.fromSet(accessLinkUsages)) {
       replaceAccessLinkUsages(access, getMethodFromMapOrFromAnnotation(cplToMethodMap, SLinkOperations.getTarget(access, "conceptLinkDeclaration", false)));
@@ -471,9 +472,11 @@ public class ConceptPropertiesHelper {
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(_quotation_createNode_azpnkk_a0a2a31a21(reference, refExpression));
     }
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(_quotation_createNode_azpnkk_a0a41a21(reference));
+    if (MapSequence.fromMap(completedConceptsByLinkDeclaration).get(SLinkOperations.getTarget(conceptLink, "conceptLinkDeclaration", false)) == null) {
+      MapSequence.fromMap(completedConceptsByLinkDeclaration).put(SLinkOperations.getTarget(conceptLink, "conceptLinkDeclaration", false), ListSequence.fromList(new ArrayList<SNode>()));
+    }
     ListSequence.fromList(MapSequence.fromMap(completedConceptsByLinkDeclaration).get(SLinkOperations.getTarget(conceptLink, "conceptLinkDeclaration", false))).addElement(conceptNode);
     addMethodToBehavior(conceptNode, method);
-
   }
 
   private void replaceConceptPropertyUsages(SNode conceptProperty, SNode overridenMethod) {
