@@ -20,7 +20,10 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ReadUtil;
 
 import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -71,4 +74,21 @@ public class IFileUtils {
         + "!" + absolutePath.substring(index + 1);
     }
   }
+
+  public static String getTextContents(IFile file) throws IOException {
+    BufferedReader br = null;
+
+    try {
+      br = new BufferedReader(new InputStreamReader(file.openInputStream()));
+      StringBuilder sb = new StringBuilder();
+      while (br.ready()) {
+        sb.append( br.readLine() );
+      }
+      return sb.toString();
+
+    } finally {
+      if (br!=null) { br.close(); }
+    }
+  }
 }
+
