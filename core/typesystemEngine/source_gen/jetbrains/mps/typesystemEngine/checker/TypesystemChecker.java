@@ -9,8 +9,9 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.HashSet;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.typesystem.inference.ITypecheckingAction;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Pair;
 import java.util.List;
 
@@ -22,17 +23,16 @@ public class TypesystemChecker extends DefaultTypecheckingContextOwner implement
     return "type system";
   }
 
-  public Set<IErrorReporter> getErrors(SNode node, IOperationContext context) {
-    Set<IErrorReporter> result = new HashSet<IErrorReporter>();
-    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().acquireTypecheckingContext(node, this);
-    try {
-      Set<Pair<SNode, List<IErrorReporter>>> nodeWithErrors = typeCheckingContext.checkRootAndGetErrors(true);
-      for (Pair<SNode, List<IErrorReporter>> pair : nodeWithErrors) {
-        result.addAll(pair.o2);
+  public Set<IErrorReporter> getErrors(SNode rootNode, IOperationContext context) {
+    final Set<IErrorReporter> result = new HashSet<IErrorReporter>();
+    TypeContextManager.getInstance().runTypeCheckingAction(this, rootNode, new ITypecheckingAction() {
+      public void run(TypeCheckingContext typeCheckingContext) {
+        Set<Pair<SNode, List<IErrorReporter>>> nodeWithErrors = typeCheckingContext.checkRootAndGetErrors(true);
+        for (Pair<SNode, List<IErrorReporter>> pair : nodeWithErrors) {
+          result.addAll(pair.o2);
+        }
       }
-    } finally {
-      TypeContextManager.getInstance().releaseTypecheckingContext(node, this);
-    }
+    });
     return result;
   }
 }

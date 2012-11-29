@@ -15,11 +15,12 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.typesystem.inference.ITypecheckingAction;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.Set;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.errors.QuickFix_Runtime;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.errors.QuickFixProvider;
 
@@ -30,11 +31,11 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
     myLanguageCheckers = CheckersComponent.getInstance().getCheckers();
   }
 
-  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, IOperationContext operationContext) {
-    List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
+  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, final IOperationContext operationContext) {
+    final List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
     monitor.start("Checking " + SModelOperations.getModelName(model), ListSequence.fromList(myLanguageCheckers).count());
-    for (INodeChecker checker : ListSequence.fromList(myLanguageCheckers)) {
+    for (final INodeChecker checker : myLanguageCheckers) {
       monitor.step(checker.getCategory());
       if (!(ModelCheckerSettings.getInstance().checkerIsOn(checker.getCategory()))) {
         continue;
@@ -42,27 +43,26 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
       if (monitor.isCanceled()) {
         break;
       }
-      for (SNode rootNode : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
-        TypeContextManager.getInstance().acquireTypecheckingContext(rootNode, this);
-        try {
-          Set<IErrorReporter> iErrorReporters = checker.getErrors(rootNode, operationContext);
-          for (IErrorReporter errorReporter : SetSequence.fromSet(iErrorReporters)) {
-            final IErrorReporter reporter = errorReporter;
-            final QuickFix_Runtime quickFix = check_7763bz_a0b0b0b0d0d0a(check_7763bz_a0a1a1a1a3a3a0(errorReporter));
-            IModelCheckerFix fix = null;
-            if (quickFix != null) {
-              fix = new IModelCheckerFix() {
-                public boolean doFix() {
-                  quickFix.execute(reporter.getSNode());
-                  return true;
-                }
-              };
+      for (final SNode rootNode : SModelOperations.getRoots(model, null)) {
+        TypeContextManager.getInstance().runTypeCheckingAction(this, rootNode, new ITypecheckingAction() {
+          public void run(TypeCheckingContext typeCheckingContext) {
+            Set<IErrorReporter> iErrorReporters = checker.getErrors(rootNode, operationContext);
+            for (IErrorReporter errorReporter : SetSequence.fromSet(iErrorReporters)) {
+              final IErrorReporter reporter = errorReporter;
+              final QuickFix_Runtime quickFix = check_7763bz_a0b0b0a0a2a0a0d0d0a(check_7763bz_a0a1a1a0a0c0a0a3a3a0(errorReporter));
+              IModelCheckerFix fix = null;
+              if (quickFix != null) {
+                fix = new IModelCheckerFix() {
+                  public boolean doFix() {
+                    quickFix.execute(reporter.getSNode());
+                    return true;
+                  }
+                };
+              }
+              addIssue(results, errorReporter.getSNode(), errorReporter.reportError(), SpecificChecker.getResultCategory(errorReporter.getMessageStatus()), checker.getCategory(), fix);
             }
-            addIssue(results, errorReporter.getSNode(), errorReporter.reportError(), SpecificChecker.getResultCategory(errorReporter.getMessageStatus()), checker.getCategory(), fix);
           }
-        } finally {
-          TypeContextManager.getInstance().releaseTypecheckingContext(rootNode, this);
-        }
+        });
       }
       monitor.advance(1);
     }
@@ -74,14 +74,14 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
     return (new DefaultTypecheckingContextOwner()).createTypecheckingContext(node, manager);
   }
 
-  private static QuickFix_Runtime check_7763bz_a0b0b0b0d0d0a(QuickFixProvider checkedDotOperand) {
+  private static QuickFix_Runtime check_7763bz_a0b0b0a0a2a0a0d0d0a(QuickFixProvider checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getQuickFix();
     }
     return null;
   }
 
-  private static QuickFixProvider check_7763bz_a0a1a1a1a3a3a0(IErrorReporter checkedDotOperand) {
+  private static QuickFixProvider check_7763bz_a0a1a1a0a0c0a0a3a3a0(IErrorReporter checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getIntentionProvider();
     }

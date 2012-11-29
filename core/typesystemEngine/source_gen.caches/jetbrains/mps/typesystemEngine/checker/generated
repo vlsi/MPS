@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9n847w12ljl5parvkp2ftir4gyjvlrl">
+<dependencies version="2" modelHash="pjetvi6wihydh222z3otkadhqh4osd">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-uvseejb8lftjizgrik03igcx568a80" />
   <common hash="th874tzqmyules596nwk57nqsulzcw" />
-  <source id="5231630840089786268" name="TypesystemChecker" hash="7hvtwzj6q5r1y72jm7z1nio7gv4zpvq">
+  <source id="5231630840089786268" name="TypesystemChecker" hash="-bxz3bf0hkqjz9pk9eacdnnsws8zyuei">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TypesystemChecker.java" />
   </source>
