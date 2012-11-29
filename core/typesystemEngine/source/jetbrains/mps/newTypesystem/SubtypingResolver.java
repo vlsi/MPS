@@ -15,20 +15,16 @@
  */
 package jetbrains.mps.newTypesystem;
 
-import gnu.trove.THashSet;
-import jetbrains.mps.newTypesystem.state.Equations;
-import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.TypeSystemReporter;
-import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 import java.util.LinkedList;
@@ -44,12 +40,12 @@ import java.util.Queue;
 public class SubtypingResolver {
 
   private final boolean myWeak;
-  final TypeCheckingContextNew myTypeCheckingContextNew;
+  final TypeCheckingContext myTypeCheckingContext;
   final Collection<Pair<SNode,SNode>> myMatchingPairs;
 
-  public SubtypingResolver(boolean isWeak, TypeCheckingContextNew typeCheckingContextNew, /*out*/ Collection<Pair<SNode, SNode>> matchingPairs) {
+  public SubtypingResolver(boolean isWeak, TypeCheckingContext typeCheckingContext, /*out*/ Collection<Pair<SNode, SNode>> matchingPairs) {
     this.myWeak = isWeak;
-    this.myTypeCheckingContextNew = typeCheckingContextNew;
+    this.myTypeCheckingContext = typeCheckingContext;
     this.myMatchingPairs = matchingPairs;
   }
 
@@ -146,7 +142,7 @@ public class SubtypingResolver {
         return true;
       }
       StructuralNodeSet<?> ancestors = new StructuralNodeSet();
-      TypeChecker.getInstance().getSubtypingManager().collectImmediateSuperTypes(cur, isWeak, ancestors, myTypeCheckingContextNew);
+      TypeChecker.getInstance().getSubtypingManager().collectImmediateSuperTypes(cur, isWeak, ancestors, myTypeCheckingContext);
       for (SNode ancestor: ancestors) {
         if (visited.contains(ancestor)) continue;
         visited.addStructurally(ancestor);

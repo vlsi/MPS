@@ -30,8 +30,6 @@ workbench/mps-ui/classes
 :workbench
 workbench/resources/classes
 workbench/resources_en/classes
-languages/util/runConfigurations/solutions/jetbrains.mps.execution.api/classes
-languages/util/runConfigurations/solutions/jetbrains.mps.execution.impl/classes
 languages/util/uiLanguage/runtime/classes
 workbench/typesystemUi/classes
 workbench/mps-workbench/classes

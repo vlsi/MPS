@@ -173,10 +173,10 @@ public class SubTypingManagerNew extends SubtypingManager {
   }
 
   // TODO: wtf
-  /*package*/ SNode coerceSubTypingNew(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final State state) {
+  /*package*/ SNode coerceSubTypingNew(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final TypeCheckingContext context) {
     if (subtype == null) return null;
     long start = System.nanoTime();
-    SNode sNode = myCoercionManager.coerceSubTypingNew(subtype, pattern, isWeak, state);
+    SNode sNode = myCoercionManager.coerceSubTypingNew(subtype, pattern, isWeak, context);
     TypeSystemReporter.getInstance().reportCoerce(subtype, pattern.getConceptFQName(), System.nanoTime()-start);
     return sNode;
   }

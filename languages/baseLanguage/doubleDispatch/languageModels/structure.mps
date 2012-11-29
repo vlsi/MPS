@@ -10,14 +10,10 @@
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2403002034744698617">
       <property name="name" nameId="tpck.1169194664001" value="DispatchModifier" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="dispatch" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.2403002034744051110" resolveInfo="Modifier" />
     </node>
   </roots>
-  <root id="2403002034744698617">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2403002034749497034">
-      <property name="value" nameId="tpce.1105725733873" value="dispatch" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-  </root>
+  <root id="2403002034744698617" />
 </model>
 

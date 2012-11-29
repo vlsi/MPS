@@ -103,7 +103,7 @@
     <scopeInfo nodeId="7518060231983298939" fileName="PluginSolution_PluginInitializer.java" startLine="13" startPosition="0" endLine="24" endPosition="0" />
     <unitInfo nodeId="7518060231983298939" fileName="PluginSolution_PluginInitializer.java" startLine="14" startPosition="54" endLine="22" endPosition="5" unitName="jetbrains.mps.execution.demo.pluginSolution.plugin.PluginSolution_PluginInitializer$1" />
     <unitInfo nodeId="7518060231983298939" fileName="PluginSolution_PluginInitializer.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.execution.demo.pluginSolution.plugin.PluginSolution_PluginInitializer" />
-    <unitInfo nodeId="7518060231983298939" fileName="plugin.xml" startLine="1" startPosition="0" endLine="16" endPosition="14" unitName="jetbrains.mps.execution.demo.pluginSolution.plugin.plugin" />
+    <unitInfo nodeId="7518060231983298939" fileName="plugin.xml" startLine="1" startPosition="0" endLine="17" endPosition="14" unitName="jetbrains.mps.execution.demo.pluginSolution.plugin.plugin" />
   </root>
   <root nodeId="7806358006983646762" modelId="r:3efdf908-9d74-483a-b1cf-495292800da4(jetbrains.mps.execution.demo.pluginSolution.plugin)">
     <nodeInfo nodeId="7806358006983646762" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="39" startPosition="181" endLine="40" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
