@@ -19,7 +19,7 @@ public class namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_Sub
   }
 
   public SNode getSubOrSuperType(SNode ntt, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_uyx4ls_a0a0(ListSequence.fromList(SLinkOperations.getTargets(ntt, "parameter", true)).toListSequence(), SLinkOperations.getTarget(ntt, "classifier", false));
+    return _quotation_createNode_uyx4ls_a0a1(ListSequence.fromList(SLinkOperations.getTargets(ntt, "parameter", true)).toListSequence(), SLinkOperations.getTarget(ntt, "classifier", false));
   }
 
   public String getApplicableConceptFQName() {
@@ -37,7 +37,7 @@ public class namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_Sub
     return false;
   }
 
-  private static SNode _quotation_createNode_uyx4ls_a0a0(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_uyx4ls_a0a1(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);

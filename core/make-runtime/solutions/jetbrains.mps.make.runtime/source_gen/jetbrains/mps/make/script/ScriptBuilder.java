@@ -27,7 +27,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class ScriptBuilder {
   private static Logger LOG = Logger.getLogger(ScriptBuilder.class);
-
   private Set<IFacet.Name> facets = SetSequence.fromSet(new HashSet<IFacet.Name>());
   private Set<ITarget.Name> requestedTargets = SetSequence.fromSet(new HashSet<ITarget.Name>());
   private ITarget.Name finalTarget;

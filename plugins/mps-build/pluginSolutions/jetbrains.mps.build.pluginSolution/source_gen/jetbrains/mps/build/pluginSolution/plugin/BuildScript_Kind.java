@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.logging.Logger;
 import java.util.List;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -19,6 +18,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
+import jetbrains.mps.logging.Logger;
 
 public class BuildScript_Kind implements ConfigurationType {
   private static final Icon ICON = new _FunctionTypes._return_P0_E0<Icon>() {
@@ -37,8 +37,6 @@ public class BuildScript_Kind implements ConfigurationType {
       return IconManager.loadIcon(path, true);
     }
   }.invoke();
-  private static Logger LOG = Logger.getLogger(BuildScript_Kind.class);
-
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
 
   public BuildScript_Kind() {
@@ -76,4 +74,6 @@ public class BuildScript_Kind implements ConfigurationType {
   public static BuildScript_Kind getInstance() {
     return ContainerUtil.findInstance(Extensions.getExtensions(CONFIGURATION_TYPE_EP), BuildScript_Kind.class);
   }
+
+  private static Logger LOG = Logger.getLogger(BuildScript_Kind.class);
 }

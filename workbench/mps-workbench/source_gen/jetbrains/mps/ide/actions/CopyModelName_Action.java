@@ -4,17 +4,16 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.logging.Logger;
 
 public class CopyModelName_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(CopyModelName_Action.class);
 
   public CopyModelName_Action() {
     super("Copy Model Name", "", ICON);
@@ -54,4 +53,6 @@ public class CopyModelName_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "CopyModelName", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(CopyModelName_Action.class);
 }

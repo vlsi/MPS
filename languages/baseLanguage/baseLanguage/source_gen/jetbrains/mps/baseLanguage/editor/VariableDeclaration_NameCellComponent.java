@@ -6,6 +6,16 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -13,19 +23,9 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.util.NameUtil;
 
 public class VariableDeclaration_NameCellComponent extends AbstractCellProvider {
   public VariableDeclaration_NameCellComponent(SNode node) {
@@ -44,6 +44,30 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
   public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
     return createEditorCell((EditorContext) editorContext);
+  }
+
+  public static class VariableDeclaration_name_postfixCellMenu_a0a extends AbstractCellMenuPart_PropertyPostfixHints {
+    public VariableDeclaration_name_postfixCellMenu_a0a() {
+    }
+
+    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      List<String> result = ListSequence.fromList(new ArrayList<String>());
+      SNode nodeType = SLinkOperations.getTarget(node, "type", true);
+      if (nodeType != null) {
+        List<String> names = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), nodeType, "virtual_getVariableSuffixes_1213877337304", new Object[]{});
+        Project project = operationContext.getProject();
+        for (String name : names) {
+          String prefix = BehaviorReflection.invokeVirtual(String.class, node, "virtual_getPrefix_3012473318495495520", new Object[]{project});
+          String suffix = BehaviorReflection.invokeVirtual(String.class, node, "virtual_getSuffix_3012473318495499856", new Object[]{project});
+          String mainName = ((prefix == null || prefix.length() == 0) ?
+            name :
+            NameUtil.capitalize(name)
+          );
+          ListSequence.fromList(result).addElement(prefix + mainName + suffix);
+        }
+      }
+      return result;
+    }
   }
 
   private EditorCell createProperty_j36akn_a(EditorContext editorContext, SNode node) {
@@ -78,30 +102,6 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
       return condition && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, "type", true), "virtual_hasMissingParameters_3508583411997314206", new Object[]{}));
     } else {
       return condition;
-    }
-  }
-
-  public static class VariableDeclaration_name_postfixCellMenu_a0a extends AbstractCellMenuPart_PropertyPostfixHints {
-    public VariableDeclaration_name_postfixCellMenu_a0a() {
-    }
-
-    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      List<String> result = ListSequence.fromList(new ArrayList<String>());
-      SNode nodeType = SLinkOperations.getTarget(node, "type", true);
-      if (nodeType != null) {
-        List<String> names = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), nodeType, "virtual_getVariableSuffixes_1213877337304", new Object[]{});
-        Project project = operationContext.getProject();
-        for (String name : names) {
-          String prefix = BehaviorReflection.invokeVirtual(String.class, node, "virtual_getPrefix_3012473318495495520", new Object[]{project});
-          String suffix = BehaviorReflection.invokeVirtual(String.class, node, "virtual_getSuffix_3012473318495499856", new Object[]{project});
-          String mainName = ((prefix == null || prefix.length() == 0) ?
-            name :
-            NameUtil.capitalize(name)
-          );
-          ListSequence.fromList(result).addElement(prefix + mainName + suffix);
-        }
-      }
-      return result;
     }
   }
 }

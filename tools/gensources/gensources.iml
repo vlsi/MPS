@@ -2,7 +2,14 @@
 <module type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="gwt" name="GWT">
-      <configuration />
+      <configuration>
+        <setting name="compilerMaxHeapSize" value="128" />
+        <setting name="gwtScriptOutputStyle" value="DETAILED" />
+        <setting name="gwtSdkUrl" value="file://" />
+        <packaging>
+          <module name="jetbrains.mps.gwt.client.inheritsTest.InheritsTest" enabled="false" />
+        </packaging>
+      </configuration>
     </facet>
     <facet type="web" name="Web">
       <configuration>
@@ -388,6 +395,8 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/scopes/runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/collections/languages/trove/runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/methodDispatch/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-api/languages/common/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/execution/util/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../plugins">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-java/languages/customViewers/source_gen" isTestSource="false" />

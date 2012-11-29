@@ -17,7 +17,7 @@ public class DecisionSample {
     // A decision table gets translated into a series of nested "if" statements 
     // A table can be manipulated just like any other expression - try selecting one and invoke e.g. "Extract Method" 
 
-    String title = decisionTable_1dgfoj_a0f0a(person);
+    String title = decisionTable_1dgfoj_a0f0b(person);
     System.out.println("The title is: " + title);
 
 
@@ -44,7 +44,7 @@ public class DecisionSample {
   }
 
   private Money create(Map<String, Object> person) {
-    return decisionTable_1dgfoj_a0a1(person);
+    return decisionTable_1dgfoj_a0a2(person);
   }
 
   private Money seasonalBonus() {
@@ -59,7 +59,38 @@ public class DecisionSample {
     return person;
   }
 
-  public String decisionTable_1dgfoj_a0f0a(Map<String, Object> person) {
+  public static boolean isBaby(Map<String, Object> person) {
+    return (Integer) MapSequence.fromMap(person).get("age") <= 2;
+  }
+
+  public static boolean isChild(Map<String, Object> person) {
+    return (Integer) MapSequence.fromMap(person).get("age") < 18 && (Integer) MapSequence.fromMap(person).get("age") > 2;
+  }
+
+  public static boolean isAdult(Map<String, Object> person) {
+    return (Integer) MapSequence.fromMap(person).get("age") <= 60 && (Integer) MapSequence.fromMap(person).get("age") >= 18;
+  }
+
+  public static boolean isRetired(Map<String, Object> person) {
+    return (Integer) MapSequence.fromMap(person).get("age") > 60;
+  }
+
+  public static boolean isMale(Map<String, Object> person) {
+    if ((String) MapSequence.fromMap(person).get("gender") == "male") {
+      return true;
+    }
+    return false;
+  }
+
+  public static boolean isFemale(Map<String, Object> person) {
+    return !(isMale(person));
+  }
+
+  public static void main(String[] args) {
+    new DecisionSample().run(args);
+  }
+
+  public String decisionTable_1dgfoj_a0f0b(Map<String, Object> person) {
     if (isMale(person)) {
       if (isChild(person)) {
         return "boy";
@@ -79,7 +110,7 @@ public class DecisionSample {
     return "Nothing to show here";
   }
 
-  public Money decisionTable_1dgfoj_a0a1(Map<String, Object> person) {
+  public Money decisionTable_1dgfoj_a0a2(Map<String, Object> person) {
     if (isMale(person)) {
       if (isBaby(person)) {
         return new Money(100, "EUR");
@@ -112,36 +143,5 @@ public class DecisionSample {
       }
     }
     return new Money(0, "EUR");
-  }
-
-  public static boolean isBaby(Map<String, Object> person) {
-    return (Integer) MapSequence.fromMap(person).get("age") <= 2;
-  }
-
-  public static boolean isChild(Map<String, Object> person) {
-    return (Integer) MapSequence.fromMap(person).get("age") < 18 && (Integer) MapSequence.fromMap(person).get("age") > 2;
-  }
-
-  public static boolean isAdult(Map<String, Object> person) {
-    return (Integer) MapSequence.fromMap(person).get("age") <= 60 && (Integer) MapSequence.fromMap(person).get("age") >= 18;
-  }
-
-  public static boolean isRetired(Map<String, Object> person) {
-    return (Integer) MapSequence.fromMap(person).get("age") > 60;
-  }
-
-  public static boolean isMale(Map<String, Object> person) {
-    if ((String) MapSequence.fromMap(person).get("gender") == "male") {
-      return true;
-    }
-    return false;
-  }
-
-  public static boolean isFemale(Map<String, Object> person) {
-    return !(isMale(person));
-  }
-
-  public static void main(String[] args) {
-    new DecisionSample().run(args);
   }
 }

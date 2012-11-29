@@ -11,22 +11,12 @@ public enum Options_DefaultTrue {
   true_("true", "true");
 
   private String myName;
-  private String myValue;
-
-  Options_DefaultTrue(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -52,5 +42,16 @@ public enum Options_DefaultTrue {
       return Options_DefaultTrue.true_;
     }
     return Options_DefaultTrue.getDefault();
+  }
+
+  private String myValue;
+
+  Options_DefaultTrue(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

@@ -4,7 +4,6 @@ package jetbrains.mps.ide.editor.actions.core;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -19,10 +18,10 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.logging.Logger;
 
 public class ShowNodeMessages_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ShowNodeMessages_Action.class);
 
   public ShowNodeMessages_Action() {
     super("Show Node Messages", "", ICON);
@@ -89,4 +88,6 @@ public class ShowNodeMessages_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "ShowNodeMessages", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ShowNodeMessages_Action.class);
 }

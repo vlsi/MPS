@@ -4,34 +4,24 @@ package jetbrains.mps.execution.lib;
 
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.execution.api.settings.SettingsEditorEx;
+import jetbrains.mps.logging.Logger;
 
 public class NodeByConcept_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
-  private static Logger LOG = Logger.getLogger(NodeByConcept_Configuration.class);
-
   @NotNull
   private NodeByConcept_Configuration.MyState myState = new NodeByConcept_Configuration.MyState();
-  private final String myConcept;
-  private final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myIsValid;
-  private SettingsEditorEx<NodeByConcept_Configuration> myEditorEx;
-
-  public NodeByConcept_Configuration(String concept, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> isValid) {
-    myConcept = concept;
-    myIsValid = isValid;
-  }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
     {
@@ -46,7 +36,7 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
           }
         }
       });
-      if (isNotEmpty_trwdw3_a0c0a0a(errorText.value)) {
+      if (isNotEmpty_trwdw3_a0c0a0b(errorText.value)) {
         throw new RuntimeConfigurationException(errorText.value);
       }
     }
@@ -116,6 +106,31 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
     return clone;
   }
 
+  public class MyState {
+    public String myNodeId;
+    public String myModelId;
+
+    public MyState() {
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+      NodeByConcept_Configuration.MyState state = new NodeByConcept_Configuration.MyState();
+      state.myNodeId = myNodeId;
+      state.myModelId = myModelId;
+      return state;
+    }
+  }
+
+  public NodeByConcept_Configuration(String concept, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> isValid) {
+    myConcept = concept;
+    myIsValid = isValid;
+  }
+
+  private final String myConcept;
+  private final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myIsValid;
+  private SettingsEditorEx<NodeByConcept_Configuration> myEditorEx;
+
   public NodeByConcept_Configuration createCloneTemplate() {
     return new NodeByConcept_Configuration(myConcept, myIsValid);
   }
@@ -131,6 +146,8 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
     return myEditorEx;
   }
 
+  private static Logger LOG = Logger.getLogger(NodeByConcept_Configuration.class);
+
   private static SNode check_h3hwcn_a0a0(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNode();
@@ -138,23 +155,7 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
     return null;
   }
 
-  public static boolean isNotEmpty_trwdw3_a0c0a0a(String str) {
+  public static boolean isNotEmpty_trwdw3_a0c0a0b(String str) {
     return str != null && str.length() > 0;
-  }
-
-  public class MyState {
-    public String myNodeId;
-    public String myModelId;
-
-    public MyState() {
-    }
-
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-      NodeByConcept_Configuration.MyState state = new NodeByConcept_Configuration.MyState();
-      state.myNodeId = myNodeId;
-      state.myModelId = myModelId;
-      return state;
-    }
   }
 }

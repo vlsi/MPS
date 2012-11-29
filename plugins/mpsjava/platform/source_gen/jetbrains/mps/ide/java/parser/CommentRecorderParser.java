@@ -10,7 +10,6 @@ import org.eclipse.jdt.internal.compiler.problem.ProblemSeverities;
 
 public class CommentRecorderParser extends Parser {
   protected static final int CommentIncrement = 100;
-
   /*package*/ int[] commentStops = new int[10];
   /*package*/ int[] commentStarts = new int[10];
   /*package*/ int commentPtr = -1;
@@ -140,7 +139,7 @@ public class CommentRecorderParser extends Parser {
   }
 
   public void initializeScanner() {
-    this.scanner = new CommentRecorderScanner(false, false, this.options.getSeverity(CompilerOptions.NonExternalizedString) != ProblemSeverities.Ignore, this.options.sourceLevel, this.options.taskTags, this.options.taskPriorites, this.options.isTaskCaseSensitive);
+    this.scanner = new CommentRecorderScanner(false, false, this.options.getSeverity(CompilerOptions.NonExternalizedString) != ProblemSeverities.Ignore, this.options.sourceLevel, this.options.taskTags, this.options.taskPriorities, this.options.isTaskCaseSensitive);
   }
 
   private void pushOnCommentsStack(int start, int end) {

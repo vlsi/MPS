@@ -4,8 +4,6 @@ package jetbrains.mps.generator.traceInfo;
 
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
 import jetbrains.mps.traceInfo.DebugInfo;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import jetbrains.mps.smodel.SModelRepository;
@@ -28,13 +26,13 @@ import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
 import java.net.MalformedURLException;
 import org.jdom.Element;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   public static final String TRACE_FILE_NAME = "trace.info";
   private static TraceInfoCache INSTANCE;
   private static final Object INSTANCE_LOCK = new Object();
-  protected static Log log = LogFactory.getLog(TraceInfoCache.class);
-
   private List<TraceInfoCache.TraceInfoResourceProvider> myProviders = new CopyOnWriteArrayList<TraceInfoCache.TraceInfoResourceProvider>();
   private final JavaTraceInfoResourceProvider myJavaTraceInfoProvider = new JavaTraceInfoResourceProvider();
 
@@ -179,7 +177,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   @Nullable
   public DebugInfo getLastGeneratedDebugInfo(@NotNull SModelDescriptor descriptor) {
     String generatorOutputPath;
-    if (neq_xlaj1j_a0b0m(descriptor.getStereotype(), SModelStereotype.TESTS)) {
+    if (neq_xlaj1j_a0b0s(descriptor.getStereotype(), SModelStereotype.TESTS)) {
       generatorOutputPath = descriptor.getModule().getGeneratorOutputPath();
     } else {
       generatorOutputPath = descriptor.getModule().getTestsGeneratorOutputPath();
@@ -242,14 +240,16 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
     return FileSystem.getInstance().getFileByPath(file);
   }
 
-  private static boolean neq_xlaj1j_a0b0m(Object a, Object b) {
+  public static interface TraceInfoResourceProvider {
+    public URL getResource(IModule module, String resourceName);
+  }
+
+  protected static Log log = LogFactory.getLog(TraceInfoCache.class);
+
+  private static boolean neq_xlaj1j_a0b0s(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
-  }
-
-  public static interface TraceInfoResourceProvider {
-    public URL getResource(IModule module, String resourceName);
   }
 }

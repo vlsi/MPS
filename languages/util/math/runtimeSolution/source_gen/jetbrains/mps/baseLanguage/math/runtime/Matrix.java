@@ -384,7 +384,6 @@ public class Matrix<T> {
       );
     }
   };
-
   private Object[][] myCarrier = null;
   private int myRows = 0;
   private int myColumns = 0;

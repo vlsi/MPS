@@ -21,7 +21,7 @@ public class typeof_SEnum_MemberForNameOperation_checkArg_InferenceRule extends 
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(operation, "nameExpression", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240321449347", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240321440339", true), (SNode) _quotation_createNode_rhg2pa_a0a0a(), true, false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240321440339", true), (SNode) _quotation_createNode_rhg2pa_a0a0b(), true, false, _info_12389875345);
       }
     }
   }
@@ -41,7 +41,7 @@ public class typeof_SEnum_MemberForNameOperation_checkArg_InferenceRule extends 
     return false;
   }
 
-  private static SNode _quotation_createNode_rhg2pa_a0a0a() {
+  private static SNode _quotation_createNode_rhg2pa_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

@@ -4,21 +4,18 @@ package jetbrains.mps.execution.demo.pluginSolution.plugin;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
-import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.lib.NodeByConcept_Configuration;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
@@ -29,14 +26,14 @@ import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
+import javax.swing.Icon;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.IconUtil;
+import jetbrains.mps.logging.Logger;
 
 public class DemoApplication_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
-  private static final Icon ICON = IconUtil.getIcon("run.png");
-  private static Logger LOG = Logger.getLogger(DemoApplication_Configuration.class);
-
   @NotNull
   private DemoApplication_Configuration.MyState myState = new DemoApplication_Configuration.MyState();
   private NodeByConcept_Configuration myNode = new NodeByConcept_Configuration("jetbrains.mps.execution.demo.structure.SomeConcept", new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
@@ -44,10 +41,6 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
       return SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.execution.demo.structure.SomeConcept"), "valid");
     }
   });
-
-  public DemoApplication_Configuration(Project project, DemoApplication_Configuration_Factory factory, String name) {
-    super(project, factory, name);
-  }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
     this.getNode().checkConfiguration();
@@ -97,6 +90,21 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
     return clone;
   }
 
+  public class MyState {
+    public MyState() {
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+      DemoApplication_Configuration.MyState state = new DemoApplication_Configuration.MyState();
+      return state;
+    }
+  }
+
+  public DemoApplication_Configuration(Project project, DemoApplication_Configuration_Factory factory, String name) {
+    super(project, factory, name);
+  }
+
   @Nullable
   public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment environment) throws ExecutionException {
     return new DemoApplication_Configuration_RunProfileState(this, executor, environment);
@@ -136,14 +144,6 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
     return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodePointer>(), this.getNode().getNodePointer())};
   }
 
-  public class MyState {
-    public MyState() {
-    }
-
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-      DemoApplication_Configuration.MyState state = new DemoApplication_Configuration.MyState();
-      return state;
-    }
-  }
+  private static final Icon ICON = IconUtil.getIcon("run.png");
+  private static Logger LOG = Logger.getLogger(DemoApplication_Configuration.class);
 }

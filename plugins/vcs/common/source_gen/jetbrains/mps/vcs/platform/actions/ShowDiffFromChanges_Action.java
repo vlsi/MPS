@@ -5,8 +5,6 @@ package jetbrains.mps.vcs.platform.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -22,10 +20,11 @@ import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import com.intellij.openapi.project.Project;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class ShowDiffFromChanges_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("diff.png");
-  protected static Log log = LogFactory.getLog(ShowDiffFromChanges_Action.class);
 
   public ShowDiffFromChanges_Action() {
     super("Show Difference", "", ICON);
@@ -84,4 +83,6 @@ public class ShowDiffFromChanges_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(ShowDiffFromChanges_Action.class);
 }

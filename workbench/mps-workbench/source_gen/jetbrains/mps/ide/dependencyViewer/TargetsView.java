@@ -58,7 +58,7 @@ public class TargetsView extends UsagesView {
     UsagesTree usagesTree = getTreeComponent().getTree();
     Enumeration nodes = usagesTree.getRootNode().breadthFirstEnumeration();
     while (nodes.hasMoreElements()) {
-      MPSTreeNode treeNode = as_w7qo2b_a0a0a2a2(nodes.nextElement(), MPSTreeNode.class);
+      MPSTreeNode treeNode = as_w7qo2b_a0a0a2a4(nodes.nextElement(), MPSTreeNode.class);
       if (treeNode == null) {
         continue;
       }
@@ -73,34 +73,6 @@ public class TargetsView extends UsagesView {
       }
     }
     return null;
-  }
-
-  private static <T> T as_w7qo2b_a0a0a0a1a2a0a0a0a0a3a0a(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_w7qo2b_a0a0a0a2a2a0a0a0a0a3a0a(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_w7qo2b_a0a0a0a3a2a0a0a0a0a3a0a(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_w7qo2b_a0a0a2a2(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
   }
 
   public class MyTreeSelectionListener implements TreeSelectionListener {
@@ -126,13 +98,13 @@ public class TargetsView extends UsagesView {
             if (userObject instanceof DataNode) {
               BaseNodeData data = ((DataNode) userObject).getData();
               if (data instanceof ModelNodeData) {
-                scope.add(as_w7qo2b_a0a0a0a1a2a0a0a0a0a3a0a(data, ModelNodeData.class).getModelDescriptor());
+                scope.add(as_w7qo2b_a0a0a0a1a2a0a0a0a0a3a3f(data, ModelNodeData.class).getModelDescriptor());
               }
               if (data instanceof ModuleNodeData) {
-                scope.add(as_w7qo2b_a0a0a0a2a2a0a0a0a0a3a0a(data, ModuleNodeData.class).getModule());
+                scope.add(as_w7qo2b_a0a0a0a2a2a0a0a0a0a3a3f(data, ModuleNodeData.class).getModule());
               }
               if (data instanceof NodeNodeData) {
-                scope.add(as_w7qo2b_a0a0a0a3a2a0a0a0a0a3a0a(data, NodeNodeData.class).getNode());
+                scope.add(as_w7qo2b_a0a0a0a3a2a0a0a0a0a3a3f(data, NodeNodeData.class).getNode());
               }
             }
           }
@@ -184,5 +156,33 @@ public class TargetsView extends UsagesView {
 
     public void write(Element element, jetbrains.mps.project.Project project) throws CantSaveSomethingException {
     }
+  }
+
+  private static <T> T as_w7qo2b_a0a0a2a4(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_w7qo2b_a0a0a0a1a2a0a0a0a0a3a3f(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_w7qo2b_a0a0a0a2a2a0a0a0a0a3a3f(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_w7qo2b_a0a0a0a3a2a0a0a0a0a3a3f(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
   }
 }

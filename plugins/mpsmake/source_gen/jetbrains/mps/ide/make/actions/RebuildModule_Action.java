@@ -4,8 +4,6 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -17,10 +15,11 @@ import java.util.Set;
 import jetbrains.mps.util.CollectionUtil;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class RebuildModule_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(RebuildModule_Action.class);
 
   public RebuildModule_Action() {
     super("Recompile Java Files", "", ICON);
@@ -76,4 +75,6 @@ public class RebuildModule_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(RebuildModule_Action.class);
 }

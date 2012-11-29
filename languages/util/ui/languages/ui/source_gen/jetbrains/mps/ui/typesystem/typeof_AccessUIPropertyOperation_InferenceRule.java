@@ -21,7 +21,7 @@ public class typeof_AccessUIPropertyOperation_InferenceRule extends AbstractInfe
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(apo);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "1870423755832759894", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "1870423755832759900", true), (SNode) _quotation_createNode_ha9sx_a0a0a(), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "1870423755832759900", true), (SNode) _quotation_createNode_ha9sx_a0a0b(), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = apo;
@@ -45,7 +45,7 @@ public class typeof_AccessUIPropertyOperation_InferenceRule extends AbstractInfe
     return false;
   }
 
-  private static SNode _quotation_createNode_ha9sx_a0a0a() {
+  private static SNode _quotation_createNode_ha9sx_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.UIObjectType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

@@ -10,7 +10,8 @@
     </node>
   </roots>
   <root id="7489932710218379845">
-    <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="7489932710218379851">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7489932710218379846" />
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="7489932710218379851">
       <property name="name" nameId="tpck.1169194664001" value="test" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7489932710218379854" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="7489932710218379855" />
@@ -18,7 +19,6 @@
         <property name="value" nameId="tpee.1068580320021" value="123" />
       </node>
     </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7489932710218379846" />
   </root>
 </model>
 

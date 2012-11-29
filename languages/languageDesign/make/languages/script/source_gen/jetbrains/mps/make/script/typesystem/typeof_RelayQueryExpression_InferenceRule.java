@@ -21,7 +21,7 @@ public class typeof_RelayQueryExpression_InferenceRule extends AbstractInference
     {
       SNode _nodeToCheck_1029348928467 = rqe;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)", "1977954644795311540", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)", "1977954644795311552", true), (SNode) _quotation_createNode_7onn49_a0a0a(SNodeOperations.as(SLinkOperations.getTarget(SLinkOperations.getTarget(rqe, "query", false), "expected", true), "jetbrains.mps.make.script.structure.ExpectedOption")), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)", "1977954644795311552", true), (SNode) _quotation_createNode_7onn49_a0a0b(SNodeOperations.as(SLinkOperations.getTarget(SLinkOperations.getTarget(rqe, "query", false), "expected", true), "jetbrains.mps.make.script.structure.ExpectedOption")), _info_12389875345);
     }
   }
 
@@ -40,7 +40,7 @@ public class typeof_RelayQueryExpression_InferenceRule extends AbstractInference
     return false;
   }
 
-  private static SNode _quotation_createNode_7onn49_a0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_7onn49_a0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.OptionType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("expectedOption", (SNode) parameter_1);

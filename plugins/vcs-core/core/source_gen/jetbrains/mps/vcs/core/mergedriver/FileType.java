@@ -23,7 +23,6 @@ public enum FileType {
   JAVA_DEPENDENCIES("dependencies", "dependenciesRoot");
 
   private static final String SVN_BASE = ".svn-base";
-
   private String mySuffix;
   private String myRootElement;
 

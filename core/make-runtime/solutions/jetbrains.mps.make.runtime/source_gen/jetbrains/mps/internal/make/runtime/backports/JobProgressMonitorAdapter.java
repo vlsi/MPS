@@ -8,7 +8,6 @@ import jetbrains.mps.progress.SubProgressKind;
 
 public class JobProgressMonitorAdapter extends ProgressMonitorBase {
   private static final int WORK_AMOUNT = 10000;
-
   private IJobMonitor myJobMonitor;
   private String myName;
   private String myTitle;

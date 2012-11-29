@@ -8,13 +8,11 @@ import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
-  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ChildConceptWeave", "jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ChildConceptWeaveEach", "jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ChildConceptWeaveEachMany", "jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ChildConceptWeaveMany", "jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.RootConcept"};
-
   public StructureAspectDescriptor() {
   }
 
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
         return new CompiledConceptDescriptor("jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ChildConceptWeave", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
       case 1:
@@ -29,4 +27,6 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
+
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ChildConceptWeave", "jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ChildConceptWeaveEach", "jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ChildConceptWeaveEachMany", "jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ChildConceptWeaveMany", "jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.RootConcept"};
 }

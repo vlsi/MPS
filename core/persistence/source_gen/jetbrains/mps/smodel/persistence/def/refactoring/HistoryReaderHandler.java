@@ -19,7 +19,6 @@ import java.util.HashMap;
 
 public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog> {
   private static String[] EMPTY_ARRAY = new String[0];
-
   private HistoryReaderHandler.HistoryElementHandler historyhandler = new HistoryReaderHandler.HistoryElementHandler();
   private HistoryReaderHandler.ElementElementHandler elementhandler = new HistoryReaderHandler.ElementElementHandler();
   private HistoryReaderHandler.DependenciesElementHandler dependencieshandler = new HistoryReaderHandler.DependenciesElementHandler();

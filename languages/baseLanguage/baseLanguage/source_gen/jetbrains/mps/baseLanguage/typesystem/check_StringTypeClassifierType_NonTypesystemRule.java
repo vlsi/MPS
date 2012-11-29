@@ -23,7 +23,7 @@ public class check_StringTypeClassifierType_NonTypesystemRule extends AbstractNo
   }
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SLinkOperations.getTarget(node, "classifier", false) == SLinkOperations.getTarget(_quotation_createNode_t8jx54_a0a0a0(), "classifier", false)) {
+    if (SLinkOperations.getTarget(node, "classifier", false) == SLinkOperations.getTarget(_quotation_createNode_t8jx54_a0a0a1(), "classifier", false)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportInfo(node, "It's recommended to use string type", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1225197259595", null, errorTarget);
@@ -51,7 +51,7 @@ public class check_StringTypeClassifierType_NonTypesystemRule extends AbstractNo
     return false;
   }
 
-  private static SNode _quotation_createNode_t8jx54_a0a0a0() {
+  private static SNode _quotation_createNode_t8jx54_a0a0a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));

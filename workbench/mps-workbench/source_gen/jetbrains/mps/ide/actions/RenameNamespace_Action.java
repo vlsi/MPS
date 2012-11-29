@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import javax.swing.tree.TreeNode;
@@ -21,10 +20,10 @@ import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.logging.Logger;
 
 public class RenameNamespace_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(RenameNamespace_Action.class);
 
   public RenameNamespace_Action() {
     super("Rename", "", ICON);
@@ -98,4 +97,6 @@ public class RenameNamespace_Action extends BaseAction {
   private ProjectPane getProjectPane(final Map<String, Object> _params) {
     return ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
   }
+
+  private static Logger LOG = Logger.getLogger(RenameNamespace_Action.class);
 }

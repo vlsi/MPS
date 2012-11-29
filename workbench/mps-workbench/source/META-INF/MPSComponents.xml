@@ -4,6 +4,9 @@
             xsi:schemaLocation="http://www.w3.org/2001/XInclude
    http://www.w3.org/2001/XInclude.xsd">
 
+  <xi:include href="/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="/META-INF/MPSEditor.xml" xpointer="xpointer(/components/*)"/>
+
   <application-components>
     <component>
       <implementation-class>jetbrains.mps.ide.MPSCoreComponents</implementation-class>
@@ -12,33 +15,7 @@
       <implementation-class>jetbrains.mps.ide.persistence.PersistenceComponent</implementation-class>
     </component>
     <component>
-      <implementation-class>com.intellij.openapi.components.impl.ServiceManagerImpl</implementation-class>
-    </component>
-    <component>
-      <implementation-class>com.intellij.openapi.util.registry.RegistryState</implementation-class>
-    </component>
-    <component>
-      <interface-class>com.intellij.openapi.project.impl.ProjectStoreClassProvider</interface-class>
-      <implementation-class>com.intellij.openapi.components.impl.stores.PlatformProjectStoreClassProvider
-      </implementation-class>
-    </component>
-    <component>
-      <interface-class>com.intellij.psi.statistics.StatisticsManager</interface-class>
-      <implementation-class>com.intellij.psi.statistics.impl.StatisticsManagerImpl</implementation-class>
-    </component>
-    <component>
-      <interface-class>com.intellij.find.FindSettings</interface-class>
-      <implementation-class>com.intellij.find.impl.FindSettingsImpl</implementation-class>
-    </component>
-    <component>
-      <implementation-class>com.intellij.util.indexing.FileBasedIndex</implementation-class>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.ide.generator.TransientSwapOwnerComponent</implementation-class>
-    </component>
-    <component>
-      <interface-class>com.intellij.psi.stubs.SerializationManager</interface-class>
-      <implementation-class>com.intellij.psi.stubs.SerializationManagerImpl</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.platform.watching.FSChangesWatcher</implementation-class>
@@ -67,134 +44,68 @@
     <component>
       <implementation-class>jetbrains.mps.workbench.MPSApplicationInfo</implementation-class>
     </component>
-  </application-components>
-
-  <project-components>
-    <component>
-      <implementation-class>com.intellij.openapi.components.impl.ServiceManagerImpl</implementation-class>
-      <loadForDefaultProject/>
-    </component>
-    <component>
-      <interface-class>com.intellij.problems.WolfTheProblemSolver</interface-class>
-      <implementation-class>com.intellij.codeInsight.problems.WolfTheProblemSolverImpl</implementation-class>
-      <headless-implementation-class>com.intellij.codeInsight.problems.MockWolfTheProblemSolver
-      </headless-implementation-class>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.project.MPSProjectVersion</implementation-class>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.project.MPSProjectMigrationState</implementation-class>
-    </component>
-    <component>
-      <interface-class>com.intellij.codeInsight.highlighting.HighlightManager</interface-class>
-      <implementation-class>com.intellij.codeInsight.highlighting.HighlightManagerImpl</implementation-class>
-      <skipForDummyProject/>
-    </component>
-  </project-components>
-
-  <xi:include href="/componentSets/Platform.xml" xpointer="xpointer(/components/*)"/>
-  <xi:include href="/componentSets/UICore.xml" xpointer="xpointer(/components/*)"/>
-  <xi:include href="/componentSets/WindowManagement.xml" xpointer="xpointer(/components/*)"/>
-  <xi:include href="/componentSets/Editor.xml" xpointer="xpointer(/components/*)"/>
-  <xi:include href="/componentSets/VCS.xml" xpointer="xpointer(/components/*)"/>
-  <xi:include href="/componentSets/Execution.xml" xpointer="xpointer(/components/*)"/>
-  <xi:include href="/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
-  <xi:include href="/META-INF/MPSEditor.xml" xpointer="xpointer(/components/*)"/>
-
-  <application-components>
-    <component>
-      <interface-class>com.intellij.openapi.fileEditor.impl.text.TextEditorProvider</interface-class>
-      <implementation-class>com.intellij.openapi.fileEditor.impl.text.TextEditorProvider</implementation-class>
-    </component>
-
     <component>
       <implementation-class>com.intellij.platform.PlatformProjectStarter</implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.MessagesPoolClearer</implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.library.LibraryManager</implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.smodel.ModelValidationSettings</implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.dialogs.DialogDimensionsSettings</implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.navigation.NavigationSupportImpl</implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.intentions.IntentionsPreferencesPage</implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.workbench.languagesFs.MPSLanguagesVirtualFileSystem
       </implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.workbench.editors.MPSLanguageEditorProvider</implementation-class>
     </component>
-
-    <component>
-      <interface-class>com.intellij.ide.RecentProjectsManagerBase</interface-class>
-      <implementation-class>jetbrains.mps.workbench.recent.RecentMPSProjectsManager</implementation-class>
-    </component>
-
     <component>
       <interface-class>jetbrains.mps.workbench.action.IRegistryManager</interface-class>
       <implementation-class>jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager</implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.plugins.PluginReloader</implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.generator.GenerationSettings</implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.generator.index.IndexBasedModelDigest</implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.generator.index.IndexBasedLanguageModelDigest</implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.project.listener.AbstractModuleWorkbenchAdjuster</implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.generator.GeneratorCacheComponent</implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.generator.PluginsTraceInfoResourceProvider</implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.make.GeneratedTextPreviewEditorProvider</implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.plugins.projectplugins.EditorOpenHandlerImpl</implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.workbench.structureview.NodeStructureViewProviderImpl</implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.diagnostic.DiagnosticUpdater</implementation-class>
     </component>
@@ -202,182 +113,97 @@
 
   <project-components>
     <component>
+      <implementation-class>jetbrains.mps.project.MPSProjectVersion</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.project.MPSProjectMigrationState</implementation-class>
+    </component>
+    <component>
       <interface-class>jetbrains.mps.project.MPSProject</interface-class>
       <implementation-class>jetbrains.mps.project.StandaloneMPSProject</implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.generator.TransientModelsComponent</implementation-class>
     </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager</implementation-class>
-    </component>
-
     <component>
       <implementation-class>jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPrefsPage
       </implementation-class>
     </component>
-
-    <component>
-      <interface-class>com.intellij.openapi.fileEditor.FileEditorManager</interface-class>
-      <implementation-class>com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl</implementation-class>
-      <headless-implementation-class>jetbrains.mps.MPSTestEditorManagerImpl</headless-implementation-class>
-      <option name="workspace" value="true"/>
-      <skipForDummyProject/>
-    </component>
-
-    <component>
-      <interface-class>com.intellij.packageDependencies.DependencyValidationManager</interface-class>
-      <implementation-class>com.intellij.packageDependencies.DependencyValidationManagerImpl
-      </implementation-class>
-    </component>
-
-    <component>
-      <interface-class>com.intellij.psi.search.scope.packageSet.NamedScopeManager</interface-class>
-      <implementation-class>com.intellij.psi.search.scope.packageSet.NamedScopeManager</implementation-class>
-    </component>
-
-    <component>
-      <interface-class>com.intellij.psi.PsiManager</interface-class>
-      <implementation-class>jetbrains.mps.workbench.psi.NullPsiManager</implementation-class>
-      <loadForDefaultProject/>
-    </component>
-
-    <component>
-      <interface-class>com.intellij.psi.PsiDocumentManager</interface-class>
-      <implementation-class>jetbrains.mps.workbench.psi.NullPsiDocumentManager</implementation-class>
-      <loadForDefaultProject/>
-    </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.findusages.view.optionseditor.DefaultSearchOptionsComponent
       </implementation-class>
       <skipForDummyProject/>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.findusages.view.UsagesViewTool</implementation-class>
       <skipForDummyProject/>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.messages.MessageViewLoggingHandler</implementation-class>
       <skipForDummyProject/>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.workbench.output.OutputViewTool</implementation-class>
       <skipForDummyProject/>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.classpath.ClassPathViewerTool</implementation-class>
       <skipForDummyProject/>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.hierarchy.HierarchyViewTool</implementation-class>
       <skipForDummyProject/>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.bookmark.BookmarksTool</implementation-class>
       <skipForDummyProject/>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.refactoring.RefactoringView</implementation-class>
       <skipForDummyProject/>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.hierarchy.BaseLanguageHierarchyViewTool</implementation-class>
       <skipForDummyProject/>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.library.ProjectLibraryManager</implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.bookmark.BookmarkManager</implementation-class>
       <skipForDummyProject/>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.bookmark.BookmarksUIComponent</implementation-class>
       <skipForDummyProject/>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.vfs.DirectoryIndexExcludeUpdater</implementation-class>
     </component>
 
     <!-- typesystem -->
-
     <component>
       <implementation-class>jetbrains.mps.typesystem.uiActions.SupertypesViewTool</implementation-class>
       <skipForDummyProject/>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.typesystem.uiActions.TypecheckerStateView</implementation-class>
       <skipForDummyProject/>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.plugins.projectplugins.ProjectPluginManager</implementation-class>
     </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager
-      </implementation-class>
-    </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsTool
       </implementation-class>
     </component>
-
-    <component>
-      <implementation-class>com.intellij.util.indexing.FileBasedIndexProjectHandler</implementation-class>
-    </component>
-
-    <component>
-      <interface-class>com.intellij.openapi.roots.impl.DirectoryIndex</interface-class>
-      <implementation-class>com.intellij.openapi.roots.impl.DirectoryIndexImpl</implementation-class>
-    </component>
-
-    <component>
-      <interface-class>com.intellij.openapi.roots.ProjectRootManager</interface-class>
-      <implementation-class>com.intellij.openapi.roots.impl.ProjectRootManagerImpl</implementation-class>
-    </component>
-
-    <component>
-      <interface-class>com.intellij.openapi.module.ModuleManager</interface-class>
-      <implementation-class>jetbrains.mps.EmptyModuleManager</implementation-class>
-    </component>
-
-    <component>
-      <interface-class>com.intellij.psi.PsiFileFactory</interface-class>
-      <implementation-class>jetbrains.mps.EmptyPsiFileFactory</implementation-class>
-    </component>
-
-    <component>
-      <interface-class>com.intellij.psi.search.PsiSearchHelper</interface-class>
-      <implementation-class>jetbrains.mps.EmptyPsiSearchHelper</implementation-class>
-    </component>
-
     <component>
       <implementation-class>jetbrains.mps.ide.findusages.caches.MPSFileBasedIndexProjectHandler</implementation-class>
     </component>
     <!-- language development workbench -->
-
     <component>
       <implementation-class>jetbrains.mps.ide.make.StartupModuleMaker</implementation-class>
     </component>
-
   </project-components>
 
   <extensions defaultExtensionNs="com.intellij">

@@ -124,7 +124,9 @@ public class SModelRoot extends FolderModelRootBase {
 
   @Override
   public SModel createModel(String modelName) {
-    return getManager().createModel(this, SModelFqName.fromString(modelName));
+    SModel model = getManager().createModel(this, SModelFqName.fromString(modelName));
+    if (model!=null) { register(model); }
+    return model;
   }
 
   @Override

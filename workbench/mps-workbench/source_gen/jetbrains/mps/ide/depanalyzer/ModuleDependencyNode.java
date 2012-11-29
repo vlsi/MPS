@@ -130,7 +130,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
 
   public void doubleClick() {
     if ((int) ListSequence.fromList(myModules).count() == 1) {
-      ProjectPane.getInstance(check_lba8jw_a0a0a0a7(((DependencyTree) getTree()), this)).selectModule(ListSequence.fromList(myModules).first(), false);
+      ProjectPane.getInstance(check_lba8jw_a0a0a0a21(((DependencyTree) getTree()), this)).selectModule(ListSequence.fromList(myModules).first(), false);
     }
   }
 
@@ -139,13 +139,6 @@ public class ModuleDependencyNode extends MPSTreeNode {
     if (myCyclic) {
       setColor(Color.RED);
     }
-  }
-
-  private static Project check_lba8jw_a0a0a0a7(DependencyTree checkedDotOperand, ModuleDependencyNode checkedDotThisExpression) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getProject();
-    }
-    return null;
   }
 
   public static class DepDependencyNode extends ModuleDependencyNode {
@@ -172,5 +165,12 @@ public class ModuleDependencyNode extends MPSTreeNode {
     public boolean isUsedLanguage() {
       return true;
     }
+  }
+
+  private static Project check_lba8jw_a0a0a0a21(DependencyTree checkedDotOperand, ModuleDependencyNode checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getProject();
+    }
+    return null;
   }
 }

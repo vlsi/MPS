@@ -36,8 +36,8 @@ public class ModuleVcsPathPresenter extends VcsPathPresenter {
           }
         }
         for (VcsRoot root : myManager.getAllVcsRoots()) {
-          if (VfsUtil.isAncestor(root.path, file, true)) {
-            return "[" + root.path.getName() + "]" + File.separator + file.getPath();
+          if (VfsUtil.isAncestor(root.getPath(), file, true)) {
+            return "[" + root.getPath().getName() + "]" + File.separator + file.getPath();
           }
         }
         return "[]" + File.separator + file.getPath();

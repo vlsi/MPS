@@ -23,7 +23,7 @@ public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends Subtyping
     SNode concept = SLinkOperations.getTarget(conceptType, "conceptDeclaraton", false);
     if (concept != null) {
       if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-        return _quotation_createNode_6unv0u_a0a0a1a0();
+        return _quotation_createNode_6unv0u_a0a0a1a1();
       }
       // commented out because: 
       // in a node of type concept<SomeInterfaceConcept> could be stored a value node<SomeConcreteConcept> 
@@ -31,11 +31,11 @@ public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends Subtyping
       // (see rule supertypesOf_SConceptTypeType_SConceptTypeType) 
       /*
         if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
-          return _quotation_createNode_6unv0u_a0a0f0b0a();
+          return _quotation_createNode_6unv0u_a0a0f0b0b();
         }
       */
     }
-    return _quotation_createNode_6unv0u_a2a0();
+    return _quotation_createNode_6unv0u_a2a1();
   }
 
   public String getApplicableConceptFQName() {
@@ -53,21 +53,21 @@ public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends Subtyping
     return true;
   }
 
-  private static SNode _quotation_createNode_6unv0u_a0a0a1a0() {
+  private static SNode _quotation_createNode_6unv0u_a0a0a1a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)"), SNodeId.fromString("1071489090640")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_6unv0u_a0a0f0b0a() {
+  private static SNode _quotation_createNode_6unv0u_a0a0f0b0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)"), SNodeId.fromString("1169125989551")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_6unv0u_a2a0() {
+  private static SNode _quotation_createNode_6unv0u_a2a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)"), SNodeId.fromString("1169125787135")));

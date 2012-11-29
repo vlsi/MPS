@@ -4,18 +4,17 @@ package jetbrains.mps.build.pluginSolution.plugin;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.lib.NodeByConcept_Configuration;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ant.execution.AntSettings_Configuration;
-import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
@@ -29,10 +28,9 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.logging.Logger;
 
 public class BuildScript_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
-  private static Logger LOG = Logger.getLogger(BuildScript_Configuration.class);
-
   @NotNull
   private BuildScript_Configuration.MyState myState = new BuildScript_Configuration.MyState();
   private NodeByConcept_Configuration myNode = new NodeByConcept_Configuration("jetbrains.mps.build.structure.BuildProject", new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
@@ -41,10 +39,6 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
     }
   });
   private AntSettings_Configuration mySettings = new AntSettings_Configuration();
-
-  public BuildScript_Configuration(Project project, BuildScript_Configuration_Factory factory, String name) {
-    super(project, factory, name);
-  }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
   }
@@ -111,6 +105,21 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
     return clone;
   }
 
+  public class MyState {
+    public MyState() {
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+      BuildScript_Configuration.MyState state = new BuildScript_Configuration.MyState();
+      return state;
+    }
+  }
+
+  public BuildScript_Configuration(Project project, BuildScript_Configuration_Factory factory, String name) {
+    super(project, factory, name);
+  }
+
   @Nullable
   public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment environment) throws ExecutionException {
     return new BuildScript_Configuration_RunProfileState(this, executor, environment);
@@ -146,14 +155,5 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
     return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodePointer>(), this.getNode().getNodePointer())};
   }
 
-  public class MyState {
-    public MyState() {
-    }
-
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-      BuildScript_Configuration.MyState state = new BuildScript_Configuration.MyState();
-      return state;
-    }
-  }
+  private static Logger LOG = Logger.getLogger(BuildScript_Configuration.class);
 }

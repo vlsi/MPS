@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
@@ -21,15 +20,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class GenerateGetters_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(GenerateGetters_Action.class);
 
   public GenerateGetters_Action() {
     super("Getter", "", ICON);
@@ -102,7 +102,7 @@ public class GenerateGetters_Action extends BaseAction {
         // Method creation begins 
         SNode fieldReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
         SLinkOperations.setTarget(fieldReference, "variableDeclaration", field, false);
-        SNode added = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(_quotation_createNode_xzx12x_a0a0f0o0a(SLinkOperations.getTarget(field, "type", true), fieldReference, getterName));
+        SNode added = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "member", true)).addElement(_quotation_createNode_xzx12x_a0a0f0o0a(SLinkOperations.getTarget(field, "type", true), fieldReference, getterName));
         lastAdded = added;
       }
       if (lastAdded != null) {
@@ -120,10 +120,10 @@ public class GenerateGetters_Action extends BaseAction {
 
   private Iterable<SNode> getFieldDeclarationsWithoutGetters(final SNode classConcept, final Map<String, Object> _params) {
     final Project project = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getProject();
-    return ListSequence.fromList(SLinkOperations.getTargets(classConcept, "field", true)).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode field) {
         final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(field, project);
-        return !(ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
+        return !(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode method) {
             return getterName.equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty();
           }
@@ -131,6 +131,8 @@ public class GenerateGetters_Action extends BaseAction {
       }
     });
   }
+
+  private static Logger LOG = Logger.getLogger(GenerateGetters_Action.class);
 
   private static SNode _quotation_createNode_xzx12x_a0a0f0o0a(Object parameter_1, Object parameter_2, Object parameter_3) {
     SNode quotedNode_4 = null;

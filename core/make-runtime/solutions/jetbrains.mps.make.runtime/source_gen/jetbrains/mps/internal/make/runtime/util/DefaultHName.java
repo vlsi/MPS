@@ -8,7 +8,6 @@ import java.util.regex.Matcher;
 
 public abstract class DefaultHName<T> implements IHName<T> {
   private static Pattern FQNAME = Pattern.compile("(.+)\\.([^\\.]+)");
-
   private T parentName;
   private String name;
 

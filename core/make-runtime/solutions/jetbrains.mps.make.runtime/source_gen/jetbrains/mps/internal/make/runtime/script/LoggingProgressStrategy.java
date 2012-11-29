@@ -7,7 +7,6 @@ import jetbrains.mps.logging.Logger;
 public class LoggingProgressStrategy extends AbstractProgressStrategy {
   private static Logger LOG = Logger.getLogger(LoggingProgressStrategy.class.getPackage().getName());
   private static String TOTAL = "\u221e";
-
   private String lastInfo = null;
   private LoggingProgressStrategy.Log logger = new LoggingProgressStrategy.Log() {
     public void error(String text) {

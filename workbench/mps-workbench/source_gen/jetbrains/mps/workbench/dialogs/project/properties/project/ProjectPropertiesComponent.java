@@ -16,7 +16,6 @@ import jetbrains.mps.project.MPSProject;
 
 public class ProjectPropertiesComponent extends JPanel {
   private static final Logger LOG = Logger.getLogger(ProjectPropertiesComponent.class);
-
   private Project myProject;
   private ProjectProperties myEditableDescriptor = new ProjectProperties();
   private ProjectPropertiesDialog myPropertiesDialog;

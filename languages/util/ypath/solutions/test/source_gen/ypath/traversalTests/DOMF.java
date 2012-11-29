@@ -50,8 +50,6 @@ public class DOMF extends TreePath<Node> {
             public Iterator<Node> iterator() {
               return new YieldingIterator<Node>() {
                 private int __CP__ = 0;
-                private Node _7_it;
-                private int _2_i;
 
                 protected boolean moveToNext() {
 __loop__:
@@ -101,6 +99,9 @@ __switch__:
                   } while (true);
                   return false;
                 }
+
+                private Node _7_it;
+                private int _2_i;
               };
             }
           };
@@ -120,8 +121,6 @@ __switch__:
             public Iterator<Node> iterator() {
               return new YieldingIterator<Node>() {
                 private int __CP__ = 0;
-                private Node _7_it;
-                private int _2_i;
 
                 protected boolean moveToNext() {
 __loop__:
@@ -171,6 +170,9 @@ __switch__:
                   } while (true);
                   return false;
                 }
+
+                private Node _7_it;
+                private int _2_i;
               };
             }
           };
@@ -197,7 +199,6 @@ __switch__:
             public Iterator<Node> iterator() {
               return new YieldingIterator<Node>() {
                 private int __CP__ = 0;
-                private int _2_i;
 
                 protected boolean moveToNext() {
 __loop__:
@@ -236,6 +237,8 @@ __switch__:
                   } while (true);
                   return false;
                 }
+
+                private int _2_i;
               };
             }
           };

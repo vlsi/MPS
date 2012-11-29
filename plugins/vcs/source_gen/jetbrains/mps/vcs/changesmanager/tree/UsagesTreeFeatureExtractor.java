@@ -23,7 +23,7 @@ public class UsagesTreeFeatureExtractor implements TreeNodeFeatureExtractor {
   @Nullable
   public Feature getFeature(@NotNull MPSTreeNode treeNode) {
     if (treeNode instanceof UsagesTree.UsagesTreeNode) {
-      BaseNodeData nodeData = check_f7pfq7_a0a0a0a(((UsagesTree.UsagesTreeNode) treeNode).getUserObject());
+      BaseNodeData nodeData = check_f7pfq7_a0a0a0b(((UsagesTree.UsagesTreeNode) treeNode).getUserObject());
       if (nodeData instanceof ModelNodeData) {
         SModelReference mr = ((ModelNodeData) nodeData).getModelReference();
         if (mr != null) {
@@ -39,7 +39,7 @@ public class UsagesTreeFeatureExtractor implements TreeNodeFeatureExtractor {
     return null;
   }
 
-  private static BaseNodeData check_f7pfq7_a0a0a0a(DataNode checkedDotOperand) {
+  private static BaseNodeData check_f7pfq7_a0a0a0b(DataNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getData();
     }

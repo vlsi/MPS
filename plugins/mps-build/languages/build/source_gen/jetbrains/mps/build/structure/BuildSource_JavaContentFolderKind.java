@@ -12,22 +12,12 @@ public enum BuildSource_JavaContentFolderKind {
   excluded("excluded", "excluded");
 
   private String myName;
-  private String myValue;
-
-  BuildSource_JavaContentFolderKind(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -57,5 +47,16 @@ public enum BuildSource_JavaContentFolderKind {
       return BuildSource_JavaContentFolderKind.excluded;
     }
     return BuildSource_JavaContentFolderKind.getDefault();
+  }
+
+  private String myValue;
+
+  BuildSource_JavaContentFolderKind(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

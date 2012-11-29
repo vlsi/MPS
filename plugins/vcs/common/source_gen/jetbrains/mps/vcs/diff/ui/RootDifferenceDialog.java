@@ -48,10 +48,10 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import java.awt.GraphicsDevice;
-import java.awt.HeadlessException;
 import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
 import org.jetbrains.annotations.NotNull;
+import java.awt.GraphicsDevice;
+import java.awt.HeadlessException;
 
 public class RootDifferenceDialog extends DialogWrapper implements DataProvider {
   private ModelDifferenceDialog myModelDialog;
@@ -129,7 +129,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     } else {
       neighbourTraverser.goToFirstChangeLater();
     }
-    DisplayMode displayMode = check_vu2gar_a0ab0b(check_vu2gar_a0a62a1(GraphicsEnvironment.getLocalGraphicsEnvironment()));
+    DisplayMode displayMode = check_vu2gar_a0ab0r(check_vu2gar_a0a62a71(GraphicsEnvironment.getLocalGraphicsEnvironment()));
     int width = (displayMode == null ?
       800 :
       displayMode.getWidth() - 100
@@ -276,20 +276,6 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     super.dispose();
   }
 
-  private static DisplayMode check_vu2gar_a0ab0b(GraphicsDevice checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getDisplayMode();
-    }
-    return null;
-  }
-
-  private static GraphicsDevice check_vu2gar_a0a62a1(GraphicsEnvironment checkedDotOperand) throws HeadlessException {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getDefaultScreenDevice();
-    }
-    return null;
-  }
-
   public class MyGoToNeighbourRootActions extends GoToNeighbourRootActions {
     public MyGoToNeighbourRootActions() {
     }
@@ -304,5 +290,19 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     protected SNodeId getNeighbourId(boolean next) {
       return myModelDialog.getNeighbourRoot(myRootId, next);
     }
+  }
+
+  private static DisplayMode check_vu2gar_a0ab0r(GraphicsDevice checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getDisplayMode();
+    }
+    return null;
+  }
+
+  private static GraphicsDevice check_vu2gar_a0a62a71(GraphicsEnvironment checkedDotOperand) throws HeadlessException {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getDefaultScreenDevice();
+    }
+    return null;
   }
 }

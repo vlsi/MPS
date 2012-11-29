@@ -16,7 +16,6 @@ public class ProjectProperties {
   public static final String PROPERTY_NAME = "name";
   public static final String PROPERTY_MODULES = "modules";
   public static final String PROPERTY_GEN_CONFIGS = "testConfigurations";
-
   private ProjectDescriptor myProjectDescriptor;
   private List<Path> myModules = ListsFactory.create(ListsFactory.PATH_VALID_COMPARATOR);
   private List<BaseTestConfiguration> myTestConfigs = ListsFactory.create(ListsFactory.GEN_CONF_COMPARATOR);

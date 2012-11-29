@@ -95,7 +95,7 @@ public class ConstructorDeclaration_Behavior {
     SNode classConcept = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     SNode classifierType = SLinkOperations.getTarget(classConcept, "superclass", true);
     if (classifierType == null) {
-      return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), "constructor", true)).first();
+      return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"))).first();
     }
     SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
     if (!(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
@@ -103,7 +103,7 @@ public class ConstructorDeclaration_Behavior {
     }
     SNode superclass = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     if (superclass != SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum")) {
-      Iterable<SNode> constructors = SLinkOperations.getTargets(superclass, "constructor", true);
+      Iterable<SNode> constructors = ClassConcept_Behavior.call_constructors_5292274854859503373(superclass);
       if (Sequence.fromIterable(constructors).isEmpty()) {
         return null;
       }
@@ -114,7 +114,7 @@ public class ConstructorDeclaration_Behavior {
       }
       return null;
     } else {
-      return ListSequence.fromList(SLinkOperations.getTargets(superclass, "constructor", true)).first();
+      return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(superclass)).first();
     }
   }
 
@@ -122,6 +122,14 @@ public class ConstructorDeclaration_Behavior {
     if (SNodeOperations.getParent(thisNode) == BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifierType, "virtual_getClassifier_7405920559687237513", new Object[]{})) {
       context.addMember(thisNode, null);
     }
+  }
+
+  public static boolean virtual_needsEmptyLineBefore_641490355014296733(SNode thisNode) {
+    return true;
+  }
+
+  public static boolean virtual_needsEmptyLineAfter_641490355014298838(SNode thisNode) {
+    return true;
   }
 
   @Deprecated

@@ -42,7 +42,6 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 
 public class BaseEditorTestBody extends BaseTestBody {
   private static DataManager DATA_MANAGER = new DataManagerImpl();
-
   public Editor myEditor;
   private SNode myBefore;
   private SNode myResult;

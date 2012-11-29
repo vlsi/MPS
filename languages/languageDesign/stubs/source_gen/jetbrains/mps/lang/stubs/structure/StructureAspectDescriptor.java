@@ -8,13 +8,11 @@ import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
-  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.lang.stubs.structure.CanCreateFunction", "jetbrains.mps.lang.stubs.structure.CreateBlock", "jetbrains.mps.lang.stubs.structure.CreateFunction", "jetbrains.mps.lang.stubs.structure.DescriptorsFunction", "jetbrains.mps.lang.stubs.structure.IModule_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.LanguageRef", "jetbrains.mps.lang.stubs.structure.ModelCreationSettings", "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration", "jetbrains.mps.lang.stubs.structure.ModelRoot_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.SModelFqName_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.SModelRoot_ConceptFunctionParameter"};
-
   public StructureAspectDescriptor() {
   }
 
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.CanCreateFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
       case 1:
@@ -43,4 +41,6 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
+
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.stubs.structure.CanCreateFunction", "jetbrains.mps.lang.stubs.structure.CreateBlock", "jetbrains.mps.lang.stubs.structure.CreateFunction", "jetbrains.mps.lang.stubs.structure.DescriptorsFunction", "jetbrains.mps.lang.stubs.structure.IModule_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.LanguageRef", "jetbrains.mps.lang.stubs.structure.ModelCreationSettings", "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration", "jetbrains.mps.lang.stubs.structure.ModelRoot_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.SModelFqName_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.SModelRoot_ConceptFunctionParameter"};
 }

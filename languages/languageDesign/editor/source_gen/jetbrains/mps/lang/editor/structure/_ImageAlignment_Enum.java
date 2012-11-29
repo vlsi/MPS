@@ -12,22 +12,12 @@ public enum _ImageAlignment_Enum {
   alignmentTile("alignmentTile", "tile");
 
   private String myName;
-  private String myValue;
-
-  _ImageAlignment_Enum(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -57,5 +47,16 @@ public enum _ImageAlignment_Enum {
       return _ImageAlignment_Enum.alignmentTile;
     }
     return _ImageAlignment_Enum.getDefault();
+  }
+
+  private String myValue;
+
+  _ImageAlignment_Enum(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

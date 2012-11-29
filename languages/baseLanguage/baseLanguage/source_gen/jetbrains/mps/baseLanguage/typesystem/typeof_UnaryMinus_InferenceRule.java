@@ -33,7 +33,7 @@ public class typeof_UnaryMinus_InferenceRule extends AbstractInferenceRule_Runti
       final SNode exType = typeCheckingContext.getRepresentative(expressionType_typevar_7602524515424797598);
       typeCheckingContext.whenConcrete(exType, new Runnable() {
         public void run() {
-          SNode type = typeCheckingContext.getOverloadedOperationType(minus, typeCheckingContext.getExpandedNode(exType), _quotation_createNode_2vfzm_c0a0a0c0a());
+          SNode type = typeCheckingContext.getOverloadedOperationType(minus, typeCheckingContext.getExpandedNode(exType), _quotation_createNode_2vfzm_c0a0a0c0b());
           if (type != null) {
             {
               SNode _nodeToCheck_1029348928467 = minus;
@@ -66,7 +66,7 @@ public class typeof_UnaryMinus_InferenceRule extends AbstractInferenceRule_Runti
     return true;
   }
 
-  private static SNode _quotation_createNode_2vfzm_c0a0a0c0a() {
+  private static SNode _quotation_createNode_2vfzm_c0a0a0c0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));

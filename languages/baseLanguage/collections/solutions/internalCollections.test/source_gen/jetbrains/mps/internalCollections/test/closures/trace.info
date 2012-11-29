@@ -1842,41 +1842,40 @@
     <unitInfo nodeId="1205849838286" fileName="ForEach_Test.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.ForEach_Test" />
   </root>
   <root nodeId="1225728681796" modelId="r:00000000-0000-4000-0000-011c895903ee(jetbrains.mps.internalCollections.test.closures)">
-    <nodeInfo nodeId="1225728713281" fileName="Find_Test.java" startLine="49" startPosition="27" endLine="49" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225728728668" fileName="Find_Test.java" startLine="52" startPosition="27" endLine="52" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1225728713281" fileName="Find_Test.java" startLine="48" startPosition="27" endLine="48" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1225728728668" fileName="Find_Test.java" startLine="51" startPosition="27" endLine="51" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1235567193961" fileName="Find_Test.java" startLine="132" startPosition="27" endLine="132" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1235567193966" fileName="Find_Test.java" startLine="135" startPosition="27" endLine="135" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1235567641056" fileName="Find_Test.java" startLine="195" startPosition="27" endLine="195" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1235567641056" fileName="Find_Test.java" startLine="197" startPosition="27" endLine="197" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
-    <nodeInfo nodeId="1225728728666" fileName="Find_Test.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_2_i" />
-    <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="29" startPosition="28" endLine="30" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="30" startPosition="54" endLine="31" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="32" startPosition="27" endLine="33" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="35" startPosition="42" endLine="36" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="36" startPosition="40" endLine="37" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="38" startPosition="23" endLine="39" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="39" startPosition="38" endLine="40" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="41" startPosition="27" endLine="42" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="42" startPosition="29" endLine="43" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="43" startPosition="38" endLine="44" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1225728746505" fileName="Find_Test.java" startLine="45" startPosition="27" endLine="46" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225728746505" fileName="Find_Test.java" startLine="46" startPosition="38" endLine="47" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225728746505" fileName="Find_Test.java" startLine="47" startPosition="39" endLine="48" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225728713281" fileName="Find_Test.java" startLine="49" startPosition="27" endLine="50" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225728713281" fileName="Find_Test.java" startLine="50" startPosition="38" endLine="51" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1225728728668" fileName="Find_Test.java" startLine="52" startPosition="27" endLine="53" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225728728668" fileName="Find_Test.java" startLine="53" startPosition="38" endLine="54" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="55" startPosition="28" endLine="56" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="58" startPosition="31" endLine="59" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3343985444902967804" fileName="Find_Test.java" startLine="67" startPosition="41" endLine="68" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3343985444902959422" fileName="Find_Test.java" startLine="72" startPosition="41" endLine="73" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3343985444902967813" fileName="Find_Test.java" startLine="75" startPosition="6" endLine="76" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3343985444902967832" fileName="Find_Test.java" startLine="78" startPosition="41" endLine="79" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3343985444902959700" fileName="Find_Test.java" startLine="83" startPosition="41" endLine="84" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3343985444902967785" fileName="Find_Test.java" startLine="86" startPosition="6" endLine="87" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7973341469126548368" fileName="Find_Test.java" startLine="92" startPosition="44" endLine="93" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="104" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
-    <nodeInfo nodeId="1235567193963" fileName="Find_Test.java" startLine="105" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_2_i" />
+    <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="28" startPosition="28" endLine="29" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="29" startPosition="54" endLine="30" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="31" startPosition="27" endLine="32" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="34" startPosition="42" endLine="35" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="35" startPosition="40" endLine="36" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="37" startPosition="23" endLine="38" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="38" startPosition="38" endLine="39" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="40" startPosition="27" endLine="41" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="41" startPosition="29" endLine="42" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="42" startPosition="38" endLine="43" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1225728746505" fileName="Find_Test.java" startLine="44" startPosition="27" endLine="45" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225728746505" fileName="Find_Test.java" startLine="45" startPosition="38" endLine="46" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225728746505" fileName="Find_Test.java" startLine="46" startPosition="39" endLine="47" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225728713281" fileName="Find_Test.java" startLine="48" startPosition="27" endLine="49" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225728713281" fileName="Find_Test.java" startLine="49" startPosition="38" endLine="50" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1225728728668" fileName="Find_Test.java" startLine="51" startPosition="27" endLine="52" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225728728668" fileName="Find_Test.java" startLine="52" startPosition="38" endLine="53" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="54" startPosition="28" endLine="55" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="57" startPosition="31" endLine="58" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225728728666" fileName="Find_Test.java" startLine="61" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_2_i" />
+    <nodeInfo nodeId="3343985444902967804" fileName="Find_Test.java" startLine="68" startPosition="41" endLine="69" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3343985444902959422" fileName="Find_Test.java" startLine="73" startPosition="41" endLine="74" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3343985444902967813" fileName="Find_Test.java" startLine="76" startPosition="6" endLine="77" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3343985444902967832" fileName="Find_Test.java" startLine="79" startPosition="41" endLine="80" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3343985444902959700" fileName="Find_Test.java" startLine="84" startPosition="41" endLine="85" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3343985444902967785" fileName="Find_Test.java" startLine="87" startPosition="6" endLine="88" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7973341469126548368" fileName="Find_Test.java" startLine="93" startPosition="44" endLine="94" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="105" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
     <nodeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="112" startPosition="28" endLine="113" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="113" startPosition="54" endLine="114" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1235567193962" fileName="Find_Test.java" startLine="115" startPosition="27" endLine="116" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1896,241 +1895,242 @@
     <nodeInfo nodeId="1235567193966" fileName="Find_Test.java" startLine="136" startPosition="38" endLine="137" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="138" startPosition="28" endLine="139" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="141" startPosition="31" endLine="142" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235567601956" fileName="Find_Test.java" startLine="150" startPosition="41" endLine="151" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3343985444902959734" fileName="Find_Test.java" startLine="155" startPosition="41" endLine="156" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3343985444902959713" fileName="Find_Test.java" startLine="158" startPosition="6" endLine="159" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235567615635" fileName="Find_Test.java" startLine="161" startPosition="41" endLine="162" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3343985444902959768" fileName="Find_Test.java" startLine="166" startPosition="41" endLine="167" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3343985444902959747" fileName="Find_Test.java" startLine="169" startPosition="6" endLine="170" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235567725115" fileName="Find_Test.java" startLine="172" startPosition="41" endLine="173" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="181" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
-    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="188" startPosition="28" endLine="189" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="189" startPosition="54" endLine="190" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235567672515" fileName="Find_Test.java" startLine="191" startPosition="27" endLine="192" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235567672515" fileName="Find_Test.java" startLine="192" startPosition="38" endLine="193" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235567672515" fileName="Find_Test.java" startLine="193" startPosition="37" endLine="194" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235567641056" fileName="Find_Test.java" startLine="195" startPosition="27" endLine="196" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235567641056" fileName="Find_Test.java" startLine="196" startPosition="38" endLine="197" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="198" startPosition="28" endLine="199" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="201" startPosition="31" endLine="202" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235567705508" fileName="Find_Test.java" startLine="210" startPosition="41" endLine="211" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235568124245" fileName="Find_Test.java" startLine="215" startPosition="41" endLine="216" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235567715897" fileName="Find_Test.java" startLine="220" startPosition="41" endLine="221" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235567735645" fileName="Find_Test.java" startLine="223" startPosition="8" endLine="224" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235567752147" fileName="Find_Test.java" startLine="226" startPosition="41" endLine="227" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235567759630" fileName="Find_Test.java" startLine="231" startPosition="41" endLine="232" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7973341469126541513" fileName="Find_Test.java" startLine="237" startPosition="44" endLine="238" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3343985444902967802" fileName="Find_Test.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
-    <nodeInfo nodeId="3343985444902959420" fileName="Find_Test.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/Integer;)Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="3343985444902967830" fileName="Find_Test.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
-    <nodeInfo nodeId="3343985444902959698" fileName="Find_Test.java" startLine="83" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/Integer;)Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="7973341469126548366" fileName="Find_Test.java" startLine="92" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/internalCollections/test/closures/IInterface;)Z" />
-    <nodeInfo nodeId="1235567599361" fileName="Find_Test.java" startLine="150" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
-    <nodeInfo nodeId="3343985444902959732" fileName="Find_Test.java" startLine="155" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/Integer;)Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="1235567612812" fileName="Find_Test.java" startLine="161" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
-    <nodeInfo nodeId="3343985444902959766" fileName="Find_Test.java" startLine="166" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/Integer;)Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="1235567723178" fileName="Find_Test.java" startLine="172" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
-    <nodeInfo nodeId="1235567704231" fileName="Find_Test.java" startLine="210" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
-    <nodeInfo nodeId="1235568122646" fileName="Find_Test.java" startLine="215" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
-    <nodeInfo nodeId="1235567714048" fileName="Find_Test.java" startLine="220" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
-    <nodeInfo nodeId="1235567749451" fileName="Find_Test.java" startLine="226" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
-    <nodeInfo nodeId="1235567758243" fileName="Find_Test.java" startLine="231" startPosition="0" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
-    <nodeInfo nodeId="7973341469126541506" fileName="Find_Test.java" startLine="237" startPosition="0" endLine="240" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="interfaces#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="34" startPosition="27" endLine="38" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1235567193963" fileName="Find_Test.java" startLine="145" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_2_i" />
+    <nodeInfo nodeId="1235567601956" fileName="Find_Test.java" startLine="152" startPosition="41" endLine="153" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3343985444902959734" fileName="Find_Test.java" startLine="157" startPosition="41" endLine="158" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3343985444902959713" fileName="Find_Test.java" startLine="160" startPosition="6" endLine="161" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235567615635" fileName="Find_Test.java" startLine="163" startPosition="41" endLine="164" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3343985444902959768" fileName="Find_Test.java" startLine="168" startPosition="41" endLine="169" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3343985444902959747" fileName="Find_Test.java" startLine="171" startPosition="6" endLine="172" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235567725115" fileName="Find_Test.java" startLine="174" startPosition="41" endLine="175" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="183" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
+    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="190" startPosition="28" endLine="191" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="191" startPosition="54" endLine="192" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235567672515" fileName="Find_Test.java" startLine="193" startPosition="27" endLine="194" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235567672515" fileName="Find_Test.java" startLine="194" startPosition="38" endLine="195" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235567672515" fileName="Find_Test.java" startLine="195" startPosition="37" endLine="196" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235567641056" fileName="Find_Test.java" startLine="197" startPosition="27" endLine="198" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235567641056" fileName="Find_Test.java" startLine="198" startPosition="38" endLine="199" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="200" startPosition="28" endLine="201" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="203" startPosition="31" endLine="204" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235567705508" fileName="Find_Test.java" startLine="212" startPosition="41" endLine="213" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235568124245" fileName="Find_Test.java" startLine="217" startPosition="41" endLine="218" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235567715897" fileName="Find_Test.java" startLine="222" startPosition="41" endLine="223" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235567735645" fileName="Find_Test.java" startLine="225" startPosition="8" endLine="226" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235567752147" fileName="Find_Test.java" startLine="228" startPosition="41" endLine="229" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235567759630" fileName="Find_Test.java" startLine="233" startPosition="41" endLine="234" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7973341469126541513" fileName="Find_Test.java" startLine="239" startPosition="44" endLine="240" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3343985444902967802" fileName="Find_Test.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
+    <nodeInfo nodeId="3343985444902959420" fileName="Find_Test.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/Integer;)Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="3343985444902967830" fileName="Find_Test.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
+    <nodeInfo nodeId="3343985444902959698" fileName="Find_Test.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/Integer;)Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="7973341469126548366" fileName="Find_Test.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/internalCollections/test/closures/IInterface;)Z" />
+    <nodeInfo nodeId="1235567599361" fileName="Find_Test.java" startLine="152" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
+    <nodeInfo nodeId="3343985444902959732" fileName="Find_Test.java" startLine="157" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/Integer;)Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="1235567612812" fileName="Find_Test.java" startLine="163" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
+    <nodeInfo nodeId="3343985444902959766" fileName="Find_Test.java" startLine="168" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/Integer;)Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="1235567723178" fileName="Find_Test.java" startLine="174" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
+    <nodeInfo nodeId="1235567704231" fileName="Find_Test.java" startLine="212" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
+    <nodeInfo nodeId="1235568122646" fileName="Find_Test.java" startLine="217" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
+    <nodeInfo nodeId="1235567714048" fileName="Find_Test.java" startLine="222" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
+    <nodeInfo nodeId="1235567749451" fileName="Find_Test.java" startLine="228" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
+    <nodeInfo nodeId="1235567758243" fileName="Find_Test.java" startLine="233" startPosition="0" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
+    <nodeInfo nodeId="7973341469126541506" fileName="Find_Test.java" startLine="239" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="interfaces#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="33" startPosition="27" endLine="37" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1235567193962" fileName="Find_Test.java" startLine="117" startPosition="27" endLine="121" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3343985444902967794" fileName="Find_Test.java" startLine="65" startPosition="7" endLine="70" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3343985444902959415" fileName="Find_Test.java" startLine="70" startPosition="8" endLine="75" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3343985444902967822" fileName="Find_Test.java" startLine="76" startPosition="68" endLine="81" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3343985444902959693" fileName="Find_Test.java" startLine="81" startPosition="8" endLine="86" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7973341469126548359" fileName="Find_Test.java" startLine="90" startPosition="48" endLine="95" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235567596345" fileName="Find_Test.java" startLine="148" startPosition="7" endLine="153" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3343985444902959727" fileName="Find_Test.java" startLine="153" startPosition="8" endLine="158" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235567610236" fileName="Find_Test.java" startLine="159" startPosition="59" endLine="164" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3343985444902959761" fileName="Find_Test.java" startLine="164" startPosition="8" endLine="169" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235567721481" fileName="Find_Test.java" startLine="170" startPosition="61" endLine="175" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235567701237" fileName="Find_Test.java" startLine="208" startPosition="7" endLine="213" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235568119557" fileName="Find_Test.java" startLine="213" startPosition="8" endLine="218" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235567711063" fileName="Find_Test.java" startLine="218" startPosition="8" endLine="223" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235567746185" fileName="Find_Test.java" startLine="224" startPosition="86" endLine="229" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235567756432" fileName="Find_Test.java" startLine="229" startPosition="8" endLine="234" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7973341469126541498" fileName="Find_Test.java" startLine="90" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_mps10458#()V" />
-    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="185" startPosition="20" endLine="200" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="183" startPosition="46" endLine="201" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="183" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
-    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="179" startPosition="47" endLine="204" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="179" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="177" startPosition="43" endLine="206" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="26" startPosition="20" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="3343985444902967794" fileName="Find_Test.java" startLine="66" startPosition="7" endLine="71" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3343985444902959415" fileName="Find_Test.java" startLine="71" startPosition="8" endLine="76" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3343985444902967822" fileName="Find_Test.java" startLine="77" startPosition="68" endLine="82" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3343985444902959693" fileName="Find_Test.java" startLine="82" startPosition="8" endLine="87" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7973341469126548359" fileName="Find_Test.java" startLine="91" startPosition="48" endLine="96" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235567596345" fileName="Find_Test.java" startLine="150" startPosition="7" endLine="155" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3343985444902959727" fileName="Find_Test.java" startLine="155" startPosition="8" endLine="160" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235567610236" fileName="Find_Test.java" startLine="161" startPosition="59" endLine="166" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3343985444902959761" fileName="Find_Test.java" startLine="166" startPosition="8" endLine="171" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235567721481" fileName="Find_Test.java" startLine="172" startPosition="61" endLine="177" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235567701237" fileName="Find_Test.java" startLine="210" startPosition="7" endLine="215" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235568119557" fileName="Find_Test.java" startLine="215" startPosition="8" endLine="220" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235567711063" fileName="Find_Test.java" startLine="220" startPosition="8" endLine="225" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235567746185" fileName="Find_Test.java" startLine="226" startPosition="86" endLine="231" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235567756432" fileName="Find_Test.java" startLine="231" startPosition="8" endLine="236" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7973341469126541498" fileName="Find_Test.java" startLine="91" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_mps10458#()V" />
+    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="187" startPosition="20" endLine="202" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="185" startPosition="46" endLine="203" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="185" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
+    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="181" startPosition="47" endLine="206" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="181" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="179" startPosition="43" endLine="208" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="25" startPosition="20" endLine="56" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
     <nodeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="109" startPosition="20" endLine="140" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="177" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1235567630249" fileName="Find_Test.java" startLine="175" startPosition="8" endLine="208" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="24" startPosition="46" endLine="58" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+    <nodeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="179" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1235567630249" fileName="Find_Test.java" startLine="177" startPosition="8" endLine="210" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="23" startPosition="46" endLine="57" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
     <nodeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="107" startPosition="46" endLine="141" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="24" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
+    <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="23" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
     <nodeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="107" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
-    <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="19" startPosition="47" endLine="61" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="102" startPosition="47" endLine="144" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="19" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="102" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="17" startPosition="43" endLine="63" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="100" startPosition="43" endLine="146" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="17" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="100" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1225728703470" fileName="Find_Test.java" startLine="15" startPosition="53" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235567193953" fileName="Find_Test.java" startLine="98" startPosition="46" endLine="148" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225728698106" fileName="Find_Test.java" startLine="15" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_findFirstLast#()V" />
-    <nodeInfo nodeId="1235567183547" fileName="Find_Test.java" startLine="98" startPosition="0" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_anyAll#()V" />
-    <scopeInfo nodeId="1225728713281" fileName="Find_Test.java" startLine="49" startPosition="27" endLine="49" endPosition="27" />
-    <scopeInfo nodeId="1225728728668" fileName="Find_Test.java" startLine="52" startPosition="27" endLine="52" endPosition="27" />
+    <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="19" startPosition="47" endLine="62" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="103" startPosition="47" endLine="146" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="19" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="103" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="17" startPosition="43" endLine="64" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="101" startPosition="43" endLine="148" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="17" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="101" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1225728703470" fileName="Find_Test.java" startLine="15" startPosition="53" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235567193953" fileName="Find_Test.java" startLine="99" startPosition="46" endLine="150" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225728698106" fileName="Find_Test.java" startLine="15" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_findFirstLast#()V" />
+    <nodeInfo nodeId="1235567183547" fileName="Find_Test.java" startLine="99" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_anyAll#()V" />
+    <scopeInfo nodeId="1225728713281" fileName="Find_Test.java" startLine="48" startPosition="27" endLine="48" endPosition="27" />
+    <scopeInfo nodeId="1225728728668" fileName="Find_Test.java" startLine="51" startPosition="27" endLine="51" endPosition="27" />
     <scopeInfo nodeId="1235567193961" fileName="Find_Test.java" startLine="132" startPosition="27" endLine="132" endPosition="27" />
     <scopeInfo nodeId="1235567193966" fileName="Find_Test.java" startLine="135" startPosition="27" endLine="135" endPosition="27" />
-    <scopeInfo nodeId="1235567641056" fileName="Find_Test.java" startLine="195" startPosition="27" endLine="195" endPosition="27" />
-    <scopeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="32" startPosition="27" endLine="33" endPosition="36" />
-    <scopeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="55" startPosition="28" endLine="56" endPosition="37" />
-    <scopeInfo nodeId="3343985444902967803" fileName="Find_Test.java" startLine="67" startPosition="41" endLine="68" endPosition="27" />
-    <scopeInfo nodeId="3343985444902959421" fileName="Find_Test.java" startLine="72" startPosition="41" endLine="73" endPosition="27" />
-    <scopeInfo nodeId="3343985444902967831" fileName="Find_Test.java" startLine="78" startPosition="41" endLine="79" endPosition="27" />
-    <scopeInfo nodeId="3343985444902959699" fileName="Find_Test.java" startLine="83" startPosition="41" endLine="84" endPosition="27" />
-    <scopeInfo nodeId="7973341469126548367" fileName="Find_Test.java" startLine="92" startPosition="44" endLine="93" endPosition="26" />
+    <scopeInfo nodeId="1235567641056" fileName="Find_Test.java" startLine="197" startPosition="27" endLine="197" endPosition="27" />
+    <scopeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="31" startPosition="27" endLine="32" endPosition="36" />
+    <scopeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="54" startPosition="28" endLine="55" endPosition="37" />
+    <scopeInfo nodeId="3343985444902967803" fileName="Find_Test.java" startLine="68" startPosition="41" endLine="69" endPosition="27" />
+    <scopeInfo nodeId="3343985444902959421" fileName="Find_Test.java" startLine="73" startPosition="41" endLine="74" endPosition="27" />
+    <scopeInfo nodeId="3343985444902967831" fileName="Find_Test.java" startLine="79" startPosition="41" endLine="80" endPosition="27" />
+    <scopeInfo nodeId="3343985444902959699" fileName="Find_Test.java" startLine="84" startPosition="41" endLine="85" endPosition="27" />
+    <scopeInfo nodeId="7973341469126548367" fileName="Find_Test.java" startLine="93" startPosition="44" endLine="94" endPosition="26" />
     <scopeInfo nodeId="1235567193962" fileName="Find_Test.java" startLine="115" startPosition="27" endLine="116" endPosition="36" />
     <scopeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="138" startPosition="28" endLine="139" endPosition="37" />
-    <scopeInfo nodeId="1235567599362" fileName="Find_Test.java" startLine="150" startPosition="41" endLine="151" endPosition="27" />
-    <scopeInfo nodeId="3343985444902959733" fileName="Find_Test.java" startLine="155" startPosition="41" endLine="156" endPosition="27" />
-    <scopeInfo nodeId="1235567612813" fileName="Find_Test.java" startLine="161" startPosition="41" endLine="162" endPosition="27" />
-    <scopeInfo nodeId="3343985444902959767" fileName="Find_Test.java" startLine="166" startPosition="41" endLine="167" endPosition="27" />
-    <scopeInfo nodeId="1235567723179" fileName="Find_Test.java" startLine="172" startPosition="41" endLine="173" endPosition="35" />
-    <scopeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="198" startPosition="28" endLine="199" endPosition="37" />
-    <scopeInfo nodeId="1235567704232" fileName="Find_Test.java" startLine="210" startPosition="41" endLine="211" endPosition="24" />
-    <scopeInfo nodeId="1235568122647" fileName="Find_Test.java" startLine="215" startPosition="41" endLine="216" endPosition="23" />
-    <scopeInfo nodeId="1235567714049" fileName="Find_Test.java" startLine="220" startPosition="41" endLine="221" endPosition="24" />
-    <scopeInfo nodeId="1235567749452" fileName="Find_Test.java" startLine="226" startPosition="41" endLine="227" endPosition="20" />
-    <scopeInfo nodeId="1235567758244" fileName="Find_Test.java" startLine="231" startPosition="41" endLine="232" endPosition="21" />
-    <scopeInfo nodeId="7973341469126541509" fileName="Find_Test.java" startLine="237" startPosition="44" endLine="238" endPosition="16" />
-    <scopeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="29" startPosition="28" endLine="31" endPosition="35" />
-    <scopeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="35" startPosition="42" endLine="37" endPosition="30" />
-    <scopeInfo nodeId="1225728713281" fileName="Find_Test.java" startLine="49" startPosition="27" endLine="51" endPosition="28" />
-    <scopeInfo nodeId="1225728728668" fileName="Find_Test.java" startLine="52" startPosition="27" endLine="54" endPosition="28" />
+    <scopeInfo nodeId="1235567599362" fileName="Find_Test.java" startLine="152" startPosition="41" endLine="153" endPosition="27" />
+    <scopeInfo nodeId="3343985444902959733" fileName="Find_Test.java" startLine="157" startPosition="41" endLine="158" endPosition="27" />
+    <scopeInfo nodeId="1235567612813" fileName="Find_Test.java" startLine="163" startPosition="41" endLine="164" endPosition="27" />
+    <scopeInfo nodeId="3343985444902959767" fileName="Find_Test.java" startLine="168" startPosition="41" endLine="169" endPosition="27" />
+    <scopeInfo nodeId="1235567723179" fileName="Find_Test.java" startLine="174" startPosition="41" endLine="175" endPosition="35" />
+    <scopeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="200" startPosition="28" endLine="201" endPosition="37" />
+    <scopeInfo nodeId="1235567704232" fileName="Find_Test.java" startLine="212" startPosition="41" endLine="213" endPosition="24" />
+    <scopeInfo nodeId="1235568122647" fileName="Find_Test.java" startLine="217" startPosition="41" endLine="218" endPosition="23" />
+    <scopeInfo nodeId="1235567714049" fileName="Find_Test.java" startLine="222" startPosition="41" endLine="223" endPosition="24" />
+    <scopeInfo nodeId="1235567749452" fileName="Find_Test.java" startLine="228" startPosition="41" endLine="229" endPosition="20" />
+    <scopeInfo nodeId="1235567758244" fileName="Find_Test.java" startLine="233" startPosition="41" endLine="234" endPosition="21" />
+    <scopeInfo nodeId="7973341469126541509" fileName="Find_Test.java" startLine="239" startPosition="44" endLine="240" endPosition="16" />
+    <scopeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="28" startPosition="28" endLine="30" endPosition="35" />
+    <scopeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="34" startPosition="42" endLine="36" endPosition="30" />
+    <scopeInfo nodeId="1225728713281" fileName="Find_Test.java" startLine="48" startPosition="27" endLine="50" endPosition="28" />
+    <scopeInfo nodeId="1225728728668" fileName="Find_Test.java" startLine="51" startPosition="27" endLine="53" endPosition="28" />
     <scopeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="112" startPosition="28" endLine="114" endPosition="35" />
     <scopeInfo nodeId="1235567193962" fileName="Find_Test.java" startLine="118" startPosition="42" endLine="120" endPosition="30" />
     <scopeInfo nodeId="1235567193961" fileName="Find_Test.java" startLine="132" startPosition="27" endLine="134" endPosition="28" />
     <scopeInfo nodeId="1235567193966" fileName="Find_Test.java" startLine="135" startPosition="27" endLine="137" endPosition="28" />
-    <scopeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="188" startPosition="28" endLine="190" endPosition="35" />
-    <scopeInfo nodeId="1235567641056" fileName="Find_Test.java" startLine="195" startPosition="27" endLine="197" endPosition="28" />
-    <scopeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="41" startPosition="27" endLine="44" endPosition="28" />
-    <scopeInfo nodeId="1225728746505" fileName="Find_Test.java" startLine="45" startPosition="27" endLine="48" endPosition="34" />
-    <scopeInfo nodeId="3343985444902967802" fileName="Find_Test.java" startLine="67" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="190" startPosition="28" endLine="192" endPosition="35" />
+    <scopeInfo nodeId="1235567641056" fileName="Find_Test.java" startLine="197" startPosition="27" endLine="199" endPosition="28" />
+    <scopeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="40" startPosition="27" endLine="43" endPosition="28" />
+    <scopeInfo nodeId="1225728746505" fileName="Find_Test.java" startLine="44" startPosition="27" endLine="47" endPosition="34" />
+    <scopeInfo nodeId="3343985444902967802" fileName="Find_Test.java" startLine="68" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="3343985444902967802" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3343985444902959420" fileName="Find_Test.java" startLine="72" startPosition="0" endLine="75" endPosition="0">
+    <scopeInfo nodeId="3343985444902959420" fileName="Find_Test.java" startLine="73" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="3343985444902959420" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3343985444902967830" fileName="Find_Test.java" startLine="78" startPosition="0" endLine="81" endPosition="0">
+    <scopeInfo nodeId="3343985444902967830" fileName="Find_Test.java" startLine="79" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="3343985444902967830" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3343985444902959698" fileName="Find_Test.java" startLine="83" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="3343985444902959698" fileName="Find_Test.java" startLine="84" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="3343985444902959698" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="7973341469126548366" fileName="Find_Test.java" startLine="92" startPosition="0" endLine="95" endPosition="0">
+    <scopeInfo nodeId="7973341469126548366" fileName="Find_Test.java" startLine="93" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="7973341469126548366" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="1235567193962" fileName="Find_Test.java" startLine="124" startPosition="27" endLine="127" endPosition="28" />
     <scopeInfo nodeId="1235567193967" fileName="Find_Test.java" startLine="128" startPosition="27" endLine="131" endPosition="34" />
-    <scopeInfo nodeId="1235567599361" fileName="Find_Test.java" startLine="150" startPosition="0" endLine="153" endPosition="0">
+    <scopeInfo nodeId="1235567599361" fileName="Find_Test.java" startLine="152" startPosition="0" endLine="155" endPosition="0">
       <varInfo nodeId="1235567599361" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3343985444902959732" fileName="Find_Test.java" startLine="155" startPosition="0" endLine="158" endPosition="0">
+    <scopeInfo nodeId="3343985444902959732" fileName="Find_Test.java" startLine="157" startPosition="0" endLine="160" endPosition="0">
       <varInfo nodeId="3343985444902959732" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1235567612812" fileName="Find_Test.java" startLine="161" startPosition="0" endLine="164" endPosition="0">
+    <scopeInfo nodeId="1235567612812" fileName="Find_Test.java" startLine="163" startPosition="0" endLine="166" endPosition="0">
       <varInfo nodeId="1235567612812" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3343985444902959766" fileName="Find_Test.java" startLine="166" startPosition="0" endLine="169" endPosition="0">
+    <scopeInfo nodeId="3343985444902959766" fileName="Find_Test.java" startLine="168" startPosition="0" endLine="171" endPosition="0">
       <varInfo nodeId="3343985444902959766" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1235567723178" fileName="Find_Test.java" startLine="172" startPosition="0" endLine="175" endPosition="0">
+    <scopeInfo nodeId="1235567723178" fileName="Find_Test.java" startLine="174" startPosition="0" endLine="177" endPosition="0">
       <varInfo nodeId="1235567723178" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1235567672515" fileName="Find_Test.java" startLine="191" startPosition="27" endLine="194" endPosition="34" />
-    <scopeInfo nodeId="1235567704231" fileName="Find_Test.java" startLine="210" startPosition="0" endLine="213" endPosition="0">
+    <scopeInfo nodeId="1235567672515" fileName="Find_Test.java" startLine="193" startPosition="27" endLine="196" endPosition="34" />
+    <scopeInfo nodeId="1235567704231" fileName="Find_Test.java" startLine="212" startPosition="0" endLine="215" endPosition="0">
       <varInfo nodeId="1235567704231" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1235568122646" fileName="Find_Test.java" startLine="215" startPosition="0" endLine="218" endPosition="0">
+    <scopeInfo nodeId="1235568122646" fileName="Find_Test.java" startLine="217" startPosition="0" endLine="220" endPosition="0">
       <varInfo nodeId="1235568122646" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1235567714048" fileName="Find_Test.java" startLine="220" startPosition="0" endLine="223" endPosition="0">
+    <scopeInfo nodeId="1235567714048" fileName="Find_Test.java" startLine="222" startPosition="0" endLine="225" endPosition="0">
       <varInfo nodeId="1235567714048" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1235567749451" fileName="Find_Test.java" startLine="226" startPosition="0" endLine="229" endPosition="0">
+    <scopeInfo nodeId="1235567749451" fileName="Find_Test.java" startLine="228" startPosition="0" endLine="231" endPosition="0">
       <varInfo nodeId="1235567749451" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1235567758243" fileName="Find_Test.java" startLine="231" startPosition="0" endLine="234" endPosition="0">
+    <scopeInfo nodeId="1235567758243" fileName="Find_Test.java" startLine="233" startPosition="0" endLine="236" endPosition="0">
       <varInfo nodeId="1235567758243" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="7973341469126541506" fileName="Find_Test.java" startLine="237" startPosition="0" endLine="240" endPosition="0" />
-    <scopeInfo nodeId="7973341469126541501" fileName="Find_Test.java" startLine="90" startPosition="48" endLine="95" endPosition="8" />
-    <scopeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="34" startPosition="27" endLine="40" endPosition="28" />
+    <scopeInfo nodeId="7973341469126541506" fileName="Find_Test.java" startLine="239" startPosition="0" endLine="242" endPosition="0" />
+    <scopeInfo nodeId="7973341469126541501" fileName="Find_Test.java" startLine="91" startPosition="48" endLine="96" endPosition="8" />
+    <scopeInfo nodeId="1225728728665" fileName="Find_Test.java" startLine="33" startPosition="27" endLine="39" endPosition="28" />
     <scopeInfo nodeId="1235567193962" fileName="Find_Test.java" startLine="117" startPosition="27" endLine="123" endPosition="28" />
-    <scopeInfo nodeId="7973341469126541498" fileName="Find_Test.java" startLine="90" startPosition="0" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="185" startPosition="20" endLine="200" endPosition="19" />
-    <scopeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="183" startPosition="46" endLine="202" endPosition="29" />
-    <scopeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="183" startPosition="0" endLine="204" endPosition="0" />
-    <scopeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="179" startPosition="47" endLine="204" endPosition="14" />
-    <scopeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="179" startPosition="0" endLine="206" endPosition="0" />
-    <scopeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="177" startPosition="43" endLine="206" endPosition="10" />
-    <scopeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="26" startPosition="20" endLine="57" endPosition="19" />
+    <scopeInfo nodeId="7973341469126541498" fileName="Find_Test.java" startLine="91" startPosition="0" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="187" startPosition="20" endLine="202" endPosition="19" />
+    <scopeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="185" startPosition="46" endLine="204" endPosition="29" />
+    <scopeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="185" startPosition="0" endLine="206" endPosition="0" />
+    <scopeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="181" startPosition="47" endLine="206" endPosition="14" />
+    <scopeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="181" startPosition="0" endLine="208" endPosition="0" />
+    <scopeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="179" startPosition="43" endLine="208" endPosition="10" />
+    <scopeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="25" startPosition="20" endLine="56" endPosition="19" />
     <scopeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="109" startPosition="20" endLine="140" endPosition="19" />
-    <scopeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="177" startPosition="0" endLine="208" endPosition="0" />
-    <scopeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="24" startPosition="46" endLine="59" endPosition="29" />
+    <scopeInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="179" startPosition="0" endLine="210" endPosition="0" />
+    <scopeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="23" startPosition="46" endLine="58" endPosition="29" />
     <scopeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="107" startPosition="46" endLine="142" endPosition="29" />
-    <scopeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="24" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="23" startPosition="0" endLine="60" endPosition="0" />
     <scopeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="107" startPosition="0" endLine="144" endPosition="0" />
-    <scopeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="19" startPosition="47" endLine="61" endPosition="14" />
-    <scopeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="102" startPosition="47" endLine="144" endPosition="14" />
-    <scopeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="19" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="102" startPosition="0" endLine="146" endPosition="0" />
-    <scopeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="17" startPosition="43" endLine="63" endPosition="10" />
-    <scopeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="100" startPosition="43" endLine="146" endPosition="10" />
-    <scopeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="17" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="100" startPosition="0" endLine="148" endPosition="0" />
-    <scopeInfo nodeId="1225728698108" fileName="Find_Test.java" startLine="15" startPosition="53" endLine="87" endPosition="69">
+    <scopeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="19" startPosition="47" endLine="62" endPosition="14" />
+    <scopeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="103" startPosition="47" endLine="146" endPosition="14" />
+    <scopeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="19" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="103" startPosition="0" endLine="148" endPosition="0" />
+    <scopeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="17" startPosition="43" endLine="64" endPosition="10" />
+    <scopeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="101" startPosition="43" endLine="148" endPosition="10" />
+    <scopeInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="17" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="101" startPosition="0" endLine="150" endPosition="0" />
+    <scopeInfo nodeId="1225728698108" fileName="Find_Test.java" startLine="15" startPosition="53" endLine="88" endPosition="69">
       <varInfo nodeId="3343985444902959416" varName="cl" />
       <varInfo nodeId="3343985444902959694" varName="cl2" />
       <varInfo nodeId="1225728703471" varName="test" />
     </scopeInfo>
-    <scopeInfo nodeId="1225728698106" fileName="Find_Test.java" startLine="15" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="1235567183549" fileName="Find_Test.java" startLine="98" startPosition="46" endLine="234" endPosition="8">
+    <scopeInfo nodeId="1225728698106" fileName="Find_Test.java" startLine="15" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="1235567183549" fileName="Find_Test.java" startLine="99" startPosition="46" endLine="236" endPosition="8">
       <varInfo nodeId="3343985444902959728" varName="cl" />
       <varInfo nodeId="3343985444902959762" varName="cl2" />
       <varInfo nodeId="1235567193954" varName="test" />
       <varInfo nodeId="1235567630250" varName="test2" />
       <varInfo nodeId="1235567735646" varName="test3" />
     </scopeInfo>
-    <scopeInfo nodeId="1235567183547" fileName="Find_Test.java" startLine="98" startPosition="0" endLine="236" endPosition="0" />
-    <unitInfo nodeId="3343985444902967802" fileName="Find_Test.java" startLine="66" startPosition="67" endLine="70" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$2" />
-    <unitInfo nodeId="3343985444902959420" fileName="Find_Test.java" startLine="71" startPosition="78" endLine="75" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$3" />
-    <unitInfo nodeId="3343985444902967830" fileName="Find_Test.java" startLine="77" startPosition="67" endLine="81" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$4" />
-    <unitInfo nodeId="3343985444902959698" fileName="Find_Test.java" startLine="82" startPosition="79" endLine="86" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$5" />
-    <unitInfo nodeId="7973341469126548366" fileName="Find_Test.java" startLine="91" startPosition="77" endLine="95" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$6" />
-    <unitInfo nodeId="1235567599361" fileName="Find_Test.java" startLine="149" startPosition="58" endLine="153" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$8" />
-    <unitInfo nodeId="3343985444902959732" fileName="Find_Test.java" startLine="154" startPosition="78" endLine="158" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$9" />
-    <unitInfo nodeId="1235567612812" fileName="Find_Test.java" startLine="160" startPosition="59" endLine="164" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$10" />
-    <unitInfo nodeId="3343985444902959766" fileName="Find_Test.java" startLine="165" startPosition="79" endLine="169" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$11" />
-    <unitInfo nodeId="1235567723178" fileName="Find_Test.java" startLine="171" startPosition="58" endLine="175" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$12" />
-    <unitInfo nodeId="1235567704231" fileName="Find_Test.java" startLine="209" startPosition="59" endLine="213" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$14" />
-    <unitInfo nodeId="1235568122646" fileName="Find_Test.java" startLine="214" startPosition="60" endLine="218" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$15" />
-    <unitInfo nodeId="1235567714048" fileName="Find_Test.java" startLine="219" startPosition="59" endLine="223" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$16" />
-    <unitInfo nodeId="1235567749451" fileName="Find_Test.java" startLine="225" startPosition="60" endLine="229" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$17" />
-    <unitInfo nodeId="1235567758243" fileName="Find_Test.java" startLine="230" startPosition="59" endLine="234" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$18" />
-    <unitInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="180" startPosition="23" endLine="204" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$15" />
-    <unitInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="178" startPosition="19" endLine="206" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$14" />
-    <unitInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="176" startPosition="55" endLine="208" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$13" />
-    <unitInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="20" startPosition="23" endLine="61" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$3" />
-    <unitInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="103" startPosition="23" endLine="144" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$9" />
-    <unitInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="18" startPosition="19" endLine="63" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$2" />
-    <unitInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="101" startPosition="19" endLine="146" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$8" />
-    <unitInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="16" startPosition="54" endLine="65" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$1" />
-    <unitInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="99" startPosition="54" endLine="148" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$7" />
-    <unitInfo nodeId="1225728681796" fileName="Find_Test.java" startLine="14" startPosition="0" endLine="241" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test" />
+    <scopeInfo nodeId="1235567183547" fileName="Find_Test.java" startLine="99" startPosition="0" endLine="238" endPosition="0" />
+    <unitInfo nodeId="3343985444902967802" fileName="Find_Test.java" startLine="67" startPosition="67" endLine="71" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$2" />
+    <unitInfo nodeId="3343985444902959420" fileName="Find_Test.java" startLine="72" startPosition="78" endLine="76" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$3" />
+    <unitInfo nodeId="3343985444902967830" fileName="Find_Test.java" startLine="78" startPosition="67" endLine="82" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$4" />
+    <unitInfo nodeId="3343985444902959698" fileName="Find_Test.java" startLine="83" startPosition="79" endLine="87" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$5" />
+    <unitInfo nodeId="7973341469126548366" fileName="Find_Test.java" startLine="92" startPosition="77" endLine="96" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$6" />
+    <unitInfo nodeId="1235567599361" fileName="Find_Test.java" startLine="151" startPosition="58" endLine="155" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$8" />
+    <unitInfo nodeId="3343985444902959732" fileName="Find_Test.java" startLine="156" startPosition="78" endLine="160" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$9" />
+    <unitInfo nodeId="1235567612812" fileName="Find_Test.java" startLine="162" startPosition="59" endLine="166" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$10" />
+    <unitInfo nodeId="3343985444902959766" fileName="Find_Test.java" startLine="167" startPosition="79" endLine="171" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$11" />
+    <unitInfo nodeId="1235567723178" fileName="Find_Test.java" startLine="173" startPosition="58" endLine="177" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$12" />
+    <unitInfo nodeId="1235567704231" fileName="Find_Test.java" startLine="211" startPosition="59" endLine="215" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$14" />
+    <unitInfo nodeId="1235568122646" fileName="Find_Test.java" startLine="216" startPosition="60" endLine="220" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$15" />
+    <unitInfo nodeId="1235567714048" fileName="Find_Test.java" startLine="221" startPosition="59" endLine="225" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$16" />
+    <unitInfo nodeId="1235567749451" fileName="Find_Test.java" startLine="227" startPosition="60" endLine="231" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$17" />
+    <unitInfo nodeId="1235567758243" fileName="Find_Test.java" startLine="232" startPosition="59" endLine="236" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$18" />
+    <unitInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="182" startPosition="23" endLine="206" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$15" />
+    <unitInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="180" startPosition="19" endLine="208" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$14" />
+    <unitInfo nodeId="1235567641055" fileName="Find_Test.java" startLine="178" startPosition="55" endLine="210" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$13" />
+    <unitInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="20" startPosition="23" endLine="62" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$3" />
+    <unitInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="104" startPosition="23" endLine="146" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$9" />
+    <unitInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="18" startPosition="19" endLine="64" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$2" />
+    <unitInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="102" startPosition="19" endLine="148" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$8" />
+    <unitInfo nodeId="1225728713280" fileName="Find_Test.java" startLine="16" startPosition="54" endLine="66" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$1" />
+    <unitInfo nodeId="1235567193960" fileName="Find_Test.java" startLine="100" startPosition="54" endLine="150" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test$7" />
+    <unitInfo nodeId="1225728681796" fileName="Find_Test.java" startLine="14" startPosition="0" endLine="243" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test" />
   </root>
   <root nodeId="1226309819704" modelId="r:00000000-0000-4000-0000-011c895903ee(jetbrains.mps.internalCollections.test.closures)">
     <nodeInfo nodeId="1226309819706" fileName="A.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="A#()V" />
@@ -2533,113 +2533,113 @@
     <unitInfo nodeId="5037332032045096364" fileName="IntHolder.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.IntHolder" />
   </root>
   <root nodeId="5192201647735776239" modelId="r:00000000-0000-4000-0000-011c895903ee(jetbrains.mps.internalCollections.test.closures)">
-    <nodeInfo nodeId="5192201647735776436" fileName="Advanced_Test.java" startLine="62" startPosition="45" endLine="62" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5192201647735776442" fileName="Advanced_Test.java" startLine="92" startPosition="27" endLine="92" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5192201647735776436" fileName="Advanced_Test.java" startLine="58" startPosition="45" endLine="58" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5192201647735776442" fileName="Advanced_Test.java" startLine="90" startPosition="27" endLine="90" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
-    <nodeInfo nodeId="5192201647735776410" fileName="Advanced_Test.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_3_array" />
-    <nodeInfo nodeId="5192201647735776420" fileName="Advanced_Test.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_4_s" />
-    <nodeInfo nodeId="5192201647735776420" fileName="Advanced_Test.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_4_s_it" />
-    <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="27" startPosition="28" endLine="28" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="28" startPosition="54" endLine="29" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
-    <nodeInfo nodeId="5192201647735776427" fileName="Advanced_Test.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_3_len" />
-    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="44" startPosition="46" endLine="45" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="45" startPosition="72" endLine="46" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5192201647735776432" fileName="Advanced_Test.java" startLine="48" startPosition="57" endLine="49" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5192201647735776432" fileName="Advanced_Test.java" startLine="49" startPosition="58" endLine="50" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="5192201647735776432" fileName="Advanced_Test.java" startLine="51" startPosition="41" endLine="52" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5192201647735776432" fileName="Advanced_Test.java" startLine="52" startPosition="56" endLine="53" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="5192201647735776437" fileName="Advanced_Test.java" startLine="54" startPosition="45" endLine="55" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5192201647735776437" fileName="Advanced_Test.java" startLine="55" startPosition="56" endLine="56" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5192201647735776437" fileName="Advanced_Test.java" startLine="56" startPosition="71" endLine="57" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5192201647735776425" fileName="Advanced_Test.java" startLine="58" startPosition="45" endLine="59" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5192201647735776426" fileName="Advanced_Test.java" startLine="58" startPosition="45" endLine="59" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5192201647735776425" fileName="Advanced_Test.java" startLine="59" startPosition="70" endLine="60" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5192201647735776425" fileName="Advanced_Test.java" startLine="60" startPosition="56" endLine="61" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="5192201647735776436" fileName="Advanced_Test.java" startLine="62" startPosition="45" endLine="63" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5192201647735776436" fileName="Advanced_Test.java" startLine="63" startPosition="56" endLine="64" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="65" startPosition="46" endLine="66" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="68" startPosition="49" endLine="69" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5192201647735776419" fileName="Advanced_Test.java" startLine="77" startPosition="54" endLine="78" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5192201647735776419" fileName="Advanced_Test.java" startLine="78" startPosition="40" endLine="79" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="5192201647735776419" fileName="Advanced_Test.java" startLine="80" startPosition="23" endLine="81" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5192201647735776419" fileName="Advanced_Test.java" startLine="81" startPosition="54" endLine="82" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5192201647735776419" fileName="Advanced_Test.java" startLine="82" startPosition="38" endLine="83" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="5192201647735776443" fileName="Advanced_Test.java" startLine="84" startPosition="27" endLine="85" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5192201647735776443" fileName="Advanced_Test.java" startLine="85" startPosition="38" endLine="86" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5192201647735776443" fileName="Advanced_Test.java" startLine="86" startPosition="39" endLine="87" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5192201647735776408" fileName="Advanced_Test.java" startLine="88" startPosition="27" endLine="89" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5192201647735776409" fileName="Advanced_Test.java" startLine="88" startPosition="27" endLine="89" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5192201647735776408" fileName="Advanced_Test.java" startLine="89" startPosition="66" endLine="90" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5192201647735776408" fileName="Advanced_Test.java" startLine="90" startPosition="38" endLine="91" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="5192201647735776442" fileName="Advanced_Test.java" startLine="92" startPosition="27" endLine="93" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5192201647735776442" fileName="Advanced_Test.java" startLine="93" startPosition="38" endLine="94" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="95" startPosition="28" endLine="96" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="98" startPosition="31" endLine="99" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5192201647735776454" fileName="Advanced_Test.java" startLine="105" startPosition="7" endLine="106" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5192201647735776432" fileName="Advanced_Test.java" startLine="47" startPosition="45" endLine="51" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5192201647735776419" fileName="Advanced_Test.java" startLine="76" startPosition="27" endLine="80" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="41" startPosition="38" endLine="67" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="39" startPosition="64" endLine="68" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="39" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
-    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="34" startPosition="64" endLine="71" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="34" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="32" startPosition="60" endLine="73" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="32" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="5192201647735776419" fileName="Advanced_Test.java" startLine="30" startPosition="27" endLine="75" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="24" startPosition="20" endLine="97" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="22" startPosition="46" endLine="98" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="22" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
-    <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="15" startPosition="46" endLine="101" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="15" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="13" startPosition="42" endLine="103" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="13" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="5192201647735776400" fileName="Advanced_Test.java" startLine="11" startPosition="51" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5192201647735776246" fileName="Advanced_Test.java" startLine="11" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nestedYield#()V" />
-    <scopeInfo nodeId="5192201647735776436" fileName="Advanced_Test.java" startLine="62" startPosition="45" endLine="62" endPosition="45" />
-    <scopeInfo nodeId="5192201647735776442" fileName="Advanced_Test.java" startLine="92" startPosition="27" endLine="92" endPosition="27" />
-    <scopeInfo nodeId="5192201647735776425" fileName="Advanced_Test.java" startLine="58" startPosition="45" endLine="59" endPosition="70" />
-    <scopeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="65" startPosition="46" endLine="66" endPosition="55" />
-    <scopeInfo nodeId="5192201647735776408" fileName="Advanced_Test.java" startLine="88" startPosition="27" endLine="89" endPosition="66" />
-    <scopeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="95" startPosition="28" endLine="96" endPosition="37" />
-    <scopeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="27" startPosition="28" endLine="29" endPosition="35" />
-    <scopeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="44" startPosition="46" endLine="46" endPosition="53" />
-    <scopeInfo nodeId="5192201647735776432" fileName="Advanced_Test.java" startLine="48" startPosition="57" endLine="50" endPosition="48" />
-    <scopeInfo nodeId="5192201647735776436" fileName="Advanced_Test.java" startLine="62" startPosition="45" endLine="64" endPosition="46" />
-    <scopeInfo nodeId="5192201647735776419" fileName="Advanced_Test.java" startLine="77" startPosition="54" endLine="79" endPosition="30" />
-    <scopeInfo nodeId="5192201647735776442" fileName="Advanced_Test.java" startLine="92" startPosition="27" endLine="94" endPosition="28" />
-    <scopeInfo nodeId="5192201647735776437" fileName="Advanced_Test.java" startLine="54" startPosition="45" endLine="57" endPosition="52" />
-    <scopeInfo nodeId="5192201647735776425" fileName="Advanced_Test.java" startLine="58" startPosition="45" endLine="61" endPosition="46" />
-    <scopeInfo nodeId="5192201647735776443" fileName="Advanced_Test.java" startLine="84" startPosition="27" endLine="87" endPosition="34" />
-    <scopeInfo nodeId="5192201647735776408" fileName="Advanced_Test.java" startLine="88" startPosition="27" endLine="91" endPosition="28" />
-    <scopeInfo nodeId="5192201647735776432" fileName="Advanced_Test.java" startLine="47" startPosition="45" endLine="53" endPosition="46" />
-    <scopeInfo nodeId="5192201647735776419" fileName="Advanced_Test.java" startLine="76" startPosition="27" endLine="83" endPosition="28" />
-    <scopeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="41" startPosition="38" endLine="67" endPosition="37" />
-    <scopeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="39" startPosition="64" endLine="69" endPosition="47" />
-    <scopeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="39" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="34" startPosition="64" endLine="71" endPosition="32" />
-    <scopeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="34" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="32" startPosition="60" endLine="73" endPosition="28" />
-    <scopeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="32" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="5192201647735776419" fileName="Advanced_Test.java" startLine="30" startPosition="27" endLine="75" endPosition="36" />
-    <scopeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="24" startPosition="20" endLine="97" endPosition="19" />
-    <scopeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="22" startPosition="46" endLine="99" endPosition="29" />
-    <scopeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="22" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="15" startPosition="46" endLine="101" endPosition="14" />
-    <scopeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="15" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="13" startPosition="42" endLine="103" endPosition="10" />
-    <scopeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="13" startPosition="0" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="5192201647735776248" fileName="Advanced_Test.java" startLine="11" startPosition="51" endLine="106" endPosition="85">
+    <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="24" startPosition="28" endLine="25" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="25" startPosition="54" endLine="26" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
+    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="40" startPosition="46" endLine="41" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="41" startPosition="72" endLine="42" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5192201647735776432" fileName="Advanced_Test.java" startLine="44" startPosition="57" endLine="45" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5192201647735776432" fileName="Advanced_Test.java" startLine="45" startPosition="58" endLine="46" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="5192201647735776432" fileName="Advanced_Test.java" startLine="47" startPosition="41" endLine="48" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5192201647735776432" fileName="Advanced_Test.java" startLine="48" startPosition="56" endLine="49" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="5192201647735776437" fileName="Advanced_Test.java" startLine="50" startPosition="45" endLine="51" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5192201647735776437" fileName="Advanced_Test.java" startLine="51" startPosition="56" endLine="52" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5192201647735776437" fileName="Advanced_Test.java" startLine="52" startPosition="71" endLine="53" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5192201647735776425" fileName="Advanced_Test.java" startLine="54" startPosition="45" endLine="55" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5192201647735776426" fileName="Advanced_Test.java" startLine="54" startPosition="45" endLine="55" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5192201647735776425" fileName="Advanced_Test.java" startLine="55" startPosition="70" endLine="56" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5192201647735776425" fileName="Advanced_Test.java" startLine="56" startPosition="56" endLine="57" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="5192201647735776436" fileName="Advanced_Test.java" startLine="58" startPosition="45" endLine="59" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5192201647735776436" fileName="Advanced_Test.java" startLine="59" startPosition="56" endLine="60" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="61" startPosition="46" endLine="62" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="64" startPosition="49" endLine="65" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5192201647735776427" fileName="Advanced_Test.java" startLine="68" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_3_len" />
+    <nodeInfo nodeId="5192201647735776419" fileName="Advanced_Test.java" startLine="75" startPosition="54" endLine="76" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5192201647735776419" fileName="Advanced_Test.java" startLine="76" startPosition="40" endLine="77" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="5192201647735776419" fileName="Advanced_Test.java" startLine="78" startPosition="23" endLine="79" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5192201647735776419" fileName="Advanced_Test.java" startLine="79" startPosition="54" endLine="80" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5192201647735776419" fileName="Advanced_Test.java" startLine="80" startPosition="38" endLine="81" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="5192201647735776443" fileName="Advanced_Test.java" startLine="82" startPosition="27" endLine="83" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5192201647735776443" fileName="Advanced_Test.java" startLine="83" startPosition="38" endLine="84" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5192201647735776443" fileName="Advanced_Test.java" startLine="84" startPosition="39" endLine="85" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5192201647735776408" fileName="Advanced_Test.java" startLine="86" startPosition="27" endLine="87" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5192201647735776409" fileName="Advanced_Test.java" startLine="86" startPosition="27" endLine="87" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5192201647735776408" fileName="Advanced_Test.java" startLine="87" startPosition="66" endLine="88" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5192201647735776408" fileName="Advanced_Test.java" startLine="88" startPosition="38" endLine="89" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="5192201647735776442" fileName="Advanced_Test.java" startLine="90" startPosition="27" endLine="91" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5192201647735776442" fileName="Advanced_Test.java" startLine="91" startPosition="38" endLine="92" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="93" startPosition="28" endLine="94" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="96" startPosition="31" endLine="97" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5192201647735776410" fileName="Advanced_Test.java" startLine="100" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_3_array" />
+    <nodeInfo nodeId="5192201647735776420" fileName="Advanced_Test.java" startLine="101" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_4_s" />
+    <nodeInfo nodeId="5192201647735776420" fileName="Advanced_Test.java" startLine="102" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_4_s_it" />
+    <nodeInfo nodeId="5192201647735776454" fileName="Advanced_Test.java" startLine="107" startPosition="7" endLine="108" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5192201647735776432" fileName="Advanced_Test.java" startLine="43" startPosition="45" endLine="47" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5192201647735776419" fileName="Advanced_Test.java" startLine="74" startPosition="27" endLine="78" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="37" startPosition="38" endLine="63" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="35" startPosition="64" endLine="64" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="35" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
+    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="31" startPosition="64" endLine="69" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="31" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="29" startPosition="60" endLine="71" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="29" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="5192201647735776419" fileName="Advanced_Test.java" startLine="27" startPosition="27" endLine="73" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="21" startPosition="20" endLine="95" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="19" startPosition="46" endLine="96" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+    <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="19" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
+    <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="15" startPosition="46" endLine="103" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="15" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="13" startPosition="42" endLine="105" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="13" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="5192201647735776400" fileName="Advanced_Test.java" startLine="11" startPosition="51" endLine="107" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5192201647735776246" fileName="Advanced_Test.java" startLine="11" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nestedYield#()V" />
+    <scopeInfo nodeId="5192201647735776436" fileName="Advanced_Test.java" startLine="58" startPosition="45" endLine="58" endPosition="45" />
+    <scopeInfo nodeId="5192201647735776442" fileName="Advanced_Test.java" startLine="90" startPosition="27" endLine="90" endPosition="27" />
+    <scopeInfo nodeId="5192201647735776425" fileName="Advanced_Test.java" startLine="54" startPosition="45" endLine="55" endPosition="70" />
+    <scopeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="61" startPosition="46" endLine="62" endPosition="55" />
+    <scopeInfo nodeId="5192201647735776408" fileName="Advanced_Test.java" startLine="86" startPosition="27" endLine="87" endPosition="66" />
+    <scopeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="93" startPosition="28" endLine="94" endPosition="37" />
+    <scopeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="24" startPosition="28" endLine="26" endPosition="35" />
+    <scopeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="40" startPosition="46" endLine="42" endPosition="53" />
+    <scopeInfo nodeId="5192201647735776432" fileName="Advanced_Test.java" startLine="44" startPosition="57" endLine="46" endPosition="48" />
+    <scopeInfo nodeId="5192201647735776436" fileName="Advanced_Test.java" startLine="58" startPosition="45" endLine="60" endPosition="46" />
+    <scopeInfo nodeId="5192201647735776419" fileName="Advanced_Test.java" startLine="75" startPosition="54" endLine="77" endPosition="30" />
+    <scopeInfo nodeId="5192201647735776442" fileName="Advanced_Test.java" startLine="90" startPosition="27" endLine="92" endPosition="28" />
+    <scopeInfo nodeId="5192201647735776437" fileName="Advanced_Test.java" startLine="50" startPosition="45" endLine="53" endPosition="52" />
+    <scopeInfo nodeId="5192201647735776425" fileName="Advanced_Test.java" startLine="54" startPosition="45" endLine="57" endPosition="46" />
+    <scopeInfo nodeId="5192201647735776443" fileName="Advanced_Test.java" startLine="82" startPosition="27" endLine="85" endPosition="34" />
+    <scopeInfo nodeId="5192201647735776408" fileName="Advanced_Test.java" startLine="86" startPosition="27" endLine="89" endPosition="28" />
+    <scopeInfo nodeId="5192201647735776432" fileName="Advanced_Test.java" startLine="43" startPosition="45" endLine="49" endPosition="46" />
+    <scopeInfo nodeId="5192201647735776419" fileName="Advanced_Test.java" startLine="74" startPosition="27" endLine="81" endPosition="28" />
+    <scopeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="37" startPosition="38" endLine="63" endPosition="37" />
+    <scopeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="35" startPosition="64" endLine="65" endPosition="47" />
+    <scopeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="35" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="31" startPosition="64" endLine="69" endPosition="32" />
+    <scopeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="31" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="29" startPosition="60" endLine="71" endPosition="28" />
+    <scopeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="29" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="5192201647735776419" fileName="Advanced_Test.java" startLine="27" startPosition="27" endLine="73" endPosition="36" />
+    <scopeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="21" startPosition="20" endLine="95" endPosition="19" />
+    <scopeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="19" startPosition="46" endLine="97" endPosition="29" />
+    <scopeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="19" startPosition="0" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="15" startPosition="46" endLine="103" endPosition="14" />
+    <scopeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="15" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="13" startPosition="42" endLine="105" endPosition="10" />
+    <scopeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="13" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="5192201647735776248" fileName="Advanced_Test.java" startLine="11" startPosition="51" endLine="108" endPosition="85">
       <varInfo nodeId="5192201647735776401" varName="test" />
     </scopeInfo>
-    <scopeInfo nodeId="5192201647735776246" fileName="Advanced_Test.java" startLine="11" startPosition="0" endLine="108" endPosition="0" />
-    <unitInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="35" startPosition="41" endLine="71" endPosition="31" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$6" />
-    <unitInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="33" startPosition="37" endLine="73" endPosition="27" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$5" />
-    <unitInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="31" startPosition="62" endLine="75" endPosition="23" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$4" />
-    <unitInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="16" startPosition="23" endLine="101" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$3" />
-    <unitInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="14" startPosition="19" endLine="103" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$2" />
-    <unitInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="12" startPosition="53" endLine="105" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$1" />
-    <unitInfo nodeId="5192201647735776239" fileName="Advanced_Test.java" startLine="10" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test" />
+    <scopeInfo nodeId="5192201647735776246" fileName="Advanced_Test.java" startLine="11" startPosition="0" endLine="110" endPosition="0" />
+    <unitInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="32" startPosition="41" endLine="69" endPosition="31" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$6" />
+    <unitInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="30" startPosition="37" endLine="71" endPosition="27" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$5" />
+    <unitInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="28" startPosition="62" endLine="73" endPosition="23" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$4" />
+    <unitInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="16" startPosition="23" endLine="103" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$3" />
+    <unitInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="14" startPosition="19" endLine="105" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$2" />
+    <unitInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="12" startPosition="53" endLine="107" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$1" />
+    <unitInfo nodeId="5192201647735776239" fileName="Advanced_Test.java" startLine="10" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test" />
   </root>
   <root nodeId="796360049988301892" modelId="r:00000000-0000-4000-0000-011c895903ee(jetbrains.mps.internalCollections.test.closures)">
     <nodeInfo nodeId="796360049988302520" fileName="IFoo.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljava/lang/Iterable;" />

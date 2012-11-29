@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -19,10 +18,10 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.logging.Logger;
 
 public class OverrideMethodsAsIntention_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(OverrideMethodsAsIntention_Action.class);
 
   public OverrideMethodsAsIntention_Action() {
     super("Override Methods", "", ICON);
@@ -83,4 +82,6 @@ public class OverrideMethodsAsIntention_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "OverrideMethodsAsIntention", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(OverrideMethodsAsIntention_Action.class);
 }

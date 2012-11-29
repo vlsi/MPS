@@ -6,7 +6,6 @@ import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.smodel.SNode;
 import java.util.concurrent.ConcurrentHashMap;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.NameUtil;
@@ -32,11 +31,11 @@ import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
+import jetbrains.mps.logging.Logger;
 
 public class SModelUtil {
   private static ConcurrentMap<String, SNode> myFQNameToConcepDecl = new ConcurrentHashMap<String, SNode>();
   private static ConcurrentMap<SNode, Language> myConceptToLanguage = new ConcurrentHashMap<SNode, Language>();
-  private static Logger LOG = Logger.getLogger(SModelUtil.class);
 
   public SModelUtil() {
   }
@@ -207,7 +206,7 @@ public class SModelUtil {
   }
 
   public static boolean isAssignableConcept(String fromFqName, String toFqName) {
-    if (eq_74see4_a0a0n(fromFqName, toFqName)) {
+    if (eq_74see4_a0a0q(fromFqName, toFqName)) {
       return true;
     }
     if (fromFqName == null || toFqName == null) {
@@ -249,7 +248,9 @@ public class SModelUtil {
     return SPropertyOperations.getString(link, "role");
   }
 
-  private static boolean eq_74see4_a0a0n(Object a, Object b) {
+  private static Logger LOG = Logger.getLogger(SModelUtil.class);
+
+  private static boolean eq_74see4_a0a0q(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

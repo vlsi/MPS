@@ -29,7 +29,7 @@ public class MergeDriverBackupUtil {
     writeContentsToFile(contents[MergeConstants.ORIGINAL], shortFileName, tmp, MergeVersion.BASE.getSuffix());
     writeContentsToFile(contents[MergeConstants.CURRENT], shortFileName, tmp, MergeVersion.MINE.getSuffix());
     writeContentsToFile(contents[MergeConstants.LAST_REVISION], shortFileName, tmp, MergeVersion.REPOSITORY.getSuffix());
-    File zipfile = chooseZipFileForModelLongName("unknown.mps", check_rdkmuq_b0a6a0(modelFqName));
+    File zipfile = chooseZipFileForModelLongName("unknown.mps", check_rdkmuq_b0a6a2(modelFqName));
     zipfile.getParentFile().mkdirs();
     FileUtil.zip(tmp, zipfile);
     FileUtil.delete(tmp);
@@ -65,7 +65,7 @@ public class MergeDriverBackupUtil {
     backupDirPath = path;
   }
 
-  private static String check_rdkmuq_b0a6a0(SModelFqName checkedDotOperand) {
+  private static String check_rdkmuq_b0a6a2(SModelFqName checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLongName();
     }

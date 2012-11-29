@@ -24,7 +24,7 @@ public class check_MethodDeclaration_NonTypesystemRule extends AbstractNonTypesy
 
   public void applyRule(final SNode baseMethodDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     for (SNode annotationInstance : SLinkOperations.getTargets(baseMethodDeclaration, "annotation", true)) {
-      if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(_quotation_createNode_46fcoa_a0a0a0a0(), "classifier", false)) {
+      if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(_quotation_createNode_46fcoa_a0a0a0a1(), "classifier", false)) {
         if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(baseMethodDeclaration, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(baseMethodDeclaration, "returnType", true), "inference method should not return a value", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1206297717786", null, errorTarget);
@@ -49,7 +49,7 @@ public class check_MethodDeclaration_NonTypesystemRule extends AbstractNonTypesy
     return false;
   }
 
-  private static SNode _quotation_createNode_46fcoa_a0a0a0a0() {
+  private static SNode _quotation_createNode_46fcoa_a0a0a0a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)"), SNodeId.fromString("1196177069451")));

@@ -4,8 +4,6 @@ package jetbrains.mps.ide.modelchecker.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import com.intellij.openapi.project.Project;
@@ -13,10 +11,11 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class ShowModelChecker_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ShowModelChecker_Action.class);
 
   public ShowModelChecker_Action() {
     super("Model Checker...", "", ICON);
@@ -77,4 +76,6 @@ public class ShowModelChecker_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(ShowModelChecker_Action.class);
 }

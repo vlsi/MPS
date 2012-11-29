@@ -21,7 +21,6 @@ public class GDBEventsHandler {
   public static final String REASON_BP_HIT = "breakpoint-hit";
   public static final String REASON_EXITED_NORMALLY = "exited-normally";
   public static final String REASON_EXITED = "exited";
-
   private ProcessHandler myProcessHandler;
   private List<GDBEventsListener> myEventsListeners = new ArrayList<GDBEventsListener>();
   private List<StreamAnswer> myPendingStreamAnswers = new ArrayList<StreamAnswer>();

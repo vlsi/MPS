@@ -24,7 +24,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 
 public class TableColumnSelection extends AbstractMultipleSelection {
   private static final String COLUMN_NUMBER_PROPERTY = "columnNumber";
-
   private int myColumnNumber;
   private EditorCell_Table myTableCell;
 

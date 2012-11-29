@@ -47,7 +47,10 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.openapi.vcs.changes.Change;
 import jetbrains.mps.vcs.concrete.GitUtils;
 import com.intellij.openapi.vcs.VcsException;
@@ -68,7 +71,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.SNodeOperations;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.command.undo.UndoManager;
 import org.junit.Test;
@@ -93,7 +95,6 @@ public class ChangesManagerTest {
   private static final String MODEL_PREFIX = "ru.geevee.fugue.";
   private static Project ourProject;
   private static boolean ourEnabled;
-
   private CurrentDifferenceRegistry myRegistry;
   private Project myProject;
   private boolean myWaitCompleted;
@@ -264,8 +265,8 @@ public class ChangesManagerTest {
     myUtilDiff.setEnabled(true);
     waitForChangesManager();
 
-    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a9a8(myHtmlDiff.getChangeSet())).isNotEmpty());
-    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a01a8(myUiDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a9a92(myHtmlDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a01a92(myUiDiff.getChangeSet())).isNotEmpty());
     Assert.assertNull(myUtilDiff.getChangeSet());
   }
 
@@ -317,17 +318,21 @@ public class ChangesManagerTest {
             return "ImageLoader".equals(SPropertyOperations.getString(r, "name"));
           }
         });
-        SPropertyOperations.set(ListSequence.fromList(SLinkOperations.getTargets(root, "method", true)).findFirst(new IWhereFilter<SNode>() {
+        SPropertyOperations.set(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), root, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode m) {
             return "getImageAttempts".equals(SPropertyOperations.getString(m, "name"));
           }
         }), "name", "getImageAttempts2");
-        ListSequence.fromList(SLinkOperations.getTargets(root, "field", true)).clear();
+        ListSequence.fromList(SLinkOperations.getTargets(root, "member", true)).removeWhere(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+          }
+        });
       }
     });
 
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a3a01(myUtilDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a3a13(myUtilDiff.getChangeSet())).isNotEmpty());
 
     MapSequence.fromMap(myExpectedFileStatuses).put("util.ImageLoader", FileStatus.MODIFIED);
     checkRootStatuses();
@@ -368,7 +373,7 @@ public class ChangesManagerTest {
     }, myUtilVirtualFile, null);
 
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a3a21(myUtilDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a3a33(myUtilDiff.getChangeSet())).isNotEmpty());
 
     MapSequence.fromMap(myExpectedFileStatuses).put("util.ImageLoader", FileStatus.MODIFIED);
     checkRootStatuses();
@@ -382,7 +387,7 @@ public class ChangesManagerTest {
   }
 
   private void modifyExternally() throws ModelReadException {
-    int changesBefore = ListSequence.fromList(check_4gxggu_a0a0a41(myUtilDiff.getChangeSet())).count();
+    int changesBefore = ListSequence.fromList(check_4gxggu_a0a0a53(myUtilDiff.getChangeSet())).count();
     final SModel modelContent = ModelPersistence.readModel(((DefaultSModelDescriptor) myUtilDiff.getModelDescriptor()).getSource().getFile(), false);
     createNewRoot(modelContent);
     final EditableSModelDescriptor modelDescriptor = myUtilDiff.getModelDescriptor();
@@ -408,7 +413,7 @@ public class ChangesManagerTest {
       }
     });
     waitForChangesManager();
-    Assert.assertEquals(changesBefore + 1, ListSequence.fromList(check_4gxggu_a1a6a41(myUtilDiff.getChangeSet())).count());
+    Assert.assertEquals(changesBefore + 1, ListSequence.fromList(check_4gxggu_a1a6a53(myUtilDiff.getChangeSet())).count());
 
     MapSequence.fromMap(myExpectedFileStatuses).put("util.NewRoot", FileStatus.ADDED);
     checkRootStatuses();
@@ -426,7 +431,7 @@ public class ChangesManagerTest {
       throw ListSequence.fromList(exceptions).first();
     }
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a5a51(myUtilDiff.getChangeSet())).isEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a5a63(myUtilDiff.getChangeSet())).isEmpty());
 
     SetSequence.fromSet(MapSequence.fromMap(myExpectedFileStatuses).keySet()).where(new IWhereFilter<String>() {
       public boolean accept(String k) {
@@ -493,7 +498,7 @@ public class ChangesManagerTest {
       runCommandAndWait(new Runnable() {
         public void run() {
           SNode node = t.invoke();
-          assert node == null || SNodeOperations.isRoot(node);
+          assert node == null || jetbrains.mps.util.SNodeOperations.isRoot(node);
           ListSequence.fromList(affectedNodePointers).addElement((node == null ?
             null :
             new SNodePointer(node)
@@ -521,7 +526,7 @@ public class ChangesManagerTest {
               fe = new DummyFileEditor(np);
             }
             UndoManager.getInstance(myIdeaProject).undo(fe);
-            check_4gxggu_a3a0a0a0a0a42(fe);
+            check_4gxggu_a3a0a0a0a0a54(fe);
           }
         });
       } catch (Throwable t) {
@@ -565,7 +570,7 @@ public class ChangesManagerTest {
     doSomethingAndUndo(myUiDiff, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
         SNode root = getDocumentLayoutRoot();
-        jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.deleteNode(root);
+        SNodeOperations.deleteNode(root);
         return (SNode) null;
       }
     });
@@ -596,19 +601,19 @@ public class ChangesManagerTest {
     final Wrappers._T<SNode> method = new Wrappers._T<SNode>();
     doSomethingAndUndo(myUiDiff, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        method.value = ListSequence.fromList(SLinkOperations.getTargets(getDocumentLayoutRoot(), "method", true)).findFirst(new IWhereFilter<SNode>() {
+        method.value = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), getDocumentLayoutRoot(), "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode m) {
             return "selectAll".equals(SPropertyOperations.getString(m, "name"));
           }
         });
         Assert.assertNotNull(method.value);
         SPropertyOperations.set(method.value, "name", "selectEverything");
-        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingRoot(method.value);
+        return SNodeOperations.getContainingRoot(method.value);
       }
     }, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
         SPropertyOperations.set(method.value, "name", "selectEverySinglePiece");
-        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingRoot(method.value);
+        return SNodeOperations.getContainingRoot(method.value);
       }
     });
   }
@@ -620,19 +625,19 @@ public class ChangesManagerTest {
     doSomethingAndUndo(myUiDiff, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
         root.value = getDocumentLayoutRoot();
-        method.value = ListSequence.fromList(SLinkOperations.getTargets(root.value, "method", true)).findFirst(new IWhereFilter<SNode>() {
+        method.value = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), root.value, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode m) {
             return "getSize".equals(SPropertyOperations.getString(m, "name"));
           }
         });
         Assert.assertNotNull(method.value);
-        SLinkOperations.setTarget(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(SLinkOperations.getTarget(method.value, "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", root.value, false);
+        SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(method.value, "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", root.value, false);
         return root.value;
       }
     }, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        SLinkOperations.setTarget(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(SLinkOperations.getTarget(method.value, "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", ListSequence.fromList(SLinkOperations.getTargets(root.value, "staticInnerClassifiers", true)).first(), false);
-        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingRoot(method.value);
+        SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(method.value, "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), root.value, "jetbrains.mps.baseLanguage.structure.Classifier", "call_nestedClassifiers_5292274854859193142", new Object[]{})).first(), false);
+        return SNodeOperations.getContainingRoot(method.value);
       }
     });
   }
@@ -644,7 +649,7 @@ public class ChangesManagerTest {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         root.value = getDocumentLayoutRoot();
-        field.value = ListSequence.fromList(SLinkOperations.getTargets(root.value, "field", true)).findFirst(new IWhereFilter<SNode>() {
+        field.value = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), root.value, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{})).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode f) {
             return "textPositions".equals(SPropertyOperations.getString(f, "name"));
           }
@@ -655,22 +660,22 @@ public class ChangesManagerTest {
 
     _FunctionTypes._return_P0_E0<? extends SNode> moveUpTwice = new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.insertPrevSiblingChild(field.value, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getPrevSibling(field.value));
-        jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.insertPrevSiblingChild(field.value, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getPrevSibling(field.value));
-        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingRoot(field.value);
+        SNodeOperations.insertPrevSiblingChild(field.value, SNodeOperations.getPrevSibling(field.value));
+        SNodeOperations.insertPrevSiblingChild(field.value, SNodeOperations.getPrevSibling(field.value));
+        return SNodeOperations.getContainingRoot(field.value);
       }
     };
     _FunctionTypes._return_P0_E0<? extends SNode> moveDown = new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.insertNextSiblingChild(field.value, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getNextSibling(field.value));
-        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingRoot(field.value);
+        SNodeOperations.insertNextSiblingChild(field.value, SNodeOperations.getNextSibling(field.value));
+        return SNodeOperations.getContainingRoot(field.value);
       }
     };
     _FunctionTypes._return_P0_E0<? extends SNode> moveToOtherClass = new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        SNode inner = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(root.value, "staticInnerClassifiers", true)).first(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-        ListSequence.fromList(SLinkOperations.getTargets(inner, "field", true)).addElement(field.value);
-        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingRoot(field.value);
+        SNode inner = SNodeOperations.cast(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), root.value, "jetbrains.mps.baseLanguage.structure.Classifier", "call_nestedClassifiers_5292274854859193142", new Object[]{})).first(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+        ListSequence.fromList(SLinkOperations.getTargets(inner, "member", true)).addElement(field.value);
+        return SNodeOperations.getContainingRoot(field.value);
       }
     };
 
@@ -692,7 +697,7 @@ public class ChangesManagerTest {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         root.value = getDocumentLayoutRoot();
-        method.value = ListSequence.fromList(SLinkOperations.getTargets(root.value, "method", true)).findFirst(new IWhereFilter<SNode>() {
+        method.value = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), root.value, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode f) {
             return "getTextPosition".equals(SPropertyOperations.getString(f, "name"));
           }
@@ -702,18 +707,18 @@ public class ChangesManagerTest {
     doSomethingAndUndo(myUiDiff, true, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
         SNode ifBefore = (SNode) new SNode(InternUtil.intern("jetbrains.mps.baseLanguage.structure.IfStatement"));
-        jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method.value, "body", true), "statement", true)).first(), ifBefore);
+        SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method.value, "body", true), "statement", true)).first(), ifBefore);
         return root.value;
       }
     }, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        SNode foreachBody = SLinkOperations.getTarget(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method.value, "body", true), "statement", true)).getElement(1), "jetbrains.mps.baseLanguage.structure.ForeachStatement"), "body", true);
-        SNode declarationStatement = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(foreachBody, "statement", true)).getElement(0), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
+        SNode foreachBody = SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method.value, "body", true), "statement", true)).getElement(1), "jetbrains.mps.baseLanguage.structure.ForeachStatement"), "body", true);
+        SNode declarationStatement = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(foreachBody, "statement", true)).getElement(0), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
         final SNode declaration = SLinkOperations.getTarget(declarationStatement, "localVariableDeclaration", true);
         final SNode initializer = SLinkOperations.getTarget(declaration, "initializer", true);
-        ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getDescendants(foreachBody, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+        ListSequence.fromList(SNodeOperations.getDescendants(foreachBody, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(SLinkOperations.getTarget(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
           }
         }).toListSequence().where(new IWhereFilter<SNode>() {
           public boolean accept(SNode vr) {
@@ -721,16 +726,16 @@ public class ChangesManagerTest {
           }
         }).visitAll(new IVisitor<SNode>() {
           public void visit(SNode vr) {
-            jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.replaceWithAnother(vr, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.copyNode(initializer));
+            SNodeOperations.replaceWithAnother(vr, SNodeOperations.copyNode(initializer));
           }
         });
-        jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.deleteNode(declarationStatement);
+        SNodeOperations.deleteNode(declarationStatement);
         return root.value;
       }
     }, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method.value, "body", true), "statement", true)).getElement(2));
-        jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method.value, "body", true), "statement", true)).getElement(1));
+        SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method.value, "body", true), "statement", true)).getElement(2));
+        SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method.value, "body", true), "statement", true)).getElement(1));
         return root.value;
       }
     });
@@ -759,7 +764,7 @@ public class ChangesManagerTest {
       });
       waitAndCheck(myUiDiff);
 
-      Assert.assertEquals(ListSequence.fromList(changesBefore).count() - 1, ListSequence.fromList(check_4gxggu_a1a6a8a43(myUiDiff.getChangeSet())).count());
+      Assert.assertEquals(ListSequence.fromList(changesBefore).count() - 1, ListSequence.fromList(check_4gxggu_a1a6a8a55(myUiDiff.getChangeSet())).count());
 
       ListSequence.fromList(affectedNodePointers).addElement(new SNodePointer(myUiDiff.getModelDescriptor().getSModelReference(), changeToPick.getRootId()));
     }
@@ -783,12 +788,12 @@ public class ChangesManagerTest {
     String stringBeforeAll = getChangeSetString(myUiDiff.getChangeSet());
     final SModel model = myUiDiff.getModelDescriptor().getSModel();
 
-    List<SNodePointer> affectedRootPointers = ListSequence.fromList(check_4gxggu_a0a0a5a53(myUiDiff.getChangeSet())).select(new ISelector<ModelChange, SNodePointer>() {
+    List<SNodePointer> affectedRootPointers = ListSequence.fromList(check_4gxggu_a0a0a5a65(myUiDiff.getChangeSet())).select(new ISelector<ModelChange, SNodePointer>() {
       public SNodePointer select(ModelChange ch) {
         return new SNodePointer(myUiDiff.getModelDescriptor().getSModelReference(), ch.getRootId());
       }
     }).distinct().toListSequence();
-    final List<ModelChange> oppositeChanges = ListSequence.fromList(check_4gxggu_a0a0g0jb(myUiDiff.getChangeSet())).select(new ISelector<ModelChange, ModelChange>() {
+    final List<ModelChange> oppositeChanges = ListSequence.fromList(check_4gxggu_a0a0g0ec(myUiDiff.getChangeSet())).select(new ISelector<ModelChange, ModelChange>() {
       public ModelChange select(ModelChange ch) {
         return ch.getOppositeChange();
       }
@@ -814,7 +819,7 @@ public class ChangesManagerTest {
       }
     });
     waitAndCheck(myUiDiff);
-    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a9a53(myUiDiff.getChangeSet())).isEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a9a65(myUiDiff.getChangeSet())).isEmpty());
 
     MapSequence.fromMap(myExpectedFileStatuses).removeKey("ui.DocumentLayout");
     MapSequence.fromMap(myExpectedFileStatuses).removeKey("ui.HTMLPanel");
@@ -830,7 +835,7 @@ public class ChangesManagerTest {
 
   private void checkOneAddedRoot(CurrentDifference newModelDiff) {
     waitForChangesManager();
-    List<ModelChange> changes = check_4gxggu_a0b0kb(newModelDiff.getChangeSet());
+    List<ModelChange> changes = check_4gxggu_a0b0fc(newModelDiff.getChangeSet());
     Assert.assertEquals(2, ListSequence.fromList(changes).count());
     Assert.assertTrue(ListSequence.fromList(changes).any(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange it) {
@@ -872,7 +877,7 @@ public class ChangesManagerTest {
 
     newModelDiff.value.setEnabled(true);
     waitForChangesManager();
-    Assert.assertTrue((int) ListSequence.fromList(check_4gxggu_a0a0l0lb(newModelDiff.value.getChangeSet())).count() == 0);
+    Assert.assertTrue((int) ListSequence.fromList(check_4gxggu_a0a0l0gc(newModelDiff.value.getChangeSet())).count() == 0);
 
     checkRootStatuses();
 
@@ -974,111 +979,6 @@ public class ChangesManagerTest {
     TestMain.finishTestOnProjectCopy(ourProject, DESTINATION_PROJECT_DIR);
   }
 
-  private static List<ModelChange> check_4gxggu_a0a9a8(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_4gxggu_a0a01a8(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_4gxggu_a0a3a01(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_4gxggu_a0a3a21(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_4gxggu_a0a0a41(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_4gxggu_a1a6a41(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_4gxggu_a0a5a51(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static void check_4gxggu_a3a0a0a0a0a42(FileEditor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      checkedDotOperand.dispose();
-    }
-
-  }
-
-  private static List<ModelChange> check_4gxggu_a1a6a8a43(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_4gxggu_a0a0a5a53(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_4gxggu_a0a0g0jb(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_4gxggu_a0a9a53(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_4gxggu_a0b0kb(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_4gxggu_a0a0l0lb(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
-  private static void check_4gxggu_a0a0a1a(Runnable checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      checkedDotOperand.run();
-    }
-
-  }
-
   private class MyReloadListener implements FSChangesWatcher.IReloadListener {
     public MyReloadListener() {
     }
@@ -1088,8 +988,113 @@ public class ChangesManagerTest {
 
     public void reloadFinished() {
       synchronized (this) {
-        check_4gxggu_a0a0a1a(myAfterReloadTask);
+        check_4gxggu_a0a0a2lc(myAfterReloadTask);
       }
     }
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a9a92(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a01a92(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a3a13(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a3a33(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a0a53(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a1a6a53(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a5a63(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static void check_4gxggu_a3a0a0a0a0a54(FileEditor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.dispose();
+    }
+
+  }
+
+  private static List<ModelChange> check_4gxggu_a1a6a8a55(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a0a5a65(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a0g0ec(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a9a65(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0b0fc(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a0l0gc(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static void check_4gxggu_a0a0a2lc(Runnable checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.run();
+    }
+
   }
 }

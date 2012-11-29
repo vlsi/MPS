@@ -11,10 +11,12 @@ import java.util.List;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class OverridingFields_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder");
@@ -50,9 +52,9 @@ public class OverridingFields_Finder extends GeneratedFinder {
       for (SNode classNode : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(node), scope, monitor.subTask(1)))) {
         Iterable<SNode> fieldsOfSameKind;
         if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
-          fieldsOfSameKind = SLinkOperations.getTargets(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true);
+          fieldsOfSameKind = ClassConcept_Behavior.call_fields_5292274854859383272(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
         } else {
-          fieldsOfSameKind = SLinkOperations.getTargets(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true);
+          fieldsOfSameKind = Classifier_Behavior.call_staticFields_5292274854859223538(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
         }
         for (SNode field : Sequence.fromIterable(fieldsOfSameKind)) {
           if (SPropertyOperations.getString(field, "name").equals(SPropertyOperations.getString(node, "name")) && BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(field, "type", true), "virtual_getErasureSignature_1213877337313", new Object[]{}).equals(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, "type", true), "virtual_getErasureSignature_1213877337313", new Object[]{}))) {

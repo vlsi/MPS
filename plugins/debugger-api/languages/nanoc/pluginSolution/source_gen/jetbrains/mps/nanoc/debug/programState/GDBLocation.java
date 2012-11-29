@@ -9,7 +9,6 @@ import jetbrains.mps.util.NameUtil;
 
 public class GDBLocation implements ILocation {
   private static Logger LOG = Logger.getLogger(GDBLocation.class);
-
   private int myLineNumber;
   private String myRoutine;
   private String myFileAbsolutePath;

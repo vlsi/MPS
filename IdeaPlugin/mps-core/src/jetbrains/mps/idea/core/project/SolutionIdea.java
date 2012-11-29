@@ -50,7 +50,7 @@ public class SolutionIdea extends Solution {
   @NotNull
   private Module myModule;
   private List<Dependency> myDependencies;
-  private List<Dependency> myAddedDependencies = new ArrayList<Dependency>();
+  private Set<ModelRoot> myContributedModelRoots;
   private MessageBusConnection myConnection;
 
   public SolutionIdea(@NotNull Module module, SolutionDescriptor descriptor) {
@@ -116,16 +116,24 @@ public class SolutionIdea extends Solution {
 
   @Override
   protected Iterable<ModelRoot> loadRoots() {
+
+    if (myContributedModelRoots==null) {
+      myContributedModelRoots = new HashSet<ModelRoot>();
+      ModelRootContributorManager mgr = myModule.getProject().getComponent(ModelRootContributorManager.class);
+      for (ModelRootContributor contributor: mgr.getContributors()) {
+        for (ModelRoot root: contributor.getModelRoots(myModule)) {
+          myContributedModelRoots.add(root);
+        }
+      }
+    }
+
     List<ModelRoot> sum = new ArrayList<ModelRoot>();
     for (ModelRoot mr: super.loadRoots()) {
       sum.add(mr);
     }
-    ModelRootContributorManager mgr = myModule.getProject().getComponent(ModelRootContributorManager.class);
-    for (ModelRootContributor contributor: mgr.getContributors()) {
-      for (ModelRoot root: contributor.getModelRoots(myModule)) {
-        sum.add(root);
-      }
-    }
+
+    sum.addAll(myContributedModelRoots);
+
     return sum;
   }
 
@@ -135,22 +143,7 @@ public class SolutionIdea extends Solution {
       // TODO: move to Solution descriptor & try to use common Solution implementation here?
       myDependencies = new ArrayList<Dependency>();
 
-      myDependencies.addAll(myAddedDependencies);
-
       ArrayList<Module> usedModules = new ArrayList<Module>(Arrays.asList(ModuleRootManager.getInstance(myModule).getDependencies()));
-
-      /*
-                     // project hasn't been opened yet, this will not work
-
-                     Solution sourceStubSol = ProjectJavaSourceImporter.getInstance(myModule.getProject()).getSolutionForModule(myModule);
-                     if (sourceStubSol!=null) {
-                         Dependency dep = new Dependency();
-                         dep.setModuleRef(sourceStubSol.getModuleReference());
-                         dep.setReexport(false);
-                         myDependencies.add(dep);
-                     }
-                     */
-
       for (Module usedModule : usedModules) {
         MPSFacet usedModuleMPSFacet = FacetManager.getInstance(usedModule).getFacetByType(MPSFacetType.ID);
         if (usedModuleMPSFacet != null && usedModuleMPSFacet.wasInitialized()) {
@@ -195,11 +188,6 @@ public class SolutionIdea extends Solution {
 
   @Override
   public void addDependency(@NotNull SModuleReference moduleRef, boolean reexport) {
-    // FIXME make proper dependencies
-    Dependency dep = new Dependency();
-    dep.setModuleRef((ModuleReference) moduleRef);
-    dep.setReexport(false); // overriding parameter
-    myAddedDependencies.add(dep);
   }
 
   @Override
@@ -214,6 +202,17 @@ public class SolutionIdea extends Solution {
   public void invalidateDependencies() {
     super.invalidateDependencies();
     myDependencies = null;
+  }
+
+  public void contributedModelRootsChanged() {
+    myContributedModelRoots = null;
+    // update models
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        setModuleDescriptor(getModuleDescriptor(), false);
+      }
+    });
   }
 
   @Override

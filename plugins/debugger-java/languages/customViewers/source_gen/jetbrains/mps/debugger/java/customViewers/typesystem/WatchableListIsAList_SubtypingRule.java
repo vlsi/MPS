@@ -18,7 +18,7 @@ public class WatchableListIsAList_SubtypingRule extends SubtypingRule_Runtime im
   }
 
   public SNode getSubOrSuperType(SNode watchableListType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_ucp7lt_a0a0();
+    return _quotation_createNode_ucp7lt_a0a1();
   }
 
   public String getApplicableConceptFQName() {
@@ -36,7 +36,7 @@ public class WatchableListIsAList_SubtypingRule extends SubtypingRule_Runtime im
     return false;
   }
 
-  private static SNode _quotation_createNode_ucp7lt_a0a0() {
+  private static SNode _quotation_createNode_ucp7lt_a0a1() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);

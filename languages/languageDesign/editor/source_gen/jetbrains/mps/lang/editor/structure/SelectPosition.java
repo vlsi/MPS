@@ -11,22 +11,12 @@ public enum SelectPosition {
   after("after", "after");
 
   private String myName;
-  private String myValue;
-
-  SelectPosition(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -52,5 +42,16 @@ public enum SelectPosition {
       return SelectPosition.after;
     }
     return SelectPosition.getDefault();
+  }
+
+  private String myValue;
+
+  SelectPosition(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

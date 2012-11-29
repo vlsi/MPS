@@ -10,11 +10,12 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
-import git4idea.GitBranch;
+import git4idea.branch.GitBranchUtil;
 import jetbrains.mps.util.NameUtil;
 import com.intellij.openapi.vcs.VcsException;
 import git4idea.commands.GitSimpleHandler;
 import git4idea.commands.GitCommand;
+import git4idea.GitLocalBranch;
 
 public class MPSSourceRevision extends SourceRevision {
   public MPSSourceRevision() {
@@ -33,7 +34,7 @@ public class MPSSourceRevision extends SourceRevision {
     }
     Project project = ProjectManager.getInstance().getOpenProjects()[0];
     try {
-      String currentBranchName = check_9qzcwz_a0a0e0a(GitBranch.current(project, mpsHome));
+      String currentBranchName = check_9qzcwz_a0a0e0b(GitBranchUtil.getCurrentBranch(project, mpsHome));
       String currentRevision = getCurrentRevision(project, mpsHome);
       String mergeBase = getMergeBase(project, mpsHome);
       int distance = getDistance(project, mpsHome);
@@ -56,7 +57,7 @@ public class MPSSourceRevision extends SourceRevision {
     h.setNoSSH(true);
     h.setSilent(true);
     h.addParameters("--max-count=1", "--pretty=%h");
-    return check_9qzcwz_a4a0(h.run());
+    return check_9qzcwz_a4a2(h.run());
   }
 
   public static String getMergeBase(Project project, VirtualFile root) throws VcsException {
@@ -81,16 +82,16 @@ public class MPSSourceRevision extends SourceRevision {
     return Integer.parseInt(count.trim());
   }
 
-  private static String check_9qzcwz_a4a0(String checkedDotOperand) {
+  private static String check_9qzcwz_a0a0e0b(GitLocalBranch checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.trim();
+      return checkedDotOperand.getName();
     }
     return null;
   }
 
-  private static String check_9qzcwz_a0a0e0a(GitBranch checkedDotOperand) {
+  private static String check_9qzcwz_a4a2(String checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getName();
+      return checkedDotOperand.trim();
     }
     return null;
   }

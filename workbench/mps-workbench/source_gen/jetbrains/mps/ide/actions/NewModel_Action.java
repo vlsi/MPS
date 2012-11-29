@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -26,10 +25,10 @@ import jetbrains.mps.ide.StereotypeProvider;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.logging.Logger;
 
 public class NewModel_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(NewModel_Action.class);
 
   public NewModel_Action() {
     super("Model", "", ICON);
@@ -179,4 +178,6 @@ public class NewModel_Action extends BaseAction {
     }
     return ((IModule) MapSequence.fromMap(_params).get("module")).getModuleFqName();
   }
+
+  private static Logger LOG = Logger.getLogger(NewModel_Action.class);
 }

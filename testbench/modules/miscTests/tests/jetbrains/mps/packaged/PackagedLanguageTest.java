@@ -110,7 +110,18 @@ public class PackagedLanguageTest {
     Assert.assertEquals(1, libraryModel.rootsCount());
     final SNode root = libraryModel.rootsIterator().next();
     Assert.assertEquals("DummyLibraryClass", root.getProperty("name"));
-    final SNode method = root.getChild("staticMethod");
+
+    SNode method = null;
+    for (SNode child : root.getChildren("member")) {
+      if (child.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
+        if (method == null) {
+          method = child;
+        } else {
+          method = null;
+          break;
+        }
+      }
+    }
     Assert.assertNotNull(method);
     Assert.assertEquals("doSomething", method.getProperty("name"));
   }

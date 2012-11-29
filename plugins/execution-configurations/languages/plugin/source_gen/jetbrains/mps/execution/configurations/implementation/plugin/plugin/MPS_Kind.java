@@ -16,7 +16,6 @@ import com.intellij.openapi.extensions.Extensions;
 
 public class MPS_Kind implements ConfigurationType {
   private static final Icon ICON = IconUtil.getIcon("MPS_16.png");
-
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
 
   public MPS_Kind() {

@@ -4,8 +4,6 @@ package jetbrains.mps.debugger.api.ui.tool;
 
 import com.intellij.openapi.Disposable;
 import org.jetbrains.annotations.NonNls;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.openapi.project.Project;
 import java.util.ArrayList;
@@ -34,12 +32,12 @@ import com.intellij.execution.ui.actions.CloseAction;
 import javax.swing.JComponent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.util.Disposer;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class DebuggerToolContentBuilder implements Disposable {
   @NonNls
   private static final String JAVA_RUNNER = "JavaRunner";
-  protected static Log log = LogFactory.getLog(DebuggerToolContentBuilder.class);
-
   private final ProgramRunner myRunner;
   private final Project myProject;
   private final ArrayList<Disposable> myDisposeables = new ArrayList<Disposable>();
@@ -146,4 +144,6 @@ public class DebuggerToolContentBuilder implements Disposable {
       super.dispose();
     }
   }
+
+  protected static Log log = LogFactory.getLog(DebuggerToolContentBuilder.class);
 }

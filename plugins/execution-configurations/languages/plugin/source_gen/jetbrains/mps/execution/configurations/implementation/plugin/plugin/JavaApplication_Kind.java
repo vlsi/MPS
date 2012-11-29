@@ -10,8 +10,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.ide.icons.IconManager;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import java.util.List;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -20,6 +18,8 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class JavaApplication_Kind implements ConfigurationType {
   private static final Icon ICON = new _FunctionTypes._return_P0_E0<Icon>() {
@@ -42,8 +42,6 @@ public class JavaApplication_Kind implements ConfigurationType {
       return IconManager.loadIcon(path, true);
     }
   }.invoke();
-  protected static Log log = LogFactory.getLog(JavaApplication_Kind.class);
-
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
 
   public JavaApplication_Kind() {
@@ -81,4 +79,6 @@ public class JavaApplication_Kind implements ConfigurationType {
   public static JavaApplication_Kind getInstance() {
     return ContainerUtil.findInstance(Extensions.getExtensions(CONFIGURATION_TYPE_EP), JavaApplication_Kind.class);
   }
+
+  protected static Log log = LogFactory.getLog(JavaApplication_Kind.class);
 }

@@ -188,7 +188,7 @@ public abstract class ProjectStructureBuilder {
     fill(generator, source);
     SPropertyOperations.set(generator, "generatorUID", source.getGeneratorUID());
     SPropertyOperations.set(generator, "generateTemplates", "" + (source.isGenerateTemplates()));
-    SPropertyOperations.set(generator, "namespace", (isNotEmpty_5cil7k_a0a0e0k(source.getNamespace()) ?
+    SPropertyOperations.set(generator, "namespace", (isNotEmpty_5cil7k_a0a0e0p(source.getNamespace()) ?
       source.getNamespace() :
       null
     ));
@@ -271,7 +271,7 @@ public abstract class ProjectStructureBuilder {
 
   public abstract Iterable<org.jetbrains.mps.openapi.model.SModelReference> loadReferences(SNode module, ModuleDescriptor descriptor);
 
-  public static boolean isNotEmpty_5cil7k_a0a0e0k(String str) {
+  public static boolean isNotEmpty_5cil7k_a0a0e0p(String str) {
     return str != null && str.length() > 0;
   }
 }

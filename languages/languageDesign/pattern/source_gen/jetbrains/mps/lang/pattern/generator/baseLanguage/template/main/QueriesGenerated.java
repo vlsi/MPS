@@ -94,8 +94,8 @@ public class QueriesGenerated {
     return _context.createUniqueName("childVar_" + SNodeOperations.getContainingRoot(_context.getNode()), SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1224175601049(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("parameter_", _context.getNode());
+  public static Object propertyMacro_GetPropertyValue_1224175601403(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName("Pattern_", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1224175601140(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -104,6 +104,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1224175601183(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.createUniqueName("AntiquotationField", null);
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1224175601049(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName("parameter_", _context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1224175601219(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -117,10 +121,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1224175601347(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SNodeOperations.cast((_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "patternVarField")), "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1224175601403(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("Pattern_", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_412500033819200875(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -679,24 +679,8 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static Iterable sourceNodesQuery_1224175601014(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = new ArrayList<SNode>();
-    for (SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
-      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"), "expression", true));
-      }
-    }
-    return result;
-  }
-
-  public static Iterable sourceNodesQuery_1224175601059(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = new ArrayList<SNode>();
-    for (SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
-      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"), "expression", true));
-      }
-    }
-    return result;
+  public static Iterable sourceNodesQuery_1224175611713(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.pattern.structure.PatternExpression");
   }
 
   public static Iterable sourceNodesQuery_1224175601101(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -708,6 +692,26 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1224175601150(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
+      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"), "expression", true));
+      }
+    }
+    return result;
+  }
+
+  public static Iterable sourceNodesQuery_1224175601014(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
+      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"), "expression", true));
+      }
+    }
+    return result;
+  }
+
+  public static Iterable sourceNodesQuery_1224175601059(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
@@ -731,10 +735,6 @@ public class QueriesGenerated {
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", false, new String[]{})));
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", false, new String[]{})));
     return result;
-  }
-
-  public static Iterable sourceNodesQuery_1224175611713(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.pattern.structure.PatternExpression");
   }
 
   public static Iterable sourceNodesQuery_412500033819230345(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

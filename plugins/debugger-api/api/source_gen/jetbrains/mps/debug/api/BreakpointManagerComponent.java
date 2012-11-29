@@ -33,7 +33,6 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   private static final Logger LOG = Logger.getLogger(BreakpointManagerComponent.class);
   private static final String BREAKPOINTS_LIST_ELEMENT = "breakpointsList";
   private static final BreakpointManagerComponent.DummyIO DUMMY_IO = new BreakpointManagerComponent.DummyIO();
-
   private final Map<SNodePointer, Set<ILocationBreakpoint>> myRootsToBreakpointsMap = new HashMap<SNodePointer, Set<ILocationBreakpoint>>();
   private boolean myBreakpointsForRootInitialized = false;
   private final Set<IBreakpoint> myBreakpoints = new HashSet<IBreakpoint>();

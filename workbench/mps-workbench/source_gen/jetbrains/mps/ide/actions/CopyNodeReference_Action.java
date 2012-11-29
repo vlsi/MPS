@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -15,10 +14,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
+import jetbrains.mps.logging.Logger;
 
 public class CopyNodeReference_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(CopyNodeReference_Action.class);
 
   public CopyNodeReference_Action() {
     super("Copy Reference", "", ICON);
@@ -73,4 +72,6 @@ public class CopyNodeReference_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "CopyNodeReference", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(CopyNodeReference_Action.class);
 }

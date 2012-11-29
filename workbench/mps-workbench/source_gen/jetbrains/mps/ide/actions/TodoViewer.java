@@ -37,7 +37,6 @@ import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 
 public class TodoViewer extends JPanel {
   public static final Icon TODO_ICON = new ImageIcon(TodoViewer.class.getResource("todo.png"));
-
   private UsagesView myUsagesView;
   private Project myProject;
   private TodoViewer_Tool myTool;

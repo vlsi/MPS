@@ -30,10 +30,10 @@ public class WindowsDemo_GWT {
   }
 
   public void buildUI(Panel menu) {
-    final Hyperlink widget_le4nk5_a0a0a = new Hyperlink();
-    widget_le4nk5_a0a0a.setText("Dialog");
-    widget_le4nk5_a0a0a.setTargetHistoryToken("dialog");
-    widget_le4nk5_a0a0a.addClickHandler(new ClickHandler() {
+    final Hyperlink widget_le4nk5_a0a0c = new Hyperlink();
+    widget_le4nk5_a0a0c.setText("Dialog");
+    widget_le4nk5_a0a0c.setTargetHistoryToken("dialog");
+    widget_le4nk5_a0a0c.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent e) {
         Executor<ClickEvent> he = new Executor<ClickEvent>() {
           public void doIt(ClickEvent event) {
@@ -43,7 +43,7 @@ public class WindowsDemo_GWT {
         he.doIt(e);
       }
     });
-    menu.add(widget_le4nk5_a0a0a);
+    menu.add(widget_le4nk5_a0a0c);
   }
 
   public void dialog() {
@@ -57,13 +57,13 @@ public class WindowsDemo_GWT {
       it.next();
       it.remove();
     }
-    final TabLayoutPanel widget_le4nk5_b0b0b = new TabLayoutPanel(2, Style.Unit.EM);
-    final String groupName_le4nk5_a0c0b0b = "defaultGroup";
-    final FlowPanel widget_le4nk5_a0a1a1a1 = new FlowPanel();
-    final String groupName_le4nk5_a0b0d0b0b = "defaultGroup";
-    final Button widget_le4nk5_a0a0a0b0b0b = new Button();
-    widget_le4nk5_a0a0a0b0b0b.setText("Dialog");
-    widget_le4nk5_a0a0a0b0b0b.addClickHandler(new ClickHandler() {
+    final TabLayoutPanel widget_le4nk5_b0b0d = new TabLayoutPanel(2, Style.Unit.EM);
+    final String groupName_le4nk5_a0c0b0d = "defaultGroup";
+    final FlowPanel widget_le4nk5_a0a1a1a3 = new FlowPanel();
+    final String groupName_le4nk5_a0b0d0b0d = "defaultGroup";
+    final Button widget_le4nk5_a0a0a0b0b0d = new Button();
+    widget_le4nk5_a0a0a0b0b0d.setText("Dialog");
+    widget_le4nk5_a0a0a0b0b0d.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent e) {
         Executor<ClickEvent> he = new Executor<ClickEvent>() {
           public void doIt(ClickEvent event) {
@@ -73,13 +73,13 @@ public class WindowsDemo_GWT {
         he.doIt(e);
       }
     });
-    widget_le4nk5_a0a1a1a1.add(widget_le4nk5_a0a0a0b0b0b);
-    widget_le4nk5_b0b0b.add(widget_le4nk5_a0a1a1a1, "Dialog");
-    final FlowPanel widget_le4nk5_b0a1a1a1 = new FlowPanel();
-    final String groupName_le4nk5_a0f0d0b0b = "defaultGroup";
-    final Button widget_le4nk5_a0a1a0b0b0b = new Button();
-    widget_le4nk5_a0a1a0b0b0b.setText("Form");
-    widget_le4nk5_a0a1a0b0b0b.addClickHandler(new ClickHandler() {
+    widget_le4nk5_a0a1a1a3.add(widget_le4nk5_a0a0a0b0b0d);
+    widget_le4nk5_b0b0d.add(widget_le4nk5_a0a1a1a3, "Dialog");
+    final FlowPanel widget_le4nk5_b0a1a1a3 = new FlowPanel();
+    final String groupName_le4nk5_a0f0d0b0d = "defaultGroup";
+    final Button widget_le4nk5_a0a1a0b0b0d = new Button();
+    widget_le4nk5_a0a1a0b0b0d.setText("Form");
+    widget_le4nk5_a0a1a0b0b0d.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent e) {
         Executor<ClickEvent> he = new Executor<ClickEvent>() {
           public void doIt(ClickEvent event) {
@@ -89,53 +89,53 @@ public class WindowsDemo_GWT {
         he.doIt(e);
       }
     });
-    widget_le4nk5_b0a1a1a1.add(widget_le4nk5_a0a1a0b0b0b);
-    widget_le4nk5_b0b0b.add(widget_le4nk5_b0a1a1a1, "Form");
-    dc.add(widget_le4nk5_b0b0b);
-    widget_le4nk5_b0b0b.setWidth("100%");
-    widget_le4nk5_b0b0b.setHeight("100%");
+    widget_le4nk5_b0a1a1a3.add(widget_le4nk5_a0a1a0b0b0d);
+    widget_le4nk5_b0b0d.add(widget_le4nk5_b0a1a1a3, "Form");
+    dc.add(widget_le4nk5_b0b0d);
+    widget_le4nk5_b0b0d.setWidth("100%");
+    widget_le4nk5_b0b0d.setHeight("100%");
   }
 
   public void showDialog() {
-    final DialogBox widget_le4nk5_a0a0c = new _FunctionTypes._return_P1_E0<DialogBox, Panel>() {
+    final DialogBox widget_le4nk5_a0a0e = new _FunctionTypes._return_P1_E0<DialogBox, Panel>() {
       public DialogBox invoke(Panel context_le4nk5_a) {
         DialogBox dlg = new DialogBox();
         dlg.setWidget(new LayoutPanel());
         return dlg;
       }
     }.invoke(this.uidemo.getRootPanel());
-    final Panel contentPane_le4nk5_a0b0a0c = (Panel) widget_le4nk5_a0a0c.getWidget();
-    final LayoutPanel widget_le4nk5_a0b0c = new LayoutPanel();
-    final String groupName_le4nk5_a0b0b0c = "defaultGroup";
-    final Button widget_le4nk5_a0a0a1a2 = new Button();
-    widget_le4nk5_a0a0a1a2.setText("FOO");
-    widget_le4nk5_a0a0a1a2.addClickHandler(new ClickHandler() {
+    final Panel contentPane_le4nk5_a0b0a0e = (Panel) widget_le4nk5_a0a0e.getWidget();
+    final LayoutPanel widget_le4nk5_a0b0e = new LayoutPanel();
+    final String groupName_le4nk5_a0b0b0e = "defaultGroup";
+    final Button widget_le4nk5_a0a0a1a4 = new Button();
+    widget_le4nk5_a0a0a1a4.setText("FOO");
+    widget_le4nk5_a0a0a1a4.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent e) {
         Executor<ClickEvent> he = new Executor<ClickEvent>() {
           public void doIt(ClickEvent event) {
-            widget_le4nk5_a0a0c.hide();
+            widget_le4nk5_a0a0e.hide();
           }
         };
         he.doIt(e);
       }
     });
-    widget_le4nk5_a0b0c.add(widget_le4nk5_a0a0a1a2);
-    widget_le4nk5_a0a0a1a2.setSize("100%", "100%");
-    contentPane_le4nk5_a0b0a0c.add(widget_le4nk5_a0b0c);
-    ((Widget) contentPane_le4nk5_a0b0a0c).setSize("50em", "20em");
-    widget_le4nk5_a0a0c.show();
+    widget_le4nk5_a0b0e.add(widget_le4nk5_a0a0a1a4);
+    widget_le4nk5_a0a0a1a4.setSize("100%", "100%");
+    contentPane_le4nk5_a0b0a0e.add(widget_le4nk5_a0b0e);
+    ((Widget) contentPane_le4nk5_a0b0a0e).setSize("50em", "20em");
+    widget_le4nk5_a0a0e.show();
   }
 
   public void showForm() {
-    final DialogBox widget_le4nk5_a0a0d = new _FunctionTypes._return_P1_E0<DialogBox, Panel>() {
+    final DialogBox widget_le4nk5_a0a0f = new _FunctionTypes._return_P1_E0<DialogBox, Panel>() {
       public DialogBox invoke(Panel context_le4nk5_a_0) {
         DialogBox dlg = new DialogBox();
         dlg.setWidget(new LayoutPanel());
         return dlg;
       }
     }.invoke(this.uidemo.getRootPanel());
-    final Panel contentPane_le4nk5_a0b0a0d = (Panel) widget_le4nk5_a0a0d.getWidget();
-    final FlexTable widget_le4nk5_a0b0d = new _FunctionTypes._return_P0_E0<FlexTable>() {
+    final Panel contentPane_le4nk5_a0b0a0f = (Panel) widget_le4nk5_a0a0f.getWidget();
+    final FlexTable widget_le4nk5_a0b0f = new _FunctionTypes._return_P0_E0<FlexTable>() {
       public FlexTable invoke() {
         FlexTable ft = new FlexTable();
         ft.setWidth("100%");
@@ -143,83 +143,83 @@ public class WindowsDemo_GWT {
         return ft;
       }
     }.invoke();
-    final String groupName_le4nk5_a0b0b0d = "defaultGroup";
-    final Label widget_le4nk5_a0a0a1a3 = new Label();
-    widget_le4nk5_a0a0a1a3.setText("Foo");
+    final String groupName_le4nk5_a0b0b0f = "defaultGroup";
+    final Label widget_le4nk5_a0a0a1a5 = new Label();
+    widget_le4nk5_a0a0a1a5.setText("Foo");
     {
-      int xcell_a0d0c0b0d = 0;
-      int ycell_a0d0c0b0d = 0;
-      widget_le4nk5_a0b0d.setWidget(ycell_a0d0c0b0d, xcell_a0d0c0b0d, widget_le4nk5_a0a0a1a3);
+      int xcell_a0d0c0b0f = 0;
+      int ycell_a0d0c0b0f = 0;
+      widget_le4nk5_a0b0f.setWidget(ycell_a0d0c0b0f, xcell_a0d0c0b0f, widget_le4nk5_a0a0a1a5);
     }
-    final TextBox widget_le4nk5_b0a0a1a3 = new TextBox();
-    widget_le4nk5_b0a0a1a3.setText(uidemo.bo.getBar());
+    final TextBox widget_le4nk5_b0a0a1a5 = new TextBox();
+    widget_le4nk5_b0a0a1a5.setText(uidemo.bo.getBar());
     {
-      int xcell_a0h0c0b0d = 1;
-      int ycell_a0h0c0b0d = 0;
-      widget_le4nk5_a0b0d.setWidget(ycell_a0h0c0b0d, xcell_a0h0c0b0d, widget_le4nk5_b0a0a1a3);
-      widget_le4nk5_a0b0d.getFlexCellFormatter().setColSpan(ycell_a0h0c0b0d, xcell_a0h0c0b0d, 2);
-      widget_le4nk5_a0b0d.getCellFormatter().setAlignment(ycell_a0h0c0b0d, xcell_a0h0c0b0d, HasHorizontalAlignment.ALIGN_DEFAULT, HasVerticalAlignment.ALIGN_MIDDLE);
-      widget_le4nk5_b0a0a1a3.setWidth("100%");
+      int xcell_a0h0c0b0f = 1;
+      int ycell_a0h0c0b0f = 0;
+      widget_le4nk5_a0b0f.setWidget(ycell_a0h0c0b0f, xcell_a0h0c0b0f, widget_le4nk5_b0a0a1a5);
+      widget_le4nk5_a0b0f.getFlexCellFormatter().setColSpan(ycell_a0h0c0b0f, xcell_a0h0c0b0f, 2);
+      widget_le4nk5_a0b0f.getCellFormatter().setAlignment(ycell_a0h0c0b0f, xcell_a0h0c0b0f, HasHorizontalAlignment.ALIGN_DEFAULT, HasVerticalAlignment.ALIGN_MIDDLE);
+      widget_le4nk5_b0a0a1a5.setWidth("100%");
     }
-    final Button widget_le4nk5_c0a0a1a3 = new Button();
-    widget_le4nk5_c0a0a1a3.setText("<-  / <->");
-    widget_le4nk5_c0a0a1a3.addClickHandler(new ClickHandler() {
+    final Button widget_le4nk5_c0a0a1a5 = new Button();
+    widget_le4nk5_c0a0a1a5.setText("<-  / <->");
+    widget_le4nk5_c0a0a1a5.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent e) {
         Executor<ClickEvent> he = new Executor<ClickEvent>() {
           public void doIt(ClickEvent event) {
-            widget_le4nk5_a0a0d.hide();
+            widget_le4nk5_a0a0f.hide();
           }
         };
         he.doIt(e);
       }
     });
     {
-      int xcell_a0m0c0b0d = 2;
-      int ycell_a0m0c0b0d = 1;
-      widget_le4nk5_a0b0d.setWidget(ycell_a0m0c0b0d, xcell_a0m0c0b0d, widget_le4nk5_c0a0a1a3);
-      widget_le4nk5_a0b0d.getCellFormatter().setAlignment(ycell_a0m0c0b0d, xcell_a0m0c0b0d, HasHorizontalAlignment.ALIGN_LEFT, HasVerticalAlignment.ALIGN_TOP);
-      widget_le4nk5_c0a0a1a3.setHeight("100%");
+      int xcell_a0m0c0b0f = 2;
+      int ycell_a0m0c0b0f = 1;
+      widget_le4nk5_a0b0f.setWidget(ycell_a0m0c0b0f, xcell_a0m0c0b0f, widget_le4nk5_c0a0a1a5);
+      widget_le4nk5_a0b0f.getCellFormatter().setAlignment(ycell_a0m0c0b0f, xcell_a0m0c0b0f, HasHorizontalAlignment.ALIGN_LEFT, HasVerticalAlignment.ALIGN_TOP);
+      widget_le4nk5_c0a0a1a5.setHeight("100%");
     }
-    final Button widget_le4nk5_d0a0a1a3 = new Button();
-    widget_le4nk5_d0a0a1a3.setText(" -> / <->");
-    widget_le4nk5_d0a0a1a3.addClickHandler(new ClickHandler() {
+    final Button widget_le4nk5_d0a0a1a5 = new Button();
+    widget_le4nk5_d0a0a1a5.setText(" -> / <->");
+    widget_le4nk5_d0a0a1a5.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent e) {
         Executor<ClickEvent> he = new Executor<ClickEvent>() {
           public void doIt(ClickEvent event) {
-            widget_le4nk5_a0a0d.hide();
+            widget_le4nk5_a0a0f.hide();
           }
         };
         he.doIt(e);
       }
     });
     {
-      int xcell_a0r0c0b0d = 2;
-      int ycell_a0r0c0b0d = 2;
-      widget_le4nk5_a0b0d.setWidget(ycell_a0r0c0b0d, xcell_a0r0c0b0d, widget_le4nk5_d0a0a1a3);
-      widget_le4nk5_a0b0d.getCellFormatter().setAlignment(ycell_a0r0c0b0d, xcell_a0r0c0b0d, HasHorizontalAlignment.ALIGN_RIGHT, HasVerticalAlignment.ALIGN_TOP);
-      widget_le4nk5_d0a0a1a3.setHeight("100%");
+      int xcell_a0r0c0b0f = 2;
+      int ycell_a0r0c0b0f = 2;
+      widget_le4nk5_a0b0f.setWidget(ycell_a0r0c0b0f, xcell_a0r0c0b0f, widget_le4nk5_d0a0a1a5);
+      widget_le4nk5_a0b0f.getCellFormatter().setAlignment(ycell_a0r0c0b0f, xcell_a0r0c0b0f, HasHorizontalAlignment.ALIGN_RIGHT, HasVerticalAlignment.ALIGN_TOP);
+      widget_le4nk5_d0a0a1a5.setHeight("100%");
     }
-    final Button widget_le4nk5_e0a0a1a3 = new Button();
-    widget_le4nk5_e0a0a1a3.setText(" -  / <->");
-    widget_le4nk5_e0a0a1a3.addClickHandler(new ClickHandler() {
+    final Button widget_le4nk5_e0a0a1a5 = new Button();
+    widget_le4nk5_e0a0a1a5.setText(" -  / <->");
+    widget_le4nk5_e0a0a1a5.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent e) {
         Executor<ClickEvent> he = new Executor<ClickEvent>() {
           public void doIt(ClickEvent event) {
-            widget_le4nk5_a0a0d.hide();
+            widget_le4nk5_a0a0f.hide();
           }
         };
         he.doIt(e);
       }
     });
     {
-      int xcell_a0w0c0b0d = 2;
-      int ycell_a0w0c0b0d = 3;
-      widget_le4nk5_a0b0d.setWidget(ycell_a0w0c0b0d, xcell_a0w0c0b0d, widget_le4nk5_e0a0a1a3);
-      widget_le4nk5_a0b0d.getCellFormatter().setAlignment(ycell_a0w0c0b0d, xcell_a0w0c0b0d, HasHorizontalAlignment.ALIGN_CENTER, HasVerticalAlignment.ALIGN_TOP);
-      widget_le4nk5_e0a0a1a3.setHeight("100%");
+      int xcell_a0w0c0b0f = 2;
+      int ycell_a0w0c0b0f = 3;
+      widget_le4nk5_a0b0f.setWidget(ycell_a0w0c0b0f, xcell_a0w0c0b0f, widget_le4nk5_e0a0a1a5);
+      widget_le4nk5_a0b0f.getCellFormatter().setAlignment(ycell_a0w0c0b0f, xcell_a0w0c0b0f, HasHorizontalAlignment.ALIGN_CENTER, HasVerticalAlignment.ALIGN_TOP);
+      widget_le4nk5_e0a0a1a5.setHeight("100%");
     }
-    contentPane_le4nk5_a0b0a0d.add(widget_le4nk5_a0b0d);
-    ((Widget) contentPane_le4nk5_a0b0a0d).setSize("50em", "20em");
-    widget_le4nk5_a0a0d.show();
+    contentPane_le4nk5_a0b0a0f.add(widget_le4nk5_a0b0f);
+    ((Widget) contentPane_le4nk5_a0b0a0f).setSize("50em", "20em");
+    widget_le4nk5_a0a0f.show();
   }
 }

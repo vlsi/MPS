@@ -36,17 +36,17 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   }
 
   public boolean isTestCase() {
-    return check_9og6tg_a0a0(getNode(), this);
+    return check_9og6tg_a0a1(getNode(), this);
   }
 
   private boolean isTestMethod() {
-    return check_9og6tg_a0a1(getNode(), this);
+    return check_9og6tg_a0a2(getNode(), this);
   }
 
   @Nullable
   @Override
   public ITestNodeWrapper getTestCase() {
-    if (check_9og6tg_a0a2(getNode(), this)) {
+    if (check_9og6tg_a0a3(getNode(), this)) {
       return TestNodeWrapperFactory.tryToWrap(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(getNode(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), "virtual_getTestCase_1216134500045", new Object[]{}));
     }
     if (isTestCase()) {
@@ -147,7 +147,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   @Override
   public String getFqName() {
     if (isTestCase()) {
-      return check_9og6tg_a0a0a7(SNodeOperations.cast(getNode(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), this);
+      return check_9og6tg_a0a0a8(SNodeOperations.cast(getNode(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), this);
     }
     return super.getFqName();
   }
@@ -156,21 +156,14 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   @Override
   public String getName() {
     if (isTestMethod()) {
-      return check_9og6tg_a0a0a8(SNodeOperations.cast(getNode(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), this);
+      return check_9og6tg_a0a0a9(SNodeOperations.cast(getNode(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), this);
     }
-    return check_9og6tg_a1a8(SNodeOperations.cast(getNode(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), this);
-  }
-
-  private static boolean check_9og6tg_a0a0(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
-    if (null != checkedDotOperand) {
-      return SNodeOperations.isInstanceOf(checkedDotOperand, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
-    }
-    return false;
+    return check_9og6tg_a1a9(SNodeOperations.cast(getNode(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), this);
   }
 
   private static boolean check_9og6tg_a0a1(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
-      return SNodeOperations.isInstanceOf(checkedDotOperand, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod");
+      return SNodeOperations.isInstanceOf(checkedDotOperand, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
     }
     return false;
   }
@@ -182,21 +175,28 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     return false;
   }
 
-  private static String check_9og6tg_a0a0a7(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
+  private static boolean check_9og6tg_a0a3(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      return SNodeOperations.isInstanceOf(checkedDotOperand, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod");
+    }
+    return false;
+  }
+
+  private static String check_9og6tg_a0a0a8(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return BehaviorReflection.invokeVirtual(String.class, checkedDotOperand, "virtual_getClassName_1216136193905", new Object[]{});
     }
     return null;
   }
 
-  private static String check_9og6tg_a0a0a8(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
+  private static String check_9og6tg_a0a0a9(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return BehaviorReflection.invokeVirtual(String.class, checkedDotOperand, "virtual_getTestName_1216136419751", new Object[]{});
     }
     return null;
   }
 
-  private static String check_9og6tg_a1a8(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
+  private static String check_9og6tg_a1a9(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return BehaviorReflection.invokeVirtual(String.class, checkedDotOperand, "virtual_getSimpleClassName_1229278847513", new Object[]{});
     }

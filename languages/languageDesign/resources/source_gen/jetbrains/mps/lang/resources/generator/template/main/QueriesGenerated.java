@@ -32,7 +32,7 @@ public class QueriesGenerated {
     return JavaNameUtil.packageName(SNodeOperations.getModel(irb)) + "." + IconResourceBundle_Behavior.call_getJavaName_8974276187400030159(irb);
   }
 
-  public static Object propertyMacro_GetPropertyValue_2990235398086953162(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_7038317550322744907(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return IconResourceBundle_Behavior.call_getJavaName_8974276187400030159(_context.getNode());
   }
 
@@ -40,7 +40,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_7038317550322744907(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_2990235398086953162(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return IconResourceBundle_Behavior.call_getJavaName_8974276187400030159(_context.getNode());
   }
 
@@ -60,15 +60,15 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_IconContainerItem");
   }
 
-  public static Object referenceMacro_GetReferent_2990235398086953187(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return IconResourceBundle_Behavior.call_getJavaName_8974276187400030159(_context.getNode());
-  }
-
   public static Object referenceMacro_GetReferent_2990235398086953122(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return IconResourceBundle_Behavior.call_getJavaName_8974276187400030159(_context.getNode());
   }
 
   public static Object referenceMacro_GetReferent_2990235398086953146(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return IconResourceBundle_Behavior.call_getJavaName_8974276187400030159(_context.getNode());
+  }
+
+  public static Object referenceMacro_GetReferent_2990235398086953187(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return IconResourceBundle_Behavior.call_getJavaName_8974276187400030159(_context.getNode());
   }
 

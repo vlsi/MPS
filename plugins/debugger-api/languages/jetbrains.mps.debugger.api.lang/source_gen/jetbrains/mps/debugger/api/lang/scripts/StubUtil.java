@@ -49,7 +49,7 @@ public class StubUtil {
     IModule debuggerApi = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("cc7da2f6-419f-4133-a811-31fcd3295a85"));
     List<SModelDescriptor> debuggerModels = debuggerApi.getOwnModelDescriptors();
     for (SModelDescriptor debuggerModel : ListSequence.fromList(debuggerModels)) {
-      if (eq_g10q2g_a0a0f0b(debuggerModel.getLongName(), targetSModelReference.getLongName())) {
+      if (eq_g10q2g_a0a0f0c(debuggerModel.getLongName(), targetSModelReference.getLongName())) {
         return debuggerModel;
       }
     }
@@ -61,7 +61,7 @@ public class StubUtil {
     SModelDescriptor newModelDescriptor = StubUtil.getDebuggerModelForReference(reference);
 
     for (SNode candidate : ListSequence.fromList(SModelOperations.getNodes(newModelDescriptor.getSModel(), conceptFqName))) {
-      if (eq_g10q2g_a0a0d0c(getResolveInfo.invoke(candidate), reference.getResolveInfo())) {
+      if (eq_g10q2g_a0a0d0d(getResolveInfo.invoke(candidate), reference.getResolveInfo())) {
         SModelReference oldModelReference = reference.getTargetSModelReference();
         SNodeOperations.getModel(targetNode).deleteModelImport(oldModelReference);
 
@@ -98,14 +98,14 @@ public class StubUtil {
     }
   }
 
-  private static boolean eq_g10q2g_a0a0f0b(Object a, Object b) {
+  private static boolean eq_g10q2g_a0a0f0c(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_g10q2g_a0a0d0c(Object a, Object b) {
+  private static boolean eq_g10q2g_a0a0d0d(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

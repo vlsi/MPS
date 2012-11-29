@@ -10,13 +10,14 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroupDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IMapping;
@@ -41,17 +42,17 @@ public class DispatchGenUtil {
       // if it's a static method declaration then we don't look into ancestors 
       // otherwise we scan all the way up 
       classesToConsider = Sequence.<SNode>singleton(parentClass);
-      methods = new _FunctionTypes._return_P1_E0<List<SNode>, SNode>() {
-        public List<SNode> invoke(SNode cls) {
-          return SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticMethod", true);
+      methods = new _FunctionTypes._return_P1_E0<Iterable<SNode>, SNode>() {
+        public Iterable<SNode> invoke(SNode cls) {
+          return ClassConcept_Behavior.call_staticMethods_5292274854859435867(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
         }
       };
 
     } else {
       classesToConsider = DispatchUtil.ancestors(SNodeOperations.cast(parentClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), true);
-      methods = new _FunctionTypes._return_P1_E0<List<SNode>, SNode>() {
-        public List<SNode> invoke(SNode cls) {
-          return SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true);
+      methods = new _FunctionTypes._return_P1_E0<Iterable<SNode>, SNode>() {
+        public Iterable<SNode> invoke(SNode cls) {
+          return Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
         }
       };
     }

@@ -27,7 +27,7 @@ public class typeof_XMLSAXChildHandler_childObject_InferenceRule extends Abstrac
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)", "2264311582634140497", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)", "2264311582634140525", true), (SNode) ((rule != null) && (SLinkOperations.getTarget(rule, "rule", false) != null) && (SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "rule", false), "type", true) != null) ?
         SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "rule", false), "type", true) :
-        _quotation_createNode_4xzpao_a0a1a0()
+        _quotation_createNode_4xzpao_a0a1a1()
       ), _info_12389875345);
     }
   }
@@ -47,7 +47,7 @@ public class typeof_XMLSAXChildHandler_childObject_InferenceRule extends Abstrac
     return false;
   }
 
-  private static SNode _quotation_createNode_4xzpao_a0a1a0() {
+  private static SNode _quotation_createNode_4xzpao_a0a1a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));

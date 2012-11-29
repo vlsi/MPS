@@ -53,7 +53,7 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
       }
     }
     for (SNode typeParameter : SLinkOperations.getTargets(classifierType, "parameter", true)) {
-      if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeParameter, SLinkOperations.getTarget(_quotation_createNode_i2c76q_a1a0a0a4a0(), "descriptor", false), false)))) {
+      if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeParameter, SLinkOperations.getTarget(_quotation_createNode_i2c76q_a1a0a0a4a1(), "descriptor", false), false)))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeParameter, "primitive types not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1195494591112", null, errorTarget);
       }
@@ -104,7 +104,7 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
     return false;
   }
 
-  private static SNode _quotation_createNode_i2c76q_a1a0a0a4a0() {
+  private static SNode _quotation_createNode_i2c76q_a1a0a0a4a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("descriptor", SReference.create("descriptor", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683941620")));

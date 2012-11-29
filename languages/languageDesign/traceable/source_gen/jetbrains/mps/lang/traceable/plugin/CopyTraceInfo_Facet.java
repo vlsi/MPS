@@ -67,7 +67,6 @@ public class CopyTraceInfo_Facet extends IFacet.Stub {
   public static class Target_copyTraceInfo implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.traceable.CopyTraceInfo.copyTraceInfo");
 
     public Target_copyTraceInfo() {

@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
@@ -23,11 +24,19 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_Behavior;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class UnaryRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_xoe8gq_a(editorContext, node);
+  }
+
+  public static class ReplaceWith_UnaryRegexp_cellMenu_a0d0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_UnaryRegexp_cellMenu_a0d0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp";
+    }
   }
 
   private EditorCell createCollection_xoe8gq_a(EditorContext editorContext, SNode node) {
@@ -102,14 +111,5 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_xoe8gq_a2a(SNode node, EditorContext editorContext, IScope scope) {
     return UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(node);
-  }
-
-  public static class ReplaceWith_UnaryRegexp_cellMenu_a0d0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_UnaryRegexp_cellMenu_a0d0() {
-    }
-
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp";
-    }
   }
 }

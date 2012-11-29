@@ -30,13 +30,13 @@ public class supertypesOf_List_SubtypingRule extends SubtypingRule_Runtime imple
     if (SNodeOperations.isInstanceOf(elemType, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       elemType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), elemType, "virtual_getUnboxedType_1213877337320", new Object[]{});
     }
-    ListSequence.fromList(result).addElement(_quotation_createNode_w26thq_a0a3a0(elemType));
+    ListSequence.fromList(result).addElement(_quotation_createNode_w26thq_a0a3a1(elemType));
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(type, "elementType", true), "jetbrains.mps.lang.smodel.structure.SNodeType")) {
-      ListSequence.fromList(result).addElement(_quotation_createNode_w26thq_a0a0a4a0(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(type, "elementType", true), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false)));
+      ListSequence.fromList(result).addElement(_quotation_createNode_w26thq_a0a0a4a1(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(type, "elementType", true), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false)));
     }
-    ListSequence.fromList(result).addElement(_quotation_createNode_w26thq_a0a5a0(SLinkOperations.getTarget(type, "elementType", true)));
-    ListSequence.fromList(result).addElement(_quotation_createNode_w26thq_a0a6a0(SLinkOperations.getTarget(type, "elementType", true)));
-    ListSequence.fromList(result).addElement(_quotation_createNode_w26thq_a0a7a0());
+    ListSequence.fromList(result).addElement(_quotation_createNode_w26thq_a0a5a1(SLinkOperations.getTarget(type, "elementType", true)));
+    ListSequence.fromList(result).addElement(_quotation_createNode_w26thq_a0a6a1(SLinkOperations.getTarget(type, "elementType", true)));
+    ListSequence.fromList(result).addElement(_quotation_createNode_w26thq_a0a7a1());
     return result;
   }
 
@@ -55,7 +55,7 @@ public class supertypesOf_List_SubtypingRule extends SubtypingRule_Runtime imple
     return false;
   }
 
-  private static SNode _quotation_createNode_w26thq_a0a3a0(Object parameter_1) {
+  private static SNode _quotation_createNode_w26thq_a0a3a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
@@ -67,14 +67,14 @@ public class supertypesOf_List_SubtypingRule extends SubtypingRule_Runtime imple
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_w26thq_a0a0a4a0(Object parameter_1) {
+  private static SNode _quotation_createNode_w26thq_a0a0a4a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("elementConcept", (SNode) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_w26thq_a0a5a0(Object parameter_1) {
+  private static SNode _quotation_createNode_w26thq_a0a5a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);
@@ -85,7 +85,7 @@ public class supertypesOf_List_SubtypingRule extends SubtypingRule_Runtime imple
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_w26thq_a0a6a0(Object parameter_1) {
+  private static SNode _quotation_createNode_w26thq_a0a6a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.CollectionType", null, null, GlobalScope.getInstance(), false);
@@ -96,7 +96,7 @@ public class supertypesOf_List_SubtypingRule extends SubtypingRule_Runtime imple
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_w26thq_a0a7a0() {
+  private static SNode _quotation_createNode_w26thq_a0a7a1() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", null, null, GlobalScope.getInstance(), false);

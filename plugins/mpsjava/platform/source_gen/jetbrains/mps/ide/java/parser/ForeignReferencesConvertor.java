@@ -13,12 +13,13 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.HashSet;
 
@@ -87,13 +88,13 @@ public class ForeignReferencesConvertor {
       return null;
     }
     String fieldName = NameUtil.shortNameFromLongName(idString);
-    for (SNode field : SLinkOperations.getTargets(classifier, "staticField", true)) {
+    for (SNode field : BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_staticFields_5292274854859223538", new Object[]{})) {
       if (SPropertyOperations.getString(field, "name").equals(fieldName)) {
         return field;
       }
     }
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      for (SNode field : SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true)) {
+      for (SNode field : BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{})) {
         if (SPropertyOperations.getString(field, "name").equals(fieldName)) {
           return field;
         }
@@ -116,7 +117,7 @@ public class ForeignReferencesConvertor {
     String signature = idString.substring(offset1 + 1, offset2);
     boolean constructor = "<init>".equals(methodName);
     List<SNode> goodMethods = new ArrayList<SNode>();
-    for (SNode method : SLinkOperations.getTargets(classifier, "method", true)) {
+    for (SNode method : BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})) {
       if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
         ListSequence.fromList(goodMethods).addElement(method);
       }
@@ -124,11 +125,11 @@ public class ForeignReferencesConvertor {
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       SNode classConcept = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
       if (constructor) {
-        for (SNode method : SLinkOperations.getTargets(classConcept, "constructor", true)) {
+        for (SNode method : BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})) {
           ListSequence.fromList(goodMethods).addElement(method);
         }
       } else {
-        for (SNode method : SLinkOperations.getTargets(classConcept, "staticMethod", true)) {
+        for (SNode method : BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_staticMethods_5292274854859435867", new Object[]{})) {
           if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
             goodMethods.add(method);
           }

@@ -6,6 +6,11 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
@@ -13,15 +18,36 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IOperationContext;
 
 public class DefaultExcludes_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_bk11d5_a(editorContext, node);
+  }
+
+  public static class DefaultExcludes_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Item {
+    public DefaultExcludes_generic_cellMenu_a0c0() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SPropertyOperations.set(node, "value", "" + (true));
+    }
+
+    public String getMatchingText() {
+      return "yes";
+    }
+  }
+
+  public static class DefaultExcludes_generic_cellMenu_b0c0 extends AbstractCellMenuPart_Generic_Item {
+    public DefaultExcludes_generic_cellMenu_b0c0() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SPropertyOperations.set(node, "value", "" + (false));
+    }
+
+    public String getMatchingText() {
+      return "no";
+    }
   }
 
   private EditorCell createAlternation_bk11d5_c0(EditorContext editorContext, SNode node) {
@@ -75,31 +101,5 @@ public class DefaultExcludes_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_bk11d5_a2a(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "value");
-  }
-
-  public static class DefaultExcludes_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Item {
-    public DefaultExcludes_generic_cellMenu_a0c0() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "value", "" + (true));
-    }
-
-    public String getMatchingText() {
-      return "yes";
-    }
-  }
-
-  public static class DefaultExcludes_generic_cellMenu_b0c0 extends AbstractCellMenuPart_Generic_Item {
-    public DefaultExcludes_generic_cellMenu_b0c0() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "value", "" + (false));
-    }
-
-    public String getMatchingText() {
-      return "no";
-    }
   }
 }

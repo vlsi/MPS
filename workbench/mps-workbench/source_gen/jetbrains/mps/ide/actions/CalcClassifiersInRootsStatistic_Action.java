@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -28,10 +27,10 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.logging.Logger;
 
 public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(CalcClassifiersInRootsStatistic_Action.class);
 
   public CalcClassifiersInRootsStatistic_Action() {
     super("Calc classifiers in roots statistic", "", ICON);
@@ -175,4 +174,6 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
       return System.currentTimeMillis() - startTime;
     }
   }
+
+  private static Logger LOG = Logger.getLogger(CalcClassifiersInRootsStatistic_Action.class);
 }

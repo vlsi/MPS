@@ -5,8 +5,6 @@ package jetbrains.mps.debugger.api.ui.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -17,10 +15,11 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import com.intellij.openapi.project.Project;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class DeleteBreakpointAction_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("delete_breakpoint.png");
-  protected static Log log = LogFactory.getLog(DeleteBreakpointAction_Action.class);
 
   public DeleteBreakpointAction_Action() {
     super("Delete", "Delete Breakpoint", ICON);
@@ -76,4 +75,6 @@ public class DeleteBreakpointAction_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(DeleteBreakpointAction_Action.class);
 }

@@ -57,7 +57,7 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
   public SProperty findProperty(final String name) {
     SNode prop = ListSequence.fromList((List<SNode>) SModelSearchUtil.getPropertyDeclarations(getConcept())).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_vein7o_a0a0a0a0a0a0a4(SPropertyOperations.getString(it, "name"), name);
+        return eq_vein7o_a0a0a0a0a0a0a7(SPropertyOperations.getString(it, "name"), name);
       }
     });
     return (prop == null ?
@@ -93,7 +93,7 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
     return myConcept;
   }
 
-  private static boolean eq_vein7o_a0a0a0a0a0a0a4(Object a, Object b) {
+  private static boolean eq_vein7o_a0a0a0a0a0a0a7(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

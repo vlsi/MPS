@@ -26,7 +26,6 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_t233bj_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_t233bj_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_t233bj_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_t233bj_d0(editorContext, node));
     return editorCell;
   }
 
@@ -48,18 +47,6 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_t233bj_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_t233bj_d0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.setDefaultText("");

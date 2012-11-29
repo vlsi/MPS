@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="51slwg42yzxow5bsnqhkxo0q7qx2vo5">
+<dependencies version="2" modelHash="3pgi1cv0goctz4a96101nrhftvagjwu">
   <common hash="al4i9icbw1f5ovb2a5x4k8lppb1ur4s" />
-  <source id="2265759664131825325" name="MyClass" hash="dompp6tlpabteg97qa7wsgbyp52exfz">
+  <source id="2265759664131825325" name="MyClass" hash="7r27d10rw1vrn0t8ql5gesftkacyw13">
     <file name="MyClass.java" />
   </source>
 </dependencies>

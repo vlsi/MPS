@@ -8,7 +8,6 @@ import org.apache.tools.ant.BuildException;
 
 public class ProjectNested extends FileSet {
   private static final String[] EXCLUDES = new String[]{"**/*.msd, **/*.mpl, **/*.class, **/*.java, **/*.mps, **/.svn/"};
-
   private boolean myWholeProject = false;
 
   public ProjectNested() {

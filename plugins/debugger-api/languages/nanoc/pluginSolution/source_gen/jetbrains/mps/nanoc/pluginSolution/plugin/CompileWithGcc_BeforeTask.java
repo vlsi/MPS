@@ -4,7 +4,6 @@ package jetbrains.mps.nanoc.pluginSolution.plugin;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsBeforeTaskProvider;
 import com.intellij.openapi.util.Key;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.process.ProcessHandler;
@@ -15,10 +14,10 @@ import com.intellij.execution.process.ProcessOutputTypes;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import java.io.File;
 import com.intellij.execution.ExecutionException;
+import jetbrains.mps.logging.Logger;
 
 public class CompileWithGcc_BeforeTask extends BaseMpsBeforeTaskProvider<CompileWithGcc_BeforeTask.CompileWithGcc_BeforeTask_RunTask> {
   private static final Key<CompileWithGcc_BeforeTask.CompileWithGcc_BeforeTask_RunTask> KEY = Key.create("jetbrains.mps.nanoc.pluginSolution.plugin.CompileWithGcc_BeforeTask");
-  private static Logger LOG = Logger.getLogger(CompileWithGcc_BeforeTask.class);
 
   public CompileWithGcc_BeforeTask() {
     super("Compile with gcc");
@@ -32,10 +31,11 @@ public class CompileWithGcc_BeforeTask extends BaseMpsBeforeTaskProvider<Compile
     return KEY;
   }
 
-  public static class CompileWithGcc_BeforeTask_RunTask extends BaseMpsBeforeTaskProvider.BaseMpsBeforeRunTask {
+  public static class CompileWithGcc_BeforeTask_RunTask extends BaseMpsBeforeTaskProvider.BaseMpsBeforeRunTask<CompileWithGcc_BeforeTask.CompileWithGcc_BeforeTask_RunTask> {
     private SNode myFile;
 
     public CompileWithGcc_BeforeTask_RunTask() {
+      super(KEY);
     }
 
     public boolean configure(SNode file) {
@@ -66,4 +66,6 @@ public class CompileWithGcc_BeforeTask extends BaseMpsBeforeTaskProvider<Compile
       }
     }
   }
+
+  private static Logger LOG = Logger.getLogger(CompileWithGcc_BeforeTask.class);
 }

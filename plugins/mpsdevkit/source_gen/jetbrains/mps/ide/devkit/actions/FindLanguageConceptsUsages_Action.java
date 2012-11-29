@@ -5,8 +5,6 @@ package jetbrains.mps.ide.devkit.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -23,10 +21,11 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.LanguageConceptsUsagesFinder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class FindLanguageConceptsUsages_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("find.png");
-  protected static Log log = LogFactory.getLog(FindLanguageConceptsUsages_Action.class);
 
   public FindLanguageConceptsUsages_Action() {
     super("Find Concepts Usages", "", ICON);
@@ -106,4 +105,6 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(FindLanguageConceptsUsages_Action.class);
 }

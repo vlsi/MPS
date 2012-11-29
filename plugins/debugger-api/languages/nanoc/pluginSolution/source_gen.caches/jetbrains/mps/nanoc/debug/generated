@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4f63x92bcq2lggv6uqsfbwscqa30gti">
+<dependencies version="2" modelHash="-cf72m0dl2np4cvlhlaupes1t3qge3ai">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -13,21 +13,21 @@
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.util(MPS.Platform/com.intellij.openapi.util@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590281(jetbrains.mps.lang.core.actions)" hash="-2kn8sh86nkqnnrc4jwtcexdmqbn06nl" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="72jgettirgdze5zodlg3xz1jp5r3et8" />
-  <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" hash="-1gceit20mrsg64bvuoget5l4f53lsuu" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="bavz98vwxhwhpog89k63m5eu2e8cbl3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" hash="djt0x25lixm6aed4u3r0vgo16f96pde" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3i4sr9viv2mafxmv1gn7u5798g1tob7" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-baumsvy45qwk0i0m1tzx9fili68fouh" />
-  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="53u2k8nmmjbnx1iucdznj7i0c3y00jn" />
-  <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" hash="-ct2x2ctqjzor68ht409gjyw255v9psb" />
-  <dep model="r:0cf7389f-e174-4742-a3d2-15c79317838a(jetbrains.mps.debug.api.run)" hash="8728l7tk8q76mxn2doiaxxra8f8a2mt" />
-  <dep model="r:18bd05e9-50fb-4ed6-9d57-1fded0456fb9(jetbrains.mps.nanoc.debug.requests)" hash="5frivz27xritkzh0fhshjgvda4w7x9l" />
-  <dep model="r:306cd397-957b-4622-bdc0-c989a7388e3a(jetbrains.mps.execution.commands.generator.template.main@generator)" hash="5ritqruexqv7qfgnzyj1roc8wrl37df" />
-  <dep model="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)" hash="es1fc85knanplcgco7kiqcd7i5n8976" />
-  <dep model="r:7fe59955-507a-46f0-b09f-056540eafdc9(jetbrains.mps.nanoc.debug.programState)" hash="94g9d9xxh3c27p7hqlemxoqgiqz905n" />
-  <dep model="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" hash="4uzrms4d2eb0q5y06xzp3scoob7ykfd" />
-  <dep model="r:cd25c6e5-97ce-4a26-8b73-c9bb310649a3(jetbrains.mps.nanoc.debug.events)" hash="a5qq6ug5fpk7nf0wqzdz234w93cezo0" />
+  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="c3ma74t3q3vz4ajis7dv1rd97n8jklu" />
+  <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" hash="-bj3fqfafj4fk98o66cbz8re4mahwexd" />
+  <dep model="r:0cf7389f-e174-4742-a3d2-15c79317838a(jetbrains.mps.debug.api.run)" hash="-43i8u2bq2nlkvvv8hc8lv34ruatbfjh" />
+  <dep model="r:18bd05e9-50fb-4ed6-9d57-1fded0456fb9(jetbrains.mps.nanoc.debug.requests)" hash="nob2914khkk929sx1abud7hp2zz0tn" />
+  <dep model="r:306cd397-957b-4622-bdc0-c989a7388e3a(jetbrains.mps.execution.commands.generator.template.main@generator)" hash="ctjilo0lr24q2z9ax6flfi3uervs2cl" />
+  <dep model="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)" hash="-4u80ogi4zypy2c0wm8d6ivi1u1w6q7b" />
+  <dep model="r:7fe59955-507a-46f0-b09f-056540eafdc9(jetbrains.mps.nanoc.debug.programState)" hash="-3lqjhl5s4aw7bo5mk2j3kjdyq6w41sg" />
+  <dep model="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" hash="-4oab46dmbc4n7wr38hqbll6sdq2gzbt" />
+  <dep model="r:cd25c6e5-97ce-4a26-8b73-c9bb310649a3(jetbrains.mps.nanoc.debug.events)" hash="32o3h1z7xb08sh65cb2354gz1pv8lqn" />
   <common hash="9j8olc7uuvhk6hl6qim8cv8ifdisatd" />
-  <source id="3990508698139426393" name="CppGDBCreator" hash="bxqoujcjtk4vsom82myg83qj96ra36q">
+  <source id="3990508698139426393" name="CppGDBCreator" hash="9o2rqckmylfnbnxohmqxnhl41nrbktk">
     <dep root="3990508698139428411" />
     <dep root="3990508698139430350" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -44,10 +44,10 @@
     <dep model="r:cd25c6e5-97ce-4a26-8b73-c9bb310649a3(jetbrains.mps.nanoc.debug.events)" />
     <file name="CppGDBCreator.java" />
   </source>
-  <source id="3990508698139427192" name="ProgramsLocationUtil" hash="-623kxe8ybc5uxwo933tj18i73exseqr">
+  <source id="3990508698139427192" name="ProgramsLocationUtil" hash="be4z7x01gki02ydvoxra5j1gajbxmhq">
     <file name="ProgramsLocationUtil.java" />
   </source>
-  <source id="3990508698139427473" name="GDBCommands" hash="-xqtz9zhqp3uk8xekpxgnwpdb1n8dgi">
+  <source id="3990508698139427473" name="GDBCommands" hash="fqv21l7dzwniehhdy4sig0csfqdsog">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.execution.process(MPS.Platform/com.intellij.execution.process@java_stub)" />
@@ -55,7 +55,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
     <file name="GDBCommands.java" />
   </source>
-  <source id="3990508698139428411" name="CppDebugSession" hash="-dik40eixoeki8jsavxywyg7sgpq8rrf">
+  <source id="3990508698139428411" name="CppDebugSession" hash="36xywc8jyve973uz1ov223ald4swk9g">
     <dep root="3990508698139429713" />
     <dep root="3990508698139430350" />
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.execution.process(MPS.Platform/com.intellij.execution.process@java_stub)" />
@@ -76,7 +76,7 @@
     <dep model="r:cd25c6e5-97ce-4a26-8b73-c9bb310649a3(jetbrains.mps.nanoc.debug.events)" />
     <file name="CppDebugSession.java" />
   </source>
-  <source id="3990508698139429713" name="CppUiStateImpl" hash="-6qfcgynpf9xsvqo1p32iiqv0nggcq3c">
+  <source id="3990508698139429713" name="CppUiStateImpl" hash="2zofsogjtbindvl4v06sqhs2lkle6fl">
     <dep root="3990508698139430350" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -86,14 +86,14 @@
     <dep model="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" />
     <file name="CppUiStateImpl.java" />
   </source>
-  <source id="3990508698139430350" name="CppUiState" hash="-v8fujdqmg31nif4byfj9p8c332wnmn">
+  <source id="3990508698139430350" name="CppUiState" hash="-3u08pbrutsgjziur70yx54um5bu83fv">
     <file name="CppUiState.java" />
   </source>
-  <source id="226334238991954936" name="CppDebugger" hash="-14kajomzxc0ohk2eaans81p2kfvk4bg">
+  <source id="226334238991954936" name="CppDebugger" hash="-a9pgo1973qmmwuvcrb7s945yx4gpwwr">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="CppDebugger.java" />
   </source>
-  <source id="4781887771024752102" name="GdbProcessListener" hash="-9eg1kks3waxyn4v7bagpinr8m8la71c">
+  <source id="4781887771024752102" name="GdbProcessListener" hash="7oqkspzifnxg9lhudr8kuq47771a0bn">
     <dep root="3990508698139428411" />
     <dep root="3990508698139430350" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -112,10 +112,10 @@
     <dep model="r:cd25c6e5-97ce-4a26-8b73-c9bb310649a3(jetbrains.mps.nanoc.debug.events)" />
     <file name="GdbProcessListener.java" />
   </source>
-  <source id="2692169166603127766" name="GdbDebuggerSettings" hash="8mkoncak5jzz521r8r5pajdjbqsu169">
+  <source id="2692169166603127766" name="GdbDebuggerSettings" hash="462xb8emhlth3g6xtbuuyklxu6jdi59">
     <file name="GdbDebuggerSettings.java" />
   </source>
-  <source id="7125917778320166850" name="ProcessUtil" hash="-2m6dvepurpoia9wsyi8zr660qoega70">
+  <source id="7125917778320166850" name="ProcessUtil" hash="a52qghd6kyn0cdvwf02zu9cdxizhlmz">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)" />

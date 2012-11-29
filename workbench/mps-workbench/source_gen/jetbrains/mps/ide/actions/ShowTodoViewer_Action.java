@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -12,10 +11,10 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.logging.Logger;
 
 public class ShowTodoViewer_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ShowTodoViewer_Action.class);
 
   public ShowTodoViewer_Action() {
     super("Todo...", "", ICON);
@@ -55,4 +54,6 @@ public class ShowTodoViewer_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "ShowTodoViewer", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ShowTodoViewer_Action.class);
 }

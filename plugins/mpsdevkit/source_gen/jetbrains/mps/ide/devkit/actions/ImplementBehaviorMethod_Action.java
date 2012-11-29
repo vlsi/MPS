@@ -4,8 +4,6 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -19,10 +17,11 @@ import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.actions.OverrideConceptMethodsAction;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class ImplementBehaviorMethod_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ImplementBehaviorMethod_Action.class);
 
   public ImplementBehaviorMethod_Action() {
     super("Implement Behavior Method...", "", ICON);
@@ -89,4 +88,6 @@ public class ImplementBehaviorMethod_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(ImplementBehaviorMethod_Action.class);
 }

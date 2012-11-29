@@ -94,7 +94,6 @@ public class Generate_Facet extends IFacet.Stub {
   public static class Target_checkParameters implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters");
 
     public Target_checkParameters() {
@@ -228,7 +227,6 @@ public class Generate_Facet extends IFacet.Stub {
   public static class Target_configure implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.configure");
 
     public Target_configure() {
@@ -405,7 +403,6 @@ public class Generate_Facet extends IFacet.Stub {
   public static class Target_preloadModels implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IMResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.preloadModels");
 
     public Target_preloadModels() {
@@ -507,7 +504,6 @@ public class Generate_Facet extends IFacet.Stub {
   public static class Target_generate implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IMResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.generate");
 
     public Target_generate() {

@@ -20,7 +20,7 @@ public class typeOf_Model_NodesOperation_InferenceRule extends AbstractInference
     {
       SNode _nodeToCheck_1029348928467 = node;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203711973625", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203711973627", true), (SNode) _quotation_createNode_pxwv6g_a0a0a(SLinkOperations.getTarget(node, "concept", false)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203711973627", true), (SNode) _quotation_createNode_pxwv6g_a0a0b(SLinkOperations.getTarget(node, "concept", false)), _info_12389875345);
     }
   }
 
@@ -39,7 +39,7 @@ public class typeOf_Model_NodesOperation_InferenceRule extends AbstractInference
     return true;
   }
 
-  private static SNode _quotation_createNode_pxwv6g_a0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_pxwv6g_a0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("elementConcept", (SNode) parameter_1);

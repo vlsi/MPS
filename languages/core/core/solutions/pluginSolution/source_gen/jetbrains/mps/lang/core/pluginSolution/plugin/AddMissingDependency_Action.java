@@ -4,7 +4,6 @@ package jetbrains.mps.lang.core.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.IScope;
@@ -20,10 +19,10 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.logging.Logger;
 
 public class AddMissingDependency_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(AddMissingDependency_Action.class);
 
   public AddMissingDependency_Action() {
     super("Add Missing Dependency", "", ICON);
@@ -97,4 +96,6 @@ public class AddMissingDependency_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "AddMissingDependency", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(AddMissingDependency_Action.class);
 }

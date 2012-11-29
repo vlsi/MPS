@@ -4,17 +4,16 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import jetbrains.mps.logging.Logger;
 
 public class FindPrevious_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(FindPrevious_Action.class);
 
   public FindPrevious_Action() {
     super("Find Previous", "Repeat the last Find operation in reverse direction", ICON);
@@ -62,4 +61,6 @@ public class FindPrevious_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "FindPrevious", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(FindPrevious_Action.class);
 }

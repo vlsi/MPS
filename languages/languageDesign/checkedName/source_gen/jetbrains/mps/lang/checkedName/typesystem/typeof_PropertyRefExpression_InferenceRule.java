@@ -21,7 +21,7 @@ public class typeof_PropertyRefExpression_InferenceRule extends AbstractInferenc
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "nodeExpr", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f922da3a-135f-4fe9-9051-9f018bc5c1bf(jetbrains.mps.lang.checkedName.typesystem)", "4844813484172611583", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f922da3a-135f-4fe9-9051-9f018bc5c1bf(jetbrains.mps.lang.checkedName.typesystem)", "4844813484172611588", true), (SNode) _quotation_createNode_r5x3lr_a0a0a(), true, false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f922da3a-135f-4fe9-9051-9f018bc5c1bf(jetbrains.mps.lang.checkedName.typesystem)", "4844813484172611588", true), (SNode) _quotation_createNode_r5x3lr_a0a0b(), true, false, _info_12389875345);
       }
     }
   }
@@ -41,7 +41,7 @@ public class typeof_PropertyRefExpression_InferenceRule extends AbstractInferenc
     return false;
   }
 
-  private static SNode _quotation_createNode_r5x3lr_a0a0a() {
+  private static SNode _quotation_createNode_r5x3lr_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

@@ -13,7 +13,6 @@ import java.util.Collections;
 public class FacetRegistry {
   private static Logger LOG = Logger.getLogger(FacetRegistry.class);
   private static FacetRegistry INSTANCE = new FacetRegistry();
-
   private Map<IFacet.Name, IFacet> facetMap = MapSequence.fromMap(new HashMap<IFacet.Name, IFacet>());
 
   private FacetRegistry() {

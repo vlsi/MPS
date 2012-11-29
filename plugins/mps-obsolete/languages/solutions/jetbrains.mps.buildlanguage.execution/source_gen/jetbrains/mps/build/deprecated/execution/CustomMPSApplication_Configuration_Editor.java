@@ -27,11 +27,6 @@ public class CustomMPSApplication_Configuration_Editor extends SettingsEditorEx<
   private NodeByConcept_Configuration_Editor myNode;
   private AntSettings_Configuration_Editor mySettings;
 
-  public CustomMPSApplication_Configuration_Editor(NodeByConcept_Configuration_Editor node, AntSettings_Configuration_Editor settings) {
-    myNode = node;
-    mySettings = settings;
-  }
-
   public void disposeEditor() {
     myChooser.dispose();
     Disposer.dispose(myNode);
@@ -69,5 +64,10 @@ public class CustomMPSApplication_Configuration_Editor extends SettingsEditorEx<
     myNode.resetEditorFrom(configuration.getNode());
     mySettings.resetEditorFrom(configuration.getSettings());
     myConfigurationChoosePanel.reset(SNodeOperations.cast(configuration.getNode().getNode(), "jetbrains.mps.build.packaging.structure.Layout"), configuration.getConfigurationId());
+  }
+
+  public CustomMPSApplication_Configuration_Editor(NodeByConcept_Configuration_Editor node, AntSettings_Configuration_Editor settings) {
+    myNode = node;
+    mySettings = settings;
   }
 }

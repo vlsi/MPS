@@ -10,6 +10,9 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -30,11 +33,15 @@ public class check_StaticFinalFieldWasAssigned_NonTypesystemRule extends Abstrac
     if (classifier == null) {
       return;
     }
-    SNode initializer = SLinkOperations.getTarget(classifier, "classInitializer", true);
-    if (initializer != null) {
-      for (SNode reference : SNodeOperations.getDescendantsWhereConceptInList(initializer, new String[]{"jetbrains.mps.baseLanguage.structure.StaticFieldReference", "jetbrains.mps.baseLanguage.structure.VariableReference"}, false, new String[]{})) {
-        if (SLinkOperations.getTarget(reference, "variableDeclaration", false) == field && CheckingUtil.isAssigned(reference)) {
-          return;
+    {
+      Iterator<SNode> initializer_it = Sequence.fromIterable(ClassConcept_Behavior.call_staticInitializers_3136320261464948039(classifier)).iterator();
+      SNode initializer_var;
+      while (initializer_it.hasNext()) {
+        initializer_var = initializer_it.next();
+        for (SNode reference : SNodeOperations.getDescendantsWhereConceptInList(initializer_var, new String[]{"jetbrains.mps.baseLanguage.structure.StaticFieldReference", "jetbrains.mps.baseLanguage.structure.VariableReference"}, false, new String[]{})) {
+          if (SLinkOperations.getTarget(reference, "variableDeclaration", false) == field && CheckingUtil.isAssigned(reference)) {
+            return;
+          }
         }
       }
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.nanoc.pluginSolution" uuid="145e4b07-c585-49f6-847f-007fdad1f453" pluginKind="PLUGIN_OTHER" compileInMPS="true">
+<solution name="jetbrains.mps.nanoc.pluginSolution" uuid="145e4b07-c585-49f6-847f-007fdad1f453" pluginKind="PLUGIN_OTHER" compileInMPS="true" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot path="${module}/models" />
     <modelRoot path="${module}/" />
@@ -11,6 +11,7 @@
     <dependency reexport="false">742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)</dependency>
     <dependency reexport="false">86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)</dependency>
     <dependency reexport="false">cc7da2f6-419f-4133-a811-31fcd3295a85(jetbrains.mps.debugger.api.api)</dependency>
+    <dependency reexport="false">36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)</dependency>
     <dependency reexport="false">933a68f9-aab6-401b-b5c5-5ca7783dce5f(jetbrains.mps.execution.configurations.pluginSolution)</dependency>
     <dependency reexport="false">04b376d5-fc16-403b-a344-c68b30193c6a(jetbrains.mps.execution.library)</dependency>
     <dependency reexport="false">08ffecab-a1e5-4be9-bd87-e14140b1b0e0(jetbrains.mps.nanoc)</dependency>

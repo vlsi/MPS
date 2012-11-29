@@ -210,10 +210,10 @@ public class ModelReference_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_i85no5_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_i85no5_a0a0a(SPropertyOperations.getString(node, "stereotype"));
+    return isNotEmpty_i85no5_a0a0r(SPropertyOperations.getString(node, "stereotype"));
   }
 
-  public static boolean isNotEmpty_i85no5_a0a0a(String str) {
+  public static boolean isNotEmpty_i85no5_a0a0r(String str) {
     return str != null && str.length() > 0;
   }
 }

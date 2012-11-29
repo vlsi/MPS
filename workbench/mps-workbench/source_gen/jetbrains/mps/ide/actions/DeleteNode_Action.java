@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
@@ -17,10 +16,10 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.logging.Logger;
 
 public class DeleteNode_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(DeleteNode_Action.class);
 
   public DeleteNode_Action() {
     super("Delete", "", ICON);
@@ -93,4 +92,6 @@ public class DeleteNode_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "DeleteNode", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(DeleteNode_Action.class);
 }

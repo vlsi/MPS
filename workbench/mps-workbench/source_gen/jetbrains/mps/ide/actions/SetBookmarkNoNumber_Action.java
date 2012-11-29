@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -13,10 +12,10 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.bookmark.BookmarkManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.logging.Logger;
 
 public class SetBookmarkNoNumber_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(SetBookmarkNoNumber_Action.class);
 
   public SetBookmarkNoNumber_Action() {
     super("Set Bookmark", "", ICON);
@@ -61,4 +60,6 @@ public class SetBookmarkNoNumber_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "SetBookmarkNoNumber", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(SetBookmarkNoNumber_Action.class);
 }

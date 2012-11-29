@@ -5,8 +5,6 @@ package jetbrains.mps.vcs.plugin;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -21,10 +19,11 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.changes.ChangeListManagerImpl;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class AddModuleToVcs_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("addToVcs.png");
-  protected static Log log = LogFactory.getLog(AddModuleToVcs_Action.class);
 
   public AddModuleToVcs_Action() {
     super("Add Module to VCS", "", ICON);
@@ -83,4 +82,6 @@ public class AddModuleToVcs_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(AddModuleToVcs_Action.class);
 }

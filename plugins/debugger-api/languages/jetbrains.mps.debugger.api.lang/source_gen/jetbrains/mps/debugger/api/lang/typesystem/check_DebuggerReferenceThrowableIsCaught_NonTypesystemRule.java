@@ -25,7 +25,7 @@ public class check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule extends 
   public void applyRule(final SNode debuggerReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(debuggerReference), "jetbrains.mps.debugger.api.lang.structure.BreakpointCreator")) {
       Set<SNode> throwables = SetSequence.fromSet(new HashSet<SNode>());
-      SetSequence.fromSet(throwables).addElement(_quotation_createNode_fpej4j_a0a1a0a0());
+      SetSequence.fromSet(throwables).addElement(_quotation_createNode_fpej4j_a0a1a0a1());
       RulesFunctions_BaseLanguage.check(typeCheckingContext, throwables, debuggerReference);
     }
   }
@@ -45,7 +45,7 @@ public class check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule extends 
     return false;
   }
 
-  private static SNode _quotation_createNode_fpej4j_a0a1a0a0() {
+  private static SNode _quotation_createNode_fpej4j_a0a1a0a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)"), SNodeId.fromString("4474271214082915164")));

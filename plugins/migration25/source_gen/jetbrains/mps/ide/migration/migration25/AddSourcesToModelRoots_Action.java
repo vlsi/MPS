@@ -4,8 +4,6 @@ package jetbrains.mps.ide.migration.migration25;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -29,10 +27,11 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class AddSourcesToModelRoots_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(AddSourcesToModelRoots_Action.class);
 
   public AddSourcesToModelRoots_Action() {
     super("Add classes__gen to Model Roots for Modules With Sources", "", ICON);
@@ -108,4 +107,6 @@ public class AddSourcesToModelRoots_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(AddSourcesToModelRoots_Action.class);
 }

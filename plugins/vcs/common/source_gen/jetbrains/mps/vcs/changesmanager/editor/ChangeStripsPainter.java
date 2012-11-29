@@ -36,7 +36,6 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
   private static final int AREA_WIDTH = 6;
   private static final int ARROW_HEIGHT = 8;
   private static final Color AREA_FRAME_COLOR = Color.GRAY;
-
   private EditorHighlighter myEditorHighlighter;
   private ChangeGroupLayout myChangeGroupLayout;
   private ChangeGroup myGroupUnderMouse;
@@ -197,7 +196,7 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
     if (event.getID() != MouseEvent.MOUSE_CLICKED) {
       return;
     }
-    check_h84zmo_a1a11(myPopupToolbar);
+    check_h84zmo_a1a02(myPopupToolbar);
     getEditorComponent().requestFocus();
     if (event.getButton() == MouseEvent.BUTTON1) {
       ChangeGroup changeGroup = findMessageGroupUnder(event.getPoint());
@@ -247,11 +246,11 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
 
   @Nullable
   /*package*/ ChangeGroup getCurrentChangeGroup() {
-    return check_h84zmo_a0a51(myPopupToolbar);
+    return check_h84zmo_a0a42(myPopupToolbar);
   }
 
   /*package*/ void showPopupForGroup(@Nullable ChangeGroup group) {
-    check_h84zmo_a0a61(myPopupToolbar);
+    check_h84zmo_a0a52(myPopupToolbar);
     if (group != null) {
       showPopupForGroup(group, (int) group.getBounds(true).start());
     }
@@ -263,21 +262,21 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
     super.dispose();
   }
 
-  private static void check_h84zmo_a1a11(PopupPanel checkedDotOperand) {
+  private static void check_h84zmo_a1a02(PopupPanel checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.dispose();
     }
 
   }
 
-  private static ChangeGroup check_h84zmo_a0a51(PopupPanel checkedDotOperand) {
+  private static ChangeGroup check_h84zmo_a0a42(PopupPanel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getChangeGroup();
     }
     return null;
   }
 
-  private static void check_h84zmo_a0a61(PopupPanel checkedDotOperand) {
+  private static void check_h84zmo_a0a52(PopupPanel checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.dispose();
     }

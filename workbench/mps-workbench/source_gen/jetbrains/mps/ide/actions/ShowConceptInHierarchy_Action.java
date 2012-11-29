@@ -5,7 +5,6 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
@@ -18,10 +17,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
+import jetbrains.mps.logging.Logger;
 
 public class ShowConceptInHierarchy_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("hierarchyView.png");
-  private static Logger LOG = Logger.getLogger(ShowConceptInHierarchy_Action.class);
 
   public ShowConceptInHierarchy_Action() {
     super("Show Concept in Hierarchy", "", ICON);
@@ -114,4 +113,6 @@ public class ShowConceptInHierarchy_Action extends BaseAction {
     }
     return SNodeOperations.cast(editedNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
+
+  private static Logger LOG = Logger.getLogger(ShowConceptInHierarchy_Action.class);
 }

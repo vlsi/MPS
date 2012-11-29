@@ -31,7 +31,7 @@ public class CommentHelper {
       return result;
     }
     // remove start prefix 
-    if (trim_rf742u_a0a4a1(Sequence.fromIterable(lines).first()).equals(start)) {
+    if (trim_rf742u_a0a4a2(Sequence.fromIterable(lines).first()).equals(start)) {
       lines = Sequence.fromIterable(lines).skip(1);
     } else if (Sequence.fromIterable(lines).first().startsWith(start)) {
       ListSequence.fromList(result).addElement(Sequence.fromIterable(lines).first().substring(start.length()));
@@ -60,7 +60,7 @@ public class CommentHelper {
       }
     }
     if ((end != null && end.length() > 0) && ListSequence.fromList(result).isNotEmpty()) {
-      if (trim_rf742u_a0a0a7a1(ListSequence.fromList(result).last()).equals(end)) {
+      if (trim_rf742u_a0a0a7a2(ListSequence.fromList(result).last()).equals(end)) {
         ListSequence.fromList(result).removeLastElement();
       } else if (ListSequence.fromList(result).last().endsWith(end)) {
         String last = ListSequence.fromList(result).removeLastElement();
@@ -82,14 +82,14 @@ public class CommentHelper {
     }
   }
 
-  public static String trim_rf742u_a0a4a1(String str) {
+  public static String trim_rf742u_a0a4a2(String str) {
     return (str == null ?
       null :
       str.trim()
     );
   }
 
-  public static String trim_rf742u_a0a0a7a1(String str) {
+  public static String trim_rf742u_a0a0a7a2(String str) {
     return (str == null ?
       null :
       str.trim()

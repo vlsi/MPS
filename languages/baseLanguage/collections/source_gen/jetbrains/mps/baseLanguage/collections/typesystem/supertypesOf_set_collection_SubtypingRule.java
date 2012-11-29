@@ -17,7 +17,7 @@ public class supertypesOf_set_collection_SubtypingRule extends SubtypingRule_Run
   }
 
   public SNode getSubOrSuperType(SNode st, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_6kyuqk_a0a0(SLinkOperations.getTarget(st, "elementType", true));
+    return _quotation_createNode_6kyuqk_a0a1(SLinkOperations.getTarget(st, "elementType", true));
   }
 
   public String getApplicableConceptFQName() {
@@ -35,7 +35,7 @@ public class supertypesOf_set_collection_SubtypingRule extends SubtypingRule_Run
     return false;
   }
 
-  private static SNode _quotation_createNode_6kyuqk_a0a0(Object parameter_1) {
+  private static SNode _quotation_createNode_6kyuqk_a0a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.CollectionType", null, null, GlobalScope.getInstance(), false);

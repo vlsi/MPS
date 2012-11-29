@@ -47,10 +47,10 @@ public class Queries {
     }
     SNode type = leastCommonSupertypes.iterator().next();
     {
-      IMatchingPattern pattern_j6k1pf_e0b = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.PrimitiveType");
-      SNode coercedNode_j6k1pf_e0b = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, pattern_j6k1pf_e0b);
-      if (coercedNode_j6k1pf_e0b != null) {
-        return coercedNode_j6k1pf_e0b;
+      IMatchingPattern pattern_j6k1pf_e0c = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.PrimitiveType");
+      SNode coercedNode_j6k1pf_e0c = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, pattern_j6k1pf_e0c);
+      if (coercedNode_j6k1pf_e0c != null) {
+        return coercedNode_j6k1pf_e0c;
       } else {
         return type;
       }

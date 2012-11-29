@@ -11,9 +11,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -22,6 +19,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.intentions.IntentionDescriptor;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class CreateMethodDeclaration_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -75,6 +75,45 @@ public class CreateMethodDeclaration_Intention implements IntentionFactory {
     return myCachedExecutable;
   }
 
+  public class IntentionImplementation implements IntentionExecutable {
+    public IntentionImplementation() {
+    }
+
+    public String getDescription(final SNode node, final EditorContext editorContext) {
+      return "Create Method Declaration";
+    }
+
+    public void execute(final SNode node, final EditorContext editorContext) {
+      SNode classifier = CreateMethodDeclarationUtil.getClassifier(node);
+      boolean isSameClassifier = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == classifier;
+      final String name = CreateMethodDeclarationUtil.getMethodName(editorContext);
+      SNode type;
+      SNode inferType = TypeChecker.getInstance().getInferredTypeOf(node);
+      if (SNodeOperations.isInstanceOf(inferType, "jetbrains.mps.baseLanguage.structure.Type")) {
+        type = SNodeOperations.cast(inferType, "jetbrains.mps.baseLanguage.structure.Type");
+      } else {
+        type = _quotation_createNode_v1wtfy_a0a0a5a0();
+      }
+      SNode method = _quotation_createNode_v1wtfy_a0g0a(type, name);
+      if (!(isSameClassifier)) {
+        SLinkOperations.setTarget(method, "visibility", _quotation_createNode_v1wtfy_a0a0h0a(), true);
+      }
+      ListSequence.fromList(SLinkOperations.getTargets(classifier, "member", true)).addElement(method);
+      SNodeOperations.replaceWithAnother(node, _quotation_createNode_v1wtfy_a0a9a0(method));
+      if (isSameClassifier) {
+        editorContext.selectWRTFocusPolicy(method);
+      } else {
+        IOperationContext operationContext = editorContext.getOperationContext();
+        Editor editor = NavigationSupport.getInstance().openNode(operationContext, classifier, true, false);
+        editor.getEditorContext().selectWRTFocusPolicy(method);
+      }
+    }
+
+    public IntentionDescriptor getDescriptor() {
+      return CreateMethodDeclaration_Intention.this;
+    }
+  }
+
   private static SNode _quotation_createNode_v1wtfy_a0a0a5a0() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
@@ -110,44 +149,5 @@ public class CreateMethodDeclaration_Intention implements IntentionFactory {
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_1);
     return quotedNode_2;
-  }
-
-  public class IntentionImplementation implements IntentionExecutable {
-    public IntentionImplementation() {
-    }
-
-    public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Create Method Declaration";
-    }
-
-    public void execute(final SNode node, final EditorContext editorContext) {
-      SNode classifier = CreateMethodDeclarationUtil.getClassifier(node);
-      boolean isSameClassifier = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == classifier;
-      final String name = CreateMethodDeclarationUtil.getMethodName(editorContext);
-      SNode type;
-      SNode inferType = TypeChecker.getInstance().getInferredTypeOf(node);
-      if (SNodeOperations.isInstanceOf(inferType, "jetbrains.mps.baseLanguage.structure.Type")) {
-        type = SNodeOperations.cast(inferType, "jetbrains.mps.baseLanguage.structure.Type");
-      } else {
-        type = _quotation_createNode_v1wtfy_a0a0a5a0();
-      }
-      SNode method = _quotation_createNode_v1wtfy_a0g0a(type, name);
-      if (!(isSameClassifier)) {
-        SLinkOperations.setTarget(method, "visibility", _quotation_createNode_v1wtfy_a0a0h0a(), true);
-      }
-      ListSequence.fromList(SLinkOperations.getTargets(classifier, "method", true)).addElement(method);
-      SNodeOperations.replaceWithAnother(node, _quotation_createNode_v1wtfy_a0a9a0(method));
-      if (isSameClassifier) {
-        editorContext.selectWRTFocusPolicy(method);
-      } else {
-        IOperationContext operationContext = editorContext.getOperationContext();
-        Editor editor = NavigationSupport.getInstance().openNode(operationContext, classifier, true, false);
-        editor.getEditorContext().selectWRTFocusPolicy(method);
-      }
-    }
-
-    public IntentionDescriptor getDescriptor() {
-      return CreateMethodDeclaration_Intention.this;
-    }
   }
 }

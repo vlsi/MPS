@@ -36,7 +36,7 @@ public class typeof_IntervalLiteral_InferenceRule extends AbstractInferenceRule_
     {
       SNode _nodeToCheck_1029348928467 = literal;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1235747425306", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1235747425314", true), (SNode) _quotation_createNode_79l3ax_a0d0a(typeCheckingContext.getRepresentative(elementType_typevar_1235747425275)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1235747425314", true), (SNode) _quotation_createNode_79l3ax_a0d0b(typeCheckingContext.getRepresentative(elementType_typevar_1235747425275)), _info_12389875345);
     }
   }
 
@@ -55,7 +55,7 @@ public class typeof_IntervalLiteral_InferenceRule extends AbstractInferenceRule_
     return false;
   }
 
-  private static SNode _quotation_createNode_79l3ax_a0d0a(Object parameter_1) {
+  private static SNode _quotation_createNode_79l3ax_a0d0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.IntervalType", null, null, GlobalScope.getInstance(), false);

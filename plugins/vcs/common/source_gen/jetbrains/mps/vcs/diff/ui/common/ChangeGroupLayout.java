@@ -52,7 +52,7 @@ public abstract class ChangeGroupLayout {
   private void calculateChangeGroups() {
     final Map<ModelChange, Bounds> left = MapSequence.fromMap(new HashMap<ModelChange, Bounds>());
     final Map<ModelChange, Bounds> right = MapSequence.fromMap(new HashMap<ModelChange, Bounds>());
-    for (ModelChange change : ListSequence.fromList(check_cuq72k_a2a5(getChangeSet(), this))) {
+    for (ModelChange change : ListSequence.fromList(check_cuq72k_a2a11(getChangeSet(), this))) {
       Bounds leftBounds = findBounds(getLeftMessages(change), getLeftComponent());
       Bounds rightBounds = findBounds(getRightMessages(change), getRightComponent());
 
@@ -163,7 +163,7 @@ public abstract class ChangeGroupLayout {
       });
     }
     if (bounds == null || bounds.length() <= 0) {
-      int y = check_cuq72k_a0a0c0a(check_cuq72k_a0a0a2a0(editorComponent));
+      int y = check_cuq72k_a0a0c0r(check_cuq72k_a0a0a2a71(editorComponent));
       return new Bounds(y, y);
     } else {
       return bounds;
@@ -178,23 +178,23 @@ public abstract class ChangeGroupLayout {
     return (int) a.end() - tolerance < (int) b.start() || (int) b.end() - tolerance < (int) a.start();
   }
 
-  private static int check_cuq72k_a0a0c0a(EditorCell checkedDotOperand) {
+  private static List<ModelChange> check_cuq72k_a2a11(ChangeSet checkedDotOperand, ChangeGroupLayout checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static int check_cuq72k_a0a0c0r(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getY();
     }
     return 0;
   }
 
-  private static EditorCell check_cuq72k_a0a0a2a0(EditorComponent checkedDotOperand) {
+  private static EditorCell check_cuq72k_a0a0a2a71(EditorComponent checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getRootCell();
-    }
-    return null;
-  }
-
-  private static List<ModelChange> check_cuq72k_a2a5(ChangeSet checkedDotOperand, ChangeGroupLayout checkedDotThisExpression) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
     }
     return null;
   }

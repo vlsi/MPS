@@ -5,8 +5,10 @@ package jetbrains.mps.testbench.suite.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -27,7 +29,7 @@ public class JUnit4TestCaseRef_Behavior {
     final SNode testAnn = SLinkOperations.getTarget(_quotation_createNode_856esj_a0a0a1(), "annotation", false);
     final SNode ignoreAnn = SLinkOperations.getTarget(_quotation_createNode_856esj_a0a1a1(), "annotation", false);
 
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "klass", false), "method", true)).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SLinkOperations.getTarget(thisNode, "klass", false))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode m) {
         return ListSequence.fromList(SLinkOperations.getTargets(m, "annotation", true)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode mann) {

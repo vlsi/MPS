@@ -33,8 +33,8 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.IOperationContext;
 
 public class DependencyPathTree extends MPSTree implements DataProvider {
   private List<Tuples._3<Set<IModule>, Set<IModule>, Set<IModule>>> myAllDependencies = ListSequence.fromList(new ArrayList<Tuples._3<Set<IModule>, Set<IModule>, Set<IModule>>>());
@@ -148,38 +148,17 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
 
   @Nullable
   public Object getData(@NonNls String id) {
-    DependencyTreeNode current = as_9bg0dz_a0a0a11(getCurrentNode(), DependencyTreeNode.class);
+    DependencyTreeNode current = as_9bg0dz_a0a0a61(getCurrentNode(), DependencyTreeNode.class);
     if (id.equals(MPSDataKeys.LOGICAL_VIEW_NODE.getName())) {
       return current;
     }
     if (id.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
-      return check_9bg0dz_a0a2a11(current);
+      return check_9bg0dz_a0a2a61(current);
     }
     if (id.equals(MPSCommonDataKeys.MODULE.getName())) {
-      return check_9bg0dz_a0a3a11(current);
+      return check_9bg0dz_a0a3a61(current);
     }
     return null;
-  }
-
-  private static IOperationContext check_9bg0dz_a0a2a11(DependencyTreeNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getOperationContext();
-    }
-    return null;
-  }
-
-  private static IModule check_9bg0dz_a0a3a11(DependencyTreeNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-
-  private static <T> T as_9bg0dz_a0a0a11(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
   }
 
   public static class LinkFrom {
@@ -226,5 +205,26 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     public void addBackDep(DependencyPathTree.LinkFrom dep) {
       ListSequence.fromList(backdeps).addElement(dep);
     }
+  }
+
+  private static IOperationContext check_9bg0dz_a0a2a61(DependencyTreeNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getOperationContext();
+    }
+    return null;
+  }
+
+  private static IModule check_9bg0dz_a0a3a61(DependencyTreeNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+
+  private static <T> T as_9bg0dz_a0a0a61(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
   }
 }

@@ -4,7 +4,6 @@ package jetbrains.mps.calculator.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
@@ -14,10 +13,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.lang.reflect.Method;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.logging.Logger;
 
 public class ExecuteCalculator_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ExecuteCalculator_Action.class);
 
   public ExecuteCalculator_Action() {
     super("Execute Calculator", "", ICON);
@@ -105,4 +104,6 @@ public class ExecuteCalculator_Action extends BaseAction {
       return null;
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ExecuteCalculator_Action.class);
 }

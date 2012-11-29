@@ -47,7 +47,7 @@ public class UpperBoundType_supertypeOf_bound_InequationReplacementRule extends 
 
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
-      GeneratedMatchingPattern pattern = new UpperBoundType_supertypeOf_bound_InequationReplacementRule.Pattern_xnp7z4_a0a0a0a5();
+      GeneratedMatchingPattern pattern = new UpperBoundType_supertypeOf_bound_InequationReplacementRule.Pattern_xnp7z4_a0a0a0a7();
       this.myMatchingPattern2 = pattern;
       boolean b = pattern.match(node);
       return new IsApplicableStatus(b, pattern);
@@ -62,10 +62,10 @@ public class UpperBoundType_supertypeOf_bound_InequationReplacementRule extends 
     return "jetbrains.mps.baseLanguage.structure.UpperBoundType";
   }
 
-  public static class Pattern_xnp7z4_a0a0a0a5 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_xnp7z4_a0a0a0a7 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_BOUND;
 
-    public Pattern_xnp7z4_a0a0a0a5() {
+    public Pattern_xnp7z4_a0a0a0a7() {
     }
 
     public boolean match(SNode nodeToMatch) {

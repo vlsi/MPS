@@ -6,6 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import java.util.List;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -14,10 +18,6 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import java.util.List;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 
 public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -26,6 +26,18 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createComponent_jiideg_a(editorContext, node);
+  }
+
+  public static class CopySrcNodeMacro_component_cellMenu_a0a0 implements SubstituteInfoPartExt {
+    private replace_node_macro myComponent;
+
+    public CopySrcNodeMacro_component_cellMenu_a0a0() {
+      this.myComponent = new replace_node_macro();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
   }
 
   private EditorCell createCollection_jiideg_a(EditorContext editorContext, SNode node) {
@@ -63,17 +75,5 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new CopySrcNodeMacro_Editor.CopySrcNodeMacro_component_cellMenu_a0a0()}));
     return editorCell;
-  }
-
-  public static class CopySrcNodeMacro_component_cellMenu_a0a0 implements SubstituteInfoPartExt {
-    private replace_node_macro myComponent;
-
-    public CopySrcNodeMacro_component_cellMenu_a0a0() {
-      this.myComponent = new replace_node_macro();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
   }
 }

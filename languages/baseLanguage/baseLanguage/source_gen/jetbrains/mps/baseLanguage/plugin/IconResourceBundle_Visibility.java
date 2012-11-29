@@ -9,7 +9,6 @@ import java.util.HashMap;
 
 public class IconResourceBundle_Visibility implements IconResourceBundle {
   private static IconResourceBundle_Visibility INSTANCE = new IconResourceBundle_Visibility();
-
   private Map<String, Icon> icons = new HashMap<String, Icon>() {
     {
       put("PACKAGE_LOCAL", IconContainer.ICON_a0);

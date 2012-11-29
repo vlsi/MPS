@@ -4,7 +4,6 @@ package jetbrains.mps.lang.smodel.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -27,10 +26,10 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
+import jetbrains.mps.logging.Logger;
 
 public class CheckLangForJavaStubModels_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(CheckLangForJavaStubModels_Action.class);
 
   public CheckLangForJavaStubModels_Action() {
     super("Check for java_stubs Usages", "", ICON);
@@ -112,4 +111,6 @@ public class CheckLangForJavaStubModels_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "CheckLangForJavaStubModels", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(CheckLangForJavaStubModels_Action.class);
 }

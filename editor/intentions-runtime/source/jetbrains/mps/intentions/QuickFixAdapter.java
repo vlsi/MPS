@@ -50,7 +50,10 @@ public class QuickFixAdapter extends BaseIntention  {
   }
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
-    return false;
+    /*Quick fixes are added "manually" by typesystem rules.
+    * Having a quick fix in messages already means that is is applicable.
+    * So, return true.*/
+    return true;
   }
 
   public boolean isAvailableInChildNodes() {

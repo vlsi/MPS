@@ -25,7 +25,7 @@ public class check_FactoryMigrationScriptPath_NonTypesystemRule extends Abstract
 
   public void applyRule(final SNode part, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode returnType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(part, "factoryMethod", true));
-    if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(returnType, _quotation_createNode_5hdosv_b0a0b0a()))) {
+    if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(returnType, _quotation_createNode_5hdosv_b0a0b0b()))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(part, "Factory method should return subtype of Iterable<AbstractMigrationRefactoring> (now \"" + BehaviorReflection.invokeVirtual(String.class, returnType, "virtual_getPresentation_1213877396640", new Object[]{}) + "\")", "r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.typesystem)", "2598676492883176352", null, errorTarget);
@@ -48,7 +48,7 @@ public class check_FactoryMigrationScriptPath_NonTypesystemRule extends Abstract
     return false;
   }
 
-  private static SNode _quotation_createNode_5hdosv_b0a0b0a() {
+  private static SNode _quotation_createNode_5hdosv_b0a0b0b() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);

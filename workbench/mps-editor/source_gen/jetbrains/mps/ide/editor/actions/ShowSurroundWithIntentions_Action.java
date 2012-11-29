@@ -4,7 +4,6 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -34,10 +33,10 @@ import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.intentions.SurroundWithIntention;
+import jetbrains.mps.logging.Logger;
 
 public class ShowSurroundWithIntentions_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ShowSurroundWithIntentions_Action.class);
 
   public ShowSurroundWithIntentions_Action() {
     super("Surround with...", "", ICON);
@@ -162,4 +161,6 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
   private String getDescriptior(Pair<IntentionExecutable, SNode> pair, final Map<String, Object> _params) {
     return pair.o1.getDescription(pair.o2, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
   }
+
+  private static Logger LOG = Logger.getLogger(ShowSurroundWithIntentions_Action.class);
 }

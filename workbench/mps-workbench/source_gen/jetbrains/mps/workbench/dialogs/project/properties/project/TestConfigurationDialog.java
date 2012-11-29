@@ -80,7 +80,6 @@ public class TestConfigurationDialog extends DialogWrapper {
   private static final Logger LOG = Logger.getLogger(TestConfigurationDialog.class);
   private static final String MODEL = "model";
   private static final String MODULE = "module";
-
   private Project myProject;
   private BaseTestConfiguration myConfig;
   private BaseTestConfiguration myResult = null;

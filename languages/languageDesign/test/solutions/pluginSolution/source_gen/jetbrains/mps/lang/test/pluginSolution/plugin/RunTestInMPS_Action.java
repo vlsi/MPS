@@ -4,7 +4,6 @@ package jetbrains.mps.lang.test.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -25,10 +24,10 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Constructor;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
+import jetbrains.mps.logging.Logger;
 
 public class RunTestInMPS_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(RunTestInMPS_Action.class);
 
   public RunTestInMPS_Action() {
     super("Run Test in MPS Process", "", ICON);
@@ -122,4 +121,6 @@ public class RunTestInMPS_Action extends BaseAction {
       e.printStackTrace();
     }
   }
+
+  private static Logger LOG = Logger.getLogger(RunTestInMPS_Action.class);
 }

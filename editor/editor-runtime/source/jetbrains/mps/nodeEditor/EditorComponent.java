@@ -659,39 +659,59 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   protected void notifyCreation() {
-    if (myOperationContext == null) {
-      LOG.warning("Trying to notify EditorComponent creation with null operation context");
+    Runnable notifyCreationRunnable = new Runnable() {
+      @Override
+      public void run() {
+        if (myOperationContext == null) {
+          LOG.warning("Trying to notify EditorComponent creation with null operation context");
+        } else {
+          if (myOperationContext.getProject() == null) {
+            return;
+          }
+          Project ideaProject = ProjectHelper.toIdeaProject(myOperationContext.getProject());
+          if (ideaProject == null) {
+            return;
+          }
+          EditorComponentCreateListener listener = ideaProject.getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
+          listener.editorComponentCreated(EditorComponent.this);
+        }
+      }
+    };
+    if (ModelAccess.instance().isInEDT()){
+      notifyCreationRunnable.run();
     } else {
-      if (myOperationContext.getProject() == null) {
-        return;
-      }
-      Project ideaProject = ProjectHelper.toIdeaProject(myOperationContext.getProject());
-      if (ideaProject == null) {
-        return;
-      }
-      EditorComponentCreateListener listener = ideaProject.getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
-      listener.editorComponentCreated(this);
+      ModelAccess.instance().runReadInEDT(notifyCreationRunnable);
     }
   }
 
   protected void notifyDisposal() {
-    if (myOperationContext == null) {
-      LOG.warning("Trying to notify disposal with empty operation context");
-      return;
+    Runnable notifyDisposalRunnable = new Runnable() {
+      @Override
+      public void run() {
+        if (myOperationContext == null) {
+          LOG.warning("Trying to notify disposal with empty operation context");
+          return;
+        }
+        if (myOperationContext.getProject() == null) {
+          return;
+        }
+        if (myOperationContext.getProject().isDisposed()) {
+          LOG.error("Trying to notify disposal of EditorComponent related to disposed project. This may cause memory leaks.");
+          return;
+        }
+        Project ideaProject = ProjectHelper.toIdeaProject(myOperationContext.getProject());
+        if (ideaProject == null) {
+          return;
+        }
+        EditorComponentCreateListener listener = ideaProject.getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
+        listener.editorComponentDisposed(EditorComponent.this);
+      }
+    };
+    if (ModelAccess.instance().isInEDT()) {
+      notifyDisposalRunnable.run();
+    } else {
+      ModelAccess.instance().runReadInEDT(notifyDisposalRunnable);
     }
-    if (myOperationContext.getProject() == null) {
-      return;
-    }
-    if (myOperationContext.getProject().isDisposed()) {
-      LOG.error("Trying to notify disposal of EditorComponent related to disposed project. This may cause memory leaks.");
-      return;
-    }
-    Project ideaProject = ProjectHelper.toIdeaProject(myOperationContext.getProject());
-    if (ideaProject == null) {
-      return;
-    }
-    EditorComponentCreateListener listener = ideaProject.getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
-    listener.editorComponentDisposed(this);
   }
 
   public boolean onEscape() {
@@ -960,7 +980,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
         SModel model = node == null ? null : node.getModel();
         setEditorContext(new EditorContext(EditorComponent.this, model, operationContext));
-        rebuildEditorContent();
+        if (ModelAccess.instance().isInEDT()) {
+          rebuildEditorContent();
+        } else {
+          ModelAccess.instance().runReadInEDT(new Runnable() {
+            @Override
+            public void run() {
+              rebuildEditorContent();
+            }
+          });
+        }
         getTypeCheckingContext();
       }
     });

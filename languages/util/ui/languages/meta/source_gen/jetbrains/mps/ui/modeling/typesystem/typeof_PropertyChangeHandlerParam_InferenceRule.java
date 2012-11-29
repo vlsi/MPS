@@ -22,7 +22,7 @@ public class typeof_PropertyChangeHandlerParam_InferenceRule extends AbstractInf
     {
       SNode _nodeToCheck_1029348928467 = handler;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "8938819815716728733", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "8938819815716722983", true), (SNode) _quotation_createNode_eijps6_a0a0a(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(handler, "jetbrains.mps.ui.modeling.structure.EditableUIPropertyAccessCode", false, false), "property", false), "dataType", true)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "8938819815716722983", true), (SNode) _quotation_createNode_eijps6_a0a0b(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(handler, "jetbrains.mps.ui.modeling.structure.EditableUIPropertyAccessCode", false, false), "property", false), "dataType", true)), _info_12389875345);
     }
   }
 
@@ -41,7 +41,7 @@ public class typeof_PropertyChangeHandlerParam_InferenceRule extends AbstractInf
     return false;
   }
 
-  private static SNode _quotation_createNode_eijps6_a0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_eijps6_a0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;

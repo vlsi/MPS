@@ -4,8 +4,6 @@ package jetbrains.mps.ide.modelchecker.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -24,10 +22,11 @@ import jetbrains.mps.smodel.SModelStereotype;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class FindCrossTemplateReferences_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(FindCrossTemplateReferences_Action.class);
 
   public FindCrossTemplateReferences_Action() {
     super("Find Cross-template References", "", ICON);
@@ -86,4 +85,6 @@ public class FindCrossTemplateReferences_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(FindCrossTemplateReferences_Action.class);
 }

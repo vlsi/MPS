@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class DebugObjects {
   private static int myStaticField = 1;
-
   private int myNonStaticField;
 
   public DebugObjects() {

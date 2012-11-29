@@ -60,7 +60,7 @@ public class UnwrapTryCatch_Intention implements IntentionFactory {
     SNode selectedNode = editorContext.getSelectedNode();
     for (SNode ancestor : ListSequence.fromList(SNodeOperations.getAncestors(selectedNode, null, true))) {
       if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.ITryCatchStatement")) {
-        return eq_cj56ns_a0a0a0b0h(ancestor, node);
+        return eq_cj56ns_a0a0a0b0j(ancestor, node);
       }
     }
     return false;
@@ -75,13 +75,6 @@ public class UnwrapTryCatch_Intention implements IntentionFactory {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new UnwrapTryCatch_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
-  }
-
-  private static boolean eq_cj56ns_a0a0a0b0h(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
   }
 
   public class IntentionImplementation implements IntentionExecutable {
@@ -117,5 +110,12 @@ public class UnwrapTryCatch_Intention implements IntentionFactory {
     public IntentionDescriptor getDescriptor() {
       return UnwrapTryCatch_Intention.this;
     }
+  }
+
+  private static boolean eq_cj56ns_a0a0a0b0j(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

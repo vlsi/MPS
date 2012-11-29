@@ -38,7 +38,7 @@ public class LowerBoundType_subtypeOf_bound_InequationReplacementRule extends Ab
 
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
-      GeneratedMatchingPattern pattern = new LowerBoundType_subtypeOf_bound_InequationReplacementRule.Pattern_ap69b7_a0a0a0a4();
+      GeneratedMatchingPattern pattern = new LowerBoundType_subtypeOf_bound_InequationReplacementRule.Pattern_ap69b7_a0a0a0a6();
       this.myMatchingPattern1 = pattern;
       boolean b = pattern.match(node);
       return new IsApplicableStatus(b, pattern);
@@ -60,10 +60,10 @@ public class LowerBoundType_subtypeOf_bound_InequationReplacementRule extends Ab
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
 
-  public static class Pattern_ap69b7_a0a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_ap69b7_a0a0a0a6 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_BOUND;
 
-    public Pattern_ap69b7_a0a0a0a4() {
+    public Pattern_ap69b7_a0a0a0a6() {
     }
 
     public boolean match(SNode nodeToMatch) {

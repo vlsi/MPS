@@ -30,10 +30,8 @@ import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import junit.framework.Assert;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 /**

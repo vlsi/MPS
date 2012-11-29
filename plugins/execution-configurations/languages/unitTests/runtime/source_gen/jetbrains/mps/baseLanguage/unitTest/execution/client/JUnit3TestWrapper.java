@@ -26,7 +26,7 @@ public class JUnit3TestWrapper extends AbstractTestWrapper<SNode> {
   @NonNls
   @Override
   public String getFqName() {
-    return check_qb7e7i_a0a1(getNode(), this);
+    return check_qb7e7i_a0a2(getNode(), this);
   }
 
   @NotNull
@@ -48,7 +48,7 @@ public class JUnit3TestWrapper extends AbstractTestWrapper<SNode> {
     });
   }
 
-  private static String check_qb7e7i_a0a1(SNode checkedDotOperand, JUnit3TestWrapper checkedDotThisExpression) {
+  private static String check_qb7e7i_a0a2(SNode checkedDotOperand, JUnit3TestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return BehaviorReflection.invokeVirtual(String.class, checkedDotOperand, "virtual_getFqName_1213877404258", new Object[]{});
     }

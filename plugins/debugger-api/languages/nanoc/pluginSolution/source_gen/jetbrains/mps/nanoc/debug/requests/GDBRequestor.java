@@ -10,7 +10,6 @@ import java.security.SecureRandom;
 
 public abstract class GDBRequestor {
   private static AtomicLong ourCounter = new AtomicLong();
-
   private long myId;
 
   public GDBRequestor() {

@@ -4,7 +4,6 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
@@ -14,10 +13,10 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.logging.Logger;
 
 public class Collapse_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(Collapse_Action.class);
 
   public Collapse_Action() {
     super("Collapse", "", ICON);
@@ -73,4 +72,6 @@ public class Collapse_Action extends BaseAction {
   /*package*/ EditorCellAction getAction(final Map<String, Object> _params) {
     return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getComponentAction(CellActionType.FOLD);
   }
+
+  private static Logger LOG = Logger.getLogger(Collapse_Action.class);
 }

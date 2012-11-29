@@ -5,8 +5,6 @@ package jetbrains.mps.ide.devkit.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -16,10 +14,11 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.devkit.cellExplorer.CellExplorerView;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class ShowCellInExplorer_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("cellExplorer.png");
-  protected static Log log = LogFactory.getLog(ShowCellInExplorer_Action.class);
 
   public ShowCellInExplorer_Action() {
     super("Show Cell In Explorer", "", ICON);
@@ -67,4 +66,6 @@ public class ShowCellInExplorer_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(ShowCellInExplorer_Action.class);
 }

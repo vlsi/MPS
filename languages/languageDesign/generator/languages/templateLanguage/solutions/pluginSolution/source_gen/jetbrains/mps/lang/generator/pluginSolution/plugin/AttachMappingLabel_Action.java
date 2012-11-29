@@ -4,7 +4,6 @@ package jetbrains.mps.lang.generator.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
@@ -33,10 +32,10 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.logging.Logger;
 
 public class AttachMappingLabel_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(AttachMappingLabel_Action.class);
 
   public AttachMappingLabel_Action() {
     super("Attach Mapping Label", "", ICON);
@@ -133,8 +132,6 @@ public class AttachMappingLabel_Action extends BaseAction {
             public Iterator<String> iterator() {
               return new YieldingIterator<String>() {
                 private int __CP__ = 0;
-                private SNode _2_label;
-                private Iterator<SNode> _2_label_it;
 
                 protected boolean moveToNext() {
 __loop__:
@@ -170,6 +167,9 @@ __switch__:
                   } while (true);
                   return false;
                 }
+
+                private SNode _2_label;
+                private Iterator<SNode> _2_label_it;
               };
             }
           };
@@ -185,4 +185,6 @@ __switch__:
       LOG.error("User's action execute method failed. Action:" + "AttachMappingLabel", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(AttachMappingLabel_Action.class);
 }

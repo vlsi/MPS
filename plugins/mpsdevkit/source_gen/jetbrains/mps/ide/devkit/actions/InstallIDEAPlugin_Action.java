@@ -4,9 +4,6 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import java.util.regex.Pattern;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -21,6 +18,7 @@ import java.io.IOException;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import java.util.regex.Pattern;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -28,12 +26,11 @@ import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.openapi.fileChooser.FileChooserDialog;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class InstallIDEAPlugin_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(InstallIDEAPlugin_Action.class);
-  private static Pattern REGEXP_gyxeh4_a0a4a5 = Pattern.compile("(?:\\.IntelliJIdea.*)|(?:\\.IdeaIC.*)", 0);
-  private static Pattern REGEXP_gyxeh4_a0a4a5_0 = Pattern.compile("(?:IntelliJIdea.*)|(?:IdeaIC.*)", 0);
 
   public InstallIDEAPlugin_Action() {
     super("Install IntelliJ IDEA Plugin", "", ICON);
@@ -111,8 +108,8 @@ public class InstallIDEAPlugin_Action extends BaseAction {
     );
     final VirtualFile ideaConfigRoot = VirtualFileUtils.getVirtualFile(ideaConfigRootPath);
     final Pattern namePattern = (isMac ?
-      REGEXP_gyxeh4_a0a4a5_0 :
-      REGEXP_gyxeh4_a0a4a5
+      REGEXP_gyxeh4_a0a4a7_0 :
+      REGEXP_gyxeh4_a0a4a7
     );
     List<VirtualFile> existingIdeaConfigs = ListSequence.fromList(new ArrayList<VirtualFile>());
     for (VirtualFile child : ideaConfigRoot.getChildren()) {
@@ -152,4 +149,8 @@ public class InstallIDEAPlugin_Action extends BaseAction {
       VirtualFileUtils.toFile(files[0])
     );
   }
+
+  protected static Log log = LogFactory.getLog(InstallIDEAPlugin_Action.class);
+  private static Pattern REGEXP_gyxeh4_a0a4a7 = Pattern.compile("(?:\\.IntelliJIdea.*)|(?:\\.IdeaIC.*)", 0);
+  private static Pattern REGEXP_gyxeh4_a0a4a7_0 = Pattern.compile("(?:IntelliJIdea.*)|(?:IdeaIC.*)", 0);
 }

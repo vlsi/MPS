@@ -5,8 +5,6 @@ package jetbrains.mps.ide.devkit.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -21,10 +19,11 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class NewLanguage_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("projectLanguage.png");
-  protected static Log log = LogFactory.getLog(NewLanguage_Action.class);
 
   public NewLanguage_Action() {
     super("Language", "", ICON);
@@ -91,4 +90,6 @@ public class NewLanguage_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(NewLanguage_Action.class);
 }

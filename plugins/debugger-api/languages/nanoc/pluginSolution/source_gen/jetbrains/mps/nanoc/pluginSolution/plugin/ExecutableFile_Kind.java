@@ -16,7 +16,6 @@ import com.intellij.openapi.extensions.Extensions;
 
 public class ExecutableFile_Kind implements ConfigurationType {
   private static final Icon ICON = IconUtil.getIcon("executable.png");
-
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
 
   public ExecutableFile_Kind() {

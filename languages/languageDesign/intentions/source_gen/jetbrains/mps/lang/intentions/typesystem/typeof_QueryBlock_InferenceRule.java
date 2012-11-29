@@ -19,7 +19,7 @@ public class typeof_QueryBlock_InferenceRule extends AbstractInferenceRule_Runti
 
   public void applyRule(final SNode block, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     ListSequence.fromList(SLinkOperations.getConceptLinkTargets(block, "conceptFunctionReturnType")).removeSequence(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(block, "conceptFunctionReturnType")));
-    ListSequence.fromList(SLinkOperations.getConceptLinkTargets(block, "conceptFunctionReturnType")).addElement(_quotation_createNode_ay8ev8_a0a1a0(SLinkOperations.getTarget(block, "paramType", true)));
+    ListSequence.fromList(SLinkOperations.getConceptLinkTargets(block, "conceptFunctionReturnType")).addElement(_quotation_createNode_ay8ev8_a0a1a1(SLinkOperations.getTarget(block, "paramType", true)));
   }
 
   public String getApplicableConceptFQName() {
@@ -37,7 +37,7 @@ public class typeof_QueryBlock_InferenceRule extends AbstractInferenceRule_Runti
     return false;
   }
 
-  private static SNode _quotation_createNode_ay8ev8_a0a1a0(Object parameter_1) {
+  private static SNode _quotation_createNode_ay8ev8_a0a1a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", null, null, GlobalScope.getInstance(), false);

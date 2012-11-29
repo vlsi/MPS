@@ -13,8 +13,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -823,7 +826,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode method = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yqqdks_a0a0a0a0a13(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).findFirst(new IWhereFilter<SNode>() {
+        SNode method = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yqqdks_a0a0a0a0a13(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return eq_802sp_a0a0a0a0a0a0a4a0a0a0a23a0(SPropertyOperations.getString(it, "name"), "addJavaCommand");
           }
@@ -853,7 +856,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode method = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yqqdks_a0a0a0a0a23(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).findFirst(new IWhereFilter<SNode>() {
+        SNode method = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yqqdks_a0a0a0a0a23(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return eq_802sp_a0a0a0a0a0a0a4a0a0a0a33a0(SPropertyOperations.getString(it, "name"), "addJavaCommand");
           }
@@ -883,7 +886,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode method = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yqqdks_a0a0a0a0a33(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).findFirst(new IWhereFilter<SNode>() {
+        SNode method = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yqqdks_a0a0a0a0a33(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return eq_802sp_a0a0a0a0a0a0a4a0a0a0a43a0(SPropertyOperations.getString(it, "name"), "splitParams");
           }
@@ -913,7 +916,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode method = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yqqdks_a0a0a0a0a43(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).findFirst(new IWhereFilter<SNode>() {
+        SNode method = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yqqdks_a0a0a0a0a43(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return eq_802sp_a0a0a0a0a0a0a4a0a0a0a53a0(SPropertyOperations.getString(it, "name"), "splitParams");
           }
@@ -946,7 +949,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode method = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yqqdks_a0a0a0a0a53(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticMethod", true)).findFirst(new IWhereFilter<SNode>() {
+        SNode method = Sequence.fromIterable(ClassConcept_Behavior.call_staticMethods_5292274854859435867(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yqqdks_a0a0a0a0a53(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return eq_802sp_a0a0a0a0a0a0a4a0a0a0a63a0(SPropertyOperations.getString(it, "name"), "fs");
           }
@@ -979,7 +982,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode method = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yqqdks_a0a0a0a0a63(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticMethod", true)).findFirst(new IWhereFilter<SNode>() {
+        SNode method = Sequence.fromIterable(ClassConcept_Behavior.call_staticMethods_5292274854859435867(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yqqdks_a0a0a0a0a63(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return eq_802sp_a0a0a0a0a0a0a4a0a0a0a73a0(SPropertyOperations.getString(it, "name"), "fs");
           }
@@ -1010,7 +1013,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
 
       public void doUpdateInstanceNode(SNode node) {
         SNode superCall = _quotation_createNode_yqqdks_a0a0a73();
-        SLinkOperations.setTarget(superCall, "baseMethodDeclaration", ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yqqdks_a0a0a0a1a0lb(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first(), false);
+        SLinkOperations.setTarget(superCall, "baseMethodDeclaration", Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yqqdks_a0a0a0a1a0lb(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))).first(), false);
         StubRefUtil.replaceRefs(node, superCall);
       }
 
@@ -1037,7 +1040,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
 
       public void doUpdateInstanceNode(SNode node) {
         SNode superCall = _quotation_createNode_yqqdks_a0a0a83();
-        SLinkOperations.setTarget(superCall, "baseMethodDeclaration", ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yqqdks_a0a0a0a1a0mb(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first(), false);
+        SLinkOperations.setTarget(superCall, "baseMethodDeclaration", Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yqqdks_a0a0a0a1a0mb(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))).first(), false);
         StubRefUtil.replaceRefs(node, superCall);
       }
 

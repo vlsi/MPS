@@ -30,6 +30,7 @@ public class FindUsagesDescriptor extends BaseFindUsagesDescriptor {
     add(new OverridingFields_Finder(), "1200420731716");
     add(new OverridingMethods_Finder(), "1200309609796");
     add(new ParameterUsages_Finder(), "1201091722183");
+    add(new Potentially_not_migratable_usages_Finder(), "5435616686793584368");
     add(new StraightDerivedClasses_Finder(), "1204122859723");
   }
 }

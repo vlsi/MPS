@@ -26,9 +26,9 @@ public class ConflictingModelsWarnings implements EditorWarningsProvider {
 
   @Nullable
   public WarningPanel getWarningPanel(@NotNull SNode node, @NotNull final Project project) {
-    SModelDescriptor md = check_bmsafs_a0a0a(node.getModel());
+    SModelDescriptor md = check_bmsafs_a0a0b(node.getModel());
     final VirtualFile modelFile = ConflictsUtil.getModelFileIfConflicting(md, project);
-    final VirtualFile moduleFile = ConflictsUtil.getModuleFileIfConflicting(check_bmsafs_a0a2a0(md), project);
+    final VirtualFile moduleFile = ConflictsUtil.getModuleFileIfConflicting(check_bmsafs_a0a2a1(md), project);
     if (moduleFile != null) {
       String type = getModuleType(md.getModule());
       assert type != null;
@@ -77,14 +77,14 @@ public class ConflictingModelsWarnings implements EditorWarningsProvider {
     return null;
   }
 
-  private static SModelDescriptor check_bmsafs_a0a0a(SModel checkedDotOperand) {
+  private static SModelDescriptor check_bmsafs_a0a0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static IModule check_bmsafs_a0a2a0(SModelDescriptor checkedDotOperand) {
+  private static IModule check_bmsafs_a0a2a1(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

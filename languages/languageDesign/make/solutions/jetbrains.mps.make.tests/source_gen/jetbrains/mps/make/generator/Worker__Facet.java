@@ -56,7 +56,6 @@ public class Worker__Facet extends IFacet.Stub {
   public static class Target_work implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("Worker_.work");
 
     public Target_work() {

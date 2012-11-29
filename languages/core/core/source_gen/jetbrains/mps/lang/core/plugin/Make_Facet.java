@@ -71,7 +71,6 @@ public class Make_Facet extends IFacet.Stub {
   public static class Target_reconcile implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IDeltaResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile");
 
     public Target_reconcile() {
@@ -227,7 +226,6 @@ public class Make_Facet extends IFacet.Stub {
   public static class Target_make implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Make.make");
 
     public Target_make() {

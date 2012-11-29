@@ -105,7 +105,7 @@ public class JavaExternalLibraryHelper {
         continue;
       }
       SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-      propertyNode.addChild("attrs", _quotation_createNode_g6ffke_b0a3a9a0(val));
+      propertyNode.addChild("attrs", _quotation_createNode_g6ffke_b0a3a9a4(val));
       ListSequence.fromList(result).addElement(propertyNode);
     }
     for (SNode pe : jarContainers) {
@@ -115,14 +115,14 @@ public class JavaExternalLibraryHelper {
         continue;
       }
       SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-      propertyNode.addChild("attrs", _quotation_createNode_g6ffke_b0a3a01a0(val));
-      propertyNode.addChild("attrs", _quotation_createNode_g6ffke_b0a4a01a0());
+      propertyNode.addChild("attrs", _quotation_createNode_g6ffke_b0a3a01a4(val));
+      propertyNode.addChild("attrs", _quotation_createNode_g6ffke_b0a4a01a4());
       ListSequence.fromList(result).addElement(propertyNode);
     }
     return result;
   }
 
-  private static SNode _quotation_createNode_g6ffke_b0a3a9a0(Object parameter_1) {
+  private static SNode _quotation_createNode_g6ffke_b0a3a9a4(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
@@ -133,7 +133,7 @@ public class JavaExternalLibraryHelper {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_g6ffke_b0a3a01a0(Object parameter_1) {
+  private static SNode _quotation_createNode_g6ffke_b0a3a01a4(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
@@ -144,7 +144,7 @@ public class JavaExternalLibraryHelper {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_g6ffke_b0a4a01a0() {
+  private static SNode _quotation_createNode_g6ffke_b0a4a01a4() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);

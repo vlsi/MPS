@@ -4,16 +4,14 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.debugger.java.api.settings.RemoteConnectionSettings;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
@@ -24,16 +22,12 @@ import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class Remote_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
-  protected static Log log = LogFactory.getLog(Remote_Configuration.class);
-
   @NotNull
   private Remote_Configuration.MyState myState = new Remote_Configuration.MyState();
-
-  public Remote_Configuration(Project project, Remote_Configuration_Factory factory, String name) {
-    super(project, factory, name);
-  }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
   }
@@ -74,6 +68,26 @@ public class Remote_Configuration extends BaseMpsRunConfiguration implements IPe
     return clone;
   }
 
+  public class MyState {
+    public RemoteConnectionSettings mySettings = new RemoteConnectionSettings("localhost", 5005);
+
+    public MyState() {
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+      Remote_Configuration.MyState state = new Remote_Configuration.MyState();
+      if (mySettings != null) {
+        state.mySettings = mySettings.clone();
+      }
+      return state;
+    }
+  }
+
+  public Remote_Configuration(Project project, Remote_Configuration_Factory factory, String name) {
+    super(project, factory, name);
+  }
+
   @Nullable
   public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment environment) throws ExecutionException {
     return new Remote_Configuration_RunProfileState(this, executor, environment);
@@ -105,19 +119,5 @@ public class Remote_Configuration extends BaseMpsRunConfiguration implements IPe
     return Remote_Configuration_RunProfileState.canExecute(executorId);
   }
 
-  public class MyState {
-    public RemoteConnectionSettings mySettings = new RemoteConnectionSettings("localhost", 5005);
-
-    public MyState() {
-    }
-
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-      Remote_Configuration.MyState state = new Remote_Configuration.MyState();
-      if (mySettings != null) {
-        state.mySettings = mySettings.clone();
-      }
-      return state;
-    }
-  }
+  protected static Log log = LogFactory.getLog(Remote_Configuration.class);
 }

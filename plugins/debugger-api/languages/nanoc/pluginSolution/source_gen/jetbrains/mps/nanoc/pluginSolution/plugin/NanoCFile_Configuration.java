@@ -4,17 +4,16 @@ package jetbrains.mps.nanoc.pluginSolution.plugin;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.lib.NodeByConcept_Configuration;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
-import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
@@ -29,10 +28,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.logging.Logger;
 
 public class NanoCFile_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
-  private static Logger LOG = Logger.getLogger(NanoCFile_Configuration.class);
-
   @NotNull
   private NanoCFile_Configuration.MyState myState = new NanoCFile_Configuration.MyState();
   private NodeByConcept_Configuration myNode = new NodeByConcept_Configuration("jetbrains.mps.nanoc.structure.File", new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
@@ -40,10 +38,6 @@ public class NanoCFile_Configuration extends BaseMpsRunConfiguration implements 
       return true;
     }
   });
-
-  public NanoCFile_Configuration(Project project, NanoCFile_Configuration_Factory factory, String name) {
-    super(project, factory, name);
-  }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
     this.getNode().checkConfiguration();
@@ -93,6 +87,21 @@ public class NanoCFile_Configuration extends BaseMpsRunConfiguration implements 
     return clone;
   }
 
+  public class MyState {
+    public MyState() {
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+      NanoCFile_Configuration.MyState state = new NanoCFile_Configuration.MyState();
+      return state;
+    }
+  }
+
+  public NanoCFile_Configuration(Project project, NanoCFile_Configuration_Factory factory, String name) {
+    super(project, factory, name);
+  }
+
   @Nullable
   public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment environment) throws ExecutionException {
     return new NanoCFile_Configuration_RunProfileState(this, executor, environment);
@@ -132,14 +141,5 @@ public class NanoCFile_Configuration extends BaseMpsRunConfiguration implements 
     return new Object[]{SNodeOperations.cast(this.getNode().getNode(), "jetbrains.mps.nanoc.structure.File")};
   }
 
-  public class MyState {
-    public MyState() {
-    }
-
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-      NanoCFile_Configuration.MyState state = new NanoCFile_Configuration.MyState();
-      return state;
-    }
-  }
+  private static Logger LOG = Logger.getLogger(NanoCFile_Configuration.class);
 }

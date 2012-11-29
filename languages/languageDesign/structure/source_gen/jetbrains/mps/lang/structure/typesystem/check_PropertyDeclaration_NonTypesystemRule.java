@@ -40,7 +40,7 @@ public class check_PropertyDeclaration_NonTypesystemRule extends AbstractNonType
     final String name = NameUtil.toConstantName(SPropertyOperations.getString(prop, "name"));
     SNode node = ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(concept)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it != prop && eq_lxacuo_a0a0a0a0a0a0h0a(name, NameUtil.toConstantName(SPropertyOperations.getString(it, "name")));
+        return it != prop && eq_lxacuo_a0a0a0a0a0a0h0b(name, NameUtil.toConstantName(SPropertyOperations.getString(it, "name")));
       }
     });
     if ((node != null)) {
@@ -66,7 +66,7 @@ public class check_PropertyDeclaration_NonTypesystemRule extends AbstractNonType
     return false;
   }
 
-  private static boolean eq_lxacuo_a0a0a0a0a0a0h0a(Object a, Object b) {
+  private static boolean eq_lxacuo_a0a0a0a0a0a0h0b(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

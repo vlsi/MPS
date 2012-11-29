@@ -109,7 +109,7 @@ public class MethodMatch {
     List<SNode> callActualParams = new ArrayList<SNode>();
     for (SNode parameter : ListSequence.fromList(this.myParametersOrder)) {
       if (ListSequence.fromList(MapSequence.fromMap(this.myParamsToNodes).get(parameter)).isEmpty()) {
-        ListSequence.fromList(callActualParams).addElement(_quotation_createNode_5zfyci_a0a0a0a1a11());
+        ListSequence.fromList(callActualParams).addElement(_quotation_createNode_5zfyci_a0a0a0a1a71());
       } else {
         ListSequence.fromList(callActualParams).addElement(SNodeOperations.cast(SNodeOperations.copyNode(ListSequence.fromList(MapSequence.fromMap(this.myParamsToNodes).get(parameter)).getElement(0)), "jetbrains.mps.baseLanguage.structure.Expression"));
       }
@@ -117,7 +117,7 @@ public class MethodMatch {
     return callActualParams;
   }
 
-  private static SNode _quotation_createNode_5zfyci_a0a0a0a1a11() {
+  private static SNode _quotation_createNode_5zfyci_a0a0a0a1a71() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

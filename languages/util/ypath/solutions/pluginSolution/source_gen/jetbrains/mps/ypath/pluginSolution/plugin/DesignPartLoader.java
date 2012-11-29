@@ -16,7 +16,6 @@ import jetbrains.mps.reloading.ReloadAdapter;
 public class DesignPartLoader {
   private static final Logger LOG = Logger.getLogger(DesignPartLoader.class);
   private static DesignPartLoader INSTANCE = new DesignPartLoader();
-
   private boolean alreadyRegistered = false;
   private DesignPartLoader.ReloadHandler reloadHandler = new DesignPartLoader.ReloadHandler();
   private Map<String, Class<?>> classes = new HashMap<String, Class<?>>();

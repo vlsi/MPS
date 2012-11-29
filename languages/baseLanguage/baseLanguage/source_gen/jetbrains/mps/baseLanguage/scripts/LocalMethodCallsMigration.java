@@ -36,7 +36,7 @@ public class LocalMethodCallsMigration {
     return new MigrationConfig(callConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall")) {
       protected SNode createConditionInternal(SNode arg) {
         // <node> 
-        return _quotation_createNode_lds4sy_a1a0a0a0a1(declarationConcept, arg);
+        return _quotation_createNode_lds4sy_a1a0a0a0a2(declarationConcept, arg);
       }
 
       @Override
@@ -65,8 +65,7 @@ public class LocalMethodCallsMigration {
           ListSequence.fromList(SNodeOperations.getChildren(result, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "typeArgument"))).addElement(copy);
         }
 
-        // copy  
-        result.setId(node.getSNodeId());
+        // copy 
         return result;
       }
 
@@ -77,7 +76,7 @@ public class LocalMethodCallsMigration {
     };
   }
 
-  private static SNode _quotation_createNode_lds4sy_a1a0a0a0a1(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_lds4sy_a1a0a0a0a2(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;

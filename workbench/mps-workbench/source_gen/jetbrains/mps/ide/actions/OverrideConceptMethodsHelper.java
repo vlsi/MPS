@@ -71,15 +71,15 @@ public class OverrideConceptMethodsHelper {
       }
       Iterable<SNode> paramList = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return _quotation_createNode_7wts1u_a0a0a0a2a0e0b(it);
+          return _quotation_createNode_7wts1u_a0a0a0a2a0e0g(it);
         }
       });
-      defaultExpr = _quotation_createNode_7wts1u_a0d0a4a1(sourceMethodConcept, Sequence.fromIterable(paramList).toListSequence(), BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), baseMethod, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "call_getOverridenMethod_1225196403956", new Object[]{}));
+      defaultExpr = _quotation_createNode_7wts1u_a0d0a4a6(sourceMethodConcept, Sequence.fromIterable(paramList).toListSequence(), BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), baseMethod, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "call_getOverridenMethod_1225196403956", new Object[]{}));
     }
 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
       if (!(isInterfaceMethod)) {
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(_quotation_createNode_7wts1u_a0a0a0a6a1(defaultExpr));
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(_quotation_createNode_7wts1u_a0a0a0a6a6(defaultExpr));
       }
     } else {
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(getReturnStatement(defaultExpr));
@@ -92,9 +92,9 @@ public class OverrideConceptMethodsHelper {
     }
 
     if (myNeedReturnKW) {
-      return _quotation_createNode_7wts1u_a0a2a2(returnExpr);
+      return _quotation_createNode_7wts1u_a0a2a7(returnExpr);
     } else {
-      return _quotation_createNode_7wts1u_a0a0c0c(returnExpr);
+      return _quotation_createNode_7wts1u_a0a0c0h(returnExpr);
     }
   }
 
@@ -108,14 +108,14 @@ public class OverrideConceptMethodsHelper {
     }
   }
 
-  private static SNode _quotation_createNode_7wts1u_a0a0a0a2a0e0b(Object parameter_1) {
+  private static SNode _quotation_createNode_7wts1u_a0a0a0a2a0e0g(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("variableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_7wts1u_a0d0a4a1(Object parameter_1, Object parameter_2, Object parameter_3) {
+  private static SNode _quotation_createNode_7wts1u_a0d0a4a6(Object parameter_1, Object parameter_2, Object parameter_3) {
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
@@ -136,7 +136,7 @@ public class OverrideConceptMethodsHelper {
     return quotedNode_4;
   }
 
-  private static SNode _quotation_createNode_7wts1u_a0a0a0a6a1(Object parameter_1) {
+  private static SNode _quotation_createNode_7wts1u_a0a0a0a6a6(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, GlobalScope.getInstance(), false);
@@ -147,7 +147,7 @@ public class OverrideConceptMethodsHelper {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_7wts1u_a0a2a2(Object parameter_1) {
+  private static SNode _quotation_createNode_7wts1u_a0a2a7(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, GlobalScope.getInstance(), false);
@@ -158,7 +158,7 @@ public class OverrideConceptMethodsHelper {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_7wts1u_a0a0c0c(Object parameter_1) {
+  private static SNode _quotation_createNode_7wts1u_a0a0c0h(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, GlobalScope.getInstance(), false);

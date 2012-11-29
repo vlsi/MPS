@@ -14,7 +14,8 @@
     <classNode dependClassName="com.intellij.openapi.vcs.VcsException" />
     <classNode dependClassName="com.intellij.openapi.vfs.LocalFileSystem" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
-    <classNode dependClassName="git4idea.GitBranch" />
+    <classNode dependClassName="git4idea.GitLocalBranch" />
+    <classNode dependClassName="git4idea.branch.GitBranchUtil" />
     <classNode dependClassName="git4idea.commands.GitCommand" />
     <classNode dependClassName="git4idea.commands.GitSimpleHandler" />
     <classNode dependClassName="java.lang.Integer" />

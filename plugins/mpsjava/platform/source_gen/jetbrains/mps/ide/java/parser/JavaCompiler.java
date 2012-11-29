@@ -63,7 +63,6 @@ import org.eclipse.jdt.internal.compiler.problem.DefaultProblemFactory;
 
 public class JavaCompiler {
   private static final Logger LOG = Logger.getLogger(JavaCompiler.class);
-
   private Map<String, CompilationUnit> myCompilationUnits = new HashMap<String, CompilationUnit>();
   private Set<ICompilationUnit> myProcessedCompilationUnits = new HashSet<ICompilationUnit>();
   private List<CompilationUnitDeclaration> myCompilationUnitDeclarations = new ArrayList<CompilationUnitDeclaration>();

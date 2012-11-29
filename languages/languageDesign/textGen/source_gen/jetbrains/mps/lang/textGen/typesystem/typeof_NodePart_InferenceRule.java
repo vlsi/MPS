@@ -20,7 +20,7 @@ public class typeof_NodePart_InferenceRule extends AbstractInferenceRule_Runtime
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(part, "value", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1237553263169", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1237553263171", true), (SNode) _quotation_createNode_3guvy4_a0a0a(), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1237553263171", true), (SNode) _quotation_createNode_3guvy4_a0a0b(), false, true, _info_12389875345);
     }
   }
 
@@ -39,7 +39,7 @@ public class typeof_NodePart_InferenceRule extends AbstractInferenceRule_Runtime
     return false;
   }
 
-  private static SNode _quotation_createNode_3guvy4_a0a0a() {
+  private static SNode _quotation_createNode_3guvy4_a0a0b() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

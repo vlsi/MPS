@@ -11,22 +11,12 @@ public enum ScriptType {
   migration("migration", "migration");
 
   private String myName;
-  private String myValue;
-
-  ScriptType(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -52,5 +42,16 @@ public enum ScriptType {
       return ScriptType.migration;
     }
     return ScriptType.getDefault();
+  }
+
+  private String myValue;
+
+  ScriptType(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

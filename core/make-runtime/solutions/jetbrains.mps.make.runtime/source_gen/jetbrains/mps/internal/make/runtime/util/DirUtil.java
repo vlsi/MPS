@@ -95,9 +95,9 @@ public class DirUtil {
     }
     if (path1.length() > path2.length()) {
       {
-        Tuples._2<String, String> _tmp_rkp2iv_a0c0j = MultiTuple.<String,String>from(path2, path1);
-        path1 = _tmp_rkp2iv_a0c0j._0();
-        path2 = _tmp_rkp2iv_a0c0j._1();
+        Tuples._2<String, String> _tmp_rkp2iv_a0c0m = MultiTuple.<String,String>from(path2, path1);
+        path1 = _tmp_rkp2iv_a0c0m._0();
+        path2 = _tmp_rkp2iv_a0c0m._1();
       }
     }
     return path2.startsWith(path1) && path2.charAt(path1.length()) == SLASH_CHAR && (path2.length() - path1.length() == 1);

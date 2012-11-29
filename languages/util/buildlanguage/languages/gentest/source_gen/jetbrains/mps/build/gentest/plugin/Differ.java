@@ -24,7 +24,6 @@ import java.util.Arrays;
 public class Differ {
   private static final char SLASH_CHAR = '/';
   private static final String SLASH = "/";
-
   private Set<String> ignoredFiles = SetSequence.fromSetAndArray(new HashSet<String>(), "generated", "trace.info", "dependencies", ".dependencies", ".generated", ".debug");
   private String[] retainedPaths;
   private Set<File> excludedFiles;

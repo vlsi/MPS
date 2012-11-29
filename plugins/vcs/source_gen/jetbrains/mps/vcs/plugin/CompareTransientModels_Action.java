@@ -5,8 +5,6 @@ package jetbrains.mps.vcs.plugin;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
@@ -22,10 +20,11 @@ import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import com.intellij.openapi.project.Project;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class CompareTransientModels_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("diff.png");
-  protected static Log log = LogFactory.getLog(CompareTransientModels_Action.class);
 
   public CompareTransientModels_Action() {
     super("Compare Models", "", ICON);
@@ -39,7 +38,7 @@ public class CompareTransientModels_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).size() == 2 && ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(0) instanceof TransientModelsModule.TransientSModelDescriptor && ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(1) instanceof TransientModelsModule.TransientSModelDescriptor && eq_5whyyr_a0a0a1(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(0).getLongName(), ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(1).getLongName());
+    return ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).size() == 2 && ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(0) instanceof TransientModelsModule.TransientSModelDescriptor && ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(1) instanceof TransientModelsModule.TransientSModelDescriptor && eq_5whyyr_a0a0a3(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(0).getLongName(), ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(1).getLongName());
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -92,7 +91,9 @@ public class CompareTransientModels_Action extends BaseAction {
     }
   }
 
-  private static boolean eq_5whyyr_a0a0a1(Object a, Object b) {
+  protected static Log log = LogFactory.getLog(CompareTransientModels_Action.class);
+
+  private static boolean eq_5whyyr_a0a0a3(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

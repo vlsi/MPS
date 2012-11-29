@@ -47,7 +47,6 @@ import com.intellij.openapi.vcs.FileStatusListener;
 
 public class MPSVcsManager implements ProjectComponent {
   private static final Logger LOG = Logger.getLogger(MPSVcsManager.class);
-
   private final Project myProject;
   private FileStatus myLastProjectStatus;
   private final ProjectLevelVcsManager myManager;
@@ -109,7 +108,7 @@ public class MPSVcsManager implements ProjectComponent {
 
   public void projectClosed() {
     FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
-    check_2eqssr_a1a2(myMessageBusConnection);
+    check_2eqssr_a1a21(myMessageBusConnection);
   }
 
   @NonNls
@@ -149,13 +148,6 @@ public class MPSVcsManager implements ProjectComponent {
 
   public static MPSVcsManager getInstance(@NotNull Project project) {
     return project.getComponent(MPSVcsManager.class);
-  }
-
-  private static void check_2eqssr_a1a2(MessageBusConnection checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      checkedDotOperand.disconnect();
-    }
-
   }
 
   public static class StubChangeListManagerGate implements ChangeListManagerGate {
@@ -248,5 +240,12 @@ public class MPSVcsManager implements ProjectComponent {
         checkIfProjectIsConflicting();
       }
     }
+  }
+
+  private static void check_2eqssr_a1a21(MessageBusConnection checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.disconnect();
+    }
+
   }
 }

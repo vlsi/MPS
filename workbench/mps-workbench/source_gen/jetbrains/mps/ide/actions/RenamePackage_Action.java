@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import javax.swing.tree.TreeNode;
@@ -19,10 +18,10 @@ import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.logging.Logger;
 
 public class RenamePackage_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(RenamePackage_Action.class);
 
   public RenamePackage_Action() {
     super("Rename", "", ICON);
@@ -96,4 +95,6 @@ public class RenamePackage_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "RenamePackage", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(RenamePackage_Action.class);
 }

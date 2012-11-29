@@ -9,9 +9,10 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.ConstructorDeclaration_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -26,7 +27,7 @@ public class check_ConstructorRecursiveInvocation_NonTypesystemRule extends Abst
 
   public void applyRule(final SNode classConcept, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> constructors = new ArrayList<SNode>();
-    for (SNode constructor : SLinkOperations.getTargets(classConcept, "constructor", true)) {
+    for (SNode constructor : ClassConcept_Behavior.call_constructors_5292274854859503373(classConcept)) {
       if (SNodeOperations.isInstanceOf(StatementList_Behavior.call_getFirstStatement_5420652334935371934(SLinkOperations.getTarget(constructor, "body", true)), "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement")) {
         constructors.add(constructor);
       }

@@ -9,7 +9,6 @@ import java.util.HashMap;
 
 public class IconResourceBundle_Behavior implements IconResourceBundle {
   private static IconResourceBundle_Behavior INSTANCE = new IconResourceBundle_Behavior();
-
   private Map<String, Icon> icons = new HashMap<String, Icon>() {
     {
       put("FINALMARK", IconContainer.ICON_a0_0);
