@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-c38xaseo7fe2tl4sqhdsdu1oymez5f6">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="72jgettirgdze5zodlg3xz1jp5r3et8" />
+<dependencies version="2" modelHash="-3iq5qtkxt1zhr0czxqgf17rn2czfrns">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="7eedhcqhmzsq08m7y6wvw2wm8ydq2af" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="drfxt8i63upja5k7zfj1z568c5k4586" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-uvseejb8lftjizgrik03igcx568a80" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d17uag6x8ib5q0e996v0fs4c7b3t8ur" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-baumsvy45qwk0i0m1tzx9fili68fouh" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="3vh6ws77llhw5tlhdfffr8964224td2" />
-  <common hash="7ulws2jqhunqjg8sp26lhl8wfbd6wo8">
+  <common hash="ewtr0kaajlbcd8d20iqap7pr20ios0a">
     <dep root="2882388703616155296" />
     <dep root="2882388703616155300" />
     <dep root="2882388703616155302" />
@@ -31,7 +31,7 @@
     <file name="StructureAspectDescriptor.java" />
     <file name="TableTests_Language.java" />
   </common>
-  <source id="2882388703616155296" name="Table" hash="1cu6g2ghem1mzcfh2pwkdn6fwjl8f5c">
+  <source id="2882388703616155296" name="Table" hash="-132famu4d7e0ycb1ztg2gt3qfcutk1b">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2882388703616155300" name="DataCell" hash="bge14a7tnl7v4gbnbpy292ftc2bje8e">
