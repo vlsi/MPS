@@ -1,3 +1,18 @@
+/*
+ * Copyright 2003-2012 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package jetbrains.mps.ide.java.ui;
 
 
@@ -13,6 +28,7 @@ import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBPanel;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
+import com.intellij.util.EventDispatcher;
 import jetbrains.mps.ide.java.stubs.JavaClassStubsModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.Nullable;
@@ -26,8 +42,9 @@ import java.awt.BorderLayout;
 import java.util.List;
 
 public class JavaClassStubsModelRootEntry implements ModelRootEntry {
-  
+
   private JavaClassStubsModelRoot myModelRoot;
+  private EventDispatcher<ModelRootEntryListener> myEventDispatcher = EventDispatcher.create(ModelRootEntryListener.class);
 
   public ModelRoot getModelRoot() {
     return myModelRoot;
@@ -50,9 +67,19 @@ public class JavaClassStubsModelRootEntry implements ModelRootEntry {
   public JComponent getDetailsComponent() {
     return null;
   }
-  
+
+  @Override
+  public boolean isValid() {
+    return (new java.io.File(myModelRoot.getPath())).exists();
+  }
+
   public ModelRootEntryEditor getEditor() {
     return new JavaClassStubsModelRootEntryEditor(); 
+  }
+
+  @Override
+  public void addModelRootEntryListener(ModelRootEntryListener listener) {
+    myEventDispatcher.addListener(listener);
   }
 
   public class JavaClassStubsModelRootEntryEditor implements ModelRootEntryEditor {
@@ -98,6 +125,7 @@ public class JavaClassStubsModelRootEntry implements ModelRootEntry {
           public void selectionChanged(List<VirtualFile> selection) {
             if (selection.size() > 0) {
               myModelRoot.setPath(selection.get(0).getPath());
+              myEventDispatcher.getMulticaster().fireDataChanged();
             }
           }
         }, new Disposable() {

@@ -26,6 +26,7 @@ import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBLabel;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
+import com.intellij.util.EventDispatcher;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.Nullable;
@@ -42,6 +43,7 @@ import java.util.List;
 public class DefaultModelRootEntry implements ModelRootEntry {
 
   private DefaultModelRoot myModelRoot;
+  private EventDispatcher<ModelRootEntryListener> myEventDispatcher = EventDispatcher.create(ModelRootEntryListener.class);
 
   @Override
   public DefaultModelRoot getModelRoot() {
@@ -72,10 +74,19 @@ public class DefaultModelRootEntry implements ModelRootEntry {
     return null;
   }
 
+  @Override
+  public boolean isValid() {
+    return (new java.io.File(myModelRoot.getPath())).exists();
+  }
 
   @Override
   public ModelRootEntryEditor getEditor() {
     return new DefaultModelRootEntryEditor(myModelRoot);
+  }
+
+  @Override
+  public void addModelRootEntryListener(ModelRootEntryListener listener) {
+    myEventDispatcher.addListener(listener);
   }
 
   private class DefaultModelRootEntryEditor implements ModelRootEntryEditor {
@@ -128,6 +139,7 @@ public class DefaultModelRootEntry implements ModelRootEntry {
           public void selectionChanged(List<VirtualFile> selection) {
             if (selection.size() > 0) {
               myModelRoot.setPath(selection.get(0).getPath());
+              myEventDispatcher.getMulticaster().fireDataChanged();
             }
           }
         }, new Disposable() {

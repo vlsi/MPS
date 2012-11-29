@@ -29,6 +29,7 @@ import com.intellij.openapi.ui.popup.PopupStep;
 import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.awt.RelativePoint;
+import com.intellij.ui.components.JBPanel;
 import com.intellij.ui.roots.ToolbarPanel;
 import com.intellij.util.ui.JBInsets;
 import com.intellij.util.ui.UIUtil;
@@ -69,8 +70,8 @@ public class ContentEntriesEditor {
   private MyContentEntryEditorListener myEditorListener = new MyContentEntryEditorListener();
 
   protected JPanel myEditorsListPanel;
-  protected JPanel myEditorPanel;
-  private JPanel myMainPanel;
+  protected JBPanel myEditorPanel;
+  private JBPanel myMainPanel;
 
   public ContentEntriesEditor(ModuleDescriptor moduleDescriptor) {
     myModuleDescriptor = moduleDescriptor;
@@ -134,10 +135,10 @@ public class ContentEntriesEditor {
   }
 
   public void initUI() {
-    myMainPanel = new JPanel(new BorderLayout());
+    myMainPanel = new JBPanel(new BorderLayout());
     myMainPanel.setBorder(BorderFactory.createEmptyBorder(6, 6, 6, 6));
 
-    final JPanel entriesPanel = new JPanel(new BorderLayout());
+    final JBPanel entriesPanel = new JBPanel(new BorderLayout());
 
     final DefaultActionGroup group = new DefaultActionGroup();
     group.add(getContentEntryActions());
@@ -151,14 +152,14 @@ public class ContentEntriesEditor {
     splitter.setHonorComponentsMinimumSize(true);
     myMainPanel.add(splitter, BorderLayout.CENTER);
 
-    final JPanel editorsPanel = new JPanel(new GridBagLayout());
+    final JBPanel editorsPanel = new JBPanel(new GridBagLayout());
     splitter.setFirstComponent(editorsPanel);
     editorsPanel.add(entriesPanel,
       new GridBagConstraints(0, 0, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, JBInsets.NONE, 0, 0));
 
-    final JPanel editorPanel = new JPanel(new BorderLayout());
+    final JBPanel editorPanel = new JBPanel(new BorderLayout());
     editorPanel.setBorder(BorderFactory.createEtchedBorder());
-    myEditorPanel = new JPanel(new BorderLayout());
+    myEditorPanel = new JBPanel(new BorderLayout());
     editorPanel.add(myEditorPanel, BorderLayout.CENTER);
     splitter.setSecondComponent(editorPanel);
 
