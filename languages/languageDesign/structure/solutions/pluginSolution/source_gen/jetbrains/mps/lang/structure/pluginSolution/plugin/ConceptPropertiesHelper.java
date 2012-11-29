@@ -600,11 +600,17 @@ public class ConceptPropertiesHelper {
         return;
       }
     }
+    if (method == null) {
+      return;
+    }
     createMethodCallAndMigrate(method, source, operand);
 
   }
 
   private void replaceAccessLinkUsages(SNode accessOperation, SNode method) {
+    if (method == null) {
+      return;
+    }
     SNode source = SNodeOperations.cast(SNodeOperations.getParent(accessOperation), "jetbrains.mps.baseLanguage.structure.DotExpression");
     createMethodCallAndMigrate(method, source, SLinkOperations.getTarget(source, "operand", true));
   }
@@ -634,17 +640,20 @@ public class ConceptPropertiesHelper {
         modelComponent = _quotation_createNode_azpnkk_a0a0a0a2a12(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)", "6639471181490591356"));
       }
     }
+    if (method == null) {
+      return;
+    }
     if (modelComponent == null) {
       SNode methodCall = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
       SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", method, false);
 
-      SNode cellModel_ReadOnlyModelAccessor = _quotation_createNode_azpnkk_a0d0d0v();
+      SNode cellModel_ReadOnlyModelAccessor = _quotation_createNode_azpnkk_a0d0e0v();
       SNode conceptFunctionParameter_node = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node", null);
       SNode returnStatement;
-      if (conceptNode == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept") && eq_azpnkk_a0a6a3a12(SPropertyOperations.getString(SLinkOperations.getTarget(cell, "relationDeclaration", false), "name"), dontSubstituteName)) {
-        returnStatement = _quotation_createNode_azpnkk_a0a0g0d0v(conceptFunctionParameter_node);
+      if (conceptNode == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept") && eq_azpnkk_a0a6a4a12(SPropertyOperations.getString(SLinkOperations.getTarget(cell, "relationDeclaration", false), "name"), dontSubstituteName)) {
+        returnStatement = _quotation_createNode_azpnkk_a0a0g0e0v(conceptFunctionParameter_node);
       } else {
-        returnStatement = _quotation_createNode_azpnkk_a0a0a6a3a12(methodCall, conceptFunctionParameter_node);
+        returnStatement = _quotation_createNode_azpnkk_a0a0a6a4a12(methodCall, conceptFunctionParameter_node);
       }
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(cellModel_ReadOnlyModelAccessor, "modelAccessor", true), "getter", true), "body", true), "statement", true)).addElement(returnStatement);
       modelComponent = cellModel_ReadOnlyModelAccessor;
@@ -1265,7 +1274,7 @@ public class ConceptPropertiesHelper {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_azpnkk_a0d0d0v() {
+  private static SNode _quotation_createNode_azpnkk_a0d0e0v() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1280,7 +1289,7 @@ public class ConceptPropertiesHelper {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_azpnkk_a0a0g0d0v(Object parameter_1) {
+  private static SNode _quotation_createNode_azpnkk_a0a0g0e0v(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -1303,7 +1312,7 @@ public class ConceptPropertiesHelper {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_azpnkk_a0a0a6a3a12(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_azpnkk_a0a0a6a4a12(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -1449,7 +1458,7 @@ public class ConceptPropertiesHelper {
     );
   }
 
-  private static boolean eq_azpnkk_a0a6a3a12(Object a, Object b) {
+  private static boolean eq_azpnkk_a0a6a4a12(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
