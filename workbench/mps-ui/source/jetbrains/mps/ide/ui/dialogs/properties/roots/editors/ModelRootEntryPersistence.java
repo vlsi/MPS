@@ -20,6 +20,7 @@ import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.util.misc.hash.HashMap;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
 
 import java.util.Map;
 import java.util.Set;
@@ -49,7 +50,7 @@ public class ModelRootEntryPersistence {
     myModelRootEntries.put(type, entry);
   }
 
-  public ModelRootEntry<?> getModelRootEntry(ModelRoot modelRoot) {
+  public ModelRootEntry getModelRootEntry(ModelRoot modelRoot) {
     ModelRootEntry entry = null;
     try {
       entry = myModelRootEntries.get(modelRoot.getType()).newInstance();
@@ -65,7 +66,7 @@ public class ModelRootEntryPersistence {
     return myModelRootEntries.keySet();
   }
 
-  public ModelRootEntry<?> getModelRootEntry(ModelRootDescriptor descriptor) {
+  public ModelRootEntry getModelRootEntry(ModelRootDescriptor descriptor) {
     ModelRoot modelRoot = PersistenceRegistry.getInstance().getModelRootFactory(descriptor.getType()).create();
     modelRoot.load(descriptor.getMemento());
 

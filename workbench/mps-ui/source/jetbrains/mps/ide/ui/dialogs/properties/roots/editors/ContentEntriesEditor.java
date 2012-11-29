@@ -39,10 +39,11 @@ import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
-import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootEntry.ContentEntryEditorListener;
+import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootEntryContainer.ContentEntryEditorListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
 
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
@@ -63,8 +64,8 @@ public class ContentEntriesEditor {
   private static final Color BACKGROUND_COLOR = UIUtil.getListBackground();
 
   private final ModuleDescriptor myModuleDescriptor;
-  private List<ModelRootEntry<?>> myModelRootEntries = new ArrayList<ModelRootEntry<?>>();
-  private ModelRootEntry<?> myFocucedModelRootEntry;
+  private List<ModelRootEntryContainer> myModelRootEntries = new ArrayList<ModelRootEntryContainer>();
+  private ModelRootEntryContainer myFocucedModelRootEntryContainer;
   private MyContentEntryEditorListener myEditorListener = new MyContentEntryEditorListener();
 
   protected JPanel myEditorsListPanel;
@@ -75,8 +76,9 @@ public class ContentEntriesEditor {
     myModuleDescriptor = moduleDescriptor;
     for(ModelRootDescriptor descriptor : myModuleDescriptor.getModelRootDescriptors()) {
       ModelRootEntry entry = ModelRootEntryPersistence.getInstance().getModelRootEntry(descriptor);
-      entry.addContentEntryEditorListener(myEditorListener);
-      myModelRootEntries.add(entry);
+      ModelRootEntryContainer container = new ModelRootEntryContainer(entry);
+      container.addContentEntryEditorListener(myEditorListener);
+      myModelRootEntries.add(container);
     }
     initUI();
   }
@@ -160,7 +162,7 @@ public class ContentEntriesEditor {
     editorPanel.add(myEditorPanel, BorderLayout.CENTER);
     splitter.setSecondComponent(editorPanel);
 
-    for(ModelRootEntry entry : myModelRootEntries) {
+    for(ModelRootEntryContainer entry : myModelRootEntries) {
       myEditorsListPanel.add(entry.getComponent());
     }
 
@@ -170,39 +172,39 @@ public class ContentEntriesEditor {
       selectEntry(null);
   }
 
-  private void selectEntry(ModelRootEntry<?> entry) {
+  private void selectEntry(ModelRootEntryContainer entry) {
     try
     {
-      if(entry != null && entry.equals(myFocucedModelRootEntry))
+      if(entry != null && entry.equals(myFocucedModelRootEntryContainer))
         return;
 
-      if(myFocucedModelRootEntry != null)
-        myFocucedModelRootEntry.setFocuced(false);
+      if(myFocucedModelRootEntryContainer != null)
+        myFocucedModelRootEntryContainer.setFocuced(false);
 
       if(entry == null) {
-        myFocucedModelRootEntry = null;
+        myFocucedModelRootEntryContainer = null;
         myEditorPanel.removeAll();
         return;
       }
 
       entry.setFocuced(true);
       myEditorPanel.removeAll();
-      myEditorPanel.add(entry.getEditor().getComponent(), BorderLayout.CENTER);
-      myFocucedModelRootEntry = entry;
+      myEditorPanel.add(entry.getEditor().createComponent(), BorderLayout.CENTER);
+      myFocucedModelRootEntryContainer = entry;
     }
     finally {
       myMainPanel.updateUI();
     }
   }
 
-  private void deleteEntry(ModelRootEntry<?> entry) {
+  private void deleteEntry(ModelRootEntryContainer entry) {
     if(!myModelRootEntries.contains(entry))
       return;
 
     myEditorsListPanel.remove(entry.getComponent());
     int idx = myModelRootEntries.indexOf(entry);
     myModelRootEntries.remove(entry);
-    if(myFocucedModelRootEntry.equals(entry))
+    if(myFocucedModelRootEntryContainer.equals(entry))
       selectEntry(myModelRootEntries.size() > 0 ?
         myModelRootEntries.get(Math.max(idx - 1, 0))
         : null);
@@ -222,10 +224,10 @@ public class ContentEntriesEditor {
 
   private Set<ModelRootDescriptor> getDescriptors() {
     Set<ModelRootDescriptor> descriptorSet = new HashSet<ModelRootDescriptor>();
-    for(ModelRootEntry entry : myModelRootEntries) {
+    for(ModelRootEntryContainer container : myModelRootEntries) {
       Memento memento = new MementoImpl();
-      entry.getModelRoot().save(memento);
-      descriptorSet.add(new ModelRootDescriptor(entry.getModelRoot().getType(), memento));
+      container.getModelRoot().save(memento);
+      descriptorSet.add(new ModelRootDescriptor(container.getModelRoot().getType(), memento));
     }
     return descriptorSet;
   }
@@ -245,10 +247,11 @@ public class ContentEntriesEditor {
     public void actionPerformed(AnActionEvent e) {
       ModelRoot modelRoot = PersistenceRegistry.getInstance().getModelRootFactory(myType).create();
       ModelRootEntry entry = ModelRootEntryPersistence.getInstance().getModelRootEntry(modelRoot);
-      entry.addContentEntryEditorListener(myEditorListener);
-      myModelRootEntries.add(entry);
-      myEditorsListPanel.add(entry.getComponent());
-      selectEntry(entry);
+      ModelRootEntryContainer container = new ModelRootEntryContainer(entry);
+      container.addContentEntryEditorListener(myEditorListener);
+      myModelRootEntries.add(container);
+      myEditorsListPanel.add(container.getComponent());
+      selectEntry(container);
       myEditorsListPanel.revalidate();
       myEditorsListPanel.repaint();
     }
@@ -256,17 +259,17 @@ public class ContentEntriesEditor {
 
   private final class MyContentEntryEditorListener implements ContentEntryEditorListener {
     @Override
-    public void focused(ModelRootEntry<?> entry) {
+    public void focused(ModelRootEntryContainer entry) {
       selectEntry(entry);
     }
 
     @Override
-    public void delete(ModelRootEntry<?> entry) {
+    public void delete(ModelRootEntryContainer entry) {
       deleteEntry(entry);
     }
 
     @Override
-    public void dataChanged(ModelRootEntry<?> entry) {
+    public void dataChanged(ModelRootEntryContainer entry) {
       int i = myModelRootEntries.indexOf(entry);
     }
   }

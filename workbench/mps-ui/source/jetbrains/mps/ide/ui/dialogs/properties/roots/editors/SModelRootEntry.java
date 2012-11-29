@@ -32,6 +32,10 @@ import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.ui.dialogs.properties.editors.ManagerTableCellEditor;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
+import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryEditor;
 
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.JComponent;
@@ -44,26 +48,25 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.List;
 
-public class SModelRootEntry extends ModelRootEntry<SModelRoot> {
+public class SModelRootEntry implements ModelRootEntry {
+
   private JBLabel myLabel;
+  private SModelRoot myModelRoot;
 
-  public SModelRootEntry() {
-    super();
-  }
-
-  public SModelRootEntry(SModelRoot modelRoot) {
-    super(modelRoot);
-    initUI();
+  @Override
+  public ModelRoot getModelRoot() {
+    return myModelRoot;
   }
 
   @Override
-  protected JComponent createDetailsComponent() {
-    myLabel = new JBLabel();
-    myLabel.setText(getDetailsText());
-    return myLabel;
+  public void setModelRoot(ModelRoot modelRoot) {
+    if(!(modelRoot instanceof SModelRoot))
+      throw new ClassCastException("Can't convert " + modelRoot.getClass().getCanonicalName() + " to " + SModelRoot.class.getCanonicalName());
+    myModelRoot = (SModelRoot)modelRoot;
   }
 
-  private String getDetailsText() {
+  @Override
+  public String getDetailsText() {
     final StringBuilder messageText = new StringBuilder();
     messageText.append("<html>");
     messageText.append("Type : ").append(myModelRoot.getType()).append("<br>");
@@ -72,22 +75,28 @@ public class SModelRootEntry extends ModelRootEntry<SModelRoot> {
     return messageText.toString();
   }
 
+  @Nullable
   @Override
-  protected void updateDetailsComponent() {
-    myLabel.setText(getDetailsText());
+  public JComponent getDetailsComponent() {
+    return null;
   }
 
   @Override
-  protected EntryEditor createEditor() {
-    return new SModelRootEntryEditor();
+  public ModelRootEntryEditor getEditor() {
+    return new SModelRootEntryEditor(myModelRoot);
   }
 
-  private class SModelRootEntryEditor extends EntryEditor {
+  private class SModelRootEntryEditor implements ModelRootEntryEditor {
     private JPanel myTreePanel;
     private ComboBox myComboBox;
+    private SModelRoot myModelRoot;
+
+    public SModelRootEntryEditor(SModelRoot modelRoot) {
+      myModelRoot = modelRoot;
+    }
 
     @Override
-    protected void initUI() {
+    public JComponent createComponent() {
       JPanel panel = new JPanel(new GridLayoutManager(2,1));
 
       List<ModelRootManager> managers = ManagerTableCellEditor.getManagers();
@@ -111,11 +120,9 @@ public class SModelRootEntry extends ModelRootEntry<SModelRoot> {
         public void itemStateChanged(ItemEvent e) {
           if(e.getStateChange() == ItemEvent.SELECTED) {
             ModelRootManager manager = (ModelRootManager)e.getItem();
-            SModelRootEntry.this.getModelRoot().getModelRoot().setManager(
+            myModelRoot.getModelRoot().setManager(
               manager.equals(empty) ? null: manager
             );
-
-            SModelRootEntry.this.reset();
           }
         }
       });
@@ -126,7 +133,7 @@ public class SModelRootEntry extends ModelRootEntry<SModelRoot> {
       panel.add(scrollPane,
         new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, null, null, null));
 
-      myEditorComponent = panel;
+      return panel;
     }
 
     private void updateTree() {
@@ -153,8 +160,7 @@ public class SModelRootEntry extends ModelRootEntry<SModelRoot> {
           @Override
           public void selectionChanged(List<VirtualFile> selection) {
             if (selection.size() > 0) {
-              SModelRootEntry.this.getModelRoot().setPath(selection.get(0).getPath());
-              SModelRootEntry.this.reset();
+              myModelRoot.setPath(selection.get(0).getPath());
             }
           }
         }, new Disposable() {
