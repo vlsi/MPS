@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem;
+package jetbrains.mps.newTypesystem.context;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.NullErrorReporter;

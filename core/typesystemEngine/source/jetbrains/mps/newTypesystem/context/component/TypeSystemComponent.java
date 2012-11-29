@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem;
+package jetbrains.mps.newTypesystem.context.component;
 
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
@@ -33,7 +33,7 @@ import java.util.*;
 /*
  *   Non-reenterable.
  */
-/*package*/ class TypeSystemComponent extends CheckingComponent implements ITypeErrorComponent {
+/*package*/ class TypeSystemComponent extends CachingTypecheckingComponent implements ITypeErrorComponent {
   protected static final Logger LOG = Logger.getLogger(TypeSystemComponent.class);
 
   private Map<SNode, Set<SNode>> myNodesToDependentNodes_A;
@@ -45,7 +45,7 @@ import java.util.*;
   private MyLanguageCacheListener myLanguageCacheListener = new MyLanguageCacheListener();
 
 
-  public TypeSystemComponent(TypeChecker typeChecker, State state, NodeTypesComponent component) {
+  public TypeSystemComponent(TypeChecker typeChecker, State state, IncrementalTypechecking component) {
     super(typeChecker, state, component);
 
     myNodesToRules = new THashMap<SNode, Set<Pair<String, String>>>();
@@ -194,8 +194,8 @@ import java.util.*;
   }
 
   @Override
-  protected NodeTypesComponent getNodeTypesComponent() {
-    return (NodeTypesComponent) super.getNodeTypesComponent();
+  protected IncrementalTypechecking getTypechecking() {
+    return (IncrementalTypechecking) super.getTypechecking();
   }
 
   //"type affected" means that *type* of this node depends on this set
@@ -209,7 +209,7 @@ import java.util.*;
       if (dependentNodes == null) {
         dependentNodes = new THashSet<SNode>(1);
         dependencies.put(nodeToDependOn, dependentNodes);
-        getNodeTypesComponent().track(nodeToDependOn);
+        getTypechecking().track(nodeToDependOn);
       }
       dependentNodes.add(sNode);
     }
@@ -222,8 +222,8 @@ import java.util.*;
 
   @Override
   protected void performActionsAfterChecking() {
-    getNodeTypesComponent().getModelListenerManager().updateGCedNodes();
-    TypeChecker.getInstance().addTypeRecalculatedListener(getNodeTypesComponent().getTypeRecalculatedListener());//method checks if already exists
+    getTypechecking().getModelListenerManager().updateGCedNodes();
+    TypeChecker.getInstance().addTypeRecalculatedListener(getTypechecking().getTypeRecalculatedListener());//method checks if already exists
     LanguageHierarchyCache.getInstance().addCacheChangeListener(myLanguageCacheListener);
   }
 
@@ -231,7 +231,7 @@ import java.util.*;
   protected boolean applyRulesToNode(final SNode node) {
     final List<Pair<InferenceRule_Runtime, IsApplicableStatus>> newRules = TypeChecker.getInstance().getRulesManager().getInferenceRules(node);
     if (newRules == null) return false;
-    return getNodeTypesComponent().runApplyRulesTo(node, new Runnable() {
+    return getTypechecking().runApplyRulesTo(node, new Runnable() {
       @Override
       public void run() {
         applyRulesToNode(node, newRules);

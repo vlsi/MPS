@@ -13,10 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem;
+package jetbrains.mps.newTypesystem.context;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
 /**
@@ -26,7 +25,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
  * Time: 4:17 PM
  * To change this template use File | Settings | File Templates.
  */
-public class TracingTypecheckingContext extends SingleTypecheckingContext{
+public class TracingTypecheckingContext extends SimpleTypecheckingContext {
 
   public TracingTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);

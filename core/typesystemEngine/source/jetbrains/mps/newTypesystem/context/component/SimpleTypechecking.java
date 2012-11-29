@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem;
+package jetbrains.mps.newTypesystem.context.component;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
@@ -39,35 +39,35 @@ import java.util.Set;
  * Time: 3:24 PM
  * To change this template use File | Settings | File Templates.
  */
-public class SingleNodeTypesComponent {
+public class SimpleTypechecking {
 
   protected final SNode myRootNode;
-  private final SingleTypeSystemComponent myTypeSystemComponent;
+  private final SimpleTypecheckingComponent myTypecheckingComponent;
 
-  public SingleNodeTypesComponent(SNode node, State state) {
+  public SimpleTypechecking(SNode node, State state) {
     myRootNode = node;
-    myTypeSystemComponent = createTypeSystemComponent(state);
+    myTypecheckingComponent = createTypeSystemComponent(state);
   }
 
-  protected SingleTypeSystemComponent createTypeSystemComponent(State state) {
-    return new SingleTypeSystemComponent(state, this);
+  protected SimpleTypecheckingComponent createTypeSystemComponent(State state) {
+    return new SimpleTypecheckingComponent(state, this);
   }
 
   public SNode getNode() {
     return myRootNode;
   }
 
-  protected SingleTypeSystemComponent getTypeSystemComponent() {
-    return myTypeSystemComponent;
+  protected SimpleTypecheckingComponent getTypecheckingComponent() {
+    return myTypecheckingComponent;
   }
 
   protected SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
-    SNode result = getTypeSystemComponent().computeTypesForNode_special(initialNode, givenAdditionalNodes);
+    SNode result = getTypecheckingComponent().computeTypesForNode_special(initialNode, givenAdditionalNodes);
     return result;
   }
 
   public InequalitySystem computeInequalitiesForHole(SNode hole, boolean holeIsAType) {
-    State state = myTypeSystemComponent.getState();
+    State state = myTypecheckingComponent.getState();
     if (state == null) return null;
     try {
       state.initHole(hole);
@@ -96,7 +96,7 @@ public class SingleNodeTypesComponent {
 
   @NotNull
   public List<IErrorReporter> getErrors(SNode node) {
-    Map<SNode, List<IErrorReporter>> nodesToErrorsMap = getTypeSystemComponent().getNodesToErrorsMap();
+    Map<SNode, List<IErrorReporter>> nodesToErrorsMap = getTypecheckingComponent().getNodesToErrorsMap();
 
     List<IErrorReporter> result = new ArrayList<IErrorReporter>(4);
     List<IErrorReporter> iErrorReporters = nodesToErrorsMap.get(node);
@@ -107,24 +107,24 @@ public class SingleNodeTypesComponent {
   }
 
   public void addNodeToFrontier(SNode node) {
-    getTypeSystemComponent().addNodeToFrontier(node);
+    getTypecheckingComponent().addNodeToFrontier(node);
   }
 
   public void dispose() {
-    getTypeSystemComponent().dispose();
+    getTypecheckingComponent().dispose();
   }
 
   public void computeTypes(boolean refreshTypes) {
-    getTypeSystemComponent().computeTypes(refreshTypes);
+    getTypecheckingComponent().computeTypes(refreshTypes);
   }
 
 
   public void setCheckedTypesystem() {
-    getTypeSystemComponent().setChecked();
+    getTypecheckingComponent().setChecked();
   }
 
   public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
-    Map<SNode, List<IErrorReporter>> nodesToErrorsMap = getTypeSystemComponent().getNodesToErrorsMap();
+    Map<SNode, List<IErrorReporter>> nodesToErrorsMap = getTypecheckingComponent().getNodesToErrorsMap();
     Set<SNode> keySet = new THashSet<SNode>(nodesToErrorsMap.keySet());
 
     Set<Pair<SNode, List<IErrorReporter>>> result = new THashSet<Pair<SNode, List<IErrorReporter>>>(1);
@@ -145,7 +145,7 @@ public class SingleNodeTypesComponent {
   }
 
   public boolean isChecked(boolean considerNonTypeSystemRules) {
-    return getTypeSystemComponent().isChecked();
+    return getTypecheckingComponent().isChecked();
   }
 
   public void applyNonTypesystemRulesToRoot(IOperationContext context, TypeCheckingContext typeCheckingContext) {

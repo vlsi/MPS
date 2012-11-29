@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem;
+package jetbrains.mps.newTypesystem.context;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
@@ -21,7 +21,8 @@ import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.newTypesystem.operation.AbstractOperation;
+import jetbrains.mps.newTypesystem.context.component.IncrementalTypechecking;
+import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -30,8 +31,8 @@ import jetbrains.mps.util.SNodeOperations;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TypeCheckingContextNew extends SingleTypecheckingContext {
-  private static Logger LOG = Logger.getLogger(TypeCheckingContextNew.class);
+public class IncrementalTypecheckingContext extends SimpleTypecheckingContext {
+  private static Logger LOG = Logger.getLogger(IncrementalTypecheckingContext.class);
 
   private boolean myIsNonTypesystemComputation = false;
 //  private boolean myIsInferenceMode = false;
@@ -39,19 +40,18 @@ public class TypeCheckingContextNew extends SingleTypecheckingContext {
   private Map<Object, Integer> myRequesting = new HashMap<Object, Integer>();
   private Integer myOldHash = 0;
 
-  public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
+  public IncrementalTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
-
   }
 
   @Override
-  protected NodeTypesComponent createNodeTypesComponent() {
-    return new NodeTypesComponent(getNode(), getState());
+  protected IncrementalTypechecking createNodeTypesComponent() {
+    return new IncrementalTypechecking(getNode(), getState());
   }
 
   @Override
-  public NodeTypesComponent getNodeTypesComponent() {
-    return (NodeTypesComponent) super.getNodeTypesComponent();
+  public IncrementalTypechecking getTypechecking() {
+    return (IncrementalTypechecking) super.getTypechecking();
   }
 
   public boolean isSingleTypeComputation() {
@@ -70,18 +70,18 @@ public class TypeCheckingContextNew extends SingleTypecheckingContext {
 
   @Override
   public void clear() {
-    getNodeTypesComponent().clear();
+    getTypechecking().clear();
   }
 
 
   @Override
-  public final NodeTypesComponent getBaseNodeTypesComponent() {
-    return getNodeTypesComponent();
+  public final IncrementalTypechecking getBaseNodeTypesComponent() {
+    return getTypechecking();
   }
 
   @Override
   public void addDependencyForCurrent(SNode node) {
-    getNodeTypesComponent().addDependencyForCurrent(node);
+    getTypechecking().addDependencyForCurrent(node);
   }
 
   @Override
@@ -93,11 +93,11 @@ public class TypeCheckingContextNew extends SingleTypecheckingContext {
   }
 
   public SNode getTypeOf_generationMode(final SNode node) {
-    throw new IllegalStateException("Invalid usage of TypeCheckingContextNew");
+    throw new IllegalStateException("Invalid usage of IncrementalTypecheckingContext");
   }
 
   public SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker) {
-    throw new IllegalStateException("Invalid usage of TypeCheckingContextNew");
+    throw new IllegalStateException("Invalid usage of IncrementalTypecheckingContext");
   }
 
   public SNode getTypeOf_normalMode(SNode node) {
@@ -107,13 +107,13 @@ public class TypeCheckingContextNew extends SingleTypecheckingContext {
 
   @Override
   public void dispose() {
-    getNodeTypesComponent().dispose();
+    getTypechecking().dispose();
     myRequesting.clear();
     super.dispose();
   }
 
   public boolean messagesChanged(Object requesting) {
-    int hash = getNodeTypesComponent().getNodesWithErrors().hashCode();
+    int hash = getTypechecking().getNodesWithErrors().hashCode();
     if (hash != myOldHash) {
       myRequesting.clear();
       myOldHash = hash;
@@ -196,14 +196,14 @@ public class TypeCheckingContextNew extends SingleTypecheckingContext {
       getState().executeOperation(new TraceWarningOperation("Error was not added: " + errorReporter.reportError()));
       return;//todo
     }
-    getNodeTypesComponent().reportTypeError(nodeWithError, errorReporter);
-    getNodeTypesComponent().addDependencyOnCurrent(nodeWithError, false);
+    getTypechecking().reportTypeError(nodeWithError, errorReporter);
+    getTypechecking().addDependencyOnCurrent(nodeWithError, false);
   }
 
 
   @Override
   protected void processDependency(SNode node, String ruleModel, String ruleId, boolean addDependency) {
-    NodeTypesComponent currentTypesComponent = getNodeTypesComponent();
+    IncrementalTypechecking currentTypesComponent = getTypechecking();
     currentTypesComponent.typeOfNodeCalled(node);
     if (addDependency) {
       currentTypesComponent.addDependencyOnCurrent(node);
@@ -215,6 +215,6 @@ public class TypeCheckingContextNew extends SingleTypecheckingContext {
   }
 
   protected void applyNonTypesystemRules() {
-    getNodeTypesComponent().applyNonTypesystemRulesToRoot(null, this);
+    getTypechecking().applyNonTypesystemRulesToRoot(null, this);
   }
 }

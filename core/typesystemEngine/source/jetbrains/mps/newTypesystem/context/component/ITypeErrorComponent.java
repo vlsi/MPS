@@ -1,4 +1,4 @@
-package jetbrains.mps.newTypesystem;
+package jetbrains.mps.newTypesystem.context.component;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SNode;

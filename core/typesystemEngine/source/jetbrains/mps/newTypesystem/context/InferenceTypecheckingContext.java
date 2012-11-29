@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem;
+package jetbrains.mps.newTypesystem.context;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -25,13 +25,13 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
  * Time: 4:40 PM
  * To change this template use File | Settings | File Templates.
  */
-public class InferenceTypecheckingContext extends SingleTypecheckingContext {
+public class InferenceTypecheckingContext extends SimpleTypecheckingContext {
 
   public InferenceTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
   }
 
   protected void applyNonTypesystemRules() {
-    getNodeTypesComponent().applyNonTypesystemRulesToRoot(null, this);
+    getTypechecking().applyNonTypesystemRulesToRoot(null, this);
   }
 }

@@ -18,11 +18,11 @@ package jetbrains.mps.typesystem.inference;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.lang.typesystem.runtime.performance.TypeCheckingContext_Tracer;
-import jetbrains.mps.newTypesystem.InferenceTypecheckingContext;
-import jetbrains.mps.newTypesystem.SingleTypecheckingContext;
-import jetbrains.mps.newTypesystem.TracingTypecheckingContext;
-import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
+import jetbrains.mps.lang.typesystem.runtime.performance.IncrementalTypecheckingContext_Tracer;
+import jetbrains.mps.newTypesystem.context.InferenceTypecheckingContext;
+import jetbrains.mps.newTypesystem.context.SimpleTypecheckingContext;
+import jetbrains.mps.newTypesystem.context.TracingTypecheckingContext;
+import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -39,16 +39,12 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.Triplet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.security.cert.TrustAnchor;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
@@ -213,9 +209,9 @@ public class TypeContextManager implements CoreComponent {
   public TypeCheckingContext createTypeCheckingContext(SNode node) {
     ModelAccess.assertLegalRead();
     if (myTypeChecker.isGenerationMode()) {
-      return new SingleTypecheckingContext(node, myTypeChecker);
+      return new SimpleTypecheckingContext(node, myTypeChecker);
     } else {
-      return new TypeCheckingContextNew(node, myTypeChecker);
+      return new IncrementalTypecheckingContext(node, myTypeChecker);
     }
   }
 
@@ -344,7 +340,7 @@ public class TypeContextManager implements CoreComponent {
 
   private TypeCheckingContext createTypeCheckingContextForResolve(SNode node) {
     SNode root = node.getTopmostAncestor();
-    return new SingleTypecheckingContext(root, myTypeChecker);
+    return new SimpleTypecheckingContext(root, myTypeChecker);
   }
 
   private Set<SNode> getMyResolveNodes() {
@@ -376,8 +372,8 @@ public class TypeContextManager implements CoreComponent {
     try {
       if (myTypeChecker.isGenerationMode()) {
         TypeCheckingContext context = myTypeChecker.hasPerformanceTracer() ?
-          new TypeCheckingContext_Tracer(node, myTypeChecker) :
-          new SingleTypecheckingContext(node, myTypeChecker);
+          new IncrementalTypecheckingContext_Tracer(node, myTypeChecker) :
+          new SimpleTypecheckingContext(node, myTypeChecker);
         if (context == null) return null;
         try {
           return context.getTypeOf_generationMode(node);

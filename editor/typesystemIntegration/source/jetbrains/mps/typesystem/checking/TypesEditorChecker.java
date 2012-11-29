@@ -22,8 +22,8 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.newTypesystem.NodeTypesComponent;
-import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
+import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
+import jetbrains.mps.newTypesystem.context.component.IncrementalTypechecking;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
@@ -66,12 +66,12 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
   }
 
   private void doCreateMessages(final TypeCheckingContext context, final boolean wasCheckedOnce, final EditorContext editorContext, final SNode rootNode, final Set<EditorMessage> messages) {
-    if (context == null || !(context instanceof TypeCheckingContextNew)) return;
+    if (context == null || !(context instanceof IncrementalTypecheckingContext)) return;
 
-    ((TypeCheckingContextNew)context).runTypeCheckingAction(new Runnable() {
+    ((IncrementalTypecheckingContext)context).runTypeCheckingAction(new Runnable() {
       @Override
       public void run() {
-        NodeTypesComponent typesComponent = context.getBaseNodeTypesComponent();
+        IncrementalTypechecking typesComponent = context.getBaseNodeTypesComponent();
         if (!wasCheckedOnce || !context.isCheckedRoot(true) || context.messagesChanged(editorContext.getEditorComponent().getClass())) {
           try {
             myMessagesChanged = true;

@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.state.blocks;
 
-import jetbrains.mps.newTypesystem.InferenceTypecheckingContext;
+import jetbrains.mps.newTypesystem.context.InferenceTypecheckingContext;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;

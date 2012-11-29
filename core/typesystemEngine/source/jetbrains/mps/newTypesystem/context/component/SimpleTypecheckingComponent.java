@@ -13,13 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem;
+package jetbrains.mps.newTypesystem.context.component;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -44,20 +45,20 @@ import java.util.Set;
  * Time: 10:07 AM
  * To change this template use File | Settings | File Templates.
  */
-/*package*/ class SingleTypeSystemComponent  {
+/*package*/ class SimpleTypecheckingComponent {
 
   protected final State myState;
   protected Queue<SNode> myQueue = new LinkedList<SNode>();
   protected boolean myIsChecked = false;
-  protected SingleNodeTypesComponent myNodeTypesComponent;
+  protected SimpleTypechecking myTypechecking;
   protected Set<SNode> myNodes = new THashSet<SNode>();
   protected Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
   protected Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
 
 
-  public SingleTypeSystemComponent(State state, SingleNodeTypesComponent component) {
+  public SimpleTypecheckingComponent(State state, SimpleTypechecking component) {
     myState = state;
-    myNodeTypesComponent = component;
+    myTypechecking = component;
   }
 
   protected boolean isIncrementalMode() {
@@ -102,7 +103,7 @@ import java.util.Set;
   }
 
   public void computeTypes(boolean refreshTypes) {
-    computeTypes(getNodeTypesComponent().getNode(), refreshTypes, true, Collections.<SNode>emptyList(), true, null);
+    computeTypes(getTypechecking().getNode(), refreshTypes, true, Collections.<SNode>emptyList(), true, null);
   }
 
   protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, Collection<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
@@ -130,8 +131,8 @@ import java.util.Set;
     return myIsChecked && !doInvalidate();
   }
 
-  protected SingleNodeTypesComponent getNodeTypesComponent() {
-    return myNodeTypesComponent;
+  protected SimpleTypechecking getTypechecking() {
+    return myTypechecking;
   }
 
   public void dispose() {

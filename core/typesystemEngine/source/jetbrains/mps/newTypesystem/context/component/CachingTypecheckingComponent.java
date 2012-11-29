@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem;
+package jetbrains.mps.newTypesystem.context.component;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.newTypesystem.state.State;
@@ -25,7 +25,7 @@ import jetbrains.mps.util.Pair;
 
 import java.util.Set;
 
-/*package*/ abstract class CheckingComponent extends SingleTypeSystemComponent {
+/*package*/ abstract class CachingTypecheckingComponent extends SimpleTypecheckingComponent {
 
   private boolean myInvalidationWasPerformed = false;
   private boolean myCacheWasRebuilt = false;
@@ -33,7 +33,7 @@ import java.util.Set;
 
   private Set<SNode> myCurrentNodesToInvalidate = new THashSet<SNode>();
 
-  protected CheckingComponent (TypeChecker typeChecker, State state, SingleNodeTypesComponent component) {
+  protected CachingTypecheckingComponent(TypeChecker typeChecker, State state, SimpleTypechecking component) {
     super(state, component);
   }
 

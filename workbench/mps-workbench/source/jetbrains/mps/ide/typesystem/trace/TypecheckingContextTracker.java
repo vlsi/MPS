@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.typesystem.trace;
 
-import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
+import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
@@ -77,7 +77,7 @@ public class TypecheckingContextTracker implements ITypeContextOwner {
     this.generationMode = generationMode;
     myOldOperation = null;
     if (false && this.generationMode) {
-      TypeCheckingContextNew context = (TypeCheckingContextNew) TypeContextManager.getInstance().createTypeCheckingContext(selectedNode);
+      IncrementalTypecheckingContext context = (IncrementalTypecheckingContext) TypeContextManager.getInstance().createTypeCheckingContext(selectedNode);
       context.getTypeInGenerationMode(selectedNode);
 
       myOperation = context.getOperation();

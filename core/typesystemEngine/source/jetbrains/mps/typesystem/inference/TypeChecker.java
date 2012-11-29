@@ -20,14 +20,11 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
-import jetbrains.mps.newTypesystem.BaseTypecheckingContext;
-import jetbrains.mps.newTypesystem.InferenceTypecheckingContext;
 import jetbrains.mps.newTypesystem.RuntimeSupportNew;
-import jetbrains.mps.newTypesystem.SingleTypecheckingContext;
+import jetbrains.mps.newTypesystem.context.SimpleTypecheckingContext;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.rules.LanguageScope;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -269,8 +266,8 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   }
 
   public InequalitySystem getInequalitiesForHole(SNode hole, boolean holeIsAType) {
-    SingleTypecheckingContext typeCheckingContext = (SingleTypecheckingContext) TypeContextManager.getInstance().createTypeCheckingContext(hole.getContainingRoot());
-    InequalitySystem inequalitySystem = typeCheckingContext.getNodeTypesComponent().computeInequalitiesForHole(hole, holeIsAType);
+    SimpleTypecheckingContext typeCheckingContext = (SimpleTypecheckingContext) TypeContextManager.getInstance().createTypeCheckingContext(hole.getContainingRoot());
+    InequalitySystem inequalitySystem = typeCheckingContext.getTypechecking().computeInequalitiesForHole(hole, holeIsAType);
     typeCheckingContext.dispose();
     return inequalitySystem;
   }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem;
+package jetbrains.mps.newTypesystem.context.component;
 
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
@@ -36,7 +36,7 @@ import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 import java.util.*;
 
-public class NodeTypesComponent extends SingleNodeTypesComponent {
+public class IncrementalTypechecking extends SimpleTypechecking {
 
   private List<SModelEvent> myEvents;
 
@@ -47,13 +47,13 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
 
   private NonTypeSystemComponent myNonTypeSystemComponent;
 
-  private static final Logger LOG = Logger.getLogger(NodeTypesComponent.class);
+  private static final Logger LOG = Logger.getLogger(IncrementalTypechecking.class);
 
   private NodeTypeAccess myNodeTypeAccess = new NodeTypeAccess();
 
   private ITypeErrorComponent myTypeErrorComponent;
 
-  public NodeTypesComponent(SNode node, State state) {
+  public IncrementalTypechecking(SNode node, State state) {
     super(node, state);
     myNonTypeSystemComponent = new NonTypeSystemComponent(TypeChecker.getInstance(), this);
     myModelListener = new MyModelListener();
@@ -69,15 +69,15 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
   }
 
   @Override
-  protected TypeSystemComponent getTypeSystemComponent() {
-    return (TypeSystemComponent) super.getTypeSystemComponent();
+  protected TypeSystemComponent getTypecheckingComponent() {
+    return (TypeSystemComponent) super.getTypecheckingComponent();
   }
 
   public void clear() {
 
     clearNodesTypes();
     myNonTypeSystemComponent.clear();
-    getTypeSystemComponent().clear();
+    getTypecheckingComponent().clear();
   }
 
   public MyModelListenerManager getModelListenerManager() {
@@ -89,7 +89,7 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
   }
 
   private void clearNodesTypes() {
-    getTypeSystemComponent().clearNodeTypes();
+    getTypecheckingComponent().clearNodeTypes();
     myNonTypeSystemComponent.clearNodeTypes();
   }
 
@@ -99,7 +99,7 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
   }
 
   private ITypeErrorComponent getTypeErrorComponent() {
-    return myTypeErrorComponent != null ? myTypeErrorComponent : getTypeSystemComponent();
+    return myTypeErrorComponent != null ? myTypeErrorComponent : getTypecheckingComponent();
   }
 
   @Deprecated
@@ -176,7 +176,7 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
 
     Set<SNode> hashSet = new THashSet<SNode>(1);
     hashSet.add(myNodeTypeAccess.peekNode());
-    getTypeSystemComponent().addDependentNodesTypeSystem(node, hashSet, typeAffected);
+    getTypecheckingComponent().addDependentNodesTypeSystem(node, hashSet, typeAffected);
   }
 
   public void addDependencyForCurrent(SNode node) {
@@ -188,7 +188,7 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
 
     Set<SNode> hashSet = new THashSet<SNode>(1);
     hashSet.add(node);
-    getTypeSystemComponent().addDependentNodesTypeSystem(current, hashSet, true);
+    getTypecheckingComponent().addDependentNodesTypeSystem(current, hashSet, true);
   }
 
   @Override
@@ -204,7 +204,7 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
   }
 
   public SNode getType(SNode node) {
-    return getTypeSystemComponent().getType(node);
+    return getTypecheckingComponent().getType(node);
   }
 
   @Override
@@ -244,11 +244,11 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
 
 
   public void markNodeAsAffectedByRule(SNode node, String ruleModel, String ruleId) {
-    getTypeSystemComponent().markNodeAsAffectedByRule(node, ruleModel, ruleId);
+    getTypecheckingComponent().markNodeAsAffectedByRule(node, ruleModel, ruleId);
   }
 
   public Set<Pair<String, String>> getRulesWhichAffectNodeType(SNode node) {
-    return getTypeSystemComponent().getRulesWhichAffectNodeType(node);
+    return getTypecheckingComponent().getRulesWhichAffectNodeType(node);
   }
 
   public boolean isCheckedNonTypesystem() {
@@ -285,8 +285,8 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
 
   private class MySModelEventVisitorAdapter extends SModelEventVisitorAdapter {
     public void visitChildEvent(SModelChildEvent event) {
-      markDependentNodesForInvalidation(event.getChild(), getTypeSystemComponent());
-      markDependentNodesForInvalidation(event.getParent(), getTypeSystemComponent());
+      markDependentNodesForInvalidation(event.getChild(), getTypecheckingComponent());
+      markDependentNodesForInvalidation(event.getParent(), getTypecheckingComponent());
 
       markDependentNodesForInvalidation(event.getChild(), myNonTypeSystemComponent);
       markDependentNodesForInvalidation(event.getParent(), myNonTypeSystemComponent);
@@ -299,7 +299,7 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
         if (event.isRemoved()) {
           //invalidate nodes which are removed
           markDependentNodesForInvalidation(descendant, myNonTypeSystemComponent);
-          markDependentNodesForInvalidation(descendant, getTypeSystemComponent());
+          markDependentNodesForInvalidation(descendant, getTypecheckingComponent());
         }
       }
       for (SReference reference : references) {
@@ -311,7 +311,7 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
     }
 
     public void visitReferenceEvent(SModelReferenceEvent event) {
-      markDependentNodesForInvalidation(event.getReference().getSourceNode(), getTypeSystemComponent());
+      markDependentNodesForInvalidation(event.getReference().getSourceNode(), getTypecheckingComponent());
       markDependentNodesForInvalidation(event.getReference().getSourceNode(), myNonTypeSystemComponent);
       if (!event.isAdded()) return;
       markDependentNodesForInvalidation(event.getReference().getTargetNodeSilently(), myNonTypeSystemComponent);
@@ -321,13 +321,13 @@ public class NodeTypesComponent extends SingleNodeTypesComponent {
       markDependentOnPropertyNodesForInvalidation(event.getNode(), event.getPropertyName());
     }
 
-    private void markDependentNodesForInvalidation(SNode eventNode, CheckingComponent component) {
+    private void markDependentNodesForInvalidation(SNode eventNode, CachingTypecheckingComponent component) {
       component.addNodeToInvalidate(eventNode);
     }
 
     private void markDependentOnPropertyNodesForInvalidation(SNode eventNode, String propertyName) {
       myNonTypeSystemComponent.addPropertyToInvalidate(eventNode, propertyName);
-      getTypeSystemComponent().addNodeToInvalidate(eventNode);
+      getTypecheckingComponent().addNodeToInvalidate(eventNode);
     }
   }
 

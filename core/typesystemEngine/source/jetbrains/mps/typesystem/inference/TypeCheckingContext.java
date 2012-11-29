@@ -18,18 +18,14 @@ package jetbrains.mps.typesystem.inference;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
-import jetbrains.mps.newTypesystem.NodeTypesComponent;
+import jetbrains.mps.newTypesystem.context.component.IncrementalTypechecking;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.state.State;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public abstract class TypeCheckingContext {
@@ -157,7 +153,7 @@ public abstract class TypeCheckingContext {
   public abstract State getState();
 
   @Deprecated
-  public abstract NodeTypesComponent getBaseNodeTypesComponent();
+  public abstract IncrementalTypechecking getBaseNodeTypesComponent();
 
   /*package*/
   public abstract SNode computeTypeInferenceMode(SNode node);

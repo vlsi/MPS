@@ -13,14 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem;
+package jetbrains.mps.newTypesystem.context.component;
 
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SNode;
@@ -31,7 +30,7 @@ import jetbrains.mps.util.Pair;
 
 import java.util.*;
 
-class NonTypeSystemComponent extends CheckingComponent implements ITypeErrorComponent {
+class NonTypeSystemComponent extends CachingTypecheckingComponent implements ITypeErrorComponent {
 
   private Set<Pair<SNode, String>> myCurrentPropertiesToInvalidate = new HashSet<Pair<SNode, String>>();
   private Set<SNode> myCurrentTypedTermsToInvalidate = new HashSet<SNode>();
@@ -60,7 +59,7 @@ class NonTypeSystemComponent extends CheckingComponent implements ITypeErrorComp
 
   private Pair<SNode, NonTypesystemRule_Runtime> myRuleAndNodeBeingChecked = null;
 
-  public NonTypeSystemComponent(TypeChecker typeChecker, NodeTypesComponent nodeTypesComponent) {
+  public NonTypeSystemComponent(TypeChecker typeChecker, IncrementalTypechecking nodeTypesComponent) {
     super(typeChecker, null, nodeTypesComponent);
   }
 
@@ -95,8 +94,8 @@ class NonTypeSystemComponent extends CheckingComponent implements ITypeErrorComp
   }
 
   @Override
-  protected NodeTypesComponent getNodeTypesComponent() {
-    return (NodeTypesComponent) super.getNodeTypesComponent();
+  protected IncrementalTypechecking getTypechecking() {
+    return (IncrementalTypechecking) super.getTypechecking();
   }
 
   private void doInvalidate(Map<NonTypesystemRule_Runtime, Set<SNode>> nodesAndRules, Set<Pair<SNode, NonTypesystemRule_Runtime>> invalidatedNodesAndRules) {
@@ -288,7 +287,7 @@ class NonTypeSystemComponent extends CheckingComponent implements ITypeErrorComp
   }
 
   private void applyNonTypesystemRulesToNode(final SNode node, final TypeCheckingContext typeCheckingContext) {
-    getNodeTypesComponent().runApplyRulesTo(node, new Runnable() {
+    getTypechecking().runApplyRulesTo(node, new Runnable() {
       @Override
       public void run() {
         List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> nonTypesystemRules = TypeChecker.getInstance().getRulesManager().getNonTypesystemRules(node);
@@ -309,7 +308,7 @@ class NonTypeSystemComponent extends CheckingComponent implements ITypeErrorComp
             myRuleAndNodeBeingChecked = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
           }
           try {
-            getNodeTypesComponent().applyRuleToNode(node, rule.o1, rule.o2, typeCheckingContext);
+            getTypechecking().applyRuleToNode(node, rule.o1, rule.o2, typeCheckingContext);
           } finally {
             myRuleAndNodeBeingChecked = null;
             if (incrementalMode) {
