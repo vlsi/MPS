@@ -17,12 +17,10 @@ package jetbrains.mps.textGen;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
 import org.jetbrains.annotations.NotNull;
-import org.objectweb.asm.util.Traceable;
 
 import java.util.HashMap;
 import java.util.List;
