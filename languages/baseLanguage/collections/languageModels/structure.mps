@@ -10,6 +10,7 @@
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
+  <import index="tp2z" modelUID="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1151688443754">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
@@ -1624,6 +1625,10 @@
   <root id="1197686869805">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1562299158921287427">
       <property name="name" nameId="tpck.1169194664001" value="hasInitSize" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278834175" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278834174">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tp2z.1262430001741497996" resolveInfo="hasInitSize" />
+      </node>
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1197687026896">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -2235,6 +2240,10 @@
   <root id="1237721394592">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1562299158921240591">
       <property name="name" nameId="tpck.1169194664001" value="hasInitSize" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278847766" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278847765">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tp2z.1262430001741498238" resolveInfo="hasInitSize" />
+      </node>
     </node>
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="3358009230509441382">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="3358009230509381714" resolveInfo="availableFor" />
