@@ -23,9 +23,9 @@ public class TypesystemChecker extends DefaultTypecheckingContextOwner implement
     return "type system";
   }
 
-  public Set<IErrorReporter> getErrors(SNode rootNode, IOperationContext context) {
+  public Set<IErrorReporter> getErrors(SNode node, IOperationContext context) {
     final Set<IErrorReporter> result = new HashSet<IErrorReporter>();
-    TypeContextManager.getInstance().runTypeCheckingAction(this, rootNode, new ITypecheckingAction() {
+    TypeContextManager.getInstance().runTypeCheckingAction(this, node, new ITypecheckingAction() {
       public void run(TypeCheckingContext typeCheckingContext) {
         Set<Pair<SNode, List<IErrorReporter>>> nodeWithErrors = typeCheckingContext.checkRootAndGetErrors(true);
         for (Pair<SNode, List<IErrorReporter>> pair : nodeWithErrors) {

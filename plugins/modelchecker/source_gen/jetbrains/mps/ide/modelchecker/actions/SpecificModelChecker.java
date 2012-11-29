@@ -6,6 +6,10 @@ import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import java.util.List;
 import jetbrains.mps.checkers.INodeChecker;
 import jetbrains.mps.checkers.CheckersComponent;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.progress.ProgressMonitor;
@@ -13,15 +17,11 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.inference.ITypecheckingAction;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.Set;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.errors.QuickFix_Runtime;
-import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.errors.QuickFixProvider;
 
 public class SpecificModelChecker extends SpecificChecker implements ITypeContextOwner {
@@ -29,6 +29,10 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
 
   public SpecificModelChecker() {
     myLanguageCheckers = CheckersComponent.getInstance().getCheckers();
+  }
+
+  public TypeCheckingContext createTypecheckingContext(SNode node, TypeContextManager manager) {
+    return new DefaultTypecheckingContextOwner().createTypecheckingContext(node, manager);
   }
 
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, final IOperationContext operationContext) {
@@ -45,11 +49,11 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
       }
       for (final SNode rootNode : SModelOperations.getRoots(model, null)) {
         TypeContextManager.getInstance().runTypeCheckingAction(this, rootNode, new ITypecheckingAction() {
-          public void run(TypeCheckingContext typeCheckingContext) {
+          public void run(TypeCheckingContext p0) {
             Set<IErrorReporter> iErrorReporters = checker.getErrors(rootNode, operationContext);
             for (IErrorReporter errorReporter : SetSequence.fromSet(iErrorReporters)) {
               final IErrorReporter reporter = errorReporter;
-              final QuickFix_Runtime quickFix = check_7763bz_a0b0b0a0a2a0a0d0d0a(check_7763bz_a0a1a1a0a0c0a0a3a3a0(errorReporter));
+              final QuickFix_Runtime quickFix = check_7763bz_a0b0b0a0a2a0a0d0d0d(check_7763bz_a0a1a1a0a0c0a0a3a3a3(errorReporter));
               IModelCheckerFix fix = null;
               if (quickFix != null) {
                 fix = new IModelCheckerFix() {
@@ -70,18 +74,14 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
     return results;
   }
 
-  public TypeCheckingContext createTypecheckingContext(SNode node, TypeContextManager manager) {
-    return (new DefaultTypecheckingContextOwner()).createTypecheckingContext(node, manager);
-  }
-
-  private static QuickFix_Runtime check_7763bz_a0b0b0a0a2a0a0d0d0a(QuickFixProvider checkedDotOperand) {
+  private static QuickFix_Runtime check_7763bz_a0b0b0a0a2a0a0d0d0d(QuickFixProvider checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getQuickFix();
     }
     return null;
   }
 
-  private static QuickFixProvider check_7763bz_a0a1a1a0a0c0a0a3a3a0(IErrorReporter checkedDotOperand) {
+  private static QuickFixProvider check_7763bz_a0a1a1a0a0c0a0a3a3a3(IErrorReporter checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getIntentionProvider();
     }
