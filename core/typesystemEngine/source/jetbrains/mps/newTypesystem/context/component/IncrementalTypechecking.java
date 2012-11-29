@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem;
+package jetbrains.mps.newTypesystem.context.component;
 
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
@@ -26,7 +26,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeRecalculatedListener;
@@ -37,8 +36,7 @@ import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 import java.util.*;
 
-public class NodeTypesComponent {
-  private SNode myRootNode;
+public class IncrementalTypechecking extends SimpleTypechecking {
 
   private List<SModelEvent> myEvents;
 
@@ -48,41 +46,38 @@ public class NodeTypesComponent {
   private MyModelListenerManager myModelListenerManager;
 
   private NonTypeSystemComponent myNonTypeSystemComponent;
-  private TypeSystemComponent myTypeSystemComponent;
-  private boolean myIsSpecial = false;
 
-  private static final Logger LOG = Logger.getLogger(NodeTypesComponent.class);
+  private static final Logger LOG = Logger.getLogger(IncrementalTypechecking.class);
 
-  private boolean myIsNonTypeSystemCheckingInProgress = false;
-  private TypeCheckingContext myTypeCheckingContext;
+  private NodeTypeAccess myNodeTypeAccess = new NodeTypeAccess();
 
-  public NodeTypesComponent(SNode rootNode, TypeChecker typeChecker, TypeCheckingContextNew typeCheckingContext) {
-    myRootNode = rootNode;
-    myTypeCheckingContext = typeCheckingContext;
-    myTypeSystemComponent = new TypeSystemComponent(typeChecker, typeCheckingContext.getState(), this);
-    if (!myTypeCheckingContext.isSingleTypeComputation()) {
-      myNonTypeSystemComponent = new NonTypeSystemComponent(typeChecker, this);
-      myModelListener = new MyModelListener();
-      myModelListenerManager = new MyModelListenerManager(myModelListener);
-      myModelListenerManager.track(myRootNode);
-      myTypeRecalculatedListener = new MyTypeRecalculatedListener();
-      myEvents = new ArrayList<SModelEvent>();
-    }
+  private ITypeErrorComponent myTypeErrorComponent;
+
+  public IncrementalTypechecking(SNode node, State state) {
+    super(node, state);
+    myNonTypeSystemComponent = new NonTypeSystemComponent(TypeChecker.getInstance(), this);
+    myModelListener = new MyModelListener();
+    myModelListenerManager = new MyModelListenerManager(myModelListener);
+    myModelListenerManager.track(myRootNode);
+    myTypeRecalculatedListener = new MyTypeRecalculatedListener();
+    myEvents = new ArrayList<SModelEvent>();
   }
 
-  public TypeCheckingContext getTypeCheckingContext() {
-    return myTypeCheckingContext;
+  @Override
+  protected TypeSystemComponent createTypeSystemComponent(State state) {
+    return new TypeSystemComponent(TypeChecker.getInstance(), state, this);
+  }
+
+  @Override
+  protected TypeSystemComponent getTypecheckingComponent() {
+    return (TypeSystemComponent) super.getTypecheckingComponent();
   }
 
   public void clear() {
 
     clearNodesTypes();
     myNonTypeSystemComponent.clear();
-    myTypeSystemComponent.clear();
-  }
-
-  public SNode getNode() {
-    return myRootNode;
+    getTypecheckingComponent().clear();
   }
 
   public MyModelListenerManager getModelListenerManager() {
@@ -94,20 +89,20 @@ public class NodeTypesComponent {
   }
 
   private void clearNodesTypes() {
-    myTypeSystemComponent.clearNodeTypes();
+    getTypecheckingComponent().clearNodeTypes();
     myNonTypeSystemComponent.clearNodeTypes();
   }
 
-  public void putError(SNode node, IErrorReporter reporter) {
-    if (myIsSpecial) return;
+  private void putError(SNode node, IErrorReporter reporter) {
     if (!ErrorReportUtil.shouldReportError(node)) return;
-    if (myIsNonTypeSystemCheckingInProgress) {
-      myNonTypeSystemComponent.putError(node, reporter);
-    } else {
-      myTypeSystemComponent.addError(node, reporter);
-    }
+    getTypeErrorComponent().addError(node, reporter);
   }
 
+  private ITypeErrorComponent getTypeErrorComponent() {
+    return myTypeErrorComponent != null ? myTypeErrorComponent : getTypecheckingComponent();
+  }
+
+  @Deprecated
   public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
     if (nodeWithError != null) {
       SimpleErrorReporter errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
@@ -121,142 +116,117 @@ public class NodeTypesComponent {
     }
   }
 
-  public SNode computeTypesForNodeDuringGeneration(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, Collections.<SNode>emptyList());
-  }
-
-  public SNode computeTypesForNodeDuringResolving(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, Collections.<SNode>emptyList());
-  }
-
-  public SNode computeTypesForNodeInferenceMode(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, Collections.<SNode>emptyList());
-  }
-
-  private SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
-    myIsSpecial = true;
-    SNode result = myTypeSystemComponent.computeTypesForNode_special(initialNode, givenAdditionalNodes);
-    myIsSpecial = false;
-    return result;
-  }
-
-  public void setNonTypeSystemCheckingInProgress(boolean inProgress) {
-    myIsNonTypeSystemCheckingInProgress = inProgress;
-  }
-
-  public void applyRuleToNode(SNode node, ICheckingRule_Runtime rule, IsApplicableStatus status) {
+  public void applyRuleToNode(SNode node, ICheckingRule_Runtime rule, IsApplicableStatus status, TypeCheckingContext typeCheckingContext) {
     try {
-      rule.applyRule(node, getTypeCheckingContext(), status);
+      rule.applyRule(node, typeCheckingContext, status);
     } catch (Throwable t) {
       LOG.error("an error occurred while applying rule to node " + node, t, node);
     }
   }
 
+  /**
+   * Returns true if the node's type is affected.
+   */
+  public boolean runApplyRulesTo(SNode node, Runnable run) {
+    myNodeTypeAccess.pushNode(node);
+    try{
+      run.run();
+    }
+    finally {
+      return myNodeTypeAccess.popNode();
+    }
+  }
+
+  @Override
   public void dispose() {
-    if (!myTypeCheckingContext.isSingleTypeComputation()) {
-      if (myModelListenerManager != null) {
-        myModelListenerManager.dispose();
-      }
-      TypeChecker.getInstance().removeTypeRecalculatedListener(myTypeRecalculatedListener);
-      if (myNonTypeSystemComponent != null) {
-        myNonTypeSystemComponent.dispose();
-      }
+    if (myModelListenerManager != null) {
+      myModelListenerManager.dispose();
     }
-    myTypeSystemComponent.dispose();
-  }
-
-  public Map<SNode, SNode> getMainContext() {
-    return null;
-  }
-
-  public InequalitySystem computeInequalitiesForHole(SNode hole, boolean holeIsAType) {
-    State state = myTypeCheckingContext.getState();
-    if (state == null) return null;
-    try {
-      state.initHole(hole);
-      computeTypesForNode_special(hole.getParent(), Collections.singleton(hole));
-      state.getInequalitySystem().expandAll(state.getEquations());
-      /* for (String s : state.getInequalitySystem().getPresentation()) {
-         System.out.println(s);
-       } */
-      return state.getInequalitySystem();
-    } finally {
-      state.disposeHole();
+    TypeChecker.getInstance().removeTypeRecalculatedListener(myTypeRecalculatedListener);
+    if (myNonTypeSystemComponent != null) {
+      myNonTypeSystemComponent.dispose();
     }
+    super.dispose();
   }
 
-  public void computeTypes(boolean refreshTypes) {
-    myTypeSystemComponent.computeTypes(refreshTypes);
-  }
 
   public void setCheckedNonTypesystem() {
     myNonTypeSystemComponent.setChecked();
   }
 
   public void typeOfNodeCalled(SNode node) {
-    myTypeSystemComponent.typeOfNodeCalled(node);
+    myNodeTypeAccess.nodeTypeAccessed(node);
   }
 
   public void addDependencyOnCurrent(SNode node, boolean typeAffected) {
-    myTypeSystemComponent.addDependencyOnCurrent(node, typeAffected);
-  }
-
-  public void addDependencyForCurrent(SNode node) {
-    SNode current = null;
-    if (myIsNonTypeSystemCheckingInProgress) {
-      current = myNonTypeSystemComponent.getCurrentCheckedNode();
-    }
-    myTypeSystemComponent.addDependencyForCurrent(node, current);
+    addDependencyOnCurrent_(node, typeAffected);
   }
 
   public void addDependencyOnCurrent(SNode node) {
-    myTypeSystemComponent.addDependencyOnCurrent(node);
+    addDependencyOnCurrent_(node, true);
   }
 
-  public void applyNonTypesystemRulesToRoot(IOperationContext context) {
-    myNonTypeSystemComponent.applyNonTypeSystemRulesToRoot(context);
+  //"type affected" means that *type* of this node depends on current
+  // used to decide whether call "type will be recalculated" if current invalidated
+  private void addDependencyOnCurrent_(SNode node, boolean typeAffected) {
+    if (node == null) {
+      LOG.error("Typesystem dependency not tracked. ");
+      return;
+    }
+
+    Set<SNode> hashSet = new THashSet<SNode>(1);
+    hashSet.add(myNodeTypeAccess.peekNode());
+    getTypecheckingComponent().addDependentNodesTypeSystem(node, hashSet, typeAffected);
   }
 
-  public void addNodeToFrontier(SNode node) {
-    myTypeSystemComponent.addNodeToFrontier(node);
+  public void addDependencyForCurrent(SNode node) {
+    SNode current = myNodeTypeAccess.peekNode();
+    if (current == null) {
+      LOG.error("Typesystem dependency not tracked. ");
+      return;
+    }
+
+    Set<SNode> hashSet = new THashSet<SNode>(1);
+    hashSet.add(node);
+    getTypecheckingComponent().addDependentNodesTypeSystem(current, hashSet, true);
+  }
+
+  @Override
+  public void applyNonTypesystemRulesToRoot(IOperationContext context, TypeCheckingContext typeCheckingContext) {
+    ITypeErrorComponent oldTypeErrorComponent = myTypeErrorComponent;
+    myTypeErrorComponent = myNonTypeSystemComponent;
+    try {
+      myNonTypeSystemComponent.applyNonTypeSystemRulesToRoot(typeCheckingContext, getNode());
+    }
+    finally {
+      myTypeErrorComponent = oldTypeErrorComponent;
+    }
   }
 
   public SNode getType(SNode node) {
-    return myTypeSystemComponent.getType(node);
+    return getTypecheckingComponent().getType(node);
   }
 
+  @Override
   @NotNull
   public List<IErrorReporter> getErrors(SNode node) {
-    Map<SNode, List<IErrorReporter>> nodesToErrorsMap = myTypeSystemComponent.getNodesToErrorsMap();
+    List<IErrorReporter> result = new ArrayList<IErrorReporter>(super.getErrors(node));
     Map<SNode, List<IErrorReporter>> nodesToErrorsMapNT = myNonTypeSystemComponent.getNodesToErrorsMap();
-
-    List<IErrorReporter> result = new ArrayList<IErrorReporter>(4);
-    List<IErrorReporter> iErrorReporters = nodesToErrorsMap.get(node);
-    if (iErrorReporters != null) {
-      result.addAll(iErrorReporters);
-    }
-    iErrorReporters = nodesToErrorsMapNT.get(node);
+    List<IErrorReporter> iErrorReporters = nodesToErrorsMapNT.get(node);
     if (iErrorReporters != null) {
       result.addAll(iErrorReporters);
     }
     return result;
   }
 
-  public SNode[] getVariables(String varName) {
-    return new SNode[0];
-  }
-
-  public void registerTypeVariable(SNode variable) {
-
-  }
-
   //--------------------------------------------------
+  @Override
   public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
-    Map<SNode, List<IErrorReporter>> nodesToErrorsMap = myTypeSystemComponent.getNodesToErrorsMap();
     Map<SNode, List<IErrorReporter>> nodesToErrorsMapNT = myNonTypeSystemComponent.getNodesToErrorsMap();
-    Set<Pair<SNode, List<IErrorReporter>>> result = new THashSet<Pair<SNode, List<IErrorReporter>>>(1);
-    Set<SNode> keySet = new THashSet<SNode>(nodesToErrorsMap.keySet());
+    Set<SNode> keySet = new THashSet<SNode>(nodesToErrorsMapNT.keySet());
     keySet.addAll(nodesToErrorsMapNT.keySet());
+
+    Set<Pair<SNode, List<IErrorReporter>>> result = new THashSet<Pair<SNode, List<IErrorReporter>>>(super.getNodesWithErrors());
     for (SNode key : keySet) {
       List<IErrorReporter> reporters = getErrors(key);
       if (reporters.isEmpty()) continue;
@@ -274,33 +244,26 @@ public class NodeTypesComponent {
 
 
   public void markNodeAsAffectedByRule(SNode node, String ruleModel, String ruleId) {
-    myTypeSystemComponent.markNodeAsAffectedByRule(node, ruleModel, ruleId);
+    getTypecheckingComponent().markNodeAsAffectedByRule(node, ruleModel, ruleId);
   }
 
   public Set<Pair<String, String>> getRulesWhichAffectNodeType(SNode node) {
-    return myTypeSystemComponent.getRulesWhichAffectNodeType(node);
+    return getTypecheckingComponent().getRulesWhichAffectNodeType(node);
   }
 
   public boolean isCheckedNonTypesystem() {
     return myNonTypeSystemComponent.isChecked();
   }
 
-  public void setCheckedTypesystem() {
-    myTypeSystemComponent.setChecked();
-  }
-
+  @Override
   public boolean isChecked(boolean considerNonTypeSystemRules) {
     processPendingEvents();
-    boolean typesChecked = myTypeSystemComponent.isChecked();
+    boolean typesChecked = super.isChecked(considerNonTypeSystemRules);
     if (considerNonTypeSystemRules) {
       return typesChecked && myNonTypeSystemComponent.isChecked();
     } else {
       return typesChecked;
     }
-  }
-
-  public boolean isSpecial() {
-    return myIsSpecial;
   }
 
   private void processPendingEvents() {
@@ -322,8 +285,8 @@ public class NodeTypesComponent {
 
   private class MySModelEventVisitorAdapter extends SModelEventVisitorAdapter {
     public void visitChildEvent(SModelChildEvent event) {
-      markDependentNodesForInvalidation(event.getChild(), myTypeSystemComponent);
-      markDependentNodesForInvalidation(event.getParent(), myTypeSystemComponent);
+      markDependentNodesForInvalidation(event.getChild(), getTypecheckingComponent());
+      markDependentNodesForInvalidation(event.getParent(), getTypecheckingComponent());
 
       markDependentNodesForInvalidation(event.getChild(), myNonTypeSystemComponent);
       markDependentNodesForInvalidation(event.getParent(), myNonTypeSystemComponent);
@@ -336,7 +299,7 @@ public class NodeTypesComponent {
         if (event.isRemoved()) {
           //invalidate nodes which are removed
           markDependentNodesForInvalidation(descendant, myNonTypeSystemComponent);
-          markDependentNodesForInvalidation(descendant, myTypeSystemComponent);
+          markDependentNodesForInvalidation(descendant, getTypecheckingComponent());
         }
       }
       for (SReference reference : references) {
@@ -348,7 +311,7 @@ public class NodeTypesComponent {
     }
 
     public void visitReferenceEvent(SModelReferenceEvent event) {
-      markDependentNodesForInvalidation(event.getReference().getSourceNode(), myTypeSystemComponent);
+      markDependentNodesForInvalidation(event.getReference().getSourceNode(), getTypecheckingComponent());
       markDependentNodesForInvalidation(event.getReference().getSourceNode(), myNonTypeSystemComponent);
       if (!event.isAdded()) return;
       markDependentNodesForInvalidation(event.getReference().getTargetNodeSilently(), myNonTypeSystemComponent);
@@ -358,13 +321,13 @@ public class NodeTypesComponent {
       markDependentOnPropertyNodesForInvalidation(event.getNode(), event.getPropertyName());
     }
 
-    private void markDependentNodesForInvalidation(SNode eventNode, CheckingComponent component) {
+    private void markDependentNodesForInvalidation(SNode eventNode, CachingTypecheckingComponent component) {
       component.addNodeToInvalidate(eventNode);
     }
 
     private void markDependentOnPropertyNodesForInvalidation(SNode eventNode, String propertyName) {
       myNonTypeSystemComponent.addPropertyToInvalidate(eventNode, propertyName);
-      myTypeSystemComponent.addNodeToInvalidate(eventNode);
+      getTypecheckingComponent().addNodeToInvalidate(eventNode);
     }
   }
 
@@ -431,6 +394,31 @@ public class NodeTypesComponent {
       for (SModelDescriptor sm : Collections.unmodifiableCollection(myNodesCount.keySet())) {
         sm.removeModelListener(myListener);
       }
+    }
+  }
+
+  private static class NodeTypeAccess {
+    private LinkedList<Pair<SNode, Boolean>> myStack = new LinkedList<Pair<SNode, Boolean>>();
+
+    private void pushNode(SNode node) {
+      myStack.push(new Pair<SNode, Boolean>(node, false));
+    }
+
+    private boolean popNode () {
+      return myStack.pop().o2;
+    }
+
+    private void nodeTypeAccessed (SNode node) {
+      for (Pair<SNode, Boolean> p: myStack) {
+        if (p.o1 == node) {
+          p.o2 = true;
+        }
+      }
+    }
+
+    private SNode peekNode () {
+      if (myStack.isEmpty()) return null;
+      return myStack.peek().o1;
     }
   }
 }

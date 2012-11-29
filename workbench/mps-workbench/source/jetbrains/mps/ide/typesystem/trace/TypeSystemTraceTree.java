@@ -6,7 +6,6 @@ import jetbrains.mps.ide.ui.MPSTree;
 import com.intellij.openapi.actionSystem.DataProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
-import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import jetbrains.mps.newTypesystem.state.State;
@@ -19,7 +18,8 @@ import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import javax.swing.tree.TreeSelectionModel;
-import jetbrains.mps.typesystem.inference.TypeContextManager;
+
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import java.util.ArrayList;
@@ -60,37 +60,28 @@ import java.util.Collections;
 
 public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   private final IOperationContext myOperationContext;
-  private AbstractOperation myOperation;
-  private final TypeCheckingContextNew myTypeCheckingContextNew;
-  private TypeCheckingContextNew myCurrentContext;
+  private final TypecheckingContextTracker myContextTracker;
+
+
   private final SNode mySelectedNode;
-  private final Set<SNode> myNodes;
-  private boolean generationMode = false;
+  private Set<SNode> myNodes;
   private TypeSystemTracePanel myParent;
-  private State myStateCopy;
-  private State myCurrentState;
-  private AbstractOperation myOldOperation;
   private EditorComponent myEditorComponent;
-  private List<TypeSystemTraceTreeNode> myErrorNodes;
+  private List<TypeSystemTraceTreeNode> myErrorNodes = new LinkedList<TypeSystemTraceTreeNode>();
   private TypeSystemTraceTree.DetailsTree myDetailsTree;
-  private NodeHighlightManager myHighlightManager;
+  private final NodeHighlightManager myHighlightManager;
   private EditorMessageOwner myMessageOwner;
 
-  public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContextNew tcc, SNode node, TypeSystemTracePanel parent, EditorComponent editorComponent) {
+  public TypeSystemTraceTree(IOperationContext operationContext, SNode node, TypeSystemTracePanel parent, EditorComponent editorComponent) {
     myOperationContext = operationContext;
-    myTypeCheckingContextNew = tcc;
-    myOperation = tcc.getOperation();
-    myErrorNodes = new LinkedList<TypeSystemTraceTreeNode>();
-    mySelectedNode = node;
-    myNodes = new HashSet<SNode>();
-    myNodes.addAll(SNodeOperations.getDescendants(((SNode) node), null, false, new String[]{}));
-    myNodes.add(node);
-    myCurrentContext = tcc;
+    myContextTracker = new TypecheckingContextTracker(node.getTopmostAncestor());
     myParent = parent;
-    myStateCopy = new State(tcc, tcc.getState().getOperation());
-    myCurrentState = myStateCopy;
-    setGenerationMode(TraceSettings.isGenerationMode());
     myEditorComponent = editorComponent;
+    mySelectedNode = node;
+    initNodes(node);
+
+    setGenerationMode(TraceSettings.isGenerationMode());
+
     this.myHighlightManager = editorComponent.getHighlightManager();
     this.myMessageOwner = new EditorMessageOwner() {};
     EditorCell nodeCell = myEditorComponent.findNodeCell(mySelectedNode);
@@ -105,37 +96,28 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     getSelectionModel().setSelectionMode(TreeSelectionModel.CONTIGUOUS_TREE_SELECTION);
   }
 
+  private void initNodes(SNode node) {
+    myNodes = new HashSet<SNode>();
+    myNodes.addAll(SNodeOperations.getDescendants(((SNode) node), null, false, new String[]{}));
+    myNodes.add(node);
+  }
+
   /*package*/ MPSTree getDetailsTree() {
     return myDetailsTree;
   }
 
   public void rebuildTrace() {
-    myTypeCheckingContextNew.checkRootInTraceMode(true);
+    myContextTracker.checkRoot(true);
     this.rebuildNow();
     this.expandAll();
   }
 
   public void setGenerationMode(boolean generationMode) {
-    if (generationMode == this.generationMode) {
-      return;
-    }
-    this.generationMode = generationMode;
-    myOldOperation = null;
-    if (this.generationMode) {
-      TypeCheckingContextNew context = (TypeCheckingContextNew) TypeContextManager.getInstance().createTypeCheckingContext(mySelectedNode);
-      context.getTypeInGenerationMode(mySelectedNode);
-      myOperation = context.getOperation();
-      myCurrentContext = context;
-      myCurrentState = context.getState();
-    } else {
-      myOperation = myTypeCheckingContextNew.getOperation();
-      myCurrentContext = myTypeCheckingContextNew;
-      myCurrentState = myStateCopy;
-    }
+    myContextTracker.setGenerationMode(generationMode, mySelectedNode);
   }
 
   public State getState() {
-    return myStateCopy;
+    return myContextTracker.getStateCopy();
   }
 
   @Override
@@ -143,9 +125,9 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     setRootVisible(false);
     setGenerationMode(TraceSettings.isGenerationMode());
     if (TraceSettings.isTraceForSelectedNode() && mySelectedNode != null) {
-      getSliceVars(myOperation);
+      getSliceVars(myContextTracker.getOperation());
     }
-    MPSTreeNode result = create(myOperation, true);
+    MPSTreeNode result = create(myContextTracker.getOperation(), true);
     if (result == null) {
       result = new TextTreeNode("Empty type system trace");
     }
@@ -171,7 +153,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
         return null;
       }
     }
-    TypeSystemTraceTreeNode result = new TypeSystemTraceTreeNode(operation, myOperationContext, myCurrentContext.getState(), myEditorComponent) {
+    TypeSystemTraceTreeNode result = new TypeSystemTraceTreeNode(operation, myOperationContext, myContextTracker.getCurrentState(), myEditorComponent) {
       @Override
       public void doUpdatePresentation() {
         super.doUpdatePresentation();
@@ -192,6 +174,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   @Override
   public void dispose() {
     myHighlightManager.clearForOwner(myMessageOwner);
+    myContextTracker.dispose();
     super.dispose();
   }
 
@@ -285,10 +268,10 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
       SNode child = eq.getChild();
       SNode parent = eq.getParent();
       if (myNodes.contains(child)) {
-        myNodes.addAll(TypesUtil.getVariables(parent, myStateCopy));
+        myNodes.addAll(TypesUtil.getVariables(parent, myContextTracker.getStateCopy()));
       }
       if (myNodes.contains(parent)) {
-        myNodes.addAll(TypesUtil.getVariables(child, myStateCopy));
+        myNodes.addAll(TypesUtil.getVariables(child, myContextTracker.getStateCopy()));
       }
     }
     if (diff instanceof AssignTypeOperation) {
@@ -347,23 +330,12 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   private void showState(final TypeSystemTraceTreeNode newNode) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        AbstractOperation rootDifference = myCurrentContext.getOperation();
         Object difference = newNode.getUserObject();
-        if (myOldOperation == null) {
-          myCurrentState.clear(false);
-          myCurrentState.executeOperationsBeforeAnchor(rootDifference, difference);
-        } else {
-          myCurrentState.updateState(myOldOperation, (AbstractOperation) difference);
-        }
-        myParent.resetState(myCurrentState);
+        myParent.resetState(myContextTracker.resetCurrentState((AbstractOperation) difference));
 
-        AbstractOperation nextDiff = findUltimateConsequence((AbstractOperation) difference);
-        if (nextDiff != null && nextDiff != difference) {
-          myCurrentState.updateState((AbstractOperation) difference, (AbstractOperation) nextDiff);
-          myParent.updateState(myCurrentState);
-          myOldOperation = (AbstractOperation) nextDiff;
-        } else {
-          myOldOperation = (AbstractOperation) difference;
+        final State newState = myContextTracker.updateCurrentState((AbstractOperation) difference);
+        if (newState != null) {
+          myParent.updateState(newState);
         }
       }
     });
@@ -372,38 +344,15 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   private void showState(final MPSTreeNode fromNode, final MPSTreeNode toNode) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        AbstractOperation rootDiff = myCurrentContext.getOperation();
         Object fromDiff = fromNode.getUserObject();
         Object toDiff = toNode.getUserObject();
 
-        if (myOldOperation == null) {
-          myCurrentState.clear(false);
-          myCurrentState.executeOperationsBeforeAnchor(rootDiff, fromDiff);
-        } else {
-          myCurrentState.updateState(myOldOperation, (AbstractOperation) fromDiff);
-        }
-        myParent.resetState(myCurrentState);
-
-        myCurrentState.updateState((AbstractOperation) fromDiff, (AbstractOperation) toDiff);
-        myParent.updateState(myCurrentState);
-
-        myOldOperation = (AbstractOperation) toDiff;
+        myParent.resetState(myContextTracker.resetCurrentState((AbstractOperation) fromDiff));
+        myParent.updateState(myContextTracker.updateCurrentState((AbstractOperation) fromDiff, (AbstractOperation) toDiff));
       }
     });
   }
 
-  private AbstractOperation findUltimateConsequence(AbstractOperation op) {
-    if (op == null) {
-      return null;
-    }
-    AbstractOperation result = op;
-    List<AbstractOperation> consequences = result.getConsequences();
-    while (consequences != null && consequences.size() > 0) {
-      result = consequences.get(consequences.size() - 1);
-      consequences = result.getConsequences();
-    }
-    return result;
-  }
 
   private void showDetails(MPSTreeNode treeNode) {
     AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a63(treeNode);
@@ -548,7 +497,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
           continue;
         }
         if (showParent) {
-          TypeSystemTraceTreeNode treeNode = new TypeSystemTraceTreeNode(operation, myOperationContext, myCurrentContext.getState(), myEditorComponent) {
+          TypeSystemTraceTreeNode treeNode = new TypeSystemTraceTreeNode(operation, myOperationContext, myContextTracker.getCurrentState(), myEditorComponent) {
             @Override
             public void doUpdatePresentation() {
               super.doUpdatePresentation();
