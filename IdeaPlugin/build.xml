@@ -33,7 +33,7 @@
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib" flatten="true">
       <resources>
-        <file file="${base_dir}/lib/asm.jar"/>
+        <file file="${base_dir}/lib/asm-tree-3.3.jar"/>
         <file file="${base_dir}/lib/diffutils-1.2.1.jar"/>
         <!-- hack for jdk in case of running from sources -->
         <file file="${base_dir}/languages/core/stub/JDK/JDK.msd"/>
