@@ -133,7 +133,8 @@ public class JavaParser {
         if (stmts != null && stmts.length > 0) {
           // TODO construct typeResolver from parent node context 
           try {
-            resultNodes = ((FullASTConverter) converter).convertStatements(stmts);
+            SNode stmtList = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
+            resultNodes = ((FullASTConverter) converter).convertStatementsOf(absMethod, stmtList);
           } catch (ReflectException e) {
             throw new RuntimeException(e);
           }

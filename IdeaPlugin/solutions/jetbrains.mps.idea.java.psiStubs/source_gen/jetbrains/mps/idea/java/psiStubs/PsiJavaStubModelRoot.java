@@ -163,7 +163,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
       SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelRef);
 
       if (model == null) {
-        model = makeModelDescriptor(sourceRoot, dir);
+        model = makeModelDescriptor(modelRef, dir);
       }
 
       assert model instanceof PsiJavaStubModelDescriptor;
@@ -177,9 +177,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
     }
   }
 
-  private PsiJavaStubModelDescriptor makeModelDescriptor(PsiDirectory sourceRoot, PsiDirectory dir) {
-
-    SModelReference modelRef = makeModelReference(sourceRoot, dir);
+  private PsiJavaStubModelDescriptor makeModelDescriptor(SModelReference modelRef, PsiDirectory dir) {
     PsiJavaStubDataSource ds = new PsiJavaStubDataSource(myIdeaModule, dir);
     return new PsiJavaStubModelDescriptor(modelRef, ds);
   }
@@ -394,7 +392,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
     for (PsiDirectory dir : SetSequence.fromSet(newDirs)) {
       PsiDirectory ourSourceRoot = findOurSourceRoot(dir);
 
-      PsiJavaStubModelDescriptor model = makeModelDescriptor(ourSourceRoot, dir);
+      PsiJavaStubModelDescriptor model = makeModelDescriptor(makeModelReference(ourSourceRoot, dir), dir);
       PsiJavaStubDataSource ds = model.getSource();
       MapSequence.fromMap(myDataSources).put(dir, ds);
       MapSequence.fromMap(myModels).put(ds, model);
