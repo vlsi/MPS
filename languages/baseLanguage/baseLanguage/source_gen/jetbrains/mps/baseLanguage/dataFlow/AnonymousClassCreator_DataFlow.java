@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 
 public class AnonymousClassCreator_DataFlow extends DataFlowBuilder {
   public AnonymousClassCreator_DataFlow() {
@@ -33,7 +34,7 @@ public class AnonymousClassCreator_DataFlow extends DataFlowBuilder {
     for (SNode expr : SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "cls", true), "actualArgument", true)) {
       _context.getBuilder().build((SNode) expr);
     }
-    for (SNode fieldDeclaration : SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "cls", true), "field", true)) {
+    for (SNode fieldDeclaration : ClassConcept_Behavior.call_fields_5292274854859383272(SLinkOperations.getTarget(_context.getNode(), "cls", true))) {
       _context.getBuilder().build((SNode) fieldDeclaration);
     }
   }

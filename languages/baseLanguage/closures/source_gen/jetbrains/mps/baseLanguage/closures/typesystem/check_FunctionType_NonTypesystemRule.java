@@ -8,12 +8,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_FunctionType_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -23,11 +25,11 @@ public class check_FunctionType_NonTypesystemRule extends AbstractNonTypesystemR
   public void applyRule(final SNode ft, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(ft, "runtimeIface", false) != null)) {
       SNode rt = SLinkOperations.getTarget(ft, "runtimeIface", false);
-      if (!((int) ListSequence.fromList(SLinkOperations.getTargets(rt, "method", true)).count() == 1)) {
+      if (!((int) Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(rt)).count() == 1)) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ft, "runtime interface must have exactly one method", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "6871507691291049608", null, errorTarget);
       }
-      SNode mtd = ListSequence.fromList(SLinkOperations.getTargets(rt, "method", true)).first();
+      SNode mtd = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(rt)).first();
       if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ft, "virtual_getResultType_1230475757059", new Object[]{}) != null)) {
         if (!(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(mtd, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")))) {
           MessageTarget errorTarget = new NodeMessageTarget();

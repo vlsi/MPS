@@ -9,6 +9,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior;
 import java.util.Iterator;
 import java.util.Map;
@@ -41,7 +43,7 @@ public class ClosureLiteralUtil {
 
   public static SNode fillParams(SNode targetIfaceErase, SNode funType) {
     TypeMatcher matcher = new TypeMatcher();
-    SNode meth = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(targetIfaceErase, "classifier", false), "method", true)).first();
+    SNode meth = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SLinkOperations.getTarget(targetIfaceErase, "classifier", false))).first();
     if ((meth == null)) {
       return null;
     }

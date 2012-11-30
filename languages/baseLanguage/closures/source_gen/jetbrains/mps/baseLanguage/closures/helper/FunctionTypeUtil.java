@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -92,7 +93,7 @@ with_throws:
   }
 
   private static SNode getFunctionMethod(SNode functionTypeOrClassifier) {
-    return Sequence.fromIterable(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "method", true)).findFirst(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SLinkOperations.getTarget(SNodeOperations.cast(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode m) {
         return !("equals".equals(SPropertyOperations.getString(m, "name"))) && SPropertyOperations.getBoolean(m, "isAbstract");
       }
@@ -227,8 +228,8 @@ with_meet:
 
   public static Map<SNode, SNode> mapAdaptableTargetTVDs(SNode adaptable, SNode target) {
     Map<SNode, SNode> resMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
-    SNode adMethod = ListSequence.fromList(SLinkOperations.getTargets(adaptable, "method", true)).first();
-    SNode trgMethod = ListSequence.fromList(SLinkOperations.getTargets(target, "method", true)).first();
+    SNode adMethod = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(adaptable)).first();
+    SNode trgMethod = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(target)).first();
     doMapTVDS(resMap, SLinkOperations.getTarget(adMethod, "returnType", true), SLinkOperations.getTarget(trgMethod, "returnType", true));
     {
       SNode adParm;

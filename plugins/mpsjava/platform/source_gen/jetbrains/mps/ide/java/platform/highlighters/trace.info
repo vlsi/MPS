@@ -971,7 +971,7 @@
     </scopeInfo>
     <unitInfo nodeId="8432634623182578876" fileName="OverrideMethodsChecker.java" startLine="48" startPosition="181" endLine="52" endPosition="5" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$1" />
     <unitInfo nodeId="8432634623182579005" fileName="OverrideMethodsChecker.java" startLine="78" startPosition="140" endLine="82" endPosition="7" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$2" />
-    <unitInfo nodeId="8432634623182579229" fileName="OverrideMethodsChecker.java" startLine="135" startPosition="111" endLine="139" endPosition="5" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$3" />
+    <unitInfo nodeId="8432634623182579229" fileName="OverrideMethodsChecker.java" startLine="135" startPosition="256" endLine="139" endPosition="5" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$3" />
     <unitInfo nodeId="8432634623182579483" fileName="OverrideMethodsChecker.java" startLine="175" startPosition="144" endLine="179" endPosition="7" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$5" />
     <unitInfo nodeId="8432634623182579422" fileName="OverrideMethodsChecker.java" startLine="184" startPosition="82" endLine="188" endPosition="9" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$4" />
     <unitInfo nodeId="8432634623182578830" fileName="OverrideMethodsChecker.java" startLine="38" startPosition="0" endLine="296" endPosition="0" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker" />

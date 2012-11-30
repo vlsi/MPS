@@ -52,9 +52,14 @@ public class OverrideImplementMethodsHelper {
       SPropertyOperations.set(method, "isAbstract", "" + (false));
       SLinkOperations.setTarget(method, "body", SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(myClassConcept), "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
       if (insertion) {
-        ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "method", true)).insertElement(ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "method", true)).indexOf(myContextMethod) + 1, method);
+        int index = ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "member", true)).indexOf(myContextMethod);
+        if (index == -1) {
+          ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "member", true)).addElement(method);
+        } else {
+          ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "member", true)).insertElement(index, method);
+        }
       } else {
-        ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "method", true)).addElement(method);
+        ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "member", true)).addElement(method);
       }
       update(method, baseMethod);
       ListSequence.fromList(result).addElement(method);

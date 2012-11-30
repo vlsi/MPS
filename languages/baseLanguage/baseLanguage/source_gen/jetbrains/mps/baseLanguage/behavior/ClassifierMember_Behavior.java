@@ -16,6 +16,7 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ClassifierMember_Behavior {
@@ -95,6 +96,10 @@ public class ClassifierMember_Behavior {
   }
 
   public static boolean virtual_needsEmptyLineAfter_641490355014298838(SNode thisNode) {
+    return false;
+  }
+
+  public static boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
     return false;
   }
 

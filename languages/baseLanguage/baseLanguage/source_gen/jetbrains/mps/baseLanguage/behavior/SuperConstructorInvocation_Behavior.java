@@ -17,6 +17,6 @@ public class SuperConstructorInvocation_Behavior {
     if ((superclass == null)) {
       return new ArrayList<SNode>();
     }
-    return SLinkOperations.getTargets(superclass, "constructor", true);
+    return ClassConcept_Behavior.call_constructors_5292274854859503373(superclass);
   }
 }

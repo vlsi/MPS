@@ -101,6 +101,7 @@ import org.eclipse.jdt.internal.compiler.ast.MessageSend;
 import org.eclipse.jdt.internal.compiler.ast.NameReference;
 import org.eclipse.jdt.internal.compiler.ast.FieldReference;
 import org.eclipse.jdt.internal.compiler.ast.AllocationExpression;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.eclipse.jdt.internal.compiler.ast.QualifiedAllocationExpression;
 import org.eclipse.jdt.internal.compiler.ast.ClassLiteralAccess;
@@ -220,7 +221,7 @@ public class ASTConverter {
 
         try {
           SNode nested = convertTypeDecl(innerTyp);
-          SLinkOperations.getTargets(cls, "staticInnerClassifiers", true).add(nested);
+          SLinkOperations.getTargets(cls, "member", true).add(nested);
         } finally {
           // maintaining valid state of ClassNameResolver 
           myTypeResolver.leaveType();
@@ -306,26 +307,19 @@ public class ASTConverter {
   }
 
   private SNode convertField(SNode cls, FieldDeclaration f, boolean attach) throws JavaParseException {
-    List<SNode> container;
-    SNode fDecl;
-
     if (f.name == null || isEnumConstant(f)) {
       return null;
     }
 
-    container = null;
-    fDecl = null;
+    SNode fDecl = null;
 
     if (flagSet(f.modifiers, ClassFileConstants.AccStatic) || SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.Interface")) {
       // interfaces in java can have fields not declared as static, but they are static 
-      container = SLinkOperations.getTargets(cls, "staticField", true);
       SNode staticDecl = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", null);
       fDecl = staticDecl;
-
     } else {
       assert SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept");
 
-      container = SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true);
       SNode fieldDecl = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null);
 
       SPropertyOperations.set(fieldDecl, "isVolatile", "" + (flagSet(f.modifiers, ClassFileConstants.AccVolatile)));
@@ -349,7 +343,7 @@ public class ASTConverter {
       }
 
       if (attach) {
-        ListSequence.fromList(container).addElement(fDecl);
+        ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).addElement(SNodeOperations.cast(fDecl, "jetbrains.mps.baseLanguage.structure.ClassifierMember"));
       }
     }
 
@@ -374,7 +368,6 @@ public class ASTConverter {
   }
 
   private SNode convertMethod(SNode cls, AbstractMethodDeclaration method, boolean attach) throws JavaParseException, ReflectException {
-    List<SNode> methods;
     SNode result = null;
 
     SNodeId sNodeId = cls.getSNodeId();
@@ -385,38 +378,33 @@ public class ASTConverter {
     );
 
     if (method instanceof MethodDeclaration) {
-
       if (flagSet(method.modifiers, ClassFileConstants.AccStatic) && SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-        methods = SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticMethod", true);
         result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", null);
       } else if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.Annotation")) {
-        methods = SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.Annotation"), "method", true);
         result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration", null);
       } else {
-        methods = SLinkOperations.getTargets(cls, "method", true);
         result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null);
       }
 
       if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.Interface")) {
         SPropertyOperations.set(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "isAbstract", "" + (true));
-        SLinkOperations.setTarget(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "visibility", _quotation_createNode_rbndtb_a0b0d0h0f(), true);
+        SLinkOperations.setTarget(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "visibility", _quotation_createNode_rbndtb_a0b0c0g0f(), true);
       }
 
       convertMethodGuts((MethodDeclaration) method, clsStringId, result);
 
       if (attach) {
-        methods.add(result);
+        ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).addElement(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.ClassifierMember"));
       }
-
     } else if (method instanceof ConstructorDeclaration) {
 
       result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", null);
-      SLinkOperations.setTarget(result, "returnType", _quotation_createNode_rbndtb_a0c0a7a5(), true);
+      SLinkOperations.setTarget(result, "returnType", _quotation_createNode_rbndtb_a0c0a6a5(), true);
 
       convertMethodGuts(method, clsStringId, result);
 
       if (attach) {
-        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).addElement(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
+        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "member", true)).addElement(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
       }
     }
 
@@ -1619,7 +1607,7 @@ public class ASTConverter {
 
   private SNode findConstructor(SNode claz, Expression[] args) {
     SNode result;
-    Iterable<SNode> conss = SLinkOperations.getTargets(claz, "constructor", true);
+    Iterable<SNode> conss = BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), claz, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{});
     if (Sequence.fromIterable(conss).isEmpty()) {
       result = null;
     } else if ((int) Sequence.fromIterable(conss).count() == 1) {
@@ -1917,13 +1905,13 @@ public class ASTConverter {
     }
   }
 
-  private static SNode _quotation_createNode_rbndtb_a0b0d0h0f() {
+  private static SNode _quotation_createNode_rbndtb_a0b0c0g0f() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a0c0a7a5() {
+  private static SNode _quotation_createNode_rbndtb_a0c0a6a5() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

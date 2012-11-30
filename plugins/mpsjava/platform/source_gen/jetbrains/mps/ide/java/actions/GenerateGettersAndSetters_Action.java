@@ -21,6 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -101,11 +102,11 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
         final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(field, project);
         SNode fieldReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
         SLinkOperations.setTarget(fieldReference, "variableDeclaration", field, false);
-        ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(_quotation_createNode_5trf1k_a0a4a41a0(SLinkOperations.getTarget(field, "type", true), fieldReference, getterName));
+        ListSequence.fromList(SLinkOperations.getTargets(classConcept, "member", true)).addElement(_quotation_createNode_5trf1k_a0a4a41a0(SLinkOperations.getTarget(field, "type", true), fieldReference, getterName));
 
         final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field, project);
         String parameterName = GenerateGettersAndSettersUtil.getParameterNameForField(field, project);
-        lastAdded = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(_quotation_createNode_5trf1k_a0a0i0o0a(SNodeOperations.copyNode(fieldReference), SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
+        lastAdded = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "member", true)).addElement(_quotation_createNode_5trf1k_a0a0i0o0a(SNodeOperations.copyNode(fieldReference), SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
       }
       if (lastAdded != null) {
         ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(lastAdded);
@@ -121,15 +122,15 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
 
   private Iterable<SNode> getFieldDeclarationsWithoutGetterOrSetter(final SNode classConcept, final Map<String, Object> _params) {
     final Project project = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getProject();
-    return ListSequence.fromList(SLinkOperations.getTargets(classConcept, "field", true)).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode field) {
         final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field, project);
         final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(field, project);
-        return !(ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
+        return !(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode method) {
             return getterName.equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty();
           }
-        })) && !(ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
+        })) && !(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode method) {
             return setterName.equals(SPropertyOperations.getString(method, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1;
           }

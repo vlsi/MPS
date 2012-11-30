@@ -18,7 +18,9 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -28,7 +30,6 @@ import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
@@ -36,6 +37,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SNodePointer;
@@ -99,7 +101,7 @@ public class ApiMigrationHelper {
 
     // replace method calls 
     Set<SNode> methods = SetSequence.fromSet(new HashSet<SNode>());
-    SetSequence.fromSet(methods).addSequence(ListSequence.fromList(SLinkOperations.getTargets(oldSnodeNode, "method", true)));
+    SetSequence.fromSet(methods).addSequence(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(oldSnodeNode)));
 
     Set<SReference> musages = FindUsagesManager.getInstance().findUsages(methods, SearchType.USAGES, scope, new EmptyProgressMonitor());
 
@@ -128,7 +130,7 @@ public class ApiMigrationHelper {
 
     // static method calls 
     Set<SNode> smethods = SetSequence.fromSet(new HashSet<SNode>());
-    SetSequence.fromSet(smethods).addSequence(ListSequence.fromList(SLinkOperations.getTargets(oldSnodeNode, "staticMethod", true)));
+    SetSequence.fromSet(smethods).addSequence(Sequence.fromIterable(ClassConcept_Behavior.call_staticMethods_5292274854859435867(oldSnodeNode)));
 
     Set<SReference> smusages = FindUsagesManager.getInstance().findUsages(smethods, SearchType.USAGES, scope, new EmptyProgressMonitor());
 
@@ -295,7 +297,7 @@ public class ApiMigrationHelper {
 
   private SNode getNewMethod(SNode old) {
     SNode newSnodeNode = SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yke5lt_a0a0a0e(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface");
-    for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(newSnodeNode, "method", true))) {
+    for (SNode method : Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(newSnodeNode))) {
       if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(method, old)) {
         return method;
       }

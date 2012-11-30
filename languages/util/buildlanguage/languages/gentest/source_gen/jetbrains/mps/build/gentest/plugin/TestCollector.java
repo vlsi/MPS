@@ -16,9 +16,10 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.List;
@@ -65,7 +66,7 @@ public class TestCollector {
   }
 
   private boolean hasJUnit38TestMethods(final SNode maybetest) {
-    return ListSequence.fromList(SLinkOperations.getTargets(maybetest, "method", true)).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(maybetest)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode meth) {
         return "public".equals(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(meth, "visibility", true)), "conceptAlias")) && SPropertyOperations.getString(meth, "name").startsWith("test");
       }
@@ -81,7 +82,7 @@ public class TestCollector {
   }
 
   private boolean hasJUnit4TestMethods(final SNode maybetest) {
-    return ListSequence.fromList(SLinkOperations.getTargets(maybetest, "method", true)).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(maybetest)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode meth) {
         return "public".equals(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(meth, "visibility", true)), "conceptAlias")) && hasAnnotation(meth, getTestAnnotation(SNodeOperations.getModel(maybetest)));
       }

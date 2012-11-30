@@ -5,10 +5,12 @@ package jetbrains.mps.testbench.suite.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -27,7 +29,7 @@ public class JUnit3TestCaseRef_Behavior {
   public static Iterable<String> virtual_testNames_4089647634160960707(SNode thisNode) {
     final SNode ignoreAnn = SLinkOperations.getTarget(_quotation_createNode_6e9f36_a0a0a1(), "annotation", false);
 
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "klass", false), "method", true)).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SLinkOperations.getTarget(thisNode, "klass", false))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode m) {
         return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(m, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(m, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType") && SPropertyOperations.getString(m, "name").startsWith("test") && !(ListSequence.fromList(SLinkOperations.getTargets(m, "annotation", true)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode mann) {

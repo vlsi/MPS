@@ -81,11 +81,19 @@ public abstract class ModelRootBase implements ModelRoot {
     return isRegistered;
   }
 
-  public void register(SModel model) {
+  protected void register(SModel model) {
     SModelRepository modelRepository = SModelRepository.getInstance();
     if (modelRepository.getModelDescriptor(model.getModelReference()) == null) {
       modelRepository.registerModelDescriptor((SModelDescriptor) model, getModule());
       myModels.add(model);
+    }
+  }
+
+  protected void unregister(SModel model) {
+    SModelRepository modelRepository = SModelRepository.getInstance();
+    if (modelRepository.getModelDescriptor(model.getModelReference()) != null) {
+      modelRepository.unRegisterModelDescriptor((SModelDescriptor) model, getModule());
+      myModels.remove(model);
     }
   }
 

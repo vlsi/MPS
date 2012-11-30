@@ -52,7 +52,6 @@ public class VariableUnifyingMigration {
           SNode copy = SNodeOperations.cast(CopyUtil.copyAndPreserveId(attribute), "jetbrains.mps.lang.core.structure.Attribute");
           ListSequence.fromList(SNodeOperations.getChildren(result, SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", "smodelAttribute"))).addElement(copy);
         }
-        result.setId(node.getSNodeId());
         return result;
       }
 
