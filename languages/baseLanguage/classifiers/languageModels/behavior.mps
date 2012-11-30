@@ -1132,7 +1132,11 @@
                 <link role="classifier" roleId="tpee.1170346070688" targetNodeId="89o2.2996818953919429936" resolveInfo="AbstractExtractMethodRefactoringProcessor" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.2996818953919430108" resolveInfo="AbstractExtractMethodRefactoringProcessor" />
                 <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1221661952193" />
-                <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1221661952194">
+                <node role="actualArgument" roleId="tpee.1068499141038" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="1221661952192" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1221670664941">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1221670644669" resolveInfo="nodesToRefactor" />
+                </node>
+                <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1221661952194">
                   <property name="name" nameId="tpck.1169194664001" value="createNewMethod" />
                   <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1221661952201" />
                   <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1221661952202">
@@ -1150,7 +1154,7 @@
                     <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
                   </node>
                 </node>
-                <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1221661897766">
+                <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1221661897766">
                   <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
                   <property name="name" nameId="tpck.1169194664001" value="createMethodCall" />
                   <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1221661897767" />
@@ -1273,10 +1277,6 @@
                   <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1221661897775">
                     <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
                   </node>
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="1221661952192" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1221670664941">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1221670644669" resolveInfo="nodesToRefactor" />
                 </node>
               </node>
             </node>

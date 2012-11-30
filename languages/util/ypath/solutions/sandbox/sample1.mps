@@ -19,7 +19,8 @@
     </node>
   </roots>
   <root id="1199467210284">
-    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1199467217249">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1199467210285" />
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1199467217249">
       <property name="name" nameId="tpck.1169194664001" value="main" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1199467217250" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1199467217251" />
@@ -131,31 +132,10 @@
         </node>
       </node>
     </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1199467210285" />
   </root>
   <root id="1199640036833">
-    <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.EnumClass" typeId="tpee.1083245097125" id="1201392172093">
-      <property name="name" nameId="tpck.1169194664001" value="Enm" />
-      <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="2112552551406738047">
-        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2112552551406738048" />
-        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2112552551406738049" />
-        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2112552551406738050" />
-      </node>
-      <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1201392185856">
-        <property name="name" nameId="tpck.1169194664001" value="A" />
-        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2112552551406738047" resolveInfo="TestClosure.Enm" />
-      </node>
-      <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1201392195515">
-        <property name="name" nameId="tpck.1169194664001" value="B" />
-        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2112552551406738047" resolveInfo="TestClosure.Enm" />
-      </node>
-      <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1201392198195">
-        <property name="name" nameId="tpck.1169194664001" value="C" />
-        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2112552551406738047" resolveInfo="TestClosure.Enm" />
-      </node>
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1201392172094" />
-    </node>
-    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1199640036834">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1199640036865" />
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1199640036834">
       <property name="name" nameId="tpck.1169194664001" value="main" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1199640036835" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1199640036836" />
@@ -1322,7 +1302,27 @@
         </node>
       </node>
     </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1199640036865" />
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.EnumClass" typeId="tpee.1083245097125" id="1201392172093">
+      <property name="name" nameId="tpck.1169194664001" value="Enm" />
+      <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1201392185856">
+        <property name="name" nameId="tpck.1169194664001" value="A" />
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2112552551406738047" resolveInfo="TestClosure.Enm" />
+      </node>
+      <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1201392195515">
+        <property name="name" nameId="tpck.1169194664001" value="B" />
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2112552551406738047" resolveInfo="TestClosure.Enm" />
+      </node>
+      <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1201392198195">
+        <property name="name" nameId="tpck.1169194664001" value="C" />
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2112552551406738047" resolveInfo="TestClosure.Enm" />
+      </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1201392172094" />
+      <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="2112552551406738047">
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2112552551406738048" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2112552551406738049" />
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2112552551406738050" />
+      </node>
+    </node>
   </root>
 </model>
 
