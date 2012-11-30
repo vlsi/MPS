@@ -72,7 +72,6 @@ public class SolutionIdea extends Solution {
         if (myModule.getProject().equals(event.getSource())) {
           ModelAccess.instance().runWriteInEDT(new Runnable() {
             public void run() {
-              invalidateDependencies();
               // this is to prevent a delayed write to be executed after the module has already been disposed
               // TODO: find a better solution
               if (myModule.isDisposed()) return;
@@ -242,6 +241,7 @@ public class SolutionIdea extends Solution {
   @Override
   public void save() {
     // TODO: implement saving functionality here.
+    // should this methods really do something?
 //        super.save();    //To change body of overridden methods use File | Settings | File Templates.
   }
 

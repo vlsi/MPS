@@ -118,10 +118,7 @@ public class SolutionLibrariesIndex implements ProjectComponent, Disposable {
     }
     Solution solution = (Solution) module;
     VirtualFile solutionBundleHome = SolutionLibraryType.getJarFile(solution.getBundleHome().getPath());
-    if (solutionBundleHome == null) {
-      return false;
-    }
-    return Arrays.asList(library.getFiles(OrderRootType.CLASSES)).contains(solutionBundleHome);
+    return solutionBundleHome != null && Arrays.asList(library.getFiles(OrderRootType.CLASSES)).contains(solutionBundleHome);
   }
 
   @NotNull
