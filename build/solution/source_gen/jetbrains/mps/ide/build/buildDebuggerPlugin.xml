@@ -43,8 +43,8 @@
     </copy>
     <mkdir dir="${build.layout}/plugins" />
     <mkdir dir="${build.layout}/plugins/mps-execution-api" />
-    <mkdir dir="${build.layout}/plugins/mps-execution-api/META_INF" />
-    <copy todir="${build.layout}/plugins/mps-execution-api/META_INF">
+    <mkdir dir="${build.layout}/plugins/mps-execution-api/META-INF" />
+    <copy todir="${build.layout}/plugins/mps-execution-api/META-INF">
       <fileset file="${mps_home}/plugins/execution-api/META-INF/plugin.xml" />
     </copy>
     <mkdir dir="${build.layout}/plugins/mps-execution-api/lib" />

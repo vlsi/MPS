@@ -10849,7 +10849,7 @@
           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="8922140744663445429">
             <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="8922140744663445430">
               <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="8922140744663445629">
-                <property name="text" nameId="3ior.4903714810883755350" value="META_INF" />
+                <property name="text" nameId="3ior.4903714810883755350" value="META-INF" />
               </node>
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="8922140744663460546">
