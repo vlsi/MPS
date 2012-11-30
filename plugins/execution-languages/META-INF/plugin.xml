@@ -9,14 +9,27 @@
   
   <depends>jetbrains.mps.debugger-java</depends>
   <depends>jetbrains.mps.debugger-api</depends>
+  <depends>jetbrains.mps.execution-api</depends>
+
+  <project-components>
+    <component>
+      <implementation-class>jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager
+      </implementation-class>
+    </component>
+  </project-components>
+
   <application-components>
     <component>
       <implementation-class>jetbrains.mps.execution.languages.plugin.Languages_PluginInitializer</implementation-class>
     </component>
   </application-components>
-  
+
   <extensions defaultExtensionNs="com.intellij">
-    <mps.LanguageLibrary dir="/" />
-    <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter" />
+    <mps.LanguageLibrary dir="/"/>
+    <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
+    <programRunner id="defaultRunRunner"
+                   implementation="jetbrains.mps.execution.impl.configurations.runners.MPSProgramRunner"/>
+    <stepsBeforeRunProvider
+            implementation="jetbrains.mps.execution.impl.configurations.runners.LegacyBeforeTaskProvider"/>
   </extensions>
 </idea-plugin>

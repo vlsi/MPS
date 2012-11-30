@@ -1857,7 +1857,7 @@
                                                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ua2a.~TypeContextManager%dgetInstance()%cjetbrains%dmps%dtypesystem%dinference%dTypeContextManager" resolveInfo="getInstance" />
                                                     </node>
                                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4644804048960759285">
-                                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ua2a.~TypeContextManager%dsetComputeInNormalMode(boolean)%cvoid" resolveInfo="setComputeInNormalMode" />
+                                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ua2a.~TypeContextManager%dsetComputeInNormalMode_resolverVooDoo(boolean)%cvoid" resolveInfo="setComputeInNormalMode_resolverVooDoo" />
                                                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4644804048960759286">
                                                         <property name="value" nameId="tpee.1068580123138" value="true" />
                                                       </node>
@@ -1888,7 +1888,7 @@
                                                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ua2a.~TypeContextManager%dgetInstance()%cjetbrains%dmps%dtypesystem%dinference%dTypeContextManager" resolveInfo="getInstance" />
                                                     </node>
                                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4644804048960759296">
-                                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ua2a.~TypeContextManager%dsetComputeInNormalMode(boolean)%cvoid" resolveInfo="setComputeInNormalMode" />
+                                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ua2a.~TypeContextManager%dsetComputeInNormalMode_resolverVooDoo(boolean)%cvoid" resolveInfo="setComputeInNormalMode_resolverVooDoo" />
                                                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4644804048960759297" />
                                                     </node>
                                                   </node>

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.relations;
 
+import com.sun.jmx.snmp.agent.SnmpMibNode;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.SubtypingUtil;
 import jetbrains.mps.newTypesystem.state.State;
@@ -22,6 +23,7 @@ import jetbrains.mps.newTypesystem.state.blocks.RelationBlock;
 import jetbrains.mps.newTypesystem.state.blocks.RelationKind;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 
 import java.util.*;
@@ -33,7 +35,6 @@ public class SubTypingRelation extends AbstractRelation {
   }
 
   public boolean solve(SNode node, Set<SNode> leftTypes, Set<SNode> rightTypes, State state, Map<SNode, RelationBlock> typesToBlocks) {
-    SubTypingManagerNew subTyping = state.getTypeCheckingContext().getSubTyping();
     SNode result = null;
     EquationInfo info = null;
     if (!leftTypes.isEmpty()) {

@@ -14,7 +14,7 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
+import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
@@ -78,8 +78,8 @@ public class ShowTypeSystemTraceIncremental_Action extends BaseAction {
     try {
       TypeCheckingContext typeCheckingContext;
       typeCheckingContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getTypeCheckingContext();
-      if (typeCheckingContext instanceof TypeCheckingContextNew) {
-        TypeCheckingContextNew tcc = (TypeCheckingContextNew) typeCheckingContext;
+      if (typeCheckingContext instanceof IncrementalTypecheckingContext) {
+        IncrementalTypecheckingContext tcc = (IncrementalTypecheckingContext) typeCheckingContext;
         TraceTool_Tool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(TraceTool_Tool.class);
         tool.buildTrace(tcc, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), false);
         tool.openToolLater(true);

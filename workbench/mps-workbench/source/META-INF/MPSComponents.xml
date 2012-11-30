@@ -194,10 +194,6 @@
       <implementation-class>jetbrains.mps.plugins.projectplugins.ProjectPluginManager</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager
-      </implementation-class>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsTool
       </implementation-class>
     </component>

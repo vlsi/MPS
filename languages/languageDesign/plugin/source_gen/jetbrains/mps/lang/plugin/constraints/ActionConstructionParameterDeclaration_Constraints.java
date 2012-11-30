@@ -11,6 +11,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 
 public class ActionConstructionParameterDeclaration_Constraints extends BaseConstraintsDescriptor {
   public ActionConstructionParameterDeclaration_Constraints() {
@@ -41,5 +43,26 @@ public class ActionConstructionParameterDeclaration_Constraints extends BaseCons
     };
   }
 
+  @Override
+  public boolean hasOwnCanBeChildMethod() {
+    return true;
+  }
+
+  @Override
+  public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
+    boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
+
+    if (!(result) && checkingNodeContext != null) {
+      checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
+    }
+
+    return result;
+  }
+
+  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.plugin.structure.ActionDeclaration");
+  }
+
   private static SNodePointer breakingNode_846svb_a0a1a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "7043625615963660229");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "4448365440079928961");
 }
